@@ -8,480 +8,480 @@
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 141-1] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A team of computational biologists analyzing genomic data from a large, geographically diverse population sample identified a genetic variant that appeared markedly more common among individuals reporting resistance to a particular pathogen, but subsequent analysis revealed that this variant was also disproportionately common within specific ancestral population groups that, independent of the variant itself, tend to have had greater historical exposure to the pathogen and, consequently, may have developed other, entirely separate immunological adaptations over many generations, complicating any straightforward claim that the variant itself confers meaningful individual-level resistance rather than merely correlating with population groups that are resistant for a range of other, unrelated reasons.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "The team conclusively proved the variant is the direct cause of pathogen resistance.",
+                "It remains unclear whether the genetic variant itself confers resistance, or whether it simply correlates with population groups that are resistant for other reasons.",
+                "The variant showed no association whatsoever with any population group studied.",
+                "Population groups with greater historical pathogen exposure showed no other immunological adaptations."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 141-1)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 141]."
+            "correctAnswer": "It remains unclear whether the genetic variant itself confers resistance, or whether it simply correlates with population groups that are resistant for other reasons.",
+            "hint": "Notice the passage's own description of what complicates a straightforward claim about the variant.",
+            "explanation": "The variant correlated with resistance, but so did belonging to certain ancestral groups with their own separate history of adaptation, meaning the passage explicitly leaves open whether the variant itself is doing the work or is simply a marker found more often in already-resistant populations."
         },
         {
             "id": "RDG_READINGCONCLUSION_L141_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 141-2] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "An organizational behavior scholar reviewing several decades of research on workplace autonomy found a consistent pattern across dozens of studies: employees granted greater discretion over how they accomplished assigned tasks, as opposed to discretion over which tasks to prioritize or when to complete them, reported the largest and most consistent gains in job satisfaction, while autonomy over scheduling and task prioritization showed weaker and more inconsistent effects across different studies and workplace contexts, a finding the scholar argued challenges the common assumption that flexible scheduling is necessarily the most valuable form of workplace autonomy an employer can offer.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "Flexible scheduling showed the strongest and most consistent effect on job satisfaction across studies.",
+                "All forms of workplace autonomy showed identical effects on job satisfaction.",
+                "Autonomy over how tasks are accomplished showed no measurable relationship to job satisfaction.",
+                "Discretion over how a task is accomplished appears more consistently linked to job satisfaction than flexible scheduling, challenging a common assumption."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 141-2)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 141]."
+            "correctAnswer": "Discretion over how a task is accomplished appears more consistently linked to job satisfaction than flexible scheduling, challenging a common assumption.",
+            "hint": "Compare the different types of autonomy the scholar examined, and notice which one showed the most consistent effect.",
+            "explanation": "Discretion over how work gets done showed the strongest, most consistent link to satisfaction, while scheduling autonomy showed weaker, less consistent effects, directly challenging the common assumption, which the scholar names explicitly, that flexible scheduling is the most valuable form of autonomy."
         },
         {
             "id": "RDG_READINGCONCLUSION_L141_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 141-3] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "An economist studying consumer response to a temporary sales tax holiday, during which certain goods were exempted from sales tax for a single weekend, found that total spending during the holiday weekend increased substantially, but spending in the weeks immediately following the holiday decreased by a nearly offsetting amount, suggesting that much of the apparent boost in spending reflected consumers simply shifting the timing of purchases they had already been planning to make rather than representing genuinely new economic activity that would not otherwise have occurred, according to the economist's analysis of point-of-sale data spanning several weeks.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "Much of the sales tax holiday's apparent spending boost appears to reflect shifted timing of planned purchases rather than genuinely new spending.",
+                "The tax holiday generated entirely new spending with no effect on later weeks.",
+                "Spending in the weeks after the holiday increased along with spending during it.",
+                "The tax holiday had no measurable effect on spending during the holiday weekend itself."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 141-3)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 141]."
+            "correctAnswer": "Much of the sales tax holiday's apparent spending boost appears to reflect shifted timing of planned purchases rather than genuinely new spending.",
+            "hint": "Compare spending during the holiday weekend with spending in the weeks that followed.",
+            "explanation": "Spending rose during the holiday but fell by a similar amount afterward, suggesting the tax holiday mostly shifted when people made purchases they were already planning, rather than creating genuinely new economic activity that wouldn't have happened otherwise."
         },
         {
             "id": "RDG_READINGCONCLUSION_L142_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 142-1] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A digital ethics researcher studying the design of default privacy settings across major consumer platforms found that the overwhelming majority of users never changed a setting from its factory default, regardless of whether that default favored maximum privacy or maximum data sharing, leading the researcher to argue that the framing of default settings as a 'neutral' starting point obscures the reality that a platform's choice of default effectively functions as the platform's actual privacy policy for the vast majority of its user base, whatever the platform's formal, opt-in-based privacy policy document might technically claim to offer users.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "Because most users never change default settings, the chosen default effectively functions as the real privacy policy for most users, regardless of what opt-in options formally exist.",
+                "Most users actively review and adjust their privacy settings from the default.",
+                "The choice of default setting has no real effect on most users' actual privacy outcomes.",
+                "Formal privacy policy documents fully determine user behavior regardless of default settings."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 142-1)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 142]."
+            "correctAnswer": "Because most users never change default settings, the chosen default effectively functions as the real privacy policy for most users, regardless of what opt-in options formally exist.",
+            "hint": "Notice the researcher's central argument about what a platform's default setting effectively becomes for most users.",
+            "explanation": "Since most users never touch the default, the researcher argues the default itself, not the formal opt-in policy document, is what actually determines most users' real-world privacy outcome, making the 'neutral' framing of defaults somewhat misleading in practice."
         },
         {
             "id": "RDG_READINGCONCLUSION_L142_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 142-2] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "A clinical researcher reviewing outcomes from a chronic pain management program that combined physical therapy with cognitive behavioral techniques found that patients who completed the full twelve-week program reported significant improvements in both pain intensity and daily functioning, but a substantial portion of enrolled patients, nearly forty percent, discontinued the program before completion, and preliminary data suggested this dropout group may have differed systematically from completers in ways, such as baseline depression severity, that the available data could not fully account for, leaving open the question of whether the program's benefits would generalize as strongly to the population that tends to drop out.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "The program's benefits were proven to apply equally to patients who dropped out.",
+                "Nearly all enrolled patients completed the full twelve-week program.",
+                "It remains unclear whether the program's benefits would extend as strongly to patients who tend to drop out, since completers may differ systematically from non-completers.",
+                "Baseline depression severity was identical between completers and those who dropped out."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 142-2)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 142]."
+            "correctAnswer": "It remains unclear whether the program's benefits would extend as strongly to patients who tend to drop out, since completers may differ systematically from non-completers.",
+            "hint": "Notice the open question the researcher raises about the dropout group at the end of the passage.",
+            "explanation": "Completers showed real improvement, but a large dropout group may have differed in ways like depression severity that weren't fully captured, meaning the passage explicitly leaves open whether the program would work as well for people more likely to drop out in the first place."
         },
         {
             "id": "RDG_READINGCONCLUSION_L142_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 142-3] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A literary scholar analyzing translation choices across multiple English editions of a classic foreign-language novel found that translations produced closer to the original publication date tended to render culturally specific idioms more literally, often requiring extensive footnotes for English readers, while more recent translations tended to substitute rough English equivalents that sacrificed some precision but improved readability, a shift the scholar attributed less to declining translator skill and more to an evolving philosophy within the translation field itself about whether a translation's primary obligation is fidelity to the original text or accessibility for the target audience.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "The scholar attributed the shift primarily to declining translator skill over time.",
+                "Older translations were found to be more readable than recent ones.",
+                "Translation philosophy has remained completely unchanged throughout the field's history.",
+                "The shift toward more readable translations appears to reflect an evolving philosophy in the field about fidelity versus accessibility, not declining translator skill."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 142-3)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 142]."
+            "correctAnswer": "The shift toward more readable translations appears to reflect an evolving philosophy in the field about fidelity versus accessibility, not declining translator skill.",
+            "hint": "Notice what the scholar explicitly says the shift reflects, and what they say it does not reflect.",
+            "explanation": "The scholar directly attributes the shift toward more readable translations to a changing philosophy about the translator's core obligation, explicitly ruling out declining skill as the explanation, so the conclusion should reflect that stated reasoning rather than a skill-based explanation."
         },
         {
             "id": "RDG_READINGCONCLUSION_L143_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 143-1] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "A researcher evaluating a district-wide initiative to reduce standardized testing time by consolidating several separate subject-specific exams into a single, shorter combined assessment found that overall testing time decreased as intended, and teacher-reported instructional time increased correspondingly, but item-level analysis of the combined assessment's results suggested it provided meaningfully less diagnostic detail about individual students' specific strengths and weaknesses within each subject than the previous, more time-consuming system of separate exams had provided, a trade-off district administrators acknowledged they had not fully anticipated when designing the consolidated assessment.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "The consolidated assessment provided more diagnostic detail than the previous separate exams.",
+                "Testing time increased under the new consolidated assessment system.",
+                "The trade-off in diagnostic detail was fully anticipated and planned for by administrators.",
+                "The consolidated assessment achieved its goal of reducing testing time but appears to have sacrificed some diagnostic detail that administrators hadn't fully anticipated."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 143-1)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 143]."
+            "correctAnswer": "The consolidated assessment achieved its goal of reducing testing time but appears to have sacrificed some diagnostic detail that administrators hadn't fully anticipated.",
+            "hint": "Notice the passage mentions both an intended success and an unanticipated cost of the consolidation.",
+            "explanation": "Testing time dropped and instructional time rose as intended, but the combined assessment gave less detailed diagnostic information than the separate exams had, a trade-off the passage explicitly says administrators hadn't fully anticipated when designing the new system."
         },
         {
             "id": "RDG_READINGCONCLUSION_L143_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 143-2] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "An ecologist studying invasive plant species management found that mechanical removal methods, physically pulling or cutting invasive plants, produced faster initial reductions in invasive plant coverage than herbicide-based methods, but follow-up surveys conducted eighteen months later found that invasive coverage had rebounded more substantially in mechanically treated plots than in herbicide-treated plots, since mechanical removal, unless performed with extraordinary thoroughness, often leaves root fragments capable of regenerating, whereas systemic herbicides more reliably killed the plant's root system entirely, preventing this kind of regrowth from occurring.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "Mechanical removal appears faster initially but less durable long-term than herbicide treatment, which more reliably prevents regrowth from root fragments.",
+                "Mechanical removal produced more durable long-term results than herbicide treatment.",
+                "Both methods showed identical rates of invasive plant regrowth after eighteen months.",
+                "Herbicide treatment produced slower initial reductions with no long-term advantage."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 143-2)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 143]."
+            "correctAnswer": "Mechanical removal appears faster initially but less durable long-term than herbicide treatment, which more reliably prevents regrowth from root fragments.",
+            "hint": "Compare the two methods' initial results with their results eighteen months later.",
+            "explanation": "Mechanical removal worked faster at first but saw more regrowth over time due to surviving root fragments, while herbicide more reliably killed the entire root system, suggesting the faster initial method was actually less durable in the long run."
         },
         {
             "id": "RDG_READINGCONCLUSION_L143_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 143-3] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A transportation researcher studying the adoption of electric scooter rental programs across several mid-sized cities found that ridership data alone suggested the programs were reducing car trips, since a majority of scooter riders reported in surveys that they would have otherwise driven, but a closer analysis accounting for trips that scooter riders reported would have otherwise been made by walking or public transit revealed that the programs' actual net effect on car trip reduction was considerably smaller than initial ridership figures alone would suggest, since a meaningful share of scooter trips simply replaced other forms of already-sustainable transportation.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "The scooter programs' actual reduction in car trips appears smaller than initial figures suggest, since many scooter trips replaced walking or transit rather than driving.",
+                "The programs eliminated far more car trips than initial ridership figures suggested.",
+                "Scooter trips replaced driving in every single case surveyed.",
+                "Walking and public transit use had no bearing on the programs' measured impact."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 143-3)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 143]."
+            "correctAnswer": "The scooter programs' actual reduction in car trips appears smaller than initial figures suggest, since many scooter trips replaced walking or transit rather than driving.",
+            "hint": "Notice the difference between what initial ridership figures suggested and what the more detailed analysis later revealed.",
+            "explanation": "Initial figures suggested a large reduction in car trips, but closer analysis found many scooter trips actually replaced walking or transit, meaning the programs' true net effect on driving was smaller than the raw ridership numbers alone would suggest."
         },
         {
             "id": "RDG_READINGCONCLUSION_L144_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 144-1] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "A family sociologist analyzing time-use diaries from dual-income households found that the total number of hours parents reported spending on direct childcare activities had increased over the past two decades even as parents' total working hours also increased over the same period, a seemingly contradictory pattern the researcher explained by pointing to a broader cultural shift toward what she termed 'intensive parenting,' in which parents increasingly reallocated time away from personal leisure and household maintenance specifically to preserve or expand time spent directly engaged with children, rather than the increase in childcare hours reflecting parents simply having more total free time available than previous generations.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "Parents appear to have reallocated time from leisure and chores toward childcare, rather than simply having more free time overall.",
+                "Parents in the study had significantly more total free time than previous generations.",
+                "Working hours decreased as childcare hours increased over the same period.",
+                "The increase in childcare hours had no relationship to any broader cultural shift."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 144-1)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 144]."
+            "correctAnswer": "Parents appear to have reallocated time from leisure and chores toward childcare, rather than simply having more free time overall.",
+            "hint": "Notice the researcher's explanation for the seemingly contradictory pattern of rising childcare time alongside rising work hours.",
+            "explanation": "Childcare hours rose even as work hours also rose, which the researcher explains through a shift toward 'intensive parenting,' where time was reallocated from leisure and chores toward children, rather than parents simply having gained more total free time to work with."
         },
         {
             "id": "RDG_READINGCONCLUSION_L144_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 144-2] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A political scientist studying local ballot measure outcomes found that measures funding specific, named infrastructure projects, such as 'repair Main Street Bridge,' passed at meaningfully higher rates than measures funding more general infrastructure categories, such as 'road maintenance,' even when both types of measures requested comparable tax increases and covered similarly sized total project budgets, suggesting voters may respond more favorably to funding requests they can concretely visualize and hold accountable than to requests framed in more abstract, general terms, regardless of the underlying fiscal similarity between the two types of measures.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "General infrastructure measures passed at higher rates than specifically named projects.",
+                "The framing of a measure had no bearing on its likelihood of passing.",
+                "Tax increases and budget size were the only factors that predicted a measure's passage.",
+                "Voters appear to respond more favorably to concretely named projects than to abstractly framed ones, even when the underlying costs are similar."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 144-2)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 144]."
+            "correctAnswer": "Voters appear to respond more favorably to concretely named projects than to abstractly framed ones, even when the underlying costs are similar.",
+            "hint": "Compare passage rates between specifically named projects and more general infrastructure categories, noting that costs were similar.",
+            "explanation": "Specifically named projects passed more often than general categories, even with similar costs, suggesting voters respond more favorably when they can concretely picture what they're funding, rather than to the underlying fiscal details, which were comparable either way."
         },
         {
             "id": "RDG_READINGCONCLUSION_L144_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 144-3] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "A sports scientist studying elite marathon runners found that runners who incorporated regular strength training into their weekly routine, in addition to their running mileage, showed improved race times over a two-year period compared to runners who focused exclusively on running-based training, but the improvement was concentrated specifically in the final quarter of the race, when fatigue-related form breakdown typically becomes most pronounced, with little measurable difference between the two groups in the earlier portions of the race when runners were still relatively fresh and less affected by accumulated fatigue, according to split-time data analyzed across dozens of races.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "Strength training improved performance equally throughout the entire race.",
+                "Strength training showed its strongest effect during the early, fresher portions of the race.",
+                "Strength training appears to specifically help runners maintain form during the fatigued final portion of a race, rather than improving performance throughout.",
+                "Strength training had no measurable relationship to race performance at any point."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 144-3)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 144]."
+            "correctAnswer": "Strength training appears to specifically help runners maintain form during the fatigued final portion of a race, rather than improving performance throughout.",
+            "hint": "Notice which specific portion of the race showed the largest difference between the two groups.",
+            "explanation": "The benefit of strength training showed up mainly in the final, most fatigued portion of the race, with little difference earlier on, suggesting the training specifically helps runners maintain form and performance as fatigue sets in, rather than boosting speed throughout the entire distance."
         },
         {
             "id": "RDG_READINGCONCLUSION_L145_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 145-1] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "A team of conservation geneticists studying a critically endangered bird species with a very small remaining population found that despite decades of extremely low genetic diversity, a condition that typically predicts elevated vulnerability to disease and reduced reproductive fitness in most species, the population had nonetheless persisted with stable reproductive rates, leading researchers to hypothesize that this particular species may have already purged its most harmful recessive genetic mutations through repeated historical population bottlenecks, effectively adapting, over many generations, to a level of inbreeding that would prove severely detrimental to most other comparable species.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "The species showed the elevated vulnerability and reduced fitness typical of low genetic diversity.",
+                "Researchers confirmed the population has begun rapidly declining due to low genetic diversity.",
+                "This species may have adapted to tolerate inbreeding through the historical purging of harmful mutations, unlike what would typically be expected in other species.",
+                "This species' genetic diversity levels are typical for a species with a stable population."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 145-1)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 145]."
+            "correctAnswer": "This species may have adapted to tolerate inbreeding through the historical purging of harmful mutations, unlike what would typically be expected in other species.",
+            "hint": "Notice the researchers' hypothesis for why this species has persisted despite conditions that would typically predict trouble.",
+            "explanation": "Despite very low genetic diversity, which usually predicts trouble, this population has remained stable, leading researchers to hypothesize the species purged harmful mutations through past bottlenecks, adapting to a level of inbreeding that would typically harm other species."
         },
         {
             "id": "RDG_READINGCONCLUSION_L145_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 145-2] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A labor economist studying the effects of a shortened workweek pilot program, in which participating companies reduced the standard workweek from five days to four while maintaining full pay, found that self-reported productivity per hour worked increased enough to fully offset the reduction in total hours for roughly two-thirds of participating companies, while the remaining third saw output decline in rough proportion to the reduced hours, a divergence the economist linked most strongly to whether a company's work was primarily structured around discrete, completable tasks or around ongoing processes requiring sustained availability throughout the traditional workweek.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "Every participating company saw identical productivity outcomes regardless of work structure.",
+                "Productivity declined proportionally at all participating companies without exception.",
+                "Whether output held steady under a shortened workweek appears linked to whether the company's work was task-based or required ongoing availability.",
+                "Output increased at every single company regardless of how work was structured."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 145-2)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 145]."
+            "correctAnswer": "Whether output held steady under a shortened workweek appears linked to whether the company's work was task-based or required ongoing availability.",
+            "hint": "Notice what factor the economist links to the divergence between companies whose output held steady and companies whose output declined.",
+            "explanation": "About two-thirds of companies maintained output under the shorter week while a third saw declines, and the economist connects this split specifically to whether work was task-based or required ongoing availability, suggesting the shortened week's success depends on the nature of the work itself."
         },
         {
             "id": "RDG_READINGCONCLUSION_L145_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 145-3] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "A food scientist studying consumer perception of shelf-stable versus fresh-refrigerated versions of an identical packaged soup product found that blind taste tests revealed no statistically significant difference in how participants rated the two versions' flavor, yet when participants were later told which sample was the shelf-stable version, retrospective satisfaction ratings for that sample dropped noticeably, even though participants were rating the exact same soup they had already tasted and rated highly moments earlier under blind conditions, according to the study's two-phase methodology comparing blind and labeled evaluations.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "Blind taste tests revealed a clear flavor difference between the two versions.",
+                "Knowing the product's storage type had no bearing on satisfaction ratings.",
+                "Satisfaction ratings for the shelf-stable label increased once participants knew which sample it was.",
+                "Knowing a product is shelf-stable, rather than fresh, appears to lower perceived quality, independent of any actual difference in taste."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 145-3)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 145]."
+            "correctAnswer": "Knowing a product is shelf-stable, rather than fresh, appears to lower perceived quality, independent of any actual difference in taste.",
+            "hint": "Compare participants' ratings under blind conditions with their ratings once they knew which sample was shelf-stable.",
+            "explanation": "The two versions tasted identically good under blind conditions, but ratings dropped once participants learned a sample was shelf-stable, suggesting the label itself, not any actual taste difference, shaped how participants perceived the same soup after the fact."
         },
         {
             "id": "RDG_READINGCONCLUSION_L146_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 146-1] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A digital rights researcher studying the long-term effectiveness of cookie-consent banners required by privacy regulations found that while the banners technically gave users a choice about data tracking, the overwhelming majority of users clicked whichever option was visually presented as the more prominent, easier-to-locate button, regardless of whether that button corresponded to accepting or declining tracking, leading the researcher to conclude that the banners' actual effect on user privacy outcomes was determined far more by interface design choices made by each individual website than by users' genuine underlying privacy preferences.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "Users' genuine privacy preferences were the main factor determining outcomes, regardless of interface design.",
+                "Interface design choices, rather than users' genuine privacy preferences, appear to be the main factor determining actual privacy outcomes from consent banners.",
+                "Users consistently clicked whichever button corresponded to declining tracking.",
+                "Interface design had no measurable relationship to which button users clicked."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 146-1)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 146]."
+            "correctAnswer": "Interface design choices, rather than users' genuine privacy preferences, appear to be the main factor determining actual privacy outcomes from consent banners.",
+            "hint": "Notice the researcher's central conclusion about what actually determines the outcome, stated at the end of the passage.",
+            "explanation": "Users tended to click whichever button was visually more prominent, regardless of what it actually meant for their privacy, leading the researcher to conclude that design choices, not genuine user preference, were the real driver of privacy outcomes from these banners."
         },
         {
             "id": "RDG_READINGCONCLUSION_L146_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 146-2] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "A media scholar studying audience response to serialized television found that shows employing a 'flashback within the finale' structure, revealing previously withheld context about earlier events in a season's final episode, received significantly higher audience engagement scores for that finale specifically, but subsequent rewatch data showed no corresponding increase in how often viewers returned to rewatch earlier episodes in light of the new context, suggesting the technique's appeal lay primarily in the finale's own novelty and emotional payoff rather than in genuinely reshaping how audiences engaged with or reinterpreted the season as a whole.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "The technique significantly increased how often viewers rewatched earlier episodes.",
+                "The flashback technique appears to boost engagement with the finale itself, without meaningfully changing how audiences revisited or reinterpreted earlier episodes.",
+                "The technique had no measurable effect on engagement with the finale itself.",
+                "Audience engagement dropped for finales using the flashback technique."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 146-2)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 146]."
+            "correctAnswer": "The flashback technique appears to boost engagement with the finale itself, without meaningfully changing how audiences revisited or reinterpreted earlier episodes.",
+            "hint": "Notice the passage separates the effect on finale engagement from the effect on rewatching earlier episodes.",
+            "explanation": "Finale engagement rose with the flashback technique, but rewatching of earlier episodes didn't increase, suggesting the technique's appeal was mostly about the finale's own novelty rather than genuinely changing how audiences related to the season as a whole."
         },
         {
             "id": "RDG_READINGCONCLUSION_L146_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 146-3] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "A health services researcher evaluating a hospital's transition to a new electronic prescribing system designed to reduce medication errors found that overall error rates did decline as intended in the months following implementation, but the specific types of errors shifted rather than simply decreasing across the board, with errors related to incorrect dosage calculation dropping sharply while a new category of errors, incorrect selection from a dropdown menu of similarly named medications, emerged and accounted for a meaningful share of the errors that still occurred under the new system.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "The new system eliminated all medication errors of every type entirely.",
+                "Dosage calculation errors increased under the new electronic prescribing system.",
+                "The new system appears to have reduced overall errors while also introducing a new type of error related to menu selection.",
+                "The types of errors remained completely unchanged after the system was introduced."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 146-3)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 146]."
+            "correctAnswer": "The new system appears to have reduced overall errors while also introducing a new type of error related to menu selection.",
+            "hint": "Notice the passage describes both an overall improvement and a genuinely new type of problem that emerged.",
+            "explanation": "Overall errors declined, and dosage errors dropped sharply, but a new error type involving dropdown menu selection emerged, suggesting the new system solved one problem while introducing a different one, rather than simply reducing every category of error uniformly."
         },
         {
             "id": "RDG_READINGCONCLUSION_L147_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 147-1] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A consumer finance researcher studying buy-now-pay-later services found that users who relied on these services for a majority of their discretionary purchases reported feeling that individual purchases felt more affordable in the moment than they would using a single upfront payment, but a follow-up analysis of these same users' overall monthly financial obligations found that the cumulative burden of multiple simultaneous installment plans often left users with less monthly financial flexibility than they had anticipated when initially making each individual purchase decision in isolation from their other ongoing obligations, according to survey and spending-pattern data across several thousand users.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "Buy-now-pay-later purchases may feel more affordable individually while cumulatively reducing users' overall monthly financial flexibility more than anticipated.",
+                "Cumulative monthly obligations remained lower than users anticipated across the board.",
+                "Individual purchases felt less affordable using these services than with upfront payment.",
+                "The services had no measurable effect on users' overall monthly financial flexibility."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 147-1)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 147]."
+            "correctAnswer": "Buy-now-pay-later purchases may feel more affordable individually while cumulatively reducing users' overall monthly financial flexibility more than anticipated.",
+            "hint": "Compare how affordable purchases felt in the moment with what the follow-up analysis found about overall monthly obligations.",
+            "explanation": "Purchases felt more affordable individually, but the accumulated weight of multiple installment plans left users with less overall flexibility than expected, suggesting a gap between how manageable each purchase feels in isolation and the actual cumulative financial picture."
         },
         {
             "id": "RDG_READINGCONCLUSION_L147_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 147-2] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "An environmental policy analyst studying the effectiveness of a carbon tax implemented in several jurisdictions found that the tax reduced overall emissions most substantially in jurisdictions that paired the tax with revenue rebates returned directly to lower-income households, compared to jurisdictions that implemented an equivalent tax rate but directed the resulting revenue toward general government spending, a pattern the analyst attributed to the rebate structure maintaining broader public and political support for the tax over time, which in turn allowed the policy to remain in place long enough to meaningfully influence long-term consumer and business behavior.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "Pairing a carbon tax with direct rebates appears more effective at reducing emissions, likely because it sustains the political support needed for the policy to remain in place.",
+                "Directing tax revenue to general government spending was more effective at reducing emissions.",
+                "The use of tax revenue had no bearing on the tax's effectiveness at reducing emissions.",
+                "Both revenue approaches produced identical emissions reductions across all jurisdictions."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 147-2)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 147]."
+            "correctAnswer": "Pairing a carbon tax with direct rebates appears more effective at reducing emissions, likely because it sustains the political support needed for the policy to remain in place.",
+            "hint": "Notice the mechanism the analyst offers for why the rebate approach was more effective.",
+            "explanation": "Emissions dropped more where rebates went directly to lower-income households, and the analyst links this to sustained political support keeping the tax in place long enough to actually change behavior, rather than the rebate itself directly reducing emissions in some other way."
         },
         {
             "id": "RDG_READINGCONCLUSION_L147_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 147-3] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A higher education researcher studying the outcomes of need-based versus merit-based financial aid found that need-based aid recipients graduated at rates comparable to merit-based aid recipients despite entering college with, on average, weaker academic preparation as measured by standardized test scores, a gap the researcher suggested may reflect need-based aid more effectively removing the specific financial barriers, such as the need to work long hours alongside coursework, that most directly threaten degree completion, regardless of a student's initial level of academic preparation upon entering the institution, according to graduation data across several cohorts.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "Need-based aid recipients graduated at significantly lower rates than merit-based recipients.",
+                "Need-based aid appears to help offset weaker initial academic preparation by removing financial barriers that most directly threaten degree completion.",
+                "Academic preparation had no relationship to which type of aid students received.",
+                "Merit-based aid was found to remove financial barriers more effectively than need-based aid."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 147-3)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 147]."
+            "correctAnswer": "Need-based aid appears to help offset weaker initial academic preparation by removing financial barriers that most directly threaten degree completion.",
+            "hint": "Notice the researcher's explanation for why need-based recipients graduated at comparable rates despite weaker initial preparation.",
+            "explanation": "Need-based recipients graduated at similar rates to merit-based recipients despite weaker test scores, and the researcher suggests this is because need-based aid addresses financial barriers, like the need to work long hours, that threaten completion regardless of how academically prepared a student initially was."
         },
         {
             "id": "RDG_READINGCONCLUSION_L148_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 148-1] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "A hospitality industry analyst studying guest satisfaction at boutique hotels found that hotels emphasizing highly personalized service, such as staff remembering returning guests' preferences without being asked, received substantially higher satisfaction ratings from guests who stayed three or more nights than from guests staying only a single night, for whom the personalization was rarely noticeable or relevant within such a short, one-night visit rather than a longer stay where personalization has more opportunity to become apparent and appreciated, according to satisfaction survey data segmented by length of stay.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "Personalized service benefited single-night guests more than longer-staying guests.",
+                "Personalized service investments appear most valuable for hotels with longer-staying guests, with limited benefit for hotels serving mostly single-night visitors.",
+                "Length of stay had no bearing on how much guests valued personalized service.",
+                "Personalized service showed identical benefits regardless of how long guests stayed."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 148-1)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 148]."
+            "correctAnswer": "Personalized service investments appear most valuable for hotels with longer-staying guests, with limited benefit for hotels serving mostly single-night visitors.",
+            "hint": "Compare satisfaction ratings between longer-staying guests and single-night guests regarding personalized service.",
+            "explanation": "Personalization boosted satisfaction most for guests staying three or more nights, with little effect for single-night guests, suggesting hotels catering mainly to short stays might see limited return on this particular investment compared to hotels with longer-staying guests."
         },
         {
             "id": "RDG_READINGCONCLUSION_L148_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 148-2] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "A researcher studying adult sibling relationships found that siblings who lived in different cities but maintained a shared, ongoing project together, such as a joint fantasy sports league or a collaborative family history research effort, reported feeling closer to each other than siblings whose contact consisted primarily of separate, individual check-in calls with no shared ongoing activity connecting them, even when the total amount of time spent communicating was statistically similar between the two groups of long-distance siblings surveyed across several years of the researcher's ongoing study.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "Separate individual check-in calls fostered closer relationships than a shared project.",
+                "Total communication time was the only factor linked to how close siblings felt.",
+                "Having a shared ongoing project appears to foster closer sibling relationships than separate check-ins alone, independent of total communication time.",
+                "Whether siblings shared an ongoing project had no bearing on relationship closeness."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 148-2)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 148]."
+            "correctAnswer": "Having a shared ongoing project appears to foster closer sibling relationships than separate check-ins alone, independent of total communication time.",
+            "hint": "Notice that total communication time was similar between groups; only the presence of a shared project differed.",
+            "explanation": "Siblings with a shared ongoing project felt closer than siblings with only separate check-ins, despite similar total communication time, suggesting that having something collaborative and ongoing to connect over matters more than sheer quantity of contact for long-distance sibling relationships."
         },
         {
             "id": "RDG_READINGCONCLUSION_L148_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 148-3] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A youth development researcher studying early sport specialization found that children who competed in a single sport year-round from a young age showed faster initial skill development in that sport compared to children who participated in multiple different sports through childhood, but by late adolescence, the multi-sport participants had largely caught up in skill level within their eventual primary sport while reporting substantially lower rates of burnout and overuse injury than their early-specializing peers, complicating simple assumptions that earlier specialization straightforwardly produces better long-term athletic outcomes.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "Early specialization produced clearly superior long-term outcomes with no downsides.",
+                "Multi-sport participants never caught up in skill level to early specializers.",
+                "Burnout and injury rates were identical between early specializers and multi-sport participants.",
+                "Early specialization appears to offer only a temporary skill advantage that multi-sport participants eventually close, while also carrying greater long-term costs like burnout and injury."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 148-3)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 148]."
+            "correctAnswer": "Early specialization appears to offer only a temporary skill advantage that multi-sport participants eventually close, while also carrying greater long-term costs like burnout and injury.",
+            "hint": "Compare the two groups' outcomes at an early stage versus by late adolescence.",
+            "explanation": "Early specializers developed skills faster initially, but multi-sport participants caught up by late adolescence while facing less burnout and injury, suggesting the early advantage was temporary and came with real long-term costs, complicating the assumption that earlier specialization is simply better."
         },
         {
             "id": "RDG_READINGCONCLUSION_L149_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 149-1] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "A civic engagement researcher studying the effects of ranked-choice voting on local elections found that jurisdictions adopting the system saw a measurable increase in the number of candidates entering local races, since candidates no longer needed to worry as acutely about 'splitting the vote' with ideologically similar candidates, but voter turnout itself remained largely unchanged from before the system's adoption, suggesting the reform primarily affected who chose to run for office rather than how many voters chose to participate in the resulting elections once the field of candidates had changed, according to election data compared across several adoption cycles.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "Ranked-choice voting appears to have primarily changed who runs for office rather than how many voters turn out to participate.",
+                "Voter turnout increased substantially after ranked-choice voting was adopted.",
+                "The number of candidates entering races decreased after the system's adoption.",
+                "Ranked-choice voting had no measurable effect on either candidates or turnout."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 149-1)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 149]."
+            "correctAnswer": "Ranked-choice voting appears to have primarily changed who runs for office rather than how many voters turn out to participate.",
+            "hint": "Notice the passage separates the effect on candidate entry from the effect on voter turnout.",
+            "explanation": "More candidates entered races under ranked-choice voting, but turnout stayed about the same, suggesting the reform's main effect was on candidates' willingness to run rather than on voters' willingness to participate in the resulting elections."
         },
         {
             "id": "RDG_READINGCONCLUSION_L149_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Vent Verdict 149-2] Hydrothermal vents emit toxic hydrogen sulfide chemicals into pitch-black waters. Despite these toxic conditions, bacteria generate organic molecules that sustain a complex web of deep-sea tube worms, crabs, and blind shrimp.",
+            "passage": "A team of behavioral ecologists studying tool use among a population of wild crows found that juvenile crows raised by tool-using parents developed sophisticated tool-crafting techniques significantly faster than juvenile crows raised by non-tool-using parents in a separate population, even when both groups of juveniles were later given identical opportunities and materials to experiment with independently, suggesting the skill is transmitted through social learning from observing parents rather than being purely instinctual or something each individual crow must independently discover through trial and error alone.",
             "options": [
-                "Life thrives near sea vents without relying on photosynthesis",
-                "Hydrothermal ecosystems rely exclusively on seaweed growth",
-                "The deep ocean floor is completely devoid of living species",
-                "Surface sunlight is necessary to power all deep-sea vents"
+                "Tool-crafting skill developed identically regardless of whether parents used tools.",
+                "Tool-crafting skill in these crows appears to be transmitted through social learning from parents, rather than being purely instinctual.",
+                "The skill was proven to be purely instinctual, independent of any parental influence.",
+                "Juveniles from non-tool-using parents developed the skill faster than the other group."
             ],
-            "correctAnswer": "Life thrives near sea vents without relying on photosynthesis",
-            "hint": "Decide whether deep hydrothermal ecosystems require solar radiation or if they rely on localized chemical heat. (Diving calibration index 149-2)",
-            "explanation": "The fact that bacteria thrive on toxic hydrogen sulfide without sunlight demonstrates that life near hot sea vents does not rely on photosynthesis. [Verified by Logic Verdict Unit 149]."
+            "correctAnswer": "Tool-crafting skill in these crows appears to be transmitted through social learning from parents, rather than being purely instinctual.",
+            "hint": "Compare the two groups of juveniles, noting that both had identical opportunities to experiment independently.",
+            "explanation": "Juveniles with tool-using parents developed the skill faster than those without, even with identical independent opportunities to practice, suggesting the skill is learned socially by observing parents rather than being something each crow must instinctively or independently discover on its own."
         },
         {
             "id": "RDG_READINGCONCLUSION_L149_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Kelp Link 149-3] Giant kelp anchors itself to rocky seafloors using root-like holdfasts and grows upward at rates exceeding 60 centimeters a day towards the surface to capture solar energy.",
+            "passage": "A team studying the adoption of open-source software within large corporations found that companies with a dedicated internal team responsible for vetting and maintaining open-source components saw measurably fewer security vulnerabilities traced back to outdated third-party code than companies relying on individual development teams to independently track and update their own open-source dependencies, even though the total number of open-source components used was statistically similar across both types of companies studied over a multi-year period spanning several industries with varying levels of software development maturity.",
             "options": [
-                "Rapid upward growth is an evolutionary drive to access sunlight",
-                "Kelps grow downward to seek warmer volcanic magma heat",
-                "Kelp forests survive best in complete polar ice darkness",
-                "Root-like holdfasts are used to absorb deep volcanic minerals"
+                "Individual development teams were more effective at preventing security vulnerabilities.",
+                "Having a dedicated team manage open-source dependencies appears more effective at preventing security vulnerabilities than relying on individual teams, despite similar overall component usage.",
+                "The number of open-source components used differed significantly between the two types of companies.",
+                "How open-source dependencies were managed had no bearing on security vulnerabilities."
             ],
-            "correctAnswer": "Rapid upward growth is an evolutionary drive to access sunlight",
-            "hint": "Link the rapid upward growth to the capture of solar energy at the surface. (Diving calibration index 149-3)",
-            "explanation": "The extreme vertical growth of kelp specifically enables it to reach the sunlit zone, serving as an adaptation to capture solar energy. [Verified by Logic Verdict Unit 149]."
+            "correctAnswer": "Having a dedicated team manage open-source dependencies appears more effective at preventing security vulnerabilities than relying on individual teams, despite similar overall component usage.",
+            "hint": "Compare the two management approaches, noting that overall component usage was similar for both.",
+            "explanation": "Companies with a dedicated vetting team had fewer vulnerabilities than companies relying on individual teams, even with similar overall open-source usage, suggesting centralized oversight itself, not simply how much open-source code was used, made the difference in security outcomes."
         },
         {
             "id": "RDG_READINGCONCLUSION_L150_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Biolum Final 150-1] Deep-sea creatures generated cold bioluminescent light through reactions of luciferin to navigate, lure prey, and deter lethal predators in absolute pitch-black depths.",
+            "passage": "A workplace communication researcher studying the shift to asynchronous, written-first communication at several distributed companies found that while employees reported the shift reduced meeting fatigue and gave them more uninterrupted focus time, managers reported a corresponding increase in the time required to reach team consensus on decisions that had previously been resolved relatively quickly in a single synchronous meeting, suggesting the asynchronous approach traded meeting fatigue for a slower, more deliberative, but potentially more thoroughly considered decision-making process overall.",
             "options": [
-                "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-                "Creatures use cold light to warm up freezing deep subsea waters",
-                "Glowing bioluminescent appendages serve no evolutionary purpose",
-                "Bioluminescence is only useful for hiding inside coral reefs"
+                "The shift reduced both meeting fatigue and the time needed to reach decisions.",
+                "The asynchronous shift appears to have reduced meeting fatigue at the cost of slower, though possibly more deliberative, decision-making.",
+                "Decision-making became faster under the new asynchronous approach.",
+                "The communication shift had no measurable effect on either fatigue or decision-making speed."
             ],
-            "correctAnswer": "Bioluminescence is a critical multi-purpose evolutionary survival tool",
-            "hint": "Synthesize the multiple purposes (luring prey, deterring predators, navigating) into a single functional conclusion. (Diving calibration index 150-1)",
-            "explanation": "Since bioluminescence enables deep-sea species to hunt, protect themselves, and communicate, it acts as a critical survival mechanism. [Verified by Logic Verdict Unit 150]."
+            "correctAnswer": "The asynchronous shift appears to have reduced meeting fatigue at the cost of slower, though possibly more deliberative, decision-making.",
+            "hint": "Notice the passage mentions a benefit for employees alongside a trade-off managers observed in decision-making.",
+            "explanation": "Employees felt less meeting fatigue, but managers found decisions took longer to reach, suggesting the shift traded quick, synchronous resolution for a slower process that may, as the passage notes, also be more thoroughly considered as a result."
         },
         {
             "id": "RDG_READINGCONCLUSION_L150_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Coral Verdict 150-2] Deep-sea corals grow in complete darkness without hosting symbiotic algae. Instead, they capture floating organic particles and plankton from deep currents, surviving for over 4,000 years.",
+            "passage": "A cultural critic reviewing several decades of award-winning documentary films found that films employing extensive first-person narration from the filmmaker tended to receive stronger initial critical reception at the time of release but were less frequently revisited or cited by subsequent filmmakers as influential a decade later, compared to more observational documentaries relying primarily on unnarrated footage, a pattern the critic suggested may reflect how narration-heavy films can feel more immediately compelling on first viewing while dating more quickly as the filmmaker's particular voice and perspective become less resonant with later audiences and filmmakers.",
             "options": [
-                "Deep corals are highly adapted to feed heterotrophically in darkness",
-                "Deep corals will die immediately if not exposed to solar rays",
-                "All marine corals require algae to process nutrients",
-                "Deep currents are highly toxic to ancient subsea ecosystems"
+                "Narration-heavy documentaries showed stronger long-term influence than observational documentaries.",
+                "Both types of documentaries showed identical patterns of initial reception and long-term influence.",
+                "Observational documentaries received weaker initial critical reception than narration-heavy films.",
+                "Narration-heavy documentaries appear to make a stronger initial impression but age less well in long-term influence than more observational films."
             ],
-            "correctAnswer": "Deep corals are highly adapted to feed heterotrophically in darkness",
-            "hint": "Focus on how deep corals feed without symbiotic algae or photosynthesis. (Diving calibration index 150-2)",
-            "explanation": "By capturing suspended organic matter from currents instead of relying on algae photosynthesis, deep corals show strong dark adaptations. [Verified by Logic Verdict Unit 150]."
+            "correctAnswer": "Narration-heavy documentaries appear to make a stronger initial impression but age less well in long-term influence than more observational films.",
+            "hint": "Compare how each type of documentary performed initially versus a decade later.",
+            "explanation": "Narration-heavy films impressed critics initially but were cited less often a decade later, while observational films showed the opposite pattern, suggesting a strong personal voice may compel immediately but not always endure as later audiences and filmmakers' tastes shift over time."
         },
         {
             "id": "RDG_READINGCONCLUSION_L150_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
             "interactionType": "Logic Bridge",
-            "passage": "[Upwell Verdict 150-3] Wind-driven coastal upwelling pushes warm surface waters away, drawing up nutrient-packed icy deep waters that spark massive plankton feeding blooms.",
+            "passage": "Since the Voss family began holding a brief 'rose, thorn, and bud' check-in at dinner, where each member shares a highlight, a difficulty, and something they're looking forward to, they say their teenage daughter, who had grown notably quiet at family meals over the past year, has gradually begun sharing more again, though the parents noted the shift took nearly two months of consistent practice before she began participating without visible reluctance, suggesting the format's value may lie less in any single conversation and more in the steady, low-pressure repetition of the ritual itself over time.",
             "options": [
-                "Upwelling currents link atmospheric winds to marine food cycles",
-                "Plankton blooms are highly toxic to humpback whale migrations",
-                "Upwelling currents only occur during volcanic seafloor eruptions",
-                "Deep polar waters are completely barren of organic nutrients"
+                "The daughter began participating enthusiastically from the very first dinner.",
+                "The ritual had no measurable effect on the daughter's participation at family meals.",
+                "The dinner ritual's value appears to come from its steady repetition over time rather than from any single conversation.",
+                "A single conversation was responsible for the entire change in the daughter's behavior."
             ],
-            "correctAnswer": "Upwelling currents link atmospheric winds to marine food cycles",
-            "hint": "Connect the winds pushing surface water to the resulting plankton blooms and marine feeding chain. (Diving calibration index 150-3)",
-            "explanation": "Wind actions create suction that pulls up deep ocean nutrients, demonstrating a direct link between winds and surface food webs. [Verified by Logic Verdict Unit 150]."
+            "correctAnswer": "The dinner ritual's value appears to come from its steady repetition over time rather than from any single conversation.",
+            "hint": "Notice how long it took before the daughter began participating, and what that suggests about the source of the ritual's value.",
+            "explanation": "It took nearly two months of consistent practice before the daughter engaged without reluctance, suggesting the ritual's benefit came from steady, repeated, low-pressure practice over time rather than from any single dinner conversation making the difference on its own."
         }
     ]
 }

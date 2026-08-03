@@ -8,16 +8,6 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
-import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -25,8 +15,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_instruction.dart';
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/widgets/direct_indirect_speech_mirror.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class DirectIndirectSpeechScreen extends StatefulWidget {
   final int level;
@@ -77,7 +67,6 @@ class _DirectIndirectSpeechScreenState
         _phase1Passed = true;
         _rotation = 3.14;
       });
-      // Wait for Phase 2
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -92,12 +81,10 @@ class _DirectIndirectSpeechScreenState
 
   void _submitPhase2Evaluation(bool nailedIt) {
     if (_isAnswered) return;
-
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
     });
-
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -218,6 +205,97 @@ class _DirectIndirectSpeechScreenState
 
                     return Stack(
                       children: [
+                        Column(
+                      children: [
+                        SizedBox(height: gapTop),
+                        isCompact
+                            ? SizedBox(
+                                height: 25.h,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: DirectIndirectSpeechInstruction(
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                ),
+                              )
+                            : DirectIndirectSpeechInstruction(
+                                primaryColor: theme.primaryColor,
+                              ),
+                        SizedBox(height: gapMiddle),
+
+                        // Holographic Mirror
+                        DirectIndirectSpeechMirror(
+                          rotation: _rotation,
+                          directText: displayDirect,
+                          indirectText: displayIndirect,
+                          isCorrect: _isCorrect,
+                          isDark: isDark,
+                          primaryColor: theme.primaryColor,
+                          isCompact: isCompact,
+                        ),
+
+                        SizedBox(height: isCompact ? 12.h : 30.h),
+
+                        // Reflection Options
+                        Expanded(
+                          child: SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: Column(
+                              children: [
+                                Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: isCompact ? 8.w : 12.w,
+                                  runSpacing: isCompact ? 8.h : 12.h,
+                                  children: List.generate(
+                                    options.length,
+                                    (i) => _buildReflectionChip(
+                                      options[i],
+                                      i,
+                                      quest.correctAnswerIndex ?? 0,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                  ),
+                                ),
+                                if (_isAnswered) ...[
+                                  SizedBox(height: isCompact ? 12.h : 30.h),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                    ),
+                                    child: _buildCorrectResult(
+                                      quest,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                  ),
+                                ],
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    if (_phase1Passed && !_isAnswered && quest != null)
+                      TypeToConfirmOverlay(
+                        expectedText: options[_selectedReflection],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitPhase2Evaluation(true),
+                        onSkipped: () => _submitPhase2Evaluation(false),
+                      ),
+                  ],
+                );
+                  },
+                ),
+        );
+      },
+    );
+  }
+
+  Widget _buildReflectionChip(
     String text,
     int index,
     int correctIndex,
