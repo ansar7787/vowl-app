@@ -97,8 +97,8 @@ class _DialectDrillHologramConsoleState
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [_buildDragTarget(0), _buildDragTarget(1)],
         ),
-        SizedBox(height: 48.h),
-        if (!widget.isAnswered)
+        if (!widget.isAnswered) ...[
+          SizedBox(height: 48.h),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -143,9 +143,8 @@ class _DialectDrillHologramConsoleState
                 ),
               ).animate().fadeIn().slideY(begin: 0.2),
             ],
-          )
-        else
-          SizedBox(height: 64.r),
+          ),
+        ],
       ],
     ).animate().fadeIn(duration: 400.ms).scale(begin: const Offset(0.95, 0.95));
   }
