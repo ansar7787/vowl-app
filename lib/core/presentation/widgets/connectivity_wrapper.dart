@@ -60,7 +60,11 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     if (matches.isNotEmpty) {
       final location = matches.last.matchedLocation;
       if (location != _currentLocation) {
-        setState(() => _currentLocation = location);
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) {
+            setState(() => _currentLocation = location);
+          }
+        });
       }
     }
   }
