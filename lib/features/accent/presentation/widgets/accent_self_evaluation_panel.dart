@@ -116,25 +116,32 @@ class _AccentSelfEvaluationPanelState extends State<AccentSelfEvaluationPanel> {
             color: widget.primaryColor,
           ),
         ),
-        SizedBox(height: 12.h),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-          decoration: BoxDecoration(
-            color: widget.primaryColor.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
-          ),
-          child: Text(
-            '"${widget.textToSpeak}"',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w600,
+        if (widget.textToSpeak.trim().isNotEmpty) ...[
+          SizedBox(height: 12.h),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: widget.primaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
+            ),
+            child: Text(
+              '"${widget.textToSpeak}"',
+              textAlign: TextAlign.center,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: widget.textToSpeak.length > 30 ? 16.sp : 18.sp,
+                fontWeight: FontWeight.w600,
+                height: 1.3,
+              ),
             ),
           ),
-        ),
-        SizedBox(height: 16.h),
+          SizedBox(height: 16.h),
+        ] else ...[
+          SizedBox(height: 16.h),
+        ],
         if (!_hasRecorded) ...[
           GestureDetector(
             onTap: () {
