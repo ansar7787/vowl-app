@@ -52,7 +52,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   double _sliderValue = 0.5;
   int? _selectedIndex;
 
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   Timer? _mismatchResetTimer;
   Timer? _autoplayTimer;
@@ -90,7 +90,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     _soundService.playTts(text);
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -110,7 +110,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   }
 
   void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() => _sliderValue = value);
 
     // Auto-lock when reaching ends
@@ -122,7 +122,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
       _sliderValue = index == 0 ? 0.0 : 1.0;
@@ -134,7 +134,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Do NOT submit yet. Wait for Phase 2.
@@ -168,7 +168,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
               _isCorrect = null;
               _sliderValue = 0.5;
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -276,7 +276,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                       width: maxWidth - 48.w,
                                                       child: VowelDistinctionInstruction(
                                                         color: theme.primaryColor,
-                                                        instruction: _phase1Passed
+                                                        instruction: _isFirstStagePassed
                                                             ? "Great job! Now confirm by speaking the word."
                                                             : context.tr(
                                                                 'games.vowel_distinction_instruction',
@@ -289,7 +289,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                 )
                                               : VowelDistinctionInstruction(
                                                   color: theme.primaryColor,
-                                                  instruction: _phase1Passed
+                                                  instruction: _isFirstStagePassed
                                                       ? "Great job! Now confirm by speaking the word."
                                                       : context.tr(
                                                           'games.vowel_distinction_instruction',
@@ -348,7 +348,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                         isDark: isDark,
                                                         isAnswered:
                                                             _isAnswered ||
-                                                            _phase1Passed,
+                                                            _isFirstStagePassed,
                                                         selectedIndex: _selectedIndex,
                                                         sliderValue: _sliderValue,
                                                         onSubmitChoice: _submitChoice,
@@ -365,7 +365,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isAnswered:
-                                                      _isAnswered || _phase1Passed,
+                                                      _isAnswered || _isFirstStagePassed,
                                                   selectedIndex: _selectedIndex,
                                                   sliderValue: _sliderValue,
                                                   onSubmitChoice: _submitChoice,
@@ -385,12 +385,12 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                         },
                       ),
               ),
-              if (_phase1Passed && !_isAnswered && quest != null)
+              if (_isFirstStagePassed && !_isAnswered && quest != null)
                 SpeakToConfirmOverlay(
                   expectedText: quest.textToSpeak ?? quest.word ?? "",
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitPhase2Evaluation(true),
-                  onSkipped: () => _submitPhase2Evaluation(false),
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
                 ),
             ],
           ),

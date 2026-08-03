@@ -47,7 +47,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   Offset _probeOffset = Offset.zero;
   int? _hoveredIndex;
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -83,7 +83,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _onProbeDragStart(DragStartDetails details) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _springController.stop();
   }
 
@@ -92,7 +92,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     Offset launchCenter,
     List<Offset> terminalCenters,
   ) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() {
       _probeOffset += details.delta;
@@ -131,7 +131,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _onProbeDragEnd(int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     if (_hoveredIndex != null) {
       _submitChoice(_hoveredIndex!, correctIndex);
@@ -142,7 +142,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final isCorrect = index == correct;
     setState(() {
@@ -154,7 +154,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -168,7 +168,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -204,7 +204,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
               _probeOffset = Offset.zero;
               _hoveredIndex = null;
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -270,7 +270,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                               probeOffset: _probeOffset,
                               hoveredIndex: _hoveredIndex,
                               selectedIndex: _selectedIndex,
-                              isAnswered: _isAnswered || _phase1Passed,
+                              isAnswered: _isAnswered || _isFirstStagePassed,
                               onProbeDragStart: _onProbeDragStart,
                               onProbeDragUpdate: _onProbeDragUpdate,
                               onProbeDragEnd: _onProbeDragEnd,
@@ -289,12 +289,12 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                   ),
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

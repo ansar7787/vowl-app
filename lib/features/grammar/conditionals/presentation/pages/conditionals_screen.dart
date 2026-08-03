@@ -38,7 +38,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -51,7 +51,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
   }
 
   void _onConnect(int nodeIndex, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
@@ -59,7 +59,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
       _hapticService.heavy();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
         _targetIndex = nodeIndex;
       });
     } else {
@@ -74,7 +74,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     setState(() {
       _isAnswered = true;
@@ -109,7 +109,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
@@ -271,12 +271,12 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                         SizedBox(height: gapBottom),
                       ],
                     ),
-                    if (_phase1Passed && !_isAnswered && quest != null)
+                    if (_isFirstStagePassed && !_isAnswered && quest != null)
                       TypeToConfirmOverlay(
                         expectedText: options[_targetIndex],
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitPhase2Evaluation(true),
-                        onSkipped: () => _submitPhase2Evaluation(false),
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
                       ),
                   ],
                 );
@@ -315,7 +315,7 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered || _phase1Passed) return;
+            if (_isAnswered || _isFirstStagePassed) return;
             setState(() {
               _chainPoints.add(details.localPosition);
               _hapticService.selection();

@@ -46,7 +46,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -82,7 +82,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _onItemTapped(String item) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _hapticService.selection();
     _soundService.playHint(); // Play synth note
     setState(() {
@@ -95,7 +95,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _clearItems() {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _hapticService.selection();
     setState(() {
       _selectedItems.clear();
@@ -103,7 +103,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
   }
 
   void _submitAnswer(String correctAnswer) {
-    if (_isAnswered || _phase1Passed || _selectedItems.isEmpty) return;
+    if (_isAnswered || _isFirstStagePassed || _selectedItems.isEmpty) return;
 
     final targets = correctAnswer
         .split(',')
@@ -119,7 +119,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -133,7 +133,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -166,7 +166,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedItems.clear();
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -357,12 +357,12 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && quest != null)
+            if (_isFirstStagePassed && !_isAnswered && quest != null)
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? _selectedItems.join(', '),
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

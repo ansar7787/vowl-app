@@ -44,7 +44,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   bool _showConfetti = false;
   int? _selectedDroneIndex;
 
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   String? _shuffledQuestId;
   List<Map<String, String>> _currentOptions = [];
@@ -90,7 +90,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
     super.dispose();
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -115,7 +115,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   }
 
   void _onShoot(int index, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final bool correct = index == correctIndex;
     setState(() {
@@ -126,7 +126,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Do NOT submit yet! Wait for Phase 2.
     } else {
@@ -158,7 +158,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedDroneIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -258,7 +258,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                     SizedBox(height: gapTop),
                                     MinimalPairsInstruction(
                                       color: theme.primaryColor,
-                                      instruction: _phase1Passed
+                                      instruction: _isFirstStagePassed
                                           ? "Great job! Now confirm by speaking the word."
                                           : context.tr(
                                               'games.minimal_pairs_instruction',
@@ -309,7 +309,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                                 0,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered || _phase1Passed,
+                                                      isAnswered: _isAnswered || _isFirstStagePassed,
                                                       selectedDroneIndex:
                                                           _selectedDroneIndex,
                                                       onShoot: _onShoot,
@@ -336,7 +336,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                       isDark: isDark,
                                                       isAnswered:
                                                           _isAnswered ||
-                                                          _phase1Passed,
+                                                          _isFirstStagePassed,
                                                       selectedDroneIndex:
                                                           _selectedDroneIndex,
                                                       onShoot: _onShoot,
@@ -365,7 +365,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                           0,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
-                                                isAnswered: _isAnswered || _phase1Passed,
+                                                isAnswered: _isAnswered || _isFirstStagePassed,
                                                 selectedDroneIndex:
                                                     _selectedDroneIndex,
                                                 onShoot: _onShoot,
@@ -387,7 +387,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                                 isDark: isDark,
                                                 isAnswered:
                                                     _isAnswered ||
-                                                    _phase1Passed,
+                                                    _isFirstStagePassed,
                                                 selectedDroneIndex:
                                                     _selectedDroneIndex,
                                                 onShoot: _onShoot,
@@ -409,14 +409,14 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                     },
                   ),
               ),
-              if (_phase1Passed && !_isAnswered && quest != null)
+              if (_isFirstStagePassed && !_isAnswered && quest != null)
                 SpeakToConfirmOverlay(
                   expectedText: _currentOptions.isNotEmpty 
                       ? _currentOptions[_currentCorrectIndex]['word']! 
                       : (quest.correctAnswer ?? quest.word1 ?? ""),
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitPhase2Evaluation(true),
-                  onSkipped: () => _submitPhase2Evaluation(false),
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
                 ),
             ],
           ),

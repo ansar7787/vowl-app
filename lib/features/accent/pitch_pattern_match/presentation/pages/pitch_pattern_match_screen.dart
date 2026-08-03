@@ -47,7 +47,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   bool _showConfetti = false;
   double _sliderValue = 0.5;
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   AccentQuest? _lastQuest;
 
   double _previewProgress = 0.0;
@@ -115,7 +115,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _onSliderUpdate(double value, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() => _sliderValue = value);
 
     // Auto-lock when reaching ends:
@@ -128,7 +128,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
       _sliderValue = index == 0 ? 1.0 : 0.0;
@@ -140,7 +140,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -155,7 +155,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -194,7 +194,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
               _selectedIndex = null;
               _previewProgress = 0.0;
               _isPreviewing = false;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -292,7 +292,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                   children: [
                                     PitchPatternMatchInstruction(
                                       color: theme.primaryColor,
-                                      instruction: _phase1Passed
+                                      instruction: _isFirstStagePassed
                                         ? "Great job! Now record yourself saying the word."
                                         : context.tr('games.pitch_pattern_match_instruction', fallback: 'Identify the pitch pattern'),
                                     ),
@@ -305,13 +305,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                     ),
                                     SizedBox(height: gapPrompt),
 
-                                    if (_isAnswered || _phase1Passed) ...[
+                                    if (_isAnswered || _isFirstStagePassed) ...[
                                       PitchPatternMatchMelodicCanvas(
                                         pattern: pattern,
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         isPreviewing: _isPreviewing,
-                                        isAnswered: _isAnswered || _phase1Passed,
+                                        isAnswered: _isAnswered || _isFirstStagePassed,
                                         previewProgress: _previewProgress,
                                       ),
                                       SizedBox(height: gapSpeaker),
@@ -334,19 +334,19 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered || _phase1Passed,
+                                      isAnswered: _isAnswered || _isFirstStagePassed,
                                       selectedIndex: _selectedIndex,
                                       sliderValue: _sliderValue,
                                       onSubmitChoice: _submitChoice,
                                       onSliderUpdate: _onSliderUpdate,
                                     ),
                                     SizedBox(height: gapBottom),
-                                    if (_phase1Passed)
+                                    if (_isFirstStagePassed)
                                       AccentSelfEvaluationPanel(
                                         textToSpeak: quest.textToSpeak ?? "",
                                         primaryColor: theme.primaryColor,
                                         isCompact: false, // Fader takes fixed height
-                                        onEvaluate: _submitPhase2Evaluation,
+                                        onEvaluate: _submitVerbalEvaluation,
                                       ),
                                     SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],

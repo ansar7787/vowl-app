@@ -43,7 +43,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -71,7 +71,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   }
 
   void _onPadTap(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() {
       _selectedIndex = index;
@@ -81,7 +81,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -96,7 +96,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -132,7 +132,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -238,7 +238,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                 child:
                                                     SyllableStressInstruction(
                                                       color: theme.primaryColor,
-                                                      instruction: _phase1Passed
+                                                      instruction: _isFirstStagePassed
                                                         ? "Great job! Now record yourself saying the word."
                                                         : context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                                     ),
@@ -247,7 +247,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                           )
                                         : SyllableStressInstruction(
                                             color: theme.primaryColor,
-                                            instruction: _phase1Passed
+                                            instruction: _isFirstStagePassed
                                               ? "Great job! Now record yourself saying the word."
                                               : context.tr('games.syllable_stress_instruction', fallback: 'Identify the stressed syllable'),
                                           ),
@@ -301,7 +301,7 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                         0,
                                                     color: theme.primaryColor,
                                                     isDark: isDark,
-                                                    isAnswered: _isAnswered || _phase1Passed,
+                                                    isAnswered: _isAnswered || _isFirstStagePassed,
                                                     selectedIndex: _selectedIndex,
                                                     onPadTap: _onPadTap,
                                                   ),
@@ -314,17 +314,17 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                   quest.correctAnswerIndex ?? 0,
                                               color: theme.primaryColor,
                                               isDark: isDark,
-                                              isAnswered: _isAnswered || _phase1Passed,
+                                              isAnswered: _isAnswered || _isFirstStagePassed,
                                               selectedIndex: _selectedIndex,
                                               onPadTap: _onPadTap,
                                             ),
                                     SizedBox(height: gapBottom),
-                                    if (_phase1Passed)
+                                    if (_isFirstStagePassed)
                                       AccentSelfEvaluationPanel(
                                         textToSpeak: quest.textToSpeak ?? "",
                                         primaryColor: theme.primaryColor,
                                         isCompact: isCompact,
-                                        onEvaluate: _submitPhase2Evaluation,
+                                        onEvaluate: _submitVerbalEvaluation,
                                       ),
                                     SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],

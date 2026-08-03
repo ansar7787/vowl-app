@@ -44,7 +44,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   bool _showConfetti = false;
 
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   String? _shuffledQuestId;
   int _shuffledRetryCount = -1;
@@ -97,7 +97,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
     });
@@ -108,7 +108,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -123,7 +123,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -159,7 +159,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -278,7 +278,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                     ConsonantClarityInstruction(
                                                       primaryColor:
                                                           theme.primaryColor,
-                                                      instruction: _phase1Passed 
+                                                      instruction: _isFirstStagePassed 
                                                         ? "Great job! Now confirm by speaking the word." 
                                                         : null,
                                                     ),
@@ -287,7 +287,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                           )
                                         : ConsonantClarityInstruction(
                                             primaryColor: theme.primaryColor,
-                                            instruction: _phase1Passed 
+                                            instruction: _isFirstStagePassed 
                                               ? "Great job! Now confirm by speaking the word." 
                                               : null,
                                           ),
@@ -305,7 +305,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                       word: quest.word ?? "",
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
-                                                      isAnswered: _isAnswered || _phase1Passed,
+                                                      isAnswered: _isAnswered || _isFirstStagePassed,
                                                     ),
                                               ),
                                             ),
@@ -314,7 +314,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             word: quest.word ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _phase1Passed,
+                                            isAnswered: _isAnswered || _isFirstStagePassed,
                                           ),
                                     SizedBox(height: gapPrompt),
 
@@ -341,7 +341,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                   correctIndex: correctIndex,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered || _phase1Passed,
+                                                  isAnswered: _isAnswered || _isFirstStagePassed,
                                                   selectedIndex: _selectedIndex,
                                                   onSubmitChoice: _submitChoice,
                                                 ),
@@ -353,7 +353,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                             correctIndex: correctIndex,
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _phase1Passed,
+                                            isAnswered: _isAnswered || _isFirstStagePassed,
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                           ),
@@ -371,12 +371,12 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                   },
                 ), // LayoutBuilder
               ), // AccentBaseLayout
-              if (_phase1Passed && !_isAnswered)
+              if (_isFirstStagePassed && !_isAnswered)
                 SpeakToConfirmOverlay(
                   expectedText: quest?.word ?? "",
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitPhase2Evaluation(true),
-                  onSkipped: () => _submitPhase2Evaluation(false),
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
                 ),
             ],
           ),

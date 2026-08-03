@@ -47,7 +47,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -73,7 +73,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _onStarTap(int index) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _hapticService.selection();
     _soundService.playHint(); // Play little synth tap note
 
@@ -87,7 +87,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _clearSelection() {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _hapticService.selection();
     setState(() {
       _selectedIndices.clear();
@@ -95,7 +95,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
   }
 
   void _submitAnswer(List<String> shuffledWords, String correctAnswer) {
-    if (_isAnswered || _phase1Passed || _selectedIndices.isEmpty) return;
+    if (_isAnswered || _isFirstStagePassed || _selectedIndices.isEmpty) return;
 
     // Assemble sentence in correct tapped order
     final String result = _selectedIndices
@@ -115,7 +115,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -129,7 +129,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -162,7 +162,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndices.clear();
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -346,12 +346,12 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && quest != null)
+            if (_isFirstStagePassed && !_isAnswered && quest != null)
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? currentText,
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

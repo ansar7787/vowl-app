@@ -37,7 +37,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   String? _selectedOption;
@@ -66,7 +66,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         _hapticService.success();
         _soundService.playCorrect();
         setState(() {
-          _phase1Passed = true;
+          _isFirstStagePassed = true;
         });
         // Wait for Phase 2
       } else {
@@ -78,7 +78,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     });
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered && _isCorrect != null) return;
 
     setState(() {
@@ -111,7 +111,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               _selectedOption = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -181,12 +181,12 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       ),
                     ),
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                    if (_phase1Passed && (!_isAnswered || _isCorrect == null) && quest != null)
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null) && quest != null)
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitPhase2Evaluation(true),
-                        onSkipped: () => _submitPhase2Evaluation(false),
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
                       ),
                   ],
                 ),

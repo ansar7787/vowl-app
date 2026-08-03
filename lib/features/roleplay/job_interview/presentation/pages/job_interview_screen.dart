@@ -51,7 +51,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
 
   // Track professionalism thermometer score (default start at 0.5)
   double _mercuryLevel = 0.5;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -82,7 +82,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
   }
 
   void _onOptionSelected(int index, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final bool isCorrect = index == correctIndex;
 
@@ -94,7 +94,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -109,7 +109,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -147,7 +147,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               
               if (state.currentQuest.options != null) {
                 final options = List<String>.from(state.currentQuest.options!);
@@ -230,7 +230,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                             color: theme.primaryColor,
                             isDark: isDark,
                             selectedIndex: _selectedIndex,
-                            isAnswered: _isAnswered || _phase1Passed,
+                            isAnswered: _isAnswered || _isFirstStagePassed,
                             isCorrect: _isCorrect,
                             onOptionSelected: _onOptionSelected,
                           ),
@@ -257,12 +257,12 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: _shuffledOptions[_selectedIndex!],
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

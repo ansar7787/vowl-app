@@ -40,7 +40,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
@@ -71,14 +71,14 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   }
 
   void _submitAnswer(int index, int correct, double maxWidth) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -92,7 +92,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -128,7 +128,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               _shuffleOptions(state.currentQuest as AccentQuest?);
             });
             Future.delayed(const Duration(milliseconds: 350), () {
@@ -226,7 +226,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     DialectDrillInstruction(
-                                      instruction: _phase1Passed
+                                      instruction: _isFirstStagePassed
                                         ? "Great job! Now record yourself saying the word."
                                         : instructionText,
                                       accentColor: theme.primaryColor,
@@ -236,8 +236,8 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                       quest: quest,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered || _phase1Passed,
-                                      isCorrect: _phase1Passed ? true : _isCorrect,
+                                      isAnswered: _isAnswered || _isFirstStagePassed,
+                                      isCorrect: _isFirstStagePassed ? true : _isCorrect,
                                       onPlayTargetAudio: () =>
                                           _triggerAutoPlay(quest),
                                       onSubmitAnswer: _submitAnswer,
@@ -248,18 +248,18 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                 AnimatedSize(
                                   duration: const Duration(milliseconds: 400),
                                   curve: Curves.easeOut,
-                                  child: (_isAnswered || _phase1Passed)
+                                  child: (_isAnswered || _isFirstStagePassed)
                                       ? Column(
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Builder(
                                               builder: (context) {
-                                                final bool isSuccess = _isCorrect == true || _phase1Passed;
+                                                final bool isSuccess = _isCorrect == true || _isFirstStagePassed;
                                                 final bool isFinalFailure = state is AccentGameOver;
                                                 final bool showExplanation = isSuccess || isFinalFailure;
 
                                                 return DialectFeedbackPanel(
-                                                  isCorrect: _isCorrect ?? _phase1Passed,
+                                                  isCorrect: _isCorrect ?? _isFirstStagePassed,
                                                   word: quest.word ?? "",
                                                   britishPronunciation: brPr.isEmpty
                                                       ? (quest.word ?? "")
@@ -281,13 +281,13 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                 );
                                               },
                                             ),
-                                            if (_phase1Passed) ...[
+                                            if (_isFirstStagePassed) ...[
                                               SizedBox(height: 16.h),
                                               AccentSelfEvaluationPanel(
                                                 textToSpeak: quest.word ?? "", // For Dialect Drill, target is usually the word
                                                 primaryColor: theme.primaryColor,
                                                 isCompact: false,
-                                                onEvaluate: _submitPhase2Evaluation,
+                                                onEvaluate: _submitVerbalEvaluation,
                                               ),
                                             ],
                                           ],

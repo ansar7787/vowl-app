@@ -46,7 +46,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   double _dialRotation = 0.0;
   bool _isDragging = false;
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   AccentQuest? _lastQuest;
 
   @override
@@ -75,7 +75,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRotate(DragUpdateDetails details, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _isDragging = true;
       // UP drag = negative delta.dy. We want UP to increase rotation to +1.0.
@@ -94,7 +94,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _onDialRelease() {
-    if (_isAnswered || _phase1Passed || !_isDragging) return;
+    if (_isAnswered || _isFirstStagePassed || !_isDragging) return;
     setState(() {
       _isDragging = false;
       if (!_isAnswered) {
@@ -104,7 +104,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
       _dialRotation = index == 0 ? -0.8 : 0.8;
@@ -117,7 +117,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -132,7 +132,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -170,7 +170,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
               _dialRotation = 0.0;
               _selectedIndex = null;
               _isDragging = false;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -271,7 +271,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     SizedBox(height: gapTop),
                                     PitchModulationInstruction(
                                       color: theme.primaryColor,
-                                      instruction: _phase1Passed
+                                      instruction: _isFirstStagePassed
                                         ? "Great job! Now record yourself saying the word."
                                         : context.tr('games.pitch_modulation_instruction', fallback: "Listen carefully and choose the pitch pattern you hear."),
                                     ),
@@ -301,7 +301,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                           quest.correctAnswerIndex ?? 0,
                                       color: theme.primaryColor,
                                       isDark: isDark,
-                                      isAnswered: _isAnswered || _phase1Passed,
+                                      isAnswered: _isAnswered || _isFirstStagePassed,
                                       isDragging: _isDragging,
                                       dialRotation: _dialRotation,
                                       selectedIndex: _selectedIndex,
@@ -311,12 +311,12 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     ),
 
                                     SizedBox(height: gapBottom),
-                                    if (_phase1Passed)
+                                    if (_isFirstStagePassed)
                                       AccentSelfEvaluationPanel(
                                         textToSpeak: quest.textToSpeak ?? "",
                                         primaryColor: theme.primaryColor,
                                         isCompact: false, // Dial takes fixed height, compact check not strongly needed here
-                                        onEvaluate: _submitPhase2Evaluation,
+                                        onEvaluate: _submitVerbalEvaluation,
                                       ),
                                     SizedBox(height: _isAnswered ? 180.h : 0),
                                   ],

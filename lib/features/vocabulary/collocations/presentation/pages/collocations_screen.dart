@@ -37,7 +37,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -68,7 +68,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       if (isCorrect) {
         _hapticService.success();
         _soundService.playCorrect();
-        setState(() => _phase1Passed = true);
+        setState(() => _isFirstStagePassed = true);
         // Wait for Phase 2
       } else {
         _hapticService.error();
@@ -79,7 +79,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     });
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered && _isCorrect != null) return;
 
     setState(() {
@@ -114,7 +114,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               _selectedOption = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -170,7 +170,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               setState(() {
                 _isAnswered = false;
                 _isCorrect = null;
-                _phase1Passed = false;
+                _isFirstStagePassed = false;
                 _selectedOption = null;
               });
             } else {
@@ -294,12 +294,12 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ),
                       ],
                     ),
-                    if (_phase1Passed && (!_isAnswered || _isCorrect == null) && quest != null)
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null) && quest != null)
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitPhase2Evaluation(true),
-                        onSkipped: () => _submitPhase2Evaluation(false),
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
                       ),
                   ],
                 );

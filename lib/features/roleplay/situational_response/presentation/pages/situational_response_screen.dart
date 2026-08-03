@@ -46,7 +46,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedOrbIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   // Shuffled state
   List<String> _shuffledOptions = [];
@@ -96,7 +96,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _checkTickWarnings() {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     // Warn when time is running out (less than 4 seconds remaining)
     final double elapsedRatio = _timerController.value;
@@ -121,7 +121,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _triggerTimeoutFailure() {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _stopTimer();
     _hapticService.error();
     _soundService.playWrong();
@@ -136,7 +136,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
   }
 
   void _onOrbTap(int index, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _stopTimer();
 
     final isCorrect = index == correctIndex;
@@ -148,7 +148,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -162,7 +162,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -195,7 +195,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedOrbIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               
               if (state.currentQuest.options != null) {
                 final options = List<String>.from(state.currentQuest.options!);
@@ -276,7 +276,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                             isDark: isDark,
                             timerValue: _timerController.value,
                             pulseValue: _pulseController.value,
-                            isAnswered: _isAnswered || _phase1Passed,
+                            isAnswered: _isAnswered || _isFirstStagePassed,
                             isCorrect: _isCorrect,
                             selectedOrbIndex: _selectedOrbIndex,
                             onOrbTap: _onOrbTap,
@@ -305,12 +305,12 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && _selectedOrbIndex != null)
+            if (_isFirstStagePassed && !_isAnswered && _selectedOrbIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: _shuffledOptions[_selectedOrbIndex!],
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

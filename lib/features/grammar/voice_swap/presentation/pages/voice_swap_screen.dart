@@ -44,7 +44,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -57,7 +57,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
   }
 
   void _submitAnswer(GameQuest? quest) {
-    if (_isAnswered || _phase1Passed || quest == null) return;
+    if (_isAnswered || _isFirstStagePassed || quest == null) return;
 
     final selectedVoice = _isPassive ? "Passive" : "Active";
     bool isCorrect =
@@ -69,7 +69,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -83,7 +83,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -120,7 +120,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
@@ -295,12 +295,12 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                             SizedBox(height: isCompact ? 12.h : 40.h),
                           ],
                         ),
-                        if (_phase1Passed && !_isAnswered && quest != null)
+                        if (_isFirstStagePassed && !_isAnswered && quest != null)
                           TypeToConfirmOverlay(
                             expectedText: quest.correctAnswerCategory ?? quest.correctAnswer ?? '',
                             primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitPhase2Evaluation(true),
-                            onSkipped: () => _submitPhase2Evaluation(false),
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onSkipped: () => _submitVerbalEvaluation(false),
                           ),
                       ],
                     );

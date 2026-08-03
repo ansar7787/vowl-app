@@ -49,7 +49,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   bool _showConfetti = false;
 
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -83,7 +83,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
     });
@@ -94,7 +94,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -109,7 +109,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -144,7 +144,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
 
               _selectedIndex = null;
             });
@@ -215,7 +215,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                               children: [
                                 ShadowingChallengeInstruction(
                                   color: theme.primaryColor,
-                                  instruction: _phase1Passed
+                                  instruction: _isFirstStagePassed
                                       ? "Great job! Now record yourself saying the phrase."
                                       : context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
                                 ),
@@ -238,17 +238,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                   correctIndex: correctIndex,
                                   color: theme.primaryColor,
                                   isDark: isDark,
-                                  isAnswered: _isAnswered || _phase1Passed,
+                                  isAnswered: _isAnswered || _isFirstStagePassed,
                                   selectedIndex: _selectedIndex,
                                   onSubmitChoice: _submitChoice,
                                 ),
                                 SizedBox(height: 24.h),
-                                if (_phase1Passed)
+                                if (_isFirstStagePassed)
                                   AccentSelfEvaluationPanel(
                                     textToSpeak: quest.textToSpeak ?? "",
                                     primaryColor: theme.primaryColor,
                                     isCompact: false,
-                                    onEvaluate: _submitPhase2Evaluation,
+                                    onEvaluate: _submitVerbalEvaluation,
                                   ),
                                 SizedBox(height: _isAnswered ? 200.h : 24.h),
                               ],

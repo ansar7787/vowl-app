@@ -44,7 +44,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   // Custom drag feedback coordinates
   int? _hoveredIndex;
@@ -83,7 +83,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
   }
 
   void _submitStamp(int index, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final isCorrect = index == correctIndex;
 
@@ -97,7 +97,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -111,7 +111,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -145,7 +145,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
               _isCorrect = null;
               _selectedIndex = null;
               _hoveredIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -210,7 +210,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                             isDark: isDark,
                             selectedIndex: _selectedIndex,
                             hoveredIndex: _hoveredIndex,
-                            isAnswered: _isAnswered || _phase1Passed,
+                            isAnswered: _isAnswered || _isFirstStagePassed,
                             isCorrect: _isCorrect,
                             rippleAnimation: _rippleController,
                             onSubmitStamp: _submitStamp,
@@ -226,7 +226,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                           SizedBox(height: isCompact ? 20.h : 32.h),
 
                           // Stamp slammed terminal console
-                          if (!_isAnswered && !_phase1Passed)
+                          if (!_isAnswered && !_isFirstStagePassed)
                             TravelDeskStampStation(
                               color: theme.primaryColor,
                               isDark: isDark,
@@ -246,12 +246,12 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && _selectedIndex != null)
+            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

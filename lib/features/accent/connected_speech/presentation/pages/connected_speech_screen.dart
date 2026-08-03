@@ -56,7 +56,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   int _shuffledCorrectIndex = 0;
 
   int? _selectedIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   Timer? _resetTimer;
 
   @override
@@ -79,7 +79,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   }
 
   void _submitChoice(int index, int correct) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedIndex = index;
     });
@@ -90,7 +90,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -104,7 +104,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -159,7 +159,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
               _isCorrect = null;
 
               _selectedIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play sound on question load
             if (quest.textToSpeak != null) {
@@ -258,7 +258,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                           SizedBox(height: gapTop),
                                           ConnectedSpeechInstruction(
                                             primaryColor: theme.primaryColor,
-                                            instruction: _phase1Passed
+                                            instruction: _isFirstStagePassed
                                                 ? "Great job! Now confirm by speaking the phrase."
                                                 : context.tr(
                                                     'games.connected_speech_instruction',
@@ -296,7 +296,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                                 : (quest.correctAnswerIndex ?? 0),
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _phase1Passed,
+                                            isAnswered: _isAnswered || _isFirstStagePassed,
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                             isCompact: isCompact,
@@ -315,12 +315,12 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                         },
                       ),
               ),
-              if (_phase1Passed && !_isAnswered && quest != null)
+              if (_isFirstStagePassed && !_isAnswered && quest != null)
                 SpeakToConfirmOverlay(
                   expectedText: quest.textToSpeak ?? quest.word ?? "",
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitPhase2Evaluation(true),
-                  onSkipped: () => _submitPhase2Evaluation(false),
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
                 ),
             ],
           ),

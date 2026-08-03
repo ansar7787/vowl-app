@@ -46,7 +46,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -83,7 +83,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
 
   // Realistic Physical dial rotation updater utilizing trigonometry
   void _onDialDragged(DragUpdateDetails details, Offset localDialCenter) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localDialCenter.dx;
@@ -109,7 +109,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
   }
 
   void _submitAnswer(double target) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     // 0.12 empathy tolerance proximity check
     bool isCorrect = (_rotation - target).abs() < 0.12;
@@ -118,7 +118,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -132,7 +132,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -165,7 +165,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
               _isAnswered = false;
               _isCorrect = null;
               _rotation = 0.0;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -292,12 +292,12 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && quest != null)
+            if (_isFirstStagePassed && !_isAnswered && quest != null)
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? "De-escalating conflict",
                 primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

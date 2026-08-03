@@ -42,7 +42,7 @@ class _DirectIndirectSpeechScreenState
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -55,7 +55,7 @@ class _DirectIndirectSpeechScreenState
   }
 
   void _onReflectionSelect(int index, int correctIndex) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() => _selectedReflection = index);
 
     bool isCorrect = index == correctIndex;
@@ -64,7 +64,7 @@ class _DirectIndirectSpeechScreenState
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
         _rotation = 3.14;
       });
     } else {
@@ -79,7 +79,7 @@ class _DirectIndirectSpeechScreenState
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     setState(() {
       _isAnswered = true;
@@ -114,7 +114,7 @@ class _DirectIndirectSpeechScreenState
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
               _selectedReflection = -1;
               _rotation = 0.0;
             });
@@ -279,12 +279,12 @@ class _DirectIndirectSpeechScreenState
                         ),
                       ],
                     ),
-                    if (_phase1Passed && !_isAnswered && quest != null)
+                    if (_isFirstStagePassed && !_isAnswered && quest != null)
                       TypeToConfirmOverlay(
                         expectedText: options[_selectedReflection],
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitPhase2Evaluation(true),
-                        onSkipped: () => _submitPhase2Evaluation(false),
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
                       ),
                   ],
                 );

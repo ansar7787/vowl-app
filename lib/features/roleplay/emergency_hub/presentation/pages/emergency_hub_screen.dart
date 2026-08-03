@@ -46,7 +46,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
 
   @override
   void initState() {
@@ -81,7 +81,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
 
   // Trigonometry-based circular dial update
   void _onValveDragged(DragUpdateDetails details, Offset localCenter) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final Offset touchPos = details.localPosition;
     final double dx = touchPos.dx - localCenter.dx;
@@ -101,7 +101,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
   }
 
   void _submitCode(String input, String correctAnswer) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     final String cleanInput = input.trim().replaceAll(' ', '').toLowerCase();
     final String cleanCorrect = correctAnswer
@@ -119,7 +119,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -133,7 +133,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -166,7 +166,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
               _isCorrect = null;
               _rotation = 0.0;
               _codeController.clear();
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -305,12 +305,12 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                   },
                 ),
             ),
-            if (_phase1Passed && !_isAnswered && quest != null)
+            if (_isFirstStagePassed && !_isAnswered && quest != null)
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? _codeController.text,
                 primaryColor: Colors.redAccent,
-                onConfirmed: () => _submitPhase2Evaluation(true),
-                onSkipped: () => _submitPhase2Evaluation(false),
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

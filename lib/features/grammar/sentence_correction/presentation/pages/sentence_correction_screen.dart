@@ -51,7 +51,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -133,7 +133,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
   }
 
   void _onWordTap(int index) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     _hapticService.selection();
     setState(() {
       _selectedWordIndex = index;
@@ -177,7 +177,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
       _hapticService.heavy();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       // Wait for Phase 2
     } else {
@@ -191,7 +191,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -228,7 +228,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
@@ -425,12 +425,12 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                     SizedBox(height: 20.h),
                   ],
                 ),
-              if (_phase1Passed && !_isAnswered && quest != null)
+              if (_isFirstStagePassed && !_isAnswered && quest != null)
                 TypeToConfirmOverlay(
                   expectedText: quest.correctAnswer ?? _selectedOption ?? '',
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitPhase2Evaluation(true),
-                  onSkipped: () => _submitPhase2Evaluation(false),
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
                 ),
             ],
           ),

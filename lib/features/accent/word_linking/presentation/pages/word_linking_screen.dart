@@ -43,7 +43,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int? _selectedNodeIndex;
-  bool _phase1Passed = false;
+  bool _isFirstStagePassed = false;
   AccentQuest? _lastQuest;
 
   @override
@@ -72,7 +72,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   }
 
   void _onNodeTap(int index, String correctPair, List<String> words) {
-    if (_isAnswered || _phase1Passed) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() {
       _selectedNodeIndex = index;
@@ -86,7 +86,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _phase1Passed = true;
+        _isFirstStagePassed = true;
       });
       _scrollToBottom();
       // Wait for Phase 2
@@ -101,7 +101,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     }
   }
 
-  void _submitPhase2Evaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
     
     setState(() {
@@ -137,7 +137,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedNodeIndex = null;
-              _phase1Passed = false;
+              _isFirstStagePassed = false;
             });
             // Proactively auto-play phonetic sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -240,7 +240,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                             ),
                                             child: WordLinkingInstruction(
                                               color: theme.primaryColor,
-                                              instruction: _phase1Passed
+                                              instruction: _isFirstStagePassed
                                                   ? "Great job! Now record yourself saying the phrase."
                                                   : context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                             ),
@@ -249,7 +249,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                       )
                                     : WordLinkingInstruction(
                                         color: theme.primaryColor,
-                                        instruction: _phase1Passed
+                                        instruction: _isFirstStagePassed
                                             ? "Great job! Now record yourself saying the phrase."
                                             : context.tr('games.word_linking_instruction', fallback: quest.instruction),
                                       ),
@@ -273,7 +273,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                       quest.correctAnswer ?? "",
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered || _phase1Passed,
+                                                  isAnswered: _isAnswered || _isFirstStagePassed,
                                                   selectedNodeIndex:
                                                       _selectedNodeIndex,
                                                   onNodeTap: _onNodeTap,
@@ -287,18 +287,18 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 quest.correctAnswer ?? "",
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _phase1Passed,
+                                            isAnswered: _isAnswered || _isFirstStagePassed,
                                             selectedNodeIndex:
                                                 _selectedNodeIndex,
                                             onNodeTap: _onNodeTap,
                                           ),
                                 SizedBox(height: gapBottom),
-                                if (_phase1Passed)
+                                if (_isFirstStagePassed)
                                   AccentSelfEvaluationPanel(
                                     textToSpeak: quest.textToSpeak ?? "",
                                     primaryColor: theme.primaryColor,
                                     isCompact: isCompact,
-                                    onEvaluate: _submitPhase2Evaluation,
+                                    onEvaluate: _submitVerbalEvaluation,
                                   ),
                                 SizedBox(height: _isAnswered ? 180.h : 0),
                               ],
