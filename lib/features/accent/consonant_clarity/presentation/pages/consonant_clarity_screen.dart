@@ -370,10 +370,10 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                             ),
                           ),
                         ),
+                      ),
                       );
                     },
                   ),
-                      ),
           ),
         );
       },

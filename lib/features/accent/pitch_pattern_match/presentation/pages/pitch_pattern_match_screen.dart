@@ -355,10 +355,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                             ),
                           ),
                         ),
+                      ),
                       );
                     },
                   ),
-                      ),
           ),
         );
       },

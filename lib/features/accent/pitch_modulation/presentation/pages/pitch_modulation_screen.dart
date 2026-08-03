@@ -325,10 +325,10 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                             ),
                           ),
                         ),
+                      ),
                       );
                     },
                   ),
-                      ),
           ),
         );
       },

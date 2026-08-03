@@ -298,10 +298,10 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                             ),
                           ),
                         ),
+                      ),
                       );
                     },
                   ),
-                      ),
           ),
         );
       },

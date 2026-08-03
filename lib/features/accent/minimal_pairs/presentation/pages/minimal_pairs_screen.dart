@@ -408,10 +408,10 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                             ),
                           ),
                         ),
+                      ),
                       );
                     },
                   ),
-                      ),
           ),
         );
       },

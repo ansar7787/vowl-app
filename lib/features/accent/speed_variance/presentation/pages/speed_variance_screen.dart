@@ -337,10 +337,10 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                       ),
                     ),
                   ),
-                );
+                ),
+                      );
               },
             ),
-                      ),
           ),
         );
       },
