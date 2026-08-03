@@ -22,11 +22,13 @@ import 'package:vowl/core/utils/offline_play_gate_service.dart';
 class OfflineQuotaExhaustedPage extends StatefulWidget {
   final Future<void> Function() onRetry;
   final VoidCallback onAdWatched;
+  final VoidCallback onClose;
 
   const OfflineQuotaExhaustedPage({
     super.key,
     required this.onRetry,
     required this.onAdWatched,
+    required this.onClose,
   });
 
   @override
@@ -114,6 +116,30 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                       ),
                     ),
                   ],
+                ),
+              ),
+
+              // ── Close / Back Button ─────────────────────────────────────
+              Positioned(
+                top: MediaQuery.of(context).padding.top + 16.h,
+                left: 16.w,
+                child: GestureDetector(
+                  onTap: () {
+                    Haptics.vibrate(HapticsType.selection);
+                    widget.onClose();
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                    ),
+                    child: Icon(
+                      LucideIcons.x,
+                      color: isDark ? Colors.white : Colors.black87,
+                      size: 24.r,
+                    ),
+                  ),
                 ),
               ),
 

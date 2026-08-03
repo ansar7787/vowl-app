@@ -56,6 +56,17 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
     AppRouter.profileRoute,
     AppRouter.leaderboardRoute,
     AppRouter.kidsLeaderboardRoute,
+    AppRouter.homeRoute,
+    AppRouter.gamesRoute,
+    AppRouter.categoryGamesRoute,
+    AppRouter.levelsRoute,
+    AppRouter.libraryRoute,
+    AppRouter.trophyRoomRoute,
+    AppRouter.streakRoute,
+    AppRouter.levelRoute,
+    AppRouter.kidsZoneRoute,
+    AppRouter.kidsHomeRoute,
+    AppRouter.kidsBuddyBoutiqueRoute,
   };
 
   @override
@@ -174,6 +185,13 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                         key: const ValueKey('connectivity_quota_block'),
                         onRetry: _handleRetry,
                         onAdWatched: _handleAdWatchedOffline,
+                        onClose: () {
+                          if (AppRouter.router.canPop()) {
+                            AppRouter.router.pop();
+                          } else {
+                            AppRouter.router.go(AppRouter.homeRoute);
+                          }
+                        },
                       )
                     : const SizedBox.shrink(
                         key: ValueKey('connectivity_clear'),
