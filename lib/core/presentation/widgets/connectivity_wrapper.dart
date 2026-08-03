@@ -164,7 +164,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
             // Soft banner: non-blocking notification within grace period
             if (shouldShowBanner)
               const Positioned(
-                bottom: 40,
+                top: 0,
                 left: 0,
                 right: 0,
                 child: OfflineBanner(

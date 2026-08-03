@@ -21,7 +21,7 @@ class OfflineBanner extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Align(
-        alignment: Alignment.bottomCenter,
+        alignment: Alignment.topCenter,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           child: Material(
@@ -77,7 +77,7 @@ class OfflineBanner extends StatelessWidget {
           )
               .animate()
               .fadeIn(duration: 400.ms)
-              .slideY(begin: 1.0, end: 0, curve: Curves.easeOutCubic),
+              .slideY(begin: -1.0, end: 0, curve: Curves.easeOutCubic),
         ),
       ),
     );
