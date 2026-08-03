@@ -211,7 +211,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 ShadowingChallengeInstruction(
                                   color: theme.primaryColor,

@@ -197,8 +197,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                       final double estimatedContentHeight =
                           24.h +
                           80.h + // Speaker
-                          (isCompact ? 130.h : 172.h) + // Sentence Field
-                          (_isAnswered ? 180.h : 0);
+                          (isCompact ? 130.h : 172.h); // Sentence Field
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 

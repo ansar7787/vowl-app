@@ -239,7 +239,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
               builder: (context, constraints) {
                 final maxHeight = constraints.maxHeight;
                 final double estimatedContentHeight =
-                    24.h + 90.h + 80.h + 140.h + (_isAnswered ? 180.h : 0);
+                    24.h + 90.h + 80.h + 140.h;
                 final remainingHeight = maxHeight - estimatedContentHeight;
 
                 final double gapUnit = remainingHeight > 0
@@ -270,7 +270,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Column(
                             mainAxisSize: MainAxisSize.min,

@@ -217,8 +217,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                           24.h +
                           (isCompact ? 90.h : 120.h) +
                           100.h +
-                          (isCompact ? 130.h : 172.h) +
-                          (_isAnswered ? (isCompact ? 110.h : 160.h) : 0);
+                          (isCompact ? 130.h : 172.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -244,7 +243,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,

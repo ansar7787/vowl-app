@@ -254,10 +254,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       final double estimatedContentHeight =
                           24.h +
                           70.h +
-                          0 +
                           80.h +
-                          140.h +
-                          (_isAnswered ? 180.h : 0);
+                          140.h;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -287,7 +285,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,

@@ -218,7 +218,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                               vertical: 24.h,
                             ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,

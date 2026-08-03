@@ -231,8 +231,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                           24.h +
                           90.h +
                           80.h +
-                          140.h +
-                          (_isAnswered ? 180.h : 0);
+                          140.h;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -264,7 +263,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,

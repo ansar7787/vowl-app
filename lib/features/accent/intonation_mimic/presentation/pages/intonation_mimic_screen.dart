@@ -253,10 +253,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                       final double estimatedContentHeight =
                           24.h +
                           70.h +
-                          (_isAnswered ? 60.h : 0) +
                           80.h +
-                          140.h +
-                          (_isAnswered ? 110.h : 0);
+                          140.h;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -286,7 +284,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
