@@ -148,6 +148,26 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
     }
   }
 
+  Future<void> _playNative() async {
+    if (_isPlaying) return;
+    setState(() => _isPlaying = true);
+    await _soundService.playTts(widget.expectedText);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
+  Future<void> _playUser() async {
+    if (_isPlaying || _recordingPath == null) return;
+    setState(() => _isPlaying = true);
+    await _soundService.playFile(_recordingPath!);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
   void _handleNailedIt() async {
     _hapticService.success();
     _soundService.playCorrect();
@@ -398,37 +418,66 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
                 ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(begin: 0.5, end: 1.0, duration: 800.ms),
               ] else ...[
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    _buildEvalButton(
-                      title: "Needs Work",
-                      icon: LucideIcons.x,
-                      color: Colors.redAccent,
-                      onTap: _handleNeedsWork,
+                    _buildIsolatedPlaybackButton(
+                      icon: Icons.record_voice_over_rounded,
+                      label: "NATIVE",
+                      onTap: _playNative,
+                      isDark: isDark,
                     ),
+                    SizedBox(width: 16.w),
                     GestureDetector(
                       onTap: _playComparison,
                       child: Container(
-                        height: 60.r,
-                        width: 60.r,
+                        height: 64.r,
+                        width: 64.r,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: widget.primaryColor.withValues(alpha: 0.15),
+                          border: Border.all(
+                            color: widget.primaryColor.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
                         ),
                         child: Center(
                           child: Icon(Icons.play_arrow_rounded, color: widget.primaryColor, size: 36.sp),
                         ),
                       ),
                     ),
-                    _buildEvalButton(
-                      title: "Nailed It",
-                      icon: LucideIcons.check,
-                      color: Colors.greenAccent,
-                      onTap: _handleNailedIt,
+                    SizedBox(width: 16.w),
+                    _buildIsolatedPlaybackButton(
+                      icon: Icons.headphones_rounded,
+                      label: "YOU",
+                      onTap: _playUser,
+                      isDark: isDark,
                     ),
                   ],
                 ),
-                SizedBox(height: 12.h),
+                SizedBox(height: 24.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                      child: _buildEvalButton(
+                        title: "Needs Work",
+                        icon: LucideIcons.x,
+                        color: Colors.redAccent,
+                        onTap: _handleNeedsWork,
+                      ),
+                    ),
+                    SizedBox(width: 16.w),
+                    Expanded(
+                      child: _buildEvalButton(
+                        title: "Nailed It",
+                        icon: LucideIcons.check,
+                        color: Colors.greenAccent,
+                        onTap: _handleNailedIt,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 16.h),
                 Text(
                   "Be honest! Did you match the native speaker?",
                   style: TextStyle(
@@ -523,7 +572,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(16.r),
@@ -538,12 +587,52 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w800,
                 color: color,
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildIsolatedPlaybackButton({
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+    required bool isDark,
+  }) {
+    final color = isDark ? Colors.white70 : Colors.black87;
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            height: 48.r,
+            width: 48.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color.withValues(alpha: 0.05),
+              border: Border.all(
+                color: color.withValues(alpha: 0.15),
+                width: 1.5,
+              ),
+            ),
+            child: Icon(icon, color: color, size: 22.sp),
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.2,
+              color: color,
+            ),
+          ),
+        ],
       ),
     );
   }
