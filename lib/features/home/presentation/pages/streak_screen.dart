@@ -16,6 +16,7 @@ import 'package:vowl/features/home/presentation/widgets/streak_hero.dart';
 import 'package:vowl/features/home/presentation/widgets/streak_calendar.dart';
 import 'package:vowl/features/home/presentation/widgets/streak_milestones.dart';
 import 'package:vowl/features/home/presentation/widgets/streak_boosters_shop.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class StreakScreen extends StatefulWidget {
   const StreakScreen({super.key});
@@ -48,11 +49,7 @@ class _StreakScreenState extends State<StreakScreen> {
         builder: (context, state) {
           final user = state.user;
           if (user == null) {
-            return Center(
-              child: CircularProgressIndicator(
-                color: isDark ? Colors.white38 : const Color(0xFF3B82F6),
-              ),
-            );
+            return const SafeArea(child: HomeShimmerLoading());
           }
 
           return Stack(

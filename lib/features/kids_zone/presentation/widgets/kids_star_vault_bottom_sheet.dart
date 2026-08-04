@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class KidsStarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -662,11 +663,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 SizedBox(
                                                   width: 24.sp,
                                                   height: 24.sp,
-                                                  child:
-                                                      const CircularProgressIndicator(
-                                                        color: Colors.white,
-                                                        strokeWidth: 3,
-                                                      ),
+                                                  child: const VowlButtonSpinner(color: Colors.white),
                                                 ),
                                                 SizedBox(width: 12.w),
                                                 Text(

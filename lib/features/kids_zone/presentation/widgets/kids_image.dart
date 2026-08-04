@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class KidsImage extends StatelessWidget {
   final String? imageUrl;
@@ -22,17 +23,13 @@ class KidsImage extends StatelessWidget {
       return _buildFallback();
     }
 
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
     // Check if it's a network URL
     if (imageUrl!.startsWith('http') || imageUrl!.startsWith('https')) {
       return CachedNetworkImage(
         imageUrl: imageUrl!,
         fit: BoxFit.contain,
         placeholder: (context, url) => Center(
-          child: CircularProgressIndicator(
-            color: isDark ? Colors.white : Colors.blueAccent,
-          ),
+          child: ShimmerLoading.circular(width: 48.r, height: 48.r),
         ),
         errorWidget: (context, url, error) => _buildFallback(),
       );

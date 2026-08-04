@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -210,14 +211,7 @@ class SendResetLinkButton extends StatelessWidget {
           minimumSize: const Size(double.infinity, 56),
         ),
         child: isSubmitting
-            ? const SizedBox(
-                height: 24,
-                width: 24,
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                  strokeWidth: 2,
-                ),
-              )
+            ? const VowlButtonSpinner(size: 24, color: Colors.white)
             // maxLines + overflow (not Flexible — this Text is the button's
             // direct child, not inside a Row/Column, and Flexible requires
             // an immediate Flex ancestor or it throws an "Incorrect use of

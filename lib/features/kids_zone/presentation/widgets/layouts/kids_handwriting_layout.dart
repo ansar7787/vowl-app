@@ -14,7 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
@@ -279,10 +279,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                           ? SizedBox(
                               height: 24.h,
                               width: 24.h,
-                              child: const CircularProgressIndicator(
-                                color: Colors.white,
-                                strokeWidth: 3,
-                              ),
+                              child: const VowlButtonSpinner(color: Colors.white),
                             )
                           : Text(
                               context.tr('common.check', fallback: 'Check My Answer!'),

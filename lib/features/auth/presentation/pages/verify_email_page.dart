@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/widgets/verify_email_widgets.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 /// Email-verification gate displayed after account creation.
 ///
@@ -175,9 +176,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               state.status == AuthStatus.unauthenticated) {
             return Scaffold(
               backgroundColor: bgColor,
-              body: const Center(
-                child: CircularProgressIndicator(color: Color(0xFF6366F1)),
-              ),
+              body: const SafeArea(child: HomeShimmerLoading()),
             );
           }
 

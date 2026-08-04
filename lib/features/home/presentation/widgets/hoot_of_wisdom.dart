@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class HootOfWisdom extends StatefulWidget {
   const HootOfWisdom({super.key});
@@ -107,13 +108,13 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       child: _isLoading
           ? SizedBox(
               height: 96.h,
-              child: Center(
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                  semanticsLabel: context.tr(
-                    'home.hoot_daily_motivation',
-                    fallback: 'Daily Motivation',
-                  ),
+              child: Semantics(
+                label: context.tr(
+                  'home.hoot_daily_motivation',
+                  fallback: 'Daily Motivation',
+                ),
+                child: const Center(
+                  child: VowlButtonSpinner(color: Color(0xFF6366F1)),
                 ),
               ),
             )

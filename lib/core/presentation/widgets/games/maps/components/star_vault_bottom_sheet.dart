@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -767,10 +768,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                               width: 24.sp,
                                               height: 24.sp,
                                               child:
-                                                  const CircularProgressIndicator(
-                                                    color: Colors.white,
-                                                    strokeWidth: 3,
-                                                  ),
+                                                  const VowlButtonSpinner(color: Colors.white),
                                             ),
                                             SizedBox(width: 12.w),
                                             Text(

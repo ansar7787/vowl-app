@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:google_mlkit_translation/google_mlkit_translation.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 /// A sleek 2026 glassmorphic bottom sheet for selecting the native translation language.
 class LanguageSelectionBottomSheet extends StatefulWidget {
@@ -594,7 +595,7 @@ class _LanguageSelectionBottomSheetState
               ),
               if (isDetecting) ...[
                 SizedBox(height: 16.h),
-                const CircularProgressIndicator(),
+                const VowlButtonSpinner(color: Color(0xFF6366F1)),
               ]
             ],
           ),

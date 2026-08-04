@@ -20,6 +20,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -76,7 +77,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final user = context.watch<AuthBloc>().state.user;
     if (user == null) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(body: SafeArea(child: HomeShimmerLoading()));
     }
 
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;

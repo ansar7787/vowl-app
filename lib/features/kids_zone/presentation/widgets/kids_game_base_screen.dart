@@ -22,6 +22,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_explanation_card.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class KidsGameBaseScreen extends StatefulWidget {
   final String title;
@@ -260,7 +261,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
   Widget _buildBody(BuildContext context, KidsState state) {
     if (state is KidsLoading) {
-      return const Center(child: CircularProgressIndicator());
+      return const SafeArea(child: GameShimmerLoading());
     }
     if (state is KidsLoaded) {
       return Stack(

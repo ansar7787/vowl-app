@@ -9,15 +9,23 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class GameScaffold<S> extends StatelessWidget {
   final S state;
   final GameStateBase baseState;
   final GameScaffoldConfig config;
-  
-  final Widget Function(BuildContext context, S state, double progress, int lives) headerBuilder;
+
+  final Widget Function(
+    BuildContext context,
+    S state,
+    double progress,
+    int lives,
+  )
+  headerBuilder;
   final Widget Function(BuildContext context, S state)? feedbackBuilder;
-  final Widget Function(BuildContext context, S state, int lives)? mascotBuilder;
+  final Widget Function(BuildContext context, S state, int lives)?
+  mascotBuilder;
   final Widget? backgroundOverlay;
 
   final bool showBriefing;
@@ -56,10 +64,14 @@ class GameScaffold<S> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // Default theme mapping; category specifics can still override internally if needed
-    final theme = LevelThemeHelper.getTheme(config.gameType.name, isDark: isDark, level: config.level);
-    
+    final theme = LevelThemeHelper.getTheme(
+      config.gameType.name,
+      isDark: isDark,
+      level: config.level,
+    );
+
     final currentQuest = baseState is GameLoadedState
         ? (baseState as GameLoadedState).currentQuestOrNull
         : null;
@@ -91,11 +103,38 @@ class GameScaffold<S> extends StatelessWidget {
               primaryColor: theme.primaryColor,
               onRetry: onRetry,
             )
-          else if (baseState is GameLoadingState || baseState is GameInitialState)
-            Center(
-              child: CircularProgressIndicator(
-                color: theme.primaryColor,
-                strokeWidth: 3,
+          else if (baseState is GameLoadingState ||
+              baseState is GameInitialState)
+            SafeArea(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+                child: Column(
+                  children: [
+                    SizedBox(height: 10.h),
+                    // Header shimmer
+                    ShimmerLoading.rounded(
+                      width: double.infinity,
+                      height: 60.h,
+                      borderRadius: 16,
+                    ),
+                    SizedBox(height: 32.h),
+                    // Content block shimmer
+                    Expanded(
+                      child: ShimmerLoading.rounded(
+                        width: double.infinity,
+                        height: double.infinity,
+                        borderRadius: 24,
+                      ),
+                    ),
+                    SizedBox(height: 32.h),
+                    // Bottom button/feedback shimmer
+                    ShimmerLoading.rounded(
+                      width: double.infinity,
+                      height: 72.h,
+                      borderRadius: 16,
+                    ),
+                  ],
+                ),
               ),
             )
           else
@@ -110,16 +149,20 @@ class GameScaffold<S> extends StatelessWidget {
                       children: [
                         AbsorbPointer(
                           absorbing: config.isAnswered,
-                          child: config.disablePadding ? 
-                            config.child :
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 16.w),
-                              child: config.useScrolling ? 
-                                SingleChildScrollView(
-                                  physics: const BouncingScrollPhysics(),
-                                  child: config.child,
-                                ) : config.child,
-                            ),
+                          child: config.disablePadding
+                              ? config.child
+                              : Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                  ),
+                                  child: config.useScrolling
+                                      ? SingleChildScrollView(
+                                          physics:
+                                              const BouncingScrollPhysics(),
+                                          child: config.child,
+                                        )
+                                      : config.child,
+                                ),
                         ),
                         if (mascotBuilder != null)
                           Positioned(
@@ -152,7 +195,7 @@ class GameScaffold<S> extends StatelessWidget {
             GameBriefingLayer(
               gameType: config.gameType,
               level: config.level,
-              theme: theme, 
+              theme: theme,
               onStart: onBriefingDismiss,
             ),
 

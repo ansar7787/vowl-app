@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/offline_play_gate_service.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 /// Shown when a free user exhausts their offline play quota.
 ///
@@ -503,10 +504,7 @@ class _ActionButtonState extends State<_ActionButton> {
                         ? SizedBox(
                             width: 22.r,
                             height: 22.r,
-                            child: const CircularProgressIndicator(
-                              color: Colors.white,
-                              strokeWidth: 2.5,
-                            ),
+                            child: const VowlButtonSpinner(color: Colors.white),
                           )
                         : Row(
                             mainAxisAlignment: MainAxisAlignment.center,

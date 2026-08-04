@@ -17,6 +17,7 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class VowlMascotScreen extends StatefulWidget {
   const VowlMascotScreen({super.key});
@@ -110,11 +111,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           if (user == null) {
             return Scaffold(
               backgroundColor: surfaceColor,
-              body: Center(
-                child: CircularProgressIndicator(
-                  color: isDark ? Colors.white30 : const Color(0xFF3B82F6),
-                ),
-              ),
+              body: const SafeArea(child: HomeShimmerLoading()),
             );
           }
 

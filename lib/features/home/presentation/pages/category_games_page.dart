@@ -19,6 +19,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
 import 'package:vowl/core/presentation/widgets/adaptive_smart_mix_widget.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
@@ -71,11 +72,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         backgroundColor: isDark
             ? const Color(0xFF0F172A)
             : const Color(0xFFF8FAFC),
-        body: Center(
-          child: CircularProgressIndicator(
-            color: isDark ? Colors.white38 : const Color(0xFF4F46E5),
-          ),
-        ),
+        body: SafeArea(child: GameShimmerLoading(primaryColor: theme.primaryColor)),
       );
     }
 

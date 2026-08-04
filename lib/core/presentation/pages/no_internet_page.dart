@@ -6,6 +6,7 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 /// Premium glassmorphic offline page with accessible retry interaction.
 ///
@@ -391,10 +392,7 @@ class _RetryButton extends StatelessWidget {
                           ? SizedBox(
                               width: 24.r,
                               height: 24.r,
-                              child: const CircularProgressIndicator(
-                                color: Colors.white,
-                                strokeWidth: 2.5,
-                              ),
+                              child: const VowlButtonSpinner(color: Colors.white),
                             )
                           : Row(
                               mainAxisAlignment: MainAxisAlignment.center,

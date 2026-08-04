@@ -16,6 +16,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/curriculum_service.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
@@ -121,11 +122,7 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
     if (user == null) {
       return Scaffold(
         backgroundColor: bgColor,
-        body: Center(
-          child: CircularProgressIndicator(
-            color: isDark ? Colors.white38 : const Color(0xFF3B82F6),
-          ),
-        ),
+        body: const SafeArea(child: HomeShimmerLoading()),
       );
     }
 

@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class RewardedAdCard extends StatefulWidget {
   /// Coins granted per successfully-watched ad. Single source of truth -
@@ -175,14 +176,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
                 elevation: 0,
               ),
               child: _isLoading
-                  ? SizedBox(
-                      width: 18.r,
-                      height: 18.r,
-                      child: const CircularProgressIndicator(
-                        strokeWidth: 2,
-                        color: Colors.white,
-                      ),
-                    )
+                  ? VowlButtonSpinner(size: 18.r, color: Colors.white)
                   : Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

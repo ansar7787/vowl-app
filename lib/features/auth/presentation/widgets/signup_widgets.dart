@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -257,14 +258,7 @@ class SignUpButton extends StatelessWidget {
               minimumSize: const Size(double.infinity, 56),
             ),
             child: state.isSubmitting
-                ? const SizedBox(
-                    height: 24,
-                    width: 24,
-                    child: CircularProgressIndicator(
-                      color: Colors.white,
-                      strokeWidth: 2,
-                    ),
-                  )
+                ? const VowlButtonSpinner(size: 24, color: Colors.white)
                 // maxLines + overflow, not Flexible — see LoginButton's
                 // identical comment for why.
                 : Text(

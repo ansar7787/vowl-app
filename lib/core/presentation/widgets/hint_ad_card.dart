@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -197,14 +198,7 @@ class _HintAdCardState extends State<HintAdCard> {
                                     ],
                             ),
                             child: loading
-                                ? SizedBox(
-                                    width: 18.r,
-                                    height: 18.r,
-                                    child: const CircularProgressIndicator(
-                                      color: Colors.white,
-                                      strokeWidth: 2,
-                                    ),
-                                  )
+                                ? const VowlButtonSpinner(size: 18, color: Colors.white)
                                 : Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [

@@ -17,6 +17,7 @@ import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
@@ -434,10 +435,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
               SizedBox(
                 width: 60.r,
                 height: 60.r,
-                child: const CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFFF59E0B)),
-                  strokeWidth: 3,
-                ),
+                child: const VowlButtonSpinner(color: Color(0xFFF59E0B)),
               ),
               SizedBox(height: 20.h),
               Semantics(

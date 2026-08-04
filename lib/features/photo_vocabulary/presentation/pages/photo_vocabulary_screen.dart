@@ -31,6 +31,7 @@ import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
 import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class PhotoVocabularyScreen extends StatefulWidget {
   const PhotoVocabularyScreen({super.key});
@@ -264,7 +265,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen> with Sing
   @override
   Widget build(BuildContext context) {
     if (!_bountiesLoaded) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(body: SafeArea(child: GameShimmerLoading(primaryColor: Color(0xFF14B8A6))));
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;

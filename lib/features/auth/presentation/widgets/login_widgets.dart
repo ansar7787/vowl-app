@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -284,14 +285,7 @@ class LoginButton extends StatelessWidget {
               minimumSize: const Size(double.infinity, 56),
             ),
             child: state.isSubmitting
-                ? const SizedBox(
-                    height: 24,
-                    width: 24,
-                    child: CircularProgressIndicator(
-                      color: Colors.white,
-                      strokeWidth: 2,
-                    ),
-                  )
+                ? const VowlButtonSpinner(size: 24, color: Colors.white)
                 // maxLines + overflow, not Flexible — this Text is the
                 // button's direct child (no Row ancestor), and Flexible
                 // requires an immediate Flex ancestor or it throws at
@@ -342,14 +336,7 @@ class GoogleLoginButton extends StatelessWidget {
               ),
             ),
             child: state.isSubmitting
-                ? const SizedBox(
-                    height: 24,
-                    width: 24,
-                    child: CircularProgressIndicator(
-                      color: Colors.white,
-                      strokeWidth: 2,
-                    ),
-                  )
+                ? const VowlButtonSpinner(size: 24, color: Colors.white)
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

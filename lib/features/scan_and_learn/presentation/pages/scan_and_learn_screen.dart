@@ -30,6 +30,7 @@ import 'package:vowl/core/utils/widgets/translation_download_dialog.dart';
 import 'package:confetti/confetti.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class ScanAndLearnScreen extends StatefulWidget {
   const ScanAndLearnScreen({super.key});
@@ -254,7 +255,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen> with SingleTick
   @override
   Widget build(BuildContext context) {
     if (!_bountiesLoaded) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator(color: Color(0xFF6366F1))));
+      return const Scaffold(body: SafeArea(child: GameShimmerLoading(primaryColor: Color(0xFF6366F1))));
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
