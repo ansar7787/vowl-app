@@ -436,8 +436,10 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? _diagnosedSymptoms.join(', '),
                 primaryColor: theme.primaryColor,
-                bonusCoins: null,
-                onConfirmed: () => _submitVerbalEvaluation(true),
+                onConfirmed: () {
+                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  _submitVerbalEvaluation(true);
+                },
                 onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],

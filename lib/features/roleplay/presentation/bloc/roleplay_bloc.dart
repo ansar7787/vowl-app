@@ -9,6 +9,7 @@ import '../../../../features/auth/domain/usecases/award_badge.dart';
 import '../../../../features/auth/domain/usecases/update_category_stats.dart';
 import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
+import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../domain/usecases/get_roleplay_quest.dart';
 import '../../domain/usecases/preload_roleplay_quests.dart';
@@ -23,6 +24,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
   RoleplayBloc({
     required this.getQuest,
     required this.preloadQuests,
+    required this.updateUserCoins,
     required this.updateUserRewards,
     required this.updateCategoryStats,
     required this.updateUnlockedLevel,
@@ -42,10 +44,12 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     on<RoleplayTutorPass>(_onTutorPass);
     on<RestartLevel>(_onRestart);
     on<PreloadNextBatch>(_onPreload);
+    on<RoleplaySpeakConfirmed>(_onSpeakConfirmed);
   }
 
   final GetRoleplayQuest getQuest;
   final PreloadRoleplayQuests preloadQuests;
+  final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
   final UpdateUnlockedLevel updateUnlockedLevel;
@@ -349,6 +353,21 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       debugPrint(
         '[RoleplayBloc] PreloadNextBatch failed — will fetch on demand: $e',
       );
+    }
+  }
+
+  Future<void> _onSpeakConfirmed(
+    RoleplaySpeakConfirmed event,
+    Emitter<RoleplayState> emit,
+  ) async {
+    try {
+      await updateUserCoins(UpdateUserCoinsParams(
+        amountChange: event.bonusCoins,
+        title: 'Speaking Bonus',
+        isEarned: true,
+      ));
+    } catch (e) {
+      debugPrint('[RoleplayBloc] SpeakConfirmed failed: $e');
     }
   }
 }

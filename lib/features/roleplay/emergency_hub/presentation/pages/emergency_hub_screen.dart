@@ -309,8 +309,10 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? _codeController.text,
                 primaryColor: Colors.redAccent,
-                bonusCoins: null,
-                onConfirmed: () => _submitVerbalEvaluation(true),
+                onConfirmed: () {
+                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  _submitVerbalEvaluation(true);
+                },
                 onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],

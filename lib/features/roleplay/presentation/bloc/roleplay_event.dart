@@ -82,6 +82,16 @@ class RoleplayTutorPass extends RoleplayEvent {
   const RoleplayTutorPass();
 }
 
+// ── Speaking Bonus ─────────────────────────────────────────────────────────
+
+class RoleplaySpeakConfirmed extends RoleplayEvent {
+  const RoleplaySpeakConfirmed(this.bonusCoins);
+  final int bonusCoins;
+  
+  @override
+  List<Object?> get props => [bonusCoins];
+}
+
 // ── Preloading ─────────────────────────────────────────────────────────────
 
 /// Fires a background preload for the next batch of quests.

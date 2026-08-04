@@ -278,6 +278,7 @@ void _initRoleplay(GetIt sl) {
     () => RoleplayBloc(
       getQuest: sl<GetRoleplayQuest>(),
       preloadQuests: sl<PreloadRoleplayQuests>(),
+      updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),
       updateUnlockedLevel: sl<UpdateUnlockedLevel>(),
