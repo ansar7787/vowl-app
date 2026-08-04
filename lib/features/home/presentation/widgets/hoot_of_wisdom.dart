@@ -113,9 +113,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                   'home.hoot_daily_motivation',
                   fallback: 'Daily Motivation',
                 ),
-                child: const Center(
-                  child: VowlButtonSpinner(color: Color(0xFF6366F1)),
-                ),
+                child: const SizedBox.shrink(),
               ),
             )
           : Semantics(
@@ -210,7 +208,6 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                   ),
                   SizedBox(height: 20.h),
 
-                  // 3. The Wisdom Text
                   Text(
                     resolvedText,
                     textAlign: TextAlign.center,
@@ -224,7 +221,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                           : const Color(0xFF1E293B),
                       height: 1.5,
                     ),
-                  ),
+                  ).animate().fadeIn(duration: 400.ms),
                 ],
               ),
             ),
