@@ -105,18 +105,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
     return GlassTile(
       borderRadius: BorderRadius.circular(32.r),
       padding: EdgeInsets.all(24.r),
-      child: _isLoading
-          ? SizedBox(
-              height: 96.h,
-              child: Semantics(
-                label: context.tr(
-                  'home.hoot_daily_motivation',
-                  fallback: 'Daily Motivation',
-                ),
-                child: const SizedBox.shrink(),
-              ),
-            )
-          : Semantics(
+      child: Semantics(
               label:
                   '${_hootTitle ?? context.tr('home.hoot_daily_motivation', fallback: 'Daily Motivation')}. $resolvedText',
               child: Column(
@@ -208,20 +197,23 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                   ),
                   SizedBox(height: 20.h),
 
-                  Text(
-                    resolvedText,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w700,
-                      fontStyle: FontStyle.italic,
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.9)
-                          : const Color(0xFF1E293B),
-                      height: 1.5,
-                    ),
-                  ).animate().fadeIn(duration: 400.ms),
+                  if (_isLoading)
+                    SizedBox(height: 22.h)
+                  else
+                    Text(
+                      resolvedText,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.9)
+                            : const Color(0xFF1E293B),
+                        height: 1.5,
+                      ),
+                    ).animate().fadeIn(duration: 400.ms),
                 ],
               ),
             ),
