@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
 import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/domain/usecases/get_roleplay_quest.dart';
@@ -23,6 +24,8 @@ class MockGetRoleplayQuest extends Mock implements GetRoleplayQuest {}
 class MockPreloadRoleplayQuests extends Mock implements PreloadRoleplayQuests {}
 
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
+class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
 
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
 
@@ -41,6 +44,9 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 class FakeUpdateUserRewardsParams extends Fake
     implements UpdateUserRewardsParams {}
 
+class FakeUpdateUserCoinsParams extends Fake
+    implements UpdateUserCoinsParams {}
+
 class FakeUpdateCategoryStatsParams extends Fake
     implements UpdateCategoryStatsParams {}
 
@@ -52,6 +58,7 @@ void main() {
   late MockGetRoleplayQuest mockGetQuest;
   late MockPreloadRoleplayQuests mockPreloadQuests;
   late MockUpdateUserRewards mockUpdateUserRewards;
+  late MockUpdateUserCoins mockUpdateUserCoins;
   late MockUpdateCategoryStats mockUpdateCategoryStats;
   late MockUpdateUnlockedLevel mockUpdateUnlockedLevel;
   late MockAwardBadge mockAwardBadge;
@@ -62,6 +69,7 @@ void main() {
 
   setUpAll(() {
     registerFallbackValue(FakeUpdateUserRewardsParams());
+    registerFallbackValue(FakeUpdateUserCoinsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
     registerFallbackValue(GameSubtype.flashcards);
@@ -71,6 +79,7 @@ void main() {
     mockGetQuest = MockGetRoleplayQuest();
     mockPreloadQuests = MockPreloadRoleplayQuests();
     mockUpdateUserRewards = MockUpdateUserRewards();
+    mockUpdateUserCoins = MockUpdateUserCoins();
     mockUpdateCategoryStats = MockUpdateCategoryStats();
     mockUpdateUnlockedLevel = MockUpdateUnlockedLevel();
     mockAwardBadge = MockAwardBadge();
@@ -83,6 +92,7 @@ void main() {
       getQuest: mockGetQuest,
       preloadQuests: mockPreloadQuests,
       updateUserRewards: mockUpdateUserRewards,
+      updateUserCoins: mockUpdateUserCoins,
       updateCategoryStats: mockUpdateCategoryStats,
       updateUnlockedLevel: mockUpdateUnlockedLevel,
       awardBadge: mockAwardBadge,
