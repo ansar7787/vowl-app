@@ -243,7 +243,7 @@ class EliteFeedbackCard extends StatelessWidget {
       begin: 1,
       end: 0,
       curve: Curves.easeOutCubic,
-      duration: 500.ms,
+      duration: 350.ms,
     );
   }
 
@@ -261,7 +261,7 @@ class EliteFeedbackCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: Icon(_icon, color: Colors.white, size: 28.r),
-          ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+          ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
         ),
         SizedBox(width: 16.w),
         Expanded(
@@ -442,8 +442,8 @@ class _ContinueButton extends StatelessWidget {
               ),
             ),
           ).animate().scale(
-            delay: 500.ms,
-            duration: 400.ms,
+            delay: 150.ms,
+            duration: 300.ms,
             curve: Curves.elasticOut,
           ),
     );

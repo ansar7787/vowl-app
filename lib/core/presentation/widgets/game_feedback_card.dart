@@ -209,7 +209,7 @@ class GameFeedbackCard extends StatelessWidget {
             shape: BoxShape.circle,
           ),
           child: Icon(icon, color: Colors.white, size: 28.r),
-        ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+        ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
         SizedBox(width: 16.w),
         Expanded(
           child: Text(
@@ -272,8 +272,8 @@ class GameFeedbackCard extends StatelessWidget {
           ),
         ),
       ).animate().scale(
-        delay: 500.ms,
-        duration: 400.ms,
+        delay: 150.ms,
+        duration: 300.ms,
         curve: Curves.elasticOut,
       ),
     );
@@ -360,6 +360,14 @@ class _ExplanationCardState extends State<_ExplanationCard> {
           ),
         ],
       ),
-    ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack);
+    )
+    .animate()
+    .fadeIn(delay: 100.ms)
+    .slideY(
+      begin: 0.2,
+      end: 0,
+      duration: 300.ms,
+      curve: Curves.easeOutBack,
+    );
   }
 }
