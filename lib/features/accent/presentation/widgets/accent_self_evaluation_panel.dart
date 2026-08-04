@@ -8,6 +8,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
   final Color primaryColor;
   final bool isCompact;
   final void Function(bool isCorrect) onEvaluate;
+  final int? bonusCoins;
 
   const AccentSelfEvaluationPanel({
     super.key,
@@ -15,6 +16,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
     required this.primaryColor,
     required this.isCompact,
     required this.onEvaluate,
+    this.bonusCoins = 5,
   });
 
   @override
@@ -25,15 +27,45 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
       children: [
         Divider(color: primaryColor.withValues(alpha: 0.2), thickness: 2),
         SizedBox(height: 8.h),
-        Text(
-          "PHASE 2: SPEAKING",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
-            color: primaryColor,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "PHASE 2: SPEAKING",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.5,
+                color: primaryColor,
+              ),
+            ),
+            if (bonusCoins != null) ...[
+              SizedBox(width: 10.w),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      primaryColor,
+                      primaryColor.withValues(alpha: 0.7),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
+                child: Text(
+                  '+$bonusCoins Coins',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ),
+            ],
+          ],
         ),
         if (textToSpeak.trim().isNotEmpty) ...[
           SizedBox(height: 12.h),

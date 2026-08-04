@@ -159,6 +159,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       _scrollToBottom();
+      context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();

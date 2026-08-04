@@ -112,6 +112,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
+      context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
       context.read<AccentBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
