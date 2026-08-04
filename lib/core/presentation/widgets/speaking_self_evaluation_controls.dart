@@ -1,0 +1,474 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+
+class SpeakingSelfEvaluationControls extends StatefulWidget {
+  final String expectedText;
+  final Color primaryColor;
+  final VoidCallback onConfirmed;
+  final VoidCallback onSkipped;
+  final bool allowSkip;
+  final bool isDark;
+
+  const SpeakingSelfEvaluationControls({
+    super.key,
+    required this.expectedText,
+    required this.primaryColor,
+    required this.onConfirmed,
+    required this.onSkipped,
+    this.allowSkip = true,
+    required this.isDark,
+  });
+
+  @override
+  State<SpeakingSelfEvaluationControls> createState() =>
+      _SpeakingSelfEvaluationControlsState();
+}
+
+class _SpeakingSelfEvaluationControlsState
+    extends State<SpeakingSelfEvaluationControls>
+    with SingleTickerProviderStateMixin {
+  final _audioRecorder = di.sl<AudioRecordingService>();
+  final _hapticService = di.sl<HapticService>();
+  final _soundService = di.sl<SoundService>();
+
+  bool _isRecording = false;
+  bool _hasRecorded = false;
+  bool _isPlaying = false;
+  String? _recordingPath;
+
+  bool _isLoadingPrefs = true;
+  bool _globalSkipEnabled = false;
+
+  late final AnimationController _pulseController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    )..repeat(reverse: true);
+    _checkGlobalSkip();
+  }
+
+  Future<void> _checkGlobalSkip() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final skipEnabled = prefs.getBool('skip_speech_enabled') ?? false;
+      if (!mounted) return;
+      if (skipEnabled) {
+        widget.onSkipped();
+      } else {
+        setState(() => _isLoadingPrefs = false);
+      }
+    } catch (_) {
+      if (mounted) setState(() => _isLoadingPrefs = false);
+    }
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    if (_isRecording) {
+      _audioRecorder.stopRecording();
+    }
+    super.dispose();
+  }
+
+  Future<void> _startRecording() async {
+    if (_isPlaying) return;
+
+    final hasPermission = await _audioRecorder.hasPermission();
+    if (hasPermission) {
+      _hapticService.selection();
+      final started = await _audioRecorder.startRecording();
+      if (started && mounted) {
+        setState(() {
+          _isRecording = true;
+          _hasRecorded = false;
+          _recordingPath = null;
+        });
+      }
+    }
+  }
+
+  Future<void> _stopRecording() async {
+    if (!_isRecording) return;
+
+    _hapticService.selection();
+    final path = await _audioRecorder.stopRecording();
+
+    if (mounted) {
+      setState(() {
+        _isRecording = false;
+        if (path != null) {
+          _recordingPath = path;
+          _hasRecorded = true;
+        }
+      });
+      if (_hasRecorded) {
+        _playComparison();
+      }
+    }
+  }
+
+  Future<void> _playComparison() async {
+    if (_isPlaying || _recordingPath == null) return;
+    setState(() => _isPlaying = true);
+    await _soundService.playTts(widget.expectedText);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) {
+      await _soundService.playFile(_recordingPath!);
+      await Future.delayed(const Duration(milliseconds: 1200));
+    }
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
+  Future<void> _playNative() async {
+    if (_isPlaying) return;
+    setState(() => _isPlaying = true);
+    await _soundService.playTts(widget.expectedText);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
+  Future<void> _playUser() async {
+    if (_isPlaying || _recordingPath == null) return;
+    setState(() => _isPlaying = true);
+    await _soundService.playFile(_recordingPath!);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) {
+      setState(() => _isPlaying = false);
+    }
+  }
+
+  void _handleNailedIt() async {
+    _hapticService.success();
+    _soundService.playCorrect();
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) widget.onConfirmed();
+  }
+
+  void _handleNeedsWork() {
+    _hapticService.error();
+    setState(() {
+      _hasRecorded = false;
+      _recordingPath = null;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_isLoadingPrefs) return const SizedBox.shrink();
+    final subtitleColor = widget.isDark ? Colors.white60 : Colors.black54;
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (!_hasRecorded) ...[
+          GestureDetector(
+            onTap: () {
+              if (_isRecording) {
+                _stopRecording();
+              } else {
+                _startRecording();
+              }
+            },
+            child: Container(
+              width: 80.r,
+              height: 80.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _isRecording ? Colors.redAccent : widget.primaryColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: (_isRecording ? Colors.redAccent : widget.primaryColor)
+                        .withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    spreadRadius: _isRecording ? 8 : 0,
+                  ),
+                ],
+              ),
+              child: Icon(
+                _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                color: Colors.white,
+                size: 40.r,
+              ),
+            ).animate(target: _isRecording ? 1 : 0).scale(
+                begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+          ),
+          SizedBox(height: 12.h),
+          Text(
+            _isRecording ? "Recording... Tap to stop" : "Tap to Record",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: _isRecording ? Colors.redAccent : subtitleColor,
+            ),
+          ).animate(target: _isRecording ? 1 : 0).fade(),
+        ] else if (_isPlaying) ...[
+          Container(
+            height: 70.r,
+            width: 70.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: widget.primaryColor.withValues(alpha: 0.15),
+            ),
+            child: Center(
+              child: Icon(
+                Icons.graphic_eq_rounded,
+                color: widget.primaryColor,
+                size: 32.sp,
+              ),
+            ),
+          )
+              .animate(onPlay: (controller) => controller.repeat(reverse: true))
+              .scale(
+                begin: const Offset(0.9, 0.9),
+                end: const Offset(1.15, 1.15),
+                duration: 600.ms,
+                curve: Curves.easeInOut,
+              )
+              .fade(begin: 0.6, end: 1.0),
+          SizedBox(height: 12.h),
+          Text(
+            "Playing comparison...",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: widget.primaryColor,
+            ),
+          ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(
+              begin: 0.5, end: 1.0, duration: 800.ms),
+        ] else ...[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildIsolatedPlaybackButton(
+                icon: Icons.record_voice_over_rounded,
+                label: "NATIVE",
+                onTap: _playNative,
+                isDark: widget.isDark,
+              ),
+              SizedBox(width: 16.w),
+              GestureDetector(
+                onTap: _playComparison,
+                child: Container(
+                  height: 64.r,
+                  width: 64.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: widget.primaryColor.withValues(alpha: 0.15),
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.3),
+                      width: 2,
+                    ),
+                  ),
+                  child: Center(
+                    child: Icon(Icons.play_arrow_rounded,
+                        color: widget.primaryColor, size: 36.sp),
+                  ),
+                ),
+              ),
+              SizedBox(width: 16.w),
+              _buildIsolatedPlaybackButton(
+                icon: Icons.headphones_rounded,
+                label: "YOU",
+                onTap: _playUser,
+                isDark: widget.isDark,
+              ),
+            ],
+          ),
+          SizedBox(height: 24.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: _buildEvalButton(
+                  title: "Needs Work",
+                  icon: LucideIcons.x,
+                  color: Colors.redAccent,
+                  onTap: _handleNeedsWork,
+                ),
+              ),
+              SizedBox(width: 16.w),
+              Expanded(
+                child: _buildEvalButton(
+                  title: "Nailed It",
+                  icon: LucideIcons.check,
+                  color: Colors.greenAccent,
+                  onTap: _handleNailedIt,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 16.h),
+          Text(
+            "Be honest! Did you match the native speaker?",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
+              color: subtitleColor,
+            ),
+          ),
+        ],
+
+        if (widget.allowSkip && !_isPlaying && !_hasRecorded)
+          Padding(
+            padding: EdgeInsets.only(top: 24.h),
+            child: Column(
+              children: [
+                ScaleButton(
+                  onTap: () async {
+                    if (_globalSkipEnabled) {
+                      final prefs = await SharedPreferences.getInstance();
+                      await prefs.setBool('skip_speech_enabled', true);
+                    }
+                    widget.onSkipped();
+                  },
+                  child: Text(
+                    'CAN\'T SPEAK NOW',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: subtitleColor,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 24.r,
+                      width: 24.r,
+                      child: Checkbox(
+                        value: _globalSkipEnabled,
+                        onChanged: (val) {
+                          setState(() {
+                            _globalSkipEnabled = val ?? false;
+                          });
+                        },
+                        activeColor: widget.primaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 4.w),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _globalSkipEnabled = !_globalSkipEnabled;
+                        });
+                      },
+                      child: Text(
+                        'Skip all speaking tasks for now',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w500,
+                          color: subtitleColor.withValues(alpha: 0.8),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildEvalButton({
+    required String title,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 14.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 24.sp),
+            SizedBox(height: 4.h),
+            Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w800,
+                color: color,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildIsolatedPlaybackButton({
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+    required bool isDark,
+  }) {
+    final color = isDark ? Colors.white70 : Colors.black87;
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            height: 48.r,
+            width: 48.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color.withValues(alpha: 0.05),
+              border: Border.all(
+                color: color.withValues(alpha: 0.15),
+                width: 1.5,
+              ),
+            ),
+            child: Icon(icon, color: color, size: 22.sp),
+          ),
+          SizedBox(height: 6.h),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w700,
+              letterSpacing: 1.2,
+              color: color,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
