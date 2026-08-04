@@ -154,15 +154,12 @@ class _SpeakingSelfEvaluationControlsState
     }
   }
 
-  void _handleNailedIt() async {
-    _hapticService.success();
-    _soundService.playCorrect();
-    await Future.delayed(const Duration(milliseconds: 1200));
-    if (mounted) widget.onConfirmed();
+  void _handleNailedIt() {
+    widget.onConfirmed();
   }
 
   void _handleNeedsWork() {
-    _hapticService.error();
+    _hapticService.selection(); // Gentle feedback, not a hard error
     setState(() {
       _hasRecorded = false;
       _recordingPath = null;
