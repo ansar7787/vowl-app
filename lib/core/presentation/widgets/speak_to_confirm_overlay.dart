@@ -1,62 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:lucide_icons/lucide_icons.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/audio_recording_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-/// Universal "Speak to Confirm" overlay that slides up after a correct
-/// click/drag answer, requiring the user to say the answer aloud before
-/// proceeding.
+/// A self-evaluation overlay for speaking tasks.
 ///
-/// This bridges the gap between passive recognition (clicking) and active
-/// production (speaking), which is critical for Accent, Roleplay, and
-/// Grammar modules where clicking alone doesn't teach the skill.
-///
-/// Usage:
-/// ```dart
-/// if (showSpeakConfirm)
-///   SpeakToConfirmOverlay(
-///     expectedText: quest.correctAnswer ?? '',
-///     primaryColor: theme.primaryColor,
-///     onConfirmed: () => bloc.add(NextQuestion()),
-///     onSkipped: () => bloc.add(NextQuestion()),
-///   ),
-/// ```
+/// Removes flaky STT in favor of recording, playing back a comparison,
+/// and letting the user honestly evaluate themselves.
 class SpeakToConfirmOverlay extends StatefulWidget {
-  /// The expected spoken text to match against STT output.
   final String expectedText;
-
-  /// Optional display text shown to the user (if different from expectedText).
-  /// Falls back to [expectedText] if null.
   final String? displayText;
-
-  /// Theme accent colour for the overlay chrome.
   final Color primaryColor;
-
-  /// Fires when the user successfully speaks the answer (match ≥ threshold).
   final VoidCallback onConfirmed;
-
-  /// Fires when the user exhausts retries or taps "Skip".
   final VoidCallback onSkipped;
-
-  /// Similarity threshold for STT match (0.0–1.0). Default 0.65 is lenient
-  /// because this is a *confirmation* phase, not a pronunciation exam.
-  final double threshold;
-
-  /// Maximum number of recording attempts before auto-skip. Default 3.
-  final int maxAttempts;
-
-  /// Bonus Coins awarded on success. Null hides the badge entirely.
+  final double threshold; // Retained for compatibility but unused.
+  final int maxAttempts; // Retained for compatibility.
   final int? bonusCoins;
-
-  /// Whether to show a "Skip" button. Defaults to true for accessibility
-  /// (muted environments, device without mic, etc.).
   final bool allowSkip;
 
   const SpeakToConfirmOverlay({
@@ -78,15 +43,15 @@ class SpeakToConfirmOverlay extends StatefulWidget {
 
 class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
     with SingleTickerProviderStateMixin {
-  final _speechService = di.sl<SpeechService>();
+  final _audioRecorder = di.sl<AudioRecordingService>();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isListening = false;
-  String _spokenText = '';
-  List<String> _spokenCandidates = [];
-  int _attempts = 0;
-  _ConfirmResult? _result;
+  bool _isRecording = false;
+  bool _hasRecorded = false;
+  bool _isPlaying = false;
+  String? _recordingPath;
+  
   bool _isLoadingPrefs = true;
   bool _globalSkipEnabled = false;
 
@@ -120,105 +85,84 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
   @override
   void dispose() {
     _pulseController.dispose();
-    _speechService.cancel();
+    if (_isRecording) {
+      _audioRecorder.stopRecording();
+    }
     super.dispose();
   }
 
-  // ── STT lifecycle ──────────────────────────────────────────────────────
-
-  Future<void> _startListening() async {
-    if (_isListening || _result == _ConfirmResult.success) return;
-
-    _hapticService.selection();
-    setState(() {
-      _isListening = true;
-      _spokenText = '';
-      _spokenCandidates = [];
-      _result = null;
-    });
-
-    _speechService.listen(
-      onResult: (candidates, isFinal) {
-        if (candidates.isEmpty) return;
+  Future<void> _startRecording() async {
+    if (_isPlaying) return;
+    
+    final hasPermission = await _audioRecorder.hasPermission();
+    if (hasPermission) {
+      _hapticService.selection();
+      final started = await _audioRecorder.startRecording();
+      if (started && mounted) {
         setState(() {
-          _spokenCandidates = candidates;
-          _spokenText = candidates.first;
+          _isRecording = true;
+          _hasRecorded = false;
+          _recordingPath = null;
         });
-      },
-      onDone: () {
-        if (mounted) {
-          setState(() => _isListening = false);
+      }
+    }
+  }
+
+  Future<void> _stopRecording() async {
+    if (!_isRecording) return;
+    
+    _hapticService.selection();
+    final path = await _audioRecorder.stopRecording();
+    
+    if (mounted) {
+      setState(() {
+        _isRecording = false;
+        if (path != null) {
+          _recordingPath = path;
+          _hasRecorded = true;
         }
-      },
-      pauseFor: const Duration(seconds: 4),
-    );
-  }
-
-  Future<void> _stopListening() async {
-    await _speechService.stop();
-    if (!mounted) return;
-    setState(() => _isListening = false);
-    await _evaluate();
-  }
-
-  Future<void> _evaluate() async {
-    if (_spokenText.isEmpty) {
-      setState(() => _result = _ConfirmResult.empty);
-      return;
-    }
-
-    // Language guard — same pattern used in speaking games.
-    try {
-      final langService = di.sl<LanguageIdService>();
-      final lang = await langService.identifyLanguage(_spokenText);
-      if (lang != 'en' && lang != 'und') {
-        if (!mounted) return;
-        setState(() => _result = _ConfirmResult.wrongLanguage);
-        _hapticService.error();
-        return;
-      }
-    } catch (_) {
-      // LanguageIdService may not be available — proceed without gating.
-    }
-
-    bool matched = false;
-    for (final candidate in _spokenCandidates.isEmpty
-        ? [_spokenText]
-        : _spokenCandidates) {
-      if (TextSimilarityHelper.isMatch(
-        candidate,
-        widget.expectedText,
-        threshold: widget.threshold,
-      )) {
-        matched = true;
-        _spokenText = candidate;
-        break;
+      });
+      if (_hasRecorded) {
+        _playComparison();
       }
     }
+  }
 
-    if (!mounted) return;
-
-    setState(() {
-      _attempts++;
-      _result = matched ? _ConfirmResult.success : _ConfirmResult.mismatch;
-    });
-
-    if (matched) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      // Brief celebration before calling back.
+  Future<void> _playComparison() async {
+    if (_isPlaying || _recordingPath == null) return;
+    
+    setState(() => _isPlaying = true);
+    
+    // Play Native
+    await _soundService.playTts(widget.expectedText);
+    await Future.delayed(const Duration(milliseconds: 1200));
+    
+    // Play User
+    if (mounted) {
+      await _soundService.playFile(_recordingPath!);
       await Future.delayed(const Duration(milliseconds: 1200));
-      if (mounted) widget.onConfirmed();
-    } else {
-      _hapticService.error();
-      if (_attempts >= widget.maxAttempts) {
-        await Future.delayed(const Duration(milliseconds: 800));
-        if (mounted) widget.onSkipped();
-      }
+    }
+    
+    if (mounted) {
+      setState(() => _isPlaying = false);
     }
   }
 
-  // ── Build ──────────────────────────────────────────────────────────────
+  void _handleNailedIt() async {
+    _hapticService.success();
+    _soundService.playCorrect();
+    // Brief celebration before calling back.
+    await Future.delayed(const Duration(milliseconds: 1200));
+    if (mounted) widget.onConfirmed();
+  }
+
+  void _handleNeedsWork() {
+    _hapticService.error();
+    setState(() {
+      _hasRecorded = false;
+      _recordingPath = null;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -262,203 +206,265 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
           ],
         ),
         child: SafeArea(
-        top: false,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // ── Handle bar ──
-            Container(
-              width: 48.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: subtitleColor.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(2.r),
+          top: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // ── Handle bar ──
+              Container(
+                width: 48.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  color: subtitleColor.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(2.r),
+                ),
               ),
-            ),
-            SizedBox(height: 16.h),
+              SizedBox(height: 16.h),
 
-            // ── Header ──
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: widget.primaryColor.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(14.r),
-                  ),
-                  child: Icon(
-                    Icons.mic_rounded,
-                    color: widget.primaryColor,
-                    size: 22.r,
-                  ),
-                ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'NOW SAY IT!',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: widget.primaryColor,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'Speak the answer to confirm',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w500,
-                          color: subtitleColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                if (widget.bonusCoins != null)
+              // ── Header ──
+              Row(
+                children: [
                   Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
-                    ),
+                    padding: EdgeInsets.all(10.r),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          widget.primaryColor,
-                          widget.primaryColor.withValues(alpha: 0.7),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
+                      color: widget.primaryColor.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(14.r),
                     ),
-                    child: Text(
-                      '+${widget.bonusCoins} Coins',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                        letterSpacing: 1,
-                      ),
+                    child: Icon(
+                      Icons.mic_rounded,
+                      color: widget.primaryColor,
+                      size: 22.r,
                     ),
                   ),
-              ],
-            ),
-            SizedBox(height: 20.h),
-
-            // ── Expected text display ──
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.04)
-                    : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.1),
-                ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'NOW SAY IT!',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: widget.primaryColor,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          'Speak the answer to confirm',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w500,
+                            color: subtitleColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (widget.bonusCoins != null)
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            widget.primaryColor,
+                            widget.primaryColor.withValues(alpha: 0.7),
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Text(
+                        '+${widget.bonusCoins} Coins',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ),
+                ],
               ),
-              child: Text(
-                widget.displayText ?? widget.expectedText,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: textColor,
-                  height: 1.4,
-                ),
-              ),
-            ),
-            SizedBox(height: 16.h),
+              SizedBox(height: 20.h),
 
-            // ── Spoken text feedback ──
-            if (_spokenText.isNotEmpty && !_spokenText.startsWith('Deciphering'))
+              // ── Expected text display ──
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
                 decoration: BoxDecoration(
-                  color: _resultColor.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(12.r),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.04)
+                      : Colors.black.withValues(alpha: 0.03),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: widget.primaryColor.withValues(alpha: 0.1),
+                  ),
                 ),
-                child: Row(
-                  children: [
-                    Icon(
-                      _resultIcon,
-                      color: _resultColor,
-                      size: 18.r,
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Text(
-                        _spokenText,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: _resultColor,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ).animate().fadeIn(duration: 300.ms),
-
-            // ── Status message ──
-            if (_result != null && _result != _ConfirmResult.success)
-              Padding(
-                padding: EdgeInsets.only(top: 8.h),
                 child: Text(
-                  _statusMessage,
+                  widget.displayText ?? widget.expectedText,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.w600,
-                    color: _resultColor.withValues(alpha: 0.8),
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w700,
+                    color: textColor,
+                    height: 1.4,
                   ),
                 ),
               ),
-            SizedBox(height: 20.h),
+              SizedBox(height: 24.h),
 
-            // ── Mic button ──
-            if (_result != _ConfirmResult.success)
-              _buildMicButton(isDark),
-
-            // ── Skip button ──
-            if (widget.allowSkip && _result != _ConfirmResult.success)
-              Padding(
-                padding: EdgeInsets.only(top: 12.h),
-                child: Column(
+              // ── Interactive Area ──
+              if (!_hasRecorded) ...[
+                GestureDetector(
+                  onTap: () {
+                    if (_isRecording) {
+                      _stopRecording();
+                    } else {
+                      _startRecording();
+                    }
+                  },
+                  child: Container(
+                    width: 80.r,
+                    height: 80.r,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: _isRecording ? Colors.redAccent : widget.primaryColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: (_isRecording ? Colors.redAccent : widget.primaryColor).withValues(alpha: 0.4),
+                          blurRadius: 20,
+                          spreadRadius: _isRecording ? 8 : 0,
+                        ),
+                      ],
+                    ),
+                    child: Icon(
+                      _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                      color: Colors.white,
+                      size: 40.r,
+                    ),
+                  ).animate(target: _isRecording ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+                ),
+                SizedBox(height: 12.h),
+                Text(
+                  _isRecording ? "Recording... Tap to stop" : "Tap to Record",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    color: _isRecording ? Colors.redAccent : subtitleColor,
+                  ),
+                ).animate(target: _isRecording ? 1 : 0).fade(),
+              ] else if (_isPlaying) ...[
+                Container(
+                  height: 70.r,
+                  width: 70.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: widget.primaryColor.withValues(alpha: 0.15),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.graphic_eq_rounded,
+                      color: widget.primaryColor,
+                      size: 32.sp,
+                    ),
+                  ),
+                )
+                    .animate(onPlay: (controller) => controller.repeat(reverse: true))
+                    .scale(
+                      begin: const Offset(0.9, 0.9),
+                      end: const Offset(1.15, 1.15),
+                      duration: 600.ms,
+                      curve: Curves.easeInOut,
+                    )
+                    .fade(begin: 0.6, end: 1.0),
+                SizedBox(height: 12.h),
+                Text(
+                  "Playing comparison...",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    color: widget.primaryColor,
+                  ),
+                ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(begin: 0.5, end: 1.0, duration: 800.ms),
+              ] else ...[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    ScaleButton(
-                      onTap: () async {
-                        if (_globalSkipEnabled) {
-                          final prefs = await SharedPreferences.getInstance();
-                          await prefs.setBool('skip_speech_enabled', true);
-                        }
-                        widget.onSkipped();
-                      },
-                      child: Text(
-                        _attempts >= widget.maxAttempts
-                            ? 'CONTINUE'
-                            : 'CAN\'T SPEAK NOW',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w700,
-                          color: subtitleColor,
-                          letterSpacing: 1.5,
+                    _buildEvalButton(
+                      title: "Needs Work",
+                      icon: LucideIcons.x,
+                      color: Colors.redAccent,
+                      onTap: _handleNeedsWork,
+                    ),
+                    GestureDetector(
+                      onTap: _playComparison,
+                      child: Container(
+                        height: 60.r,
+                        width: 60.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: widget.primaryColor.withValues(alpha: 0.15),
+                        ),
+                        child: Center(
+                          child: Icon(Icons.play_arrow_rounded, color: widget.primaryColor, size: 36.sp),
                         ),
                       ),
                     ),
-                    if (_attempts < widget.maxAttempts) ...[
+                    _buildEvalButton(
+                      title: "Nailed It",
+                      icon: LucideIcons.check,
+                      color: Colors.greenAccent,
+                      onTap: _handleNailedIt,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 12.h),
+                Text(
+                  "Be honest! Did you match the native speaker?",
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: subtitleColor,
+                  ),
+                ),
+              ],
+
+              // ── Skip button ──
+              if (widget.allowSkip && !_isPlaying && !_hasRecorded)
+                Padding(
+                  padding: EdgeInsets.only(top: 24.h),
+                  child: Column(
+                    children: [
+                      ScaleButton(
+                        onTap: () async {
+                          if (_globalSkipEnabled) {
+                            final prefs = await SharedPreferences.getInstance();
+                            await prefs.setBool('skip_speech_enabled', true);
+                          }
+                          widget.onSkipped();
+                        },
+                        child: Text(
+                          'CAN\'T SPEAK NOW',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: subtitleColor,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ),
                       SizedBox(height: 8.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -499,164 +505,46 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
                         ],
                       ),
                     ],
-                  ],
-                ),
-              ),
-
-            // ── Attempt counter ──
-            if (_attempts > 0 && _result != _ConfirmResult.success)
-              Padding(
-                padding: EdgeInsets.only(top: 8.h),
-                child: Text(
-                  '${widget.maxAttempts - _attempts} attempts remaining',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w500,
-                    color: subtitleColor.withValues(alpha: 0.6),
                   ),
                 ),
-              ),
-
-            // ── Success state ──
-            if (_result == _ConfirmResult.success)
-              Column(
-                children: [
-                  Icon(
-                    Icons.verified_rounded,
-                    color: Colors.greenAccent,
-                    size: 48.r,
-                  ).animate().scale(
-                        begin: const Offset(0, 0),
-                        end: const Offset(1, 1),
-                        duration: 400.ms,
-                        curve: Curves.easeOutBack,
-                      ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    'PERFECT! 🎯',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.greenAccent,
-                      letterSpacing: 2,
-                    ),
-                  ).animate().fadeIn(delay: 200.ms),
-                ],
-              ),
-          ],
+            ],
+          ),
         ),
       ),
-    ));
-  }
-
-  Widget _buildMicButton(bool isDark) {
-    return AnimatedBuilder(
-      animation: _pulseController,
-      builder: (context, child) {
-        final double pulseScale = _isListening
-            ? 1.0 + (_pulseController.value * 0.08)
-            : 1.0;
-
-        return Transform.scale(
-          scale: pulseScale,
-          child: GestureDetector(
-            onLongPressStart: (_) => _startListening(),
-            onLongPressEnd: (_) => _stopListening(),
-            child: Container(
-              width: 72.r,
-              height: 72.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: _isListening
-                      ? [Colors.redAccent, Colors.red.shade700]
-                      : [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.7)],
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: (_isListening ? Colors.redAccent : widget.primaryColor)
-                        .withValues(alpha: _isListening ? 0.5 : 0.3),
-                    blurRadius: _isListening ? 24 : 16,
-                    spreadRadius: _isListening ? 4 : 1,
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    _isListening
-                        ? Icons.graphic_eq_rounded
-                        : Icons.mic_rounded,
-                    color: Colors.white,
-                    size: 28.r,
-                  ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    _isListening ? 'RELEASE' : 'HOLD',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 7.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white.withValues(alpha: 0.9),
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
     );
   }
 
-  // ── Computed properties ────────────────────────────────────────────────
-
-  Color get _resultColor {
-    switch (_result) {
-      case _ConfirmResult.success:
-        return Colors.greenAccent;
-      case _ConfirmResult.mismatch:
-      case _ConfirmResult.wrongLanguage:
-        return Colors.redAccent;
-      case _ConfirmResult.empty:
-        return Colors.orangeAccent;
-      case null:
-        return widget.primaryColor;
-    }
-  }
-
-  IconData get _resultIcon {
-    switch (_result) {
-      case _ConfirmResult.success:
-        return Icons.check_circle_rounded;
-      case _ConfirmResult.mismatch:
-      case _ConfirmResult.wrongLanguage:
-        return Icons.error_outline_rounded;
-      case _ConfirmResult.empty:
-        return Icons.mic_off_rounded;
-      case null:
-        return Icons.hearing_rounded;
-    }
-  }
-
-  String get _statusMessage {
-    switch (_result) {
-      case _ConfirmResult.mismatch:
-        return "Hmm, that didn't match. Try saying it more clearly!";
-      case _ConfirmResult.wrongLanguage:
-        return 'Please speak in English!';
-      case _ConfirmResult.empty:
-        return 'No voice detected. Hold the mic and speak clearly.';
-      default:
-        return '';
-    }
+  Widget _buildEvalButton({
+    required String title,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(icon, color: color, size: 24.sp),
+            SizedBox(height: 4.h),
+            Text(
+              title,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w700,
+                color: color,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
-
-enum _ConfirmResult { success, mismatch, wrongLanguage, empty }
