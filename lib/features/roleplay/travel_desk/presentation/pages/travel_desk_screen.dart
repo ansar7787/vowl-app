@@ -250,8 +250,9 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
               SpeakToConfirmOverlay(
                 expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

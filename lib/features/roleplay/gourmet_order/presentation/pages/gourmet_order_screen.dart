@@ -361,8 +361,9 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? _selectedItems.join(', '),
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

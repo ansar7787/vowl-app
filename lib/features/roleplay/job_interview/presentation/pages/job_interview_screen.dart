@@ -261,8 +261,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
               SpeakToConfirmOverlay(
                 expectedText: _shuffledOptions[_selectedIndex!],
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

@@ -72,3 +72,12 @@ class PreloadBatch extends AccentEvent {
 class AccentTutorPass extends AccentEvent {
   const AccentTutorPass();
 }
+
+/// The user successfully passed the speak-to-confirm overlay.
+class AccentSpeakConfirmed extends AccentEvent {
+  final int bonusCoins;
+  const AccentSpeakConfirmed(this.bonusCoins);
+  
+  @override
+  List<Object?> get props => [bonusCoins];
+}

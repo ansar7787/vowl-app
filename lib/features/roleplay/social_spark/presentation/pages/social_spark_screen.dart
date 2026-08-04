@@ -350,8 +350,9 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? currentText,
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

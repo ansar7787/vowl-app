@@ -309,8 +309,9 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               SpeakToConfirmOverlay(
                 expectedText: _shuffledOptions[_selectedOrbIndex!],
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

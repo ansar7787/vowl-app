@@ -415,8 +415,11 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       ? _currentOptions[_currentCorrectIndex]['word']! 
                       : (quest.correctAnswer ?? quest.word1 ?? ""),
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitVerbalEvaluation(true),
-                  onSkipped: () => _submitVerbalEvaluation(false),
+                  onConfirmed: () {
+                    context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
+                    _submitVerbalEvaluation(true);
+                  },
+                  onSkipped: () => _submitVerbalEvaluation(true), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

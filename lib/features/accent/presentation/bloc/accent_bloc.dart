@@ -94,6 +94,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     on<RestoreLife>(_onRestoreLife);
     on<AccentTutorPass>(_onTutorPass);
     on<RestartLevel>(_onRestart);
+    on<AccentSpeakConfirmed>(_onSpeakConfirmed);
   }
 
   // ── FetchAccentQuests ────────────────────────────────────────────────────
@@ -377,5 +378,22 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       NoParams(),
     ); // Fire-and-forget; stale entries removed for next fetch.
     emit(const AccentInitial());
+  }
+
+  // ── AccentSpeakConfirmed ─────────────────────────────────────────────────
+
+  Future<void> _onSpeakConfirmed(
+    AccentSpeakConfirmed event,
+    Emitter<AccentState> emit,
+  ) async {
+    try {
+      await updateUserCoins(UpdateUserCoinsParams(
+        amountChange: event.bonusCoins,
+        title: 'Speaking Bonus',
+        isEarned: true,
+      ));
+    } catch (e, stack) {
+      errorReporter?.call(e, stack);
+    }
   }
 }

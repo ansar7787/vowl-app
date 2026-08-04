@@ -311,8 +311,11 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                 SpeakToConfirmOverlay(
                   expectedText: quest.textToSpeak ?? quest.word ?? "",
                   primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitVerbalEvaluation(true),
-                  onSkipped: () => _submitVerbalEvaluation(false),
+                  onConfirmed: () {
+                    context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
+                    _submitVerbalEvaluation(true);
+                  },
+                  onSkipped: () => _submitVerbalEvaluation(true), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

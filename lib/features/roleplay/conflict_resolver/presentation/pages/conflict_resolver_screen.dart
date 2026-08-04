@@ -296,8 +296,9 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? "De-escalating conflict",
                 primaryColor: theme.primaryColor,
+                bonusCoins: null,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false),
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
           ],
         );

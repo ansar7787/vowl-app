@@ -52,8 +52,8 @@ class SpeakToConfirmOverlay extends StatefulWidget {
   /// Maximum number of recording attempts before auto-skip. Default 3.
   final int maxAttempts;
 
-  /// Bonus XP label shown on success. Null hides the badge entirely.
-  final int? bonusXp;
+  /// Bonus Coins awarded on success. Null hides the badge entirely.
+  final int? bonusCoins;
 
   /// Whether to show a "Skip" button. Defaults to true for accessibility
   /// (muted environments, device without mic, etc.).
@@ -68,7 +68,7 @@ class SpeakToConfirmOverlay extends StatefulWidget {
     required this.onSkipped,
     this.threshold = 0.65,
     this.maxAttempts = 3,
-    this.bonusXp = 5,
+    this.bonusCoins = 5,
     this.allowSkip = true,
   });
 
@@ -320,7 +320,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
                     ],
                   ),
                 ),
-                if (widget.bonusXp != null)
+                if (widget.bonusCoins != null)
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,
@@ -336,7 +336,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
-                      '+${widget.bonusXp} XP',
+                      '+${widget.bonusCoins} Coins',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
