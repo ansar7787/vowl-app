@@ -260,7 +260,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
             
             final quest = s.currentQuest;
             String? explanation = quest.explanation;
-            if (explanation == null && widget.isCorrect == false && widget.isFinalFailure) {
+            final resolvedIsFinalFailure = s.isFinalFailure;
+            if (explanation == null && widget.isCorrect == false && resolvedIsFinalFailure) {
                if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
                    explanation = quest.options![quest.correctAnswerIndex!];
                }
@@ -271,7 +272,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
             
             return GameFeedbackCard(
               isCorrect: widget.isCorrect,
-              isFinalFailure: widget.isFinalFailure,
+              isFinalFailure: resolvedIsFinalFailure,
               livesRemaining: s.livesRemaining,
               onContinue: widget.onContinue,
               isDark: isDark,

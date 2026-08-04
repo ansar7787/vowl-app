@@ -165,7 +165,8 @@ class RoleplayBaseLayout extends StatelessWidget {
         
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
-        if (explanation == null && isCorrect == false && isFinalFailure) {
+        final resolvedIsFinalFailure = state.isFinalFailure;
+        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
            if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
                explanation = quest.options![quest.correctAnswerIndex!];
            }
@@ -176,7 +177,7 @@ class RoleplayBaseLayout extends StatelessWidget {
 
         return GameFeedbackCard(
           isCorrect: isCorrect,
-          isFinalFailure: isFinalFailure,
+          isFinalFailure: resolvedIsFinalFailure,
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,

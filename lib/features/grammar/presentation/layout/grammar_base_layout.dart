@@ -111,7 +111,8 @@ class GrammarBaseLayout extends StatelessWidget {
         
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
-        if (explanation == null && isCorrect == false && isFinalFailure) {
+        final resolvedIsFinalFailure = state.isFinalFailure;
+        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
            explanation = (quest.options != null && quest.correctAnswerIndex != null
                ? quest.options![quest.correctAnswerIndex!]
                : null);
@@ -122,7 +123,7 @@ class GrammarBaseLayout extends StatelessWidget {
 
         return GameFeedbackCard(
           isCorrect: isCorrect,
-          isFinalFailure: isFinalFailure,
+          isFinalFailure: resolvedIsFinalFailure,
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,

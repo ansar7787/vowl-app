@@ -116,14 +116,14 @@ class WritingBaseLayout extends StatelessWidget {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
         final quest = state.currentQuest;
-
         final explanation = quest.explanation;
         final ruleContent = quest.context ?? quest.situation ?? explanation;
         final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final resolvedIsFinalFailure = state.isFinalFailure;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,
-          isFinalFailure: isFinalFailure,
+          isFinalFailure: resolvedIsFinalFailure,
           livesRemaining: state.livesRemaining,
           onContinue: onContinue,
           isDark: isDark,

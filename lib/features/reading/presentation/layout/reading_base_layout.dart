@@ -151,7 +151,8 @@ class ReadingBaseLayout extends StatelessWidget {
             final theme = LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level);
             final quest = s.currentQuest;
             String? explanation = quest.explanation;
-            if (explanation == null && isCorrect == false && isFinalFailure) {
+            final resolvedIsFinalFailure = s.isFinalFailure;
+            if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
               if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
                  explanation = quest.options![quest.correctAnswerIndex!];
               }
@@ -162,7 +163,7 @@ class ReadingBaseLayout extends StatelessWidget {
 
             return GameFeedbackCard(
               isCorrect: isCorrect,
-              isFinalFailure: isFinalFailure,
+              isFinalFailure: resolvedIsFinalFailure,
               livesRemaining: s.livesRemaining,
               onContinue: onContinue,
               isDark: isDark,
