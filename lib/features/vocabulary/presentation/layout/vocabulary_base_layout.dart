@@ -100,6 +100,9 @@ class VocabularyBaseLayout extends StatelessWidget {
            }
         }
 
+        final ruleContent = quest.definition ?? explanation;
+        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+
         return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
@@ -107,7 +110,9 @@ class VocabularyBaseLayout extends StatelessWidget {
           onContinue: onContinue,
           isDark: isDark,
           primaryColor: theme.primaryColor,
-          explanation: explanation,
+          explanation: finalExplanation,
+          ruleTitle: 'VOCABULARY TIP',
+          ruleContent: ruleContent,
         );
       },
     );

@@ -266,6 +266,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
                }
             }
             
+            final ruleContent = quest.audioTranscript ?? explanation;
+            final finalExplanation = (ruleContent == explanation) ? null : explanation;
+            
             return GameFeedbackCard(
               isCorrect: widget.isCorrect,
               isFinalFailure: widget.isFinalFailure,
@@ -273,7 +276,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               onContinue: widget.onContinue,
               isDark: isDark,
               primaryColor: theme.primaryColor,
-              explanation: explanation,
+              explanation: finalExplanation,
+              ruleTitle: 'LISTENING TRANSCRIPT',
+              ruleContent: ruleContent,
             );
           },
         );

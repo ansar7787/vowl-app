@@ -171,6 +171,9 @@ class RoleplayBaseLayout extends StatelessWidget {
            }
         }
 
+        final ruleContent = quest.situation ?? quest.scene ?? explanation;
+        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+
         return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
@@ -178,7 +181,10 @@ class RoleplayBaseLayout extends StatelessWidget {
           onContinue: onContinue,
           isDark: isDark,
           primaryColor: theme.primaryColor,
-          explanation: explanation,
+          explanation: finalExplanation,
+          ruleTitle: 'SCENARIO CONTEXT',
+          ruleContent: ruleContent,
+          sampleAnswer: quest.sampleAnswer,
           onTutorPass: onTutorPass,
         );
       },

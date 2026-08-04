@@ -117,6 +117,9 @@ class GrammarBaseLayout extends StatelessWidget {
                : null);
         }
 
+        final ruleContent = quest.grammarRule ?? explanation;
+        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+
         return GameFeedbackCard(
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
@@ -124,9 +127,9 @@ class GrammarBaseLayout extends StatelessWidget {
           onContinue: onContinue,
           isDark: isDark,
           primaryColor: theme.primaryColor,
-          explanation: explanation,
+          explanation: finalExplanation,
           ruleTitle: 'GRAMMAR RULE',
-          ruleContent: quest.grammarRule,
+          ruleContent: ruleContent,
         );
       },
     );

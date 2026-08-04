@@ -157,6 +157,9 @@ class ReadingBaseLayout extends StatelessWidget {
               }
             }
 
+            final ruleContent = quest.passage ?? explanation;
+            final finalExplanation = (ruleContent == explanation) ? null : explanation;
+
             return GameFeedbackCard(
               isCorrect: isCorrect,
               isFinalFailure: isFinalFailure,
@@ -164,7 +167,9 @@ class ReadingBaseLayout extends StatelessWidget {
               onContinue: onContinue,
               isDark: isDark,
               primaryColor: theme.primaryColor,
-              explanation: explanation,
+              explanation: finalExplanation,
+              ruleTitle: 'READING CONTEXT',
+              ruleContent: ruleContent,
             );
           },
         );

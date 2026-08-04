@@ -88,6 +88,13 @@ class GamificationRepositoryImpl
       // transaction retry — so it's computed once, outside the closure.
       final int finalStarsEarned = starsEarned ?? 3;
 
+      // INSTANT UI UPDATE: Fire the reactive stars notifier synchronously BEFORE 
+      // the network transaction. This prevents the UI from showing a stale "mock"
+      // value while waiting for the network, and eliminates the perceived lag.
+      if (starsEarned != null) {
+        lastEarnedStars.value = finalStarsEarned;
+      }
+
       final result = await _firestore.runTransaction<Either<Failure, void>>((
         transaction,
       ) async {
@@ -123,13 +130,6 @@ class GamificationRepositoryImpl
 
         return const Right<Failure, void>(null);
       });
-
-      // Fire the reactive stars notifier only once the transaction has
-      // actually committed (see class doc for why this can't live inside
-      // the transaction closure above).
-      if (result.isRight() && starsEarned != null) {
-        lastEarnedStars.value = finalStarsEarned;
-      }
 
       return result;
     } catch (e) {

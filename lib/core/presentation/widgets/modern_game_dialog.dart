@@ -140,7 +140,7 @@ class ModernGameDialog extends StatelessWidget {
                                           end: const Offset(1, 1),
                                           duration: 400.ms,
                                           curve: Curves.elasticOut,
-                                          delay: (500 + index * 150).ms,
+                                          delay: (200 + index * 150).ms,
                                         )
                                         .then()
                                         .shimmer(
