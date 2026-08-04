@@ -18,6 +18,10 @@ class HootOfWisdom extends StatefulWidget {
 }
 
 class _HootOfWisdomState extends State<HootOfWisdom> {
+  static String? _cachedTitle;
+  static String? _cachedText;
+  static bool _hasLoaded = false;
+
   String? _hootTitle;
   String _hootText = "...";
   bool _isLoading = true;
@@ -25,7 +29,13 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
   @override
   void initState() {
     super.initState();
-    _loadDailyHoot();
+    if (_hasLoaded) {
+      _hootTitle = _cachedTitle;
+      _hootText = _cachedText ?? "";
+      _isLoading = false;
+    } else {
+      _loadDailyHoot();
+    }
   }
 
   Future<void> _loadDailyHoot() async {
@@ -66,6 +76,10 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
 
       if (mounted) {
         setState(() {
+          _cachedTitle = title;
+          _cachedText = text;
+          _hasLoaded = true;
+
           _hootTitle = title;
           _hootText = text;
           _isLoading = false;
