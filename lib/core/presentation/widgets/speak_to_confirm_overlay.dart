@@ -242,24 +242,26 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
-    return Container(
-      padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-        border: Border.all(
-          color: widget.primaryColor.withValues(alpha: 0.2),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.15),
-            blurRadius: 30,
-            offset: const Offset(0, -8),
+    return Material(
+      type: MaterialType.transparency,
+      child: Container(
+        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          border: Border.all(
+            color: widget.primaryColor.withValues(alpha: 0.2),
+            width: 1.5,
           ),
-        ],
-      ),
-      child: SafeArea(
+          boxShadow: [
+            BoxShadow(
+              color: widget.primaryColor.withValues(alpha: 0.15),
+              blurRadius: 30,
+              offset: const Offset(0, -8),
+            ),
+          ],
+        ),
+        child: SafeArea(
         top: false,
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -546,7 +548,7 @@ class _SpeakToConfirmOverlayState extends State<SpeakToConfirmOverlay>
           ],
         ),
       ),
-    );
+    ));
   }
 
   Widget _buildMicButton(bool isDark) {
