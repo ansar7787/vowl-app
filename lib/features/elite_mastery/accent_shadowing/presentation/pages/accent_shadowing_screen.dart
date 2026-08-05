@@ -146,12 +146,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               (state is EliteMasteryLoaded && state.isFinalFailure) ||
               (state is EliteMasteryLoaded ? state.livesRemaining <= 0 : false),
           showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr(
-                'games.accent_shadowing_instruction',
-                fallback: 'Listen and repeat the sentence exactly as you hear it.',
-              ),
+          title: "",
           onContinue: () {
             setState(() {
               _isAnswered = false;
