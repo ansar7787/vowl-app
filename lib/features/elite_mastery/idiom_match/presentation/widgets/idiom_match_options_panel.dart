@@ -70,8 +70,8 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
             child: ScaleButton(
               onTap: isAnswered ? null : () => onOptionSelected(index),
               child: GlassTile(
-                borderRadius: BorderRadius.circular(24.r),
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 22.h),
+                borderRadius: BorderRadius.circular(20.r),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
                 usePremiumStyle: true,
                 showShadow: true,
                 color: isDark ? Colors.black.withValues(alpha: 0.3) : null,

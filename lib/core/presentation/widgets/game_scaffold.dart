@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 
 class GameScaffold<S> extends StatelessWidget {
   final S state;
@@ -156,10 +157,12 @@ class GameScaffold<S> extends StatelessWidget {
                                     horizontal: 16.w,
                                   ),
                                   child: config.useScrolling
-                                      ? SingleChildScrollView(
-                                          physics:
-                                              const BouncingScrollPhysics(),
-                                          child: config.child,
+                                      ? GameScrollbar(
+                                          child: SingleChildScrollView(
+                                            physics:
+                                                const BouncingScrollPhysics(),
+                                            child: config.child,
+                                          ),
                                         )
                                       : config.child,
                                 ),
