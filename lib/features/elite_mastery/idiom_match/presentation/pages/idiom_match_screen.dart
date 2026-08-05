@@ -102,8 +102,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     final isCorrect = actualOriginalIndex == correctOriginalIndex;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection();
       setState(() {
         _isFirstStagePassed = true;
         _selectedIndex = shuffledIndex;

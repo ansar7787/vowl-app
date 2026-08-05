@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -151,8 +151,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     });
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection();
       setState(() {
         _isFirstStagePassed = true;
       });

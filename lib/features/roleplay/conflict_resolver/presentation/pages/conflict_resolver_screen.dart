@@ -1,4 +1,4 @@
-﻿import 'dart:math' as math;
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -115,8 +115,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     bool isCorrect = (_rotation - target).abs() < 0.12;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection();
       setState(() {
         _isFirstStagePassed = true;
       });

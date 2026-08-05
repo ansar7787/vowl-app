@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -79,8 +79,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     final bool isCorrect = index == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection();
       setState(() {
         _isFirstStagePassed = true;
       });
