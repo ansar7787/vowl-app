@@ -17,6 +17,7 @@ import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_instruction.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_digital_blackboard.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_correction_options.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class FixTheSentenceScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final List<Offset> _erasePoints = [];
   bool _isWiped = false;
   String? _selectedOption;
+  String? _pendingSelectedOption;
   bool _showConfetti = false;
   int _erasedAmount = 0;
   WritingQuest? _lastQuest;
@@ -67,6 +69,35 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     }
   }
 
+  void _submitFinalAnswer(bool nailedTyping, WritingQuest quest) {
+    if (_pendingSelectedOption == null) return;
+
+    if (!nailedTyping) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _selectedOption = _pendingSelectedOption;
+      });
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    final selected = _pendingSelectedOption!;
+    final correct = quest.correctAnswer ?? "";
+    final bool isAnsCorrect = selected == correct;
+    
+    setState(() {
+      _selectedOption = _pendingSelectedOption;
+    });
+
+    context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
+    if (isAnsCorrect) {
+      final fullText = quest.passage ?? "";
+      final targetWord = quest.missingWord ?? "";
+      final correctedText = fullText.replaceFirst(targetWord, selected);
+      _ttsService.speak(correctedText);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +114,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           setState(() {
             _isWiped = false;
             _selectedOption = null;
+            _pendingSelectedOption = null;
             _erasePoints.clear();
             _erasedAmount = 0;
           });
@@ -123,72 +155,73 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        FixTheSentenceInstruction(
-                          isWiped: _isWiped,
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            FixTheSentenceInstruction(
+                              isWiped: _isWiped,
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 32.h),
+
+                            FixTheSentenceDigitalBlackboard(
+                              fullText: quest.passage ?? "",
+                              targetWord: quest.missingWord ?? "",
+                              selectedReplacement: _selectedOption ?? _pendingSelectedOption,
+                              isWiped: _isWiped,
+                              erasePoints: _erasePoints,
+                              onErase: (pos) => _onErase(pos, isAnswered),
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 32.h),
+
+                            if (_isWiped && !isAnswered)
+                              FixTheSentenceWipedAlert(
+                                primaryColor: theme.primaryColor,
+                              ),
+                            if (_isWiped && !isAnswered) SizedBox(height: 16.h),
+
+                            if (_isWiped)
+                              FixTheSentenceCorrectionOptions(
+                                options: _shuffledOptions ?? quest.options ?? [],
+                                correct: quest.correctAnswer ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                onSelect: (selected, correct) {
+                                  if (isAnswered || _pendingSelectedOption != null) return;
+                                  setState(() => _pendingSelectedOption = selected);
+                                },
+                              ),
+
+                            SizedBox(height: 160.h),
+                          ],
                         ),
-                        SizedBox(height: 32.h),
-
-                        FixTheSentenceDigitalBlackboard(
-                          fullText: quest.passage ?? "",
-                          targetWord: quest.missingWord ?? "",
-                          selectedReplacement: _selectedOption,
-                          isWiped: _isWiped,
-                          erasePoints: _erasePoints,
-                          onErase: (pos) => _onErase(pos, isAnswered),
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 32.h),
-
-                        if (_isWiped && !isAnswered)
-                          FixTheSentenceWipedAlert(
-                            primaryColor: theme.primaryColor,
-                          ),
-                        if (_isWiped && !isAnswered) SizedBox(height: 16.h),
-
-                        if (_isWiped)
-                          FixTheSentenceCorrectionOptions(
-                            options: _shuffledOptions ?? quest.options ?? [],
-                            correct: quest.correctAnswer ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSelect: (selected, correct) {
-                              if (isAnswered) return;
-                              setState(() => _selectedOption = selected);
-                              final bool isAnsCorrect = selected == correct;
-                              context.read<WritingBloc>().add(SubmitAnswer(isAnsCorrect));
-                              if (isAnsCorrect) {
-                                final fullText = quest.passage ?? "";
-                                final targetWord = quest.missingWord ?? "";
-                                final correctedText = fullText.replaceFirst(targetWord, selected);
-                                _ttsService.speak(correctedText);
-                              }
-                            },
-                          ),
-
-                        SizedBox(height: 60.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (_pendingSelectedOption != null && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _pendingSelectedOption!,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },
     );
   }
 }
-
-
-

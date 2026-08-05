@@ -63,17 +63,17 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 4. WRITING (11 Games)
 *Goal: Ensure anti-gibberish checks are active. No overlays needed.*
-- [ ] 1. Sentence Builder (Action: Verify Drag/Jigsaw)
-- [ ] 2. Complete Sentence (Action: Verify Typing + Drag)
-- [ ] 3. Describe Situation (Action: Verify Free writing + Gibberish Check)
-- [ ] 4. Fix the Sentence (Action: Verify Typing)
-- [ ] 5. Short Answer (Action: Verify Typing + Gibberish Check)
-- [ ] 6. Opinion Writing (Action: Verify Free writing)
-- [ ] 7. Daily Journal (Action: Verify Free writing + Gibberish Check)
-- [ ] 8. Summarize Story (Action: Verify Free writing)
-- [ ] 9. Writing Email (Action: Verify Typing)
-- [ ] 10. Correction Writing (Action: Verify Typing)
-- [ ] 11. Essay Drafting (Action: Verify Free writing)
+- [x] 1. Sentence Builder (Action: Verify Drag/Jigsaw)
+- [x] 2. Complete Sentence (Action: Verify Typing + Drag)
+- [x] 3. Describe Situation (Action: Verify Free writing + Gibberish Check)
+- [x] 4. Fix the Sentence (Action: Verify Typing)
+- [x] 5. Short Answer (Action: Verify Typing + Gibberish Check)
+- [x] 6. Opinion Writing (Action: Verify Free writing)
+- [x] 7. Daily Journal (Action: Verify Free writing + Gibberish Check)
+- [x] 8. Summarize Story (Action: Verify Free writing)
+- [x] 9. Writing Email (Action: Verify Typing)
+- [x] 10. Essay Outline (Action: Verify Free writing)
+- [x] 11. Writing Inference (Action: Verify Typing)
 
 ## 5. GRAMMAR (19 Games)
 *Goal: Use Dynamic Jigsaw heavily. Dragging words forces users to internalize grammar rules.*

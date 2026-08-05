@@ -16,6 +16,7 @@ import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_topic_banner.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_hex_slot.dart';
 import 'package:vowl/features/writing/essay_drafting/presentation/widgets/essay_drafting_data_stream.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class EssayDraftingScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   List<String> _shuffledOptions = [];
 
   bool _showConfetti = false;
+  bool _pendingSubmit = false;
 
   @override
   void initState() {
@@ -70,8 +72,25 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   }
 
   void _submitAnswer(bool isAnswered) {
+    if (isAnswered) return;
+    setState(() {
+      _pendingSubmit = true;
+    });
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    setState(() {
+      _pendingSubmit = false;
+    });
+
     final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded || isAnswered) return;
+    if (state is! WritingLoaded) return;
+
+    if (!nailedTyping) {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
 
     final quest = state.currentQuest;
     final points = quest.requiredPoints ?? [];
@@ -112,6 +131,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           setState(() {
             _blueprintSlots.clear();
+            _pendingSubmit = false;
             final quest = state.currentQuest;
             for (var point in (quest.requiredPoints ?? [])) {
               _blueprintSlots[point] = null;
@@ -157,96 +177,110 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
           child: activeQuest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        EssayDraftingInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: activeQuest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            EssayDraftingInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: activeQuest.instruction,
+                            ),
+                            SizedBox(height: 24.h),
 
-                        EssayDraftingTopicBanner(
-                          topic: activeQuest.essayTopic ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
+                            EssayDraftingTopicBanner(
+                              topic: activeQuest.essayTopic ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
 
-                        ..._blueprintSlots.keys.map(
-                          (k) => EssayDraftingHexSlot(
-                            slotKey: k,
-                            slotValue: _blueprintSlots[k],
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSlot: (key, data) =>
-                                _onSlot(key, data, isAnswered),
-                            onClearSlot: (key) => _clearSlot(key, isAnswered),
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
-
-                        EssayDraftingDataStream(
-                          items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
-                          slots: _blueprintSlots,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 16.h),
-
-                        if (!isAnswered)
-                          ScaleButton(
-                            onTap: slotsFilled
-                                ? () => _submitAnswer(isAnswered)
-                                : null,
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: slotsFilled
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (slotsFilled)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      blurRadius: 15,
-                                    ),
-                                ],
+                            ..._blueprintSlots.keys.map(
+                              (k) => EssayDraftingHexSlot(
+                                slotKey: k,
+                                slotValue: _blueprintSlots[k],
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                onSlot: (key, data) =>
+                                    _onSlot(key, data, isAnswered),
+                                onClearSlot: (key) => _clearSlot(key, isAnswered),
                               ),
-                              child: Center(
-                                child: Text(
-                                  "TRANSMIT BLUEPRINT",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            EssayDraftingDataStream(
+                              items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
+                              slots: _blueprintSlots,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 16.h),
+
+                            if (!isAnswered)
+                              ScaleButton(
+                                onTap: slotsFilled
+                                    ? () => _submitAnswer(isAnswered)
+                                    : null,
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    color: slotsFilled
+                                        ? theme.primaryColor
+                                        : Colors.grey,
+                                    boxShadow: [
+                                      if (slotsFilled)
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                        ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "TRANSMIT BLUEPRINT",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
-                      ],
+                              SizedBox(height: 160.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_pendingSubmit && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _blueprintSlots.isNotEmpty && _blueprintSlots.values.first != null
+                            ? _blueprintSlots.values.first!
+                            : "",
+                        displayText: "Type the first point to finalize the outline",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },
     );
   }
 }
-
-

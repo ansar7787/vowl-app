@@ -19,6 +19,7 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;
@@ -42,6 +43,7 @@ class _SummarizeStoryWritingScreenState
 
   bool _showConfetti = false;
   WritingQuest? _lastQuest;
+  bool _pendingSubmit = false;
 
   @override
   void initState() {
@@ -79,13 +81,26 @@ class _SummarizeStoryWritingScreenState
     });
   }
 
-
-
   void _submitAnswer(bool isAnswered) {
     if (isAnswered) return;
+    setState(() {
+      _pendingSubmit = true;
+    });
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    setState(() {
+      _pendingSubmit = false;
+    });
 
     final state = context.read<WritingBloc>().state;
     if (state is! WritingLoaded) return;
+
+    if (!nailedTyping) {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
 
     final WritingQuest? quest = state.currentQuest as WritingQuest?;
     if (quest == null) return;
@@ -108,6 +123,7 @@ class _SummarizeStoryWritingScreenState
     context.read<WritingBloc>().add(SubmitAnswer(isAllCorrect));
   }
 
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -121,6 +137,7 @@ class _SummarizeStoryWritingScreenState
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           setState(() {
+            _pendingSubmit = false;
             for (var slot in _slots) {
               slot.sentence = null;
             }
@@ -174,93 +191,104 @@ class _SummarizeStoryWritingScreenState
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        SummarizeStoryWritingInstruction(
-                          instruction: context.tr(
-                            'games.summarizeStoryWriting_instruction',
-                            fallback: quest.instruction,
-                          ),
-                          primaryColor: theme.primaryColor,
-                        ),
-                        SizedBox(height: 24.h),
-
-                        SummarizeStoryManuscript(
-                          story: quest.story ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
-
-                        SummarizeStoryFilmStrip(
-                          slots: _slots,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onDropFrame: (idx, sentence) =>
-                              _onDropFrame(idx, sentence, isAnswered),
-                          onRemoveFrame: (idx) => _removeFrame(idx, isAnswered),
-                        ),
-                        SizedBox(height: 24.h),
-
-                        SummarizeStoryFrameVault(
-                          options: options,
-                          slots: _slots,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onTapOption: (text) => _onTapOption(text, isAnswered),
-                        ),
-                        SizedBox(height: 32.h),
-
-                        if (isSlotsFilled && !isAnswered)
-                          ScaleButton(
-                            onTap: () => _submitAnswer(isAnswered),
-                            child: Container(
-                              width: double.infinity,
-                              padding: EdgeInsets.symmetric(vertical: 18.h),
-                              decoration: BoxDecoration(
-                                color: theme.primaryColor,
-                                borderRadius: BorderRadius.circular(20.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: theme.primaryColor.withValues(alpha: 0.4),
-                                    blurRadius: 15,
-                                    offset: const Offset(0, 5),
-                                  ),
-                                ],
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            SummarizeStoryWritingInstruction(
+                              instruction: context.tr(
+                                'games.summarizeStoryWriting_instruction',
+                                fallback: quest.instruction,
                               ),
-                              child: Center(
-                                child: Text(
-                                  context.tr('common.check_answer', fallback: 'CHECK ANSWER'),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 18.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
+                              primaryColor: theme.primaryColor,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            SummarizeStoryManuscript(
+                              story: quest.story ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            SummarizeStoryFilmStrip(
+                              slots: _slots,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onDropFrame: (idx, sentence) =>
+                                  _onDropFrame(idx, sentence, isAnswered),
+                              onRemoveFrame: (idx) => _removeFrame(idx, isAnswered),
+                            ),
+                            SizedBox(height: 24.h),
+
+                            SummarizeStoryFrameVault(
+                              options: options,
+                              slots: _slots,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onTapOption: (text) => _onTapOption(text, isAnswered),
+                            ),
+                            SizedBox(height: 32.h),
+
+                            if (isSlotsFilled && !isAnswered)
+                              ScaleButton(
+                                onTap: () => _submitAnswer(isAnswered),
+                                child: Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.symmetric(vertical: 18.h),
+                                  decoration: BoxDecoration(
+                                    color: theme.primaryColor,
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: theme.primaryColor.withValues(alpha: 0.4),
+                                        blurRadius: 15,
+                                        offset: const Offset(0, 5),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      context.tr('common.check_answer', fallback: 'CHECK ANSWER'),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
 
-                        SizedBox(height: 60.h),
-                      ],
+                            SizedBox(height: 160.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_pendingSubmit && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _slots.isNotEmpty ? (_slots[0].sentence ?? "") : "",
+                        displayText: "Type the first sentence to finalize your summary",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },
     );
   }
 }
-
-

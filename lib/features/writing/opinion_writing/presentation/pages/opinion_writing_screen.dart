@@ -16,6 +16,7 @@ import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opini
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_thesis_card.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_scale_interface.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_argument_stones.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class OpinionWritingScreen extends StatefulWidget {
   final int level;
@@ -40,6 +41,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   bool _showConfetti = false;
   WritingQuest? _lastQuest;
   List<String> _shuffledOptions = [];
+  bool _pendingScaleSubmit = false;
 
   @override
   void initState() {
@@ -84,8 +86,25 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   }
 
   void _submitAnswer(bool isAnswered) {
+    if (isAnswered) return;
+    setState(() {
+      _pendingScaleSubmit = true;
+    });
+  }
+
+  void _submitFinalAnswer(bool nailedTyping) {
+    setState(() {
+      _pendingScaleSubmit = false;
+    });
+
     final state = context.read<WritingBloc>().state;
-    if (state is! WritingLoaded || isAnswered) return;
+    if (state is! WritingLoaded) return;
+
+    if (!nailedTyping) {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
 
     final quest = state.currentQuest;
     final options = quest.options ?? [];
@@ -124,6 +143,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             _leftPanArgs.clear();
             _rightPanArgs.clear();
             _scaleRotation = 0.0;
+            _pendingScaleSubmit = false;
             
             // Randomize options for pedagogical integrity
             _shuffledOptions = List.from(state.currentQuest.options ?? []);
@@ -161,100 +181,111 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        OpinionWritingInstruction(
-                          primaryColor: theme.primaryColor,
-                        ),
-                        SizedBox(height: 16.h),
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            OpinionWritingInstruction(
+                              primaryColor: theme.primaryColor,
+                            ),
+                            SizedBox(height: 16.h),
 
-                        OpinionWritingThesisCard(
-                          text: quest.prompt ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 8.h),
+                            OpinionWritingThesisCard(
+                              text: quest.prompt ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 8.h),
 
-                        OpinionWritingScaleInterface(
-                          scaleRotation: _scaleRotation,
-                          leftPanArgs: _leftPanArgs,
-                          rightPanArgs: _rightPanArgs,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          onDropArg: (arg, isLeft) =>
-                              _onDropArg(arg, isLeft, isAnswered),
-                          onRemoveArg: (arg, isLeft) =>
-                              _removeArg(arg, isLeft, isAnswered),
-                        ),
-                        SizedBox(height: 8.h),
+                            OpinionWritingScaleInterface(
+                              scaleRotation: _scaleRotation,
+                              leftPanArgs: _leftPanArgs,
+                              rightPanArgs: _rightPanArgs,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              onDropArg: (arg, isLeft) =>
+                                  _onDropArg(arg, isLeft, isAnswered),
+                              onRemoveArg: (arg, isLeft) =>
+                                  _removeArg(arg, isLeft, isAnswered),
+                            ),
+                            SizedBox(height: 8.h),
 
-                        OpinionWritingArgumentStones(
-                          options: options,
-                          leftPanArgs: _leftPanArgs,
-                          rightPanArgs: _rightPanArgs,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
+                            OpinionWritingArgumentStones(
+                              options: options,
+                              leftPanArgs: _leftPanArgs,
+                              rightPanArgs: _rightPanArgs,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
 
-                        if (!isAnswered)
-                          ScaleButton(
-                            onTap: totalPlaced == 4
-                                ? () => _submitAnswer(isAnswered)
-                                : null,
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: totalPlaced == 4
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (totalPlaced == 4)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
+                            if (!isAnswered)
+                              ScaleButton(
+                                onTap: totalPlaced == 4
+                                    ? () => _submitAnswer(isAnswered)
+                                    : null,
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    color: totalPlaced == 4
+                                        ? theme.primaryColor
+                                        : Colors.grey,
+                                    boxShadow: [
+                                      if (totalPlaced == 4)
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                        ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      totalPlaced == 4
+                                          ? "BALANCE THE TRUTH"
+                                          : "PLACE ${4 - totalPlaced} MORE CARDS",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
                                       ),
-                                      blurRadius: 15,
                                     ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  totalPlaced == 4
-                                      ? "BALANCE THE TRUTH"
-                                      : "PLACE ${4 - totalPlaced} MORE CARDS",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
 
-                        SizedBox(height: 60.h),
-                      ],
+                            SizedBox(height: 160.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_pendingScaleSubmit && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.prompt ?? "I have balanced the arguments",
+                        displayText: "Type the thesis to seal your argument",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },
     );
   }
 }
-
-
