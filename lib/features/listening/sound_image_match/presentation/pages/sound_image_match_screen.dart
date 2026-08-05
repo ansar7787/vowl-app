@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_instruction.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_scanner_field.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class SoundImageMatchScreen extends StatefulWidget {
   final int level;
@@ -39,6 +40,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
 
   @override
   void initState() {
@@ -54,6 +56,44 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
       _lensPosition = position;
       _hapticService.selection();
     });
+  }
+
+  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
+    if (_isAnswered || _pendingSelectedIndex == null) return;
+
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _pendingSelectedIndex == correct;
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+    }
   }
 
   void _submitAnswer(int index, int correct) {
@@ -99,6 +139,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _lensPosition = const Offset(150, 150);
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -163,7 +204,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                         ? (gapUnit * 2).clamp(10.0, 24.0)
                         : 10.0;
 
-                    return SingleChildScrollView(
+                    return Stack(
+                      children: [
+                        SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(minHeight: maxHeight),
