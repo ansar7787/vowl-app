@@ -165,13 +165,19 @@ class SettingsDialogs {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Disable Notifications Confirmation
-  // ---------------------------------------------------------------------------
-
-  static Future<bool?> showDisableNotificationConfirmation(
-    BuildContext context,
-  ) {
+  static Future<bool?> _showDisableConfirmation({
+    required BuildContext context,
+    required IconData icon,
+    required Color color,
+    required String titleKey,
+    required String titleFallback,
+    required String bodyKey,
+    required String bodyFallback,
+    required String keepKey,
+    required String keepFallback,
+    required String disableKey,
+    required String disableFallback,
+  }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     di.sl<HapticService>().warning();
     final width = _dialogWidth(context, 320.w);
@@ -192,16 +198,10 @@ class SettingsDialogs {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _DialogIcon(
-                  icon: Icons.notifications_off_rounded,
-                  color: Colors.orange,
-                ),
+                _DialogIcon(icon: icon, color: color),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr(
-                    'settings_dialogs.disable_notifications_title',
-                    fallback: 'Disable Notifications?',
-                  ),
+                  context.tr(titleKey, fallback: titleFallback),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 24.sp,
@@ -212,11 +212,7 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  // FIX (HIGH-2): Was hardcoded English. Now localised.
-                  context.tr(
-                    'settings_dialogs.disable_notifications_body',
-                    fallback: 'You will miss out on daily reminders.',
-                  ),
+                  context.tr(bodyKey, fallback: bodyFallback),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -227,19 +223,13 @@ class SettingsDialogs {
                 ),
                 SizedBox(height: 32.h),
                 _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.keep_reminders',
-                    fallback: 'Keep Reminders',
-                  ),
+                  label: context.tr(keepKey, fallback: keepFallback),
                   color: Colors.blue,
                   onPressed: () => Navigator.pop(dialogContext, false),
                 ),
                 SizedBox(height: 12.h),
                 _DestructiveTextButton(
-                  label: context.tr(
-                    'settings_dialogs.yes_disable',
-                    fallback: 'Yes, Disable',
-                  ),
+                  label: context.tr(disableKey, fallback: disableFallback),
                   onPressed: () => Navigator.pop(dialogContext, true),
                 ),
               ],
@@ -249,6 +239,26 @@ class SettingsDialogs {
       ),
       transitionBuilder: (_, anim1, anim2, child) =>
           _dialogTransition(anim1, child),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Disable Notifications Confirmation
+  // ---------------------------------------------------------------------------
+
+  static Future<bool?> showDisableNotificationConfirmation(BuildContext context) {
+    return _showDisableConfirmation(
+      context: context,
+      icon: Icons.notifications_off_rounded,
+      color: Colors.orange,
+      titleKey: 'settings_dialogs.disable_notifications_title',
+      titleFallback: 'Disable Notifications?',
+      bodyKey: 'settings_dialogs.disable_notifications_body',
+      bodyFallback: 'You will miss out on daily reminders.',
+      keepKey: 'settings_dialogs.keep_reminders',
+      keepFallback: 'Keep Reminders',
+      disableKey: 'settings_dialogs.yes_disable',
+      disableFallback: 'Yes, Disable',
     );
   }
 
@@ -257,82 +267,18 @@ class SettingsDialogs {
   // ---------------------------------------------------------------------------
 
   static Future<bool?> showDisableSoundConfirmation(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    di.sl<HapticService>().warning();
-    final width = _dialogWidth(context, 320.w);
-
-    return showGeneralDialog<bool>(
+    return _showDisableConfirmation(
       context: context,
-      barrierDismissible: true,
-      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
-      barrierColor: Colors.black54,
-      transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (dialogContext, anim1, anim2) => Center(
-        child: Material(
-          color: Colors.transparent,
-          child: GlassTile(
-            width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(icon: Icons.volume_off_rounded, color: Colors.pink),
-                SizedBox(height: 24.h),
-                Text(
-                  // FIX (HIGH-2): Was hardcoded 'Mute Game Sounds?'
-                  context.tr(
-                    'settings_dialogs.disable_sound_title',
-                    fallback: 'Disable Sound?',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  // FIX (HIGH-2): Was hardcoded 'Clear audio and guidance...'
-                  context.tr(
-                    'settings_dialogs.disable_sound_body',
-                    fallback: 'This will mute all game sounds.',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                // FIX (HIGH-2): 'Keep It On' and 'Mute Anyway' localised.
-                _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.keep_sound_on',
-                    fallback: 'Keep Sound On',
-                  ),
-                  color: Colors.blue,
-                  onPressed: () => Navigator.pop(dialogContext, false),
-                ),
-                SizedBox(height: 12.h),
-                _DestructiveTextButton(
-                  label: context.tr(
-                    'settings_dialogs.mute_anyway',
-                    fallback: 'Mute Anyway',
-                  ),
-                  onPressed: () => Navigator.pop(dialogContext, true),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      transitionBuilder: (_, anim1, anim2, child) =>
-          _dialogTransition(anim1, child),
+      icon: Icons.volume_off_rounded,
+      color: Colors.pink,
+      titleKey: 'settings_dialogs.disable_sound_title',
+      titleFallback: 'Disable Sound?',
+      bodyKey: 'settings_dialogs.disable_sound_body',
+      bodyFallback: 'This will mute all game sounds.',
+      keepKey: 'settings_dialogs.keep_sound_on',
+      keepFallback: 'Keep Sound On',
+      disableKey: 'settings_dialogs.mute_anyway',
+      disableFallback: 'Mute Anyway',
     );
   }
 
@@ -341,79 +287,18 @@ class SettingsDialogs {
   // ---------------------------------------------------------------------------
 
   static Future<bool?> showDisableSpeechConfirmation(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    di.sl<HapticService>().warning();
-    final width = _dialogWidth(context, 320.w);
-
-    return showGeneralDialog<bool>(
+    return _showDisableConfirmation(
       context: context,
-      barrierDismissible: true,
-      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
-      barrierColor: Colors.black54,
-      transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (dialogContext, anim1, anim2) => Center(
-        child: Material(
-          color: Colors.transparent,
-          child: GlassTile(
-            width: width,
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(40.r),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _DialogIcon(icon: Icons.mic_off_rounded, color: Colors.cyan),
-                SizedBox(height: 24.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.disable_speech_title',
-                    fallback: 'Disable Speaking?',
-                  ),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 16.h),
-                Text(
-                  context.tr(
-                    'settings_dialogs.disable_speech_body',
-                    fallback: 'You will miss out on crucial speaking practice.',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? Colors.white60 : Colors.black54,
-                    height: 1.5,
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                _PrimaryButton(
-                  label: context.tr(
-                    'settings_dialogs.keep_speaking',
-                    fallback: 'Keep Speaking',
-                  ),
-                  color: Colors.blue,
-                  onPressed: () => Navigator.pop(dialogContext, false),
-                ),
-                SizedBox(height: 12.h),
-                _DestructiveTextButton(
-                  label: context.tr(
-                    'settings_dialogs.disable_anyway',
-                    fallback: 'Disable Anyway',
-                  ),
-                  onPressed: () => Navigator.pop(dialogContext, true),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      transitionBuilder: (_, anim1, anim2, child) =>
-          _dialogTransition(anim1, child),
+      icon: Icons.mic_off_rounded,
+      color: Colors.cyan,
+      titleKey: 'settings_dialogs.disable_speech_title',
+      titleFallback: 'Disable Speaking?',
+      bodyKey: 'settings_dialogs.disable_speech_body',
+      bodyFallback: 'You will miss out on crucial speaking practice.',
+      keepKey: 'settings_dialogs.keep_speaking',
+      keepFallback: 'Keep Speaking',
+      disableKey: 'settings_dialogs.disable_anyway',
+      disableFallback: 'Disable Anyway',
     );
   }
 
