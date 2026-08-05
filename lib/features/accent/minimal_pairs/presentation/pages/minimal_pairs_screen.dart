@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -419,7 +419,7 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                     context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
                     _submitVerbalEvaluation(true);
                   },
-                  onSkipped: () => _submitVerbalEvaluation(true), // Skip speaking but keep the correct answer!
+                  onSkipped: () => _submitVerbalEvaluation(false), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

@@ -1,4 +1,4 @@
-import 'dart:math' as math;
+﻿import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -313,7 +313,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                   context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
                   _submitVerbalEvaluation(true);
                 },
-                onSkipped: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );

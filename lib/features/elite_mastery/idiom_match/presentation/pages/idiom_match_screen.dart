@@ -269,7 +269,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                 expectedText: expectedText,
                 primaryColor: theme.primaryColor,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(true), // Skip speaking but keep the correct answer
+                onSkipped: () => _submitVerbalEvaluation(false), // Penalize if user evaluates poorly
               ),
           ],
         );

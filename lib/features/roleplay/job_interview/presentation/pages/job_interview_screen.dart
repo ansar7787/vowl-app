@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -265,7 +265,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                   context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
                   _submitVerbalEvaluation(true);
                 },
-                onSkipped: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(false),
               ),
           ],
         );
