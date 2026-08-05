@@ -14,6 +14,7 @@ import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class ClozeTestScreen extends StatefulWidget {
   final int level;
@@ -33,6 +34,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   final _soundService = di.sl<SoundService>();
 
   String? _dockedOption;
+  String? _pendingDockedOption;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -48,10 +50,29 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   }
 
   void _onDock(String option, String correct) {
-    if (_isAnswered) return;
-    setState(() => _dockedOption = option);
-    _hapticService.success();
-    _submitAnswer(option, correct);
+    if (_isAnswered || _pendingDockedOption != null) return;
+    _hapticService.selection();
+    setState(() => _pendingDockedOption = option);
+  }
+
+  void _submitFinalAnswer(bool nailedTyping, String correct) {
+    if (_pendingDockedOption == null) return;
+
+    if (!nailedTyping) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _dockedOption = _pendingDockedOption;
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    final selected = _pendingDockedOption!;
+    setState(() => _dockedOption = _pendingDockedOption);
+    _submitAnswer(selected, correct);
   }
 
   void _submitAnswer(String selected, String correct) {
@@ -65,7 +86,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -73,7 +94,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -96,6 +117,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _dockedOption = null;
+              _pendingDockedOption = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -127,50 +149,64 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ClozeTestInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: context.tr(
-                            'games.clozeTest_instruction',
-                            fallback:
-                                'Complete the sentence by docking the correct word.',
-                          ),
-                        ),
-                        SizedBox(height: 32.h),
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ClozeTestInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: context.tr(
+                                'games.clozeTest_instruction',
+                                fallback:
+                                    'Complete the sentence by docking the correct word.',
+                              ),
+                            ),
+                            SizedBox(height: 32.h),
 
-                        ClozeTestPneumaticPort(
-                          text: quest.passage ?? "",
-                          correct: quest.correctAnswer ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          dockedOption: _dockedOption,
-                          isAnswered: _isAnswered,
-                          onDock: (opt) =>
-                              _onDock(opt, quest.correctAnswer ?? ""),
-                        ),
-                        SizedBox(height: 40.h),
+                            ClozeTestPneumaticPort(
+                              text: quest.passage ?? "",
+                              correct: quest.correctAnswer ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              dockedOption: _dockedOption ?? _pendingDockedOption,
+                              isAnswered: _isAnswered,
+                              onDock: (opt) =>
+                                  _onDock(opt, quest.correctAnswer ?? ""),
+                            ),
+                            SizedBox(height: 40.h),
 
-                        ClozeTestFuelCells(
-                          options: quest.options ?? [],
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          dockedOption: _dockedOption,
-                        ),
+                            ClozeTestFuelCells(
+                              options: quest.options ?? [],
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              dockedOption: _dockedOption ?? _pendingDockedOption,
+                            ),
 
-                        SizedBox(height: 60.h),
-                      ],
+                            SizedBox(height: 180.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_pendingDockedOption != null && !_isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: _pendingDockedOption!,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () =>
+                            _submitFinalAnswer(true, quest.correctAnswer ?? ""),
+                        onSkipped: () =>
+                            _submitFinalAnswer(false, quest.correctAnswer ?? ""),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },

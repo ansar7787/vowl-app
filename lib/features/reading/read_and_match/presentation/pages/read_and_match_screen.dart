@@ -14,6 +14,28 @@ import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_a
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_result.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+
+class ReadAndMatchScreen extends StatefulWidget {
+  final int level;
+  final GameSubtype gameType;
+  const ReadAndMatchScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.readAndMatch,
+  });
+
+  @override
+  State<ReadAndMatchScreen> createState() => _ReadAndMatchScreenState();
+}
+
+class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
+  final _hapticService = di.sl<HapticService>();
+  final _soundService = di.sl<SoundService>();
+
+  final GlobalKey _canvasKey = GlobalKey();
+  final Map<String, GlobalKey> _terminalKeys = {};
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;
@@ -42,6 +64,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingSubmission = false;
 
   @override
   void initState() {
@@ -92,8 +115,38 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     });
 
     if (_matches.length == pairs.length) {
-      _submitAnswer(pairs);
+      setState(() {
+        _pendingSubmission = true;
+      });
     }
+  }
+
+  void _submitFinalAnswer(bool nailedSpeaking, List<Map<String, String>> pairs) {
+    setState(() {
+      _pendingSubmission = false;
+    });
+
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (mounted) {
+          setState(() {
+            _matches.clear();
+            _isAnswered = false;
+            _isCorrect = null;
+          });
+        }
+      });
+      return;
+    }
+
+    _submitAnswer(pairs);
   }
 
   void _submitAnswer(List<Map<String, String>> pairs) {
@@ -153,6 +206,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
               _isCorrect = null;
               _matches.clear();
               _activeKey = null;
+              _pendingSubmission = false;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -193,105 +247,117 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ReadAndMatchInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
-                        ),
-                        SizedBox(height: 32.h),
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ReadAndMatchInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 32.h),
 
-                        // Interactive Canvas Stack
-                        SizedBox(
-                          key: _canvasKey,
-                          height: 420.h,
-                          child: Stack(
-                            children: [
-                              Row(
+                            // Interactive Canvas Stack
+                            SizedBox(
+                              key: _canvasKey,
+                              height: 420.h,
+                              child: Stack(
                                 children: [
-                                  // Left Keys Column
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: keys
-                                          .map(
-                                            (k) => ReadAndMatchTerminal(
-                                              text: k,
-                                              isSource: true,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isMatched: _matches.containsKey(
-                                                k,
-                                              ),
-                                              isActive: _activeKey == k,
-                                              onTap: () => _onKeyTap(k),
-                                            ),
-                                          )
-                                          .toList(),
-                                    ),
+                                  Row(
+                                    children: [
+                                      // Left Keys Column
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: keys
+                                              .map(
+                                                (k) => ReadAndMatchTerminal(
+                                                  text: k,
+                                                  isSource: true,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isMatched: _matches.containsKey(
+                                                    k,
+                                                  ),
+                                                  isActive: _activeKey == k,
+                                                  onTap: () => _onKeyTap(k),
+                                                ),
+                                              )
+                                              .toList(),
+                                        ),
+                                      ),
+                                      SizedBox(width: 40.w),
+                                      // Right Values Column
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: values
+                                              .map(
+                                                (v) => ReadAndMatchTerminal(
+                                                  text: v,
+                                                  isSource: false,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isMatched: _matches.containsValue(
+                                                    v,
+                                                  ),
+                                                  isActive: false,
+                                                  onTap: () =>
+                                                      _onValueTap(v, pairs),
+                                                ),
+                                              )
+                                              .toList(),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(width: 40.w),
-                                  // Right Values Column
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: values
-                                          .map(
-                                            (v) => ReadAndMatchTerminal(
-                                              text: v,
-                                              isSource: false,
-                                              color: theme.primaryColor,
-                                              isDark: isDark,
-                                              isMatched: _matches.containsValue(
-                                                v,
-                                              ),
-                                              isActive: false,
-                                              onTap: () =>
-                                                  _onValueTap(v, pairs),
-                                            ),
-                                          )
-                                          .toList(),
+
+                                  // Render Glowing Lasers dynamically using key positions!
+                                  IgnorePointer(
+                                    child: CustomPaint(
+                                      painter: LaserBridgePainter(
+                                        matches: _matches,
+                                        activeKey: _activeKey,
+                                        getCenter: _getCenterOf,
+                                        getKey: _getKeyFor,
+                                        color: theme.primaryColor,
+                                      ),
+                                      size: Size.infinite,
                                     ),
                                   ),
                                 ],
                               ),
+                            ),
 
-                              // Render Glowing Lasers dynamically using key positions!
-                              IgnorePointer(
-                                child: CustomPaint(
-                                  painter: LaserBridgePainter(
-                                    matches: _matches,
-                                    activeKey: _activeKey,
-                                    getCenter: _getCenterOf,
-                                    getKey: _getKeyFor,
-                                    color: theme.primaryColor,
-                                  ),
-                                  size: Size.infinite,
-                                ),
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              ReadAndMatchResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
                               ),
                             ],
-                          ),
+                            SizedBox(height: 50.h),
+                          ],
                         ),
-
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ReadAndMatchResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 50.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (_pendingSubmission && !_isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.textToSpeak ?? quest.correctAnswer ?? "Confirm",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, pairs),
+                        onSkipped: () => _submitFinalAnswer(false, pairs),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },

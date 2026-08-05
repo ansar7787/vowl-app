@@ -14,6 +14,21 @@ import 'package:vowl/features/reading/reading_inference/presentation/widgets/rea
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_option.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+
+class ReadingInferenceScreen extends StatefulWidget {
+  final int level;
+  final GameSubtype gameType;
+  const ReadingInferenceScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.readingInference,
+  });
+
+  @override
+  State<ReadingInferenceScreen> createState() => _ReadingInferenceScreenState();
+}
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;
@@ -35,6 +50,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   final List<Offset> _rubPoints = [];
   double _clarity = 0.0;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -60,29 +76,42 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     });
   }
 
-  void _onChoiceTap(int index, String selected, String correct) {
-    if (_isAnswered || _clarity < 0.3) return;
-    setState(() => _selectedIndex = index);
+  void _onChoiceTap(int index) {
+    if (_isAnswered || _clarity < 0.3 || _pendingSelectedIndex != null) return;
+    setState(() => _pendingSelectedIndex = index);
+  }
 
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
+    if (_pendingSelectedIndex == null) return;
+    
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    final selected = quest.options![_pendingSelectedIndex!];
+    final correct = quest.correctAnswer ?? "";
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    setState(() {
+      _selectedIndex = _pendingSelectedIndex;
+      _isAnswered = true;
+      _isCorrect = isCorrect;
+    });
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -105,6 +134,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _rubPoints.clear();
               _clarity = 0.0;
             });
@@ -142,7 +172,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -188,14 +220,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                             correct: quest.correctAnswer ?? "",
                             color: theme.primaryColor,
                             isDark: isDark,
-                            selectedIndex: _selectedIndex,
+                            selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
                             isAnswered: _isAnswered,
                             clarity: _clarity,
-                            onTap: () => _onChoiceTap(
-                              index,
-                              quest.options![index],
-                              quest.correctAnswer ?? "",
-                            ),
+                            onTap: () => _onChoiceTap(index),
                           ),
                         ),
 
@@ -212,6 +240,16 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                     ),
                   ),
                 ),
+                if (_pendingSelectedIndex != null && !_isAnswered)
+                  SpeakToConfirmOverlay(
+                    expectedText: quest.options![_pendingSelectedIndex!],
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true, quest),
+                    onSkipped: () => _submitFinalAnswer(false, quest),
+                    allowSkip: true,
+                  ),
+              ],
+            ),
         );
       },
     );

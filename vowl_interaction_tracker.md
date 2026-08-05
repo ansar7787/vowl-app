@@ -54,12 +54,12 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 - [x] 4. Sentence Order (Action: Verify Reorder is working)
 - [x] 5. Reading Speed Check (Action: Verify Timed scroll)
 - [x] 6. Guess Title (Action: Implement **Dynamic Jigsaw** - rebuild the title)
-- [ ] 7. Read and Match (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 8. Paragraph Summary (Action: Verify Condenser is working)
-- [ ] 9. Reading Inference (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 10. Reading Conclusion (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 11. Cloze Test (Action: Verify Typing is working)
-- [ ] 12. Skimming Scanning (Action: Verify Search/Scroll)
+- [x] 7. Read and Match (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 8. Paragraph Summary (Action: Verify Condenser is working)
+- [x] 9. Reading Inference (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 10. Reading Conclusion (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 11. Cloze Test (Action: Verify Typing is working)
+- [x] 12. Skimming Scanning (Action: Verify Search/Scroll)
 
 ## 4. WRITING (11 Games)
 *Goal: Ensure anti-gibberish checks are active. No overlays needed.*

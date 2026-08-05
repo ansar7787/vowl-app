@@ -16,6 +16,7 @@ import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/re
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_terminals.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_result.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_bridge_painter.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   Offset? _dragStart;
   Offset? _dragCurrent;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -53,7 +55,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   }
 
   void _onBridgeStart(Offset globalPosition) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingSelectedIndex != null) return;
     final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
     if (renderBox != null) {
       final localPos = renderBox.globalToLocal(globalPosition);
@@ -66,7 +68,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   }
 
   void _onBridgeUpdate(Offset globalPosition) {
-    if (_isAnswered || _dragStart == null) return;
+    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null) return;
     final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
     if (renderBox != null) {
       setState(() {
@@ -81,9 +83,32 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   }
 
   void _submitAnswer(int index, String selected, String correct) {
-    setState(() => _selectedIndex = index);
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    if (_isAnswered || _pendingSelectedIndex != null) return;
+    setState(() {
+      _pendingSelectedIndex = index;
+      _dragStart = null;
+      _dragCurrent = null;
+    });
+  }
+
+  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
+    if (_pendingSelectedIndex == null) return;
+    
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    final selected = quest.options![_pendingSelectedIndex!];
+    final correct = quest.correctAnswer ?? "";
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    setState(() => _selectedIndex = _pendingSelectedIndex);
 
     if (isCorrect) {
       _hapticService.success();
@@ -92,7 +117,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -100,13 +125,14 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(1.seconds, () {
         if (mounted) {
           setState(() {
             _dragStart = null;
             _dragCurrent = null;
             _selectedIndex = null;
+            _pendingSelectedIndex = null;
           });
         }
       });
@@ -132,6 +158,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _dragStart = null;
               _dragCurrent = null;
             });
@@ -165,8 +192,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -198,7 +225,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                               correct: quest.correctAnswer ?? "",
                               color: theme.primaryColor,
                               isDark: isDark,
-                              selectedIndex: _selectedIndex,
+                              selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
                               isAnswered: _isAnswered,
                               onBridgeEnd: (idx, opt) => _onBridgeEnd(
                                 idx,
@@ -225,7 +252,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                         ),
                       ),
                     ),
-                    if (_dragStart != null && _dragCurrent != null)
+                    if (_dragStart != null && _dragCurrent != null && _pendingSelectedIndex == null)
                       IgnorePointer(
                         child: CustomPaint(
                           painter: BridgePainter(
@@ -235,6 +262,14 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                           ),
                           size: Size.infinite,
                         ),
+                      ),
+                    if (_pendingSelectedIndex != null && !_isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.options![_pendingSelectedIndex!],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
                       ),
                   ],
                 ),
