@@ -35,27 +35,6 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
 
   final GlobalKey _canvasKey = GlobalKey();
   final Map<String, GlobalKey> _terminalKeys = {};
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
-
-class ReadAndMatchScreen extends StatefulWidget {
-  final int level;
-  final GameSubtype gameType;
-  const ReadAndMatchScreen({
-    super.key,
-    required this.level,
-    this.gameType = GameSubtype.readAndMatch,
-  });
-
-  @override
-  State<ReadAndMatchScreen> createState() => _ReadAndMatchScreenState();
-}
-
-class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-
-  final GlobalKey _canvasKey = GlobalKey();
-  final Map<String, GlobalKey> _terminalKeys = {};
 
   String? _activeKey;
   final Map<String, String> _matches = {};
@@ -165,7 +144,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -173,7 +152,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
       Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           setState(() {
@@ -243,8 +222,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(

@@ -28,20 +28,6 @@ class ReadingInferenceScreen extends StatefulWidget {
   @override
   State<ReadingInferenceScreen> createState() => _ReadingInferenceScreenState();
 }
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
-
-class ReadingInferenceScreen extends StatefulWidget {
-  final int level;
-  final GameSubtype gameType;
-  const ReadingInferenceScreen({
-    super.key,
-    required this.level,
-    this.gameType = GameSubtype.readingInference,
-  });
-
-  @override
-  State<ReadingInferenceScreen> createState() => _ReadingInferenceScreenState();
-}
 
 class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   final _hapticService = di.sl<HapticService>();
@@ -168,88 +154,88 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
                   children: [
                     SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ReadingInferenceInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
-                        ),
-                        SizedBox(height: 32.h),
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ReadingInferenceInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 32.h),
 
-                        ReadingInferenceFoggyMirror(
-                          passage: quest.passage ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          isAnswered: _isAnswered,
-                          rubPoints: _rubPoints,
-                          clarity: _clarity,
-                          onRub: _onRub,
-                        ),
-                        SizedBox(height: 32.h),
+                            ReadingInferenceFoggyMirror(
+                              passage: quest.passage ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              isAnswered: _isAnswered,
+                              rubPoints: _rubPoints,
+                              clarity: _clarity,
+                              onRub: _onRub,
+                            ),
+                            SizedBox(height: 32.h),
 
-                        Text(
-                          quest.question?.toUpperCase() ??
-                              "INFER THE HIDDEN TRUTH",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: theme.primaryColor,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
+                            Text(
+                              quest.question?.toUpperCase() ??
+                                  "INFER THE HIDDEN TRUTH",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: theme.primaryColor,
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                            SizedBox(height: 24.h),
 
-                        ...List.generate(
-                          quest.options?.length ?? 0,
-                          (index) => ReadingInferenceOption(
-                            index: index,
-                            text: quest.options![index],
-                            correct: quest.correctAnswer ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
-                            isAnswered: _isAnswered,
-                            clarity: _clarity,
-                            onTap: () => _onChoiceTap(index),
-                          ),
-                        ),
+                            ...List.generate(
+                              quest.options?.length ?? 0,
+                              (index) => ReadingInferenceOption(
+                                index: index,
+                                text: quest.options![index],
+                                correct: quest.correctAnswer ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
+                                isAnswered: _isAnswered,
+                                clarity: _clarity,
+                                onTap: () => _onChoiceTap(index),
+                              ),
+                            ),
 
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ReadingInferenceResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 60.h),
-                      ],
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              ReadingInferenceResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    if (_pendingSelectedIndex != null && !_isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.options![_pendingSelectedIndex!],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
-                if (_pendingSelectedIndex != null && !_isAnswered)
-                  SpeakToConfirmOverlay(
-                    expectedText: quest.options![_pendingSelectedIndex!],
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true, quest),
-                    onSkipped: () => _submitFinalAnswer(false, quest),
-                    allowSkip: true,
-                  ),
-              ],
-            ),
         );
       },
     );
