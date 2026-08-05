@@ -243,7 +243,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                   SizedBox(width: 12.w),
                   Expanded(
                     child: Text(
-                      "Phase 1: Listen to the example.\nPhase 2: Speak and match the exact accent and rhythm.",
+                      quest.instruction.isNotEmpty
+                          ? quest.instruction
+                          : context.tr(
+                              'games.accent_shadowing_instruction',
+                              fallback: 'Listen to the example, then speak and match the exact accent and rhythm.',
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
