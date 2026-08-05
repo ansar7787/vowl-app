@@ -11,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class ClauseConnectorScreen extends StatefulWidget {
   final int level;
@@ -35,6 +36,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingJigsaw = false;
 
   @override
   void initState() {
@@ -45,7 +47,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   }
 
   void _onSnap(String connector, int correctIndex, List<String> options) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingJigsaw) return;
 
     bool isCorrect = connector == options[correctIndex];
 
@@ -53,11 +55,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       _hapticService.heavy();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
         _draggingConnector = connector;
+        _pendingJigsaw = true;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -66,8 +66,26 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         _isCorrect = false;
         _draggingConnector = connector;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.success();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   @override
@@ -88,9 +106,10 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingJigsaw = false;
+              _draggingConnector = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -117,6 +136,18 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         final clauseA = parts[0];
         final clauseB = parts.length > 1 ? parts[1] : "...";
         final options = quest?.options ?? [];
+        
+        String cleanTargetSentence = "";
+        if (quest != null) {
+            final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+            if (sentence.isNotEmpty) {
+                cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
+            } else {
+                // Fallback to assembling it
+                final correctConnector = options.isNotEmpty && quest.correctAnswerIndex != null ? options[quest.correctAnswerIndex!] : "";
+                cleanTargetSentence = "$clauseA $correctConnector $clauseB";
+            }
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -125,100 +156,112 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 50.h : 80.h) * 2 +
-                        (isCompact ? 50.h : 80.h) +
-                        (isCompact ? 60.h : 100.h) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 50.h : 80.h) * 2 +
+                            (isCompact ? 50.h : 80.h) +
+                            (isCompact ? 60.h : 100.h) +
+                            40.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(4.0, 15.0)
+                            : 4.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                            : 6.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                            : 10.0;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: ClauseConnectorInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: ClauseConnectorInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : ClauseConnectorInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
+                            SizedBox(height: gapMiddle),
+
+                            // Magnetic Energy Port Container
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    _buildHolographicPlate(
+                                      clauseA,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                    _buildMagneticPort(
+                                      quest,
+                                      options,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 10.h : 16.h),
+                                    _buildHolographicPlate(
+                                      clauseB,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ).animate().fadeIn(delay: 300.ms),
+                                  ],
                                 ),
-                              )
-                            : ClauseConnectorInstruction(
-                                primaryColor: theme.primaryColor,
                               ),
-                        SizedBox(height: gapMiddle),
-
-                        // Magnetic Energy Port Container
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                _buildHolographicPlate(
-                                  clauseA,
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
-                                ),
-                                SizedBox(height: isCompact ? 10.h : 16.h),
-                                _buildMagneticPort(
-                                  quest,
-                                  options,
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
-                                ),
-                                SizedBox(height: isCompact ? 10.h : 16.h),
-                                _buildHolographicPlate(
-                                  clauseB,
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
-                                ).animate().fadeIn(delay: 300.ms),
-                              ],
                             ),
-                          ),
-                        ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        if (!_isAnswered)
-                          _buildConnectorPalette(
-                            options,
-                            theme.primaryColor,
-                            isDark,
-                            quest.correctAnswerIndex ?? 0,
-                            isCompact,
-                          ),
-                        SizedBox(height: gapBottom),
-                      ],
-                    );
-                  },
+                            if (!_isAnswered && !_pendingJigsaw)
+                              _buildConnectorPalette(
+                                options,
+                                theme.primaryColor,
+                                isDark,
+                                quest.correctAnswerIndex ?? 0,
+                                isCompact,
+                              ),
+                            SizedBox(height: gapBottom),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
@@ -233,13 +276,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     bool isCompact,
   ) {
     return DragTarget<String>(
-      onWillAcceptWithDetails: (details) => !_isAnswered,
+      onWillAcceptWithDetails: (details) => !_isAnswered && !_pendingJigsaw,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final portColor = _isAnswered
-            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+        final portColor = (_isAnswered || _pendingJigsaw)
+            ? (_isCorrect != false ? Colors.greenAccent : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
@@ -253,10 +296,10 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: _isAnswered ? BorderStyle.none : BorderStyle.solid,
+              style: (_isAnswered || _pendingJigsaw) ? BorderStyle.none : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || _isAnswered)
+              if (isHighlight || _isAnswered || _pendingJigsaw)
                 BoxShadow(
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,
@@ -265,13 +308,13 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             ],
           ),
           child: Center(
-            child: _isAnswered
+            child: (_isAnswered || _pendingJigsaw)
                 ? _buildConnector(
                     _draggingConnector ?? "---",
                     primaryColor,
                     isDark,
                     isCompact,
-                    isCorrect: _isCorrect,
+                    isCorrect: _isCorrect != false,
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : Text(
                     isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",

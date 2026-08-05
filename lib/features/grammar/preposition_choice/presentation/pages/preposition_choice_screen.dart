@@ -14,6 +14,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_choice_instruction.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/widgets/preposition_path_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class PrepositionChoiceScreen extends StatefulWidget {
   final int level;
@@ -40,6 +41,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingJigsaw = false;
 
   @override
   void initState() {
@@ -50,24 +52,45 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
   }
 
   void _onPathEnd(int nodeIndex, int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingJigsaw) return;
 
     bool isCorrect = nodeIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() {
+        _targetNode = nodeIndex;
+        _pendingJigsaw = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _targetNode = nodeIndex;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-      _targetNode = nodeIndex;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.success();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   List<InlineSpan> _buildSentenceWithBlank(
@@ -141,9 +164,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _targetNode = -1;
+              _pendingJigsaw = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -167,6 +191,16 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             ? state.currentQuest
             : null;
         final options = quest?.options ?? ["IN", "ON", "AT", "UNDER"];
+        
+        String cleanTargetSentence = "";
+        if (quest != null) {
+            final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
+            String fullSentence = sentence;
+            if (sentence.contains("___") && _targetNode != -1) {
+                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), options[_targetNode]);
+            }
+            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -175,131 +209,143 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Stack needs finite space to anchor to bottom
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 50.h : 80.h) +
-                        (isCompact ? 160.h : 260.h) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 50.h : 80.h) +
+                            (isCompact ? 160.h : 260.h) +
+                            40.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(4.0, 15.0)
+                            : 4.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                            : 6.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                            : 10.0;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: PrepositionChoiceInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: PrepositionChoiceInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : PrepositionChoiceInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : PrepositionChoiceInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        // Context Card
-                        Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.all(
-                                  isCompact ? 14.r : 22.r,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.05)
-                                      : Colors.black.withValues(alpha: 0.03),
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 18.r : 28.r,
-                                  ),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.15,
+                            // Context Card
+                            Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(
+                                      isCompact ? 14.r : 22.r,
                                     ),
-                                    width: 1.5,
-                                  ),
-                                ),
-                                child: RichText(
-                                  textAlign: TextAlign.center,
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: isCompact ? 15.sp : 20.sp,
+                                    decoration: BoxDecoration(
                                       color: isDark
-                                          ? Colors.white
-                                          : Colors.black87,
-                                      height: 1.5,
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(alpha: 0.03),
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 18.r : 28.r,
+                                      ),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
+                                      ),
                                     ),
-                                    children: _buildSentenceWithBlank(
-                                      quest.sentenceWithBlank ??
-                                          quest.question ??
-                                          "____ sentence.",
-                                      _isAnswered && _targetNode != -1
-                                          ? options[_targetNode]
-                                          : null,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
+                                    child: RichText(
+                                      textAlign: TextAlign.center,
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 15.sp : 20.sp,
+                                          color: isDark
+                                              ? Colors.white
+                                              : Colors.black87,
+                                          height: 1.5,
+                                        ),
+                                        children: _buildSentenceWithBlank(
+                                          quest.sentenceWithBlank ??
+                                              quest.question ??
+                                              "____ sentence.",
+                                          (_isAnswered || _pendingJigsaw) && _targetNode != -1
+                                              ? options[_targetNode]
+                                              : null,
+                                          theme.primaryColor,
+                                          isDark,
+                                          isCompact,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                )
+                                .animate()
+                                .fadeIn(duration: 600.ms)
+                                .slideY(begin: 0.2, end: 0),
+
+                            // Result Feedback
+                            if (_isAnswered) ...[
+                              SizedBox(height: isCompact ? 8.h : 24.h),
+                              _buildResult(
+                                quest,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
                               ),
-                            )
-                            .animate()
-                            .fadeIn(duration: 600.ms)
-                            .slideY(begin: 0.2, end: 0),
+                            ],
 
-                        // Result Feedback
-                        if (_isAnswered) ...[
-                          SizedBox(height: isCompact ? 8.h : 24.h),
-                          _buildResult(
-                            quest,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ],
+                            // Path Canvas
+                            Expanded(
+                              child: _buildPathCanvas(
+                                options,
+                                quest.correctAnswerIndex ?? 0,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
+                              ),
+                            ),
 
-                        // Path Canvas
-                        Expanded(
-                          child: _buildPathCanvas(
-                            options,
-                            quest.correctAnswerIndex ?? 0,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ),
-
-                        SizedBox(height: gapBottom),
-                      ],
-                    );
-                  },
+                            SizedBox(height: gapBottom),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
@@ -349,7 +395,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered) return;
+            if (_isAnswered || _pendingJigsaw) return;
             setState(() {
               _points.add(details.localPosition);
             });
@@ -369,7 +415,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
               nodes: nodePoints,
               options: options,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered,
+              isAnswered: _isAnswered || _pendingJigsaw,
               isCorrect: _isCorrect ?? false,
               targetNode: _targetNode,
               isDark: isDark,

@@ -14,6 +14,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_mastery_instruction.dart';
 import 'package:vowl/features/grammar/punctuation_mastery/presentation/widgets/punctuation_sticker_sheet.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class PunctuationMasteryScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,8 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingTyping = false;
+  String? _assembledSentence;
 
   @override
   void initState() {
@@ -48,13 +51,13 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   }
 
   void _onStick(int index, String mark) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingTyping) return;
     _hapticService.selection();
     setState(() => _placedStickers[index] = mark);
   }
 
   void _submitAnswer(GameQuest quest) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingTyping) return;
 
     final words = (quest.sentence ?? "").split(" ");
     String result = "";
@@ -73,16 +76,38 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() {
+        _assembledSentence = result;
+        _pendingTyping = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _assembledSentence = result;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingTyping = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.success();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   @override
@@ -103,9 +128,10 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingTyping = false;
+              _placedStickers.clear();
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -128,6 +154,16 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final marks = [".", ",", "!", "?", ";", ":"];
 
+        String cleanTargetSentence = "";
+        if (quest != null) {
+            final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+            if (sentence.isNotEmpty) {
+                cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
+            } else if (_assembledSentence != null) {
+                cleanTargetSentence = _assembledSentence!;
+            }
+        }
+
         return GrammarBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
@@ -135,137 +171,149 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Required for Stack Overlays
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: isCompact ? 4.h : 10.h),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: PunctuationMasteryInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: isCompact ? 4.h : 10.h),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: PunctuationMasteryInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : PunctuationMasteryInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : PunctuationMasteryInstruction(
+                            SizedBox(height: isCompact ? 8.h : 20.h),
+
+                            // Context Card with Sticker Slots
+                            Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(
+                                      isCompact ? 14.r : 22.r,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(alpha: 0.03),
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 18.r : 28.r,
+                                      ),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: _buildStickerSentence(
+                                      quest.sentence ?? "Missing sentence.",
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                  ),
+                                )
+                                .animate()
+                                .fadeIn(duration: 600.ms)
+                                .slideY(begin: 0.2, end: 0),
+
+                            // Result
+                            if (_isAnswered) ...[
+                              SizedBox(height: isCompact ? 12.h : 32.h),
+                              _buildResult(
+                                quest,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
+                              ),
+                            ],
+
+                            SizedBox(height: isCompact ? 16.h : 48.h),
+
+                            // Sticker Sheet
+                            if (!_isAnswered && !_pendingTyping)
+                              PunctuationStickerSheet(
+                                marks: marks,
                                 primaryColor: theme.primaryColor,
                               ),
-                        SizedBox(height: isCompact ? 8.h : 20.h),
 
-                        // Context Card with Sticker Slots
-                        Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.all(
-                                  isCompact ? 14.r : 22.r,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.05)
-                                      : Colors.black.withValues(alpha: 0.03),
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 18.r : 28.r,
-                                  ),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.15,
-                                    ),
-                                    width: 1.5,
-                                  ),
-                                ),
-                                child: _buildStickerSentence(
-                                  quest.sentence ?? "Missing sentence.",
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
-                                ),
-                              ),
-                            )
-                            .animate()
-                            .fadeIn(duration: 600.ms)
-                            .slideY(begin: 0.2, end: 0),
+                            const Spacer(),
 
-                        // Result
-                        if (_isAnswered) ...[
-                          SizedBox(height: isCompact ? 12.h : 32.h),
-                          _buildResult(
-                            quest,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ],
-
-                        SizedBox(height: isCompact ? 16.h : 48.h),
-
-                        // Sticker Sheet
-                        if (!_isAnswered)
-                          PunctuationStickerSheet(
-                            marks: marks,
-                            primaryColor: theme.primaryColor,
-                          ),
-
-                        const Spacer(),
-
-                        // Submit Button
-                        if (!_isAnswered)
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: ScaleButton(
-                              onTap: () => _submitAnswer(quest),
-                              child: Container(
-                                width: double.infinity,
-                                height: isCompact ? 48.h : 65.h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 16.r : 24.r,
-                                  ),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theme.primaryColor,
-                                      theme.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.4,
+                            // Submit Button
+                            if (!_isAnswered && !_pendingTyping)
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: ScaleButton(
+                                  onTap: () => _submitAnswer(quest),
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: isCompact ? 48.h : 65.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 16.r : 24.r,
                                       ),
-                                      blurRadius: 25,
-                                      offset: const Offset(0, 12),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          theme.primaryColor,
+                                          theme.primaryColor.withValues(alpha: 0.8),
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.4,
+                                          ),
+                                          blurRadius: 25,
+                                          offset: const Offset(0, 12),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "FINALIZE ARCHITECTURE",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: isCompact ? 13.sp : 16.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
+                                    child: Center(
+                                      child: Text(
+                                        "FINALIZE ARCHITECTURE",
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 13.sp : 16.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white,
+                                          letterSpacing: 2,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
 
-                        SizedBox(height: isCompact ? 12.h : 40.h),
-                      ],
-                    );
-                  },
+                            SizedBox(height: isCompact ? 12.h : 40.h),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingTyping && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      TypeToConfirmOverlay(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
@@ -337,7 +385,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                       child: mark != null
                           ? GestureDetector(
                               onTap: () {
-                                if (_isAnswered) return;
+                                if (_isAnswered || _pendingTyping) return;
                                 _hapticService.selection();
                                 setState(
                                   () => _placedStickers.remove(slotIndex),

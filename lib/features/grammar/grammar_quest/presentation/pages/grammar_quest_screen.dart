@@ -10,8 +10,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
-import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentence.dart';
-import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
   final int level;
@@ -44,21 +43,17 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
     );
   }
 
-  void _onQuadrantSelect(int index, int correctIndex) {
+  void _submitAnswer(bool correct) {
     if (_isAnswered) return;
 
-    _hapticService.selection();
-
-    bool isCorrect = index == correctIndex;
-
-    if (isCorrect) {
+    if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -66,13 +61,12 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -90,7 +84,6 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               _isCorrect = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -111,9 +104,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        final options =
-            quest?.options ??
-            ["Subject", "Verb", "Object", "Tense"]; // Fallback options
+        
+        String targetText = "";
+        if (quest != null) {
+            if (quest.options != null && quest.options!.isNotEmpty && quest.correctAnswerIndex != null && quest.correctAnswerIndex! < quest.options!.length) {
+                targetText = quest.options![quest.correctAnswerIndex!];
+            } else {
+                targetText = quest.correctAnswer ?? quest.sentence ?? "";
+            }
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -122,76 +121,44 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: true,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Stack needs finite space to anchor to bottom
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 60.h : 90.h) +
-                        (isCompact ? 180.r : 280.r) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
-
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
-
-                    return Column(
+              : Stack(
+                  children: [
+                    Column(
                       children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: GrammarQuestInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                                ),
-                              )
-                            : GrammarQuestInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: gapMiddle),
-                        GrammarQuestSentence(
-                          text: quest.sentence ?? quest.question ?? "",
-                          isDark: isDark,
-                          isCompact: isCompact,
-                        ),
-                        SizedBox(height: gapMiddle * 1.5),
-                        GrammarQuestCompass(
-                          options: options,
-                          correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                        SizedBox(height: 24.h),
+                        GrammarQuestInstruction(
                           primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          isAnswered: _isAnswered,
-                          isCorrect: _isCorrect,
-                          onQuadrantSelect: (index) => _onQuadrantSelect(
-                            index,
-                            quest.correctAnswerIndex ?? 0,
-                          ),
-                          isCompact: isCompact,
                         ),
-                        SizedBox(height: gapBottom),
+                        SizedBox(height: 24.h),
+                        if (_isAnswered)
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Text(
+                              targetText,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.bold,
+                                color: _isCorrect == true ? Colors.green : Colors.red,
+                              ),
+                            ),
+                          ),
                       ],
-                    );
-                  },
+                    ),
+                    if (!_isAnswered && targetText.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: targetText,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitAnswer(true),
+                        onSkipped: () => _submitAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },

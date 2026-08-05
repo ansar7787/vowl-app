@@ -14,6 +14,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class ModalsSelectionScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingJigsaw = false;
 
   @override
   void initState() {
@@ -48,23 +50,43 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   }
 
   void _submitAnswer(int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingJigsaw) return;
 
     bool isCorrect = _selectedIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() {
+        _pendingJigsaw = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.success();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   List<InlineSpan> _buildSentenceWithBlank(
@@ -137,9 +159,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingJigsaw = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -162,6 +184,16 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? ["CAN", "COULD", "MUST", "SHOULD"];
 
+        String cleanTargetSentence = "";
+        if (quest != null) {
+            final sentence = quest.sentence ?? quest.question ?? "";
+            String fullSentence = sentence;
+            if (sentence.contains("___")) {
+                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), options[_selectedIndex]);
+            }
+            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+        }
+
         return GrammarBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
@@ -169,176 +201,189 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Stack needs finite space to anchor to bottom
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 50.h : 80.h) +
-                        (isCompact ? 180.r : 280.r) +
-                        (isCompact ? 40.h : 65.h) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 50.h : 80.h) +
+                            (isCompact ? 180.r : 280.r) +
+                            (isCompact ? 40.h : 65.h) +
+                            40.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(4.0, 15.0)
+                            : 4.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                            : 6.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                            : 10.0;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: ModalsSelectionInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: ModalsSelectionInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : ModalsSelectionInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : ModalsSelectionInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        // Context Card with Fill-in-the-Blank
-                        Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.all(
-                                  isCompact ? 14.r : 22.r,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.05)
-                                      : Colors.black.withValues(alpha: 0.03),
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 18.r : 28.r,
-                                  ),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.15,
+                            // Context Card with Fill-in-the-Blank
+                            Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(
+                                      isCompact ? 14.r : 22.r,
                                     ),
-                                    width: 1.5,
-                                  ),
-                                ),
-                                child: RichText(
-                                  textAlign: TextAlign.center,
-                                  text: TextSpan(
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: isCompact ? 15.sp : 20.sp,
+                                    decoration: BoxDecoration(
                                       color: isDark
-                                          ? Colors.white
-                                          : Colors.black87,
-                                      height: 1.5,
-                                    ),
-                                    children: _buildSentenceWithBlank(
-                                      quest.question ?? "___ sentence.",
-                                      options[_selectedIndex],
-                                      theme.primaryColor,
-                                      isDark,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                            .animate()
-                            .fadeIn(duration: 600.ms)
-                            .slideY(begin: 0.2, end: 0),
-
-                        // Result Feedback
-                        if (_isAnswered) ...[
-                          SizedBox(height: isCompact ? 8.h : 24.h),
-                          _buildResult(
-                            quest,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ],
-
-                        // Rotary Dial
-                        Expanded(
-                          child: ModalsRotaryDial(
-                            options: options,
-                            isAnswered: _isAnswered,
-                            isDark: isDark,
-                            primaryColor: theme.primaryColor,
-                            onSelectionChanged: (index) {
-                              setState(() => _selectedIndex = index);
-                            },
-                            isCompact: isCompact,
-                          ),
-                        ),
-
-                        // Submit Button
-                        if (!_isAnswered)
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 40.w),
-                            child: ScaleButton(
-                              onTap: () =>
-                                  _submitAnswer(quest.correctAnswerIndex ?? 0),
-                              child: Container(
-                                width: double.infinity,
-                                height: isCompact ? 48.h : 65.h,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 14.r : 22.r,
-                                  ),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theme.primaryColor,
-                                      theme.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(alpha: 0.03),
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 18.r : 28.r,
                                       ),
-                                      blurRadius: 15,
-                                      offset: const Offset(0, 5),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
+                                      ),
                                     ),
-                                  ],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "LOCK CONFIGURATION",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: isCompact ? 12.sp : 14.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
+                                    child: RichText(
+                                      textAlign: TextAlign.center,
+                                      text: TextSpan(
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 15.sp : 20.sp,
+                                          color: isDark
+                                              ? Colors.white
+                                              : Colors.black87,
+                                          height: 1.5,
+                                        ),
+                                        children: _buildSentenceWithBlank(
+                                          quest.question ?? "___ sentence.",
+                                          options[_selectedIndex],
+                                          theme.primaryColor,
+                                          isDark,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                )
+                                .animate()
+                                .fadeIn(duration: 600.ms)
+                                .slideY(begin: 0.2, end: 0),
+
+                            // Result Feedback
+                            if (_isAnswered) ...[
+                              SizedBox(height: isCompact ? 8.h : 24.h),
+                              _buildResult(
+                                quest,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
+                              ),
+                            ],
+
+                            // Rotary Dial
+                            Expanded(
+                              child: ModalsRotaryDial(
+                                options: options,
+                                isAnswered: _isAnswered || _pendingJigsaw,
+                                isDark: isDark,
+                                primaryColor: theme.primaryColor,
+                                onSelectionChanged: (index) {
+                                  if (_isAnswered || _pendingJigsaw) return;
+                                  setState(() => _selectedIndex = index);
+                                },
+                                isCompact: isCompact,
                               ),
                             ),
-                          ),
 
-                        SizedBox(height: gapBottom),
-                      ],
-                    );
-                  },
+                            // Submit Button
+                            if (!_isAnswered && !_pendingJigsaw)
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 40.w),
+                                child: ScaleButton(
+                                  onTap: () =>
+                                      _submitAnswer(quest.correctAnswerIndex ?? 0),
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: isCompact ? 48.h : 65.h,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 14.r : 22.r,
+                                      ),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          theme.primaryColor,
+                                          theme.primaryColor.withValues(alpha: 0.8),
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                          offset: const Offset(0, 5),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "LOCK CONFIGURATION",
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: isCompact ? 12.sp : 14.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white,
+                                          letterSpacing: 2,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                            SizedBox(height: gapBottom),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },

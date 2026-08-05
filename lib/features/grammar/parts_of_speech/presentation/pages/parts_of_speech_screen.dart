@@ -15,6 +15,7 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speec
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_context_card.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_vortex.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_draggable_word.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class PartsOfSpeechScreen extends StatefulWidget {
   final int level;
@@ -31,7 +32,6 @@ class PartsOfSpeechScreen extends StatefulWidget {
 }
 
 class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
-  // Services resolved in initState — not as field initializers.
   late final HapticService _hapticService;
   late final SoundService _soundService;
 
@@ -42,17 +42,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
-  /// Synchronous lock set BEFORE setState to prevent a race where multiple
-  /// rapid onPanUpdate events all pass the `_isAnswered` guard before the
-  /// first setState rebuild completes.
   bool _isSubmitting = false;
+  bool _pendingJigsaw = false;
 
-  /// Fallback part-of-speech labels when the quest has fewer than 4 options.
   static const List<String> _fallbackOptions = ['Noun', 'Verb', 'Adj', 'Adv'];
-
-  // -------------------------------------------------------------------------
-  // Lifecycle
-  // -------------------------------------------------------------------------
 
   @override
   void initState() {
@@ -64,36 +57,53 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     );
   }
 
-  // -------------------------------------------------------------------------
-  // Interaction
-  // -------------------------------------------------------------------------
-
   void _onFlick(int targetIndex, int correctIndex) {
     if (_isAnswered || _isSubmitting) return;
-    _isSubmitting = true; // Lock immediately — before any async work.
+    _isSubmitting = true;
 
     final isCorrect = targetIndex == correctIndex;
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() {
+        _pendingJigsaw = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.success();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
+    if (_pendingJigsaw || _isAnswered) return;
+    
     final distance = _dragOffset.distance;
     final threshold = isCompact ? 60.r : 100.r;
     if (distance <= threshold) return;
 
-    // Map quadrant → vortex index using a switch expression.
     final targetIndex = switch ((_dragOffset.dx < 0, _dragOffset.dy < 0)) {
       (true, true) => 0, // Top-Left
       (false, true) => 1, // Top-Right
@@ -103,14 +113,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
     _onFlick(targetIndex, correctIndex);
   }
 
-  // -------------------------------------------------------------------------
-  // Build
-  // -------------------------------------------------------------------------
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // : cache theme — widget.level is final, so the result is stable.
     final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
     return BlocConsumer<GrammarBloc, GrammarState>(
@@ -120,6 +125,11 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         final options = (quest?.options?.length ?? 0) >= 4
             ? quest!.options!.sublist(0, 4)
             : _fallbackOptions;
+            
+        String cleanTargetSentence = "";
+        if (quest != null && quest.sentence != null) {
+            cleanTargetSentence = quest.sentence!.replaceAll('[', '').replaceAll(']', '');
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -128,49 +138,59 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox.shrink()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
-                    return _PosQuestLayout(
-                      quest: quest,
-                      options: options,
-                      theme: theme,
-                      isDark: isDark,
-                      isCompact: isCompact,
-                      maxHeight: constraints.maxHeight,
-                      dragOffset: _dragOffset,
-                      isAnswered: _isAnswered,
-                      onPanUpdate: (details) {
-                        setState(() => _dragOffset += details.delta);
-                        _checkCollision(
-                          quest.correctAnswerIndex ?? 0,
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
+                        return _PosQuestLayout(
+                          quest: quest,
+                          options: options,
+                          theme: theme,
+                          isDark: isDark,
                           isCompact: isCompact,
+                          maxHeight: constraints.maxHeight,
+                          dragOffset: _dragOffset,
+                          isAnswered: _isAnswered || _pendingJigsaw,
+                          onPanUpdate: (details) {
+                            if (_pendingJigsaw || _isAnswered) return;
+                            setState(() => _dragOffset += details.delta);
+                            _checkCollision(
+                              quest.correctAnswerIndex ?? 0,
+                              isCompact: isCompact,
+                            );
+                          },
+                          onPanEnd: (_) {
+                            if (_pendingJigsaw || _isAnswered) return;
+                            setState(() => _dragOffset = Offset.zero);
+                          },
                         );
                       },
-                      onPanEnd: (_) =>
-                          setState(() => _dragOffset = Offset.zero),
-                    );
-                  },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
     );
   }
 
-  // -------------------------------------------------------------------------
-  // Listener — extracted to keep build() clean
-  // -------------------------------------------------------------------------
-
   void _onStateChange(BuildContext context, GrammarState state) {
     if (state is GrammarLoaded) {
       final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-      // FIX: was `state.lastAnswerCorrect == null` → use AnswerStatus enum.
       final isRetry = _isAnswered && !state.answerStatus.isAnswered;
       final livesRestored =
           _lastLives != null && state.livesRemaining > _lastLives!;
@@ -181,10 +201,10 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           _isAnswered = false;
           _isCorrect = null;
           _dragOffset = Offset.zero;
-          _isSubmitting = false; // Reset race guard on new question.
+          _isSubmitting = false; 
+          _pendingJigsaw = false;
         });
       } else if (state.answerStatus.isAnswered && !_isAnswered) {
-        // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
         setState(() {
           _isAnswered = true;
           _isCorrect = state.answerStatus.asBoolOrNull;
@@ -203,12 +223,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         enableDoubleUp: true,
       );
     }
-      }
+  }
 }
-
-// =============================================================================
-// Private layout widget — extracted to keep _PartsOfSpeechScreenState lean
-// =============================================================================
 
 class _PosQuestLayout extends StatelessWidget {
   final GrammarQuest quest;
@@ -249,8 +265,6 @@ class _PosQuestLayout extends StatelessWidget {
     required this.onPanEnd,
   });
 
-  /// Distributes remaining vertical space across the three gaps proportionally,
-  /// clamped so the layout never breaks on very small or very large screens.
   ({double top, double middle, double bottom}) _computeGaps() {
     final estimated =
         (isCompact ? 30.h : 40.h) +
@@ -285,7 +299,6 @@ class _PosQuestLayout extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // Corner vortex buckets
               for (int i = 0; i < 4; i++)
                 SpeechVortex(
                   index: i,
@@ -294,7 +307,6 @@ class _PosQuestLayout extends StatelessWidget {
                   alignment: _vortexAlignments[i],
                   isCompact: isCompact,
                 ),
-              // Draggable word chip
               if (!isAnswered)
                 GestureDetector(
                   onPanUpdate: onPanUpdate,

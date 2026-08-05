@@ -14,6 +14,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_instruction.dart';
 import 'package:vowl/features/grammar/relative_clauses/presentation/widgets/relative_clauses_quantum_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class RelativeClausesScreen extends StatefulWidget {
   final int level;
@@ -39,6 +40,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingJigsaw = false;
 
   @override
   void initState() {
@@ -49,24 +51,45 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   }
 
   void _onCatch(int fishIndex, int correctIndex) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingJigsaw) return;
 
     bool isCorrect = fishIndex == correctIndex;
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
+      setState(() {
+        _targetFish = fishIndex;
+        _pendingJigsaw = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _targetFish = fishIndex;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = isCorrect;
-      _targetFish = fishIndex;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.heavy();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   @override
@@ -87,9 +110,10 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _targetFish = -1;
+              _pendingJigsaw = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -115,6 +139,16 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
         final fishOptions =
             quest?.options ?? ["WHO IS SMART", "WHICH IS RED", "THAT I LIKE"];
 
+        String cleanTargetSentence = "";
+        if (quest != null) {
+            final sentence = quest.question ?? "";
+            String fullSentence = sentence;
+            if (sentence.contains("___") && _targetFish != -1) {
+                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), fishOptions[_targetFish]);
+            }
+            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+        }
+
         return GrammarBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
@@ -122,100 +156,112 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Stack needs finite space to anchor to bottom
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: isCompact ? 4.h : 10.h),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: RelativeClausesInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: isCompact ? 4.h : 10.h),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: RelativeClausesInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : RelativeClausesInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : RelativeClausesInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: isCompact ? 8.h : 20.h),
+                            SizedBox(height: isCompact ? 8.h : 20.h),
 
-                        // Context Card
-                        Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Container(
-                                width: double.infinity,
-                                padding: EdgeInsets.all(
-                                  isCompact ? 14.r : 22.r,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.05)
-                                      : Colors.black.withValues(alpha: 0.03),
-                                  borderRadius: BorderRadius.circular(
-                                    isCompact ? 18.r : 28.r,
-                                  ),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.15,
+                            // Context Card
+                            Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: Container(
+                                    width: double.infinity,
+                                    padding: EdgeInsets.all(
+                                      isCompact ? 14.r : 22.r,
                                     ),
-                                    width: 1.5,
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(alpha: 0.03),
+                                      borderRadius: BorderRadius.circular(
+                                        isCompact ? 18.r : 28.r,
+                                      ),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
+                                      ),
+                                    ),
+                                    child: Text(
+                                      quest.question?.replaceAll('___', (_isAnswered || _pendingJigsaw) && _targetFish != -1 ? fishOptions[_targetFish] : '_____') ??
+                                          "The data ____",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: isCompact ? 15.sp : 20.sp,
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black87,
+                                        height: 1.5,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
                                   ),
-                                ),
-                                child: Text(
-                                  quest.question?.replaceAll('___', '_____') ??
-                                      "The data ____",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: isCompact ? 15.sp : 20.sp,
-                                    color: isDark
-                                        ? Colors.white
-                                        : Colors.black87,
-                                    height: 1.5,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
+                                )
+                                .animate()
+                                .fadeIn(duration: 600.ms)
+                                .slideY(begin: 0.2, end: 0),
+
+                            // Result
+                            if (_isAnswered) ...[
+                              SizedBox(height: isCompact ? 8.h : 20.h),
+                              _buildResult(
+                                quest,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
                               ),
-                            )
-                            .animate()
-                            .fadeIn(duration: 600.ms)
-                            .slideY(begin: 0.2, end: 0),
+                            ],
 
-                        // Result
-                        if (_isAnswered) ...[
-                          SizedBox(height: isCompact ? 8.h : 20.h),
-                          _buildResult(
-                            quest,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ],
+                            // Game Arena
+                            Expanded(
+                              child: _buildQuantumArena(
+                                fishOptions,
+                                quest.correctAnswerIndex ?? 0,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
+                              ),
+                            ),
 
-                        // Game Arena
-                        Expanded(
-                          child: _buildQuantumArena(
-                            fishOptions,
-                            quest.correctAnswerIndex ?? 0,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ),
-
-                        SizedBox(height: isCompact ? 12.h : 40.h),
-                      ],
-                    );
-                  },
+                            SizedBox(height: isCompact ? 12.h : 40.h),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
@@ -246,7 +292,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
 
         return GestureDetector(
           onPanUpdate: (details) {
-            if (_isAnswered) return;
+            if (_isAnswered || _pendingJigsaw) return;
             setState(() {
               _hookPoint = details.localPosition;
               if (details.localPosition.dy.toInt() % 10 == 0) {
@@ -269,7 +315,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               nodePoints: nodePoints,
               nodeLabels: nodes,
               primaryColor: primaryColor,
-              isAnswered: _isAnswered,
+              isAnswered: _isAnswered || _pendingJigsaw,
               isCorrect: _isCorrect,
               targetNode: _targetFish,
               isDark: isDark,

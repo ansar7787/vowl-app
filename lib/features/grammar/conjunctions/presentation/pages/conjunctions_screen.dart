@@ -14,6 +14,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_instruction.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -39,6 +40,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _pendingJigsaw = false;
 
   @override
   void initState() {
@@ -49,7 +51,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   }
 
   void _onBridge(String conj, int correctIndex, List<String> options) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingJigsaw) return;
 
     bool isCorrect = conj == options[correctIndex];
 
@@ -57,11 +59,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       _hapticService.heavy();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
         _placedBrick = conj;
+        _pendingJigsaw = true;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -70,8 +70,26 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         _isCorrect = false;
         _placedBrick = conj;
       });
-      context.read<GrammarBloc>().add(SubmitAnswer(false));
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _submitFinalAnswer(bool correct) {
+     setState(() => _pendingJigsaw = false);
+     setState(() {
+        _isAnswered = true;
+        _isCorrect = correct;
+     });
+     
+     if (correct) {
+         _hapticService.heavy();
+         _soundService.playCorrect();
+         context.read<GrammarBloc>().add(const SubmitAnswer(true));
+     } else {
+         _hapticService.error();
+         _soundService.playWrong();
+         context.read<GrammarBloc>().add(const SubmitAnswer(false));
+     }
   }
 
   @override
@@ -92,9 +110,10 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _placedBrick = null;
+              _pendingJigsaw = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            // FIX: was `state.lastAnswerCorrect != null` and `state.lastAnswerCorrect`
             setState(() {
               _isAnswered = true;
               _isCorrect = state.answerStatus.asBoolOrNull;
@@ -122,6 +141,17 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         final parts = question.contains("...")
             ? question.split("...")
             : question.split("___");
+            
+        String cleanTargetSentence = "";
+        if (quest != null && _placedBrick != null) {
+            String fullSentence = question;
+            if (question.contains("...")) {
+                fullSentence = question.replaceFirst(RegExp(r'\.{3,}'), " $_placedBrick ");
+            } else if (question.contains("___")) {
+                fullSentence = question.replaceFirst(RegExp(r'_{3,}'), " $_placedBrick ");
+            }
+            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -130,109 +160,121 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          useScrolling: false, // Stack needs finite space to anchor to bottom
+          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 50.h : 80.h) * 2 +
-                        (isCompact ? 50.h : 70.h) +
-                        (isCompact ? 50.h : 80.h) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            (isCompact ? 30.h : 40.h) +
+                            (isCompact ? 50.h : 80.h) * 2 +
+                            (isCompact ? 50.h : 70.h) +
+                            (isCompact ? 50.h : 80.h) +
+                            40.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(4.0, 15.0)
+                            : 4.0;
+                        final double gapMiddle = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                            : 6.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                            : 10.0;
 
-                    return Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: ConjunctionsInstruction(
+                        return Column(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: ConjunctionsInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : ConjunctionsInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
+                            SizedBox(height: gapMiddle),
+
+                            // Magnetic Junction Bridge
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    _buildIslandPiece(
+                                      parts.first,
+                                      isDark,
+                                      theme.primaryColor,
+                                      isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 12.h : 24.h),
+                                    _buildMagneticJunction(
+                                      options,
+                                      quest.correctAnswerIndex ?? 0,
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                    SizedBox(height: isCompact ? 12.h : 24.h),
+                                    if (parts.length > 1 && parts.last.isNotEmpty)
+                                      _buildIslandPiece(
+                                        parts.last,
+                                        isDark,
+                                        theme.primaryColor,
+                                        isCompact,
+                                      ).animate().fadeIn(delay: 400.ms),
+                                    if (_isAnswered) ...[
+                                      SizedBox(height: isCompact ? 10.h : 20.h),
+                                      _buildCorrectResult(
+                                        quest,
+                                        theme.primaryColor,
+                                        isDark,
+                                        isCompact,
+                                      ),
+                                    ],
+                                  ],
                                 ),
-                              )
-                            : ConjunctionsInstruction(
-                                primaryColor: theme.primaryColor,
                               ),
-                        SizedBox(height: gapMiddle),
-
-                        // Magnetic Junction Bridge
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                _buildIslandPiece(
-                                  parts.first,
-                                  isDark,
-                                  theme.primaryColor,
-                                  isCompact,
-                                ),
-                                SizedBox(height: isCompact ? 12.h : 24.h),
-                                _buildMagneticJunction(
-                                  options,
-                                  quest.correctAnswerIndex ?? 0,
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
-                                ),
-                                SizedBox(height: isCompact ? 12.h : 24.h),
-                                if (parts.length > 1 && parts.last.isNotEmpty)
-                                  _buildIslandPiece(
-                                    parts.last,
-                                    isDark,
-                                    theme.primaryColor,
-                                    isCompact,
-                                  ).animate().fadeIn(delay: 400.ms),
-                                if (_isAnswered) ...[
-                                  SizedBox(height: isCompact ? 10.h : 20.h),
-                                  _buildCorrectResult(
-                                    quest,
-                                    theme.primaryColor,
-                                    isDark,
-                                    isCompact,
-                                  ),
-                                ],
-                              ],
                             ),
-                          ),
-                        ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        ConjunctionsBrickSheet(
-                          options: options,
-                          placedBrick: _placedBrick,
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                          isCompact: isCompact,
-                        ),
-                        SizedBox(height: gapBottom),
-                      ],
-                    );
-                  },
+                            ConjunctionsBrickSheet(
+                              options: options,
+                              placedBrick: _placedBrick,
+                              primaryColor: theme.primaryColor,
+                              isDark: isDark,
+                              isCompact: isCompact,
+                            ),
+                            SizedBox(height: gapBottom),
+                          ],
+                        );
+                      },
+                    ),
+                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      DynamicJigsawWrapper(
+                        expectedText: cleanTargetSentence,
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
@@ -252,7 +294,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
         final nodeColor = _placedBrick != null
-            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+            ? ((_isAnswered || _pendingJigsaw) && _isCorrect != false ? Colors.greenAccent : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));
