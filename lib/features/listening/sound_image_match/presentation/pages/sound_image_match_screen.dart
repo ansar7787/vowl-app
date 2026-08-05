@@ -271,18 +271,18 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                           ],
                         ),
                       ),
-                    );
-                  },
-                ),
-                if (_pendingSelectedIndex != null && !_isAnswered)
-                  SpeakToConfirmOverlay(
-                    expectedText: quest.options![_pendingSelectedIndex!],
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswerIndex ?? 0),
-                    onSkipped: () => _submitFinalAnswer(false, quest.correctAnswerIndex ?? 0),
-                    allowSkip: true,
-                  ),
-              ],
+                    ),
+                    if (_pendingSelectedIndex != null && !_isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.options![_pendingSelectedIndex!],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswerIndex ?? 0),
+                        onSkipped: () => _submitFinalAnswer(false, quest.correctAnswerIndex ?? 0),
+                        allowSkip: true,
+                      ),
+                  ],
+                );
+              },
             ),
         );
       },
