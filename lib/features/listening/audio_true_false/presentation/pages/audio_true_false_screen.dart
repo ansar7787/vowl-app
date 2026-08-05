@@ -85,29 +85,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     }
   }
 
-  void _submitAnswer(bool verdict, String correct) {
-    if (_isAnswered) return;
-    bool isCorrect =
-        verdict.toString().toLowerCase() == correct.trim().toLowerCase();
 
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {

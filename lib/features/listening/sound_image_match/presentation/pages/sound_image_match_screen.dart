@@ -96,30 +96,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     }
   }
 
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    bool isCorrect = index == correct;
 
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        _selectedIndex = index;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        _selectedIndex = index;
-      });
-      context.read<ListeningBloc>().add(SubmitAnswer(false));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -280,10 +257,12 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                     selectedIndex: _selectedIndex,
                                     lensPosition: _lensPosition,
                                     onScan: _onScan,
-                                    onSelect: (index) => _submitAnswer(
-                                      index,
-                                      quest.correctAnswerIndex ?? 0,
-                                    ),
+                                    onSelect: (index) {
+                                      if (_isAnswered || _pendingSelectedIndex != null) return;
+                                      setState(() {
+                                        _pendingSelectedIndex = index;
+                                      });
+                                    },
                                   ),
                                 ),
                                 SizedBox(height: gapBottom),
@@ -295,6 +274,16 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                     );
                   },
                 ),
+                if (_pendingSelectedIndex != null && !_isAnswered)
+                  SpeakToConfirmOverlay(
+                    expectedText: quest.options![_pendingSelectedIndex!],
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswerIndex ?? 0),
+                    onSkipped: () => _submitFinalAnswer(false, quest.correctAnswerIndex ?? 0),
+                    allowSkip: true,
+                  ),
+              ],
+            ),
         );
       },
     );
