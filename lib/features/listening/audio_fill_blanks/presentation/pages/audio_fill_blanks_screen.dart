@@ -100,7 +100,10 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       return;
     }
 
-    final isCorrect = input.toLowerCase() == correct.trim().toLowerCase();
+    String cleanInput = input.replaceAll(RegExp(r'[.,!?]'), '').trim().toLowerCase();
+    String cleanCorrect = correct.replaceAll(RegExp(r'[.,!?]'), '').trim().toLowerCase();
+
+    final isCorrect = cleanInput == cleanCorrect;
 
     if (isCorrect) {
       _hapticService.success();

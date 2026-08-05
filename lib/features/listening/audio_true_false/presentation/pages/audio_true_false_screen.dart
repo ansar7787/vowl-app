@@ -15,6 +15,7 @@ import 'package:vowl/features/listening/audio_true_false/presentation/widgets/au
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_polarized_filters.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;
@@ -39,6 +40,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool? _selectedVerdict;
 
   @override
   void initState() {
@@ -46,6 +48,41 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     context.read<ListeningBloc>().add(
       FetchListeningQuests(gameType: widget.gameType, level: widget.level),
     );
+  }
+
+  void _submitFinalAnswer(bool nailedSpeaking, String correct) {
+    if (_isAnswered) return;
+
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _selectedVerdict.toString().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+    }
   }
 
   void _submitAnswer(bool verdict, String correct) {
@@ -90,6 +127,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _tuningValue = 0.5;
+              _selectedVerdict = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -124,8 +162,10 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
@@ -248,19 +288,12 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                                     _hapticService.selection();
                                                   },
                                                   onChangeEnd: (v) {
+                                                    if (_isAnswered || _selectedVerdict != null) return;
                                                     if (v > 0.9) {
-                                                      _submitAnswer(
-                                                        true,
-                                                        quest.correctAnswer ??
-                                                            "",
-                                                      );
+                                                      setState(() => _selectedVerdict = true);
                                                     }
                                                     if (v < 0.1) {
-                                                      _submitAnswer(
-                                                        false,
-                                                        quest.correctAnswer ??
-                                                            "",
-                                                      );
+                                                      setState(() => _selectedVerdict = false);
                                                     }
                                                   },
                                                 ),
@@ -277,17 +310,12 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                           _hapticService.selection();
                                         },
                                         onChangeEnd: (v) {
+                                          if (_isAnswered || _selectedVerdict != null) return;
                                           if (v > 0.9) {
-                                            _submitAnswer(
-                                              true,
-                                              quest.correctAnswer ?? "",
-                                            );
+                                            setState(() => _selectedVerdict = true);
                                           }
                                           if (v < 0.1) {
-                                            _submitAnswer(
-                                              false,
-                                              quest.correctAnswer ?? "",
-                                            );
+                                            setState(() => _selectedVerdict = false);
                                           }
                                         },
                                       ),
@@ -300,6 +328,16 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                     );
                   },
                 ),
+                if (_selectedVerdict != null && !_isAnswered)
+                  SpeakToConfirmOverlay(
+                    expectedText: quest.statement ?? "",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswer ?? ""),
+                    onSkipped: () => _submitFinalAnswer(false, quest.correctAnswer ?? ""),
+                    allowSkip: true,
+                  ),
+              ],
+            ),
         );
       },
     );

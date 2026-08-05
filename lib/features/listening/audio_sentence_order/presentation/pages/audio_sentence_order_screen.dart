@@ -12,6 +12,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_timeline.dart';
@@ -74,9 +75,21 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
 
   void _submitAnswer(String correctFull) {
     if (_isAnswered) return;
-    String current = _slots.join(" ").trim().toLowerCase();
+
+    if (_segments.isNotEmpty) {
+      CustomSnackBar.show(
+        context: context,
+        message: "Please place all segments in the timeline!",
+        type: CustomSnackBarType.warning,
+      );
+      _hapticService.selection();
+      return;
+    }
+
+    String current = _slots.join(" ").replaceAll(RegExp(r'[^\w\s]'), '').replaceAll(RegExp(r'\s+'), ' ').trim().toLowerCase();
     String target = correctFull
         .replaceAll(RegExp(r'[^\w\s]'), '')
+        .replaceAll(RegExp(r'\s+'), ' ')
         .trim()
         .toLowerCase();
     bool isCorrect = current == target;

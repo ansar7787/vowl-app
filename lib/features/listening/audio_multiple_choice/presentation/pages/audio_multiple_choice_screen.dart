@@ -13,7 +13,8 @@ import 'package:vowl/features/listening/presentation/layout/listening_base_layou
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
-import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
+import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
@@ -33,13 +34,11 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  double _rotation = 0.0;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
 
   @override
   void initState() {
@@ -49,20 +48,10 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     );
   }
 
-  void _onSpin(double delta) {
+  void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered) return;
-    setState(() {
-      _rotation += delta / 200;
-      _hapticService.selection();
-    });
-  }
-
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
-
-    if (isCorrect) {
+    
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
@@ -99,8 +88,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
-              _rotation = 0.0;
+              _isAnswered = false;
+              _isCorrect = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -135,149 +124,130 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        20.h + 40.h + 50.h + (isCompact ? 220.h : 320.h) + 20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            20.h + 40.h + 50.h + (isCompact ? 150.h : 200.h) + 20.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 7
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                        : 10.0;
-                    final double gapQuestion = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(12.0, 30.0)
-                        : 12.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 7
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 16.0)
+                            : 6.0;
+                        final double gapInstruction = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                            : 10.0;
+                        final double gapQuestion = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(10.0, 24.0)
+                            : 10.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 2).clamp(12.0, 100.0)
+                            : 12.0;
 
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: AudioMultipleChoiceInstruction(
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 35.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: AudioMultipleChoiceInstruction(
+                                                color: theme.primaryColor,
+                                                instruction: quest.instruction,
+                                              ),
+                                            ),
+                                          )
+                                        : AudioMultipleChoiceInstruction(
                                             color: theme.primaryColor,
                                             instruction: quest.instruction,
                                           ),
-                                        ),
-                                      )
-                                    : AudioMultipleChoiceInstruction(
-                                        color: theme.primaryColor,
-                                        instruction: quest.instruction,
-                                      ),
-                                SizedBox(height: gapInstruction),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 40.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: AudioMultipleChoiceQuestion(
+                                    SizedBox(height: gapInstruction),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 40.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: AudioMultipleChoiceQuestion(
+                                                text: quest.question ?? "",
+                                                isDark: isDark,
+                                              ),
+                                            ),
+                                          )
+                                        : AudioMultipleChoiceQuestion(
                                             text: quest.question ?? "",
                                             isDark: isDark,
                                           ),
-                                        ),
-                                      )
-                                    : AudioMultipleChoiceQuestion(
-                                        text: quest.question ?? "",
-                                        isDark: isDark,
-                                      ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapQuestion),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 220.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth,
-                                            child: AudioMultipleChoiceSpinner(
-                                              options: quest.options ?? [],
-                                              correct:
-                                                  quest.correctAnswerIndex ?? 0,
-                                              color: theme.primaryColor,
-                                              tts: quest.textToSpeak ?? "",
-                                              emoji: quest.emoji,
-                                              rotation: _rotation,
-                                              selectedIndex: _selectedIndex,
-                                              isAnswered: _isAnswered,
-                                              isCorrectState: _isCorrect,
-                                              onSpin: _onSpin,
-                                              onSelectSatellite: (idx) =>
-                                                  _submitAnswer(
-                                                    idx,
-                                                    quest.correctAnswerIndex ??
-                                                        0,
-                                                  ),
-                                              onTapCore: () {
-                                                _soundService.playTts(
-                                                  quest.textToSpeak ?? "",
-                                                );
-                                                _hapticService.selection();
-                                              },
-                                            ),
+                                  ],
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapQuestion),
+                                    Center(
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          _soundService.playTts(quest.textToSpeak ?? "");
+                                          _hapticService.selection();
+                                        },
+                                        child: Container(
+                                          width: isCompact ? 100.r : 140.r,
+                                          height: isCompact ? 100.r : 140.r,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: theme.primaryColor.withValues(alpha: 0.1),
+                                            border: Border.all(color: theme.primaryColor, width: 2),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: theme.primaryColor.withValues(alpha: 0.2),
+                                                blurRadius: 20,
+                                                spreadRadius: 5,
+                                              )
+                                            ]
                                           ),
-                                        ),
-                                      )
-                                    : SizedBox(
-                                        height: 320.h,
-                                        child: AudioMultipleChoiceSpinner(
-                                          options: quest.options ?? [],
-                                          correct:
-                                              quest.correctAnswerIndex ?? 0,
-                                          color: theme.primaryColor,
-                                          tts: quest.textToSpeak ?? "",
-                                          emoji: quest.emoji,
-                                          rotation: _rotation,
-                                          selectedIndex: _selectedIndex,
-                                          isAnswered: _isAnswered,
-                                          isCorrectState: _isCorrect,
-                                          onSpin: _onSpin,
-                                          onSelectSatellite: (idx) =>
-                                              _submitAnswer(
-                                                idx,
-                                                quest.correctAnswerIndex ?? 0,
-                                              ),
-                                          onTapCore: () {
-                                            _soundService.playTts(
-                                              quest.textToSpeak ?? "",
-                                            );
-                                            _hapticService.selection();
-                                          },
-                                        ),
+                                          child: Icon(
+                                            Icons.volume_up_rounded,
+                                            size: isCompact ? 50.r : 70.r,
+                                            color: theme.primaryColor,
+                                          ),
+                                        ).animate(onPlay: (c) => c.repeat(reverse: true))
+                                         .scale(begin: const Offset(0.95, 0.95), end: const Offset(1.05, 1.05), duration: 2.seconds),
                                       ),
-                                SizedBox(height: gapBottom),
+                                    ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                        );
+                      },
+                    ),
+                    if (!_isAnswered || _isCorrect == null)
+                      BlindDictationWrapper(
+                        expectedText: (quest.options != null && quest.options!.isNotEmpty) 
+                            ? quest.options![quest.correctAnswerIndex ?? 0] 
+                            : "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
                       ),
-                    );
-                  },
+                  ],
                 ),
         );
       },

@@ -35,10 +35,10 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 2. LISTENING (10 Games)
 *Goal: Use Blind Dictation (hide MCQ options) to force true listening comprehension.*
-- [ ] 1. Audio Fill Blanks (Action: Verify Typing is working)
-- [ ] 2. Audio Multiple Choice (Action: Implement **Blind Dictation** - hide options, force user to type answer)
-- [ ] 3. Audio Sentence Order (Action: Verify Reorder is working)
-- [ ] 4. Audio True/False (Action: Implement `SpeakToConfirmOverlay` - read statement aloud)
+- [x] 1. Audio Fill Blanks (Action: Verify Typing is working)
+- [x] 2. Audio Multiple Choice (Action: Implement **Blind Dictation** - hide options, force user to type answer)
+- [x] 3. Audio Sentence Order (Action: Verify Reorder is working)
+- [x] 4. Audio True/False (Action: Implement `SpeakToConfirmOverlay` - read statement aloud)
 - [ ] 5. Sound Image Match (Action: Implement `SpeakToConfirmOverlay` - say image name)
 - [ ] 6. Fast Speech Decoder (Action: Keep as fast MCQ for speed round)
 - [ ] 7. Emotion Recognition (Action: Keep as MCQ for nuance/context)
