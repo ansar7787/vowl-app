@@ -50,8 +50,8 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       return;
     }
 
-    String cleanInput = input.replaceAll(RegExp(r'[.,!?]'), '').trim().toLowerCase();
-    String cleanCorrect = widget.expectedText.replaceAll(RegExp(r'[.,!?]'), '').trim().toLowerCase();
+    String cleanInput = input.replaceAll(RegExp(r'[.,!?]'), '').replaceAll(RegExp(r'\s+'), ' ').trim().toLowerCase();
+    String cleanCorrect = widget.expectedText.replaceAll(RegExp(r'[.,!?]'), '').replaceAll(RegExp(r'\s+'), ' ').trim().toLowerCase();
 
     if (cleanInput == cleanCorrect) {
       widget.onConfirmed();

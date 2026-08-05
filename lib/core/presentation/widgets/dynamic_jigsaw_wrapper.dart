@@ -27,6 +27,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
 class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   late List<_WordTile> _availableTiles;
   late List<_WordTile?> _placedTiles;
+  late String _targetSentence;
   bool _hasError = false;
 
   @override
@@ -42,14 +43,18 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     _placedTiles = List.filled(rawWords.length, null);
     _availableTiles = [];
 
+    List<String> cleanedWords = [];
     for (int i = 0; i < rawWords.length; i++) {
       // Loophole Fixes: 
       // 1. Lowercase to prevent capital-letter exploits.
       // 2. Strip trailing punctuation so it doesn't give away the last word.
       String cleanedWord = rawWords[i].toLowerCase().replaceAll(RegExp(r'[.,!?]$'), '');
       
+      cleanedWords.add(cleanedWord);
       _availableTiles.add(_WordTile(id: i, word: cleanedWord));
     }
+    
+    _targetSentence = cleanedWords.join(' ');
     
     _availableTiles.shuffle();
   }
@@ -84,16 +89,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
        return;
     }
     
-    // To validate, we just check if the IDs are in perfect sequential order (0, 1, 2, 3...)
-    bool isCorrect = true;
-    for (int i = 0; i < _placedTiles.length; i++) {
-       if (_placedTiles[i]!.id != i) {
-          isCorrect = false;
-          break;
-       }
-    }
+    String currentSentence = _placedTiles.map((t) => t!.word).join(' ');
 
-    if (isCorrect) {
+    if (currentSentence == _targetSentence) {
       widget.onConfirmed();
     } else {
       setState(() {
