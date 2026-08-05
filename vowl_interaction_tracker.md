@@ -48,12 +48,12 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 3. READING (12 Games)
 *Goal: Use Dynamic Jigsaw for sentences, and SpeakToConfirm for long paragraphs.*
-- [ ] 1. Read and Answer (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 2. Find Word Meaning (Action: Implement **Dynamic Anagram** - spell the meaning word)
-- [ ] 3. True/False Reading (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 4. Sentence Order (Action: Verify Reorder is working)
-- [ ] 5. Reading Speed Check (Action: Verify Timed scroll)
-- [ ] 6. Guess Title (Action: Implement **Dynamic Jigsaw** - rebuild the title)
+- [x] 1. Read and Answer (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 2. Find Word Meaning (Action: Implement **Dynamic Anagram** - spell the meaning word)
+- [x] 3. True/False Reading (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 4. Sentence Order (Action: Verify Reorder is working)
+- [x] 5. Reading Speed Check (Action: Verify Timed scroll)
+- [x] 6. Guess Title (Action: Implement **Dynamic Jigsaw** - rebuild the title)
 - [ ] 7. Read and Match (Action: Implement `SpeakToConfirmOverlay`)
 - [ ] 8. Paragraph Summary (Action: Verify Condenser is working)
 - [ ] 9. Reading Inference (Action: Implement `SpeakToConfirmOverlay`)

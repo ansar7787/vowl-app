@@ -11,9 +11,8 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
-import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_cargo_crate.dart';
-import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_label_rack.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class GuessTitleScreen extends StatefulWidget {
   final int level;
@@ -32,7 +31,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  String? _selectedTitle;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -47,25 +45,22 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 
-  void _submitAnswer(String selected, String correct) {
+  void _submitFinalAnswer(bool isCorrect) {
     if (_isAnswered) return;
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
+    
     setState(() {
       _isAnswered = true;
       _isCorrect = isCorrect;
-      _selectedTitle = selected;
     });
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -87,7 +82,6 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedTitle = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -119,54 +113,67 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        GuessTitleInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            GuessTitleInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 24.h),
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(24.r),
+                              decoration: BoxDecoration(
+                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
+                                  color: theme.primaryColor.withValues(alpha: 0.3),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Text(
+                                quest.passage ?? "",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 18.sp,
+                                  height: 1.6,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                ),
+                              ),
+                            ),
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              GuessTitleResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 240.h), // Spacing for Jigsaw Wrapper
+                          ],
                         ),
-                        SizedBox(height: 24.h),
-                        GuessTitleCargoCrate(
-                          passage: quest.passage ?? "",
-                          correct: quest.correctAnswer ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          selectedTitle: _selectedTitle,
-                          isAnswered: _isAnswered,
-                          isCorrect: _isCorrect,
-                          onAccept: (title) =>
-                              _submitAnswer(title, quest.correctAnswer ?? ""),
-                        ),
-                        SizedBox(height: 32.h),
-                        GuessTitleLabelRack(
-                          labels: quest.options ?? [],
-                          correct: quest.correctAnswer ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          selectedTitle: _selectedTitle,
-                          isAnswered: _isAnswered,
-                        ),
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          GuessTitleResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 60.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (!_isAnswered || _isCorrect == null)
+                      DynamicJigsawWrapper(
+                        expectedText: quest.correctAnswer ?? "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },

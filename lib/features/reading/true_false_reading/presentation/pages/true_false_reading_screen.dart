@@ -15,6 +15,7 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;
@@ -41,6 +42,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  
+  bool? _pendingAnswer;
 
   @override
   void initState() {
@@ -51,7 +54,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   }
 
   void _onFlick(Offset delta) {
-    if (_isAnswered) return;
+    if (_isAnswered || _pendingAnswer != null) return;
     setState(() {
       _coinX += delta.dx;
       _coinY += delta.dy;
@@ -60,35 +63,46 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     });
 
     if (_coinX.abs() > 100.w) {
-      _submitAnswer(
-        _coinX > 0,
-        (context.read<ReadingBloc>().state as ReadingLoaded)
-                .currentQuest
-                .correctAnswer ??
-            "",
-      );
+      setState(() {
+        _pendingAnswer = _coinX > 0;
+      });
     }
   }
 
-  void _submitAnswer(bool val, String correct) {
-    if (_isAnswered) return;
-    bool isCorrect = (val ? "true" : "false") == correct.trim().toLowerCase();
+  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
+    if (_pendingAnswer == null) return;
+
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _coinX = _pendingAnswer! ? 120.w : -120.w;
+        _coinY = 0.0;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    String correct = quest.correctAnswer ?? "";
+    bool isCorrect = (_pendingAnswer! ? "true" : "false") == correct.trim().toLowerCase();
 
     setState(() {
       _isAnswered = true;
       _isCorrect = isCorrect;
-      _coinX = val ? 120.w : -120.w;
+      _coinX = _pendingAnswer! ? 120.w : -120.w;
       _coinY = 0.0;
     });
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -110,6 +124,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingAnswer = null;
               _coinX = 0.0;
               _coinY = 0.0;
               _coinRotation = 0.0;
@@ -144,54 +159,66 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        TrueFalseReadingInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            TrueFalseReadingInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 24.h),
+                            TrueFalseReadingPassage(
+                              passage: quest.passage ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 32.h),
+                            TrueFalseReadingStatement(
+                              statement: quest.question ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 40.h),
+                            TrueFalseReadingCoinZone(
+                              coinX: _coinX,
+                              coinY: _coinY,
+                              coinRotation: _coinRotation,
+                              onFlick: _onFlick,
+                              isDark: isDark,
+                              themeColor: theme.primaryColor,
+                            ),
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              TrueFalseReadingResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 60.h),
+                          ],
                         ),
-                        SizedBox(height: 24.h),
-                        TrueFalseReadingPassage(
-                          passage: quest.passage ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 32.h),
-                        TrueFalseReadingStatement(
-                          statement: quest.question ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 40.h),
-                        TrueFalseReadingCoinZone(
-                          coinX: _coinX,
-                          coinY: _coinY,
-                          coinRotation: _coinRotation,
-                          onFlick: _onFlick,
-                          isDark: isDark,
-                          themeColor: theme.primaryColor,
-                        ),
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          TrueFalseReadingResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 60.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (_pendingAnswer != null && !_isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.question ?? "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },

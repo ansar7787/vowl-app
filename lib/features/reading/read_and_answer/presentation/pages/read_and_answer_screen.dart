@@ -12,6 +12,10 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
 
 class ReadAndAnswerScreen extends StatefulWidget {
   final int level;
@@ -28,25 +32,12 @@ class ReadAndAnswerScreen extends StatefulWidget {
 }
 
 class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
-  // ---------------------------------------------------------------------------
-  // Local UI state — only what cannot be derived from the BLoC.
-  //
-  // _isAnswered, _isCorrect, _lastProcessedIndex, _lastLives were all removed:
-  // they are now derived from ReadingLoaded.lastAnswerCorrect, which is the
-  // single source of truth and eliminates a whole class of sync bugs.
-  // ---------------------------------------------------------------------------
+  final _hapticService = di.sl<HapticService>();
+  final _soundService = di.sl<SoundService>();
 
-  /// Which option index the player tapped. Null until an option is chosen.
-  /// Reset to null whenever the BLoC signals a new question or a retry.
   int? _selectedIndex;
-
-  /// Drives the confetti overlay in [ReadingBaseLayout]. Latched to true on
-  /// [ReadingGameComplete] and never reset (stays for the completion dialog).
+  int? _pendingSelectedIndex;
   bool _showConfetti = false;
-
-  // ---------------------------------------------------------------------------
-  // Lifecycle
-  // ---------------------------------------------------------------------------
 
   @override
   void initState() {
@@ -56,56 +47,63 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Interaction
-  // ---------------------------------------------------------------------------
-
-  /// Handles an option tap. Sound and haptic feedback are intentionally
-  /// NOT called here — the BLoC's [SubmitAnswer] handler owns audio/haptic
-  /// to guarantee they fire exactly once regardless of tap rate.
-  ///
-  /// [_selectedIndex] is set immediately so the pressed option highlights
-  /// in the same frame. The BLoC processes the event synchronously, so
-  /// [isAnswered] (derived from [state.lastAnswerCorrect]) updates in the
-  /// same build pass — no visible flicker between selection and feedback.
-  void _onOptionTap(int index, String selected, String correct) {
-    // Guard: ignore subsequent taps once an option has been chosen.
-    if (_selectedIndex != null) return;
-    setState(() => _selectedIndex = index);
-    final isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-    context.read<ReadingBloc>().add(SubmitAnswer(isCorrect));
+  void _onOptionTap(int index) {
+    if (_selectedIndex != null || _pendingSelectedIndex != null) return;
+    setState(() => _pendingSelectedIndex = index);
   }
 
-  // ---------------------------------------------------------------------------
-  // Build
-  // ---------------------------------------------------------------------------
+  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
+    if (_pendingSelectedIndex == null) return;
+
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+      return;
+    }
+
+    final selected = quest.options![_pendingSelectedIndex!];
+    final isCorrect = selected.trim().toLowerCase() == (quest.correctAnswer ?? '').trim().toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // Match the call signature used by ReadingBaseLayout so both widgets
-    // resolve the same theme object. The original used 'reading' + level:
-    // which ignored isDark and used a potentially wrong game-type string.
     final theme = LevelThemeHelper.getTheme(
       widget.gameType.name,
       isDark: isDark,
     );
 
     return BlocConsumer<ReadingBloc, ReadingState>(
-      // Only invoke the listener when:
-      //  (a) a terminal state is reached for the first time, or
-      //  (b) the question resets (lastAnswerCorrect returns to null).
-      // Without listenWhen, the listener would re-fire on local setState
-      // rebuilds (e.g. _showConfetti = true), potentially showing dialogs twice.
       listenWhen: (prev, curr) =>
           (curr is ReadingGameComplete && prev is! ReadingGameComplete) ||
           (curr is ReadingGameOver && prev is! ReadingGameOver) ||
           (curr is ReadingLoaded && curr.lastAnswerCorrect == null),
       listener: (context, state) {
         if (state is ReadingLoaded && state.lastAnswerCorrect == null) {
-          // New question loaded or retry triggered — clear the selected option.
-          setState(() => _selectedIndex = null);
+          setState(() {
+            _selectedIndex = null;
+            _pendingSelectedIndex = null;
+          });
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
@@ -119,7 +117,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         }
       },
       builder: (context, state) {
-        // Derive answer state from the BLoC — no local mirrors needed.
         final isLoaded = state is ReadingLoaded;
         final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
@@ -138,14 +135,26 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
               context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const _QuestLoadingPlaceholder()
-              : _QuestContent(
-                  quest: quest,
-                  primaryColor: theme.primaryColor,
-                  isDark: isDark,
-                  isAnswered: isAnswered,
-                  isCorrect: isCorrect,
-                  selectedIndex: _selectedIndex,
-                  onOptionTap: _onOptionTap,
+              : Stack(
+                  children: [
+                    _QuestContent(
+                      quest: quest,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                      isAnswered: isAnswered,
+                      isCorrect: isCorrect,
+                      selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
+                      onOptionTap: _onOptionTap,
+                    ),
+                    if (_pendingSelectedIndex != null && !isAnswered)
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.options![_pendingSelectedIndex!],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true, quest),
+                        onSkipped: () => _submitFinalAnswer(false, quest),
+                        allowSkip: true,
+                      ),
+                  ],
                 ),
         );
       },
@@ -153,12 +162,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Private sub-widgets
-// ---------------------------------------------------------------------------
-
-/// Shown while the first quest is loading. Keeps the layout stable so
-/// [ReadingBaseLayout] renders its scaffold and header immediately.
 class _QuestLoadingPlaceholder extends StatelessWidget {
   const _QuestLoadingPlaceholder();
 
@@ -171,11 +174,6 @@ class _QuestLoadingPlaceholder extends StatelessWidget {
   }
 }
 
-/// Renders the full question UI for a loaded [ReadingQuest].
-///
-/// Extracted to a [StatelessWidget] so Flutter's element diffing can detect
-/// that nothing changed when only BLoC state irrelevant to this subtree
-/// (e.g. hint-used flag) changes, avoiding unnecessary rebuilds.
 class _QuestContent extends StatelessWidget {
   final ReadingQuest quest;
   final Color primaryColor;
@@ -183,7 +181,7 @@ class _QuestContent extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final int? selectedIndex;
-  final void Function(int, String, String) onOptionTap;
+  final void Function(int) onOptionTap;
 
   const _QuestContent({
     required this.quest,
@@ -200,7 +198,6 @@ class _QuestContent extends StatelessWidget {
     final options = quest.options ?? const [];
 
     return Semantics(
-      // Group the entire question UI so screen readers can navigate as a unit.
       explicitChildNodes: true,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -223,8 +220,6 @@ class _QuestContent extends StatelessWidget {
             isDark: isDark,
           ),
           SizedBox(height: 32.h),
-
-          // Options — null-safe: options is normalised to [] above.
           ...List.generate(options.length, (index) {
             final optionText = options[index];
             return ReadAndAnswerBuoyOption(
@@ -235,11 +230,9 @@ class _QuestContent extends StatelessWidget {
               isDark: isDark,
               isAnswered: isAnswered,
               selectedIndex: selectedIndex,
-              onTap: () =>
-                  onOptionTap(index, optionText, quest.correctAnswer ?? ''),
+              onTap: () => onOptionTap(index),
             );
           }),
-
           if (isAnswered) ...[
             SizedBox(height: 24.h),
             ReadAndAnswerResult(

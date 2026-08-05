@@ -12,8 +12,8 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_instruction.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_question_header.dart';
-import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_magnifier_field.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_result.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
@@ -32,7 +32,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  Offset _lensPos = const Offset(200, 300);
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -47,18 +46,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     );
   }
 
-  void _onLensMove(Offset position) {
+  void _submitFinalAnswer(bool isCorrect) {
     if (_isAnswered) return;
-    setState(() {
-      _lensPos = position;
-      _hapticService.selection();
-    });
-  }
-
-  void _onWordTap(String word, String correct) {
-    if (_isAnswered) return;
-
-    bool isCorrect = word.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
@@ -67,7 +56,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -75,7 +64,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -97,7 +86,6 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _lensPos = const Offset(200, 300);
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -129,51 +117,72 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        FindWordMeaningInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
+              : Stack(
+                  children: [
+                    SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            FindWordMeaningInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 24.h),
+                            FindWordMeaningQuestionHeader(
+                              text: quest.question ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 32.h),
+                            Container(
+                              width: double.infinity,
+                              padding: EdgeInsets.all(24.r),
+                              decoration: BoxDecoration(
+                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(20.r),
+                                border: Border.all(
+                                  color: theme.primaryColor.withValues(alpha: 0.3),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Text(
+                                quest.passage ?? "",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 18.sp,
+                                  height: 1.6,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                ),
+                              ),
+                            ),
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              FindWordMeaningResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 240.h), // space for anagram wrapper
+                          ],
                         ),
-                        SizedBox(height: 24.h),
-                        FindWordMeaningQuestionHeader(
-                          text: quest.question ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 32.h),
-                        FindWordMeaningMagnifierField(
-                          passage: quest.passage ?? "",
-                          correct: quest.targetWord ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          lensPos: _lensPos,
-                          isAnswered: _isAnswered,
-                          onLensMove: _onLensMove,
-                          onWordTap: (word) =>
-                              _onWordTap(word, quest.targetWord ?? ""),
-                        ),
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          FindWordMeaningResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 40.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    if (!_isAnswered || _isCorrect == null)
+                      DynamicAnagramWrapper(
+                        expectedText: quest.targetWord ?? "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },
