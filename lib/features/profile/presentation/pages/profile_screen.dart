@@ -88,14 +88,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   SizedBox(height: 20.h),
-                                  ProfileHeader(
-                                    user: user,
-                                    onEditName: () => _showEditNameSheet(
-                                      context,
-                                      user.displayName ?? '',
-                                    ),
-                                    onEditPhoto: () =>
-                                        _showImageSourceSheet(context),
+                                  BlocBuilder<ProfileBloc, ProfileState>(
+                                    buildWhen: (prev, curr) =>
+                                        prev.photoUrl != curr.photoUrl,
+                                    builder: (context, profileState) {
+                                      return ProfileHeader(
+                                        user: user,
+                                        immediatePhotoUrl:
+                                            profileState.photoUrl,
+                                        onEditName: () =>
+                                            _showEditNameSheet(
+                                          context,
+                                          user.displayName ?? '',
+                                        ),
+                                        onEditPhoto: () =>
+                                            _showImageSourceSheet(context),
+                                      );
+                                    },
                                   ),
                                 ],
                               ),

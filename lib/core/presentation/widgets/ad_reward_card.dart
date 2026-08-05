@@ -54,10 +54,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
           context.read<EconomyBloc>().add(
             EconomyAddCoinsRequested(
               _coinReward,
-              title: context.tr(
-                'games.watched_rewarded_ad_title',
-                fallback: 'Watched Rewarded Ad',
-              ),
+              title: 'coin_history.ad_reward',
               isEarned: true,
             ),
           );

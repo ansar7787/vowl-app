@@ -57,7 +57,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
         context.read<EconomyBloc>().add(
           EconomyAddCoinsRequested(
             widget.rewardAmount,
-            title: 'Watched Rewarded Ad',
+            title: 'coin_history.ad_reward',
             isEarned: true,
           ),
         );

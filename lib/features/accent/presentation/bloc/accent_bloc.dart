@@ -389,7 +389,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     try {
       await updateUserCoins(UpdateUserCoinsParams(
         amountChange: event.bonusCoins,
-        title: 'Speaking Bonus',
+        title: 'coin_history.speaking_bonus',
         isEarned: true,
       ));
     } catch (e, stack) {

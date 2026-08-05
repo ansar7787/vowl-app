@@ -363,7 +363,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     try {
       await updateUserCoins(UpdateUserCoinsParams(
         amountChange: event.bonusCoins,
-        title: 'Speaking Bonus',
+        title: 'coin_history.speaking_bonus',
         isEarned: true,
       ));
     } catch (e) {

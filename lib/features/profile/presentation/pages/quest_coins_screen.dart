@@ -643,7 +643,13 @@ class VowlCoinsScreen extends StatelessWidget {
                 (txn['isEarned'] == true) ||
                 (txn['amount'] != null && (txn['amount'] as num) > 0);
             final amount = (txn['amount'] as num?)?.toInt() ?? 0;
-            final title = txn['title'] as String? ?? 'Transaction';
+            // Read 'titleKey' (the current schema) with 'title' as legacy
+            // fallback — older entries written before the titleKey migration
+            // stored raw English in 'title'.
+            final rawKey = (txn['titleKey'] as String?) ??
+                (txn['title'] as String?) ??
+                'Transaction';
+            final title = _localizeTransactionKey(context, rawKey, txn);
             final dateStr = txn['date'] as String?;
 
             final color = isEarned
@@ -767,6 +773,135 @@ class VowlCoinsScreen extends StatelessWidget {
           }),
       ],
     );
+  }
+
+  // ── Transaction key → human-readable title ─────────────────────────────
+  /// Resolves a `titleKey` stored in Firestore's `coinHistory` to a
+  /// user-facing localized string. Keys follow the `coin_history.*` pattern
+  /// established in `_recordCoinHistory` across the repository layer.
+  ///
+  /// Legacy entries that pre-date the titleKey migration may contain raw
+  /// English (e.g. 'Earned Coins') — those pass through unchanged.
+  static String _localizeTransactionKey(
+    BuildContext context,
+    String rawKey,
+    Map<String, dynamic> txn,
+  ) {
+    // Helper to extract params for interpolation.
+    final params = txn['params'] as Map<String, dynamic>?;
+    final gameType = params?['gameType'] as String? ?? '';
+    final milestone = params?['milestone']?.toString() ?? '';
+
+    switch (rawKey) {
+      case 'coin_history.quest_reward':
+        return context.tr(
+          'coin_history.quest_reward',
+          args: [gameType],
+          fallback: 'Quest Reward${gameType.isNotEmpty ? ' – $gameType' : ''}',
+        );
+      case 'coin_history.ad_triple_reward':
+        return context.tr(
+          'coin_history.ad_triple_reward',
+          fallback: 'Ad Triple Reward 🎬',
+        );
+      case 'coin_history.earned_coins':
+        return context.tr(
+          'coin_history.earned_coins',
+          fallback: 'Earned Coins',
+        );
+      case 'coin_history.purchased_hint_pack':
+        return context.tr(
+          'coin_history.purchased_hint_pack',
+          fallback: 'Purchased Hint Pack',
+        );
+      case 'coin_history.repaired_streak':
+        return context.tr(
+          'coin_history.repaired_streak',
+          fallback: 'Repaired Streak 🔥',
+        );
+      case 'coin_history.purchased_streak_freeze':
+        return context.tr(
+          'coin_history.purchased_streak_freeze',
+          fallback: 'Streak Freeze ❄️',
+        );
+      case 'coin_history.purchased_double_xp':
+        return context.tr(
+          'coin_history.purchased_double_xp',
+          fallback: 'Double XP Boost ⚡',
+        );
+      case 'coin_history.purchased_permanent_xp_boost':
+        return context.tr(
+          'coin_history.purchased_permanent_xp_boost',
+          fallback: 'Permanent XP Boost 🚀',
+        );
+      case 'coin_history.streak_milestone_reward':
+        return context.tr(
+          'coin_history.streak_milestone_reward',
+          args: [milestone],
+          fallback:
+              'Streak Milestone${milestone.isNotEmpty ? ' ($milestone🔥)' : ''} 🏆',
+        );
+      case 'coin_history.level_milestone_reward':
+        return context.tr(
+          'coin_history.level_milestone_reward',
+          args: [milestone],
+          fallback:
+              'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''} 🏆',
+        );
+      case 'coin_history.ad_reward':
+        return context.tr(
+          'coin_history.ad_reward',
+          fallback: 'Ad Reward 🎬',
+        );
+      case 'coin_history.daily_gift':
+        return context.tr(
+          'coin_history.daily_gift',
+          fallback: 'Daily Gift 🎁',
+        );
+      case 'coin_history.vip_gift':
+        return context.tr(
+          'coin_history.vip_gift',
+          fallback: 'VIP Gift ⭐',
+        );
+      case 'coin_history.spin_reward':
+        return context.tr(
+          'coin_history.spin_reward',
+          fallback: 'Spin Reward 🎰',
+        );
+      case 'coin_history.daily_chest':
+        return context.tr(
+          'coin_history.daily_chest',
+          fallback: 'Daily Chest 🎁',
+        );
+      case 'coin_history.speaking_bonus':
+        return context.tr(
+          'coin_history.speaking_bonus',
+          fallback: 'Speaking Bonus 🎤',
+        );
+      case 'coin_history.purchased_mascot':
+        return context.tr(
+          'coin_history.purchased_mascot',
+          fallback: 'Purchased Mascot 🦉',
+        );
+      case 'coin_history.purchased_accessory':
+        return context.tr(
+          'coin_history.purchased_accessory',
+          fallback: 'Purchased Accessory ✨',
+        );
+      case 'coin_history.purchased_golden_key':
+        return context.tr(
+          'coin_history.purchased_golden_key',
+          fallback: 'Purchased Golden Key 🔑',
+        );
+      case 'coin_history.purchased_coin_pack':
+        return context.tr(
+          'coin_history.purchased_coin_pack',
+          fallback: 'Purchased Coin Pack 💎',
+        );
+      default:
+        // Legacy raw-English entries or unknown keys — display as-is.
+        return rawKey;
+    }
   }
 }
 

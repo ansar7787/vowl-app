@@ -146,8 +146,16 @@ class ShopRepositoryImpl
             UserGameConstants.kDailyGiftBaseReward +
             (now.day % 5) * UserGameConstants.kDailyGiftCycleIncrement;
 
+        final history = _recordCoinHistory(
+          _parseMapList(doc.data()!['coinHistory']),
+          titleKey: 'coin_history.daily_gift',
+          amount: reward,
+          isEarned: true,
+        );
+
         transaction.update(docRef, {
           'coins': FieldValue.increment(reward),
+          'coinHistory': history,
           'lastDailyRewardDate': Timestamp.now(),
         });
         return const Right<Failure, void>(null);
@@ -198,8 +206,16 @@ class ShopRepositoryImpl
           return Left(AuthFailure('daily-chest-already-claimed'));
         }
 
+        final history = _recordCoinHistory(
+          _parseMapList(doc.data()!['coinHistory']),
+          titleKey: 'coin_history.daily_chest',
+          amount: amount,
+          isEarned: true,
+        );
+
         transaction.update(docRef, {
           'coins': FieldValue.increment(amount),
+          'coinHistory': history,
           'lastDailyRewardDate': Timestamp.now(),
         });
         return const Right<Failure, void>(null);
@@ -536,6 +552,12 @@ class ShopRepositoryImpl
         if (!alreadyOwned) {
           updates['coins'] = currentCoins - cost;
           updates['vowlOwnedMascots'] = FieldValue.arrayUnion([mascotId]);
+          updates['coinHistory'] = _recordCoinHistory(
+            _parseMapList(data['coinHistory']),
+            titleKey: 'coin_history.purchased_mascot',
+            amount: -cost,
+            isEarned: false,
+          );
         }
 
         transaction.update(docRef, updates);
@@ -588,6 +610,12 @@ class ShopRepositoryImpl
           updates['vowlOwnedAccessories'] = FieldValue.arrayUnion([
             accessoryId,
           ]);
+          updates['coinHistory'] = _recordCoinHistory(
+            _parseMapList(data['coinHistory']),
+            titleKey: 'coin_history.purchased_accessory',
+            amount: -cost,
+            isEarned: false,
+          );
         }
 
         transaction.update(docRef, updates);

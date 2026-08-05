@@ -169,9 +169,24 @@ exports.verifyCoinPurchase = onCall(async (request) => {
 
         const currentCoins = userDoc.data().coins || 0;
         const currentKeys = userDoc.data().goldenKeys || 0;
+        const currentCoinHistory = userDoc.data().coinHistory || [];
 
         coinsGranted = packData.coins || 0;
         keysGranted = packData.keys || 0;
+
+        if (coinsGranted > 0) {
+            currentCoinHistory.unshift({
+                titleKey: 'coin_history.purchased_coin_pack',
+                amount: coinsGranted,
+                isEarned: true,
+                date: new Date().toISOString()
+            });
+            
+            // Limit array size to prevent document Bloat
+            if (currentCoinHistory.length > 20) {
+                currentCoinHistory.length = 20;
+            }
+        }
 
         transaction.update(userRef, {
             coins: currentCoins + coinsGranted,
@@ -179,6 +194,7 @@ exports.verifyCoinPurchase = onCall(async (request) => {
             lastCoinPurchaseId: paymentId,
             lastCoinPurchaseDate: admin.firestore.FieldValue.serverTimestamp(),
             lastCoinPackId: packId,
+            coinHistory: currentCoinHistory,
         });
     });
 
@@ -238,11 +254,14 @@ exports.sendWeeklyRankings = onSchedule("59 23 * * 0", async (event) => {
             if (rank === 1) {
                 title = "The Crown is Yours! 👑";
                 body = "UNBELIEVABLE! You are the #1 Vowl player in the world this week! 🥇 Defend your throne!";
-            } else if (rank <= 3) {
-                title = "Podium Finish! 🥈";
-                body = `Incredible! You finished #${rank} in the world! Can you hit #1 next week?`;
+            } else if (rank === 2) {
+                title = "Silver Medalist! 🥈";
+                body = `Incredible! You finished #2 in the world! Can you hit #1 next week?`;
+            } else if (rank === 3) {
+                title = "Podium Finish! 🥉";
+                body = `Amazing! You finished #3 in the world! You're on the podium!`;
             } else {
-                body = `Amazing! You finished #${rank} in the Global Rankings! 🏆 You're a legend!`;
+                body = `Great job! You finished #${rank} in the Global Rankings! 🏆 Keep climbing!`;
             }
 
             messages.push({

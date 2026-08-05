@@ -168,6 +168,12 @@ class UserRepositoryImpl
 
         transaction.update(docRef, {
           'coins': FieldValue.increment(UserGameConstants.kVipDailyGiftReward),
+          'coinHistory': _recordCoinHistory(
+            _parseMapList(doc.data()!['coinHistory']),
+            titleKey: 'coin_history.vip_gift',
+            amount: UserGameConstants.kVipDailyGiftReward,
+            isEarned: true,
+          ),
           'lastVipGiftDate': Timestamp.now(),
         });
         return const Right<Failure, void>(null);
@@ -212,5 +218,37 @@ class UserRepositoryImpl
   /// Debug-only log helper. Produces no output in release builds.
   void _log(String message) {
     if (kDebugMode) debugPrint(message);
+  }
+
+  /// Parses a Firestore list of coin-history entries defensively. Local
+  /// counterpart to the equivalent helper in ShopRepositoryImpl — Dart's
+  /// per-file privacy means neither can import the other's.
+  static List<Map<String, dynamic>> _parseMapList(dynamic raw) {
+    if (raw == null) return <Map<String, dynamic>>[];
+    return (raw as List<dynamic>)
+        .whereType<Map<Object?, Object?>>()
+        .map((m) => m.map((k, v) => MapEntry(k.toString(), v)))
+        .toList();
+  }
+
+  /// Prepends a coin-history entry and trims to the configured retention
+  /// limit.
+  static List<Map<String, dynamic>> _recordCoinHistory(
+    List<Map<String, dynamic>> existing, {
+    required String titleKey,
+    required int amount,
+    required bool isEarned,
+  }) {
+    final updated = List<Map<String, dynamic>>.from(existing)
+      ..insert(0, {
+        'titleKey': titleKey,
+        'amount': amount,
+        'isEarned': isEarned,
+        'date': DateTime.now().toIso8601String(),
+      });
+    if (updated.length > UserGameConstants.kActivityHistoryLimit) {
+      return updated.sublist(0, UserGameConstants.kActivityHistoryLimit);
+    }
+    return updated;
   }
 }

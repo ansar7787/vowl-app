@@ -764,9 +764,18 @@ class GamificationRepositoryImpl
           if (currentCoins < cost) {
             return Left(AuthFailure('insufficient-coins'));
           }
+
+          final history = _recordCoinHistory(
+            _parseMapList(data['coinHistory']),
+            titleKey: 'coin_history.purchased_golden_key',
+            amount: -cost,
+            isEarned: false,
+          );
+
           transaction.update(docRef, {
             'coins': currentCoins - cost,
             'keys': currentKeys + 1,
+            'coinHistory': history,
           });
         }
         return const Right<Failure, void>(null);

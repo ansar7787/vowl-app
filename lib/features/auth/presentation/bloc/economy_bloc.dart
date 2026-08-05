@@ -325,16 +325,12 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     );
   }
 
-  /// ⚠️ Client-side XP/coin credit via a full-document [updateUser] write —
-  /// same pattern flagged (and fixed, where a safe fix was possible) in
-  /// `ProfileBloc` and `ProgressionBloc`. Not changed here: unlike a
-  /// milestone claim, there's no server-side reference table this review
-  /// has visibility into for what a legitimate "triple up" amount should
-  /// be, so a repository method could only re-implement the same
-  /// trust-the-caller behavior with extra ceremony, not actually close the
-  /// gap. At minimum this should become an atomic `FieldValue.increment`
-  /// inside a transaction (closing the lost-update race) once the intended
-  /// validation rule is decided; see the review notes for the full pattern.
+  /// Awards the ad-tripled coin bonus and optional XP via proper atomic
+  /// paths that record a coinHistory ledger entry. The previous
+  /// implementation used a raw [updateUser] full-document write, which
+  /// bypassed [_recordCoinHistory] entirely — so the bonus coins were
+  /// credited to the balance but never appeared in the Coin Ledger,
+  /// leaving users confused about where their coins came from.
   Future<void> _onTripleUp(
     EconomyTripleUpRewardsRequested event,
     Emitter<EconomyState> emit,
@@ -343,15 +339,35 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     final user = authBloc.state.user;
     if (user == null) return;
 
-    final updatedUser = user.copyWith(
-      totalExp: user.totalExp + event.bonusXp,
-      coins: user.coins + event.bonusCoins,
-    );
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
-    result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
-    );
+    // ── Bonus coins: use the proper atomic path with coinHistory logging ──
+    if (event.bonusCoins > 0) {
+      final coinResult = await updateUserCoins(
+        UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.ad_triple_reward',
+          isEarned: true,
+        ),
+      );
+      coinResult.fold(
+        (failure) {
+          _log('EconomyBloc: TripleUp coins FAILED: ${failure.message}');
+          emit(state.copyWith(message: () => failure.message));
+        },
+        (_) => _log('EconomyBloc: TripleUp coins SUCCESS (+${event.bonusCoins})'),
+      );
+    }
+
+    // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
+    if (event.bonusXp > 0) {
+      final xpUser = authBloc.state.user;
+      if (xpUser == null) return;
+      final updatedUser = xpUser.copyWith(
+        totalExp: xpUser.totalExp + event.bonusXp,
+      );
+      await updateUser(UpdateUserParams(user: updatedUser));
+    }
+
+    authBloc.add(const AuthRefreshUser());
   }
 
   /// ⚠️ Same caveat as [_onTripleUp] — see its doc comment.
@@ -362,15 +378,35 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     final user = authBloc.state.user;
     if (user == null) return;
 
-    final updatedUser = user.copyWith(
-      totalExp: user.totalExp + event.bonusXp,
-      coins: user.coins + event.bonusCoins,
-    );
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
-    result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthRefreshUser()),
-    );
+    // ── Bonus coins: use the proper atomic path with coinHistory logging ──
+    if (event.bonusCoins > 0) {
+      final coinResult = await updateUserCoins(
+        UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.earned_coins',
+          isEarned: true,
+        ),
+      );
+      coinResult.fold(
+        (failure) {
+          _log('EconomyBloc: Bonus coins FAILED: ${failure.message}');
+          emit(state.copyWith(message: () => failure.message));
+        },
+        (_) => _log('EconomyBloc: Bonus coins SUCCESS (+${event.bonusCoins})'),
+      );
+    }
+
+    // ── Bonus XP: still uses updateUser (no atomic XP-increment use case) ──
+    if (event.bonusXp > 0) {
+      final xpUser = authBloc.state.user;
+      if (xpUser == null) return;
+      final updatedUser = xpUser.copyWith(
+        totalExp: xpUser.totalExp + event.bonusXp,
+      );
+      await updateUser(UpdateUserParams(user: updatedUser));
+    }
+
+    authBloc.add(const AuthRefreshUser());
   }
 
   Future<void> _onClaimDailyChest(

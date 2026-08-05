@@ -13,11 +13,17 @@ class ProfileHeader extends StatelessWidget {
   final VoidCallback onEditName;
   final VoidCallback onEditPhoto;
 
+  /// When non-null, takes priority over [user.photoUrl] — used to display the
+  /// freshly-uploaded profile picture immediately after a successful upload,
+  /// before the Firestore user-stream round-trip completes.
+  final String? immediatePhotoUrl;
+
   const ProfileHeader({
     super.key,
     required this.user,
     required this.onEditName,
     required this.onEditPhoto,
+    this.immediatePhotoUrl,
   });
 
   @override
@@ -75,8 +81,8 @@ class ProfileHeader extends StatelessWidget {
                           : const Color(0xFFF1F5F9),
                     ),
                     child: ClipOval(
-                      child: user.photoUrl != null
-                          ? ShimmerImage(imageUrl: user.photoUrl!)
+                      child: (immediatePhotoUrl ?? user.photoUrl) != null
+                          ? ShimmerImage(imageUrl: (immediatePhotoUrl ?? user.photoUrl)!)
                           : Icon(
                               Icons.person_rounded,
                               color: const Color(0xFF94A3B8),
