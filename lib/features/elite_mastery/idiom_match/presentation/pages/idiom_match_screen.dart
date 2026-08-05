@@ -231,12 +231,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   ? (state.isFinalFailure || state.livesRemaining <= 0)
                   : false,
               showConfetti: _showConfetti,
-              title:
-                  quest?.instruction ??
-                  context.tr(
-                    'games.idiomMatch_instruction',
-                    fallback: 'Select the matching idiom.',
-                  ),
               visualConfig: quest?.visualConfig,
               onContinue: () {
                 setState(() {
@@ -325,6 +319,44 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
         return Column(
           children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: theme.primaryColor.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                      color: theme.primaryColor.withValues(alpha: 0.2)),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.extension_rounded,
+                        color: theme.primaryColor, size: 24.r),
+                    SizedBox(width: 12.w),
+                    Expanded(
+                      child: Text(
+                        quest.instruction.isNotEmpty
+                            ? quest.instruction
+                            : context.tr(
+                                'games.idiomMatch_instruction',
+                                fallback: 'Select the matching idiom.',
+                              ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(width: 24.r + 12.w), // Balance the icon for true center
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: isCompact ? 16.h : 24.h),
             if (quest.question != null && quest.question!.isNotEmpty) ...[
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
