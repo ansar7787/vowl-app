@@ -17,10 +17,13 @@ class GameScrollbar extends StatelessWidget {
     return RawScrollbar(
       controller: controller,
       thumbColor: isDark ? Colors.white24 : Colors.black26,
-      radius: const Radius.circular(8),
-      thickness: 3,
+      radius: const Radius.circular(10),
+      thickness: 4,
+      crossAxisMargin: 4,
+      mainAxisMargin: 24,
+      minThumbLength: 36,
       fadeDuration: const Duration(milliseconds: 300),
-      timeToFade: const Duration(milliseconds: 1000),
+      timeToFade: const Duration(milliseconds: 1500),
       interactive: true,
       child: child,
     );
