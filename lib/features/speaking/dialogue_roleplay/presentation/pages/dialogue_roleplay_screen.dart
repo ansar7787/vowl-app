@@ -8,22 +8,18 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
-import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_telemetry_card.dart';
-import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_mic_trigger.dart';
 
 class DialogueRoleplayScreen extends StatefulWidget {
   final int level;
@@ -43,22 +39,19 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isListening = false;
-  int _attempts = 0;
 
   late AnimationController _synapticController;
   double _timeVal = 0.0;
-  String _spokenText = "";
   
   List<String> _acceptedSynonyms = [];
   List<String> _smartReplies = [];
+  String _chosenReply = "";
 
   @override
   void initState() {
@@ -112,108 +105,29 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     }
   }
 
-  void _startSpeechListening() async {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    _hapticService.selection();
 
     setState(() {
-      _isListening = true;
-      _spokenText = "Awaiting verbal speech input...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isListening = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening() async {
-    await _speechService.stop();
-
-    setState(() {
-      _isListening = false;
-    });
-
-    await _verifyResponseSpoken();
-  }
-
-  Future<void> _verifyResponseSpoken() async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Awaiting")) {
-      setState(() {
-        _spokenText = "No vocal signals transcribed.";
-      });
-      _hapticService.error();
-      return;
-    }
-
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language ($detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-    bool matchFound = false;
-
-    for (var sub in _acceptedSynonyms) {
-      final String cleanSub = sub.trim().toLowerCase().replaceAll(
-        RegExp(r'[^\w\s]'),
-        '',
-      );
-      if (cleanSpeech.contains(cleanSub) ||
-          TextSimilarityHelper.isMatch(
-            cleanSpeech,
-            cleanSub,
-            threshold: 0.70,
-          )) {
-        matchFound = true;
-        break;
-      }
-    }
-
-    setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = matchFound;
+      _isCorrect = nailedIt;
     });
 
-    if (!mounted) return;
-
-    if (matchFound) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      di.sl<SmartReplyService>().addMessage(cleanSpeech, isLocalUser: true);
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      
+      // Add a default or chosen message to history if correct
+      final responseText = _chosenReply.isNotEmpty 
+          ? _chosenReply 
+          : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "Yes");
+      di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
+      
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -243,10 +157,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _isListening = false;
-              _spokenText = "";
               _smartReplies = [];
+              _chosenReply = "";
             });
             if (state.currentIndex == 0) {
               di.sl<SmartReplyService>().clearConversation();
@@ -283,6 +195,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
         if (quest != null) {
           _acceptedSynonyms = quest.acceptedSynonyms ?? [];
         }
+        
+        final expectedText = _chosenReply.isNotEmpty 
+            ? _chosenReply 
+            : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "");
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -295,8 +211,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -309,12 +225,12 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 80.h : 110.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 5
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -325,12 +241,6 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                       final double gapStage = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapMic = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
-                          : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -397,29 +307,6 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                             isCorrect: _isCorrect ?? false,
                                           ),
                                     SizedBox(height: gapStage),
-
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      DialogueRoleplayTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : DialogueRoleplayTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
                                             
                                     if (_smartReplies.isNotEmpty && !_isAnswered) ...[
                                       SizedBox(height: 16.h),
@@ -443,12 +330,8 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                                   adButtonLabel: context.tr('translation.smart_reply_ad', fallback: 'Watch Ad (1 Suggestion)'),
                                                   onSuccess: () {
                                                     setState(() {
-                                                      _acceptedSynonyms.add(reply);
-                                                      _spokenText = reply; // Display as hint for them to speak
+                                                      _chosenReply = reply;
                                                     });
-                                                    _verifyResponseSpoken();
-
-
                                                   },
                                                 );
                                               },
@@ -462,41 +345,17 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: gapTelemetry),
-                                    SizedBox(height: gapMic),
 
                                     if (!_isAnswered)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    DialogueRoleplayMicTrigger(
-                                                      isListening: _isListening,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd:
-                                                          _stopSpeechListening,
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : DialogueRoleplayMicTrigger(
-                                              isListening: _isListening,
-                                              primaryColor: theme.primaryColor,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd:
-                                                  _stopSpeechListening,
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: expectedText,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                      ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -513,4 +372,3 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     );
   }
 }
-

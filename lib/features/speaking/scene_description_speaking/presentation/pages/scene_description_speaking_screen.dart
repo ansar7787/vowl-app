@@ -8,18 +8,15 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_active_prompt_card.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_explorer_guide_card.dart';
-import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_telemetry_card.dart';
-import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_mic_trigger.dart';
 
 class SceneDescriptionScreen extends StatefulWidget {
   final int level;
@@ -39,7 +36,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   final Set<int> _inspectedHotspots = {};
   int _activeHotspot = -1;
@@ -48,11 +44,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isListening = false;
-  int _attempts = 0;
 
   late AnimationController _radarController;
-  String _spokenText = "";
   
   List<String> _hotspotLabels = [];
   List<String> _hotspotPrompts = [];
@@ -91,97 +84,17 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     _soundService.playTts(_hotspotLabels[index]);
     setState(() {
       _activeHotspot = index;
-      _spokenText = "";
     });
   }
 
-  void _startSpeechListening() async {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered || _activeHotspot == -1) return;
-    _hapticService.selection();
 
-    setState(() {
-      _isListening = true;
-      _spokenText = "Calibrating vocal description synthesizer...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isListening = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening() async {
-    await _speechService.stop();
-
-    setState(() {
-      _isListening = false;
-    });
-
-    await _verifyDescriptionSpoken();
-  }
-
-  Future<void> _verifyDescriptionSpoken() async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Calibrating")) {
-      setState(() {
-        _spokenText = "No acoustic details detected.";
-      });
-      _hapticService.error();
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-    final List<String> keywords = _hotspotKeywords[_activeHotspot];
-
-    bool matchFound = false;
-
-    for (var key in keywords) {
-      if (cleanSpeech.contains(key.trim().toLowerCase())) {
-        matchFound = true;
-        break;
-      }
-    }
-
-    if (!mounted) return;
-
-    if (matchFound) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
         _inspectedHotspots.add(_activeHotspot);
-        _spokenText =
-            "DECODED SUCCESSFULLY! '${_hotspotLabels[_activeHotspot]}' visual verified.";
         _activeHotspot = -1;
       });
 
@@ -190,17 +103,16 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
           _isAnswered = true;
           _isCorrect = true;
         });
-        context.read<SpeakingBloc>().add(SubmitAnswer(true));
+        context.read<SpeakingBloc>().add(const SubmitAnswer(true));
       }
     } else {
       _hapticService.error();
       _soundService.playWrong();
       setState(() {
-        _attempts++;
-        _spokenText =
-            "Detail mismatch. Focus your description and use key terms: ${keywords.join(', ')}.";
+        _isAnswered = true;
+        _isCorrect = false;
       });
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -256,11 +168,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _isListening = false;
               _inspectedHotspots.clear();
               _activeHotspot = -1;
-              _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -306,8 +215,8 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -320,12 +229,12 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 80.h : 110.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 5
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -339,9 +248,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                       final double gapPrompt = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
-                          : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -467,73 +373,21 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                           ),
                                     SizedBox(height: gapPrompt),
 
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SceneDescriptionTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SceneDescriptionTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: gapTelemetry),
-                                    SizedBox(height: gapBottom),
-
-                                    if (!_isAnswered)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    SceneDescriptionMicTrigger(
-                                                      isListening: _isListening,
-                                                      activeHotspot:
-                                                          _activeHotspot,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd:
-                                                          _stopSpeechListening,
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : SceneDescriptionMicTrigger(
-                                              isListening: _isListening,
-                                              activeHotspot: _activeHotspot,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd:
-                                                  _stopSpeechListening,
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                    if (!_isAnswered && _activeHotspot != -1)
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: _hotspotPrompts[_activeHotspot],
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                      ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -550,4 +404,3 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     );
   }
 }
-

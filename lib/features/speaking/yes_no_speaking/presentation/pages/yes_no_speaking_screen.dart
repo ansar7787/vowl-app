@@ -8,18 +8,14 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_header_instruction.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_audition_card.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_tilt_arena.dart';
-import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_telemetry_card.dart';
-import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/yes_no_speaking_tactile_mic.dart';
 
 class YesNoSpeakingScreen extends StatefulWidget {
   final int level;
@@ -38,22 +34,17 @@ class YesNoSpeakingScreen extends StatefulWidget {
 class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
   double _tiltValue = 0.0;
   bool _isSnapped = false;
-  bool _isSpeechActive = false;
-
-  String _spokenText = "";
   
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   Timer? _autoplayTimer;
-  int _attempts = 0;
 
   @override
   void initState() {
@@ -98,91 +89,26 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     });
   }
 
-  void _startSpeechListening() async {
+  void _submitVerbalEvaluation(bool nailedIt, bool expectedMatch) {
     if (_isAnswered || !_isSnapped) return;
-    _hapticService.selection();
-
-    setState(() {
-      _isSpeechActive = true;
-      _spokenText = "Voice capturing initiated...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isSpeechActive = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening(String expectedText, bool expectedMatch) async {
-    await _speechService.stop();
-    setState(() => _isSpeechActive = false);
-    await _verifyBinaryResponse(expectedText, expectedMatch);
-  }
-
-  Future<void> _verifyBinaryResponse(String expectedText, bool expectedMatch) async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Voice capturing")) {
-      setState(() {
-        _spokenText = "No audible voice input recorded.";
-      });
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
 
     final bool chosenMatch = _tiltValue > 0;
     final bool binaryIsCorrect = chosenMatch == expectedMatch;
-
-    final bool speechIsCorrect = TextSimilarityHelper.isMatch(
-      _spokenText,
-      expectedText,
-      threshold: 0.70,
-    );
-
-    final bool isCorrect = binaryIsCorrect && speechIsCorrect;
+    final bool isOverallCorrect = binaryIsCorrect && nailedIt;
 
     setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = isOverallCorrect;
     });
 
-    if (!mounted) return;
-
-    if (isCorrect) {
+    if (isOverallCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -212,10 +138,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _isSnapped = false;
               _tiltValue = 0.0;
-              _spokenText = "";
             });
             _autoplayTimer?.cancel();
             _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
@@ -263,8 +187,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -277,12 +201,12 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 80.h : 110.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 5
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -296,9 +220,6 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                       final double gapTilt = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
-                          : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -415,71 +336,16 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapTilt),
-                                    if (_isSnapped) ...[
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      YesNoSpeakingTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : YesNoSpeakingTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
-                                      SizedBox(height: gapTelemetry),
-
-                                      if (!_isAnswered)
-                                        isCompact
-                                            ? SizedBox(
-                                                height: 70.h,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: YesNoSpeakingTactileMic(
-                                                    isSpeechActive:
-                                                        _isSpeechActive,
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    onLongPressStart:
-                                                        _startSpeechListening,
-                                                    onLongPressEnd: () =>
-                                                        _stopSpeechListening(
-                                                          quest.sampleAnswer ??
-                                                              "",
-                                                          doTheyMatch,
-                                                        ),
-                                                    attempts: _attempts,
-                                                    isAnswered: _isAnswered,
-                                                    
-                                                  ),
-                                                ),
-                                              )
-                                            : YesNoSpeakingTactileMic(
-                                                isSpeechActive: _isSpeechActive,
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                onLongPressStart:
-                                                    _startSpeechListening,
-                                                onLongPressEnd: () =>
-                                                    _stopSpeechListening(
-                                                      quest.sampleAnswer ?? "",
-                                                      doTheyMatch,
-                                                    ),
-                                                attempts: _attempts,
-                                                isAnswered: _isAnswered,
-                                                
-                                              ),
-                                    ],
+                                    if (_isSnapped && !_isAnswered)
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: quest.sampleAnswer ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true, doTheyMatch),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false, doTheyMatch),
+                                      ),
 
                                     SizedBox(height: gapBottom),
                                   ],
@@ -497,4 +363,3 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     );
   }
 }
-

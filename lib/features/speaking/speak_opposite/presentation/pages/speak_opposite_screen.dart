@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,19 +7,15 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_plasma_conduit_panel.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_negative_pole_panel.dart';
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_frequency_telemetry_card.dart';
-import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_electromagnetic_trigger.dart';
 
 class SpeakOppositeScreen extends StatefulWidget {
   final int level;
@@ -40,7 +35,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   double _pullProgress = 0.0;
   bool _isAnswered = false;
@@ -48,14 +42,9 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isListening = false;
-  int _attempts = 0;
 
-  // Animation controller for high-voltage plasma crackling oscillation
   late AnimationController _sparkController;
-  Timer? _pullTimer;
   double _timeVal = 0.0;
-  String _spokenText = "";
   
   List<String> _acceptedAntonyms = [];
 
@@ -79,7 +68,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   @override
   void dispose() {
     _sparkController.dispose();
-    _pullTimer?.cancel();
     super.dispose();
   }
 
@@ -90,130 +78,22 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     }
   }
 
-  void _startSpeechListening() async {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    _hapticService.selection();
-
     setState(() {
-      _isListening = true;
-      _pullProgress = 0.05;
-      _spokenText = "Calibrating reverse polarization channel...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isListening = false);
-      },
-    );
-
-    _pullTimer = Timer.periodic(const Duration(milliseconds: 30), (timer) {
-      if (!mounted || !_isListening) {
-        timer.cancel();
-        return;
-      }
-      setState(() {
-        if (_pullProgress < 0.92) {
-          _pullProgress += 0.015 + (math.Random().nextDouble() * 0.008);
-        } else {
-          _pullProgress = 0.92 + (math.Random().nextDouble() * 0.03);
-        }
-      });
-    });
-  }
-
-  void _stopSpeechListening() async {
-    _pullTimer?.cancel();
-    await _speechService.stop();
-
-    setState(() {
-      _isListening = false;
-    });
-
-    await _verifyOppositeSpoken();
-  }
-
-  Future<void> _verifyOppositeSpoken() async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Calibrating")) {
-      setState(() {
-        _spokenText = "No magnetic frequency detected.";
-        _pullProgress = 0.0;
-      });
-      _hapticService.error();
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-    final List<String> speechWords = cleanSpeech.split(' ');
-
-    bool matchFound = false;
-
-    for (var word in speechWords) {
-      final String cleanWord = word.trim().replaceAll(RegExp(r'[^\w]'), '');
-      for (var ant in _acceptedAntonyms) {
-        final String cleanAnt = ant.trim().toLowerCase();
-        if (cleanWord == cleanAnt ||
-            cleanWord.contains(cleanAnt) ||
-            cleanAnt.contains(cleanWord) ||
-            TextSimilarityHelper.isMatch(
-              cleanWord,
-              cleanAnt,
-              threshold: 0.70,
-            )) {
-          matchFound = true;
-          break;
-        }
-      }
-      if (matchFound) break;
-    }
-
-    setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = matchFound;
-      _pullProgress = matchFound ? 1.0 : 0.0;
+      _isCorrect = nailedIt;
+      _pullProgress = nailedIt ? 1.0 : 0.0;
     });
 
-    if (!mounted) return;
-
-    if (matchFound) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -244,10 +124,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _isListening = false;
               _pullProgress = 0.0;
-              _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -281,6 +158,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
         if (quest != null) {
           _acceptedAntonyms = quest.acceptedSynonyms ?? [];
         }
+        
+        final expectedText = _acceptedAntonyms.isNotEmpty ? _acceptedAntonyms.first : "";
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -293,8 +172,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -307,12 +186,12 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 80.h : 110.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 6
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -329,9 +208,6 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                       final double gapNegative = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
-                          : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -417,7 +293,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                                           _pullProgress,
                                                       primaryColor:
                                                           theme.primaryColor,
-                                                      isListening: _isListening,
+                                                      isListening: false,
                                                       timeVal: _timeVal,
                                                       isDark: isDark,
                                                     ),
@@ -427,7 +303,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                         : SpeakOppositePlasmaConduitPanel(
                                             pullProgress: _pullProgress,
                                             primaryColor: theme.primaryColor,
-                                            isListening: _isListening,
+                                            isListening: false,
                                             timeVal: _timeVal,
                                             isDark: isDark,
                                           ),
@@ -460,63 +336,18 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapNegative),
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakOppositeFrequencyTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakOppositeFrequencyTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
-
-                                    SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    SpeakOppositeElectromagneticTrigger(
-                                                      isListening: _isListening,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd:
-                                                          _stopSpeechListening,
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : SpeakOppositeElectromagneticTrigger(
-                                              isListening: _isListening,
-                                              primaryColor: theme.primaryColor,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd:
-                                                  _stopSpeechListening,
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: expectedText,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                      ),
+
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -533,4 +364,3 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     );
   }
 }
-

@@ -7,18 +7,14 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_instruction.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_vortex_sentence.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_magnet_arena.dart';
-import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_telemetry_card.dart';
-import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/speak_missing_word_tactile_mic.dart';
 
 class SpeakMissingWordScreen extends StatefulWidget {
   final int level;
@@ -37,7 +33,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   late AnimationController _vortexController;
 
@@ -51,14 +46,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
   bool _isListening = false;
   bool _isWordPlaced = false;
 
-  // Speech states
-  String _spokenText = "";
-  
-  bool _isSpeechActive = false;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  int _attempts = 0;
 
   @override
   void initState() {
@@ -172,91 +162,25 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     }
   }
 
-  void _startSpeechListening() async {
-    if (_isAnswered || !_isWordPlaced) return;
-    _hapticService.selection();
+  void _submitVerbalEvaluation(bool nailedIt, String expectedWord) {
+    if (_isAnswered) return;
+    
+    final bool wordIsCorrect = _selectedWord?.toLowerCase() == expectedWord.toLowerCase();
+    final bool isOverallCorrect = wordIsCorrect && nailedIt;
 
     setState(() {
-      _isSpeechActive = true;
-      _spokenText = "Voice capturing initiated...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isSpeechActive = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening(String correctAnswer) async {
-    await _speechService.stop();
-    setState(() => _isSpeechActive = false);
-    await _verifySpeech(correctAnswer);
-  }
-
-  Future<void> _verifySpeech(String expected) async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Voice capturing")) {
-      setState(() {
-        _spokenText = "No speech input recorded.";
-      });
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-
-    final bool wordIsCorrect =
-        _selectedWord?.toLowerCase() == expected.toLowerCase();
-
-    final bool speechIsCorrect = TextSimilarityHelper.isMatch(
-      _spokenText,
-      expected,
-      threshold: 0.70,
-    );
-
-    final bool isCorrect = wordIsCorrect && speechIsCorrect;
-
-    setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = isOverallCorrect;
     });
 
-    if (!mounted) return;
-
-    if (isCorrect) {
+    if (isOverallCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -297,12 +221,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
               _isListening = false;
               _pullForce = 0.0;
               _selectedWord = null;
               _isWordPlaced = false;
-              _spokenText = "";
               _generateDynamicOptions(
                 state.currentQuest.missingWord ?? "drone",
               );
@@ -367,8 +289,8 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -381,12 +303,12 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 70.h : 100.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 6
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -398,7 +320,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
                       final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
+                          ? (gapUnit * 1.5).clamp(12.0, 30.0)
                           : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
@@ -516,29 +438,6 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                               onPullStart: _onPullStart,
                                               onPullEnd: _onPullEnd,
                                             ),
-
-                                    if (_isWordPlaced)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakMissingWordTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakMissingWordTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
                                   ],
                                 ),
                                 Column(
@@ -546,42 +445,15 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                   children: [
                                     SizedBox(height: gapTelemetry),
                                     if (_isWordPlaced && !_isAnswered)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    SpeakMissingWordTactileMic(
-                                                      isSpeechActive:
-                                                          _isSpeechActive,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd: () =>
-                                                          _stopSpeechListening(
-                                                            completedSentence,
-                                                          ),
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : SpeakMissingWordTactileMic(
-                                              isSpeechActive: _isSpeechActive,
-                                              primaryColor: theme.primaryColor,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd: () =>
-                                                  _stopSpeechListening(
-                                                    completedSentence,
-                                                  ),
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: completedSentence,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true, missingWord),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false, missingWord),
+                                      ),
 
                                     SizedBox(height: gapBottom),
                                   ],
@@ -599,4 +471,3 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     );
   }
 }
-

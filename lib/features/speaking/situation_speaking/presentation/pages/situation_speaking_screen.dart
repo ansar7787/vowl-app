@@ -8,16 +8,13 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
-import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_telemetry_card.dart';
-import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_scrubbed_mic_trigger.dart';
 
 class SituationSpeakingScreen extends StatefulWidget {
   final int level;
@@ -38,7 +35,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   double _scrubProgress = 0.0;
   bool _isAnswered = false;
@@ -46,14 +42,9 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isListening = false;
-  int _attempts = 0;
 
   late AnimationController _shimmerController;
   double _timeVal = 0.0;
-  String _spokenText = "";
-  
-  List<String> _acceptedSubstrings = [];
 
   @override
   void initState() {
@@ -84,102 +75,22 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     }
   }
 
-  void _startSpeechListening() async {
-    if (_isAnswered || _scrubProgress < 0.95) return;
-    _hapticService.selection();
+  void _submitVerbalEvaluation(bool nailedIt) {
+    if (_isAnswered) return;
 
     setState(() {
-      _isListening = true;
-      _spokenText = "Calibrating conversational context decoder...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isListening = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening() async {
-    await _speechService.stop();
-
-    setState(() {
-      _isListening = false;
-    });
-
-    await _verifyResponseSpoken();
-  }
-
-  Future<void> _verifyResponseSpoken() async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Calibrating")) {
-      setState(() {
-        _spokenText = "No voice frequency signature detected.";
-      });
-      _hapticService.error();
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-
-    final String cleanSpeech = _spokenText.trim().toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-    bool matchFound = false;
-
-    for (var sub in _acceptedSubstrings) {
-      final String cleanSub = sub.trim().toLowerCase().replaceAll(
-        RegExp(r'[^\w\s]'),
-        '',
-      );
-      if (cleanSpeech.contains(cleanSub)) {
-        matchFound = true;
-        break;
-      }
-    }
-
-    setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = matchFound;
+      _isCorrect = nailedIt;
     });
 
-    if (!mounted) return;
-
-    if (matchFound) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -221,10 +132,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _isListening = false;
               _scrubProgress = 0.0;
-              _spokenText = "";
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -255,10 +163,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
       builder: (context, state) {
         final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
-        if (quest != null) {
-          _acceptedSubstrings = quest.acceptedSynonyms ?? [];
-        }
-
         return MediaQuery(
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
@@ -270,8 +174,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -289,7 +193,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 6
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -298,9 +202,6 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                           ? (gapUnit * 1).clamp(8.0, 16.0)
                           : 8.0;
                       final double gapScrubber = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
                       final double gapMic = remainingHeight > 0
@@ -382,74 +283,23 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                                                 ),
                                           ),
                                     SizedBox(height: gapScrubber),
-
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SituationSpeakingTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SituationSpeakingTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                            ),
                                   ],
                                 ),
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    SizedBox(height: gapTelemetry),
                                     SizedBox(height: gapMic),
 
-                                    if (!_isAnswered)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    SituationSpeakingScrubbedMicTrigger(
-                                                      isListening: _isListening,
-                                                      scrubProgress:
-                                                          _scrubProgress,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd:
-                                                          _stopSpeechListening,
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : SituationSpeakingScrubbedMicTrigger(
-                                              isListening: _isListening,
-                                              scrubProgress: _scrubProgress,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd:
-                                                  _stopSpeechListening,
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                    if (!_isAnswered && _scrubProgress >= 1.0)
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: quest.textToSpeak ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                      ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -466,4 +316,3 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     );
   }
 }
-

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,20 +7,16 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_usage_panel.dart';
-import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_telemetry_card.dart';
-import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratcher_trigger.dart';
 
 class DailyExpressionScreen extends StatefulWidget {
   final int level;
@@ -41,7 +36,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   double _scratchProgress = 0.0;
   bool _isAnswered = false;
@@ -49,14 +43,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _isListening = false;
-  int _attempts = 0;
 
   late AnimationController _glowController;
-  Timer? _scratchTimer;
   double _timeVal = 0.0;
-  String _spokenText = "";
-  List<String> _spokenCandidates = [];
   String _targetExpression = "";
 
   @override
@@ -79,42 +68,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
   @override
   void dispose() {
     _glowController.dispose();
-    _scratchTimer?.cancel();
     super.dispose();
-  }
-
-  void _startSpeechListening() async {
-    if (_isAnswered) return;
-    _hapticService.selection();
-
-    setState(() {
-      _isListening = true;
-      _spokenText = "Initializing vocal frequency analyzer...";
-    });
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-        });
-      },
-      onDone: () {
-        if (mounted) setState(() => _isListening = false);
-      },
-    );
-  }
-
-  void _stopSpeechListening() async {
-    await _speechService.stop();
-
-    setState(() {
-      _isListening = false;
-    });
-
-    await _verifyExpressionSpoken();
   }
 
   void _handleScratchUpdate(double delta) {
@@ -129,60 +83,22 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     });
   }
 
-  Future<void> _verifyExpressionSpoken() async {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Initializing")) {
-      setState(() {
-        _spokenText = "Vocal analysis timed out.";
-      });
-      _hapticService.error();
-      return;
-    }
-    // Language ID interception
-    final languageIdService = di.sl<LanguageIdService>();
-    final detectedLang = await languageIdService.identifyLanguage(_spokenText);
-
-    if (detectedLang != 'en' && detectedLang != 'und') {
-      _hapticService.error();
-      if (!mounted) return;
-      GameDialogHelper.showPremiumSnackBar(
-        context,
-        "Oops! It sounds like you spoke in a different language (\$detectedLang). Try saying it in English!",
-        icon: Icons.language_rounded,
-        color: Colors.orange,
-      );
-      setState(() {
-        _isAnswered = false;
-        _spokenText = "";
-      });
-      return;
-    }
-
-
-    bool matchFound = false;
-    for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
-      if (TextSimilarityHelper.isMatch(candidate, _targetExpression, threshold: 0.70)) {
-        matchFound = true;
-        _spokenText = candidate;
-        break;
-      }
-    }
+  void _submitVerbalEvaluation(bool nailedIt) {
+    if (_isAnswered || _scratchProgress < 1.0) return;
 
     setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = matchFound;
+      _isCorrect = nailedIt;
     });
 
-    if (!mounted) return;
-
-    if (matchFound) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<SpeakingBloc>().add(SubmitAnswer(true));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      context.read<SpeakingBloc>().add(SubmitAnswer(false));
+      context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -213,10 +129,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _isListening = false;
               _scratchProgress = 0.0;
-              _spokenText = "";
             });
             // Removed Future.delayed auto-play to preserve scratch card mystery
           } else if (state.lastAnswerCorrect == false) {
@@ -257,8 +170,8 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -271,12 +184,12 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                           (isCompact ? 90.h : 120.h) +
                           (isCompact ? 80.h : 110.h) +
                           (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 60.h : 80.h);
+                          (isCompact ? 100.h : 160.h);
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
                       final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
+                          ? remainingHeight / 5
                           : 0;
                       final double gapTop = remainingHeight > 0
                           ? (gapUnit * 1).clamp(6.0, 16.0)
@@ -290,9 +203,6 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                       final double gapUsage = remainingHeight > 0
                           ? (gapUnit * 1.5).clamp(10.0, 24.0)
                           : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(12.0, 30.0)
-                          : 12.0;
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -399,7 +309,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                       isDark: isDark,
                                                       scratchProgress:
                                                           _scratchProgress,
-                                                      isListening: _isListening,
+                                                      isListening: false,
                                                       timeVal: _timeVal,
                                                       onPlayTts: () =>
                                                           _soundService.playTts(
@@ -417,7 +327,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                             primaryColor: theme.primaryColor,
                                             isDark: isDark,
                                             scratchProgress: _scratchProgress,
-                                            isListening: _isListening,
+                                            isListening: false,
                                             timeVal: _timeVal,
                                             onPlayTts: () =>
                                                 _soundService.playTts(
@@ -428,8 +338,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                           ),
                                     SizedBox(height: gapScratch),
 
-                                    if (_scratchProgress > 0.3 &&
-                                        _spokenText.isEmpty)
+                                    if (_scratchProgress > 0.3)
                                       isCompact
                                           ? SizedBox(
                                                   height: 80.h,
@@ -446,7 +355,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                                 .primaryColor,
                                                             isDark: isDark,
                                                             isListening:
-                                                                _isListening,
+                                                                false,
                                                           ),
                                                     ),
                                                   ),
@@ -459,7 +368,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                   primaryColor:
                                                       theme.primaryColor,
                                                   isDark: isDark,
-                                                  isListening: _isListening,
+                                                  isListening: false,
                                                 )
                                                 .animate()
                                                 .fadeIn(duration: 300.ms)
@@ -470,70 +379,17 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     SizedBox(height: gapUsage),
-                                    if (_spokenText.isNotEmpty)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      DailyExpressionTelemetryCard(
-                                                        spokenText: _spokenText,
-                                                        isDark: isDark,
-                                                        primaryColor:
-                                                            theme.primaryColor,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : DailyExpressionTelemetryCard(
-                                              spokenText: _spokenText,
-                                              isDark: isDark,
-                                              primaryColor: theme.primaryColor,
-                                            ),
-
-                                    SizedBox(height: gapTelemetry),
 
                                     if (!_isAnswered && _scratchProgress >= 1.0)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 70.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child:
-                                                    DailyExpressionScratcherTrigger(
-                                                      isListening: _isListening,
-                                                      timeVal: _timeVal,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onLongPressStart:
-                                                          _startSpeechListening,
-                                                      onLongPressEnd:
-                                                          _stopSpeechListening,
-                                                      attempts: _attempts,
-                                                      isAnswered: _isAnswered,
-                                                      
-                                                    ),
-                                              ),
-                                            )
-                                          : DailyExpressionScratcherTrigger(
-                                              isListening: _isListening,
-                                              timeVal: _timeVal,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              onLongPressStart:
-                                                  _startSpeechListening,
-                                              onLongPressEnd:
-                                                  _stopSpeechListening,
-                                              attempts: _attempts,
-                                              isAnswered: _isAnswered,
-                                              
-                                            ),
+                                      SpeakingSelfEvaluationControls(
+                                          expectedText: _targetExpression,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onConfirmed: () =>
+                                              _submitVerbalEvaluation(true),
+                                          onSkipped: () =>
+                                              _submitVerbalEvaluation(false),
+                                      ),
                                     SizedBox(height: gapBottom),
                                   ],
                                 ),
@@ -550,4 +406,3 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     );
   }
 }
-
