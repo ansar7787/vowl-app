@@ -260,6 +260,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white70 : Colors.black87,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],

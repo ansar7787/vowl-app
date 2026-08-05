@@ -159,11 +159,7 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   void _handleNeedsWork() {
-    _hapticService.selection(); // Gentle feedback, not a hard error
-    setState(() {
-      _hasRecorded = false;
-      _recordingPath = null;
-    });
+    widget.onSkipped();
   }
 
   @override
