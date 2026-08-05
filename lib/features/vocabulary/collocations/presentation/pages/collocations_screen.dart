@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -52,7 +52,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() {
       _selectedOption = selected;
@@ -79,7 +79,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     });
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered && _isCorrect != null) return;
 
     setState(() {
@@ -295,11 +295,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                       ],
                     ),
                     if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
-                      TypeToConfirmOverlay(
+                      DynamicJigsawWrapper(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
                       ),
                   ],
                 );

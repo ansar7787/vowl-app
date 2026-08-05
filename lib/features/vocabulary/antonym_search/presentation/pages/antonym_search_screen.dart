@@ -16,7 +16,7 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_pulsar.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 class AntonymSearchScreen extends StatefulWidget {
   final int level;
@@ -217,7 +217,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                     _buildPlasmaThunder(targetColor, isCompact),
 
                   if (_isFirstStagePassed && !_isAnswered && quest != null)
-                    TypeToConfirmOverlay(
+                    DynamicAnagramWrapper(
                       expectedText: quest.correctAnswer ?? '',
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitVerbalEvaluation(true),

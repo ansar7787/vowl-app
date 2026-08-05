@@ -16,6 +16,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   String? _selectedOption;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
@@ -60,7 +62,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   }
 
   void _submitChoice(String selected, String correct) async {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() => _selectedOption = selected);
     bool isCorrect =
@@ -71,10 +73,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
       _soundService.playCorrect();
       _vaultController.forward(from: 0);
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
       });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -82,6 +82,25 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         _isAnswered = true;
         _isCorrect = false;
       });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }
@@ -103,6 +122,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedOption = null;
+              _isFirstStagePassed = false;
               _vaultController.reset();
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -329,6 +349,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                         );
                       },
                     ),
+                    if (_isFirstStagePassed && !_isAnswered)
+                      DynamicJigsawWrapper(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
                   ],
                 ),
         );

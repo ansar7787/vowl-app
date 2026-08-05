@@ -15,7 +15,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -78,7 +78,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     });
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered && _isCorrect != null) return;
 
     setState(() {
@@ -182,11 +182,11 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                     ),
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
                     if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
-                      TypeToConfirmOverlay(
+                      DynamicJigsawWrapper(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
                       ),
                   ],
                 ),

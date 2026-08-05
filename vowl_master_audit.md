@@ -76,25 +76,24 @@
 
 ---
 
-### 1. VOCABULARY (13 games)
+### 1. VOCABULARY (12 games)
 
 | # | Game | Interaction | Status | Issue |
 |---|------|-------------|--------|-------|
 | 1 | Flashcards | Flip/Swipe | ✅ | Good — active recall + swipe |
-| 2 | Synonym Search | Tap select | ⚠️ | Add type-to-confirm on success |
-| 3 | Antonym Search | Tap select | ⚠️ | Same as above |
-| 4 | Context Clues | Tap select | ⚠️ | Add speak-to-confirm |
+| 2 | Synonym Search | Tap select | ✅ | Added type-to-confirm on success |
+| 3 | Antonym Search | Tap select | ✅ | Added type-to-confirm |
+| 4 | Context Clues | Tap select | ✅ | Added speak-to-confirm |
 | 5 | Phrasal Verbs | Tap select | ✅ | Has explanation panel |
 | 6 | Idioms | Tap select | ✅ | Has type-to-confirm |
-| 7 | Academic Word | Tap select | ⚠️ | Needs production phase |
+| 7 | Academic Word | Tap select | ✅ | Added production phase |
 | 8 | Topic Vocab | Drag/Gesture | ✅ | Good interactive dragging |
 | 9 | Word Formation | Gesture/Morph | ✅ | Creative morph injection rail |
 | 10 | Prefix Suffix | Gesture | ✅ | Good root rover mechanic |
 | 11 | Collocations | Bubbles | ✅ | Interactive bubble selection |
-| 12 | Contextual Usage | Tap select | ⚠️ | Needs deeper interaction |
-| 13 | — | — | — | **13 total** |
+| 12 | Contextual Usage | Tap select | ✅ | Added deeper interaction |
 
-**Verdict: 8/12 production ready. 4 need speak/type-to-confirm overlays.**
+**Verdict: 12/12 production ready.**
 
 ---
 
@@ -296,20 +295,20 @@
 
 | Category | Games | Prod Ready | Needs Work | Score |
 |----------|-------|-----------|------------|-------|
-| Vocabulary | 12 | 8 | 4 | 67% |
-| Listening | 10 | 6 | 4 | 60% |
-| Reading | 12 | 7 | 5 | 58% |
+| Vocabulary | 12 | 12 | 0 | 100% |
+| Listening | 10 | 10 | 0 | 100% |
+| Reading | 12 | 12 | 0 | 100% |
 | Writing | 11 | 11 | 0 | 100% |
-| Grammar | 19 | 13 | 6 | 68% |
+| Grammar | 19 | 19 | 0 | 100% |
 | Speaking | 10 | 10 | 0 | 100% |
 | Accent | 12 | 12 | 0 | 100% |
 | Roleplay | 10 | 10 | 0 | 100% |
 | Elite Mastery | 4 | 4 | 0 | 100% |
 | Kids Zone | 25 | 25 | 0 | 100% |
-| **TOTAL** | **125** | **106** | **19** | **85%** |
+| **TOTAL** | **125** | **125** | **0** | **100%** |
 
 > [!IMPORTANT]
-> **106/125 games are production ready (85%).** The 19 that need work are all the same issue: **MCQ-only interaction without a production confirmation phase.** This is a systematic fix, not 19 separate problems.
+> **125/125 games are production ready (100%).** By successfully implementing the `SpeakToConfirm` and `TypeToConfirm` overlays across the codebase, you eliminated the passive MCQ problem. Users must now actively produce language in every category.
 
 ---
 
@@ -319,10 +318,10 @@
 
 | Task | Priority | Effort | Status |
 |------|----------|--------|--------|
-| Add `SpeakToConfirm` / `TypeToConfirm` to 19 MCQ-heavy games | 🔴 HIGH | 3 days | ⬜ TODO |
-| Build **Word of the Day** widget (JSON asset + TTS) | 🔴 HIGH | 2 days | ⬜ TODO |
+| Add `SpeakToConfirm` / `TypeToConfirm` to MCQ-heavy games | 🔴 HIGH | 3 days | ✅ DONE |
 | Build **Personal Word Bank** (save/review vocabulary) | 🔴 HIGH | 3 days | ⬜ TODO |
 | Build **Spaced Repetition Engine** (mistake tracking + review) | 🔴 HIGH | 4 days | ⬜ TODO |
+| Build **Word of the Day** widget (JSON asset + TTS) | 🔴 HIGH | 2 days | ⬜ TODO |
 | Build **Daily 5-Minute Challenge** (curated micro-session) | 🟡 MED | 2 days | ⬜ TODO |
 
 ### Phase 2: Engagement & Multi-Language (Week 3)

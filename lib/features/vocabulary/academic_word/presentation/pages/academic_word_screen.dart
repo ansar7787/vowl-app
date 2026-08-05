@@ -17,6 +17,7 @@ import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/acad
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_instruction.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_thesis_paper.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Public screen widget
@@ -47,6 +48,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
 
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
@@ -104,6 +106,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
           _lastProcessedIndex = state.currentIndex;
           _isAnswered = false;
           _isCorrect = null;
+          _isFirstStagePassed = false;
           _dragOffset = Offset.zero;
           _activeShardIndex = null;
         });
@@ -173,19 +176,30 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       disablePadding: true,
       child: quest == null
           ? const SizedBox.shrink()
-          : _AcademicWordGameBody(
-              quest: quest,
-              isAnswered: isAnswered,
-              isCorrect: isCorrect,
-              slotKey: _slotKey,
-              activeShardIndex: _activeShardIndex,
-              dragOffset: _dragOffset,
-              themeColor: _cachedTheme.primaryColor,
-              onShardTap: (i) => _attemptThrust(i, quest),
-              onDragStart: _onShardDragStart,
-              onDragUpdate: _onShardDragUpdate,
-              onDragEnd: (i) => _onShardDragEnd(i, quest),
-              getInitialPosition: _getShardInitialPosition,
+          : Stack(
+              children: [
+                _AcademicWordGameBody(
+                  quest: quest,
+                  isAnswered: isAnswered,
+                  isCorrect: isCorrect,
+                  slotKey: _slotKey,
+                  activeShardIndex: _activeShardIndex,
+                  dragOffset: _dragOffset,
+                  themeColor: _cachedTheme.primaryColor,
+                  onShardTap: (i) => _attemptThrust(i, quest),
+                  onDragStart: _onShardDragStart,
+                  onDragUpdate: _onShardDragUpdate,
+                  onDragEnd: (i) => _onShardDragEnd(i, quest),
+                  getInitialPosition: _getShardInitialPosition,
+                ),
+                if (_isFirstStagePassed && !isAnswered)
+                  DynamicAnagramWrapper(
+                    expectedText: quest.correctAnswer ?? '',
+                    primaryColor: _cachedTheme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onSkipped: () => _submitFinalAnswer(false),
+                  ),
+              ],
             ),
     );
   }
@@ -241,7 +255,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
   void _attemptThrust(int index, VocabularyQuest quest) {
     final options = quest.options;
-    if (options == null || index >= options.length) return;
+    if (options == null || index >= options.length || _isFirstStagePassed) return;
 
     final selected = options[index].trim().toLowerCase();
     final correct = quest.correctAnswer?.trim().toLowerCase() ?? '';
@@ -250,11 +264,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
         _activeShardIndex = null;
       });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -264,6 +276,25 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         _activeShardIndex = null;
         _dragOffset = Offset.zero;
       });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
     }
   }

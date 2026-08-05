@@ -11,7 +11,8 @@ import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_lay
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 // Extracted Optimized Widgets
 import '../widgets/context_clues_case_header.dart';
@@ -41,6 +42,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   String? _selectedOption;
@@ -85,31 +87,48 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
 
     setState(() {
       _selectedOption = selected;
+    });
+
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _isFirstStagePassed = true;
+      });
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
       _isAnswered = true;
+      _isCorrect = nailedIt;
     });
 
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
-    // Delay feedback to allow user to see their selection
-    Future.delayed(400.ms, () {
-      if (!mounted) return;
-
-      if (isCorrect) {
-        _hapticService.success();
-        _soundService.playCorrect();
-      } else {
-        _hapticService.error();
-        _soundService.playWrong();
-      }
-
-      setState(() => _isCorrect = isCorrect);
-      context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
-    });
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -127,6 +146,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedOption = null;
+              _isFirstStagePassed = false;
               _lensPosition.value = Offset.zero;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
@@ -193,10 +213,21 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : _buildForensicScene(
-                  quest,
-                  theme.primaryColor,
-                  (state is VocabularyLoaded) ? state.isFinalFailure : false,
+              : Stack(
+                  children: [
+                    _buildForensicScene(
+                      quest,
+                      theme.primaryColor,
+                      (state is VocabularyLoaded) ? state.isFinalFailure : false,
+                    ),
+                    if (_isFirstStagePassed && !_isAnswered)
+                      DynamicAnagramWrapper(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
+                  ],
                 ),
         );
       },

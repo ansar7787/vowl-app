@@ -15,6 +15,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_painters.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_card.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_option_chip.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
 
 class ContextualUsageScreen extends StatefulWidget {
   final int level;
@@ -36,6 +37,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   String? _selectedOption;
@@ -49,7 +51,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _selectedOption = selected;
       _isAnswered = true;
@@ -62,8 +64,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
       if (isCorrect) {
         _hapticService.success();
         _soundService.playCorrect();
-        setState(() => _isCorrect = true);
-        context.read<VocabularyBloc>().add(SubmitAnswer(true));
+        setState(() => _isFirstStagePassed = true);
       } else {
         _hapticService.error();
         _soundService.playWrong();
@@ -71,6 +72,25 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
         context.read<VocabularyBloc>().add(SubmitAnswer(false));
       }
     });
+  }
+
+  void _submitFinalAnswer(bool nailedIt) {
+    if (_isAnswered && _isCorrect != null) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -88,6 +108,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedOption = null;
+              _isFirstStagePassed = false;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -156,6 +177,13 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       ),
                     ),
                     _buildUnfoldContent(quest, theme.primaryColor, isDarkMode),
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                      DynamicJigsawWrapper(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                      ),
                   ],
                 ),
         );
