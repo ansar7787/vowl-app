@@ -13,7 +13,7 @@ import 'package:vowl/features/listening/presentation/layout/listening_base_layou
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
-import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
+import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
   final int level;
@@ -40,7 +40,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
 
   @override
   void initState() {
@@ -60,10 +59,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     super.dispose();
   }
 
-  void _submitAnswer(int index, int correct) {
+  void _submitFinalAnswer(bool isCorrect) {
     if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -101,7 +98,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -136,48 +132,44 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        10.h +
-                        40.h +
-                        (isCompact ? 90.h : 130.h) +
-                        40.h +
-                        (isCompact ? 110.h : 150.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            10.h +
+                            40.h +
+                            (isCompact ? 90.h : 130.h) +
+                            40.h +
+                            200.h +
+                            20.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 7
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapRadar = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapQuestion = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(10.0, 24.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 16.0)
+                            : 6.0;
+                        final double gapInstruction = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                            : 8.0;
+                        final double gapRadar = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                            : 8.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(10.0, 24.0)
+                            : 10.0;
 
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 SizedBox(height: gapTop),
                                 isCompact
@@ -227,11 +219,6 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                         emoji: quest.emoji,
                                         isCorrectState: _isCorrect,
                                       ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
                                 SizedBox(height: gapRadar),
                                 Padding(
                                   padding: EdgeInsets.symmetric(
@@ -269,54 +256,23 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                                           ),
                                         ),
                                 ),
-                                SizedBox(height: gapQuestion),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 110.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth,
-                                            child: ListeningInferenceGrid(
-                                              options: quest.options ?? [],
-                                              correctAnswerIndex:
-                                                  quest.correctAnswerIndex ?? 0,
-                                              color: theme.primaryColor,
-                                              isAnswered: _isAnswered,
-                                              isCorrectState: _isCorrect,
-                                              selectedIndex: _selectedIndex,
-                                              onSubmitAnswer: (index) =>
-                                                  _submitAnswer(
-                                                    index,
-                                                    quest.correctAnswerIndex ??
-                                                        0,
-                                                  ),
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    : ListeningInferenceGrid(
-                                        options: quest.options ?? [],
-                                        correctAnswerIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        color: theme.primaryColor,
-                                        isAnswered: _isAnswered,
-                                        isCorrectState: _isCorrect,
-                                        selectedIndex: _selectedIndex,
-                                        onSubmitAnswer: (index) =>
-                                            _submitAnswer(
-                                              index,
-                                              quest.correctAnswerIndex ?? 0,
-                                            ),
-                                      ),
-                                SizedBox(height: gapBottom),
+                                SizedBox(height: 220.h + gapBottom),
                               ],
                             ),
-                          ],
-                        ),
+                          ),
+                        );
+                      },
+                    ),
+                    if (!_isAnswered || _isCorrect == null)
+                      BlindDictationWrapper(
+                        expectedText: (quest.options != null && quest.options!.isNotEmpty) 
+                            ? quest.options![quest.correctAnswerIndex ?? 0] 
+                            : "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
                       ),
-                    );
-                  },
+                  ],
                 ),
         );
       },

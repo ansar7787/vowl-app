@@ -43,8 +43,8 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 - [x] 6. Fast Speech Decoder (Action: Keep as fast MCQ for speed round)
 - [x] 7. Emotion Recognition (Action: Keep as MCQ for nuance/context)
 - [x] 8. Detail Spotlight (Action: Implement **Blind Dictation** - hide options, force user to type detail)
-- [ ] 9. Listening Inference (Action: Implement **Blind Dictation** - hide options, type conclusion)
-- [ ] 10. Ambient ID (Action: Keep as MCQ for speed)
+- [x] 9. Listening Inference (Action: Implement **Blind Dictation** - hide options, type conclusion)
+- [x] 10. Ambient ID (Action: Keep as MCQ for speed)
 
 ## 3. READING (12 Games)
 *Goal: Use Dynamic Jigsaw for sentences, and SpeakToConfirm for long paragraphs.*
