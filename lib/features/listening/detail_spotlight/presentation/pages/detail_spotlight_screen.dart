@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_instruction.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_emitter.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_prompt.dart';
-import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
+import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
 
 class DetailSpotlightScreen extends StatefulWidget {
   final int level;
@@ -33,13 +33,11 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  int? _selectedIndex;
 
   @override
   void initState() {
@@ -49,21 +47,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    _spotlightPos.dispose();
-    super.dispose();
-  }
-
-  void _onSearch(Offset position) {
+  void _submitFinalAnswer(bool isCorrect) {
     if (_isAnswered) return;
-    _spotlightPos.value = position;
-  }
-
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -101,8 +86,6 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
-              _spotlightPos.value = const Offset(0, 0);
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -137,48 +120,44 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final maxHeight = constraints.maxHeight;
+                        final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        20.h +
-                        40.h +
-                        (isCompact ? 60.h : 80.h) +
-                        40.h +
-                        (isCompact ? 220.h : 300.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                        final double estimatedContentHeight =
+                            20.h +
+                            40.h +
+                            (isCompact ? 60.h : 80.h) +
+                            40.h +
+                            200.h +
+                            20.h;
+                        final remainingHeight = maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 8
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapEmitter = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapPrompt = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(10.0, 24.0)
-                        : 10.0;
+                        final double gapUnit = remainingHeight > 0
+                            ? remainingHeight / 5
+                            : 0;
+                        final double gapTop = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(6.0, 16.0)
+                            : 6.0;
+                        final double gapInstruction = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                            : 8.0;
+                        final double gapEmitter = remainingHeight > 0
+                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
+                            : 8.0;
+                        final double gapBottom = remainingHeight > 0
+                            ? (gapUnit * 1).clamp(10.0, 24.0)
+                            : 10.0;
 
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 SizedBox(height: gapTop),
                                 isCompact
@@ -247,40 +226,23 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                         detail: quest.targetDetail ?? "Detail",
                                         color: theme.primaryColor,
                                       ),
+                                SizedBox(height: 220.h + gapBottom),
                               ],
                             ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapPrompt),
-                                SizedBox(
-                                  height: isCompact ? 220.h : 300.h,
-                                  child: RepaintBoundary(
-                                    child: DetailSpotlightDarkField(
-                                      options: quest.options ?? [],
-                                      correctAnswerIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isAnswered: _isAnswered,
-                                      isCorrectState: _isCorrect,
-                                      selectedIndex: _selectedIndex,
-                                      spotlightPos: _spotlightPos,
-                                      onSearch: _onSearch,
-                                      onSelect: (index) => _submitAnswer(
-                                        index,
-                                        quest.correctAnswerIndex ?? 0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: gapBottom),
-                              ],
-                            ),
-                          ],
-                        ),
+                          ),
+                        );
+                      },
+                    ),
+                    if (!_isAnswered || _isCorrect == null)
+                      BlindDictationWrapper(
+                        expectedText: (quest.options != null && quest.options!.isNotEmpty) 
+                            ? quest.options![quest.correctAnswerIndex ?? 0] 
+                            : "",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
                       ),
-                    );
-                  },
+                  ],
                 ),
         );
       },

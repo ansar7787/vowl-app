@@ -41,8 +41,8 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 - [x] 4. Audio True/False (Action: Implement `SpeakToConfirmOverlay` - read statement aloud)
 - [x] 5. Sound Image Match (Action: Implement `SpeakToConfirmOverlay` - say image name)
 - [x] 6. Fast Speech Decoder (Action: Keep as fast MCQ for speed round)
-- [ ] 7. Emotion Recognition (Action: Keep as MCQ for nuance/context)
-- [ ] 8. Detail Spotlight (Action: Implement **Blind Dictation** - hide options, force user to type detail)
+- [x] 7. Emotion Recognition (Action: Keep as MCQ for nuance/context)
+- [x] 8. Detail Spotlight (Action: Implement **Blind Dictation** - hide options, force user to type detail)
 - [ ] 9. Listening Inference (Action: Implement **Blind Dictation** - hide options, type conclusion)
 - [ ] 10. Ambient ID (Action: Keep as MCQ for speed)
 
