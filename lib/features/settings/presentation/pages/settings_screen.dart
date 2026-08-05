@@ -260,6 +260,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         onToggleSound: _toggleSound,
                         onToggleNotifications: _toggleNotifications,
                         onToggleSpeechConfirm: (value) async {
+                          if (!value) {
+                            if (!mounted) return;
+                            final confirmed = await SettingsDialogs.showDisableSpeechConfirmation(
+                              context,
+                            );
+                            if (confirmed != true) return;
+                          }
                           final prefs = await SharedPreferences.getInstance();
                           await prefs.setBool('skip_speech_enabled', !value);
                           if (!mounted) return;

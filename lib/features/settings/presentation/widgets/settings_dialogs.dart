@@ -337,6 +337,87 @@ class SettingsDialogs {
   }
 
   // ---------------------------------------------------------------------------
+  // Disable Speech Confirmation
+  // ---------------------------------------------------------------------------
+
+  static Future<bool?> showDisableSpeechConfirmation(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    di.sl<HapticService>().warning();
+    final width = _dialogWidth(context, 320.w);
+
+    return showGeneralDialog<bool>(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
+        child: Material(
+          color: Colors.transparent,
+          child: GlassTile(
+            width: width,
+            padding: EdgeInsets.all(32.r),
+            borderRadius: BorderRadius.circular(40.r),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                _DialogIcon(icon: Icons.mic_off_rounded, color: Colors.cyan),
+                SizedBox(height: 24.h),
+                Text(
+                  context.tr(
+                    'settings_dialogs.disable_speech_title',
+                    fallback: 'Disable Speaking?',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  context.tr(
+                    'settings_dialogs.disable_speech_body',
+                    fallback: 'You will miss out on crucial speaking practice.',
+                  ),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                    height: 1.5,
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                _PrimaryButton(
+                  label: context.tr(
+                    'settings_dialogs.keep_speaking',
+                    fallback: 'Keep Speaking',
+                  ),
+                  color: Colors.blue,
+                  onPressed: () => Navigator.pop(dialogContext, false),
+                ),
+                SizedBox(height: 12.h),
+                _DestructiveTextButton(
+                  label: context.tr(
+                    'settings_dialogs.disable_anyway',
+                    fallback: 'Disable Anyway',
+                  ),
+                  onPressed: () => Navigator.pop(dialogContext, true),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      transitionBuilder: (_, anim1, anim2, child) =>
+          _dialogTransition(anim1, child),
+    );
+  }
+
+  // ---------------------------------------------------------------------------
   // Password Reset
   // ---------------------------------------------------------------------------
 
