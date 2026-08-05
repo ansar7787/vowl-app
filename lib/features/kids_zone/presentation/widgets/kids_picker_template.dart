@@ -8,6 +8,8 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 class KidsPickerTemplate extends StatefulWidget {
   final String title;
@@ -263,6 +265,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                     onTap: (isAnswered || isRemovedByHint)
                         ? null
                         : () {
+                            di.sl<KidsTTSService>().speak(option);
                             context.read<KidsBloc>().add(
                               SubmitKidsAnswer(isCorrect),
                             );

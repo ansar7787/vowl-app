@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 /// Farmer's Market Theme for Fruits Game
 /// Space Complexity: O(1)
@@ -172,6 +174,7 @@ class KidsFruitsLayout extends StatelessWidget {
 
     return ScaleButton(
       onTap: () {
+        di.sl<KidsTTSService>().speak(text);
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
       child: Stack(
