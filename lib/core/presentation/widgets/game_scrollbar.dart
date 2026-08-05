@@ -19,7 +19,6 @@ class GameScrollbar extends StatelessWidget {
       thumbColor: isDark ? Colors.white24 : Colors.black26,
       radius: const Radius.circular(10),
       thickness: 4,
-      crossAxisMargin: 4,
       mainAxisMargin: 24,
       minThumbLength: 36,
       fadeDuration: const Duration(milliseconds: 300),

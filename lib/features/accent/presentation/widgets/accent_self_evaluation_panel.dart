@@ -97,7 +97,6 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
           primaryColor: primaryColor,
           onConfirmed: () => onEvaluate(true),
           onSkipped: () => onEvaluate(false),
-          allowSkip: false, // Legacy panel didn't have "Can't Speak Now"
           isDark: isDark,
         ),
       ],

@@ -181,7 +181,6 @@ class SpeakToConfirmOverlay extends StatelessWidget {
                   primaryColor: primaryColor,
                   onConfirmed: onConfirmed,
                   onSkipped: onSkipped,
-                  allowSkip: allowSkip,
                   isDark: isDark,
                 ),
               ],

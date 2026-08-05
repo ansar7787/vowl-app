@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+
 import 'package:vowl/core/utils/audio_recording_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -14,7 +13,6 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
-  final bool allowSkip;
   final bool isDark;
 
   const SpeakingSelfEvaluationControls({
@@ -23,7 +21,6 @@ class SpeakingSelfEvaluationControls extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
-    this.allowSkip = true,
     required this.isDark,
   });
 
@@ -44,9 +41,6 @@ class _SpeakingSelfEvaluationControlsState
   bool _isPlaying = false;
   String? _recordingPath;
 
-  bool _isLoadingPrefs = true;
-  bool _globalSkipEnabled = false;
-
   late final AnimationController _pulseController;
 
   @override
@@ -56,22 +50,6 @@ class _SpeakingSelfEvaluationControlsState
       vsync: this,
       duration: const Duration(milliseconds: 1200),
     )..repeat(reverse: true);
-    _checkGlobalSkip();
-  }
-
-  Future<void> _checkGlobalSkip() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final skipEnabled = prefs.getBool('skip_speech_enabled') ?? false;
-      if (!mounted) return;
-      if (skipEnabled) {
-        widget.onSkipped();
-      } else {
-        setState(() => _isLoadingPrefs = false);
-      }
-    } catch (_) {
-      if (mounted) setState(() => _isLoadingPrefs = false);
-    }
   }
 
   @override
@@ -164,7 +142,6 @@ class _SpeakingSelfEvaluationControlsState
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoadingPrefs) return const SizedBox.shrink();
     final subtitleColor = widget.isDark ? Colors.white60 : Colors.black54;
 
     return Column(
@@ -321,72 +298,7 @@ class _SpeakingSelfEvaluationControlsState
           ),
         ],
 
-        if (widget.allowSkip && !_isPlaying && !_hasRecorded)
-          Padding(
-            padding: EdgeInsets.only(top: 24.h),
-            child: Column(
-              children: [
-                ScaleButton(
-                  onTap: () async {
-                    if (_globalSkipEnabled) {
-                      final prefs = await SharedPreferences.getInstance();
-                      await prefs.setBool('skip_speech_enabled', true);
-                    }
-                    widget.onSkipped();
-                  },
-                  child: Text(
-                    'CAN\'T SPEAK NOW',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: subtitleColor,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 24.r,
-                      width: 24.r,
-                      child: Checkbox(
-                        value: _globalSkipEnabled,
-                        onChanged: (val) {
-                          setState(() {
-                            _globalSkipEnabled = val ?? false;
-                          });
-                        },
-                        activeColor: widget.primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(4.r),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 4.w),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _globalSkipEnabled = !_globalSkipEnabled;
-                        });
-                      },
-                      child: Text(
-                        'Skip all speaking tasks for now',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w500,
-                          color: subtitleColor.withValues(alpha: 0.8),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+
       ],
     );
   }
