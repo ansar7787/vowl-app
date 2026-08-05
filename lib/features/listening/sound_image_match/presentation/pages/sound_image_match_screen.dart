@@ -83,6 +83,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         _isCorrect = true;
         _selectedIndex = _pendingSelectedIndex;
       });
+      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();

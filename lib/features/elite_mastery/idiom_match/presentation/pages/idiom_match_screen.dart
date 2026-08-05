@@ -137,6 +137,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
+      context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
       _hapticService.error();

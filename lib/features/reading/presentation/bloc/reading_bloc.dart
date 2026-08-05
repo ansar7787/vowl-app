@@ -56,11 +56,24 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     on<ReadingHintUsed>(_onReadingHintUsed);
     on<RestoreLife>(_onRestoreLife);
     on<RestartLevel>(_onRestartLevel);
+    on<ReadingSpeakConfirmed>(_onSpeakConfirmed);
   }
 
   // ---------------------------------------------------------------------------
   // Handlers
   // ---------------------------------------------------------------------------
+
+  Future<void> _onSpeakConfirmed(ReadingSpeakConfirmed event, Emitter<ReadingState> emit) async {
+    try {
+      await updateUserCoins(UpdateUserCoinsParams(
+        amountChange: event.bonusCoins,
+        title: 'coin_history.speaking_bonus',
+        isEarned: true,
+      ));
+    } catch (e) {
+      // logger?.error('Failed to add speaking bonus', error: e);
+    }
+  }
 
   void _onRetryCurrentQuestion(
     RetryCurrentQuestion event,

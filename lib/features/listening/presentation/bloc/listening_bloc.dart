@@ -41,6 +41,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
 
   /// Analytics are optional — defaults to no-op so tests require no mocking.
   final ListeningAnalytics analytics;
+  final UpdateUserCoins? updateUserCoins;
 
   // Stored when FetchListeningQuests fires; used in background-save lambdas.
   String? _currentGameType;
@@ -57,10 +58,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     required this.useHint,
     required this.networkInfo,
     this.analytics = const NoOpListeningAnalytics(),
-    // Backward-compat shim: accepted but intentionally unused.
-    // Remove once DI registrations are cleaned up (coinIncrease is handled
-    // ignore: avoid_unused_constructor_parameters
-    UpdateUserCoins? updateUserCoins,
+    this.updateUserCoins,
   }) : super(const ListeningInitial()) {
     on<FetchListeningQuests>(_onFetch);
     on<SubmitAnswer>(_onSubmitAnswer);
@@ -68,6 +66,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     on<RetryCurrentQuestion>(_onRetry);
     on<ListeningHintUsed>(_onHintUsed);
     on<RestoreLife>(_onRestoreLife);
+    on<ListeningSpeakConfirmed>(_onSpeakConfirmed);
     on<RestartLevel>(_onRestartLevel);
   }
 
@@ -257,6 +256,25 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
 
   void _onRestartLevel(RestartLevel event, Emitter<ListeningState> emit) =>
       emit(const ListeningInitial());
+
+  // ── ListeningSpeakConfirmed ───────────────────────────────────────────────
+
+  Future<void> _onSpeakConfirmed(
+    ListeningSpeakConfirmed event,
+    Emitter<ListeningState> emit,
+  ) async {
+    try {
+      if (updateUserCoins != null) {
+        await updateUserCoins!(UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.speaking_bonus',
+          isEarned: true,
+        ));
+      }
+    } catch (e) {
+      debugPrint('[ListeningBloc] _onSpeakConfirmed failed: $e');
+    }
+  }
 
   // ── Private helpers ───────────────────────────────────────────────────────
 

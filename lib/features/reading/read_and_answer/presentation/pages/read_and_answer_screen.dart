@@ -74,6 +74,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
       setState(() {
         _selectedIndex = _pendingSelectedIndex;
       });
+      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();

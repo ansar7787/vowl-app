@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
 import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/features/elite_mastery/domain/usecases/get_elite_mastery_quests.dart';
@@ -16,6 +17,8 @@ import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc
 class MockGetEliteMasteryQuests extends Mock implements GetEliteMasteryQuests {}
 
 class MockUpdateUserRewards extends Mock implements UpdateUserRewards {}
+
+class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
 
 class MockUpdateCategoryStats extends Mock implements UpdateCategoryStats {}
 
@@ -43,6 +46,7 @@ void main() {
   late EliteMasteryBloc bloc;
   late MockGetEliteMasteryQuests mockGetQuests;
   late MockUpdateUserRewards mockUpdateUserRewards;
+  late MockUpdateUserCoins mockUpdateUserCoins;
   late MockUpdateCategoryStats mockUpdateCategoryStats;
   late MockUpdateUnlockedLevel mockUpdateUnlockedLevel;
   late MockUseHint mockUseHint;
@@ -60,6 +64,7 @@ void main() {
   setUp(() {
     mockGetQuests = MockGetEliteMasteryQuests();
     mockUpdateUserRewards = MockUpdateUserRewards();
+    mockUpdateUserCoins = MockUpdateUserCoins();
     mockUpdateCategoryStats = MockUpdateCategoryStats();
     mockUpdateUnlockedLevel = MockUpdateUnlockedLevel();
     mockUseHint = MockUseHint();
@@ -68,6 +73,7 @@ void main() {
 
     bloc = EliteMasteryBloc(
       getQuests: mockGetQuests,
+      updateUserCoins: mockUpdateUserCoins,
       updateUserRewards: mockUpdateUserRewards,
       updateCategoryStats: mockUpdateCategoryStats,
       updateUnlockedLevel: mockUpdateUnlockedLevel,

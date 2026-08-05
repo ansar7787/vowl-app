@@ -53,3 +53,10 @@ class AddLifeFromAd extends EliteMasteryEvent {
 class EliteTutorPass extends EliteMasteryEvent {
   const EliteTutorPass();
 }
+
+class EliteSpeakConfirmed extends EliteMasteryEvent {
+  final int bonusCoins;
+  const EliteSpeakConfirmed(this.bonusCoins);
+  @override
+  List<Object?> get props => [bonusCoins];
+}

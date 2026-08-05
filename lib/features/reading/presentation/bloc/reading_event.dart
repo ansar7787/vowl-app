@@ -55,3 +55,10 @@ class RetryCurrentQuestion extends ReadingEvent {
 class RestoreLife extends ReadingEvent {
   const RestoreLife();
 }
+
+class ReadingSpeakConfirmed extends ReadingEvent {
+  final int bonusCoins;
+  const ReadingSpeakConfirmed(this.bonusCoins);
+  @override
+  List<Object?> get props => [bonusCoins];
+}

@@ -63,6 +63,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
+      context.read<EliteMasteryBloc>().add(const EliteSpeakConfirmed(5));
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
       _hapticService.error();

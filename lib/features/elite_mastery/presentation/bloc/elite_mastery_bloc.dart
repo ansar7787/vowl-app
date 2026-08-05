@@ -15,12 +15,13 @@ import '../../../../core/utils/sound_service.dart';
 import '../../../../features/auth/domain/usecases/use_hint.dart';
 import '../../../../core/utils/hint_utility.dart';
 import '../../../../core/presentation/bloc/game_state_base.dart';
+import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';
-
-class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
+class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   final GetEliteMasteryQuests getQuests;
+  final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
   final UpdateCategoryStats updateCategoryStats;
   final UpdateUnlockedLevel updateUnlockedLevel;
@@ -39,6 +40,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
 
   EliteMasteryBloc({
     required this.getQuests,
+    required this.updateUserCoins,
     required this.updateUserRewards,
     required this.updateCategoryStats,
     required this.updateUnlockedLevel,
@@ -55,6 +57,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     on<AddLifeFromAd>(_onAddLifeFromAd);
     on<RestoreEliteLife>(_onRestoreEliteLife);
     on<EliteTutorPass>(_onEliteTutorPass);
+    on<EliteSpeakConfirmed>(_onSpeakConfirmed);
   }
 
   // ── Handlers ────────────────────────────────────────────────────────────────
@@ -438,6 +441,18 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           lastAnswerCorrect: true,
         ),
       );
+    }
+  }
+
+  Future<void> _onSpeakConfirmed(EliteSpeakConfirmed event, Emitter<EliteMasteryState> emit) async {
+    try {
+      await updateUserCoins(UpdateUserCoinsParams(
+        amountChange: event.bonusCoins,
+        title: 'coin_history.speaking_bonus',
+        isEarned: true,
+      ));
+    } catch (e) {
+      dev.log('Failed to add speak confirmed coins', error: e);
     }
   }
 

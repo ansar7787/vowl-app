@@ -447,6 +447,7 @@ void _initEliteMastery(GetIt sl) {
   sl.registerFactory<EliteMasteryBloc>(
     () => EliteMasteryBloc(
       getQuests: sl<GetEliteMasteryQuests>(),
+      updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),
       updateUnlockedLevel: sl<UpdateUnlockedLevel>(),

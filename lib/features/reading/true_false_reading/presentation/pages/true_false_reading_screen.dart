@@ -98,6 +98,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();

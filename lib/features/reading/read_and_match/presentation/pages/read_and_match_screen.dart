@@ -144,6 +144,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
+      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();

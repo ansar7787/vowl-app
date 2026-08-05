@@ -11,15 +11,15 @@ abstract class EliteMasteryState extends Equatable implements GameStateBase {
   List<Object?> get props => [];
 }
 
-class EliteMasteryInitial extends EliteMasteryState {
+class EliteMasteryInitial extends EliteMasteryState implements GameInitialState {
   const EliteMasteryInitial();
 }
 
-class EliteMasteryLoading extends EliteMasteryState {
+class EliteMasteryLoading extends EliteMasteryState implements GameLoadingState {
   const EliteMasteryLoading();
 }
 
-class EliteMasteryLoaded extends EliteMasteryState {
+class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
   /// The game sub-type for this session.
   ///
   /// **Nullable for backward compatibility.** Existing call sites — tests,
@@ -33,16 +33,28 @@ class EliteMasteryLoaded extends EliteMasteryState {
   final int? level;
 
   final List<EliteMasteryQuest> quests;
+  @override
   final int currentIndex;
   @override
   final int livesRemaining;
+  @override
   final bool? lastAnswerCorrect;
   final bool isHintVisible;
   final bool isHintUsed;
   final int wrongCount;
+  @override
   final bool isFinalFailure;
   final List<int> removedIndices;
   final bool isLetterRevealed;
+
+  @override
+  bool get hintUsed => isHintUsed;
+
+  @override
+  GameQuest? get currentQuestOrNull => currentQuest;
+
+  @override
+  int get totalQuests => quests.length;
 
   /// Returns the quest at [currentIndex].
   ///
@@ -164,7 +176,8 @@ enum EliteMasteryErrorReason {
   noQuestsForLevel,
 }
 
-class EliteMasteryError extends EliteMasteryState {
+class EliteMasteryError extends EliteMasteryState implements GameErrorState {
+  @override
   final String message;
 
   /// See [EliteMasteryErrorReason]. Defaults to [EliteMasteryErrorReason.unknown]
@@ -181,8 +194,10 @@ class EliteMasteryError extends EliteMasteryState {
   List<Object?> get props => [message, reason];
 }
 
-class EliteMasteryGameComplete extends EliteMasteryState {
+class EliteMasteryGameComplete extends EliteMasteryState implements GameCompleteState {
+  @override
   final int xpEarned;
+  @override
   final int coinsEarned;
   final int questCount;
 
@@ -196,7 +211,7 @@ class EliteMasteryGameComplete extends EliteMasteryState {
   List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
-class EliteMasteryGameOver extends EliteMasteryState {
+class EliteMasteryGameOver extends EliteMasteryState implements GameOverState {
   /// See [EliteMasteryLoaded.gameType] for nullability rationale.
   final GameSubtype? gameType;
 

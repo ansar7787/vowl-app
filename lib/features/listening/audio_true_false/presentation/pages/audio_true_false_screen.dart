@@ -73,6 +73,7 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         _isAnswered = true;
         _isCorrect = true;
       });
+      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();

@@ -61,3 +61,10 @@ class RestoreLife extends ListeningEvent {
 class RestartLevel extends ListeningEvent {
   const RestartLevel();
 }
+
+class ListeningSpeakConfirmed extends ListeningEvent {
+  final int bonusCoins;
+  const ListeningSpeakConfirmed(this.bonusCoins);
+  @override
+  List<Object?> get props => [bonusCoins];
+}
