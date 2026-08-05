@@ -150,22 +150,26 @@ class GameScaffold<S> extends StatelessWidget {
                       children: [
                         AbsorbPointer(
                           absorbing: config.isAnswered,
-                          child: config.disablePadding
-                              ? config.child
-                              : Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                  ),
-                                  child: config.useScrolling
-                                      ? GameScrollbar(
-                                          child: SingleChildScrollView(
-                                            physics:
-                                                const BouncingScrollPhysics(),
-                                            child: config.child,
+                          child: config.useScrolling
+                              ? GameScrollbar(
+                                  child: SingleChildScrollView(
+                                    physics: const BouncingScrollPhysics(),
+                                    padding: config.disablePadding
+                                        ? EdgeInsets.zero
+                                        : EdgeInsets.symmetric(
+                                            horizontal: 16.w,
                                           ),
-                                        )
-                                      : config.child,
-                                ),
+                                    child: config.child,
+                                  ),
+                                )
+                              : (config.disablePadding
+                                  ? config.child
+                                  : Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                      ),
+                                      child: config.child,
+                                    )),
                         ),
                         if (mascotBuilder != null)
                           Positioned(

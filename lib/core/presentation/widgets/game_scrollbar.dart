@@ -16,7 +16,6 @@ class GameScrollbar extends StatelessWidget {
     
     return RawScrollbar(
       controller: controller,
-      thumbVisibility: true,
       thumbColor: isDark ? Colors.white24 : Colors.black26,
       radius: const Radius.circular(10),
       thickness: 4,
