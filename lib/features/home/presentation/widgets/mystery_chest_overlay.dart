@@ -211,58 +211,104 @@ class MysteryChestOverlay extends StatelessWidget {
 
                           // The Chest Image
                           ExcludeSemantics(
-                            child:
-                                Image.asset(
-                                      'assets/images/daily_chest.png', // Assuming user added this
-                                      width: isOpened ? 280.r : 240.r,
-                                      height: isOpened ? 280.r : 240.r,
+                            child: AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 600),
+                              switchInCurve: Curves.elasticOut,
+                              switchOutCurve: Curves.easeInBack,
+                              transitionBuilder: (child, animation) {
+                                // A pure scale pop, no ghostly crossfades!
+                                return ScaleTransition(
+                                  scale: animation,
+                                  child: child,
+                                );
+                              },
+                              child: isOpened
+                                  ? Image.asset(
+                                      'assets/images/chest_3d.webp',
+                                      key: const ValueKey('opened_chest'),
+                                      width: 280.r,
+                                      height: 280.r,
                                       semanticLabel: context.tr(
                                         'home.chest_daily_mystery',
                                         fallback: 'Daily Mystery',
                                       ),
                                       errorBuilder:
-                                          (context, error, stackTrace) {
-                                            return Image.asset(
-                                              'assets/images/chest_3d.webp',
-                                              width: isOpened ? 260.r : 220.r,
-                                              height: isOpened ? 260.r : 220.r,
-                                              semanticLabel: context.tr(
-                                                'home.chest_daily_mystery',
-                                                fallback: 'Daily Mystery',
-                                              ),
-                                              errorBuilder:
-                                                  (
-                                                    context,
-                                                    error,
-                                                    stackTrace,
-                                                  ) => Icon(
+                                          (context, error, stackTrace) => Icon(
+                                            Icons.card_giftcard_rounded,
+                                            size: 150.r,
+                                            color: Colors.amber,
+                                          ),
+                                    )
+                                  : Image.asset(
+                                          'assets/images/closed_chest_3d.webp',
+                                          key: const ValueKey('closed_chest'),
+                                          width: 240.r,
+                                          height: 240.r,
+                                          semanticLabel: context.tr(
+                                            'home.chest_daily_mystery',
+                                            fallback: 'Daily Mystery',
+                                          ),
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Icon(
                                                     Icons.card_giftcard_rounded,
                                                     size: 150.r,
                                                     color: Colors.amber,
                                                   ),
-                                            );
-                                          },
-                                    )
-                                    .animate(
-                                      onPlay: (c) => isOpened
-                                          ? null
-                                          : c.repeat(reverse: true),
-                                    )
-                                    .scale(
-                                      begin: const Offset(1, 1),
-                                      end: isOpened
-                                          ? const Offset(1, 1)
-                                          : const Offset(1.05, 1.05),
-                                      duration: 1.seconds,
-                                      curve: Curves.easeInOut,
-                                    )
-                                    .shake(
-                                      hz: 2,
-                                      offset: const Offset(2, 0),
-                                      duration: 2.seconds,
-                                    )
-                                    .animate(target: isOpened ? 0 : 1),
+                                        )
+                                        .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true),
+                                        )
+                                        .scale(
+                                          begin: const Offset(1, 1),
+                                          end: const Offset(1.05, 1.05),
+                                          duration: 1.seconds,
+                                          curve: Curves.easeInOut,
+                                        )
+                                        .shake(
+                                          hz: 2,
+                                          offset: const Offset(2, 0),
+                                          duration: 2.seconds,
+                                        ),
+                            ),
                           ),
+
+                          // AAA Magic Flash Explosion
+                          if (isOpened)
+                            IgnorePointer(
+                              child:
+                                  Container(
+                                        width: 400.r,
+                                        height: 400.r,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: RadialGradient(
+                                            colors: [
+                                              Colors.white,
+                                              Colors.white.withValues(
+                                                alpha: 0.8,
+                                              ),
+                                              Colors.white.withValues(
+                                                alpha: 0.0,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                      .animate()
+                                      .scale(
+                                        begin: const Offset(0.2, 0.2),
+                                        end: const Offset(1.5, 1.5),
+                                        duration: 400.ms,
+                                        curve: Curves.easeOut,
+                                      )
+                                      .fadeOut(
+                                        duration: 600.ms,
+                                        curve: Curves.easeOut,
+                                      ),
+                            ),
+
                           // Confetti explosion from the box
                           ExcludeSemantics(
                             child: ConfettiWidget(
