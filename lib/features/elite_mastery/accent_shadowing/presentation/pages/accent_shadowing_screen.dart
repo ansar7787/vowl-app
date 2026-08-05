@@ -263,6 +263,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  SizedBox(width: 24.r + 12.w), // Balances the left icon to keep text mathematically centered
                 ],
               ),
             ),
