@@ -189,6 +189,21 @@ class _SpeakingSelfEvaluationControlsState
               color: _isRecording ? Colors.redAccent : subtitleColor,
             ),
           ).animate(target: _isRecording ? 1 : 0).fade(),
+          if (!_isRecording)
+            Padding(
+              padding: EdgeInsets.only(top: 24.h),
+              child: Text(
+                "Can't speak right now?\nYou can disable speaking tasks in Settings.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w500,
+                  color: subtitleColor.withValues(alpha: 0.6),
+                  height: 1.4,
+                ),
+              ),
+            ),
         ] else if (_isPlaying) ...[
           Container(
             height: 70.r,
