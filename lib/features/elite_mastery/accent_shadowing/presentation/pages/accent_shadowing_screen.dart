@@ -1,6 +1,5 @@
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -8,15 +7,13 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/speech_service.dart';
-import 'package:vowl/core/utils/text_similarity_helper.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import '../widgets/accent_shadowing_target_panel.dart';
-import '../widgets/accent_shadowing_mic_trigger.dart';
+import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -33,22 +30,15 @@ class AccentShadowingScreen extends StatefulWidget {
 
 class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _speechService = di.sl<SpeechService>();
+  final _soundService = di.sl<SoundService>();
+  
   bool _showConfetti = false;
-  bool _isListening = false;
-  String _lastWords = "";
-  List<String> _spokenCandidates = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   int _attempts = 0;
-  bool _isProcessing = false;
   Set<int> _matchedIndices = {};
   String? _lastQuestId;
 
-  // Below this available height, use tighter spacing so the target panel,
-  // hint card, transcript, and mic trigger all comfortably fit without the
-  // player needing to scroll on short viewports (landscape phones,
-  // split-screen, or with the on-screen keyboard occupying vertical space).
   static const double _kCompactHeightBreakpoint = 580;
 
   @override
@@ -59,177 +49,26 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
   }
 
-  @override
-  void dispose() {
-    // FIX: if the player navigates away mid-recording, the speech engine
-    // previously kept listening with no owner — leaking an active
-    // microphone session (battery drain, a lingering OS mic indicator) and
-    // risking `setState()` being invoked after this State is disposed once
-    // a result/done callback eventually fired.
-    if (_isListening) {
-      _speechService.stop();
-    }
-    super.dispose();
-  }
-
-  Future<void> _toggleListening(String targetText) async {
-    if (_isAnswered) return;
-    if (_isListening) {
-      setState(() {
-        _isListening = false;
-        _isProcessing = true;
-      });
-      await _speechService.stop();
-      _checkResult(_lastWords, targetText);
-    } else {
-      final available = await _speechService.initializeStt();
-      if (available) {
-        setState(() {
-          _isListening = true;
-          _isProcessing = false;
-          _lastWords = "";
-        });
-        _speechService.listen(
-          onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
-          final text = candidates.first;
-            if (mounted) {
-              setState(() {
-                _lastWords = text;
-                _matchedIndices = TextSimilarityHelper.getMatchedIndices(
-                  text,
-                  targetText,
-                );
-              });
-
-              // Auto-Catch: Wait 1 second before finishing to feel more natural
-              final targetWords = targetText
-                  .split(RegExp(r'\s+'))
-                  .where((w) => w.isNotEmpty)
-                  .toList();
-              if (_matchedIndices.length >= targetWords.length &&
-                  targetWords.isNotEmpty) {
-                Future.delayed(const Duration(seconds: 1), () {
-                  if (mounted && _isListening) {
-                    _toggleListening(targetText);
-                  }
-                });
-              }
-            }
-          },
-          onDone: () {
-            if (mounted && _isListening && !_isProcessing) {
-              setState(() {
-                _isListening = false;
-                _isProcessing = true;
-              });
-              _checkResult(_lastWords, targetText);
-            }
-          },
-        );
-        _hapticService.selection();
-      } else {
-        // FIX: previously, if the microphone permission was denied or
-        // speech recognition was unavailable on the device, tapping the mic
-        // button silently did nothing — a dead-end button with zero
-        // affordance for what went wrong. Surface it explicitly instead.
-        if (!mounted) return;
-        _hapticService.error();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              context.tr(
-                'games.mic_unavailable',
-                fallback: 'Microphone Unavailable',
-              ),
-            ),
-            behavior: SnackBarBehavior.floating,
-          ),
-        );
-      }
-    }
-  }
-
-  void _checkResult(String spoken, String target) async {
-    final langService = di.sl<LanguageIdService>();
-    final langCode = await langService.identifyLanguage(spoken);
-    if (langCode != 'en' && langCode != 'und') {
-      if (!mounted) return;
-      
-      String langName = 'another language';
-      switch (langCode) {
-        case 'es': langName = 'Spanish'; break;
-        case 'fr': langName = 'French'; break;
-        case 'de': langName = 'German'; break;
-        case 'zh': langName = 'Chinese'; break;
-        case 'ja': langName = 'Japanese'; break;
-        case 'ko': langName = 'Korean'; break;
-        case 'it': langName = 'Italian'; break;
-        case 'pt': langName = 'Portuguese'; break;
-        case 'ru': langName = 'Russian'; break;
-        case 'ar': langName = 'Arabic'; break;
-        case 'hi': langName = 'Hindi'; break;
-      }
-      
-      showDialog(
-        context: context,
-        builder: (ctx) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.r)),
-          title: Row(
-            children: [
-              Icon(Icons.language_rounded, color: Colors.blueAccent),
-              SizedBox(width: 8.w),
-              Text("Language Detected", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold, fontSize: 18.sp)),
-            ],
-          ),
-          content: Text(
-            "Oops! It sounds like you spoke in $langName. Try saying it in English!",
-            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(ctx).pop(),
-              child: Text("TRY AGAIN", style: TextStyle(fontWeight: FontWeight.bold)),
-            ),
-          ],
-        ),
-      );
-      setState(() {
-        _isProcessing = false;
-        _isListening = false;
-        _lastWords = "";
-      });
-      return;
-    }
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
 
-    // Ultra-lenient threshold for difficult accent games (tongue twisters)
-    // Lenient threshold for difficult accent games, balanced with length safety
-    bool isCorrect = false;
-    for (var candidate in _spokenCandidates.isEmpty ? [spoken] : _spokenCandidates) {
-      if (TextSimilarityHelper.isMatch(candidate, target, threshold: 0.70)) {
-        isCorrect = true;
-        _lastWords = candidate; // Update UI to show the correctly matched string
-        break;
-      }
-    }
-
-    // FIX: previously `_attempts++` ran outside any `setState`, and the
-    // three state mutations below were split across two separate `setState`
-    // calls. Neither was an active bug (Flutter coalesces same-frame
-    // `setState` calls, and the very next call always covered the
-    // `_attempts` update too), but consolidating into a single call is
-    // clearer to read and keeps every mutation of this State's fields
-    // consistently inside `setState`.
     setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = isCorrect;
-      _isProcessing = false;
+      _isCorrect = nailedIt;
+      if (nailedIt) {
+        _matchedIndices = Set.from(Iterable.generate(100)); // Highlight all on success
+      }
     });
-    if (!mounted) return;
-    context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(isCorrect));
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+    }
   }
 
   void _tutorPass() {
@@ -269,49 +108,22 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           );
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
-          if (_lastQuestId != quest.id) {
+          if (_lastQuestId != quest.id || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastQuestId = quest.id;
               _isAnswered = false;
               _isCorrect = null;
               _attempts = 0;
-              _lastWords = "";
-              _matchedIndices = {};
-            });
-          } else if (state.lastAnswerCorrect == null) {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-              _attempts = 0;
-              _lastWords = "";
               _matchedIndices = {};
             });
           } else if (state.lastAnswerCorrect == false) {
             setState(() {
               _isCorrect = false;
-              // If it's a final failure (either 2 strikes or out of lives), lock screen
               if (state.isFinalFailure || state.livesRemaining <= 0) {
                 _isAnswered = true;
               }
             });
           }
-          // FIX: `lastAnswerCorrect == true` intentionally needs no handling
-          // here. Both a genuine correct answer (`_checkResult`) and a Tutor
-          // Pass override (`_tutorPass`) already set `_isAnswered`/`_isCorrect`
-          // locally *before* dispatching their event. The previous version
-          // additionally reset those flags whenever `livesRemaining` ticked
-          // up versus the last-seen value — which is exactly what both
-          // `EliteTutorPass` and the ad-funded `AddLifeFromAd` do as a
-          // deliberate side effect. That meant using "I spoke correctly!"
-          // (mid-quest, or from the Game Over dialog) silently wiped the
-          // feedback card back to the mic-trigger UI a moment after it
-          // appeared, while the BLoC's `lastAnswerCorrect` stayed locked at
-          // `true` — so re-recording produced no further effect and there
-          // was no way to reach the Continue button. Deriving the reset
-          // purely from `lastAnswerCorrect == null` (covers `RetryEliteQuestion`,
-          // `RestoreEliteLife`, and `AddLifeFromAd` from Game Over, all of
-          // which already emit with `lastAnswerCorrect` unset) avoids that
-          // false trigger entirely.
         }
       },
       builder: (context, state) {
@@ -326,7 +138,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           isCorrect: _isCorrect,
           isFinalFailure:
               (state is EliteMasteryLoaded && state.isFinalFailure) ||
-              state.livesRemaining <= 0,
+              (state is EliteMasteryLoaded ? state.livesRemaining <= 0 : false),
           showConfetti: _showConfetti,
           title:
               quest?.instruction ??
@@ -339,7 +151,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _attempts = 0;
-              _lastWords = "";
               _matchedIndices = {};
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
@@ -374,15 +185,10 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
-    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
-    // directly inside its Stack and never includes this `child` slot for
-    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
     if (state is EliteMasteryGameOver) {
-      // Keep UI visible behind the dialog but dim it
       return Opacity(
         opacity: 0.5,
         child: AbsorbPointer(
@@ -431,7 +237,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               isAnswered: _isAnswered,
               isCorrect: _isCorrect,
               attempts: _attempts,
-              onListenTap: () => _speechService.speak(targetText ?? ""),
+              onListenTap: () => _soundService.playTts(targetText ?? ""),
             ),
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),
@@ -443,48 +249,14 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ),
             ],
             SizedBox(height: isCompact ? 16.h : 30.h),
-            // FIX: previously no Semantics wrapper — a screen-reader user
-            // had no indication this text is their own live transcription
-            // rather than some other UI copy.
-            if (_lastWords.isNotEmpty)
-              Semantics(
-                liveRegion: true,
-                label: context.tr(
-                  'games.semantic_transcribed_speech',
-                  fallback: 'Transcribed Speech',
-                  args: [_lastWords],
-                ),
-                excludeSemantics: true,
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: isCompact ? 8.h : 12.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(15.r),
-                  ),
-                  child: Text(
-                    _lastWords,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: isCompact ? 14.sp : 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: theme.primaryColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ).animate().fadeIn(),
-            SizedBox(height: isCompact ? 20.h : 40.h),
-            AccentShadowingMicTrigger(
-              isListening: _isListening,
-              onTap: () => _toggleListening(targetText ?? ""),
-              
-              primaryColor: theme.primaryColor,
-              attempts: _attempts,
-              isAnswered: _isAnswered,
-            ),
+            
+            if (!_isAnswered)
+              AccentSelfEvaluationPanel(
+                textToSpeak: targetText ?? "",
+                primaryColor: theme.primaryColor,
+                isCompact: isCompact,
+                onEvaluate: _submitVerbalEvaluation,
+              ),
           ],
         );
       },

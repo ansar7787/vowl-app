@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
@@ -37,19 +38,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   int? _selectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
-  List<int> _wrongIndices = []; // Stores indices relative to the SHUFFLED list
+  bool _isFirstStagePassed = false;
+  List<int> _wrongIndices = []; 
   String? _lastQuestId;
   int _lastLives = 3;
 
-  // Below this available height, use tighter spacing so the question text,
-  // hint card, and all 4 options comfortably fit without the player needing
-  // to scroll on short viewports (landscape phones, split-screen, or with
-  // the on-screen keyboard occupying vertical space).
-  //
-  // NOTE: this same breakpoint is duplicated across all 4 Elite Mastery game
-  // screens (accent shadowing, idiom match, speed spelling, story builder).
-  // Worth consolidating into one shared constant — see the review report's
-  // Refactoring Opportunities section.
   static const double _kCompactHeightBreakpoint = 580;
 
   @override
@@ -61,19 +54,13 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   }
 
   void _initializeOptions(GameQuest quest, {bool shouldSetState = true}) {
-    // FIX: previously just `if (quest.options == null) return;` — leaving
-    // whatever the *previous* quest's shuffled options were still on
-    // screen. Since `quest`/`quest.id` has already moved on by the time
-    // this is called, that meant showing options that don't belong to the
-    // current question at all, with taps resolving against the wrong
-    // quest's correctAnswerIndex. Clearing instead of leaving stale state
-    // makes this fail safely (an empty panel) rather than fail confusingly.
     if (quest.options == null || quest.options!.isEmpty) {
       void reset() {
         _shuffledOptions = [];
         _originalIndices = [];
         _selectedIndex = null;
         _wrongIndices = [];
+        _isFirstStagePassed = false;
       }
 
       if (shouldSetState) {
@@ -96,18 +83,20 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         _shuffledOptions = mapped.map((e) => e.value).toList();
         _originalIndices = mapped.map((e) => e.key).toList();
         _selectedIndex = null;
-        _wrongIndices = []; // Reset wrong indicators on shuffle
+        _wrongIndices = []; 
+        _isFirstStagePassed = false;
       });
     } else {
       _shuffledOptions = mapped.map((e) => e.value).toList();
       _originalIndices = mapped.map((e) => e.key).toList();
       _selectedIndex = null;
-      _wrongIndices = []; // Reset wrong indicators on shuffle
+      _wrongIndices = []; 
+      _isFirstStagePassed = false;
     }
   }
 
   void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
-    if (_isAnswered || _wrongIndices.contains(shuffledIndex)) return;
+    if (_isAnswered || _isFirstStagePassed || _wrongIndices.contains(shuffledIndex)) return;
 
     final actualOriginalIndex = _originalIndices[shuffledIndex];
     final isCorrect = actualOriginalIndex == correctOriginalIndex;
@@ -116,11 +105,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
         _selectedIndex = shuffledIndex;
       });
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+      // Do NOT submit yet! Wait for Phase 2.
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -134,6 +122,25 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         _selectedIndex = shuffledIndex;
       });
 
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+    }
+  }
+
+  void _submitVerbalEvaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
@@ -166,18 +173,12 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         } else if (state is EliteMasteryLoaded) {
           final livesChanged = (state.livesRemaining > _lastLives);
 
-          // FIX: these four lines used to mutate fields directly, outside
-          // any setState, relying entirely on `_initializeOptions`'s own
-          // internal setState (called immediately after) to flush the
-          // rebuild. That happens to work today, but it's an implicit
-          // dependency a future edit could silently break — e.g. if
-          // `_initializeOptions` were ever called with `shouldSetState:
-          // false` here. Wrapping explicitly removes that hazard.
-          if (_lastQuestId != state.currentQuest.id || livesChanged) {
+          if (_lastQuestId != state.currentQuest.id || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastQuestId = state.currentQuest.id;
               _isAnswered = false;
               _isCorrect = null;
+              _isFirstStagePassed = false;
             });
             _initializeOptions(state.currentQuest);
           } else if (state.lastAnswerCorrect == null) {
@@ -185,19 +186,19 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _isFirstStagePassed = false;
             });
           }
           if (state.lastAnswerCorrect == false) {
             setState(() {
               _isCorrect = false;
-              // If it's a final failure (either 2 strikes or out of lives), lock screen
               if (state.isFinalFailure || state.livesRemaining <= 0) {
                 _isAnswered = true;
               }
             });
           }
           _lastLives = state.livesRemaining;
-          // Dynamic Hint Logic (50/50 Lifeline) from Bloc
+          
           if (state.removedIndices.isNotEmpty) {
             setState(() {
               for (final originalIdx in state.removedIndices) {
@@ -212,53 +213,69 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
+        
+        final expectedText = quest != null && _selectedIndex != null 
+            ? _shuffledOptions[_selectedIndex!]
+            : "";
 
-        return EliteBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          state: state,
-          isCorrect: _isCorrect,
-          isFinalFailure: (state is EliteMasteryLoaded)
-              ? (state.isFinalFailure || state.livesRemaining <= 0)
-              : false,
-          showConfetti: _showConfetti,
-          title:
-              quest?.instruction ??
-              context.tr(
-                'games.idiomMatch_instruction',
-                fallback: 'Select the matching idiom.',
-              ),
-          visualConfig: quest?.visualConfig,
-          onContinue: () {
-            setState(() {
-              _isAnswered = false;
-              _isCorrect = null;
-              _selectedIndex = null;
-              _wrongIndices = [];
-            });
-            context.read<EliteMasteryBloc>().add(NextEliteQuestion());
-          },
-          onHint: () {
-            final bloc = context.read<EliteMasteryBloc>();
-            final s = bloc.state;
-            if (s is EliteMasteryLoaded) {
-              if (s.currentQuest.hint != null &&
-                  s.currentQuest.hint!.isNotEmpty) {
-                if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                bloc.add(ShowEliteHint());
-              } else {
-                GameDialogHelper.showHintAdDialog(
-                  context,
-                  onHintEarned: () {
+        return Stack(
+          children: [
+            EliteBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered,
+              state: state,
+              isCorrect: _isCorrect,
+              isFinalFailure: (state is EliteMasteryLoaded)
+                  ? (state.isFinalFailure || state.livesRemaining <= 0)
+                  : false,
+              showConfetti: _showConfetti,
+              title:
+                  quest?.instruction ??
+                  context.tr(
+                    'games.idiomMatch_instruction',
+                    fallback: 'Select the matching idiom.',
+                  ),
+              visualConfig: quest?.visualConfig,
+              onContinue: () {
+                setState(() {
+                  _isAnswered = false;
+                  _isCorrect = null;
+                  _selectedIndex = null;
+                  _wrongIndices = [];
+                  _isFirstStagePassed = false;
+                });
+                context.read<EliteMasteryBloc>().add(NextEliteQuestion());
+              },
+              onHint: () {
+                final bloc = context.read<EliteMasteryBloc>();
+                final s = bloc.state;
+                if (s is EliteMasteryLoaded) {
+                  if (s.currentQuest.hint != null &&
+                      s.currentQuest.hint!.isNotEmpty) {
                     if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
-                  },
-                );
-              }
-            }
-          },
-          child: _buildBody(context, state, isDark, theme),
+                  } else {
+                    GameDialogHelper.showHintAdDialog(
+                      context,
+                      onHintEarned: () {
+                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
+                        bloc.add(ShowEliteHint());
+                      },
+                    );
+                  }
+                }
+              },
+              child: _buildBody(context, state, isDark, theme),
+            ),
+            if (_isFirstStagePassed && !_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: expectedText,
+                primaryColor: theme.primaryColor,
+                onConfirmed: () => _submitVerbalEvaluation(true),
+                onSkipped: () => _submitVerbalEvaluation(true), // Skip speaking but keep the correct answer
+              ),
+          ],
         );
       },
     );
@@ -270,10 +287,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     bool isDark,
     ThemeResult theme,
   ) {
-    // `EliteMasteryLoading` and `EliteMasteryError` are both handled
-    // centrally by `EliteBaseLayout`: it renders its own shimmer/error UI
-    // directly inside its Stack and never includes this `child` slot for
-    // either state, so no local UI is built (or ever shown) for them here.
     if (state is EliteMasteryLoaded) {
       return _buildGameUI(context, state, isDark, theme);
     }
@@ -390,8 +403,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               originalIndices: _originalIndices,
               selectedIndex: _selectedIndex,
               wrongIndices: _wrongIndices,
-              isAnswered: _isAnswered,
-              showCorrectAnswer: _isCorrect == true,
+              isAnswered: _isAnswered || _isFirstStagePassed,
+              showCorrectAnswer: _isCorrect == true || _isFirstStagePassed,
               correctAnswerIndex: quest.correctAnswerIndex ?? 0,
               isDark: isDark,
               primaryColor: theme.primaryColor,

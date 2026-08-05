@@ -140,10 +140,10 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 9. ELITE MASTERY (4 Games)
 *Goal: Verify elite difficulty mechanics are intact.*
-- [ ] 1. Story Builder (Action: Verify Reorder + Drag)
-- [ ] 2. Idiom Match (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 3. Speed Spelling (Action: Verify Typing + Timer)
-- [ ] 4. Accent Shadowing (Action: Verify Voice)
+- [x] 1. Story Builder (Action: Verify Reorder + Drag)
+- [x] 2. Idiom Match (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 3. Speed Spelling (Action: Verify Typing + Timer)
+- [x] 4. Accent Shadowing (Action: Verify Voice)
 
 ## 10. KIDS ZONE (25 Games)
 *Goal: NO typing or STT for kids. Implement Tap + Auto TTS Playback.*
