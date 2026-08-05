@@ -231,6 +231,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   ? (state.isFinalFailure || state.livesRemaining <= 0)
                   : false,
               showConfetti: _showConfetti,
+              title: "",
               visualConfig: quest?.visualConfig,
               onContinue: () {
                 setState(() {
