@@ -99,9 +99,9 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 6. SPEAKING (10 Games)
 *Goal: Ensure manual self-evaluation is active for robust UX.*
-- [ ] 1. Repeat Sentence (Action: Verify Voice + Self-eval)
-- [ ] 2. Speak Missing Word (Action: Verify Voice + Magnet)
-- [ ] 3. Situation Speaking (Action: Verify Voice + Fog scrub)
+- [x] 1. Repeat Sentence (Action: Verify Voice + Self-eval)
+- [x] 2. Speak Missing Word (Action: Verify Voice + Magnet)
+- [x] 3. Situation Speaking (Action: Verify Voice + Fog scrub)
 - [x] 4. Scene Description (Action: Verify Voice + Radar)
 - [x] 5. Yes/No Speaking (Action: Verify Voice + Tilt)
 - [x] 6. Speak Synonym (Action: Verify Voice + Watering)
