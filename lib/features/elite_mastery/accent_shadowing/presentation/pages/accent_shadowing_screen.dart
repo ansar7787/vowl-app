@@ -245,37 +245,6 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               attempts: _attempts,
               onListenTap: () => _soundService.playTts(targetText ?? ""),
             ),
-            SizedBox(height: isCompact ? 12.h : 20.h),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: theme.primaryColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
-              ),
-              child: Row(
-                children: [
-                  Icon(Icons.record_voice_over_rounded, color: theme.primaryColor, size: 24.r),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: Text(
-                      quest.instruction.isNotEmpty
-                          ? quest.instruction
-                          : context.tr(
-                              'games.accent_shadowing_instruction',
-                              fallback: 'Listen to the example, then speak and match the exact accent and rhythm.',
-                            ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : Colors.black87,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),
               EliteHintCard(
