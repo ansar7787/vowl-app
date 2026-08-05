@@ -116,13 +116,6 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _pendingSelectedIndex = null;
-              _lensPosition = const Offset(150, 150);
-            });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;

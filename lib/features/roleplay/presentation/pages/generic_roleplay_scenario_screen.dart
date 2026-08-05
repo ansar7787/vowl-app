@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/presentation/widgets/chat_message.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_character_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_chat_messages_list.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_options_section.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 
 /// Generic screen for multiple-choice Roleplay quests.
 ///
@@ -57,6 +58,7 @@ class _GenericRoleplayScenarioScreenState
   int? _selectedIndex;
   bool _isAnswered = false;
   bool _isProcessing = false;
+  bool _isFirstStagePassed = false;
 
   /// Number of wrong taps for the current quest (resets per quest).
   int _attempts = 0;
@@ -115,6 +117,7 @@ class _GenericRoleplayScenarioScreenState
       _lastProcessedIndex = state.currentIndex;
       _isAnswered = false;
       _selectedIndex = null;
+      _isFirstStagePassed = false;
       _attempts = 0;
       _chatMessages
         ..clear()
@@ -147,10 +150,10 @@ class _GenericRoleplayScenarioScreenState
       await Future.delayed(kRoleplayCorrectAnswerDelay);
       if (!mounted) return;
       setState(() {
-        _isAnswered = true;
+        _isFirstStagePassed = true;
         _isProcessing = false;
       });
-      context.read<RoleplayBloc>().add(const SubmitAnswer(true));
+      // Waif for SpeakToConfirmOverlay Phase 2
     } else {
       _attempts++;
       await Future.delayed(kRoleplayWrongAnswerDelay);
@@ -167,6 +170,23 @@ class _GenericRoleplayScenarioScreenState
           _isProcessing = false;
         });
       }
+      context.read<RoleplayBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _submitVerbalEvaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isFirstStagePassed = false;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      context.read<RoleplayBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
       context.read<RoleplayBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -231,51 +251,65 @@ class _GenericRoleplayScenarioScreenState
         final options = quest.options ?? const [];
         final correctIndex = quest.correctAnswerIndex ?? 0;
 
-        return RoleplayBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          mascotId: mascotId,
-          isAnswered: _isAnswered,
-          isCorrect: _selectedIndex == correctIndex,
-          isFinalFailure: _attempts >= kRoleplayMaxWrongAttempts,
-          showConfetti: _showConfetti,
-          title: widget.title,
-          subtitle: quest.scene ?? 'Choose the best response',
-          useScrolling: true,
-          scrollController: _chatScrollController,
-          onContinue: () =>
-              context.read<RoleplayBloc>().add(const NextQuestion()),
-          onHint: () =>
-              context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              RoleplayCharacterCard(
-                roleName: quest.roleName ?? 'Professional Advisor',
-                icon: widget.icon,
-                primaryColor: theme.primaryColor,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              mascotId: mascotId,
+              isAnswered: _isAnswered,
+              isCorrect: _selectedIndex == correctIndex,
+              isFinalFailure: _attempts >= kRoleplayMaxWrongAttempts,
+              showConfetti: _showConfetti,
+              title: widget.title,
+              subtitle: quest.scene ?? 'Choose the best response',
+              useScrolling: true,
+              scrollController: _chatScrollController,
+              onContinue: () =>
+                  context.read<RoleplayBloc>().add(const NextQuestion()),
+              onHint: () =>
+                  context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  RoleplayCharacterCard(
+                    roleName: quest.roleName ?? 'Professional Advisor',
+                    icon: widget.icon,
+                    primaryColor: theme.primaryColor,
+                  ),
+                  SizedBox(height: 32.h),
+                  RoleplayChatMessagesList(
+                    messages: _chatMessages,
+                    isProcessing: _isProcessing,
+                    hint: state.hintUsed ? quest.hint : null,
+                    primaryColor: theme.primaryColor,
+                    isDark: isDark,
+                    scrollController: _chatScrollController,
+                  ),
+                  if (!_isAnswered && !_isFirstStagePassed) ...[
+                    SizedBox(height: 32.h),
+                    RoleplayOptionsSection(
+                      options: options,
+                      correctIndex: correctIndex,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                      onOptionSelected: _onOptionSelected,
+                    ),
+                  ],
+                ],
               ),
-              SizedBox(height: 32.h),
-              RoleplayChatMessagesList(
-                messages: _chatMessages,
-                isProcessing: _isProcessing,
-                hint: state.hintUsed ? quest.hint : null,
+            ),
+            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+              SpeakToConfirmOverlay(
+                expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
-                isDark: isDark,
-                scrollController: _chatScrollController,
+                onConfirmed: () {
+                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  _submitVerbalEvaluation(true);
+                },
+                onSkipped: () => _submitVerbalEvaluation(true),
               ),
-              if (!_isAnswered) ...[
-                SizedBox(height: 32.h),
-                RoleplayOptionsSection(
-                  options: options,
-                  correctIndex: correctIndex,
-                  primaryColor: theme.primaryColor,
-                  isDark: isDark,
-                  onOptionSelected: _onOptionSelected,
-                ),
-              ],
-            ],
-          ),
+          ],
         );
       },
     );
