@@ -419,7 +419,6 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: isCompact ? 16.h : 24.h),
             ],
             if (state.isHintVisible) ...[
               SizedBox(height: isCompact ? 12.h : 20.h),
@@ -430,7 +429,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                 primaryColor: theme.primaryColor,
               ),
             ],
-            SizedBox(height: isCompact ? 16.h : 30.h),
+            SizedBox(height: isCompact ? 16.h : 24.h),
             IdiomMatchOptionsPanel(
               shuffledOptions: _shuffledOptions,
               originalIndices: _originalIndices,
