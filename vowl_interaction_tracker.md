@@ -127,16 +127,16 @@ Users will try to cheat to get coins faster. Close these loopholes in your UI wr
 
 ## 8. ROLEPLAY (10 Games)
 *Goal: KEEP SpeakToConfirm. Real-world conversations must be spoken.*
-- [ ] 1. Branching Dialogue (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 2. Situational Response (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 3. Job Interview (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 4. Medical Consult (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 5. Gourmet Order (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 6. Travel Desk (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 7. Conflict Resolver (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 8. Elevator Pitch (Action: Verify Speaking)
-- [ ] 9. Social Spark (Action: Implement `SpeakToConfirmOverlay`)
-- [ ] 10. Emergency Hub (Action: Verify Typing + Terminal)
+- [x] 1. Branching Dialogue (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 2. Situational Response (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 3. Job Interview (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 4. Medical Consult (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 5. Gourmet Order (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 6. Travel Desk (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 7. Conflict Resolver (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 8. Elevator Pitch (Action: Verify Speaking)
+- [x] 9. Social Spark (Action: Implement `SpeakToConfirmOverlay`)
+- [x] 10. Emergency Hub (Action: Verify Typing + Terminal)
 
 ## 9. ELITE MASTERY (4 Games)
 *Goal: Verify elite difficulty mechanics are intact.*

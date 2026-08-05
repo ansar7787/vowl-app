@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,17 +7,15 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_event.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_state.dart';
 import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_instruction.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_prompt_card.dart';
-import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_chamber_console.dart';
-import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_record_control.dart';
 
 class ElevatorPitchScreen extends StatefulWidget {
   final int level;
@@ -33,51 +30,21 @@ class ElevatorPitchScreen extends StatefulWidget {
   State<ElevatorPitchScreen> createState() => _ElevatorPitchScreenState();
 }
 
-class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
-    with TickerProviderStateMixin {
+class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
-
-  late AnimationController _waveController;
-  Timer? _gravityTimer;
 
   int _lastProcessedIndex = -1;
-  bool _isListening = false;
-  String _spokenText = "";
-  List<String> _spokenCandidates = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
 
-  // Real-time Physics variables
-  double _capsuleY =
-      0.4; // Position of capsule inside elevator shaft (0.0 to 1.0)
-  double _greenZoneY = 0.5; // Center position of green target zone (0.0 to 1.0)
-
-  // Game scores
-  int _ticksRecorded = 0;
-  int _ticksInAlignment = 0;
-  int _attempts = 0;
-
   @override
   void initState() {
     super.initState();
-    _waveController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    )..repeat();
-
     context.read<RoleplayBloc>().add(
       FetchRoleplayQuests(gameType: widget.gameType, level: widget.level),
     );
-  }
-
-  @override
-  void dispose() {
-    _waveController.dispose();
-    _gravityTimer?.cancel();
-    super.dispose();
   }
 
   void _triggerAutoPlay(RoleplayQuest quest) {
@@ -89,115 +56,15 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
     }
   }
 
-  // Propulsion action: fires booster pushing capsule UP
-  void _fireBooster() {
+  void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    _hapticService.selection();
-    setState(() {
-      _capsuleY = (_capsuleY - 0.16).clamp(0.0, 1.0);
-    });
-  }
-
-  // Dynamic Physical Engine loops running while microphone records
-  void _startPhysicalEngine() {
-    _ticksRecorded = 0;
-    _ticksInAlignment = 0;
-    _gravityTimer?.cancel();
-
-    _gravityTimer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
-      if (!mounted || _isAnswered || !_isListening) {
-        timer.cancel();
-        return;
-      }
-
-      setState(() {
-        // 1. Gravity acceleration pulls capsule DOWN
-        _capsuleY = (_capsuleY + 0.007).clamp(0.0, 1.0);
-
-        // 2. Green target zone floats using a smooth harmonic sine wave
-        final double elapsedSec =
-            DateTime.now().millisecondsSinceEpoch / 1000.0;
-        _greenZoneY = 0.5 + 0.3 * math.sin(elapsedSec * 1.6);
-
-        // 3. Increment calibration alignments
-        _ticksRecorded++;
-        final double dist = (_capsuleY - _greenZoneY).abs();
-        if (dist < 0.14) {
-          _ticksInAlignment++;
-        }
-      });
-    });
-  }
-
-  void _startListening() async {
-    if (_isAnswered) return;
-    _hapticService.selection();
 
     setState(() {
-      _isListening = true;
-      _spokenText = "Voice capturing initiated...";
-      _capsuleY = 0.4;
-    });
-
-    _startPhysicalEngine();
-
-    _speechService.listen(
-      onResult: (candidates, _) {
-          if (candidates.isEmpty) return;
-          _spokenCandidates = candidates;
-          final text = candidates.first;
-        setState(() {
-          _spokenText = text;
-          // Giving small booster lift upon spoken transcript updates
-          _capsuleY = (_capsuleY - 0.04).clamp(0.0, 1.0);
-        });
-      },
-      onDone: () {
-        if (mounted) {
-          setState(() => _isListening = false);
-          _gravityTimer?.cancel();
-        }
-      },
-    );
-  }
-
-  void _stopListening(String target) async {
-    await _speechService.stop();
-    _gravityTimer?.cancel();
-    setState(() => _isListening = false);
-    _verifySpeech(target);
-  }
-
-  void _verifySpeech(String target) {
-    if (_spokenText.isEmpty || _spokenText.startsWith("Voice capturing")) {
-      _spokenText = "No recording input captured.";
-      return;
-    }
-
-    // Alignment accuracy score
-    final double alignmentAccuracy = _ticksRecorded > 0
-        ? (_ticksInAlignment / _ticksRecorded)
-        : 0.0;
-
-    // Core requirements:
-    // 1. alignmentAccuracy >= 40% (stayed inside the drifting green elevator target bounds)
-    // 2. Length of spoken text >= 12 chars
-    bool isCorrect = false;
-    for (var candidate in _spokenCandidates.isEmpty ? [_spokenText] : _spokenCandidates) {
-      if (alignmentAccuracy >= 0.40 && candidate.length >= 12) {
-        isCorrect = true;
-        _spokenText = candidate;
-        break;
-      }
-    }
-
-    setState(() {
-      _attempts++;
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = nailedIt;
     });
 
-    if (isCorrect) {
+    if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
       context.read<RoleplayBloc>().add(SubmitAnswer(true));
@@ -231,11 +98,6 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _attempts = 0;
-              _spokenText = "";
-              _isListening = false;
-              _capsuleY = 0.4;
-              _greenZoneY = 0.5;
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -265,75 +127,60 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return RoleplayBaseLayout(
-          onTutorPass: _tutorPass,
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-          onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: isCompact ? 5.h : 10.h,
-                      ),
-                      child: Column(
-                        children: [
-                          ElevatorPitchInstruction(
-                            primaryColor: theme.primaryColor,
-                            instruction: quest.instruction,
+        return Stack(
+          children: [
+            RoleplayBaseLayout(
+              onTutorPass: _tutorPass,
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              showConfetti: _showConfetti,
+              onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
+              onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: isCompact ? 5.h : 10.h,
                           ),
-                          SizedBox(height: isCompact ? 10.h : 16.h),
-                          ElevatorPitchPromptCard(
-                            prompt: quest.prompt ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
+                          child: Column(
+                            children: [
+                              ElevatorPitchInstruction(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: isCompact ? 10.h : 16.h),
+                              ElevatorPitchPromptCard(
+                                prompt: quest.prompt ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                              ),
+                              SizedBox(height: isCompact ? 40.h : 80.h),
+                            ],
                           ),
-                          SizedBox(height: isCompact ? 12.h : 20.h),
-
-                          // Elevator Physical Chamber Layout
-                          ElevatorPitchChamberConsole(
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            capsuleY: _capsuleY,
-                            greenZoneY: _greenZoneY,
-                            isListening: _isListening,
-                            spokenText: _spokenText,
-                            waveAnimation: _waveController,
-                            onFireBooster: _fireBooster,
-                          ),
-                          SizedBox(height: isCompact ? 16.h : 24.h),
-
-                          // Speech input capture controls
-                          if (!_isAnswered)
-                            ElevatorPitchRecordControl(
-                              isListening: _isListening,
-                              color: theme.primaryColor,
-                              correctAnswer: quest.correctAnswer ?? "",
-                              onStartListening: _startListening,
-                              onStopListening: _stopListening,
-                              attempts: _attempts,
-                              isAnswered: _isAnswered,
-                            ),
-
-                          // Post-answer explanation cards
-                          SizedBox(height: isCompact ? 40.h : 80.h),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                        );
+                      },
+                    ),
+            ),
+            if (!_isAnswered && quest != null)
+              SpeakToConfirmOverlay(
+                expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
+                primaryColor: theme.primaryColor,
+                onConfirmed: () {
+                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  _submitVerbalEvaluation(true);
+                },
+                onSkipped: () => _submitVerbalEvaluation(false),
+              ),
+          ],
         );
       },
     );
   }
 }
-
