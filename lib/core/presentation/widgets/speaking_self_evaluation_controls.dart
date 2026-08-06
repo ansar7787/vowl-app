@@ -101,9 +101,6 @@ class _SpeakingSelfEvaluationControlsState
             _hasRecorded = true;
           }
         });
-        if (_hasRecorded) {
-          _playComparison();
-        }
       }
     } finally {
       _isProcessingAudioAction = false;
