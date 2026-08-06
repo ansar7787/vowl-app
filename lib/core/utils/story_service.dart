@@ -257,6 +257,31 @@ class StoryServiceImpl implements StoryService {
   };
 
   static const Map<String, List<String>> kidsScripts = {
+    'handwriting': [
+      "Pen in hand! Let's draw some beautiful magic letters today! ✍️",
+      "Calligraphy Hero! You're making every word look like art! 🎨",
+      "The Magic Scroll is glowing! Your writing is becoming so clear! ✨",
+      "A master of lines! You draw the perfect shapes every time! 📐",
+      "100 levels of writing! You are the Master of the Golden Pen! 🖋️",
+      "Legendary Scribe! Your handwriting is the most beautiful in the world! 📜",
+    ],
+    'weather': [
+      "Sun or rain! Let's learn about the beautiful sky today! ☀️",
+      "Cloud Chaser! You know exactly what the sky is telling us! ☁️",
+      "The Storm is passed! You're a hero of the seasons! 🌈",
+      "A perfect forecast! You understand the rhythm of nature! 🌩️",
+      "100 levels of weather! You are the Master of the Elements! 🌪️",
+      "Sky Guardian! You control the sunshine and the rain! 🌦️",
+    ],
+    'professions': [
+      "What do you want to be? Let's explore all the amazing jobs! 👩‍🚀",
+      "The Helper! You know how everyone makes the world a better place! 👨‍🚒",
+      "A community of heroes! You're learning how we all work together! 👩‍⚕️",
+      "The Architect of Dreams! You can be anything you want to be! 👷",
+      "100 levels of careers! You are the Mayor of the City! 🏙️",
+      "World Leader! You understand every amazing job in the world! 🌍",
+    ],
+
     'alphabet': [
       "Hi little explorer! Let's find all the hidden magic letters in the forest! 🕵️‍♂️",
       "Yay! The Alphabet Bridge is fixed! Now we can cross into the Land of Stories! 🌈",
@@ -1374,6 +1399,9 @@ class StoryServiceImpl implements StoryService {
             'transport',
             'bodyparts',
             'clothing',
+            'handwriting',
+            'weather',
+            'professions',
           ].contains(cleanId);
 
       final String broadCategory = _getBroadCategory(categoryId);
