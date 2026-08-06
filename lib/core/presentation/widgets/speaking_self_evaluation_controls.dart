@@ -42,6 +42,7 @@ class _SpeakingSelfEvaluationControlsState
   String _playingContext = "";
   bool _isProcessingAudioAction = false;
   String? _recordingPath;
+  int _playbackSessionId = 0;
 
   late final AnimationController _pulseController;
 
@@ -62,6 +63,24 @@ class _SpeakingSelfEvaluationControlsState
     }
     _soundService.stopTts();
     super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(SpeakingSelfEvaluationControls oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.expectedText != widget.expectedText) {
+      _playbackSessionId++;
+      _soundService.stopTts();
+      if (_audioRecorder.isRecording) {
+        _audioRecorder.stopRecording();
+      }
+      setState(() {
+        _isRecording = false;
+        _hasRecorded = false;
+        _isPlaying = false;
+        _recordingPath = null;
+      });
+    }
   }
 
   Future<void> _startRecording() async {
@@ -110,6 +129,9 @@ class _SpeakingSelfEvaluationControlsState
 
   Future<void> _playComparison() async {
     if (_isPlaying || _recordingPath == null) return;
+    _playbackSessionId++;
+    final sessionId = _playbackSessionId;
+
     setState(() {
       _isPlaying = true;
       _playingContext = "Playing comparison...";
@@ -121,7 +143,9 @@ class _SpeakingSelfEvaluationControlsState
       // Ignore TTS errors
     }
     
+    if (sessionId != _playbackSessionId) return;
     await Future.delayed(const Duration(milliseconds: 1200));
+    if (sessionId != _playbackSessionId) return;
     
     if (mounted) {
       try {
@@ -129,27 +153,33 @@ class _SpeakingSelfEvaluationControlsState
       } catch (e) {
         // Ignore file playback errors
       }
+      
+      if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     }
     
-    if (mounted) {
+    if (mounted && sessionId == _playbackSessionId) {
       setState(() => _isPlaying = false);
     }
   }
 
   Future<void> _playNative() async {
     if (_isPlaying) return;
+    _playbackSessionId++;
+    final sessionId = _playbackSessionId;
+
     setState(() {
       _isPlaying = true;
       _playingContext = "Playing native voice...";
     });
     try {
       await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
+      if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
       // Ignore playback/TTS errors so UI doesn't get stuck
     } finally {
-      if (mounted) {
+      if (mounted && sessionId == _playbackSessionId) {
         setState(() => _isPlaying = false);
       }
     }
@@ -157,28 +187,36 @@ class _SpeakingSelfEvaluationControlsState
 
   Future<void> _playUser() async {
     if (_isPlaying || _recordingPath == null) return;
+    _playbackSessionId++;
+    final sessionId = _playbackSessionId;
+
     setState(() {
       _isPlaying = true;
       _playingContext = "Playing your voice...";
     });
     try {
       await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
+      if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
       // Ignore playback/TTS errors so UI doesn't get stuck
     } finally {
-      if (mounted) {
+      if (mounted && sessionId == _playbackSessionId) {
         setState(() => _isPlaying = false);
       }
     }
   }
 
   void _handleNailedIt() {
+    _playbackSessionId++;
+    setState(() => _isPlaying = false);
     _soundService.stopTts();
     widget.onConfirmed();
   }
 
   void _handleNeedsWork() {
+    _playbackSessionId++;
+    setState(() => _isPlaying = false);
     _soundService.stopTts();
     widget.onSkipped();
   }
