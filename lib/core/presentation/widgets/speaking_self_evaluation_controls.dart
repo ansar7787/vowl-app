@@ -101,12 +101,24 @@ class _SpeakingSelfEvaluationControlsState
   Future<void> _playComparison() async {
     if (_isPlaying || _recordingPath == null) return;
     setState(() => _isPlaying = true);
-    await _soundService.playTts(widget.expectedText);
+    
+    try {
+      await _soundService.playTts(widget.expectedText);
+    } catch (e) {
+      // Ignore TTS errors
+    }
+    
     await Future.delayed(const Duration(milliseconds: 1200));
+    
     if (mounted) {
-      await _soundService.playFile(_recordingPath!);
+      try {
+        await _soundService.playFile(_recordingPath!);
+      } catch (e) {
+        // Ignore file playback errors
+      }
       await Future.delayed(const Duration(milliseconds: 1200));
     }
+    
     if (mounted) {
       setState(() => _isPlaying = false);
     }
@@ -115,20 +127,30 @@ class _SpeakingSelfEvaluationControlsState
   Future<void> _playNative() async {
     if (_isPlaying) return;
     setState(() => _isPlaying = true);
-    await _soundService.playTts(widget.expectedText);
-    await Future.delayed(const Duration(milliseconds: 1200));
-    if (mounted) {
-      setState(() => _isPlaying = false);
+    try {
+      await _soundService.playTts(widget.expectedText);
+      await Future.delayed(const Duration(milliseconds: 1200));
+    } catch (e) {
+      // Ignore playback/TTS errors so UI doesn't get stuck
+    } finally {
+      if (mounted) {
+        setState(() => _isPlaying = false);
+      }
     }
   }
 
   Future<void> _playUser() async {
     if (_isPlaying || _recordingPath == null) return;
     setState(() => _isPlaying = true);
-    await _soundService.playFile(_recordingPath!);
-    await Future.delayed(const Duration(milliseconds: 1200));
-    if (mounted) {
-      setState(() => _isPlaying = false);
+    try {
+      await _soundService.playFile(_recordingPath!);
+      await Future.delayed(const Duration(milliseconds: 1200));
+    } catch (e) {
+      // Ignore playback/TTS errors so UI doesn't get stuck
+    } finally {
+      if (mounted) {
+        setState(() => _isPlaying = false);
+      }
     }
   }
 
