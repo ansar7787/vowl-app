@@ -103,7 +103,7 @@ class _SpeakingSelfEvaluationControlsState
     setState(() => _isPlaying = true);
     
     try {
-      await _soundService.playTts(widget.expectedText);
+      await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
     } catch (e) {
       // Ignore TTS errors
     }
@@ -112,7 +112,7 @@ class _SpeakingSelfEvaluationControlsState
     
     if (mounted) {
       try {
-        await _soundService.playFile(_recordingPath!);
+        await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
       } catch (e) {
         // Ignore file playback errors
       }
@@ -128,7 +128,7 @@ class _SpeakingSelfEvaluationControlsState
     if (_isPlaying) return;
     setState(() => _isPlaying = true);
     try {
-      await _soundService.playTts(widget.expectedText);
+      await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
       // Ignore playback/TTS errors so UI doesn't get stuck
@@ -143,7 +143,7 @@ class _SpeakingSelfEvaluationControlsState
     if (_isPlaying || _recordingPath == null) return;
     setState(() => _isPlaying = true);
     try {
-      await _soundService.playFile(_recordingPath!);
+      await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
       // Ignore playback/TTS errors so UI doesn't get stuck
