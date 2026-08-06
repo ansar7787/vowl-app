@@ -217,6 +217,32 @@ class GameInstructionService {
 
   // Large centralized static register matching GameSubtypes to their Briefing parameters.
   static const Map<GameSubtype, GameBriefing> _briefings = {
+    GameSubtype.storyBuilder: GameBriefing(
+      title: "Story Builder",
+      icon: Icons.menu_book_rounded,
+      objective:
+          "Read the scrambled sentences and arrange them in the correct logical order to build a complete story. Mastering this skill ensures your written communication is clear, professional, and effective.",
+      rules: [
+        "Find the opening sentence",
+        "Look for logical transitions",
+        "Verify the story flow",
+      ],
+      actionText: "Build Story",
+      tip: "PRO TIP: Transition words like 'However', 'Then', and 'Finally' are huge clues to the correct order!",
+    ),
+    GameSubtype.accentShadowing: GameBriefing(
+      title: "Accent Shadowing",
+      icon: Icons.record_voice_over_rounded,
+      objective:
+          "Listen to the example, then speak and match the exact accent and rhythm. Mastering pronunciation ensures your spoken English sounds clear and natural.",
+      rules: [
+        "Listen to the target phrase",
+        "Analyze the rhythm and pitch",
+        "Speak to match the native voice",
+      ],
+      actionText: "Start Shadowing",
+      tip: "PRO TIP: Don't just read the words—act them out! Match the emotion and energy of the original speaker.",
+    ),
     GameSubtype.speedSpelling: GameBriefing(
       title: "Speed Spelling",
       icon: Icons.bolt_rounded,

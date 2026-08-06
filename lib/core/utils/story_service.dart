@@ -500,6 +500,38 @@ class StoryServiceImpl implements StoryService {
       "Level 100! Your reading comprehension is excellent.",
       "Level 200 reached! You can read and analyze advanced texts effortlessly.",
     ],
+    'storybuilder': [
+      "",
+      "Great job! Building narratives is key to language fluency.",
+      "Your structural logic is becoming incredibly sharp.",
+      "Halfway to 100! You are constructing complex thoughts effortlessly.",
+      "Level 100! You are a master storyteller.",
+      "Level 200 reached! Your narrative architecture is flawless.",
+    ],
+    'idiommatch': [
+      "",
+      "Great job! Idioms are the secret to native-sounding speech.",
+      "Your cultural vocabulary is expanding rapidly.",
+      "Halfway to 100! You are deciphering complex meanings with ease.",
+      "Level 100! You have mastered the art of figurative language.",
+      "Level 200 reached! You can converse with natives on any abstract topic.",
+    ],
+    'speedspelling': [
+      "",
+      "Great job! Spelling under pressure sharpens your memory.",
+      "Your lexical recall is becoming incredibly fast.",
+      "Halfway to 100! You are decoding words with machine-like precision.",
+      "Level 100! Your orthography is elite.",
+      "Level 200 reached! You have mastered the most complex vocabulary spelling.",
+    ],
+    'accentshadowing': [
+      "",
+      "Great job! Shadowing is the fastest path to native pronunciation.",
+      "Your rhythm and pitch are aligning perfectly with native speakers.",
+      "Halfway to 100! You are conquering the nuances of connected speech.",
+      "Level 100! Your spoken cadence is incredibly natural.",
+      "Level 200 reached! You possess flawless phonetic mimicry.",
+    ],
     'elitemastery': [
       "",
       "Great job! These advanced challenges are making you much sharper.",
@@ -614,7 +646,24 @@ class StoryServiceImpl implements StoryService {
       }
     }
 
-    // Try broad adult category for milestones > 1
+    // 3. Milestones > 1 (Legacy Scripts)
+    // First try granular match
+    if (legacyAdultScripts.containsKey(cleanId)) {
+      final script = legacyAdultScripts[cleanId]!;
+      if (beatIndex < script.length && script[beatIndex].isNotEmpty) {
+        return StoryBeat(
+          title: context.tr('story.system_update', fallback: 'System Update'),
+          text: context.tr(
+            'story_scripts.${cleanId}_beat_$beatIndex',
+            fallback: script[beatIndex],
+          ),
+          mascotEmoji: _getMascotEmoji(categoryId),
+          themeColor: _getCategoryColor(categoryId),
+        );
+      }
+    }
+
+    // Try broad adult category fallback
     final String broadId = _getBroadCategory(categoryId);
     if (legacyAdultScripts.containsKey(broadId)) {
       final script = legacyAdultScripts[broadId]!;
