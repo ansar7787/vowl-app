@@ -275,6 +275,7 @@ class SoundServiceImpl implements SoundService {
       await _ttsService.speak(text, rate: speed, locale: locale);
     } catch (e) {
       di.sl<AppLogger>().error('SoundService: Error playing TTS', error: e);
+      rethrow;
     }
   }
 

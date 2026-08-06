@@ -112,9 +112,13 @@ class TtsServiceImpl implements TtsService {
       } else {
         await _flutterTts.setSpeechRate(0.4); // Default speed for learners
       }
-      await _flutterTts.speak(cleanText);
+      final result = await _flutterTts.speak(cleanText);
+      if (result == 0) {
+        throw Exception("TTS Engine failed to speak (possibly unbound or crashed)");
+      }
     } catch (e) {
       sl<AppLogger>().error('TtsService: Speech execution error', error: e);
+      rethrow;
     }
   }
 
