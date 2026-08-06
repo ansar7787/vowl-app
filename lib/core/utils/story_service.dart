@@ -1596,52 +1596,90 @@ class StoryServiceImpl implements StoryService {
 
     final String id = categoryId.toLowerCase();
 
-    if (id.contains('alphabet') ||
-        id.contains('speak') ||
-        id.contains('bodypart') ||
-        id.contains('family')) {
+    // Kids Zone exact color matching
+    switch (id) {
+      case 'alphabet':
+        return const Color(0xFFF43F5E);
+      case 'numbers':
+        return const Color(0xFF0EA5E9);
+      case 'colors':
+        return const Color(0xFFF59E0B);
+      case 'shapes':
+        return const Color(0xFF10B981);
+      case 'animals':
+        return const Color(0xFF6366F1);
+      case 'fruits':
+        return const Color(0xFFEF4444);
+      case 'family':
+        return const Color(0xFFEC4899);
+      case 'school':
+        return const Color(0xFFF59E0B);
+      case 'verbs':
+        return const Color(0xFF8B5CF6);
+      case 'routine':
+        return const Color(0xFFF97316);
+      case 'emotions':
+        return const Color(0xFF06B6D4);
+      case 'prepositions':
+        return const Color(0xFF64748B);
+      case 'phonics':
+        return const Color(0xFFFFCC00);
+      case 'time':
+        return const Color(0xFF333333);
+      case 'opposites':
+        return const Color(0xFF94A3B8);
+      case 'day_night':
+      case 'daynight':
+        return const Color(0xFF1E293B);
+      case 'nature':
+        return const Color(0xFF16A34A);
+      case 'home_kids':
+      case 'home':
+        return const Color(0xFFD946EF);
+      case 'food_kids':
+      case 'food':
+        return const Color(0xFFFB923C);
+      case 'transport':
+        return const Color(0xFF6366F1);
+      case 'body_parts':
+      case 'bodyparts':
+        return const Color(0xFFF43F5E);
+      case 'clothing':
+        return const Color(0xFF8B5CF6);
+      case 'handwriting':
+        return const Color(0xFFF43F5E);
+      case 'weather':
+        return const Color(0xFF38BDF8);
+      case 'professions':
+        return const Color(0xFF6366F1);
+    }
+
+    // Adult category fallbacks
+    if (id.contains('speak') || id.contains('dialogue')) {
       return LevelThemeHelper.getCategoryBaseColor('speaking');
     }
-    if (id.contains('number') ||
-        id.contains('grammar') ||
-        id.contains('clothing') ||
-        id.contains('time')) {
+    if (id.contains('grammar') || id.contains('sentence')) {
       return LevelThemeHelper.getCategoryBaseColor('grammar');
     }
-    if (id.contains('color') ||
-        id.contains('write') ||
-        id.contains('shape') ||
-        id.contains('home')) {
+    if (id.contains('write') || id.contains('journal')) {
       return LevelThemeHelper.getCategoryBaseColor('writing');
     }
-    if (id.contains('animal') ||
-        id.contains('listen') ||
-        id.contains('school') ||
-        id.contains('routine')) {
+    if (id.contains('listen') || id.contains('audio')) {
       return LevelThemeHelper.getCategoryBaseColor('listening');
     }
-    if (id.contains('fruit') ||
-        id.contains('accent') ||
-        id.contains('food') ||
-        id.contains('opposite')) {
+    if (id.contains('accent') || id.contains('pronunciation')) {
       return LevelThemeHelper.getCategoryBaseColor('accent');
     }
-    if (id.contains('emotion') ||
-        id.contains('roleplay') ||
-        id.contains('daynight') ||
-        id.contains('verb')) {
+    if (id.contains('roleplay') || id.contains('situation')) {
       return LevelThemeHelper.getCategoryBaseColor('roleplay');
     }
-    if (id.contains('transport') ||
-        id.contains('read') ||
-        id.contains('preposition') ||
-        id.contains('phonics')) {
+    if (id.contains('read') || id.contains('paragraph')) {
       return LevelThemeHelper.getCategoryBaseColor('reading');
     }
-    if (id.contains('nature') || id.contains('vocab')) {
+    if (id.contains('vocab') || id.contains('word')) {
       return LevelThemeHelper.getCategoryBaseColor('vocabulary');
     }
-    if (id.contains('elite')) {
+    if (id.contains('elite') || id.contains('mastery')) {
       return LevelThemeHelper.getCategoryBaseColor('elitemastery');
     }
 
