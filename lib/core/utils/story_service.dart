@@ -1641,8 +1641,9 @@ class StoryServiceImpl implements StoryService {
     if (id.contains('nature') || id.contains('vocab')) {
       return LevelThemeHelper.getCategoryBaseColor('vocabulary');
     }
-    if (id.contains('elite'))
+    if (id.contains('elite')) {
       return LevelThemeHelper.getCategoryBaseColor('elitemastery');
+    }
 
     return LevelThemeHelper.getCategoryBaseColor('grammar');
   }
