@@ -677,15 +677,15 @@ class StoryServiceImpl implements StoryService {
   /// Theme color per broad category for every *recognized* adult/modern
   /// [GameSubtype] id. Same key set and rationale as [_categoryEmoji].
   static const Map<QuestType, Color> _categoryColors = {
-    QuestType.speaking: Color(0xFFE11D48), // Rose 600
-    QuestType.grammar: Color(0xFF0284C7), // Sky 600
-    QuestType.writing: Color(0xFFD97706), // Amber 600
-    QuestType.listening: Color(0xFF4F46E5), // Indigo 600
-    QuestType.accent: Color(0xFFDC2626), // Red 600
-    QuestType.roleplay: Color(0xFF0891B2), // Cyan 600
-    QuestType.reading: Color(0xFF1D4ED8), // Blue 700
-    QuestType.vocabulary: Color(0xFF059669), // Emerald 600
-    QuestType.eliteMastery: Color(0xFFEAB308), // Yellow 500
+    QuestType.speaking: Color(0xFFF44336), // Pure Red
+    QuestType.grammar: Color(0xFF2196F3), // Pure Blue
+    QuestType.writing: Color(0xFFFF9800), // Pure Orange
+    QuestType.listening: Color(0xFFE91E63), // Pure Pink
+    QuestType.accent: Color(0xFF00BCD4), // Pure Cyan
+    QuestType.roleplay: Color(0xFF8BC34A), // Pure Lime
+    QuestType.reading: Color(0xFF4CAF50), // Pure Green
+    QuestType.vocabulary: Color(0xFF673AB7), // Pure Deep Purple
+    QuestType.eliteMastery: Color(0xFFFFD700), // Pure Gold
   };
 
   /// BUG FIX: this previously matched *every* id (kids-zone topics AND
@@ -767,49 +767,49 @@ class StoryServiceImpl implements StoryService {
         id.contains('speak') ||
         id.contains('bodypart') ||
         id.contains('family')) {
-      return const Color(0xFFE11D48); // Rose 600
+      return const Color(0xFFF44336); // Pure Red
     }
     if (id.contains('number') ||
         id.contains('grammar') ||
         id.contains('clothing') ||
         id.contains('time')) {
-      return const Color(0xFF0284C7); // Sky 600
+      return const Color(0xFF2196F3); // Pure Blue
     }
     if (id.contains('color') ||
         id.contains('write') ||
         id.contains('shape') ||
         id.contains('home')) {
-      return const Color(0xFFD97706); // Amber 600
+      return const Color(0xFFFF9800); // Pure Orange
     }
     if (id.contains('animal') ||
         id.contains('listen') ||
         id.contains('school') ||
         id.contains('routine')) {
-      return const Color(0xFF4F46E5); // Indigo 600
+      return const Color(0xFFE91E63); // Pure Pink
     }
     if (id.contains('fruit') ||
         id.contains('accent') ||
         id.contains('food') ||
         id.contains('opposite')) {
-      return const Color(0xFFDC2626); // Red 600
+      return const Color(0xFF00BCD4); // Pure Cyan
     }
     if (id.contains('emotion') ||
         id.contains('roleplay') ||
         id.contains('daynight') ||
         id.contains('verb')) {
-      return const Color(0xFF0891B2); // Cyan 600
+      return const Color(0xFF8BC34A); // Pure Lime
     }
     if (id.contains('transport') ||
         id.contains('read') ||
         id.contains('preposition') ||
         id.contains('phonics')) {
-      return const Color(0xFF1D4ED8); // Blue 700
+      return const Color(0xFF4CAF50); // Pure Green
     }
     if (id.contains('nature') || id.contains('vocab')) {
-      return const Color(0xFF059669); // Emerald 600
+      return const Color(0xFF673AB7); // Pure Deep Purple
     }
-    if (id.contains('elite')) return const Color(0xFFEAB308); // Yellow 500
+    if (id.contains('elite')) return const Color(0xFFFFD700); // Pure Gold
 
-    return const Color(0xFF4F46E5); // Indigo 600
+    return const Color(0xFF2196F3); // Pure Blue
   }
 }
