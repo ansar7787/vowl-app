@@ -1,7 +1,12 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class KidsCategoryGrid extends StatelessWidget {
   final bool isDark;
@@ -22,13 +27,41 @@ class KidsCategoryGrid extends StatelessWidget {
         delegate: SliverChildListDelegate([
           _buildCategoryCard(
             context,
-            () => context.push(
-              '/kids/map/handwriting',
-              extra: {
-                'title': 'Handwriting',
-                'primaryColor': const Color(0xFFF43F5E),
-              },
-            ),
+            () async {
+              final service = di.sl<DigitalInkService>();
+              bool isDownloaded = await service.isModelDownloaded();
+
+              if (!isDownloaded && context.mounted) {
+                final success = await showDialog<bool>(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) => const _DownloadModelDialog(
+                    primaryColor: Color(0xFFF43F5E),
+                  ),
+                );
+
+                if (success != true) {
+                  if (context.mounted) {
+                    CustomSnackBar.show(
+                      context: context,
+                      message: 'Failed to download handwriting model.',
+                      type: CustomSnackBarType.error,
+                    );
+                  }
+                  return;
+                }
+              }
+
+              if (context.mounted) {
+                context.push(
+                  '/kids/map/handwriting',
+                  extra: {
+                    'title': 'Handwriting',
+                    'primaryColor': const Color(0xFFF43F5E),
+                  },
+                );
+              }
+            },
             'Write & Learn',
             'Handwriting Fun',
             const Color(0xFFF43F5E), // Rose
@@ -333,7 +366,6 @@ class KidsCategoryGrid extends StatelessWidget {
             const Color(0xFF8B5CF6),
             Icons.checkroom_rounded,
           ),
-
           _buildCategoryCard(
             context,
             () => context.push(
@@ -424,6 +456,135 @@ class KidsCategoryGrid extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DownloadModelDialog extends StatefulWidget {
+  final Color primaryColor;
+  const _DownloadModelDialog({required this.primaryColor});
+
+  @override
+  State<_DownloadModelDialog> createState() => _DownloadModelDialogState();
+}
+
+class _DownloadModelDialogState extends State<_DownloadModelDialog> {
+  double _progress = 0.0;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startMockProgress();
+    _downloadModel();
+  }
+
+  void _startMockProgress() {
+    _timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        if (_progress < 0.85) {
+          _progress += 0.02; // Fast up to 85%
+        } else if (_progress < 0.95) {
+          _progress += 0.005; // Slow crawl to 95%
+        }
+      });
+    });
+  }
+
+  Future<void> _downloadModel() async {
+    final service = di.sl<DigitalInkService>();
+    final success = await service.downloadModel();
+    if (mounted) {
+      if (success) {
+        Navigator.of(context).pop(true);
+      } else {
+        Navigator.of(context).pop(false);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      backgroundColor: const Color(0xFF1E293B),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.r)),
+      child: Padding(
+        padding: EdgeInsets.all(32.r),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+                  Icons.cloud_download_rounded,
+                  size: 80.r,
+                  color: widget.primaryColor,
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(begin: -5, end: 5, duration: 1.seconds),
+            SizedBox(height: 24.h),
+            Text(
+              "Downloading Smart Pen...",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                fontWeight: FontWeight.bold,
+                color: widget.primaryColor,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              "This only happens once!",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                color: Colors.grey,
+              ),
+            ),
+            SizedBox(height: 32.h),
+            Container(
+              width: double.infinity,
+              height: 20.h,
+              decoration: BoxDecoration(
+                color: widget.primaryColor.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+              child: Stack(
+                children: [
+                  AnimatedContainer(
+                    duration: const Duration(milliseconds: 100),
+                    width: 250.w * _progress,
+                    height: 20.h,
+                    decoration: BoxDecoration(
+                      color: widget.primaryColor,
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              "${(_progress * 100).toInt()}%",
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.bold,
+                color: widget.primaryColor,
+              ),
             ),
           ],
         ),
