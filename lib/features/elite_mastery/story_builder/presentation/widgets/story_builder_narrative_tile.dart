@@ -122,13 +122,16 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
                       vertical: 6.h,
                     ),
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFFFB800), Color(0xFFFF9500)],
+                      gradient: LinearGradient(
+                        colors: [
+                          theme.primaryColor,
+                          theme.primaryColor.withValues(alpha: 0.8),
+                        ],
                       ),
                       borderRadius: BorderRadius.circular(12.r),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.orange.withValues(alpha: 0.3),
+                          color: theme.primaryColor.withValues(alpha: 0.3),
                           blurRadius: 8,
                         ),
                       ],
