@@ -39,6 +39,7 @@ class _SpeakingSelfEvaluationControlsState
   bool _isRecording = false;
   bool _hasRecorded = false;
   bool _isPlaying = false;
+  bool _isProcessingAudioAction = false;
   String? _recordingPath;
 
   late final AnimationController _pulseController;
@@ -55,7 +56,7 @@ class _SpeakingSelfEvaluationControlsState
   @override
   void dispose() {
     _pulseController.dispose();
-    if (_isRecording) {
+    if (_audioRecorder.isRecording) {
       _audioRecorder.stopRecording();
     }
     _soundService.stopTts();
@@ -63,39 +64,49 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   Future<void> _startRecording() async {
-    if (_isPlaying) return;
+    if (_isPlaying || _isRecording || _isProcessingAudioAction) return;
+    _isProcessingAudioAction = true;
 
-    final hasPermission = await _audioRecorder.hasPermission();
-    if (hasPermission) {
-      _hapticService.selection();
-      final started = await _audioRecorder.startRecording();
-      if (started && mounted) {
-        setState(() {
-          _isRecording = true;
-          _hasRecorded = false;
-          _recordingPath = null;
-        });
+    try {
+      final hasPermission = await _audioRecorder.hasPermission();
+      if (hasPermission) {
+        _hapticService.selection();
+        final started = await _audioRecorder.startRecording();
+        if (started && mounted) {
+          setState(() {
+            _isRecording = true;
+            _hasRecorded = false;
+            _recordingPath = null;
+          });
+        }
       }
+    } finally {
+      _isProcessingAudioAction = false;
     }
   }
 
   Future<void> _stopRecording() async {
-    if (!_isRecording) return;
+    if (!_isRecording || _isProcessingAudioAction) return;
+    _isProcessingAudioAction = true;
 
-    _hapticService.selection();
-    final path = await _audioRecorder.stopRecording();
+    try {
+      _hapticService.selection();
+      final path = await _audioRecorder.stopRecording();
 
-    if (mounted) {
-      setState(() {
-        _isRecording = false;
-        if (path != null) {
-          _recordingPath = path;
-          _hasRecorded = true;
+      if (mounted) {
+        setState(() {
+          _isRecording = false;
+          if (path != null) {
+            _recordingPath = path;
+            _hasRecorded = true;
+          }
+        });
+        if (_hasRecorded) {
+          _playComparison();
         }
-      });
-      if (_hasRecorded) {
-        _playComparison();
       }
+    } finally {
+      _isProcessingAudioAction = false;
     }
   }
 
