@@ -10,7 +10,6 @@ import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/widgets/handwriting_canvas.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
@@ -41,28 +40,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   final GlobalKey<HandwritingCanvasState> _canvasKey =
       GlobalKey<HandwritingCanvasState>();
 
-  @override
-  void initState() {
-    super.initState();
-    _initModel();
-  }
 
-  Future<void> _initModel() async {
-    setState(() => _isDownloading = true);
-    final service = di.sl<DigitalInkService>();
-    final success = await service.downloadModel();
-    if (mounted) {
-      setState(() => _isDownloading = false);
-      if (!success) {
-        CustomSnackBar.show(
-          context: context,
-          message:
-              'Failed to download handwriting model. Please check your connection.',
-          type: CustomSnackBarType.error,
-        );
-      }
-    }
-  }
 
   Future<void> _checkHandwriting(BuildContext context, KidsLoaded state) async {
     if (_currentInk == null || _currentInk!.strokes.isEmpty) return;
