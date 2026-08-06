@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
+import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -1085,6 +1086,11 @@ class ProfileShimmerLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SafeArea(child: ProfileShimmerLoading()));
+    return const Scaffold(
+      body: LoadingOverlay(
+        isLoading: true,
+        child: SizedBox.expand(),
+      ),
+    );
   }
 }
