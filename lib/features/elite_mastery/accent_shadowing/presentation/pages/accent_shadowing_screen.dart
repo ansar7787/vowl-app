@@ -141,13 +141,15 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               (state is EliteMasteryLoaded && state.isFinalFailure) ||
               (state is EliteMasteryLoaded ? state.livesRemaining <= 0 : false),
           showConfetti: _showConfetti,
-          title: quest?.instruction.isNotEmpty == true
-              ? quest!.instruction
-              : context.tr(
-                  'games.accent_shadowing_instruction',
-                  fallback:
-                      'Listen to the example, then speak and match the exact accent and rhythm.',
-                ),
+          title: _isAnswered
+              ? ""
+              : quest?.instruction.isNotEmpty == true
+                  ? quest!.instruction
+                  : context.tr(
+                      'games.accent_shadowing_instruction',
+                      fallback:
+                          'Listen to the example, then speak and match the exact accent and rhythm.',
+                    ),
           titleIcon: Icons.record_voice_over_rounded,
           onContinue: () {
             setState(() {

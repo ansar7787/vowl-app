@@ -230,12 +230,14 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                   ? (state.isFinalFailure || state.livesRemaining <= 0)
                   : false,
               showConfetti: _showConfetti,
-              title: quest?.instruction.isNotEmpty == true
-                  ? quest!.instruction
-                  : context.tr(
-                      'games.idiomMatch_instruction',
-                      fallback: 'Select the matching idiom.',
-                    ),
+              title: _isFirstStagePassed || _isAnswered
+                  ? ""
+                  : quest?.instruction.isNotEmpty == true
+                      ? quest!.instruction
+                      : context.tr(
+                          'games.idiomMatch_instruction',
+                          fallback: 'Select the matching idiom.',
+                        ),
               titleIcon: Icons.extension_rounded,
               visualConfig: quest?.visualConfig,
               onContinue: () {
