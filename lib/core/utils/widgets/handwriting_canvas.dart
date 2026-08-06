@@ -5,11 +5,19 @@ import 'package:lucide_icons/lucide_icons.dart';
 class HandwritingCanvas extends StatefulWidget {
   final Function(Ink ink) onInkUpdated;
   final VoidCallback onClear;
-  
+  final Color canvasColor;
+  final Color strokeColor;
+  final Color borderColor;
+  final double borderWidth;
+
   const HandwritingCanvas({
     super.key,
     required this.onInkUpdated,
     required this.onClear,
+    this.canvasColor = Colors.white,
+    this.strokeColor = Colors.indigo,
+    this.borderColor = const Color(0xFFE0E0E0), // Colors.grey.shade300 approx
+    this.borderWidth = 2.0,
   });
 
   @override
@@ -20,7 +28,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
   final Ink _ink = Ink();
   final List<Stroke> _strokes = [];
   Stroke? _currentStroke;
-  
+
   @override
   void initState() {
     super.initState();
@@ -68,9 +76,12 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: widget.canvasColor,
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.grey.shade300, width: 2),
+              border: Border.all(
+                color: widget.borderColor,
+                width: widget.borderWidth,
+              ),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
@@ -106,7 +117,7 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
                   }
                 },
                 child: CustomPaint(
-                  painter: _SignaturePainter(_strokes),
+                  painter: _SignaturePainter(_strokes, widget.strokeColor),
                   size: Size.infinite,
                 ),
               ),
@@ -120,26 +131,27 @@ class HandwritingCanvasState extends State<HandwritingCanvas> {
 
 class _SignaturePainter extends CustomPainter {
   final List<Stroke> strokes;
+  final Color strokeColor;
 
-  _SignaturePainter(this.strokes);
+  _SignaturePainter(this.strokes, this.strokeColor);
 
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.indigo
+      ..color = strokeColor
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 6.0
       ..strokeJoin = StrokeJoin.round;
 
     for (final stroke in strokes) {
       if (stroke.points.isEmpty) continue;
-      
+
       final path = Path();
       path.moveTo(stroke.points.first.x, stroke.points.first.y);
       for (int i = 1; i < stroke.points.length; i++) {
         path.lineTo(stroke.points[i].x, stroke.points[i].y);
       }
-      
+
       canvas.drawPath(path, paint..style = PaintingStyle.stroke);
     }
   }

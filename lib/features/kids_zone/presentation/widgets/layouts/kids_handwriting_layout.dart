@@ -16,7 +16,6 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
-
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
   final String title;
@@ -40,7 +39,8 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   bool? _isCorrect;
   int _attemptsCount = 0;
   String? _lastQuestId;
-  final GlobalKey<HandwritingCanvasState> _canvasKey = GlobalKey<HandwritingCanvasState>();
+  final GlobalKey<HandwritingCanvasState> _canvasKey =
+      GlobalKey<HandwritingCanvasState>();
 
   @override
   void initState() {
@@ -57,7 +57,8 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
       if (!success) {
         CustomSnackBar.show(
           context: context,
-          message: 'Failed to download handwriting model. Please check your connection.',
+          message:
+              'Failed to download handwriting model. Please check your connection.',
           type: CustomSnackBarType.error,
         );
       }
@@ -73,9 +74,18 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
       MlMonetizationController.attemptFeature(
         context,
         featureIcon: Icons.edit_rounded,
-        featureTitle: context.tr('kids_zone.handwriting_title', fallback: 'Write & Learn'),
-        featureSubtitle: context.tr('kids_zone.handwriting_desc', fallback: 'Practice your handwriting!'),
-        adButtonLabel: context.tr('kids_zone.handwriting_ad', fallback: 'Watch Ad to Continue'),
+        featureTitle: context.tr(
+          'kids_zone.handwriting_title',
+          fallback: 'Write & Learn',
+        ),
+        featureSubtitle: context.tr(
+          'kids_zone.handwriting_desc',
+          fallback: 'Practice your handwriting!',
+        ),
+        adButtonLabel: context.tr(
+          'kids_zone.handwriting_ad',
+          fallback: 'Watch Ad to Continue',
+        ),
         isKidsZone: true,
         onSuccess: () {
           _attemptsCount = 0;
@@ -93,7 +103,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
     final targetWord = state.currentQuest.question?.toUpperCase() ?? '';
     final results = await di.sl<DigitalInkService>().recognize(_currentInk!);
-    
+
     if (!mounted) return;
 
     bool correct = false;
@@ -151,7 +161,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
         }
 
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final frameColor = const Color(0xFF38BDF8); // Fun blue toy frame
         final targetWord = state.currentQuest.question ?? '';
 
         if (_isDownloading) {
@@ -160,8 +169,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
         return Column(
           children: [
-            SizedBox(height: 120.h), // Mascot space reserved by KidsGameBaseScreen
-
+            SizedBox(
+              height: 120.h,
+            ), // Mascot space reserved by KidsGameBaseScreen
             // Flashcard Target Word Display
             Container(
               width: 300.w,
@@ -169,7 +179,10 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
               decoration: BoxDecoration(
                 color: isDark ? const Color(0xFF1E293B) : Colors.white,
                 borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3), width: 4.w),
+                border: Border.all(
+                  color: widget.primaryColor.withValues(alpha: 0.3),
+                  width: 4.w,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: widget.primaryColor.withValues(alpha: 0.2),
@@ -181,7 +194,10 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
               child: Column(
                 children: [
                   Text(
-                    context.tr('kids_zone.handwriting_instruction', fallback: 'Draw this word:'),
+                    context.tr(
+                      'kids_zone.handwriting_instruction',
+                      fallback: 'Draw this word:',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
@@ -202,64 +218,60 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                 ],
               ),
             ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
-            
+
             SizedBox(height: 16.h),
-            
-            // Toy Tablet Canvas Frame
+
+            // Chalkboard Canvas Frame
             Expanded(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 24.w),
                 decoration: BoxDecoration(
-                  color: isDark ? const Color(0xFF0F172A) : Colors.white,
-                  borderRadius: BorderRadius.circular(32.r),
-                  border: Border.all(
-                    color: frameColor,
-                    width: 12.w, // Thick playful border
-                    strokeAlign: BorderSide.strokeAlignOutside,
-                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: frameColor.withValues(alpha: 0.3),
+                      color: Colors.black.withValues(alpha: 0.3),
                       blurRadius: 16,
                       offset: Offset(0, 8.h),
                     ),
                   ],
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.r),
-                  child: Stack(
-                    children: [
-                      HandwritingCanvas(
-                        key: _canvasKey,
-                        onInkUpdated: (ink) {
-                          if (state.lastAnswerCorrect != null) return; // Disallow writing if already checked
-                          _currentInk = ink;
-                          if (_isCorrect != null) {
-                            setState(() => _isCorrect = null);
-                          }
-                        },
-                        onClear: () {
-                          if (state.lastAnswerCorrect != null) return; // Disallow clearing if checked
-                          _currentInk = null;
-                          setState(() {
-                            _isCorrect = null;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
+                child: HandwritingCanvas(
+                  key: _canvasKey,
+                  canvasColor: const Color(0xFF1B3B2B), // Deep chalkboard green
+                  strokeColor: Colors.white, // White chalk
+                  borderColor: const Color(0xFF8B4513), // Wood brown frame
+                  borderWidth: 12.w, // Thick wood frame
+                  onInkUpdated: (ink) {
+                    if (state.lastAnswerCorrect != null) {
+                      return;
+                    }
+                    _currentInk = ink;
+                    if (_isCorrect != null) {
+                      setState(() => _isCorrect = null);
+                    }
+                  },
+                  onClear: () {
+                    if (state.lastAnswerCorrect != null) {
+                      return;
+                    }
+                    _currentInk = null;
+                    setState(() {
+                      _isCorrect = null;
+                    });
+                  },
                 ),
               ),
             ),
-            
+
             SizedBox(height: 16.h),
-            
+
             // Action Button
             if (state.lastAnswerCorrect == null)
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: ScaleButton(
-                  onTap: _isChecking ? null : () => _checkHandwriting(context, state),
+                  onTap: _isChecking
+                      ? null
+                      : () => _checkHandwriting(context, state),
                   child: Container(
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 20.h),
@@ -280,10 +292,15 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                           ? SizedBox(
                               height: 24.h,
                               width: 24.h,
-                              child: const VowlButtonSpinner(color: Colors.white),
+                              child: const VowlButtonSpinner(
+                                color: Colors.white,
+                              ),
                             )
                           : Text(
-                              context.tr('common.check', fallback: 'Check My Answer!'),
+                              context.tr(
+                                'common.check',
+                                fallback: 'Check My Answer!',
+                              ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 26.sp,
@@ -295,7 +312,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                   ),
                 ),
               ),
-            
+
             SizedBox(height: 32.h), // Padding at bottom for safe area
           ],
         );
@@ -347,7 +364,11 @@ class _MockDownloadProgressState extends State<_MockDownloadProgress> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(height: 160.h),
-        Icon(Icons.cloud_download_rounded, size: 80.r, color: widget.primaryColor)
+        Icon(
+              Icons.cloud_download_rounded,
+              size: 80.r,
+              color: widget.primaryColor,
+            )
             .animate(onPlay: (c) => c.repeat(reverse: true))
             .moveY(begin: -5, end: 5, duration: 1.seconds),
         SizedBox(height: 24.h),
