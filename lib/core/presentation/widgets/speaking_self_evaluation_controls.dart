@@ -283,24 +283,39 @@ class _SpeakingSelfEvaluationControlsState
                 isDark: widget.isDark,
               ),
               SizedBox(width: 16.w),
-              GestureDetector(
-                onTap: _playComparison,
-                child: Container(
-                  height: 64.r,
-                  width: 64.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: widget.primaryColor.withValues(alpha: 0.15),
-                    border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.3),
-                      width: 2,
+              Column(
+                children: [
+                  GestureDetector(
+                    onTap: _playComparison,
+                    child: Container(
+                      height: 64.r,
+                      width: 64.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: widget.primaryColor.withValues(alpha: 0.15),
+                        border: Border.all(
+                          color: widget.primaryColor.withValues(alpha: 0.3),
+                          width: 2,
+                        ),
+                      ),
+                      child: Center(
+                        child: Icon(Icons.play_arrow_rounded,
+                            color: widget.primaryColor, size: 36.sp),
+                      ),
                     ),
                   ),
-                  child: Center(
-                    child: Icon(Icons.play_arrow_rounded,
-                        color: widget.primaryColor, size: 36.sp),
+                  SizedBox(height: 6.h),
+                  Text(
+                    "COMPARE",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.5,
+                      color: widget.primaryColor,
+                    ),
                   ),
-                ),
+                ],
               ),
               SizedBox(width: 16.w),
               _buildIsolatedPlaybackButton(
