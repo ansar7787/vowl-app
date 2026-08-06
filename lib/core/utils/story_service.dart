@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 /// Immutable model representing a narrative milestones/narrative trigger.
 class StoryBeat {
@@ -674,19 +675,7 @@ class StoryServiceImpl implements StoryService {
     QuestType.vocabulary: '📚',
   };
 
-  /// Theme color per broad category for every *recognized* adult/modern
-  /// [GameSubtype] id. Same key set and rationale as [_categoryEmoji].
-  static const Map<QuestType, Color> _categoryColors = {
-    QuestType.speaking: Color(0xFFF44336), // Pure Red
-    QuestType.grammar: Color(0xFF2196F3), // Pure Blue
-    QuestType.writing: Color(0xFFFF9800), // Pure Orange
-    QuestType.listening: Color(0xFFE91E63), // Pure Pink
-    QuestType.accent: Color(0xFF00BCD4), // Pure Cyan
-    QuestType.roleplay: Color(0xFF8BC34A), // Pure Lime
-    QuestType.reading: Color(0xFF4CAF50), // Pure Green
-    QuestType.vocabulary: Color(0xFF673AB7), // Pure Deep Purple
-    QuestType.eliteMastery: Color(0xFFFFD700), // Pure Gold
-  };
+
 
   /// BUG FIX: this previously matched *every* id (kids-zone topics AND
   /// adult/modern GameSubtype ids alike) purely by checking whether the
@@ -758,7 +747,7 @@ class StoryServiceImpl implements StoryService {
   Color _getCategoryColor(String categoryId) {
     final resolvedCategory = _resolveQuestType(categoryId);
     if (resolvedCategory != null) {
-      return _categoryColors[resolvedCategory] ?? const Color(0xFF4F46E5);
+      return LevelThemeHelper.getCategoryBaseColor(resolvedCategory.name);
     }
 
     final String id = categoryId.toLowerCase();
@@ -767,49 +756,49 @@ class StoryServiceImpl implements StoryService {
         id.contains('speak') ||
         id.contains('bodypart') ||
         id.contains('family')) {
-      return const Color(0xFFF44336); // Pure Red
+      return LevelThemeHelper.getCategoryBaseColor('speaking');
     }
     if (id.contains('number') ||
         id.contains('grammar') ||
         id.contains('clothing') ||
         id.contains('time')) {
-      return const Color(0xFF2196F3); // Pure Blue
+      return LevelThemeHelper.getCategoryBaseColor('grammar');
     }
     if (id.contains('color') ||
         id.contains('write') ||
         id.contains('shape') ||
         id.contains('home')) {
-      return const Color(0xFFFF9800); // Pure Orange
+      return LevelThemeHelper.getCategoryBaseColor('writing');
     }
     if (id.contains('animal') ||
         id.contains('listen') ||
         id.contains('school') ||
         id.contains('routine')) {
-      return const Color(0xFFE91E63); // Pure Pink
+      return LevelThemeHelper.getCategoryBaseColor('listening');
     }
     if (id.contains('fruit') ||
         id.contains('accent') ||
         id.contains('food') ||
         id.contains('opposite')) {
-      return const Color(0xFF00BCD4); // Pure Cyan
+      return LevelThemeHelper.getCategoryBaseColor('accent');
     }
     if (id.contains('emotion') ||
         id.contains('roleplay') ||
         id.contains('daynight') ||
         id.contains('verb')) {
-      return const Color(0xFF8BC34A); // Pure Lime
+      return LevelThemeHelper.getCategoryBaseColor('roleplay');
     }
     if (id.contains('transport') ||
         id.contains('read') ||
         id.contains('preposition') ||
         id.contains('phonics')) {
-      return const Color(0xFF4CAF50); // Pure Green
+      return LevelThemeHelper.getCategoryBaseColor('reading');
     }
     if (id.contains('nature') || id.contains('vocab')) {
-      return const Color(0xFF673AB7); // Pure Deep Purple
+      return LevelThemeHelper.getCategoryBaseColor('vocabulary');
     }
-    if (id.contains('elite')) return const Color(0xFFFFD700); // Pure Gold
+    if (id.contains('elite')) return LevelThemeHelper.getCategoryBaseColor('elitemastery');
 
-    return const Color(0xFF2196F3); // Pure Blue
+    return LevelThemeHelper.getCategoryBaseColor('grammar');
   }
 }

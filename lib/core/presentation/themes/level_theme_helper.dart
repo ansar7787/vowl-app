@@ -46,7 +46,7 @@ class LevelThemeHelper {
   };
 
   /// Core Category Base Colors (Mathematically Balanced for Distinction)
-  static Color _getCategoryBaseColor(String category) {
+  static Color getCategoryBaseColor(String category) {
     switch (category
         .trim()
         .toLowerCase()
@@ -146,7 +146,7 @@ class LevelThemeHelper {
         .toLowerCase()
         .replaceAll(' ', '')
         .replaceAll('_', '');
-    final Color base = _getCategoryBaseColor(normalized);
+    final Color base = getCategoryBaseColor(normalized);
     final HSLColor hsl = HSLColor.fromColor(base);
 
     Color bgTop;
@@ -207,7 +207,7 @@ class LevelThemeHelper {
     );
 
     final categoryName = subtype.category.name;
-    final Color baseColor = _getCategoryBaseColor(categoryName);
+    final Color baseColor = getCategoryBaseColor(categoryName);
 
     // 2. LEVEL SHADING LOGIC (The "Journey" feel)
     // We adjust Lightness based on level (1-100+)
