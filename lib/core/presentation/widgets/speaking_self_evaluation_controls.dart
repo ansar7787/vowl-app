@@ -58,6 +58,7 @@ class _SpeakingSelfEvaluationControlsState
     if (_isRecording) {
       _audioRecorder.stopRecording();
     }
+    _soundService.stopTts();
     super.dispose();
   }
 
@@ -155,10 +156,12 @@ class _SpeakingSelfEvaluationControlsState
   }
 
   void _handleNailedIt() {
+    _soundService.stopTts();
     widget.onConfirmed();
   }
 
   void _handleNeedsWork() {
+    _soundService.stopTts();
     widget.onSkipped();
   }
 
