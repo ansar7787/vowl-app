@@ -211,10 +211,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ? (state.isFinalFailure || state.livesRemaining <= 0)
               : false,
           showConfetti: _showConfetti,
-          title: context.tr(
-            'games.story_builder_instruction',
-            fallback: 'Assemble the fragments into a correct story.',
-          ),
+          title: (state is EliteMasteryLoaded && state.currentQuest.instruction.isNotEmpty)
+              ? state.currentQuest.instruction
+              : context.tr(
+                  'games.story_builder_instruction',
+                  fallback: 'Assemble the fragments into a correct story.',
+                ),
+          titleIcon: Icons.format_list_numbered_rounded,
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {

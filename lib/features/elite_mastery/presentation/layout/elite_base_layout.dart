@@ -30,6 +30,7 @@ class EliteBaseLayout extends StatelessWidget {
   final bool showConfetti;
   final String title;
   final String? subtitle;
+  final IconData? titleIcon;
   final bool isFinalFailure;
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
@@ -49,6 +50,7 @@ class EliteBaseLayout extends StatelessWidget {
     this.showConfetti = false,
     required this.title,
     this.subtitle,
+    this.titleIcon,
     this.visualConfig,
     this.onTutorPass,
   });
@@ -64,54 +66,80 @@ class EliteBaseLayout extends StatelessWidget {
       isDark: isDark,
       isMidnight: isMidnight,
     );
-    final quest = state is EliteMasteryLoaded ? (state as EliteMasteryLoaded).currentQuest : null;
+    final quest = state is EliteMasteryLoaded
+        ? (state as EliteMasteryLoaded).currentQuest
+        : null;
 
-    final wrappedChild = Builder(builder: (context) {
-      return Center(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: MediaQuery.sizeOf(context).height * 0.5,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Semantics(
-                header: true,
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: (subtitle == null || subtitle!.isEmpty) ? 14.sp : 10.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: (subtitle == null || subtitle!.isEmpty) ? 0 : 4,
-                    color: isDark ? Colors.white70 : const Color(0xFF1E293B).withValues(alpha: 0.7),
-                  ),
-                ),
-              ).animate().fadeIn(),
-              if (subtitle != null && subtitle!.isNotEmpty) ...[
-                SizedBox(height: 8.h),
-                Semantics(
-                  liveRegion: true,
-                  child: Text(
-                    subtitle!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+    final wrappedChild = Builder(
+      builder: (context) {
+        return Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.sizeOf(context).height * 0.5,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 60.h),
+                if (title.isNotEmpty)
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: theme.primaryColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                      ),
+                      child: Row(
+                        children: [
+                          if (titleIcon != null) ...[
+                            Icon(titleIcon, color: theme.primaryColor, size: 24.r),
+                            SizedBox(width: 12.w),
+                          ],
+                          Expanded(
+                            child: Semantics(
+                              header: true,
+                              child: Text(
+                                title,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ).animate().fadeIn().slideY(begin: 0.1),
+                  ).animate().fadeIn(),
+                if (subtitle != null && subtitle!.isNotEmpty) ...[
+                  SizedBox(height: 8.h),
+                  Semantics(
+                    liveRegion: true,
+                    child: Text(
+                      subtitle!,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      ),
+                    ),
+                  ).animate().fadeIn().slideY(begin: 0.1),
+                ],
+                SizedBox(height: 20.h),
+                child,
               ],
-              SizedBox(height: 32.h),
-              child,
-            ],
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
 
     final config = GameScaffoldConfig(
       gameType: gameType,
@@ -133,25 +161,32 @@ class EliteBaseLayout extends StatelessWidget {
       onRetry: () => context.read<EliteMasteryBloc>().add(
         FetchEliteMasteryQuests(gameType: gameType, level: level),
       ),
-      onRestoreLife: () => context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
-      backgroundOverlay: Builder(builder: (context) {
-        return Stack(
-          children: [
-            if (visualConfig != null)
-              VisualConfigBackground(config: visualConfig!)
-            else if (quest?.visualConfig != null)
-              VisualConfigBackground(config: quest!.visualConfig!),
-          ],
-        );
-      }),
+      onRestoreLife: () =>
+          context.read<EliteMasteryBloc>().add(const RestoreEliteLife()),
+      backgroundOverlay: Builder(
+        builder: (context) {
+          return Stack(
+            children: [
+              if (visualConfig != null)
+                VisualConfigBackground(config: visualConfig!)
+              else if (quest?.visualConfig != null)
+                VisualConfigBackground(config: quest!.visualConfig!),
+            ],
+          );
+        },
+      ),
       headerBuilder: (context, dynamicState, progress, lives) {
         return EliteGameHeader(
           level: level,
           progress: progress,
           lives: lives,
-          streak: dynamicState is EliteMasteryLoaded ? dynamicState.currentIndex : 0,
+          streak: dynamicState is EliteMasteryLoaded
+              ? dynamicState.currentIndex
+              : 0,
           isAnswered: isAnswered,
-          isHintUsed: dynamicState is EliteMasteryLoaded ? dynamicState.isHintUsed : false,
+          isHintUsed: dynamicState is EliteMasteryLoaded
+              ? dynamicState.isHintUsed
+              : false,
           hintText: quest?.hint,
           theme: theme,
           isDark: isDark,
