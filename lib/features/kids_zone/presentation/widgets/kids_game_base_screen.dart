@@ -7,7 +7,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_feedback_overlay.dart';
+import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_header.dart';
@@ -21,7 +21,6 @@ import 'package:vowl/core/utils/hint_utility.dart' as import_hint;
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/utils/mascot_message_helper.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_explanation_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 class KidsGameBaseScreen extends StatefulWidget {
@@ -260,6 +259,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   }
 
   Widget _buildBody(BuildContext context, KidsState state) {
+    final bool isDark = Theme.of(context).brightness == Brightness.dark;
     if (state is KidsLoading) {
       return const SafeArea(child: GameShimmerLoading());
     }
@@ -271,97 +271,28 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             state,
             () => speakHint(state.currentQuest.hint),
           ),
-          if (state.lastAnswerCorrect == true)
-            Positioned(
-              bottom: 30.h,
-              right: 25.w,
-              child:
-                  ScaleButton(
-                        onTap: () =>
-                            context.read<KidsBloc>().add(NextKidsQuestion()),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20.w,
-                            vertical: 12.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30.r),
-                            border: Border.all(
-                              color: Colors.grey.shade300,
-                              width: 3.w,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.shade300,
-                                offset: Offset(0, 5.h),
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                context
-                                    .tr('common.next', fallback: 'Next')
-                                    .toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  color: widget.primaryColor,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 16.sp,
-                                  letterSpacing: 1,
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              Icon(
-                                Icons.arrow_forward_rounded,
-                                color: widget.primaryColor,
-                                size: 22.sp,
-                              ),
-                            ],
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scale(
-                        begin: const Offset(1.0, 1.0),
-                        end: const Offset(1.1, 1.1),
-                        duration: 800.ms,
-                      )
-                      .animate()
-                      .fadeIn(delay: 1.seconds),
-            ),
-          if (state.lastAnswerCorrect == false &&
-              (!state.isFinalFailure && state.livesRemaining > 0))
+          if (state.lastAnswerCorrect != null)
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
-              child: KidsExplanationCard(
-                quest: state.currentQuest,
+              child: GameFeedbackCard(
+                isCorrect: state.lastAnswerCorrect,
+                isFinalFailure: state.isFinalFailure,
+                livesRemaining: state.livesRemaining,
+                isDark: isDark,
                 primaryColor: widget.primaryColor,
-                onTryAgain: () =>
-                    context.read<KidsBloc>().add(ClearKidsFeedback()),
-              ),
-            ),
-          if (state.lastAnswerCorrect != null &&
-              state.lastAnswerCorrect == true)
-            KidsFeedbackOverlay(
-              isCorrect: state.lastAnswerCorrect!,
-              attempts: state.wrongCount,
-              explanation: state.currentQuest.explanation,
-              onTap: () {
-                if (state.lastAnswerCorrect!) {
-                  context.read<KidsBloc>().add(NextKidsQuestion());
-                } else {
-                  if (state.isFinalFailure || state.livesRemaining <= 0) {
+                explanation: state.lastAnswerCorrect == true || state.isFinalFailure
+                    ? state.currentQuest.explanation
+                    : null,
+                onContinue: () {
+                  if (state.lastAnswerCorrect == true || state.isFinalFailure || state.livesRemaining <= 0) {
                     context.read<KidsBloc>().add(NextKidsQuestion());
                   } else {
                     context.read<KidsBloc>().add(ClearKidsFeedback());
                   }
-                }
-              },
+                },
+              ),
             ),
         ],
       );
