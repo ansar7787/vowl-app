@@ -39,6 +39,7 @@ class _SpeakingSelfEvaluationControlsState
   bool _isRecording = false;
   bool _hasRecorded = false;
   bool _isPlaying = false;
+  String _playingContext = "";
   bool _isProcessingAudioAction = false;
   String? _recordingPath;
 
@@ -109,7 +110,10 @@ class _SpeakingSelfEvaluationControlsState
 
   Future<void> _playComparison() async {
     if (_isPlaying || _recordingPath == null) return;
-    setState(() => _isPlaying = true);
+    setState(() {
+      _isPlaying = true;
+      _playingContext = "Playing comparison...";
+    });
     
     try {
       await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
@@ -135,7 +139,10 @@ class _SpeakingSelfEvaluationControlsState
 
   Future<void> _playNative() async {
     if (_isPlaying) return;
-    setState(() => _isPlaying = true);
+    setState(() {
+      _isPlaying = true;
+      _playingContext = "Playing native voice...";
+    });
     try {
       await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
       await Future.delayed(const Duration(milliseconds: 1200));
@@ -150,7 +157,10 @@ class _SpeakingSelfEvaluationControlsState
 
   Future<void> _playUser() async {
     if (_isPlaying || _recordingPath == null) return;
-    setState(() => _isPlaying = true);
+    setState(() {
+      _isPlaying = true;
+      _playingContext = "Playing your voice...";
+    });
     try {
       await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
       await Future.delayed(const Duration(milliseconds: 1200));
@@ -237,95 +247,97 @@ class _SpeakingSelfEvaluationControlsState
                 ),
               ),
             ),
-        ] else if (_isPlaying) ...[
-          Container(
-            height: 70.r,
-            width: 70.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: widget.primaryColor.withValues(alpha: 0.15),
-            ),
-            child: Center(
-              child: Icon(
-                Icons.graphic_eq_rounded,
-                color: widget.primaryColor,
-                size: 32.sp,
-              ),
-            ),
-          )
-              .animate(onPlay: (controller) => controller.repeat(reverse: true))
-              .scale(
-                begin: const Offset(0.9, 0.9),
-                end: const Offset(1.15, 1.15),
-                duration: 600.ms,
-                curve: Curves.easeInOut,
-              )
-              .fade(begin: 0.6, end: 1.0),
-          SizedBox(height: 12.h),
-          Text(
-            "Playing comparison...",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              color: widget.primaryColor,
-            ),
-          ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(
-              begin: 0.5, end: 1.0, duration: 800.ms),
         ] else ...[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              _buildIsolatedPlaybackButton(
-                icon: Icons.record_voice_over_rounded,
-                label: "NATIVE",
-                onTap: _playNative,
-                isDark: widget.isDark,
+          if (_isPlaying) ...[
+            Container(
+              height: 70.r,
+              width: 70.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: widget.primaryColor.withValues(alpha: 0.15),
               ),
-              SizedBox(width: 16.w),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: _playComparison,
-                    child: Container(
-                      height: 64.r,
-                      width: 64.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: widget.primaryColor.withValues(alpha: 0.15),
-                        border: Border.all(
-                          color: widget.primaryColor.withValues(alpha: 0.3),
-                          width: 2,
+              child: Center(
+                child: Icon(
+                  Icons.graphic_eq_rounded,
+                  color: widget.primaryColor,
+                  size: 32.sp,
+                ),
+              ),
+            )
+                .animate(onPlay: (controller) => controller.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(0.9, 0.9),
+                  end: const Offset(1.15, 1.15),
+                  duration: 600.ms,
+                  curve: Curves.easeInOut,
+                )
+                .fade(begin: 0.6, end: 1.0),
+            SizedBox(height: 12.h),
+            Text(
+              _playingContext,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: widget.primaryColor,
+              ),
+            ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(
+                begin: 0.5, end: 1.0, duration: 800.ms),
+          ] else ...[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                _buildIsolatedPlaybackButton(
+                  icon: Icons.record_voice_over_rounded,
+                  label: "NATIVE",
+                  onTap: _playNative,
+                  isDark: widget.isDark,
+                ),
+                SizedBox(width: 16.w),
+                Column(
+                  children: [
+                    GestureDetector(
+                      onTap: _playComparison,
+                      child: Container(
+                        height: 64.r,
+                        width: 64.r,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: widget.primaryColor.withValues(alpha: 0.15),
+                          border: Border.all(
+                            color: widget.primaryColor.withValues(alpha: 0.3),
+                            width: 2,
+                          ),
+                        ),
+                        child: Center(
+                          child: Icon(Icons.play_arrow_rounded,
+                              color: widget.primaryColor, size: 36.sp),
                         ),
                       ),
-                      child: Center(
-                        child: Icon(Icons.play_arrow_rounded,
-                            color: widget.primaryColor, size: 36.sp),
+                    ),
+                    SizedBox(height: 6.h),
+                    Text(
+                      "COMPARE",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 1.5,
+                        color: widget.primaryColor,
                       ),
                     ),
-                  ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    "COMPARE",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                      color: widget.primaryColor,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(width: 16.w),
-              _buildIsolatedPlaybackButton(
-                icon: Icons.headphones_rounded,
-                label: "YOU",
-                onTap: _playUser,
-                isDark: widget.isDark,
-              ),
-            ],
-          ),
+                  ],
+                ),
+                SizedBox(width: 16.w),
+                _buildIsolatedPlaybackButton(
+                  icon: Icons.headphones_rounded,
+                  label: "YOU",
+                  onTap: _playUser,
+                  isDark: widget.isDark,
+                ),
+              ],
+            ),
+          ],
           SizedBox(height: 24.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
