@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'dart:math' as math;
@@ -39,7 +39,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Magical Floating Stage
-            Expanded(flex: 5, child: Center(child: _buildMagicStage(quest))),
+            Expanded(flex: 5, child: Center(child: _buildMagicStage(context, state, quest))),
             // The Magician Top Hats (Options)
             Flexible(
               flex: 5,
@@ -71,22 +71,31 @@ class KidsPrepositionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildMagicStage(dynamic quest) {
-    return Container(
+  Widget _buildMagicStage(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: const Color(0xFF2E1065), // Deep magical purple
+            color: isHovering ? const Color(0xFF4C1D95) : const Color(0xFF2E1065), // Deep magical purple
             borderRadius: BorderRadius.circular(100.r), // Magical orb shape
             border: Border.all(
-              color: const Color(0xFFC084FC),
+              color: isHovering ? const Color(0xFFE9D5FF) : const Color(0xFFC084FC),
               width: 4.r,
             ), // Glowing border
             boxShadow: [
               BoxShadow(
                 color: const Color(0xFF9333EA).withValues(alpha: 0.5),
-                blurRadius: 20,
-                spreadRadius: 5,
+                blurRadius: isHovering ? 30 : 20,
+                spreadRadius: isHovering ? 10 : 5,
               ),
             ],
           ),
@@ -103,35 +112,22 @@ class KidsPrepositionsLayout extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                    Text(
-                      quest.question ?? "?",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 48.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                        shadows: const [
-                          Shadow(color: Color(0xFFD8B4FE), blurRadius: 10),
-                        ],
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
+                      Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarged emoji, hidden question
                     if (quest.funFact != null) ...[
                       SizedBox(height: 8.h),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Text(
+                        child: AutoSizeText(
                           quest.funFact!,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 12.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.bold,
                             color: const Color(0xFFE9D5FF), // Light purple text
                           ),
                           textAlign: TextAlign.center,
                           maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                          minFontSize: 10,
                         ),
                       ),
                     ],
@@ -140,7 +136,9 @@ class KidsPrepositionsLayout extends StatelessWidget {
               ),
             ],
           ),
-        )
+        );
+      },
+    )
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(
           begin: -5.h,
@@ -166,12 +164,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Stack(
+    final hatWidget = Stack(
         alignment: Alignment.bottomCenter,
         clipBehavior: Clip.none,
         children: [
@@ -264,7 +257,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4.r),
                 border: Border.all(color: const Color(0xFF9333EA), width: 1),
               ),
-              child: Text(
+              child: AutoSizeText(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -273,12 +266,30 @@ class KidsPrepositionsLayout extends StatelessWidget {
                   color: const Color(0xFF4C1D95),
                 ),
                 maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+                minFontSize: 8,
               ),
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: hatWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: hatWidget,
+      ),
+      child: hatWidget,
     );
   }
 }
