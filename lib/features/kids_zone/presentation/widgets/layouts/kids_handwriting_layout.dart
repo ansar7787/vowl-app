@@ -263,12 +263,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     ),
                     child: Center(
                       child: _isChecking
-                          ? SizedBox(
-                              height: 24.h,
-                              width: 24.h,
-                              child: const VowlButtonSpinner(
-                                color: Colors.white,
-                              ),
+                          ? VowlButtonSpinner(
+                              color: Colors.white,
+                              size: 24.h,
                             )
                           : Text(
                               context.tr(

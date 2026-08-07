@@ -18,9 +18,9 @@ class VowlButtonSpinner extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (index) {
         return Container(
-          margin: EdgeInsets.symmetric(horizontal: size * 0.1),
-          width: size * 0.25,
-          height: size * 0.25,
+          margin: EdgeInsets.symmetric(horizontal: size * 0.05),
+          width: size * 0.2,
+          height: size * 0.2,
           decoration: BoxDecoration(
             color: color,
             shape: BoxShape.circle,
