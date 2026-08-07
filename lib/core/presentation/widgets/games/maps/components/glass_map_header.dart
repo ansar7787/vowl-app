@@ -69,29 +69,33 @@ class GlassMapHeader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    theme.title.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      color: theme.primaryColor,
-                      letterSpacing: 2,
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      theme.title.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: theme.primaryColor,
+                        letterSpacing: 2,
+                      ),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 4.h),
-                  Text(
-                    gameTheme.title,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      gameTheme.title,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      ),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 8.h),
                   // Coins Mini-Pill
@@ -120,20 +124,22 @@ class GlassMapHeader extends StatelessWidget {
                               size: 10.r,
                             ),
                             SizedBox(width: 4.w),
-                            Text(
-                              context.tr(
-                                'games.coins_count',
-                                args: [coins.toString()],
-                                fallback: '$coins COINS',
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                context.tr(
+                                  'games.coins_count',
+                                  args: [coins.toString()],
+                                  fallback: '$coins COINS',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFF10B981),
+                                ),
                               ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFF10B981),
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
