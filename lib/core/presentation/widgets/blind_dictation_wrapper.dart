@@ -201,8 +201,9 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
                                 maxLines: 3,
                                 minLines: 1,
                                 onChanged: (_) {
-                                  if (_hasError)
+                                  if (_hasError) {
                                     setState(() => _hasError = false);
+                                  }
                                 },
                                 decoration: InputDecoration(
                                   hintText: 'Type here...',

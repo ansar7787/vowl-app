@@ -177,8 +177,9 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
   }
 
   void _submitDiagnosis(String correctAnswer) {
-    if (_isAnswered || _isFirstStagePassed || _diagnosedSymptoms.isEmpty)
+    if (_isAnswered || _isFirstStagePassed || _diagnosedSymptoms.isEmpty) {
       return;
+    }
 
     final targets = correctAnswer
         .split(',')

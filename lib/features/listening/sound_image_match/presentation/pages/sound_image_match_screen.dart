@@ -251,8 +251,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                         onScan: _onScan,
                                         onSelect: (index) {
                                           if (_isAnswered ||
-                                              _pendingSelectedIndex != null)
+                                              _pendingSelectedIndex != null) {
                                             return;
+                                          }
                                           setState(() {
                                             _pendingSelectedIndex = index;
                                           });

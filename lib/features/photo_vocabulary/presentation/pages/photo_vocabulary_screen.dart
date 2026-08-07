@@ -244,8 +244,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           .sl<TranslationService>()
           .isLanguageConfigured();
       if (!mounted) return;
-      if (!configuredNow)
+      if (!configuredNow) {
         return; // User closed sheet without selecting a language
+      }
     }
 
     MlMonetizationController.attemptFeature(
@@ -281,10 +282,11 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                 .sl<TranslationService>()
                 .isTargetModelDownloaded();
             if (!isDownloadedNow) {
-              if (mounted)
+              if (mounted) {
                 setState(() {
                   _isTranslating[index] = false;
                 });
+              }
               return;
             }
           }
@@ -498,8 +500,9 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
   }
 
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessing || _labels == null)
+    if (_isProcessing || _labels == null) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
 
     if (_labels!.isEmpty) {
       return SliverToBoxAdapter(

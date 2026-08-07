@@ -25,8 +25,9 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
         word == "I'm" ||
         word == "I'll" ||
         word == "I've" ||
-        word == "I'd")
+        word == "I'd") {
       return word;
+    }
     return word.toLowerCase();
   }
 

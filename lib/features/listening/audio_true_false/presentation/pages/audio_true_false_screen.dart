@@ -269,8 +269,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                                   onChangeEnd: (v) {
                                                     if (_isAnswered ||
                                                         _selectedVerdict !=
-                                                            null)
+                                                            null) {
                                                       return;
+                                                    }
                                                     if (v > 0.9) {
                                                       setState(
                                                         () => _selectedVerdict =
@@ -299,8 +300,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                                             },
                                             onChangeEnd: (v) {
                                               if (_isAnswered ||
-                                                  _selectedVerdict != null)
+                                                  _selectedVerdict != null) {
                                                 return;
+                                              }
                                               if (v > 0.9) {
                                                 setState(
                                                   () => _selectedVerdict = true,

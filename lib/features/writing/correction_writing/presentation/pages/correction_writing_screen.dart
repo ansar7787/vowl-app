@@ -74,8 +74,9 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     if (quest == null ||
         isAnswered ||
         (!isHardMode && _selectedCorrection == null) ||
-        (isHardMode && typedText == null))
+        (isHardMode && typedText == null)) {
       return;
+    }
 
     bool correct = false;
     if (isHardMode && typedText != null) {

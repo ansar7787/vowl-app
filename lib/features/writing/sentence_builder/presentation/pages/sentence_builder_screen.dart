@@ -93,8 +93,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     final isHardMode = widget.level >= 6;
     if (isAnswered ||
         (!isHardMode && _assembledPieces.isEmpty) ||
-        (isHardMode && _textController.text.trim().isEmpty))
+        (isHardMode && _textController.text.trim().isEmpty)) {
       return;
+    }
 
     if (isHardMode) {
       final rawText = _textController.text.trim();

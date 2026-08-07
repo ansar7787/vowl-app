@@ -240,8 +240,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
           .sl<TranslationService>()
           .isLanguageConfigured();
       if (!mounted) return;
-      if (!configuredNow)
+      if (!configuredNow) {
         return; // User closed sheet without selecting a language
+      }
     }
 
     MlMonetizationController.attemptFeature(
@@ -277,10 +278,11 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                 .sl<TranslationService>()
                 .isTargetModelDownloaded();
             if (!isDownloadedNow) {
-              if (mounted)
+              if (mounted) {
                 setState(() {
                   _isTranslating[index] = false;
                 });
+              }
               return;
             }
           }
@@ -486,8 +488,9 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
   }
 
   Widget _buildSliverResults(bool isDark) {
-    if (_isProcessing || _recognizedText == null)
+    if (_isProcessing || _recognizedText == null) {
       return const SliverToBoxAdapter(child: SizedBox.shrink());
+    }
 
     if (_recognizedText!.blocks.isEmpty) {
       return SliverToBoxAdapter(

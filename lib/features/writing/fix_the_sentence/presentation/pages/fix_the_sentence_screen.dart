@@ -205,8 +205,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                 isDark: isDark,
                                 onSelect: (selected, correct) {
                                   if (isAnswered ||
-                                      _pendingSelectedOption != null)
+                                      _pendingSelectedOption != null) {
                                     return;
+                                  }
                                   setState(
                                     () => _pendingSelectedOption = selected,
                                   );

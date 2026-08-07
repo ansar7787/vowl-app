@@ -68,8 +68,9 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   }
 
   void _onBridgeUpdate(Offset globalPosition) {
-    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null)
+    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null) {
       return;
+    }
     final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
     if (renderBox != null) {
       setState(() {

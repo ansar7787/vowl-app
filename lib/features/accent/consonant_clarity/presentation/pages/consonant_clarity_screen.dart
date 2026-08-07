@@ -52,8 +52,9 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   int _currentCorrectIndex = 0;
 
   void _ensureOptionsShuffled(AccentQuest quest, int retryCount) {
-    if (_shuffledQuestId == quest.id && _shuffledRetryCount == retryCount)
+    if (_shuffledQuestId == quest.id && _shuffledRetryCount == retryCount) {
       return;
+    }
 
     _shuffledQuestId = quest.id;
     _shuffledRetryCount = retryCount;

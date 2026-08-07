@@ -126,8 +126,9 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       try {
         cacheSnapshot = await cacheDocRef.get().timeout(_kNetworkTimeout);
       } catch (e) {
-        if (kDebugMode)
+        if (kDebugMode) {
           debugPrint('LeaderboardRepo: Failed to read kids cache: $e');
+        }
       }
 
       if (cacheSnapshot != null &&

@@ -98,8 +98,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
     if (_isAnswered ||
         _isFirstStagePassed ||
-        _wrongIndices.contains(shuffledIndex))
+        _wrongIndices.contains(shuffledIndex)) {
       return;
+    }
 
     final actualOriginalIndex = _originalIndices[shuffledIndex];
     final isCorrect = actualOriginalIndex == correctOriginalIndex;

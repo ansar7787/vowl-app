@@ -255,8 +255,9 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
   void _attemptThrust(int index, VocabularyQuest quest) {
     final options = quest.options;
-    if (options == null || index >= options.length || _isFirstStagePassed)
+    if (options == null || index >= options.length || _isFirstStagePassed) {
       return;
+    }
 
     final selected = options[index].trim().toLowerCase();
     final correct = quest.correctAnswer?.trim().toLowerCase() ?? '';
