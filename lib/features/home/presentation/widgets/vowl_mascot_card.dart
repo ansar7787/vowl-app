@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VowlMascotCard extends StatefulWidget {
   const VowlMascotCard({super.key});
@@ -268,7 +269,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                               .fadeOut(duration: 1.seconds),
                                           SizedBox(width: 8.w),
                                           Flexible(
-                                            child: Text(
+                                            child: AutoSizeText(
                                               sanctuaryLabel,
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
@@ -278,13 +279,14 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                                 letterSpacing: 2.0,
                                               ),
                                               maxLines: 1,
+                                              minFontSize: 6,
                                               overflow: TextOverflow.ellipsis,
                                             ),
                                           ),
                                         ],
                                       ),
                                       SizedBox(height: 6.h),
-                                      Text(
+                                      AutoSizeText(
                                             mascotName.toUpperCase(),
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
@@ -296,12 +298,13 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                               letterSpacing: 0.2,
                                             ),
                                             maxLines: 1,
+                                            minFontSize: 12,
                                             overflow: TextOverflow.ellipsis,
                                           )
                                           .animate()
                                           .fadeIn(delay: 200.ms)
                                           .slideX(begin: -0.1),
-                                      Text(
+                                      AutoSizeText(
                                         guidanceLabel,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
@@ -313,6 +316,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                           letterSpacing: 1.5,
                                         ),
                                         maxLines: 1,
+                                        minFontSize: 7,
                                         overflow: TextOverflow.ellipsis,
                                       ),
                                     ],

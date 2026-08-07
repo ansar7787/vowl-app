@@ -18,6 +18,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VowlMascotScreen extends StatefulWidget {
   const VowlMascotScreen({super.key});
@@ -277,7 +278,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(
+                                AutoSizeText(
                                   context.tr(
                                     'vowl_mascot.nest_title',
                                     fallback: 'Vowl Nest',
@@ -290,9 +291,10 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     letterSpacing: 2,
                                   ),
                                   maxLines: 1,
+                                  minFontSize: 8,
                                   overflow: TextOverflow.ellipsis,
                                 ).animate().fadeIn(),
-                                Text(
+                                AutoSizeText(
                                   context.tr(
                                     'vowl_mascot.nest_subtitle',
                                     fallback: 'Manage your companion',
@@ -305,6 +307,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                     letterSpacing: 1.0,
                                   ),
                                   maxLines: 1,
+                                  minFontSize: 5,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ],
@@ -312,7 +315,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           )
                         else
                           Flexible(
-                            child: Text(
+                            child: AutoSizeText(
                               context.tr(
                                 'vowl_mascot.nest_title',
                                 fallback: 'Vowl Nest',
@@ -325,6 +328,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                                 letterSpacing: 2,
                               ),
                               maxLines: 1,
+                              minFontSize: 6,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
@@ -460,7 +464,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       ]
                     : [],
               ),
-              child: Text(
+              child: AutoSizeText(
                 label,
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -473,6 +477,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   letterSpacing: 1.5,
                 ),
                 maxLines: 1,
+                minFontSize: 8,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -733,7 +738,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   SizedBox(height: 12.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 4.w),
-                    child: Text(
+                    child: AutoSizeText(
                       name.toUpperCase(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -744,6 +749,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         letterSpacing: 0.5,
                       ),
                       maxLines: 1,
+                      minFontSize: 6,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -756,7 +762,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       size: 14,
                     ).animate().scale()
                   else if (isOwned)
-                    Text(
+                    AutoSizeText(
                       context.tr(
                         'vowl_mascot.sync_ready',
                         fallback: 'Sync Ready',
@@ -768,6 +774,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                       maxLines: 1,
+                      minFontSize: 5,
                       overflow: TextOverflow.ellipsis,
                     )
                   else
@@ -993,7 +1000,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                       .animate(target: isEquipped ? 1 : 0)
                       .shimmer(color: primaryColor.withValues(alpha: 0.3)),
             ),
-            Text(
+            AutoSizeText(
               name.toUpperCase(),
               textAlign: TextAlign.center,
               style: TextStyle(
@@ -1004,6 +1011,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                 letterSpacing: 0.5,
               ),
               maxLines: 1,
+              minFontSize: 6,
               overflow: TextOverflow.ellipsis,
             ),
             SizedBox(height: 12.h),
@@ -1122,7 +1130,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
               SizedBox(width: 2.w),
             ],
             Flexible(
-              child: Text(
+              child: AutoSizeText(
                 label,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -1132,6 +1140,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                   letterSpacing: 1,
                 ),
                 maxLines: 1,
+                minFontSize: 5,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -1153,7 +1162,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
           ),
           SizedBox(width: 12.w),
           Expanded(
-            child: Text(
+            child: AutoSizeText(
               label,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -1163,6 +1172,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                 letterSpacing: 2.5,
               ),
               maxLines: 1,
+              minFontSize: 6,
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -1210,7 +1220,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                     ),
                     SizedBox(width: 12.w),
                     Expanded(
-                      child: Text(
+                      child: AutoSizeText(
                         context.tr(
                           'vowl_mascot.status_bar_text',
                           fallback: 'Status OK',
@@ -1223,6 +1233,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen> {
                           letterSpacing: 1,
                         ),
                         maxLines: 1,
+                        minFontSize: 5,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

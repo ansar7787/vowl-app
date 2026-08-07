@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VowlBotAuthCompanion extends StatefulWidget {
   final FocusNode? nameFocus;
@@ -198,7 +199,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
                             maxWidth: 180.w,
                           ),
                           padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 18.h),
-                          child: Text(
+                          child: AutoSizeText(
                             greeting,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -209,6 +210,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
                               letterSpacing: 0.1,
                             ),
                             maxLines: 3,
+                            minFontSize: 6,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),

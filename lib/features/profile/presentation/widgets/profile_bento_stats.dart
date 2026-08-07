@@ -101,11 +101,14 @@ class _AdventureLevelCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AutoSizeText(
                     context.tr(
                       'profile.current_level_label',
                       fallback: 'Current Level',
                     ),
+                    maxLines: 1,
+                    minFontSize: 8,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -197,11 +200,14 @@ class _AdventureXPCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AutoSizeText(
                         context.tr(
                           'profile.adventure_xp_label',
                           fallback: 'Adventure XP',
                         ),
+                        maxLines: 1,
+                        minFontSize: 8,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,

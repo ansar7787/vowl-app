@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class HomeQuickStats extends StatelessWidget {
   final UserEntity user;
@@ -87,7 +88,7 @@ class HomeQuickStats extends StatelessWidget {
                       child: Icon(icon, color: color, size: 20.r),
                     ),
                     SizedBox(height: 8.h),
-                    Text(
+                    AutoSizeText(
                       value,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -97,10 +98,11 @@ class HomeQuickStats extends StatelessWidget {
                         height: 1.1,
                       ),
                       maxLines: 1,
+                      minFontSize: 12,
                       overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 2.h),
-                    Text(
+                    AutoSizeText(
                       label,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -110,6 +112,7 @@ class HomeQuickStats extends StatelessWidget {
                         letterSpacing: 1.0,
                       ),
                       maxLines: 1,
+                      minFontSize: 5,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ],
