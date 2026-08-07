@@ -179,7 +179,7 @@ class ProfileHeader extends StatelessWidget {
                               fallback: 'Explorer',
                             ),
                         maxLines: 1,
-                        minFontSize: 14,
+                        minFontSize: 18,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
