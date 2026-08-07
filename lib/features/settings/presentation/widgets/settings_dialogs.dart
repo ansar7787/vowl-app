@@ -246,7 +246,9 @@ class SettingsDialogs {
   // Disable Notifications Confirmation
   // ---------------------------------------------------------------------------
 
-  static Future<bool?> showDisableNotificationConfirmation(BuildContext context) {
+  static Future<bool?> showDisableNotificationConfirmation(
+    BuildContext context,
+  ) {
     return _showDisableConfirmation(
       context: context,
       icon: Icons.notifications_off_rounded,

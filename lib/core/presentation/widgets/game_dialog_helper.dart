@@ -63,14 +63,18 @@ class GameDialogHelper {
     // their stream always report online, so this path never fires for them.
     // Fire-and-forget: showCompletion is synchronous void; the quota update
     // is registered before the next StreamBuilder rebuild in ConnectivityWrapper.
-    di.sl<NetworkInfo>().isConnected.then((connected) {
-      if (!connected) {
-        OfflinePlayGateService.instance.recordOfflineLevel();
-      }
-    }).catchError((_) {
-      // Network check failed — treat as offline to be safe
-      OfflinePlayGateService.instance.recordOfflineLevel();
-    });
+    di
+        .sl<NetworkInfo>()
+        .isConnected
+        .then((connected) {
+          if (!connected) {
+            OfflinePlayGateService.instance.recordOfflineLevel();
+          }
+        })
+        .catchError((_) {
+          // Network check failed — treat as offline to be safe
+          OfflinePlayGateService.instance.recordOfflineLevel();
+        });
 
     final authState = context.read<AuthBloc>().state;
     final userLevel = authState.user?.level ?? 1;

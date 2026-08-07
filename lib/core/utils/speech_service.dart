@@ -262,7 +262,9 @@ class SpeechServiceImpl implements SpeechService {
         listenOptions: SpeechListenOptions(
           localeId: localeId,
           listenFor: const Duration(seconds: 45),
-          pauseFor: pauseFor ?? const Duration(seconds: 15), // Highly patient for learners
+          pauseFor:
+              pauseFor ??
+              const Duration(seconds: 15), // Highly patient for learners
           partialResults: true,
           listenMode: listenMode, // Continuous speech shadowing support
         ),

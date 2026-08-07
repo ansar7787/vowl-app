@@ -198,7 +198,10 @@ class _HintAdCardState extends State<HintAdCard> {
                                     ],
                             ),
                             child: loading
-                                ? const VowlButtonSpinner(size: 18, color: Colors.white)
+                                ? const VowlButtonSpinner(
+                                    size: 18,
+                                    color: Colors.white,
+                                  )
                                 : Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [

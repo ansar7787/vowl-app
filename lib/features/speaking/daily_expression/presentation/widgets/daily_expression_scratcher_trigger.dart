@@ -13,7 +13,6 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const DailyExpressionScratcherTrigger({
     super.key,
@@ -25,7 +24,6 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -140,7 +138,6 @@ class DailyExpressionScratcherTrigger extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-          
         ],
       ),
     );

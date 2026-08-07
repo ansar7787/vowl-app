@@ -87,7 +87,7 @@ class RoleplayTutorPass extends RoleplayEvent {
 class RoleplaySpeakConfirmed extends RoleplayEvent {
   const RoleplaySpeakConfirmed(this.bonusCoins);
   final int bonusCoins;
-  
+
   @override
   List<Object?> get props => [bonusCoins];
 }

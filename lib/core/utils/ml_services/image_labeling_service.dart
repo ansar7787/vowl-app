@@ -16,7 +16,10 @@ class ImageLabelingService {
       final inputImage = InputImage.fromFilePath(imagePath);
       return await _labeler.processImage(inputImage);
     } catch (e) {
-      di.sl<AppLogger>().error('ImageLabelingService: Failed to label image', error: e);
+      di.sl<AppLogger>().error(
+        'ImageLabelingService: Failed to label image',
+        error: e,
+      );
       return [];
     }
   }

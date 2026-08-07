@@ -10,7 +10,6 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const YesNoSpeakingTactileMic({
     super.key,
@@ -20,7 +19,6 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -103,7 +101,6 @@ class YesNoSpeakingTactileMic extends StatelessWidget {
             letterSpacing: 1.5,
           ),
         ),
-        
       ],
     );
   }

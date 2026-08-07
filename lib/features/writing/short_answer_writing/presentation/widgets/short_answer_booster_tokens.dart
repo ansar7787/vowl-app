@@ -23,7 +23,11 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(Icons.radar_rounded, size: 14.r, color: isDark ? Colors.white54 : Colors.black54),
+            Icon(
+              Icons.radar_rounded,
+              size: 14.r,
+              color: isDark ? Colors.white54 : Colors.black54,
+            ),
             SizedBox(width: 8.w),
             Text(
               "REQUIRED KEYWORDS (USE AT LEAST 2)",
@@ -44,7 +48,10 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
           alignment: WrapAlignment.start,
           children: keywords.map((k) {
             final kwLower = k.toLowerCase();
-            final bool isUsed = RegExp(r'\b' + RegExp.escape(kwLower) + r'\b', caseSensitive: false).hasMatch(text);
+            final bool isUsed = RegExp(
+              r'\b' + RegExp.escape(kwLower) + r'\b',
+              caseSensitive: false,
+            ).hasMatch(text);
             final successColor = isDark
                 ? Colors.greenAccent
                 : const Color(0xFF16A34A);

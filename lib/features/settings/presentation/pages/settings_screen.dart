@@ -262,9 +262,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         onToggleSpeechConfirm: (value) async {
                           if (!value) {
                             if (!mounted) return;
-                            final confirmed = await SettingsDialogs.showDisableSpeechConfirmation(
-                              context,
-                            );
+                            final confirmed =
+                                await SettingsDialogs.showDisableSpeechConfirmation(
+                                  context,
+                                );
                             if (confirmed != true) return;
                           }
                           final prefs = await SharedPreferences.getInstance();

@@ -29,22 +29,26 @@ class ShortAnswerInkwell extends StatelessWidget {
         color: isDark ? const Color(0xFF121212) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isAnswered ? color.withValues(alpha: 0.5) : (isDark ? Colors.white12 : Colors.black12),
+          color: isAnswered
+              ? color.withValues(alpha: 0.5)
+              : (isDark ? Colors.white12 : Colors.black12),
           width: 2,
         ),
-        boxShadow: isAnswered ? [
-          BoxShadow(
-            color: color.withValues(alpha: 0.2),
-            blurRadius: 30,
-            spreadRadius: -5,
-          ),
-        ] : [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
-            blurRadius: 10,
-            spreadRadius: 2,
-          )
-        ],
+        boxShadow: isAnswered
+            ? [
+                BoxShadow(
+                  color: color.withValues(alpha: 0.2),
+                  blurRadius: 30,
+                  spreadRadius: -5,
+                ),
+              ]
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                ),
+              ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +82,9 @@ class ShortAnswerInkwell extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: wordCount >= 10
-                      ? (isDark ? Colors.greenAccent.withValues(alpha: 0.1) : const Color(0xFF16A34A).withValues(alpha: 0.1))
+                      ? (isDark
+                            ? Colors.greenAccent.withValues(alpha: 0.1)
+                            : const Color(0xFF16A34A).withValues(alpha: 0.1))
                       : (isDark ? Colors.white10 : Colors.black12),
                   borderRadius: BorderRadius.circular(12.r),
                 ),
@@ -88,7 +94,9 @@ class ShortAnswerInkwell extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 9.sp,
                     color: wordCount >= 10
-                        ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+                        ? (isDark
+                              ? Colors.greenAccent
+                              : const Color(0xFF16A34A))
                         : (isDark ? Colors.white54 : Colors.black54),
                     fontWeight: FontWeight.bold,
                   ),

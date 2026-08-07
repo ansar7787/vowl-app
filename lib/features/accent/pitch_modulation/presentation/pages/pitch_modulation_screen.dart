@@ -19,7 +19,6 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
-
 class PitchModulationScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -134,7 +133,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -205,8 +204,6 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
             : _lastQuest;
         final options = quest?.options ?? ["A", "B"];
         final mediaQuery = MediaQuery.of(context);
-        
-
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -227,10 +224,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                       final maxHeight = constraints.maxHeight;
 
                       final double estimatedContentHeight =
-                          24.h +
-                          90.h +
-                          80.h +
-                          140.h;
+                          24.h + 90.h + 80.h + 140.h;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -249,7 +243,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      
+
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -257,76 +251,82 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                       return GameScrollbar(
                         controller: _scrollController,
                         child: SingleChildScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    PitchModulationInstruction(
-                                      color: theme.primaryColor,
-                                      instruction: _isFirstStagePassed
-                                        ? "Great job! Now record yourself saying the word."
-                                        : context.tr('games.pitch_modulation_instruction', fallback: "Listen carefully and choose the pitch pattern you hear."),
-                                    ),
-                                    SizedBox(height: gapInstruction),
-
-                                    PitchModulationPromptCard(
-                                      word: quest.word ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
-                                    SizedBox(height: gapPrompt),
-
-                                    PitchModulationPulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
-                                    PitchModulationDialControl(
-                                      options: options,
-                                      correctIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered || _isFirstStagePassed,
-                                      isDragging: _isDragging,
-                                      dialRotation: _dialRotation,
-                                      selectedIndex: _selectedIndex,
-                                      onDialRotate: _onDialRotate,
-                                      onDialRelease: _onDialRelease,
-                                      onSubmitChoice: _submitChoice,
-                                    ),
-
-                                    SizedBox(height: gapBottom),
-                                    if (_isFirstStagePassed)
-                                      AccentSelfEvaluationPanel(
-                                        textToSpeak: quest.textToSpeak ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isCompact: false, // Dial takes fixed height, compact check not strongly needed here
-                                        onEvaluate: _submitVerbalEvaluation,
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: gapTop),
+                                      PitchModulationInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: _isFirstStagePassed
+                                            ? "Great job! Now record yourself saying the word."
+                                            : context.tr(
+                                                'games.pitch_modulation_instruction',
+                                                fallback:
+                                                    "Listen carefully and choose the pitch pattern you hear.",
+                                              ),
                                       ),
-                                    SizedBox(height: _isAnswered ? 180.h : 0),
-                                  ],
-                                ),
-                              ],
+                                      SizedBox(height: gapInstruction),
+
+                                      PitchModulationPromptCard(
+                                        word: quest.word ?? "",
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                      ),
+                                      SizedBox(height: gapPrompt),
+
+                                      PitchModulationPulseSpeaker(
+                                        text: quest.textToSpeak ?? "",
+                                        color: theme.primaryColor,
+                                        onPlayTts: _playTts,
+                                      ),
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: gapSpeaker),
+                                      PitchModulationDialControl(
+                                        options: options,
+                                        correctIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered:
+                                            _isAnswered || _isFirstStagePassed,
+                                        isDragging: _isDragging,
+                                        dialRotation: _dialRotation,
+                                        selectedIndex: _selectedIndex,
+                                        onDialRotate: _onDialRotate,
+                                        onDialRelease: _onDialRelease,
+                                        onSubmitChoice: _submitChoice,
+                                      ),
+
+                                      SizedBox(height: gapBottom),
+                                      if (_isFirstStagePassed)
+                                        AccentSelfEvaluationPanel(
+                                          textToSpeak: quest.textToSpeak ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isCompact:
+                                              false, // Dial takes fixed height, compact check not strongly needed here
+                                          onEvaluate: _submitVerbalEvaluation,
+                                        ),
+                                      SizedBox(height: _isAnswered ? 180.h : 0),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
                       );
                     },
                   ),
@@ -336,7 +336,3 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
     );
   }
 }
-
-
-
-

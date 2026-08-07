@@ -21,7 +21,12 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
   });
 
   String _formatText(String word) {
-    if (word == 'I' || word == "I'm" || word == "I'll" || word == "I've" || word == "I'd") return word;
+    if (word == 'I' ||
+        word == "I'm" ||
+        word == "I'll" ||
+        word == "I've" ||
+        word == "I'd")
+      return word;
     return word.toLowerCase();
   }
 
@@ -49,9 +54,9 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
             child: Padding(
               // The left notch padding and right tab padding ensure text doesn't clip
               padding: EdgeInsets.only(
-                left: 20.w, 
-                right: 28.w, 
-                top: 10.h, 
+                left: 20.w,
+                right: 28.w,
+                top: 10.h,
                 bottom: 10.h,
               ),
               child: Row(
@@ -103,56 +108,91 @@ class _PuzzlePiecePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final tabSize = 12.0.w;
     final radius = 10.0.r;
-    
+
     final path = Path();
-    
+
     // Start top-left after radius
     path.moveTo(radius, 0);
     path.lineTo(size.width - radius - tabSize, 0);
-    
+
     // Top-right corner
-    path.quadraticBezierTo(size.width - tabSize, 0, size.width - tabSize, radius);
-    
+    path.quadraticBezierTo(
+      size.width - tabSize,
+      0,
+      size.width - tabSize,
+      radius,
+    );
+
     // Right tab (outward)
     path.lineTo(size.width - tabSize, size.height / 2 - tabSize + 2);
-    path.quadraticBezierTo(size.width, size.height / 2 - tabSize + 2, size.width, size.height / 2);
-    path.quadraticBezierTo(size.width, size.height / 2 + tabSize - 2, size.width - tabSize, size.height / 2 + tabSize - 2);
-    
+    path.quadraticBezierTo(
+      size.width,
+      size.height / 2 - tabSize + 2,
+      size.width,
+      size.height / 2,
+    );
+    path.quadraticBezierTo(
+      size.width,
+      size.height / 2 + tabSize - 2,
+      size.width - tabSize,
+      size.height / 2 + tabSize - 2,
+    );
+
     // Bottom-right corner
     path.lineTo(size.width - tabSize, size.height - radius);
-    path.quadraticBezierTo(size.width - tabSize, size.height, size.width - tabSize - radius, size.height);
-    
+    path.quadraticBezierTo(
+      size.width - tabSize,
+      size.height,
+      size.width - tabSize - radius,
+      size.height,
+    );
+
     // Bottom edge
     path.lineTo(radius, size.height);
-    
+
     // Bottom-left corner
     path.quadraticBezierTo(0, size.height, 0, size.height - radius);
-    
+
     // Left notch (inward)
     path.lineTo(0, size.height / 2 + tabSize - 2);
-    path.quadraticBezierTo(tabSize, size.height / 2 + tabSize - 2, tabSize, size.height / 2);
-    path.quadraticBezierTo(tabSize, size.height / 2 - tabSize + 2, 0, size.height / 2 - tabSize + 2);
-    
+    path.quadraticBezierTo(
+      tabSize,
+      size.height / 2 + tabSize - 2,
+      tabSize,
+      size.height / 2,
+    );
+    path.quadraticBezierTo(
+      tabSize,
+      size.height / 2 - tabSize + 2,
+      0,
+      size.height / 2 - tabSize + 2,
+    );
+
     // Top-left corner
     path.lineTo(0, radius);
     path.quadraticBezierTo(0, 0, radius, 0);
-    
+
     path.close();
 
     // Draw shadow
     if (isDragging || isAssembled) {
-       canvas.drawShadow(path, shadowColor, 8, false);
+      canvas.drawShadow(path, shadowColor, 8, false);
     } else {
-       canvas.drawShadow(path, Colors.black.withValues(alpha: isDark ? 0.3 : 0.05), 4, false);
+      canvas.drawShadow(
+        path,
+        Colors.black.withValues(alpha: isDark ? 0.3 : 0.05),
+        4,
+        false,
+      );
     }
 
     // Draw background
     final paint = Paint()
-      ..color = isAssembled 
-          ? color.withValues(alpha: 0.25) 
+      ..color = isAssembled
+          ? color.withValues(alpha: 0.25)
           : (isDark ? const Color(0xFF1E293B) : Colors.white)
       ..style = PaintingStyle.fill;
-    
+
     canvas.drawPath(path, paint);
 
     // Draw border
@@ -160,15 +200,15 @@ class _PuzzlePiecePainter extends CustomPainter {
       ..color = isAssembled ? color : (isDark ? Colors.white24 : Colors.black12)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2.0;
-      
+
     canvas.drawPath(path, borderPaint);
   }
 
   @override
   bool shouldRepaint(covariant _PuzzlePiecePainter oldDelegate) {
     return oldDelegate.color != color ||
-           oldDelegate.isAssembled != isAssembled ||
-           oldDelegate.isDark != isDark ||
-           oldDelegate.isDragging != isDragging;
+        oldDelegate.isAssembled != isAssembled ||
+        oldDelegate.isDark != isDark ||
+        oldDelegate.isDragging != isDragging;
   }
 }

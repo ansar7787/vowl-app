@@ -93,7 +93,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
       _selectedOption = selected;
     });
 
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
@@ -218,7 +219,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                     _buildForensicScene(
                       quest,
                       theme.primaryColor,
-                      (state is VocabularyLoaded) ? state.isFinalFailure : false,
+                      (state is VocabularyLoaded)
+                          ? state.isFinalFailure
+                          : false,
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
                       DynamicAnagramWrapper(

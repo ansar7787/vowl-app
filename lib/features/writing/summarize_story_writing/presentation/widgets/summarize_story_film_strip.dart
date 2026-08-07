@@ -59,40 +59,60 @@ class SummarizeStoryFilmStrip extends StatelessWidget {
 
                     return GestureDetector(
                       onTap: () => onRemoveFrame(slot.index),
-                      child: Container(
-                        constraints: BoxConstraints(minHeight: 60.h),
-                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                        decoration: BoxDecoration(
-                          color: text != null
-                              ? color.withValues(alpha: 0.15)
-                              : (isHovering
-                                  ? color.withValues(alpha: 0.05)
-                                  : (isDark ? Colors.black12 : Colors.black.withValues(alpha: 0.02))),
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: text != null
-                                ? color
-                                : (isHovering
-                                    ? color.withValues(alpha: 0.5)
-                                    : (isDark ? Colors.white24 : Colors.black12)),
-                            width: 2,
-                          ),
-                        ),
-                        child: Center(
-                          child: Text(
-                            text ?? "Drop event here...",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.bold,
-                              color: text != null
-                                  ? (isDark ? Colors.white : Colors.black87)
-                                  : (isDark ? Colors.white30 : Colors.black38),
-                            ),
-                          ),
-                        ),
-                      ).animate(target: text != null ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.02, 1.02)).tint(color: color.withValues(alpha: 0.1)),
+                      child:
+                          Container(
+                                constraints: BoxConstraints(minHeight: 60.h),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 12.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: text != null
+                                      ? color.withValues(alpha: 0.15)
+                                      : (isHovering
+                                            ? color.withValues(alpha: 0.05)
+                                            : (isDark
+                                                  ? Colors.black12
+                                                  : Colors.black.withValues(
+                                                      alpha: 0.02,
+                                                    ))),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: text != null
+                                        ? color
+                                        : (isHovering
+                                              ? color.withValues(alpha: 0.5)
+                                              : (isDark
+                                                    ? Colors.white24
+                                                    : Colors.black12)),
+                                    width: 2,
+                                  ),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    text ?? "Drop event here...",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.bold,
+                                      color: text != null
+                                          ? (isDark
+                                                ? Colors.white
+                                                : Colors.black87)
+                                          : (isDark
+                                                ? Colors.white30
+                                                : Colors.black38),
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .animate(target: text != null ? 1 : 0)
+                              .scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.02, 1.02),
+                              )
+                              .tint(color: color.withValues(alpha: 0.1)),
                     );
                   },
                 ),

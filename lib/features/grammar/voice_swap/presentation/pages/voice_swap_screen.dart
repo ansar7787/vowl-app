@@ -175,7 +175,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
 
                             // Context Card
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Container(
                                     padding: EdgeInsets.all(
                                       isCompact ? 14.r : 22.r,
@@ -183,7 +185,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                     decoration: BoxDecoration(
                                       color: isDark
                                           ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.03),
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
                                       borderRadius: BorderRadius.circular(
                                         isCompact ? 16.r : 24.r,
                                       ),
@@ -221,7 +225,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                               isAnswered: _isAnswered,
                               primaryColor: theme.primaryColor,
                               isDark: isDark,
-                              onToggle: (val) => setState(() => _isPassive = val),
+                              onToggle: (val) =>
+                                  setState(() => _isPassive = val),
                             ),
 
                             if (_isAnswered) ...[
@@ -257,11 +262,13 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: theme.primaryColor.withValues(
-                                              alpha: 0.4,
-                                            ),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.4),
                                             blurRadius: isCompact ? 12 : 20,
-                                            offset: Offset(0, isCompact ? 4 : 8),
+                                            offset: Offset(
+                                              0,
+                                              isCompact ? 4 : 8,
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -279,7 +286,9 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                                       ),
                                     ),
                                   )
-                                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
                                   .shimmer(
                                     duration: 2.seconds,
                                     color: Colors.white24,
@@ -290,7 +299,10 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                         ),
                         if (_isFirstStagePassed && !_isAnswered)
                           TypeToConfirmOverlay(
-                            expectedText: quest.correctAnswerCategory ?? quest.correctAnswer ?? '',
+                            expectedText:
+                                quest.correctAnswerCategory ??
+                                quest.correctAnswer ??
+                                '',
                             primaryColor: theme.primaryColor,
                             onConfirmed: () => _submitVerbalEvaluation(true),
                             onSkipped: () => _submitVerbalEvaluation(false),

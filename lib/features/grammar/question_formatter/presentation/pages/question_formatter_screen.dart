@@ -108,21 +108,21 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   @override
@@ -174,12 +174,14 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
 
         String cleanTargetSentence = "";
         if (quest != null) {
-            final sentence = quest.correctAnswer ?? quest.sentence ?? "";
-            if (sentence.isNotEmpty) {
-                cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
-            } else if (_selectedOptionText != null) {
-                cleanTargetSentence = _selectedOptionText!;
-            }
+          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          if (sentence.isNotEmpty) {
+            cleanTargetSentence = sentence
+                .replaceAll('[', '')
+                .replaceAll(']', '');
+          } else if (_selectedOptionText != null) {
+            cleanTargetSentence = _selectedOptionText!;
+          }
         }
 
         return GrammarBaseLayout(
@@ -190,8 +192,10 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Stack layout required for Jigsaw Overlay
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -220,7 +224,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
 
                             // 3D Inverter Context Card
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Transform(
                                     transform: Matrix4.identity()
                                       ..setEntry(3, 2, 0.001)
@@ -233,8 +239,12 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                       ),
                                       decoration: BoxDecoration(
                                         color: isDark
-                                            ? Colors.white.withValues(alpha: 0.05)
-                                            : Colors.black.withValues(alpha: 0.03),
+                                            ? Colors.white.withValues(
+                                                alpha: 0.05,
+                                              )
+                                            : Colors.black.withValues(
+                                                alpha: 0.03,
+                                              ),
                                         borderRadius: BorderRadius.circular(
                                           isCompact ? 18.r : 28.r,
                                         ),
@@ -246,9 +256,8 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: theme.primaryColor.withValues(
-                                              alpha: 0.05,
-                                            ),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.05),
                                             blurRadius: 30,
                                             spreadRadius: 5,
                                           ),
@@ -283,10 +292,13 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                               child: SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    if (!_isAnswered && !_pendingJigsaw && _crankRotation.abs() < 6.28)
+                                    if (!_isAnswered &&
+                                        !_pendingJigsaw &&
+                                        _crankRotation.abs() < 6.28)
                                       QuestionFormatterCrank(
                                         crankRotation: _crankRotation,
-                                        isAnswered: _isAnswered || _pendingJigsaw,
+                                        isAnswered:
+                                            _isAnswered || _pendingJigsaw,
                                         isDark: isDark,
                                         primaryColor: theme.primaryColor,
                                         onPanUpdate: _onCrankUpdate,
@@ -302,7 +314,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                       )
                                     else if (_isAnswered)
                                       _buildResult(
-                                        quest.correctAnswer ?? _selectedOptionText ?? "",
+                                        quest.correctAnswer ??
+                                            _selectedOptionText ??
+                                            "",
                                         theme.primaryColor,
                                         isDark,
                                         isCompact,
@@ -317,7 +331,9 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,

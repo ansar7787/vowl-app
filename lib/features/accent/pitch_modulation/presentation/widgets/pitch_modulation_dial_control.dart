@@ -45,21 +45,9 @@ class PitchModulationDialControl extends StatelessWidget {
           flex: 4,
           child: Column(
             children: [
-              _buildOptionCard(
-                options[1],
-                1,
-                correctIndex,
-                color,
-                isDark,
-              ),
+              _buildOptionCard(options[1], 1, correctIndex, color, isDark),
               SizedBox(height: 32.h),
-              _buildOptionCard(
-                options[0],
-                0,
-                correctIndex,
-                color,
-                isDark,
-              ),
+              _buildOptionCard(options[0], 0, correctIndex, color, isDark),
             ],
           ),
         ),
@@ -98,10 +86,12 @@ class PitchModulationDialControl extends StatelessWidget {
                 borderRadius: BorderRadius.circular(2.r),
               ),
             ),
-            
+
             // Fader thumb
             TweenAnimationBuilder<double>(
-              duration: isDragging ? Duration.zero : const Duration(milliseconds: 300),
+              duration: isDragging
+                  ? Duration.zero
+                  : const Duration(milliseconds: 300),
               curve: Curves.easeOutBack,
               // dialRotation: -1.0 is bottom (Option 0), +1.0 is top (Option 1).
               // Alignment.y goes from -1.0 (top) to +1.0 (bottom).
@@ -188,60 +178,65 @@ class PitchModulationDialControl extends StatelessWidget {
 
     return ScaleButton(
       onTap: () => onSubmitChoice(index, correctIndex),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: cardColor,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: borderColor,
-            width: isSelected ? 3 : 2,
-          ),
-          boxShadow: [
-            if (isSelected)
-              BoxShadow(
-                color: borderColor.withValues(alpha: 0.2),
-                blurRadius: 15,
-                spreadRadius: 2,
-              ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              mainText,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-                color: textColor,
-                letterSpacing: 1,
-              ),
-            ),
-            if (subText.isNotEmpty) ...[
-              SizedBox(height: 4.h),
-              Text(
-                subText,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.grey.shade400 : Colors.grey.shade700,
-                  height: 1.3,
+      child:
+          AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: borderColor,
+                    width: isSelected ? 3 : 2,
+                  ),
+                  boxShadow: [
+                    if (isSelected)
+                      BoxShadow(
+                        color: borderColor.withValues(alpha: 0.2),
+                        blurRadius: 15,
+                        spreadRadius: 2,
+                      ),
+                  ],
                 ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      mainText,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    if (subText.isNotEmpty) ...[
+                      SizedBox(height: 4.h),
+                      Text(
+                        subText,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark
+                              ? Colors.grey.shade400
+                              : Colors.grey.shade700,
+                          height: 1.3,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              )
+              .animate(target: isSelected ? 1 : 0)
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.02, 1.02),
+                duration: 150.ms,
               ),
-            ],
-          ],
-        ),
-      ).animate(target: isSelected ? 1 : 0).scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.02, 1.02),
-            duration: 150.ms,
-          ),
     );
   }
 }

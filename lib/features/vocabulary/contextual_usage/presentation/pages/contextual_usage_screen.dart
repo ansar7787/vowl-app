@@ -177,7 +177,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                       ),
                     ),
                     _buildUnfoldContent(quest, theme.primaryColor, isDarkMode),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                    if (_isFirstStagePassed &&
+                        (!_isAnswered || _isCorrect == null))
                       DynamicJigsawWrapper(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,

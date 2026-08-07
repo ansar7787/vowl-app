@@ -37,11 +37,13 @@ class DescribeSituationWritingArea extends StatelessWidget {
             controller: textController,
             maxLines: 4,
             maxLength: 400,
-            buildCounter: (context,
-                    {required currentLength,
-                    required isFocused,
-                    maxLength}) =>
-                null,
+            buildCounter:
+                (
+                  context, {
+                  required currentLength,
+                  required isFocused,
+                  maxLength,
+                }) => null,
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white : Colors.black87,

@@ -82,7 +82,9 @@ class ProfileHeader extends StatelessWidget {
                     ),
                     child: ClipOval(
                       child: (immediatePhotoUrl ?? user.photoUrl) != null
-                          ? ShimmerImage(imageUrl: (immediatePhotoUrl ?? user.photoUrl)!)
+                          ? ShimmerImage(
+                              imageUrl: (immediatePhotoUrl ?? user.photoUrl)!,
+                            )
                           : Icon(
                               Icons.person_rounded,
                               color: const Color(0xFF94A3B8),

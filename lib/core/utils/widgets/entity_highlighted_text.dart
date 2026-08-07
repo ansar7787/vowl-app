@@ -5,7 +5,6 @@ import 'package:google_mlkit_entity_extraction/google_mlkit_entity_extraction.da
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/entity_extraction_service.dart';
 
-
 class EntityHighlightedText extends StatelessWidget {
   final String text;
   final List<EntityAnnotation> annotations;
@@ -20,13 +19,18 @@ class EntityHighlightedText extends StatelessWidget {
     required this.isDark,
   });
 
-  void _showEntityTooltip(BuildContext context, EntityAnnotation annotation, Entity entity) {
+  void _showEntityTooltip(
+    BuildContext context,
+    EntityAnnotation annotation,
+    Entity entity,
+  ) {
     final extractedStr = text.substring(annotation.start, annotation.end);
-    
+
     // Formatting the entity type for display (e.g. EntityType.dateTime -> "Date Time")
     String typeName = entity.type.name;
-    typeName = typeName.replaceAllMapped(
-        RegExp(r'[A-Z]'), (match) => ' ${match.group(0)}').trim();
+    typeName = typeName
+        .replaceAllMapped(RegExp(r'[A-Z]'), (match) => ' ${match.group(0)}')
+        .trim();
     typeName = typeName[0].toUpperCase() + typeName.substring(1);
 
     showModalBottomSheet(
@@ -46,7 +50,9 @@ class EntityHighlightedText extends StatelessWidget {
               children: [
                 Icon(
                   Icons.info_outline_rounded,
-                  color: di.sl<EntityExtractionService>().getColorForEntity(entity.type),
+                  color: di.sl<EntityExtractionService>().getColorForEntity(
+                    entity.type,
+                  ),
                   size: 28.sp,
                 ),
                 SizedBox(width: 12.w),
@@ -66,7 +72,9 @@ class EntityHighlightedText extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
-                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
+                color: (isDark ? Colors.white : Colors.black).withValues(
+                  alpha: 0.05,
+                ),
                 borderRadius: BorderRadius.circular(16.r),
               ),
               child: Text(
@@ -102,14 +110,18 @@ class EntityHighlightedText extends StatelessWidget {
     for (var annotation in sortedAnnotations) {
       if (annotation.start > currentIndex) {
         // Add normal text before the annotation
-        spans.add(TextSpan(text: text.substring(currentIndex, annotation.start)));
+        spans.add(
+          TextSpan(text: text.substring(currentIndex, annotation.start)),
+        );
       }
 
       if (annotation.start >= currentIndex) {
         // Add highlighted text
-        final entity = annotation.entities.isNotEmpty ? annotation.entities.first : null;
-        final color = entity != null 
-            ? di.sl<EntityExtractionService>().getColorForEntity(entity.type) 
+        final entity = annotation.entities.isNotEmpty
+            ? annotation.entities.first
+            : null;
+        final color = entity != null
+            ? di.sl<EntityExtractionService>().getColorForEntity(entity.type)
             : Colors.blue;
 
         spans.add(
@@ -140,10 +152,7 @@ class EntityHighlightedText extends StatelessWidget {
     }
 
     return RichText(
-      text: TextSpan(
-        style: style,
-        children: spans,
-      ),
+      text: TextSpan(style: style, children: spans),
     );
   }
 }

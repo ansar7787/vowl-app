@@ -46,7 +46,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
   int? _lastLives;
 
   late AnimationController _radarController;
-  
+
   List<String> _hotspotLabels = [];
   List<String> _hotspotPrompts = [];
   List<List<String>> _hotspotKeywords = [];
@@ -215,8 +215,10 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -372,7 +374,6 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                                   ),
                                           ),
                                     SizedBox(height: gapPrompt),
-
                                   ],
                                 ),
                                 Column(
@@ -380,13 +381,14 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                   children: [
                                     if (!_isAnswered && _activeHotspot != -1)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: _hotspotPrompts[_activeHotspot],
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                        expectedText:
+                                            _hotspotPrompts[_activeHotspot],
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
                                     SizedBox(height: gapBottom),
                                   ],

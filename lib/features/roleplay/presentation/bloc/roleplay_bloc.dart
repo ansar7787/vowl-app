@@ -361,11 +361,13 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     Emitter<RoleplayState> emit,
   ) async {
     try {
-      await updateUserCoins(UpdateUserCoinsParams(
-        amountChange: event.bonusCoins,
-        title: 'coin_history.speaking_bonus',
-        isEarned: true,
-      ));
+      await updateUserCoins(
+        UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.speaking_bonus',
+          isEarned: true,
+        ),
+      );
     } catch (e) {
       debugPrint('[RoleplayBloc] SpeakConfirmed failed: $e');
     }

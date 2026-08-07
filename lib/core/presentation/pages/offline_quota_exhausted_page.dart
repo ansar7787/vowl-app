@@ -88,8 +88,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
       body: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 14, sigmaY: 14),
         child: Container(
-          color: (isDark ? const Color(0xFF0F172A) : Colors.white)
-              .withValues(alpha: 0.92),
+          color: (isDark ? const Color(0xFF0F172A) : Colors.white).withValues(
+            alpha: 0.92,
+          ),
           child: Stack(
             children: [
               // ── Background glow accents ───────────────────────────────
@@ -133,7 +134,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                     padding: EdgeInsets.all(10.r),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+                      color: isDark
+                          ? Colors.white10
+                          : Colors.black.withValues(alpha: 0.05),
                     ),
                     child: Icon(
                       LucideIcons.x,
@@ -162,9 +165,9 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                           children: [
                             // ── Icon + counter ──────────────────────────
                             _QuotaIcon(
-                              isDark: isDark,
-                              levelsPlayed: gate.offlineLevelsPlayed,
-                            )
+                                  isDark: isDark,
+                                  levelsPlayed: gate.offlineLevelsPlayed,
+                                )
                                 .animate()
                                 .fadeIn(duration: 600.ms)
                                 .scale(
@@ -177,21 +180,21 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                             // ── Title ───────────────────────────────────
                             Text(
-                              context.tr(
-                                'connectivity.quota_title',
-                                fallback: 'OFFLINE LIMIT REACHED',
-                              ),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 2,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
-                              ),
-                            )
+                                  context.tr(
+                                    'connectivity.quota_title',
+                                    fallback: 'OFFLINE LIMIT REACHED',
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 24.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 2,
+                                    color: isDark
+                                        ? Colors.white
+                                        : const Color(0xFF0F172A),
+                                  ),
+                                )
                                 .animate()
                                 .fadeIn(delay: 200.ms, duration: 600.ms)
                                 .moveY(begin: 10, end: 0),
@@ -213,29 +216,27 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
                                 color: isDark ? Colors.white60 : Colors.black54,
                                 height: 1.5,
                               ),
-                            )
-                                .animate()
-                                .fadeIn(delay: 400.ms, duration: 600.ms),
+                            ).animate().fadeIn(delay: 400.ms, duration: 600.ms),
 
                             SizedBox(height: 40.h),
 
                             // ── Watch Ad Button (Primary CTA) ───────────
                             if (hasAdReady)
                               _ActionButton(
-                                isDark: isDark,
-                                isLoading: _isLoadingAd,
-                                onTap: _handleWatchAd,
-                                icon: LucideIcons.play,
-                                label: context.tr(
-                                  'connectivity.watch_ad_continue',
-                                  fallback: 'WATCH AD FOR +3 LEVELS',
-                                ),
-                                gradient: const [
-                                  Color(0xFF10B981),
-                                  Color(0xFF059669),
-                                ],
-                                glowColor: const Color(0xFF10B981),
-                              )
+                                    isDark: isDark,
+                                    isLoading: _isLoadingAd,
+                                    onTap: _handleWatchAd,
+                                    icon: LucideIcons.play,
+                                    label: context.tr(
+                                      'connectivity.watch_ad_continue',
+                                      fallback: 'WATCH AD FOR +3 LEVELS',
+                                    ),
+                                    gradient: const [
+                                      Color(0xFF10B981),
+                                      Color(0xFF059669),
+                                    ],
+                                    glowColor: const Color(0xFF10B981),
+                                  )
                                   .animate()
                                   .fadeIn(delay: 500.ms, duration: 600.ms)
                                   .moveY(begin: 20, end: 0),
@@ -244,20 +245,20 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                             // ── Reconnect Button ────────────────────────
                             _ActionButton(
-                              isDark: isDark,
-                              isLoading: _isChecking,
-                              onTap: _handleRetry,
-                              icon: LucideIcons.wifi,
-                              label: context.tr(
-                                'connectivity.retry_button',
-                                fallback: 'RECONNECT',
-                              ),
-                              gradient: const [
-                                Color(0xFF6366F1),
-                                Color(0xFF1D4ED8),
-                              ],
-                              glowColor: Colors.blue,
-                            )
+                                  isDark: isDark,
+                                  isLoading: _isChecking,
+                                  onTap: _handleRetry,
+                                  icon: LucideIcons.wifi,
+                                  label: context.tr(
+                                    'connectivity.retry_button',
+                                    fallback: 'RECONNECT',
+                                  ),
+                                  gradient: const [
+                                    Color(0xFF6366F1),
+                                    Color(0xFF1D4ED8),
+                                  ],
+                                  glowColor: Colors.blue,
+                                )
                                 .animate()
                                 .fadeIn(delay: 600.ms, duration: 600.ms)
                                 .moveY(begin: 20, end: 0),
@@ -266,54 +267,57 @@ class _OfflineQuotaExhaustedPageState extends State<OfflineQuotaExhaustedPage> {
 
                             // ── Premium Upsell ──────────────────────────
                             GestureDetector(
-                              onTap: () {
-                                Haptics.vibrate(HapticsType.light);
-                                AppRouter.router
-                                    .push(AppRouter.premiumRoute);
-                              },
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 14.h,
-                                  horizontal: 24.w,
-                                ),
-                                decoration: BoxDecoration(
-                                  color:
-                                      Colors.amber.withValues(alpha: 0.12),
-                                  borderRadius: BorderRadius.circular(16.r),
-                                  border: Border.all(
-                                    color: Colors.amber
-                                        .withValues(alpha: 0.4),
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      LucideIcons.crown,
-                                      color: Colors.amber,
-                                      size: 20.r,
+                                  onTap: () {
+                                    Haptics.vibrate(HapticsType.light);
+                                    AppRouter.router.push(
+                                      AppRouter.premiumRoute,
+                                    );
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 14.h,
+                                      horizontal: 24.w,
                                     ),
-                                    SizedBox(width: 8.w),
-                                    Flexible(
-                                      child: Text(
-                                        context.tr(
-                                          'connectivity.go_premium',
-                                          fallback:
-                                              'Play Offline with Premium',
+                                    decoration: BoxDecoration(
+                                      color: Colors.amber.withValues(
+                                        alpha: 0.12,
+                                      ),
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      border: Border.all(
+                                        color: Colors.amber.withValues(
+                                          alpha: 0.4,
                                         ),
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          color: Colors.amber,
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        textAlign: TextAlign.center,
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ),
-                            )
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          LucideIcons.crown,
+                                          color: Colors.amber,
+                                          size: 20.r,
+                                        ),
+                                        SizedBox(width: 8.w),
+                                        Flexible(
+                                          child: Text(
+                                            context.tr(
+                                              'connectivity.go_premium',
+                                              fallback:
+                                                  'Play Offline with Premium',
+                                            ),
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.amber,
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
                                 .animate()
                                 .fadeIn(delay: 800.ms, duration: 600.ms)
                                 .moveY(begin: 10, end: 0),
@@ -371,47 +375,47 @@ class _QuotaIcon extends StatelessWidget {
 
         // Core disk
         Container(
-          width: 120.r,
-          height: 120.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isDark
-                ? Colors.amber.withValues(alpha: 0.1)
-                : Colors.amber.withValues(alpha: 0.12),
-            border: Border.all(
-              color: Colors.amber.withValues(alpha: 0.3),
-              width: 2,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
-                blurRadius: 20,
-                spreadRadius: 4,
-              ),
-            ],
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                LucideIcons.wifiOff,
-                size: 36.r,
-                color: Colors.amber[400],
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                '$levelsPlayed/${OfflinePlayGateService.maxOfflineLevels}',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.amber[400],
-                  letterSpacing: 1,
+              width: 120.r,
+              height: 120.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isDark
+                    ? Colors.amber.withValues(alpha: 0.1)
+                    : Colors.amber.withValues(alpha: 0.12),
+                border: Border.all(
+                  color: Colors.amber.withValues(alpha: 0.3),
+                  width: 2,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.amber.withValues(alpha: isDark ? 0.1 : 0.06),
+                    blurRadius: 20,
+                    spreadRadius: 4,
+                  ),
+                ],
               ),
-            ],
-          ),
-        )
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    LucideIcons.wifiOff,
+                    size: 36.r,
+                    color: Colors.amber[400],
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    '$levelsPlayed/${OfflinePlayGateService.maxOfflineLevels}',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.amber[400],
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+            )
             .animate(onPlay: (c) => c.repeat(reverse: true))
             .shimmer(
               duration: 3000.ms,
@@ -468,8 +472,8 @@ class _ActionButtonState extends State<_ActionButton> {
               gradient: LinearGradient(
                 colors: widget.isLoading
                     ? widget.gradient
-                        .map((c) => c.withValues(alpha: 0.5))
-                        .toList()
+                          .map((c) => c.withValues(alpha: 0.5))
+                          .toList()
                     : widget.gradient,
               ),
               boxShadow: [
@@ -556,7 +560,11 @@ class _GlowOrb extends StatelessWidget {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           boxShadow: [
-            BoxShadow(color: color, blurRadius: size / 2, spreadRadius: size / 4),
+            BoxShadow(
+              color: color,
+              blurRadius: size / 2,
+              spreadRadius: size / 4,
+            ),
           ],
         ),
       ),

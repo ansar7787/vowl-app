@@ -69,10 +69,12 @@ class AccentLoaded extends AccentState implements GameLoadedState {
   final bool isFinalFailure;
 
   AccentQuest get currentQuest => quests[currentIndex];
-  
+
   @override
-  AccentQuest? get currentQuestOrNull => 
-      (currentIndex >= 0 && currentIndex < quests.length) ? quests[currentIndex] : null;
+  AccentQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
 
   @override
   int get totalQuests => quests.length;

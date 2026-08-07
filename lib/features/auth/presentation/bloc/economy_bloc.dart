@@ -353,7 +353,8 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
           _log('EconomyBloc: TripleUp coins FAILED: ${failure.message}');
           emit(state.copyWith(message: () => failure.message));
         },
-        (_) => _log('EconomyBloc: TripleUp coins SUCCESS (+${event.bonusCoins})'),
+        (_) =>
+            _log('EconomyBloc: TripleUp coins SUCCESS (+${event.bonusCoins})'),
       );
     }
 

@@ -86,7 +86,12 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       return;
     }
 
-    String current = _slots.join(" ").replaceAll(RegExp(r'[^\w\s]'), '').replaceAll(RegExp(r'\s+'), ' ').trim().toLowerCase();
+    String current = _slots
+        .join(" ")
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .replaceAll(RegExp(r'\s+'), ' ')
+        .trim()
+        .toLowerCase();
     String target = correctFull
         .replaceAll(RegExp(r'[^\w\s]'), '')
         .replaceAll(RegExp(r'\s+'), ' ')

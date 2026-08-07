@@ -32,10 +32,13 @@ class ConsonantClarityInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              instruction ?? context.tr(
-                'games.consonantClarity_instruction',
-                fallback: 'Tap the correct consonant sound.',
-              ).toUpperCase(),
+              instruction ??
+                  context
+                      .tr(
+                        'games.consonantClarity_instruction',
+                        fallback: 'Tap the correct consonant sound.',
+                      )
+                      .toUpperCase(),
               textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(

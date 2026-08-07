@@ -117,15 +117,16 @@ class WordLinkingSentenceField extends StatelessWidget {
                   color: isSelected || (isAnswered && correct)
                       ? nodeColor.withValues(alpha: 0.2)
                       : isDark
-                          ? color.withValues(alpha: 0.15)
-                          : color.withValues(alpha: 0.08),
+                      ? color.withValues(alpha: 0.15)
+                      : color.withValues(alpha: 0.08),
                   border: Border.all(
-                      color: isAnswered && !correct && !isSelected
-                          ? Colors.transparent
-                          : isSelected || isAnswered
-                              ? nodeColor
-                              : color.withValues(alpha: 0.4),
-                      width: 2),
+                    color: isAnswered && !correct && !isSelected
+                        ? Colors.transparent
+                        : isSelected || isAnswered
+                        ? nodeColor
+                        : color.withValues(alpha: 0.4),
+                    width: 2,
+                  ),
                   boxShadow: isSelected || (isAnswered && correct)
                       ? [
                           BoxShadow(
@@ -137,11 +138,12 @@ class WordLinkingSentenceField extends StatelessWidget {
                 ),
                 child: Center(
                   child: Icon(
-                      isSelected || isAnswered
-                          ? Icons.link_rounded
-                          : Icons.add_link_rounded,
-                      size: 22.r,
-                      color: nodeColor),
+                    isSelected || isAnswered
+                        ? Icons.link_rounded
+                        : Icons.add_link_rounded,
+                    size: 22.r,
+                    color: nodeColor,
+                  ),
                 ),
               )
               .animate(

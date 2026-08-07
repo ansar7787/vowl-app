@@ -80,26 +80,26 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
     if (_pendingJigsaw || _isAnswered) return;
-    
+
     final distance = _dragOffset.distance;
     final threshold = isCompact ? 60.r : 100.r;
     if (distance <= threshold) return;
@@ -125,10 +125,12 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         final options = (quest?.options?.length ?? 0) >= 4
             ? quest!.options!.sublist(0, 4)
             : _fallbackOptions;
-            
+
         String cleanTargetSentence = "";
         if (quest != null && quest.sentence != null) {
-            cleanTargetSentence = quest.sentence!.replaceAll('[', '').replaceAll(']', '');
+          cleanTargetSentence = quest.sentence!
+              .replaceAll('[', '')
+              .replaceAll(']', '');
         }
 
         return GrammarBaseLayout(
@@ -138,7 +140,8 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
+          useScrolling:
+              false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -174,7 +177,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
@@ -201,7 +206,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           _isAnswered = false;
           _isCorrect = null;
           _dragOffset = Offset.zero;
-          _isSubmitting = false; 
+          _isSubmitting = false;
           _pendingJigsaw = false;
         });
       } else if (state.answerStatus.isAnswered && !_isAnswered) {

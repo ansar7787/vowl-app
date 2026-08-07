@@ -64,13 +64,17 @@ class GrammarBaseLayout extends StatelessWidget {
       backgroundOverlay: Builder(
         builder: (context) {
           final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme('grammar', level: level, isDark: isDark);
+          final theme = LevelThemeHelper.getTheme(
+            'grammar',
+            level: level,
+            isDark: isDark,
+          );
           return Positioned.fill(
             child: LogicCircuit(
               color: (theme.primaryColor).withValues(alpha: 0.2),
             ),
           );
-        }
+        },
       ),
       onRetry: () => context.read<GrammarBloc>().add(
         FetchGrammarQuests(gameType: gameType, level: level),
@@ -78,8 +82,14 @@ class GrammarBaseLayout extends StatelessWidget {
       onRestoreLife: () => context.read<GrammarBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('grammar', isDark: isDark, level: level);
-        final currentQuest = state is GrammarLoaded ? state.currentQuestOrNull : null;
+        final theme = LevelThemeHelper.getTheme(
+          'grammar',
+          isDark: isDark,
+          level: level,
+        );
+        final currentQuest = state is GrammarLoaded
+            ? state.currentQuestOrNull
+            : null;
         return GrammarGameHeader(
           state: state,
           level: level,
@@ -90,12 +100,14 @@ class GrammarBaseLayout extends StatelessWidget {
           isAnswered: isAnswered,
           isFinalFailure: isFinalFailure,
           soundService: di.sl<SoundService>(),
-          onShowBriefing: () {}, // GameBaseLayout handles briefing internally now
+          onShowBriefing:
+              () {}, // GameBaseLayout handles briefing internally now
           onHint: onHint,
         );
       },
       mascotBuilder: (context, state, lives) {
-        final mascotId = context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
+        final mascotId =
+            context.read<AuthBloc>().state.user?.vowlMascot ?? 'vowl_prime';
         return GrammarPeekingMascot(
           state: state,
           lives: lives,
@@ -107,19 +119,28 @@ class GrammarBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! GrammarLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('grammar', level: level, isDark: isDark);
-        
+        final theme = LevelThemeHelper.getTheme(
+          'grammar',
+          level: level,
+          isDark: isDark,
+        );
+
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
         final resolvedIsFinalFailure = state.isFinalFailure;
-        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
-           explanation = (quest.options != null && quest.correctAnswerIndex != null
-               ? quest.options![quest.correctAnswerIndex!]
-               : null);
+        if (explanation == null &&
+            isCorrect == false &&
+            resolvedIsFinalFailure) {
+          explanation =
+              (quest.options != null && quest.correctAnswerIndex != null
+              ? quest.options![quest.correctAnswerIndex!]
+              : null);
         }
 
         final ruleContent = quest.grammarRule ?? explanation;
-        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

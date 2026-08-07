@@ -134,7 +134,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                             40.h +
                             200.h +
                             20.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 5
@@ -235,8 +236,9 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                     ),
                     if (!_isAnswered || _isCorrect == null)
                       BlindDictationWrapper(
-                        expectedText: (quest.options != null && quest.options!.isNotEmpty) 
-                            ? quest.options![quest.correctAnswerIndex ?? 0] 
+                        expectedText:
+                            (quest.options != null && quest.options!.isNotEmpty)
+                            ? quest.options![quest.correctAnswerIndex ?? 0]
                             : "",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),

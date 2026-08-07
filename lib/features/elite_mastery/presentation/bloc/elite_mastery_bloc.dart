@@ -19,7 +19,8 @@ import '../../../../features/auth/domain/usecases/update_user_coins.dart';
 
 part 'elite_mastery_event.dart';
 part 'elite_mastery_state.dart';
-class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
+
+class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
   final GetEliteMasteryQuests getQuests;
   final UpdateUserCoins updateUserCoins;
   final UpdateUserRewards updateUserRewards;
@@ -444,13 +445,18 @@ part 'elite_mastery_state.dart';
     }
   }
 
-  Future<void> _onSpeakConfirmed(EliteSpeakConfirmed event, Emitter<EliteMasteryState> emit) async {
+  Future<void> _onSpeakConfirmed(
+    EliteSpeakConfirmed event,
+    Emitter<EliteMasteryState> emit,
+  ) async {
     try {
-      await updateUserCoins(UpdateUserCoinsParams(
-        amountChange: event.bonusCoins,
-        title: 'coin_history.speaking_bonus',
-        isEarned: true,
-      ));
+      await updateUserCoins(
+        UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.speaking_bonus',
+          isEarned: true,
+        ),
+      );
     } catch (e) {
       dev.log('Failed to add speak confirmed coins', error: e);
     }

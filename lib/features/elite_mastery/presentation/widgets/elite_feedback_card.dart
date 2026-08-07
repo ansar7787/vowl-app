@@ -98,15 +98,21 @@ class EliteFeedbackCard extends StatelessWidget {
 
     final usageContext = state.currentQuest.usageContext;
     final hasUsageContext =
-        shouldRevealPedagogy && usageContext != null && usageContext.trim().isNotEmpty;
+        shouldRevealPedagogy &&
+        usageContext != null &&
+        usageContext.trim().isNotEmpty;
 
     final spellingRule = state.currentQuest.spellingRule;
     final hasSpellingRule =
-        shouldRevealPedagogy && spellingRule != null && spellingRule.trim().isNotEmpty;
+        shouldRevealPedagogy &&
+        spellingRule != null &&
+        spellingRule.trim().isNotEmpty;
 
     final sequenceLogic = state.currentQuest.sequenceLogic;
     final hasSequenceLogic =
-        shouldRevealPedagogy && sequenceLogic != null && sequenceLogic.trim().isNotEmpty;
+        shouldRevealPedagogy &&
+        sequenceLogic != null &&
+        sequenceLogic.trim().isNotEmpty;
 
     // Curriculum "why" note (e.g. the stress/linking/intonation rule behind
     // the sentence). Shown on both success and failure — reinforcing the
@@ -380,6 +386,7 @@ class EliteFeedbackCard extends StatelessWidget {
     return null;
   }
 }
+
 class _ContinueButton extends StatelessWidget {
   final String label;
   final List<Color> gradient;
@@ -470,18 +477,11 @@ class _TutorPassButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.auto_awesome_rounded,
-              color: accentColor,
-              size: 14.r,
-            ),
+            Icon(Icons.auto_awesome_rounded, color: accentColor, size: 14.r),
             SizedBox(width: 8.w),
             Text(
               context
-                  .tr(
-                    'games.i_spoke_correctly',
-                    fallback: 'I spoke correctly',
-                  )
+                  .tr('games.i_spoke_correctly', fallback: 'I spoke correctly')
                   .toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',

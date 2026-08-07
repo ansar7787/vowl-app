@@ -33,9 +33,10 @@ class AudioRecordingServiceImpl implements AudioRecordingService {
     try {
       if (await _audioRecorder.hasPermission()) {
         final Directory tempDir = await getTemporaryDirectory();
-        final String path = '${tempDir.path}/vowl_accent_eval_${DateTime.now().millisecondsSinceEpoch}.m4a';
+        final String path =
+            '${tempDir.path}/vowl_accent_eval_${DateTime.now().millisecondsSinceEpoch}.m4a';
         _currentPath = path;
-        
+
         await _audioRecorder.start(
           const RecordConfig(
             encoder: AudioEncoder.aacLc, // High quality, low latency for speech
@@ -47,7 +48,10 @@ class AudioRecordingServiceImpl implements AudioRecordingService {
         return true;
       }
     } catch (e) {
-      sl<AppLogger>().error('AudioRecordingService: Start recording error', error: e);
+      sl<AppLogger>().error(
+        'AudioRecordingService: Start recording error',
+        error: e,
+      );
     }
     return false;
   }
@@ -59,7 +63,10 @@ class AudioRecordingServiceImpl implements AudioRecordingService {
       _isRecording = false;
       return path ?? _currentPath;
     } catch (e) {
-      sl<AppLogger>().error('AudioRecordingService: Stop recording error', error: e);
+      sl<AppLogger>().error(
+        'AudioRecordingService: Stop recording error',
+        error: e,
+      );
       _isRecording = false;
       return null;
     }

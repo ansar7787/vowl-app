@@ -30,16 +30,18 @@ class AdaptiveSmartMixWidget extends StatelessWidget {
 
     // Determine the daily mix based on the current day to keep it consistent
     final today = DateTime.now();
-    final random = math.Random(today.year * 10000 + today.month * 100 + today.day);
+    final random = math.Random(
+      today.year * 10000 + today.month * 100 + today.day,
+    );
 
     GameSubtype getWeakestGame(List<GameSubtype> tier) {
       if (tier.isEmpty) return GameSubtype.grammarQuest;
       GameSubtype weakest = tier.first;
       int lowestScore = 999;
-      
+
       // Deterministically shuffle to handle ties differently each day
       final shuffledTier = List<GameSubtype>.from(tier)..shuffle(random);
-      
+
       for (var game in shuffledTier) {
         int score = (user.completedLevels[game.name]?.length ?? 0);
         if (score < lowestScore) {
@@ -81,7 +83,11 @@ class AdaptiveSmartMixWidget extends StatelessWidget {
           ),
           SizedBox(height: 8.h),
           Text(
-            context.tr('category.daily_mix_desc', fallback: 'Your personalized 3-step workout based on your weakest skills.'),
+            context.tr(
+              'category.daily_mix_desc',
+              fallback:
+                  'Your personalized 3-step workout based on your weakest skills.',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 12.sp,
@@ -98,7 +104,13 @@ class AdaptiveSmartMixWidget extends StatelessWidget {
 
             return Padding(
               padding: EdgeInsets.only(bottom: 12.h),
-              child: _buildMixCard(context, entry.value, entry.key + 1, theme.primaryColor, tierLabel),
+              child: _buildMixCard(
+                context,
+                entry.value,
+                entry.key + 1,
+                theme.primaryColor,
+                tierLabel,
+              ),
             );
           }),
         ],
@@ -106,7 +118,13 @@ class AdaptiveSmartMixWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildMixCard(BuildContext context, GameSubtype subtype, int step, Color accentColor, String tierLabel) {
+  Widget _buildMixCard(
+    BuildContext context,
+    GameSubtype subtype,
+    int step,
+    Color accentColor,
+    String tierLabel,
+  ) {
     final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
     final displayColor = isDark
         ? theme.primaryColor

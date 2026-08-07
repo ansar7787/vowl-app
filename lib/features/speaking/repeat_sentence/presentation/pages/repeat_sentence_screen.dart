@@ -144,8 +144,10 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(

@@ -7,19 +7,26 @@ class EntityExtractionService {
   final EntityExtractor _extractor;
 
   EntityExtractionService()
-      : _extractor = EntityExtractor(language: EntityExtractorLanguage.english);
+    : _extractor = EntityExtractor(language: EntityExtractorLanguage.english);
 
   /// Downloads the English entity extraction model if not present.
   Future<bool> downloadModel() async {
     try {
       final modelManager = EntityExtractorModelManager();
-      final isDownloaded = await modelManager.isModelDownloaded(EntityExtractorLanguage.english.name);
+      final isDownloaded = await modelManager.isModelDownloaded(
+        EntityExtractorLanguage.english.name,
+      );
       if (!isDownloaded) {
-        return await modelManager.downloadModel(EntityExtractorLanguage.english.name);
+        return await modelManager.downloadModel(
+          EntityExtractorLanguage.english.name,
+        );
       }
       return true;
     } catch (e) {
-      di.sl<AppLogger>().error('EntityExtractionService: Failed to download model', error: e);
+      di.sl<AppLogger>().error(
+        'EntityExtractionService: Failed to download model',
+        error: e,
+      );
       return false;
     }
   }
@@ -29,7 +36,10 @@ class EntityExtractionService {
     try {
       return await _extractor.annotateText(text);
     } catch (e) {
-      di.sl<AppLogger>().error('EntityExtractionService: Failed to extract entities', error: e);
+      di.sl<AppLogger>().error(
+        'EntityExtractionService: Failed to extract entities',
+        error: e,
+      );
       return [];
     }
   }

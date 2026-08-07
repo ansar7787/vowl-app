@@ -646,7 +646,8 @@ class VowlCoinsScreen extends StatelessWidget {
             // Read 'titleKey' (the current schema) with 'title' as legacy
             // fallback — older entries written before the titleKey migration
             // stored raw English in 'title'.
-            final rawKey = (txn['titleKey'] as String?) ??
+            final rawKey =
+                (txn['titleKey'] as String?) ??
                 (txn['title'] as String?) ??
                 'Transaction';
             final title = _localizeTransactionKey(context, rawKey, txn);
@@ -849,20 +850,11 @@ class VowlCoinsScreen extends StatelessWidget {
               'Level Milestone${milestone.isNotEmpty ? ' (Lv.$milestone)' : ''} 🏆',
         );
       case 'coin_history.ad_reward':
-        return context.tr(
-          'coin_history.ad_reward',
-          fallback: 'Ad Reward 🎬',
-        );
+        return context.tr('coin_history.ad_reward', fallback: 'Ad Reward 🎬');
       case 'coin_history.daily_gift':
-        return context.tr(
-          'coin_history.daily_gift',
-          fallback: 'Daily Gift 🎁',
-        );
+        return context.tr('coin_history.daily_gift', fallback: 'Daily Gift 🎁');
       case 'coin_history.vip_gift':
-        return context.tr(
-          'coin_history.vip_gift',
-          fallback: 'VIP Gift ⭐',
-        );
+        return context.tr('coin_history.vip_gift', fallback: 'VIP Gift ⭐');
       case 'coin_history.spin_reward':
         return context.tr(
           'coin_history.spin_reward',

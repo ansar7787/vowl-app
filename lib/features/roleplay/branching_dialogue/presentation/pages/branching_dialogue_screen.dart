@@ -229,71 +229,76 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
           children: [
             RoleplayBaseLayout(
               gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-          onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : Expanded(
-                  child: LayoutBuilder(
-                    builder: (context, constraints) {
-                      final isCompact = constraints.maxHeight < 580;
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
-                          vertical: isCompact ? 5.h : 10.h,
-                        ),
-                        child: Column(
-                          children: [
-                            BranchingDialogueInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
+              level: widget.level,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              showConfetti: _showConfetti,
+              onContinue: () =>
+                  context.read<RoleplayBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : Expanded(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final isCompact = constraints.maxHeight < 580;
+                          return SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: isCompact ? 5.h : 10.h,
                             ),
-                            SizedBox(height: isCompact ? 10.h : 16.h),
-                            BranchingDialoguePersonaConsole(
-                              quest: quest,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              onListen: () => _triggerAutoPlay(quest),
+                            child: Column(
+                              children: [
+                                BranchingDialogueInstruction(
+                                  primaryColor: theme.primaryColor,
+                                  instruction: quest.instruction,
+                                ),
+                                SizedBox(height: isCompact ? 10.h : 16.h),
+                                BranchingDialoguePersonaConsole(
+                                  quest: quest,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  onListen: () => _triggerAutoPlay(quest),
+                                ),
+                                SizedBox(height: isCompact ? 12.h : 20.h),
+                                BranchingDialogueConsoleBoard(
+                                  options: options,
+                                  correctIndex: quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  probeOffset: _probeOffset,
+                                  hoveredIndex: _hoveredIndex,
+                                  selectedIndex: _selectedIndex,
+                                  isAnswered:
+                                      _isAnswered || _isFirstStagePassed,
+                                  onProbeDragStart: _onProbeDragStart,
+                                  onProbeDragUpdate: _onProbeDragUpdate,
+                                  onProbeDragEnd: _onProbeDragEnd,
+                                  onOptionTapped: (index) => _submitChoice(
+                                    index,
+                                    quest.correctAnswerIndex ?? 0,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: isCompact ? 40.h : 80.h,
+                                ), // Safe spacing for base layouts
+                              ],
                             ),
-                            SizedBox(height: isCompact ? 12.h : 20.h),
-                            BranchingDialogueConsoleBoard(
-                              options: options,
-                              correctIndex: quest.correctAnswerIndex ?? 0,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              probeOffset: _probeOffset,
-                              hoveredIndex: _hoveredIndex,
-                              selectedIndex: _selectedIndex,
-                              isAnswered: _isAnswered || _isFirstStagePassed,
-                              onProbeDragStart: _onProbeDragStart,
-                              onProbeDragUpdate: _onProbeDragUpdate,
-                              onProbeDragEnd: _onProbeDragEnd,
-                              onOptionTapped: (index) => _submitChoice(
-                                index,
-                                quest.correctAnswerIndex ?? 0,
-                              ),
-                            ),
-                            SizedBox(
-                              height: isCompact ? 40.h : 80.h,
-                            ), // Safe spacing for base layouts
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                          );
+                        },
+                      ),
+                    ),
             ),
             if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
                 onConfirmed: () {
-                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  context.read<RoleplayBloc>().add(
+                    const RoleplaySpeakConfirmed(5),
+                  );
                   _submitVerbalEvaluation(true);
                 },
                 onSkipped: () => _submitVerbalEvaluation(false),
@@ -304,4 +309,3 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
     );
   }
 }
-

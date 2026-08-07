@@ -45,7 +45,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
   late AnimationController _sparkController;
   double _timeVal = 0.0;
-  
+
   List<String> _acceptedAntonyms = [];
 
   @override
@@ -158,8 +158,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
         if (quest != null) {
           _acceptedAntonyms = quest.acceptedSynonyms ?? [];
         }
-        
-        final expectedText = _acceptedAntonyms.isNotEmpty ? _acceptedAntonyms.first : "";
+
+        final expectedText = _acceptedAntonyms.isNotEmpty
+            ? _acceptedAntonyms.first
+            : "";
 
         return MediaQuery(
           data: mediaQuery.copyWith(
@@ -172,8 +174,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -339,13 +343,13 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
 
                                     if (!_isAnswered)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: expectedText,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                        expectedText: expectedText,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
 
                                     SizedBox(height: gapBottom),

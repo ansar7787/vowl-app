@@ -28,10 +28,12 @@ class CorrectionWritingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Expanded(
             child: Text(
-              context.tr(
-                'games.correctionWriting_instruction',
-                fallback: instruction,
-              ).toUpperCase(),
+              context
+                  .tr(
+                    'games.correctionWriting_instruction',
+                    fallback: instruction,
+                  )
+                  .toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,

@@ -215,94 +215,95 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 35.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 35.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: _buildInstruction(
+                                            theme.primaryColor,
+                                            isDark,
+                                            quest.instruction,
+                                          ),
+                                        ),
+                                      )
+                                    : _buildInstruction(
                                         theme.primaryColor,
                                         isDark,
                                         quest.instruction,
                                       ),
-                                    ),
-                                  )
-                                : _buildInstruction(
-                                    theme.primaryColor,
-                                    isDark,
-                                    quest.instruction,
-                                  ),
-                            SizedBox(height: gapInstruction),
-                            isCompact
-                                ? SizedBox(
-                                    height: 80.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: CollocationAnchorBubble(
+                                SizedBox(height: gapInstruction),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 80.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: CollocationAnchorBubble(
+                                            text: quest.word ?? "",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                          ),
+                                        ),
+                                      )
+                                    : CollocationAnchorBubble(
                                         text: quest.word ?? "",
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                       ),
-                                    ),
-                                  )
-                                : CollocationAnchorBubble(
-                                    text: quest.word ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(height: gapAnchor),
-                            isCompact
-                                ? SizedBox(
-                                    height: 100.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: SizedBox(
-                                        width: constraints.maxWidth,
-                                        child: _buildOptionsWrap(
-                                          quest,
-                                          theme.primaryColor,
-                                          isDark,
-                                          state is VocabularyLoaded
-                                              ? state.isFinalFailure
-                                              : false,
-                                          isCompact,
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapAnchor),
+                                isCompact
+                                    ? SizedBox(
+                                        height: 100.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SizedBox(
+                                            width: constraints.maxWidth,
+                                            child: _buildOptionsWrap(
+                                              quest,
+                                              theme.primaryColor,
+                                              isDark,
+                                              state is VocabularyLoaded
+                                                  ? state.isFinalFailure
+                                                  : false,
+                                              isCompact,
+                                            ),
+                                          ),
                                         ),
+                                      )
+                                    : _buildOptionsWrap(
+                                        quest,
+                                        theme.primaryColor,
+                                        isDark,
+                                        state is VocabularyLoaded
+                                            ? state.isFinalFailure
+                                            : false,
+                                        isCompact,
                                       ),
-                                    ),
-                                  )
-                                : _buildOptionsWrap(
-                                    quest,
-                                    theme.primaryColor,
-                                    isDark,
-                                    state is VocabularyLoaded
-                                        ? state.isFinalFailure
-                                        : false,
-                                    isCompact,
-                                  ),
-                            SizedBox(height: gapBottom),
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
                           ],
                         ),
+                        if (_isFirstStagePassed &&
+                            (!_isAnswered || _isCorrect == null))
+                          DynamicJigsawWrapper(
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(true),
+                            onSkipped: () => _submitFinalAnswer(false),
+                          ),
                       ],
-                    ),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
-                      DynamicJigsawWrapper(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                      ),
-                  ],
-                );
+                    );
                   },
                 ),
         );

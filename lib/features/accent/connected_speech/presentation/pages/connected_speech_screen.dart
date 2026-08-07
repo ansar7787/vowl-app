@@ -97,7 +97,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -195,7 +195,8 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                 isAnswered: _isAnswered,
                 isCorrect: _isCorrect,
                 showConfetti: _showConfetti,
-                onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+                onContinue: () =>
+                    context.read<AccentBloc>().add(NextQuestion()),
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
                 child: quest == null
                     ? const SizedBox()
@@ -237,9 +238,13 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                             child: SingleChildScrollView(
                               physics: const BouncingScrollPhysics(),
                               child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: maxHeight),
+                                constraints: BoxConstraints(
+                                  minHeight: maxHeight,
+                                ),
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -282,19 +287,25 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                           ConnectedSpeechLinkerCards(
                                             key: ValueKey(quest.id),
                                             options: options,
-                                            correctIndex: _shuffledOptions.isNotEmpty
+                                            correctIndex:
+                                                _shuffledOptions.isNotEmpty
                                                 ? _shuffledCorrectIndex
-                                                : (quest.correctAnswerIndex ?? 0),
+                                                : (quest.correctAnswerIndex ??
+                                                      0),
                                             color: theme.primaryColor,
                                             isDark: isDark,
-                                            isAnswered: _isAnswered || _isFirstStagePassed,
+                                            isAnswered:
+                                                _isAnswered ||
+                                                _isFirstStagePassed,
                                             selectedIndex: _selectedIndex,
                                             onSubmitChoice: _submitChoice,
                                             isCompact: isCompact,
                                           ),
                                           SizedBox(height: gapBottom),
                                           // Panel removed in favor of SpeakToConfirmOverlay
-                                          SizedBox(height: _isAnswered ? 180.h : 0),
+                                          SizedBox(
+                                            height: _isAnswered ? 180.h : 0,
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -311,10 +322,14 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                   expectedText: quest.textToSpeak ?? quest.word ?? "",
                   primaryColor: theme.primaryColor,
                   onConfirmed: () {
-                    context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
+                    context.read<AccentBloc>().add(
+                      const AccentSpeakConfirmed(5),
+                    );
                     _submitVerbalEvaluation(true);
                   },
-                  onSkipped: () => _submitVerbalEvaluation(false), // Skip speaking but keep the correct answer!
+                  onSkipped: () => _submitVerbalEvaluation(
+                    false,
+                  ), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

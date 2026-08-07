@@ -19,7 +19,8 @@ class CorrectionWritingKeyboardInput extends StatefulWidget {
       _CorrectionWritingKeyboardInputState();
 }
 
-class _CorrectionWritingKeyboardInputState extends State<CorrectionWritingKeyboardInput> {
+class _CorrectionWritingKeyboardInputState
+    extends State<CorrectionWritingKeyboardInput> {
   final _controller = TextEditingController();
 
   void _submitInput() {

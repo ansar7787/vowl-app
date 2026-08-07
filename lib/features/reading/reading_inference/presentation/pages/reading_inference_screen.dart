@@ -69,7 +69,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
 
   void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
     if (_pendingSelectedIndex == null) return;
-    
+
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
@@ -82,7 +82,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
 
     final selected = quest.options![_pendingSelectedIndex!];
     final correct = quest.correctAnswer ?? "";
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     setState(() {
       _selectedIndex = _pendingSelectedIndex;
@@ -155,8 +156,10 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -207,7 +210,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                 correct: quest.correctAnswer ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
-                                selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
+                                selectedIndex:
+                                    _selectedIndex ?? _pendingSelectedIndex,
                                 isAnswered: _isAnswered,
                                 clarity: _clarity,
                                 onTap: () => _onChoiceTap(index),

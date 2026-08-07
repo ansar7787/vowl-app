@@ -265,11 +265,13 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   ) async {
     try {
       if (updateUserCoins != null) {
-        await updateUserCoins!(UpdateUserCoinsParams(
-          amountChange: event.bonusCoins,
-          title: 'coin_history.speaking_bonus',
-          isEarned: true,
-        ));
+        await updateUserCoins!(
+          UpdateUserCoinsParams(
+            amountChange: event.bonusCoins,
+            title: 'coin_history.speaking_bonus',
+            isEarned: true,
+          ),
+        );
       }
     } catch (e) {
       debugPrint('[ListeningBloc] _onSpeakConfirmed failed: $e');

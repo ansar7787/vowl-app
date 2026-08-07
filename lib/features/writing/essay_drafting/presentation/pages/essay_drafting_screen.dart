@@ -136,7 +136,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
             for (var point in (quest.requiredPoints ?? [])) {
               _blueprintSlots[point] = null;
             }
-            _shuffledOptions = List<String>.from(quest.options ?? [])..shuffle();
+            _shuffledOptions = List<String>.from(quest.options ?? [])
+              ..shuffle();
           });
         }
         if (state is WritingGameComplete) {
@@ -177,8 +178,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<WritingBloc>().add(const WritingHintUsed()),
           child: activeQuest == null
               ? const SizedBox()
               : Stack(
@@ -211,13 +214,16 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                 isDark: isDark,
                                 onSlot: (key, data) =>
                                     _onSlot(key, data, isAnswered),
-                                onClearSlot: (key) => _clearSlot(key, isAnswered),
+                                onClearSlot: (key) =>
+                                    _clearSlot(key, isAnswered),
                               ),
                             ),
                             SizedBox(height: 24.h),
 
                             EssayDraftingDataStream(
-                              items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
+                              items: _shuffledOptions.isNotEmpty
+                                  ? _shuffledOptions
+                                  : options,
                               slots: _blueprintSlots,
                               color: theme.primaryColor,
                               isDark: isDark,
@@ -261,17 +267,20 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 160.h),
+                            SizedBox(height: 160.h),
                           ],
                         ),
                       ),
                     ),
                     if (_pendingSubmit && !isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText: _blueprintSlots.isNotEmpty && _blueprintSlots.values.first != null
+                        expectedText:
+                            _blueprintSlots.isNotEmpty &&
+                                _blueprintSlots.values.first != null
                             ? _blueprintSlots.values.first!
                             : "",
-                        displayText: "Type the first point to finalize the outline",
+                        displayText:
+                            "Type the first point to finalize the outline",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),

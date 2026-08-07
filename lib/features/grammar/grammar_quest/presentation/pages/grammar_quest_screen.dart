@@ -104,14 +104,17 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
-        
+
         String targetText = "";
         if (quest != null) {
-            if (quest.options != null && quest.options!.isNotEmpty && quest.correctAnswerIndex != null && quest.correctAnswerIndex! < quest.options!.length) {
-                targetText = quest.options![quest.correctAnswerIndex!];
-            } else {
-                targetText = quest.correctAnswer ?? quest.sentence ?? "";
-            }
+          if (quest.options != null &&
+              quest.options!.isNotEmpty &&
+              quest.correctAnswerIndex != null &&
+              quest.correctAnswerIndex! < quest.options!.length) {
+            targetText = quest.options![quest.correctAnswerIndex!];
+          } else {
+            targetText = quest.correctAnswer ?? quest.sentence ?? "";
+          }
         }
 
         return GrammarBaseLayout(
@@ -122,8 +125,10 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -145,7 +150,9 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                 fontFamily: 'Outfit',
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.bold,
-                                color: _isCorrect == true ? Colors.green : Colors.red,
+                                color: _isCorrect == true
+                                    ? Colors.green
+                                    : Colors.red,
                               ),
                             ),
                           ),

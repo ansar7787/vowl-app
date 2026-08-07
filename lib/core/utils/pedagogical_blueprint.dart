@@ -214,16 +214,9 @@ class PedagogicalBlueprintMap {
     ),
     'elitemastery': PedagogicalBlueprint(
       radarAxes: ['Speed', 'Accuracy', 'Memory', 'Synthesis'],
-      tier1: [
-        GameSubtype.speedSpelling,
-      ],
-      tier2: [
-        GameSubtype.idiomMatch,
-      ],
-      tier3: [
-        GameSubtype.storyBuilder,
-        GameSubtype.accentShadowing,
-      ],
+      tier1: [GameSubtype.speedSpelling],
+      tier2: [GameSubtype.idiomMatch],
+      tier3: [GameSubtype.storyBuilder, GameSubtype.accentShadowing],
       tier1Label: 'TIER 1: SPEED',
       tier2Label: 'TIER 2: ACCURACY',
       tier3Label: 'TIER 3: SYNTHESIS',

@@ -30,7 +30,8 @@ class DescribeSituationInstruction extends StatelessWidget {
             child: Text(
               context.tr(
                 'games.describeSituationWriting_instruction',
-                fallback: instruction ?? "EXPAND EMOJIS TO INJECT NARRATIVE KEYWORDS",
+                fallback:
+                    instruction ?? "EXPAND EMOJIS TO INJECT NARRATIVE KEYWORDS",
               ),
               textAlign: TextAlign.center,
               style: TextStyle(

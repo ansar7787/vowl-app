@@ -114,7 +114,8 @@ class ListeningError extends ListeningState implements GameErrorState {
 }
 
 /// Player successfully completed all questions in the level.
-class ListeningGameComplete extends ListeningState implements GameCompleteState {
+class ListeningGameComplete extends ListeningState
+    implements GameCompleteState {
   @override
   final int xpEarned;
   @override

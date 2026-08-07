@@ -164,7 +164,8 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
           context: context,
           message: context.tr(
             'store.purchase_verify_failed',
-            fallback: 'Payment verified but failed to grant items. Please contact support.',
+            fallback:
+                'Payment verified but failed to grant items. Please contact support.',
           ),
           type: CustomSnackBarType.error,
         );
@@ -182,13 +183,17 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
       if (response.code == Razorpay.PAYMENT_CANCELLED) {
         CustomSnackBar.show(
           context: context,
-          message: context.tr('store.purchase_cancelled', fallback: 'Purchase cancelled.'),
+          message: context.tr(
+            'store.purchase_cancelled',
+            fallback: 'Purchase cancelled.',
+          ),
           type: CustomSnackBarType.info,
         );
       } else {
         CustomSnackBar.show(
           context: context,
-          message: response.message ??
+          message:
+              response.message ??
               context.tr(
                 'store.purchase_failed',
                 fallback: 'Purchase failed. Please try again.',
@@ -601,7 +606,11 @@ class _PremiumStoreBottomSheetState extends State<PremiumStoreBottomSheet> {
                           borderRadius: BorderRadius.circular(16.r),
                         ),
                         child: Center(
-                          child: Icon(_getIconFromName(pack.iconName), color: color, size: 32.r),
+                          child: Icon(
+                            _getIconFromName(pack.iconName),
+                            color: color,
+                            size: 32.r,
+                          ),
                         ),
                       ),
                       SizedBox(width: 16.w),

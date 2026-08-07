@@ -40,7 +40,7 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
 
   double _tiltValue = 0.0;
   bool _isSnapped = false;
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -187,8 +187,10 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -338,13 +340,19 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                                     SizedBox(height: gapTilt),
                                     if (_isSnapped && !_isAnswered)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: quest.sampleAnswer ?? "",
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true, doTheyMatch),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false, doTheyMatch),
+                                        expectedText: quest.sampleAnswer ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              doTheyMatch,
+                                            ),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              doTheyMatch,
+                                            ),
                                       ),
 
                                     SizedBox(height: gapBottom),

@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
           setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
         }
       });
-      
+
       kidsResult.fold((_) {}, (data) {
         final sorted = List<UserEntity>.from(data.users)
           ..sort((a, b) {
@@ -258,7 +258,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mode: CommandPodMode.kidsOnly,
                               ),
                               SizedBox(height: 14.h),
-                              KidsGlobalProgressCard(user: user, globalRank: _kidsGlobalRank),
+                              KidsGlobalProgressCard(
+                                user: user,
+                                globalRank: _kidsGlobalRank,
+                              ),
                             ],
                           ),
                         ),

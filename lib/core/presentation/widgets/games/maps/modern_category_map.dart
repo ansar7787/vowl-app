@@ -433,12 +433,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                               // here: each node's perpetual float animation
                               // no longer forces Flutter to walk/repaint
                               // every sibling node alongside it.
-                                Column(
-                                  children: [
-                                    ...List.generate(_totalLevels, (index) {
-                                      final levelNumber = index + 1;
-                                      
-                                      final point = points[index];
+                              Column(
+                                children: [
+                                  ...List.generate(_totalLevels, (index) {
+                                    final levelNumber = index + 1;
+
+                                    final point = points[index];
 
                                     return Container(
                                       height: rowSpacing,
@@ -988,123 +988,115 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         'category_map.mascot_marker_action',
         fallback: 'Get a cheer from your mascot',
       ),
-      child:
-          GestureDetector(
-                onTap: () {
-                  _buddyMessageTimer?.cancel();
-                  final mascotName = _formatMascotName(mascotId);
+      child: GestureDetector(
+        onTap: () {
+          _buddyMessageTimer?.cancel();
+          final mascotName = _formatMascotName(mascotId);
 
-                  final messageKeys = [
-                    'category_map.cheer_unstoppable',
-                    'category_map.cheer_impressed',
-                    'category_map.cheer_magic',
-                    'category_map.cheer_genius',
-                    'category_map.cheer_rock',
-                    'category_map.cheer_winning',
-                    'category_map.cheer_boom',
-                    'category_map.cheer_smart',
-                    'category_map.cheer_momentum',
-                    'category_map.cheer_breathtaking',
-                  ];
-                  const fallbacks = [
-                    "Level {0}! You're unstoppable, Superstar! ⭐",
-                    "Level {0}! {1} is impressed! 🚀",
-                    "Level {0}! Pure linguistic magic! ✨",
-                    "Level {0}! Absolute genius energy! 🧠",
-                    "Level {0}! You rock this stage! 🎸",
-                    "Level {0}! We're winning big! 🏆",
-                    "Level {0}! Boom! Perfect progress! 💥",
-                    "Level {0}! {1} says: You're so smart! 🦉",
-                    "Level {0}! Keep that momentum! 🏃‍♂️",
-                    "Level {0}! Wow! Simply breathtaking! 🎈",
-                  ];
-                  final pick = math.Random().nextInt(messageKeys.length);
-                  final message = context.tr(
-                    messageKeys[pick],
-                    args: [unlockedLevels.toString(), mascotName],
-                    fallback: fallbacks[pick]
-                        .replaceAll('{0}', unlockedLevels.toString())
-                        .replaceAll('{1}', mascotName),
-                  );
+          final messageKeys = [
+            'category_map.cheer_unstoppable',
+            'category_map.cheer_impressed',
+            'category_map.cheer_magic',
+            'category_map.cheer_genius',
+            'category_map.cheer_rock',
+            'category_map.cheer_winning',
+            'category_map.cheer_boom',
+            'category_map.cheer_smart',
+            'category_map.cheer_momentum',
+            'category_map.cheer_breathtaking',
+          ];
+          const fallbacks = [
+            "Level {0}! You're unstoppable, Superstar! ⭐",
+            "Level {0}! {1} is impressed! 🚀",
+            "Level {0}! Pure linguistic magic! ✨",
+            "Level {0}! Absolute genius energy! 🧠",
+            "Level {0}! You rock this stage! 🎸",
+            "Level {0}! We're winning big! 🏆",
+            "Level {0}! Boom! Perfect progress! 💥",
+            "Level {0}! {1} says: You're so smart! 🦉",
+            "Level {0}! Keep that momentum! 🏃‍♂️",
+            "Level {0}! Wow! Simply breathtaking! 🎈",
+          ];
+          final pick = math.Random().nextInt(messageKeys.length);
+          final message = context.tr(
+            messageKeys[pick],
+            args: [unlockedLevels.toString(), mascotName],
+            fallback: fallbacks[pick]
+                .replaceAll('{0}', unlockedLevels.toString())
+                .replaceAll('{1}', mascotName),
+          );
 
-                  setState(() {
-                    _buddyMessage = message;
-                    _touchAuraColor = theme.primaryColor;
-                  });
+          setState(() {
+            _buddyMessage = message;
+            _touchAuraColor = theme.primaryColor;
+          });
 
-                  final cleanMessage = message
-                      .replaceAll(
-                        RegExp(
-                          r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2B50}]',
-                          unicode: true,
-                        ),
-                        '',
-                      )
-                      .trim();
-                  di.sl<TtsService>().speak(cleanMessage);
-
-                  HapticFeedback.lightImpact();
-                  _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
-                    if (mounted) setState(() => _buddyMessage = null);
-                  });
-                },
-                child: ExcludeSemantics(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (_buddyMessage != null)
-                        Padding(
-                          padding: EdgeInsets.only(bottom: 8.h),
-                          child:
-                              Container(
-                                constraints: BoxConstraints(maxWidth: 220.w),
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 14.w,
-                                  vertical: 8.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor,
-                                  borderRadius: BorderRadius.circular(15.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black26,
-                                      blurRadius: 10.r,
-                                      offset: Offset(0, 5.h),
-                                    ),
-                                  ],
-                                ),
-                                child: Text(
-                                  _buddyMessage!,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    color: Colors.white,
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ).animate().scale(
-                                curve: Curves.elasticOut,
-                                duration: 500.ms,
-                              ),
-                        ),
-                      VowlMascot(
-                        size: 55.r,
-                        useFloatingAnimation: true,
-                        mascotId: mascotId,
-                      ).animate().scale(
-                        curve: Curves.elasticOut,
-                        duration: 500.ms,
-                      ),
-                      CustomPaint(
-                        size: Size(12.w, 8.h),
-                        painter: TrianglePainter(color: theme.primaryColor),
-                      ),
-                    ],
-                  ),
+          final cleanMessage = message
+              .replaceAll(
+                RegExp(
+                  r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}\u{2B50}]',
+                  unicode: true,
                 ),
+                '',
+              )
+              .trim();
+          di.sl<TtsService>().speak(cleanMessage);
+
+          HapticFeedback.lightImpact();
+          _buddyMessageTimer = Timer(const Duration(seconds: 4), () {
+            if (mounted) setState(() => _buddyMessage = null);
+          });
+        },
+        child: ExcludeSemantics(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (_buddyMessage != null)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 8.h),
+                  child: Container(
+                    constraints: BoxConstraints(maxWidth: 220.w),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 8.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: theme.primaryColor,
+                      borderRadius: BorderRadius.circular(15.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 10.r,
+                          offset: Offset(0, 5.h),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      _buddyMessage!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
+                ),
+              VowlMascot(
+                size: 55.r,
+                useFloatingAnimation: true,
+                mascotId: mascotId,
+              ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
+              CustomPaint(
+                size: Size(12.w, 8.h),
+                painter: TrianglePainter(color: theme.primaryColor),
               ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

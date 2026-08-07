@@ -136,28 +136,32 @@ class _SpeakingSelfEvaluationControlsState
       _isPlaying = true;
       _playingContext = "Playing comparison...";
     });
-    
+
     try {
-      await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
+      await _soundService
+          .playTts(widget.expectedText)
+          .timeout(const Duration(seconds: 45));
     } catch (e) {
       // Ignore TTS errors
     }
-    
+
     if (sessionId != _playbackSessionId) return;
     await Future.delayed(const Duration(milliseconds: 1200));
     if (sessionId != _playbackSessionId) return;
-    
+
     if (mounted) {
       try {
-        await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
+        await _soundService
+            .playFile(_recordingPath!)
+            .timeout(const Duration(seconds: 45));
       } catch (e) {
         // Ignore file playback errors
       }
-      
+
       if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     }
-    
+
     if (mounted && sessionId == _playbackSessionId) {
       setState(() => _isPlaying = false);
     }
@@ -173,7 +177,9 @@ class _SpeakingSelfEvaluationControlsState
       _playingContext = "Playing native voice...";
     });
     try {
-      await _soundService.playTts(widget.expectedText).timeout(const Duration(seconds: 45));
+      await _soundService
+          .playTts(widget.expectedText)
+          .timeout(const Duration(seconds: 45));
       if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
@@ -195,7 +201,9 @@ class _SpeakingSelfEvaluationControlsState
       _playingContext = "Playing your voice...";
     });
     try {
-      await _soundService.playFile(_recordingPath!).timeout(const Duration(seconds: 45));
+      await _soundService
+          .playFile(_recordingPath!)
+          .timeout(const Duration(seconds: 45));
       if (sessionId != _playbackSessionId) return;
       await Future.delayed(const Duration(milliseconds: 1200));
     } catch (e) {
@@ -237,28 +245,38 @@ class _SpeakingSelfEvaluationControlsState
                 _startRecording();
               }
             },
-            child: Container(
-              width: 80.r,
-              height: 80.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _isRecording ? Colors.redAccent : widget.primaryColor,
-                boxShadow: [
-                  BoxShadow(
-                    color: (_isRecording ? Colors.redAccent : widget.primaryColor)
-                        .withValues(alpha: 0.4),
-                    blurRadius: 20,
-                    spreadRadius: _isRecording ? 8 : 0,
-                  ),
-                ],
-              ),
-              child: Icon(
-                _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
-                color: Colors.white,
-                size: 40.r,
-              ),
-            ).animate(target: _isRecording ? 1 : 0).scale(
-                begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
+            child:
+                Container(
+                      width: 80.r,
+                      height: 80.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: _isRecording
+                            ? Colors.redAccent
+                            : widget.primaryColor,
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                (_isRecording
+                                        ? Colors.redAccent
+                                        : widget.primaryColor)
+                                    .withValues(alpha: 0.4),
+                            blurRadius: 20,
+                            spreadRadius: _isRecording ? 8 : 0,
+                          ),
+                        ],
+                      ),
+                      child: Icon(
+                        _isRecording ? Icons.stop_rounded : Icons.mic_rounded,
+                        color: Colors.white,
+                        size: 40.r,
+                      ),
+                    )
+                    .animate(target: _isRecording ? 1 : 0)
+                    .scale(
+                      begin: const Offset(1, 1),
+                      end: const Offset(1.1, 1.1),
+                    ),
           ),
           SizedBox(height: 12.h),
           Text(
@@ -288,21 +306,23 @@ class _SpeakingSelfEvaluationControlsState
         ] else ...[
           if (_isPlaying) ...[
             Container(
-              height: 70.r,
-              width: 70.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: widget.primaryColor.withValues(alpha: 0.15),
-              ),
-              child: Center(
-                child: Icon(
-                  Icons.graphic_eq_rounded,
-                  color: widget.primaryColor,
-                  size: 32.sp,
-                ),
-              ),
-            )
-                .animate(onPlay: (controller) => controller.repeat(reverse: true))
+                  height: 70.r,
+                  width: 70.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: widget.primaryColor.withValues(alpha: 0.15),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.graphic_eq_rounded,
+                      color: widget.primaryColor,
+                      size: 32.sp,
+                    ),
+                  ),
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
                 .scale(
                   begin: const Offset(0.9, 0.9),
                   end: const Offset(1.15, 1.15),
@@ -312,15 +332,18 @@ class _SpeakingSelfEvaluationControlsState
                 .fade(begin: 0.6, end: 1.0),
             SizedBox(height: 12.h),
             Text(
-              _playingContext,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w600,
-                color: widget.primaryColor,
-              ),
-            ).animate(onPlay: (controller) => controller.repeat(reverse: true)).fade(
-                begin: 0.5, end: 1.0, duration: 800.ms),
+                  _playingContext,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    color: widget.primaryColor,
+                  ),
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .fade(begin: 0.5, end: 1.0, duration: 800.ms),
           ] else ...[
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -348,8 +371,11 @@ class _SpeakingSelfEvaluationControlsState
                           ),
                         ),
                         child: Center(
-                          child: Icon(Icons.play_arrow_rounded,
-                              color: widget.primaryColor, size: 36.sp),
+                          child: Icon(
+                            Icons.play_arrow_rounded,
+                            color: widget.primaryColor,
+                            size: 36.sp,
+                          ),
                         ),
                       ),
                     ),
@@ -410,8 +436,6 @@ class _SpeakingSelfEvaluationControlsState
             ),
           ),
         ],
-
-
       ],
     );
   }

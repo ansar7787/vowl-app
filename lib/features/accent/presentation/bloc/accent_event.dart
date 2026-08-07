@@ -77,7 +77,7 @@ class AccentTutorPass extends AccentEvent {
 class AccentSpeakConfirmed extends AccentEvent {
   final int bonusCoins;
   const AccentSpeakConfirmed(this.bonusCoins);
-  
+
   @override
   List<Object?> get props => [bonusCoins];
 }

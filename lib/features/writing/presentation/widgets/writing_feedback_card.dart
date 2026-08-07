@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -48,11 +48,19 @@ class WritingFeedbackCard extends StatelessWidget {
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
         : (isFinalFailure
               ? (lives == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+                    ? context
+                          .tr('common.see_results', fallback: 'See Results')
+                          .toUpperCase()
+                    : context
+                          .tr('common.continue_text', fallback: 'Continue')
+                          .toUpperCase())
+              : context
+                    .tr('games.try_again', fallback: 'Try Again')
+                    .toUpperCase());
 
-    final String? explanation = showExplanation ? s.currentQuest.explanation : null;
+    final String? explanation = showExplanation
+        ? s.currentQuest.explanation
+        : null;
 
     return Container(
       width: double.infinity,
@@ -72,7 +80,7 @@ class WritingFeedbackCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           _Header(icon: icon, title: title, gradient: primaryGradient),
-          
+
           if (explanation != null) ...[
             SizedBox(height: 16.h),
             _ExplanationCard(
@@ -81,7 +89,7 @@ class WritingFeedbackCard extends StatelessWidget {
               isDark: isDark,
             ),
           ],
-          
+
           if (showExplanation) ...[
             if (s.currentQuest.sampleAnswer != null)
               Padding(
@@ -97,7 +105,8 @@ class WritingFeedbackCard extends StatelessWidget {
                   isDark: isDark,
                 ),
               ),
-            if (s.currentQuest.requiredPoints != null && s.currentQuest.requiredPoints!.isNotEmpty)
+            if (s.currentQuest.requiredPoints != null &&
+                s.currentQuest.requiredPoints!.isNotEmpty)
               Padding(
                 padding: EdgeInsets.only(top: 12.h),
                 child: PedagogicalRuleBox(
@@ -204,7 +213,9 @@ class _ExplanationCardState extends State<_ExplanationCard> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
             decoration: BoxDecoration(
-              color: widget.color.withValues(alpha: widget.isDark ? 0.08 : 0.05),
+              color: widget.color.withValues(
+                alpha: widget.isDark ? 0.08 : 0.05,
+              ),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: widget.color.withValues(alpha: 0.2),
@@ -257,7 +268,9 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
-                    color: widget.isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF475569),
+                    color: widget.isDark
+                        ? Colors.white.withValues(alpha: 0.8)
+                        : const Color(0xFF475569),
                     height: 1.4,
                   ),
                 ),
@@ -267,7 +280,12 @@ class _ExplanationCardState extends State<_ExplanationCard> {
         )
         .animate()
         .fadeIn(delay: 300.ms)
-        .slideY(begin: 0.2, end: 0, duration: 400.ms, curve: Curves.easeOutBack);
+        .slideY(
+          begin: 0.2,
+          end: 0,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        );
   }
 }
 

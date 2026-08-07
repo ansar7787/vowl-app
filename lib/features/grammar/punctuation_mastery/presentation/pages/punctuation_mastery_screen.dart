@@ -93,21 +93,21 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingTyping = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingTyping = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   @override
@@ -156,12 +156,14 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
         String cleanTargetSentence = "";
         if (quest != null) {
-            final sentence = quest.correctAnswer ?? quest.sentence ?? "";
-            if (sentence.isNotEmpty) {
-                cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
-            } else if (_assembledSentence != null) {
-                cleanTargetSentence = _assembledSentence!;
-            }
+          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          if (sentence.isNotEmpty) {
+            cleanTargetSentence = sentence
+                .replaceAll('[', '')
+                .replaceAll(']', '');
+          } else if (_assembledSentence != null) {
+            cleanTargetSentence = _assembledSentence!;
+          }
         }
 
         return GrammarBaseLayout(
@@ -172,8 +174,10 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Required for Stack Overlays
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -202,7 +206,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
                             // Context Card with Sticker Slots
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Container(
                                     width: double.infinity,
                                     padding: EdgeInsets.all(
@@ -211,7 +217,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                     decoration: BoxDecoration(
                                       color: isDark
                                           ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.03),
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
                                       borderRadius: BorderRadius.circular(
                                         isCompact ? 18.r : 28.r,
                                       ),
@@ -272,7 +280,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                       gradient: LinearGradient(
                                         colors: [
                                           theme.primaryColor,
-                                          theme.primaryColor.withValues(alpha: 0.8),
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
                                         ],
                                       ),
                                       boxShadow: [
@@ -306,7 +316,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                         );
                       },
                     ),
-                    if (_pendingTyping && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingTyping &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,

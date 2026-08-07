@@ -39,7 +39,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _isFirstStagePassed = false;
-  List<int> _wrongIndices = []; 
+  List<int> _wrongIndices = [];
   String? _lastQuestId;
   int _lastLives = 3;
 
@@ -83,20 +83,23 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         _shuffledOptions = mapped.map((e) => e.value).toList();
         _originalIndices = mapped.map((e) => e.key).toList();
         _selectedIndex = null;
-        _wrongIndices = []; 
+        _wrongIndices = [];
         _isFirstStagePassed = false;
       });
     } else {
       _shuffledOptions = mapped.map((e) => e.value).toList();
       _originalIndices = mapped.map((e) => e.key).toList();
       _selectedIndex = null;
-      _wrongIndices = []; 
+      _wrongIndices = [];
       _isFirstStagePassed = false;
     }
   }
 
   void _onOptionSelected(int shuffledIndex, int? correctOriginalIndex) {
-    if (_isAnswered || _isFirstStagePassed || _wrongIndices.contains(shuffledIndex)) return;
+    if (_isAnswered ||
+        _isFirstStagePassed ||
+        _wrongIndices.contains(shuffledIndex))
+      return;
 
     final actualOriginalIndex = _originalIndices[shuffledIndex];
     final isCorrect = actualOriginalIndex == correctOriginalIndex;
@@ -173,7 +176,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         } else if (state is EliteMasteryLoaded) {
           final livesChanged = (state.livesRemaining > _lastLives);
 
-          if (_lastQuestId != state.currentQuest.id || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (_lastQuestId != state.currentQuest.id ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastQuestId = state.currentQuest.id;
               _isAnswered = false;
@@ -198,7 +203,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             });
           }
           _lastLives = state.livesRemaining;
-          
+
           if (state.removedIndices.isNotEmpty) {
             setState(() {
               for (final originalIdx in state.removedIndices) {
@@ -213,8 +218,8 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
       },
       builder: (context, state) {
         final quest = (state is EliteMasteryLoaded) ? state.currentQuest : null;
-        
-        final expectedText = quest != null && _selectedIndex != null 
+
+        final expectedText = quest != null && _selectedIndex != null
             ? _shuffledOptions[_selectedIndex!]
             : "";
 
@@ -233,11 +238,11 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               title: _isFirstStagePassed || _isAnswered
                   ? ""
                   : quest?.instruction.isNotEmpty == true
-                      ? quest!.instruction
-                      : context.tr(
-                          'games.idiomMatch_instruction',
-                          fallback: 'Select the matching idiom.',
-                        ),
+                  ? quest!.instruction
+                  : context.tr(
+                      'games.idiomMatch_instruction',
+                      fallback: 'Select the matching idiom.',
+                    ),
               titleIcon: Icons.extension_rounded,
               visualConfig: quest?.visualConfig,
               onContinue: () {
@@ -276,7 +281,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                 expectedText: expectedText,
                 primaryColor: theme.primaryColor,
                 onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(false), // Penalize if user evaluates poorly
+                onSkipped: () => _submitVerbalEvaluation(
+                  false,
+                ), // Penalize if user evaluates poorly
               ),
           ],
         );
@@ -343,10 +350,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
                               Colors.white.withValues(alpha: 0.1),
                               Colors.white.withValues(alpha: 0.02),
                             ]
-                          : [
-                              Colors.white,
-                              Colors.white.withValues(alpha: 0.7),
-                            ],
+                          : [Colors.white, Colors.white.withValues(alpha: 0.7)],
                     ),
                     border: Border.all(
                       color: isDark

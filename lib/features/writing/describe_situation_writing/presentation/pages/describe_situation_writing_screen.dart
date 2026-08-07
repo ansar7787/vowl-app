@@ -152,7 +152,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     if (!['.', '!', '?'].contains(lastChar)) {
       CustomSnackBar.show(
         context: context,
-        message: "Please end your description with proper punctuation (., !, or ?).",
+        message:
+            "Please end your description with proper punctuation (., !, or ?).",
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
@@ -240,7 +241,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     if (language != 'en') {
       CustomSnackBar.show(
         context: context,
-        message: "Your answer must be written in English. Please write a natural sentence!",
+        message:
+            "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();

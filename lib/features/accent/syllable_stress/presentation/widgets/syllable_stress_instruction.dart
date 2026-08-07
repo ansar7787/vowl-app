@@ -44,7 +44,11 @@ class SyllableStressInstruction extends StatelessWidget {
             ),
           ),
           SizedBox(width: 8.w),
-          Icon(Icons.speaker_group_rounded, size: 14.r, color: Colors.transparent),
+          Icon(
+            Icons.speaker_group_rounded,
+            size: 14.r,
+            color: Colors.transparent,
+          ),
         ],
       ),
     );

@@ -6,8 +6,7 @@ class DigitalInkService {
   final DigitalInkRecognizer _recognizer;
   final String _language = 'en'; // English model
 
-  DigitalInkService()
-      : _recognizer = DigitalInkRecognizer(languageCode: 'en');
+  DigitalInkService() : _recognizer = DigitalInkRecognizer(languageCode: 'en');
 
   /// Downloads the Digital Ink model for the specified language if it's not already downloaded.
   Future<bool> downloadModel() async {
@@ -19,7 +18,10 @@ class DigitalInkService {
       }
       return true;
     } catch (e) {
-      di.sl<AppLogger>().error('DigitalInkService: Failed to download model', error: e);
+      di.sl<AppLogger>().error(
+        'DigitalInkService: Failed to download model',
+        error: e,
+      );
       return false;
     }
   }
@@ -40,7 +42,10 @@ class DigitalInkService {
       final candidates = await _recognizer.recognize(ink);
       return candidates.map((c) => c.text).toList();
     } catch (e) {
-      di.sl<AppLogger>().error('DigitalInkService: Failed to recognize ink', error: e);
+      di.sl<AppLogger>().error(
+        'DigitalInkService: Failed to recognize ink',
+        error: e,
+      );
       return [];
     }
   }

@@ -85,7 +85,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     final selected = _pendingSelectedOption!;
     final correct = quest.correctAnswer ?? "";
     final bool isAnsCorrect = selected == correct;
-    
+
     setState(() {
       _selectedOption = _pendingSelectedOption;
     });
@@ -155,8 +155,10 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -178,7 +180,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                             FixTheSentenceDigitalBlackboard(
                               fullText: quest.passage ?? "",
                               targetWord: quest.missingWord ?? "",
-                              selectedReplacement: _selectedOption ?? _pendingSelectedOption,
+                              selectedReplacement:
+                                  _selectedOption ?? _pendingSelectedOption,
                               isWiped: _isWiped,
                               erasePoints: _erasePoints,
                               onErase: (pos) => _onErase(pos, isAnswered),
@@ -195,13 +198,18 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
 
                             if (_isWiped)
                               FixTheSentenceCorrectionOptions(
-                                options: _shuffledOptions ?? quest.options ?? [],
+                                options:
+                                    _shuffledOptions ?? quest.options ?? [],
                                 correct: quest.correctAnswer ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 onSelect: (selected, correct) {
-                                  if (isAnswered || _pendingSelectedOption != null) return;
-                                  setState(() => _pendingSelectedOption = selected);
+                                  if (isAnswered ||
+                                      _pendingSelectedOption != null)
+                                    return;
+                                  setState(
+                                    () => _pendingSelectedOption = selected,
+                                  );
                                 },
                               ),
 

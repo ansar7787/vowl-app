@@ -663,7 +663,10 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 SizedBox(
                                                   width: 24.sp,
                                                   height: 24.sp,
-                                                  child: const VowlButtonSpinner(color: Colors.white),
+                                                  child:
+                                                      const VowlButtonSpinner(
+                                                        color: Colors.white,
+                                                      ),
                                                 ),
                                                 SizedBox(width: 12.w),
                                                 Text(

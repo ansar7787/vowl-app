@@ -25,8 +25,8 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
     // would leave the completer dangling, freezing the RefreshIndicator
     // spinner indefinitely with no recovery path for the user.
     try {
-      final result = event.isKids 
-          ? await repository.getTopKidsUsers() 
+      final result = event.isKids
+          ? await repository.getTopKidsUsers()
           : await repository.getTopUsers();
 
       result.fold((failure) => emit(LeaderboardError(failure.message)), (data) {
@@ -58,7 +58,13 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
             }
           });
 
-        emit(LeaderboardLoaded(sortedUsers, data.lastUpdated, isKids: event.isKids));
+        emit(
+          LeaderboardLoaded(
+            sortedUsers,
+            data.lastUpdated,
+            isKids: event.isKids,
+          ),
+        );
       });
     } finally {
       // Always complete — whether the fetch succeeded, failed with a Left,

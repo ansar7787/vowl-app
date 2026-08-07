@@ -40,9 +40,17 @@ class IntonationMimicVerticalFader extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _buildPitchOption(options[topIndex], topIndex, Icons.arrow_upward_rounded),
+              _buildPitchOption(
+                options[topIndex],
+                topIndex,
+                Icons.arrow_upward_rounded,
+              ),
               SizedBox(height: 12.h),
-              _buildPitchOption(options[bottomIndex], bottomIndex, Icons.arrow_downward_rounded),
+              _buildPitchOption(
+                options[bottomIndex],
+                bottomIndex,
+                Icons.arrow_downward_rounded,
+              ),
             ],
           ),
         ),

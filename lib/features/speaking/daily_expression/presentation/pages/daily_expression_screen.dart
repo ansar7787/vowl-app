@@ -170,8 +170,10 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -354,8 +356,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                                                             primaryColor: theme
                                                                 .primaryColor,
                                                             isDark: isDark,
-                                                            isListening:
-                                                                false,
+                                                            isListening: false,
                                                           ),
                                                     ),
                                                   ),
@@ -382,13 +383,13 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
 
                                     if (!_isAnswered && _scratchProgress >= 1.0)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: _targetExpression,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                        expectedText: _targetExpression,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
                                     SizedBox(height: gapBottom),
                                   ],

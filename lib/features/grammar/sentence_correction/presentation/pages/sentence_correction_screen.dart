@@ -276,145 +276,145 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
               quest == null
                   ? const SizedBox()
                   : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    SentenceCorrectionInstruction(
-                      primaryColor: theme.primaryColor,
-                    ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      "Tap the incorrect word to diagnose, then choose the repair option.",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-
-                    // Diagnostic Context Card
-                    Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 24.w),
-                          child: Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.all(24.r),
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.05)
-                                  : Colors.black.withValues(alpha: 0.03),
-                              borderRadius: BorderRadius.circular(32.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.2,
-                                ),
-                                width: 1.5,
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.05,
-                                  ),
-                                  blurRadius: 40,
-                                  spreadRadius: 5,
-                                ),
-                              ],
-                            ),
-                            child: Wrap(
-                              alignment: WrapAlignment.center,
-                              spacing: 10.w,
-                              runSpacing: 16.h,
-                              children: List.generate(words.length, (i) {
-                                return SentenceCorrectionDiagnosticWord(
-                                  text: words[i],
-                                  index: i,
-                                  isSuspected: _selectedWordIndex == i,
-                                  isCorrectZap:
-                                      _isAnswered &&
-                                      _isCorrect == true &&
-                                      correctIndices.contains(i),
-                                  isWrongZap:
-                                      _isAnswered &&
-                                      _isCorrect == false &&
-                                      _selectedWordIndex == i,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  onTap: () => _onWordTap(i),
-                                );
-                              }),
-                            ),
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(duration: 800.ms)
-                        .slideY(begin: 0.1, end: 0),
-
-                    SizedBox(height: 20.h),
-
-                    // Scanner Status
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                              width: 10.r,
-                              height: 10.r,
-                              decoration: BoxDecoration(
-                                color: theme.primaryColor,
-                                shape: BoxShape.circle,
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scale(
-                              begin: const Offset(1, 1),
-                              end: const Offset(1.8, 1.8),
-                              duration: 1.seconds,
-                            )
-                            .shimmer(color: theme.primaryColor),
-                        SizedBox(width: 14.w),
+                        SizedBox(height: 10.h),
+                        SentenceCorrectionInstruction(
+                          primaryColor: theme.primaryColor,
+                        ),
+                        SizedBox(height: 12.h),
                         Text(
-                          "SCANNER ARMED: SEEKING GLITCHES",
+                          "Tap the incorrect word to diagnose, then choose the repair option.",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: theme.primaryColor,
-                            letterSpacing: 2,
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white60 : Colors.black54,
                           ),
                         ),
+                        SizedBox(height: 16.h),
+
+                        // Diagnostic Context Card
+                        Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(24.r),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? Colors.white.withValues(alpha: 0.05)
+                                      : Colors.black.withValues(alpha: 0.03),
+                                  borderRadius: BorderRadius.circular(32.r),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.2,
+                                    ),
+                                    width: 1.5,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.05,
+                                      ),
+                                      blurRadius: 40,
+                                      spreadRadius: 5,
+                                    ),
+                                  ],
+                                ),
+                                child: Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: 10.w,
+                                  runSpacing: 16.h,
+                                  children: List.generate(words.length, (i) {
+                                    return SentenceCorrectionDiagnosticWord(
+                                      text: words[i],
+                                      index: i,
+                                      isSuspected: _selectedWordIndex == i,
+                                      isCorrectZap:
+                                          _isAnswered &&
+                                          _isCorrect == true &&
+                                          correctIndices.contains(i),
+                                      isWrongZap:
+                                          _isAnswered &&
+                                          _isCorrect == false &&
+                                          _selectedWordIndex == i,
+                                      isDark: isDark,
+                                      primaryColor: theme.primaryColor,
+                                      onTap: () => _onWordTap(i),
+                                    );
+                                  }),
+                                ),
+                              ),
+                            )
+                            .animate()
+                            .fadeIn(duration: 800.ms)
+                            .slideY(begin: 0.1, end: 0),
+
+                        SizedBox(height: 20.h),
+
+                        // Scanner Status
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                                  width: 10.r,
+                                  height: 10.r,
+                                  decoration: BoxDecoration(
+                                    color: theme.primaryColor,
+                                    shape: BoxShape.circle,
+                                  ),
+                                )
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scale(
+                                  begin: const Offset(1, 1),
+                                  end: const Offset(1.8, 1.8),
+                                  duration: 1.seconds,
+                                )
+                                .shimmer(color: theme.primaryColor),
+                            SizedBox(width: 14.w),
+                            Text(
+                              "SCANNER ARMED: SEEKING GLITCHES",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w900,
+                                color: theme.primaryColor,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        // Options Panel
+                        if (_selectedWordIndex != null) ...[
+                          SizedBox(height: 24.h),
+                          SentenceCorrectionOptionsPanel(
+                            options: _shuffledOptions ?? [],
+                            selectedOption: _selectedOption,
+                            isAnswered: _isAnswered,
+                            isDark: isDark,
+                            primaryColor: theme.primaryColor,
+                            onOptionSelect: (option) {
+                              _hapticService.selection();
+                              setState(() => _selectedOption = option);
+                            },
+                            onConfirm: () =>
+                                _confirmRepair(correctIndices, quest, words),
+                          ),
+                        ],
+
+                        // Correction Feedback
+                        if (_isAnswered && _isCorrect == false) ...[
+                          SizedBox(height: 24.h),
+                          SentenceCorrectionFeedback(
+                            correction: quest.correctedPart ?? "",
+                            primaryColor: theme.primaryColor,
+                          ),
+                        ],
+
+                        SizedBox(height: 20.h),
                       ],
                     ),
-
-                    // Options Panel
-                    if (_selectedWordIndex != null) ...[
-                      SizedBox(height: 24.h),
-                      SentenceCorrectionOptionsPanel(
-                        options: _shuffledOptions ?? [],
-                        selectedOption: _selectedOption,
-                        isAnswered: _isAnswered,
-                        isDark: isDark,
-                        primaryColor: theme.primaryColor,
-                        onOptionSelect: (option) {
-                          _hapticService.selection();
-                          setState(() => _selectedOption = option);
-                        },
-                        onConfirm: () =>
-                            _confirmRepair(correctIndices, quest, words),
-                      ),
-                    ],
-
-                    // Correction Feedback
-                    if (_isAnswered && _isCorrect == false) ...[
-                      SizedBox(height: 24.h),
-                      SentenceCorrectionFeedback(
-                        correction: quest.correctedPart ?? "",
-                        primaryColor: theme.primaryColor,
-                      ),
-                    ],
-
-                    SizedBox(height: 20.h),
-                  ],
-                ),
               if (_isFirstStagePassed && !_isAnswered && quest != null)
                 TypeToConfirmOverlay(
                   expectedText: quest.correctAnswer ?? _selectedOption ?? '',

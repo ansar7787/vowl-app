@@ -13,7 +13,7 @@ class GameScaffoldConfig {
   final bool showConfetti;
   final bool useScrolling;
   final bool disablePadding;
-  
+
   const GameScaffoldConfig({
     required this.gameType,
     required this.level,

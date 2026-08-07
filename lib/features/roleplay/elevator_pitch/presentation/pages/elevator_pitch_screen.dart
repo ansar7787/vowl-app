@@ -136,8 +136,10 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
               isAnswered: _isAnswered,
               isCorrect: _isCorrect,
               showConfetti: _showConfetti,
-              onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-              onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              onContinue: () =>
+                  context.read<RoleplayBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
@@ -173,7 +175,9 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                 expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
                 primaryColor: theme.primaryColor,
                 onConfirmed: () {
-                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  context.read<RoleplayBloc>().add(
+                    const RoleplaySpeakConfirmed(5),
+                  );
                   _submitVerbalEvaluation(true);
                 },
                 onSkipped: () => _submitVerbalEvaluation(false),

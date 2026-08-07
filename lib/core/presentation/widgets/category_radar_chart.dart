@@ -36,12 +36,16 @@ class CategoryRadarChart extends StatelessWidget {
     // 2: T2
     // 3: Elite (T4)
     // 4: Flow (T3)
-    
+
     // For a dynamic 4-axis chart without hardcoding 4 tiers of games, we can split the games
     // into 4 groups, or we can just divide the total games into 4 equal chunks to power the 4 axes.
-    final allGames = [...blueprint.tier1, ...blueprint.tier2, ...blueprint.tier3];
+    final allGames = [
+      ...blueprint.tier1,
+      ...blueprint.tier2,
+      ...blueprint.tier3,
+    ];
     final chunkSize = (allGames.length / 4).ceil();
-    
+
     final axisGames1 = allGames.take(chunkSize).toList();
     final axisGames2 = allGames.skip(chunkSize).take(chunkSize).toList();
     final axisGames3 = allGames.skip(chunkSize * 2).take(chunkSize).toList();
@@ -68,9 +72,7 @@ class CategoryRadarChart extends StatelessWidget {
             ? Colors.white.withValues(alpha: 0.08)
             : Colors.white.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.2),
-        ),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
@@ -94,11 +96,7 @@ class CategoryRadarChart extends StatelessWidget {
                   letterSpacing: 2,
                 ),
               ),
-              Icon(
-                Icons.radar_rounded,
-                color: primaryColor,
-                size: 20.r,
-              ),
+              Icon(Icons.radar_rounded, color: primaryColor, size: 20.r),
             ],
           ),
           SizedBox(height: 24.h),
@@ -118,18 +116,43 @@ class CategoryRadarChart extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildLegend(context, blueprint.radarAxes[0], primaryColor, score1),
-              _buildLegend(context, blueprint.radarAxes[1], primaryColor, score2),
-              _buildLegend(context, blueprint.radarAxes[2], primaryColor, score3),
-              _buildLegend(context, blueprint.radarAxes[3], primaryColor, score4),
+              _buildLegend(
+                context,
+                blueprint.radarAxes[0],
+                primaryColor,
+                score1,
+              ),
+              _buildLegend(
+                context,
+                blueprint.radarAxes[1],
+                primaryColor,
+                score2,
+              ),
+              _buildLegend(
+                context,
+                blueprint.radarAxes[2],
+                primaryColor,
+                score3,
+              ),
+              _buildLegend(
+                context,
+                blueprint.radarAxes[3],
+                primaryColor,
+                score4,
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildLegend(BuildContext context, String label, Color color, double score) {
+  Widget _buildLegend(
+    BuildContext context,
+    String label,
+    Color color,
+    double score,
+  ) {
     return Column(
       children: [
         Text(
@@ -161,9 +184,14 @@ class CategoryRadarChart extends StatelessWidget {
     int totalLevels = games.length * 200;
     int completedLevels = 0;
     for (var game in games) {
-      completedLevels += (user.completedLevels[game.name]?.length ?? 0).clamp(0, 200);
+      completedLevels += (user.completedLevels[game.name]?.length ?? 0).clamp(
+        0,
+        200,
+      );
     }
-    return totalLevels > 0 ? (completedLevels / totalLevels).clamp(0.0, 1.0) : 0.0;
+    return totalLevels > 0
+        ? (completedLevels / totalLevels).clamp(0.0, 1.0)
+        : 0.0;
   }
 }
 
@@ -237,7 +265,7 @@ class _RadarChartPainter extends CustomPainter {
     final dataPaintFill = Paint()
       ..color = primaryColor.withValues(alpha: 0.3)
       ..style = PaintingStyle.fill;
-    
+
     final dataPaintStroke = Paint()
       ..color = primaryColor
       ..style = PaintingStyle.stroke
@@ -250,7 +278,7 @@ class _RadarChartPainter extends CustomPainter {
     final pointPaint = Paint()
       ..color = isDark ? Colors.white : Colors.white
       ..style = PaintingStyle.fill;
-      
+
     final pointStrokePaint = Paint()
       ..color = primaryColor
       ..style = PaintingStyle.stroke
@@ -269,7 +297,7 @@ class _RadarChartPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant _RadarChartPainter oldDelegate) {
     return oldDelegate.scores != scores ||
-           oldDelegate.primaryColor != primaryColor ||
-           oldDelegate.isDark != isDark;
+        oldDelegate.primaryColor != primaryColor ||
+        oldDelegate.isDark != isDark;
   }
 }

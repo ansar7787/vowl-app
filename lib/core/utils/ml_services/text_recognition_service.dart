@@ -15,16 +15,23 @@ class TextRecognitionService {
   Future<RecognizedText?> recognizeFromFile(String imagePath) async {
     final file = File(imagePath);
     if (!await file.exists()) {
-      di.sl<AppLogger>().error('TextRecognitionService: File not found at $imagePath');
+      di.sl<AppLogger>().error(
+        'TextRecognitionService: File not found at $imagePath',
+      );
       return null;
     }
 
     try {
       final inputImage = InputImage.fromFile(file);
-      final RecognizedText recognizedText = await _textRecognizer.processImage(inputImage);
+      final RecognizedText recognizedText = await _textRecognizer.processImage(
+        inputImage,
+      );
       return recognizedText;
     } catch (e) {
-      di.sl<AppLogger>().error('TextRecognitionService: Failed to process image', error: e);
+      di.sl<AppLogger>().error(
+        'TextRecognitionService: Failed to process image',
+        error: e,
+      );
       return null;
     }
   }

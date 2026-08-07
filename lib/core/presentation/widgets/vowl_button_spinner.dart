@@ -18,27 +18,28 @@ class VowlButtonSpinner extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (index) {
         return Container(
-          margin: EdgeInsets.symmetric(horizontal: size * 0.05),
-          width: size * 0.2,
-          height: size * 0.2,
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
-          ),
-        ).animate(
-          onPlay: (controller) => controller.repeat(),
-          delay: (index * 150).ms,
-        ).scale(
-          begin: const Offset(0.6, 0.6),
-          end: const Offset(1.2, 1.2),
-          duration: 500.ms,
-          curve: Curves.easeInOut,
-        ).then().scale(
-          begin: const Offset(1.2, 1.2),
-          end: const Offset(0.6, 0.6),
-          duration: 500.ms,
-          curve: Curves.easeInOut,
-        );
+              margin: EdgeInsets.symmetric(horizontal: size * 0.05),
+              width: size * 0.2,
+              height: size * 0.2,
+              decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+            )
+            .animate(
+              onPlay: (controller) => controller.repeat(),
+              delay: (index * 150).ms,
+            )
+            .scale(
+              begin: const Offset(0.6, 0.6),
+              end: const Offset(1.2, 1.2),
+              duration: 500.ms,
+              curve: Curves.easeInOut,
+            )
+            .then()
+            .scale(
+              begin: const Offset(1.2, 1.2),
+              end: const Offset(0.6, 0.6),
+              duration: 500.ms,
+              curve: Curves.easeInOut,
+            );
       }),
     );
   }

@@ -42,7 +42,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  
+
   bool? _pendingAnswer;
 
   @override
@@ -86,7 +86,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     }
 
     String correct = quest.correctAnswer ?? "";
-    bool isCorrect = (_pendingAnswer! ? "true" : "false") == correct.trim().toLowerCase();
+    bool isCorrect =
+        (_pendingAnswer! ? "true" : "false") == correct.trim().toLowerCase();
 
     setState(() {
       _isAnswered = true;
@@ -160,8 +161,10 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(

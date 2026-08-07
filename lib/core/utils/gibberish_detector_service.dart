@@ -18,7 +18,7 @@ class GibberishDetectorService {
 
     for (int i = 0; i < wordsList.length; i++) {
       final w = wordsList[i];
-      
+
       if (w.length > 25) {
         CustomSnackBar.show(
           context: context,
@@ -28,7 +28,7 @@ class GibberishDetectorService {
         hapticService.selection();
         return false;
       }
-      
+
       if (RegExp(r'(.)\1{2,}').hasMatch(w)) {
         CustomSnackBar.show(
           context: context,
@@ -38,11 +38,11 @@ class GibberishDetectorService {
         hapticService.selection();
         return false;
       }
-      
+
       if (RegExp(r'[aeiouy]', caseSensitive: false).hasMatch(w)) {
         wordsWithVowels++;
       }
-      
+
       if (i > 0) {
         if (w.toLowerCase() == wordsList[i - 1].toLowerCase()) {
           currentRepetitions++;
@@ -58,7 +58,8 @@ class GibberishDetectorService {
     if (maxRepetitions > 3) {
       CustomSnackBar.show(
         context: context,
-        message: "Please write a natural sentence without repeating the same word!",
+        message:
+            "Please write a natural sentence without repeating the same word!",
         type: CustomSnackBarType.warning,
       );
       hapticService.selection();
@@ -68,7 +69,8 @@ class GibberishDetectorService {
     if ((wordsWithVowels / wordsList.length) < 0.5) {
       CustomSnackBar.show(
         context: context,
-        message: "Your answer looks like gibberish. Please write a real sentence!",
+        message:
+            "Your answer looks like gibberish. Please write a real sentence!",
         type: CustomSnackBarType.warning,
       );
       hapticService.selection();

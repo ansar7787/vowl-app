@@ -52,22 +52,25 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
   int _currentCorrectIndex = 0;
 
   void _ensureOptionsShuffled(AccentQuest quest, int retryCount) {
-    if (_shuffledQuestId == quest.id && _shuffledRetryCount == retryCount) return;
-    
+    if (_shuffledQuestId == quest.id && _shuffledRetryCount == retryCount)
+      return;
+
     _shuffledQuestId = quest.id;
     _shuffledRetryCount = retryCount;
-    
+
     final originalOptions = quest.options ?? ["A", "B"];
     final originalCorrectIndex = quest.correctAnswerIndex ?? 0;
-    final originalCorrectAnswer = originalOptions.isNotEmpty && originalCorrectIndex < originalOptions.length 
-        ? originalOptions[originalCorrectIndex] 
+    final originalCorrectAnswer =
+        originalOptions.isNotEmpty &&
+            originalCorrectIndex < originalOptions.length
+        ? originalOptions[originalCorrectIndex]
         : null;
-        
+
     _currentOptions = List.from(originalOptions)..shuffle();
     if (originalCorrectAnswer != null) {
-        _currentCorrectIndex = _currentOptions.indexOf(originalCorrectAnswer);
+      _currentCorrectIndex = _currentOptions.indexOf(originalCorrectAnswer);
     } else {
-        _currentCorrectIndex = 0;
+      _currentCorrectIndex = 0;
     }
   }
 
@@ -124,7 +127,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -190,14 +193,20 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
         final AccentQuest? quest = (state is AccentLoaded)
             ? state.currentQuest as AccentQuest?
             : _lastQuest;
-            
+
         if (quest != null && !_isAnswered) {
-          final currentLives = (state is AccentLoaded) ? state.livesRemaining : _lastLives;
+          final currentLives = (state is AccentLoaded)
+              ? state.livesRemaining
+              : _lastLives;
           _ensureOptionsShuffled(quest, currentLives);
         }
-        
-        final options = _currentOptions.isEmpty ? (quest?.options ?? ["A", "B"]) : _currentOptions;
-        final correctIndex = _currentOptions.isEmpty ? (quest?.correctAnswerIndex ?? 0) : _currentCorrectIndex;
+
+        final options = _currentOptions.isEmpty
+            ? (quest?.options ?? ["A", "B"])
+            : _currentOptions;
+        final correctIndex = _currentOptions.isEmpty
+            ? (quest?.correctAnswerIndex ?? 0)
+            : _currentCorrectIndex;
         final mediaQuery = MediaQuery.of(context);
 
         return MediaQuery(
@@ -207,178 +216,203 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
           child: Stack(
             children: [
               AccentBaseLayout(
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: _isAnswered,
-            isCorrect: _isCorrect,
-            showConfetti: _showConfetti,
-            onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
-            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-            child: quest == null
-                ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final maxWidth = constraints.maxWidth;
-                      final bool isCompact = maxHeight < 580;
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: _isAnswered,
+                isCorrect: _isCorrect,
+                showConfetti: _showConfetti,
+                onContinue: () =>
+                    context.read<AccentBloc>().add(NextQuestion()),
+                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+                child: quest == null
+                    ? const SizedBox()
+                    : LayoutBuilder(
+                        builder: (context, constraints) {
+                          final maxHeight = constraints.maxHeight;
+                          final maxWidth = constraints.maxWidth;
+                          final bool isCompact = maxHeight < 580;
 
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          100.h +
-                          (isCompact ? 130.h : 172.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
+                          final double estimatedContentHeight =
+                              24.h +
+                              (isCompact ? 90.h : 120.h) +
+                              100.h +
+                              (isCompact ? 130.h : 172.h);
+                          final remainingHeight =
+                              maxHeight - estimatedContentHeight;
 
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 8
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 24.0)
-                          : 8.0;
-                      final double gapPrompt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 32.0)
-                          : 12.0;
-                      final double gapSpeaker = remainingHeight > 0
-                          ? (gapUnit * 2).clamp(16.0, 48.0)
-                          : 16.0;
-                      
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
+                          final double gapUnit = remainingHeight > 0
+                              ? remainingHeight / 8
+                              : 0;
+                          final double gapTop = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapInstruction = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(8.0, 24.0)
+                              : 8.0;
+                          final double gapPrompt = remainingHeight > 0
+                              ? (gapUnit * 1.5).clamp(12.0, 32.0)
+                              : 12.0;
+                          final double gapSpeaker = remainingHeight > 0
+                              ? (gapUnit * 2).clamp(16.0, 48.0)
+                              : 16.0;
 
-                      return GameScrollbar(
-                        controller: _scrollController,
-                        child: SingleChildScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    ConsonantClarityInstruction(
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      instruction: _isFirstStagePassed 
-                                                        ? "Great job! Now confirm by speaking the word." 
-                                                        : null,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : ConsonantClarityInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: _isFirstStagePassed 
-                                              ? "Great job! Now confirm by speaking the word." 
-                                              : null,
-                                          ),
-                                    SizedBox(height: gapInstruction),
+                          final double gapBottom = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(12.0, 40.0)
+                              : 12.0;
 
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child:
-                                                    ConsonantClarityPromptCard(
-                                                      word: quest.word ?? "",
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      isAnswered: _isAnswered || _isFirstStagePassed,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : ConsonantClarityPromptCard(
-                                            word: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered || _isFirstStagePassed,
-                                          ),
-                                    SizedBox(height: gapPrompt),
-
-                                    ConsonantClarityPulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
+                          return GameScrollbar(
+                            controller: _scrollController,
+                            child: SingleChildScrollView(
+                              controller: _scrollController,
+                              physics: const BouncingScrollPhysics(),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  minHeight: maxHeight,
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 110.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: maxWidth - 48.w,
-                                                child: ConsonantClarityTactileGrid(
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SizedBox(height: gapTop),
+                                          isCompact
+                                              ? SizedBox(
+                                                  height: 32.h,
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: SizedBox(
+                                                      width: maxWidth - 48.w,
+                                                      child: ConsonantClarityInstruction(
+                                                        primaryColor:
+                                                            theme.primaryColor,
+                                                        instruction:
+                                                            _isFirstStagePassed
+                                                            ? "Great job! Now confirm by speaking the word."
+                                                            : null,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : ConsonantClarityInstruction(
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  instruction:
+                                                      _isFirstStagePassed
+                                                      ? "Great job! Now confirm by speaking the word."
+                                                      : null,
+                                                ),
+                                          SizedBox(height: gapInstruction),
+
+                                          isCompact
+                                              ? SizedBox(
+                                                  height: 90.h,
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: SizedBox(
+                                                      width: maxWidth - 48.w,
+                                                      child: ConsonantClarityPromptCard(
+                                                        word: quest.word ?? "",
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isAnswered:
+                                                            _isAnswered ||
+                                                            _isFirstStagePassed,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : ConsonantClarityPromptCard(
+                                                  word: quest.word ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered:
+                                                      _isAnswered ||
+                                                      _isFirstStagePassed,
+                                                ),
+                                          SizedBox(height: gapPrompt),
+
+                                          ConsonantClarityPulseSpeaker(
+                                            text: quest.textToSpeak ?? "",
+                                            color: theme.primaryColor,
+                                            onPlayTts: _playTts,
+                                          ),
+                                        ],
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SizedBox(height: gapSpeaker),
+                                          isCompact
+                                              ? SizedBox(
+                                                  height: 110.h,
+                                                  child: FittedBox(
+                                                    fit: BoxFit.scaleDown,
+                                                    child: SizedBox(
+                                                      width: maxWidth - 48.w,
+                                                      child: ConsonantClarityTactileGrid(
+                                                        options: options,
+                                                        correctIndex:
+                                                            correctIndex,
+                                                        color:
+                                                            theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isAnswered:
+                                                            _isAnswered ||
+                                                            _isFirstStagePassed,
+                                                        selectedIndex:
+                                                            _selectedIndex,
+                                                        onSubmitChoice:
+                                                            _submitChoice,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              : ConsonantClarityTactileGrid(
                                                   options: options,
                                                   correctIndex: correctIndex,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isAnswered: _isAnswered || _isFirstStagePassed,
+                                                  isAnswered:
+                                                      _isAnswered ||
+                                                      _isFirstStagePassed,
                                                   selectedIndex: _selectedIndex,
                                                   onSubmitChoice: _submitChoice,
                                                 ),
-                                              ),
-                                            ),
-                                          )
-                                        : ConsonantClarityTactileGrid(
-                                            options: options,
-                                            correctIndex: correctIndex,
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered: _isAnswered || _isFirstStagePassed,
-                                            selectedIndex: _selectedIndex,
-                                            onSubmitChoice: _submitChoice,
+                                          SizedBox(height: gapBottom),
+                                          // Panel removed in favor of SpeakToConfirmOverlay
+                                          SizedBox(
+                                            height: _isAnswered ? 180.h : 0,
                                           ),
-                                    SizedBox(height: gapBottom),
-                                    // Panel removed in favor of SpeakToConfirmOverlay
-                                    SizedBox(height: _isAnswered ? 180.h : 0),
-                                  ],
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                    ); // GameScrollbar
-                  },
-                ), // LayoutBuilder
+                          ); // GameScrollbar
+                        },
+                      ), // LayoutBuilder
               ), // AccentBaseLayout
               if (_isFirstStagePassed && !_isAnswered)
                 SpeakToConfirmOverlay(
                   expectedText: quest?.word ?? "",
                   primaryColor: theme.primaryColor,
                   onConfirmed: () {
-                    context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
+                    context.read<AccentBloc>().add(
+                      const AccentSpeakConfirmed(5),
+                    );
                     _submitVerbalEvaluation(true);
                   },
-                  onSkipped: () => _submitVerbalEvaluation(false), // Skip speaking but keep the correct answer!
+                  onSkipped: () => _submitVerbalEvaluation(
+                    false,
+                  ), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

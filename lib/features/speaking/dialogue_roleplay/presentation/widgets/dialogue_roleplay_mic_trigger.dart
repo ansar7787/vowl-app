@@ -10,7 +10,6 @@ class DialogueRoleplayMicTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const DialogueRoleplayMicTrigger({
     super.key,
@@ -20,7 +19,6 @@ class DialogueRoleplayMicTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -132,7 +130,6 @@ class DialogueRoleplayMicTrigger extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-          
         ],
       ),
     );

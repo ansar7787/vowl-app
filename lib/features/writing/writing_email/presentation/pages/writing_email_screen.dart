@@ -145,7 +145,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           setState(() {
             _slots.updateAll((k, v) => null);
             final quest = state.currentQuest;
-            _shuffledOptions = List<String>.from(quest.options ?? [])..shuffle();
+            _shuffledOptions = List<String>.from(quest.options ?? [])
+              ..shuffle();
           });
         }
         if (state is WritingGameComplete) {
@@ -170,9 +171,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         final slotsFilled = _slots.values.every((v) => v != null);
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        
+
         final lives = state.livesRemaining;
-        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);
+        final bool isFinalFailure = isLoaded
+            ? state.isFinalFailure
+            : (lives == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -187,125 +190,128 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
           child: (state is WritingLoading || _lastQuest == null)
               ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : quest == null
-                  ? const SizedBox.shrink()
-                  : Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Column(
-                        children: [
-                        SizedBox(height: 16.h),
-                        WritingEmailInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
+              ? const SizedBox.shrink()
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16.h),
+                      WritingEmailInstruction(
+                        primaryColor: theme.primaryColor,
+                        instruction: quest.instruction,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        WritingEmailPromptCard(
-                          text: quest.prompt ?? "",
+                      WritingEmailPromptCard(
+                        text: quest.prompt ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 24.h),
+
+                      ..._slots.keys.map(
+                        (k) => WritingEmailHexSlot(
+                          slotKey: k,
+                          slotValue: _slots[k],
                           color: theme.primaryColor,
                           isDark: isDark,
+                          onSlot: (key, data) => _onSlot(key, data, isAnswered),
+                          onClearSlot: (key) => _clearSlot(key, isAnswered),
                         ),
+                      ),
+                      if (!slotsFilled && !isAnswered) ...[
                         SizedBox(height: 24.h),
-
-                        ..._slots.keys.map(
-                          (k) => WritingEmailHexSlot(
-                            slotKey: k,
-                            slotValue: _slots[k],
+                        if (widget.level >= 6) ...[
+                          GestureDetector(
+                            onTap: () {
+                              CustomSnackBar.show(
+                                context: context,
+                                message:
+                                    "Hard Mode! Tapping is disabled. Please type your answer below.",
+                                type: CustomSnackBarType.info,
+                              );
+                            },
+                            child: AbsorbPointer(
+                              child: Opacity(
+                                opacity: 0.8,
+                                child: WritingEmailDataStream(
+                                  items:
+                                      options, // Show full list for reference
+                                  slots: _slots,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  onTapItem: (_) {}, // Disabled
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 16.h),
+                          WritingEmailKeyboardInput(
+                            validOptions: options
+                                .where((opt) => !_slots.values.contains(opt))
+                                .toList(),
                             color: theme.primaryColor,
                             isDark: isDark,
-                            onSlot: (key, data) =>
-                                _onSlot(key, data, isAnswered),
-                            onClearSlot: (key) => _clearSlot(key, isAnswered),
+                            onValidInput: (data) =>
+                                _onTapOption(data, isAnswered),
+                          ),
+                        ] else
+                          WritingEmailDataStream(
+                            items: _shuffledOptions.isNotEmpty
+                                ? _shuffledOptions
+                                : options,
+                            slots: _slots,
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            onTapItem: (data) => _onTapOption(data, isAnswered),
+                          ),
+                        SizedBox(height: 32.h),
+                      ] else ...[
+                        SizedBox(height: 48.h),
+                      ],
+
+                      if (!isAnswered)
+                        ScaleButton(
+                          onTap: slotsFilled
+                              ? () => _submitAnswer(isAnswered)
+                              : null,
+                          child: Container(
+                            width: double.infinity,
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: slotsFilled
+                                  ? theme.primaryColor
+                                  : Colors.grey,
+                              boxShadow: [
+                                if (slotsFilled)
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                    blurRadius: 15,
+                                  ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "SEND EMAIL",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 2,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
-                        if (!slotsFilled && !isAnswered) ...[
-                          SizedBox(height: 24.h),
-                          if (widget.level >= 6) ...[
-                            GestureDetector(
-                              onTap: () {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: "Hard Mode! Tapping is disabled. Please type your answer below.",
-                                  type: CustomSnackBarType.info,
-                                );
-                              },
-                              child: AbsorbPointer(
-                                child: Opacity(
-                                  opacity: 0.8,
-                                  child: WritingEmailDataStream(
-                                    items: options, // Show full list for reference
-                                    slots: _slots,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    onTapItem: (_) {}, // Disabled
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 16.h),
-                            WritingEmailKeyboardInput(
-                              validOptions: options
-                                  .where((opt) => !_slots.values.contains(opt))
-                                  .toList(),
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              onValidInput: (data) =>
-                                  _onTapOption(data, isAnswered),
-                            ),
-                          ] else
-                            WritingEmailDataStream(
-                              items: _shuffledOptions.isNotEmpty ? _shuffledOptions : options,
-                              slots: _slots,
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              onTapItem: (data) => _onTapOption(data, isAnswered),
-                            ),
-                          SizedBox(height: 32.h),
-                        ] else ...[
-                          SizedBox(height: 48.h),
-                        ],
 
-                        if (!isAnswered)
-                          ScaleButton(
-                            onTap: slotsFilled
-                                ? () => _submitAnswer(isAnswered)
-                                : null,
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: slotsFilled
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (slotsFilled)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      blurRadius: 15,
-                                    ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "SEND EMAIL",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-
-                        SizedBox(height: 60.h),
-                      ],
-                    ),
+                      SizedBox(height: 60.h),
+                    ],
                   ),
+                ),
         );
       },
     );

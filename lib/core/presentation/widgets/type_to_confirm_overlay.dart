@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+
 /// click/drag answer, requiring the user to type the answer before
 /// proceeding.
 class TypeToConfirmOverlay extends StatefulWidget {
@@ -143,7 +144,12 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
 
     return Container(
-      padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, MediaQuery.of(context).viewInsets.bottom + 32.h),
+      padding: EdgeInsets.fromLTRB(
+        24.w,
+        20.h,
+        24.w,
+        MediaQuery.of(context).viewInsets.bottom + 32.h,
+      ),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
@@ -300,9 +306,14 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                   ),
                   decoration: InputDecoration(
                     hintText: 'Type exactly...',
-                    hintStyle: TextStyle(color: subtitleColor.withValues(alpha: 0.6)),
+                    hintStyle: TextStyle(
+                      color: subtitleColor.withValues(alpha: 0.6),
+                    ),
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 16.h,
+                    ),
                   ),
                   onSubmitted: (_) => _evaluate(),
                 ),
@@ -378,21 +389,25 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       );
                     }
                   },
-                  child: Builder(builder: (context) {
-                    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
-                    return Text(
-                      _attempts >= widget.maxAttempts
-                          ? 'CONTINUE'
-                          : (isPremium ? 'SKIP' : 'WATCH AD TO BYPASS'),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w700,
-                        color: subtitleColor,
-                        letterSpacing: 1.5,
-                      ),
-                    );
-                  }),
+                  child: Builder(
+                    builder: (context) {
+                      final isPremium =
+                          context.watch<AuthBloc>().state.user?.isPremium ??
+                          false;
+                      return Text(
+                        _attempts >= widget.maxAttempts
+                            ? 'CONTINUE'
+                            : (isPremium ? 'SKIP' : 'WATCH AD TO BYPASS'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          color: subtitleColor,
+                          letterSpacing: 1.5,
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
 
@@ -420,11 +435,11 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                     color: Colors.greenAccent,
                     size: 48.r,
                   ).animate().scale(
-                        begin: const Offset(0, 0),
-                        end: const Offset(1, 1),
-                        duration: 400.ms,
-                        curve: Curves.easeOutBack,
-                      ),
+                    begin: const Offset(0, 0),
+                    end: const Offset(1, 1),
+                    duration: 400.ms,
+                    curve: Curves.easeOutBack,
+                  ),
                   SizedBox(height: 8.h),
                   Text(
                     'PERFECT! 🎯',

@@ -123,7 +123,8 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     });
 
     final isCorrect =
-        selected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') == correct.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
+        selected.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') ==
+        correct.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '');
 
     // Clear trajectory immediately on fire â€” no lingering aim line.
     _dragNotifier.value = null;
@@ -190,7 +191,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         final options = quest?.options ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (state.livesRemaining == 0);
+        final bool isFinalFailure = isLoaded
+            ? state.isFinalFailure
+            : (state.livesRemaining == 0);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -207,8 +210,8 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onHint: () {},
           child: quest == null
               ? (_lastQuest == null
-                  ? GameShimmerLoading(primaryColor: _theme.primaryColor)
-                  : const SizedBox.shrink())
+                    ? GameShimmerLoading(primaryColor: _theme.primaryColor)
+                    : const SizedBox.shrink())
               : Stack(
                   key: _stackKey,
                   children: [
@@ -298,65 +301,64 @@ class _CompleteSentenceBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: [
-            SizedBox(height: 16.h),
-            CompleteSentenceInstruction(primaryColor: theme.primaryColor),
-            SizedBox(height: 32.h),
-            CompleteSentenceTargetWall(
-              text: quest.partialSentence ?? '',
-              injected: selectedProjectile,
-              color: theme.primaryColor,
-              isDark: isDark,
-              // FIX: onFire now receives only the selected word.
-              // correctAnswer comparison is handled in the screen.
-              onFire: onFire,
-            ),
-            SizedBox(height: 32.h),
-            if (level >= 6) ...[
-              GestureDetector(
-                onTap: () {
-                  CustomSnackBar.show(
-                    context: context,
-                    message: "Hard Mode! Dragging is disabled. Please type your answer below.",
-                    type: CustomSnackBarType.info,
-                  );
-                },
-                child: AbsorbPointer(
-                  child: Opacity(
-                    opacity: 0.8,
-                    child: CompleteSentenceBallistaAmmo(
-                      options: options,
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      onBridgeStart: (_) {},
-                      onBridgeUpdate: (_) {},
-                      onFire: (_) {},
-                    ),
+          SizedBox(height: 16.h),
+          CompleteSentenceInstruction(primaryColor: theme.primaryColor),
+          SizedBox(height: 32.h),
+          CompleteSentenceTargetWall(
+            text: quest.partialSentence ?? '',
+            injected: selectedProjectile,
+            color: theme.primaryColor,
+            isDark: isDark,
+            // FIX: onFire now receives only the selected word.
+            // correctAnswer comparison is handled in the screen.
+            onFire: onFire,
+          ),
+          SizedBox(height: 32.h),
+          if (level >= 6) ...[
+            GestureDetector(
+              onTap: () {
+                CustomSnackBar.show(
+                  context: context,
+                  message:
+                      "Hard Mode! Dragging is disabled. Please type your answer below.",
+                  type: CustomSnackBarType.info,
+                );
+              },
+              child: AbsorbPointer(
+                child: Opacity(
+                  opacity: 0.8,
+                  child: CompleteSentenceBallistaAmmo(
+                    options: options,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onBridgeStart: (_) {},
+                    onBridgeUpdate: (_) {},
+                    onFire: (_) {},
                   ),
                 ),
               ),
-              SizedBox(height: 16.h),
-              CompleteSentenceKeyboardInput(
-                color: theme.primaryColor,
-                isDark: isDark,
-                onFire: onFire,
-              ),
-            ] else
-              CompleteSentenceBallistaAmmo(
-                options: options,
-                color: theme.primaryColor,
-                isDark: isDark,
-                onBridgeStart: onBridgeStart,
-                onBridgeUpdate: onBridgeUpdate,
-                // FIX: onFire now receives only the fired word.
-                onFire: onFire,
-              ),
-            SizedBox(
-              height: 160.h,
-            ), // Provide enough bottom padding for the WritingFeedbackCard
-          ],
-        ),
-      );
+            ),
+            SizedBox(height: 16.h),
+            CompleteSentenceKeyboardInput(
+              color: theme.primaryColor,
+              isDark: isDark,
+              onFire: onFire,
+            ),
+          ] else
+            CompleteSentenceBallistaAmmo(
+              options: options,
+              color: theme.primaryColor,
+              isDark: isDark,
+              onBridgeStart: onBridgeStart,
+              onBridgeUpdate: onBridgeUpdate,
+              // FIX: onFire now receives only the fired word.
+              onFire: onFire,
+            ),
+          SizedBox(
+            height: 160.h,
+          ), // Provide enough bottom padding for the WritingFeedbackCard
+        ],
+      ),
+    );
   }
 }
-
-

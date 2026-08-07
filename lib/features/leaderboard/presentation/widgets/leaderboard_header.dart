@@ -7,7 +7,11 @@ class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
   final bool isKids;
 
-  const LeaderboardHeader({super.key, required this.lastUpdated, this.isKids = false});
+  const LeaderboardHeader({
+    super.key,
+    required this.lastUpdated,
+    this.isKids = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +54,14 @@ class LeaderboardHeader extends StatelessWidget {
                         Flexible(
                           child: Text(
                             isKids
-                                ? context.tr('leaderboard.kids_title', fallback: 'Kids Leaderboard')
-                                : context.tr('leaderboard.title', fallback: 'Leaderboard'),
+                                ? context.tr(
+                                    'leaderboard.kids_title',
+                                    fallback: 'Kids Leaderboard',
+                                  )
+                                : context.tr(
+                                    'leaderboard.title',
+                                    fallback: 'Leaderboard',
+                                  ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 22.sp,
@@ -109,8 +119,14 @@ class LeaderboardHeader extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       isKids
-                          ? context.tr('leaderboard.kids_subtitle', fallback: 'See how your child ranks globally!')
-                          : context.tr('leaderboard.subtitle', fallback: 'See how you rank globally!'),
+                          ? context.tr(
+                              'leaderboard.kids_subtitle',
+                              fallback: 'See how your child ranks globally!',
+                            )
+                          : context.tr(
+                              'leaderboard.subtitle',
+                              fallback: 'See how you rank globally!',
+                            ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,

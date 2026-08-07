@@ -157,7 +157,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -251,10 +251,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       final maxHeight = constraints.maxHeight;
 
                       final double estimatedContentHeight =
-                          24.h +
-                          70.h +
-                          80.h +
-                          140.h;
+                          24.h + 70.h + 80.h + 140.h;
                       final remainingHeight =
                           maxHeight - estimatedContentHeight;
 
@@ -271,7 +268,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       final double gapSpeaker = remainingHeight > 0
                           ? (gapUnit * 2).clamp(16.0, 48.0)
                           : 16.0;
-                      
+
                       final double gapBottom = remainingHeight > 0
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
@@ -279,84 +276,93 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                       return GameScrollbar(
                         controller: _scrollController,
                         child: SingleChildScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    PitchPatternMatchInstruction(
-                                      color: theme.primaryColor,
-                                      instruction: _isFirstStagePassed
-                                        ? "Great job! Now record yourself saying the word."
-                                        : context.tr('games.pitch_pattern_match_instruction', fallback: 'Identify the pitch pattern'),
-                                    ),
-                                    SizedBox(height: gapInstruction),
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      PitchPatternMatchInstruction(
+                                        color: theme.primaryColor,
+                                        instruction: _isFirstStagePassed
+                                            ? "Great job! Now record yourself saying the word."
+                                            : context.tr(
+                                                'games.pitch_pattern_match_instruction',
+                                                fallback:
+                                                    'Identify the pitch pattern',
+                                              ),
+                                      ),
+                                      SizedBox(height: gapInstruction),
 
-                                    PitchPatternMatchPromptCard(
-                                      word: quest.word ?? "",
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                    ),
-                                    SizedBox(height: gapPrompt),
-
-                                    if (_isAnswered || _isFirstStagePassed) ...[
-                                      PitchPatternMatchMelodicCanvas(
-                                        pattern: pattern,
+                                      PitchPatternMatchPromptCard(
+                                        word: quest.word ?? "",
                                         color: theme.primaryColor,
                                         isDark: isDark,
-                                        isPreviewing: _isPreviewing,
-                                        isAnswered: _isAnswered || _isFirstStagePassed,
-                                        previewProgress: _previewProgress,
                                       ),
-                                      SizedBox(height: gapSpeaker),
-                                    ],
+                                      SizedBox(height: gapPrompt),
 
-                                    PitchPatternMatchPulseSpeaker(
-                                      text: quest.textToSpeak ?? "",
-                                      color: theme.primaryColor,
-                                      onPlayTts: _playTts,
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapSpeaker),
-                                    PitchPatternMatchVerticalFader(
-                                      options: options,
-                                      correctIndex:
-                                          quest.correctAnswerIndex ?? 0,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered || _isFirstStagePassed,
-                                      selectedIndex: _selectedIndex,
-                                      sliderValue: _sliderValue,
-                                      onSubmitChoice: _submitChoice,
-                                      onSliderUpdate: _onSliderUpdate,
-                                    ),
-                                    SizedBox(height: gapBottom),
-                                    if (_isFirstStagePassed)
-                                      AccentSelfEvaluationPanel(
-                                        textToSpeak: quest.textToSpeak ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isCompact: false, // Fader takes fixed height
-                                        onEvaluate: _submitVerbalEvaluation,
+                                      if (_isAnswered ||
+                                          _isFirstStagePassed) ...[
+                                        PitchPatternMatchMelodicCanvas(
+                                          pattern: pattern,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          isPreviewing: _isPreviewing,
+                                          isAnswered:
+                                              _isAnswered ||
+                                              _isFirstStagePassed,
+                                          previewProgress: _previewProgress,
+                                        ),
+                                        SizedBox(height: gapSpeaker),
+                                      ],
+
+                                      PitchPatternMatchPulseSpeaker(
+                                        text: quest.textToSpeak ?? "",
+                                        color: theme.primaryColor,
+                                        onPlayTts: _playTts,
                                       ),
-                                    SizedBox(height: _isAnswered ? 180.h : 0),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: gapSpeaker),
+                                      PitchPatternMatchVerticalFader(
+                                        options: options,
+                                        correctIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered:
+                                            _isAnswered || _isFirstStagePassed,
+                                        selectedIndex: _selectedIndex,
+                                        sliderValue: _sliderValue,
+                                        onSubmitChoice: _submitChoice,
+                                        onSliderUpdate: _onSliderUpdate,
+                                      ),
+                                      SizedBox(height: gapBottom),
+                                      if (_isFirstStagePassed)
+                                        AccentSelfEvaluationPanel(
+                                          textToSpeak: quest.textToSpeak ?? "",
+                                          primaryColor: theme.primaryColor,
+                                          isCompact:
+                                              false, // Fader takes fixed height
+                                          onEvaluate: _submitVerbalEvaluation,
+                                        ),
+                                      SizedBox(height: _isAnswered ? 180.h : 0),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
                       );
                     },
                   ),
@@ -366,7 +372,3 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     );
   }
 }
-
-
-
-

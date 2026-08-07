@@ -30,7 +30,9 @@ class ScanResultBlock extends StatelessWidget {
       return 'Phonics Tip: Words ending in "-ed" can sound like /t/, /d/, or /id/ depending on the root word.';
     } else if (lowerText.contains('th')) {
       return 'Phonics Tip: Watch your "th" sounds! Remember to place your tongue slightly between your teeth.';
-    } else if (RegExp(r'\b(can|could|should|would|will|must)\b').hasMatch(lowerText)) {
+    } else if (RegExp(
+      r'\b(can|could|should|would|will|must)\b',
+    ).hasMatch(lowerText)) {
       return 'Grammar Tip: Modal verbs (like can/should) are usually unstressed in natural spoken English.';
     } else if (RegExp(r"\b\w+'\w+\b").hasMatch(lowerText)) {
       return 'Fluency Tip: This text contains contractions (e.g., don\'t). Pronounce them smoothly as a single sound.';
@@ -54,15 +56,25 @@ class ScanResultBlock extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryIndigo = const Color(0xFF6366F1);
     final textColor = isDark ? Colors.white : Colors.black87;
-    final borderColor = isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.1);
-    final bgColor = isDark ? Colors.black.withValues(alpha: 0.4) : Colors.white.withValues(alpha: 0.7);
+    final borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.15)
+        : Colors.black.withValues(alpha: 0.1);
+    final bgColor = isDark
+        ? Colors.black.withValues(alpha: 0.4)
+        : Colors.white.withValues(alpha: 0.7);
 
     final translationParts = translatedText?.split('\n\n') ?? [];
-    final translatedBlockText = translationParts.isNotEmpty ? translationParts[0] : null;
-    final translatedTip = translationParts.length > 1 ? translationParts[1] : null;
+    final translatedBlockText = translationParts.isNotEmpty
+        ? translationParts[0]
+        : null;
+    final translatedTip = translationParts.length > 1
+        ? translationParts[1]
+        : null;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(16.r), // Sharper, document-like corners
+      borderRadius: BorderRadius.circular(
+        16.r,
+      ), // Sharper, document-like corners
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
         child: Container(
@@ -77,7 +89,11 @@ class ScanResultBlock extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.text_format_rounded, size: 14.r, color: primaryIndigo),
+                  Icon(
+                    Icons.text_format_rounded,
+                    size: 14.r,
+                    color: primaryIndigo,
+                  ),
                   SizedBox(width: 4.w),
                   Text(
                     '${block.text.trim().split(RegExp(r'\s+')).length} words',
@@ -89,7 +105,11 @@ class ScanResultBlock extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 12.w),
-                  Icon(Icons.auto_stories_rounded, size: 14.r, color: primaryIndigo),
+                  Icon(
+                    Icons.auto_stories_rounded,
+                    size: 14.r,
+                    color: primaryIndigo,
+                  ),
                   SizedBox(width: 4.w),
                   Text(
                     'Reading Practice',
@@ -116,7 +136,9 @@ class ScanResultBlock extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(10.r),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(8.r),
                 ),
                 child: Column(
@@ -124,7 +146,11 @@ class ScanResultBlock extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.tips_and_updates_rounded, size: 14.r, color: Colors.amber),
+                        Icon(
+                          Icons.tips_and_updates_rounded,
+                          size: 14.r,
+                          color: Colors.amber,
+                        ),
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
@@ -170,11 +196,17 @@ class ScanResultBlock extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: primaryIndigo.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: primaryIndigo.withValues(alpha: 0.3)),
+                    border: Border.all(
+                      color: primaryIndigo.withValues(alpha: 0.3),
+                    ),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.g_translate_rounded, color: primaryIndigo, size: 18.r),
+                      Icon(
+                        Icons.g_translate_rounded,
+                        color: primaryIndigo,
+                        size: 18.r,
+                      ),
                       SizedBox(width: 8.w),
                       Expanded(
                         child: Text(
@@ -182,7 +214,9 @@ class ScanResultBlock extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
-                            color: isDark ? const Color(0xFF818CF8) : primaryIndigo,
+                            color: isDark
+                                ? const Color(0xFF818CF8)
+                                : primaryIndigo,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -193,8 +227,8 @@ class ScanResultBlock extends StatelessWidget {
               ] else if (isTranslating) ...[
                 SizedBox(height: 12.h),
                 SizedBox(
-                  height: 3.h, 
-                  width: double.infinity, 
+                  height: 3.h,
+                  width: double.infinity,
                   child: LinearProgressIndicator(color: primaryIndigo),
                 ),
               ] else ...[
@@ -204,19 +238,31 @@ class ScanResultBlock extends StatelessWidget {
                   child: ScaleButton(
                     onTap: () => onTranslate(index, block.text),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 8.h,
+                      ),
                       decoration: BoxDecoration(
                         color: primaryIndigo.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(color: primaryIndigo.withValues(alpha: 0.3)),
+                        border: Border.all(
+                          color: primaryIndigo.withValues(alpha: 0.3),
+                        ),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.g_translate_rounded, color: primaryIndigo, size: 16.r),
+                          Icon(
+                            Icons.g_translate_rounded,
+                            color: primaryIndigo,
+                            size: 16.r,
+                          ),
                           SizedBox(width: 6.w),
                           Text(
-                            context.tr('translation.translate', fallback: 'Translate'),
+                            context.tr(
+                              'translation.translate',
+                              fallback: 'Translate',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -229,7 +275,7 @@ class ScanResultBlock extends StatelessWidget {
                     ),
                   ),
                 ),
-              ]
+              ],
             ],
           ),
         ),

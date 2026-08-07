@@ -72,7 +72,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         backgroundColor: isDark
             ? const Color(0xFF0F172A)
             : const Color(0xFFF8FAFC),
-        body: SafeArea(child: GameShimmerLoading(primaryColor: theme.primaryColor)),
+        body: SafeArea(
+          child: GameShimmerLoading(primaryColor: theme.primaryColor),
+        ),
       );
     }
 
@@ -88,7 +90,9 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
           Builder(
             builder: (context) {
-              final hasBlueprint = PedagogicalBlueprintMap.getBlueprint(widget.categoryId) != null;
+              final hasBlueprint =
+                  PedagogicalBlueprintMap.getBlueprint(widget.categoryId) !=
+                  null;
               return CustomScrollView(
                 physics: const BouncingScrollPhysics(),
                 slivers: [
@@ -126,9 +130,15 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     ),
                     SliverToBoxAdapter(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 16.h,
+                        ),
                         child: Text(
-                          context.tr('category.practice_library', fallback: 'PRACTICE LIBRARY'),
+                          context.tr(
+                            'category.practice_library',
+                            fallback: 'PRACTICE LIBRARY',
+                          ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
@@ -143,7 +153,12 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
 
                   // 4. Game Grid/List
                   SliverPadding(
-                    padding: EdgeInsets.fromLTRB(24.w, hasBlueprint ? 8.h : 32.h, 24.w, 100.h),
+                    padding: EdgeInsets.fromLTRB(
+                      24.w,
+                      hasBlueprint ? 8.h : 32.h,
+                      24.w,
+                      100.h,
+                    ),
                     sliver: SliverList(
                       delegate: SliverChildBuilderDelegate((context, index) {
                         return Padding(
@@ -161,7 +176,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                   ),
                 ],
               );
-            }
+            },
           ),
 
           // 5. Floating Glass Island AppBar
@@ -278,17 +293,19 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       Icon(theme.icon, color: theme.primaryColor, size: 16.r),
                       SizedBox(width: 8.w),
                       Flexible(
-                        child: Text(
-                          widget.categoryId.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
-                            color: contentColor,
-                            letterSpacing: 1.5,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            widget.categoryId.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: contentColor,
+                              letterSpacing: 1.5,
+                            ),
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],
@@ -379,20 +396,22 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            context.tr(
-                              'category_games.overall_mastery',
-                              fallback: 'Overall Mastery',
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              context.tr(
+                                'category_games.overall_mastery',
+                                fallback: 'Overall Mastery',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.sp,
+                                fontWeight: FontWeight.w800,
+                                color: theme.primaryColor,
+                                letterSpacing: 2,
+                              ),
                             ),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w800,
-                              color: theme.primaryColor,
-                              letterSpacing: 2,
-                            ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
                           ),
                           SizedBox(height: 4.h),
                           FittedBox(
@@ -549,19 +568,21 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             // GAMES / RANK (this row has 3 mini-stats sharing the available
             // width) could otherwise overflow this Row horizontally.
             Flexible(
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.w800,
-                  color: (isDark ? Colors.white : Colors.black).withValues(
-                    alpha: 0.4,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 8.sp,
+                    fontWeight: FontWeight.w800,
+                    color: (isDark ? Colors.white : Colors.black).withValues(
+                      alpha: 0.4,
+                    ),
+                    letterSpacing: 1,
                   ),
-                  letterSpacing: 1,
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -629,36 +650,40 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              theme.title.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w900,
-                                color: contentColor,
-                                letterSpacing: 1,
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                theme.title.toUpperCase(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: contentColor,
+                                  letterSpacing: 1,
+                                ),
                               ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
                             ),
                             SizedBox(height: 8.h),
                             _buildLiquidProgressBar(displayColor, currentLevel),
                             SizedBox(height: 8.h),
-                            Text(
-                              context.tr(
-                                'category_games.mission_progress',
-                                fallback: 'Mission Progress',
-                                args: [missionPercent.toString()],
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                context.tr(
+                                  'category_games.mission_progress',
+                                  fallback: 'Mission Progress',
+                                  args: [missionPercent.toString()],
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: displayColor.withValues(alpha: 0.6),
+                                  letterSpacing: 0.5,
+                                ),
                               ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w800,
-                                color: displayColor.withValues(alpha: 0.6),
-                                letterSpacing: 0.5,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
@@ -759,16 +784,17 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10),
           ],
         ),
-        child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'New'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w900,
-            color: Colors.white,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr('quest_archive.new_badge', fallback: 'New'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+            ),
           ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);
     }

@@ -14,7 +14,11 @@ class KidsGlobalProgressCard extends StatelessWidget {
   final UserEntity user;
   final int? globalRank;
 
-  const KidsGlobalProgressCard({super.key, required this.user, this.globalRank});
+  const KidsGlobalProgressCard({
+    super.key,
+    required this.user,
+    this.globalRank,
+  });
 
   static const int totalLevels = 5000;
 

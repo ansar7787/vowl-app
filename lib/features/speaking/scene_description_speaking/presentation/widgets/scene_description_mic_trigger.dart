@@ -12,7 +12,6 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const SceneDescriptionMicTrigger({
     super.key,
@@ -24,7 +23,6 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -147,7 +145,6 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-          
         ],
       ),
     );

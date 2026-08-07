@@ -195,10 +195,11 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
               _isCorrect = null;
               _selectedOrbIndex = null;
               _isFirstStagePassed = false;
-              
+
               if (state.currentQuest.options != null) {
                 final options = List<String>.from(state.currentQuest.options!);
-                final correctOption = options[state.currentQuest.correctAnswerIndex ?? 0];
+                final correctOption =
+                    options[state.currentQuest.correctAnswerIndex ?? 0];
                 options.shuffle();
                 _shuffledOptions = options;
                 _shuffledCorrectIndex = options.indexOf(correctOption);
@@ -236,80 +237,87 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
           children: [
             RoleplayBaseLayout(
               gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-          onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: isCompact ? 5.h : 10.h,
-                      ),
-                      child: Column(
-                        children: [
-                          SituationalResponseInstruction(
-                            primaryColor: theme.primaryColor,
-                            instruction: quest.instruction,
-                            isDark: isDark,
+              level: widget.level,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              showConfetti: _showConfetti,
+              onContinue: () =>
+                  context.read<RoleplayBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: isCompact ? 5.h : 10.h,
                           ),
-                          SizedBox(height: isCompact ? 10.h : 16.h),
-                          SituationalResponseSceneDisplay(
-                            quest: quest,
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onListen: () => _triggerAutoPlay(quest),
-                          ),
-                          SizedBox(height: isCompact ? 16.h : 24.h),
-                          SituationalResponseReactionZone(
-                            options: _shuffledOptions,
-                            correctIndex: _shuffledCorrectIndex,
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            timerValue: _timerController.value,
-                            pulseValue: _pulseController.value,
-                            isAnswered: _isAnswered || _isFirstStagePassed,
-                            isCorrect: _isCorrect,
-                            selectedOrbIndex: _selectedOrbIndex,
-                            onOrbTap: _onOrbTap,
-                          ),
-                          SizedBox(height: isCompact ? 12.h : 20.h),
+                          child: Column(
+                            children: [
+                              SituationalResponseInstruction(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
+                                isDark: isDark,
+                              ),
+                              SizedBox(height: isCompact ? 10.h : 16.h),
+                              SituationalResponseSceneDisplay(
+                                quest: quest,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                onListen: () => _triggerAutoPlay(quest),
+                              ),
+                              SizedBox(height: isCompact ? 16.h : 24.h),
+                              SituationalResponseReactionZone(
+                                options: _shuffledOptions,
+                                correctIndex: _shuffledCorrectIndex,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                timerValue: _timerController.value,
+                                pulseValue: _pulseController.value,
+                                isAnswered: _isAnswered || _isFirstStagePassed,
+                                isCorrect: _isCorrect,
+                                selectedOrbIndex: _selectedOrbIndex,
+                                onOrbTap: _onOrbTap,
+                              ),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
 
-                          // Explanations Card when answered
-                          AnimatedCrossFade(
-                            firstChild: const SizedBox(),
-                            secondChild: SituationalResponseExplanationPanel(
-                              quest: quest,
-                              isDark: isDark,
-                              isCorrect: _isCorrect,
-                            ),
-                            crossFadeState: _isAnswered
-                                ? CrossFadeState.showSecond
-                                : CrossFadeState.showFirst,
-                            duration: const Duration(milliseconds: 450),
+                              // Explanations Card when answered
+                              AnimatedCrossFade(
+                                firstChild: const SizedBox(),
+                                secondChild:
+                                    SituationalResponseExplanationPanel(
+                                      quest: quest,
+                                      isDark: isDark,
+                                      isCorrect: _isCorrect,
+                                    ),
+                                crossFadeState: _isAnswered
+                                    ? CrossFadeState.showSecond
+                                    : CrossFadeState.showFirst,
+                                duration: const Duration(milliseconds: 450),
+                              ),
+                              SizedBox(
+                                height: isCompact ? 40.h : 80.h,
+                              ), // Safe spacing for base layouts
+                            ],
                           ),
-                          SizedBox(
-                            height: isCompact ? 40.h : 80.h,
-                          ), // Safe spacing for base layouts
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                        );
+                      },
+                    ),
             ),
-            if (_isFirstStagePassed && !_isAnswered && _selectedOrbIndex != null)
+            if (_isFirstStagePassed &&
+                !_isAnswered &&
+                _selectedOrbIndex != null)
               SpeakToConfirmOverlay(
                 expectedText: _shuffledOptions[_selectedOrbIndex!],
                 primaryColor: theme.primaryColor,
                 onConfirmed: () {
-                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  context.read<RoleplayBloc>().add(
+                    const RoleplaySpeakConfirmed(5),
+                  );
                   _submitVerbalEvaluation(true);
                 },
                 onSkipped: () => _submitVerbalEvaluation(false),
@@ -320,4 +328,3 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
     );
   }
 }
-

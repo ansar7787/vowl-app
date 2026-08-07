@@ -47,7 +47,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
 
   void _submitFinalAnswer(bool isCorrect) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = isCorrect;
@@ -113,8 +113,10 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -135,10 +137,14 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                               width: double.infinity,
                               padding: EdgeInsets.all(24.r),
                               decoration: BoxDecoration(
-                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.02),
                                 borderRadius: BorderRadius.circular(20.r),
                                 border: Border.all(
-                                  color: theme.primaryColor.withValues(alpha: 0.3),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.3,
+                                  ),
                                   width: 1,
                                 ),
                               ),
@@ -148,7 +154,9 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 18.sp,
                                   height: 1.6,
-                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
                                 ),
                               ),
                             ),
@@ -160,7 +168,9 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                 isDark: isDark,
                               ),
                             ],
-                            SizedBox(height: 240.h), // Spacing for Jigsaw Wrapper
+                            SizedBox(
+                              height: 240.h,
+                            ), // Spacing for Jigsaw Wrapper
                           ],
                         ),
                       ),

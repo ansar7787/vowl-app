@@ -126,10 +126,13 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       try {
         cacheSnapshot = await cacheDocRef.get().timeout(_kNetworkTimeout);
       } catch (e) {
-        if (kDebugMode) debugPrint('LeaderboardRepo: Failed to read kids cache: $e');
+        if (kDebugMode)
+          debugPrint('LeaderboardRepo: Failed to read kids cache: $e');
       }
 
-      if (cacheSnapshot != null && cacheSnapshot.exists && cacheSnapshot.data() != null) {
+      if (cacheSnapshot != null &&
+          cacheSnapshot.exists &&
+          cacheSnapshot.data() != null) {
         final data = cacheSnapshot.data()!;
         final lastUpdated =
             (data['lastUpdated'] as Timestamp?)?.toDate() ?? DateTime.now();
@@ -161,7 +164,7 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
           final data = Map<String, dynamic>.from(doc.data());
           data['id'] = (data['id'] as String?) ?? doc.id;
           users.add(UserModel.fromMap(data));
-          
+
           usersData.add({
             'id': data['id'],
             'displayName': data['displayName'],

@@ -6,7 +6,11 @@ class SentenceBuilderInstruction extends StatelessWidget {
   final Color primaryColor;
   final String? instruction;
 
-  const SentenceBuilderInstruction({super.key, required this.primaryColor, this.instruction});
+  const SentenceBuilderInstruction({
+    super.key,
+    required this.primaryColor,
+    this.instruction,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,14 @@ class SentenceBuilderInstruction extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  context.tr('games.sentenceBuilder_instruction', fallback: instruction ?? 'Assemble the fragments into a correct sentence').toUpperCase(),
+                  context
+                      .tr(
+                        'games.sentenceBuilder_instruction',
+                        fallback:
+                            instruction ??
+                            'Assemble the fragments into a correct sentence',
+                      )
+                      .toUpperCase(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',

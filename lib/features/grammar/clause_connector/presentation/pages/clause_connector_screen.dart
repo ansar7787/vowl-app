@@ -71,21 +71,21 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   @override
@@ -136,17 +136,22 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         final clauseA = parts[0];
         final clauseB = parts.length > 1 ? parts[1] : "...";
         final options = quest?.options ?? [];
-        
+
         String cleanTargetSentence = "";
         if (quest != null) {
-            final sentence = quest.correctAnswer ?? quest.sentence ?? "";
-            if (sentence.isNotEmpty) {
-                cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
-            } else {
-                // Fallback to assembling it
-                final correctConnector = options.isNotEmpty && quest.correctAnswerIndex != null ? options[quest.correctAnswerIndex!] : "";
-                cleanTargetSentence = "$clauseA $correctConnector $clauseB";
-            }
+          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          if (sentence.isNotEmpty) {
+            cleanTargetSentence = sentence
+                .replaceAll('[', '')
+                .replaceAll(']', '');
+          } else {
+            // Fallback to assembling it
+            final correctConnector =
+                options.isNotEmpty && quest.correctAnswerIndex != null
+                ? options[quest.correctAnswerIndex!]
+                : "";
+            cleanTargetSentence = "$clauseA $correctConnector $clauseB";
+          }
         }
 
         return GrammarBaseLayout(
@@ -156,9 +161,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          useScrolling:
+              false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -174,7 +182,8 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                             (isCompact ? 50.h : 80.h) +
                             (isCompact ? 60.h : 100.h) +
                             40.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 5
@@ -254,7 +263,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
@@ -296,7 +307,9 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: (_isAnswered || _pendingJigsaw) ? BorderStyle.none : BorderStyle.solid,
+              style: (_isAnswered || _pendingJigsaw)
+                  ? BorderStyle.none
+                  : BorderStyle.solid,
             ),
             boxShadow: [
               if (isHighlight || _isAnswered || _pendingJigsaw)

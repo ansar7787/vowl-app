@@ -122,7 +122,6 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   final _ttsService = di.sl<TtsService>();
   final _soundService = di.sl<SoundService>();
 
-
   late AnimationController _audioController;
   Timer? _nudgeTimer;
 
@@ -179,7 +178,9 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
 
     return BlocBuilder<ListeningBloc, ListeningState>(
       builder: (context, state) {
-        final currentQuest = state is ListeningLoaded ? state.currentQuest : null;
+        final currentQuest = state is ListeningLoaded
+            ? state.currentQuest
+            : null;
 
         final wrappedChild = LayoutBuilder(
           builder: (ctx, constraints) {
@@ -232,9 +233,13 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
           config: config,
           stateMapper: (s) => s,
           onRetry: () => context.read<ListeningBloc>().add(
-            FetchListeningQuests(gameType: widget.gameType, level: widget.level),
+            FetchListeningQuests(
+              gameType: widget.gameType,
+              level: widget.level,
+            ),
           ),
-          onRestoreLife: () => context.read<ListeningBloc>().add(const RestoreLife()),
+          onRestoreLife: () =>
+              context.read<ListeningBloc>().add(const RestoreLife()),
           headerBuilder: (context, s, progress, lvs) {
             final currentQuest = s is ListeningLoaded ? s.currentQuest : null;
             return ListeningHeader(
@@ -257,19 +262,25 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
           },
           feedbackBuilder: (context, s) {
             if (s is! ListeningLoaded) return const SizedBox.shrink();
-            
+
             final quest = s.currentQuest;
             String? explanation = quest.explanation;
             final resolvedIsFinalFailure = s.isFinalFailure;
-            if (explanation == null && widget.isCorrect == false && resolvedIsFinalFailure) {
-               if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
-                   explanation = quest.options![quest.correctAnswerIndex!];
-               }
+            if (explanation == null &&
+                widget.isCorrect == false &&
+                resolvedIsFinalFailure) {
+              if (quest.correctAnswerIndex != null &&
+                  quest.options != null &&
+                  quest.options!.isNotEmpty) {
+                explanation = quest.options![quest.correctAnswerIndex!];
+              }
             }
-            
+
             final ruleContent = quest.audioTranscript ?? explanation;
-            final finalExplanation = (ruleContent == explanation) ? null : explanation;
-            
+            final finalExplanation = (ruleContent == explanation)
+                ? null
+                : explanation;
+
             return GameFeedbackCard(
               isCorrect: widget.isCorrect,
               isFinalFailure: resolvedIsFinalFailure,
@@ -533,4 +544,3 @@ class _ContentArea extends StatelessWidget {
 }
 
 // =============================================================================
-

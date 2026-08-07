@@ -23,15 +23,18 @@ const int _kNudgeTriggerLives = 2;
 const Duration _kNudgeDelay = Duration(milliseconds: 1200);
 
 typedef GameStateMapper<S> = GameStateBase Function(S state);
-typedef HeaderBuilder<S> = Widget Function(BuildContext context, S state, double progress, int lives);
+typedef HeaderBuilder<S> =
+    Widget Function(BuildContext context, S state, double progress, int lives);
 typedef FeedbackBuilder<S> = Widget Function(BuildContext context, S state);
-typedef MascotBuilder<S> = Widget Function(BuildContext context, S state, int lives);
+typedef MascotBuilder<S> =
+    Widget Function(BuildContext context, S state, int lives);
 typedef ErrorRetryCallback = VoidCallback;
 
-class GameBaseLayout<B extends StateStreamableSource<S>, S> extends StatefulWidget {
+class GameBaseLayout<B extends StateStreamableSource<S>, S>
+    extends StatefulWidget {
   final GameScaffoldConfig config;
   final GameStateMapper<S> stateMapper;
-  
+
   // UI Builders
   final HeaderBuilder<S> headerBuilder;
   final FeedbackBuilder<S>? feedbackBuilder;
@@ -56,7 +59,8 @@ class GameBaseLayout<B extends StateStreamableSource<S>, S> extends StatefulWidg
   State<GameBaseLayout<B, S>> createState() => _GameBaseLayoutState<B, S>();
 }
 
-class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<GameBaseLayout<B, S>> {
+class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
+    extends State<GameBaseLayout<B, S>> {
   late final TtsService _ttsService;
   late final HapticService _hapticService;
 
@@ -84,21 +88,18 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<
 
   void _onStateChange(BuildContext ctx, S state) {
     final baseState = widget.stateMapper(state);
-    
+
     if (baseState is GameOverState) {
-      GameDialogHelper.showGameOver(
-        ctx,
-        onRestore: widget.onRestoreLife,
-      );
+      GameDialogHelper.showGameOver(ctx, onRestore: widget.onRestoreLife);
       return;
     }
 
     if (baseState is! GameLoadedState) return;
-    
+
     final justDroppedToLastLife =
         _lastLives == _kNudgeTriggerLives &&
         baseState.livesRemaining == _kLastLifeThreshold;
-        
+
     if (justDroppedToLastLife) _handleLastLifeNudge();
     _lastLives = baseState.livesRemaining;
   }
@@ -116,7 +117,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<
       listenWhen: (prev, curr) {
         final prevBase = widget.stateMapper(prev);
         final currBase = widget.stateMapper(curr);
-        
+
         if (currBase is GameOverState && prevBase is! GameOverState) {
           return true;
         }
@@ -130,7 +131,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<
         buildWhen: (prev, curr) {
           final prevBase = widget.stateMapper(prev);
           final currBase = widget.stateMapper(curr);
-          
+
           if (prevBase.runtimeType != currBase.runtimeType) return true;
           if (currBase is GameLoadedState && prevBase is GameLoadedState) {
             return prevBase.currentIndex != currBase.currentIndex ||
@@ -143,7 +144,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<
         builder: (context, state) {
           final baseState = widget.stateMapper(state);
           final isComplete = baseState is GameCompleteState;
-          
+
           return PopScope(
             canPop: isComplete,
             onPopInvokedWithResult: (didPop, _) {
@@ -151,7 +152,9 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S> extends State<
             },
             child: MediaQuery(
               data: MediaQuery.of(context).copyWith(
-                textScaler: MediaQuery.of(context).textScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.1),
+                textScaler: MediaQuery.of(
+                  context,
+                ).textScaler.clamp(minScaleFactor: 0.8, maxScaleFactor: 1.1),
               ),
               child: GameScaffold<S>(
                 state: state,

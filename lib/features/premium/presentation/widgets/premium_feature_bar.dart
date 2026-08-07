@@ -25,7 +25,8 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_photo_vocab_desc',
-            fallback: 'Snap any object and learn its English name instantly using AI.',
+            fallback:
+                'Snap any object and learn its English name instantly using AI.',
           ),
           isDark: isDark,
           customColor: const Color(0xFF14B8A6), // Teal
@@ -40,7 +41,8 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_scan_learn_desc',
-            fallback: 'Extract text from books or documents and get instant, real-time AI translations.',
+            fallback:
+                'Extract text from books or documents and get instant, real-time AI translations.',
           ),
           isDark: isDark,
           customColor: const Color(0xFF6366F1), // Indigo
@@ -85,7 +87,8 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_ai_tools_desc',
-            fallback: 'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
+            fallback:
+                'Unlimited Smart Reply, Photo Vocabulary, Scan & Learn, Entity Highlighter — all ad-free.',
           ),
           isDark: isDark,
           customColor: const Color(0xFF8B5CF6), // Violet
@@ -179,7 +182,8 @@ class ModernFeatureBar extends StatelessWidget {
     required bool isDark,
     Color? customColor,
   }) {
-    final primaryColor = customColor ?? const Color(0xFF6366F1); // Default to Indigo
+    final primaryColor =
+        customColor ?? const Color(0xFF6366F1); // Default to Indigo
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.r),

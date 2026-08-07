@@ -14,7 +14,7 @@ abstract class GameLoadedState extends GameStateBase {
   bool get hintUsed;
   bool get isFinalFailure;
   GameQuest? get currentQuestOrNull;
-  
+
   // Total quests for progress calculation
   int get totalQuests;
 }

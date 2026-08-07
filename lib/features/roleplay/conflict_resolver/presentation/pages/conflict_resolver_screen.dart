@@ -190,113 +190,119 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
           children: [
             RoleplayBaseLayout(
               gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-          onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
-          child: quest == null
-              ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: isCompact ? 5.h : 10.h,
-                      ),
-                      child: Column(
-                        children: [
-                          ConflictResolverInstruction(
-                            primaryColor: theme.primaryColor,
-                            instruction: quest.instruction,
+              level: widget.level,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              showConfetti: _showConfetti,
+              onContinue: () =>
+                  context.read<RoleplayBloc>().add(NextQuestion()),
+              onHint: () =>
+                  context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              child: quest == null
+                  ? const SizedBox()
+                  : LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isCompact = constraints.maxHeight < 580;
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: isCompact ? 5.h : 10.h,
                           ),
-                          SizedBox(height: isCompact ? 10.h : 16.h),
-                          ConflictResolverConflictCard(
-                            scene: quest.scene ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            rotation: _rotation,
-                          ),
-                          SizedBox(height: isCompact ? 16.h : 24.h),
-
-                          // Circular audio dials
-                          ConflictResolverDialConsole(
-                            targetValue: empathyTarget,
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            rotation: _rotation,
-                            waveAnimation: _waveController,
-                            onDialDragged: _onDialDragged,
-                          ),
-                          SizedBox(height: isCompact ? 20.h : 28.h),
-
-                          // Submit control button
-                          if (!_isAnswered)
-                            ScaleButton(
-                              onTap: () => _submitAnswer(empathyTarget),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 48.w,
-                                  vertical: isCompact ? 10.h : 14.h,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30.r),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      theme.primaryColor,
-                                      theme.primaryColor.withValues(alpha: 0.8),
-                                    ],
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.35,
-                                      ),
-                                      blurRadius: isCompact ? 10 : 15,
-                                    ),
-                                  ],
-                                ),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      Icons.security_rounded,
-                                      color: Colors.white,
-                                      size: isCompact ? 16.r : 18.r,
-                                    ),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      "LOCK HARMONIC FREQUENCY",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 10.sp : 12.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        letterSpacing: 1.5,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                          child: Column(
+                            children: [
+                              ConflictResolverInstruction(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
                               ),
-                            ).animate().fadeIn(duration: 300.ms),
+                              SizedBox(height: isCompact ? 10.h : 16.h),
+                              ConflictResolverConflictCard(
+                                scene: quest.scene ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                rotation: _rotation,
+                              ),
+                              SizedBox(height: isCompact ? 16.h : 24.h),
 
-                          // Post-answer review cards
-                          SizedBox(height: isCompact ? 40.h : 80.h),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                              // Circular audio dials
+                              ConflictResolverDialConsole(
+                                targetValue: empathyTarget,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                rotation: _rotation,
+                                waveAnimation: _waveController,
+                                onDialDragged: _onDialDragged,
+                              ),
+                              SizedBox(height: isCompact ? 20.h : 28.h),
+
+                              // Submit control button
+                              if (!_isAnswered)
+                                ScaleButton(
+                                  onTap: () => _submitAnswer(empathyTarget),
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 48.w,
+                                      vertical: isCompact ? 10.h : 14.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30.r),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          theme.primaryColor,
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
+                                        ],
+                                      ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.35,
+                                          ),
+                                          blurRadius: isCompact ? 10 : 15,
+                                        ),
+                                      ],
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.security_rounded,
+                                          color: Colors.white,
+                                          size: isCompact ? 16.r : 18.r,
+                                        ),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          "LOCK HARMONIC FREQUENCY",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 10.sp : 12.sp,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white,
+                                            letterSpacing: 1.5,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ).animate().fadeIn(duration: 300.ms),
+
+                              // Post-answer review cards
+                              SizedBox(height: isCompact ? 40.h : 80.h),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
             ),
             if (_isFirstStagePassed && !_isAnswered && quest != null)
               SpeakToConfirmOverlay(
                 expectedText: quest.correctAnswer ?? "De-escalating conflict",
                 primaryColor: theme.primaryColor,
                 onConfirmed: () {
-                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  context.read<RoleplayBloc>().add(
+                    const RoleplaySpeakConfirmed(5),
+                  );
                   _submitVerbalEvaluation(true);
                 },
                 onSkipped: () => _submitVerbalEvaluation(false),
@@ -307,4 +313,3 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
     );
   }
 }
-

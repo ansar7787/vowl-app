@@ -66,7 +66,10 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     });
   }
 
-  Future<void> _submitAnswer(List<String> targetKeywords, bool isAnswered) async {
+  Future<void> _submitAnswer(
+    List<String> targetKeywords,
+    bool isAnswered,
+  ) async {
     if (isAnswered || _answerController.text.trim().isEmpty) return;
 
     final rawText = _answerController.text.trim();
@@ -95,7 +98,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
     int matchedCount = 0;
     for (var kw in targetKeywords) {
-      if (RegExp(r'\b' + RegExp.escape(kw.toLowerCase()) + r'\b').hasMatch(text)) {
+      if (RegExp(
+        r'\b' + RegExp.escape(kw.toLowerCase()) + r'\b',
+      ).hasMatch(text)) {
         matchedCount++;
       }
     }
@@ -112,14 +117,17 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
     // --- ML KIT LANGUAGE ID CHECK ---
     final languageIdService = di.sl<LanguageIdService>();
-    final String languageCode = await languageIdService.identifyLanguage(rawText);
-    
+    final String languageCode = await languageIdService.identifyLanguage(
+      rawText,
+    );
+
     if (!mounted) return;
-    
+
     if (languageCode != 'en') {
       CustomSnackBar.show(
         context: context,
-        message: "Your answer must be written in English. Please write a natural sentence!",
+        message:
+            "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
@@ -214,113 +222,118 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         color: theme.primaryColor,
                         isDark: isDark,
                       ),
-                        SizedBox(height: 24.h),
+                      SizedBox(height: 24.h),
 
-                        ShortAnswerBoosterTokens(
-                          keywords: targetKeywords,
-                          text: _answerController.text,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
+                      ShortAnswerBoosterTokens(
+                        keywords: targetKeywords,
+                        text: _answerController.text,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        ShortAnswerInkwell(
-                          controller: _answerController,
-                          isAnswered: isAnswered,
-                          wordCount: _wordCount,
-                          inkLevel: _inkLevel,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 36.h),
+                      ShortAnswerInkwell(
+                        controller: _answerController,
+                        isAnswered: isAnswered,
+                        wordCount: _wordCount,
+                        inkLevel: _inkLevel,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 36.h),
 
-                        if ((isCorrect == true || isFinalFailure) && quest.sampleAnswer != null)
-                          Container(
-                            margin: EdgeInsets.only(bottom: 36.h),
-                            padding: EdgeInsets.all(16.r),
-                            decoration: BoxDecoration(
-                              color: theme.primaryColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(16.r),
-                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(Icons.lightbulb_rounded, color: theme.primaryColor, size: 18.r),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      "SAMPLE ANSWER",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: theme.primaryColor,
-                                        letterSpacing: 1.2,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8.h),
-                                Text(
-                                  quest.sampleAnswer!,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    color: isDark ? Colors.white : Colors.black87,
-                                    height: 1.5,
-                                  ),
-                                ),
-                              ],
+                      if ((isCorrect == true || isFinalFailure) &&
+                          quest.sampleAnswer != null)
+                        Container(
+                          margin: EdgeInsets.only(bottom: 36.h),
+                          padding: EdgeInsets.all(16.r),
+                          decoration: BoxDecoration(
+                            color: theme.primaryColor.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(
+                              color: theme.primaryColor.withValues(alpha: 0.3),
                             ),
                           ),
-
-                        if (!isAnswered && livesRemaining > 0)
-                          ScaleButton(
-                            onTap: () =>
-                                _submitAnswer(targetKeywords, isAnswered),
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: _wordCount >= 10
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (_wordCount >= 10)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      blurRadius: 15,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.lightbulb_rounded,
+                                    color: theme.primaryColor,
+                                    size: 18.r,
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Text(
+                                    "SAMPLE ANSWER",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.2,
                                     ),
+                                  ),
                                 ],
                               ),
-                              child: Center(
-                                child: Text(
-                                  "SEAL WITH WAX",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
+                              SizedBox(height: 8.h),
+                              Text(
+                                quest.sampleAnswer!,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  color: isDark ? Colors.white : Colors.black87,
+                                  height: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+
+                      if (!isAnswered && livesRemaining > 0)
+                        ScaleButton(
+                          onTap: () =>
+                              _submitAnswer(targetKeywords, isAnswered),
+                          child: Container(
+                            width: double.infinity,
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: _wordCount >= 10
+                                  ? theme.primaryColor
+                                  : Colors.grey,
+                              boxShadow: [
+                                if (_wordCount >= 10)
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
+                                    ),
+                                    blurRadius: 15,
                                   ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "SEAL WITH WAX",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 2,
                                 ),
                               ),
                             ),
                           ),
+                        ),
 
-                        SizedBox(height: 60.h),
-                      ],
-                    ),
+                      SizedBox(height: 60.h),
+                    ],
                   ),
+                ),
         );
       },
     );
   }
 }
-
-

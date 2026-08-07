@@ -22,10 +22,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-          width: 2,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
         boxShadow: [
           BoxShadow(
             color: color.withValues(alpha: 0.1),
@@ -43,7 +40,9 @@ class SummarizeStoryManuscript extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,
-              color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF334155),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.9)
+                  : const Color(0xFF334155),
               height: 1.5,
               fontWeight: FontWeight.w500,
             ),

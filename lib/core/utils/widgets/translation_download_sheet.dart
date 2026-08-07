@@ -133,8 +133,14 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           SizedBox(height: 24.h),
           Text(
             _isFinished
-                ? context.tr('translation.model_optimized', fallback: 'Model Optimized!')
-                : context.tr('translation.initializing_engine', fallback: 'Initializing AI Engine...'),
+                ? context.tr(
+                    'translation.model_optimized',
+                    fallback: 'Model Optimized!',
+                  )
+                : context.tr(
+                    'translation.initializing_engine',
+                    fallback: 'Initializing AI Engine...',
+                  ),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 22.sp,
@@ -145,8 +151,15 @@ class _TranslationDownloadSheetState extends State<TranslationDownloadSheet> {
           SizedBox(height: 12.h),
           Text(
             _isFinished
-                ? context.tr('translation.ready_forever', fallback: 'On-device translation ready forever.')
-                : context.tr('translation.download_desc', fallback: 'Downloading offline AI language model (~30MB). This happens only once!'),
+                ? context.tr(
+                    'translation.ready_forever',
+                    fallback: 'On-device translation ready forever.',
+                  )
+                : context.tr(
+                    'translation.download_desc',
+                    fallback:
+                        'Downloading offline AI language model (~30MB). This happens only once!',
+                  ),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

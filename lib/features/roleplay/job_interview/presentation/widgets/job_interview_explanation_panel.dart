@@ -19,7 +19,9 @@ class JobInterviewExplanationPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color cardColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
+    final Color cardColor = (isCorrect ?? false)
+        ? Colors.greenAccent
+        : Colors.redAccent;
 
     return Container(
       width: 1.sw,
@@ -33,7 +35,7 @@ class JobInterviewExplanationPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: cardColor.withValues(alpha: 0.1), 
+            color: cardColor.withValues(alpha: 0.1),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -45,13 +47,17 @@ class JobInterviewExplanationPanel extends StatelessWidget {
           Row(
             children: [
               Icon(
-                (isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
+                (isCorrect ?? false)
+                    ? Icons.verified_rounded
+                    : Icons.info_rounded,
                 color: cardColor,
                 size: 24.r,
               ),
               SizedBox(width: 8.w),
               Text(
-                (isCorrect ?? false) ? "Strong Professionalism!" : "Missed Opportunity!",
+                (isCorrect ?? false)
+                    ? "Strong Professionalism!"
+                    : "Missed Opportunity!",
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
@@ -63,7 +69,8 @@ class JobInterviewExplanationPanel extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            quest.explanation ?? "Connecting your skills to the role is key for professionalism.",
+            quest.explanation ??
+                "Connecting your skills to the role is key for professionalism.",
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 14.sp,

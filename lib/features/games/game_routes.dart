@@ -138,7 +138,7 @@ class GameRoutes {
         return fadeTransitionPage(
           child: ModernCategoryMap(
             key: ValueKey('${categoryId}_$gameType'),
-            gameType: gameType, 
+            gameType: gameType,
             categoryId: categoryId,
           ),
           state: state,

@@ -1,4 +1,4 @@
-﻿import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -206,7 +206,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                 isAnswered: _isAnswered,
                 isCorrect: _isCorrect,
                 showConfetti: _showConfetti,
-                onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+                onContinue: () =>
+                    context.read<AccentBloc>().add(NextQuestion()),
                 onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
                 child: quest == null
                     ? const SizedBox()
@@ -250,9 +251,13 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                               controller: _scrollController,
                               physics: const BouncingScrollPhysics(),
                               child: ConstrainedBox(
-                                constraints: BoxConstraints(minHeight: maxHeight),
+                                constraints: BoxConstraints(
+                                  minHeight: maxHeight,
+                                ),
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -268,8 +273,10 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                     child: SizedBox(
                                                       width: maxWidth - 48.w,
                                                       child: VowelDistinctionInstruction(
-                                                        color: theme.primaryColor,
-                                                        instruction: _isFirstStagePassed
+                                                        color:
+                                                            theme.primaryColor,
+                                                        instruction:
+                                                            _isFirstStagePassed
                                                             ? "Great job! Now confirm by speaking the word."
                                                             : context.tr(
                                                                 'games.vowel_distinction_instruction',
@@ -282,7 +289,8 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                 )
                                               : VowelDistinctionInstruction(
                                                   color: theme.primaryColor,
-                                                  instruction: _isFirstStagePassed
+                                                  instruction:
+                                                      _isFirstStagePassed
                                                       ? "Great job! Now confirm by speaking the word."
                                                       : context.tr(
                                                           'games.vowel_distinction_instruction',
@@ -300,8 +308,11 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                       width: maxWidth - 48.w,
                                                       child:
                                                           VowelDistinctionPromptCard(
-                                                            word: quest.word ?? "",
-                                                            color: theme.primaryColor,
+                                                            word:
+                                                                quest.word ??
+                                                                "",
+                                                            color: theme
+                                                                .primaryColor,
                                                             isDark: isDark,
                                                           ),
                                                     ),
@@ -337,14 +348,18 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                             quest
                                                                 .correctAnswerIndex ??
                                                             0,
-                                                        color: theme.primaryColor,
+                                                        color:
+                                                            theme.primaryColor,
                                                         isDark: isDark,
                                                         isAnswered:
                                                             _isAnswered ||
                                                             _isFirstStagePassed,
-                                                        selectedIndex: _selectedIndex,
-                                                        sliderValue: _sliderValue,
-                                                        onSubmitChoice: _submitChoice,
+                                                        selectedIndex:
+                                                            _selectedIndex,
+                                                        sliderValue:
+                                                            _sliderValue,
+                                                        onSubmitChoice:
+                                                            _submitChoice,
                                                         onSliderUpdate:
                                                             _onSliderUpdate,
                                                       ),
@@ -354,19 +369,25 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                               : VowelDistinctionSpectralSlider(
                                                   options: options,
                                                   correctIndex:
-                                                      quest.correctAnswerIndex ?? 0,
+                                                      quest
+                                                          .correctAnswerIndex ??
+                                                      0,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isAnswered:
-                                                      _isAnswered || _isFirstStagePassed,
+                                                      _isAnswered ||
+                                                      _isFirstStagePassed,
                                                   selectedIndex: _selectedIndex,
                                                   sliderValue: _sliderValue,
                                                   onSubmitChoice: _submitChoice,
-                                                  onSliderUpdate: _onSliderUpdate,
+                                                  onSliderUpdate:
+                                                      _onSliderUpdate,
                                                 ),
                                           SizedBox(height: gapBottom),
                                           // Panel removed in favor of SpeakToConfirmOverlay
-                                          SizedBox(height: _isAnswered ? 180.h : 0),
+                                          SizedBox(
+                                            height: _isAnswered ? 180.h : 0,
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -383,10 +404,14 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                   expectedText: quest.textToSpeak ?? quest.word ?? "",
                   primaryColor: theme.primaryColor,
                   onConfirmed: () {
-                    context.read<AccentBloc>().add(const AccentSpeakConfirmed(5));
+                    context.read<AccentBloc>().add(
+                      const AccentSpeakConfirmed(5),
+                    );
                     _submitVerbalEvaluation(true);
                   },
-                  onSkipped: () => _submitVerbalEvaluation(false), // Skip speaking but keep the correct answer!
+                  onSkipped: () => _submitVerbalEvaluation(
+                    false,
+                  ), // Skip speaking but keep the correct answer!
                 ),
             ],
           ),

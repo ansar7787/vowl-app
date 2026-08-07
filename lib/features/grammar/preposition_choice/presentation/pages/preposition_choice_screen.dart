@@ -76,21 +76,21 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   List<InlineSpan> _buildSentenceWithBlank(
@@ -191,15 +191,20 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
             ? state.currentQuest
             : null;
         final options = quest?.options ?? ["IN", "ON", "AT", "UNDER"];
-        
+
         String cleanTargetSentence = "";
         if (quest != null) {
-            final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
-            String fullSentence = sentence;
-            if (sentence.contains("___") && _targetNode != -1) {
-                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), options[_targetNode]);
-            }
-            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+          final sentence = quest.sentenceWithBlank ?? quest.question ?? "";
+          String fullSentence = sentence;
+          if (sentence.contains("___") && _targetNode != -1) {
+            fullSentence = sentence.replaceFirst(
+              RegExp(r'_{3,}'),
+              options[_targetNode],
+            );
+          }
+          cleanTargetSentence = fullSentence
+              .replaceAll(RegExp(r'\s+'), ' ')
+              .trim();
         }
 
         return GrammarBaseLayout(
@@ -210,8 +215,10 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -226,7 +233,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                             (isCompact ? 50.h : 80.h) +
                             (isCompact ? 160.h : 260.h) +
                             40.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 5
@@ -261,7 +269,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
 
                             // Context Card
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Container(
                                     width: double.infinity,
                                     padding: EdgeInsets.all(
@@ -270,7 +280,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                     decoration: BoxDecoration(
                                       color: isDark
                                           ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.03),
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
                                       borderRadius: BorderRadius.circular(
                                         isCompact ? 18.r : 28.r,
                                       ),
@@ -296,7 +308,8 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                                           quest.sentenceWithBlank ??
                                               quest.question ??
                                               "____ sentence.",
-                                          (_isAnswered || _pendingJigsaw) && _targetNode != -1
+                                          (_isAnswered || _pendingJigsaw) &&
+                                                  _targetNode != -1
                                               ? options[_targetNode]
                                               : null,
                                           theme.primaryColor,
@@ -338,7 +351,9 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,

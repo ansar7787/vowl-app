@@ -4,16 +4,12 @@ class GameScrollbar extends StatelessWidget {
   final Widget child;
   final ScrollController? controller;
 
-  const GameScrollbar({
-    super.key,
-    required this.child,
-    this.controller,
-  });
+  const GameScrollbar({super.key, required this.child, this.controller});
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return RawScrollbar(
       controller: controller,
       thumbColor: isDark ? Colors.white24 : Colors.black26,

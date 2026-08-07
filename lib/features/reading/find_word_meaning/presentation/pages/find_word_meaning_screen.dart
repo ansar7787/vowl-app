@@ -117,8 +117,10 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -145,10 +147,14 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                               width: double.infinity,
                               padding: EdgeInsets.all(24.r),
                               decoration: BoxDecoration(
-                                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.02),
                                 borderRadius: BorderRadius.circular(20.r),
                                 border: Border.all(
-                                  color: theme.primaryColor.withValues(alpha: 0.3),
+                                  color: theme.primaryColor.withValues(
+                                    alpha: 0.3,
+                                  ),
                                   width: 1,
                                 ),
                               ),
@@ -158,7 +164,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                   fontFamily: 'Outfit',
                                   fontSize: 18.sp,
                                   height: 1.6,
-                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
                                 ),
                               ),
                             ),
@@ -170,7 +178,9 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                 isDark: isDark,
                               ),
                             ],
-                            SizedBox(height: 240.h), // space for anagram wrapper
+                            SizedBox(
+                              height: 240.h,
+                            ), // space for anagram wrapper
                           ],
                         ),
                       ),

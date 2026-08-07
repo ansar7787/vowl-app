@@ -68,7 +68,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   }
 
   void _onBridgeUpdate(Offset globalPosition) {
-    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null) return;
+    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null)
+      return;
     final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
     if (renderBox != null) {
       setState(() {
@@ -93,7 +94,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
 
   void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
     if (_pendingSelectedIndex == null) return;
-    
+
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
@@ -106,7 +107,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
 
     final selected = quest.options![_pendingSelectedIndex!];
     final correct = quest.correctAnswer ?? "";
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     setState(() => _selectedIndex = _pendingSelectedIndex);
 
@@ -193,8 +195,10 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -226,7 +230,8 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                               correct: quest.correctAnswer ?? "",
                               color: theme.primaryColor,
                               isDark: isDark,
-                              selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
+                              selectedIndex:
+                                  _selectedIndex ?? _pendingSelectedIndex,
                               isAnswered: _isAnswered,
                               onBridgeEnd: (idx, opt) => _onBridgeEnd(
                                 idx,
@@ -253,7 +258,9 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                         ),
                       ),
                     ),
-                    if (_dragStart != null && _dragCurrent != null && _pendingSelectedIndex == null)
+                    if (_dragStart != null &&
+                        _dragCurrent != null &&
+                        _pendingSelectedIndex == null)
                       IgnorePointer(
                         child: CustomPaint(
                           painter: BridgePainter(

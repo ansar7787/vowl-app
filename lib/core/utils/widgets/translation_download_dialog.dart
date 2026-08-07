@@ -17,7 +17,8 @@ class TranslationDownloadDialog extends StatefulWidget {
   }
 
   @override
-  State<TranslationDownloadDialog> createState() => _TranslationDownloadDialogState();
+  State<TranslationDownloadDialog> createState() =>
+      _TranslationDownloadDialogState();
 }
 
 class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
@@ -32,7 +33,9 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
   }
 
   Future<void> _loadLanguageAndStart() async {
-    final langName = await di.sl<TranslationService>().getConfiguredLanguageName();
+    final langName = await di
+        .sl<TranslationService>()
+        .getConfiguredLanguageName();
     if (mounted) {
       setState(() {
         _languageName = langName ?? 'Language';
@@ -58,7 +61,12 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(context.tr('translation.download_failed', fallback: 'Failed to download language model.')),
+            content: Text(
+              context.tr(
+                'translation.download_failed',
+                fallback: 'Failed to download language model.',
+              ),
+            ),
             backgroundColor: const Color(0xFFF43F5E),
           ),
         );
@@ -111,7 +119,9 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
                     value: _progress == 0 ? null : _progress / 100,
                     strokeWidth: 6,
                     backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                    valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF6366F1)),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      Color(0xFF6366F1),
+                    ),
                   ),
                 ),
                 Text(
@@ -127,7 +137,10 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
             ),
             SizedBox(height: 24.h),
             Text(
-              context.tr('translation.downloading_model', fallback: 'Downloading Model...'),
+              context.tr(
+                'translation.downloading_model',
+                fallback: 'Downloading Model...',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
@@ -138,10 +151,13 @@ class _TranslationDownloadDialogState extends State<TranslationDownloadDialog> {
             ),
             SizedBox(height: 8.h),
             Text(
-              context.tr(
-                'translation.downloading_desc', 
-                fallback: 'Downloading offline AI model for {lang}. This only happens once.',
-              ).replaceAll('{lang}', _languageName ?? ''),
+              context
+                  .tr(
+                    'translation.downloading_desc',
+                    fallback:
+                        'Downloading offline AI model for {lang}. This only happens once.',
+                  )
+                  .replaceAll('{lang}', _languageName ?? ''),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,

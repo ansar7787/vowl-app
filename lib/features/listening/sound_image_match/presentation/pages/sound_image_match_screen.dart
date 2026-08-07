@@ -97,8 +97,6 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
@@ -178,38 +176,51 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                     return Stack(
                       children: [
                         SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SoundImageMatchInstruction(
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 35.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SoundImageMatchInstruction(
+                                                color: theme.primaryColor,
+                                                instruction: quest.instruction,
+                                              ),
+                                            ),
+                                          )
+                                        : SoundImageMatchInstruction(
                                             color: theme.primaryColor,
                                             instruction: quest.instruction,
                                           ),
-                                        ),
-                                      )
-                                    : SoundImageMatchInstruction(
-                                        color: theme.primaryColor,
-                                        instruction: quest.instruction,
-                                      ),
-                                SizedBox(height: gapInstruction),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 60.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SoundImageMatchEmitter(
+                                    SizedBox(height: gapInstruction),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 60.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SoundImageMatchEmitter(
+                                                onTap: () {
+                                                  _soundService.playTts(
+                                                    quest.textToSpeak ?? "",
+                                                  );
+                                                  _hapticService.selection();
+                                                },
+                                                color: theme.primaryColor,
+                                                emoji: quest.emoji,
+                                                isCorrectState: _isCorrect,
+                                              ),
+                                            ),
+                                          )
+                                        : SoundImageMatchEmitter(
                                             onTap: () {
                                               _soundService.playTts(
                                                 quest.textToSpeak ?? "",
@@ -220,64 +231,60 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                             emoji: quest.emoji,
                                             isCorrectState: _isCorrect,
                                           ),
-                                        ),
-                                      )
-                                    : SoundImageMatchEmitter(
-                                        onTap: () {
-                                          _soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          _hapticService.selection();
-                                        },
-                                        color: theme.primaryColor,
-                                        emoji: quest.emoji,
-                                        isCorrectState: _isCorrect,
-                                      ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapEmitter),
-                                SizedBox(
-                                  height: isCompact ? 220.h : 350.h,
-                                  child: SoundImageMatchScannerField(
-                                    options: quest.options ?? [],
-                                    correctAnswerIndex:
-                                        quest.correctAnswerIndex ?? 0,
-                                    color: theme.primaryColor,
-                                    isAnswered: _isAnswered,
-                                    isCorrectState: _isCorrect,
-                                    selectedIndex: _selectedIndex,
-                                    lensPosition: _lensPosition,
-                                    onScan: _onScan,
-                                    onSelect: (index) {
-                                      if (_isAnswered || _pendingSelectedIndex != null) return;
-                                      setState(() {
-                                        _pendingSelectedIndex = index;
-                                      });
-                                    },
-                                  ),
+                                  ],
                                 ),
-                                SizedBox(height: gapBottom),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapEmitter),
+                                    SizedBox(
+                                      height: isCompact ? 220.h : 350.h,
+                                      child: SoundImageMatchScannerField(
+                                        options: quest.options ?? [],
+                                        correctAnswerIndex:
+                                            quest.correctAnswerIndex ?? 0,
+                                        color: theme.primaryColor,
+                                        isAnswered: _isAnswered,
+                                        isCorrectState: _isCorrect,
+                                        selectedIndex: _selectedIndex,
+                                        lensPosition: _lensPosition,
+                                        onScan: _onScan,
+                                        onSelect: (index) {
+                                          if (_isAnswered ||
+                                              _pendingSelectedIndex != null)
+                                            return;
+                                          setState(() {
+                                            _pendingSelectedIndex = index;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                    if (_pendingSelectedIndex != null && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.options![_pendingSelectedIndex!],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswerIndex ?? 0),
-                        onSkipped: () => _submitFinalAnswer(false, quest.correctAnswerIndex ?? 0),
-                        allowSkip: true,
-                      ),
-                  ],
-                );
-              },
-            ),
+                        if (_pendingSelectedIndex != null && !_isAnswered)
+                          SpeakToConfirmOverlay(
+                            expectedText:
+                                quest.options![_pendingSelectedIndex!],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(
+                              true,
+                              quest.correctAnswerIndex ?? 0,
+                            ),
+                            onSkipped: () => _submitFinalAnswer(
+                              false,
+                              quest.correctAnswerIndex ?? 0,
+                            ),
+                            allowSkip: true,
+                          ),
+                      ],
+                    );
+                  },
+                ),
         );
       },
     );

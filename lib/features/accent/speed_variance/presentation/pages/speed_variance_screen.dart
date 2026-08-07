@@ -149,7 +149,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -265,81 +265,80 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                     : 12.0;
 
                 return GameScrollbar(
-                        controller: _scrollController,
-                        child: SingleChildScrollView(
                   controller: _scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: maxHeight),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: gapTop),
-                              SpeedVarianceInstruction(
-                                color: theme.primaryColor,
-                                instruction: _isFirstStagePassed
-                                  ? "Great job! Now record yourself saying the word."
-                                  : context.tr(
-                                    'games.speed_variance_instruction',
-                                    fallback: quest.instruction,
-                                  ),
-                              ),
-                              SizedBox(height: gapInstruction),
-                              SpeedVariancePromptCard(
-                                word: quest.word ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                              ),
-                              SizedBox(height: gapPrompt),
-                              SpeedVariancePulseSpeaker(
-                                text: quest.textToSpeak ?? "",
-                                color: theme.primaryColor,
-                                onPlayTts: (text) =>
-                                    _playTts(text, speed: quest.targetSpeed),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(height: gapSpeaker),
-                              SpeedVarianceTempoDial(
-                                options: options,
-                                correctIndex: quest.correctAnswerIndex ?? 0,
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                isAnswered: _isAnswered || _isFirstStagePassed,
-                                isDragging: _isDragging,
-                                dialRotation: _dialRotation,
-                                selectedIndex: _selectedIndex,
-                                onDialRotate: _onDialRotate,
-                                onDialRelease: _onDialRelease,
-                                onSubmitChoice: _submitChoice,
-                              ),
-                              SizedBox(height: gapBottom),
-                              if (_isFirstStagePassed)
-                                AccentSelfEvaluationPanel(
-                                  textToSpeak: quest.textToSpeak ?? "",
-                                  primaryColor: theme.primaryColor,
-                                  isCompact: false, // Dial uses fixed size
-                                  onEvaluate: _submitVerbalEvaluation,
+                  child: SingleChildScrollView(
+                    controller: _scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(minHeight: maxHeight),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                SpeedVarianceInstruction(
+                                  color: theme.primaryColor,
+                                  instruction: _isFirstStagePassed
+                                      ? "Great job! Now record yourself saying the word."
+                                      : context.tr(
+                                          'games.speed_variance_instruction',
+                                          fallback: quest.instruction,
+                                        ),
                                 ),
-                              SizedBox(
-                                height: _isAnswered ? 180.h : 0,
-                              ),
-                            ],
-                          ),
-                        ],
+                                SizedBox(height: gapInstruction),
+                                SpeedVariancePromptCard(
+                                  word: quest.word ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                                SizedBox(height: gapPrompt),
+                                SpeedVariancePulseSpeaker(
+                                  text: quest.textToSpeak ?? "",
+                                  color: theme.primaryColor,
+                                  onPlayTts: (text) =>
+                                      _playTts(text, speed: quest.targetSpeed),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapSpeaker),
+                                SpeedVarianceTempoDial(
+                                  options: options,
+                                  correctIndex: quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  isAnswered:
+                                      _isAnswered || _isFirstStagePassed,
+                                  isDragging: _isDragging,
+                                  dialRotation: _dialRotation,
+                                  selectedIndex: _selectedIndex,
+                                  onDialRotate: _onDialRotate,
+                                  onDialRelease: _onDialRelease,
+                                  onSubmitChoice: _submitChoice,
+                                ),
+                                SizedBox(height: gapBottom),
+                                if (_isFirstStagePassed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: false, // Dial uses fixed size
+                                    onEvaluate: _submitVerbalEvaluation,
+                                  ),
+                                SizedBox(height: _isAnswered ? 180.h : 0),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-                      );
+                );
               },
             ),
           ),

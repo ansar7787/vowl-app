@@ -75,21 +75,21 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.heavy();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.heavy();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   @override
@@ -141,16 +141,24 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
         final parts = question.contains("...")
             ? question.split("...")
             : question.split("___");
-            
+
         String cleanTargetSentence = "";
         if (quest != null && _placedBrick != null) {
-            String fullSentence = question;
-            if (question.contains("...")) {
-                fullSentence = question.replaceFirst(RegExp(r'\.{3,}'), " $_placedBrick ");
-            } else if (question.contains("___")) {
-                fullSentence = question.replaceFirst(RegExp(r'_{3,}'), " $_placedBrick ");
-            }
-            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+          String fullSentence = question;
+          if (question.contains("...")) {
+            fullSentence = question.replaceFirst(
+              RegExp(r'\.{3,}'),
+              " $_placedBrick ",
+            );
+          } else if (question.contains("___")) {
+            fullSentence = question.replaceFirst(
+              RegExp(r'_{3,}'),
+              " $_placedBrick ",
+            );
+          }
+          cleanTargetSentence = fullSentence
+              .replaceAll(RegExp(r'\s+'), ' ')
+              .trim();
         }
 
         return GrammarBaseLayout(
@@ -161,8 +169,10 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -178,7 +188,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                             (isCompact ? 50.h : 70.h) +
                             (isCompact ? 50.h : 80.h) +
                             40.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 5
@@ -233,7 +244,8 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                       isCompact,
                                     ),
                                     SizedBox(height: isCompact ? 12.h : 24.h),
-                                    if (parts.length > 1 && parts.last.isNotEmpty)
+                                    if (parts.length > 1 &&
+                                        parts.last.isNotEmpty)
                                       _buildIslandPiece(
                                         parts.last,
                                         isDark,
@@ -267,7 +279,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
@@ -294,7 +308,9 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
         final nodeColor = _placedBrick != null
-            ? ((_isAnswered || _pendingJigsaw) && _isCorrect != false ? Colors.greenAccent : Colors.redAccent)
+            ? ((_isAnswered || _pendingJigsaw) && _isCorrect != false
+                  ? Colors.greenAccent
+                  : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
                   : primaryColor.withValues(alpha: 0.3));

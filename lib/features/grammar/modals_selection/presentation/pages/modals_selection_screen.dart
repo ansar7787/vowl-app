@@ -72,21 +72,21 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-     setState(() => _pendingJigsaw = false);
-     setState(() {
-        _isAnswered = true;
-        _isCorrect = correct;
-     });
-     
-     if (correct) {
-         _hapticService.success();
-         _soundService.playCorrect();
-         context.read<GrammarBloc>().add(const SubmitAnswer(true));
-     } else {
-         _hapticService.error();
-         _soundService.playWrong();
-         context.read<GrammarBloc>().add(const SubmitAnswer(false));
-     }
+    setState(() => _pendingJigsaw = false);
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = correct;
+    });
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   List<InlineSpan> _buildSentenceWithBlank(
@@ -186,12 +186,17 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
 
         String cleanTargetSentence = "";
         if (quest != null) {
-            final sentence = quest.sentence ?? quest.question ?? "";
-            String fullSentence = sentence;
-            if (sentence.contains("___")) {
-                fullSentence = sentence.replaceFirst(RegExp(r'_{3,}'), options[_selectedIndex]);
-            }
-            cleanTargetSentence = fullSentence.replaceAll(RegExp(r'\s+'), ' ').trim();
+          final sentence = quest.sentence ?? quest.question ?? "";
+          String fullSentence = sentence;
+          if (sentence.contains("___")) {
+            fullSentence = sentence.replaceFirst(
+              RegExp(r'_{3,}'),
+              options[_selectedIndex],
+            );
+          }
+          cleanTargetSentence = fullSentence
+              .replaceAll(RegExp(r'\s+'), ' ')
+              .trim();
         }
 
         return GrammarBaseLayout(
@@ -202,8 +207,10 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false, // Stack needs finite space to anchor to bottom
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -219,7 +226,8 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                             (isCompact ? 180.r : 280.r) +
                             (isCompact ? 40.h : 65.h) +
                             40.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 5
@@ -254,7 +262,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
 
                             // Context Card with Fill-in-the-Blank
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Container(
                                     width: double.infinity,
                                     padding: EdgeInsets.all(
@@ -263,7 +273,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                     decoration: BoxDecoration(
                                       color: isDark
                                           ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.03),
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
                                       borderRadius: BorderRadius.circular(
                                         isCompact ? 18.r : 28.r,
                                       ),
@@ -330,8 +342,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 40.w),
                                 child: ScaleButton(
-                                  onTap: () =>
-                                      _submitAnswer(quest.correctAnswerIndex ?? 0),
+                                  onTap: () => _submitAnswer(
+                                    quest.correctAnswerIndex ?? 0,
+                                  ),
                                   child: Container(
                                     width: double.infinity,
                                     height: isCompact ? 48.h : 65.h,
@@ -342,7 +355,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                       gradient: LinearGradient(
                                         colors: [
                                           theme.primaryColor,
-                                          theme.primaryColor.withValues(alpha: 0.8),
+                                          theme.primaryColor.withValues(
+                                            alpha: 0.8,
+                                          ),
                                         ],
                                       ),
                                       boxShadow: [
@@ -376,7 +391,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                         );
                       },
                     ),
-                    if (_pendingJigsaw && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    if (_pendingJigsaw &&
+                        !_isAnswered &&
+                        cleanTargetSentence.isNotEmpty)
                       DynamicJigsawWrapper(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,

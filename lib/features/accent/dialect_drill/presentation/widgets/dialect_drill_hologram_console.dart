@@ -190,11 +190,15 @@ class _DialectDrillHologramConsoleState
         },
         builder: (context, candidateData, rejectedData) {
           String label =
-              widget.quest.options != null && widget.quest.options!.length > index
+              widget.quest.options != null &&
+                  widget.quest.options!.length > index
               ? widget.quest.options![index]
               : "TRANS 0${index + 1}";
 
-          label = label.replaceAll(RegExp(r'\s*\(American\)|\s*\(British\)'), '');
+          label = label.replaceAll(
+            RegExp(r'\s*\(American\)|\s*\(British\)'),
+            '',
+          );
 
           return DialectDrillTransmissionTower(
             index: index,

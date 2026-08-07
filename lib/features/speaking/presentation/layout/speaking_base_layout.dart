@@ -16,10 +16,6 @@ import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
 
-
-
-
-
 // =============================================================================
 // SpeakingBaseLayout
 // =============================================================================
@@ -94,11 +90,16 @@ class SpeakingBaseLayout extends StatelessWidget {
       onRetry: () => context.read<SpeakingBloc>().add(
         FetchSpeakingQuests(gameType: gameType, level: level),
       ),
-      onRestoreLife: () => context.read<SpeakingBloc>().add(const RestoreLife()),
+      onRestoreLife: () =>
+          context.read<SpeakingBloc>().add(const RestoreLife()),
       backgroundOverlay: Builder(
         builder: (context) {
           final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme('speaking', level: level, isDark: isDark);
+          final theme = LevelThemeHelper.getTheme(
+            'speaking',
+            level: level,
+            isDark: isDark,
+          );
           return SpeakingVoicePulseBg(
             color: (theme.primaryColor).withValues(alpha: 0.15),
           );
@@ -106,10 +107,12 @@ class SpeakingBaseLayout extends StatelessWidget {
       ),
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final currentQuest = state is SpeakingLoaded ? state.currentQuestOrNull : null;
+        final currentQuest = state is SpeakingLoaded
+            ? state.currentQuestOrNull
+            : null;
         final hintUsed = state is SpeakingLoaded ? state.hintUsed : false;
         final streak = state is SpeakingLoaded ? state.currentIndex : 0;
-        
+
         return SpeakingGameHeader(
           level: level,
           progress: progress,
@@ -141,19 +144,29 @@ class SpeakingBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! SpeakingLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('speaking', level: level, isDark: isDark);
-        
+        final theme = LevelThemeHelper.getTheme(
+          'speaking',
+          level: level,
+          isDark: isDark,
+        );
+
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
         final resolvedIsFinalFailure = state.isFinalFailure;
-        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
-           if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
-               explanation = quest.options![quest.correctAnswerIndex!];
-           }
+        if (explanation == null &&
+            isCorrect == false &&
+            resolvedIsFinalFailure) {
+          if (quest.correctAnswerIndex != null &&
+              quest.options != null &&
+              quest.options!.isNotEmpty) {
+            explanation = quest.options![quest.correctAnswerIndex!];
+          }
         }
 
         final ruleContent = quest.meaning ?? explanation;
-        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

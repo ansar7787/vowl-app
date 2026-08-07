@@ -111,7 +111,9 @@ class _PodiumSlot extends StatelessWidget {
         ? maxHeight * 0.46
         : (rank == 2 ? maxHeight * 0.36 : maxHeight * 0.30);
     final colors = _rankColors(rank);
-    final levelsCleared = isKids ? user.kidsTotalLevelsCompleted : user.totalLevelsCompleted;
+    final levelsCleared = isKids
+        ? user.kidsTotalLevelsCompleted
+        : user.totalLevelsCompleted;
     final score = isKids ? user.kidsCoins : user.totalExp;
     final scoreLabel = isKids ? 'Coins' : 'XP';
     final isDark = Theme.of(context).brightness == Brightness.dark;

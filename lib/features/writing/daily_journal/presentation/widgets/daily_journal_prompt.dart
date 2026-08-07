@@ -18,63 +18,63 @@ class DailyJournalPrompt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24.r),
-        gradient: LinearGradient(
-          colors: [
-            primaryColor.withValues(alpha: isDark ? 0.2 : 0.15),
-            primaryColor.withValues(alpha: isDark ? 0.05 : 0.05),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: primaryColor.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Stack(
-        children: [
-          const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
-          Row(
-            children: [
-              Icon(
-                    Icons.nightlight_round,
-                    color: Colors.amberAccent,
-                    size: 24.r,
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .shimmer(duration: 3.seconds),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                    height: 1.4,
-                  ),
-                ),
+          padding: EdgeInsets.all(20.r),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24.r),
+            gradient: LinearGradient(
+              colors: [
+                primaryColor.withValues(alpha: isDark ? 0.2 : 0.15),
+                primaryColor.withValues(alpha: isDark ? 0.05 : 0.05),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.1),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
               ),
             ],
           ),
-        ],
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(
-      duration: 4.seconds,
-      color: primaryColor.withValues(alpha: 0.1),
-    );
+          child: Stack(
+            children: [
+              const Positioned.fill(child: TechPatternOverlay(opacity: 0.05)),
+              Row(
+                children: [
+                  Icon(
+                        Icons.nightlight_round,
+                        color: Colors.amberAccent,
+                        size: 24.r,
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .shimmer(duration: 3.seconds),
+                  SizedBox(width: 16.w),
+                  Expanded(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(
+          duration: 4.seconds,
+          color: primaryColor.withValues(alpha: 0.1),
+        );
   }
 }

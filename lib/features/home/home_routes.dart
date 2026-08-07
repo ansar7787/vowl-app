@@ -132,7 +132,6 @@ class HomeRoutes {
           fadeTransitionPage(child: const StreakScreen(), state: state),
     ),
 
-
     GoRoute(
       path: trophyRoomRoute,
       pageBuilder: (context, state) =>
@@ -140,10 +139,8 @@ class HomeRoutes {
     ),
     GoRoute(
       path: scanAndLearnRoute,
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const ScanAndLearnScreen(),
-        state: state,
-      ),
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: const ScanAndLearnScreen(), state: state),
     ),
     GoRoute(
       path: photoVocabularyRoute,

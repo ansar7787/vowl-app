@@ -139,43 +139,115 @@ class AccentFeedbackCard extends StatelessWidget {
               shadowColor: shadowColor,
               isDark: isDark,
             ),
-            
+
             // Dynamic generation of all possible pedagogical rules.
             // When new games add new fields, simply add them to this list.
             ...[
               if (state.currentQuest.phoneticRule != null)
-                (icon: Icons.psychology_rounded, capsKey: 'games.phonetic_rule_caps', capsFallback: 'PHONETIC RULE', titleKey: 'games.phonetic_rule', titleFallback: 'Phonetic Rule', rule: state.currentQuest.phoneticRule!),
+                (
+                  icon: Icons.psychology_rounded,
+                  capsKey: 'games.phonetic_rule_caps',
+                  capsFallback: 'PHONETIC RULE',
+                  titleKey: 'games.phonetic_rule',
+                  titleFallback: 'Phonetic Rule',
+                  rule: state.currentQuest.phoneticRule!,
+                ),
               if (state.currentQuest.mouthPosition != null)
-                (icon: Icons.face_retouching_natural_rounded, capsKey: 'games.mouth_position_caps', capsFallback: 'MOUTH POSITION', titleKey: 'games.mouth_position', titleFallback: 'Mouth Position', rule: state.currentQuest.mouthPosition!),
+                (
+                  icon: Icons.face_retouching_natural_rounded,
+                  capsKey: 'games.mouth_position_caps',
+                  capsFallback: 'MOUTH POSITION',
+                  titleKey: 'games.mouth_position',
+                  titleFallback: 'Mouth Position',
+                  rule: state.currentQuest.mouthPosition!,
+                ),
               if (state.currentQuest.dialectNote != null)
-                (icon: Icons.public, capsKey: 'games.dialect_note_caps', capsFallback: 'DIALECT NOTE', titleKey: 'games.dialect_note', titleFallback: 'Dialect Note', rule: state.currentQuest.dialectNote!),
+                (
+                  icon: Icons.public,
+                  capsKey: 'games.dialect_note_caps',
+                  capsFallback: 'DIALECT NOTE',
+                  titleKey: 'games.dialect_note',
+                  titleFallback: 'Dialect Note',
+                  rule: state.currentQuest.dialectNote!,
+                ),
               if (state.currentQuest.pitchRule != null)
-                (icon: Icons.show_chart, capsKey: 'games.pitch_rule_caps', capsFallback: 'PITCH RULE', titleKey: 'games.pitch_rule', titleFallback: 'Pitch Rule', rule: state.currentQuest.pitchRule!),
+                (
+                  icon: Icons.show_chart,
+                  capsKey: 'games.pitch_rule_caps',
+                  capsFallback: 'PITCH RULE',
+                  titleKey: 'games.pitch_rule',
+                  titleFallback: 'Pitch Rule',
+                  rule: state.currentQuest.pitchRule!,
+                ),
               if (state.currentQuest.vowelTensionRule != null)
-                (icon: Icons.waves_rounded, capsKey: 'games.vowel_tension_caps', capsFallback: 'VOWEL TENSION', titleKey: 'games.vowel_tension', titleFallback: 'Vowel Tension', rule: state.currentQuest.vowelTensionRule!),
+                (
+                  icon: Icons.waves_rounded,
+                  capsKey: 'games.vowel_tension_caps',
+                  capsFallback: 'VOWEL TENSION',
+                  titleKey: 'games.vowel_tension',
+                  titleFallback: 'Vowel Tension',
+                  rule: state.currentQuest.vowelTensionRule!,
+                ),
               if (state.currentQuest.modulationPattern != null)
-                (icon: Icons.graphic_eq_rounded, capsKey: 'games.modulation_pattern_caps', capsFallback: 'MODULATION PATTERN', titleKey: 'games.modulation_pattern', titleFallback: 'Modulation Pattern', rule: state.currentQuest.modulationPattern!),
+                (
+                  icon: Icons.graphic_eq_rounded,
+                  capsKey: 'games.modulation_pattern_caps',
+                  capsFallback: 'MODULATION PATTERN',
+                  titleKey: 'games.modulation_pattern',
+                  titleFallback: 'Modulation Pattern',
+                  rule: state.currentQuest.modulationPattern!,
+                ),
               if (state.currentQuest.emphasisRule != null)
-                (icon: Icons.priority_high_rounded, capsKey: 'games.emphasis_rule_caps', capsFallback: 'EMPHASIS RULE', titleKey: 'games.emphasis_rule', titleFallback: 'Emphasis Rule', rule: state.currentQuest.emphasisRule!),
+                (
+                  icon: Icons.priority_high_rounded,
+                  capsKey: 'games.emphasis_rule_caps',
+                  capsFallback: 'EMPHASIS RULE',
+                  titleKey: 'games.emphasis_rule',
+                  titleFallback: 'Emphasis Rule',
+                  rule: state.currentQuest.emphasisRule!,
+                ),
               if (state.currentQuest.flowRule != null)
-                (icon: Icons.water_drop_rounded, capsKey: 'games.flow_rule_caps', capsFallback: 'FLOW RULE', titleKey: 'games.flow_rule', titleFallback: 'Flow Rule', rule: state.currentQuest.flowRule!),
+                (
+                  icon: Icons.water_drop_rounded,
+                  capsKey: 'games.flow_rule_caps',
+                  capsFallback: 'FLOW RULE',
+                  titleKey: 'games.flow_rule',
+                  titleFallback: 'Flow Rule',
+                  rule: state.currentQuest.flowRule!,
+                ),
               if (state.currentQuest.pacingRule != null)
-                (icon: Icons.speed_rounded, capsKey: 'games.pacing_rule_caps', capsFallback: 'PACING RULE', titleKey: 'games.pacing_rule', titleFallback: 'Pacing Rule', rule: state.currentQuest.pacingRule!),
+                (
+                  icon: Icons.speed_rounded,
+                  capsKey: 'games.pacing_rule_caps',
+                  capsFallback: 'PACING RULE',
+                  titleKey: 'games.pacing_rule',
+                  titleFallback: 'Pacing Rule',
+                  rule: state.currentQuest.pacingRule!,
+                ),
               if (state.currentQuest.stressRule != null)
-                (icon: Icons.compress_rounded, capsKey: 'games.stress_rule_caps', capsFallback: 'STRESS RULE', titleKey: 'games.stress_rule', titleFallback: 'Stress Rule', rule: state.currentQuest.stressRule!),
-            ].map((ruleData) => Padding(
-              padding: EdgeInsets.only(top: 12.h),
-              child: PedagogicalRuleBox(
-                icon: ruleData.icon,
-                capsKey: ruleData.capsKey,
-                capsFallback: ruleData.capsFallback,
-                titleKey: ruleData.titleKey,
-                titleFallback: ruleData.titleFallback,
-                rule: ruleData.rule,
-                shadowColor: shadowColor,
-                isDark: isDark,
+                (
+                  icon: Icons.compress_rounded,
+                  capsKey: 'games.stress_rule_caps',
+                  capsFallback: 'STRESS RULE',
+                  titleKey: 'games.stress_rule',
+                  titleFallback: 'Stress Rule',
+                  rule: state.currentQuest.stressRule!,
+                ),
+            ].map(
+              (ruleData) => Padding(
+                padding: EdgeInsets.only(top: 12.h),
+                child: PedagogicalRuleBox(
+                  icon: ruleData.icon,
+                  capsKey: ruleData.capsKey,
+                  capsFallback: ruleData.capsFallback,
+                  titleKey: ruleData.titleKey,
+                  titleFallback: ruleData.titleFallback,
+                  rule: ruleData.rule,
+                  shadowColor: shadowColor,
+                  isDark: isDark,
+                ),
               ),
-            )),
+            ),
           ],
 
           SizedBox(height: 28.h),
@@ -390,5 +462,4 @@ class _ExplanationBoxState extends State<_ExplanationBox> {
           curve: Curves.easeOutBack,
         );
   }
-
 }

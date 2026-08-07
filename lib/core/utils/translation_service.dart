@@ -90,7 +90,9 @@ class TranslationService {
     final bcpCode = prefs.getString(_kTargetLangKey);
     if (bcpCode == null) return false;
     final targetDownloaded = await _modelManager.isModelDownloaded(bcpCode);
-    final englishDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    final englishDownloaded = await _modelManager.isModelDownloaded(
+      TranslateLanguage.english.bcpCode,
+    );
     return targetDownloaded && englishDownloaded;
   }
 
@@ -108,13 +110,17 @@ class TranslationService {
     _currentTargetLanguage = target;
 
     // Ensure English base model is downloaded
-    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    final isEnDownloaded = await _modelManager.isModelDownloaded(
+      TranslateLanguage.english.bcpCode,
+    );
     if (!isEnDownloaded) {
       await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
     }
 
     // Trigger download for target language
-    final isTargetDownloaded = await _modelManager.isModelDownloaded(target.bcpCode);
+    final isTargetDownloaded = await _modelManager.isModelDownloaded(
+      target.bcpCode,
+    );
     if (!isTargetDownloaded) {
       await _modelManager.downloadModel(target.bcpCode);
     }
@@ -147,7 +153,9 @@ class TranslationService {
     }
 
     // Ensure models are fully downloaded before translating
-    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    final isEnDownloaded = await _modelManager.isModelDownloaded(
+      TranslateLanguage.english.bcpCode,
+    );
     if (!isEnDownloaded) {
       await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
     }
@@ -174,7 +182,7 @@ class TranslationService {
         targetLanguage: target,
       );
       _currentTargetLanguage = target;
-      
+
       try {
         var result2 = await _translator!.translateText(englishText);
         if (result2 == englishText && target != TranslateLanguage.english) {
@@ -186,18 +194,21 @@ class TranslationService {
         // If it STILL fails, the downloaded model is likely corrupted on disk.
         // Delete it so the app is forced to redownload a clean copy next time.
         await _modelManager.deleteModel(target.bcpCode);
-        throw Exception("Corrupted model deleted. Please try translating again to redownload.");
+        throw Exception(
+          "Corrupted model deleted. Please try translating again to redownload.",
+        );
       }
     }
   }
-
 
   /// Explicitly starts the model download for the configured language and waits for completion.
   Future<void> ensureModelDownloaded() async {
     final prefs = await SharedPreferences.getInstance();
     final bcpCode = prefs.getString(_kTargetLangKey);
     if (bcpCode == null) return;
-    final isEnDownloaded = await _modelManager.isModelDownloaded(TranslateLanguage.english.bcpCode);
+    final isEnDownloaded = await _modelManager.isModelDownloaded(
+      TranslateLanguage.english.bcpCode,
+    );
     if (!isEnDownloaded) {
       await _modelManager.downloadModel(TranslateLanguage.english.bcpCode);
     }

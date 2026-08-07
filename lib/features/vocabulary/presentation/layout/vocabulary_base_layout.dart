@@ -61,10 +61,17 @@ class VocabularyBaseLayout extends StatelessWidget {
       onRetry: () => context.read<VocabularyBloc>().add(
         FetchVocabularyQuests(gameType: gameType, level: level),
       ),
-      onRestoreLife: () => context.read<VocabularyBloc>().add(const RestoreLife()),
+      onRestoreLife: () =>
+          context.read<VocabularyBloc>().add(const RestoreLife()),
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = VocabLevelTheme.from(LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level));
+        final theme = VocabLevelTheme.from(
+          LevelThemeHelper.getTheme(
+            gameType.name,
+            isDark: isDark,
+            level: level,
+          ),
+        );
         return VocabularyHeader(
           state: state,
           level: level,
@@ -74,7 +81,10 @@ class VocabularyBaseLayout extends StatelessWidget {
           isDark: isDark,
           isAnswered: isAnswered,
           gameType: gameType,
-          onExit: () => GameDialogHelper.showExitConfirmation(context, onQuit: () => Navigator.of(context).pop()),
+          onExit: () => GameDialogHelper.showExitConfirmation(
+            context,
+            onQuit: () => Navigator.of(context).pop(),
+          ),
           onBriefingShow: () {}, // Handled by GameBaseLayout internally now
           onHint: onHint,
         );
@@ -90,19 +100,31 @@ class VocabularyBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! VocabularyLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = VocabLevelTheme.from(LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level));
-        
+        final theme = VocabLevelTheme.from(
+          LevelThemeHelper.getTheme(
+            gameType.name,
+            isDark: isDark,
+            level: level,
+          ),
+        );
+
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
         final resolvedIsFinalFailure = state.isFinalFailure;
-        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
-           if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
-               explanation = quest.options![quest.correctAnswerIndex!];
-           }
+        if (explanation == null &&
+            isCorrect == false &&
+            resolvedIsFinalFailure) {
+          if (quest.correctAnswerIndex != null &&
+              quest.options != null &&
+              quest.options!.isNotEmpty) {
+            explanation = quest.options![quest.correctAnswerIndex!];
+          }
         }
 
         final ruleContent = quest.definition ?? explanation;
-        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

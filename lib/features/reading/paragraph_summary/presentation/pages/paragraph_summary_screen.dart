@@ -221,8 +221,10 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                 isDark: isDark,
                                 selectedOption: _selectedOption,
                                 isAnswered: _isAnswered,
-                                onTapOption: (opt) =>
-                                    _submitAnswer(opt, quest.correctAnswer ?? ""),
+                                onTapOption: (opt) => _submitAnswer(
+                                  opt,
+                                  quest.correctAnswer ?? "",
+                                ),
                               ),
                             ],
                             if (_isAnswered) ...[
@@ -238,7 +240,8 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                         ),
                       ),
                     ),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                    if (_isFirstStagePassed &&
+                        (!_isAnswered || _isCorrect == null))
                       TypeToConfirmOverlay(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,

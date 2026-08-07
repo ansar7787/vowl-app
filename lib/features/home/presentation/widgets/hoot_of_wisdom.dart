@@ -120,117 +120,113 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       borderRadius: BorderRadius.circular(32.r),
       padding: EdgeInsets.all(24.r),
       child: Semantics(
-              label:
-                  '${_hootTitle ?? context.tr('home.hoot_daily_motivation', fallback: 'Daily Motivation')}. $resolvedText',
-              child: Column(
+        label:
+            '${_hootTitle ?? context.tr('home.hoot_daily_motivation', fallback: 'Daily Motivation')}. $resolvedText',
+        child: Column(
+          children: [
+            ExcludeSemantics(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ExcludeSemantics(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // 1. Date Badge (Standard App Style)
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10.w,
+                      vertical: 4.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        // 1. Date Badge (Standard App Style)
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
+                        Text(
+                          monthStr,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFF6366F1),
                           ),
-                          decoration: BoxDecoration(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.2),
-                            ),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                monthStr,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 9.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: const Color(0xFF6366F1),
-                                ),
-                                maxLines: 1,
-                              ),
-                              Text(
-                                dayStr,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A),
-                                ),
-                                maxLines: 1,
-                              ),
-                            ],
-                          ),
+                          maxLines: 1,
                         ),
-
-                        // 2. Owly Identifier
-                        Flexible(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  _hootTitle ??
-                                      context.tr(
-                                        'home.hoot_daily_motivation',
-                                        fallback: 'Daily Motivation',
-                                      ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: const Color(0xFF6366F1),
-                                    letterSpacing: 2,
-                                  ),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              VowlMascot(
-                                size: 26.r,
-                                useFloatingAnimation: false,
-                                state: VowlMascotState.neutral,
-                              ),
-                            ],
+                        Text(
+                          dayStr,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark
+                                ? Colors.white
+                                : const Color(0xFF0F172A),
                           ),
+                          maxLines: 1,
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20.h),
 
-                  if (_isLoading)
-                    SizedBox(height: 22.h)
-                  else
-                    Text(
-                      resolvedText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w700,
-                        fontStyle: FontStyle.italic,
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.9)
-                            : const Color(0xFF1E293B),
-                        height: 1.5,
-                      ),
-                    ).animate().fadeIn(duration: 400.ms),
+                  // 2. Owly Identifier
+                  Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            _hootTitle ??
+                                context.tr(
+                                  'home.hoot_daily_motivation',
+                                  fallback: 'Daily Motivation',
+                                ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFF6366F1),
+                              letterSpacing: 2,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        SizedBox(width: 8.w),
+                        VowlMascot(
+                          size: 26.r,
+                          useFloatingAnimation: false,
+                          state: VowlMascotState.neutral,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
+            SizedBox(height: 20.h),
+
+            if (_isLoading)
+              SizedBox(height: 22.h)
+            else
+              Text(
+                resolvedText,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w700,
+                  fontStyle: FontStyle.italic,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.9)
+                      : const Color(0xFF1E293B),
+                  height: 1.5,
+                ),
+              ).animate().fadeIn(duration: 400.ms),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -54,7 +54,9 @@ class AccentShadowingTargetPanel extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white70 : const Color(0xFF1E293B).withValues(alpha: 0.7),
+                color: isDark
+                    ? Colors.white70
+                    : const Color(0xFF1E293B).withValues(alpha: 0.7),
               ),
               textAlign: TextAlign.center,
             ),

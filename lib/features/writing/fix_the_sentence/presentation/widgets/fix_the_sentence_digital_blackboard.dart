@@ -30,7 +30,9 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
   Widget build(BuildContext context) {
     final parts = fullText.split(targetWord);
     final String prefix = parts.isNotEmpty ? parts[0] : "";
-    final String suffix = parts.length > 1 ? parts.sublist(1).join(targetWord) : "";
+    final String suffix = parts.length > 1
+        ? parts.sublist(1).join(targetWord)
+        : "";
 
     return Container(
       width: double.infinity,
@@ -138,15 +140,28 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                     Positioned.fill(
                                       child: IgnorePointer(
                                         child: Center(
-                                          child: Icon(
-                                            Icons.swipe_rounded,
-                                            size: 24.r,
-                                            color: isDark ? Colors.white70 : Colors.black54,
-                                          )
-                                          .animate(onPlay: (c) => c.repeat())
-                                          .moveX(begin: -15, end: 15, duration: 1.seconds, curve: Curves.easeInOutSine)
-                                          .fadeIn(duration: 400.ms)
-                                          .fadeOut(delay: 600.ms, duration: 400.ms),
+                                          child:
+                                              Icon(
+                                                    Icons.swipe_rounded,
+                                                    size: 24.r,
+                                                    color: isDark
+                                                        ? Colors.white70
+                                                        : Colors.black54,
+                                                  )
+                                                  .animate(
+                                                    onPlay: (c) => c.repeat(),
+                                                  )
+                                                  .moveX(
+                                                    begin: -15,
+                                                    end: 15,
+                                                    duration: 1.seconds,
+                                                    curve: Curves.easeInOutSine,
+                                                  )
+                                                  .fadeIn(duration: 400.ms)
+                                                  .fadeOut(
+                                                    delay: 600.ms,
+                                                    duration: 400.ms,
+                                                  ),
                                         ),
                                       ),
                                     ),

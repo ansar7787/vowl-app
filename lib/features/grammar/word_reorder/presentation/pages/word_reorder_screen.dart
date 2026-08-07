@@ -111,12 +111,14 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              
+
               _assembledIndices.clear();
               _availableIndices.clear();
               final quest = state.currentQuest;
               if (quest.shuffledWords != null) {
-                _availableIndices.addAll(List.generate(quest.shuffledWords!.length, (i) => i));
+                _availableIndices.addAll(
+                  List.generate(quest.shuffledWords!.length, (i) => i),
+                );
               }
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -155,8 +157,10 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Column(

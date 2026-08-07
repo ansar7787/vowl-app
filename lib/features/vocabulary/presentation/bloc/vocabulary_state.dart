@@ -148,7 +148,8 @@ class VocabularyError extends VocabularyState implements GameErrorState {
 }
 
 /// All quests answered successfully — rewards have been persisted.
-class VocabularyGameComplete extends VocabularyState implements GameCompleteState {
+class VocabularyGameComplete extends VocabularyState
+    implements GameCompleteState {
   @override
   final int xpEarned;
   @override

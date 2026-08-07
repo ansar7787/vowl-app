@@ -32,7 +32,10 @@ class FixTheSentenceInstruction extends StatelessWidget {
             child: Text(
               isWiped
                   ? "SELECT THE CORRECT REPLACEMENT WORD"
-                  : context.tr('games.fixTheSentence_instruction', fallback: instruction),
+                  : context.tr(
+                      'games.fixTheSentence_instruction',
+                      fallback: instruction,
+                    ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

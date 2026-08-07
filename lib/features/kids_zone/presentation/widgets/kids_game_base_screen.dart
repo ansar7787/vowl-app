@@ -273,7 +273,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                     : null,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
-                  if (state.lastAnswerCorrect == true || state.isFinalFailure || state.livesRemaining <= 0) {
+                  if (state.lastAnswerCorrect == true ||
+                      state.isFinalFailure ||
+                      state.livesRemaining <= 0) {
                     context.read<KidsBloc>().add(NextKidsQuestion());
                   } else {
                     context.read<KidsBloc>().add(ClearKidsFeedback());

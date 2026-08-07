@@ -10,7 +10,6 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const SpeakOppositeElectromagneticTrigger({
     super.key,
@@ -20,7 +19,6 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -135,7 +133,6 @@ class SpeakOppositeElectromagneticTrigger extends StatelessWidget {
             letterSpacing: 1.5,
           ),
         ),
-        
       ],
     );
   }

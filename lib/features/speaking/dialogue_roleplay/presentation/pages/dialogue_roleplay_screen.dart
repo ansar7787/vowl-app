@@ -48,7 +48,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
 
   late AnimationController _synapticController;
   double _timeVal = 0.0;
-  
+
   List<String> _acceptedSynonyms = [];
   List<String> _smartReplies = [];
   String _chosenReply = "";
@@ -79,20 +79,25 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
   void _triggerAutoPlay(SpeakingQuest quest) async {
     if (quest.partnerDialogue != null) {
       _soundService.playTts(quest.partnerDialogue!);
-      
+
       // Fetch AI Smart Replies based on the NPC's dialogue
       final smartReplyService = di.sl<SmartReplyService>();
       // smartReplyService.clearConversation();
       smartReplyService.addMessage(quest.partnerDialogue!, isLocalUser: false);
-      
+
       final suggestions = await smartReplyService.getSuggestions();
       if (mounted) {
         setState(() {
-          _smartReplies = suggestions.where((s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s)).toList();
+          _smartReplies = suggestions
+              .where(
+                (s) => s.trim().length > 1 && RegExp(r'[a-zA-Z]').hasMatch(s),
+              )
+              .toList();
           final fallbackOptions = quest.smartReplies ?? quest.acceptedSynonyms;
           if (fallbackOptions != null) {
-            final List<String> availableSynonyms = List.from(fallbackOptions)..shuffle();
-            
+            final List<String> availableSynonyms = List.from(fallbackOptions)
+              ..shuffle();
+
             for (var synonym in availableSynonyms) {
               if (_smartReplies.length >= 3) break;
               if (!_smartReplies.contains(synonym)) {
@@ -116,13 +121,13 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
-      
+
       // Add a default or chosen message to history if correct
-      final responseText = _chosenReply.isNotEmpty 
-          ? _chosenReply 
+      final responseText = _chosenReply.isNotEmpty
+          ? _chosenReply
           : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "Yes");
       di.sl<SmartReplyService>().addMessage(responseText, isLocalUser: true);
-      
+
       context.read<SpeakingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -195,9 +200,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
         if (quest != null) {
           _acceptedSynonyms = quest.acceptedSynonyms ?? [];
         }
-        
-        final expectedText = _chosenReply.isNotEmpty 
-            ? _chosenReply 
+
+        final expectedText = _chosenReply.isNotEmpty
+            ? _chosenReply
             : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : "");
 
         return MediaQuery(
@@ -211,8 +216,10 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -307,8 +314,9 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                             isCorrect: _isCorrect ?? false,
                                           ),
                                     SizedBox(height: gapStage),
-                                            
-                                    if (_smartReplies.isNotEmpty && !_isAnswered) ...[
+
+                                    if (_smartReplies.isNotEmpty &&
+                                        !_isAnswered) ...[
                                       SizedBox(height: 16.h),
                                       SizedBox(
                                         height: 44.h,
@@ -317,17 +325,35 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                           itemCount: _smartReplies.length,
                                           itemBuilder: (context, index) {
                                             final reply = _smartReplies[index];
-                                            final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+                                            final isPremium =
+                                                context
+                                                    .read<AuthBloc>()
+                                                    .state
+                                                    .user
+                                                    ?.isPremium ??
+                                                false;
                                             return SmartReplyChip(
                                               text: reply,
                                               isPremium: isPremium,
                                               onTap: () {
                                                 MlMonetizationController.attemptFeature(
                                                   context,
-                                                  featureIcon: Icons.auto_awesome_rounded,
-                                                  featureTitle: context.tr('translation.smart_reply_title', fallback: 'AI Smart Reply'),
-                                                  featureSubtitle: context.tr('translation.smart_reply_desc', fallback: 'Get AI-powered conversation suggestions'),
-                                                  adButtonLabel: context.tr('translation.smart_reply_ad', fallback: 'Watch Ad (1 Suggestion)'),
+                                                  featureIcon: Icons
+                                                      .auto_awesome_rounded,
+                                                  featureTitle: context.tr(
+                                                    'translation.smart_reply_title',
+                                                    fallback: 'AI Smart Reply',
+                                                  ),
+                                                  featureSubtitle: context.tr(
+                                                    'translation.smart_reply_desc',
+                                                    fallback:
+                                                        'Get AI-powered conversation suggestions',
+                                                  ),
+                                                  adButtonLabel: context.tr(
+                                                    'translation.smart_reply_ad',
+                                                    fallback:
+                                                        'Watch Ad (1 Suggestion)',
+                                                  ),
                                                   onSuccess: () {
                                                     setState(() {
                                                       _chosenReply = reply;
@@ -345,16 +371,15 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-
                                     if (!_isAnswered)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: expectedText,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                        expectedText: expectedText,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
                                     SizedBox(height: gapBottom),
                                   ],

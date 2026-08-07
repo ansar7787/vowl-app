@@ -8,7 +8,7 @@ class WritingEmailInstruction extends StatelessWidget {
   final String? instruction;
 
   const WritingEmailInstruction({
-    super.key, 
+    super.key,
     required this.primaryColor,
     this.instruction,
   });
@@ -29,10 +29,14 @@ class WritingEmailInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr(
-                'games.writingEmail_instruction',
-                fallback: instruction ?? "Arrange the email into the correct order.",
-              ).toUpperCase(),
+              context
+                  .tr(
+                    'games.writingEmail_instruction',
+                    fallback:
+                        instruction ??
+                        "Arrange the email into the correct order.",
+                  )
+                  .toUpperCase(),
               textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(

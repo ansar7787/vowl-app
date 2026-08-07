@@ -65,7 +65,7 @@ class ReadingBaseLayout extends StatelessWidget {
         final isComplete = state is ReadingGameComplete;
         final isGameOver = state is ReadingGameOver;
         final lives = state.livesRemaining;
-        
+
         final wrappedChild = ReadingContentArea(
           isAnswered: isAnswered,
           useScrolling: useScrolling,
@@ -99,11 +99,16 @@ class ReadingBaseLayout extends StatelessWidget {
           onRetry: () => context.read<ReadingBloc>().add(
             FetchReadingQuests(gameType: gameType, level: level),
           ),
-          onRestoreLife: () => context.read<ReadingBloc>().add(const RestoreLife()),
+          onRestoreLife: () =>
+              context.read<ReadingBloc>().add(const RestoreLife()),
           headerBuilder: (context, s, progress, lvs) {
             final isDark = Theme.of(context).brightness == Brightness.dark;
-            final theme = LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level);
-            
+            final theme = LevelThemeHelper.getTheme(
+              gameType.name,
+              isDark: isDark,
+              level: level,
+            );
+
             final gameProgressHeader = GameProgressHeader(
               level: level,
               progress: progress,
@@ -148,18 +153,28 @@ class ReadingBaseLayout extends StatelessWidget {
           feedbackBuilder: (context, s) {
             if (s is! ReadingLoaded) return const SizedBox.shrink();
             final isDark = Theme.of(context).brightness == Brightness.dark;
-            final theme = LevelThemeHelper.getTheme(gameType.name, isDark: isDark, level: level);
+            final theme = LevelThemeHelper.getTheme(
+              gameType.name,
+              isDark: isDark,
+              level: level,
+            );
             final quest = s.currentQuest;
             String? explanation = quest.explanation;
             final resolvedIsFinalFailure = s.isFinalFailure;
-            if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
-              if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
-                 explanation = quest.options![quest.correctAnswerIndex!];
+            if (explanation == null &&
+                isCorrect == false &&
+                resolvedIsFinalFailure) {
+              if (quest.correctAnswerIndex != null &&
+                  quest.options != null &&
+                  quest.options!.isNotEmpty) {
+                explanation = quest.options![quest.correctAnswerIndex!];
               }
             }
 
             final ruleContent = quest.passage ?? explanation;
-            final finalExplanation = (ruleContent == explanation) ? null : explanation;
+            final finalExplanation = (ruleContent == explanation)
+                ? null
+                : explanation;
 
             return GameFeedbackCard(
               isCorrect: isCorrect,

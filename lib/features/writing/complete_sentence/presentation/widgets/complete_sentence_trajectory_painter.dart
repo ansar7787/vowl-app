@@ -27,19 +27,10 @@ class CompleteSentenceTrajectoryPainter extends CustomPainter {
 
     final path = Path()
       ..moveTo(start.dx, start.dy)
-      ..quadraticBezierTo(
-        controlPoint.dx,
-        controlPoint.dy,
-        end.dx,
-        end.dy,
-      );
+      ..quadraticBezierTo(controlPoint.dx, controlPoint.dy, end.dx, end.dy);
 
     canvas.drawPath(path, paint);
-    canvas.drawCircle(
-      end,
-      8.r,
-      Paint()..color = color.withValues(alpha: 0.5),
-    );
+    canvas.drawCircle(end, 8.r, Paint()..color = color.withValues(alpha: 0.5));
   }
 
   // FIX: was `return true` unconditionally — caused unnecessary redraws on

@@ -171,7 +171,12 @@ class UserEntity {
         .toSet();
     adultCategories.addAll(GameSubtype.values.map((s) => s.name));
     // Exclude standard non-kids core systems just in case
-    adultCategories.addAll(['diagnostic', 'placement', 'placement_test', 'daily_challenge']);
+    adultCategories.addAll([
+      'diagnostic',
+      'placement',
+      'placement_test',
+      'daily_challenge',
+    ]);
 
     var count = 0;
     for (final entry in completedLevels.entries) {

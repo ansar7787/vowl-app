@@ -30,9 +30,15 @@ class SmartReplyChip extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: isDark 
-              ? [const Color(0xFF6366F1).withValues(alpha: 0.15), const Color(0xFF8B5CF6).withValues(alpha: 0.15)]
-              : [const Color(0xFF6366F1).withValues(alpha: 0.08), const Color(0xFF8B5CF6).withValues(alpha: 0.08)],
+            colors: isDark
+                ? [
+                    const Color(0xFF6366F1).withValues(alpha: 0.15),
+                    const Color(0xFF8B5CF6).withValues(alpha: 0.15),
+                  ]
+                : [
+                    const Color(0xFF6366F1).withValues(alpha: 0.08),
+                    const Color(0xFF8B5CF6).withValues(alpha: 0.08),
+                  ],
           ),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
@@ -51,12 +57,19 @@ class SmartReplyChip extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Icon(
-              Icons.auto_awesome_rounded,
-              color: const Color(0xFF8B5CF6),
-              size: 16.r,
-            ).animate(onPlay: (controller) => controller.repeat(reverse: true))
-             .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 1.seconds)
-             .tint(color: Colors.white, duration: 1.seconds),
+                  Icons.auto_awesome_rounded,
+                  color: const Color(0xFF8B5CF6),
+                  size: 16.r,
+                )
+                .animate(
+                  onPlay: (controller) => controller.repeat(reverse: true),
+                )
+                .scale(
+                  begin: const Offset(1, 1),
+                  end: const Offset(1.1, 1.1),
+                  duration: 1.seconds,
+                )
+                .tint(color: Colors.white, duration: 1.seconds),
             SizedBox(width: 8.w),
             Text(
               text,
@@ -74,7 +87,7 @@ class SmartReplyChip extends StatelessWidget {
                 color: isDark ? Colors.white38 : Colors.black38,
                 size: 14.r,
               ),
-            ]
+            ],
           ],
         ),
       ),

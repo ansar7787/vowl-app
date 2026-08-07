@@ -110,30 +110,36 @@ class _GameEntryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      metadata.title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        height: 1.1,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        metadata.title,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                          height: 1.1,
+                        ),
                       ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 6.h),
-                    Text(
-                      metadata.categoryName.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w900,
-                        color: displayColor.withValues(alpha: 0.7),
-                        letterSpacing: 1.0,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        metadata.categoryName.toUpperCase(),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w900,
+                          color: displayColor.withValues(alpha: 0.7),
+                          letterSpacing: 1.0,
+                        ),
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),
@@ -169,17 +175,18 @@ class _GameEntryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(6.r),
           border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
-        child: Text(
-          context.tr('quest_archive.new_badge', fallback: 'New'),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 8.sp,
-            fontWeight: FontWeight.w900,
-            color: color,
-            letterSpacing: 0.5,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr('quest_archive.new_badge', fallback: 'New'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 8.sp,
+              fontWeight: FontWeight.w900,
+              color: color,
+              letterSpacing: 0.5,
+            ),
           ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
         ),
       );
     }

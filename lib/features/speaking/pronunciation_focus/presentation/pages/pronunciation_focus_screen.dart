@@ -46,7 +46,7 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
 
   late AnimationController _tickerController;
   double _timeVal = 0.0;
-  
+
   bool _showGuide = false;
 
   @override
@@ -168,8 +168,10 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -340,13 +342,13 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
 
                                     if (!_isAnswered)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: quest.textToSpeak ?? "",
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false),
+                                        expectedText: quest.textToSpeak ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(true),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(false),
                                       ),
                                     SizedBox(height: gapBottom),
                                   ],

@@ -50,7 +50,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
 
   void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -132,8 +132,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                         final isCompact = maxHeight < 580;
 
                         final double estimatedContentHeight =
-                            20.h + 40.h + 50.h + (isCompact ? 150.h : 200.h) + 20.h;
-                        final remainingHeight = maxHeight - estimatedContentHeight;
+                            20.h +
+                            40.h +
+                            50.h +
+                            (isCompact ? 150.h : 200.h) +
+                            20.h;
+                        final remainingHeight =
+                            maxHeight - estimatedContentHeight;
 
                         final double gapUnit = remainingHeight > 0
                             ? remainingHeight / 7
@@ -167,10 +172,12 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                             height: 35.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: AudioMultipleChoiceInstruction(
-                                                color: theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
+                                              child:
+                                                  AudioMultipleChoiceInstruction(
+                                                    color: theme.primaryColor,
+                                                    instruction:
+                                                        quest.instruction,
+                                                  ),
                                             ),
                                           )
                                         : AudioMultipleChoiceInstruction(
@@ -183,10 +190,11 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                             height: 40.h,
                                             child: FittedBox(
                                               fit: BoxFit.scaleDown,
-                                              child: AudioMultipleChoiceQuestion(
-                                                text: quest.question ?? "",
-                                                isDark: isDark,
-                                              ),
+                                              child:
+                                                  AudioMultipleChoiceQuestion(
+                                                    text: quest.question ?? "",
+                                                    isDark: isDark,
+                                                  ),
                                             ),
                                           )
                                         : AudioMultipleChoiceQuestion(
@@ -202,31 +210,59 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                                     Center(
                                       child: GestureDetector(
                                         onTap: () {
-                                          _soundService.playTts(quest.textToSpeak ?? "");
+                                          _soundService.playTts(
+                                            quest.textToSpeak ?? "",
+                                          );
                                           _hapticService.selection();
                                         },
-                                        child: Container(
-                                          width: isCompact ? 100.r : 140.r,
-                                          height: isCompact ? 100.r : 140.r,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: theme.primaryColor.withValues(alpha: 0.1),
-                                            border: Border.all(color: theme.primaryColor, width: 2),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: theme.primaryColor.withValues(alpha: 0.2),
-                                                blurRadius: 20,
-                                                spreadRadius: 5,
-                                              )
-                                            ]
-                                          ),
-                                          child: Icon(
-                                            Icons.volume_up_rounded,
-                                            size: isCompact ? 50.r : 70.r,
-                                            color: theme.primaryColor,
-                                          ),
-                                        ).animate(onPlay: (c) => c.repeat(reverse: true))
-                                         .scale(begin: const Offset(0.95, 0.95), end: const Offset(1.05, 1.05), duration: 2.seconds),
+                                        child:
+                                            Container(
+                                                  width: isCompact
+                                                      ? 100.r
+                                                      : 140.r,
+                                                  height: isCompact
+                                                      ? 100.r
+                                                      : 140.r,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    color: theme.primaryColor
+                                                        .withValues(alpha: 0.1),
+                                                    border: Border.all(
+                                                      color: theme.primaryColor,
+                                                      width: 2,
+                                                    ),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        color: theme
+                                                            .primaryColor
+                                                            .withValues(
+                                                              alpha: 0.2,
+                                                            ),
+                                                        blurRadius: 20,
+                                                        spreadRadius: 5,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  child: Icon(
+                                                    Icons.volume_up_rounded,
+                                                    size: isCompact
+                                                        ? 50.r
+                                                        : 70.r,
+                                                    color: theme.primaryColor,
+                                                  ),
+                                                )
+                                                .animate(
+                                                  onPlay: (c) =>
+                                                      c.repeat(reverse: true),
+                                                )
+                                                .scale(
+                                                  begin: const Offset(
+                                                    0.95,
+                                                    0.95,
+                                                  ),
+                                                  end: const Offset(1.05, 1.05),
+                                                  duration: 2.seconds,
+                                                ),
                                       ),
                                     ),
                                     SizedBox(height: gapBottom),
@@ -240,8 +276,9 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                     ),
                     if (!_isAnswered || _isCorrect == null)
                       BlindDictationWrapper(
-                        expectedText: (quest.options != null && quest.options!.isNotEmpty) 
-                            ? quest.options![quest.correctAnswerIndex ?? 0] 
+                        expectedText:
+                            (quest.options != null && quest.options!.isNotEmpty)
+                            ? quest.options![quest.correctAnswerIndex ?? 0]
                             : "",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),

@@ -15,7 +15,11 @@ class LeaderboardRankCard extends StatelessWidget {
   static const int _totalLevels = AppConstants.totalCurriculumLevels;
   static const int _totalKidsLevels = 25;
 
-  const LeaderboardRankCard({super.key, required this.allUsers, this.isKids = false});
+  const LeaderboardRankCard({
+    super.key,
+    required this.allUsers,
+    this.isKids = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,9 @@ class LeaderboardRankCard extends StatelessWidget {
     final rank = rankIndex != -1 ? rankIndex + 1 : 0;
     final isRanked = rank > 0;
 
-    final levelsCleared = isKids ? currentUser.kidsTotalLevelsCompleted : currentUser.totalLevelsCompleted;
+    final levelsCleared = isKids
+        ? currentUser.kidsTotalLevelsCompleted
+        : currentUser.totalLevelsCompleted;
     final maxLevels = isKids ? _totalKidsLevels : _totalLevels;
     final progress = (levelsCleared / maxLevels).clamp(0.0, 1.0);
     final contrastColor = isDark ? Colors.white : const Color(0xFF0F172A);

@@ -164,8 +164,9 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
 
   void _submitVerbalEvaluation(bool nailedIt, String expectedWord) {
     if (_isAnswered) return;
-    
-    final bool wordIsCorrect = _selectedWord?.toLowerCase() == expectedWord.toLowerCase();
+
+    final bool wordIsCorrect =
+        _selectedWord?.toLowerCase() == expectedWord.toLowerCase();
     final bool isOverallCorrect = wordIsCorrect && nailedIt;
 
     setState(() {
@@ -289,8 +290,10 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             isAnswered: _isAnswered,
             isCorrect: _isCorrect,
             showConfetti: _showConfetti,
-            onContinue: () => context.read<SpeakingBloc>().add(const NextQuestion()),
-            onHint: () => context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
+            onContinue: () =>
+                context.read<SpeakingBloc>().add(const NextQuestion()),
+            onHint: () =>
+                context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -446,13 +449,19 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                                     SizedBox(height: gapTelemetry),
                                     if (_isWordPlaced && !_isAnswered)
                                       SpeakingSelfEvaluationControls(
-                                          expectedText: completedSentence,
-                                          primaryColor: theme.primaryColor,
-                                          isDark: isDark,
-                                          onConfirmed: () =>
-                                              _submitVerbalEvaluation(true, missingWord),
-                                          onSkipped: () =>
-                                              _submitVerbalEvaluation(false, missingWord),
+                                        expectedText: completedSentence,
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        onConfirmed: () =>
+                                            _submitVerbalEvaluation(
+                                              true,
+                                              missingWord,
+                                            ),
+                                        onSkipped: () =>
+                                            _submitVerbalEvaluation(
+                                              false,
+                                              missingWord,
+                                            ),
                                       ),
 
                                     SizedBox(height: gapBottom),

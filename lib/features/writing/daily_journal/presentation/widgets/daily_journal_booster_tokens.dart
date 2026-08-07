@@ -52,7 +52,8 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                 if (!isUsed) {
                   CustomSnackBar.show(
                     context: context,
-                    message: "Type '$k' in your journal entry to activate this token!",
+                    message:
+                        "Type '$k' in your journal entry to activate this token!",
                     type: CustomSnackBarType.info,
                   );
                 } else {

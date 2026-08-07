@@ -97,7 +97,9 @@ class AccentQuestModel extends AccentQuest {
             )
           : null,
       word: getString(map['word'] ?? map['targetWord']),
-      phoneticHint: getString(map['phoneticHint'] ?? map['phonetic'] ?? map['ipa']),
+      phoneticHint: getString(
+        map['phoneticHint'] ?? map['phonetic'] ?? map['ipa'],
+      ),
       targetWord: getString(map['targetWord'] ?? map['word']),
       question: getString(
         map['question'] ?? map['prompt'] ?? map['instruction'],

@@ -66,7 +66,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     }
 
     final selected = quest.options![_pendingSelectedIndex!];
-    final isCorrect = selected.trim().toLowerCase() == (quest.correctAnswer ?? '').trim().toLowerCase();
+    final isCorrect =
+        selected.trim().toLowerCase() ==
+        (quest.correctAnswer ?? '').trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();

@@ -11,11 +11,13 @@ abstract class EliteMasteryState extends Equatable implements GameStateBase {
   List<Object?> get props => [];
 }
 
-class EliteMasteryInitial extends EliteMasteryState implements GameInitialState {
+class EliteMasteryInitial extends EliteMasteryState
+    implements GameInitialState {
   const EliteMasteryInitial();
 }
 
-class EliteMasteryLoading extends EliteMasteryState implements GameLoadingState {
+class EliteMasteryLoading extends EliteMasteryState
+    implements GameLoadingState {
   const EliteMasteryLoading();
 }
 
@@ -194,7 +196,8 @@ class EliteMasteryError extends EliteMasteryState implements GameErrorState {
   List<Object?> get props => [message, reason];
 }
 
-class EliteMasteryGameComplete extends EliteMasteryState implements GameCompleteState {
+class EliteMasteryGameComplete extends EliteMasteryState
+    implements GameCompleteState {
   @override
   final int xpEarned;
   @override

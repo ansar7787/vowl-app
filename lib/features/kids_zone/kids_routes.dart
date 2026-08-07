@@ -12,7 +12,6 @@ import 'package:vowl/features/kids_zone/presentation/widgets/unified_kids_game_s
 import 'package:vowl/features/kids_zone/presentation/pages/buddy_boutique_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/kids_room_screen.dart';
 
-
 class KidsRoutes {
   static const String kidsZoneRoute = '/kids-zone';
   static const String kidsLevelMapRoute = '/kids/map/:gameType';

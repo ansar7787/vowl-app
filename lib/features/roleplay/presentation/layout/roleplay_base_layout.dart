@@ -61,44 +61,48 @@ class RoleplayBaseLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final wrappedChild = Builder(builder: (context) {
-      final isDark = Theme.of(context).brightness == Brightness.dark;
-      final theme = LevelThemeHelper.getTheme('roleplay', level: level);
-      
-      return Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: kRoleplayMaxContentWidth),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 4,
-                  color: theme.primaryColor,
-                ),
-              ).animate().fadeIn(),
-              SizedBox(height: 8.h),
-              Text(
-                subtitle,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
-              ).animate().fadeIn().slideY(begin: 0.1),
-              SizedBox(height: 32.h),
-              child,
-            ],
+    final wrappedChild = Builder(
+      builder: (context) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final theme = LevelThemeHelper.getTheme('roleplay', level: level);
+
+        return Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: kRoleplayMaxContentWidth,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 4,
+                    color: theme.primaryColor,
+                  ),
+                ).animate().fadeIn(),
+                SizedBox(height: 8.h),
+                Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  ),
+                ).animate().fadeIn().slideY(begin: 0.1),
+                SizedBox(height: 32.h),
+                child,
+              ],
+            ),
           ),
-        ),
-      );
-    });
+        );
+      },
+    );
 
     final config = GameScaffoldConfig(
       gameType: gameType,
@@ -120,7 +124,8 @@ class RoleplayBaseLayout extends StatelessWidget {
       onRetry: () => context.read<RoleplayBloc>().add(
         FetchRoleplayQuests(gameType: gameType, level: level),
       ),
-      onRestoreLife: () => context.read<RoleplayBloc>().add(const RestoreLife()),
+      onRestoreLife: () =>
+          context.read<RoleplayBloc>().add(const RestoreLife()),
       backgroundOverlay: Builder(
         builder: (context) {
           final theme = LevelThemeHelper.getTheme('roleplay', level: level);
@@ -137,7 +142,7 @@ class RoleplayBaseLayout extends StatelessWidget {
         final theme = LevelThemeHelper.getTheme('roleplay', level: level);
         final quest = state is RoleplayLoaded ? state.currentQuestOrNull : null;
         final hintUsed = state is RoleplayLoaded ? state.hintUsed : false;
-        
+
         return _buildHeader(
           context,
           state,
@@ -162,18 +167,24 @@ class RoleplayBaseLayout extends StatelessWidget {
         if (state is! RoleplayLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final theme = LevelThemeHelper.getTheme('roleplay', level: level);
-        
+
         final quest = state.currentQuest;
         String? explanation = quest.explanation;
         final resolvedIsFinalFailure = state.isFinalFailure;
-        if (explanation == null && isCorrect == false && resolvedIsFinalFailure) {
-           if (quest.correctAnswerIndex != null && quest.options != null && quest.options!.isNotEmpty) {
-               explanation = quest.options![quest.correctAnswerIndex!];
-           }
+        if (explanation == null &&
+            isCorrect == false &&
+            resolvedIsFinalFailure) {
+          if (quest.correctAnswerIndex != null &&
+              quest.options != null &&
+              quest.options!.isNotEmpty) {
+            explanation = quest.options![quest.correctAnswerIndex!];
+          }
         }
 
         final ruleContent = quest.situation ?? quest.scene ?? explanation;
-        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
 
         return GameFeedbackCard(
           isCorrect: isCorrect,

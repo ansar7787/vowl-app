@@ -48,8 +48,6 @@ WrongAnswerResult processWrongAnswer(RoleplayLoaded state) {
 // versions. If your project targets Dart 3.0+ you can optionally add the
 // `sealed` modifier to RoleplayState for exhaustive switch checking.
 
-
-
 /// Root state class.
 abstract class RoleplayState extends Equatable implements GameStateBase {
   const RoleplayState();
@@ -125,10 +123,12 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   final bool isFinalFailure;
 
   RoleplayQuest get currentQuest => quests[currentIndex];
-  
+
   @override
-  RoleplayQuest? get currentQuestOrNull => 
-      (currentIndex >= 0 && currentIndex < quests.length) ? quests[currentIndex] : null;
+  RoleplayQuest? get currentQuestOrNull =>
+      (currentIndex >= 0 && currentIndex < quests.length)
+      ? quests[currentIndex]
+      : null;
 
   @override
   int get totalQuests => quests.length;

@@ -111,7 +111,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -179,9 +179,9 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
         final rawOptions = quest?.options ?? ["A", "B"];
         final options = List<String>.from(rawOptions)
           ..shuffle(Random(quest?.id.hashCode ?? 0));
-        
-        final correctIndex = quest?.correctAnswer != null 
-            ? options.indexOf(quest!.correctAnswer!) 
+
+        final correctIndex = quest?.correctAnswer != null
+            ? options.indexOf(quest!.correctAnswer!)
             : (quest?.correctAnswerIndex ?? 0);
         final mediaQuery = MediaQuery.of(context);
 
@@ -205,58 +205,65 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                       return GameScrollbar(
                         controller: _scrollController,
                         child: SingleChildScrollView(
-                        controller: _scrollController,
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                ShadowingChallengeInstruction(
-                                  color: theme.primaryColor,
-                                  instruction: _isFirstStagePassed
-                                      ? "Great job! Now record yourself saying the phrase."
-                                      : context.tr('games.shadowing_challenge_instruction', fallback: quest.instruction),
-                                ),
-                                SizedBox(height: 16.h),
-                                ShadowingChallengePromptCard(
-                                  word: quest.word ?? "",
-                                  ipa: quest.phonetic ?? "",
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                ),
-                                SizedBox(height: 24.h),
-                                ShadowingChallengePulseSpeaker(
-                                  text: quest.textToSpeak ?? "",
-                                  color: theme.primaryColor,
-                                  onPlayTts: _playTts,
-                                ),
-                                SizedBox(height: 32.h),
-                                ShadowingChallengeDialogueList(
-                                  options: options,
-                                  correctIndex: correctIndex,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  isAnswered: _isAnswered || _isFirstStagePassed,
-                                  selectedIndex: _selectedIndex,
-                                  onSubmitChoice: _submitChoice,
-                                ),
-                                SizedBox(height: 24.h),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
-                                    primaryColor: theme.primaryColor,
-                                    isCompact: false,
-                                    onEvaluate: _submitVerbalEvaluation,
+                          controller: _scrollController,
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 24.w,
+                                vertical: 24.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  ShadowingChallengeInstruction(
+                                    color: theme.primaryColor,
+                                    instruction: _isFirstStagePassed
+                                        ? "Great job! Now record yourself saying the phrase."
+                                        : context.tr(
+                                            'games.shadowing_challenge_instruction',
+                                            fallback: quest.instruction,
+                                          ),
                                   ),
-                                SizedBox(height: _isAnswered ? 200.h : 24.h),
-                              ],
+                                  SizedBox(height: 16.h),
+                                  ShadowingChallengePromptCard(
+                                    word: quest.word ?? "",
+                                    ipa: quest.phonetic ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  ShadowingChallengePulseSpeaker(
+                                    text: quest.textToSpeak ?? "",
+                                    color: theme.primaryColor,
+                                    onPlayTts: _playTts,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  ShadowingChallengeDialogueList(
+                                    options: options,
+                                    correctIndex: correctIndex,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered:
+                                        _isAnswered || _isFirstStagePassed,
+                                    selectedIndex: _selectedIndex,
+                                    onSubmitChoice: _submitChoice,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  if (_isFirstStagePassed)
+                                    AccentSelfEvaluationPanel(
+                                      textToSpeak: quest.textToSpeak ?? "",
+                                      primaryColor: theme.primaryColor,
+                                      isCompact: false,
+                                      onEvaluate: _submitVerbalEvaluation,
+                                    ),
+                                  SizedBox(height: _isAnswered ? 200.h : 24.h),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
                       );
                     },
                   ),
@@ -266,7 +273,3 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     );
   }
 }
-
-
-
-

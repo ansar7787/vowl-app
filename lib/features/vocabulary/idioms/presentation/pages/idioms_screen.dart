@@ -181,7 +181,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       ),
                     ),
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                    if (_isFirstStagePassed &&
+                        (!_isAnswered || _isCorrect == null))
                       DynamicJigsawWrapper(
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,

@@ -149,8 +149,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -177,7 +179,8 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                               correct: quest.correctAnswer ?? "",
                               color: theme.primaryColor,
                               isDark: isDark,
-                              dockedOption: _dockedOption ?? _pendingDockedOption,
+                              dockedOption:
+                                  _dockedOption ?? _pendingDockedOption,
                               isAnswered: _isAnswered,
                               onDock: (opt) =>
                                   _onDock(opt, quest.correctAnswer ?? ""),
@@ -188,7 +191,8 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                               options: quest.options ?? [],
                               color: theme.primaryColor,
                               isDark: isDark,
-                              dockedOption: _dockedOption ?? _pendingDockedOption,
+                              dockedOption:
+                                  _dockedOption ?? _pendingDockedOption,
                             ),
 
                             SizedBox(height: 180.h),
@@ -202,8 +206,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () =>
                             _submitFinalAnswer(true, quest.correctAnswer ?? ""),
-                        onSkipped: () =>
-                            _submitFinalAnswer(false, quest.correctAnswer ?? ""),
+                        onSkipped: () => _submitFinalAnswer(
+                          false,
+                          quest.correctAnswer ?? "",
+                        ),
                         allowSkip: true,
                       ),
                   ],

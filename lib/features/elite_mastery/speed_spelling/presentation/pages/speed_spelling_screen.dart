@@ -205,16 +205,19 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           isAnswered: _isAnswered,
           state: state,
           isCorrect: _isCorrect,
-          isFinalFailure: state.livesRemaining <= 0 || (state is EliteMasteryLoaded && state.isFinalFailure),
+          isFinalFailure:
+              state.livesRemaining <= 0 ||
+              (state is EliteMasteryLoaded && state.isFinalFailure),
           showConfetti: _showConfetti,
           title: _isAnswered
               ? ""
-              : (state is EliteMasteryLoaded && state.currentQuest.instruction.isNotEmpty)
-                  ? state.currentQuest.instruction
-                  : context.tr(
-                      'games.speedSpelling_instruction',
-                      fallback: 'Spell the word using the provided letters.',
-                    ),
+              : (state is EliteMasteryLoaded &&
+                    state.currentQuest.instruction.isNotEmpty)
+              ? state.currentQuest.instruction
+              : context.tr(
+                  'games.speedSpelling_instruction',
+                  fallback: 'Spell the word using the provided letters.',
+                ),
           titleIcon: Icons.keyboard_alt_rounded,
           onContinue: () {
             setState(() {
@@ -350,7 +353,8 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             if (!_isAnswered) ...[
               Builder(
                 builder: (context) {
-                  final canSubmit = _currentInput.length == (quest.word?.length ?? 0);
+                  final canSubmit =
+                      _currentInput.length == (quest.word?.length ?? 0);
                   return Semantics(
                     button: true,
                     label: context.tr('games.submit_caps', fallback: 'SUBMIT'),
@@ -358,52 +362,60 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                     child: Opacity(
                       opacity: canSubmit ? 1.0 : 0.5,
                       child: ScaleButton(
-                  // FIX: was `_submit(quest.word!)` — see _onClear for
-                  // rationale. An empty fallback just resolves to "wrong
-                  // answer" rather than crashing the screen outright.
-                  onTap: canSubmit ? () => _submit(quest.word ?? '') : null,
-                  child: Container(
-                    width: double.infinity,
-                    // FIX: height was purely padding-driven (14-20.h
-                    // vertical + text), which sits right at the 48dp
-                    // touch-target floor in compact mode and could dip
-                    // under it once ScreenUtil scales down on the smallest
-                    // screens. This is the primary submit action for every
-                    // question in this game — worth the extra insurance.
-                    constraints: const BoxConstraints(minHeight: 48),
-                    padding: EdgeInsets.symmetric(
-                      vertical: isCompact ? 14.h : 20.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: theme.primaryColor,
-                      borderRadius: BorderRadius.circular(
-                        isCompact ? 16.r : 24.r,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: theme.primaryColor.withValues(alpha: 0.3),
-                          blurRadius: isCompact ? 10 : 20,
-                          offset: Offset(0, isCompact ? 5 : 10),
+                        // FIX: was `_submit(quest.word!)` — see _onClear for
+                        // rationale. An empty fallback just resolves to "wrong
+                        // answer" rather than crashing the screen outright.
+                        onTap: canSubmit
+                            ? () => _submit(quest.word ?? '')
+                            : null,
+                        child: Container(
+                          width: double.infinity,
+                          // FIX: height was purely padding-driven (14-20.h
+                          // vertical + text), which sits right at the 48dp
+                          // touch-target floor in compact mode and could dip
+                          // under it once ScreenUtil scales down on the smallest
+                          // screens. This is the primary submit action for every
+                          // question in this game — worth the extra insurance.
+                          constraints: const BoxConstraints(minHeight: 48),
+                          padding: EdgeInsets.symmetric(
+                            vertical: isCompact ? 14.h : 20.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: theme.primaryColor,
+                            borderRadius: BorderRadius.circular(
+                              isCompact ? 16.r : 24.r,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: theme.primaryColor.withValues(
+                                  alpha: 0.3,
+                                ),
+                                blurRadius: isCompact ? 10 : 20,
+                                offset: Offset(0, isCompact ? 5 : 10),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              context.tr(
+                                'games.submit_caps',
+                                fallback: 'SUBMIT',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isCompact ? 16.sp : 18.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: isCompact ? 1.5 : 2,
+                              ),
+                            ),
+                          ),
                         ),
-                      ],
-                    ),
-                    child: Center(
-                      child: Text(
-                        context.tr('games.submit_caps', fallback: 'SUBMIT'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isCompact ? 16.sp : 18.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          letterSpacing: isCompact ? 1.5 : 2,
-                        ),
                       ),
                     ),
-                  ),
-                  ),
-                ),
-              );
-            }),
+                  );
+                },
+              ),
             ],
           ],
         );

@@ -41,7 +41,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   bool _isFirstStagePassed = false;
-  
+
   List<String>? _shuffledOptions;
   int? _shuffledCorrectIndex;
 
@@ -55,16 +55,20 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
   void _shuffleOptions(AccentQuest? quest) {
     if (quest == null || quest.options == null) return;
-    List<MapEntry<int, String>> indexedOptions = quest.options!.asMap().entries.toList();
+    List<MapEntry<int, String>> indexedOptions = quest.options!
+        .asMap()
+        .entries
+        .toList();
     indexedOptions.shuffle();
     _shuffledOptions = indexedOptions.map((e) => e.value).toList();
-    _shuffledCorrectIndex = indexedOptions.indexWhere((e) => e.key == (quest.correctAnswerIndex ?? 0));
+    _shuffledCorrectIndex = indexedOptions.indexWhere(
+      (e) => e.key == (quest.correctAnswerIndex ?? 0),
+    );
   }
 
   void _triggerAutoPlay(AccentQuest quest) {
     final instruction = quest.instruction.toLowerCase();
-    final String targetLocale =
-        instruction.contains('british')
+    final String targetLocale = instruction.contains('british')
         ? "en-GB"
         : "en-US";
     _soundService.playTts(quest.word ?? "", locale: targetLocale);
@@ -94,7 +98,7 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -212,94 +216,119 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
 
                       return GameScrollbar(
                         child: SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 24.h,
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    DialectDrillInstruction(
-                                      instruction: _isFirstStagePassed
-                                        ? "Great job! Now record yourself saying the word."
-                                        : instructionText,
-                                      accentColor: theme.primaryColor,
-                                    ),
-                                    SizedBox(height: 24.h),
-                                    DialectDrillHologramConsole(
-                                      quest: quest,
-                                      color: theme.primaryColor,
-                                      isDark: isDark,
-                                      isAnswered: _isAnswered || _isFirstStagePassed,
-                                      isCorrect: _isFirstStagePassed ? true : _isCorrect,
-                                      onPlayTargetAudio: () =>
-                                          _triggerAutoPlay(quest),
-                                      onSubmitAnswer: _submitAnswer,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 32.h),
-                                AnimatedSize(
-                                  duration: const Duration(milliseconds: 400),
-                                  curve: Curves.easeOut,
-                                  child: (_isAnswered || _isFirstStagePassed)
-                                      ? Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Builder(
-                                              builder: (context) {
-                                                final bool isSuccess = _isCorrect == true || _isFirstStagePassed;
-                                                final bool isFinalFailure = state is AccentGameOver;
-                                                final bool showExplanation = isSuccess || isFinalFailure;
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 24.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      DialectDrillInstruction(
+                                        instruction: _isFirstStagePassed
+                                            ? "Great job! Now record yourself saying the word."
+                                            : instructionText,
+                                        accentColor: theme.primaryColor,
+                                      ),
+                                      SizedBox(height: 24.h),
+                                      DialectDrillHologramConsole(
+                                        quest: quest,
+                                        color: theme.primaryColor,
+                                        isDark: isDark,
+                                        isAnswered:
+                                            _isAnswered || _isFirstStagePassed,
+                                        isCorrect: _isFirstStagePassed
+                                            ? true
+                                            : _isCorrect,
+                                        onPlayTargetAudio: () =>
+                                            _triggerAutoPlay(quest),
+                                        onSubmitAnswer: _submitAnswer,
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 32.h),
+                                  AnimatedSize(
+                                    duration: const Duration(milliseconds: 400),
+                                    curve: Curves.easeOut,
+                                    child: (_isAnswered || _isFirstStagePassed)
+                                        ? Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Builder(
+                                                builder: (context) {
+                                                  final bool isSuccess =
+                                                      _isCorrect == true ||
+                                                      _isFirstStagePassed;
+                                                  final bool isFinalFailure =
+                                                      state is AccentGameOver;
+                                                  final bool showExplanation =
+                                                      isSuccess ||
+                                                      isFinalFailure;
 
-                                                return DialectFeedbackPanel(
-                                                  isCorrect: _isCorrect ?? _isFirstStagePassed,
-                                                  word: quest.word ?? "",
-                                                  britishPronunciation: brPr.isEmpty
-                                                      ? (quest.word ?? "")
-                                                      : brPr,
-                                                  americanPronunciation: amPr.isEmpty
-                                                      ? (quest.word ?? "")
-                                                      : amPr,
-                                                  hint: isHintUnlocked ? quest.hint : null,
-                                                  explanation: showExplanation ? quest.explanation : null,
-                                                  dialectNote: showExplanation ? quest.dialectNote : null,
-                                                  isDark: isDark,
-                                                  isMidnight: false,
-                                                  onPlayAudio: (text, locale) {
-                                                    _soundService.playTts(
-                                                      text,
-                                                      locale: locale,
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                            if (_isFirstStagePassed) ...[
-                                              SizedBox(height: 16.h),
-                                              AccentSelfEvaluationPanel(
-                                                textToSpeak: quest.word ?? "", // For Dialect Drill, target is usually the word
-                                                primaryColor: theme.primaryColor,
-                                                isCompact: false,
-                                                onEvaluate: _submitVerbalEvaluation,
+                                                  return DialectFeedbackPanel(
+                                                    isCorrect:
+                                                        _isCorrect ??
+                                                        _isFirstStagePassed,
+                                                    word: quest.word ?? "",
+                                                    britishPronunciation:
+                                                        brPr.isEmpty
+                                                        ? (quest.word ?? "")
+                                                        : brPr,
+                                                    americanPronunciation:
+                                                        amPr.isEmpty
+                                                        ? (quest.word ?? "")
+                                                        : amPr,
+                                                    hint: isHintUnlocked
+                                                        ? quest.hint
+                                                        : null,
+                                                    explanation: showExplanation
+                                                        ? quest.explanation
+                                                        : null,
+                                                    dialectNote: showExplanation
+                                                        ? quest.dialectNote
+                                                        : null,
+                                                    isDark: isDark,
+                                                    isMidnight: false,
+                                                    onPlayAudio:
+                                                        (text, locale) {
+                                                          _soundService.playTts(
+                                                            text,
+                                                            locale: locale,
+                                                          );
+                                                        },
+                                                  );
+                                                },
                                               ),
+                                              if (_isFirstStagePassed) ...[
+                                                SizedBox(height: 16.h),
+                                                AccentSelfEvaluationPanel(
+                                                  textToSpeak:
+                                                      quest.word ??
+                                                      "", // For Dialect Drill, target is usually the word
+                                                  primaryColor:
+                                                      theme.primaryColor,
+                                                  isCompact: false,
+                                                  onEvaluate:
+                                                      _submitVerbalEvaluation,
+                                                ),
+                                              ],
                                             ],
-                                          ],
-                                        )
-                                      : const SizedBox(width: double.infinity),
-                                ),
-                              ],
+                                          )
+                                        : const SizedBox(
+                                            width: double.infinity,
+                                          ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
                       );
                     },
                   ),

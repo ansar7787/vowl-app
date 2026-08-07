@@ -55,19 +55,12 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
           Row(
             children: [
               ExcludeSemantics(
-                child: Icon(
-                  widget.icon,
-                  color: widget.shadowColor,
-                  size: 16.r,
-                ),
+                child: Icon(widget.icon, color: widget.shadowColor, size: 16.r),
               ),
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  context.tr(
-                    widget.capsKey,
-                    fallback: widget.capsFallback,
-                  ),
+                  context.tr(widget.capsKey, fallback: widget.capsFallback),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,

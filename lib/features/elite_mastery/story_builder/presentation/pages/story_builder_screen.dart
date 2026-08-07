@@ -83,18 +83,14 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     do {
       shuffled.shuffle();
       safetyCounter++;
-    } while (_isCorrectSequence(shuffled, correctOrder) &&
-        safetyCounter < 10);
+    } while (_isCorrectSequence(shuffled, correctOrder) && safetyCounter < 10);
 
     setState(() {
       _currentOrder = shuffled;
     });
   }
 
-  bool _isCorrectSequence(
-    List<int> current,
-    List<int>? correctIndices,
-  ) {
+  bool _isCorrectSequence(List<int> current, List<int>? correctIndices) {
     if (correctIndices == null || current.length != correctIndices.length) {
       return false;
     }
@@ -107,10 +103,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   void _submitOrder(List<int>? correctOrder) {
     if (correctOrder == null || _isAnswered) return;
 
-    bool isCorrect = _isCorrectSequence(
-      _currentOrder,
-      correctOrder,
-    );
+    bool isCorrect = _isCorrectSequence(_currentOrder, correctOrder);
 
     if (isCorrect) {
       _hapticService.success();
@@ -213,12 +206,13 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           showConfetti: _showConfetti,
           title: _isAnswered
               ? ""
-              : (state is EliteMasteryLoaded && state.currentQuest.instruction.isNotEmpty)
-                  ? state.currentQuest.instruction
-                  : context.tr(
-                      'games.story_builder_instruction',
-                      fallback: 'Assemble the fragments into a correct story.',
-                    ),
+              : (state is EliteMasteryLoaded &&
+                    state.currentQuest.instruction.isNotEmpty)
+              ? state.currentQuest.instruction
+              : context.tr(
+                  'games.story_builder_instruction',
+                  fallback: 'Assemble the fragments into a correct story.',
+                ),
           titleIcon: Icons.format_list_numbered_rounded,
           visualConfig: _visualConfig,
           onContinue: () {
@@ -235,7 +229,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               // on every single question transition across all 200 levels.
               _isAnswered = false;
               _isCorrect = null;
-            _currentOrder = [];
+              _currentOrder = [];
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
           },
@@ -355,9 +349,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   Padding(
                     // Keying on the original index is perfectly stable and
                     // prevents duplicate-key crashes if sentences are identical.
-                    key: ValueKey(
-                      '${quest.id}_${_currentOrder[i]}',
-                    ),
+                    key: ValueKey('${quest.id}_${_currentOrder[i]}'),
                     padding: EdgeInsets.only(bottom: 8.h),
                     child: StoryBuilderNarrativeTile(
                       index: i,

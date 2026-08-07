@@ -44,8 +44,7 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 class FakeUpdateUserRewardsParams extends Fake
     implements UpdateUserRewardsParams {}
 
-class FakeUpdateUserCoinsParams extends Fake
-    implements UpdateUserCoinsParams {}
+class FakeUpdateUserCoinsParams extends Fake implements UpdateUserCoinsParams {}
 
 class FakeUpdateCategoryStatsParams extends Fake
     implements UpdateCategoryStatsParams {}

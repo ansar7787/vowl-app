@@ -63,7 +63,7 @@ class _SummarizeStoryWritingScreenState
 
   void _onTapOption(String sentence, bool isAnswered) {
     if (isAnswered) return;
-    
+
     final firstEmptyIdx = _slots.indexWhere((s) => s.sentence == null);
     if (firstEmptyIdx != -1) {
       _hapticService.success();
@@ -123,7 +123,6 @@ class _SummarizeStoryWritingScreenState
     context.read<WritingBloc>().add(SubmitAnswer(isAllCorrect));
   }
 
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -177,7 +176,7 @@ class _SummarizeStoryWritingScreenState
             }
           }
         }
-        
+
         final WritingQuest? quest = _lastQuest;
 
         final options = quest?.options ?? [];
@@ -191,8 +190,10 @@ class _SummarizeStoryWritingScreenState
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -226,7 +227,8 @@ class _SummarizeStoryWritingScreenState
                               isDark: isDark,
                               onDropFrame: (idx, sentence) =>
                                   _onDropFrame(idx, sentence, isAnswered),
-                              onRemoveFrame: (idx) => _removeFrame(idx, isAnswered),
+                              onRemoveFrame: (idx) =>
+                                  _removeFrame(idx, isAnswered),
                             ),
                             SizedBox(height: 24.h),
 
@@ -235,7 +237,8 @@ class _SummarizeStoryWritingScreenState
                               slots: _slots,
                               color: theme.primaryColor,
                               isDark: isDark,
-                              onTapOption: (text) => _onTapOption(text, isAnswered),
+                              onTapOption: (text) =>
+                                  _onTapOption(text, isAnswered),
                             ),
                             SizedBox(height: 32.h),
 
@@ -250,7 +253,9 @@ class _SummarizeStoryWritingScreenState
                                     borderRadius: BorderRadius.circular(20.r),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: theme.primaryColor.withValues(alpha: 0.4),
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.4,
+                                        ),
                                         blurRadius: 15,
                                         offset: const Offset(0, 5),
                                       ),
@@ -258,7 +263,10 @@ class _SummarizeStoryWritingScreenState
                                   ),
                                   child: Center(
                                     child: Text(
-                                      context.tr('common.check_answer', fallback: 'CHECK ANSWER'),
+                                      context.tr(
+                                        'common.check_answer',
+                                        fallback: 'CHECK ANSWER',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 18.sp,
@@ -278,8 +286,11 @@ class _SummarizeStoryWritingScreenState
                     ),
                     if (_pendingSubmit && !isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText: _slots.isNotEmpty ? (_slots[0].sentence ?? "") : "",
-                        displayText: "Type the first sentence to finalize your summary",
+                        expectedText: _slots.isNotEmpty
+                            ? (_slots[0].sentence ?? "")
+                            : "",
+                        displayText:
+                            "Type the first sentence to finalize your summary",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),

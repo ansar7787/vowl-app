@@ -513,32 +513,38 @@ class AdventureLevelScreen extends StatelessWidget {
                     // card can never overflow, while looking identical to
                     // the original for the existing English copy, which
                     // already fits comfortably within these limits.
-                    Text(
-                      perk['title'] as String,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w800,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        perk['title'] as String,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                        ),
                       ),
                     ),
-                    Text(
-                      isActive
-                          ? perk['desc'] as String
-                          : context.tr(
-                              'adventure.perk_unlocks_at_level',
-                              fallback: 'Unlocks at Lvl',
-                              args: ['${perk['level']}'],
-                            ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white38 : Colors.black38,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        isActive
+                            ? perk['desc'] as String
+                            : context.tr(
+                                'adventure.perk_unlocks_at_level',
+                                fallback: 'Unlocks at Lvl',
+                                args: ['${perk['level']}'],
+                              ),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white38 : Colors.black38,
+                        ),
                       ),
                     ),
                   ],

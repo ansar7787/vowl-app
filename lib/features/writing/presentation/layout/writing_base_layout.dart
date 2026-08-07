@@ -84,19 +84,27 @@ class WritingBaseLayout extends StatelessWidget {
       backgroundOverlay: Builder(
         builder: (context) {
           final isDark = Theme.of(context).brightness == Brightness.dark;
-          final theme = LevelThemeHelper.getTheme('writing', level: level, isDark: isDark);
-          return Positioned.fill(
-            child: InkStreak(
-              color: theme.primaryColor.withValues(alpha: 0.15),
-            ),
+          final theme = LevelThemeHelper.getTheme(
+            'writing',
+            level: level,
+            isDark: isDark,
           );
-        }
+          return Positioned.fill(
+            child: InkStreak(color: theme.primaryColor.withValues(alpha: 0.15)),
+          );
+        },
       ),
       headerBuilder: (context, state, progress, lives) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
-        final currentQuest = state is WritingLoaded ? state.currentQuestOrNull : null;
-        
+        final theme = LevelThemeHelper.getTheme(
+          'writing',
+          isDark: isDark,
+          level: level,
+        );
+        final currentQuest = state is WritingLoaded
+            ? state.currentQuestOrNull
+            : null;
+
         return _buildHeader(
           context,
           state,
@@ -114,11 +122,17 @@ class WritingBaseLayout extends StatelessWidget {
       feedbackBuilder: (context, state) {
         if (state is! WritingLoaded) return const SizedBox.shrink();
         final isDark = Theme.of(context).brightness == Brightness.dark;
-        final theme = LevelThemeHelper.getTheme('writing', isDark: isDark, level: level);
+        final theme = LevelThemeHelper.getTheme(
+          'writing',
+          isDark: isDark,
+          level: level,
+        );
         final quest = state.currentQuest;
         final explanation = quest.explanation;
         final ruleContent = quest.context ?? quest.situation ?? explanation;
-        final finalExplanation = (ruleContent == explanation) ? null : explanation;
+        final finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
         final resolvedIsFinalFailure = state.isFinalFailure;
 
         return GameFeedbackCard(
@@ -178,7 +192,9 @@ class WritingBaseLayout extends StatelessWidget {
                         hintText: quest.hint,
                         soundService: di.sl<SoundService>(),
                         onTap: () {
-                          context.read<WritingBloc>().add(const WritingHintUsed());
+                          context.read<WritingBloc>().add(
+                            const WritingHintUsed(),
+                          );
                           onHint();
                         },
                       )
@@ -220,7 +236,7 @@ class WritingBaseLayout extends StatelessWidget {
 
   Widget _buildPeekingMascot(
     BuildContext context,
-    WritingState state, 
+    WritingState state,
     int lives,
     String mascotId,
     String mascotName,

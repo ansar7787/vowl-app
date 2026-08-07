@@ -163,13 +163,13 @@ class GameScaffold<S> extends StatelessWidget {
                                   ),
                                 )
                               : (config.disablePadding
-                                  ? config.child
-                                  : Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w,
-                                      ),
-                                      child: config.child,
-                                    )),
+                                    ? config.child
+                                    : Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w,
+                                        ),
+                                        child: config.child,
+                                      )),
                         ),
                         if (mascotBuilder != null)
                           Positioned(

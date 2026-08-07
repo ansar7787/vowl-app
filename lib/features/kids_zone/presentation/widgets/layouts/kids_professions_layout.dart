@@ -175,11 +175,16 @@ class KidsProfessionsLayout extends StatelessWidget {
             end: Alignment.bottomCenter,
             colors: [
               Colors.white,
-              Color(0xFFEEF2FF), // Slight indigo tint at the bottom of the badge
+              Color(
+                0xFFEEF2FF,
+              ), // Slight indigo tint at the bottom of the badge
             ],
           ),
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: const Color(0xFF4F46E5), width: 3), // Indigo 600
+          border: Border.all(
+            color: const Color(0xFF4F46E5),
+            width: 3,
+          ), // Indigo 600
           boxShadow: [
             BoxShadow(
               color: const Color(0xFF4F46E5).withValues(alpha: 0.2),

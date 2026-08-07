@@ -29,13 +29,21 @@ class PhotoResultChip extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryTeal = const Color(0xFF14B8A6);
     final textColor = isDark ? Colors.white : Colors.black87;
-    final borderColor = isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.1);
-    final bgColor = isDark ? Colors.black.withValues(alpha: 0.35) : Colors.white.withValues(alpha: 0.75);
+    final borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.15)
+        : Colors.black.withValues(alpha: 0.1);
+    final bgColor = isDark
+        ? Colors.black.withValues(alpha: 0.35)
+        : Colors.white.withValues(alpha: 0.75);
     final entry = PhotoVocabularyDictionary.getEntry(label.label);
-    
+
     final translationParts = translatedText?.split('\n\n') ?? [];
-    final translatedWord = translationParts.isNotEmpty ? translationParts[0] : null;
-    final translatedExample = translationParts.length > 1 ? translationParts[1] : null;
+    final translatedWord = translationParts.isNotEmpty
+        ? translationParts[0]
+        : null;
+    final translatedExample = translationParts.length > 1
+        ? translationParts[1]
+        : null;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(24.r), // Playful bubbly corners
@@ -64,9 +72,9 @@ class PhotoResultChip extends StatelessWidget {
                               Text(
                                 label.label,
                                 style: TextStyle(
-                                  fontFamily: 'Outfit', 
-                                  fontSize: 22.sp, 
-                                  fontWeight: FontWeight.w900, 
+                                  fontFamily: 'Outfit',
+                                  fontSize: 22.sp,
+                                  fontWeight: FontWeight.w900,
                                   color: textColor,
                                 ),
                                 overflow: TextOverflow.ellipsis,
@@ -76,10 +84,12 @@ class PhotoResultChip extends StatelessWidget {
                                 Text(
                                   entry.ipa,
                                   style: TextStyle(
-                                    fontFamily: 'Outfit', 
-                                    fontSize: 14.sp, 
-                                    fontWeight: FontWeight.w500, 
-                                    color: isDark ? Colors.white54 : Colors.black54,
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.black54,
                                   ),
                                 ),
                               ],
@@ -88,19 +98,26 @@ class PhotoResultChip extends StatelessWidget {
                         ),
                         SizedBox(width: 12.w),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 4.h,
+                          ),
                           decoration: BoxDecoration(
                             color: primaryTeal.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(10.r),
-                            border: Border.all(color: primaryTeal.withValues(alpha: 0.4)),
+                            border: Border.all(
+                              color: primaryTeal.withValues(alpha: 0.4),
+                            ),
                           ),
                           child: Text(
                             '${(label.confidence * 100).toStringAsFixed(0)}%',
                             style: TextStyle(
-                              fontFamily: 'Outfit', 
-                              fontSize: 13.sp, 
-                              fontWeight: FontWeight.w900, 
-                              color: isDark ? const Color(0xFF2DD4BF) : primaryTeal,
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark
+                                  ? const Color(0xFF2DD4BF)
+                                  : primaryTeal,
                             ),
                           ),
                         ),
@@ -110,7 +127,9 @@ class PhotoResultChip extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(12.r),
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.03),
                         borderRadius: BorderRadius.circular(8.r),
                       ),
                       child: Column(
@@ -119,24 +138,28 @@ class PhotoResultChip extends StatelessWidget {
                           Text(
                             entry.definition,
                             style: TextStyle(
-                              fontFamily: 'Outfit', 
-                              fontSize: 13.sp, 
-                              fontWeight: FontWeight.w500, 
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
                               color: isDark ? Colors.white70 : Colors.black87,
                             ),
                           ),
                           SizedBox(height: 8.h),
                           Row(
                             children: [
-                              Icon(Icons.lightbulb_outline_rounded, size: 14.r, color: Colors.amber),
+                              Icon(
+                                Icons.lightbulb_outline_rounded,
+                                size: 14.r,
+                                color: Colors.amber,
+                              ),
                               SizedBox(width: 6.w),
                               Expanded(
                                 child: Text(
                                   entry.grammarTip,
                                   style: TextStyle(
-                                    fontFamily: 'Outfit', 
-                                    fontSize: 12.sp, 
-                                    fontWeight: FontWeight.w600, 
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
                                     color: Colors.amber.shade700,
                                   ),
                                 ),
@@ -147,9 +170,9 @@ class PhotoResultChip extends StatelessWidget {
                           Text(
                             'Example: "${entry.example}"',
                             style: TextStyle(
-                              fontFamily: 'Outfit', 
-                              fontSize: 13.sp, 
-                              fontWeight: FontWeight.w500, 
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
                               color: isDark ? Colors.white70 : Colors.black87,
                               fontStyle: FontStyle.italic,
                             ),
@@ -159,9 +182,9 @@ class PhotoResultChip extends StatelessWidget {
                             Text(
                               'Example: "$translatedExample"',
                               style: TextStyle(
-                                fontFamily: 'Outfit', 
-                                fontSize: 13.sp, 
-                                fontWeight: FontWeight.w600, 
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w600,
                                 color: primaryTeal,
                                 fontStyle: FontStyle.italic,
                               ),
@@ -175,17 +198,17 @@ class PhotoResultChip extends StatelessWidget {
                       Text(
                         translatedWord,
                         style: TextStyle(
-                          fontFamily: 'Outfit', 
-                          fontSize: 18.sp, 
-                          fontWeight: FontWeight.w700, 
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w700,
                           color: isDark ? const Color(0xFF2DD4BF) : primaryTeal,
                         ),
                       ),
                     ] else if (isTranslating) ...[
                       SizedBox(height: 12.h),
                       SizedBox(
-                        height: 3.h, 
-                        width: 48.w, 
+                        height: 3.h,
+                        width: 48.w,
                         child: LinearProgressIndicator(color: primaryTeal),
                       ),
                     ] else ...[
@@ -193,16 +216,21 @@ class PhotoResultChip extends StatelessWidget {
                       GestureDetector(
                         onTap: () => onTranslate(index, label.label),
                         child: Text(
-                          context.tr('translation.translate', fallback: 'Translate'),
+                          context.tr(
+                            'translation.translate',
+                            fallback: 'Translate',
+                          ),
                           style: TextStyle(
-                            fontFamily: 'Outfit', 
-                            fontSize: 15.sp, 
-                            fontWeight: FontWeight.w600, 
-                            color: isDark ? const Color(0xFF2DD4BF) : primaryTeal,
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark
+                                ? const Color(0xFF2DD4BF)
+                                : primaryTeal,
                           ),
                         ),
                       ),
-                    ]
+                    ],
                   ],
                 ),
               ),
@@ -211,10 +239,16 @@ class PhotoResultChip extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(14.r),
                   decoration: BoxDecoration(
-                    color: isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.05),
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.15)
+                        : Colors.black.withValues(alpha: 0.05),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(Icons.volume_up_rounded, color: isDark ? Colors.white : primaryTeal, size: 26.r),
+                  child: Icon(
+                    Icons.volume_up_rounded,
+                    color: isDark ? Colors.white : primaryTeal,
+                    size: 26.r,
+                  ),
                 ),
               ),
             ],

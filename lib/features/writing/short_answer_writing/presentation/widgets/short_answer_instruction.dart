@@ -8,7 +8,7 @@ class ShortAnswerInstruction extends StatelessWidget {
   final String? instruction;
 
   const ShortAnswerInstruction({
-    super.key, 
+    super.key,
     required this.primaryColor,
     this.instruction,
   });
@@ -29,10 +29,14 @@ class ShortAnswerInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr(
-                'games.short_answer_writing_instruction',
-                fallback: instruction ?? "Write a short, natural answer to the prompt below.",
-              ).toUpperCase(),
+              context
+                  .tr(
+                    'games.short_answer_writing_instruction',
+                    fallback:
+                        instruction ??
+                        "Write a short, natural answer to the prompt below.",
+                  )
+                  .toUpperCase(),
               textAlign: TextAlign.center,
               maxLines: null,
               style: TextStyle(

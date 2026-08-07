@@ -12,7 +12,6 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const PronunciationFocusMicCoreButton({
     super.key,
@@ -24,7 +23,6 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -116,7 +114,6 @@ class PronunciationFocusMicCoreButton extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-          
         ],
       ),
     );

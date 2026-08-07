@@ -10,10 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 class ScanEmptyState extends StatelessWidget {
   final Future<void> Function(ImageSource) onPickImage;
 
-  const ScanEmptyState({
-    super.key,
-    required this.onPickImage,
-  });
+  const ScanEmptyState({super.key, required this.onPickImage});
 
   @override
   Widget build(BuildContext context) {
@@ -39,34 +36,56 @@ class ScanEmptyState extends StatelessWidget {
                 _buildViewfinderCorner(Alignment.bottomRight, iconColor),
 
                 // Center Icon
-                Icon(Icons.description_outlined, size: 80.r, color: iconColor.withValues(alpha: 0.2)),
+                Icon(
+                  Icons.description_outlined,
+                  size: 80.r,
+                  color: iconColor.withValues(alpha: 0.2),
+                ),
 
                 // Moving Laser Line
                 Positioned(
                   top: 0,
                   left: 20.w,
                   right: 20.w,
-                  child: Container(
-                    height: 2.h,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1),
-                      boxShadow: [
-                        BoxShadow(color: const Color(0xFF6366F1), blurRadius: 10, spreadRadius: 2),
-                      ],
-                    ),
-                  ).animate(onPlay: (controller) => controller.repeat(reverse: true)).moveY(begin: 10.h, end: 170.h, duration: 1.5.seconds, curve: Curves.easeInOut),
+                  child:
+                      Container(
+                            height: 2.h,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF6366F1),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFF6366F1),
+                                  blurRadius: 10,
+                                  spreadRadius: 2,
+                                ),
+                              ],
+                            ),
+                          )
+                          .animate(
+                            onPlay: (controller) =>
+                                controller.repeat(reverse: true),
+                          )
+                          .moveY(
+                            begin: 10.h,
+                            end: 170.h,
+                            duration: 1.5.seconds,
+                            curve: Curves.easeInOut,
+                          ),
                 ),
               ],
             ),
           ),
           SizedBox(height: 32.h),
           Text(
-            context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
+            context.tr(
+              'translation.scan_learn_title',
+              fallback: 'Scan & Learn',
+            ),
             style: TextStyle(
-              fontFamily: 'Outfit', 
-              fontSize: 26.sp, 
-              fontWeight: FontWeight.w900, 
-              color: textColor, 
+              fontFamily: 'Outfit',
+              fontSize: 26.sp,
+              fontWeight: FontWeight.w900,
+              color: textColor,
               letterSpacing: -0.5,
             ),
           ),
@@ -77,9 +96,9 @@ class ScanEmptyState extends StatelessWidget {
               'Capture a photo of text, signs, or menus to instantly translate them to your language.',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Outfit', 
-                fontSize: 16.sp, 
-                fontWeight: FontWeight.w500, 
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white70 : Colors.black54,
                 height: 1.4,
               ),
@@ -119,23 +138,53 @@ class ScanEmptyState extends StatelessWidget {
         height: 32.r,
         decoration: BoxDecoration(
           border: Border(
-            top: (alignment == Alignment.topLeft || alignment == Alignment.topRight) ? BorderSide(color: color, width: 4) : BorderSide.none,
-            bottom: (alignment == Alignment.bottomLeft || alignment == Alignment.bottomRight) ? BorderSide(color: color, width: 4) : BorderSide.none,
-            left: (alignment == Alignment.topLeft || alignment == Alignment.bottomLeft) ? BorderSide(color: color, width: 4) : BorderSide.none,
-            right: (alignment == Alignment.topRight || alignment == Alignment.bottomRight) ? BorderSide(color: color, width: 4) : BorderSide.none,
+            top:
+                (alignment == Alignment.topLeft ||
+                    alignment == Alignment.topRight)
+                ? BorderSide(color: color, width: 4)
+                : BorderSide.none,
+            bottom:
+                (alignment == Alignment.bottomLeft ||
+                    alignment == Alignment.bottomRight)
+                ? BorderSide(color: color, width: 4)
+                : BorderSide.none,
+            left:
+                (alignment == Alignment.topLeft ||
+                    alignment == Alignment.bottomLeft)
+                ? BorderSide(color: color, width: 4)
+                : BorderSide.none,
+            right:
+                (alignment == Alignment.topRight ||
+                    alignment == Alignment.bottomRight)
+                ? BorderSide(color: color, width: 4)
+                : BorderSide.none,
           ),
           borderRadius: BorderRadius.only(
-            topLeft: alignment == Alignment.topLeft ? Radius.circular(8.r) : Radius.zero,
-            topRight: alignment == Alignment.topRight ? Radius.circular(8.r) : Radius.zero,
-            bottomLeft: alignment == Alignment.bottomLeft ? Radius.circular(8.r) : Radius.zero,
-            bottomRight: alignment == Alignment.bottomRight ? Radius.circular(8.r) : Radius.zero,
+            topLeft: alignment == Alignment.topLeft
+                ? Radius.circular(8.r)
+                : Radius.zero,
+            topRight: alignment == Alignment.topRight
+                ? Radius.circular(8.r)
+                : Radius.zero,
+            bottomLeft: alignment == Alignment.bottomLeft
+                ? Radius.circular(8.r)
+                : Radius.zero,
+            bottomRight: alignment == Alignment.bottomRight
+                ? Radius.circular(8.r)
+                : Radius.zero,
           ),
         ),
       ),
     );
   }
 
-  Widget _buildGlassAction(BuildContext context, {required IconData icon, required String label, required VoidCallback onTap, required bool isDark}) {
+  Widget _buildGlassAction(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required VoidCallback onTap,
+    required bool isDark,
+  }) {
     return ScaleButton(
       onTap: onTap,
       child: ClipRRect(
@@ -148,7 +197,11 @@ class ScanEmptyState extends StatelessWidget {
               color: const Color(0xFF6366F1),
               borderRadius: BorderRadius.circular(16.r),
               boxShadow: [
-                BoxShadow(color: const Color(0xFF6366F1).withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 5)),
+                BoxShadow(
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
               ],
             ),
             child: Column(
@@ -156,8 +209,13 @@ class ScanEmptyState extends StatelessWidget {
                 Icon(icon, color: Colors.white, size: 36.r),
                 SizedBox(height: 12.h),
                 Text(
-                  label, 
-                  style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w800, color: Colors.white),
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),

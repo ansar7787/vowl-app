@@ -407,7 +407,8 @@ class CommandPod extends StatelessWidget {
                             Text(
                               context.tr(
                                 'home.junior_adventure_subtitle',
-                                fallback: '25 playful missions for young explorers',
+                                fallback:
+                                    '25 playful missions for young explorers',
                               ),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
@@ -451,9 +452,7 @@ class CommandPod extends StatelessWidget {
                               ),
                             ),
                           )
-                          .animate(
-                            onPlay: (c) => c.repeat(reverse: true),
-                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
                           .scale(
                             begin: const Offset(0.8, 0.8),
                             end: const Offset(1.2, 1.2),
@@ -467,9 +466,7 @@ class CommandPod extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Colors.white.withValues(
-                                  alpha: 0.15,
-                                ),
+                                color: Colors.white.withValues(alpha: 0.15),
                                 width: 1.5,
                               ),
                             ),
@@ -486,18 +483,14 @@ class CommandPod extends StatelessWidget {
                           child:
                               Icon(
                                     Icons.star_rounded,
-                                    color: Colors.white.withValues(
-                                      alpha: 0.3,
-                                    ),
+                                    color: Colors.white.withValues(alpha: 0.3),
                                     size: (8 + random.nextInt(8)).r,
                                   )
                                   .animate(
-                                    onPlay: (c) =>
-                                        c.repeat(reverse: true),
+                                    onPlay: (c) => c.repeat(reverse: true),
                                   )
                                   .fadeIn(
-                                    duration: (1 + random.nextDouble())
-                                        .seconds,
+                                    duration: (1 + random.nextDouble()).seconds,
                                   )
                                   .moveY(
                                     begin: 0,
@@ -511,21 +504,15 @@ class CommandPod extends StatelessWidget {
                       Container(
                             padding: EdgeInsets.all(18.r),
                             decoration: BoxDecoration(
-                              color: Colors.white.withValues(
-                                alpha: 0.15,
-                              ),
+                              color: Colors.white.withValues(alpha: 0.15),
                               shape: BoxShape.circle,
                               border: Border.all(
-                                color: Colors.white.withValues(
-                                  alpha: 0.25,
-                                ),
+                                color: Colors.white.withValues(alpha: 0.25),
                                 width: 2.r,
                               ),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withValues(
-                                    alpha: 0.1,
-                                  ),
+                                  color: Colors.black.withValues(alpha: 0.1),
                                   blurRadius: 25,
                                   offset: const Offset(0, 12),
                                 ),
@@ -536,9 +523,7 @@ class CommandPod extends StatelessWidget {
                               style: TextStyle(fontSize: 48.sp, height: 1.0),
                             ),
                           )
-                          .animate(
-                            onPlay: (c) => c.repeat(reverse: true),
-                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
                           .moveY(
                             begin: -6,
                             end: 6,

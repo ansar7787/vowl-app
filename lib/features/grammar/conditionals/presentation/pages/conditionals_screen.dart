@@ -176,110 +176,116 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                     return Stack(
                       children: [
                         Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: ConditionalsInstruction(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: ConditionalsInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : ConditionalsInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : ConditionalsInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        // Context Card
-                        Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Container(
-                                padding: EdgeInsets.all(
-                                  isCompact ? 12.r : 22.r,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: isDark
-                                      ? Colors.white.withValues(alpha: 0.05)
-                                      : Colors.black.withValues(alpha: 0.03),
-                                  borderRadius: BorderRadius.circular(24.r),
-                                  border: Border.all(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.15,
-                                    ),
-                                    width: 1.5,
+                            // Context Card
+                            Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
                                   ),
-                                ),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      "IF CONDITION",
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 8.sp : 10.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: theme.primaryColor,
-                                        letterSpacing: 2,
+                                  child: Container(
+                                    padding: EdgeInsets.all(
+                                      isCompact ? 12.r : 22.r,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: isDark
+                                          ? Colors.white.withValues(alpha: 0.05)
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
+                                      borderRadius: BorderRadius.circular(24.r),
+                                      border: Border.all(
+                                        color: theme.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        width: 1.5,
                                       ),
                                     ),
-                                    SizedBox(height: isCompact ? 6.h : 12.h),
-                                    Text(
-                                      quest.question ?? "",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: isCompact ? 16.sp : 20.sp,
-                                        color: isDark
-                                            ? Colors.white
-                                            : Colors.black87,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          "IF CONDITION",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 8.sp : 10.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: isCompact ? 6.h : 12.h,
+                                        ),
+                                        Text(
+                                          quest.question ?? "",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: isCompact ? 16.sp : 20.sp,
+                                            color: isDark
+                                                ? Colors.white
+                                                : Colors.black87,
+                                            height: 1.4,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                )
+                                .animate()
+                                .fadeIn(duration: 600.ms)
+                                .slideY(begin: 0.2, end: 0),
+
+                            // Result
+                            if (_isAnswered) ...[
+                              SizedBox(height: gapMiddle),
+                              _buildResult(
+                                quest,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
                               ),
-                            )
-                            .animate()
-                            .fadeIn(duration: 600.ms)
-                            .slideY(begin: 0.2, end: 0),
+                            ],
 
-                        // Result
-                        if (_isAnswered) ...[
-                          SizedBox(height: gapMiddle),
-                          _buildResult(
-                            quest,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
-                        ],
+                            // Chain Arena
+                            Expanded(
+                              child: _buildChainArena(
+                                options,
+                                quest.correctAnswerIndex ?? 0,
+                                theme.primaryColor,
+                                isDark,
+                                isCompact,
+                              ),
+                            ),
 
-                        // Chain Arena
-                        Expanded(
-                          child: _buildChainArena(
-                            options,
-                            quest.correctAnswerIndex ?? 0,
-                            theme.primaryColor,
-                            isDark,
-                            isCompact,
-                          ),
+                            SizedBox(height: gapBottom),
+                          ],
                         ),
-
-                        SizedBox(height: gapBottom),
+                        if (_isFirstStagePassed && !_isAnswered)
+                          TypeToConfirmOverlay(
+                            expectedText: options[_targetIndex],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onSkipped: () => _submitVerbalEvaluation(false),
+                          ),
                       ],
-                    ),
-                    if (_isFirstStagePassed && !_isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: options[_targetIndex],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
-                      ),
-                  ],
-                );
+                    );
                   },
                 ),
         );

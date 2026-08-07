@@ -97,14 +97,16 @@ class IdiomMatchOptionsPanel extends StatelessWidget {
                         color: (isCorrect || isSelected)
                             ? Colors.green.withValues(alpha: 0.15)
                             : (isWrong
-                                ? Colors.red.withValues(alpha: 0.15)
-                                : primaryColor.withValues(alpha: 0.15)),
+                                  ? Colors.red.withValues(alpha: 0.15)
+                                  : primaryColor.withValues(alpha: 0.15)),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         isCorrect
                             ? Icons.check_rounded
-                            : (isWrong ? Icons.close_rounded : Icons.psychology_alt_rounded),
+                            : (isWrong
+                                  ? Icons.close_rounded
+                                  : Icons.psychology_alt_rounded),
                         color: (isCorrect || isSelected)
                             ? Colors.green
                             : (isWrong ? Colors.redAccent : primaryColor),

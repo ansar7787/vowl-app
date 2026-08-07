@@ -1,4 +1,4 @@
-﻿import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -304,7 +304,9 @@ class _GenericRoleplayScenarioScreenState
                 expectedText: options[_selectedIndex!],
                 primaryColor: theme.primaryColor,
                 onConfirmed: () {
-                  context.read<RoleplayBloc>().add(const RoleplaySpeakConfirmed(5));
+                  context.read<RoleplayBloc>().add(
+                    const RoleplaySpeakConfirmed(5),
+                  );
                   _submitVerbalEvaluation(true);
                 },
                 onSkipped: () => _submitVerbalEvaluation(false),
@@ -315,4 +317,3 @@ class _GenericRoleplayScenarioScreenState
     );
   }
 }
-

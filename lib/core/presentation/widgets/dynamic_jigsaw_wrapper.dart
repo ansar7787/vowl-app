@@ -39,29 +39,32 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   void _initGame() {
     // Split sentence by spaces
     List<String> rawWords = widget.expectedText.trim().split(RegExp(r'\s+'));
-    
+
     _placedTiles = List.filled(rawWords.length, null);
     _availableTiles = [];
 
     List<String> cleanedWords = [];
     for (int i = 0; i < rawWords.length; i++) {
-      // Loophole Fixes: 
+      // Loophole Fixes:
       // 1. Lowercase to prevent capital-letter exploits.
       // 2. Strip trailing punctuation so it doesn't give away the last word.
-      String cleanedWord = rawWords[i].toLowerCase().replaceAll(RegExp(r'[.,!?]$'), '');
-      
+      String cleanedWord = rawWords[i].toLowerCase().replaceAll(
+        RegExp(r'[.,!?]$'),
+        '',
+      );
+
       cleanedWords.add(cleanedWord);
       _availableTiles.add(_WordTile(id: i, word: cleanedWord));
     }
-    
+
     _targetSentence = cleanedWords.join(' ');
-    
+
     _availableTiles.shuffle();
   }
 
   void _onAvailableTileTapped(_WordTile tile) {
     if (_hasError) setState(() => _hasError = false);
-    
+
     int emptyIndex = _placedTiles.indexWhere((t) => t == null);
     if (emptyIndex != -1) {
       setState(() {
@@ -85,10 +88,10 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
 
   void _onSubmit() {
     if (_placedTiles.contains(null)) {
-       setState(() => _hasError = true);
-       return;
+      setState(() => _hasError = true);
+      return;
     }
-    
+
     String currentSentence = _placedTiles.map((t) => t!.word).join(' ');
 
     if (currentSentence == _targetSentence) {
@@ -112,246 +115,297 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
       bottom: 0,
       left: 0,
       right: 0,
-      child: Material(
-        type: MaterialType.transparency,
-        child: Container(
-          padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
-          decoration: BoxDecoration(
-            color: bgColor,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-            border: Border.all(
-              color: _hasError ? errorColor.withValues(alpha: 0.5) : widget.primaryColor.withValues(alpha: 0.2),
-              width: 1.5,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: _hasError ? errorColor.withValues(alpha: 0.15) : widget.primaryColor.withValues(alpha: 0.15),
-                blurRadius: 30,
-                offset: const Offset(0, -8),
-              ),
-            ],
-          ),
-          child: SafeArea(
-            top: false,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Handle bar
-                Container(
-                  width: 48.w,
-                  height: 4.h,
+      child:
+          Material(
+                type: MaterialType.transparency,
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                   decoration: BoxDecoration(
-                    color: subtitleColor.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(2.r),
-                  ),
-                ),
-                SizedBox(height: 16.h),
-
-                // Header
-                Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: widget.primaryColor.withValues(alpha: 0.12),
-                        borderRadius: BorderRadius.circular(14.r),
-                      ),
-                      child: Icon(
-                        Icons.extension_rounded,
-                        color: widget.primaryColor,
-                        size: 22.r,
-                      ),
+                    color: bgColor,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(32.r),
                     ),
-                    SizedBox(width: 12.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'BUILD THE SENTENCE!',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w900,
-                              color: widget.primaryColor,
-                              letterSpacing: 2,
-                            ),
-                          ),
-                          SizedBox(height: 2.h),
-                          Text(
-                            'Tap the words in the correct grammatical order',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
-                              color: subtitleColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 24.h),
-
-                // Placed Tiles (Sentence Builder Area)
-                Container(
-                  width: double.infinity,
-                  constraints: BoxConstraints(minHeight: 60.h),
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
-                    borderRadius: BorderRadius.circular(12.r),
                     border: Border.all(
-                      color: _hasError ? errorColor.withValues(alpha: 0.5) : Colors.transparent,
+                      color: _hasError
+                          ? errorColor.withValues(alpha: 0.5)
+                          : widget.primaryColor.withValues(alpha: 0.2),
+                      width: 1.5,
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: _hasError
+                            ? errorColor.withValues(alpha: 0.15)
+                            : widget.primaryColor.withValues(alpha: 0.15),
+                        blurRadius: 30,
+                        offset: const Offset(0, -8),
+                      ),
+                    ],
                   ),
-                  child: Wrap(
-                    spacing: 8.w,
-                    runSpacing: 8.h,
-                    children: List.generate(_placedTiles.length, (index) {
-                      final tile = _placedTiles[index];
-                      if (tile == null) {
-                         // Empty slot indicator
-                         return Container(
-                           height: 36.h,
-                           width: 50.w,
-                           decoration: BoxDecoration(
-                             color: widget.primaryColor.withValues(alpha: 0.05),
-                             borderRadius: BorderRadius.circular(18.r),
-                             border: Border.all(
-                               color: widget.primaryColor.withValues(alpha: 0.2),
-                               style: BorderStyle.solid,
-                             ),
-                           ),
-                         );
-                      }
-                      
-                      return GestureDetector(
-                        onTap: () => _onPlacedTileTapped(index),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  child: SafeArea(
+                    top: false,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // Handle bar
+                        Container(
+                          width: 48.w,
+                          height: 4.h,
                           decoration: BoxDecoration(
-                            color: widget.primaryColor.withValues(alpha: 0.15),
-                            borderRadius: BorderRadius.circular(18.r),
-                            border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.5),
-                            ),
-                          ),
-                          child: Text(
-                            tile.word,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              color: textColor,
-                            ),
+                            color: subtitleColor.withValues(alpha: 0.3),
+                            borderRadius: BorderRadius.circular(2.r),
                           ),
                         ),
-                      );
-                    }),
-                  ),
-                ).animate(target: _hasError ? 1 : 0).shakeX(amount: 5, duration: 400.ms),
-                
-                SizedBox(height: 24.h),
+                        SizedBox(height: 16.h),
 
-                // Available Tiles (Word Bank)
-                Wrap(
-                  spacing: 8.w,
-                  runSpacing: 12.h,
-                  alignment: WrapAlignment.center,
-                  children: _availableTiles.map((tile) {
-                    return GestureDetector(
-                      onTap: () => _onAvailableTileTapped(tile),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                        decoration: BoxDecoration(
-                          color: isDark ? const Color(0xFF1E1E2C) : Colors.white,
-                          borderRadius: BorderRadius.circular(18.r),
-                          border: Border.all(
-                            color: subtitleColor.withValues(alpha: 0.2),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.05),
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
+                        // Header
+                        Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10.r),
+                              decoration: BoxDecoration(
+                                color: widget.primaryColor.withValues(
+                                  alpha: 0.12,
+                                ),
+                                borderRadius: BorderRadius.circular(14.r),
+                              ),
+                              child: Icon(
+                                Icons.extension_rounded,
+                                color: widget.primaryColor,
+                                size: 22.r,
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'BUILD THE SENTENCE!',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: widget.primaryColor,
+                                      letterSpacing: 2,
+                                    ),
+                                  ),
+                                  SizedBox(height: 2.h),
+                                  Text(
+                                    'Tap the words in the correct grammatical order',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: subtitleColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                        child: Text(
-                          tile.word,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                            color: textColor,
-                          ),
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
+                        SizedBox(height: 24.h),
 
-                SizedBox(height: 32.h),
+                        // Placed Tiles (Sentence Builder Area)
+                        Container(
+                              width: double.infinity,
+                              constraints: BoxConstraints(minHeight: 60.h),
+                              padding: EdgeInsets.all(12.r),
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? Colors.white.withValues(alpha: 0.05)
+                                    : Colors.black.withValues(alpha: 0.02),
+                                borderRadius: BorderRadius.circular(12.r),
+                                border: Border.all(
+                                  color: _hasError
+                                      ? errorColor.withValues(alpha: 0.5)
+                                      : Colors.transparent,
+                                ),
+                              ),
+                              child: Wrap(
+                                spacing: 8.w,
+                                runSpacing: 8.h,
+                                children: List.generate(_placedTiles.length, (
+                                  index,
+                                ) {
+                                  final tile = _placedTiles[index];
+                                  if (tile == null) {
+                                    // Empty slot indicator
+                                    return Container(
+                                      height: 36.h,
+                                      width: 50.w,
+                                      decoration: BoxDecoration(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.05,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          18.r,
+                                        ),
+                                        border: Border.all(
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.2,
+                                          ),
+                                          style: BorderStyle.solid,
+                                        ),
+                                      ),
+                                    );
+                                  }
 
-                // Controls
-                Row(
-                  children: [
-                    if (widget.allowSkip) ...[
-                      Expanded(
-                        flex: 1,
-                        child: TextButton(
-                          onPressed: widget.onSkipped,
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.r),
+                                  return GestureDetector(
+                                    onTap: () => _onPlacedTileTapped(index),
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: 8.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: widget.primaryColor.withValues(
+                                          alpha: 0.15,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          18.r,
+                                        ),
+                                        border: Border.all(
+                                          color: widget.primaryColor.withValues(
+                                            alpha: 0.5,
+                                          ),
+                                        ),
+                                      ),
+                                      child: Text(
+                                        tile.word,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: textColor,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }),
+                              ),
+                            )
+                            .animate(target: _hasError ? 1 : 0)
+                            .shakeX(amount: 5, duration: 400.ms),
+
+                        SizedBox(height: 24.h),
+
+                        // Available Tiles (Word Bank)
+                        Wrap(
+                          spacing: 8.w,
+                          runSpacing: 12.h,
+                          alignment: WrapAlignment.center,
+                          children: _availableTiles.map((tile) {
+                            return GestureDetector(
+                              onTap: () => _onAvailableTileTapped(tile),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16.w,
+                                  vertical: 8.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: isDark
+                                      ? const Color(0xFF1E1E2C)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(18.r),
+                                  border: Border.all(
+                                    color: subtitleColor.withValues(alpha: 0.2),
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withValues(
+                                        alpha: 0.05,
+                                      ),
+                                      blurRadius: 4,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  tile.word,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: textColor,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
+
+                        SizedBox(height: 32.h),
+
+                        // Controls
+                        Row(
+                          children: [
+                            if (widget.allowSkip) ...[
+                              Expanded(
+                                flex: 1,
+                                child: TextButton(
+                                  onPressed: widget.onSkipped,
+                                  style: TextButton.styleFrom(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 16.h,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.r),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'Skip',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: subtitleColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
+                            ],
+                            Expanded(
+                              flex: 2,
+                              child: ElevatedButton(
+                                onPressed: _onSubmit,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: _hasError
+                                      ? errorColor
+                                      : widget.primaryColor,
+                                  padding: EdgeInsets.symmetric(vertical: 16.h),
+                                  elevation: 0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.r),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Submit',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                          child: Text(
-                            'Skip',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              color: subtitleColor,
-                            ),
-                          ),
+                          ],
                         ),
-                      ),
-                      SizedBox(width: 12.w),
-                    ],
-                    Expanded(
-                      flex: 2,
-                      child: ElevatedButton(
-                        onPressed: _onSubmit,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: _hasError ? errorColor : widget.primaryColor,
-                          padding: EdgeInsets.symmetric(vertical: 16.h),
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.r),
-                          ),
-                        ),
-                        child: Text(
-                          'Submit',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ],
-            ),
-          ),
-        ),
-      ).animate().slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut).fadeIn(duration: 300.ms),
+              )
+              .animate()
+              .slideY(
+                begin: 1.0,
+                end: 0,
+                duration: 400.ms,
+                curve: Curves.easeOut,
+              )
+              .fadeIn(duration: 300.ms),
     );
   }
 }

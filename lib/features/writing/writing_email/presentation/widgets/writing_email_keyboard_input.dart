@@ -61,7 +61,8 @@ class _WritingEmailKeyboardInputState extends State<WritingEmailKeyboardInput> {
       _hapticService.error();
       CustomSnackBar.show(
         context: context,
-        message: "That doesn't quite match any of the required email parts. Check your spelling!",
+        message:
+            "That doesn't quite match any of the required email parts. Check your spelling!",
         type: CustomSnackBarType.warning,
       );
     }

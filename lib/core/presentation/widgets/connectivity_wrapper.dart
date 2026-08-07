@@ -153,12 +153,14 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
         final bool isQuotaExhausted = gate.isOfflineQuotaExhausted;
 
         // 2. Quota exhausted block for gameplay routes (show OfflineQuotaExhaustedPage)
-        final bool shouldShowQuotaBlock = isOffline &&
+        final bool shouldShowQuotaBlock =
+            isOffline &&
             isQuotaExhausted &&
             !_nonGameplayRoutes.contains(_currentLocation);
 
         // 3. Soft banner: offline but within grace period, not on silent route
-        final bool shouldShowBanner = isOffline &&
+        final bool shouldShowBanner =
+            isOffline &&
             !shouldShowQuotaBlock &&
             !_offlineSilentRoutes.contains(_currentLocation);
 
@@ -174,8 +176,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                 duration: const Duration(milliseconds: 400),
                 switchInCurve: Curves.easeInOut,
                 switchOutCurve: Curves.easeInOut,
-                transitionBuilder:
-                    (Widget child, Animation<double> animation) {
+                transitionBuilder: (Widget child, Animation<double> animation) {
                   return FadeTransition(opacity: animation, child: child);
                 },
                 child: shouldShowQuotaBlock
@@ -203,9 +204,7 @@ class _ConnectivityWrapperState extends State<ConnectivityWrapper> {
                 top: 0,
                 left: 0,
                 right: 0,
-                child: OfflineBanner(
-                  key: ValueKey('connectivity_soft_banner'),
-                ),
+                child: OfflineBanner(key: ValueKey('connectivity_soft_banner')),
               ),
           ],
         );

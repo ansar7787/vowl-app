@@ -85,16 +85,25 @@ class EliteBaseLayout extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 12.h,
+                      ),
                       decoration: BoxDecoration(
                         color: theme.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                        border: Border.all(
+                          color: theme.primaryColor.withValues(alpha: 0.2),
+                        ),
                       ),
                       child: Row(
                         children: [
                           if (titleIcon != null) ...[
-                            Icon(titleIcon, color: theme.primaryColor, size: 24.r),
+                            Icon(
+                              titleIcon,
+                              color: theme.primaryColor,
+                              size: 24.r,
+                            ),
                             SizedBox(width: 12.w),
                           ],
                           Expanded(
@@ -107,7 +116,9 @@ class EliteBaseLayout extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: isDark ? Colors.white70 : Colors.black87,
+                                  color: isDark
+                                      ? Colors.white70
+                                      : Colors.black87,
                                 ),
                               ),
                             ),

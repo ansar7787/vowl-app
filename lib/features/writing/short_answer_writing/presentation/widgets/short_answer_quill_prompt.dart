@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-
 class ShortAnswerQuillPrompt extends StatelessWidget {
   final String prompt;
   final Color color;
@@ -36,10 +35,7 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
             spreadRadius: 2,
           ),
         ],
-        border: Border.all(
-          color: color.withValues(alpha: 0.3),
-          width: 1.5,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
       ),
       child: Stack(
         clipBehavior: Clip.none,
@@ -61,13 +57,22 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(8.r),
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.2),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(Icons.psychology_alt_rounded, color: color, size: 20.r),
-                    ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.1,1.1)),
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: color.withValues(alpha: 0.2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.psychology_alt_rounded,
+                            color: color,
+                            size: 20.r,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.1, 1.1),
+                        ),
                     SizedBox(width: 12.w),
                     Text(
                       "ANALYSIS PROMPT",

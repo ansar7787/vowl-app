@@ -58,8 +58,11 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     });
   }
 
-  static String _normalizeAnswer(String s) =>
-      s.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '').replaceAll(RegExp(r'\s+'), ' ');
+  static String _normalizeAnswer(String s) => s
+      .trim()
+      .toLowerCase()
+      .replaceAll(RegExp(r'[^\w\s]'), '')
+      .replaceAll(RegExp(r'\s+'), ' ');
 
   void _submitAnswer(bool isAnswered, [String? typedText]) {
     final currentState = context.read<WritingBloc>().state;
@@ -67,8 +70,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
 
     final WritingQuest? quest = currentState.currentQuest as WritingQuest?;
     final isHardMode = widget.level >= 6;
-    
-    if (quest == null || isAnswered || (!isHardMode && _selectedCorrection == null) || (isHardMode && typedText == null)) return;
+
+    if (quest == null ||
+        isAnswered ||
+        (!isHardMode && _selectedCorrection == null) ||
+        (isHardMode && typedText == null))
+      return;
 
     bool correct = false;
     if (isHardMode && typedText != null) {
@@ -87,15 +94,20 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
       if (!['.', '!', '?'].contains(lastChar)) {
         CustomSnackBar.show(
           context: context,
-          message: "Please end your sentence with proper punctuation (., !, or ?).",
+          message:
+              "Please end your sentence with proper punctuation (., !, or ?).",
           type: CustomSnackBarType.warning,
         );
         _hapticService.selection();
         return;
       }
 
-      String expectedSentence = (quest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), quest.correctAnswer ?? "");
-      correct = _normalizeAnswer(typedText) == _normalizeAnswer(expectedSentence);
+      String expectedSentence = (quest.passage ?? "").replaceAll(
+        RegExp(r'\[(.*?)\]'),
+        quest.correctAnswer ?? "",
+      );
+      correct =
+          _normalizeAnswer(typedText) == _normalizeAnswer(expectedSentence);
     } else {
       correct = _selectedCorrection == quest.correctAnswer;
     }
@@ -177,102 +189,105 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
                     children: [
-                        SizedBox(height: 16.h),
-                        CorrectionWritingInstruction(
-                          instruction: activeQuest.instruction,
-                          primaryColor: theme.primaryColor,
-                        ),
-                        SizedBox(height: 24.h),
+                      SizedBox(height: 16.h),
+                      CorrectionWritingInstruction(
+                        instruction: activeQuest.instruction,
+                        primaryColor: theme.primaryColor,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        CorrectionWritingSentenceCard(
-                          passage: activeQuest.passage ?? "",
-                          selectedCorrection: widget.level >= 6 ? null : _selectedCorrection,
+                      CorrectionWritingSentenceCard(
+                        passage: activeQuest.passage ?? "",
+                        selectedCorrection: widget.level >= 6
+                            ? null
+                            : _selectedCorrection,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 32.h),
+
+                      if (widget.level >= 6) ...[
+                        GestureDetector(
+                          onTap: () {
+                            CustomSnackBar.show(
+                              context: context,
+                              message:
+                                  "Hard Mode! Tapping is disabled. Please type your answer below.",
+                              type: CustomSnackBarType.info,
+                            );
+                          },
+                          child: AbsorbPointer(
+                            child: Opacity(
+                              opacity: 0.8,
+                              child: CorrectionWritingVault(
+                                options: options,
+                                selectedCorrection: null,
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                onSelectCorrection: (_) {},
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 16.h),
+                        CorrectionWritingKeyboardInput(
                           color: theme.primaryColor,
                           isDark: isDark,
+                          onSubmit: (text) => _submitAnswer(isAnswered, text),
                         ),
-                        SizedBox(height: 32.h),
+                      ] else
+                        CorrectionWritingVault(
+                          options: options,
+                          selectedCorrection: _selectedCorrection,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          onSelectCorrection: (choice) =>
+                              _onSelectCorrection(choice, isAnswered),
+                        ),
+                      SizedBox(height: 36.h),
 
-                        if (widget.level >= 6) ...[
-                          GestureDetector(
-                            onTap: () {
-                              CustomSnackBar.show(
-                                context: context,
-                                message: "Hard Mode! Tapping is disabled. Please type your answer below.",
-                                type: CustomSnackBarType.info,
-                              );
-                            },
-                            child: AbsorbPointer(
-                              child: Opacity(
-                                opacity: 0.8,
-                                child: CorrectionWritingVault(
-                                  options: options,
-                                  selectedCorrection: null,
-                                  color: theme.primaryColor,
-                                  isDark: isDark,
-                                  onSelectCorrection: (_) {},
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 16.h),
-                          CorrectionWritingKeyboardInput(
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSubmit: (text) => _submitAnswer(isAnswered, text),
-                          ),
-                        ] else
-                          CorrectionWritingVault(
-                            options: options,
-                            selectedCorrection: _selectedCorrection,
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            onSelectCorrection: (choice) =>
-                                _onSelectCorrection(choice, isAnswered),
-                          ),
-                        SizedBox(height: 36.h),
-
-                        if (!isAnswered && widget.level < 6)
-                          ScaleButton(
-                            onTap: _selectedCorrection != null
-                                ? () => _submitAnswer(isAnswered)
-                                : null,
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: _selectedCorrection != null
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (_selectedCorrection != null)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      blurRadius: 15,
+                      if (!isAnswered && widget.level < 6)
+                        ScaleButton(
+                          onTap: _selectedCorrection != null
+                              ? () => _submitAnswer(isAnswered)
+                              : null,
+                          child: Container(
+                            width: double.infinity,
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: _selectedCorrection != null
+                                  ? theme.primaryColor
+                                  : Colors.grey,
+                              boxShadow: [
+                                if (_selectedCorrection != null)
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
                                     ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "AUDIT SYNTAX",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
+                                    blurRadius: 15,
                                   ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "AUDIT SYNTAX",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 2,
                                 ),
                               ),
                             ),
                           ),
+                        ),
 
-                          SizedBox(height: 60.h),
-                        ],
-                      ),
-                    ),
+                      SizedBox(height: 60.h),
+                    ],
+                  ),
+                ),
         );
       },
     );

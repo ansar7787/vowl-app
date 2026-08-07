@@ -49,7 +49,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
 
     return BlocProvider(
-      create: (_) => di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode)),
+      create: (_) =>
+          di.sl<LeaderboardBloc>()..add(LoadLeaderboard(isKids: _isKidsMode)),
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -61,41 +62,50 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
             return Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
-                
+
                 // Content Layer
                 Column(
                   children: [
                     SizedBox(height: MediaQuery.of(context).padding.top + 8.h),
-                    
+
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 4.h,
+                      ),
                       child: _LeaderboardToggle(
                         isKidsMode: _isKidsMode,
                         onToggle: (bool isKids) {
                           if (_isKidsMode == isKids) return;
                           setState(() => _isKidsMode = isKids);
-                          context.read<LeaderboardBloc>().add(LoadLeaderboard(isKids: isKids));
+                          context.read<LeaderboardBloc>().add(
+                            LoadLeaderboard(isKids: isKids),
+                          );
                         },
                       ),
                     ),
-                    
+
                     Expanded(
                       child: Builder(
                         builder: (context) {
                           if (state is LeaderboardLoaded) {
-                            return _LeaderboardContent(state: state, currentUser: currentUser);
-                          } else if (state is LeaderboardLoading || state is LeaderboardInitial) {
+                            return _LeaderboardContent(
+                              state: state,
+                              currentUser: currentUser,
+                            );
+                          } else if (state is LeaderboardLoading ||
+                              state is LeaderboardInitial) {
                             return const LeaderboardShimmerLoading();
                           } else if (state is LeaderboardError) {
                             return _LeaderboardErrorView(
                               message: state.message,
-                              onRetry: () => context.read<LeaderboardBloc>().add(
-                                LoadLeaderboard(isKids: _isKidsMode),
-                              ),
+                              onRetry: () => context
+                                  .read<LeaderboardBloc>()
+                                  .add(LoadLeaderboard(isKids: _isKidsMode)),
                             );
                           }
                           return const SizedBox.shrink();
-                        }
+                        },
                       ),
                     ),
                   ],
@@ -137,9 +147,7 @@ class _LeaderboardContent extends StatelessWidget {
         ),
         slivers: [
           // Padding to push content slightly below AppBar
-          SliverToBoxAdapter(
-            child: SizedBox(height: 16.h),
-          ),
+          SliverToBoxAdapter(child: SizedBox(height: 16.h)),
 
           // Header with last-updated timestamp
           SliverToBoxAdapter(
@@ -203,33 +211,38 @@ class _LeaderboardContent extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final userIndex = index + 3;
-                    if (userIndex >= state.users.length) {
-                      return const SizedBox.shrink();
-                    }
-                    final user = state.users[userIndex];
-                    final rank = userIndex + 1;
-                    final isMe = currentUser?.id == user.id;
-                    final isLast = userIndex == state.users.length - 1;
+                delegate: SliverChildBuilderDelegate((context, index) {
+                  final userIndex = index + 3;
+                  if (userIndex >= state.users.length) {
+                    return const SizedBox.shrink();
+                  }
+                  final user = state.users[userIndex];
+                  final rank = userIndex + 1;
+                  final isMe = currentUser?.id == user.id;
+                  final isLast = userIndex == state.users.length - 1;
 
-                    return RepaintBoundary(
-                      // ValueKey prevents animation replay when tiles
-                      // are recycled by the SliverChildBuilderDelegate.
-                      key: ValueKey('rank_tile_${user.id}'),
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
-                        child:
-                            LeaderboardRankTile(user: user, rank: rank, isMe: isMe)
-                                .animate()
-                                .fadeIn(duration: 250.ms, curve: Curves.easeOut)
-                                .slideX(begin: 0.05, end: 0, curve: Curves.easeOut),
-                      ),
-                    );
-                  },
-                  childCount: state.users.length - 3,
-                ),
+                  return RepaintBoundary(
+                    // ValueKey prevents animation replay when tiles
+                    // are recycled by the SliverChildBuilderDelegate.
+                    key: ValueKey('rank_tile_${user.id}'),
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: isLast ? 0 : 10.h),
+                      child:
+                          LeaderboardRankTile(
+                                user: user,
+                                rank: rank,
+                                isMe: isMe,
+                              )
+                              .animate()
+                              .fadeIn(duration: 250.ms, curve: Curves.easeOut)
+                              .slideX(
+                                begin: 0.05,
+                                end: 0,
+                                curve: Curves.easeOut,
+                              ),
+                    ),
+                  );
+                }, childCount: state.users.length - 3),
               ),
             )
           else
@@ -240,7 +253,9 @@ class _LeaderboardContent extends StatelessWidget {
                 child: Column(
                   children: [
                     Icon(
-                      state.isKids ? Icons.child_care_rounded : Icons.emoji_events_outlined,
+                      state.isKids
+                          ? Icons.child_care_rounded
+                          : Icons.emoji_events_outlined,
                       size: 48.r,
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white24
@@ -249,8 +264,15 @@ class _LeaderboardContent extends StatelessWidget {
                     SizedBox(height: 12.h),
                     Text(
                       state.isKids
-                          ? context.tr('leaderboard.kids_empty', fallback: 'Be the first kid on the leaderboard!')
-                          : context.tr('leaderboard.empty', fallback: 'Complete more quests to climb the ranks!'),
+                          ? context.tr(
+                              'leaderboard.kids_empty',
+                              fallback: 'Be the first kid on the leaderboard!',
+                            )
+                          : context.tr(
+                              'leaderboard.empty',
+                              fallback:
+                                  'Complete more quests to climb the ranks!',
+                            ),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -339,8 +361,12 @@ class _StickyRankCardDelegate extends SliverPersistentHeaderDelegate {
                   gradient: LinearGradient(
                     colors: [
                       Colors.transparent,
-                      (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
-                      (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
+                      (isDark ? Colors.white : Colors.black).withValues(
+                        alpha: 0.08,
+                      ),
+                      (isDark ? Colors.white : Colors.black).withValues(
+                        alpha: 0.08,
+                      ),
                       Colors.transparent,
                     ],
                     stops: const [0.0, 0.2, 0.8, 1.0],
@@ -419,23 +445,24 @@ class _LeaderboardToggle extends StatelessWidget {
   final bool isKidsMode;
   final ValueChanged<bool> onToggle;
 
-  const _LeaderboardToggle({
-    required this.isKidsMode,
-    required this.onToggle,
-  });
+  const _LeaderboardToggle({required this.isKidsMode, required this.onToggle});
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Container(
       height: 48.h,
       padding: EdgeInsets.all(3.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.black.withValues(alpha: 0.4) : Colors.white.withValues(alpha: 0.6),
+        color: isDark
+            ? Colors.black.withValues(alpha: 0.4)
+            : Colors.white.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.1)
+              : Colors.black.withValues(alpha: 0.05),
           width: 1,
         ),
       ),
@@ -448,17 +475,21 @@ class _LeaderboardToggle extends StatelessWidget {
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: !isKidsMode 
-                    ? const Color(0xFF6366F1) 
-                    : Colors.transparent,
+                  color: !isKidsMode
+                      ? const Color(0xFF6366F1)
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(21.r),
-                  boxShadow: !isKidsMode ? [
-                    BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    )
-                  ] : null,
+                  boxShadow: !isKidsMode
+                      ? [
+                          BoxShadow(
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.4),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ]
+                      : null,
                 ),
                 alignment: Alignment.center,
                 child: Row(
@@ -466,7 +497,9 @@ class _LeaderboardToggle extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.public_rounded,
-                      color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      color: !isKidsMode
+                          ? Colors.white
+                          : (isDark ? Colors.white54 : Colors.black54),
                       size: 15.r,
                     ),
                     SizedBox(width: 5.w),
@@ -476,7 +509,9 @@ class _LeaderboardToggle extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w800,
                         fontSize: 13.sp,
-                        color: !isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                        color: !isKidsMode
+                            ? Colors.white
+                            : (isDark ? Colors.white54 : Colors.black54),
                       ),
                     ),
                   ],
@@ -491,17 +526,21 @@ class _LeaderboardToggle extends StatelessWidget {
                 duration: const Duration(milliseconds: 250),
                 curve: Curves.easeOutCubic,
                 decoration: BoxDecoration(
-                  color: isKidsMode 
-                    ? const Color(0xFFF43F5E) 
-                    : Colors.transparent,
+                  color: isKidsMode
+                      ? const Color(0xFFF43F5E)
+                      : Colors.transparent,
                   borderRadius: BorderRadius.circular(21.r),
-                  boxShadow: isKidsMode ? [
-                    BoxShadow(
-                      color: const Color(0xFFF43F5E).withValues(alpha: 0.4),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    )
-                  ] : null,
+                  boxShadow: isKidsMode
+                      ? [
+                          BoxShadow(
+                            color: const Color(
+                              0xFFF43F5E,
+                            ).withValues(alpha: 0.4),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ]
+                      : null,
                 ),
                 alignment: Alignment.center,
                 child: Row(
@@ -509,7 +548,9 @@ class _LeaderboardToggle extends StatelessWidget {
                   children: [
                     Icon(
                       Icons.child_care_rounded,
-                      color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                      color: isKidsMode
+                          ? Colors.white
+                          : (isDark ? Colors.white54 : Colors.black54),
                       size: 15.r,
                     ),
                     SizedBox(width: 5.w),
@@ -519,7 +560,9 @@ class _LeaderboardToggle extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w800,
                         fontSize: 13.sp,
-                        color: isKidsMode ? Colors.white : (isDark ? Colors.white54 : Colors.black54),
+                        color: isKidsMode
+                            ? Colors.white
+                            : (isDark ? Colors.white54 : Colors.black54),
                       ),
                     ),
                   ],

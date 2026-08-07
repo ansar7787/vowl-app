@@ -69,7 +69,10 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     });
   }
 
-  Future<void> _submitAnswer(List<String> targetKeywords, bool isAnswered) async {
+  Future<void> _submitAnswer(
+    List<String> targetKeywords,
+    bool isAnswered,
+  ) async {
     if (isAnswered || _controller.text.trim().isEmpty || _isSubmitting) return;
 
     setState(() => _isSubmitting = true);
@@ -90,7 +93,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     if (!['.', '!', '?'].contains(lastChar)) {
       CustomSnackBar.show(
         context: context,
-        message: "Please end your entry with a full stop, exclamation mark, or question mark.",
+        message:
+            "Please end your entry with a full stop, exclamation mark, or question mark.",
         type: CustomSnackBarType.warning,
       );
       _hapticService.selection();
@@ -110,7 +114,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     if (_wordCount < 10) {
       CustomSnackBar.show(
         context: context,
-        message: "Keep writing! A valid journal entry requires at least 10 words.",
+        message:
+            "Keep writing! A valid journal entry requires at least 10 words.",
         type: CustomSnackBarType.info,
       );
       _hapticService.selection();
@@ -143,7 +148,8 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     if (language != 'en') {
       CustomSnackBar.show(
         context: context,
-        message: "Your answer must be written in English. Please write a natural sentence!",
+        message:
+            "Your answer must be written in English. Please write a natural sentence!",
         type: CustomSnackBarType.warning,
       );
       _hapticService.warning();
@@ -155,7 +161,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     _soundService.playCorrect();
 
     context.read<WritingBloc>().add(SubmitAnswer(true));
-    
+
     if (mounted) {
       setState(() => _isSubmitting = false);
     }
@@ -224,79 +230,79 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
                     children: [
-                        SizedBox(height: 16.h),
-                        DailyJournalInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: activeQuest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
+                      SizedBox(height: 16.h),
+                      DailyJournalInstruction(
+                        primaryColor: theme.primaryColor,
+                        instruction: activeQuest.instruction,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        DailyJournalPrompt(
-                          text: activeQuest.prompt ?? "",
-                          primaryColor: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
+                      DailyJournalPrompt(
+                        text: activeQuest.prompt ?? "",
+                        primaryColor: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        DailyJournalBoosterTokens(
-                          keywords: targetKeywords,
-                          text: _controller.text,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
+                      DailyJournalBoosterTokens(
+                        keywords: targetKeywords,
+                        text: _controller.text,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 24.h),
 
-                        DailyJournalScratchArea(
-                          controller: _controller,
-                          isAnswered: isAnswered,
-                          wordCount: _wordCount,
-                          journalProgress: _journalProgress,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 32.h),
+                      DailyJournalScratchArea(
+                        controller: _controller,
+                        isAnswered: isAnswered,
+                        wordCount: _wordCount,
+                        journalProgress: _journalProgress,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                      ),
+                      SizedBox(height: 32.h),
 
-                        if (!isAnswered)
-                          ScaleButton(
-                            onTap: () =>
-                                _submitAnswer(targetKeywords, isAnswered),
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: _wordCount >= 10
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (_wordCount >= 10)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      blurRadius: 15,
+                      if (!isAnswered)
+                        ScaleButton(
+                          onTap: () =>
+                              _submitAnswer(targetKeywords, isAnswered),
+                          child: Container(
+                            width: double.infinity,
+                            height: 60.h,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20.r),
+                              color: _wordCount >= 10
+                                  ? theme.primaryColor
+                                  : Colors.grey,
+                              boxShadow: [
+                                if (_wordCount >= 10)
+                                  BoxShadow(
+                                    color: theme.primaryColor.withValues(
+                                      alpha: 0.3,
                                     ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "CRYSTALLIZE MEMORY",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
+                                    blurRadius: 15,
                                   ),
+                              ],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "CRYSTALLIZE MEMORY",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                  letterSpacing: 2,
                                 ),
                               ),
                             ),
                           ),
+                        ),
 
-                        SizedBox(height: 60.h),
-                      ],
-                    ),
+                      SizedBox(height: 60.h),
+                    ],
                   ),
+                ),
         );
       },
     );

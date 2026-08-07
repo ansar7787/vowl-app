@@ -100,7 +100,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, List<Map<String, String>> pairs) {
+  void _submitFinalAnswer(
+    bool nailedSpeaking,
+    List<Map<String, String>> pairs,
+  ) {
     setState(() {
       _pendingSubmission = false;
     });
@@ -223,8 +226,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<ReadingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<ReadingBloc>().add(const ReadingHintUsed()),
+          onContinue: () =>
+              context.read<ReadingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -262,9 +267,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                   isSource: true,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isMatched: _matches.containsKey(
-                                                    k,
-                                                  ),
+                                                  isMatched: _matches
+                                                      .containsKey(k),
                                                   isActive: _activeKey == k,
                                                   onTap: () => _onKeyTap(k),
                                                 ),
@@ -285,9 +289,8 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                   isSource: false,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
-                                                  isMatched: _matches.containsValue(
-                                                    v,
-                                                  ),
+                                                  isMatched: _matches
+                                                      .containsValue(v),
                                                   isActive: false,
                                                   onTap: () =>
                                                       _onValueTap(v, pairs),
@@ -331,7 +334,10 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                     ),
                     if (_pendingSubmission && !_isAnswered)
                       SpeakToConfirmOverlay(
-                        expectedText: quest.textToSpeak ?? quest.correctAnswer ?? "Confirm",
+                        expectedText:
+                            quest.textToSpeak ??
+                            quest.correctAnswer ??
+                            "Confirm",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true, pairs),
                         onSkipped: () => _submitFinalAnswer(false, pairs),

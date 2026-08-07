@@ -13,16 +13,53 @@ class KidsSmartMixWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // Generate a daily seed based on the date
     final today = DateTime.now();
-    final random = math.Random(today.year * 10000 + today.month * 100 + today.day);
+    final random = math.Random(
+      today.year * 10000 + today.month * 100 + today.day,
+    );
 
     final allKidsCategories = [
-      {'route': '/kids/map/handwriting', 'title': 'Write & Learn', 'color': const Color(0xFFF43F5E), 'icon': Icons.edit_rounded},
-      {'route': '/kids/map/alphabet', 'title': 'ABC', 'color': const Color(0xFFF43F5E), 'icon': Icons.abc_rounded},
-      {'route': '/kids/map/numbers', 'title': '123', 'color': const Color(0xFF0EA5E9), 'icon': Icons.pin_rounded},
-      {'route': '/kids/map/colors', 'title': 'Colors', 'color': const Color(0xFFF59E0B), 'icon': Icons.palette_rounded},
-      {'route': '/kids/map/shapes', 'title': 'Shapes', 'color': const Color(0xFF10B981), 'icon': Icons.category_rounded},
-      {'route': '/kids/map/animals', 'title': 'Animals', 'color': const Color(0xFF8B5CF6), 'icon': Icons.pets_rounded},
-      {'route': '/kids/map/fruits', 'title': 'Fruits', 'color': const Color(0xFFEC4899), 'icon': Icons.apple_rounded},
+      {
+        'route': '/kids/map/handwriting',
+        'title': 'Write & Learn',
+        'color': const Color(0xFFF43F5E),
+        'icon': Icons.edit_rounded,
+      },
+      {
+        'route': '/kids/map/alphabet',
+        'title': 'ABC',
+        'color': const Color(0xFFF43F5E),
+        'icon': Icons.abc_rounded,
+      },
+      {
+        'route': '/kids/map/numbers',
+        'title': '123',
+        'color': const Color(0xFF0EA5E9),
+        'icon': Icons.pin_rounded,
+      },
+      {
+        'route': '/kids/map/colors',
+        'title': 'Colors',
+        'color': const Color(0xFFF59E0B),
+        'icon': Icons.palette_rounded,
+      },
+      {
+        'route': '/kids/map/shapes',
+        'title': 'Shapes',
+        'color': const Color(0xFF10B981),
+        'icon': Icons.category_rounded,
+      },
+      {
+        'route': '/kids/map/animals',
+        'title': 'Animals',
+        'color': const Color(0xFF8B5CF6),
+        'icon': Icons.pets_rounded,
+      },
+      {
+        'route': '/kids/map/fruits',
+        'title': 'Fruits',
+        'color': const Color(0xFFEC4899),
+        'icon': Icons.apple_rounded,
+      },
     ];
 
     allKidsCategories.shuffle(random);
@@ -51,7 +88,11 @@ class KidsSmartMixWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.auto_awesome, color: const Color(0xFFF59E0B), size: 28.sp),
+              Icon(
+                Icons.auto_awesome,
+                color: const Color(0xFFF59E0B),
+                size: 28.sp,
+              ),
               SizedBox(width: 12.w),
               Text(
                 'DAILY ADVENTURE',
@@ -82,11 +123,11 @@ class KidsSmartMixWidget extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(bottom: 12.h),
               child: _buildAdventureCard(
-                context, 
-                index, 
-                cat['title'] as String, 
-                cat['route'] as String, 
-                cat['color'] as Color, 
+                context,
+                index,
+                cat['title'] as String,
+                cat['route'] as String,
+                cat['color'] as Color,
                 cat['icon'] as IconData,
               ),
             );
@@ -97,18 +138,16 @@ class KidsSmartMixWidget extends StatelessWidget {
   }
 
   Widget _buildAdventureCard(
-    BuildContext context, 
-    int step, 
-    String title, 
-    String route, 
-    Color color, 
+    BuildContext context,
+    int step,
+    String title,
+    String route,
+    Color color,
     IconData icon,
   ) {
     return ScaleButton(
-      onTap: () => context.push(
-        route,
-        extra: {'title': title, 'primaryColor': color},
-      ),
+      onTap: () =>
+          context.push(route, extra: {'title': title, 'primaryColor': color}),
       child: Container(
         padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
@@ -128,7 +167,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   BoxShadow(
                     color: color.withValues(alpha: 0.4),
                     offset: Offset(0, 4.h),
-                  )
+                  ),
                 ],
               ),
               child: Center(
@@ -164,7 +203,7 @@ class KidsSmartMixWidget extends StatelessWidget {
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.1),
                     offset: Offset(0, 2.h),
-                  )
+                  ),
                 ],
               ),
               child: Icon(icon, color: color, size: 24.sp),

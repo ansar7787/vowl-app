@@ -80,10 +80,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withValues(alpha: isDark ? 0.15 : 0.05),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: color.withValues(alpha: 0.5),
-          width: 2,
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
       ),
       child: Text(
         text,

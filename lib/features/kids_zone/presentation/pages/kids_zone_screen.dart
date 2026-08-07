@@ -146,9 +146,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                     ),
                   ),
 
-                  SliverToBoxAdapter(
-                    child: KidsSmartMixWidget(isDark: isDark),
-                  ),
+                  SliverToBoxAdapter(child: KidsSmartMixWidget(isDark: isDark)),
 
                   KidsCategoryGrid(isDark: isDark),
 

@@ -10,7 +10,6 @@ class RepeatSentenceTactileMic extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const RepeatSentenceTactileMic({
     super.key,
@@ -20,7 +19,6 @@ class RepeatSentenceTactileMic extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -102,7 +100,6 @@ class RepeatSentenceTactileMic extends StatelessWidget {
             letterSpacing: 1.5,
           ),
         ),
-        
       ],
     );
   }

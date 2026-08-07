@@ -81,8 +81,10 @@ class OfflinePlayGateService {
   /// by [maxOfflineLevels] rather than resetting to zero, so the
   /// total session offline plays are still tracked.
   void grantBonusOfflinePlays() {
-    _offlineLevelsPlayed =
-        (_offlineLevelsPlayed - maxOfflineLevels).clamp(0, 999);
+    _offlineLevelsPlayed = (_offlineLevelsPlayed - maxOfflineLevels).clamp(
+      0,
+      999,
+    );
     _pendingReconnectAdReset = false;
   }
 }

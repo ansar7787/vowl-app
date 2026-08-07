@@ -7,7 +7,7 @@ class EssayDraftingInstruction extends StatelessWidget {
   final String instruction;
 
   const EssayDraftingInstruction({
-    super.key, 
+    super.key,
     required this.primaryColor,
     required this.instruction,
   });
@@ -28,7 +28,10 @@ class EssayDraftingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr('games.essayDrafting_instruction', fallback: instruction),
+              context.tr(
+                'games.essayDrafting_instruction',
+                fallback: instruction,
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

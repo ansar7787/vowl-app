@@ -97,8 +97,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         user: user,
                                         immediatePhotoUrl:
                                             profileState.photoUrl,
-                                        onEditName: () =>
-                                            _showEditNameSheet(
+                                        onEditName: () => _showEditNameSheet(
                                           context,
                                           user.displayName ?? '',
                                         ),
@@ -404,8 +403,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final features = [
       (
         icon: Icons.document_scanner_rounded,
-        title: context.tr('translation.scan_learn_title', fallback: 'Scan & Learn'),
-        subtitle: context.tr('translation.scan_learn_desc', fallback: 'Extract & translate real-world text.'),
+        title: context.tr(
+          'translation.scan_learn_title',
+          fallback: 'Scan & Learn',
+        ),
+        subtitle: context.tr(
+          'translation.scan_learn_desc',
+          fallback: 'Extract & translate real-world text.',
+        ),
         color: const Color(0xFF6366F1),
         onTap: () {
           di.sl<HapticService>().selection();
@@ -414,8 +419,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       (
         icon: Icons.camera_alt_rounded,
-        title: context.tr('vocabulary.photo_vocab_title', fallback: 'Photo Vocab'),
-        subtitle: context.tr('vocabulary.photo_vocab_desc', fallback: 'Point camera to learn object names.'),
+        title: context.tr(
+          'vocabulary.photo_vocab_title',
+          fallback: 'Photo Vocab',
+        ),
+        subtitle: context.tr(
+          'vocabulary.photo_vocab_desc',
+          fallback: 'Point camera to learn object names.',
+        ),
         color: const Color(0xFF14B8A6),
         onTap: () {
           di.sl<HapticService>().selection();
@@ -432,7 +443,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Icons.translate_rounded,
           color: const Color(0xFFF43F5E),
           title: 'Instant Translation',
-          desc: 'Runs directly on your device to provide real-time translations during reading and speaking games without needing internet.',
+          desc:
+              'Runs directly on your device to provide real-time translations during reading and speaking games without needing internet.',
         ),
       ),
       (
@@ -445,7 +457,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Icons.auto_awesome_rounded,
           color: const Color(0xFF8B5CF6),
           title: 'AI Smart Reply',
-          desc: 'Generates context-aware conversation replies during the Dialogue Roleplay modules to keep the chat flowing naturally.',
+          desc:
+              'Generates context-aware conversation replies during the Dialogue Roleplay modules to keep the chat flowing naturally.',
         ),
       ),
       (
@@ -458,7 +471,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Icons.search_rounded,
           color: const Color(0xFF10B981),
           title: 'Entity Extraction',
-          desc: 'Automatically scans reading passages to highlight important entities like dates, times, money, and locations.',
+          desc:
+              'Automatically scans reading passages to highlight important entities like dates, times, money, and locations.',
         ),
       ),
       (
@@ -471,7 +485,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Icons.language_rounded,
           color: const Color(0xFFF59E0B),
           title: 'Language ID',
-          desc: 'Runs silently during speaking exercises to detect if you accidentally spoke in your native language instead of English.',
+          desc:
+              'Runs silently during speaking exercises to detect if you accidentally spoke in your native language instead of English.',
         ),
       ),
       (
@@ -484,7 +499,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: Icons.draw_rounded,
           color: const Color(0xFFEC4899),
           title: 'Digital Ink',
-          desc: 'Powers the handwriting canvas in the Kids Zone, translating drawn strokes into digital text instantly.',
+          desc:
+              'Powers the handwriting canvas in the Kids Zone, translating drawn strokes into digital text instantly.',
         ),
       ),
     ];
@@ -496,7 +512,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
             children: [
-              Icon(Icons.auto_awesome_rounded, color: const Color(0xFF6366F1), size: 24.r),
+              Icon(
+                Icons.auto_awesome_rounded,
+                color: const Color(0xFF6366F1),
+                size: 24.r,
+              ),
               SizedBox(width: 8.w),
               _buildSectionHeader(
                 context,
@@ -509,7 +529,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
-            context.tr('profile.ai_lab_desc', fallback: '7 powerful AI engines running 100% offline.'),
+            context.tr(
+              'profile.ai_lab_desc',
+              fallback: '7 powerful AI engines running 100% offline.',
+            ),
             style: TextStyle(
               fontFamily: 'Outfit',
               color: isDark ? Colors.white54 : Colors.black54,
@@ -606,10 +629,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         decoration: BoxDecoration(
           color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-          border: Border.all(
-            color: color.withValues(alpha: 0.3),
-            width: 1.5,
-          ),
+          border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -910,7 +930,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
     super.initState();
     _nameController = TextEditingController(text: widget.currentName);
     _focusNode = FocusNode();
-    
+
     // Delay focus request until bottom sheet animation completes
     Future.delayed(const Duration(milliseconds: 300), () {
       if (mounted) {
@@ -931,9 +951,7 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.viewInsetsOf(context).bottom,
-      ),
+      padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
@@ -944,140 +962,138 @@ class _EditNameSheetContentState extends State<_EditNameSheetContent> {
         ),
       ),
       child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(height: 12.h),
-            Container(
-              width: 40.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: Colors.grey.withValues(alpha: 0.3),
-                borderRadius: BorderRadius.circular(2.r),
-              ),
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: 12.h),
+          Container(
+            width: 40.w,
+            height: 4.h,
+            decoration: BoxDecoration(
+              color: Colors.grey.withValues(alpha: 0.3),
+              borderRadius: BorderRadius.circular(2.r),
             ),
-            Padding(
-              padding: EdgeInsets.all(32.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr(
-                      'profile.update_identity_title',
-                      fallback: 'Update Identity',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      letterSpacing: -0.5,
-                    ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(32.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.tr(
+                    'profile.update_identity_title',
+                    fallback: 'Update Identity',
                   ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    context.tr(
-                      'profile.update_identity_subtitle',
-                      fallback: 'Change your display name and avatar.',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      color: isDark ? Colors.white60 : Colors.black54,
-                    ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    letterSpacing: -0.5,
                   ),
-                  SizedBox(height: 32.h),
-                  Container(
-                    decoration: BoxDecoration(
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  context.tr(
+                    'profile.update_identity_subtitle',
+                    fallback: 'Change your display name and avatar.',
+                  ),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                Container(
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
                       color: isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(24.r),
-                      border: Border.all(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.1)
-                            : Colors.transparent,
-                      ),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.transparent,
                     ),
-                    child: TextField(
-                      controller: _nameController,
-                      focusNode: _focusNode,
-                      maxLength: 40,
-                      style: TextStyle(
+                  ),
+                  child: TextField(
+                    controller: _nameController,
+                    focusNode: _focusNode,
+                    maxLength: 40,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    ),
+                    decoration: InputDecoration(
+                      hintText: context.tr(
+                        'profile.enter_new_name_hint',
+                        fallback: 'Enter new name',
+                      ),
+                      hintStyle: const TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        color: Colors.grey,
                       ),
-                      decoration: InputDecoration(
-                        hintText: context.tr(
-                          'profile.enter_new_name_hint',
-                          fallback: 'Enter new name',
+                      border: InputBorder.none,
+                      counterText: '',
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 24.w,
+                        vertical: 20.h,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                ScaleButton(
+                  onTap: () {
+                    final newName = _nameController.text.trim();
+                    if (newName.isNotEmpty && newName != widget.currentName) {
+                      context.read<ProfileBloc>().add(
+                        ProfileUpdateDisplayNameRequested(newName),
+                      );
+                    }
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(vertical: 20.h),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
+                      ),
+                      borderRadius: BorderRadius.circular(24.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
                         ),
-                        hintStyle: const TextStyle(
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        context.tr(
+                          'profile.save_changes_button',
+                          fallback: 'Save Changes',
+                        ),
+                        style: TextStyle(
                           fontFamily: 'Outfit',
-                          color: Colors.grey,
-                        ),
-                        border: InputBorder.none,
-                        counterText: '',
-                        contentPadding: EdgeInsets.symmetric(
-                          horizontal: 24.w,
-                          vertical: 20.h,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 32.h),
-                  ScaleButton(
-                    onTap: () {
-                      final newName = _nameController.text.trim();
-                      if (newName.isNotEmpty && newName != widget.currentName) {
-                        context.read<ProfileBloc>().add(
-                          ProfileUpdateDisplayNameRequested(newName),
-                        );
-                      }
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 20.h),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
-                        ),
-                        borderRadius: BorderRadius.circular(24.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.3),
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          context.tr(
-                            'profile.save_changes_button',
-                            fallback: 'Save Changes',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w800,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
-                ],
-              ),
+                ),
+                SizedBox(height: 20.h),
+              ],
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1087,10 +1103,7 @@ class ProfileShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: LoadingOverlay(
-        isLoading: true,
-        child: SizedBox.expand(),
-      ),
+      body: LoadingOverlay(isLoading: true, child: SizedBox.expand()),
     );
   }
 }

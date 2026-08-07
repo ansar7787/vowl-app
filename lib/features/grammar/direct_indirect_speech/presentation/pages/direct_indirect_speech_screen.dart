@@ -206,88 +206,88 @@ class _DirectIndirectSpeechScreenState
                     return Stack(
                       children: [
                         Column(
-                      children: [
-                        SizedBox(height: gapTop),
-                        isCompact
-                            ? SizedBox(
-                                height: 25.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: DirectIndirectSpeechInstruction(
+                          children: [
+                            SizedBox(height: gapTop),
+                            isCompact
+                                ? SizedBox(
+                                    height: 25.h,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: DirectIndirectSpeechInstruction(
+                                        primaryColor: theme.primaryColor,
+                                      ),
+                                    ),
+                                  )
+                                : DirectIndirectSpeechInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                                ),
-                              )
-                            : DirectIndirectSpeechInstruction(
-                                primaryColor: theme.primaryColor,
-                              ),
-                        SizedBox(height: gapMiddle),
+                            SizedBox(height: gapMiddle),
 
-                        // Holographic Mirror
-                        DirectIndirectSpeechMirror(
-                          rotation: _rotation,
-                          directText: displayDirect,
-                          indirectText: displayIndirect,
-                          isCorrect: _isCorrect,
-                          isDark: isDark,
-                          primaryColor: theme.primaryColor,
-                          isCompact: isCompact,
-                        ),
-
-                        SizedBox(height: isCompact ? 12.h : 30.h),
-
-                        // Reflection Options
-                        Expanded(
-                          child: SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: Column(
-                              children: [
-                                Wrap(
-                                  alignment: WrapAlignment.center,
-                                  spacing: isCompact ? 8.w : 12.w,
-                                  runSpacing: isCompact ? 8.h : 12.h,
-                                  children: List.generate(
-                                    options.length,
-                                    (i) => _buildReflectionChip(
-                                      options[i],
-                                      i,
-                                      quest.correctAnswerIndex ?? 0,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
-                                    ),
-                                  ),
-                                ),
-                                if (_isAnswered) ...[
-                                  SizedBox(height: isCompact ? 12.h : 30.h),
-                                  Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 24.w,
-                                    ),
-                                    child: _buildCorrectResult(
-                                      quest,
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
-                                    ),
-                                  ),
-                                ],
-                                SizedBox(height: gapBottom),
-                              ],
+                            // Holographic Mirror
+                            DirectIndirectSpeechMirror(
+                              rotation: _rotation,
+                              directText: displayDirect,
+                              indirectText: displayIndirect,
+                              isCorrect: _isCorrect,
+                              isDark: isDark,
+                              primaryColor: theme.primaryColor,
+                              isCompact: isCompact,
                             ),
-                          ),
+
+                            SizedBox(height: isCompact ? 12.h : 30.h),
+
+                            // Reflection Options
+                            Expanded(
+                              child: SingleChildScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                child: Column(
+                                  children: [
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      spacing: isCompact ? 8.w : 12.w,
+                                      runSpacing: isCompact ? 8.h : 12.h,
+                                      children: List.generate(
+                                        options.length,
+                                        (i) => _buildReflectionChip(
+                                          options[i],
+                                          i,
+                                          quest.correctAnswerIndex ?? 0,
+                                          theme.primaryColor,
+                                          isDark,
+                                          isCompact,
+                                        ),
+                                      ),
+                                    ),
+                                    if (_isAnswered) ...[
+                                      SizedBox(height: isCompact ? 12.h : 30.h),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: _buildCorrectResult(
+                                          quest,
+                                          theme.primaryColor,
+                                          isDark,
+                                          isCompact,
+                                        ),
+                                      ),
+                                    ],
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
+                        if (_isFirstStagePassed && !_isAnswered)
+                          TypeToConfirmOverlay(
+                            expectedText: options[_selectedReflection],
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onSkipped: () => _submitVerbalEvaluation(false),
+                          ),
                       ],
-                    ),
-                    if (_isFirstStagePassed && !_isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: options[_selectedReflection],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
-                      ),
-                  ],
-                );
+                    );
                   },
                 ),
         );

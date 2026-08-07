@@ -44,7 +44,8 @@ class CompleteSentenceInstruction extends StatelessWidget {
                   context
                       .tr(
                         'games.completeSentence_instruction',
-                        fallback: 'Launch the correct fragment to complete the sentence!',
+                        fallback:
+                            'Launch the correct fragment to complete the sentence!',
                       )
                       .toUpperCase(),
                   textAlign: TextAlign.center,

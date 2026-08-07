@@ -31,7 +31,7 @@ class AccentShadowingScreen extends StatefulWidget {
 class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   bool _showConfetti = false;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -56,7 +56,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
       _isAnswered = true;
       _isCorrect = nailedIt;
       if (nailedIt) {
-        _matchedIndices = Set.from(Iterable.generate(100)); // Highlight all on success
+        _matchedIndices = Set.from(
+          Iterable.generate(100),
+        ); // Highlight all on success
       }
     });
 
@@ -109,7 +111,8 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           );
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
-          if (_lastQuestId != quest.id || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (_lastQuestId != quest.id ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastQuestId = quest.id;
               _isAnswered = false;
@@ -144,12 +147,12 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           title: _isAnswered
               ? ""
               : quest?.instruction.isNotEmpty == true
-                  ? quest!.instruction
-                  : context.tr(
-                      'games.accent_shadowing_instruction',
-                      fallback:
-                          'Listen to the example, then speak and match the exact accent and rhythm.',
-                    ),
+              ? quest!.instruction
+              : context.tr(
+                  'games.accent_shadowing_instruction',
+                  fallback:
+                      'Listen to the example, then speak and match the exact accent and rhythm.',
+                ),
           titleIcon: Icons.record_voice_over_rounded,
           onContinue: () {
             setState(() {
@@ -255,10 +258,11 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               ),
             ],
             SizedBox(height: isCompact ? 16.h : 30.h),
-            
+
             if (!_isAnswered)
               AccentSelfEvaluationPanel(
-                textToSpeak: "", // Removed duplicate text, it's already shown in the target panel
+                textToSpeak:
+                    "", // Removed duplicate text, it's already shown in the target panel
                 primaryColor: theme.primaryColor,
                 isCompact: isCompact,
                 onEvaluate: _submitVerbalEvaluation,

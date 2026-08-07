@@ -88,7 +88,7 @@ class GamificationRepositoryImpl
       // transaction retry — so it's computed once, outside the closure.
       final int finalStarsEarned = starsEarned ?? 3;
 
-      // INSTANT UI UPDATE: Fire the reactive stars notifier synchronously BEFORE 
+      // INSTANT UI UPDATE: Fire the reactive stars notifier synchronously BEFORE
       // the network transaction. This prevents the UI from showing a stale "mock"
       // value while waiting for the network, and eliminates the perceived lag.
       if (starsEarned != null) {
@@ -133,9 +133,12 @@ class GamificationRepositoryImpl
 
       return result;
     } catch (e) {
-      if (e is FirebaseException && (e.code == 'unavailable' || e.code == 'network-request-failed')) {
+      if (e is FirebaseException &&
+          (e.code == 'unavailable' || e.code == 'network-request-failed')) {
         return _offlineFallbackUpdateUserRewards(
-          docRef: _firestore.collection('users').doc(_firebaseAuth.currentUser!.uid),
+          docRef: _firestore
+              .collection('users')
+              .doc(_firebaseAuth.currentUser!.uid),
           gameType: gameType,
           level: level,
           xpIncrease: xpIncrease,
@@ -174,7 +177,7 @@ class GamificationRepositoryImpl
       }
 
       final userData = UserModel.fromMap(doc.data() as Map<String, dynamic>);
-      
+
       final updates = _computeRewardUpdates(
         userData: userData,
         gameType: gameType,
@@ -229,9 +232,7 @@ class GamificationRepositoryImpl
     final starRatings = userData.starRatings.map(
       (k, v) => MapEntry(k, Map<String, int>.from(v)),
     );
-    var coinHistoryList = List<Map<String, dynamic>>.from(
-      userData.coinHistory,
-    );
+    var coinHistoryList = List<Map<String, dynamic>>.from(userData.coinHistory);
 
     // ---- Replay detection ----
     final categoryCompleted = completedLevels[gameType] ?? <int>[];
@@ -295,8 +296,7 @@ class GamificationRepositoryImpl
     // ---- Daily XP history ----
     final now = DateTime.now();
     final todayKey = _dateKey(now);
-    dailyHistory[todayKey] =
-        (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
+    dailyHistory[todayKey] = (dailyHistory[todayKey] ?? 0) + finalXpIncrease;
     _trimOldestDailyEntries(
       dailyHistory,
       UserGameConstants.kDailyXpHistoryLimit,

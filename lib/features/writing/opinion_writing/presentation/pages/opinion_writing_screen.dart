@@ -144,7 +144,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             _rightPanArgs.clear();
             _scaleRotation = 0.0;
             _pendingScaleSubmit = false;
-            
+
             // Randomize options for pedagogical integrity
             _shuffledOptions = List.from(state.currentQuest.options ?? []);
             _shuffledOptions.shuffle();
@@ -168,11 +168,15 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
 
-        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? []);
+        final options = _shuffledOptions.isNotEmpty
+            ? _shuffledOptions
+            : (quest?.options ?? []);
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        final bool isFinalFailure = isLoaded ? state.isFinalFailure : (state is WritingGameOver);
+        final bool isFinalFailure = isLoaded
+            ? state.isFinalFailure
+            : (state is WritingGameOver);
 
         return WritingBaseLayout(
           gameType: widget.gameType,
@@ -181,8 +185,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<WritingBloc>().add(const NextQuestion()),
-          onHint: () => context.read<WritingBloc>().add(const WritingHintUsed()),
+          onContinue: () =>
+              context.read<WritingBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<WritingBloc>().add(const WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -275,7 +281,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                     ),
                     if (_pendingScaleSubmit && !isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText: quest.prompt ?? "I have balanced the arguments",
+                        expectedText:
+                            quest.prompt ?? "I have balanced the arguments",
                         displayText: "Type the thesis to seal your argument",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),

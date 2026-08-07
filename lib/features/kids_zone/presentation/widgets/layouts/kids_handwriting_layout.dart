@@ -40,8 +40,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
   final GlobalKey<HandwritingCanvasState> _canvasKey =
       GlobalKey<HandwritingCanvasState>();
 
-
-
   Future<void> _checkHandwriting(BuildContext context, KidsLoaded state) async {
     if (_currentInk == null || _currentInk!.strokes.isEmpty) return;
 
@@ -139,7 +137,6 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
 
         final isDark = Theme.of(context).brightness == Brightness.dark;
         final targetWord = state.currentQuest.question ?? '';
-
 
         return Column(
           children: [
@@ -263,10 +260,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     ),
                     child: Center(
                       child: _isChecking
-                          ? VowlButtonSpinner(
-                              color: Colors.white,
-                              size: 24.h,
-                            )
+                          ? VowlButtonSpinner(color: Colors.white, size: 24.h)
                           : Text(
                               context.tr(
                                 'common.check',

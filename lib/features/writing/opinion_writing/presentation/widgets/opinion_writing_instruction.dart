@@ -23,7 +23,11 @@ class OpinionWritingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr('games.opinion_writing_instruction', fallback: 'Decide if each statement supports or opposes the opinion.'),
+              context.tr(
+                'games.opinion_writing_instruction',
+                fallback:
+                    'Decide if each statement supports or opposes the opinion.',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

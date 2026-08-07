@@ -191,7 +191,10 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                     : SliverPadding(
                         padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 100.h),
                         sliver: SliverList(
-                          delegate: SliverChildBuilderDelegate((context, index) {
+                          delegate: SliverChildBuilderDelegate((
+                            context,
+                            index,
+                          ) {
                             return Padding(
                               padding: EdgeInsets.only(bottom: 16.h),
                               child: _buildLibraryQuestCard(

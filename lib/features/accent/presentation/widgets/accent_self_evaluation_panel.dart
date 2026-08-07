@@ -46,10 +46,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      primaryColor,
-                      primaryColor.withValues(alpha: 0.7),
-                    ],
+                    colors: [primaryColor, primaryColor.withValues(alpha: 0.7)],
                   ),
                   borderRadius: BorderRadius.circular(20.r),
                 ),
@@ -91,7 +88,7 @@ class AccentSelfEvaluationPanel extends StatelessWidget {
         ] else ...[
           SizedBox(height: 16.h),
         ],
-        
+
         SpeakingSelfEvaluationControls(
           expectedText: textToSpeak,
           primaryColor: primaryColor,

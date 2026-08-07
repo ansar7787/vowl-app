@@ -172,9 +172,7 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (_) => const PremiumScreen(),
-                    ),
+                    MaterialPageRoute(builder: (_) => const PremiumScreen()),
                   );
                 },
                 child: Container(
@@ -196,8 +194,11 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.workspace_premium_rounded,
-                          color: Colors.white, size: 20.r),
+                      Icon(
+                        Icons.workspace_premium_rounded,
+                        color: Colors.white,
+                        size: 20.r,
+                      ),
                       SizedBox(width: 8.w),
                       Text(
                         context.tr(
@@ -247,9 +248,11 @@ class _MlFeatureGateDialog extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.play_circle_outline_rounded,
-                          color: isDark ? Colors.white70 : Colors.black54,
-                          size: 20.r),
+                      Icon(
+                        Icons.play_circle_outline_rounded,
+                        color: isDark ? Colors.white70 : Colors.black54,
+                        size: 20.r,
+                      ),
                       SizedBox(width: 8.w),
                       Text(
                         adButtonLabel,

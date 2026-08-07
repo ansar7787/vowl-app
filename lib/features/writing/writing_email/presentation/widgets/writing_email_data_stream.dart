@@ -34,63 +34,64 @@ class WritingEmailDataStream extends StatelessWidget {
                 onTap: () => onTapItem(i),
                 child: Draggable<String>(
                   data: i,
-                feedback: Material(
-                  color: Colors.transparent,
+                  feedback: Material(
+                    color: Colors.transparent,
+                    child: Container(
+                      width: 260.w,
+                      padding: EdgeInsets.all(12.r),
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.circular(12.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: color.withValues(alpha: 0.4),
+                            blurRadius: 20,
+                          ),
+                        ],
+                      ),
+                      child: Text(
+                        i,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          color: Colors.white,
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
                   child: Container(
-                    width: 260.w,
+                    width: double.infinity,
                     padding: EdgeInsets.all(12.r),
                     decoration: BoxDecoration(
-                      color: color,
-                      borderRadius: BorderRadius.circular(12.r),
+                      color: isDark ? Colors.black87 : Colors.white,
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: color.withValues(alpha: 0.3),
+                        width: 2,
+                      ),
                       boxShadow: [
                         BoxShadow(
-                          color: color.withValues(alpha: 0.4),
-                          blurRadius: 20,
+                          color: color.withValues(alpha: isDark ? 0.35 : 0.15),
+                          blurRadius: 6,
                         ),
                       ],
                     ),
                     child: Text(
                       i,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        color: Colors.white,
-                        fontSize: 10.sp,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                        fontSize: 9.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.black87 : Colors.white,
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.3),
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: isDark ? 0.35 : 0.15),
-                        blurRadius: 6,
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    i,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white70 : Colors.black87,
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
               ),
-            ),
-          ).toList(),
+            )
+            .toList(),
       ),
     );
   }

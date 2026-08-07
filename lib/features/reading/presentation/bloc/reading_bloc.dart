@@ -63,13 +63,18 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
   // Handlers
   // ---------------------------------------------------------------------------
 
-  Future<void> _onSpeakConfirmed(ReadingSpeakConfirmed event, Emitter<ReadingState> emit) async {
+  Future<void> _onSpeakConfirmed(
+    ReadingSpeakConfirmed event,
+    Emitter<ReadingState> emit,
+  ) async {
     try {
-      await updateUserCoins(UpdateUserCoinsParams(
-        amountChange: event.bonusCoins,
-        title: 'coin_history.speaking_bonus',
-        isEarned: true,
-      ));
+      await updateUserCoins(
+        UpdateUserCoinsParams(
+          amountChange: event.bonusCoins,
+          title: 'coin_history.speaking_bonus',
+          isEarned: true,
+        ),
+      );
     } catch (e) {
       // logger?.error('Failed to add speaking bonus', error: e);
     }

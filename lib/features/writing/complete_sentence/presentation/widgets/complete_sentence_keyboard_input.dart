@@ -19,7 +19,8 @@ class CompleteSentenceKeyboardInput extends StatefulWidget {
       _CompleteSentenceKeyboardInputState();
 }
 
-class _CompleteSentenceKeyboardInputState extends State<CompleteSentenceKeyboardInput> {
+class _CompleteSentenceKeyboardInputState
+    extends State<CompleteSentenceKeyboardInput> {
   final _controller = TextEditingController();
 
   void _submitInput() {

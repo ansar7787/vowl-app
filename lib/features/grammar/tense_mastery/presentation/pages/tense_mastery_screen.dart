@@ -154,8 +154,10 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
           isFinalFailure: _isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false,
-          onContinue: () => context.read<GrammarBloc>().add(const NextQuestion()),
-          onHint: () => context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          onContinue: () =>
+              context.read<GrammarBloc>().add(const NextQuestion()),
+          onHint: () =>
+              context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Stack(
@@ -184,7 +186,9 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
 
                             // Context Card
                             Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
                                   child: Container(
                                     padding: EdgeInsets.all(
                                       isCompact ? 14.r : 22.r,
@@ -192,7 +196,9 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                     decoration: BoxDecoration(
                                       color: isDark
                                           ? Colors.white.withValues(alpha: 0.05)
-                                          : Colors.black.withValues(alpha: 0.03),
+                                          : Colors.black.withValues(
+                                              alpha: 0.03,
+                                            ),
                                       borderRadius: BorderRadius.circular(
                                         isCompact ? 16.r : 24.r,
                                       ),
@@ -264,11 +270,13 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: theme.primaryColor.withValues(
-                                              alpha: 0.4,
-                                            ),
+                                            color: theme.primaryColor
+                                                .withValues(alpha: 0.4),
                                             blurRadius: isCompact ? 12 : 20,
-                                            offset: Offset(0, isCompact ? 4 : 8),
+                                            offset: Offset(
+                                              0,
+                                              isCompact ? 4 : 8,
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -286,7 +294,9 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                                       ),
                                     ),
                                   )
-                                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
                                   .shimmer(
                                     duration: 2.seconds,
                                     color: Colors.white24,

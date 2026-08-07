@@ -111,7 +111,9 @@ class _KidsFeedbackOverlayContentState
 
   Widget _buildCorrectAnimation() {
     return Container(
-          padding: EdgeInsets.all(16.r), // Reduced padding since Lottie has its own whitespace
+          padding: EdgeInsets.all(
+            16.r,
+          ), // Reduced padding since Lottie has its own whitespace
           decoration: BoxDecoration(
             color: const Color(0xFF10B981), // Emerald 500
             shape: BoxShape.circle,

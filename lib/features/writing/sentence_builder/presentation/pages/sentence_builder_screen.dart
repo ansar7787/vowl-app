@@ -38,7 +38,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
   // PERF FIX: cached so getTheme() isn't called on every build().
   late dynamic _theme;
-  
+
   dynamic _lastQuest;
 
   final _textController = TextEditingController();
@@ -48,8 +48,11 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   // FIX: full whitespace normalization to prevent false mismatches.
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
   // when assembled pieces are joined with inconsistent spacing.
-  static String _normalizeAnswer(String s) =>
-      s.trim().toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '').replaceAll(RegExp(r'\s+'), ' ');
+  static String _normalizeAnswer(String s) => s
+      .trim()
+      .toLowerCase()
+      .replaceAll(RegExp(r'[^\w\s]'), '')
+      .replaceAll(RegExp(r'\s+'), ' ');
 
   @override
   void initState() {
@@ -88,7 +91,10 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
 
   void _submitAnswer(String correct, bool isAnswered) {
     final isHardMode = widget.level >= 6;
-    if (isAnswered || (!isHardMode && _assembledPieces.isEmpty) || (isHardMode && _textController.text.trim().isEmpty)) return;
+    if (isAnswered ||
+        (!isHardMode && _assembledPieces.isEmpty) ||
+        (isHardMode && _textController.text.trim().isEmpty))
+      return;
 
     if (isHardMode) {
       final rawText = _textController.text.trim();
@@ -106,7 +112,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
       if (!['.', '!', '?'].contains(lastChar)) {
         CustomSnackBar.show(
           context: context,
-          message: "Please end your sentence with proper punctuation (., !, or ?).",
+          message:
+              "Please end your sentence with proper punctuation (., !, or ?).",
           type: CustomSnackBarType.warning,
         );
         _hapticService.selection();
@@ -115,7 +122,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     }
 
     // FIX: normalize both sides before comparison.
-    final built = _normalizeAnswer(isHardMode ? _textController.text : _assembledPieces.join(' '));
+    final built = _normalizeAnswer(
+      isHardMode ? _textController.text : _assembledPieces.join(' '),
+    );
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
@@ -131,7 +140,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
           (curr is WritingLoaded && prev is! WritingLoaded) ||
-          (prev is WritingLoaded && curr is WritingLoaded && prev.lastAnswerCorrect != curr.lastAnswerCorrect),
+          (prev is WritingLoaded &&
+              curr is WritingLoaded &&
+              prev.lastAnswerCorrect != curr.lastAnswerCorrect),
       listener: (context, state) {
         if (state is WritingLoaded && state.lastAnswerCorrect == null) {
           // New question loaded or retry triggered â€” clear the selected option.
@@ -179,7 +190,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         final pool = quest?.shuffledWords ?? const [];
         final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
         final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
-        
+
         final lives = state.livesRemaining;
         final isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);
 
@@ -261,66 +272,66 @@ class _SentenceBuilderBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: [
-            SizedBox(height: 16.h),
-            SentenceBuilderInstruction(
-              primaryColor: theme.primaryColor,
-              instruction: quest.instruction,
-            ),
-            SizedBox(height: 32.h),
+          SizedBox(height: 16.h),
+          SentenceBuilderInstruction(
+            primaryColor: theme.primaryColor,
+            instruction: quest.instruction,
+          ),
+          SizedBox(height: 32.h),
 
-            if (level >= 6) ...[
-              GestureDetector(
-                onTap: () {
-                  CustomSnackBar.show(
-                    context: context,
-                    message: "Hard Mode! Dragging is disabled. Please type your answer below.",
-                    type: CustomSnackBarType.info,
-                  );
-                },
-                child: AbsorbPointer(
-                  child: Opacity(
-                    opacity: 0.8,
-                    child: SentenceBuilderPiecePool(
-                      pool: pool,
-                      assembledPieces: const [],
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      onSnap: (_) {},
-                    ),
+          if (level >= 6) ...[
+            GestureDetector(
+              onTap: () {
+                CustomSnackBar.show(
+                  context: context,
+                  message:
+                      "Hard Mode! Dragging is disabled. Please type your answer below.",
+                  type: CustomSnackBarType.info,
+                );
+              },
+              child: AbsorbPointer(
+                child: Opacity(
+                  opacity: 0.8,
+                  child: SentenceBuilderPiecePool(
+                    pool: pool,
+                    assembledPieces: const [],
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onSnap: (_) {},
                   ),
                 ),
               ),
-              SizedBox(height: 16.h),
-              SentenceBuilderKeyboardInput(
-                controller: textController,
-                color: theme.primaryColor,
-                isDark: isDark,
-              ),
-            ] else ...[
-              SentenceBuilderWorkbench(
-                assembledPieces: assembledPieces,
-                color: theme.primaryColor,
-                isDark: isDark,
-                onSnap: onSnap,
-                onRemovePiece: onRemovePiece,
-              ),
-              SizedBox(height: 32.h),
-              SentenceBuilderPiecePool(
-                pool: pool,
-                assembledPieces: assembledPieces,
-                color: theme.primaryColor,
-                isDark: isDark,
-                onSnap: onSnap,
-              ),
-            ],
-
-
-            SizedBox(height: 40.h),
-            if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
-            SizedBox(height: 60.h),
+            ),
+            SizedBox(height: 16.h),
+            SentenceBuilderKeyboardInput(
+              controller: textController,
+              color: theme.primaryColor,
+              isDark: isDark,
+            ),
+          ] else ...[
+            SentenceBuilderWorkbench(
+              assembledPieces: assembledPieces,
+              color: theme.primaryColor,
+              isDark: isDark,
+              onSnap: onSnap,
+              onRemovePiece: onRemovePiece,
+            ),
+            SizedBox(height: 32.h),
+            SentenceBuilderPiecePool(
+              pool: pool,
+              assembledPieces: assembledPieces,
+              color: theme.primaryColor,
+              isDark: isDark,
+              onSnap: onSnap,
+            ),
           ],
-        ),
-      );
+
+          SizedBox(height: 40.h),
+          if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
+          SizedBox(height: 60.h),
+        ],
+      ),
+    );
   }
 }
 
@@ -370,5 +381,3 @@ class _SubmitButton extends StatelessWidget {
     );
   }
 }
-
-

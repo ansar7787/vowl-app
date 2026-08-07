@@ -29,10 +29,9 @@ class DailyJournalInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              context.tr(
-                'games.dailyJournal_instruction',
-                fallback: instruction,
-              ).toUpperCase(),
+              context
+                  .tr('games.dailyJournal_instruction', fallback: instruction)
+                  .toUpperCase(),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

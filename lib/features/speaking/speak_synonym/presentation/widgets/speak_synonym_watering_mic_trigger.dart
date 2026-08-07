@@ -12,7 +12,6 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
   final VoidCallback onLongPressEnd;
   final int attempts;
   final bool isAnswered;
-  
 
   const SpeakSynonymWateringMicTrigger({
     super.key,
@@ -23,7 +22,6 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
     required this.onLongPressEnd,
     required this.attempts,
     required this.isAnswered,
-    
   });
 
   @override
@@ -139,7 +137,6 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
             letterSpacing: 1.5,
           ),
         ),
-        
       ],
     );
   }

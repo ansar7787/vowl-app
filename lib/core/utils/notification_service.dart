@@ -658,7 +658,7 @@ class NotificationService {
           body: '$streak days! Most people never make it this far.',
         ),
         (
-          title: 'Week ${ streak ~/ 7} complete \u{1F389}',
+          title: 'Week ${streak ~/ 7} complete \u{1F389}',
           body: 'Your future self will thank you. 2-minute round?',
         ),
         (

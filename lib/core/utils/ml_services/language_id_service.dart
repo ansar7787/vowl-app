@@ -14,31 +14,39 @@ class LanguageIdService {
   }
 
   /// Identifies the primary language of the given text.
-  /// 
-  /// Returns the BCP-47 language code (e.g., 'en', 'es', 'fr'), 
+  ///
+  /// Returns the BCP-47 language code (e.g., 'en', 'es', 'fr'),
   /// or 'und' (undetermined) if it cannot be identified with enough confidence.
   Future<String> identifyLanguage(String text) async {
     if (text.trim().isEmpty) return 'und';
-    
+
     try {
       final String response = await _languageIdentifier.identifyLanguage(text);
       return response;
     } catch (e) {
-      di.sl<AppLogger>().error('LanguageIdService: identifyLanguage failed', error: e);
+      di.sl<AppLogger>().error(
+        'LanguageIdService: identifyLanguage failed',
+        error: e,
+      );
       return 'und';
     }
   }
 
   /// Identifies possible languages of the given text and their confidence scores.
-  Future<List<IdentifiedLanguage>> identifyPossibleLanguages(String text) async {
+  Future<List<IdentifiedLanguage>> identifyPossibleLanguages(
+    String text,
+  ) async {
     if (text.trim().isEmpty) return [];
 
     try {
-      final List<IdentifiedLanguage> response = 
-          await _languageIdentifier.identifyPossibleLanguages(text);
+      final List<IdentifiedLanguage> response = await _languageIdentifier
+          .identifyPossibleLanguages(text);
       return response;
     } catch (e) {
-      di.sl<AppLogger>().error('LanguageIdService: identifyPossibleLanguages failed', error: e);
+      di.sl<AppLogger>().error(
+        'LanguageIdService: identifyPossibleLanguages failed',
+        error: e,
+      );
       return [];
     }
   }
