@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:confetti/confetti.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MysteryChestOverlay extends StatelessWidget {
   const MysteryChestOverlay({
@@ -79,7 +80,7 @@ class MysteryChestOverlay extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Title with premium glow
-                  Text(
+                  AutoSizeText(
                     isOpened
                         ? context.tr(
                             'home.chest_claimed',
@@ -116,6 +117,7 @@ class MysteryChestOverlay extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 2,
+                    minFontSize: 16,
                   ).animate().fadeIn().scale(
                     duration: 600.ms,
                     curve: Curves.easeOutBack,
@@ -123,7 +125,7 @@ class MysteryChestOverlay extends StatelessWidget {
 
                   SizedBox(height: 8.h),
 
-                  Text(
+                  AutoSizeText(
                     isOpened
                         ? context.tr(
                             'home.chest_treasure_unlocked',
@@ -150,6 +152,7 @@ class MysteryChestOverlay extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 2,
+                    minFontSize: 10,
                   ).animate().fadeIn(delay: 300.ms),
 
                   SizedBox(height: 50.h),
@@ -387,7 +390,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                               decoration: TextDecoration.none,
                                             ),
                                           ),
-                                          Text(
+                                          AutoSizeText(
                                             context.tr(
                                               'home.chest_coins_collected',
                                               fallback: 'Coins Collected',
@@ -401,6 +404,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                               decoration: TextDecoration.none,
                                             ),
                                             maxLines: 1,
+                                            minFontSize: 6,
                                             overflow: TextOverflow.ellipsis,
                                           ),
                                         ],
@@ -419,7 +423,7 @@ class MysteryChestOverlay extends StatelessWidget {
                     SizedBox(height: 60.h),
                     ExcludeSemantics(
                       child:
-                          Text(
+                          AutoSizeText(
                                 isPremium
                                     ? context.tr(
                                         'home.chest_tap_vip_loot',
@@ -441,6 +445,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                 ),
                                 textAlign: TextAlign.center,
                                 maxLines: 2,
+                                minFontSize: 8,
                               )
                               .animate(onPlay: (c) => c.repeat(reverse: true))
                               .fadeIn(duration: 1.seconds),

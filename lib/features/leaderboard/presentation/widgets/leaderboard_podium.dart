@@ -5,6 +5,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class LeaderboardPodium extends StatelessWidget {
   final List<UserEntity> top3;
@@ -247,26 +248,24 @@ class _PodiumSlot extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            (user.displayName ?? 'Player')
-                                .split(' ')
-                                .first
-                                .toUpperCase(),
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: isFirst ? 11.sp : 9.sp,
-                              fontWeight: FontWeight.w900,
-                              color: MeshGradientBackground.getContrastColor(
-                                context,
-                              ),
-                              height: 1.1,
+                        child: AutoSizeText(
+                          (user.displayName ?? 'Player')
+                              .split(' ')
+                              .first
+                              .toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: isFirst ? 11.sp : 9.sp,
+                            fontWeight: FontWeight.w900,
+                            color: MeshGradientBackground.getContrastColor(
+                              context,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
+                            height: 1.1,
                           ),
+                          maxLines: 1,
+                          minFontSize: 6,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                       if (user.isPremium)
@@ -282,45 +281,43 @@ class _PodiumSlot extends StatelessWidget {
                   ),
                   SizedBox(height: 2.h),
                   // Levels cleared badge
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 4.w,
-                        vertical: 2.h,
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 4.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: colors[0].withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: AutoSizeText(
+                      context.tr(
+                        'leaderboard.lvs',
+                        fallback: 'Lvs',
+                        args: [levelsCleared.toString()],
                       ),
-                      decoration: BoxDecoration(
-                        color: colors[0].withValues(alpha: 0.15),
-                        borderRadius: BorderRadius.circular(6.r),
-                      ),
-                      child: Text(
-                        context.tr(
-                          'leaderboard.lvs',
-                          fallback: 'Lvs',
-                          args: [levelsCleared.toString()],
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isFirst ? 8.sp : 7.sp,
-                          fontWeight: FontWeight.w900,
-                          color: colors[0],
-                          height: 1.1,
-                        ),
+                      maxLines: 1,
+                      minFontSize: 4,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: isFirst ? 8.sp : 7.sp,
+                        fontWeight: FontWeight.w900,
+                        color: colors[0],
+                        height: 1.1,
                       ),
                     ),
                   ),
                   SizedBox(height: 1.h),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '$score $scoreLabel',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: isFirst ? 7.sp : 6.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                        height: 1.1,
-                      ),
+                  AutoSizeText(
+                    '$score $scoreLabel',
+                    maxLines: 1,
+                    minFontSize: 4,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: isFirst ? 7.sp : 6.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white70 : Colors.black54,
+                      height: 1.1,
                     ),
                   ),
                 ],

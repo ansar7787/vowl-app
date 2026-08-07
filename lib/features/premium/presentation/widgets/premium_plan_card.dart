@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
@@ -106,9 +107,10 @@ class PremiumPlanCard extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  AutoSizeText(
                                     plan.name.toUpperCase(),
                                     maxLines: 1,
+                                    minFontSize: 10,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -121,13 +123,14 @@ class PremiumPlanCard extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(height: 4.h),
-                                  Text(
+                                  AutoSizeText(
                                     context.tr(
                                       'premium.days_of_elite_access',
                                       fallback: 'Days of Elite Access',
                                       args: ['${plan.days}'],
                                     ),
                                     maxLines: 1,
+                                    minFontSize: 8,
                                     overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
@@ -207,8 +210,11 @@ class PremiumPlanCard extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       plan.tag,
+                                      maxLines: 1,
+                                      minFontSize: 6,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Colors.white,
