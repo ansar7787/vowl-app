@@ -126,7 +126,7 @@ class CommandPod extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildDynamicGreeting(context),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 12.h),
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 10.w,
@@ -698,22 +698,24 @@ class CommandPod extends StatelessWidget {
           '$greeting,',
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 12.sp, // Reduced to create better hierarchy
-            fontWeight: FontWeight.w700,
+            fontSize: 13.sp, // Professional secondary size
+            fontWeight: FontWeight.w600, // Medium weight for contrast
             color: const Color(
               0xFF6366F1,
-            ).withValues(alpha: isDark ? 0.7 : 0.9),
+            ).withValues(alpha: isDark ? 0.8 : 0.9),
             letterSpacing: 0.5,
           ),
           maxLines: 1,
-          minFontSize: 8,
+          minFontSize: 10,
           overflow: TextOverflow.ellipsis,
         ),
+        SizedBox(height: 2.h), // Micro-spacing for breathing room
+
         AutoSizeText(
           name,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 24.sp,
+            fontSize: 26.sp, // Punchy hero size
             fontWeight: FontWeight.w900,
             color: MeshGradientBackground.getContrastColor(context),
             letterSpacing: -1.0,

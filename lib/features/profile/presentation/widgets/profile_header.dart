@@ -192,7 +192,7 @@ class ProfileHeader extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 12.w),
+                    SizedBox(width: 14.w), // Slightly wider gap for the ID badge
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.w,
@@ -211,9 +211,10 @@ class ProfileHeader extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 10.sp,
+                          fontSize: 11.sp, // Slightly larger for legibility
                           fontWeight: FontWeight.w900,
                           color: Colors.white,
+                          letterSpacing: 0.5,
                         ),
                       ),
                     ),
@@ -223,6 +224,7 @@ class ProfileHeader extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(height: 12.h), // Add vertical spacing between name and email
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Row(
