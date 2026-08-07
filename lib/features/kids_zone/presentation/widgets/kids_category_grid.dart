@@ -117,20 +117,17 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
             KidsRoutes.getKidsGameColor('handwriting'),
             Icons.edit_rounded,
             trailing: _isCheckingModel
-                ? SizedBox(
-                    width: 24.sp,
-                    height: 24.sp,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: KidsRoutes.getKidsGameColor('handwriting'),
-                    ),
-                  )
+                ? Icon(
+                    Icons.sync_rounded,
+                    color: KidsRoutes.getKidsGameColor('handwriting'),
+                    size: 24.sp,
+                  ).animate(onPlay: (c) => c.repeat()).rotate(duration: 1.5.seconds)
                 : (!_isModelDownloaded
                       ? Icon(
-                          Icons.lock_outline_rounded,
+                          Icons.cloud_download_rounded,
                           color: KidsRoutes.getKidsGameColor('handwriting'),
                           size: 28.sp,
-                        )
+                        ).animate(onPlay: (c) => c.repeat(reverse: true)).scaleXY(begin: 1.0, end: 1.15, duration: 1.seconds)
                       : null),
           ),
           _buildCategoryCard(
