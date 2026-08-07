@@ -225,6 +225,8 @@ class KidsEmotionsLayout extends StatelessWidget {
         ),
       ],
     );
+      },
+    );
   }
 
   Widget _buildTheaterMaskOption(
