@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ProfileBentoStats extends StatelessWidget {
   final UserEntity user;
@@ -114,13 +115,14 @@ class _AdventureLevelCard extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  Text(
+                  AutoSizeText(
                     context.tr(
                       'profile.level_value',
                       fallback: 'Lvl',
                       args: ['${user.level}'],
                     ),
                     maxLines: 1,
+                    minFontSize: 14,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -129,12 +131,13 @@ class _AdventureLevelCard extends StatelessWidget {
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
                   ),
-                  Text(
+                  AutoSizeText(
                     context.tr(
                       'profile.tap_view_rank_details',
                       fallback: 'Tap to view rank details',
                     ),
                     maxLines: 1,
+                    minFontSize: 8,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -207,13 +210,14 @@ class _AdventureXPCard extends StatelessWidget {
                           letterSpacing: 1.5,
                         ),
                       ),
-                      Text(
+                      AutoSizeText(
                         context.tr(
                           'profile.total_experience',
                           fallback: 'Total Experience',
                           args: ['${user.totalExp}'],
                         ),
                         maxLines: 1,
+                        minFontSize: 10,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -242,13 +246,14 @@ class _AdventureXPCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(
-                      child: Text(
+                      child: AutoSizeText(
                         context.tr(
                           'profile.progress_to_level',
                           fallback: 'Progress to next level',
                           args: ['${user.level + 1}'],
                         ),
                         maxLines: 1,
+                        minFontSize: 6,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -367,22 +372,21 @@ class _StatPod extends StatelessWidget {
               child: Icon(icon, color: color, size: 20.r),
             ),
             SizedBox(height: 16.h),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                value,
-                maxLines: 1,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
+            AutoSizeText(
+              value,
+              maxLines: 1,
+              minFontSize: 10,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
               ),
             ),
-            Text(
+            AutoSizeText(
               title,
               maxLines: 1,
+              minFontSize: 6,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: 'Outfit',

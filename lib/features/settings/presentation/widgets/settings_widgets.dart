@@ -9,6 +9,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:auto_size_text/auto_size_text.dart';
 
 // ---------------------------------------------------------------------------
 // SettingsSectionTitle
@@ -121,7 +122,7 @@ class SettingsTile extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AutoSizeText(
                         title,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -134,11 +135,12 @@ class SettingsTile extends StatelessWidget {
                                     : const Color(0xFF0F172A)),
                         ),
                         maxLines: 1,
+                        minFontSize: 10,
                         overflow: TextOverflow.ellipsis,
                       ),
                       if (subtitle != null) ...[
                         SizedBox(height: 2.h),
-                        Text(
+                        AutoSizeText(
                           subtitle!,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -147,6 +149,7 @@ class SettingsTile extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                           maxLines: 2,
+                          minFontSize: 8,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
@@ -221,8 +224,10 @@ class SettingsSwitchTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AutoSizeText(
                     title,
+                    maxLines: 1,
+                    minFontSize: 10,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 15.sp,
@@ -230,7 +235,7 @@ class SettingsSwitchTile extends StatelessWidget {
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
                   ),
-                  Text(
+                  AutoSizeText(
                     subtitle,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -239,6 +244,7 @@ class SettingsSwitchTile extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                     maxLines: 2,
+                    minFontSize: 8,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -344,7 +350,7 @@ class SettingsLogoutButton extends StatelessWidget {
                         ),
                         SizedBox(width: 16.w),
                         Flexible(
-                          child: Text(
+                          child: AutoSizeText(
                             context.tr(
                               'settings.sign_out',
                               fallback: 'Sign Out',
@@ -357,6 +363,7 @@ class SettingsLogoutButton extends StatelessWidget {
                               letterSpacing: 1.5,
                             ),
                             maxLines: 1,
+                            minFontSize: 8,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
@@ -535,7 +542,7 @@ class SettingsProfileSection extends StatelessWidget {
                         ),
                         SizedBox(width: 6.w),
                         Flexible(
-                          child: Text(
+                          child: AutoSizeText(
                             currentUser.isPremium
                                 ? context.tr(
                                     'settings.premium_quester',
@@ -553,6 +560,7 @@ class SettingsProfileSection extends StatelessWidget {
                               letterSpacing: 1,
                             ),
                             maxLines: 1,
+                            minFontSize: 6,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
