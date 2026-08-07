@@ -164,8 +164,10 @@ class KidsWeatherLayout extends StatelessWidget {
               minFontSize: 10,
             ),
           ],
-        ],
-      ),
+          ],
+          ),
+        );
+      },
     );
   }
 

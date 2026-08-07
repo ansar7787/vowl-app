@@ -144,8 +144,21 @@ class KidsDayNightLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarged emoji, hide question text
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 12,
+                      ),
+                    ),
                     if (quest.funFact != null) ...[
                       SizedBox(height: 8.h),
                       Padding(
