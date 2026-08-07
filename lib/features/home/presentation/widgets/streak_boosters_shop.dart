@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class StreakBoostersShop extends StatefulWidget {
   final UserEntity user;
@@ -37,7 +38,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              child: Text(
+              child: AutoSizeText(
                 context.tr(
                   'streak.boosters_title',
                   fallback: 'STREAK BOOSTERS',
@@ -49,6 +50,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   letterSpacing: -0.5,
                 ),
                 maxLines: 1,
+                minFontSize: 12,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -392,7 +394,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                           Row(
                             children: [
                               Flexible(
-                                child: Text(
+                                child: AutoSizeText(
                                   title,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
@@ -403,6 +405,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                         : Colors.black87,
                                   ),
                                   maxLines: 1,
+                                  minFontSize: 10,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -445,7 +448,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                               .withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(8.r),
                                     ),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       isActive
                                           ? context.tr(
                                               'streak.status_active',
@@ -464,6 +467,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                             : Colors.grey,
                                       ),
                                       maxLines: 1,
+                                      minFontSize: 6,
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
@@ -472,7 +476,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                             ],
                           ),
                           SizedBox(height: 4.h),
-                          Text(
+                          AutoSizeText(
                             subtitle,
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -483,11 +487,12 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                               fontWeight: FontWeight.w500,
                             ),
                             maxLines: 2,
+                            minFontSize: 8,
                             overflow: TextOverflow.ellipsis,
                           ),
                           if (isActive && activeUntil != null) ...[
                             SizedBox(height: 4.h),
-                            Text(
+                            AutoSizeText(
                               context.tr(
                                 'streak.expires_label',
                                 args: [
@@ -508,6 +513,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                                 fontWeight: FontWeight.w600,
                               ),
                               maxLines: 1,
+                              minFontSize: 6,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],

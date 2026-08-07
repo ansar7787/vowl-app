@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ProfileStickersProgress extends StatelessWidget {
   final UserEntity user;
@@ -49,12 +50,13 @@ class ProfileStickersProgress extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    AutoSizeText(
                       context.tr(
                         'profile.collection_progress',
                         fallback: 'Collection Progress',
                       ),
                       maxLines: 1,
+                      minFontSize: 6,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -64,13 +66,14 @@ class ProfileStickersProgress extends StatelessWidget {
                         letterSpacing: 1,
                       ),
                     ),
-                    Text(
+                    AutoSizeText(
                       context.tr(
                         'profile.stickers_count',
                         fallback: 'Stickers',
                         args: ['${earnedStickers.length}', '$totalPossible'],
                       ),
                       maxLines: 1,
+                      minFontSize: 10,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontFamily: 'Outfit',

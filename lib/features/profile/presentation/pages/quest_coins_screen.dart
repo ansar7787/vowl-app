@@ -18,6 +18,7 @@ import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/hint_purchase_dialog.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -520,7 +521,7 @@ class VowlCoinsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  AutoSizeText(
                     item.title,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -528,8 +529,11 @@ class VowlCoinsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
                     ),
+                    maxLines: 1,
+                    minFontSize: 10,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  Text(
+                  AutoSizeText(
                     item.subtitle,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -537,6 +541,9 @@ class VowlCoinsScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white54 : const Color(0xFF64748B),
                     ),
+                    maxLines: 2,
+                    minFontSize: 8,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
@@ -709,7 +716,7 @@ class VowlCoinsScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          AutoSizeText(
                             title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
@@ -720,6 +727,9 @@ class VowlCoinsScreen extends StatelessWidget {
                                   : const Color(0xFF1E293B),
                               letterSpacing: 0.2,
                             ),
+                            maxLines: 2,
+                            minFontSize: 10,
+                            overflow: TextOverflow.ellipsis,
                           ),
                           if (formattedDate.isNotEmpty)
                             Text(

@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// A single streak milestone: the day count it unlocks at, and its reward.
 class StreakMilestone {
@@ -46,7 +47,7 @@ class StreakMilestones extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        AutoSizeText(
           context.tr('streak.milestones_title', fallback: 'STREAK MILESTONES'),
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -55,6 +56,7 @@ class StreakMilestones extends StatelessWidget {
             letterSpacing: -0.5,
           ),
           maxLines: 1,
+          minFontSize: 12,
           overflow: TextOverflow.ellipsis,
         ),
         SizedBox(height: 16.h),
@@ -176,20 +178,17 @@ class StreakMilestones extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 12.h),
-                              FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  daysLabel,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isReached
-                                        ? Colors.amber
-                                        : Colors.grey,
-                                  ),
-                                  maxLines: 1,
+                              AutoSizeText(
+                                daysLabel,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isReached ? Colors.amber : Colors.grey,
                                 ),
+                                maxLines: 1,
+                                minFontSize: 8,
+                                overflow: TextOverflow.ellipsis,
                               ),
                               SizedBox(height: 4.h),
                               Row(
@@ -263,17 +262,16 @@ class StreakMilestones extends StatelessWidget {
                                                 ),
                                                 elevation: 0,
                                               ),
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: Text(
-                                                  statusLabel,
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 10.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                  ),
-                                                  maxLines: 1,
+                                              child: AutoSizeText(
+                                                statusLabel,
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 10.sp,
+                                                  fontWeight: FontWeight.w900,
                                                 ),
+                                                maxLines: 1,
+                                                minFontSize: 6,
+                                                overflow: TextOverflow.ellipsis,
                                               ),
                                             )
                                             .animate(onPlay: (c) => c.repeat())
@@ -281,15 +279,18 @@ class StreakMilestones extends StatelessWidget {
                                   ),
                                 )
                               else if (isClaimed)
-                                Text(
+                                AutoSizeText(
                                   statusLabel,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: Colors.amber.withValues(alpha: 0.5),
+                                    color: Colors.amber.withValues(
+                                      alpha: 0.5,
+                                    ),
                                   ),
                                   maxLines: 1,
+                                  minFontSize: 6,
                                   overflow: TextOverflow.ellipsis,
                                 )
                               else

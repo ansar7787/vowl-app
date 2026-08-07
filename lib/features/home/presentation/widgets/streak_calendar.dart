@@ -6,6 +6,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class StreakCalendar extends StatelessWidget {
   final UserEntity user;
@@ -39,7 +40,7 @@ class StreakCalendar extends StatelessWidget {
               ),
               SizedBox(width: 10.w),
               Flexible(
-                child: Text(
+                child: AutoSizeText(
                   context.tr(
                     'streak.activity_heatmap',
                     fallback: 'ACTIVITY HEATMAP',
@@ -54,6 +55,7 @@ class StreakCalendar extends StatelessWidget {
                     letterSpacing: 1.5,
                   ),
                   maxLines: 1,
+                  minFontSize: 6,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -86,7 +88,7 @@ class StreakCalendar extends StatelessWidget {
                           size: 12.r,
                         ),
                         SizedBox(width: 4.w),
-                        Text(
+                        AutoSizeText(
                           context.tr(
                             'streak.protected_badge',
                             fallback: 'PROTECTED',
@@ -99,6 +101,7 @@ class StreakCalendar extends StatelessWidget {
                             letterSpacing: 0.5,
                           ),
                           maxLines: 1,
+                          minFontSize: 5,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
