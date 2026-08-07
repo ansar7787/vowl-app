@@ -426,7 +426,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             children: [
               VowlMascot(
                 isKidsMode: true,
-                size: 85.r,
+                size: 60.r,
                 state: mascotState,
                 useFloatingAnimation: true,
               ),
