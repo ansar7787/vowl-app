@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsFruitsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Fruit Stand Awning
-            Expanded(flex: 5, child: Center(child: _buildAwningFrame(quest))),
+            Expanded(flex: 5, child: Center(child: _buildAwningFrame(context, state, quest))),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -69,98 +69,113 @@ class KidsFruitsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildAwningFrame(dynamic quest) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // Main wooden board
-        Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFFFEF3C7), // Light wood
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(
-              color: const Color(0xFF92400E),
-              width: 6.r,
-            ), // Dark wood frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 48.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF78350F),
-                  ),
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF92400E), // Medium wood color
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+  Widget _buildAwningFrame(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            // Main wooden board
+            Container(
+              width: 280.w,
+              height: 200.h,
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF3C7), // Light wood
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
+                  color: isHovering ? const Color(0xFFB45309) : const Color(0xFF92400E),
+                  width: isHovering ? 8.r : 6.r,
+                ), // Dark wood frame
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.15),
+                    blurRadius: isHovering ? 20 : 10,
+                    offset: const Offset(0, 8),
                   ),
                 ],
-              ],
-            ),
-          ),
-        ),
-        // Red and White striped awning on top
-        Positioned(
-          top: -15.h,
-          child: Container(
-            width: 280.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.r),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  blurRadius: 5,
-                  offset: const Offset(0, 4),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?", // Use instruction, hide emoji/question to prevent cheat
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF78350F),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 12,
+                      ),
+                    ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF92400E), // Medium wood color
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
-              ],
+              ),
             ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(4.r),
-              child: Row(
-                children: List.generate(
-                  8,
-                  (index) => Expanded(
-                    child: Container(
-                      color: index % 2 == 0 ? Colors.red[600] : Colors.white,
+            // Red and White striped awning on top
+            Positioned(
+              top: -15.h,
+              child: Container(
+                width: 280.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.2),
+                      blurRadius: 5,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4.r),
+                  child: Row(
+                    children: List.generate(
+                      8,
+                      (index) => Expanded(
+                        child: Container(
+                          color: index % 2 == 0 ? Colors.red[600] : Colors.white,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 
@@ -172,12 +187,7 @@ class KidsFruitsLayout extends StatelessWidget {
   ) {
     final basketColor = const Color(0xFFD97706); // Wicker yellow/brown
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Stack(
+    final basketWidget = Stack(
         alignment: Alignment.bottomCenter,
         clipBehavior: Clip.none,
         children: [
@@ -191,7 +201,7 @@ class KidsFruitsLayout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4.r),
                 border: Border.all(color: const Color(0xFF92400E), width: 1),
               ),
-              child: Text(
+              child: AutoSizeText(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -200,6 +210,7 @@ class KidsFruitsLayout extends StatelessWidget {
                   color: const Color(0xFF451A03),
                 ),
                 maxLines: 1,
+                minFontSize: 8,
               ),
             ),
           ),
@@ -224,7 +235,25 @@ class KidsFruitsLayout extends StatelessWidget {
             child: CustomPaint(painter: _WickerPainter()),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: basketWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: basketWidget,
+      ),
+      child: basketWidget,
     );
   }
 }

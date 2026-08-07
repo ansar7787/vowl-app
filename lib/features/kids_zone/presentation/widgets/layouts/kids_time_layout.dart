@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -38,7 +37,7 @@ class KidsTimeLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Giant Clock Face
-            Expanded(flex: 5, child: Center(child: _buildClockFace(quest))),
+            Expanded(flex: 5, child: Center(child: _buildClockFace(context, state, quest))),
             // The Pocket Watches (Options)
             Flexible(
               flex: 5,
@@ -94,96 +93,107 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClockFace(dynamic quest) {
-    return Container(
-      width: 260.r,
-      height: 260.r,
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEF3C7), // Antique clock face
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: const Color(0xFFB45309),
-          width: 12.r,
-        ), // Brass frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 15,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Clock numbers (visual decoration)
-          Positioned(
-            top: 10.r,
-            child: Text("12", style: _clockNumStyle()),
-          ),
-          Positioned(
-            bottom: 10.r,
-            child: Text("6", style: _clockNumStyle()),
-          ),
-          Positioned(
-            left: 15.r,
-            child: Text("9", style: _clockNumStyle()),
-          ),
-          Positioned(
-            right: 15.r,
-            child: Text("3", style: _clockNumStyle()),
-          ),
-
-          // Background gears rotating slowly
-          _buildGear(40, -40, 60, true),
-          _buildGear(-40, 30, 80, false),
-
-          // Main Question text in the center
-          Center(
-            child: Container(
-              width: 180.w,
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: 0.9),
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(color: const Color(0xFFD97706), width: 2),
+  Widget _buildClockFace(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 260.r,
+          height: 260.r,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF3C7), // Antique clock face
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              width: isHovering ? 16.r : 12.r,
+            ), // Brass frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                blurRadius: isHovering ? 25 : 15,
+                offset: const Offset(0, 10),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (quest.emoji != null)
-                    Text(quest.emoji!, style: TextStyle(fontSize: 40.sp)),
-                  Text(
-                    quest.question ?? "?",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF1E293B),
-                    ),
-                    textAlign: TextAlign.center,
+            ],
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Clock numbers (visual decoration)
+              Positioned(
+                top: 10.r,
+                child: Text("12", style: _clockNumStyle()),
+              ),
+              Positioned(
+                bottom: 10.r,
+                child: Text("6", style: _clockNumStyle()),
+              ),
+              Positioned(
+                left: 15.r,
+                child: Text("9", style: _clockNumStyle()),
+              ),
+              Positioned(
+                right: 15.r,
+                child: Text("3", style: _clockNumStyle()),
+              ),
+
+              // Background gears
+              _buildGear(40, -40, 60, true),
+              _buildGear(-40, 30, 80, false),
+
+              // Main Instruction text in the center (Hide question/emoji)
+              Center(
+                child: Container(
+                  width: 200.w,
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.95),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(color: const Color(0xFFD97706), width: 2),
                   ),
-                  if (quest.funFact != null) ...[
-                    SizedBox(height: 4.h),
-                    Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF78350F), // Dark brown
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AutoSizeText(
+                        quest.instruction ?? "?", // Use instruction
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF1E293B),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 10,
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ],
+                      if (quest.funFact != null) ...[
+                        SizedBox(height: 8.h),
+                        AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF78350F), // Dark brown
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                          minFontSize: 8,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -197,22 +207,15 @@ class KidsTimeLayout extends StatelessWidget {
   }
 
   Widget _buildGear(double x, double y, double size, bool clockwise) {
+    // Static gears for now, rotation isn't strictly necessary since flutter_animate was removed.
     return Positioned(
       left: 110.r + x - (size / 2),
       top: 110.r + y - (size / 2),
-      child:
-          Icon(
-                Icons.settings_rounded,
-                color: const Color(0xFFD97706).withValues(alpha: 0.2),
-                size: size,
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .rotate(
-                duration: 10.seconds,
-                curve: Curves.linear,
-                begin: 0,
-                end: clockwise ? 1 : -1,
-              ),
+      child: Icon(
+        Icons.settings_rounded,
+        color: const Color(0xFFD97706).withValues(alpha: 0.2),
+        size: size,
+      ),
     );
   }
 
@@ -223,12 +226,7 @@ class KidsTimeLayout extends StatelessWidget {
     bool isCorrect,
     int index,
   ) {
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Column(
+    final watchWidget = Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // The chain
@@ -258,7 +256,7 @@ class KidsTimeLayout extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: Text(
+                child: AutoSizeText(
                   text,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -268,13 +266,31 @@ class KidsTimeLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 8,
                 ),
               ),
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: watchWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: watchWidget,
+      ),
+      child: watchWidget,
     );
   }
 }

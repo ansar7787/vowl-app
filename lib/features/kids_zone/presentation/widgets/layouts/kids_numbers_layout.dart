@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsNumbersLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Rocket Window for the Question
-            Expanded(flex: 5, child: Center(child: _buildRocketWindow(quest))),
+            Expanded(flex: 5, child: Center(child: _buildRocketWindow(context, state, quest))),
             // The Planets/Asteroids for Options
             Flexible(
               flex: 5,
@@ -68,82 +68,96 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRocketWindow(dynamic quest) {
-    return Container(
-      width: 260.r,
-      height: 260.r,
-      decoration: BoxDecoration(
-        color: const Color(0xFF0F172A), // Deep Space Blue
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: const Color(0xFF94A3B8),
-          width: 16.r,
-        ), // Silver metallic frame
-        boxShadow: [
-          // Outer glow for the window
-          BoxShadow(
-            color: const Color(0xFF0EA5E9).withValues(alpha: 0.3),
-            blurRadius: 30,
-            spreadRadius: 5,
-          ),
-          // Inner shadow for depth
-          const BoxShadow(
-            color: Colors.black54,
-            blurRadius: 10,
-            offset: Offset(
-              0,
-              5,
-            ), // Simulating inner shadow via generic blur isn't native, so we just use standard shadow.
-          ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Little stars in the background
-          Positioned(top: 40.r, left: 50.r, child: _buildStar(10)),
-          Positioned(bottom: 60.r, right: 40.r, child: _buildStar(14)),
-          Positioned(top: 80.r, right: 60.r, child: _buildStar(8)),
-
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (quest.emoji != null)
-                Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-              Text(
-                quest.question ?? "?",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 80.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  shadows: const [
-                    Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
-                  ],
-                ),
+  Widget _buildRocketWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 260.r,
+          height: 260.r,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A), // Deep Space Blue
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFF94A3B8),
+              width: 16.r,
+            ), // Silver metallic frame
+            boxShadow: [
+              // Outer glow for the window
+              BoxShadow(
+                color: const Color(0xFF0EA5E9).withValues(alpha: isHovering ? 0.6 : 0.3),
+                blurRadius: isHovering ? 40 : 30,
+                spreadRadius: isHovering ? 10 : 5,
               ),
-              if (quest.funFact != null) ...[
-                SizedBox(height: 4.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Text(
-                    quest.funFact!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFF94A3B8), // Silver text
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
+              // Inner shadow for depth
+              const BoxShadow(
+                color: Colors.black54,
+                blurRadius: 10,
+                offset: Offset(0, 5),
+              ),
             ],
           ),
-        ],
-      ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Little stars in the background
+              Positioned(top: 40.r, left: 50.r, child: _buildStar(10)),
+              Positioned(bottom: 60.r, right: 40.r, child: _buildStar(14)),
+              Positioned(top: 80.r, right: 60.r, child: _buildStar(8)),
+
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (quest.emoji != null && quest.question != quest.emoji)
+                    Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: AutoSizeText(
+                      quest.question ?? "?",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 60.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        shadows: const [
+                          Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
+                        ],
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      minFontSize: 20,
+                    ),
+                  ),
+                  if (quest.funFact != null) ...[
+                    SizedBox(height: 4.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: AutoSizeText(
+                        quest.funFact!,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.bold,
+                          color: const Color(0xFF94A3B8), // Silver text
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 2,
+                        minFontSize: 8,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -165,12 +179,7 @@ class KidsNumbersLayout extends StatelessWidget {
     final baseColor = const Color(0xFFF59E0B); // Amber planet
     final shadowColor = const Color(0xFFB45309);
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final planetWidget = Container(
         height: 100.h,
         decoration: BoxDecoration(
           color: baseColor,
@@ -187,17 +196,40 @@ class KidsNumbersLayout extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 36.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 36.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+              ),
+              maxLines: 1,
+              minFontSize: 12,
             ),
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: planetWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: planetWidget,
+      ),
+      child: planetWidget,
     );
   }
 }

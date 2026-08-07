@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -45,7 +44,7 @@ class KidsNatureLayout extends StatelessWidget {
               children: [
                 SizedBox(height: 120.h),
                 // The Wooden Tree Sign
-                Expanded(flex: 5, child: Center(child: _buildTreeSign(quest))),
+                Expanded(flex: 5, child: Center(child: _buildTreeSign(context, state, quest))),
                 // Glowing River Stones (Options)
                 Flexible(
                   flex: 5,
@@ -103,111 +102,134 @@ class KidsNatureLayout extends StatelessWidget {
   }
 
   Widget _buildFirefly() {
-    return Container(
-          width: 10.r,
-          height: 10.r,
+    // Using implicit animation or just static for simplicity without flutter_animate
+    return TweenAnimationBuilder<double>(
+      tween: Tween<double>(begin: 0.5, end: 1.5),
+      duration: const Duration(seconds: 2),
+      curve: Curves.easeInOut,
+      builder: (context, scale, child) {
+        return Transform.scale(
+          scale: scale,
+          child: Opacity(
+            opacity: scale > 1.0 ? 1.0 : 0.4,
+            child: child,
+          ),
+        );
+      },
+      child: Container(
+        width: 10.r,
+        height: 10.r,
+        decoration: BoxDecoration(
+          color: const Color(0xFFFEF08A),
+          shape: BoxShape.circle,
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFEAB308),
+              blurRadius: 10,
+              spreadRadius: 2,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTreeSign(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 280.w,
+          height: 200.h,
           decoration: BoxDecoration(
-            color: const Color(0xFFFEF08A),
-            shape: BoxShape.circle,
+            color: isHovering ? const Color(0xFF92400E) : const Color(0xFF78350F), // Dark wood
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFF16A34A) : const Color(0xFF451A03), 
+              width: isHovering ? 10.r : 6.r,
+            ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFFEAB308),
-                blurRadius: 10,
-                spreadRadius: 2,
+                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                blurRadius: isHovering ? 25 : 15,
+                offset: const Offset(0, 10),
               ),
             ],
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scale(
-          begin: const Offset(0.5, 0.5),
-          end: const Offset(1.5, 1.5),
-          duration: 2.seconds,
-        )
-        .fade(begin: 0.2, end: 1.0, duration: 1.seconds);
-  }
-
-  Widget _buildTreeSign(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF78350F), // Dark wood
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: const Color(0xFF451A03), width: 6.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 15,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          // Leaves on the sign
-          Positioned(
-            top: -20.h,
-            left: -10.w,
-            child: Icon(
-              Icons.eco_rounded,
-              color: const Color(0xFF16A34A),
-              size: 60.r,
-            ),
-          ),
-          Positioned(
-            bottom: -15.h,
-            right: -10.w,
-            child: Icon(
-              Icons.eco_rounded,
-              color: const Color(0xFF15803D),
-              size: 50.r,
-            ),
-          ),
-
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 42.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFFFEF3C7), // Light wood text
-                  ),
-                  textAlign: TextAlign.center,
+          child: Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              // Leaves on the sign
+              Positioned(
+                top: -20.h,
+                left: -10.w,
+                child: Icon(
+                  Icons.eco_rounded,
+                  color: const Color(0xFF16A34A),
+                  size: 60.r,
                 ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(
-                          0xFFFDE68A,
-                        ), // Warmer yellow for fact
+              ),
+              Positioned(
+                bottom: -15.h,
+                right: -10.w,
+                child: Icon(
+                  Icons.eco_rounded,
+                  color: const Color(0xFF15803D),
+                  size: 50.r,
+                ),
+              ),
+
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?", // Show instruction, hide question/emoji
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFFFEF3C7), // Light wood text
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 12,
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                  ),
-                ],
-              ],
-            ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFFFDE68A), // Warmer yellow for fact
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 8,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -222,12 +244,7 @@ class KidsNatureLayout extends StatelessWidget {
     final rotations = [-0.1, 0.05, -0.05, 0.1];
     final rotation = rotations[index % rotations.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Transform.rotate(
+    final stoneWidget = Transform.rotate(
         angle: rotation,
         child: Container(
           height: 80.r,
@@ -248,9 +265,7 @@ class KidsNatureLayout extends StatelessWidget {
               ),
               // Magic glow inside
               BoxShadow(
-                color: const Color(
-                  0xFF6EE7B7,
-                ).withValues(alpha: 0.3), // Mint green glow
+                color: const Color(0xFF6EE7B7).withValues(alpha: 0.3), // Mint green glow
                 blurRadius: 15,
                 spreadRadius: 2,
               ),
@@ -259,7 +274,7 @@ class KidsNatureLayout extends StatelessWidget {
           child: Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: Text(
+              child: AutoSizeText(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -269,12 +284,30 @@ class KidsNatureLayout extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+                minFontSize: 8,
               ),
             ),
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: stoneWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: stoneWidget,
+      ),
+      child: stoneWidget,
     );
   }
 }

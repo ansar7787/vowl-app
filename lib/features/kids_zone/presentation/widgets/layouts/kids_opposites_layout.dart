@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsOppositesLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Split Mirror / Split World
-            Expanded(flex: 5, child: Center(child: _buildSplitWorld(quest))),
+            Expanded(flex: 5, child: Center(child: _buildSplitWorld(context, state, quest))),
             // The Split Plaques (Options)
             Flexible(
               flex: 5,
@@ -91,108 +91,122 @@ class KidsOppositesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSplitWorld(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 220.h,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: const Color(0xFF1E293B),
-          width: 8.r,
-        ), // Dark frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
-            blurRadius: 15,
-            offset: const Offset(0, 10),
+  Widget _buildSplitWorld(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 280.w,
+          height: 220.h,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFF6366F1) : const Color(0xFF1E293B),
+              width: isHovering ? 10.r : 8.r,
+            ), // Dark frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
+                blurRadius: isHovering ? 25 : 15,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(8.r),
-        child: Stack(
-          children: [
-            // Left Half (Fire / Warm)
-            Positioned(
-              left: 0,
-              top: 0,
-              bottom: 0,
-              width: 140.w, // Half width approx
-              child: Container(color: const Color(0xFFFCA5A5)), // Light red
-            ),
-            // Right Half (Ice / Cold)
-            Positioned(
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: 140.w,
-              child: Container(color: const Color(0xFF93C5FD)), // Light blue
-            ),
-            // Center Divider Line
-            Center(
-              child: Container(
-                width: 4.w,
-                height: double.infinity,
-                color: const Color(0xFF1E293B),
-              ),
-            ),
-            // Main Text in a central circle
-            Center(
-              child: Container(
-                width: 200.w,
-                height: 140.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.r),
+            child: Stack(
+              children: [
+                // Left Half (Fire / Warm)
+                Positioned(
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 140.w, // Half width approx
+                  child: Container(color: isHovering ? const Color(0xFFFECACA) : const Color(0xFFFCA5A5)), // Light red
+                ),
+                // Right Half (Ice / Cold)
+                Positioned(
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 140.w,
+                  child: Container(color: isHovering ? const Color(0xFFBFDBFE) : const Color(0xFF93C5FD)), // Light blue
+                ),
+                // Center Divider Line
+                Center(
+                  child: Container(
+                    width: 4.w,
+                    height: double.infinity,
                     color: const Color(0xFF1E293B),
-                    width: 4.r,
                   ),
                 ),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (quest.emoji != null)
-                        Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                      Text(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 32.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFF0F172A),
-                        ),
-                        textAlign: TextAlign.center,
+                // Main Text in a central circle
+                Center(
+                  child: Container(
+                    width: 220.w,
+                    height: 160.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.95),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: const Color(0xFF1E293B),
+                        width: 4.r,
                       ),
-                      if (quest.funFact != null) ...[
-                        SizedBox(height: 4.h),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w),
-                          child: Text(
-                            quest.funFact!,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.bold,
-                              color: const Color(0xFF475569), // Slate grey
+                    ),
+                    child: Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 12.w),
+                            child: AutoSizeText(
+                              quest.instruction ?? "?", // Use instruction, hide emoji/question to prevent cheat
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 22.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFF0F172A),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 4,
+                              minFontSize: 12,
                             ),
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
                           ),
-                        ),
-                      ],
-                    ],
+                          if (quest.funFact != null) ...[
+                            SizedBox(height: 8.h),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 12.w),
+                              child: AutoSizeText(
+                                quest.funFact!,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xFF475569), // Slate grey
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 3,
+                                minFontSize: 8,
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -203,12 +217,7 @@ class KidsOppositesLayout extends StatelessWidget {
     bool isCorrect,
     int index,
   ) {
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final plaqueWidget = Container(
         height: 70.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
@@ -260,7 +269,7 @@ class KidsOppositesLayout extends StatelessWidget {
                       width: 1,
                     ),
                   ),
-                  child: Text(
+                  child: AutoSizeText(
                     text,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -270,14 +279,32 @@ class KidsOppositesLayout extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    minFontSize: 8,
                   ),
                 ),
               ),
             ],
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: plaqueWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: plaqueWidget,
+      ),
+      child: plaqueWidget,
     );
   }
 }

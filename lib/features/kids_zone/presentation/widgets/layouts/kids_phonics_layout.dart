@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -38,7 +37,7 @@ class KidsPhonicsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Studio Monitor
-            Expanded(flex: 5, child: Center(child: _buildStudioMonitor(quest))),
+            Expanded(flex: 5, child: Center(child: _buildStudioMonitor(context, state, quest))),
             // Vinyl Records
             Flexible(
               flex: 5,
@@ -99,82 +98,96 @@ class KidsPhonicsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildStudioMonitor(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF09090B), // Deep black screen
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: const Color(0xFF52525B),
-          width: 12.r,
-        ), // Silver monitor frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.4),
-            blurRadius: 15,
-            offset: const Offset(0, 10),
+  Widget _buildStudioMonitor(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 280.w,
+          height: 200.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFF09090B), // Deep black screen
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFF6366F1) : const Color(0xFF52525B),
+              width: isHovering ? 14.r : 12.r,
+            ), // Silver monitor frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isHovering ? 0.6 : 0.4),
+                blurRadius: isHovering ? 25 : 15,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Simulated Soundwave Equalizer Background
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: List.generate(15, (index) {
-              return _buildEqBar(index);
-            }),
-          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Simulated Soundwave Equalizer Background
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: List.generate(15, (index) {
+                  return _buildEqBar(index);
+                }),
+              ),
 
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 48.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    shadows: const [
-                      Shadow(
-                        color: Color(0xFF22C55E),
-                        blurRadius: 15,
-                      ), // Neon green glow
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF86EFAC), // Light neon green text
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?", // Use instruction, hide emoji/question
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              color: isHovering ? const Color(0xFF818CF8) : const Color(0xFF22C55E),
+                              blurRadius: 15,
+                            ), // Neon glow
+                          ],
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 12,
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
                     ),
-                  ),
-                ],
-              ],
-            ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF86EFAC), // Light neon green text
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 8,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -207,9 +220,10 @@ class KidsPhonicsLayout extends StatelessWidget {
             ).withValues(alpha: 0.3), // Faint green EQ bars
             borderRadius: BorderRadius.circular(4.r),
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .scaleY(begin: 0.5, end: 1.5, duration: (300 + (index * 50)).ms);
+          // Remove flutter_animate usage for EQ bars to keep it simpler without the package,
+          // or we can use a TweenAnimationBuilder. For simplicity, we just leave it static or use Tween.
+          // Since flutter_animate was imported previously but we replaced it, let's just make it static.
+        );
   }
 
   Widget _buildVinylRecordOption(
@@ -227,12 +241,7 @@ class KidsPhonicsLayout extends StatelessWidget {
     ];
     final labelColor = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Stack(
+    final recordWidget = Stack(
         alignment: Alignment.center,
         children: [
           // The Vinyl Record (Black disc)
@@ -292,12 +301,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .rotate(
-                duration: 5.seconds,
-                curve: Curves.linear,
-              ), // Spin record slowly
+              ),
           // The overlay with text (does not spin)
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
@@ -306,7 +310,7 @@ class KidsPhonicsLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(color: labelColor, width: 2),
             ),
-            child: Text(
+            child: AutoSizeText(
               text,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -315,10 +319,29 @@ class KidsPhonicsLayout extends StatelessWidget {
                 color: const Color(0xFF0F172A),
               ),
               maxLines: 1,
+              minFontSize: 8,
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: recordWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: recordWidget,
+      ),
+      child: recordWidget,
     );
   }
 }

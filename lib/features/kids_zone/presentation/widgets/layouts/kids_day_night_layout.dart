@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
@@ -45,7 +45,7 @@ class KidsDayNightLayout extends StatelessWidget {
               children: [
                 SizedBox(height: 120.h),
                 // The Observatory Telescope View
-                Expanded(flex: 5, child: Center(child: _buildSkyView(quest))),
+                Expanded(flex: 5, child: Center(child: _buildSkyView(context, state, quest))),
                 // Celestial Cards (Options)
                 Flexible(
                   flex: 5,
@@ -98,82 +98,79 @@ class KidsDayNightLayout extends StatelessWidget {
         );
   }
 
-  Widget _buildSkyView(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 220.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF0F172A),
-        borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
-        border: Border.all(
-          color: const Color(0xFF64748B),
-          width: 8.r,
-        ), // Thick observatory metal frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+  Widget _buildSkyView(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 280.w,
+          height: 220.h,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A),
+            borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
+            border: Border.all(
+              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFF64748B),
+              width: isHovering ? 12.r : 8.r,
+            ), // Thick observatory metal frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                blurRadius: isHovering ? 30 : 20,
+                offset: const Offset(0, 10),
+              ),
+              BoxShadow(
+                color: const Color(
+                  0xFF0EA5E9,
+                ).withValues(alpha: isHovering ? 0.3 : 0.1), // Slight atmospheric glow
+                blurRadius: isHovering ? 60 : 40,
+                spreadRadius: isHovering ? 10 : 5,
+              ),
+            ],
           ),
-          BoxShadow(
-            color: const Color(
-              0xFF0EA5E9,
-            ).withValues(alpha: 0.1), // Slight atmospheric glow
-            blurRadius: 40,
-            spreadRadius: 5,
-          ),
-        ],
-      ),
-      child: Stack(
-        children: [
-          // Twinkling stars in the observatory view
-          Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
-          Positioned(bottom: 40.h, right: 40.w, child: _buildTwinklingStar()),
-          Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
+          child: Stack(
+            children: [
+              // Twinkling stars in the observatory view
+              Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
+              Positioned(bottom: 40.h, right: 40.w, child: _buildTwinklingStar()),
+              Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
 
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Text(
-                    quest.question ?? "?",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize:
-                          32.sp, // slightly smaller to fit longer questions
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF7DD3FC), // Light sky blue
+              Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (quest.emoji != null)
+                      Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarged emoji, hide question text
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF7DD3FC), // Light sky blue
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ],
-            ),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
@@ -212,12 +209,7 @@ class KidsDayNightLayout extends StatelessWidget {
         ? const Color(0xFF0284C7)
         : const Color(0xFF0F172A);
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final cardWidget = Container(
         height: 120.h,
         decoration: BoxDecoration(
           color: color,
@@ -249,7 +241,7 @@ class KidsDayNightLayout extends StatelessWidget {
 
               SizedBox(height: 12.h),
 
-              Text(
+              AutoSizeText(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -265,11 +257,31 @@ class KidsDayNightLayout extends StatelessWidget {
                   ],
                 ),
                 textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
               ),
             ],
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: cardWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: cardWidget,
+      ),
+      child: cardWidget,
     );
   }
 }

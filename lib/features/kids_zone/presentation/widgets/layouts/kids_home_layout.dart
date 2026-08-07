@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsHomeLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Dollhouse Cross-section
-            Expanded(flex: 5, child: Center(child: _buildDollhouse(quest))),
+            Expanded(flex: 5, child: Center(child: _buildDollhouse(context, state, quest))),
             // The Furniture pieces (Options)
             Flexible(
               flex: 5,
@@ -99,76 +99,92 @@ class KidsHomeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildDollhouse(dynamic quest) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // Dollhouse Roof
-        ClipPath(
-          clipper: _TriangleClipper(),
-          child: Container(
-            width: 280.w,
-            height: 60.h,
-            color: const Color(0xFFEF4444), // Red roof
-          ),
-        ),
-        // Dollhouse Room
-        Container(
-          width: 240.w,
-          height: 140.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFFFDE68A), // Warm yellow wallpaper
-            border: Border.all(
-              color: const Color(0xFF78350F),
-              width: 6.r,
-            ), // Wooden walls
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
+  Widget _buildDollhouse(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Dollhouse Roof
+            ClipPath(
+              clipper: _TriangleClipper(),
+              child: Container(
+                width: 280.w,
+                height: 60.h,
+                color: isHovering ? const Color(0xFFDC2626) : const Color(0xFFEF4444), // Red roof
               ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 36.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF451A03),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF92400E), // Match wood frame
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+            ),
+            // Dollhouse Room
+            Container(
+              width: 240.w,
+              height: 160.h, // Made slightly taller to fit instruction
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFFFEF3C7) : const Color(0xFFFDE68A), // Warm yellow wallpaper
+                border: Border.all(
+                  color: isHovering ? const Color(0xFF92400E) : const Color(0xFF78350F),
+                  width: isHovering ? 8.r : 6.r,
+                ), // Wooden walls
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.15),
+                    blurRadius: isHovering ? 20 : 10,
+                    offset: const Offset(0, 8),
                   ),
                 ],
-              ],
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (quest.emoji != null)
+                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?", // Use instruction as clue, hide question
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF451A03),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        minFontSize: 10,
+                      ),
+                    ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF92400E), // Match wood frame
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 8,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
             ),
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 
@@ -187,12 +203,7 @@ class KidsHomeLayout extends StatelessWidget {
     ];
     final furnitureColor = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final furnitureWidget = Container(
         height: 75.h,
         decoration: BoxDecoration(
           color: furnitureColor,
@@ -217,7 +228,7 @@ class KidsHomeLayout extends StatelessWidget {
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: Text(
+                  child: AutoSizeText(
                     text,
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -227,14 +238,32 @@ class KidsHomeLayout extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    minFontSize: 8,
                   ),
                 ),
               ),
             ),
           ],
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: furnitureWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: furnitureWidget,
+      ),
+      child: furnitureWidget,
     );
   }
 }

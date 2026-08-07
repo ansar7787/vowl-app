@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsFoodLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Chef's Hat / Board
-            Expanded(flex: 5, child: Center(child: _buildKitchenBoard(quest))),
+            Expanded(flex: 5, child: Center(child: _buildKitchenBoard(context, state, quest))),
             // Serving Platters (Options)
             Flexible(
               flex: 5,
@@ -92,102 +92,120 @@ class KidsFoodLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildKitchenBoard(dynamic quest) {
-    return Stack(
-      alignment: Alignment.topCenter,
-      clipBehavior: Clip.none,
-      children: [
-        // The White Kitchen Tile Board
-        Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: const Color(0xFFD4D4D8),
-              width: 4.r,
-            ), // Light grey tile border
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 42.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFFE11D48), // Tasty red text
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF71717A), // Gray fact text
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+  Widget _buildKitchenBoard(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Stack(
+          alignment: Alignment.topCenter,
+          clipBehavior: Clip.none,
+          children: [
+            // The White Kitchen Tile Board
+            Container(
+              width: 280.w,
+              height: 200.h,
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFFFEF2F2) : Colors.white, // Light red tint on hover
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isHovering ? const Color(0xFFE11D48) : const Color(0xFFD4D4D8),
+                  width: isHovering ? 6.r : 4.r,
+                ), // Light grey tile border
+                boxShadow: [
+                  BoxShadow(
+                    color: isHovering 
+                        ? const Color(0xFFE11D48).withValues(alpha: 0.3) 
+                        : Colors.black.withValues(alpha: 0.1),
+                    blurRadius: isHovering ? 20 : 10,
+                    offset: const Offset(0, 8),
                   ),
                 ],
-              ],
-            ),
-          ),
-        ),
-        // A cute chef hat resting on top
-        Positioned(
-          top: -30.h,
-          child: Container(
-            width: 80.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-              border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 2.w,
-                  height: 20.h,
-                  color: const Color(0xFFE4E4E7),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (quest.emoji != null)
+                      Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: AutoSizeText(
+                        quest.instruction ?? "?", // Use instruction as clue, hide question
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFFE11D48), // Tasty red text
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 3,
+                        minFontSize: 12,
+                      ),
+                    ),
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF71717A), // Gray fact text
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ],
                 ),
-                Container(
-                  width: 2.w,
-                  height: 25.h,
-                  color: const Color(0xFFE4E4E7),
-                ),
-                Container(
-                  width: 2.w,
-                  height: 20.h,
-                  color: const Color(0xFFE4E4E7),
-                ),
-              ],
+              ),
             ),
-          ),
-        ),
-      ],
+            // A cute chef hat resting on top
+            Positioned(
+              top: -30.h,
+              child: Container(
+                width: 80.w,
+                height: 40.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+                  border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 2.w,
+                      height: 20.h,
+                      color: const Color(0xFFE4E4E7),
+                    ),
+                    Container(
+                      width: 2.w,
+                      height: 25.h,
+                      color: const Color(0xFFE4E4E7),
+                    ),
+                    Container(
+                      width: 2.w,
+                      height: 20.h,
+                      color: const Color(0xFFE4E4E7),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -197,12 +215,7 @@ class KidsFoodLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Column(
+    final platterWidget = Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // The Cloche (Silver Dome)
@@ -251,7 +264,7 @@ class KidsFoodLayout extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: Text(
+                child: AutoSizeText(
                   text,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -261,13 +274,31 @@ class KidsFoodLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 8,
                 ),
               ),
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: platterWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: platterWidget,
+      ),
+      child: platterWidget,
     );
   }
 }
