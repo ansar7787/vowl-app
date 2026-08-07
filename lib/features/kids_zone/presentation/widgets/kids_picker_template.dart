@@ -10,6 +10,7 @@ import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class KidsPickerTemplate extends StatefulWidget {
   final String title;
@@ -320,18 +321,18 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             BoxShadow(color: Colors.grey.shade300, offset: const Offset(0, 6)),
         ],
       ),
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Text(
-          option,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: _getOptionFontSize(option),
-            fontWeight: FontWeight.w800,
-            color: const Color(0xFF334155),
-          ),
-          textAlign: TextAlign.center,
+      child: AutoSizeText(
+        option,
+        maxLines: 2,
+        minFontSize: 12,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: _getOptionFontSize(option),
+          fontWeight: FontWeight.w800,
+          color: const Color(0xFF334155),
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }

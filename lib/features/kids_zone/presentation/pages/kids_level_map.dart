@@ -29,6 +29,7 @@ import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_toll_gate_bottom_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/painters/kids_segment_path_painter.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class KidsLevelMap extends StatefulWidget {
   final String gameType;
@@ -769,17 +770,16 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      widget.title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
+                  AutoSizeText(
+                    widget.title,
+                    maxLines: 1,
+                    minFontSize: 12,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
                   ),
                   SizedBox(height: 8.h),

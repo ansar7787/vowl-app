@@ -536,17 +536,16 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                     if (trailing != null) ...[SizedBox(width: 4.w), trailing],
                   ],
                 ),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    subtitle,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w500,
-                      color: widget.isDark ? Colors.white60 : Colors.black45,
-                    ),
+                AutoSizeText(
+                  subtitle,
+                  maxLines: 1,
+                  minFontSize: 8,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w500,
+                    color: widget.isDark ? Colors.white60 : Colors.black45,
                   ),
                 ),
               ],
