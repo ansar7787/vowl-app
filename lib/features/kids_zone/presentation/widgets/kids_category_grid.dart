@@ -7,11 +7,38 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/features/kids_zone/kids_routes.dart';
 
-class KidsCategoryGrid extends StatelessWidget {
+class KidsCategoryGrid extends StatefulWidget {
   final bool isDark;
 
   const KidsCategoryGrid({super.key, required this.isDark});
+
+  @override
+  State<KidsCategoryGrid> createState() => _KidsCategoryGridState();
+}
+
+class _KidsCategoryGridState extends State<KidsCategoryGrid> {
+  bool _isCheckingModel = true;
+  bool _isModelDownloaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkModelStatus();
+  }
+
+  Future<void> _checkModelStatus() async {
+    final service = di.sl<DigitalInkService>();
+    final isDownloaded = await service.isModelDownloaded();
+    if (mounted) {
+      setState(() {
+        _isModelDownloaded = isDownloaded;
+        _isCheckingModel = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +55,20 @@ class KidsCategoryGrid extends StatelessWidget {
           _buildCategoryCard(
             context,
             () async {
+              if (!_isModelDownloaded) {
+                final networkInfo = di.sl<NetworkInfo>();
+                final isConnected = await networkInfo.isConnected;
+                if (!isConnected && context.mounted) {
+                  CustomSnackBar.show(
+                    context: context,
+                    message:
+                        'Internet connection required to download smart pen model.',
+                    type: CustomSnackBarType.warning,
+                  );
+                  return;
+                }
+              }
+
               final service = di.sl<DigitalInkService>();
               bool isDownloaded = await service.isModelDownloaded();
 
@@ -35,8 +76,8 @@ class KidsCategoryGrid extends StatelessWidget {
                 final success = await showDialog<bool>(
                   context: context,
                   barrierDismissible: false,
-                  builder: (context) => const _DownloadModelDialog(
-                    primaryColor: Color(0xFFF43F5E),
+                  builder: (context) => _DownloadModelDialog(
+                    primaryColor: KidsRoutes.getKidsGameColor('handwriting'),
                   ),
                 );
 
@@ -50,6 +91,10 @@ class KidsCategoryGrid extends StatelessWidget {
                   }
                   return;
                 }
+
+                setState(() {
+                  _isModelDownloaded = true;
+                });
               }
 
               if (context.mounted) {
@@ -57,15 +102,35 @@ class KidsCategoryGrid extends StatelessWidget {
                   '/kids/map/handwriting',
                   extra: {
                     'title': 'Handwriting',
-                    'primaryColor': const Color(0xFFF43F5E),
+                    'primaryColor': KidsRoutes.getKidsGameColor('handwriting'),
                   },
                 );
               }
             },
             'Write & Learn',
-            'Handwriting Fun',
-            const Color(0xFFF43F5E), // Rose
+            _isCheckingModel
+                ? 'Checking...'
+                : (!_isModelDownloaded
+                      ? 'Download Required'
+                      : 'Handwriting Fun'),
+            KidsRoutes.getKidsGameColor('handwriting'),
             Icons.edit_rounded,
+            trailing: _isCheckingModel
+                ? SizedBox(
+                    width: 24.sp,
+                    height: 24.sp,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: KidsRoutes.getKidsGameColor('handwriting'),
+                    ),
+                  )
+                : (!_isModelDownloaded
+                      ? Icon(
+                          Icons.lock_outline_rounded,
+                          color: KidsRoutes.getKidsGameColor('handwriting'),
+                          size: 28.sp,
+                        )
+                      : null),
           ),
           _buildCategoryCard(
             context,
@@ -73,12 +138,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/alphabet',
               extra: {
                 'title': 'Alphabet',
-                'primaryColor': const Color(0xFFF43F5E),
+                'primaryColor': KidsRoutes.getKidsGameColor('alphabet'),
               },
             ),
             'ABC',
             'Letters & Phonics',
-            const Color(0xFFF43F5E),
+            KidsRoutes.getKidsGameColor('alphabet'),
             Icons.abc_rounded,
           ),
           _buildCategoryCard(
@@ -87,12 +152,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/numbers',
               extra: {
                 'title': 'Numbers',
-                'primaryColor': const Color(0xFF0EA5E9),
+                'primaryColor': KidsRoutes.getKidsGameColor('numbers'),
               },
             ),
             '123',
             'Numbers & Math',
-            const Color(0xFF0EA5E9),
+            KidsRoutes.getKidsGameColor('numbers'),
             Icons.pin_rounded,
           ),
           _buildCategoryCard(
@@ -101,12 +166,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/colors',
               extra: {
                 'title': 'Colors',
-                'primaryColor': const Color(0xFFF59E0B),
+                'primaryColor': KidsRoutes.getKidsGameColor('colors'),
               },
             ),
             'Colors',
             'Rainbow Fun',
-            const Color(0xFFF59E0B),
+            KidsRoutes.getKidsGameColor('colors'),
             Icons.palette_rounded,
           ),
           _buildCategoryCard(
@@ -115,12 +180,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/shapes',
               extra: {
                 'title': 'Shapes',
-                'primaryColor': const Color(0xFF10B981),
+                'primaryColor': KidsRoutes.getKidsGameColor('shapes'),
               },
             ),
             'Shapes',
             'Geometry Fun',
-            const Color(0xFF10B981),
+            KidsRoutes.getKidsGameColor('shapes'),
             Icons.category_rounded,
           ),
           _buildCategoryCard(
@@ -129,12 +194,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/animals',
               extra: {
                 'title': 'Animals',
-                'primaryColor': const Color(0xFF8B5CF6),
+                'primaryColor': KidsRoutes.getKidsGameColor('animals'),
               },
             ),
             'Animals',
             'Farm & Wild',
-            const Color(0xFF8B5CF6),
+            KidsRoutes.getKidsGameColor('animals'),
             Icons.pets_rounded,
           ),
           _buildCategoryCard(
@@ -143,12 +208,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/fruits',
               extra: {
                 'title': 'Fruits',
-                'primaryColor': const Color(0xFFEC4899),
+                'primaryColor': KidsRoutes.getKidsGameColor('fruits'),
               },
             ),
             'Fruits',
             'Healthy Eating',
-            const Color(0xFFEC4899),
+            KidsRoutes.getKidsGameColor('fruits'),
             Icons.apple_rounded,
           ),
           _buildCategoryCard(
@@ -157,12 +222,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/family',
               extra: {
                 'title': 'Family',
-                'primaryColor': const Color(0xFFEC4899),
+                'primaryColor': KidsRoutes.getKidsGameColor('family'),
               },
             ),
             'Family',
             'Love & Home',
-            const Color(0xFFEC4899),
+            KidsRoutes.getKidsGameColor('family'),
             Icons.people_rounded,
           ),
           _buildCategoryCard(
@@ -171,12 +236,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/school',
               extra: {
                 'title': 'School',
-                'primaryColor': const Color(0xFFF59E0B),
+                'primaryColor': KidsRoutes.getKidsGameColor('school'),
               },
             ),
             'School',
             'Let\'s Learn',
-            const Color(0xFFF59E0B),
+            KidsRoutes.getKidsGameColor('school'),
             Icons.school_rounded,
           ),
           _buildCategoryCard(
@@ -185,12 +250,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/verbs',
               extra: {
                 'title': 'Verbs',
-                'primaryColor': const Color(0xFF8B5CF6),
+                'primaryColor': KidsRoutes.getKidsGameColor('verbs'),
               },
             ),
             'Verbs',
             'Action Words',
-            const Color(0xFF8B5CF6),
+            KidsRoutes.getKidsGameColor('verbs'),
             Icons.run_circle_rounded,
           ),
           _buildCategoryCard(
@@ -199,12 +264,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/routine',
               extra: {
                 'title': 'Routine',
-                'primaryColor': const Color(0xFFF97316),
+                'primaryColor': KidsRoutes.getKidsGameColor('routine'),
               },
             ),
             'Routine',
             'My Day',
-            const Color(0xFFF97316),
+            KidsRoutes.getKidsGameColor('routine'),
             Icons.schedule_rounded,
           ),
           _buildCategoryCard(
@@ -213,12 +278,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/emotions',
               extra: {
                 'title': 'Emotions',
-                'primaryColor': const Color(0xFF06B6D4),
+                'primaryColor': KidsRoutes.getKidsGameColor('emotions'),
               },
             ),
             'Emotions',
             'Feelings',
-            const Color(0xFF06B6D4),
+            KidsRoutes.getKidsGameColor('emotions'),
             Icons.mood_rounded,
           ),
           _buildCategoryCard(
@@ -227,12 +292,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/prepositions',
               extra: {
                 'title': 'Prepositions',
-                'primaryColor': const Color(0xFF64748B),
+                'primaryColor': KidsRoutes.getKidsGameColor('prepositions'),
               },
             ),
             'Positions',
             'Where is it?',
-            const Color(0xFF64748B),
+            KidsRoutes.getKidsGameColor('prepositions'),
             Icons.place_rounded,
           ),
           _buildCategoryCard(
@@ -241,23 +306,26 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/phonics',
               extra: {
                 'title': 'Phonics',
-                'primaryColor': const Color(0xFFFFCC00),
+                'primaryColor': KidsRoutes.getKidsGameColor('phonics'),
               },
             ),
             'Phonics',
             'Sound Out',
-            const Color(0xFFFFCC00),
+            KidsRoutes.getKidsGameColor('phonics'),
             Icons.record_voice_over_rounded,
           ),
           _buildCategoryCard(
             context,
             () => context.push(
               '/kids/map/time',
-              extra: {'title': 'Time', 'primaryColor': const Color(0xFF333333)},
+              extra: {
+                'title': 'Time',
+                'primaryColor': KidsRoutes.getKidsGameColor('time'),
+              },
             ),
             'Time',
             'Tick Tock',
-            const Color(0xFF333333),
+            KidsRoutes.getKidsGameColor('time'),
             Icons.watch_later_rounded,
           ),
           _buildCategoryCard(
@@ -266,12 +334,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/opposites',
               extra: {
                 'title': 'Opposites',
-                'primaryColor': const Color(0xFF94A3B8),
+                'primaryColor': KidsRoutes.getKidsGameColor('opposites'),
               },
             ),
             'Opposites',
             'Flip It',
-            const Color(0xFF94A3B8),
+            KidsRoutes.getKidsGameColor('opposites'),
             Icons.swap_horiz_rounded,
           ),
           _buildCategoryCard(
@@ -280,12 +348,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/day_night',
               extra: {
                 'title': 'Day/Night',
-                'primaryColor': const Color(0xFF1E293B),
+                'primaryColor': KidsRoutes.getKidsGameColor('day_night'),
               },
             ),
             'Day & Night',
             'Sun & Moon',
-            const Color(0xFF1E293B),
+            KidsRoutes.getKidsGameColor('day_night'),
             Icons.brightness_4_rounded,
           ),
           _buildCategoryCard(
@@ -294,34 +362,40 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/nature',
               extra: {
                 'title': 'Nature',
-                'primaryColor': const Color(0xFF16A34A),
+                'primaryColor': KidsRoutes.getKidsGameColor('nature'),
               },
             ),
             'Nature',
             'Outdoors',
-            const Color(0xFF16A34A),
+            KidsRoutes.getKidsGameColor('nature'),
             Icons.forest_rounded,
           ),
           _buildCategoryCard(
             context,
             () => context.push(
               '/kids/map/home',
-              extra: {'title': 'Home', 'primaryColor': const Color(0xFFD946EF)},
+              extra: {
+                'title': 'Home',
+                'primaryColor': KidsRoutes.getKidsGameColor('home'),
+              },
             ),
             'Home',
             'Rooms & Items',
-            const Color(0xFFD946EF),
+            KidsRoutes.getKidsGameColor('home'),
             Icons.home_rounded,
           ),
           _buildCategoryCard(
             context,
             () => context.push(
               '/kids/map/food',
-              extra: {'title': 'Food', 'primaryColor': const Color(0xFFFB923C)},
+              extra: {
+                'title': 'Food',
+                'primaryColor': KidsRoutes.getKidsGameColor('food'),
+              },
             ),
             'Food',
             'Yummy!',
-            const Color(0xFFFB923C),
+            KidsRoutes.getKidsGameColor('food'),
             Icons.restaurant_rounded,
           ),
           _buildCategoryCard(
@@ -330,12 +404,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/transport',
               extra: {
                 'title': 'Transport',
-                'primaryColor': const Color(0xFF6366F1),
+                'primaryColor': KidsRoutes.getKidsGameColor('transport'),
               },
             ),
             'Transport',
             'Vroom Vroom',
-            const Color(0xFF6366F1),
+            KidsRoutes.getKidsGameColor('transport'),
             Icons.directions_car_rounded,
           ),
           _buildCategoryCard(
@@ -344,12 +418,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/body_parts',
               extra: {
                 'title': 'Body Parts',
-                'primaryColor': const Color(0xFFF43F5E),
+                'primaryColor': KidsRoutes.getKidsGameColor('body_parts'),
               },
             ),
             'Body',
             'My Body',
-            const Color(0xFFF43F5E),
+            KidsRoutes.getKidsGameColor('body_parts'),
             Icons.accessibility_new_rounded,
           ),
           _buildCategoryCard(
@@ -358,12 +432,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/clothing',
               extra: {
                 'title': 'Clothing',
-                'primaryColor': const Color(0xFF8B5CF6),
+                'primaryColor': KidsRoutes.getKidsGameColor('clothing'),
               },
             ),
             'Clothing',
             'Dress Up',
-            const Color(0xFF8B5CF6),
+            KidsRoutes.getKidsGameColor('clothing'),
             Icons.checkroom_rounded,
           ),
           _buildCategoryCard(
@@ -372,12 +446,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/weather',
               extra: {
                 'title': 'Weather',
-                'primaryColor': const Color(0xFF38BDF8),
+                'primaryColor': KidsRoutes.getKidsGameColor('weather'),
               },
             ),
             'Weather',
             'Sun & Rain',
-            const Color(0xFF38BDF8),
+            KidsRoutes.getKidsGameColor('weather'),
             Icons.cloud_rounded,
           ),
           _buildCategoryCard(
@@ -386,12 +460,12 @@ class KidsCategoryGrid extends StatelessWidget {
               '/kids/map/professions',
               extra: {
                 'title': 'Professions',
-                'primaryColor': const Color(0xFF6366F1),
+                'primaryColor': KidsRoutes.getKidsGameColor('professions'),
               },
             ),
             'Professions',
             'When I Grow Up',
-            const Color(0xFF6366F1),
+            KidsRoutes.getKidsGameColor('professions'),
             Icons.work_rounded,
           ),
         ]),
@@ -405,14 +479,15 @@ class KidsCategoryGrid extends StatelessWidget {
     String title,
     String subtitle,
     Color color,
-    IconData icon,
-  ) {
+    IconData icon, {
+    Widget? trailing,
+  }) {
     return ScaleButton(
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(32.r),
           border: Border.all(color: color, width: 3.w),
           boxShadow: [
@@ -437,14 +512,22 @@ class KidsCategoryGrid extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        color: widget.isDark
+                            ? Colors.white
+                            : const Color(0xFF1E293B),
+                      ),
+                    ),
+                    ?trailing,
+                  ],
                 ),
                 Text(
                   subtitle,
@@ -452,7 +535,7 @@ class KidsCategoryGrid extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white60 : Colors.black45,
+                    color: widget.isDark ? Colors.white60 : Colors.black45,
                   ),
                 ),
               ],
