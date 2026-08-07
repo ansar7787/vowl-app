@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/features/kids_zone/kids_routes.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class KidsCategoryGrid extends StatefulWidget {
   final bool isDark;
@@ -516,19 +517,19 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          title,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                            color: widget.isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                          ),
+                      child: AutoSizeText(
+                        title,
+                        maxLines: 2,
+                        minFontSize: 12,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.isDark
+                              ? Colors.white
+                              : const Color(0xFF1E293B),
+                          height: 1.1,
                         ),
                       ),
                     ),

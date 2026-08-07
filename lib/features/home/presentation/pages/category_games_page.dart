@@ -20,6 +20,7 @@ import 'package:vowl/core/presentation/widgets/category_radar_chart.dart';
 import 'package:vowl/core/presentation/widgets/adaptive_smart_mix_widget.dart';
 import 'package:vowl/core/utils/pedagogical_blueprint.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class CategoryGamesPage extends StatefulWidget {
   const CategoryGamesPage({super.key, required this.categoryId});
@@ -650,18 +651,18 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                theme.title.toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: contentColor,
-                                  letterSpacing: 1,
-                                ),
+                            AutoSizeText(
+                              theme.title.toUpperCase(),
+                              maxLines: 2,
+                              minFontSize: 12,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w900,
+                                color: contentColor,
+                                letterSpacing: 1,
+                                height: 1.1,
                               ),
                             ),
                             SizedBox(height: 8.h),

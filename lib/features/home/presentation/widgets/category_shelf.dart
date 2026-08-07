@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class CategoryShelf extends StatelessWidget {
   const CategoryShelf({super.key, required this.user, required this.subtypes});
@@ -110,20 +111,17 @@ class _GameEntryCard extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        metadata.title,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                          height: 1.1,
-                        ),
+                    AutoSizeText(
+                      metadata.title,
+                      maxLines: 2,
+                      minFontSize: 12,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        height: 1.1,
                       ),
                     ),
                     SizedBox(height: 6.h),
