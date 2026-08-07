@@ -515,22 +515,28 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: widget.isDark
-                            ? Colors.white
-                            : const Color(0xFF1E293B),
+                    Expanded(
+                      child: Text(
+                        title,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.isDark
+                              ? Colors.white
+                              : const Color(0xFF1E293B),
+                        ),
                       ),
                     ),
-                    ?trailing,
+                    if (trailing != null) ...[SizedBox(width: 4.w), trailing],
                   ],
                 ),
                 Text(
                   subtitle,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 11.sp,
