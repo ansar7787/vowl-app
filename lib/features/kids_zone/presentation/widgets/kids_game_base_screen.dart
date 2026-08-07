@@ -125,7 +125,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             );
           }
         } else if (state is KidsGameOver) {
-          audio.playFailureSFX();
           KidsGameDialogs.showGameOverDialog(
             context: context,
             primaryColor: widget.primaryColor,
@@ -133,24 +132,20 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state is KidsLoaded) {
           if (state.lastAnswerCorrect == true) {
             audio.playSuccessSFX();
-            final bloc = context.read<KidsBloc>();
-            Future.delayed(const Duration(milliseconds: 1500), () {
-              if (mounted && context.mounted && bloc.state == state) {
-                bloc.add(NextKidsQuestion());
-              }
-            });
+            final explanation = state.currentQuest.explanation;
+            if (explanation != null && explanation.isNotEmpty) {
+              _speakInstruction(explanation);
+            }
           } else if (state.lastAnswerCorrect == false) {
             audio.playFailureSFX();
-            final bloc = context.read<KidsBloc>();
             final isFinalFailure =
                 state.isFinalFailure || state.livesRemaining <= 0;
 
             if (isFinalFailure) {
-              Future.delayed(const Duration(milliseconds: 2000), () {
-                if (mounted && context.mounted && bloc.state == state) {
-                  bloc.add(NextKidsQuestion());
-                }
-              });
+              final explanation = state.currentQuest.explanation;
+              if (explanation != null && explanation.isNotEmpty) {
+                _speakInstruction(explanation);
+              }
             }
           }
           if (state.lastAnswerCorrect == null && !state.hintUsed) {
@@ -286,6 +281,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                     ? state.currentQuest.explanation
                     : null,
                 onContinue: () {
+                  di.sl<KidsTTSService>().stop();
                   if (state.lastAnswerCorrect == true || state.isFinalFailure || state.livesRemaining <= 0) {
                     context.read<KidsBloc>().add(NextKidsQuestion());
                   } else {
