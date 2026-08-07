@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsRoutineLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bedroom Window
-            Expanded(flex: 5, child: Center(child: _buildBedroomWindow(quest))),
+            Expanded(flex: 5, child: Center(child: _buildBedroomWindow(context, state, quest))),
             // The Bed with Pillows
             Flexible(
               flex: 5,
@@ -103,120 +103,121 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBedroomWindow(dynamic quest) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // The Window pane
-        Container(
-          width: 240.w,
-          height: 180.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF38BDF8), // Light blue daytime sky
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(
-              color: Colors.white,
-              width: 8.r,
-            ), // White window frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Stack(
-            children: [
-              // Window mullions (cross pattern)
-              Center(
-                child: Container(
-                  width: double.infinity,
-                  height: 4.h,
+  Widget _buildBedroomWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            // The Window pane
+            Container(
+              width: 240.w,
+              height: 180.h,
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFF0284C7) : const Color(0xFF38BDF8), // Light blue daytime sky
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
                   color: Colors.white,
-                ),
-              ),
-              Center(
-                child: Container(
-                  width: 4.w,
-                  height: double.infinity,
-                  color: Colors.white,
-                ),
-              ),
-              // The text
-              Center(
-                child: Container(
-                  width: 180.w,
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.8),
-                    borderRadius: BorderRadius.circular(12.r),
+                  width: 8.r,
+                ), // White window frame
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.1),
+                    blurRadius: isHovering ? 20 : 10,
+                    offset: const Offset(0, 4),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (quest.emoji != null)
-                        Text(quest.emoji!, style: TextStyle(fontSize: 40.sp)),
-                      Text(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 28.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFF0F172A),
-                        ),
-                        textAlign: TextAlign.center,
+                ],
+              ),
+              child: Stack(
+                children: [
+                  // Window mullions (cross pattern)
+                  Center(
+                    child: Container(
+                      width: double.infinity,
+                      height: 4.h,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      width: 4.w,
+                      height: double.infinity,
+                      color: Colors.white,
+                    ),
+                  ),
+                  // The text
+                  Center(
+                    child: Container(
+                      width: 180.w,
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.8),
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
-                      if (quest.funFact != null) ...[
-                        SizedBox(height: 4.h),
-                        Text(
-                          quest.funFact!,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF475569),
-                          ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ],
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.emoji != null)
+                            Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hidden question string
+                          if (quest.funFact != null) ...[
+                            SizedBox(height: 4.h),
+                            AutoSizeText(
+                              quest.funFact!,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF475569),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              minFontSize: 8,
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Curtains
+            Positioned(
+              left: 10.w,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF43F5E), // Rose red curtains
+                  borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
+                ),
+              ),
+            ),
+            Positioned(
+              right: 10.w,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF43F5E), // Rose red curtains
+                  borderRadius: BorderRadius.horizontal(
+                    right: Radius.circular(8.r),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        // Curtains
-        Positioned(
-          left: 10.w,
-          top: 0,
-          bottom: 0,
-          child: Container(
-            width: 40.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFFF43F5E), // Rose red curtains
-              borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
             ),
-          ),
-        ),
-        Positioned(
-          right: 10.w,
-          top: 0,
-          bottom: 0,
-          child: Container(
-            width: 40.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFFF43F5E), // Rose red curtains
-              borderRadius: BorderRadius.horizontal(
-                right: Radius.circular(8.r),
-              ),
-            ),
-          ),
-        ),
-      ],
+          ],
+        );
+      },
     );
   }
 
@@ -226,12 +227,7 @@ class KidsRoutineLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final pillowWidget = Container(
         height: 70.h,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -246,20 +242,41 @@ class KidsRoutineLayout extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w800,
-              color: const Color(0xFF475569),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w800,
+                color: const Color(0xFF475569),
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              minFontSize: 8,
             ),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: pillowWidget,
           ),
         ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: pillowWidget,
+      ),
+      child: pillowWidget,
     );
   }
 }

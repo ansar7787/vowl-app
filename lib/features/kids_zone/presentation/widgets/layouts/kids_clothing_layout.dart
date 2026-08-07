@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsClothingLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Open Closet
-            Expanded(flex: 5, child: Center(child: _buildClosetBoard(quest))),
+            Expanded(flex: 5, child: Center(child: _buildClosetBoard(context, state, quest))),
             // The Clothing Hangers (Options)
             Flexible(
               flex: 5,
@@ -100,46 +100,45 @@ class KidsClothingLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClosetBoard(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEF3C7), // Light wood inside closet
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: const Color(0xFFB45309),
-          width: 12.r,
-        ), // Dark wood frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.2),
-            blurRadius: 15,
-            offset: const Offset(0, 8),
-          ),
-        ],
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-            Text(
-              quest.question ?? "?",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 42.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF78350F),
+  Widget _buildClosetBoard(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Container(
+          width: 280.w,
+          height: 200.h,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFFFDE68A) : const Color(0xFFFEF3C7), // Light wood inside closet
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              width: 12.r,
+            ), // Dark wood frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
+                blurRadius: isHovering ? 25 : 15,
+                offset: const Offset(0, 8),
               ),
-              textAlign: TextAlign.center,
-            ),
-            if (quest.funFact != null) ...[
-              SizedBox(height: 8.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
+            ],
+          ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (quest.emoji != null)
+                  Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hidden question string
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: AutoSizeText(
                   quest.funFact!,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -149,13 +148,15 @@ class KidsClothingLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 10,
                 ),
               ),
             ],
           ],
         ),
       ),
+    );
+      },
     );
   }
 
@@ -174,12 +175,7 @@ class KidsClothingLayout extends StatelessWidget {
     ];
     final tagColor = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Column(
+    final hangerWidget = Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           // Metal Hanger Hook
@@ -221,7 +217,7 @@ class KidsClothingLayout extends StatelessWidget {
             child: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: Text(
+                child: AutoSizeText(
                   text,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -231,13 +227,31 @@ class KidsClothingLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 8,
                 ),
               ),
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: hangerWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: hangerWidget,
+      ),
+      child: hangerWidget,
     );
   }
 }
