@@ -178,8 +178,8 @@ class ProfileHeader extends StatelessWidget {
                               'profile.default_name',
                               fallback: 'Explorer',
                             ),
-                        maxLines: 2,
-                        minFontSize: 12,
+                        maxLines: 1,
+                        minFontSize: 14,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
