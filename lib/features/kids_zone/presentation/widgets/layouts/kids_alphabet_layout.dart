@@ -99,50 +99,21 @@ class KidsAlphabetLayout extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (quest.wordEmoji != null)
-              Text(quest.wordEmoji!, style: TextStyle(fontSize: 40.sp))
-            else if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 40.sp)),
-            Flexible(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (quest.capitalLetter != null)
-                    Flexible(
-                      child: AutoSizeText(
-                        quest.capitalLetter!,
-                        style: TextStyle(
-                          fontFamily: 'ComicSans',
-                          fontSize: 72.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFFFDE68A), // Chalk yellow
-                        ),
-                        maxLines: 1,
-                        minFontSize: 24,
-                      ),
-                    ),
-                ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: AutoSizeText(
+                quest.instruction ?? "?",
+                style: TextStyle(
+                  fontFamily: 'ComicSans',
+                  fontSize: 28.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFFFDE68A), // Chalk yellow
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 4,
+                minFontSize: 14,
               ),
             ),
-            if (quest.wordExample != null) ...[
-              SizedBox(height: 4.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: AutoSizeText(
-                  "${quest.wordExample!} ${quest.phonetic != null ? '(/${quest.phonetic}/)' : ''}",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFFA7F3D0), // Chalk mint
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 10,
-                ),
-              ),
-            ],
             if (quest.funFact != null) ...[
               SizedBox(height: 8.h),
               Padding(
