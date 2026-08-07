@@ -138,15 +138,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             }
           } else if (state.lastAnswerCorrect == false) {
             audio.playFailureSFX();
-            final isFinalFailure =
-                state.isFinalFailure || state.livesRemaining <= 0;
-
-            if (isFinalFailure) {
-              final explanation = state.currentQuest.explanation;
-              if (explanation != null && explanation.isNotEmpty) {
-                _speakInstruction(explanation);
-              }
-            }
           }
           if (state.lastAnswerCorrect == null && !state.hintUsed) {
             _speakInstruction(state.currentQuest.instruction);
@@ -277,7 +268,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 livesRemaining: state.livesRemaining,
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
-                explanation: state.lastAnswerCorrect == true || state.isFinalFailure
+                explanation: state.lastAnswerCorrect == true
                     ? state.currentQuest.explanation
                     : null,
                 onContinue: () {
