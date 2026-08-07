@@ -58,7 +58,7 @@ abstract final class UserGameConstants {
   static const double kDoubleXpMultiplier = 2.0;
 
   /// Fraction of base XP awarded when replaying an already-completed level.
-  static const double kReplayXpFraction = 0.5;
+  static const double kReplayXpFraction = 0.0;
 
   // ---------------------------------------------------------------------------
   // Daily Rewards

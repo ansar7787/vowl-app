@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
@@ -17,6 +18,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -29,11 +31,14 @@ class AdventureXPScreen extends StatelessWidget {
         if (state.message != null) {
           final rawMessage = state.message!;
           final lowerMsg = rawMessage.toLowerCase();
-          final isError =
-              lowerMsg.contains('not enough') || lowerMsg.contains('failed');
+          final isError = state.lastPurchaseSuccess == false ||
+              lowerMsg.contains('not enough') || 
+              lowerMsg.contains('failed') || 
+              lowerMsg.contains('insufficient') || 
+              lowerMsg.contains('lacking');
 
           String displayMessage;
-          if (lowerMsg.contains('not enough')) {
+          if (isError) {
             displayMessage = context.tr(
               'adventure.insufficient_coins',
               fallback: 'Not enough coins!',
@@ -66,6 +71,9 @@ class AdventureXPScreen extends StatelessWidget {
                 ? CustomSnackBarType.error
                 : CustomSnackBarType.success,
           );
+
+          // Clear the message so the listener can fire again for subsequent clicks
+          context.read<ProgressionBloc>().add(const ProgressionClearMessageRequested());
         }
       },
       child: Builder(
@@ -252,7 +260,7 @@ class AdventureXPScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 2.h),
                     Text(
-                      "$totalXP XP",
+                      "${NumberFormat('#,###').format(totalXP)} XP",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 26.sp,
@@ -411,7 +419,6 @@ class AdventureXPScreen extends StatelessWidget {
     final categories = QuestType.values.map((type) {
       final name = type.name;
       final displayTitle = name[0].toUpperCase() + name.substring(1);
-      final progress = user.getCategoryProgress(type);
 
       // Calculate total levels for this category
       int levelsCompleted = 0;
@@ -419,6 +426,11 @@ class AdventureXPScreen extends StatelessWidget {
         final completed = user.completedLevels[subtype.name] ?? [];
         levelsCompleted += completed.length;
       }
+
+      final maxLevels = type.subtypes.length * 200;
+      final actualProg = maxLevels > 0 
+          ? ((levelsCompleted / maxLevels) * 100).toInt().clamp(0, 100) 
+          : 0;
 
       IconData icon;
       Color color;
@@ -462,13 +474,29 @@ class AdventureXPScreen extends StatelessWidget {
       }
 
       return {
+        'id': type.serializedName,
         'name': displayTitle,
         'icon': icon,
-        'progress': progress,
+        'progress': actualProg,
         'levels': levelsCompleted,
         'color': color,
       };
     }).toList();
+
+    // Add Kids category
+    final kidsMaxLevels = 12 * 200;
+    final kidsProg = kidsMaxLevels > 0 
+        ? ((user.kidsTotalLevelsCompleted / kidsMaxLevels) * 100).toInt().clamp(0, 100) 
+        : 0;
+    
+    categories.add({
+      'id': 'kids',
+      'name': 'Kids',
+      'icon': Icons.child_care_rounded,
+      'progress': kidsProg,
+      'levels': user.kidsTotalLevelsCompleted,
+      'color': const Color(0xFFEC4899),
+    });
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -497,92 +525,107 @@ class AdventureXPScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final cat = categories[index];
             final prog = cat['progress'] as int;
-            String levelLabel = 'Novice';
+            
+            // Advanced Psychological Mastery Tiers
+            String levelLabel = 'Beginner';
             if (prog >= 80) {
               levelLabel = 'Master';
+            } else if (prog >= 60) {
+              levelLabel = 'Expert';
             } else if (prog >= 40) {
               levelLabel = 'Adept';
+            } else if (prog >= 20) {
+              levelLabel = 'Novice';
             }
 
-            return GlassTile(
-              padding: EdgeInsets.all(16.r),
-              borderRadius: BorderRadius.circular(24.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8.r),
-                        decoration: BoxDecoration(
-                          color: (cat['color'] as Color).withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
+            return ScaleButton(
+              onTap: () {
+                if (cat['id'] == 'kids') {
+                  context.push(AppRouter.kidsZoneRoute);
+                } else {
+                  context.push('${AppRouter.categoryGamesRoute}?category=${cat['id']}');
+                }
+              },
+              child: GlassTile(
+                padding: EdgeInsets.all(16.r),
+                borderRadius: BorderRadius.circular(24.r),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(8.r),
+                          decoration: BoxDecoration(
+                            color: (cat['color'] as Color).withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: Icon(
+                            cat['icon'] as IconData,
+                            size: 18.r,
+                            color: cat['color'] as Color,
+                          ),
                         ),
-                        child: Icon(
-                          cat['icon'] as IconData,
-                          size: 18.r,
-                          color: cat['color'] as Color,
+                        const Spacer(),
+                        Text(
+                          '$prog%',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: cat['color'] as Color,
+                          ),
                         ),
-                      ),
-                      const Spacer(),
-                      Text(
-                        '$prog%',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          color: cat['color'] as Color,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  Text(
-                    cat['name'] as String,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      ],
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        '${cat['levels']} levels · ',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white38 : Colors.black38,
-                        ),
+                    const Spacer(),
+                    Text(
+                      cat['name'] as String,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white : const Color(0xFF1E293B),
                       ),
-                      Text(
-                        levelLabel,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w800,
-                          color: (cat['color'] as Color).withValues(alpha: 0.7),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(6.r),
-                    child: LinearProgressIndicator(
-                      value: prog / 100,
-                      backgroundColor: (cat['color'] as Color).withValues(
-                        alpha: 0.1,
-                      ),
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        cat['color'] as Color,
-                      ),
-                      minHeight: 6.h,
                     ),
-                  ),
-                ],
+                    Row(
+                      children: [
+                        Text(
+                          '${cat['levels']} levels · ',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                        Text(
+                          levelLabel,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w800,
+                            color: (cat['color'] as Color).withValues(alpha: 0.7),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10.h),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(6.r),
+                      child: LinearProgressIndicator(
+                        value: prog / 100,
+                        backgroundColor: (cat['color'] as Color).withValues(
+                          alpha: 0.1,
+                        ),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          cat['color'] as Color,
+                        ),
+                        minHeight: 6.h,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },
@@ -604,6 +647,8 @@ class AdventureXPScreen extends StatelessWidget {
         'icon': Icons.shield_rounded,
         'color': const Color(0xFF10B981),
         'type': 'shield',
+        'active': user.streakFreezes > 0,
+        'activeText': '${user.streakFreezes} ACTIVE',
       },
       {
         'title': context.tr('adventure.double_xp', fallback: 'Double XP'),
@@ -612,9 +657,8 @@ class AdventureXPScreen extends StatelessWidget {
         'icon': Icons.bolt_rounded,
         'color': const Color(0xFF3B82F6),
         'type': 'warp',
-        'active':
-            user.doubleXPExpiry != null &&
-            user.doubleXPExpiry!.isAfter(DateTime.now()),
+        'active': user.isDoubleXPActive,
+        'activeText': '2X ACTIVE',
       },
       {
         'title': 'Golden Scroll',
@@ -625,6 +669,7 @@ class AdventureXPScreen extends StatelessWidget {
         'type': 'scroll',
         'locked': user.level < 200 || !user.isPremium,
         'active': user.hasPermanentXPBoost,
+        'activeText': 'OWNED',
       },
     ];
 
@@ -679,10 +724,28 @@ class AdventureXPScreen extends StatelessWidget {
 
                   return Opacity(
                     opacity: isLocked ? 0.6 : 1.0,
-                    child: GestureDetector(
-                      onTap: isLocked || isCurrentlyActive
-                          ? null
-                          : () {
+                    child: ScaleButton(
+                      onTap: () {
+                              if (isLocked) {
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: 'Unlock at Premium Lvl 100+',
+                                  type: CustomSnackBarType.info,
+                                );
+                                return;
+                              }
+
+                              if (isCurrentlyActive) {
+                                CustomSnackBar.show(
+                                  context: context,
+                                  message: item['type'] == 'shield'
+                                      ? 'Streak Shield is already active!'
+                                      : 'You already have this boost!',
+                                  type: CustomSnackBarType.info,
+                                );
+                                return;
+                              }
+
                               if (item['type'] == 'shield') {
                                 context.read<ProgressionBloc>().add(
                                   ProgressionPurchaseStreakFreezeRequested(
@@ -740,27 +803,12 @@ class AdventureXPScreen extends StatelessWidget {
                                           : const Color(0xFF0F172A),
                                     ),
                                   ),
-                                  if (state.lastPurchaseType == item['type'] &&
-                                      state.lastPurchaseSuccess != null)
-                                    Text(
-                                      state.lastPurchaseSuccess!
-                                          ? 'BOUGHT!'
-                                          : 'LACKING COINS',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 9.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: state.lastPurchaseSuccess!
-                                            ? const Color(0xFF10B981)
-                                            : const Color(0xFFEF4444),
-                                      ),
-                                    )
-                                  else
+
                                     Text(
                                       isLocked
                                           ? 'Premium Lvl 200'
                                           : isCurrentlyActive
-                                          ? 'ITEM ACTIVE'
+                                          ? (item['activeText'] as String? ?? 'ITEM ACTIVE')
                                           : '${item['cost']} Coins',
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
@@ -806,7 +854,22 @@ class AdventureXPScreen extends StatelessWidget {
 
   Widget _buildRecentActivities(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final activities = user.recentActivities;
+    
+    // Filter activities to ONLY show those that gained XP (XP Screen purity)
+    final activities = user.recentActivities.where((activity) {
+      final xpEarned = activity['xpEarned'] as int?;
+      if (xpEarned != null) {
+        return xpEarned > 0;
+      }
+      
+      // Fallback for older legacy data
+      final subtitle = activity['subtitle'] as String? ?? '';
+      final lowerSub = subtitle.toLowerCase();
+      if (lowerSub.contains('0xp') || lowerSub.contains('0 xp')) return false;
+      if (lowerSub.contains('coin') && !lowerSub.contains('xp')) return false;
+      
+      return true;
+    }).toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -846,6 +909,19 @@ class AdventureXPScreen extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(height: 10.h),
             itemBuilder: (context, index) {
               final activity = activities[index];
+              
+              // Dynamic real data from gamification_repository_impl
+              final gameTypeRaw = activity['gameType'] as String? ?? 'quest';
+              final String displayTitle = gameTypeRaw.isNotEmpty 
+                  ? gameTypeRaw[0].toUpperCase() + gameTypeRaw.substring(1).replaceAll(RegExp(r'(?=[A-Z])'), ' ')
+                  : 'Quest';
+
+              final xpEarned = activity['xpEarned'] as int? ?? 0;
+              
+              String subtitle = '+$xpEarned XP';
+              final bool isQuest = activity['type'] == 'quest' || activity['titleKey'] == 'activity.quest_completed';
+              final bool showSubtitle = !isQuest || xpEarned > 0;
+
               return GlassTile(
                 padding: EdgeInsets.all(12.r),
                 borderRadius: BorderRadius.circular(16.r),
@@ -873,11 +949,9 @@ class AdventureXPScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            (activity['title'] as String?) ??
-                                context.tr(
-                                  'adventure.activity_default_title',
-                                  fallback: 'Activity',
-                                ),
+                            activity['titleKey'] == 'activity.quest_completed' 
+                                ? displayTitle 
+                                : ((activity['title'] as String?)?.replaceAll(RegExp('adventure', caseSensitive: false), 'Quest') ?? 'Quest Completed'),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -889,20 +963,25 @@ class AdventureXPScreen extends StatelessWidget {
                                   : const Color(0xFF1E293B),
                             ),
                           ),
-                          Text(
-                            (activity['subtitle'] as String?) ??
-                                context.tr(
-                                  'adventure.activity_default_subtitle',
-                                  fallback: 'Quest Completed',
-                                ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              color: isDark ? Colors.white38 : Colors.black38,
+                          if (showSubtitle)
+                            Text(
+                              isQuest
+                                  ? subtitle
+                                  : ((activity['subtitle'] as String?)
+                                          ?.replaceAll(RegExp('adventure', caseSensitive: false), 'Quest')
+                                          .replaceAll(RegExp(r'\+?\s*\d+\s*coins?', caseSensitive: false), '')
+                                          .replaceAll(RegExp(r'•|\|'), '')
+                                          .trim() 
+                                      ?? 'Reward Earned'),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? const Color(0xFF10B981) : const Color(0xFF059669),
+                              ),
                             ),
-                          ),
                         ],
                       ),
                     ),
@@ -955,26 +1034,14 @@ class AdventureXPScreen extends StatelessWidget {
 
     final diff = DateTime.now().difference(dt);
     if (diff.inDays > 0) {
-      return context.tr(
-        'adventure.time_days_ago',
-        fallback: 'days ago',
-        args: ['${diff.inDays}'],
-      );
+      return '${diff.inDays}d ago';
     }
     if (diff.inHours > 0) {
-      return context.tr(
-        'adventure.time_hours_ago',
-        fallback: 'hours ago',
-        args: ['${diff.inHours}'],
-      );
+      return '${diff.inHours}h ago';
     }
     if (diff.inMinutes > 0) {
-      return context.tr(
-        'adventure.time_minutes_ago',
-        fallback: 'mins ago',
-        args: ['${diff.inMinutes}'],
-      );
+      return '${diff.inMinutes}m ago';
     }
-    return context.tr('adventure.time_just_now', fallback: 'Just now');
+    return 'Just now';
   }
 }
