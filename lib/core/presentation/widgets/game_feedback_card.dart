@@ -82,11 +82,11 @@ class GameFeedbackCard extends StatelessWidget {
 
     final buttonText = success
         ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
-        : (isFinalFailure
-              ? (livesRemaining == 0
-                    ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
-                    : context.tr('common.continue_text', fallback: 'Continue').toUpperCase())
-              : context.tr('games.try_again', fallback: 'Try Again').toUpperCase());
+        : (livesRemaining <= 0
+            ? context.tr('common.see_results', fallback: 'See Results').toUpperCase()
+            : (isFinalFailure
+                ? context.tr('common.continue_text', fallback: 'Continue').toUpperCase()
+                : context.tr('games.try_again', fallback: 'Try Again').toUpperCase()));
 
     final bool showEducationalInfo = success || isFinalFailure;
 
