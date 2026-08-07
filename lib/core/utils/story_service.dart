@@ -1597,61 +1597,13 @@ class StoryServiceImpl implements StoryService {
     final String id = categoryId.toLowerCase();
 
     // Kids Zone exact color matching
-    switch (id) {
-      case 'alphabet':
-        return const Color(0xFFF43F5E);
-      case 'numbers':
-        return const Color(0xFF0EA5E9);
-      case 'colors':
-        return const Color(0xFFF59E0B);
-      case 'shapes':
-        return const Color(0xFF10B981);
-      case 'animals':
-        return const Color(0xFF6366F1);
-      case 'fruits':
-        return const Color(0xFFEF4444);
-      case 'family':
-        return const Color(0xFFEC4899);
-      case 'school':
-        return const Color(0xFFF59E0B);
-      case 'verbs':
-        return const Color(0xFF8B5CF6);
-      case 'routine':
-        return const Color(0xFFF97316);
-      case 'emotions':
-        return const Color(0xFF06B6D4);
-      case 'prepositions':
-        return const Color(0xFF64748B);
-      case 'phonics':
-        return const Color(0xFFFFCC00);
-      case 'time':
-        return const Color(0xFF333333);
-      case 'opposites':
-        return const Color(0xFF94A3B8);
-      case 'day_night':
-      case 'daynight':
-        return const Color(0xFF1E293B);
-      case 'nature':
-        return const Color(0xFF16A34A);
-      case 'home_kids':
-      case 'home':
-        return const Color(0xFFD946EF);
-      case 'food_kids':
-      case 'food':
-        return const Color(0xFFFB923C);
-      case 'transport':
-        return const Color(0xFF6366F1);
-      case 'body_parts':
-      case 'bodyparts':
-        return const Color(0xFFF43F5E);
-      case 'clothing':
-        return const Color(0xFF8B5CF6);
-      case 'handwriting':
-        return const Color(0xFFF43F5E);
-      case 'weather':
-        return const Color(0xFF38BDF8);
-      case 'professions':
-        return const Color(0xFF6366F1);
+    // Fallback on LevelThemeHelper's unified method for all 25 kids games
+    // We check if it's a known kids game color by seeing if it matches one of the kids IDs.
+    // Actually, we can just check if it's one of the known 25, or let the adult fallback handle it.
+    final kidsColor = LevelThemeHelper.getKidsGameColor(id);
+    if (kidsColor != Colors.blue || id == 'numbers') {
+      // 'numbers' is blue, so it's a valid return
+      return kidsColor;
     }
 
     // Adult category fallbacks

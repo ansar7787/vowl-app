@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/navigation_helpers.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/sticker_book_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/pages/mascot_selection_screen.dart';
@@ -105,62 +106,7 @@ class KidsRoutes {
   }
 
   static Color getKidsGameColor(String gameType) {
-    switch (gameType) {
-      case 'alphabet':
-        return const Color(0xFFEF4444);
-      case 'numbers':
-        return const Color(0xFF3B82F6);
-      case 'colors':
-        return const Color(0xFFF59E0B);
-      case 'shapes':
-        return const Color(0xFF10B981);
-      case 'animals':
-        return const Color(0xFF8B5CF6);
-      case 'fruits':
-        return const Color(0xFFEC4899);
-      case 'family':
-        return const Color(0xFFF43F5E);
-      case 'school':
-        return const Color(0xFFEAB308);
-      case 'verbs':
-        return const Color(0xFF6366F1);
-      case 'routine':
-        return const Color(0xFFF97316);
-      case 'emotions':
-        return const Color(0xFF06B6D4);
-      case 'prepositions':
-        return const Color(0xFF64748B);
-      case 'phonics':
-        return const Color(0xFFD946EF);
-      case 'jumble':
-        return const Color(0xFF9333EA);
-      case 'time':
-        return const Color(0xFF84CC16);
-      case 'opposites':
-        return const Color(0xFF14B8A6);
-      case 'day_night':
-        return const Color(0xFF1E3A8A);
-      case 'nature':
-        return const Color(0xFF22C55E);
-      case 'home':
-        return const Color(0xFFCA8A04);
-      case 'food':
-        return const Color(0xFFEA580C);
-      case 'transport':
-        return const Color(0xFF0EA5E9);
-      case 'body_parts':
-        return const Color(0xFFE11D48);
-      case 'clothing':
-        return const Color(0xFFA855F7);
-      case 'handwriting':
-        return const Color(0xFF4F46E5);
-      case 'weather':
-        return const Color(0xFF38BDF8);
-      case 'professions':
-        return const Color(0xFF0D9488);
-      default:
-        return Colors.blue;
-    }
+    return LevelThemeHelper.getKidsGameColor(gameType);
   }
 
   static Widget _getKidsBlocWrapper(Widget child) {
