@@ -126,21 +126,7 @@ class KidsSchoolLayout extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-            Flexible(
-              child: AutoSizeText(
-                quest.question ?? "?",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 40.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 3,
-                minFontSize: 16,
-              ),
-            ),
+              Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji since question is hidden
             if (quest.funFact != null) ...[
               SizedBox(height: 8.h),
               Padding(
