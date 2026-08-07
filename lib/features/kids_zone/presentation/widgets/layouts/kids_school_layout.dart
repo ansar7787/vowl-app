@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsSchoolLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bus Window
-            Expanded(flex: 5, child: Center(child: _buildBusWindow(quest))),
+            Expanded(flex: 5, child: Center(child: _buildBusWindow(context, state, quest))),
             // Backpacks on Seats
             Flexible(
               flex: 5,
@@ -92,46 +92,60 @@ class KidsSchoolLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBusWindow(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFFE0F2FE), // Sky blue outside window
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: const Color(0xFFFACC15),
-          width: 16.r,
-        ), // School bus yellow frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
-            blurRadius: 10,
-            offset: const Offset(0, 8),
+  Widget _buildBusWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          width: 280.w,
+          height: 200.h,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFFBAE6FD) : const Color(0xFFE0F2FE), // Sky blue outside window
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFFFDE047) : const Color(0xFFFACC15),
+              width: 16.r,
+            ), // School bus yellow frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.15),
+                blurRadius: 10,
+                offset: const Offset(0, 8),
+              ),
+            ],
           ),
-        ],
-      ),
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             if (quest.emoji != null)
               Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-            Text(
-              quest.question ?? "?",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 40.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF0F172A),
+            Flexible(
+              child: AutoSizeText(
+                quest.question ?? "?",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 40.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF0F172A),
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 3,
+                minFontSize: 16,
               ),
-              textAlign: TextAlign.center,
             ),
             if (quest.funFact != null) ...[
               SizedBox(height: 8.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
+                child: AutoSizeText(
                   quest.funFact!,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -141,13 +155,15 @@ class KidsSchoolLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 10,
                 ),
               ),
             ],
           ],
         ),
       ),
+        );
+      },
     );
   }
 
@@ -166,14 +182,9 @@ class KidsSchoolLayout extends StatelessWidget {
     ];
     final color = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Stack(
-        alignment: Alignment.topCenter,
-        children: [
+    final backpackWidget = Stack(
+      alignment: Alignment.topCenter,
+      children: [
           // Backpack Handle
           Container(
             width: 30.w,
@@ -216,7 +227,7 @@ class KidsSchoolLayout extends StatelessWidget {
                   ),
                   Expanded(
                     child: Center(
-                      child: Text(
+                      child: AutoSizeText(
                         text,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -224,8 +235,9 @@ class KidsSchoolLayout extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                           color: Colors.white,
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        minFontSize: 8,
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
@@ -234,7 +246,25 @@ class KidsSchoolLayout extends StatelessWidget {
             ),
           ),
         ],
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: backpackWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: backpackWidget,
+      ),
+      child: backpackWidget,
     );
   }
 }

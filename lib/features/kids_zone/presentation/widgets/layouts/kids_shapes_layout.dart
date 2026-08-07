@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -39,7 +38,7 @@ class KidsShapesLayout extends StatelessWidget {
             // The Crane holding Blueprint
             Expanded(
               flex: 5,
-              child: Center(child: _buildBlueprintCrane(quest)),
+              child: Center(child: _buildBlueprintCrane(context, state, quest)),
             ),
             // The Toy Building Blocks
             Flexible(
@@ -72,92 +71,101 @@ class KidsShapesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBlueprintCrane(dynamic quest) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // Crane Arm (Yellow/Black stripes)
-        Container(
-          height: 16.h,
-          width: 180.w,
-          decoration: BoxDecoration(
-            color: const Color(0xFFFBBF24), // Construction Yellow
-            borderRadius: BorderRadius.circular(4.r),
-            border: Border.all(color: const Color(0xFF92400E), width: 2),
-            // A simple stripe effect would require a custom painter,
-            // but we keep it solid yellow for performance and clean aesthetic
-          ),
-        ),
-        // Crane Hook / Cables
-        Container(
-          height: 30.h,
-          width: 4.w,
-          color: const Color(0xFF52525B), // Steel cable
-        ),
-        // The Blueprint Paper
-        Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E3A8A), // Blueprint Blue
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: Colors.white, width: 4),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
+  Widget _buildBlueprintCrane(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Crane Arm (Yellow/Black stripes)
+            Container(
+              height: 16.h,
+              width: 180.w,
+              decoration: BoxDecoration(
+                color: const Color(0xFFFBBF24), // Construction Yellow
+                borderRadius: BorderRadius.circular(4.r),
+                border: Border.all(color: const Color(0xFF92400E), width: 2),
               ),
-            ],
-          ),
-          child: Stack(
-            children: [
-              // Grid pattern for blueprint
-              Positioned.fill(
-                child: CustomPaint(painter: _BlueprintGridPainter()),
+            ),
+            // Crane Hook / Cables
+            Container(
+              height: 30.h,
+              width: 4.w,
+              color: const Color(0xFF52525B), // Steel cable
+            ),
+            // The Blueprint Paper
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 280.w,
+              height: 200.h,
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFF3B82F6) : const Color(0xFF1E3A8A), // Blueprint Blue (lighter when hovering)
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(color: isHovering ? Colors.yellowAccent : Colors.white, width: 4),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.15),
+                    blurRadius: 10,
+                    offset: const Offset(0, 8),
+                  ),
+                ],
               ),
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                    Text(
-                      quest.question ?? "?",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 42.sp,
-                        fontWeight: FontWeight
-                            .w400, // Thinner weight for blueprint aesthetic
-                        color: Colors.white,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    if (quest.funFact != null) ...[
-                      SizedBox(height: 8.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.w),
-                        child: Text(
-                          quest.funFact!,
+              child: Stack(
+                children: [
+                  // Grid pattern for blueprint
+                  Positioned.fill(
+                    child: CustomPaint(painter: _BlueprintGridPainter()),
+                  ),
+                  Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (quest.emoji != null)
+                          Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
+                        Text(
+                          quest.question ?? "?",
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF93C5FD), // Light blue
+                            fontSize: 42.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.white,
+                            letterSpacing: 1,
                           ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
                         ),
-                      ),
-                    ],
-                  ],
-                ),
+                        if (quest.funFact != null) ...[
+                          SizedBox(height: 8.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: Text(
+                              quest.funFact!,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF93C5FD), // Light blue
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -177,58 +185,71 @@ class KidsShapesLayout extends StatelessWidget {
     ];
     final color = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // The studs on top of the block
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: List.generate(2, (i) => _buildStud(color)),
-          ),
-          // The main block body
-          Container(
-            height: 90.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(4.r),
-              border: Border.all(
-                color: Colors.black.withValues(alpha: 0.1),
-                width: 1,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  offset: Offset(0, 6.h),
-                ),
-                BoxShadow(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  offset: const Offset(0, -2),
-                ),
-              ],
+    final blockWidget = Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // The studs on top of the block
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: List.generate(2, (i) => _buildStud(color)),
+        ),
+        // The main block body
+        Container(
+          height: 90.h,
+          width: 75.w, // Fixed width for Draggable overlay stability
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(4.r),
+            border: Border.all(
+              color: Colors.black.withValues(alpha: 0.1),
+              width: 1,
             ),
-            child: Center(
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                offset: Offset(0, 6.h),
               ),
+              BoxShadow(
+                color: Colors.white.withValues(alpha: 0.2),
+                offset: const Offset(0, -2),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-        ],
+        ),
+      ],
+    );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: blockWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: blockWidget,
+      ),
+      child: blockWidget,
     );
   }
 
@@ -239,16 +260,9 @@ class KidsShapesLayout extends StatelessWidget {
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
-        border: Border(
-          top: BorderSide(color: Colors.white.withValues(alpha: 0.4), width: 1),
-          left: BorderSide(
-            color: Colors.black.withValues(alpha: 0.1),
-            width: 1,
-          ),
-          right: BorderSide(
-            color: Colors.black.withValues(alpha: 0.1),
-            width: 1,
-          ),
+        border: Border.all(
+          color: Colors.black.withValues(alpha: 0.15),
+          width: 1,
         ),
       ),
     );
