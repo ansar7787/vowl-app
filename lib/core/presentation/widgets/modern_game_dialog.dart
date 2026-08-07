@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// Premium glassmorphic dialog panel for success briefings, exit confirmations,
 /// and life-rescue actions. Rendering-tick animations are isolated behind
@@ -94,9 +95,11 @@ class ModernGameDialog extends StatelessWidget {
               SizedBox(height: 24.h),
 
               // ── Title ─────────────────────────────────────────────────
-              Text(
+              AutoSizeText(
                 title,
                 textAlign: TextAlign.center,
+                maxLines: 2,
+                minFontSize: 16,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
@@ -210,8 +213,8 @@ class ModernGameDialog extends StatelessWidget {
                               ],
                             ),
                             child: Center(
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 12.w),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   mainAxisSize: MainAxisSize.min,
@@ -224,18 +227,23 @@ class ModernGameDialog extends StatelessWidget {
                                       size: 20.r,
                                     ),
                                     SizedBox(width: 8.w),
-                                    Text(
-                                      adButtonText ??
-                                          context.tr(
-                                            'games.triple_coins_button',
-                                            fallback: 'TRIPLE REWARDS (3X)',
-                                          ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 0.5,
-                                        color: _adButtonContentColor,
+                                    Flexible(
+                                      child: AutoSizeText(
+                                        adButtonText ??
+                                            context.tr(
+                                              'games.triple_coins_button',
+                                              fallback: 'TRIPLE REWARDS (3X)',
+                                            ),
+                                        maxLines: 1,
+                                        minFontSize: 8,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 0.5,
+                                          color: _adButtonContentColor,
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -273,15 +281,21 @@ class ModernGameDialog extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16.r),
                     ),
                     child: Center(
-                      child: Text(
-                        buttonText,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isRescueLife
-                              ? (isDark ? Colors.white54 : Colors.black54)
-                              : Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          buttonText,
+                          maxLines: 1,
+                          minFontSize: 10,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isRescueLife
+                                ? (isDark ? Colors.white54 : Colors.black54)
+                                : Colors.white,
+                          ),
                         ),
                       ),
                     ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// Compact level/progress/lives header shared across all 9 game categories.
 ///
@@ -81,13 +82,14 @@ class GameProgressHeader extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                AutoSizeText(
                   context.tr(
                     'game_progress.level_label',
                     fallback: 'Level',
                     args: ['$level'],
                   ),
                   maxLines: 1,
+                  minFontSize: 10,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// Cinematic full-screen mission briefing shown before a quest begins.
 ///
@@ -170,17 +171,16 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                               SizedBox(height: 8.h),
 
                               // Quest title
-                              FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  widget.title.toUpperCase(),
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 22.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                  ),
+                              AutoSizeText(
+                                widget.title.toUpperCase(),
+                                textAlign: TextAlign.center,
+                                maxLines: 2,
+                                minFontSize: 14,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 22.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
                                 ),
                               ),
 
@@ -293,15 +293,25 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                                                 ],
                                               ),
                                               child: Center(
-                                                child: Text(
-                                                  widget.actionText
-                                                      .toUpperCase(),
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 16.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.white,
-                                                    letterSpacing: 1.5,
+                                                child: Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    horizontal: 16.w,
+                                                  ),
+                                                  child: AutoSizeText(
+                                                    widget.actionText
+                                                        .toUpperCase(),
+                                                    maxLines: 1,
+                                                    minFontSize: 10,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 16.sp,
+                                                      fontWeight:
+                                                          FontWeight.w900,
+                                                      color: Colors.white,
+                                                      letterSpacing: 1.5,
+                                                    ),
                                                   ),
                                                 ),
                                               ),

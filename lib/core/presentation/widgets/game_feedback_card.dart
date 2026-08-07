@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/presentation/widgets/pedagogical_rule_box.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// A universal feedback card to be used across all game categories.
 /// Consolidates duplicate feedback card patterns.
@@ -229,8 +230,11 @@ class GameFeedbackCard extends StatelessWidget {
         ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
         SizedBox(width: 16.w),
         Expanded(
-          child: Text(
+          child: AutoSizeText(
             title,
+            maxLines: 1,
+            minFontSize: 14,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 24.sp,
@@ -277,14 +281,20 @@ class GameFeedbackCard extends StatelessWidget {
                 ],
               ),
               child: Center(
-                child: Text(
-                  label,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 3,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: AutoSizeText(
+                    label,
+                    maxLines: 1,
+                    minFontSize: 10,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 3,
+                    ),
                   ),
                 ),
               ),

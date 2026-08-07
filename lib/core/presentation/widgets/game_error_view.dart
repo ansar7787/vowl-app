@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class GameErrorView extends StatelessWidget {
   final String message;
@@ -33,9 +34,12 @@ class GameErrorView extends StatelessWidget {
             children: [
               _ErrorIcon(primaryColor: primaryColor),
               SizedBox(height: 24.h),
-              Text(
+              AutoSizeText(
                 'Connection Stalled',
                 textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 16,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 24.sp,
@@ -117,16 +121,21 @@ class _RetryButton extends StatelessWidget {
             children: [
               const Icon(Icons.refresh_rounded, color: Colors.white),
               SizedBox(width: 8.w),
-              Text(
-                context
-                    .tr('games.try_again', fallback: 'Try Again')
-                    .toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
-                  letterSpacing: 1,
+              Flexible(
+                child: AutoSizeText(
+                  context
+                      .tr('games.try_again', fallback: 'Try Again')
+                      .toUpperCase(),
+                  maxLines: 1,
+                  minFontSize: 10,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                    letterSpacing: 1,
+                  ),
                 ),
               ),
             ],
