@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -39,7 +39,7 @@ class KidsFamilyLayout extends StatelessWidget {
             // The Framed Painting
             Expanded(
               flex: 5,
-              child: Center(child: _buildFramedPainting(quest)),
+              child: Center(child: _buildFramedPainting(context, state, quest)),
             ),
             // The Polaroid Pictures on Mantle
             Flexible(
@@ -104,46 +104,47 @@ class KidsFamilyLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildFramedPainting(dynamic quest) {
-    return Container(
-      width: 280.w,
-      height: 200.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFFFEF08A), // Warm wallpaper yellow
-        borderRadius: BorderRadius.circular(4.r),
-        border: Border.all(
-          color: const Color(0xFFB45309),
-          width: 16.r,
-        ), // Ornate wooden frame
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.25),
-            blurRadius: 15,
-            offset: const Offset(0, 12),
-          ),
-        ],
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-            Text(
-              quest.question ?? "?",
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 42.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF451A03),
+  Widget _buildFramedPainting(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          width: 280.w,
+          height: 200.h,
+          decoration: BoxDecoration(
+            color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF08A), // Highlight yellow
+            borderRadius: BorderRadius.circular(4.r),
+            border: Border.all(
+              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              width: 16.r,
+            ), // Ornate wooden frame
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.25),
+                blurRadius: 15,
+                offset: const Offset(0, 12),
               ),
-              textAlign: TextAlign.center,
-            ),
+            ],
+          ),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (quest.emoji != null)
+                  Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Bigger emoji since we removed question
+
             if (quest.funFact != null) ...[
               SizedBox(height: 8.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
+                child: AutoSizeText(
                   quest.funFact!,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -153,13 +154,15 @@ class KidsFamilyLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                  minFontSize: 10,
                 ),
               ),
             ],
           ],
         ),
       ),
+        );
+      },
     );
   }
 
@@ -173,12 +176,7 @@ class KidsFamilyLayout extends StatelessWidget {
     // Slight random rotation for polaroids
     final double rotation = index % 2 == 0 ? -0.05 : 0.05;
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Transform.rotate(
+    final polaroidWidget = Transform.rotate(
         angle: rotation,
         child: Container(
           height: 110.h,
@@ -212,7 +210,7 @@ class KidsFamilyLayout extends StatelessWidget {
               ),
               SizedBox(height: 8.h),
               // Handwriting text
-              Text(
+              AutoSizeText(
                 text,
                 style: TextStyle(
                   fontFamily: 'ComicSans', // Or any casual font
@@ -220,13 +218,32 @@ class KidsFamilyLayout extends StatelessWidget {
                   fontWeight: FontWeight.w800,
                   color: const Color(0xFF334155),
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                minFontSize: 8,
+                textAlign: TextAlign.center,
               ),
             ],
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: polaroidWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: polaroidWidget,
+      ),
+      child: polaroidWidget,
     );
   }
 }

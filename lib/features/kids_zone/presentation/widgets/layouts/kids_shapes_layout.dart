@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -128,32 +129,22 @@ class KidsShapesLayout extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         if (quest.emoji != null)
-                          Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                        Text(
-                          quest.question ?? "?",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 42.sp,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white,
-                            letterSpacing: 1,
-                          ),
-                        ),
+                          Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Enlarge emoji since question is removed
                         if (quest.funFact != null) ...[
                           SizedBox(height: 8.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Text(
+                            child: AutoSizeText(
                               quest.funFact!,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.bold,
                                 color: const Color(0xFF93C5FD), // Light blue
                               ),
                               textAlign: TextAlign.center,
                               maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                              minFontSize: 10,
                             ),
                           ),
                         ],
@@ -216,7 +207,7 @@ class KidsShapesLayout extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
+            child: AutoSizeText(
               text,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -225,8 +216,8 @@ class KidsShapesLayout extends StatelessWidget {
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              minFontSize: 8,
             ),
           ),
         ),

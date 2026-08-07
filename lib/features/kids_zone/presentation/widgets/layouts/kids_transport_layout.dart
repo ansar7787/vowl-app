@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsTransportLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Traffic Light / Road Sign
-            Expanded(flex: 5, child: Center(child: _buildRoadSign(quest))),
+            Expanded(flex: 5, child: Center(child: _buildRoadSign(context, state, quest))),
             // The License Plates (Options)
             Flexible(
               flex: 5,
@@ -105,63 +105,68 @@ class KidsTransportLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRoadSign(dynamic quest) {
+  Widget _buildRoadSign(BuildContext context, KidsLoaded state, dynamic quest) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         // The green highway sign
-        Container(
-          width: 280.w,
-          height: 180.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF166534), // Highway Green
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: Colors.white, width: 4.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.3),
-                blurRadius: 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                Text(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 42.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                  ),
-                  textAlign: TextAlign.center,
+        DragTarget<String>(
+          onAcceptWithDetails: (details) {
+            final text = details.data;
+            final isCorrect = (text == quest.correctAnswer);
+            di.sl<KidsTTSService>().speak(text);
+            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+          },
+          builder: (context, candidateData, rejectedData) {
+            final isHovering = candidateData.isNotEmpty;
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 280.w,
+              height: 180.h,
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFF22C55E) : const Color(0xFF166534), // Highway Green
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isHovering ? Colors.yellow : Colors.white, 
+                  width: 4.r,
                 ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF86EFAC), // Light green
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    blurRadius: 15,
+                    offset: const Offset(0, 10),
                   ),
                 ],
-              ],
-            ),
-          ),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (quest.emoji != null)
+                      Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Bigger emoji, hidden question
+                    if (quest.funFact != null) ...[
+                      SizedBox(height: 8.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF86EFAC), // Light green
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            );
+          },
         ),
         // The metal pole holding it
         Container(
@@ -191,12 +196,7 @@ class KidsTransportLayout extends StatelessWidget {
     ];
     final plateColor = colors[index % colors.length];
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final plateWidget = Container(
         height: 60.h,
         decoration: BoxDecoration(
           color: plateColor,
@@ -217,28 +217,46 @@ class KidsTransportLayout extends StatelessWidget {
             Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
             Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
 
-            Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
-                  text.toUpperCase(),
-                  style: TextStyle(
-                    fontFamily:
-                        'Outfit', // A rigid font looks more like a license plate
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF0F172A),
-                    letterSpacing: 1.5,
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: AutoSizeText(
+                    text.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily:
+                          'Outfit', // A rigid font looks more like a license plate
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF0F172A),
+                      letterSpacing: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    minFontSize: 8,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
+        );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: plateWidget,
+          ),
         ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: plateWidget,
+      ),
+      child: plateWidget,
     );
   }
 
