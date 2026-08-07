@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -37,7 +37,7 @@ class KidsEmotionsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Theater Stage
-            Expanded(flex: 5, child: Center(child: _buildTheaterStage(quest))),
+            Expanded(flex: 5, child: Center(child: _buildTheaterStage(context, state, quest))),
             // The Theater Masks (Options)
             Flexible(
               flex: 5,
@@ -95,75 +95,77 @@ class KidsEmotionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildTheaterStage(dynamic quest) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // The Stage background
-        Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E293B), // Dark backstage
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: const Color(0xFF78350F), width: 8.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.3),
-                blurRadius: 15,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+  Widget _buildTheaterStage(BuildContext context, KidsLoaded state, dynamic quest) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) {
+        final text = details.data;
+        final isCorrect = (text == quest.correctAnswer);
+        di.sl<KidsTTSService>().speak(text);
+        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+      },
+      builder: (context, candidateData, rejectedData) {
+        final isHovering = candidateData.isNotEmpty;
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            // The Stage background
+            Container(
+              width: 280.w,
+              height: 200.h,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: const [
+                color: isHovering ? const Color(0xFF334155) : const Color(0xFF1E293B), // Dark backstage
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
+                  color: isHovering ? const Color(0xFFD97706) : const Color(0xFF78350F), 
+                  width: 8.r
+                ),
+                boxShadow: [
                   BoxShadow(
-                    color: Colors.black26,
-                    offset: Offset(0, 4),
-                    blurRadius: 4,
+                    color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                    blurRadius: isHovering ? 25 : 15,
+                    offset: const Offset(0, 8),
                   ),
                 ],
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (quest.emoji != null)
-                    Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-                  Text(
-                    quest.question ?? "?",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 42.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  if (quest.funFact != null) ...[
-                    SizedBox(height: 8.h),
-                    Text(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF64748B), // Soft slate gray
+              child: Center(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black26,
+                        offset: Offset(0, 4),
+                        blurRadius: 4,
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
-                ],
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (quest.emoji != null)
+                        Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hide question string
+                      if (quest.funFact != null) ...[
+                        SizedBox(height: 8.h),
+                        AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                            color: const Color(0xFF64748B), // Soft slate gray
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
         // Red Velvet Curtains (Left)
         Positioned(
           left: 0,
@@ -239,12 +241,7 @@ class KidsEmotionsLayout extends StatelessWidget {
         ? const Color(0xFFCA8A04)
         : const Color(0xFF0284C7);
 
-    return ScaleButton(
-      onTap: () {
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      child: Container(
+    final maskWidget = Container(
         height: 85.h,
         decoration: BoxDecoration(
           color: color,
@@ -262,7 +259,7 @@ class KidsEmotionsLayout extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: Text(
+            child: AutoSizeText(
               text,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -272,11 +269,29 @@ class KidsEmotionsLayout extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
               maxLines: 1,
-              overflow: TextOverflow.ellipsis,
+              minFontSize: 8,
             ),
           ),
         ),
+      );
+
+    return Draggable<String>(
+      data: text,
+      feedback: Material(
+        color: Colors.transparent,
+        child: Transform.scale(
+          scale: 1.05,
+          child: Opacity(
+            opacity: 0.9,
+            child: maskWidget,
+          ),
+        ),
       ),
+      childWhenDragging: Opacity(
+        opacity: 0.3,
+        child: maskWidget,
+      ),
+      child: maskWidget,
     );
   }
 }
