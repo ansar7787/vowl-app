@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ProfileHeader extends StatelessWidget {
   final UserEntity user;
@@ -171,13 +172,14 @@ class ProfileHeader extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Flexible(
-                      child: Text(
+                      child: AutoSizeText(
                         user.displayName ??
                             context.tr(
                               'profile.default_name',
                               fallback: 'Explorer',
                             ),
-                        maxLines: 1,
+                        maxLines: 2,
+                        minFontSize: 12,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -202,8 +204,11 @@ class ProfileHeader extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.circular(10.r),
                       ),
-                      child: Text(
+                      child: AutoSizeText(
                         context.tr('profile.id_badge', fallback: 'ID Badge'),
+                        maxLines: 1,
+                        minFontSize: 6,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
@@ -230,11 +235,14 @@ class ProfileHeader extends StatelessWidget {
                   size: 16.r,
                 ),
                 SizedBox(width: 4.w),
-                Text(
+                AutoSizeText(
                   context.tr(
                     'profile.premium_member_badge',
                     fallback: 'Premium Member',
                   ),
+                  maxLines: 1,
+                  minFontSize: 6,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,

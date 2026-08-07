@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
 
@@ -693,7 +694,7 @@ class CommandPod extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        AutoSizeText(
           '$greeting,',
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -705,9 +706,10 @@ class CommandPod extends StatelessWidget {
             letterSpacing: 0.5,
           ),
           maxLines: 1,
+          minFontSize: 8,
           overflow: TextOverflow.ellipsis,
         ),
-        Text(
+        AutoSizeText(
           name,
           style: TextStyle(
             fontFamily: 'Outfit',
@@ -717,7 +719,8 @@ class CommandPod extends StatelessWidget {
             letterSpacing: -1.0,
             height: 1.1,
           ),
-          maxLines: 1,
+          maxLines: 2,
+          minFontSize: 12,
           overflow: TextOverflow.ellipsis,
         ),
       ],
