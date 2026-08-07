@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class VocabularyQuestionCard extends StatelessWidget {
   final VocabularyQuest quest;
@@ -52,10 +53,11 @@ class VocabularyQuestionCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            AutoSizeText(
               instruction,
               textAlign: TextAlign.center,
               maxLines: 2,
+              minFontSize: 8,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -67,11 +69,12 @@ class VocabularyQuestionCard extends StatelessWidget {
             ),
             SizedBox(height: 12.h),
             // softWrap + maxLines guards against RenderFlex on long words.
-            Text(
+            AutoSizeText(
               displayWord,
               textAlign: TextAlign.center,
               softWrap: true,
               maxLines: 3,
+              minFontSize: 14,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -82,10 +85,11 @@ class VocabularyQuestionCard extends StatelessWidget {
             ),
             if (quest.sentence != null) ...[
               SizedBox(height: 12.h),
-              Text(
+              AutoSizeText(
                 quest.sentence!,
                 textAlign: TextAlign.center,
                 maxLines: 5,
+                minFontSize: 10,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
