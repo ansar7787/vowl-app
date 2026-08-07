@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -69,32 +70,31 @@ class GlassMapHeader extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      theme.title.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: theme.primaryColor,
-                        letterSpacing: 2,
-                      ),
+                  AutoSizeText(
+                    theme.title.toUpperCase(),
+                    maxLines: 1,
+                    minFontSize: 8,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: theme.primaryColor,
+                      letterSpacing: 2,
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      gameTheme.title,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
+                  AutoSizeText(
+                    gameTheme.title,
+                    maxLines: 2,
+                    minFontSize: 14,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                      height: 1.1,
                     ),
                   ),
                   SizedBox(height: 8.h),

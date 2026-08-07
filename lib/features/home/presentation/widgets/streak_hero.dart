@@ -5,6 +5,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class StreakHero extends StatelessWidget {
   final UserEntity user;
@@ -106,8 +107,11 @@ class StreakHero extends StatelessWidget {
                   ),
                   maxLines: 1,
                 ).animate().fadeIn().scale(duration: 600.ms),
-                Text(
+                AutoSizeText(
                   context.tr('streak.day_streak_label', fallback: 'DAY STREAK'),
+                  maxLines: 1,
+                  minFontSize: 8,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
@@ -115,8 +119,6 @@ class StreakHero extends StatelessWidget {
                     color: color,
                     letterSpacing: 4,
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 16.h),
                 Container(
@@ -135,16 +137,17 @@ class StreakHero extends StatelessWidget {
                       Icon(LucideIcons.sparkles, color: color, size: 14.r),
                       SizedBox(width: 8.w),
                       Flexible(
-                        child: Text(
+                        child: AutoSizeText(
                           statusText,
+                          maxLines: 1,
+                          minFontSize: 8,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w800,
                             color: color,
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                         ),
                       ),
                     ],

@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({required this.navigationShell, super.key});
@@ -184,20 +185,19 @@ class MainWrapper extends StatelessWidget {
                   if (isSelected) ...[
                     SizedBox(width: 4.w),
                     Flexible(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          label,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: accentColor,
-                            letterSpacing: 0.5,
-                          ),
-                          maxLines: 1,
-                        ).animate().fadeIn().slideX(begin: -0.2),
-                      ),
+                      child: AutoSizeText(
+                        label,
+                        maxLines: 1,
+                        minFontSize: 6,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w900,
+                          color: accentColor,
+                          letterSpacing: 0.5,
+                        ),
+                      ).animate().fadeIn().slideX(begin: -0.2),
                     ),
                   ],
                 ],
