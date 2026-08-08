@@ -8,7 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';

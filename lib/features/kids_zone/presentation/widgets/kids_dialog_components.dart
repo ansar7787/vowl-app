@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// AAA Rotating Sunburst Background for Victory Screens
 class KidsSunburstBackground extends StatelessWidget {
@@ -68,6 +69,7 @@ class Kids3DButton extends StatelessWidget {
           Container(
             width: double.infinity,
             height: 54.h, // Less height leaves bottom shadow visible
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             decoration: BoxDecoration(
               gradient: isGolden 
                  ? const LinearGradient(
@@ -95,7 +97,7 @@ class Kids3DButton extends StatelessWidget {
                     SizedBox(width: 8.w),
                   ],
                   Flexible(
-                    child: Text(
+                    child: AutoSizeText(
                       text.toUpperCase(),
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -105,7 +107,7 @@ class Kids3DButton extends StatelessWidget {
                         letterSpacing: 1.5,
                       ),
                       maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+                      minFontSize: 10,
                     ),
                   ),
                 ],
