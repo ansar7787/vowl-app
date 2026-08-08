@@ -50,7 +50,6 @@ class Kids3DButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final buttonColor = isGolden ? const Color(0xFFFFD700) : color;
     final shadowColor = isGolden ? const Color(0xFFD97706) : color.withValues(alpha: 0.7);
     
     return ScaleButton(
