@@ -26,6 +26,7 @@ class MysteryChestOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final chestColor = isPremium ? const Color(0xFFF59E0B) : Colors.amber;
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Stack(
@@ -106,11 +107,7 @@ class MysteryChestOverlay extends StatelessWidget {
                       decoration: TextDecoration.none,
                       shadows: [
                         Shadow(
-                          color:
-                              (isPremium
-                                      ? const Color(0xFFF59E0B)
-                                      : Colors.amber)
-                                  .withValues(alpha: 0.5),
+                          color: chestColor.withValues(alpha: 0.5),
                           blurRadius: 20,
                         ),
                       ],
@@ -189,14 +186,11 @@ class MysteryChestOverlay extends StatelessWidget {
                                         shape: BoxShape.circle,
                                         gradient: RadialGradient(
                                           colors: [
-                                            (isPremium
-                                                    ? const Color(0xFFF59E0B)
-                                                    : Colors.amber)
-                                                .withValues(
-                                                  alpha: isOpened
-                                                      ? 0.3
-                                                      : (isPremium ? 0.4 : 0.1),
-                                                ),
+                                            chestColor.withValues(
+                                              alpha: isOpened
+                                                  ? 0.3
+                                                  : (isPremium ? 0.4 : 0.1),
+                                            ),
                                             Colors.transparent,
                                           ],
                                         ),
@@ -439,9 +433,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w800,
-                                  color: isPremium
-                                      ? const Color(0xFFF59E0B)
-                                      : Colors.amber,
+                                  color: chestColor,
                                   letterSpacing: 3,
                                   decoration: TextDecoration.none,
                                 ),
