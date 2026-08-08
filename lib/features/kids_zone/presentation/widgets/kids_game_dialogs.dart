@@ -40,10 +40,13 @@ class KidsGameDialogs {
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) {
           return BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+            filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4),
             child: Stack(
               alignment: Alignment.center,
               children: [
+                // Darken layer to maintain contrast
+                Container(color: Colors.black.withValues(alpha: 0.4)),
+                
                 // Radiant Sunburst Background
                 KidsSunburstBackground(color: primaryColor),
 

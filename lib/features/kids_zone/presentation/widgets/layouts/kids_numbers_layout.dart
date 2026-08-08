@@ -266,7 +266,7 @@ class KidsNumbersLayout extends StatelessWidget {
       ),
       child: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          padding: EdgeInsets.all(12.r),
           child: FittedBox(
             fit: BoxFit.scaleDown,
             child: AutoSizeText(
