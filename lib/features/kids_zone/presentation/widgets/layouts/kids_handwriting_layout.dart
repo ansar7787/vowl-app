@@ -82,7 +82,9 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     if (!mounted) return;
 
     bool correct = false;
-    for (final result in results) {
+    // Only check the top 3 candidates to prevent loose matching (false positives)
+    final topCandidates = results.take(3).toList();
+    for (final result in topCandidates) {
       if (result.toUpperCase().trim() == targetWord) {
         correct = true;
         break;
