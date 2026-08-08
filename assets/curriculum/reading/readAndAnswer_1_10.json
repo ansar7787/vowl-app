@@ -8,540 +8,540 @@
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 1-1] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Morning Routine] Every morning, Sarah wakes up at seven o'clock. She eats breakfast and then walks to school with her brother.",
+            "question": "What time does Sarah wake up?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "At six o'clock",
+                "At eight o'clock",
+                "At seven o'clock",
+                "At nine o'clock"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 1-1)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 1]."
+            "correctAnswer": "At seven o'clock",
+            "correctAnswerIndex": 2,
+            "hint": "Look at the exact time in the first sentence.",
+            "explanation": "The passage says Sarah wakes up at seven o'clock every morning."
         },
         {
             "id": "RDG_READANDANSWER_L1_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 1-2] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[My Family] Tom has one sister and one brother. His sister is a doctor, and his brother is a teacher.",
+            "question": "What is Tom's sister's job?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "A teacher",
+                "A doctor",
+                "A nurse",
+                "A student"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 1-2)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 1]."
+            "correctAnswer": "A doctor",
+            "correctAnswerIndex": 1,
+            "hint": "Check which job belongs to the sister, not the brother.",
+            "explanation": "The passage clearly states that Tom's sister works as a doctor."
         },
         {
             "id": "RDG_READANDANSWER_L1_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 1-3] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[At School] The students have math class at nine o'clock. After math, they have a short break and then art class.",
+            "question": "What class do the students have first?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Art class",
+                "Music class",
+                "Science class",
+                "Math class"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 1-3)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 1]."
+            "correctAnswer": "Math class",
+            "correctAnswerIndex": 3,
+            "hint": "Find the class named at the start of the passage.",
+            "explanation": "According to the passage, math class comes before art class."
         },
         {
             "id": "RDG_READANDANSWER_L2_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 2-1] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Today's Weather] It is very cold outside today. The sky is gray, and small snowflakes are falling slowly to the ground.",
+            "question": "What is falling from the sky?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "Rain",
+                "Leaves",
+                "Snow",
+                "Hail"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 2-1)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 2]."
+            "correctAnswer": "Snow",
+            "correctAnswerIndex": 2,
+            "hint": "Look at the last part of the passage.",
+            "explanation": "The passage says snowflakes are falling to the ground."
         },
         {
             "id": "RDG_READANDANSWER_L2_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 2-2] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[At the Market] Mia goes to the market every Saturday. She always buys fresh apples, bananas, and orange juice for her family.",
+            "question": "When does Mia go to the market?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "Every Saturday",
+                "Every Monday",
+                "Every Friday",
+                "Every Sunday"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswer": "Every Saturday",
             "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 2-2)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 2]."
+            "hint": "Check the day mentioned right after Mia's name.",
+            "explanation": "The text states that Mia visits the market every Saturday."
         },
         {
             "id": "RDG_READANDANSWER_L2_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 2-3] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[My Dog Max] Max is a small brown dog. He loves to play in the garden and sleep next to the warm fireplace.",
+            "question": "Where does Max like to sleep?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "In the garden",
+                "Next to the fireplace",
+                "On the sofa",
+                "Under the bed"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 2-3)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 2]."
+            "correctAnswer": "Next to the fireplace",
+            "correctAnswerIndex": 1,
+            "hint": "Look at what comes right after the word 'sleep'.",
+            "explanation": "The passage explains that Max sleeps next to the warm fireplace."
         },
         {
             "id": "RDG_READANDANSWER_L3_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 3-1] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Going to Work] Every weekday, Mr. Lee takes the number 12 bus to work. The ride takes about twenty-five minutes.",
+            "question": "How does Mr. Lee travel to work?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "By car",
+                "By bus",
+                "By train",
+                "By bike"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 3-1)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 3]."
+            "correctAnswer": "By bus",
+            "correctAnswerIndex": 1,
+            "hint": "The vehicle is named in the first sentence.",
+            "explanation": "The passage says Mr. Lee takes the bus to work."
         },
         {
             "id": "RDG_READANDANSWER_L3_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 3-2] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[A Birthday Party] Lily's birthday is next Friday. Her mother is baking a chocolate cake, and her friends are bringing balloons.",
+            "question": "What is Lily's mother making?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "A chocolate cake",
+                "A pizza",
+                "Sandwiches",
+                "Cookies"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswer": "A chocolate cake",
             "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 3-2)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 3]."
+            "hint": "Look for the word 'baking' in the passage.",
+            "explanation": "The text says Lily's mother is baking a chocolate cake."
         },
         {
             "id": "RDG_READANDANSWER_L3_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 3-3] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Favorite Food] Daniel loves Italian food. His favorite dish is spaghetti with tomato sauce and fresh basil on top.",
+            "question": "What is Daniel's favorite dish?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Pizza",
+                "Chicken soup",
+                "Rice with vegetables",
+                "Spaghetti with tomato sauce"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 3-3)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 3]."
+            "correctAnswer": "Spaghetti with tomato sauce",
+            "correctAnswerIndex": 3,
+            "hint": "The dish is named in the second sentence.",
+            "explanation": "The passage states that Daniel's favorite dish is spaghetti with tomato sauce."
         },
         {
             "id": "RDG_READANDANSWER_L4_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 4-1] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[A Message to Anna] Hi Anna, do you want to meet at the coffee shop on Sunday afternoon? I will be there at two o'clock.",
+            "question": "What time will the writer be at the coffee shop?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "At two o'clock",
+                "At one o'clock",
+                "At three o'clock",
+                "At four o'clock"
             ],
-            "correctAnswer": "Distributing heat via currents",
+            "correctAnswer": "At two o'clock",
             "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 4-1)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 4]."
+            "hint": "Look at the exact time mentioned at the end of the message.",
+            "explanation": "The message says the writer will arrive at two o'clock."
         },
         {
             "id": "RDG_READANDANSWER_L4_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 4-2] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Weekend Plans] This weekend, Noah is going to visit his grandparents. They live in a small town near the mountains.",
+            "question": "Who is Noah going to visit?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "His parents",
+                "His grandparents",
+                "His friends",
+                "His teacher"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 4-2)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 4]."
+            "correctAnswer": "His grandparents",
+            "correctAnswerIndex": 1,
+            "hint": "The people he is visiting are named early in the passage.",
+            "explanation": "The passage tells us that Noah is visiting his grandparents this weekend."
         },
         {
             "id": "RDG_READANDANSWER_L4_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 4-3] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[At the Library] Emma borrowed three books from the library. She plans to finish reading all of them before next week.",
+            "question": "How many books did Emma borrow?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Two",
+                "Four",
+                "Five",
+                "Three"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 4-3)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 4]."
+            "correctAnswer": "Three",
+            "correctAnswerIndex": 3,
+            "hint": "Find the number mentioned in the first sentence.",
+            "explanation": "The passage says Emma borrowed three books from the library."
         },
         {
             "id": "RDG_READANDANSWER_L5_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 5-1] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[Making Dinner] Jack is cooking dinner tonight. He is making rice, grilled chicken, and a fresh green salad for his family.",
+            "question": "What is Jack cooking for dinner?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Pasta and bread",
+                "Soup and sandwiches",
+                "Rice, chicken, and salad",
+                "Fish and potatoes"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 5-1)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 5]."
+            "correctAnswer": "Rice, chicken, and salad",
+            "correctAnswerIndex": 2,
+            "hint": "Look at the list of foods in the second sentence.",
+            "explanation": "The passage lists rice, grilled chicken, and salad as tonight's dinner."
         },
         {
             "id": "RDG_READANDANSWER_L5_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 5-2] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[A Rainy Afternoon] It is raining outside, so Ben is staying home. He is reading a book and drinking hot tea.",
+            "question": "Why is Ben staying home?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "He is sick",
+                "It is raining",
+                "He is tired",
+                "He has no plans"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 5-2)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 5]."
+            "correctAnswer": "It is raining",
+            "correctAnswerIndex": 1,
+            "hint": "Look at the reason given right after the weather is mentioned.",
+            "explanation": "The passage explains that Ben stays home because it is raining."
         },
         {
             "id": "RDG_READANDANSWER_L5_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 5-3] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[A New Phone] Sophie bought a new phone yesterday. It has a bigger screen and a much better camera than her old one.",
+            "question": "What is better about Sophie's new phone?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "The price and color",
+                "The battery and speaker",
+                "The screen and camera",
+                "The size and weight"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 5-3)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 5]."
+            "correctAnswer": "The screen and camera",
+            "correctAnswerIndex": 2,
+            "hint": "Check the two features mentioned in the second sentence.",
+            "explanation": "The passage says the new phone has a bigger screen and a better camera."
         },
         {
             "id": "RDG_READANDANSWER_L6_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 6-1] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[A Visit to the Doctor] Olivia has a stomachache, so her mother is taking her to see the doctor. The appointment is at four o'clock.",
+            "question": "Why is Olivia going to see the doctor?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "She has a stomachache",
+                "She has a headache",
+                "She has a cold",
+                "She hurt her leg"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswer": "She has a stomachache",
             "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 6-1)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 6]."
+            "hint": "Look for the health problem mentioned at the start.",
+            "explanation": "The passage states that Olivia has a stomachache."
         },
         {
             "id": "RDG_READANDANSWER_L6_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 6-2] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Playing Soccer] Every Tuesday, Leo plays soccer with his friends in the park. The games usually last about one hour.",
+            "question": "How long do Leo's soccer games usually last?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "Thirty minutes",
+                "One hour",
+                "Two hours",
+                "All afternoon"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 6-2)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 6]."
+            "correctAnswer": "One hour",
+            "correctAnswerIndex": 1,
+            "hint": "The length of the games is stated in the last sentence.",
+            "explanation": "The passage says the games usually last about one hour."
         },
         {
             "id": "RDG_READANDANSWER_L6_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 6-3] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[A Shopping List] Before the party, Rosa needs to buy milk, eggs, and flour. She is going to the store after lunch.",
+            "question": "When is Rosa going to the store?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "Before breakfast",
+                "After lunch",
+                "After dinner",
+                "Before school"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 6-3)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 6]."
+            "correctAnswer": "After lunch",
+            "correctAnswerIndex": 1,
+            "hint": "Look at when Rosa plans to go, mentioned in the last sentence.",
+            "explanation": "The passage says Rosa is going to the store after lunch."
         },
         {
             "id": "RDG_READANDANSWER_L7_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 7-1] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Morning Exercise] David runs in the park every morning before work. He says running helps him feel awake and full of energy.",
+            "question": "When does David go running?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "After work",
+                "During lunch",
+                "Before work",
+                "Late at night"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 7-1)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 7]."
+            "correctAnswer": "Before work",
+            "correctAnswerIndex": 2,
+            "hint": "Look at the time mentioned in the first sentence.",
+            "explanation": "The passage says David runs before work every morning."
         },
         {
             "id": "RDG_READANDANSWER_L7_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 7-2] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[Math Class] In math class today, the students learned how to add and subtract large numbers. Their teacher gave them homework to practice.",
+            "question": "What did the students learn in math class today?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "How to add and subtract",
+                "How to read maps",
+                "How to spell words",
+                "How to draw shapes"
             ],
-            "correctAnswer": "Distributing heat via currents",
+            "correctAnswer": "How to add and subtract",
             "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 7-2)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 7]."
+            "hint": "The lesson topic is named right after 'math class today'.",
+            "explanation": "The passage explains that the students learned to add and subtract large numbers."
         },
         {
             "id": "RDG_READANDANSWER_L7_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 7-3] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Family Dinner] On Sundays, the Garcia family always eats dinner together at six o'clock. They talk about their week and share stories.",
+            "question": "What time does the Garcia family eat dinner on Sundays?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "At six o'clock",
+                "At five o'clock",
+                "At seven o'clock",
+                "At eight o'clock"
             ],
-            "correctAnswer": "The extreme water pressure",
+            "correctAnswer": "At six o'clock",
             "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 7-3)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 7]."
+            "hint": "Find the exact time in the first sentence.",
+            "explanation": "The passage says the family eats dinner at six o'clock on Sundays."
         },
         {
             "id": "RDG_READANDANSWER_L8_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 8-1] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[Taking the Train] Every morning, Hannah takes the train to the city center. The train ride takes only fifteen minutes.",
+            "question": "How long does Hannah's train ride take?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Five minutes",
+                "Thirty minutes",
+                "One hour",
+                "Fifteen minutes"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 8-1)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 8]."
+            "correctAnswer": "Fifteen minutes",
+            "correctAnswerIndex": 3,
+            "hint": "The exact time is given in the last sentence.",
+            "explanation": "The passage states that the train ride takes fifteen minutes."
         },
         {
             "id": "RDG_READANDANSWER_L8_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 8-2] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[A Birthday Gift] For his father's birthday, Kevin bought a warm blue scarf. His father loves the color blue and often feels cold.",
+            "question": "What did Kevin buy for his father?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "A pair of gloves",
+                "A leather wallet",
+                "A warm blue scarf",
+                "A wool hat"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 8-2)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 8]."
+            "correctAnswer": "A warm blue scarf",
+            "correctAnswerIndex": 2,
+            "hint": "The gift is named in the first sentence.",
+            "explanation": "The passage says Kevin bought a warm blue scarf for his father."
         },
         {
             "id": "RDG_READANDANSWER_L8_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 8-3] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Watching TV] After dinner, the Kim family usually watches a movie together. Tonight, they are watching a funny movie about animals.",
+            "question": "What are the Kim family watching tonight?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "A sad movie",
+                "A news program",
+                "A cooking show",
+                "A funny movie about animals"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 8-3)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 8]."
+            "correctAnswer": "A funny movie about animals",
+            "correctAnswerIndex": 3,
+            "hint": "Look at what kind of movie is named in the last sentence.",
+            "explanation": "The passage says the family is watching a funny movie about animals tonight."
         },
         {
             "id": "RDG_READANDANSWER_L9_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 9-1] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[A Trip to the Zoo] Last weekend, Ethan visited the zoo with his class. His favorite animal there was the tall, spotted giraffe.",
+            "question": "What was Ethan's favorite animal at the zoo?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "The lion",
+                "The elephant",
+                "The monkey",
+                "The giraffe"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 9-1)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 9]."
+            "correctAnswer": "The giraffe",
+            "correctAnswerIndex": 3,
+            "hint": "The animal is described at the end of the passage.",
+            "explanation": "The passage says Ethan's favorite animal was the giraffe."
         },
         {
             "id": "RDG_READANDANSWER_L9_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 9-2] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[A New Job] Maria started a new job at a bakery last Monday. She bakes fresh bread every morning before the shop opens.",
+            "question": "Where does Maria work?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "At a restaurant",
+                "At a bakery",
+                "At a supermarket",
+                "At a coffee shop"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 9-2)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 9]."
+            "correctAnswer": "At a bakery",
+            "correctAnswerIndex": 1,
+            "hint": "Her workplace is named in the first sentence.",
+            "explanation": "The passage states that Maria works at a bakery."
         },
         {
             "id": "RDG_READANDANSWER_L9_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 9-3] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Making a Sandwich] For lunch, Peter makes a sandwich with cheese, ham, and lettuce. He always adds a little mustard on top.",
+            "question": "What does Peter always add to his sandwich?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "Ketchup",
+                "Mayonnaise",
+                "Mustard",
+                "Butter"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 9-3)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 9]."
+            "correctAnswer": "Mustard",
+            "correctAnswerIndex": 2,
+            "hint": "Look at the last sentence for the extra ingredient.",
+            "explanation": "The passage says Peter always adds mustard to his sandwich."
         },
         {
             "id": "RDG_READANDANSWER_L10_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 10-1] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[A Day at the Beach] Last Saturday, the Chen family spent the whole day at the beach. The children built a large sandcastle near the water.",
+            "question": "What did the children build at the beach?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "A sandcastle",
+                "A boat",
+                "A tent",
+                "A fire"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswer": "A sandcastle",
             "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 10-1)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 10]."
+            "hint": "The activity is mentioned in the last sentence.",
+            "explanation": "The passage says the children built a sandcastle near the water."
         },
         {
             "id": "RDG_READANDANSWER_L10_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 10-2] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Learning to Swim] Grace is learning to swim this summer. Her swimming lessons are every Wednesday afternoon at the community pool.",
+            "question": "When are Grace's swimming lessons?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Every Monday morning",
+                "Every Friday evening",
+                "Every Saturday morning",
+                "Every Wednesday afternoon"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 10-2)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 10]."
+            "correctAnswer": "Every Wednesday afternoon",
+            "correctAnswerIndex": 3,
+            "hint": "The day and time are given in the last sentence.",
+            "explanation": "The passage states that Grace's swimming lessons are every Wednesday afternoon."
         },
         {
             "id": "RDG_READANDANSWER_L10_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 10-3] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[A Thank-You Note] Dear Mrs. Adams, thank you for the lovely scarf. I wear it almost every day because it keeps me very warm.",
+            "question": "What gift did the writer receive?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "A hat",
+                "A jacket",
+                "Gloves",
+                "A scarf"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 10-3)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 10]."
+            "correctAnswer": "A scarf",
+            "correctAnswerIndex": 3,
+            "hint": "The gift is named at the start of the note.",
+            "explanation": "The note thanks Mrs. Adams for the scarf she gave."
         }
     ]
 }

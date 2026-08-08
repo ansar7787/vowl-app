@@ -8,540 +8,540 @@
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 121-1] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Network Effects in Technology Markets] A product exhibits network effects when its value to any individual user increases as more people adopt it, a dynamic that helps explain why a handful of dominant platforms tend to emerge in categories such as social media or ride-sharing, even when competitors offer comparable or occasionally superior features. This dynamic creates a significant structural advantage for early market leaders, since a new entrant must not only build a better product but somehow convince a critical mass of users to abandon a network where their existing friends, colleagues, or business contacts are already established, a coordination problem that has proven remarkably difficult to overcome even for well-funded challengers with genuinely innovative offerings.",
+            "question": "What structural advantage do network effects give to early market leaders?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "Early leaders are legally protected from any competition",
+                "New entrants always offer inferior products by default",
+                "Network effects only apply to physical, not digital, products",
+                "New entrants must overcome a difficult coordination problem to compete"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 121-1)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 121]."
+            "correctAnswer": "New entrants must overcome a difficult coordination problem to compete",
+            "correctAnswerIndex": 3,
+            "hint": "The advantage is explained in the second half of the passage.",
+            "explanation": "The passage explains that network effects create a coordination problem for new entrants, since users are already established on a leader's platform."
         },
         {
             "id": "RDG_READANDANSWER_L121_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 121-2] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[Epigenetics] While an organism's DNA sequence remains largely fixed throughout its lifetime, epigenetics examines how environmental factors, such as diet, stress, or exposure to certain chemicals, can alter which genes are actively expressed without changing the underlying genetic code itself, functioning somewhat like a dimmer switch that turns certain genes up or down rather than rewriting the instructions entirely. Some of these epigenetic changes have been shown to persist across multiple generations in certain organisms, a finding that has complicated the traditional assumption that only DNA sequence itself, and not the pattern of gene expression, can be meaningfully inherited by offspring.",
+            "question": "How does the passage describe the way epigenetic changes affect genes?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "By completely rewriting the DNA sequence",
+                "Like a dimmer switch turning genes up or down",
+                "By deleting certain genes permanently",
+                "By having no measurable effect on genes"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 121-2)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 121]."
+            "correctAnswer": "Like a dimmer switch turning genes up or down",
+            "correctAnswerIndex": 1,
+            "hint": "The comparison is made in the middle of the passage.",
+            "explanation": "The passage compares epigenetic changes to a dimmer switch that adjusts gene expression rather than rewriting DNA."
         },
         {
             "id": "RDG_READANDANSWER_L121_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 121-3] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[Invasive Species Management] Efforts to control invasive species, organisms introduced to an ecosystem where they have no natural predators, often reveal the limits of straightforward intervention: removing an invasive plant, for instance, can sometimes worsen an ecosystem's condition in the short term if the plant had inadvertently begun providing habitat or erosion control that native species had not yet reclaimed. Ecologists increasingly advocate for phased removal strategies paired with active native species restoration, arguing that eliminating an invasive species without simultaneously supporting its native replacement can leave an ecological gap that a different, sometimes equally problematic, invasive organism quickly fills instead.",
+            "question": "Why do ecologists advocate for phased removal paired with native restoration?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Native species restoration is always cheaper than removal",
+                "Removing an invasive species without a replacement can create a gap another invader fills",
+                "Invasive species removal has no ecological effects",
+                "Phased removal eliminates the need for any monitoring"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 121-3)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 121]."
+            "correctAnswer": "Removing an invasive species without a replacement can create a gap another invader fills",
+            "correctAnswerIndex": 1,
+            "hint": "The reasoning is explained in the last sentence.",
+            "explanation": "The passage explains that removing an invasive species without supporting native replacements can leave a gap that another invasive species fills."
         },
         {
             "id": "RDG_READANDANSWER_L122_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 122-1] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Edge Computing] As internet-connected devices multiply, from factory sensors to smart home appliances, the traditional model of sending all data to a distant, centralized cloud server for processing has begun to strain under sheer volume and the delay inherent in that round trip, particularly for applications like autonomous vehicles that require split-second decisions. Edge computing addresses this by processing data closer to where it is actually generated, on or near the device itself, reducing the delay a request would otherwise face traveling to a distant server and back, though this approach requires distributing computing power across many smaller locations rather than concentrating it in a few large data centers.",
+            "question": "Why does edge computing particularly benefit applications like autonomous vehicles?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "It reduces the delay from sending data to a distant server",
+                "It eliminates the need for any sensors",
+                "It requires no computing power at all",
+                "It only works for smart home appliances"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
+            "correctAnswer": "It reduces the delay from sending data to a distant server",
             "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 122-1)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 122]."
+            "hint": "The specific benefit is explained in the middle of the passage.",
+            "explanation": "The passage explains that edge computing reduces delay by processing data near its source, which benefits time-sensitive applications like autonomous vehicles."
         },
         {
             "id": "RDG_READANDANSWER_L122_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 122-2] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[Cognitive Dissonance] Cognitive dissonance describes the psychological discomfort that arises when a person holds two contradictory beliefs simultaneously, or when their actions conflict with their stated values, a tension the mind is strongly motivated to resolve, often by adjusting a belief rather than the more difficult task of changing behavior. A smoker aware of serious health risks, for example, might resolve this discomfort not by quitting but by downplaying the statistical risk or emphasizing a distant relative who smoked for decades without apparent harm, illustrating how the resolution of dissonance does not necessarily favor the most rational or evidence-based outcome.",
+            "question": "What does the smoker example illustrate about resolving cognitive dissonance?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "People always change their behavior to resolve it",
+                "Cognitive dissonance only affects smokers specifically",
+                "Statistical risk always outweighs personal anecdotes",
+                "The resolution does not necessarily favor the most rational outcome"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 122-2)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 122]."
+            "correctAnswer": "The resolution does not necessarily favor the most rational outcome",
+            "correctAnswerIndex": 3,
+            "hint": "The lesson from the example is stated in the last sentence.",
+            "explanation": "The passage says the smoker example illustrates that resolving dissonance doesn't necessarily lead to the most rational outcome."
         },
         {
             "id": "RDG_READANDANSWER_L122_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 122-3] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[Spaced Repetition] Cognitive research on memory consistently shows that information reviewed multiple times at gradually increasing intervals, a technique known as spaced repetition, produces significantly stronger long-term retention than reviewing the same material repeatedly within a single concentrated study session, a common but comparatively ineffective strategy often called cramming. The apparent inefficiency of spacing out review, since it can feel like information is being partially forgotten between sessions, is in fact central to why the technique works: the mild effort required to retrieve a partially faded memory appears to strengthen that memory more than reviewing it while still fresh and easily accessible.",
+            "question": "Why does the mild effort of retrieving a partially faded memory help retention?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "It guarantees the information will never be forgotten",
+                "It works only for very short pieces of information",
+                "It is identical in effect to cramming",
+                "It appears to strengthen the memory more than reviewing it while still fresh"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 122-3)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 122]."
+            "correctAnswer": "It appears to strengthen the memory more than reviewing it while still fresh",
+            "correctAnswerIndex": 3,
+            "hint": "The explanation is given in the last sentence.",
+            "explanation": "The passage explains that retrieving a partially faded memory strengthens it more than reviewing information while it is still fresh."
         },
         {
             "id": "RDG_READANDANSWER_L123_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 123-1] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Untranslatable Words and Cultural Concepts] Linguists caution against the popular but often oversimplified claim that certain words are entirely 'untranslatable,' since most concepts can eventually be explained in another language given enough words and context, even if no single equivalent term exists. What such words more accurately reveal is which concepts a culture has found useful enough to compress into a single, efficient term, reflecting cultural priorities and everyday concerns rather than describing an idea genuinely inexpressible to speakers of other languages.",
+            "question": "What do so-called 'untranslatable' words more accurately reveal, according to linguists?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "Ideas that no other language could ever express",
+                "Words that have no meaning at all",
+                "Which concepts a culture found useful enough to compress into one word",
+                "Concepts unique to a single historical period"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 123-1)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 123]."
+            "correctAnswer": "Which concepts a culture found useful enough to compress into one word",
+            "correctAnswerIndex": 2,
+            "hint": "The linguists' actual explanation is given in the last sentence.",
+            "explanation": "The passage says linguists view such words as reflecting which concepts a culture found useful to compress into a single term, not genuine untranslatability."
         },
         {
             "id": "RDG_READANDANSWER_L123_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 123-2] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[Gut Microbiome Research] The human gut hosts trillions of microorganisms collectively known as the gut microbiome, and emerging research suggests this microbial community may influence far more than digestion alone, with some studies pointing to a connection between microbiome composition and mood regulation, immune function, and even response to certain medications. Researchers caution, however, that much of this research remains correlational rather than clearly causal, meaning that while a particular microbiome pattern is often observed alongside a particular health outcome, scientists have not always established which factor is actually driving the other, or whether some third, unmeasured factor might explain both.",
+            "question": "What caution do researchers give about gut microbiome research, according to the passage?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "Much of it is correlational rather than clearly causal",
+                "It has been completely disproven by new studies",
+                "It applies only to digestion, nothing else",
+                "It has identified exact causes for every condition"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswer": "Much of it is correlational rather than clearly causal",
             "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 123-2)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 123]."
+            "hint": "The caution is explained in the second half of the passage.",
+            "explanation": "The passage says researchers caution that much gut microbiome research is correlational, not clearly established as causal."
         },
         {
             "id": "RDG_READANDANSWER_L123_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 123-3] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Transit-Oriented Development] Transit-oriented development refers to an urban planning approach that concentrates housing, retail, and office space within comfortable walking distance of a public transit station, aiming to reduce car dependency by making it genuinely convenient for residents to live without one. Critics of past implementations note that simply building dense housing near a train station does not automatically produce the intended reduction in car ownership if the transit service itself remains infrequent or unreliable, suggesting that successful transit-oriented development depends as much on transit quality as on the density of nearby development itself.",
+            "question": "What do critics say is necessary, beyond density, for transit-oriented development to succeed?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Extremely low housing costs nearby",
+                "A complete ban on car ownership",
+                "Reliable, frequent transit service",
+                "Large parking garages at each station"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 123-3)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 123]."
+            "correctAnswer": "Reliable, frequent transit service",
+            "correctAnswerIndex": 2,
+            "hint": "The additional requirement is explained in the last sentence.",
+            "explanation": "The passage says critics believe successful transit-oriented development also depends on transit quality, not density alone."
         },
         {
             "id": "RDG_READANDANSWER_L124_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 124-1] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[Organizational Silos] Within large organizations, 'silos' describe a pattern in which departments operate with limited communication or collaboration across boundaries, each optimizing for its own goals in ways that can inadvertently work against the organization's broader objectives, such as a sales team promising a delivery timeline that the operations team was never consulted about and cannot actually meet. Management consultants often attribute the persistence of silos not to any individual's poor judgment but to organizational incentive structures that reward departments for their own narrow performance metrics rather than for outcomes that require cross-departmental cooperation to achieve.",
+            "question": "What do management consultants often attribute the persistence of silos to?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "A lack of talented employees within departments",
+                "Buildings being physically too far apart",
+                "Incentive structures rewarding narrow departmental performance",
+                "Employees deliberately sabotaging other departments"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 124-1)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 124]."
+            "correctAnswer": "Incentive structures rewarding narrow departmental performance",
+            "correctAnswerIndex": 2,
+            "hint": "The consultants' explanation is given in the last sentence.",
+            "explanation": "The passage says consultants attribute silos to incentive structures that reward narrow metrics rather than cross-departmental cooperation."
         },
         {
             "id": "RDG_READANDANSWER_L124_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 124-2] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[The Bystander Effect] Social psychologists have documented a counterintuitive phenomenon known as the bystander effect, in which an individual is actually less likely to offer help in an emergency situation as the number of other witnesses present increases, rather than more likely, as common intuition might suggest. Researchers attribute this largely to a diffusion of responsibility, in which each individual bystander assumes that someone else in the group will act, or already has, a psychological process that can occur even among people who genuinely intend to help if they believed themselves to be the only witness present.",
+            "question": "How does the bystander effect contradict common intuition, according to the passage?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "More witnesses always guarantee someone will help",
+                "Fewer witnesses always reduce the chance of help",
+                "Witnesses never intend to help in an emergency",
+                "More witnesses make individual helping less, not more, likely"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 124-2)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 124]."
+            "correctAnswer": "More witnesses make individual helping less, not more, likely",
+            "correctAnswerIndex": 3,
+            "hint": "The contradiction is described in the first sentence.",
+            "explanation": "The passage explains that the bystander effect contradicts intuition because more witnesses make an individual less, not more, likely to help."
         },
         {
             "id": "RDG_READANDANSWER_L124_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 124-3] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[Passive Solar Building Design] Passive solar design orients a building and selects its materials specifically to capture, store, and distribute the sun's heat during colder months while minimizing unwanted heat gain during warmer ones, all without relying on any mechanical or electrical heating and cooling systems. A south-facing wall of thermal mass material, such as dense stone or concrete, might absorb heat throughout a winter day and gradually release it overnight, while carefully calculated roof overhangs block the higher summer sun from directly entering the same windows that welcome the lower winter sun.",
+            "question": "What role does the roof overhang play in passive solar design, according to the passage?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Storing heat throughout the winter day",
+                "Preventing any sunlight from entering year-round",
+                "Blocking the higher summer sun while allowing lower winter sun",
+                "Powering the building's electrical systems"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 124-3)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 124]."
+            "correctAnswer": "Blocking the higher summer sun while allowing lower winter sun",
+            "correctAnswerIndex": 2,
+            "hint": "The overhang's function is explained in the last sentence.",
+            "explanation": "The passage says the overhang blocks the higher summer sun while still allowing the lower winter sun to enter."
         },
         {
             "id": "RDG_READANDANSWER_L125_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 125-1] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[The Paradox of Choice in Consumer Behavior] Behavioral economists studying consumer decision-making have identified what is sometimes called the paradox of choice: while a certain degree of variety is generally perceived as desirable and even necessary for a sense of autonomy, choice sets beyond a certain threshold tend to produce diminishing, and eventually negative, returns on consumer satisfaction, as the cognitive burden of comparing numerous similar options begins to outweigh the benefit of finding a more precisely suited match. This finding has practical implications for retailers, some of whom have found that deliberately curating a smaller, well-chosen selection can increase both sales and reported customer satisfaction compared to offering the widest possible range.",
+            "question": "What practical implication has this research had for some retailers, according to the passage?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Offering unlimited choices always increases sales",
+                "Curating a smaller selection can increase sales and satisfaction",
+                "Customers prefer having no choices available",
+                "Retailers should eliminate all product variety"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 125-1)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 125]."
+            "correctAnswer": "Curating a smaller selection can increase sales and satisfaction",
+            "correctAnswerIndex": 1,
+            "hint": "The implication is stated in the last sentence.",
+            "explanation": "The passage says some retailers found that a smaller, curated selection can increase both sales and satisfaction."
         },
         {
             "id": "RDG_READANDANSWER_L125_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 125-2] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Permafrost Thaw and Methane Release] Vast areas of permanently frozen ground in Arctic regions, known as permafrost, contain organic material that has remained frozen, and therefore largely undecomposed, for thousands of years, effectively locking away carbon that would otherwise have been released into the atmosphere long ago. As rising temperatures cause permafrost to thaw more extensively, microorganisms begin breaking down this newly accessible organic material, releasing greenhouse gases, including methane, in a process that concerns climate scientists precisely because it represents a feedback loop: warming causes thawing, thawing releases greenhouse gases, and those gases contribute to further warming.",
+            "question": "Why does permafrost thaw concern climate scientists specifically, according to the passage?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "It has no connection to greenhouse gas levels",
+                "It only affects regions far from human populations",
+                "It causes temperatures to decrease over time",
+                "It represents a feedback loop that accelerates further warming"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 125-2)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 125]."
+            "correctAnswer": "It represents a feedback loop that accelerates further warming",
+            "correctAnswerIndex": 3,
+            "hint": "The specific concern is explained in the last sentence.",
+            "explanation": "The passage says scientists are concerned because permafrost thaw creates a feedback loop that contributes to further warming."
         },
         {
             "id": "RDG_READANDANSWER_L125_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 125-3] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[The Halo Effect in Perception] The halo effect describes a cognitive bias in which an initial positive impression of a person or product in one specific area unconsciously influences perceptions of entirely unrelated qualities, such as when a physically attractive job candidate is also rated by interviewers, without clear justification, as more competent or trustworthy than an equally qualified but less conventionally attractive candidate. Marketers have long exploited this bias deliberately, understanding that a product perceived favorably in one dimension, such as sleek packaging design, will often be assumed by consumers to be superior in unrelated dimensions, such as ingredient quality, that a customer has not actually evaluated directly.",
+            "question": "How do marketers exploit the halo effect, according to the passage?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "By using one favorable quality to imply unrelated superior qualities",
+                "By avoiding any positive product qualities entirely",
+                "By only marketing to physically attractive customers",
+                "By eliminating packaging design from consideration"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswer": "By using one favorable quality to imply unrelated superior qualities",
             "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 125-3)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 125]."
+            "hint": "The marketers' strategy is explained in the last sentence.",
+            "explanation": "The passage says marketers exploit the effect by letting one favorable quality imply superiority in unrelated, unevaluated qualities."
         },
         {
             "id": "RDG_READANDANSWER_L126_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 126-1] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[Survivorship Bias] Survivorship bias occurs when conclusions are drawn from a group that has already been filtered by some selection process, without accounting for the larger, often unseen, population that did not survive that same process, a pattern famously illustrated by military analysts who initially proposed reinforcing the areas of returning aircraft that showed the most bullet damage, before a statistician pointed out that the planes being analyzed had, by definition, survived being hit in those exact locations, meaning the truly vulnerable areas were more likely those with no damage recorded at all, since planes hit there had failed to return.",
+            "question": "What did the statistician point out about the returning aircraft, according to the passage?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "The planes had never actually been in combat",
+                "The damage shown was completely random and meaningless",
+                "The planes had survived being hit in the damaged areas",
+                "The military should reinforce every part equally"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 126-1)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 126]."
+            "correctAnswer": "The planes had survived being hit in the damaged areas",
+            "correctAnswerIndex": 2,
+            "hint": "The statistician's insight is explained in the last part of the passage.",
+            "explanation": "The passage explains that the statistician pointed out the returning planes had survived damage in those areas, so the truly vulnerable spots were the undamaged ones on planes that never returned."
         },
         {
             "id": "RDG_READANDANSWER_L126_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 126-2] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Biomimicry in Engineering] Biomimicry involves studying structures and processes that have evolved in nature over millions of years and adapting those solutions to solve human engineering challenges, based on the premise that evolutionary pressure has already extensively tested and refined many highly efficient designs. The rigid yet lightweight structure of a bird's bones, for example, has directly informed the design of certain aircraft components, while the specific texture of shark skin, which reduces drag by subtly disrupting the flow of water across its surface, has inspired swimsuit and even ship hull coatings intended to reduce friction.",
+            "question": "What premise underlies the practice of biomimicry, according to the passage?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "Human engineers always outperform natural designs",
+                "Nature has no relevance to modern technology",
+                "Evolutionary pressure has already tested and refined efficient designs",
+                "Animal structures cannot inform human engineering"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 126-2)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 126]."
+            "correctAnswer": "Evolutionary pressure has already tested and refined efficient designs",
+            "correctAnswerIndex": 2,
+            "hint": "The underlying premise is stated in the first sentence.",
+            "explanation": "The passage says biomimicry is based on the premise that evolution has already tested and refined many efficient natural designs."
         },
         {
             "id": "RDG_READANDANSWER_L126_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 126-3] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[Cultural Differences in Negotiation Styles] Cross-cultural business researchers have documented significant variation in negotiation norms across different cultural contexts, noting that what one culture interprets as a sign of respectful patience and relationship-building, such as extended small talk before discussing business terms, another culture might interpret as evasiveness or a lack of seriousness about reaching a deal efficiently. Consultants who advise international businesses argue that misreading these differences as personal character traits, rather than recognizing them as culturally learned communication patterns, is a common and often costly source of failed international business negotiations.",
+            "question": "What do consultants identify as a common source of failed negotiations, according to the passage?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "A complete absence of small talk in all cultures",
+                "Businesses refusing to negotiate internationally at all",
+                "Cultural patterns being identical across all countries",
+                "Misreading cultural communication patterns as personal character traits"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 126-3)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 126]."
+            "correctAnswer": "Misreading cultural communication patterns as personal character traits",
+            "correctAnswerIndex": 3,
+            "hint": "The consultants' point is explained in the last sentence.",
+            "explanation": "The passage says consultants identify misreading culturally learned patterns as personal traits as a common source of failed negotiations."
         },
         {
             "id": "RDG_READANDANSWER_L127_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 127-1] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[The Framing Effect in Decision-Making] The framing effect demonstrates that the same objective information can lead to substantially different decisions depending purely on how that information is presented, independent of any actual change in the underlying facts, such as patients responding more favorably to a medical procedure described as having a 'ninety percent survival rate' than to the mathematically identical description of a 'ten percent mortality rate,' despite both statements conveying exactly the same statistical reality. This finding has significant implications for fields ranging from public health messaging to financial disclosures, where the specific framing chosen, even when technically accurate, can meaningfully shape how information is ultimately received and acted upon.",
+            "question": "What does the medical procedure example illustrate about the framing effect?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Survival rates and mortality rates measure different things",
+                "Patients always prefer negative framing over positive framing",
+                "Identical statistics can produce different reactions based on wording alone",
+                "The framing effect only applies to financial disclosures"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 127-1)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 127]."
+            "correctAnswer": "Identical statistics can produce different reactions based on wording alone",
+            "correctAnswerIndex": 2,
+            "hint": "The lesson from the example is explained in the first sentence.",
+            "explanation": "The passage uses the survival-versus-mortality-rate example to show that identical statistics can be received differently depending on framing."
         },
         {
             "id": "RDG_READANDANSWER_L127_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 127-2] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[Keystone Species in Ecosystems] A keystone species is an organism whose influence on its ecosystem is disproportionately large relative to its actual population size, meaning its removal can trigger a cascade of changes throughout the food web that would not occur with the loss of a more ecologically redundant species. Sea otters serve as a frequently cited example: by preying on sea urchins, otters indirectly protect kelp forests from being overgrazed, since without otters to control urchin populations, urchins can multiply unchecked and consume kelp forests down to bare rock, eliminating a habitat that supports a vast range of other marine life.",
+            "question": "Why are sea otters considered a keystone species, according to the passage?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "They have the largest population of any marine species",
+                "They consume kelp directly in large quantities",
+                "Their predation on urchins indirectly protects entire kelp forests",
+                "They have no measurable effect on their ecosystem"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 127-2)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 127]."
+            "correctAnswer": "Their predation on urchins indirectly protects entire kelp forests",
+            "correctAnswerIndex": 2,
+            "hint": "The explanation is given in the last part of the passage.",
+            "explanation": "The passage explains that otters are a keystone species because controlling urchins indirectly protects kelp forests supporting other marine life."
         },
         {
             "id": "RDG_READANDANSWER_L127_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 127-3] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Anchoring Bias in Pricing] Anchoring bias describes the tendency for an initial piece of information, even one known to be arbitrary or irrelevant, to disproportionately influence subsequent judgments and decisions, a pattern retailers frequently exploit by displaying a high 'original' price crossed out next to a lower 'sale' price, since the crossed-out figure, regardless of whether it reflects a price the item was ever genuinely sold at, subtly anchors a shopper's perception of what constitutes a fair price for that particular item. Researchers have found this effect persists even among shoppers who consciously recognize the tactic and believe themselves immune to its influence.",
+            "question": "What have researchers found about shoppers who recognize the anchoring tactic?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "They are always completely unaffected by it",
+                "They never notice crossed-out prices at all",
+                "They stop shopping at stores that use it",
+                "The effect persists even when they believe themselves immune"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 127-3)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 127]."
+            "correctAnswer": "The effect persists even when they believe themselves immune",
+            "correctAnswerIndex": 3,
+            "hint": "The finding about aware shoppers is in the last sentence.",
+            "explanation": "The passage says researchers found the anchoring effect persists even among shoppers who consciously recognize the tactic."
         },
         {
             "id": "RDG_READANDANSWER_L128_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 128-1] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[The Tragedy of the Commons] The tragedy of the commons describes a situation in which individuals acting independently in their own rational self-interest deplete a shared, limited resource, even when doing so is clearly against the long-term collective interest of the entire group, since each individual bears only a fraction of the cost of their own overuse while capturing the full benefit for themselves, whereas the cost of restraint would be borne entirely by that individual while the benefit would be shared collectively. Economists note that the tragedy is not inevitable, however, pointing to numerous historical examples of communities successfully managing shared resources through locally developed rules and social enforcement, without requiring either full privatization or centralized government control.",
+            "question": "What do economists note about the tragedy of the commons, according to the passage?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "It is not inevitable, as some communities manage shared resources successfully",
+                "It always requires full privatization to prevent",
+                "It has never been avoided in human history",
+                "It only applies to government-owned resources"
             ],
-            "correctAnswer": "Their vast biodiversity",
+            "correctAnswer": "It is not inevitable, as some communities manage shared resources successfully",
             "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 128-1)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 128]."
+            "hint": "The economists' point is explained in the last sentence.",
+            "explanation": "The passage says economists note the tragedy is not inevitable, citing communities that have successfully managed shared resources."
         },
         {
             "id": "RDG_READANDANSWER_L128_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 128-2] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[Confirmation Bias in Research] Confirmation bias refers to the tendency to search for, interpret, and recall information in ways that support a belief one already holds, while giving disproportionately less weight to evidence that would challenge that same belief, a pattern that can subtly affect even trained researchers if they are not deliberately guarding against it. Scientific methodology attempts to counteract this tendency through practices such as pre-registering a study's hypothesis before data collection begins and actively seeking out disconfirming evidence, procedural safeguards designed specifically to prevent a researcher's existing expectations from unconsciously shaping which results are emphasized or reported.",
+            "question": "Why do researchers pre-register a hypothesis before collecting data, according to the passage?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "To prevent existing expectations from shaping which results get emphasized",
+                "To guarantee their hypothesis will be proven correct",
+                "To avoid collecting any data at all",
+                "To reduce the total cost of the study"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
+            "correctAnswer": "To prevent existing expectations from shaping which results get emphasized",
             "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 128-2)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 128]."
+            "hint": "The purpose is explained in the last sentence.",
+            "explanation": "The passage says pre-registration is a safeguard meant to prevent a researcher's expectations from shaping reported results."
         },
         {
             "id": "RDG_READANDANSWER_L128_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 128-3] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Urban Microclimates and Building Design] Densely built urban environments create microclimates that can differ measurably from surrounding suburban or rural areas, with narrow streets flanked by tall buildings sometimes creating wind tunnel effects that intensify gusts at street level, while other configurations of the same buildings can instead block airflow entirely, trapping heat and pollutants close to the ground. Urban planners increasingly use computer modeling during the design phase specifically to predict these airflow patterns before construction begins, since retrofitting a poorly ventilated urban canyon after buildings are already in place is far more difficult and costly than adjusting a design on paper.",
+            "question": "Why do planners use computer modeling before construction begins, according to the passage?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "It eliminates the need for any future construction",
+                "Retrofitting poor airflow after construction is far more difficult",
+                "It guarantees no wind will ever occur",
+                "It is required by international building law"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 128-3)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 128]."
+            "correctAnswer": "Retrofitting poor airflow after construction is far more difficult",
+            "correctAnswerIndex": 1,
+            "hint": "The reason is explained in the last sentence.",
+            "explanation": "The passage says planners model airflow beforehand because retrofitting poor ventilation after construction is far more difficult and costly."
         },
         {
             "id": "RDG_READANDANSWER_L129_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 129-1] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[The Availability Heuristic] The availability heuristic describes a mental shortcut in which people estimate the likelihood or frequency of an event based on how easily relevant examples come to mind, rather than on actual statistical data, a pattern that helps explain why vivid, heavily reported events, such as plane crashes, are frequently judged to be far more common than they statistically are, while less dramatic but considerably more frequent risks, such as routine car accidents, tend to be systematically underestimated precisely because they rarely generate the same intensity of media coverage or emotional impact.",
+            "question": "Why are plane crashes often judged to be more common than they statistically are?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "Plane crashes are actually more frequent than car accidents",
+                "Statistical data on plane crashes does not exist",
+                "People deliberately choose to overestimate rare risks",
+                "Vivid, heavily reported events are easier to recall, skewing perception"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 129-1)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 129]."
+            "correctAnswer": "Vivid, heavily reported events are easier to recall, skewing perception",
+            "correctAnswerIndex": 3,
+            "hint": "The explanation is given throughout the passage, especially the first half.",
+            "explanation": "The passage explains that vivid, well-reported events like plane crashes come to mind more easily, skewing perceived likelihood upward."
         },
         {
             "id": "RDG_READANDANSWER_L129_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 129-2] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[Thermal Mass and Passive Cooling] Traditional architecture in many hot, arid regions has long relied on thick walls made of dense materials like adobe or stone, which absorb heat slowly throughout the day and release it gradually overnight, a property known as thermal mass that helps moderate indoor temperature swings without any mechanical cooling system. Modern builders in similar climates increasingly borrow this centuries-old principle, sometimes combining high-thermal-mass materials with contemporary insulation techniques to reduce a building's reliance on energy-intensive air conditioning, particularly in regions where electricity costs or grid reliability make constant mechanical cooling impractical.",
+            "question": "What does thermal mass help traditional buildings achieve, according to the passage?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "Moderating indoor temperature swings without mechanical cooling",
+                "Eliminating the need for any walls at all",
+                "Increasing indoor temperature swings significantly",
+                "Requiring constant air conditioning to function"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswer": "Moderating indoor temperature swings without mechanical cooling",
             "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 129-2)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 129]."
+            "hint": "The function of thermal mass is explained in the first sentence.",
+            "explanation": "The passage explains that thermal mass helps moderate indoor temperature swings without requiring mechanical cooling."
         },
         {
             "id": "RDG_READANDANSWER_L129_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 129-3] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[The Bandwagon Effect in Public Opinion] The bandwagon effect describes the tendency for individuals to adopt a particular belief or behavior primarily because they perceive that many other people already hold it, a dynamic that can create self-reinforcing momentum independent of the belief's actual merit, since the visible popularity of a position can itself become perceived as evidence supporting that position. Researchers studying public opinion polling have noted particular concern about this dynamic in the context of published poll results, since voters exposed to polling data showing one candidate meaningfully ahead may become more likely to support that same candidate, a feedback loop that can potentially distort the very outcome the polling was originally intended merely to measure.",
+            "question": "What concern have researchers noted about published poll results, according to the passage?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "They are always completely inaccurate",
+                "They may create a feedback loop that distorts the outcome being measured",
+                "They have no effect on voter behavior",
+                "They are illegal to publish in most places"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 129-3)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 129]."
+            "correctAnswer": "They may create a feedback loop that distorts the outcome being measured",
+            "correctAnswerIndex": 1,
+            "hint": "The concern is explained in the last sentence.",
+            "explanation": "The passage says researchers are concerned that polls may create a feedback loop, distorting the outcome they were meant to measure."
         },
         {
             "id": "RDG_READANDANSWER_L130_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 130-1] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[The Precautionary Principle in Policy] The precautionary principle holds that when an action carries a plausible risk of significant or irreversible harm, the burden of proof should fall on demonstrating that the action is safe, rather than requiring critics to first prove definitive harm before any restriction is considered, a standard frequently invoked in debates over new chemicals, genetically modified organisms, or emerging technologies where long-term consequences remain genuinely uncertain. Critics of the principle argue that applied too broadly, it could indefinitely stall beneficial innovations simply because absolute certainty about safety is, in practice, rarely achievable for any new technology, however promising.",
+            "question": "What concern do critics raise about the precautionary principle, according to the passage?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "It guarantees that all new technologies are safe",
+                "It could indefinitely stall beneficial innovations due to lack of absolute certainty",
+                "It requires no evidence of harm whatsoever",
+                "It has never been applied to any policy debate"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 130-1)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 130]."
+            "correctAnswer": "It could indefinitely stall beneficial innovations due to lack of absolute certainty",
+            "correctAnswerIndex": 1,
+            "hint": "The critics' concern is explained in the last sentence.",
+            "explanation": "The passage says critics worry the principle could stall beneficial innovations, since absolute safety certainty is rarely achievable."
         },
         {
             "id": "RDG_READANDANSWER_L130_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 130-2] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Selection Bias in Online Reviews] Online review platforms are susceptible to a form of selection bias in which customers with either extremely positive or extremely negative experiences are disproportionately more likely to leave a review compared to the larger, often silent, majority who had a moderately satisfactory experience, meaning the visible distribution of ratings may not accurately reflect the typical customer experience at all. This dynamic helps explain why a product or service can maintain a strong overall reputation and consistent repeat business despite an online review section that appears, at a glance, unusually polarized between glowing praise and harsh criticism.",
+            "question": "What does the passage say the visible distribution of online ratings may not accurately reflect?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "The typical customer experience",
+                "The exact price of the product or service",
+                "The total number of customers served",
+                "The location of the business itself"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
+            "correctAnswer": "The typical customer experience",
             "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 130-2)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 130]."
+            "hint": "This is stated directly in the middle of the passage.",
+            "explanation": "The passage says the visible rating distribution may not accurately reflect the typical customer experience, due to selection bias in who leaves reviews."
         },
         {
             "id": "RDG_READANDANSWER_L130_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 130-3] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[Redundancy in Engineering Safety Systems] Critical infrastructure systems, from aircraft to nuclear power plants, are typically designed with deliberate redundancy, meaning multiple independent systems capable of performing the same essential function, so that the failure of any single component does not result in catastrophic failure of the entire system. Engineers specifically aim for these backup systems to fail independently of one another wherever possible, recognizing that redundancy provides little genuine protection if a single shared cause, such as a design flaw common to all versions of a component, could simultaneously disable every redundant system at once.",
+            "question": "Why do engineers aim for backup systems to fail independently of each other?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "Independent failure guarantees systems never actually fail",
+                "A shared flaw could disable every redundant system at once otherwise",
+                "It reduces the total number of systems needed",
+                "It eliminates the need for any testing"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 130-3)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 130]."
+            "correctAnswer": "A shared flaw could disable every redundant system at once otherwise",
+            "correctAnswerIndex": 1,
+            "hint": "The reasoning is explained in the last sentence.",
+            "explanation": "The passage explains that engineers want independent failure because a shared cause could otherwise disable all redundant systems simultaneously."
         }
     ]
 }

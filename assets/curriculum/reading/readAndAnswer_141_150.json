@@ -8,540 +8,540 @@
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 141-1] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Moral Hazard in Economics] Economists use the term moral hazard to describe a situation in which one party, insulated from the negative consequences of a risk by an agreement such as an insurance policy or a financial guarantee, becomes more inclined to take on greater risk than they would if they alone bore the full potential cost of an unfavorable outcome. The concept gained widespread public attention following certain large financial institution bailouts, when critics argued that rescuing failing institutions from the consequences of excessively risky lending, however necessary to prevent broader economic collapse in the moment, could inadvertently signal to other institutions that similarly risky behavior might again be rescued in the future, thereby undermining the very caution the financial system depends on to function safely.",
+            "question": "What did critics argue about certain financial institution bailouts, according to the passage?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "They completely eliminated all financial risk going forward",
+                "They had no effect on future institutional behavior",
+                "They were universally praised without any criticism",
+                "They could inadvertently signal that risky behavior might be rescued again"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 141-1)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 141]."
+            "correctAnswer": "They could inadvertently signal that risky behavior might be rescued again",
+            "correctAnswerIndex": 3,
+            "hint": "The critics' argument is explained in the last part of the passage.",
+            "explanation": "The passage explains that critics worried bailouts could signal to institutions that risky behavior might be rescued again, undermining caution."
         },
         {
             "id": "RDG_READANDANSWER_L141_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 141-2] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[The Replication Crisis in Science] Beginning in the early 2010s, researchers across several scientific fields, particularly psychology, began systematically attempting to reproduce the results of previously published, influential studies, only to find that a striking proportion of these results could not be reliably replicated under the same experimental conditions, a widespread pattern that came to be known as the replication crisis. While some of this failure to replicate can be attributed to legitimate differences between the original and replication studies, researchers have also pointed to structural incentives within academic publishing itself, since journals have historically shown a strong preference for novel, statistically striking findings over the comparatively unglamorous, though scientifically essential, work of confirming or challenging existing results.",
+            "question": "What structural incentive does the passage identify as contributing to the replication crisis?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Journals refuse to publish any new research",
+                "Researchers are legally required to falsify data",
+                "Replication studies are always faster to conduct",
+                "Journals prefer novel findings over confirming existing results"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 141-2)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 141]."
+            "correctAnswer": "Journals prefer novel findings over confirming existing results",
+            "correctAnswerIndex": 3,
+            "hint": "The structural incentive is explained in the last sentence.",
+            "explanation": "The passage identifies journals' preference for novel findings over replication work as a structural incentive contributing to the crisis."
         },
         {
             "id": "RDG_READANDANSWER_L141_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 141-3] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[Algorithmic Bias in Criminal Justice] As courts and parole boards in some jurisdictions have adopted algorithmic risk-assessment tools intended to predict a defendant's likelihood of reoffending, researchers investigating these systems have found that even models explicitly designed to exclude race as an input variable can nonetheless reproduce racially disparate outcomes, since other factors used by the model, such as zip code or prior arrest history, can function as effective proxies for race due to existing patterns of residential segregation and disparate policing practices. This finding has complicated straightforward assumptions that removing an explicitly biased variable is sufficient to produce a genuinely unbiased algorithmic outcome.",
+            "question": "Why can algorithms that exclude race still produce racially disparate outcomes, according to the passage?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Other factors like zip code can function as proxies for race",
+                "The algorithms deliberately reintroduce race as a factor",
+                "Judges manually override the algorithm's every decision",
+                "Prior arrest history is always recorded incorrectly"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
+            "correctAnswer": "Other factors like zip code can function as proxies for race",
             "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 141-3)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 141]."
+            "hint": "The explanation is given in the middle of the passage.",
+            "explanation": "The passage explains that factors like zip code can act as proxies for race due to existing segregation and policing patterns, even without race as an input."
         },
         {
             "id": "RDG_READANDANSWER_L142_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 142-1] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[The Paradox of Tolerance] The philosopher who articulated the paradox of tolerance argued that a society committed to unlimited tolerance, extended even to those who are explicitly intolerant, risks the eventual destruction of tolerance itself, since intolerant movements, if permitted to organize and gain sufficient influence unchecked, may ultimately dismantle the very tolerant framework that had permitted their rise in the first place. Critics of applying this reasoning too broadly caution that it can be invoked to justify suppressing a wide range of merely unpopular or uncomfortable speech under the pretext of protecting tolerance, making the boundary between legitimately intolerant, dangerous movements and simply disfavored viewpoints a matter of significant and ongoing philosophical and legal disagreement.",
+            "question": "What caution do critics raise about applying the paradox of tolerance broadly?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "It guarantees complete tolerance for every viewpoint",
+                "It could be used to justify suppressing merely unpopular speech",
+                "It has never been debated by philosophers or courts",
+                "It applies only to historical political movements"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 142-1)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 142]."
+            "correctAnswer": "It could be used to justify suppressing merely unpopular speech",
+            "correctAnswerIndex": 1,
+            "hint": "The critics' caution is explained in the last sentence.",
+            "explanation": "The passage explains that critics worry the paradox could be invoked too broadly, justifying suppression of merely unpopular speech."
         },
         {
             "id": "RDG_READANDANSWER_L142_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 142-2] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[The Innovator's Dilemma] Business strategists have observed a recurring pattern in which highly successful, well-managed companies, precisely because they excel at listening to their existing customers and optimizing their most profitable current products, often fail to invest adequately in disruptive new technologies that initially appear inferior and less profitable than their established offerings, only for those same disruptive technologies to improve rapidly and eventually displace the incumbent's core business entirely. This pattern, sometimes called the innovator's dilemma, suggests that the very management practices widely praised as sound business discipline, such as prioritizing a company's most profitable and demanding existing customers, can simultaneously leave an otherwise well-run company vulnerable to being outmaneuvered by newer competitors serving a market the incumbent had reasonably judged not worth pursuing.",
+            "question": "Why does the innovator's dilemma suggest sound management practices can create vulnerability?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "Prioritizing profitable existing customers can cause new technologies to be overlooked",
+                "Sound management practices always prevent any competition",
+                "Successful companies never listen to their customers",
+                "New technologies are always immediately more profitable"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswer": "Prioritizing profitable existing customers can cause new technologies to be overlooked",
             "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 142-2)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 142]."
+            "hint": "The explanation is given throughout the passage, especially the last sentence.",
+            "explanation": "The passage explains that prioritizing existing profitable customers, though sound practice, can cause a company to overlook disruptive new technologies until it's too late."
         },
         {
             "id": "RDG_READANDANSWER_L142_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 142-3] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[Planetary Boundaries Framework] A group of environmental scientists proposed the planetary boundaries framework to identify a set of measurable Earth system processes, including climate change, biodiversity loss, and nitrogen and phosphorus cycles, within which humanity could theoretically continue to operate safely, while transgressing these boundaries risks triggering abrupt or irreversible environmental changes at a scale that could destabilize the relatively stable conditions that have characterized the planet throughout recorded human civilization. Proponents of the framework acknowledge significant scientific uncertainty in precisely quantifying several of these boundaries, but argue that this uncertainty itself is a reason for caution rather than a reason to dismiss the framework's usefulness as a guide for long-term environmental policy.",
+            "question": "How do proponents of the framework respond to uncertainty in quantifying the boundaries?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "They claim there is no uncertainty in the framework at all",
+                "They argue the framework should be abandoned entirely",
+                "They argue uncertainty is a reason for caution, not dismissal",
+                "They say uncertainty proves the boundaries do not exist"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 142-3)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 142]."
+            "correctAnswer": "They argue uncertainty is a reason for caution, not dismissal",
+            "correctAnswerIndex": 2,
+            "hint": "The proponents' response is explained in the last sentence.",
+            "explanation": "The passage explains that proponents view scientific uncertainty as a reason for caution, not as grounds to dismiss the framework."
         },
         {
             "id": "RDG_READANDANSWER_L143_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 143-1] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Learned Helplessness] In a series of influential, and by contemporary ethical standards controversial, experiments, psychologists found that animals repeatedly exposed to an unpleasant stimulus they had no ability to control or escape would later fail to attempt escape even when a clear opportunity to do so was subsequently provided, a phenomenon termed learned helplessness. Researchers extending this concept to human psychology have suggested that a similar dynamic may partly explain certain patterns observed in individuals who have experienced prolonged, uncontrollable adversity, who may subsequently fail to pursue available opportunities for improvement, not necessarily from a lack of desire for change, but potentially from a deeply conditioned expectation, formed through repeated prior experience, that their actions are unlikely to meaningfully affect their circumstances regardless of effort.",
+            "question": "How might learned helplessness affect a person's response to new opportunities, according to the passage?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "They may not pursue opportunities due to a conditioned expectation of futility",
+                "They will always immediately seize every new opportunity",
+                "They lose the physical ability to make any choices",
+                "They become more motivated after each setback"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
+            "correctAnswer": "They may not pursue opportunities due to a conditioned expectation of futility",
             "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 143-1)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 143]."
+            "hint": "The explanation is given in the last sentence.",
+            "explanation": "The passage explains that a conditioned expectation that actions won't matter, not a lack of desire, may cause someone to not pursue opportunities."
         },
         {
             "id": "RDG_READANDANSWER_L143_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 143-2] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[Linguistic Relativity] The hypothesis of linguistic relativity proposes that the particular language a person speaks can shape, to some meaningful degree, the way that person perceives and categorizes the world, a claim that has existed in both a strong version, largely rejected by contemporary linguists, suggesting language rigidly determines thought entirely, and a more modestly supported weaker version, suggesting language merely influences certain habitual patterns of perception and attention without imposing any strict limitation on what a speaker is capable of thinking or perceiving. Studies examining languages with notably different systems for describing color, spatial orientation, or grammatical gender have found modest but measurable differences in how speakers of those languages perform on certain related cognitive tasks, offering some support for the weaker version of the hypothesis while providing no support for the stronger, more deterministic claim.",
+            "question": "What do studies on languages with different color or spatial systems suggest, according to the passage?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "Modest support for the weaker version of linguistic relativity",
+                "Strong support for language completely determining thought",
+                "No connection at all between language and cognition",
+                "Complete rejection of the linguistic relativity hypothesis"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswer": "Modest support for the weaker version of linguistic relativity",
             "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 143-2)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 143]."
+            "hint": "The studies' findings are summarized in the last sentence.",
+            "explanation": "The passage explains that such studies offer modest support for the weaker version of linguistic relativity, not the stronger, deterministic claim."
         },
         {
             "id": "RDG_READANDANSWER_L143_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 143-3] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[Social Capital Theory] Sociologists use the term social capital to describe the practical value embedded within an individual's network of social relationships and the trust, reciprocity, and shared norms those relationships generate, resources that, much like financial or physical capital, can be drawn upon to accomplish goals that would otherwise be considerably more difficult or costly to achieve alone. Researchers studying community wellbeing have found that regions with higher measured levels of social capital, indicated by factors such as civic participation, generalized trust between strangers, and involvement in local organizations, tend to demonstrate better outcomes across a range of seemingly unrelated measures, including public health, economic mobility, and even measured resilience following natural disasters.",
+            "question": "What outcomes have researchers found associated with higher social capital, according to the passage?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Lower civic participation and less generalized trust",
+                "No measurable effect on any community outcomes",
+                "Worse economic mobility but better public health only",
+                "Better public health, economic mobility, and disaster resilience"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 143-3)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 143]."
+            "correctAnswer": "Better public health, economic mobility, and disaster resilience",
+            "correctAnswerIndex": 3,
+            "hint": "The associated outcomes are listed in the last sentence.",
+            "explanation": "The passage lists better public health, economic mobility, and disaster resilience as outcomes associated with higher social capital."
         },
         {
             "id": "RDG_READANDANSWER_L144_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 144-1] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[The Biopsychosocial Model of Health] In contrast to a purely biomedical model that explains illness primarily through biological mechanisms alone, the biopsychosocial model proposes that health and illness emerge from a genuinely interacting combination of biological, psychological, and social factors, none of which can fully account for a patient's condition or recovery in isolation from the others. A patient recovering from a major surgery, for instance, may experience meaningfully different physical outcomes depending not only on the technical success of the surgery itself but also on their psychological state, such as their level of anxiety or depression, and their social circumstances, such as the availability of a supportive network to assist during recovery, factors a purely biomedical framework would tend to treat as secondary or largely irrelevant to physical healing.",
+            "question": "How does the biopsychosocial model differ from a purely biomedical model, according to the passage?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "It ignores biological factors entirely",
+                "It treats psychological and social factors as genuinely interacting with biology",
+                "It focuses exclusively on psychological factors",
+                "It considers social factors irrelevant to health"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 144-1)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 144]."
+            "correctAnswer": "It treats psychological and social factors as genuinely interacting with biology",
+            "correctAnswerIndex": 1,
+            "hint": "The core difference is explained in the first sentence.",
+            "explanation": "The passage explains that the biopsychosocial model treats biological, psychological, and social factors as genuinely interacting, unlike a purely biomedical model."
         },
         {
             "id": "RDG_READANDANSWER_L144_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 144-2] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[Externalities in Economic Theory] An externality, in economic terms, refers to a cost or benefit affecting a third party who did not directly choose to incur that cost or benefit, arising as an unintended side effect of a transaction or activity between two other parties, such as when a factory's manufacturing process pollutes a river used by a downstream community that had no involvement in or say over the factory's original production decision. Economists generally argue that markets left entirely to themselves tend to systematically underprice activities that generate negative externalities, since the price a producer charges typically reflects only their own private costs of production, not the broader costs imposed on unconsenting third parties, a mismatch that has motivated policy tools such as pollution taxes intended to more accurately incorporate a negative externality's true social cost into the market price.",
+            "question": "Why do economists argue markets tend to underprice activities with negative externalities?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "Markets always overprice every good and service",
+                "Externalities never affect market prices at all",
+                "Prices reflect only private costs, not broader third-party costs",
+                "Third parties always negotiate the final price directly"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 144-2)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 144]."
+            "correctAnswer": "Prices reflect only private costs, not broader third-party costs",
+            "correctAnswerIndex": 2,
+            "hint": "The reasoning is explained in the middle of the passage.",
+            "explanation": "The passage explains that markets underprice negative externalities because prices reflect only the producer's private costs, not the broader costs to third parties."
         },
         {
             "id": "RDG_READANDANSWER_L144_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 144-3] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[Heuristics and the Adaptive Toolbox] While much research on cognitive biases has emphasized the ways mental shortcuts, or heuristics, can lead to systematic errors in judgment, an alternative research tradition has argued that these same heuristics should more accurately be understood as an adaptive toolbox of generally effective decision-making strategies, well-suited to the specific kinds of real-world, time-pressured, and information-limited environments in which human cognition actually evolved and typically continues to operate, rather than as inherently flawed shortcuts that merely approximate some theoretically ideal, fully rational calculation. Proponents of this view point to evidence that simple heuristics can sometimes outperform far more complex statistical models when predicting real-world outcomes under genuine conditions of uncertainty and limited available information.",
+            "question": "What evidence do proponents of the 'adaptive toolbox' view cite, according to the passage?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Heuristics always produce completely accurate predictions",
+                "Complex statistical models never make any errors",
+                "Simple heuristics can outperform complex models under real uncertainty",
+                "Heuristics are only useful in laboratory settings"
             ],
-            "correctAnswer": "Their vast biodiversity",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 144-3)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 144]."
+            "correctAnswer": "Simple heuristics can outperform complex models under real uncertainty",
+            "correctAnswerIndex": 2,
+            "hint": "The evidence cited is described in the last sentence.",
+            "explanation": "The passage says proponents cite evidence that simple heuristics can outperform complex statistical models under real-world uncertainty."
         },
         {
             "id": "RDG_READANDANSWER_L145_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 145-1] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[The Precautionary Tale of Leaded Gasoline] The decades-long history of leaded gasoline, added to fuel throughout much of the twentieth century to improve engine performance despite early internal industry research suggesting significant neurological risks, particularly to children, is frequently cited by public health historians as a cautionary illustration of how commercial interests, regulatory delay, and scientific uncertainty deliberately manufactured or exaggerated by interested parties can combine to permit a known public health hazard to persist for decades after credible warning signs first emerged. Subsequent research, once leaded gasoline was finally phased out across most of the world, found measurable correlations between the historical decline in childhood lead exposure and broader improvements in population-level cognitive outcomes, lending retrospective support to the earlier warnings that had gone largely unheeded for so long.",
+            "question": "What did research find after leaded gasoline was finally phased out, according to the passage?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "No connection at all between lead and cognitive outcomes",
+                "A correlation between declining lead exposure and cognitive improvements",
+                "Cognitive outcomes worsened significantly after the phase-out",
+                "Lead exposure had already ended decades before the phase-out"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 145-1)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 145]."
+            "correctAnswer": "A correlation between declining lead exposure and cognitive improvements",
+            "correctAnswerIndex": 1,
+            "hint": "The research finding is described in the last sentence.",
+            "explanation": "The passage says research found a correlation between declining childhood lead exposure and improved population-level cognitive outcomes."
         },
         {
             "id": "RDG_READANDANSWER_L145_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 145-2] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Base Rate Neglect in Statistical Reasoning] Base rate neglect describes a common statistical reasoning error in which people place disproportionate weight on specific, vivid information about an individual case while inadequately accounting for the underlying general frequency, or base rate, of the phenomenon in question within the broader population, a pattern that helps explain why a positive result from a medical test with a small but nonzero false-positive rate can be badly misinterpreted if the condition being tested for is itself extremely rare, since even a highly accurate test will, in absolute terms, still generate more false positives than true positives when applied to a large population in which the actual condition occurs only very infrequently.",
+            "question": "Why can a positive result from an accurate test still often be a false positive, according to the passage?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "Accurate tests never produce any false positives at all",
+                "The condition being tested for is always common",
+                "When a condition is rare, false positives can outnumber true positives",
+                "Base rates have no relevance to test results"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 145-2)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 145]."
+            "correctAnswer": "When a condition is rare, false positives can outnumber true positives",
+            "correctAnswerIndex": 2,
+            "hint": "The statistical explanation is given in the last part of the passage.",
+            "explanation": "The passage explains that for a rare condition, even an accurate test can produce more false positives than true positives in absolute terms."
         },
         {
             "id": "RDG_READANDANSWER_L145_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 145-3] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[The Tyranny of Small Decisions] An economist who examined how a sequence of individually reasonable small decisions can cumulatively produce a large-scale outcome that none of the individual decision-makers actually intended or would have chosen if presented with the aggregate result directly termed this phenomenon the tyranny of small decisions, illustrating it through the example of a bus route being discontinued not through any single deliberate decision to eliminate it, but through countless individual commuters each reasonably choosing to drive rather than wait for an increasingly infrequent bus, a series of individually sensible choices that collectively reduced ridership to the point where the route's cancellation became a financially unavoidable outcome no single rider had actually chosen or desired.",
+            "question": "How was the bus route in the example ultimately discontinued, according to the passage?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "Through a single deliberate decision by the bus company",
+                "Because a new law banned all bus service",
+                "Through the cumulative effect of many individual choices to drive instead",
+                "Because no one had ever used the route at all"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 145-3)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 145]."
+            "correctAnswer": "Through the cumulative effect of many individual choices to drive instead",
+            "correctAnswerIndex": 2,
+            "hint": "The mechanism is explained in the last part of the passage.",
+            "explanation": "The passage explains that the route was discontinued through the cumulative effect of many riders individually choosing to drive rather than wait."
         },
         {
             "id": "RDG_READANDANSWER_L146_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 146-1] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[The Winner's Curse in Auctions] In competitive bidding situations where the true value of an item being auctioned is uncertain and each bidder must independently estimate that value, economic theory predicts a systematic pattern known as the winner's curse, in which the winning bidder, precisely because they submitted the highest estimate among all participants, is statistically more likely than not to have overestimated the item's actual value relative to the average estimate across all bidders, meaning the very act of winning the auction is itself a signal that the winner likely overpaid relative to the item's true worth. Sophisticated bidders account for this dynamic by deliberately submitting a bid somewhat below their own independent value estimate, adjusting downward specifically to compensate for the statistical bias inherent in the winning position itself.",
+            "question": "Why do sophisticated bidders submit bids below their own value estimate, according to the passage?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "To compensate for the statistical bias of the winning position itself",
+                "To guarantee they will lose the auction",
+                "Because their estimates are always too low already",
+                "Because auction rules require lower bids"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswer": "To compensate for the statistical bias of the winning position itself",
             "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 146-1)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 146]."
+            "hint": "The reason is explained in the last sentence.",
+            "explanation": "The passage explains that sophisticated bidders lower their bids to compensate for the winner's curse, the statistical bias inherent in winning."
         },
         {
             "id": "RDG_READANDANSWER_L146_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 146-2] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[Punctuated Equilibrium in Evolutionary Biology] Challenging an earlier assumption that evolutionary change proceeds at a roughly constant, gradual pace across geological time, the theory of punctuated equilibrium proposes instead that most species remain in a state of relative morphological stability for long stretches of time, interrupted by comparatively brief, geologically speaking, periods of rapid evolutionary change, often coinciding with the geographic isolation of a small subpopulation. Proponents of this model argue it better accounts for gaps frequently observed in the fossil record, gaps earlier interpreted mainly as evidence of an incomplete fossil record, by proposing instead that rapid transitional change, occurring within a relatively small and geographically isolated population, is inherently less likely to be well represented in fossil deposits than the far longer periods of relative stability that preceded and followed it.",
+            "question": "How does punctuated equilibrium explain gaps in the fossil record, according to the passage?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "The gaps prove that evolution never actually occurred",
+                "Fossil records are always complete with no gaps",
+                "Rapid change in small isolated populations is less likely to be fossilized",
+                "Gradual change is always well represented in fossils"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 146-2)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 146]."
+            "correctAnswer": "Rapid change in small isolated populations is less likely to be fossilized",
+            "correctAnswerIndex": 2,
+            "hint": "The explanation is given in the last sentence.",
+            "explanation": "The passage explains that punctuated equilibrium suggests rapid change in small, isolated populations is less likely to leave a strong fossil record than long stable periods."
         },
         {
             "id": "RDG_READANDANSWER_L146_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 146-3] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[Preference Falsification in Public Opinion] Preference falsification describes the widespread practice of publicly expressing a view that differs from one's privately held actual opinion, typically due to a genuine or perceived social cost associated with openly stating one's true position, a dynamic that can cause an entire society to significantly misjudge the true, actual distribution of opinion on a particular issue, since individuals observing what appears to be near-unanimous public support for a position may reasonably, if incorrectly, assume that support to be considerably more genuine and widespread than it privately actually is. Social scientists studying rapid, seemingly sudden shifts in public opinion have suggested that some such shifts may reflect not a genuine, gradual change in underlying private belief, but rather a comparatively swift cascade in which individuals, upon perceiving it has become safer to express a previously privately held but publicly suppressed view, begin doing so in rapid succession.",
+            "question": "What might explain some sudden shifts in public opinion, according to the passage?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "A sudden, coordinated change in everyone's private beliefs",
+                "Public opinion never actually shifts suddenly",
+                "A cascade of people expressing previously suppressed private views",
+                "Government mandates forcing new opinions overnight"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 146-3)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 146]."
+            "correctAnswer": "A cascade of people expressing previously suppressed private views",
+            "correctAnswerIndex": 2,
+            "hint": "The explanation is given in the last sentence.",
+            "explanation": "The passage explains that some sudden shifts may reflect a cascade of people revealing previously suppressed private opinions, not a true change in belief."
         },
         {
             "id": "RDG_READANDANSWER_L147_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 147-1] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[The Streetlight Effect in Research] The streetlight effect, named after an old joke about a person searching for lost keys under a streetlight not because that is where the keys were dropped, but because that is where the light happens to be, describes a tendency in research and problem-solving more broadly to focus disproportionately on questions that are easiest to investigate with available methods and existing data, rather than on questions that may be more genuinely important but are harder to measure or study directly. Critics applying this concept to certain fields of social science research argue that an overreliance on easily quantifiable metrics can systematically bias an entire field's cumulative body of knowledge toward whatever happens to be conveniently measurable, potentially at the expense of more difficult, but potentially more consequential, lines of inquiry that resist easy quantification.",
+            "question": "What do critics argue can result from overreliance on easily quantifiable metrics?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Research becomes completely impossible to conduct",
+                "Every important question becomes easy to measure",
+                "Quantifiable metrics are always the most important ones",
+                "A field's knowledge becomes biased toward what is conveniently measurable"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 147-1)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 147]."
+            "correctAnswer": "A field's knowledge becomes biased toward what is conveniently measurable",
+            "correctAnswerIndex": 3,
+            "hint": "The critics' concern is explained in the last sentence.",
+            "explanation": "The passage explains that critics worry overreliance on measurable metrics biases a field's knowledge toward convenient topics rather than important ones."
         },
         {
             "id": "RDG_READANDANSWER_L147_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 147-2] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[Loss Aversion in Behavioral Economics] Extensive research in behavioral economics has found that the psychological pain associated with losing a given amount of money or a valued possession is, for most people, felt considerably more intensely than the pleasure derived from gaining an equivalent amount, an asymmetry termed loss aversion that helps explain a range of otherwise puzzling economic behaviors, including why investors often hold onto a declining stock considerably longer than a purely rational cost-benefit analysis would recommend, since selling would require formally realizing and psychologically confronting the loss, whereas continuing to hold the stock, even as its value continues to decline, allows the loss to remain comfortably unrealized and therefore psychologically deferred.",
+            "question": "Why might investors hold onto a declining stock longer than is rational, according to the passage?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "Declining stocks always eventually increase in value",
+                "Selling requires confronting the loss, which feels worse than gains feel good",
+                "Selling a stock is always more expensive than holding it",
+                "Investors are legally required to hold declining stocks"
             ],
-            "correctAnswer": "Distributing heat via currents",
-            "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 147-2)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 147]."
+            "correctAnswer": "Selling requires confronting the loss, which feels worse than gains feel good",
+            "correctAnswerIndex": 1,
+            "hint": "The explanation connects to loss aversion, described throughout the passage.",
+            "explanation": "The passage explains that investors may hold declining stocks to avoid psychologically confronting a realized loss, consistent with loss aversion."
         },
         {
             "id": "RDG_READANDANSWER_L147_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Abyss Sector 147-3] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "passage": "[The Concept of Satisficing] Challenging the traditional economic assumption that decision-makers seek to identify the single objectively optimal choice among all available options, the concept of satisficing, a blend of 'satisfy' and 'suffice,' proposes that people more commonly search only until they find an option that meets some internally set minimum threshold of acceptability, then stop searching, rather than continuing to exhaustively evaluate every remaining alternative in pursuit of a theoretically superior but practically elusive optimal choice. Proponents argue this behavior is not necessarily an irrational failure to optimize but can instead represent a reasonable adaptation to the genuine costs, in time, effort, and available information, of conducting an exhaustive search in real-world conditions where the marginal benefit of continued searching frequently fails to justify its cumulative cost.",
+            "question": "How do proponents of satisficing characterize this decision-making behavior?",
             "options": [
-                "The extreme water pressure",
-                "The freezing deep ocean currents",
-                "The high chemical mineral content",
-                "The metal shell of the submersible"
+                "An irrational failure that should always be corrected",
+                "A behavior found only in economic textbooks",
+                "A guarantee of finding the worst possible option",
+                "A reasonable adaptation to the real costs of exhaustive searching"
             ],
-            "correctAnswer": "The extreme water pressure",
-            "correctAnswerIndex": 0,
-            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 147-3)",
-            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 147]."
+            "correctAnswer": "A reasonable adaptation to the real costs of exhaustive searching",
+            "correctAnswerIndex": 3,
+            "hint": "The proponents' characterization is explained in the last sentence.",
+            "explanation": "The passage explains that proponents view satisficing as a reasonable adaptation to the real costs of exhaustive searching, not an irrational failure."
         },
         {
             "id": "RDG_READANDANSWER_L148_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Reef Zone 148-1] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-            "question": "Why are coral reefs compared to tropical rainforests?",
+            "passage": "[Cultural Lag in Sociology] Sociologists use the term cultural lag to describe the interval of time that often elapses between the introduction of a significant material or technological innovation and the corresponding adaptation of a society's non-material culture, including its laws, social norms, and institutional structures, to adequately address the new circumstances that innovation has created, a gap during which existing rules, crafted for an earlier technological reality, may prove increasingly inadequate, ambiguous, or even actively counterproductive when applied to genuinely novel situations the original rule-makers could not have reasonably anticipated. Contemporary debates over how existing legal frameworks, originally developed for physical property and traditional forms of published media, should apply to digital content, data ownership, and algorithmically generated works are frequently cited as an active, still-unresolved instance of this general pattern.",
+            "question": "What contemporary example does the passage give of cultural lag?",
             "options": [
-                "Their vast biodiversity",
-                "Their warm geographic location",
-                "Their dense leafy plants",
-                "Their heavy rainfall amounts"
+                "Debates over applying old legal frameworks to digital content and data",
+                "The invention of the printing press centuries ago",
+                "A law that was updated immediately after a new invention",
+                "A technology that has had no legal implications"
             ],
-            "correctAnswer": "Their vast biodiversity",
+            "correctAnswer": "Debates over applying old legal frameworks to digital content and data",
             "correctAnswerIndex": 0,
-            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 148-1)",
-            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 148]."
+            "hint": "The contemporary example is given in the last sentence.",
+            "explanation": "The passage gives the example of debates over applying legal frameworks built for physical property to digital content as an instance of cultural lag."
         },
         {
             "id": "RDG_READANDANSWER_L148_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Biolum Lab 148-2] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "passage": "[The Concept of Antifragility] Distinct from mere resilience, which describes a system's capacity to withstand shocks and return to its prior state largely unchanged, the concept of antifragility describes systems that do something more remarkable: they actually improve, strengthen, or grow more capable specifically as a result of exposure to moderate stress, volatility, or disorder, rather than merely surviving it unchanged or being damaged by it. A muscle subjected to the controlled stress of exercise, which grows measurably stronger during the recovery process precisely in response to that stress, is frequently cited as a clear biological example of antifragility, illustrated in direct contrast with a fragile system, such as a piece of glass, which by definition can only be damaged, never strengthened, by any exposure to a comparable physical stressor.",
+            "question": "How does antifragility differ from mere resilience, according to the passage?",
             "options": [
-                "Attracting prey or finding mates",
-                "Photosynthesizing food molecules",
-                "Warming up frozen waters",
-                "Navigating back to shallow reefs"
+                "Antifragile systems cannot experience any stress at all",
+                "Antifragile systems improve from stress rather than just surviving it unchanged",
+                "Resilient systems always improve more than antifragile ones",
+                "There is no meaningful difference between the two concepts"
             ],
-            "correctAnswer": "Attracting prey or finding mates",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 148-2)",
-            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 148]."
+            "correctAnswer": "Antifragile systems improve from stress rather than just surviving it unchanged",
+            "correctAnswerIndex": 1,
+            "hint": "The distinction is explained in the first sentence.",
+            "explanation": "The passage explains that antifragile systems actually improve from stress, unlike merely resilient systems that survive unchanged."
         },
         {
             "id": "RDG_READANDANSWER_L148_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Whale Pod 148-3] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "passage": "[Signaling Theory in Economics] Signaling theory examines how, in situations characterized by asymmetric information, where one party to a transaction possesses relevant information the other party lacks, an informed party may take a costly, difficult-to-fake action specifically to credibly convey otherwise unverifiable information to the uninformed party, a dynamic frequently applied to explain why job candidates invest in an expensive university degree even in fields where the specific technical content of that degree bears little direct relevance to the actual skills a particular job requires, since successfully completing a rigorous, costly degree program can serve as a credible signal of underlying qualities, such as sustained discipline and general capability, that would otherwise be considerably more difficult for an employer to directly verify before making a hiring decision.",
+            "question": "Why might a degree serve as a signal even if its content isn't job-relevant?",
             "options": [
-                "Tiny crustaceans called krill",
-                "Large predatory sharks",
-                "Giant deep-sea squids",
-                "Marine plants and kelp forests"
+                "Degrees always teach exactly the skills needed for any job",
+                "Employers never consider degrees when hiring",
+                "Signaling theory only applies to physical products",
+                "Completing it credibly signals discipline and capability that's hard to verify otherwise"
             ],
-            "correctAnswer": "Tiny crustaceans called krill",
-            "correctAnswerIndex": 0,
-            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 148-3)",
-            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 148]."
+            "correctAnswer": "Completing it credibly signals discipline and capability that's hard to verify otherwise",
+            "correctAnswerIndex": 3,
+            "hint": "The explanation is given in the last part of the passage.",
+            "explanation": "The passage explains that a costly degree can signal underlying discipline and capability that would otherwise be hard for an employer to verify directly."
         },
         {
             "id": "RDG_READANDANSWER_L149_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Seismic Hub 149-1] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "passage": "[The Concept of Epistemic Bubbles] Distinct from a genuine echo chamber, in which dissenting sources are actively and deliberately discredited or excluded, an epistemic bubble describes a more passive informational structure in which a person simply fails to encounter relevant, credible dissenting perspectives, not because such perspectives have been deliberately excluded or attacked, but because the ordinary, largely unremarkable structure of their existing information network, whether social media connections or habitual news sources, simply never happens to surface them in the first place. Some researchers argue this distinction carries a meaningful practical implication: an epistemic bubble can, in principle, be popped through the comparatively modest intervention of simple, deliberate exposure to new sources, whereas a genuine echo chamber, having actively conditioned its members to distrust outside sources on principle, tends to prove considerably more resistant to correction through exposure alone.",
+            "question": "How does the passage say an epistemic bubble differs from a genuine echo chamber?",
             "options": [
-                "Over 800 kilometers per hour",
-                "Around 100 kilometers per hour",
-                "As fast as a swimming shark",
-                "Slower than shallow tide waves"
+                "It is far more resistant to correction than an echo chamber",
+                "It requires deliberate effort to create, unlike an echo chamber",
+                "It results from passive gaps in exposure, not active exclusion of dissent",
+                "There is no meaningful difference between the two"
             ],
-            "correctAnswer": "Over 800 kilometers per hour",
-            "correctAnswerIndex": 0,
-            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 149-1)",
-            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 149]."
+            "correctAnswer": "It results from passive gaps in exposure, not active exclusion of dissent",
+            "correctAnswerIndex": 2,
+            "hint": "The distinction is explained in the first sentence.",
+            "explanation": "The passage explains that an epistemic bubble arises from passively never encountering dissent, unlike an echo chamber's active exclusion of it."
         },
         {
             "id": "RDG_READANDANSWER_L149_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Vent Sector 149-2] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "passage": "[Diminishing Marginal Utility] The economic principle of diminishing marginal utility holds that the additional satisfaction or benefit a person derives from consuming one more unit of a given good or service tends to decrease as the total quantity already consumed increases, meaning a starving person's first meal in days provides an immense increase in wellbeing, while a tenth consecutive helping of the identical meal, consumed shortly afterward, provides comparatively little additional benefit and may even, past a certain point, begin to actively decrease overall wellbeing. This principle underlies a range of practical economic reasoning, including progressive taxation structures, which are partly justified by the argument that an additional unit of income provides proportionally less additional wellbeing to someone already relatively wealthy than the identical additional unit would provide to someone with substantially less income to begin with.",
+            "question": "How does the passage connect diminishing marginal utility to progressive taxation?",
             "options": [
-                "Chemosynthesis by bacteria",
-                "Solar radiation absorption",
-                "Thermal heat collection",
-                "Predatory coral filter feeding"
+                "Progressive taxation has no connection to this economic principle",
+                "Wealthy people always receive more benefit from additional income",
+                "Taxation always provides equal benefit regardless of income level",
+                "Additional income provides less added wellbeing to wealthier people"
             ],
-            "correctAnswer": "Chemosynthesis by bacteria",
-            "correctAnswerIndex": 0,
-            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 149-2)",
-            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 149]."
+            "correctAnswer": "Additional income provides less added wellbeing to wealthier people",
+            "correctAnswerIndex": 3,
+            "hint": "The connection is explained in the last sentence.",
+            "explanation": "The passage explains that progressive taxation is partly justified by the idea that additional income provides less added wellbeing to wealthier individuals."
         },
         {
             "id": "RDG_READANDANSWER_L149_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Kelp Grove 149-3] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "passage": "[The Concept of Institutional Isomorphism] Organizational sociologists have observed that institutions operating within the same field, whether universities, hospitals, or corporations, often grow to resemble one another structurally over time even in the complete absence of any objective evidence that a shared structure is genuinely more effective, a pattern termed institutional isomorphism that researchers attribute to several distinct pressures, including a tendency to imitate organizations already perceived as successful or legitimate, compliance with shared external regulatory or professional requirements, and the increasingly standardized training that professionals across an entire field commonly receive regardless of which specific institution ultimately employs them. Critics of this pattern argue that isomorphic pressure can inadvertently discourage genuine structural innovation, since deviating meaningfully from an established organizational norm can itself be perceived as a credibility risk, independent of whether that deviation would actually improve organizational outcomes in practice.",
+            "question": "What concern do critics raise about institutional isomorphism, according to the passage?",
             "options": [
-                "Up to 60 centimeters per day",
-                "Around 10 centimeters per week",
-                "Over 5 meters every single hour",
-                "Only during the warm summer season"
+                "It guarantees every institution becomes more effective",
+                "It can discourage innovation since deviation is seen as a credibility risk",
+                "It has no connection to organizational structure at all",
+                "It only affects universities, not hospitals or corporations"
             ],
-            "correctAnswer": "Up to 60 centimeters per day",
-            "correctAnswerIndex": 0,
-            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 149-3)",
-            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 149]."
+            "correctAnswer": "It can discourage innovation since deviation is seen as a credibility risk",
+            "correctAnswerIndex": 1,
+            "hint": "The critics' concern is explained in the last sentence.",
+            "explanation": "The passage explains that critics worry isomorphic pressure discourages innovation because deviating from the norm is seen as a credibility risk."
         },
         {
             "id": "RDG_READANDANSWER_L150_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Angler Depths 150-1] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "passage": "[The Concept of Opportunity Cost] While often introduced to students as a simple, almost self-evident economic concept, opportunity cost, the value of the next-best alternative forgone when a particular choice is made, proves considerably more difficult to apply consistently in genuine practice than its straightforward textbook definition might initially suggest, since accurately identifying the true next-best alternative requires making often highly uncertain assumptions about a counterfactual scenario that, by its very definition, never actually occurred and therefore cannot be directly observed or verified. This inherent difficulty helps explain why reasonable, well-informed economic analysts frequently arrive at substantially different opportunity cost estimates for the identical decision, since each analyst's estimate depends heavily on their own particular, and often only implicitly stated, assumptions about what would have plausibly happened in a specific alternative scenario that ultimately never came to pass.",
+            "question": "Why do analysts often arrive at different opportunity cost estimates for the same decision?",
             "options": [
-                "Using a glowing bacterial lure",
-                "Emitting loud acoustic pulses",
-                "Releasing chemical scents",
-                "Hiding in sandy reef trenches"
+                "Opportunity cost is a completely meaningless concept",
+                "Estimates depend on unverifiable assumptions about a scenario that never occurred",
+                "All analysts are required to use identical assumptions",
+                "The next-best alternative is always directly observable"
             ],
-            "correctAnswer": "Using a glowing bacterial lure",
-            "correctAnswerIndex": 0,
-            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 150-1)",
-            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 150]."
+            "correctAnswer": "Estimates depend on unverifiable assumptions about a scenario that never occurred",
+            "correctAnswerIndex": 1,
+            "hint": "The explanation is given in the last sentence.",
+            "explanation": "The passage explains that different opportunity cost estimates arise because they depend on unverifiable assumptions about a counterfactual that never actually happened."
         },
         {
             "id": "RDG_READANDANSWER_L150_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Shark Reef 150-2] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "passage": "[The Peter Pan Fallacy in Corporate Growth] Business analysts have observed a pattern in which certain small and mid-sized companies deliberately avoid growing beyond a specific employee threshold at which new, often more burdensome regulatory, tax, or reporting requirements would formally apply, a behavior that, while individually rational from each company's own narrow short-term financial perspective, can collectively suppress the very economic growth and job creation that such regulations were frequently intended to encourage in the first place. Economists studying this dynamic across different regulatory environments have found that the specific threshold at which companies cluster below tends to shift measurably in direct response to changes in the underlying regulatory requirement itself, offering fairly strong empirical evidence that companies are indeed responding deliberately to the specific regulatory threshold, rather than the observed clustering pattern being merely an unrelated coincidence.",
+            "question": "What evidence do economists cite for companies deliberately responding to regulatory thresholds?",
             "options": [
-                "Sensing electromagnetic fields",
-                "Highly developed color vision",
-                "Feeling thermal temperature shifts",
-                "Hearing low-frequency whale songs"
+                "Companies never cluster near any specific size at all",
+                "Regulatory thresholds have remained completely constant for decades",
+                "All companies grow as large as possible regardless of regulation",
+                "The clustering threshold shifts when the regulatory requirement changes"
             ],
-            "correctAnswer": "Sensing electromagnetic fields",
-            "correctAnswerIndex": 0,
-            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 150-2)",
-            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 150]."
+            "correctAnswer": "The clustering threshold shifts when the regulatory requirement changes",
+            "correctAnswerIndex": 3,
+            "hint": "The evidence is described in the last sentence.",
+            "explanation": "The passage explains that the clustering threshold shifting with regulatory changes provides evidence companies are deliberately responding to those thresholds."
         },
         {
             "id": "RDG_READANDANSWER_L150_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
             "interactionType": "Text Diver",
-            "passage": "[Global Sea 150-3] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "passage": "[The Concept of Technological Lock-in] Technological lock-in describes a situation in which a particular technology, once adopted widely enough, becomes so deeply embedded within a broader interdependent system of infrastructure, complementary products, user skills, and industry standards that switching to a genuinely superior alternative technology becomes prohibitively costly and complex, even when nearly all relevant stakeholders privately agree the alternative would, in isolation, be preferable. The persistence of certain long-established but demonstrably inefficient infrastructure standards illustrates this dynamic clearly: while replacing such a standard might indeed produce clear efficiency gains if implemented in complete isolation, the practical requirement of coordinating a simultaneous, costly transition across an enormous number of interdependent users, manufacturers, and existing installed systems has consistently proven, in most real-world cases, to outweigh those theoretical gains.",
+            "question": "Why does technological lock-in persist even when stakeholders agree an alternative is better?",
             "options": [
-                "Distributing heat via currents",
-                "Creating global volcanic rings",
-                "Reflecting all incoming sunlight",
-                "Increasing atmospheric oxygen levels"
+                "Coordinating a simultaneous transition across many interdependent users is too costly",
+                "Stakeholders never actually agree that alternatives are better",
+                "The original technology is always secretly superior",
+                "Switching technologies is always simple and inexpensive"
             ],
-            "correctAnswer": "Distributing heat via currents",
+            "correctAnswer": "Coordinating a simultaneous transition across many interdependent users is too costly",
             "correctAnswerIndex": 0,
-            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 150-3)",
-            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 150]."
+            "hint": "The reasoning is explained in the last sentence.",
+            "explanation": "The passage explains that lock-in persists because coordinating a costly simultaneous transition across many interdependent users outweighs the theoretical efficiency gains."
         }
     ]
 }
