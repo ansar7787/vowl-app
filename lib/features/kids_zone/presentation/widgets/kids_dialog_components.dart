@@ -144,9 +144,11 @@ class KidsDialogContainer extends StatelessWidget {
 
     final usedRibbonColor = ribbonColor ?? primaryColor;
 
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.topCenter,
+    return Material(
+      type: MaterialType.transparency,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.topCenter,
       children: [
         Container(
           margin: EdgeInsets.only(top: 24.h),
@@ -201,6 +203,7 @@ class KidsDialogContainer extends StatelessWidget {
           ).animate().scale(curve: Curves.elasticOut, delay: 200.ms),
         ),
       ],
+      ),
     );
   }
 }
