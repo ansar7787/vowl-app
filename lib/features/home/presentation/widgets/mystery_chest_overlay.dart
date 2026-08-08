@@ -361,51 +361,51 @@ class MysteryChestOverlay extends StatelessWidget {
                                   ],
                                 ),
                                 child: ExcludeSemantics(
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.monetization_on_rounded,
-                                        color: Colors.amber,
-                                        size: 40.r,
-                                      ),
-                                      SizedBox(width: 16.w),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          AutoSizeText(
-                                            '+$rewardAmount',
-                                            maxLines: 1,
-                                            minFontSize: 16,
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 32.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: Colors.amber,
-                                              decoration: TextDecoration.none,
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.monetization_on_rounded,
+                                          color: Colors.amber,
+                                          size: 40.r,
+                                        ),
+                                        SizedBox(width: 16.w),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '+$rewardAmount',
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 32.sp,
+                                                fontWeight: FontWeight.w900,
+                                                color: Colors.amber,
+                                                decoration: TextDecoration.none,
+                                              ),
                                             ),
-                                          ),
-                                          AutoSizeText(
-                                            context.tr(
-                                              'home.chest_coins_collected',
-                                              fallback: 'Coins Collected',
+                                            Text(
+                                              context.tr(
+                                                'home.chest_coins_collected',
+                                                fallback: 'Coins Collected',
+                                              ),
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w800,
+                                                color: Colors.white70,
+                                                letterSpacing: 1,
+                                                decoration: TextDecoration.none,
+                                              ),
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
                                             ),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 10.sp,
-                                              fontWeight: FontWeight.w800,
-                                              color: Colors.white70,
-                                              letterSpacing: 1,
-                                              decoration: TextDecoration.none,
-                                            ),
-                                            maxLines: 1,
-                                            minFontSize: 6,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               )
