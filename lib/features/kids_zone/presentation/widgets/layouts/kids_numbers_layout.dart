@@ -284,6 +284,10 @@ class KidsNumbersLayout extends StatelessWidget {
       ),
     );
 
+    if (state.lastAnswerCorrect != null) {
+      return planetWidget;
+    }
+
     return Draggable<String>(
       data: text,
       feedback: Material(
