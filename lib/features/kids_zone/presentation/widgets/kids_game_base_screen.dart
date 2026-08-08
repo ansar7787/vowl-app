@@ -55,10 +55,11 @@ class KidsGameBaseScreen extends StatefulWidget {
 }
 
 class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
+  bool _showBriefing = true;
   String? _hintText;
   bool _completionDialogShown = false;
+  KidsLoaded? _lastLoadedState;
   bool _hasSpokenNudge = false;
-  bool _showBriefing = false;
   int _lastLives = 3;
 
   @override
@@ -250,14 +251,20 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       return const SafeArea(child: GameShimmerLoading());
     }
     if (state is KidsLoaded) {
+      _lastLoadedState = state;
+    }
+
+    final displayState = (state is KidsLoaded) ? state : _lastLoadedState;
+
+    if (displayState != null && (state is KidsLoaded || state is KidsGameComplete || state is KidsGameOver)) {
       return Stack(
         children: [
           widget.buildGameUI(
             context,
-            state,
-            () => speakHint(state.currentQuest.hint),
+            displayState,
+            () => speakHint(displayState.currentQuest.hint),
           ),
-          if (state.lastAnswerCorrect != null)
+          if (state is KidsLoaded && state.lastAnswerCorrect != null)
             Positioned(
               bottom: 0,
               left: 0,
