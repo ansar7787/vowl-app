@@ -88,6 +88,7 @@ class KidsAlphabetLayout extends StatelessWidget {
       builder: (context, setState) {
         return DragTarget<String>(
           onAcceptWithDetails: (details) {
+            if (state.lastAnswerCorrect != null) return;
             final text = details.data;
             final isCorrect = (text == quest.correctAnswer);
             context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
@@ -115,7 +116,7 @@ class KidsAlphabetLayout extends StatelessWidget {
                 ],
               ),
               child: InkWell(
-                onTap: () {
+                onTap: state.lastAnswerCorrect != null ? null : () {
                   // Play the instruction sound
                   if (quest.instruction != null) {
                     di.sl<KidsTTSService>().speak(quest.instruction!);
@@ -276,6 +277,10 @@ class KidsAlphabetLayout extends StatelessWidget {
           ),
         ),
       );
+
+    if (state.lastAnswerCorrect != null) {
+      return blockWidget;
+    }
 
     return Draggable<String>(
       data: text,
