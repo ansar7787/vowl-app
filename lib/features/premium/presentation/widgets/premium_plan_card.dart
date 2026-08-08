@@ -150,33 +150,39 @@ class PremiumPlanCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                AutoSizeText(
-                                  currencyFormat.format(plan.oldPrice),
-                                  maxLines: 1,
-                                  minFontSize: 8,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    color: isDark
-                                        ? Colors.white30
-                                        : Colors.black38,
-                                    fontSize: 14.sp,
-                                    decoration: TextDecoration.lineThrough,
-                                    decorationColor: isDark
-                                        ? Colors.white54
-                                        : Colors.black54,
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    currencyFormat.format(plan.oldPrice),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: isDark
+                                          ? Colors.white30
+                                          : Colors.black38,
+                                      fontSize: 14.sp,
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationColor: isDark
+                                          ? Colors.white54
+                                          : Colors.black54,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: 2.h),
-                                AutoSizeText(
-                                  currencyFormat.format(plan.price),
-                                  maxLines: 1,
-                                  minFontSize: 12,
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    color: isDark ? Colors.white : Colors.black,
-                                    fontSize: 24.sp,
-                                    fontWeight: FontWeight.w900,
-                                    letterSpacing: -0.5,
+                                FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  alignment: Alignment.centerRight,
+                                  child: Text(
+                                    currencyFormat.format(plan.price),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      color: isDark
+                                          ? Colors.white
+                                          : Colors.black,
+                                      fontSize: 24.sp,
+                                      fontWeight: FontWeight.w900,
+                                      letterSpacing: -0.5,
+                                    ),
                                   ),
                                 ),
                               ],
