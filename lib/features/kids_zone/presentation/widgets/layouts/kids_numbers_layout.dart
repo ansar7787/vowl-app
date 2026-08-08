@@ -155,55 +155,28 @@ class KidsNumbersLayout extends StatelessWidget {
                 Positioned(top: 80.r, right: 60.r, child: _buildStar(8)),
 
                 // The Question ALWAYS visible (No progressive disclosure loophole)
-                Column(
-                  key: const ValueKey('revealed_question'),
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (quest.emoji != null && quest.question != quest.emoji)
-                      Text(
-                        quest.emoji!,
-                        style: TextStyle(fontSize: 48.sp),
-                      ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: AutoSizeText(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 60.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          shadows: const [
-                            Shadow(
-                              color: Color(0xFF38BDF8),
-                              blurRadius: 15,
-                            ),
-                          ],
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        minFontSize: 20,
-                      ),
-                    ),
-                    if (quest.funFact != null) ...[
-                      SizedBox(height: 4.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: AutoSizeText(
-                          quest.funFact!,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF94A3B8), // Silver
+                Padding(
+                  padding: EdgeInsets.all(24.r),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: AutoSizeText(
+                      quest.question ?? "?",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 80.sp, // Made larger since it's the only thing in the window
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        shadows: const [
+                          Shadow(
+                            color: Color(0xFF38BDF8),
+                            blurRadius: 15,
                           ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          minFontSize: 8,
-                        ),
+                        ],
                       ),
-                    ],
-                  ],
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                    ),
+                  ),
                 ),
               ],
             ),
