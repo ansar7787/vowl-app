@@ -46,7 +46,9 @@ class _GameConfettiState extends State<GameConfetti> {
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) _controller.play();
+      Future.delayed(const Duration(milliseconds: 300), () {
+        if (mounted) _controller.play();
+      });
     });
   }
 

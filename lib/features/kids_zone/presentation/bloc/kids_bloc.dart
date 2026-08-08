@@ -374,19 +374,21 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             ),
           );
 
-          // Fire and forget database writes in the background
-          Future.wait([
-            updateUserRewards(
-              UpdateUserRewardsParams(
-                gameType: s.gameType,
-                level: s.level,
-                xpIncrease: 3,
-                coinIncrease: 10,
-                starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
+          // Delay heavy database writes so the UI thread can flawlessly animate the dialog
+          Future.delayed(const Duration(milliseconds: 500), () {
+            Future.wait([
+              updateUserRewards(
+                UpdateUserRewardsParams(
+                  gameType: s.gameType,
+                  level: s.level,
+                  xpIncrease: 3,
+                  coinIncrease: 10,
+                  starsEarned: s.livesRemaining > 0 ? s.livesRemaining : 1,
+                ),
               ),
-            ),
-            if (newSticker != null) awardKidsSticker(newSticker),
-          ]);
+              if (newSticker != null) awardKidsSticker(newSticker),
+            ]);
+          });
         } else {
           // Wrong answer on the very last quest
           emit(
