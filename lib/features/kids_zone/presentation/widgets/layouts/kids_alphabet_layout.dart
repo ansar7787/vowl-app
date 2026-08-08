@@ -90,7 +90,6 @@ class KidsAlphabetLayout extends StatelessWidget {
           onAcceptWithDetails: (details) {
             final text = details.data;
             final isCorrect = (text == quest.correctAnswer);
-            di.sl<KidsTTSService>().speak(text);
             context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
           },
           builder: (context, candidateData, rejectedData) {
