@@ -43,7 +43,9 @@ class KidsAlphabetLayout extends StatelessWidget {
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
-                color: Colors.white.withValues(alpha: 0.8),
+                color: Theme.of(context).brightness == Brightness.dark 
+                    ? Colors.white.withValues(alpha: 0.8) 
+                    : Colors.black.withValues(alpha: 0.6),
               ),
             ),
             SizedBox(height: 12.h),
@@ -195,10 +197,7 @@ class KidsAlphabetLayout extends StatelessWidget {
                                 child: AutoSizeText.rich(
                                   TextSpan(
                                     children: [
-                                      TextSpan(
-                                        text: _getMaskedWord(quest.wordExample!, quest.correctAnswer),
-                                        style: const TextStyle(color: Color(0xFFA7F3D0)), // Chalk mint for the word
-                                      ),
+                                      ..._buildHighlightedWordSpans(quest.wordExample!, quest.correctAnswer),
                                       if (quest.phonetic != null)
                                         TextSpan(
                                           text: ' (/${quest.phonetic}/)',
@@ -302,13 +301,27 @@ class KidsAlphabetLayout extends StatelessWidget {
     );
   }
 
-  /// Helper to mask the first letter of the word if it matches the correct answer
-  String _getMaskedWord(String word, String? correctAnswer) {
-    if (correctAnswer == null || correctAnswer.isEmpty) return word;
-    if (word.toLowerCase().startsWith(correctAnswer.toLowerCase())) {
-      return "_${word.substring(correctAnswer.length)}"; // e.g., Giraffe -> _iraffe
+  /// Helper to highlight the target letter in the word to teach phonetic connection
+  List<TextSpan> _buildHighlightedWordSpans(String word, String? correctAnswer) {
+    if (correctAnswer == null || correctAnswer.isEmpty) {
+      return [TextSpan(text: word, style: const TextStyle(color: Color(0xFFA7F3D0)))];
     }
-    return word;
+    
+    if (word.toLowerCase().startsWith(correctAnswer.toLowerCase())) {
+      final firstPart = word.substring(0, correctAnswer.length);
+      final restPart = word.substring(correctAnswer.length);
+      return [
+        TextSpan(
+          text: firstPart,
+          style: const TextStyle(color: Color(0xFFFCD34D), fontWeight: FontWeight.w900), // Highlight Yellow
+        ),
+        TextSpan(
+          text: restPart,
+          style: const TextStyle(color: Color(0xFFA7F3D0)), // Chalk mint
+        ),
+      ];
+    }
+    return [TextSpan(text: word, style: const TextStyle(color: Color(0xFFA7F3D0)))];
   }
 
   /// Helper to reduce DRY AutoSizeText boilerplate on the chalkboard
