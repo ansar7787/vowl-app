@@ -1495,14 +1495,14 @@ class GameInstructionService {
           title: "Number Fun",
           icon: Icons.numbers_rounded,
           objective:
-              "COUNTING TIME: Tap the rocket window to hear the number, then drag the correct planet to the rocket!",
+              "COUNTING TIME: Look through the rocket window to see the puzzle, then drag the correct planet to the rocket!",
           rules: [
-            "Tap to listen closely",
+            "Look at the rocket window",
             "Find the matching planet",
             "Drag it to the rocket",
           ],
           actionText: "Start Counting",
-          tip: "PRO TIP: Count out loud along with the voice! 🚀",
+          tip: "PRO TIP: Count out loud or tap the rocket window to hear the number! 🚀",
         );
       case 'colors':
         return const GameBriefing(
