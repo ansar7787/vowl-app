@@ -107,38 +107,40 @@ class PremiumPlanCard extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  AutoSizeText(
-                                    plan.name.toUpperCase(),
-                                    maxLines: 1,
-                                    minFontSize: 10,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark
-                                          ? Colors.white
-                                          : Colors.black87,
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w900,
-                                      letterSpacing: 1,
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      plan.name.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isDark
+                                            ? Colors.white
+                                            : Colors.black87,
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 1,
+                                      ),
                                     ),
                                   ),
                                   SizedBox(height: 4.h),
-                                  AutoSizeText(
-                                    context.tr(
-                                      'premium.days_of_elite_access',
-                                      fallback: 'Days of Elite Access',
-                                      args: ['${plan.days}'],
-                                    ),
-                                    maxLines: 1,
-                                    minFontSize: 8,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark
-                                          ? Colors.white60
-                                          : Colors.black54,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w500,
+                                  FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      context.tr(
+                                        'premium.days_of_elite_access',
+                                        fallback: 'Days of Elite Access',
+                                        args: ['${plan.days}'],
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isDark
+                                            ? Colors.white60
+                                            : Colors.black54,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -220,17 +222,17 @@ class PremiumPlanCard extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    child: AutoSizeText(
-                                      plan.tag,
-                                      maxLines: 1,
-                                      minFontSize: 6,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        color: Colors.white,
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.bold,
-                                        letterSpacing: 1,
+                                    child: FittedBox(
+                                      fit: BoxFit.scaleDown,
+                                      child: Text(
+                                        plan.tag,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          color: Colors.white,
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                          letterSpacing: 1,
+                                        ),
                                       ),
                                     ),
                                   )
