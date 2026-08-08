@@ -217,39 +217,37 @@ class ModernGameDialog extends StatelessWidget {
                             ),
                             child: Center(
                               child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      isExitConfirmation
-                                          ? Icons.logout_rounded
-                                          : Icons.play_circle_fill_rounded,
-                                      color: _adButtonContentColor,
-                                      size: 20.r,
-                                    ),
-                                    SizedBox(width: 8.w),
-                                    Flexible(
-                                      child: AutoSizeText(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        isExitConfirmation
+                                            ? Icons.logout_rounded
+                                            : Icons.play_circle_fill_rounded,
+                                        color: _adButtonContentColor,
+                                        size: 20.r,
+                                      ),
+                                      SizedBox(width: 8.w),
+                                      Text(
                                         adButtonText ??
                                             context.tr(
                                               'games.triple_coins_button',
-                                              fallback: 'TRIPLE REWARDS (3X)',
+                                              fallback: 'TRIPLE REWARDS',
                                             ),
-                                        maxLines: 1,
-                                        minFontSize: 8,
-                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
-                                          fontSize: 14.sp,
+                                          fontSize: 16.sp,
                                           fontWeight: FontWeight.w900,
                                           letterSpacing: 0.5,
                                           color: _adButtonContentColor,
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

@@ -158,31 +158,30 @@ class GameDialogHelper {
                     final isPrem =
                         context.read<AuthBloc>().state.user?.isPremium ?? false;
 
+                    bool rewardEarned = false;
                     adService.showRewardedAd(
                       context: context,
                       isPremium: isPrem,
                       onUserEarnedReward: (_) {
-                        if (!context.mounted) return;
-                        context.read<EconomyBloc>().add(
-                          EconomyTripleUpRewardsRequested(0, coins * 2),
-                        );
-                        showPremiumSnackBar(
-                          context,
-                          context.tr(
-                            'games.coins_tripled',
-                            fallback: 'Coins Tripled!',
-                          ),
-                          icon: Icons.auto_awesome_rounded,
-                          color: const Color(0xFF10B981),
-                        );
-                        if (context.mounted) {
-                          Navigator.of(context).pop(popResult);
-                        }
+                        rewardEarned = true;
                       },
                       onDismissed: () {
-                        if (context.mounted) {
-                          Navigator.of(context).pop(popResult);
+                        if (!context.mounted) return;
+                        if (rewardEarned) {
+                          context.read<EconomyBloc>().add(
+                            EconomyTripleUpRewardsRequested(0, coins * 2),
+                          );
+                          showPremiumSnackBar(
+                            context,
+                            context.tr(
+                              'games.coins_tripled',
+                              fallback: 'Coins Tripled!',
+                            ),
+                            icon: Icons.auto_awesome_rounded,
+                            color: const Color(0xFF10B981),
+                          );
                         }
+                        Navigator.of(context).pop(popResult);
                       },
                     );
                   }
@@ -271,14 +270,21 @@ class GameDialogHelper {
                   return;
                 }
 
+                bool rewardEarned = false;
                 adService.showRewardedAd(
                   context: context,
                   isPremium: false,
                   onUserEarnedReward: (_) {
-                    onRestore();
-                    if (dialogCtx.mounted) Navigator.of(dialogCtx).pop();
+                    rewardEarned = true;
                   },
-                  onDismissed: () {},
+                  onDismissed: () {
+                    if (rewardEarned) {
+                      onRestore();
+                      if (dialogCtx.mounted) {
+                        Navigator.of(dialogCtx).pop();
+                      }
+                    }
+                  },
                 );
               }
             : null,
