@@ -1495,14 +1495,14 @@ class GameInstructionService {
           title: "Number Fun",
           icon: Icons.numbers_rounded,
           objective:
-              "COUNTING TIME: Learn to count and recognize numbers 1 to 100!",
+              "COUNTING TIME: Tap the rocket window to hear the number, then drag the correct planet to the rocket!",
           rules: [
-            "Count the objects",
-            "Pick the right number",
-            "Say it out loud",
+            "Tap to listen closely",
+            "Find the matching planet",
+            "Drag it to the rocket",
           ],
           actionText: "Start Counting",
-          tip: "Use your fingers to count along with the game! 🖐️",
+          tip: "PRO TIP: Count out loud along with the voice! 🚀",
         );
       case 'colors':
         return const GameBriefing(
