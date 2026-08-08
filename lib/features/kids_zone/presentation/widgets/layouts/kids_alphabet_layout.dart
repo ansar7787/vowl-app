@@ -6,6 +6,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsAlphabetLayout extends StatelessWidget {
   final int level;
@@ -35,6 +36,18 @@ class KidsAlphabetLayout extends StatelessWidget {
             SizedBox(height: 120.h), // Mascot space
             // The Chalkboard for the Question
             Expanded(flex: 5, child: Center(child: _buildChalkboard(context, state, quest))),
+            
+            Text(
+              context.tr('games.kids_alphabet_drag', fallback: 'Drag the block to the chalkboard! 👆'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Colors.white.withValues(alpha: 0.8),
+              ),
+            ),
+            SizedBox(height: 12.h),
+
             // The Wooden Blocks for Options
             Flexible(
               flex: 5,
@@ -158,7 +171,7 @@ class KidsAlphabetLayout extends StatelessWidget {
                                       ],
                                     ),
                                     child: Text(
-                                      "TAP ME!",
+                                      context.tr('games.kids_tap_me', fallback: 'TAP ME!'),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,

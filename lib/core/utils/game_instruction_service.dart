@@ -1466,14 +1466,14 @@ class GameInstructionService {
           title: "Alphabet Adventure",
           icon: Icons.abc_rounded,
           objective:
-              "LEARN LETTERS: Match the letters to their sounds and shapes!",
+              "LEARN LETTERS: Tap the mystery box to hear the sound, then drag the correct letter to the chalkboard!",
           rules: [
-            "Follow the ABCs",
-            "Find the matching pair",
-            "Listen to the letter",
+            "Tap to listen closely",
+            "Find the matching block",
+            "Drag it to the board",
           ],
           actionText: "Play ABCs",
-          tip: "Sing the ABC song to help you remember the order! 🎵",
+          tip: "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
         );
       case 'animals':
         return const GameBriefing(
