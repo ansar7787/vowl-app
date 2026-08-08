@@ -344,9 +344,11 @@ class KidsGameDialogs {
       context: context,
       barrierDismissible: false,
       builder: (context) => BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-        child: Center(
-          child: Padding(
+        filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4), // Reduced blur to fix GPU lag
+        child: Container(
+          color: Colors.black.withValues(alpha: 0.4), // Darken layer
+          child: Center(
+            child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: KidsDialogContainer(
               primaryColor: const Color(0xFF6366F1), // Moody purple/indigo
@@ -439,6 +441,7 @@ class KidsGameDialogs {
               ),
             ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
           ),
+        ),
         ),
       ),
     );
