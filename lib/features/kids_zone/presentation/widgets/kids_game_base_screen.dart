@@ -208,7 +208,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                           children: [
                             _buildBody(context, state),
                             if (state is KidsLoaded)
-                              _buildDynamicMascot(context, state),
+                              _buildDynamicMascot(context, state)
+                            else if ((state is KidsGameComplete || state is KidsGameOver) && _lastLoadedState != null)
+                              _buildDynamicMascot(context, _lastLoadedState!),
                           ],
                         ),
                       ),
