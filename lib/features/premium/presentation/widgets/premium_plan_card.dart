@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/premium/domain/entities/subscription_plan.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class PremiumPlanCard extends StatelessWidget {
   final SubscriptionPlan plan;

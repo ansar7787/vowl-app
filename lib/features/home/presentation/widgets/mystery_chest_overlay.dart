@@ -208,67 +208,59 @@ class MysteryChestOverlay extends StatelessWidget {
 
                           // The Chest Image
                           ExcludeSemantics(
-                            child: AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 600),
-                              switchInCurve: Curves.elasticOut,
-                              switchOutCurve: Curves.easeInBack,
-                              transitionBuilder: (child, animation) {
-                                // A pure scale pop, no ghostly crossfades!
-                                return ScaleTransition(
-                                  scale: animation,
-                                  child: child,
-                                );
-                              },
-                              child: isOpened
-                                  ? Image.asset(
-                                      'assets/images/chest_3d.webp',
-                                      key: const ValueKey('opened_chest'),
-                                      width: 280.r,
-                                      height: 280.r,
-                                      semanticLabel: context.tr(
-                                        'home.chest_daily_mystery',
-                                        fallback: 'Daily Mystery',
-                                      ),
-                                      errorBuilder:
-                                          (context, error, stackTrace) => Icon(
-                                            Icons.card_giftcard_rounded,
-                                            size: 150.r,
-                                            color: Colors.amber,
-                                          ),
-                                    )
-                                  : Image.asset(
-                                          'assets/images/closed_chest_3d.webp',
-                                          key: const ValueKey('closed_chest'),
-                                          width: 240.r,
-                                          height: 240.r,
-                                          semanticLabel: context.tr(
-                                            'home.chest_daily_mystery',
-                                            fallback: 'Daily Mystery',
-                                          ),
-                                          errorBuilder:
-                                              (context, error, stackTrace) =>
-                                                  Icon(
-                                                    Icons.card_giftcard_rounded,
-                                                    size: 150.r,
-                                                    color: Colors.amber,
-                                                  ),
-                                        )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .scale(
-                                          begin: const Offset(1, 1),
-                                          end: const Offset(1.05, 1.05),
-                                          duration: 1.seconds,
-                                          curve: Curves.easeInOut,
-                                        )
-                                        .shake(
-                                          hz: 2,
-                                          offset: const Offset(2, 0),
-                                          duration: 2.seconds,
+                            child: isOpened
+                                ? Image.asset(
+                                    'assets/images/chest_3d.webp',
+                                    key: const ValueKey('opened_chest'),
+                                    width: 280.r,
+                                    height: 280.r,
+                                    semanticLabel: context.tr(
+                                      'home.chest_daily_mystery',
+                                      fallback: 'Daily Mystery',
+                                    ),
+                                    errorBuilder:
+                                        (context, error, stackTrace) => Icon(
+                                          Icons.card_giftcard_rounded,
+                                          size: 150.r,
+                                          color: Colors.amber,
                                         ),
-                            ),
+                                  ).animate().scale(
+                                    begin: const Offset(0.3, 0.3),
+                                    end: const Offset(1.0, 1.0),
+                                    duration: 800.ms,
+                                    curve: Curves.elasticOut,
+                                  )
+                                : Image.asset(
+                                        'assets/images/closed_chest_3d.webp',
+                                        key: const ValueKey('closed_chest'),
+                                        width: 240.r,
+                                        height: 240.r,
+                                        semanticLabel: context.tr(
+                                          'home.chest_daily_mystery',
+                                          fallback: 'Daily Mystery',
+                                        ),
+                                        errorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Icon(
+                                                  Icons.card_giftcard_rounded,
+                                                  size: 150.r,
+                                                  color: Colors.amber,
+                                                ),
+                                      )
+                                      .animate(
+                                        onPlay: (c) => c.repeat(reverse: true),
+                                      )
+                                      .scale(
+                                        begin: const Offset(1, 1),
+                                        end: const Offset(1.05, 1.05),
+                                        duration: 1.seconds,
+                                        curve: Curves.easeInOut,
+                                      )
+                                      .shake(
+                                        hz: 2,
+                                        offset: const Offset(2, 0),
+                                        duration: 2.seconds,
+                                      ),
                           ),
 
                           // AAA Magic Flash Explosion
