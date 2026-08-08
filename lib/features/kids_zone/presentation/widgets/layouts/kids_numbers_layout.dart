@@ -77,6 +77,7 @@ class KidsNumbersLayout extends StatelessWidget {
                           state,
                           option,
                           quest.correctAnswer == option,
+                          index,
                         ),
                       ),
                     );
@@ -225,6 +226,7 @@ class KidsNumbersLayout extends StatelessWidget {
     KidsLoaded state,
     String text,
     bool isCorrect,
+    int index,
   ) {
     // A vibrant gas giant planet style
     final baseColor = const Color(0xFFF59E0B); // Amber planet
@@ -275,7 +277,10 @@ class KidsNumbersLayout extends StatelessWidget {
       ),
       childWhenDragging: Opacity(opacity: 0.3, child: planetWidget),
       child: planetWidget
-          .animate(onPlay: (controller) => controller.repeat(reverse: true))
+          .animate(
+            onPlay: (controller) => controller.repeat(reverse: true),
+            delay: Duration(milliseconds: 300 * index), // Staggered start
+          )
           .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut),
     );
   }
