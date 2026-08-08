@@ -27,7 +27,10 @@ class KidsGameDialogs {
     required Color primaryColor,
   }) {
     final adService = di.sl<AdService>();
-    final user = context.read<AuthBloc>().state.user;
+    final authBloc = context.read<AuthBloc>();
+    final kidsBloc = context.read<KidsBloc>();
+    final navigator = Navigator.of(context);
+    final user = authBloc.state.user;
     final isPremium = user?.isPremium ?? false;
     bool rewardsDoubled = false;
 
@@ -143,7 +146,7 @@ class KidsGameDialogs {
                                   isPremium: isPremium,
                                   childSafe: true,
                                   onUserEarnedReward: (_) {
-                                    context.read<KidsBloc>().add(ClaimDoubleKidsRewards((context.read<KidsBloc>().state as KidsLoaded).gameType, (context.read<KidsBloc>().state as KidsLoaded).level));
+                                    kidsBloc.add(ClaimDoubleKidsRewards((kidsBloc.state as KidsLoaded).gameType, (kidsBloc.state as KidsLoaded).level));
                                     setDialogState(() => rewardsDoubled = true);
                                   },
                                   onDismissed: () {},
@@ -181,9 +184,9 @@ class KidsGameDialogs {
                             color: primaryColor,
                             onTap: () {
                               adService.recordLevelCompletion();
-                              context.read<AuthBloc>().add(const AuthRefreshUser());
-                              context.pop();
-                              context.pop();
+                              authBloc.add(const AuthRefreshUser());
+                              navigator.pop();
+                              navigator.pop();
                             },
                           ),
                         ],
@@ -205,6 +208,8 @@ class KidsGameDialogs {
     required Color primaryColor,
   }) {
     final adService = di.sl<AdService>();
+    final kidsBloc = context.read<KidsBloc>();
+    final navigator = Navigator.of(context);
     final user = context.read<AuthBloc>().state.user;
     final isPremium = user?.isPremium ?? false;
 
@@ -254,8 +259,8 @@ class KidsGameDialogs {
                         isPremium: isPremium,
                         childSafe: true,
                         onUserEarnedReward: (_) {
-                          context.read<KidsBloc>().add(RestoreKidsLife());
-                          Navigator.pop(context);
+                          kidsBloc.add(RestoreKidsLife());
+                          navigator.pop();
                         },
                         onDismissed: () {},
                       );
@@ -268,8 +273,8 @@ class KidsGameDialogs {
                     text: context.tr('games.kids_exit_to_map', fallback: 'Exit to Map'),
                     color: Colors.grey.shade600,
                     onTap: () {
-                      context.pop();
-                      context.pop();
+                      navigator.pop();
+                      navigator.pop();
                     },
                   ),
                 ],
