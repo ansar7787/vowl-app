@@ -37,7 +37,10 @@ class KidsTransportLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Traffic Light / Road Sign
-            Expanded(flex: 5, child: Center(child: _buildRoadSign(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildRoadSign(context, state, quest)),
+            ),
             // The License Plates (Options)
             Flexible(
               flex: 5,
@@ -124,10 +127,12 @@ class KidsTransportLayout extends StatelessWidget {
               width: 280.w,
               height: 180.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFF22C55E) : const Color(0xFF166534), // Highway Green
+                color: isHovering
+                    ? const Color(0xFF22C55E)
+                    : const Color(0xFF166534), // Highway Green
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
-                  color: isHovering ? Colors.yellow : Colors.white, 
+                  color: isHovering ? Colors.yellow : Colors.white,
                   width: 4.r,
                 ),
                 boxShadow: [
@@ -143,7 +148,10 @@ class KidsTransportLayout extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Bigger emoji, hidden question
+                      Text(
+                        quest.emoji!,
+                        style: TextStyle(fontSize: 64.sp),
+                      ), // Bigger emoji, hidden question
                     if (quest.funFact != null) ...[
                       SizedBox(height: 8.h),
                       Padding(
@@ -197,48 +205,48 @@ class KidsTransportLayout extends StatelessWidget {
     final plateColor = colors[index % colors.length];
 
     final plateWidget = Container(
-        height: 60.h,
-        decoration: BoxDecoration(
-          color: plateColor,
-          borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: const Color(0xFF475569), width: 3),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            // Screw holes
-            Positioned(top: 4.h, left: 6.w, child: _buildScrew()),
-            Positioned(top: 4.h, right: 6.w, child: _buildScrew()),
-            Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
-            Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
-
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: AutoSizeText(
-                    text.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily:
-                          'Outfit', // A rigid font looks more like a license plate
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                      letterSpacing: 1.5,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    minFontSize: 8,
-                  ),
-                ),
-              ),
-            ],
+      height: 60.h,
+      decoration: BoxDecoration(
+        color: plateColor,
+        borderRadius: BorderRadius.circular(8.r),
+        border: Border.all(color: const Color(0xFF475569), width: 3),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            offset: const Offset(0, 4),
           ),
-        );
+        ],
+      ),
+      child: Stack(
+        children: [
+          // Screw holes
+          Positioned(top: 4.h, left: 6.w, child: _buildScrew()),
+          Positioned(top: 4.h, right: 6.w, child: _buildScrew()),
+          Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
+          Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
+
+          Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: AutoSizeText(
+                text.toUpperCase(),
+                style: TextStyle(
+                  fontFamily:
+                      'Outfit', // A rigid font looks more like a license plate
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF0F172A),
+                  letterSpacing: 1.5,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -246,16 +254,10 @@ class KidsTransportLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: plateWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: plateWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: plateWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: plateWidget),
       child: plateWidget,
     );
   }

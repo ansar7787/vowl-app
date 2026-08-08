@@ -37,7 +37,10 @@ class KidsPhonicsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Studio Monitor
-            Expanded(flex: 5, child: Center(child: _buildStudioMonitor(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildStudioMonitor(context, state, quest)),
+            ),
             // Vinyl Records
             Flexible(
               flex: 5,
@@ -98,7 +101,11 @@ class KidsPhonicsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildStudioMonitor(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildStudioMonitor(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -115,7 +122,9 @@ class KidsPhonicsLayout extends StatelessWidget {
             color: const Color(0xFF09090B), // Deep black screen
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF6366F1) : const Color(0xFF52525B),
+              color: isHovering
+                  ? const Color(0xFF6366F1)
+                  : const Color(0xFF52525B),
               width: isHovering ? 14.r : 12.r,
             ), // Silver monitor frame
             boxShadow: [
@@ -145,7 +154,8 @@ class KidsPhonicsLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?", // Use instruction, hide emoji/question
+                        quest.instruction ??
+                            "?", // Use instruction, hide emoji/question
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
@@ -153,7 +163,9 @@ class KidsPhonicsLayout extends StatelessWidget {
                           color: Colors.white,
                           shadows: [
                             Shadow(
-                              color: isHovering ? const Color(0xFF818CF8) : const Color(0xFF22C55E),
+                              color: isHovering
+                                  ? const Color(0xFF818CF8)
+                                  : const Color(0xFF22C55E),
                               blurRadius: 15,
                             ), // Neon glow
                           ],
@@ -173,7 +185,9 @@ class KidsPhonicsLayout extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFF86EFAC), // Light neon green text
+                            color: const Color(
+                              0xFF86EFAC,
+                            ), // Light neon green text
                           ),
                           textAlign: TextAlign.center,
                           maxLines: 2,
@@ -212,18 +226,18 @@ class KidsPhonicsLayout extends StatelessWidget {
     final baseHeight = heightMap[index % heightMap.length];
 
     return Container(
-          width: 8.w,
-          height: baseHeight.h,
-          decoration: BoxDecoration(
-            color: const Color(
-              0xFF22C55E,
-            ).withValues(alpha: 0.3), // Faint green EQ bars
-            borderRadius: BorderRadius.circular(4.r),
-          ),
-          // Remove flutter_animate usage for EQ bars to keep it simpler without the package,
-          // or we can use a TweenAnimationBuilder. For simplicity, we just leave it static or use Tween.
-          // Since flutter_animate was imported previously but we replaced it, let's just make it static.
-        );
+      width: 8.w,
+      height: baseHeight.h,
+      decoration: BoxDecoration(
+        color: const Color(
+          0xFF22C55E,
+        ).withValues(alpha: 0.3), // Faint green EQ bars
+        borderRadius: BorderRadius.circular(4.r),
+      ),
+      // Remove flutter_animate usage for EQ bars to keep it simpler without the package,
+      // or we can use a TweenAnimationBuilder. For simplicity, we just leave it static or use Tween.
+      // Since flutter_animate was imported previously but we replaced it, let's just make it static.
+    );
   }
 
   Widget _buildVinylRecordOption(
@@ -242,88 +256,88 @@ class KidsPhonicsLayout extends StatelessWidget {
     final labelColor = colors[index % colors.length];
 
     final recordWidget = Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Vinyl Record (Black disc)
-          Container(
-                height: 90.r,
-                width: 90.r,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF18181B),
-                  shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFF3F3F46), width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Grooves
-                    Container(
-                      width: 70.r,
-                      height: 70.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xFF27272A)),
-                      ),
-                    ),
-                    Container(
-                      width: 50.r,
-                      height: 50.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xFF27272A)),
-                      ),
-                    ),
-
-                    // Center Label
-                    Container(
-                      width: 35.r,
-                      height: 35.r,
-                      decoration: BoxDecoration(
-                        color: labelColor,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Container(
-                          width: 5.r,
-                          height: 5.r,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ), // Hole
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+      alignment: Alignment.center,
+      children: [
+        // The Vinyl Record (Black disc)
+        Container(
+          height: 90.r,
+          width: 90.r,
+          decoration: BoxDecoration(
+            color: const Color(0xFF18181B),
+            shape: BoxShape.circle,
+            border: Border.all(color: const Color(0xFF3F3F46), width: 1),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                offset: const Offset(0, 4),
               ),
-          // The overlay with text (does not spin)
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(4.r),
-              border: Border.all(color: labelColor, width: 2),
-            ),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF0F172A),
-              ),
-              maxLines: 1,
-              minFontSize: 8,
-            ),
+            ],
           ),
-        ],
-      );
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // Grooves
+              Container(
+                width: 70.r,
+                height: 70.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color(0xFF27272A)),
+                ),
+              ),
+              Container(
+                width: 50.r,
+                height: 50.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: const Color(0xFF27272A)),
+                ),
+              ),
+
+              // Center Label
+              Container(
+                width: 35.r,
+                height: 35.r,
+                decoration: BoxDecoration(
+                  color: labelColor,
+                  shape: BoxShape.circle,
+                ),
+                child: Center(
+                  child: Container(
+                    width: 5.r,
+                    height: 5.r,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ), // Hole
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        // The overlay with text (does not spin)
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(4.r),
+            border: Border.all(color: labelColor, width: 2),
+          ),
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF0F172A),
+            ),
+            maxLines: 1,
+            minFontSize: 8,
+          ),
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -331,16 +345,10 @@ class KidsPhonicsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: recordWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: recordWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: recordWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: recordWidget),
       child: recordWidget,
     );
   }

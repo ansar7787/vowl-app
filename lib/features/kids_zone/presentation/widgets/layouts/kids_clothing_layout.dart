@@ -37,7 +37,10 @@ class KidsClothingLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Open Closet
-            Expanded(flex: 5, child: Center(child: _buildClosetBoard(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildClosetBoard(context, state, quest)),
+            ),
             // The Clothing Hangers (Options)
             Flexible(
               flex: 5,
@@ -100,7 +103,11 @@ class KidsClothingLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClosetBoard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildClosetBoard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -114,10 +121,14 @@ class KidsClothingLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFFFDE68A) : const Color(0xFFFEF3C7), // Light wood inside closet
+            color: isHovering
+                ? const Color(0xFFFDE68A)
+                : const Color(0xFFFEF3C7), // Light wood inside closet
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              color: isHovering
+                  ? const Color(0xFFD97706)
+                  : const Color(0xFFB45309),
               width: 12.r,
             ), // Dark wood frame
             boxShadow: [
@@ -133,29 +144,34 @@ class KidsClothingLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hidden question string
+                  Text(
+                    quest.emoji!,
+                    style: TextStyle(fontSize: 80.sp),
+                  ), // Enlarge emoji, hidden question string
                 if (quest.funFact != null) ...[
                   SizedBox(height: 8.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: AutoSizeText(
-                  quest.funFact!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF92400E), // Medium brown fact text
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(
+                          0xFF92400E,
+                        ), // Medium brown fact text
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      minFontSize: 10,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
+                ],
+              ],
+            ),
+          ),
+        );
       },
     );
   }
@@ -176,64 +192,64 @@ class KidsClothingLayout extends StatelessWidget {
     final tagColor = colors[index % colors.length];
 
     final hangerWidget = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Metal Hanger Hook
-          Container(
-            width: 20.w,
-            height: 15.h,
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
-                left: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
-                right: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Metal Hanger Hook
+        Container(
+          width: 20.w,
+          height: 15.h,
+          decoration: BoxDecoration(
+            border: Border(
+              top: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+              left: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+              right: BorderSide(color: const Color(0xFF94A3B8), width: 3.r),
+            ),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
+          ),
+        ),
+        // Wooden Hanger Base
+        Container(
+          height: 10.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: const Color(0xFFD97706),
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+        ),
+        // Clothing Tag hanging from it
+        Container(
+          height: 60.h,
+          margin: EdgeInsets.symmetric(horizontal: 10.w),
+          decoration: BoxDecoration(
+            color: tagColor,
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(8.r)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.15),
+                offset: const Offset(0, 4),
               ),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
-            ),
+            ],
           ),
-          // Wooden Hanger Base
-          Container(
-            height: 10.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color(0xFFD97706),
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-          ),
-          // Clothing Tag hanging from it
-          Container(
-            height: 60.h,
-            margin: EdgeInsets.symmetric(horizontal: 10.w),
-            decoration: BoxDecoration(
-              color: tagColor,
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(8.r)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.15),
-                  offset: const Offset(0, 4),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: AutoSizeText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF0F172A),
                 ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: AutoSizeText(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF0F172A),
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 8,
-                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
               ),
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -241,16 +257,10 @@ class KidsClothingLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: hangerWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: hangerWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: hangerWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: hangerWidget),
       child: hangerWidget,
     );
   }

@@ -1473,7 +1473,8 @@ class GameInstructionService {
             "Drag it to the board",
           ],
           actionText: "Play ABCs",
-          tip: "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
+          tip:
+              "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
         );
       case 'animals':
         return const GameBriefing(
@@ -1667,7 +1668,8 @@ class GameInstructionService {
               "MAGIC PEN: Learn how to write letters perfectly using your magic finger!",
           rules: ["Trace the letter", "Follow the arrows", "Write it yourself"],
           actionText: "Start Writing",
-          tip: "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
+          tip:
+              "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
         );
       case 'routine':
         return const GameBriefing(

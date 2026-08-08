@@ -31,10 +31,11 @@ class AdventureXPScreen extends StatelessWidget {
         if (state.message != null) {
           final rawMessage = state.message!;
           final lowerMsg = rawMessage.toLowerCase();
-          final isError = state.lastPurchaseSuccess == false ||
-              lowerMsg.contains('not enough') || 
-              lowerMsg.contains('failed') || 
-              lowerMsg.contains('insufficient') || 
+          final isError =
+              state.lastPurchaseSuccess == false ||
+              lowerMsg.contains('not enough') ||
+              lowerMsg.contains('failed') ||
+              lowerMsg.contains('insufficient') ||
               lowerMsg.contains('lacking');
 
           String displayMessage;
@@ -73,7 +74,9 @@ class AdventureXPScreen extends StatelessWidget {
           );
 
           // Clear the message so the listener can fire again for subsequent clicks
-          context.read<ProgressionBloc>().add(const ProgressionClearMessageRequested());
+          context.read<ProgressionBloc>().add(
+            const ProgressionClearMessageRequested(),
+          );
         }
       },
       child: Builder(
@@ -428,8 +431,8 @@ class AdventureXPScreen extends StatelessWidget {
       }
 
       final maxLevels = type.subtypes.length * 200;
-      final actualProg = maxLevels > 0 
-          ? ((levelsCompleted / maxLevels) * 100).toInt().clamp(0, 100) 
+      final actualProg = maxLevels > 0
+          ? ((levelsCompleted / maxLevels) * 100).toInt().clamp(0, 100)
           : 0;
 
       IconData icon;
@@ -485,10 +488,13 @@ class AdventureXPScreen extends StatelessWidget {
 
     // Add Kids category
     final kidsMaxLevels = 12 * 200;
-    final kidsProg = kidsMaxLevels > 0 
-        ? ((user.kidsTotalLevelsCompleted / kidsMaxLevels) * 100).toInt().clamp(0, 100) 
+    final kidsProg = kidsMaxLevels > 0
+        ? ((user.kidsTotalLevelsCompleted / kidsMaxLevels) * 100).toInt().clamp(
+            0,
+            100,
+          )
         : 0;
-    
+
     categories.add({
       'id': 'kids',
       'name': 'Kids',
@@ -525,7 +531,7 @@ class AdventureXPScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final cat = categories[index];
             final prog = cat['progress'] as int;
-            
+
             // Advanced Psychological Mastery Tiers
             String levelLabel = 'Beginner';
             if (prog >= 80) {
@@ -543,7 +549,9 @@ class AdventureXPScreen extends StatelessWidget {
                 if (cat['id'] == 'kids') {
                   context.push(AppRouter.kidsZoneRoute);
                 } else {
-                  context.push('${AppRouter.categoryGamesRoute}?category=${cat['id']}');
+                  context.push(
+                    '${AppRouter.categoryGamesRoute}?category=${cat['id']}',
+                  );
                 }
               },
               child: GlassTile(
@@ -557,7 +565,9 @@ class AdventureXPScreen extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(8.r),
                           decoration: BoxDecoration(
-                            color: (cat['color'] as Color).withValues(alpha: 0.1),
+                            color: (cat['color'] as Color).withValues(
+                              alpha: 0.1,
+                            ),
                             borderRadius: BorderRadius.circular(12.r),
                           ),
                           child: Icon(
@@ -605,7 +615,9 @@ class AdventureXPScreen extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
-                            color: (cat['color'] as Color).withValues(alpha: 0.7),
+                            color: (cat['color'] as Color).withValues(
+                              alpha: 0.7,
+                            ),
                           ),
                         ),
                       ],
@@ -726,46 +738,46 @@ class AdventureXPScreen extends StatelessWidget {
                     opacity: isLocked ? 0.6 : 1.0,
                     child: ScaleButton(
                       onTap: () {
-                              if (isLocked) {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: 'Unlock at Premium Lvl 100+',
-                                  type: CustomSnackBarType.info,
-                                );
-                                return;
-                              }
+                        if (isLocked) {
+                          CustomSnackBar.show(
+                            context: context,
+                            message: 'Unlock at Premium Lvl 100+',
+                            type: CustomSnackBarType.info,
+                          );
+                          return;
+                        }
 
-                              if (isCurrentlyActive) {
-                                CustomSnackBar.show(
-                                  context: context,
-                                  message: item['type'] == 'shield'
-                                      ? 'Streak Shield is already active!'
-                                      : 'You already have this boost!',
-                                  type: CustomSnackBarType.info,
-                                );
-                                return;
-                              }
+                        if (isCurrentlyActive) {
+                          CustomSnackBar.show(
+                            context: context,
+                            message: item['type'] == 'shield'
+                                ? 'Streak Shield is already active!'
+                                : 'You already have this boost!',
+                            type: CustomSnackBarType.info,
+                          );
+                          return;
+                        }
 
-                              if (item['type'] == 'shield') {
-                                context.read<ProgressionBloc>().add(
-                                  ProgressionPurchaseStreakFreezeRequested(
-                                    item['cost'] as int,
-                                  ),
-                                );
-                              } else if (item['type'] == 'warp') {
-                                context.read<ProgressionBloc>().add(
-                                  ProgressionActivateDoubleXPRequested(
-                                    item['cost'] as int,
-                                  ),
-                                );
-                              } else if (item['type'] == 'scroll') {
-                                context.read<ProgressionBloc>().add(
-                                  ProgressionPurchasePermanentXPBoostRequested(
-                                    item['cost'] as int,
-                                  ),
-                                );
-                              }
-                            },
+                        if (item['type'] == 'shield') {
+                          context.read<ProgressionBloc>().add(
+                            ProgressionPurchaseStreakFreezeRequested(
+                              item['cost'] as int,
+                            ),
+                          );
+                        } else if (item['type'] == 'warp') {
+                          context.read<ProgressionBloc>().add(
+                            ProgressionActivateDoubleXPRequested(
+                              item['cost'] as int,
+                            ),
+                          );
+                        } else if (item['type'] == 'scroll') {
+                          context.read<ProgressionBloc>().add(
+                            ProgressionPurchasePermanentXPBoostRequested(
+                              item['cost'] as int,
+                            ),
+                          );
+                        }
+                      },
                       child: GlassTile(
                         width: 200.w,
                         padding: EdgeInsets.all(12.r),
@@ -804,23 +816,24 @@ class AdventureXPScreen extends StatelessWidget {
                                     ),
                                   ),
 
-                                    Text(
-                                      isLocked
-                                          ? 'Premium Lvl 200'
+                                  Text(
+                                    isLocked
+                                        ? 'Premium Lvl 200'
+                                        : isCurrentlyActive
+                                        ? (item['activeText'] as String? ??
+                                              'ITEM ACTIVE')
+                                        : '${item['cost']} Coins',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: isLocked
+                                          ? Colors.red.withValues(alpha: 0.7)
                                           : isCurrentlyActive
-                                          ? (item['activeText'] as String? ?? 'ITEM ACTIVE')
-                                          : '${item['cost']} Coins',
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: isLocked
-                                            ? Colors.red.withValues(alpha: 0.7)
-                                            : isCurrentlyActive
-                                            ? const Color(0xFFF59E0B)
-                                            : const Color(0xFF10B981),
-                                      ),
+                                          ? const Color(0xFFF59E0B)
+                                          : const Color(0xFF10B981),
                                     ),
+                                  ),
                                   SizedBox(height: 2.h),
                                   Text(
                                     item['desc'] as String,
@@ -854,20 +867,20 @@ class AdventureXPScreen extends StatelessWidget {
 
   Widget _buildRecentActivities(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // Filter activities to ONLY show those that gained XP (XP Screen purity)
     final activities = user.recentActivities.where((activity) {
       final xpEarned = activity['xpEarned'] as int?;
       if (xpEarned != null) {
         return xpEarned > 0;
       }
-      
+
       // Fallback for older legacy data
       final subtitle = activity['subtitle'] as String? ?? '';
       final lowerSub = subtitle.toLowerCase();
       if (lowerSub.contains('0xp') || lowerSub.contains('0 xp')) return false;
       if (lowerSub.contains('coin') && !lowerSub.contains('xp')) return false;
-      
+
       return true;
     }).toList();
 
@@ -909,17 +922,22 @@ class AdventureXPScreen extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(height: 10.h),
             itemBuilder: (context, index) {
               final activity = activities[index];
-              
+
               // Dynamic real data from gamification_repository_impl
               final gameTypeRaw = activity['gameType'] as String? ?? 'quest';
-              final String displayTitle = gameTypeRaw.isNotEmpty 
-                  ? gameTypeRaw[0].toUpperCase() + gameTypeRaw.substring(1).replaceAll(RegExp(r'(?=[A-Z])'), ' ')
+              final String displayTitle = gameTypeRaw.isNotEmpty
+                  ? gameTypeRaw[0].toUpperCase() +
+                        gameTypeRaw
+                            .substring(1)
+                            .replaceAll(RegExp(r'(?=[A-Z])'), ' ')
                   : 'Quest';
 
               final xpEarned = activity['xpEarned'] as int? ?? 0;
-              
+
               String subtitle = '+$xpEarned XP';
-              final bool isQuest = activity['type'] == 'quest' || activity['titleKey'] == 'activity.quest_completed';
+              final bool isQuest =
+                  activity['type'] == 'quest' ||
+                  activity['titleKey'] == 'activity.quest_completed';
               final bool showSubtitle = !isQuest || xpEarned > 0;
 
               return GlassTile(
@@ -949,9 +967,16 @@ class AdventureXPScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            activity['titleKey'] == 'activity.quest_completed' 
-                                ? displayTitle 
-                                : ((activity['title'] as String?)?.replaceAll(RegExp('adventure', caseSensitive: false), 'Quest') ?? 'Quest Completed'),
+                            activity['titleKey'] == 'activity.quest_completed'
+                                ? displayTitle
+                                : ((activity['title'] as String?)?.replaceAll(
+                                        RegExp(
+                                          'adventure',
+                                          caseSensitive: false,
+                                        ),
+                                        'Quest',
+                                      ) ??
+                                      'Quest Completed'),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -968,18 +993,32 @@ class AdventureXPScreen extends StatelessWidget {
                               isQuest
                                   ? subtitle
                                   : ((activity['subtitle'] as String?)
-                                          ?.replaceAll(RegExp('adventure', caseSensitive: false), 'Quest')
-                                          .replaceAll(RegExp(r'\+?\s*\d+\s*coins?', caseSensitive: false), '')
-                                          .replaceAll(RegExp(r'•|\|'), '')
-                                          .trim() 
-                                      ?? 'Reward Earned'),
+                                            ?.replaceAll(
+                                              RegExp(
+                                                'adventure',
+                                                caseSensitive: false,
+                                              ),
+                                              'Quest',
+                                            )
+                                            .replaceAll(
+                                              RegExp(
+                                                r'\+?\s*\d+\s*coins?',
+                                                caseSensitive: false,
+                                              ),
+                                              '',
+                                            )
+                                            .replaceAll(RegExp(r'•|\|'), '')
+                                            .trim() ??
+                                        'Reward Earned'),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 11.sp,
                                 fontWeight: FontWeight.w600,
-                                color: isDark ? const Color(0xFF10B981) : const Color(0xFF059669),
+                                color: isDark
+                                    ? const Color(0xFF10B981)
+                                    : const Color(0xFF059669),
                               ),
                             ),
                         ],

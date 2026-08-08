@@ -44,7 +44,10 @@ class KidsNatureLayout extends StatelessWidget {
               children: [
                 SizedBox(height: 120.h),
                 // The Wooden Tree Sign
-                Expanded(flex: 5, child: Center(child: _buildTreeSign(context, state, quest))),
+                Expanded(
+                  flex: 5,
+                  child: Center(child: _buildTreeSign(context, state, quest)),
+                ),
                 // Glowing River Stones (Options)
                 Flexible(
                   flex: 5,
@@ -110,10 +113,7 @@ class KidsNatureLayout extends StatelessWidget {
       builder: (context, scale, child) {
         return Transform.scale(
           scale: scale,
-          child: Opacity(
-            opacity: scale > 1.0 ? 1.0 : 0.4,
-            child: child,
-          ),
+          child: Opacity(opacity: scale > 1.0 ? 1.0 : 0.4, child: child),
         );
       },
       child: Container(
@@ -148,10 +148,14 @@ class KidsNatureLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF92400E) : const Color(0xFF78350F), // Dark wood
+            color: isHovering
+                ? const Color(0xFF92400E)
+                : const Color(0xFF78350F), // Dark wood
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF16A34A) : const Color(0xFF451A03), 
+              color: isHovering
+                  ? const Color(0xFF16A34A)
+                  : const Color(0xFF451A03),
               width: isHovering ? 10.r : 6.r,
             ),
             boxShadow: [
@@ -193,7 +197,8 @@ class KidsNatureLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?", // Show instruction, hide question/emoji
+                        quest.instruction ??
+                            "?", // Show instruction, hide question/emoji
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 22.sp,
@@ -215,7 +220,9 @@ class KidsNatureLayout extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 14.sp,
                             fontWeight: FontWeight.bold,
-                            color: const Color(0xFFFDE68A), // Warmer yellow for fact
+                            color: const Color(
+                              0xFFFDE68A,
+                            ), // Warmer yellow for fact
                           ),
                           textAlign: TextAlign.center,
                           maxLines: 2,
@@ -245,51 +252,53 @@ class KidsNatureLayout extends StatelessWidget {
     final rotation = rotations[index % rotations.length];
 
     final stoneWidget = Transform.rotate(
-        angle: rotation,
-        child: Container(
-          height: 80.r,
-          decoration: BoxDecoration(
-            color: const Color(0xFF94A3B8), // Slate grey stone
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30.r),
-              topRight: Radius.circular(20.r),
-              bottomLeft: Radius.circular(25.r),
-              bottomRight: Radius.circular(35.r),
-            ),
-            border: Border.all(color: const Color(0xFFCBD5E1), width: 2),
-            boxShadow: [
-              // Shadow below
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.4),
-                offset: const Offset(0, 8),
-              ),
-              // Magic glow inside
-              BoxShadow(
-                color: const Color(0xFF6EE7B7).withValues(alpha: 0.3), // Mint green glow
-                blurRadius: 15,
-                spreadRadius: 2,
-              ),
-            ],
+      angle: rotation,
+      child: Container(
+        height: 80.r,
+        decoration: BoxDecoration(
+          color: const Color(0xFF94A3B8), // Slate grey stone
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.r),
+            topRight: Radius.circular(20.r),
+            bottomLeft: Radius.circular(25.r),
+            bottomRight: Radius.circular(35.r),
           ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.w),
-              child: AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
+          border: Border.all(color: const Color(0xFFCBD5E1), width: 2),
+          boxShadow: [
+            // Shadow below
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.4),
+              offset: const Offset(0, 8),
+            ),
+            // Magic glow inside
+            BoxShadow(
+              color: const Color(
+                0xFF6EE7B7,
+              ).withValues(alpha: 0.3), // Mint green glow
+              blurRadius: 15,
+              spreadRadius: 2,
+            ),
+          ],
+        ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFF0F172A),
               ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              minFontSize: 8,
             ),
           ),
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -297,16 +306,10 @@ class KidsNatureLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: stoneWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: stoneWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: stoneWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: stoneWidget),
       child: stoneWidget,
     );
   }

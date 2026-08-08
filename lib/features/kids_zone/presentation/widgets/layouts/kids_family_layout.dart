@@ -104,7 +104,11 @@ class KidsFamilyLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildFramedPainting(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildFramedPainting(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -119,10 +123,14 @@ class KidsFamilyLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF08A), // Highlight yellow
+            color: isHovering
+                ? const Color(0xFFFEF9C3)
+                : const Color(0xFFFEF08A), // Highlight yellow
             borderRadius: BorderRadius.circular(4.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              color: isHovering
+                  ? const Color(0xFFD97706)
+                  : const Color(0xFFB45309),
               width: 16.r,
             ), // Ornate wooden frame
             boxShadow: [
@@ -138,29 +146,32 @@ class KidsFamilyLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Bigger emoji since we removed question
+                  Text(
+                    quest.emoji!,
+                    style: TextStyle(fontSize: 64.sp),
+                  ), // Bigger emoji since we removed question
 
-            if (quest.funFact != null) ...[
-              SizedBox(height: 8.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: AutoSizeText(
-                  quest.funFact!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF78350F), // Dark wood text
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: AutoSizeText(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF78350F), // Dark wood text
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      minFontSize: 10,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
+                ],
+              ],
+            ),
+          ),
         );
       },
     );
@@ -177,55 +188,55 @@ class KidsFamilyLayout extends StatelessWidget {
     final double rotation = index % 2 == 0 ? -0.05 : 0.05;
 
     final polaroidWidget = Transform.rotate(
-        angle: rotation,
-        child: Container(
-          height: 110.h,
-          padding: EdgeInsets.fromLTRB(8.w, 8.h, 8.w, 20.h),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(2.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
-                offset: const Offset(0, 4),
-                blurRadius: 6,
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              // Photo area (placeholder color)
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: const Color(0xFFE2E8F0), // Blank photo grey
-                  child: Center(
-                    child: Icon(
-                      Icons.photo_rounded,
-                      color: const Color(0xFF94A3B8),
-                      size: 24.r,
-                    ),
+      angle: rotation,
+      child: Container(
+        height: 110.h,
+        padding: EdgeInsets.fromLTRB(8.w, 8.h, 8.w, 20.h),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(2.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.15),
+              offset: const Offset(0, 4),
+              blurRadius: 6,
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            // Photo area (placeholder color)
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: const Color(0xFFE2E8F0), // Blank photo grey
+                child: Center(
+                  child: Icon(
+                    Icons.photo_rounded,
+                    color: const Color(0xFF94A3B8),
+                    size: 24.r,
                   ),
                 ),
               ),
-              SizedBox(height: 8.h),
-              // Handwriting text
-              AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'ComicSans', // Or any casual font
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                  color: const Color(0xFF334155),
-                ),
-                maxLines: 2,
-                minFontSize: 8,
-                textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 8.h),
+            // Handwriting text
+            AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'ComicSans', // Or any casual font
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w800,
+                color: const Color(0xFF334155),
               ),
-            ],
-          ),
+              maxLines: 2,
+              minFontSize: 8,
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -233,16 +244,10 @@ class KidsFamilyLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: polaroidWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: polaroidWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: polaroidWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: polaroidWidget),
       child: polaroidWidget,
     );
   }

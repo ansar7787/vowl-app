@@ -72,7 +72,11 @@ class KidsShapesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBlueprintCrane(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildBlueprintCrane(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -107,9 +111,16 @@ class KidsShapesLayout extends StatelessWidget {
               width: 280.w,
               height: 200.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFF3B82F6) : const Color(0xFF1E3A8A), // Blueprint Blue (lighter when hovering)
+                color: isHovering
+                    ? const Color(0xFF3B82F6)
+                    : const Color(
+                        0xFF1E3A8A,
+                      ), // Blueprint Blue (lighter when hovering)
                 borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(color: isHovering ? Colors.yellowAccent : Colors.white, width: 4),
+                border: Border.all(
+                  color: isHovering ? Colors.yellowAccent : Colors.white,
+                  width: 4,
+                ),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withValues(alpha: 0.15),
@@ -129,7 +140,10 @@ class KidsShapesLayout extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         if (quest.emoji != null)
-                          Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)), // Enlarge emoji since question is removed
+                          Text(
+                            quest.emoji!,
+                            style: TextStyle(fontSize: 64.sp),
+                          ), // Enlarge emoji since question is removed
                         if (quest.funFact != null) ...[
                           SizedBox(height: 8.h),
                           Padding(
@@ -230,16 +244,10 @@ class KidsShapesLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: blockWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: blockWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: blockWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: blockWidget),
       child: blockWidget,
     );
   }

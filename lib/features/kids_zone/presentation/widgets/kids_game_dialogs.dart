@@ -46,155 +46,279 @@ class KidsGameDialogs {
               children: [
                 // Radiant Sunburst Background
                 KidsSunburstBackground(color: primaryColor),
-                
+
                 Center(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: KidsDialogContainer(
-                      primaryColor: primaryColor,
-                      title: context.tr('games.kids_level_up', fallback: 'Level Up!'),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          // STARS
-                          ValueListenableBuilder<int>(
-                            valueListenable: GamificationRepositoryImpl.lastEarnedStars,
-                            builder: (context, stars, child) {
-                              return Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: List.generate(3, (index) {
-                                  final isEarned = index < stars;
-                                  return Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                                    child: Container(
-                                      width: index == 1 ? 65.r : 50.r,
-                                      height: index == 1 ? 65.r : 50.r,
-                                      decoration: BoxDecoration(
-                                        color: isEarned ? const Color(0xFFFFD700) : Colors.grey[300],
-                                        shape: BoxShape.circle,
-                                        border: Border.all(color: Colors.white, width: 4.w),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: isEarned ? const Color(0xFFD97706) : Colors.grey[500]!,
-                                            offset: Offset(0, 4.h),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Center(
-                                        child: Icon(Icons.star_rounded, size: index == 1 ? 45.sp : 35.sp, color: Colors.white),
-                                      ),
-                                    ).animate(delay: (200 * index).ms).scale(curve: Curves.elasticOut),
+                  child:
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: KidsDialogContainer(
+                          primaryColor: primaryColor,
+                          title: context.tr(
+                            'games.kids_level_up',
+                            fallback: 'Level Up!',
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // STARS
+                              ValueListenableBuilder<int>(
+                                valueListenable:
+                                    GamificationRepositoryImpl.lastEarnedStars,
+                                builder: (context, stars, child) {
+                                  return Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: List.generate(3, (index) {
+                                      final isEarned = index < stars;
+                                      return Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 4.w,
+                                        ),
+                                        child:
+                                            Container(
+                                                  width: index == 1
+                                                      ? 65.r
+                                                      : 50.r,
+                                                  height: index == 1
+                                                      ? 65.r
+                                                      : 50.r,
+                                                  decoration: BoxDecoration(
+                                                    color: isEarned
+                                                        ? const Color(
+                                                            0xFFFFD700,
+                                                          )
+                                                        : Colors.grey[300],
+                                                    shape: BoxShape.circle,
+                                                    border: Border.all(
+                                                      color: Colors.white,
+                                                      width: 4.w,
+                                                    ),
+                                                    boxShadow: [
+                                                      BoxShadow(
+                                                        color: isEarned
+                                                            ? const Color(
+                                                                0xFFD97706,
+                                                              )
+                                                            : Colors.grey[500]!,
+                                                        offset: Offset(0, 4.h),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  child: Center(
+                                                    child: Icon(
+                                                      Icons.star_rounded,
+                                                      size: index == 1
+                                                          ? 45.sp
+                                                          : 35.sp,
+                                                      color: Colors.white,
+                                                    ),
+                                                  ),
+                                                )
+                                                .animate(
+                                                  delay: (200 * index).ms,
+                                                )
+                                                .scale(
+                                                  curve: Curves.elasticOut,
+                                                ),
+                                      );
+                                    }),
                                   );
-                                }),
-                              );
-                            },
-                          ),
-                          SizedBox(height: 24.h),
-                          
-                          // REWARDS CARD
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(vertical: 16.h),
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).brightness == Brightness.dark ? const Color(0xFF1E293B) : Colors.white,
-                              borderRadius: BorderRadius.circular(24.r),
-                              border: Border.all(color: primaryColor.withValues(alpha: 0.5), width: 4.w),
-                            ),
-                            child: Row(
-                              children: [
-                                Expanded(child: _buildReward(context, state.coinsEarned * (rewardsDoubled ? 3 : 1), "🪙", _safeTr(context, 'games.kids_coins', 'KIDS COINS'), Colors.amber)),
-                                Container(width: 2.w, height: 50.h, color: Colors.grey.withValues(alpha: 0.2)),
-                                Expanded(child: _buildReward(context, state.xpEarned, "⚡", _safeTr(context, 'games.kids_xp', 'XP'), Colors.blueAccent)),
-                              ],
-                            ),
-                          ),
-                          
-                          if (state.stickerAwarded != null) ...[
-                            SizedBox(height: 16.h),
-                            Container(
-                              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-                              decoration: BoxDecoration(
-                                color: Colors.amber.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(20.r),
-                                border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
+                                },
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(Icons.auto_awesome_rounded, color: Colors.amber, size: 22.sp),
-                                  SizedBox(width: 8.w),
-                                  Text(
-                                    context.tr('games.kids_new_sticker', fallback: 'New Sticker!'),
-                                    style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w800, color: Colors.amber[700], fontSize: 14.sp),
+                              SizedBox(height: 24.h),
+
+                              // REWARDS CARD
+                              Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(vertical: 16.h),
+                                decoration: BoxDecoration(
+                                  color:
+                                      Theme.of(context).brightness ==
+                                          Brightness.dark
+                                      ? const Color(0xFF1E293B)
+                                      : Colors.white,
+                                  borderRadius: BorderRadius.circular(24.r),
+                                  border: Border.all(
+                                    color: primaryColor.withValues(alpha: 0.5),
+                                    width: 4.w,
                                   ),
-                                ],
-                              ),
-                            ).animate().scale(curve: Curves.elasticOut),
-                          ],
-                          
-                          SizedBox(height: 32.h),
-                          
-                          if (!rewardsDoubled) ...[
-                            Kids3DButton(
-                              text: "WATCH AD FOR 3X REWARDS",
-                              color: primaryColor,
-                              isGolden: true,
-                              icon: Icons.play_circle_fill_rounded,
-                              onTap: () {
-                                adService.showRewardedAd(
-                                  context: context,
-                                  isPremium: isPremium,
-                                  childSafe: true,
-                                  onUserEarnedReward: (_) {
-                                    kidsBloc.add(ClaimDoubleKidsRewards((kidsBloc.state as KidsLoaded).gameType, (kidsBloc.state as KidsLoaded).level));
-                                    setDialogState(() => rewardsDoubled = true);
-                                  },
-                                  onDismissed: () {},
-                                );
-                              },
-                            ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds, color: Colors.white.withValues(alpha: 0.4)),
-                          ] else
-                            Container(
-                              width: double.infinity,
-                              height: 54.h,
-                              decoration: BoxDecoration(
-                                color: Colors.green.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(30.r),
-                                border: Border.all(color: Colors.green.withValues(alpha: 0.4), width: 3.w),
-                              ),
-                              child: Center(
+                                ),
                                 child: Row(
-                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Icon(Icons.check_circle_rounded, color: Colors.green, size: 24.sp),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      "REWARDS TRIPLED!",
-                                      style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.green, fontSize: 16.sp),
+                                    Expanded(
+                                      child: _buildReward(
+                                        context,
+                                        state.coinsEarned *
+                                            (rewardsDoubled ? 3 : 1),
+                                        "🪙",
+                                        _safeTr(
+                                          context,
+                                          'games.kids_coins',
+                                          'KIDS COINS',
+                                        ),
+                                        Colors.amber,
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 2.w,
+                                      height: 50.h,
+                                      color: Colors.grey.withValues(alpha: 0.2),
+                                    ),
+                                    Expanded(
+                                      child: _buildReward(
+                                        context,
+                                        state.xpEarned,
+                                        "⚡",
+                                        _safeTr(context, 'games.kids_xp', 'XP'),
+                                        Colors.blueAccent,
+                                      ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ).animate().scale(curve: Curves.easeOutBack),
-                            
-                          SizedBox(height: 16.h),
-                          
-                          Kids3DButton(
-                            text: context.tr('common.continue_text', fallback: 'Continue'),
-                            color: primaryColor,
-                            onTap: () {
-                              adService.recordLevelCompletion();
-                              authBloc.add(const AuthRefreshUser());
-                              navigator.pop();
-                              navigator.pop();
-                            },
+
+                              if (state.stickerAwarded != null) ...[
+                                SizedBox(height: 16.h),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                    vertical: 12.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.amber.withValues(alpha: 0.1),
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    border: Border.all(
+                                      color: Colors.amber.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Icon(
+                                        Icons.auto_awesome_rounded,
+                                        color: Colors.amber,
+                                        size: 22.sp,
+                                      ),
+                                      SizedBox(width: 8.w),
+                                      Text(
+                                        context.tr(
+                                          'games.kids_new_sticker',
+                                          fallback: 'New Sticker!',
+                                        ),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.amber[700],
+                                          fontSize: 14.sp,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ).animate().scale(curve: Curves.elasticOut),
+                              ],
+
+                              SizedBox(height: 32.h),
+
+                              if (!rewardsDoubled) ...[
+                                Kids3DButton(
+                                      text: "WATCH AD FOR 3X REWARDS",
+                                      color: primaryColor,
+                                      isGolden: true,
+                                      icon: Icons.play_circle_fill_rounded,
+                                      onTap: () {
+                                        adService.showRewardedAd(
+                                          context: context,
+                                          isPremium: isPremium,
+                                          childSafe: true,
+                                          onUserEarnedReward: (_) {
+                                            kidsBloc.add(
+                                              ClaimDoubleKidsRewards(
+                                                (kidsBloc.state as KidsLoaded)
+                                                    .gameType,
+                                                (kidsBloc.state as KidsLoaded)
+                                                    .level,
+                                              ),
+                                            );
+                                            setDialogState(
+                                              () => rewardsDoubled = true,
+                                            );
+                                          },
+                                          onDismissed: () {},
+                                        );
+                                      },
+                                    )
+                                    .animate(onPlay: (c) => c.repeat())
+                                    .shimmer(
+                                      duration: 2.seconds,
+                                      color: Colors.white.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                    ),
+                              ] else
+                                Container(
+                                  width: double.infinity,
+                                  height: 54.h,
+                                  decoration: BoxDecoration(
+                                    color: Colors.green.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(30.r),
+                                    border: Border.all(
+                                      color: Colors.green.withValues(
+                                        alpha: 0.4,
+                                      ),
+                                      width: 3.w,
+                                    ),
+                                  ),
+                                  child: Center(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.check_circle_rounded,
+                                          color: Colors.green,
+                                          size: 24.sp,
+                                        ),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          "REWARDS TRIPLED!",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.green,
+                                            fontSize: 16.sp,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ).animate().scale(curve: Curves.easeOutBack),
+
+                              SizedBox(height: 16.h),
+
+                              Kids3DButton(
+                                text: context.tr(
+                                  'common.continue_text',
+                                  fallback: 'Continue',
+                                ),
+                                color: primaryColor,
+                                onTap: () {
+                                  adService.recordLevelCompletion();
+                                  authBloc.add(const AuthRefreshUser());
+                                  navigator.pop();
+                                  navigator.pop();
+                                },
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
+                      ).animate().scale(
+                        duration: 500.ms,
+                        curve: Curves.easeOutBack,
                       ),
-                    ),
-                  ).animate().scale(duration: 500.ms, curve: Curves.easeOutBack),
                 ),
-                const Positioned.fill(child: IgnorePointer(child: GameConfetti(shouldPop: false))),
+                const Positioned.fill(
+                  child: IgnorePointer(child: GameConfetti(shouldPop: false)),
+                ),
               ],
             ),
           );
@@ -229,29 +353,57 @@ class KidsGameDialogs {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(24.r),
-                    decoration: BoxDecoration(
-                      color: Colors.redAccent.withValues(alpha: 0.1),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(color: Colors.redAccent.withValues(alpha: 0.2), blurRadius: 20),
-                      ],
-                    ),
-                    child: Icon(Icons.heart_broken_rounded, color: Colors.redAccent, size: 60.sp),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1), duration: 1.seconds),
-                  
+                        padding: EdgeInsets.all(24.r),
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.redAccent.withValues(alpha: 0.2),
+                              blurRadius: 20,
+                            ),
+                          ],
+                        ),
+                        child: Icon(
+                          Icons.heart_broken_rounded,
+                          color: Colors.redAccent,
+                          size: 60.sp,
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(
+                        begin: const Offset(1, 1),
+                        end: const Offset(1.1, 1.1),
+                        duration: 1.seconds,
+                      ),
+
                   SizedBox(height: 16.h),
                   Text(
-                    context.tr('games.kids_game_over_subtitle', fallback: 'Great effort!'),
+                    context.tr(
+                      'games.kids_game_over_subtitle',
+                      fallback: 'Great effort!',
+                    ),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white70
+                          : Colors.black54,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  
+
                   SizedBox(height: 32.h),
-                  
+
                   Kids3DButton(
-                    text: context.tr('games.kids_resume_game', fallback: 'Resume Game'),
-                    color: const Color(0xFF10B981), // Bright neon green for Revive
+                    text: context.tr(
+                      'games.kids_resume_game',
+                      fallback: 'Resume Game',
+                    ),
+                    color: const Color(
+                      0xFF10B981,
+                    ), // Bright neon green for Revive
                     icon: Icons.play_circle_fill_rounded,
                     onTap: () {
                       adService.showRewardedAd(
@@ -266,11 +418,14 @@ class KidsGameDialogs {
                       );
                     },
                   ),
-                  
+
                   SizedBox(height: 16.h),
-                  
+
                   Kids3DButton(
-                    text: context.tr('games.kids_exit_to_map', fallback: 'Exit to Map'),
+                    text: context.tr(
+                      'games.kids_exit_to_map',
+                      fallback: 'Exit to Map',
+                    ),
                     color: Colors.grey.shade600,
                     onTap: () {
                       navigator.pop();

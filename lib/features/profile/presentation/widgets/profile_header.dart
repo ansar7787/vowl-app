@@ -192,7 +192,9 @@ class ProfileHeader extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 14.w), // Slightly wider gap for the ID badge
+                    SizedBox(
+                      width: 14.w,
+                    ), // Slightly wider gap for the ID badge
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.w,

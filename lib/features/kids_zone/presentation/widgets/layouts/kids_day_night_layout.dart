@@ -45,7 +45,10 @@ class KidsDayNightLayout extends StatelessWidget {
               children: [
                 SizedBox(height: 120.h),
                 // The Observatory Telescope View
-                Expanded(flex: 5, child: Center(child: _buildSkyView(context, state, quest))),
+                Expanded(
+                  flex: 5,
+                  child: Center(child: _buildSkyView(context, state, quest)),
+                ),
                 // Celestial Cards (Options)
                 Flexible(
                   flex: 5,
@@ -112,10 +115,16 @@ class KidsDayNightLayout extends StatelessWidget {
           width: 280.w,
           height: 220.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A),
-            borderRadius: BorderRadius.circular(40.r), // Chunky rounded rectangle
+            color: isHovering
+                ? const Color(0xFF1E293B)
+                : const Color(0xFF0F172A),
+            borderRadius: BorderRadius.circular(
+              40.r,
+            ), // Chunky rounded rectangle
             border: Border.all(
-              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFF64748B),
+              color: isHovering
+                  ? const Color(0xFF38BDF8)
+                  : const Color(0xFF64748B),
               width: isHovering ? 12.r : 8.r,
             ), // Thick observatory metal frame
             boxShadow: [
@@ -125,9 +134,9 @@ class KidsDayNightLayout extends StatelessWidget {
                 offset: const Offset(0, 10),
               ),
               BoxShadow(
-                color: const Color(
-                  0xFF0EA5E9,
-                ).withValues(alpha: isHovering ? 0.3 : 0.1), // Slight atmospheric glow
+                color: const Color(0xFF0EA5E9).withValues(
+                  alpha: isHovering ? 0.3 : 0.1,
+                ), // Slight atmospheric glow
                 blurRadius: isHovering ? 60 : 40,
                 spreadRadius: isHovering ? 10 : 5,
               ),
@@ -137,7 +146,11 @@ class KidsDayNightLayout extends StatelessWidget {
             children: [
               // Twinkling stars in the observatory view
               Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
-              Positioned(bottom: 40.h, right: 40.w, child: _buildTwinklingStar()),
+              Positioned(
+                bottom: 40.h,
+                right: 40.w,
+                child: _buildTwinklingStar(),
+              ),
               Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
 
               Center(
@@ -223,60 +236,58 @@ class KidsDayNightLayout extends StatelessWidget {
         : const Color(0xFF0F172A);
 
     final cardWidget = Container(
-        height: 120.h,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: borderColor, width: 4.r),
-          boxShadow: [
-            BoxShadow(color: shadowColor, offset: const Offset(0, 8)),
+      height: 120.h,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: borderColor, width: 4.r),
+        boxShadow: [BoxShadow(color: shadowColor, offset: const Offset(0, 8))],
+      ),
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Bouncing icon (Sun or Moon)
+            Icon(
+                  isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
+                  color: isDay
+                      ? const Color(0xFFFEF08A)
+                      : const Color(0xFFE2E8F0),
+                  size: 42.sp,
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .moveY(
+                  begin: -2.h,
+                  end: 2.h,
+                  duration: 2.seconds,
+                  curve: Curves.easeInOutSine,
+                ),
+
+            SizedBox(height: 12.h),
+
+            AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                shadows: [
+                  Shadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              minFontSize: 8,
+            ),
           ],
         ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Bouncing icon (Sun or Moon)
-              Icon(
-                    isDay ? Icons.wb_sunny_rounded : Icons.mode_night_rounded,
-                    color: isDay
-                        ? const Color(0xFFFEF08A)
-                        : const Color(0xFFE2E8F0),
-                    size: 42.sp,
-                  )
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .moveY(
-                    begin: -2.h,
-                    end: 2.h,
-                    duration: 2.seconds,
-                    curve: Curves.easeInOutSine,
-                  ),
-
-              SizedBox(height: 12.h),
-
-              AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  shadows: [
-                    Shadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
-              ),
-            ],
-          ),
-        ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -284,16 +295,10 @@ class KidsDayNightLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: cardWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: cardWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: cardWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: cardWidget),
       child: cardWidget,
     );
   }

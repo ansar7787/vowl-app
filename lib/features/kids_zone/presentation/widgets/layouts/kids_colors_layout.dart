@@ -37,7 +37,10 @@ class KidsColorsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Artist Easel
-            Expanded(flex: 5, child: Center(child: _buildEasel(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildEasel(context, state, quest)),
+            ),
             // The Squeezed Paint Tubes
             Flexible(
               flex: 5,
@@ -89,8 +92,14 @@ class KidsColorsLayout extends StatelessWidget {
                 height: 250.h,
                 decoration: BoxDecoration(
                   border: Border(
-                    left: BorderSide(color: const Color(0xFF92400E), width: 12.w),
-                    right: BorderSide(color: const Color(0xFF92400E), width: 12.w),
+                    left: BorderSide(
+                      color: const Color(0xFF92400E),
+                      width: 12.w,
+                    ),
+                    right: BorderSide(
+                      color: const Color(0xFF92400E),
+                      width: 12.w,
+                    ),
                   ),
                 ),
               ),
@@ -100,15 +109,21 @@ class KidsColorsLayout extends StatelessWidget {
               width: 280.w,
               height: 200.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFFFDE047) : Colors.white, // Highlight canvas on hover
+                color: isHovering
+                    ? const Color(0xFFFDE047)
+                    : Colors.white, // Highlight canvas on hover
                 borderRadius: BorderRadius.circular(4.r),
                 border: Border.all(
-                  color: isHovering ? const Color(0xFFEAB308) : const Color(0xFFD4D4D8), 
-                  width: isHovering ? 4 : 2
+                  color: isHovering
+                      ? const Color(0xFFEAB308)
+                      : const Color(0xFFD4D4D8),
+                  width: isHovering ? 4 : 2,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.1),
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.3 : 0.1,
+                    ),
                     blurRadius: isHovering ? 20 : 10,
                     offset: const Offset(0, 8),
                   ),
@@ -119,7 +134,10 @@ class KidsColorsLayout extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hide question text
+                      Text(
+                        quest.emoji!,
+                        style: TextStyle(fontSize: 80.sp),
+                      ), // Enlarge emoji, hide question text
                     if (quest.funFact != null) ...[
                       SizedBox(height: 8.h),
                       Padding(
@@ -173,64 +191,60 @@ class KidsColorsLayout extends StatelessWidget {
     Color tubeColor = _getColorFromName(text, primaryColor);
 
     final tubeWidget = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Paint Splatter at the top (simulating squeezed paint)
-          Icon(Icons.water_drop_rounded, color: tubeColor, size: 28.r),
-          // The Tube
-          Container(
-            height: 90.h,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(8.r),
-                topRight: Radius.circular(8.r),
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
-              border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
-              boxShadow: [
-                BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
-              ],
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Paint Splatter at the top (simulating squeezed paint)
+        Icon(Icons.water_drop_rounded, color: tubeColor, size: 28.r),
+        // The Tube
+        Container(
+          height: 90.h,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8.r),
+              topRight: Radius.circular(8.r),
+              bottomLeft: Radius.circular(20.r),
+              bottomRight: Radius.circular(20.r),
             ),
-            child: Column(
-              children: [
-                // Tube label color strip
-                Container(
-                  height: 30.h,
-                  width: double.infinity,
-                  color: tubeColor,
-                ),
-                Expanded(
-                  child: Center(
-                    child: AutoSizeText(
-                      text,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFF3F3F46),
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 1,
-                      minFontSize: 8,
+            border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
+            boxShadow: [
+              BoxShadow(color: Colors.black12, offset: Offset(0, 6.h)),
+            ],
+          ),
+          child: Column(
+            children: [
+              // Tube label color strip
+              Container(height: 30.h, width: double.infinity, color: tubeColor),
+              Expanded(
+                child: Center(
+                  child: AutoSizeText(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF3F3F46),
                     ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    minFontSize: 8,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          // Tube Cap
-          Container(
-            height: 12.h,
-            width: 30.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFF52525B), // Grey cap
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
-            ),
+        ),
+        // Tube Cap
+        Container(
+          height: 12.h,
+          width: 30.w,
+          decoration: BoxDecoration(
+            color: const Color(0xFF52525B), // Grey cap
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(4.r)),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -238,16 +252,10 @@ class KidsColorsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: tubeWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: tubeWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: tubeWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: tubeWidget),
       child: tubeWidget,
     );
   }

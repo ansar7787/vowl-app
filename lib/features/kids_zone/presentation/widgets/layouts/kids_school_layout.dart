@@ -37,7 +37,10 @@ class KidsSchoolLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bus Window
-            Expanded(flex: 5, child: Center(child: _buildBusWindow(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildBusWindow(context, state, quest)),
+            ),
             // Backpacks on Seats
             Flexible(
               flex: 5,
@@ -92,7 +95,11 @@ class KidsSchoolLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBusWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildBusWindow(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -107,10 +114,14 @@ class KidsSchoolLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFFBAE6FD) : const Color(0xFFE0F2FE), // Sky blue outside window
+            color: isHovering
+                ? const Color(0xFFBAE6FD)
+                : const Color(0xFFE0F2FE), // Sky blue outside window
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFFFDE047) : const Color(0xFFFACC15),
+              color: isHovering
+                  ? const Color(0xFFFDE047)
+                  : const Color(0xFFFACC15),
               width: 16.r,
             ), // School bus yellow frame
             boxShadow: [
@@ -121,33 +132,36 @@ class KidsSchoolLayout extends StatelessWidget {
               ),
             ],
           ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji since question is hidden
-            if (quest.funFact != null) ...[
-              SizedBox(height: 8.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: AutoSizeText(
-                  quest.funFact!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF334155), // Slate grey
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                if (quest.emoji != null)
+                  Text(
+                    quest.emoji!,
+                    style: TextStyle(fontSize: 80.sp),
+                  ), // Enlarge emoji since question is hidden
+                if (quest.funFact != null) ...[
+                  SizedBox(height: 8.h),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: AutoSizeText(
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF334155), // Slate grey
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      minFontSize: 10,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
+                ],
+              ],
+            ),
+          ),
         );
       },
     );
@@ -171,68 +185,65 @@ class KidsSchoolLayout extends StatelessWidget {
     final backpackWidget = Stack(
       alignment: Alignment.topCenter,
       children: [
-          // Backpack Handle
-          Container(
-            width: 30.w,
-            height: 20.h,
-            decoration: BoxDecoration(
-              color: Colors.transparent,
-              border: Border.all(
-                color: color.withValues(alpha: 0.8),
-                width: 4.r,
-              ),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
-            ),
+        // Backpack Handle
+        Container(
+          width: 30.w,
+          height: 20.h,
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            border: Border.all(color: color.withValues(alpha: 0.8), width: 4.r),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
           ),
-          // Main Backpack Body
-          Padding(
-            padding: EdgeInsets.only(top: 10.h),
-            child: Container(
-              height: 90.h,
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  width: 2,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.2),
-                    offset: const Offset(0, 4),
-                  ),
-                ],
+        ),
+        // Main Backpack Body
+        Padding(
+          padding: EdgeInsets.only(top: 10.h),
+          child: Container(
+            height: 90.h,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: Colors.black.withValues(alpha: 0.1),
+                width: 2,
               ),
-              child: Column(
-                children: [
-                  // Front Pocket Line
-                  Container(
-                    margin: EdgeInsets.only(top: 30.h),
-                    height: 2.h,
-                    color: Colors.black.withValues(alpha: 0.2),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: AutoSizeText(
-                        text,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                        ),
-                        maxLines: 2,
-                        minFontSize: 8,
-                        textAlign: TextAlign.center,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                // Front Pocket Line
+                Container(
+                  margin: EdgeInsets.only(top: 30.h),
+                  height: 2.h,
+                  color: Colors.black.withValues(alpha: 0.2),
+                ),
+                Expanded(
+                  child: Center(
+                    child: AutoSizeText(
+                      text,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
                       ),
+                      maxLines: 2,
+                      minFontSize: 8,
+                      textAlign: TextAlign.center,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -240,16 +251,10 @@ class KidsSchoolLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: backpackWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: backpackWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: backpackWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: backpackWidget),
       child: backpackWidget,
     );
   }

@@ -35,7 +35,10 @@ class KidsWeatherLayout extends StatelessWidget {
           children: [
             SizedBox(height: 60.h),
             // The Sky Billboard
-            Expanded(flex: 6, child: Center(child: _buildSkyBillboard(context, state, quest))),
+            Expanded(
+              flex: 6,
+              child: Center(child: _buildSkyBillboard(context, state, quest)),
+            ),
             // The Weather Clouds (Options)
             Flexible(
               flex: 4,
@@ -63,7 +66,11 @@ class KidsWeatherLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSkyBillboard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildSkyBillboard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -81,18 +88,26 @@ class KidsWeatherLayout extends StatelessWidget {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                isHovering ? const Color(0xFFE0F2FE) : const Color(0xFFF0F9FF), // Sky 50
-                isHovering ? const Color(0xFFBAE6FD) : const Color(0xFFE0F2FE), // Sky 100
+                isHovering
+                    ? const Color(0xFFE0F2FE)
+                    : const Color(0xFFF0F9FF), // Sky 50
+                isHovering
+                    ? const Color(0xFFBAE6FD)
+                    : const Color(0xFFE0F2FE), // Sky 100
               ],
             ),
             borderRadius: BorderRadius.circular(32.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFFBAE6FD), 
-              width: isHovering ? 6 : 4
+              color: isHovering
+                  ? const Color(0xFF38BDF8)
+                  : const Color(0xFFBAE6FD),
+              width: isHovering ? 6 : 4,
             ),
             boxShadow: [
               BoxShadow(
-                color: const Color(0xFF38BDF8).withValues(alpha: isHovering ? 0.4 : 0.2),
+                color: const Color(
+                  0xFF38BDF8,
+                ).withValues(alpha: isHovering ? 0.4 : 0.2),
                 blurRadius: isHovering ? 25 : 15,
                 offset: const Offset(0, 8),
               ),
@@ -113,58 +128,61 @@ class KidsWeatherLayout extends StatelessWidget {
                 maxLines: 3,
                 minFontSize: 16,
               ),
-          if (quest.phonetic != null) ...[
-            SizedBox(height: 4.h),
-            Text(
-              quest.phonetic!,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w600,
-                color: const Color(0xFF7DD3FC),
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-          if (quest.funFact != null) ...[
-            SizedBox(height: 16.h),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              child: AutoSizeText(
-                "💡 ${quest.funFact!}",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF0284C7),
+              if (quest.phonetic != null) ...[
+                SizedBox(height: 4.h),
+                Text(
+                  quest.phonetic!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF7DD3FC),
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                minFontSize: 10,
-              ),
-            ),
-          ],
-          if (quest.wordExample != null) ...[
-            SizedBox(height: 12.h),
-            AutoSizeText(
-              '"${quest.wordExample!}"',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.w500,
-                color: const Color(0xFF0C4A6E),
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              minFontSize: 10,
-            ),
-          ],
-          ],
+              ],
+              if (quest.funFact != null) ...[
+                SizedBox(height: 16.h),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 8.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                  child: AutoSizeText(
+                    "💡 ${quest.funFact!}",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF0284C7),
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    minFontSize: 10,
+                  ),
+                ),
+              ],
+              if (quest.wordExample != null) ...[
+                SizedBox(height: 12.h),
+                AutoSizeText(
+                  '"${quest.wordExample!}"',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xFF0C4A6E),
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  minFontSize: 10,
+                ),
+              ],
+            ],
           ),
         );
       },
@@ -178,42 +196,42 @@ class KidsWeatherLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final cloudWidget = Container(
-        width: 140.w,
-        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.white,
-              Color(0xFFF0F9FF), // Very soft blue at bottom of cloud
-            ],
-          ),
-          borderRadius: BorderRadius.circular(40.r), // Cloud-like pill shape
-          border: Border.all(color: const Color(0xFFE0F2FE), width: 3),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFF7DD3FC).withValues(alpha: 0.3),
-              blurRadius: 8,
-              offset: const Offset(0, 4),
-            ),
+      width: 140.w,
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.white,
+            Color(0xFFF0F9FF), // Very soft blue at bottom of cloud
           ],
         ),
-        child: Center(
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w900,
-              color: const Color(0xFF0369A1),
-            ),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            minFontSize: 10,
+        borderRadius: BorderRadius.circular(40.r), // Cloud-like pill shape
+        border: Border.all(color: const Color(0xFFE0F2FE), width: 3),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF7DD3FC).withValues(alpha: 0.3),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
           ),
+        ],
+      ),
+      child: Center(
+        child: AutoSizeText(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w900,
+            color: const Color(0xFF0369A1),
+          ),
+          textAlign: TextAlign.center,
+          maxLines: 1,
+          minFontSize: 10,
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -221,16 +239,10 @@ class KidsWeatherLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: cloudWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: cloudWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: cloudWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: cloudWidget),
       child: cloudWidget,
     );
   }

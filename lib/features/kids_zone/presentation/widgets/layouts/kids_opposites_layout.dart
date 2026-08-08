@@ -37,7 +37,10 @@ class KidsOppositesLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Split Mirror / Split World
-            Expanded(flex: 5, child: Center(child: _buildSplitWorld(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildSplitWorld(context, state, quest)),
+            ),
             // The Split Plaques (Options)
             Flexible(
               flex: 5,
@@ -91,7 +94,11 @@ class KidsOppositesLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSplitWorld(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildSplitWorld(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -108,7 +115,9 @@ class KidsOppositesLayout extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF6366F1) : const Color(0xFF1E293B),
+              color: isHovering
+                  ? const Color(0xFF6366F1)
+                  : const Color(0xFF1E293B),
               width: isHovering ? 10.r : 8.r,
             ), // Dark frame
             boxShadow: [
@@ -129,7 +138,11 @@ class KidsOppositesLayout extends StatelessWidget {
                   top: 0,
                   bottom: 0,
                   width: 140.w, // Half width approx
-                  child: Container(color: isHovering ? const Color(0xFFFECACA) : const Color(0xFFFCA5A5)), // Light red
+                  child: Container(
+                    color: isHovering
+                        ? const Color(0xFFFECACA)
+                        : const Color(0xFFFCA5A5),
+                  ), // Light red
                 ),
                 // Right Half (Ice / Cold)
                 Positioned(
@@ -137,7 +150,11 @@ class KidsOppositesLayout extends StatelessWidget {
                   top: 0,
                   bottom: 0,
                   width: 140.w,
-                  child: Container(color: isHovering ? const Color(0xFFBFDBFE) : const Color(0xFF93C5FD)), // Light blue
+                  child: Container(
+                    color: isHovering
+                        ? const Color(0xFFBFDBFE)
+                        : const Color(0xFF93C5FD),
+                  ), // Light blue
                 ),
                 // Center Divider Line
                 Center(
@@ -167,7 +184,8 @@ class KidsOppositesLayout extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 12.w),
                             child: AutoSizeText(
-                              quest.instruction ?? "?", // Use instruction, hide emoji/question to prevent cheat
+                              quest.instruction ??
+                                  "?", // Use instruction, hide emoji/question to prevent cheat
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 22.sp,
@@ -218,75 +236,72 @@ class KidsOppositesLayout extends StatelessWidget {
     int index,
   ) {
     final plaqueWidget = Container(
-        height: 70.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: const Color(0xFF1E293B), width: 2),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              offset: const Offset(0, 4),
+      height: 70.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: const Color(0xFF1E293B), width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.r),
+        child: Stack(
+          children: [
+            // Top half
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 35.h,
+              child: Container(color: const Color(0xFFFDE047)), // Yellow
+            ),
+            // Bottom half
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: 35.h,
+              child: Container(color: const Color(0xFFC4B5FD)), // Purple
+            ),
+            // Divider
+            Center(
+              child: Container(
+                height: 2.h,
+                width: double.infinity,
+                color: const Color(0xFF1E293B),
+              ),
+            ),
+            // Text Box in the middle
+            Center(
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(4.r),
+                  border: Border.all(color: const Color(0xFF1E293B), width: 1),
+                ),
+                child: AutoSizeText(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  minFontSize: 8,
+                ),
+              ),
             ),
           ],
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10.r),
-          child: Stack(
-            children: [
-              // Top half
-              Positioned(
-                top: 0,
-                left: 0,
-                right: 0,
-                height: 35.h,
-                child: Container(color: const Color(0xFFFDE047)), // Yellow
-              ),
-              // Bottom half
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: 35.h,
-                child: Container(color: const Color(0xFFC4B5FD)), // Purple
-              ),
-              // Divider
-              Center(
-                child: Container(
-                  height: 2.h,
-                  width: double.infinity,
-                  color: const Color(0xFF1E293B),
-                ),
-              ),
-              // Text Box in the middle
-              Center(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(4.r),
-                    border: Border.all(
-                      color: const Color(0xFF1E293B),
-                      width: 1,
-                    ),
-                  ),
-                  child: AutoSizeText(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    minFontSize: 8,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -294,16 +309,10 @@ class KidsOppositesLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: plaqueWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: plaqueWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: plaqueWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: plaqueWidget),
       child: plaqueWidget,
     );
   }

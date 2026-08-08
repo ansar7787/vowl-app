@@ -37,7 +37,10 @@ class KidsVerbsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Stadium Scoreboard
-            Expanded(flex: 5, child: Center(child: _buildScoreboard(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildScoreboard(context, state, quest)),
+            ),
             // The Sports Balls (Bouncing slightly)
             Flexible(
               flex: 5,
@@ -92,7 +95,11 @@ class KidsVerbsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildScoreboard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildScoreboard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -106,10 +113,14 @@ class KidsVerbsLayout extends StatelessWidget {
           width: 280.w,
           height: 180.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A), // Black board
+            color: isHovering
+                ? const Color(0xFF1E293B)
+                : const Color(0xFF0F172A), // Black board
             borderRadius: BorderRadius.circular(8.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF64748B) : const Color(0xFF334155),
+              color: isHovering
+                  ? const Color(0xFF64748B)
+                  : const Color(0xFF334155),
               width: isHovering ? 10.r : 8.r,
             ), // Grey steel frame
             boxShadow: [
@@ -127,7 +138,8 @@ class KidsVerbsLayout extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: AutoSizeText(
-                    quest.instruction ?? "?", // Show instruction, hide emoji/question to prevent cheat
+                    quest.instruction ??
+                        "?", // Show instruction, hide emoji/question to prevent cheat
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 24.sp,
@@ -203,40 +215,40 @@ class KidsVerbsLayout extends StatelessWidget {
     }
 
     final ballWidget = Container(
-        height: 80.r,
-        decoration: BoxDecoration(
-          color: ballColor,
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: Colors.black.withValues(alpha: 0.2),
-            width: 2,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
-              offset: const Offset(0, 6),
-              blurRadius: 4,
-            ),
-          ],
+      height: 80.r,
+      decoration: BoxDecoration(
+        color: ballColor,
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: Colors.black.withValues(alpha: 0.2),
+          width: 2,
         ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
-                color: textColor,
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              minFontSize: 8,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.3),
+            offset: const Offset(0, 6),
+            blurRadius: 4,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w900,
+              color: textColor,
             ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            minFontSize: 8,
           ),
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -244,16 +256,10 @@ class KidsVerbsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: ballWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: ballWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: ballWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: ballWidget),
       child: ballWidget,
     );
   }

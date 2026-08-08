@@ -37,7 +37,10 @@ class KidsEmotionsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Theater Stage
-            Expanded(flex: 5, child: Center(child: _buildTheaterStage(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildTheaterStage(context, state, quest)),
+            ),
             // The Theater Masks (Options)
             Flexible(
               flex: 5,
@@ -95,7 +98,11 @@ class KidsEmotionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildTheaterStage(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildTheaterStage(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -113,15 +120,21 @@ class KidsEmotionsLayout extends StatelessWidget {
               width: 280.w,
               height: 200.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFF334155) : const Color(0xFF1E293B), // Dark backstage
+                color: isHovering
+                    ? const Color(0xFF334155)
+                    : const Color(0xFF1E293B), // Dark backstage
                 borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(
-                  color: isHovering ? const Color(0xFFD97706) : const Color(0xFF78350F), 
-                  width: 8.r
+                  color: isHovering
+                      ? const Color(0xFFD97706)
+                      : const Color(0xFF78350F),
+                  width: 8.r,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.5 : 0.3,
+                    ),
                     blurRadius: isHovering ? 25 : 15,
                     offset: const Offset(0, 8),
                   ),
@@ -129,7 +142,10 @@ class KidsEmotionsLayout extends StatelessWidget {
               ),
               child: Center(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 12.h,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20.r),
@@ -145,7 +161,10 @@ class KidsEmotionsLayout extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (quest.emoji != null)
-                        Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hide question string
+                        Text(
+                          quest.emoji!,
+                          style: TextStyle(fontSize: 80.sp),
+                        ), // Enlarge emoji, hide question string
                       if (quest.funFact != null) ...[
                         SizedBox(height: 8.h),
                         AutoSizeText(
@@ -166,65 +185,72 @@ class KidsEmotionsLayout extends StatelessWidget {
                 ),
               ),
             ),
-        // Red Velvet Curtains (Left)
-        Positioned(
-          left: 0,
-          top: 0,
-          bottom: 0,
-          child: Container(
-            width: 40.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFF9F1239), // Velvet red
-              borderRadius: BorderRadius.horizontal(left: Radius.circular(4.r)),
-              border: Border(
-                right: BorderSide(
-                  color: const Color(0xFFE11D48),
-                  width: 4.w,
-                ), // Curtain fold highlight
-              ),
-            ),
-          ),
-        ),
-        // Red Velvet Curtains (Right)
-        Positioned(
-          right: 0,
-          top: 0,
-          bottom: 0,
-          child: Container(
-            width: 40.w,
-            decoration: BoxDecoration(
-              color: const Color(0xFF9F1239),
-              borderRadius: BorderRadius.horizontal(
-                right: Radius.circular(4.r),
-              ),
-              border: Border(
-                left: BorderSide(color: const Color(0xFFE11D48), width: 4.w),
-              ),
-            ),
-          ),
-        ),
-        // Stage Valance (Top curtain)
-        Positioned(
-          top: 0,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 30.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFFBE123C),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(4.r)),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black45,
-                  offset: Offset(0, 4),
-                  blurRadius: 4,
+            // Red Velvet Curtains (Left)
+            Positioned(
+              left: 0,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF9F1239), // Velvet red
+                  borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(4.r),
+                  ),
+                  border: Border(
+                    right: BorderSide(
+                      color: const Color(0xFFE11D48),
+                      width: 4.w,
+                    ), // Curtain fold highlight
+                  ),
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
-      ],
-    );
+            // Red Velvet Curtains (Right)
+            Positioned(
+              right: 0,
+              top: 0,
+              bottom: 0,
+              child: Container(
+                width: 40.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFF9F1239),
+                  borderRadius: BorderRadius.horizontal(
+                    right: Radius.circular(4.r),
+                  ),
+                  border: Border(
+                    left: BorderSide(
+                      color: const Color(0xFFE11D48),
+                      width: 4.w,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            // Stage Valance (Top curtain)
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                height: 30.h,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFBE123C),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(4.r),
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black45,
+                      offset: Offset(0, 4),
+                      blurRadius: 4,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        );
       },
     );
   }
@@ -244,38 +270,36 @@ class KidsEmotionsLayout extends StatelessWidget {
         : const Color(0xFF0284C7);
 
     final maskWidget = Container(
-        height: 85.h,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
-            bottomLeft: Radius.circular(40.r),
-            bottomRight: Radius.circular(40.r),
-          ), // Mask shape
-          border: Border.all(color: Colors.white, width: 2),
-          boxShadow: [
-            BoxShadow(color: shadowColor, offset: const Offset(0, 6)),
-          ],
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF1E293B),
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              minFontSize: 8,
+      height: 85.h,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20.r),
+          topRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(40.r),
+          bottomRight: Radius.circular(40.r),
+        ), // Mask shape
+        border: Border.all(color: Colors.white, width: 2),
+        boxShadow: [BoxShadow(color: shadowColor, offset: const Offset(0, 6))],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF1E293B),
             ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            minFontSize: 8,
           ),
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -283,16 +307,10 @@ class KidsEmotionsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: maskWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: maskWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: maskWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: maskWidget),
       child: maskWidget,
     );
   }

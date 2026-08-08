@@ -58,7 +58,9 @@ class KidsAnimalsLayout extends StatelessWidget {
                 // The Binoculars / Safari Frame
                 Expanded(
                   flex: 5,
-                  child: Center(child: _buildSafariFrame(context, state, quest)),
+                  child: Center(
+                    child: _buildSafariFrame(context, state, quest),
+                  ),
                 ),
                 // Wooden Signposts for Options
                 Flexible(
@@ -119,7 +121,11 @@ class KidsAnimalsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSafariFrame(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildSafariFrame(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -133,10 +139,16 @@ class KidsAnimalsLayout extends StatelessWidget {
           width: 300.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF3C7), // Safari Khaki
-            borderRadius: BorderRadius.circular(100.r), // Pill shape for binoculars
+            color: isHovering
+                ? const Color(0xFFFEF9C3)
+                : const Color(0xFFFEF3C7), // Safari Khaki
+            borderRadius: BorderRadius.circular(
+              100.r,
+            ), // Pill shape for binoculars
             border: Border.all(
-              color: isHovering ? const Color(0xFF92400E) : const Color(0xFF78350F),
+              color: isHovering
+                  ? const Color(0xFF92400E)
+                  : const Color(0xFF78350F),
               width: isHovering ? 10.r : 8.r,
             ), // Dark leather
             boxShadow: [
@@ -158,7 +170,10 @@ class KidsAnimalsLayout extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 12.h,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.9),
                     borderRadius: BorderRadius.circular(20.r),
@@ -169,7 +184,8 @@ class KidsAnimalsLayout extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: AutoSizeText(
-                          quest.instruction ?? "?", // Use instruction, hide emoji to prevent cheating
+                          quest.instruction ??
+                              "?", // Use instruction, hide emoji to prevent cheating
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 24.sp,
@@ -220,52 +236,52 @@ class KidsAnimalsLayout extends StatelessWidget {
     final shadowColor = const Color(0xFF92400E); // Dark Wood
 
     final signpostWidget = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // The wooden board
-          Container(
-            height: 70.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: baseColor,
-              borderRadius: BorderRadius.circular(8.r),
-              border: Border.all(color: shadowColor, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  offset: Offset(0, 4.h),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // The wooden board
+        Container(
+          height: 70.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: baseColor,
+            borderRadius: BorderRadius.circular(8.r),
+            border: Border.all(color: shadowColor, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                offset: Offset(0, 4.h),
+              ),
+            ],
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: AutoSizeText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF451A03), // Very dark wood text
                 ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: AutoSizeText(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF451A03), // Very dark wood text
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 8,
-                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
               ),
             ),
           ),
-          // The stick holding it up
-          Container(
-            height: 40.h,
-            width: 16.w,
-            decoration: BoxDecoration(
-              color: shadowColor,
-              border: Border.all(color: const Color(0xFF78350F), width: 1),
-            ),
+        ),
+        // The stick holding it up
+        Container(
+          height: 40.h,
+          width: 16.w,
+          decoration: BoxDecoration(
+            color: shadowColor,
+            border: Border.all(color: const Color(0xFF78350F), width: 1),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -273,16 +289,10 @@ class KidsAnimalsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: signpostWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: signpostWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: signpostWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: signpostWidget),
       child: signpostWidget,
     );
   }

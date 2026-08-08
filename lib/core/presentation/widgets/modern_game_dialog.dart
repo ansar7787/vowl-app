@@ -165,9 +165,12 @@ class ModernGameDialog extends StatelessWidget {
               SizedBox(height: 12.h),
 
               // ── Description ───────────────────────────────────────────
-              Text(
+              AutoSizeText(
                 description,
                 textAlign: TextAlign.center,
+                maxLines: 4,
+                minFontSize: 10,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,

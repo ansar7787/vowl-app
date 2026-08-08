@@ -37,7 +37,10 @@ class KidsFruitsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Fruit Stand Awning
-            Expanded(flex: 5, child: Center(child: _buildAwningFrame(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildAwningFrame(context, state, quest)),
+            ),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -69,7 +72,11 @@ class KidsFruitsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildAwningFrame(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildAwningFrame(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -87,15 +94,21 @@ class KidsFruitsLayout extends StatelessWidget {
               width: 280.w,
               height: 200.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF3C7), // Light wood
+                color: isHovering
+                    ? const Color(0xFFFEF9C3)
+                    : const Color(0xFFFEF3C7), // Light wood
                 borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(
-                  color: isHovering ? const Color(0xFFB45309) : const Color(0xFF92400E),
+                  color: isHovering
+                      ? const Color(0xFFB45309)
+                      : const Color(0xFF92400E),
                   width: isHovering ? 8.r : 6.r,
                 ), // Dark wood frame
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.15),
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.3 : 0.15,
+                    ),
                     blurRadius: isHovering ? 20 : 10,
                     offset: const Offset(0, 8),
                   ),
@@ -108,7 +121,8 @@ class KidsFruitsLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?", // Use instruction, hide emoji/question to prevent cheat
+                        quest.instruction ??
+                            "?", // Use instruction, hide emoji/question to prevent cheat
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
@@ -165,7 +179,9 @@ class KidsFruitsLayout extends StatelessWidget {
                       8,
                       (index) => Expanded(
                         child: Container(
-                          color: index % 2 == 0 ? Colors.red[600] : Colors.white,
+                          color: index % 2 == 0
+                              ? Colors.red[600]
+                              : Colors.white,
                         ),
                       ),
                     ),
@@ -188,54 +204,54 @@ class KidsFruitsLayout extends StatelessWidget {
     final basketColor = const Color(0xFFD97706); // Wicker yellow/brown
 
     final basketWidget = Stack(
-        alignment: Alignment.bottomCenter,
-        clipBehavior: Clip.none,
-        children: [
-          // The label sticking out
-          Positioned(
-            top: -20.h,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(4.r),
-                border: Border.all(color: const Color(0xFF92400E), width: 1),
-              ),
-              child: AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w800,
-                  color: const Color(0xFF451A03),
-                ),
-                maxLines: 1,
-                minFontSize: 8,
-              ),
-            ),
-          ),
-          // The basket
-          Container(
-            height: 80.h,
-            width: double.infinity,
+      alignment: Alignment.bottomCenter,
+      clipBehavior: Clip.none,
+      children: [
+        // The label sticking out
+        Positioned(
+          top: -20.h,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
             decoration: BoxDecoration(
-              color: basketColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.r),
-                bottomRight: Radius.circular(20.r),
-              ),
-              border: Border.all(color: const Color(0xFF78350F), width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  offset: Offset(0, 4.h),
-                ),
-              ],
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(4.r),
+              border: Border.all(color: const Color(0xFF92400E), width: 1),
             ),
-            child: CustomPaint(painter: _WickerPainter()),
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w800,
+                color: const Color(0xFF451A03),
+              ),
+              maxLines: 1,
+              minFontSize: 8,
+            ),
           ),
-        ],
-      );
+        ),
+        // The basket
+        Container(
+          height: 80.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: basketColor,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20.r),
+              bottomRight: Radius.circular(20.r),
+            ),
+            border: Border.all(color: const Color(0xFF78350F), width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                offset: Offset(0, 4.h),
+              ),
+            ],
+          ),
+          child: CustomPaint(painter: _WickerPainter()),
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -243,16 +259,10 @@ class KidsFruitsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: basketWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: basketWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: basketWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: basketWidget),
       child: basketWidget,
     );
   }

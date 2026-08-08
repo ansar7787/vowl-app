@@ -37,7 +37,10 @@ class KidsBodyPartsLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The X-Ray Board
-            Expanded(flex: 5, child: Center(child: _buildXRayBoard(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildXRayBoard(context, state, quest)),
+            ),
             // The Band-aids (Options)
             Flexible(
               flex: 5,
@@ -97,7 +100,11 @@ class KidsBodyPartsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildXRayBoard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildXRayBoard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -111,17 +118,21 @@ class KidsBodyPartsLayout extends StatelessWidget {
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A), // Dark X-Ray background
+            color: isHovering
+                ? const Color(0xFF1E293B)
+                : const Color(0xFF0F172A), // Dark X-Ray background
             borderRadius: BorderRadius.circular(8.r),
             border: Border.all(
-              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFFE2E8F0),
+              color: isHovering
+                  ? const Color(0xFF38BDF8)
+                  : const Color(0xFFE2E8F0),
               width: 12.r,
             ), // Medical white frame
             boxShadow: [
               BoxShadow(
-                color: const Color(
-                  0xFF38BDF8,
-                ).withValues(alpha: isHovering ? 0.6 : 0.3), // Blue glowing backlight
+                color: const Color(0xFF38BDF8).withValues(
+                  alpha: isHovering ? 0.6 : 0.3,
+                ), // Blue glowing backlight
                 blurRadius: isHovering ? 30 : 20,
                 spreadRadius: isHovering ? 10 : 5,
               ),
@@ -132,30 +143,33 @@ class KidsBodyPartsLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hidden question
+                  Text(
+                    quest.emoji!,
+                    style: TextStyle(fontSize: 80.sp),
+                  ), // Enlarge emoji, hidden question
                 if (quest.funFact != null) ...[
                   SizedBox(height: 8.h),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.w),
                     child: AutoSizeText(
-                  quest.funFact!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF7DD3FC), // Light blue fact text
+                      quest.funFact!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0xFF7DD3FC), // Light blue fact text
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      minFontSize: 10,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 10,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-    },
+                ],
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -175,58 +189,58 @@ class KidsBodyPartsLayout extends StatelessWidget {
     final bandaidColor = colors[index % colors.length];
 
     final bandaidWidget = Container(
-        height: 70.h,
-        decoration: BoxDecoration(
-          color: bandaidColor,
-          borderRadius: BorderRadius.circular(30.r), // Pill shape for bandaid
-          border: Border.all(
-            color: Colors.black.withValues(alpha: 0.1),
-            width: 1,
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.15),
-              offset: const Offset(0, 4),
-            ),
-          ],
+      height: 70.h,
+      decoration: BoxDecoration(
+        color: bandaidColor,
+        borderRadius: BorderRadius.circular(30.r), // Pill shape for bandaid
+        border: Border.all(
+          color: Colors.black.withValues(alpha: 0.1),
+          width: 1,
         ),
-        child: Stack(
-          children: [
-            // Band-aid dots texture
-            Positioned(left: 10.w, top: 20.h, child: _buildDot()),
-            Positioned(left: 10.w, bottom: 20.h, child: _buildDot()),
-            Positioned(right: 10.w, top: 20.h, child: _buildDot()),
-            Positioned(right: 10.w, bottom: 20.h, child: _buildDot()),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.15),
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Stack(
+        children: [
+          // Band-aid dots texture
+          Positioned(left: 10.w, top: 20.h, child: _buildDot()),
+          Positioned(left: 10.w, bottom: 20.h, child: _buildDot()),
+          Positioned(right: 10.w, top: 20.h, child: _buildDot()),
+          Positioned(right: 10.w, bottom: 20.h, child: _buildDot()),
 
-            // White pad in the middle
-            Center(
-              child: Container(
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 20.w),
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.8),
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
-                child: Center(
-                  child: AutoSizeText(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF0F172A),
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    minFontSize: 8,
+          // White pad in the middle
+          Center(
+            child: Container(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.symmetric(vertical: 8.h),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.8),
+                borderRadius: BorderRadius.circular(4.r),
+              ),
+              child: Center(
+                child: AutoSizeText(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: const Color(0xFF0F172A),
                   ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  minFontSize: 8,
                 ),
               ),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -234,16 +248,10 @@ class KidsBodyPartsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: bandaidWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: bandaidWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: bandaidWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: bandaidWidget),
       child: bandaidWidget,
     );
   }

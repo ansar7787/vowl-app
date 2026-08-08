@@ -150,8 +150,10 @@ class PremiumPlanCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Text(
+                                AutoSizeText(
                                   currencyFormat.format(plan.oldPrice),
+                                  maxLines: 1,
+                                  minFontSize: 8,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     color: isDark
@@ -165,8 +167,10 @@ class PremiumPlanCard extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(height: 2.h),
-                                Text(
+                                AutoSizeText(
                                   currencyFormat.format(plan.price),
+                                  maxLines: 1,
+                                  minFontSize: 12,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     color: isDark ? Colors.white : Colors.black,

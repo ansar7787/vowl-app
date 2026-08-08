@@ -37,7 +37,10 @@ class KidsTimeLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Giant Clock Face
-            Expanded(flex: 5, child: Center(child: _buildClockFace(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildClockFace(context, state, quest)),
+            ),
             // The Pocket Watches (Options)
             Flexible(
               flex: 5,
@@ -93,7 +96,11 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildClockFace(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildClockFace(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -107,10 +114,14 @@ class KidsTimeLayout extends StatelessWidget {
           width: 260.r,
           height: 260.r,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFFFEF9C3) : const Color(0xFFFEF3C7), // Antique clock face
+            color: isHovering
+                ? const Color(0xFFFEF9C3)
+                : const Color(0xFFFEF3C7), // Antique clock face
             shape: BoxShape.circle,
             border: Border.all(
-              color: isHovering ? const Color(0xFFD97706) : const Color(0xFFB45309),
+              color: isHovering
+                  ? const Color(0xFFD97706)
+                  : const Color(0xFFB45309),
               width: isHovering ? 16.r : 12.r,
             ), // Brass frame
             boxShadow: [
@@ -150,11 +161,17 @@ class KidsTimeLayout extends StatelessWidget {
               Center(
                 child: Container(
                   width: 200.w,
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.95),
                     borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(color: const Color(0xFFD97706), width: 2),
+                    border: Border.all(
+                      color: const Color(0xFFD97706),
+                      width: 2,
+                    ),
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -227,52 +244,52 @@ class KidsTimeLayout extends StatelessWidget {
     int index,
   ) {
     final watchWidget = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // The chain
-          Container(
-            height: 15.h,
-            width: 4.w,
-            color: const Color(0xFFFBBF24), // Gold chain
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // The chain
+        Container(
+          height: 15.h,
+          width: 4.w,
+          color: const Color(0xFFFBBF24), // Gold chain
+        ),
+        // The Watch body
+        Container(
+          height: 75.r,
+          width: 75.r,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: const Color(0xFFFBBF24),
+              width: 6.r,
+            ), // Gold rim
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-          // The Watch body
-          Container(
-            height: 75.r,
-            width: 75.r,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: const Color(0xFFFBBF24),
-                width: 6.r,
-              ), // Gold rim
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  offset: const Offset(0, 4),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: AutoSizeText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF0F172A),
                 ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: AutoSizeText(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF0F172A),
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 8,
-                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
               ),
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -280,16 +297,10 @@ class KidsTimeLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: watchWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: watchWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: watchWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: watchWidget),
       child: watchWidget,
     );
   }

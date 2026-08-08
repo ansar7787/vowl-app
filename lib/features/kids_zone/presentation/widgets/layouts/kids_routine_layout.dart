@@ -37,7 +37,10 @@ class KidsRoutineLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Bedroom Window
-            Expanded(flex: 5, child: Center(child: _buildBedroomWindow(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildBedroomWindow(context, state, quest)),
+            ),
             // The Bed with Pillows
             Flexible(
               flex: 5,
@@ -103,7 +106,11 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildBedroomWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildBedroomWindow(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -121,7 +128,9 @@ class KidsRoutineLayout extends StatelessWidget {
               width: 240.w,
               height: 180.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFF0284C7) : const Color(0xFF38BDF8), // Light blue daytime sky
+                color: isHovering
+                    ? const Color(0xFF0284C7)
+                    : const Color(0xFF38BDF8), // Light blue daytime sky
                 borderRadius: BorderRadius.circular(8.r),
                 border: Border.all(
                   color: Colors.white,
@@ -129,7 +138,9 @@ class KidsRoutineLayout extends StatelessWidget {
                 ), // White window frame
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.1),
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.3 : 0.1,
+                    ),
                     blurRadius: isHovering ? 20 : 10,
                     offset: const Offset(0, 4),
                   ),
@@ -156,7 +167,10 @@ class KidsRoutineLayout extends StatelessWidget {
                   Center(
                     child: Container(
                       width: 180.w,
-                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 8.h,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.white.withValues(alpha: 0.8),
                         borderRadius: BorderRadius.circular(12.r),
@@ -165,7 +179,10 @@ class KidsRoutineLayout extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           if (quest.emoji != null)
-                            Text(quest.emoji!, style: TextStyle(fontSize: 80.sp)), // Enlarge emoji, hidden question string
+                            Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            ), // Enlarge emoji, hidden question string
                           if (quest.funFact != null) ...[
                             SizedBox(height: 4.h),
                             AutoSizeText(
@@ -197,7 +214,9 @@ class KidsRoutineLayout extends StatelessWidget {
                 width: 40.w,
                 decoration: BoxDecoration(
                   color: const Color(0xFFF43F5E), // Rose red curtains
-                  borderRadius: BorderRadius.horizontal(left: Radius.circular(8.r)),
+                  borderRadius: BorderRadius.horizontal(
+                    left: Radius.circular(8.r),
+                  ),
                 ),
               ),
             ),
@@ -228,37 +247,37 @@ class KidsRoutineLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final pillowWidget = Container(
-        height: 70.h,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: const Color(0xFFE2E8F0), width: 2),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              offset: const Offset(0, 4),
-              blurRadius: 4,
+      height: 70.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: const Color(0xFFE2E8F0), width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            offset: const Offset(0, 4),
+            blurRadius: 4,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w800,
+              color: const Color(0xFF475569),
             ),
-          ],
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF475569),
-              ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              minFontSize: 8,
-            ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            minFontSize: 8,
           ),
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -266,16 +285,10 @@ class KidsRoutineLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: pillowWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: pillowWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: pillowWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: pillowWidget),
       child: pillowWidget,
     );
   }

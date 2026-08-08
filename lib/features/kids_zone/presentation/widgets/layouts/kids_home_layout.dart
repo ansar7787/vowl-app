@@ -37,7 +37,10 @@ class KidsHomeLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Dollhouse Cross-section
-            Expanded(flex: 5, child: Center(child: _buildDollhouse(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildDollhouse(context, state, quest)),
+            ),
             // The Furniture pieces (Options)
             Flexible(
               flex: 5,
@@ -99,7 +102,11 @@ class KidsHomeLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildDollhouse(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildDollhouse(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -118,7 +125,9 @@ class KidsHomeLayout extends StatelessWidget {
               child: Container(
                 width: 280.w,
                 height: 60.h,
-                color: isHovering ? const Color(0xFFDC2626) : const Color(0xFFEF4444), // Red roof
+                color: isHovering
+                    ? const Color(0xFFDC2626)
+                    : const Color(0xFFEF4444), // Red roof
               ),
             ),
             // Dollhouse Room
@@ -126,14 +135,20 @@ class KidsHomeLayout extends StatelessWidget {
               width: 240.w,
               height: 160.h, // Made slightly taller to fit instruction
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFFFEF3C7) : const Color(0xFFFDE68A), // Warm yellow wallpaper
+                color: isHovering
+                    ? const Color(0xFFFEF3C7)
+                    : const Color(0xFFFDE68A), // Warm yellow wallpaper
                 border: Border.all(
-                  color: isHovering ? const Color(0xFF92400E) : const Color(0xFF78350F),
+                  color: isHovering
+                      ? const Color(0xFF92400E)
+                      : const Color(0xFF78350F),
                   width: isHovering ? 8.r : 6.r,
                 ), // Wooden walls
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isHovering ? 0.3 : 0.15),
+                    color: Colors.black.withValues(
+                      alpha: isHovering ? 0.3 : 0.15,
+                    ),
                     blurRadius: isHovering ? 20 : 10,
                     offset: const Offset(0, 8),
                   ),
@@ -148,7 +163,8 @@ class KidsHomeLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?", // Use instruction as clue, hide question
+                        quest.instruction ??
+                            "?", // Use instruction as clue, hide question
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
@@ -204,48 +220,48 @@ class KidsHomeLayout extends StatelessWidget {
     final furnitureColor = colors[index % colors.length];
 
     final furnitureWidget = Container(
-        height: 75.h,
-        decoration: BoxDecoration(
-          color: furnitureColor,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: Colors.white, width: 2),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              offset: const Offset(0, 6),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            // Furniture "cushion" line
-            Container(
-              margin: EdgeInsets.only(top: 20.h),
-              height: 2.h,
-              color: Colors.white.withValues(alpha: 0.3),
-            ),
-            Expanded(
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: AutoSizeText(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    minFontSize: 8,
+      height: 75.h,
+      decoration: BoxDecoration(
+        color: furnitureColor,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: Colors.white, width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.2),
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          // Furniture "cushion" line
+          Container(
+            margin: EdgeInsets.only(top: 20.h),
+            height: 2.h,
+            color: Colors.white.withValues(alpha: 0.3),
+          ),
+          Expanded(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: AutoSizeText(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
                   ),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  minFontSize: 8,
                 ),
               ),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -253,16 +269,10 @@ class KidsHomeLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: furnitureWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: furnitureWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: furnitureWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: furnitureWidget),
       child: furnitureWidget,
     );
   }

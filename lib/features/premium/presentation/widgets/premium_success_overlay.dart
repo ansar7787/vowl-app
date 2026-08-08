@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class PremiumSuccessOverlay extends StatelessWidget {
   final VoidCallback onBeginAdventure;
@@ -109,13 +110,15 @@ class PremiumSuccessOverlay extends StatelessWidget {
                   ),
                 ).animate().fadeIn(duration: 500.ms).slideY(begin: 0.2, end: 0),
                 SizedBox(height: 12.h),
-                Text(
+                AutoSizeText(
                   context.tr(
                     'premium.success_subtitle',
                     fallback:
                         'Your upgrade was successful. All elite features are now unlocked.',
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 3,
+                  minFontSize: 10,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 15.sp,
@@ -197,20 +200,26 @@ class PremiumSuccessOverlay extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Text(
-                        context
-                            .tr(
-                              'premium.begin_adventure_button',
-                              fallback: 'Begin Adventure',
-                            )
-                            .toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w900,
-                          fontSize: 15.sp,
-                          letterSpacing: 1.2,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: AutoSizeText(
+                          context
+                              .tr(
+                                'premium.begin_adventure_button',
+                                fallback: 'Begin Adventure',
+                              )
+                              .toUpperCase(),
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                          minFontSize: 10,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 15.sp,
+                            letterSpacing: 1.2,
+                          ),
                         ),
                       ),
                     ),

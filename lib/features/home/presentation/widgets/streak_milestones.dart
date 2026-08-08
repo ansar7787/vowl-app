@@ -285,9 +285,7 @@ class StreakMilestones extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
-                                    color: Colors.amber.withValues(
-                                      alpha: 0.5,
-                                    ),
+                                    color: Colors.amber.withValues(alpha: 0.5),
                                   ),
                                   maxLines: 1,
                                   minFontSize: 6,

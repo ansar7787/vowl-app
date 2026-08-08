@@ -37,7 +37,10 @@ class KidsNumbersLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Rocket Window for the Question
-            Expanded(flex: 5, child: Center(child: _buildRocketWindow(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildRocketWindow(context, state, quest)),
+            ),
             // The Planets/Asteroids for Options
             Flexible(
               flex: 5,
@@ -68,7 +71,11 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildRocketWindow(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildRocketWindow(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -82,16 +89,22 @@ class KidsNumbersLayout extends StatelessWidget {
           width: 260.r,
           height: 260.r,
           decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF1E293B) : const Color(0xFF0F172A), // Deep Space Blue
+            color: isHovering
+                ? const Color(0xFF1E293B)
+                : const Color(0xFF0F172A), // Deep Space Blue
             shape: BoxShape.circle,
             border: Border.all(
-              color: isHovering ? const Color(0xFF38BDF8) : const Color(0xFF94A3B8),
+              color: isHovering
+                  ? const Color(0xFF38BDF8)
+                  : const Color(0xFF94A3B8),
               width: 16.r,
             ), // Silver metallic frame
             boxShadow: [
               // Outer glow for the window
               BoxShadow(
-                color: const Color(0xFF0EA5E9).withValues(alpha: isHovering ? 0.6 : 0.3),
+                color: const Color(
+                  0xFF0EA5E9,
+                ).withValues(alpha: isHovering ? 0.6 : 0.3),
                 blurRadius: isHovering ? 40 : 30,
                 spreadRadius: isHovering ? 10 : 5,
               ),
@@ -180,38 +193,38 @@ class KidsNumbersLayout extends StatelessWidget {
     final shadowColor = const Color(0xFFB45309);
 
     final planetWidget = Container(
-        height: 100.h,
-        decoration: BoxDecoration(
-          color: baseColor,
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.white, width: 3),
-          boxShadow: [
-            BoxShadow(color: shadowColor, offset: Offset(0, 8.h)),
-            // Glowing atmosphere
-            BoxShadow(
-              color: baseColor.withValues(alpha: 0.4),
-              blurRadius: 15,
-              spreadRadius: 2,
+      height: 100.h,
+      decoration: BoxDecoration(
+        color: baseColor,
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.white, width: 3),
+        boxShadow: [
+          BoxShadow(color: shadowColor, offset: Offset(0, 8.h)),
+          // Glowing atmosphere
+          BoxShadow(
+            color: baseColor.withValues(alpha: 0.4),
+            blurRadius: 15,
+            spreadRadius: 2,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w),
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 36.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
             ),
-          ],
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 36.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-              ),
-              maxLines: 1,
-              minFontSize: 12,
-            ),
+            maxLines: 1,
+            minFontSize: 12,
           ),
         ),
-      );
+      ),
+    );
 
     return Draggable<String>(
       data: text,
@@ -219,16 +232,10 @@ class KidsNumbersLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: planetWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: planetWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: planetWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: planetWidget),
       child: planetWidget,
     );
   }

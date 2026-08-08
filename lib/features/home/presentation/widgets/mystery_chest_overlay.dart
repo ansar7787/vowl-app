@@ -37,7 +37,7 @@ class MysteryChestOverlay extends StatelessWidget {
                   : null, // Dismiss on background tap only if already opened
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                child: Container(color: Colors.black.withValues(alpha: 0.95)),
+                child: Container(color: Colors.black.withValues(alpha: 0.6)),
               ),
             ),
           ),
@@ -380,8 +380,10 @@ class MysteryChestOverlay extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          AutoSizeText(
                                             '+$rewardAmount',
+                                            maxLines: 1,
+                                            minFontSize: 16,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 32.sp,

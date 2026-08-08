@@ -37,7 +37,10 @@ class KidsFoodLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h),
             // The Chef's Hat / Board
-            Expanded(flex: 5, child: Center(child: _buildKitchenBoard(context, state, quest))),
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildKitchenBoard(context, state, quest)),
+            ),
             // Serving Platters (Options)
             Flexible(
               flex: 5,
@@ -92,7 +95,11 @@ class KidsFoodLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildKitchenBoard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildKitchenBoard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
         final text = details.data;
@@ -111,16 +118,20 @@ class KidsFoodLayout extends StatelessWidget {
               width: 280.w,
               height: 200.h,
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFFFEF2F2) : Colors.white, // Light red tint on hover
+                color: isHovering
+                    ? const Color(0xFFFEF2F2)
+                    : Colors.white, // Light red tint on hover
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: isHovering ? const Color(0xFFE11D48) : const Color(0xFFD4D4D8),
+                  color: isHovering
+                      ? const Color(0xFFE11D48)
+                      : const Color(0xFFD4D4D8),
                   width: isHovering ? 6.r : 4.r,
                 ), // Light grey tile border
                 boxShadow: [
                   BoxShadow(
-                    color: isHovering 
-                        ? const Color(0xFFE11D48).withValues(alpha: 0.3) 
+                    color: isHovering
+                        ? const Color(0xFFE11D48).withValues(alpha: 0.3)
                         : Colors.black.withValues(alpha: 0.1),
                     blurRadius: isHovering ? 20 : 10,
                     offset: const Offset(0, 8),
@@ -136,7 +147,8 @@ class KidsFoodLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?", // Use instruction as clue, hide question
+                        quest.instruction ??
+                            "?", // Use instruction as clue, hide question
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
@@ -178,7 +190,9 @@ class KidsFoodLayout extends StatelessWidget {
                 height: 40.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(40.r),
+                  ),
                   border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
                 ),
                 child: Row(
@@ -216,71 +230,69 @@ class KidsFoodLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final platterWidget = Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // The Cloche (Silver Dome)
-          Container(
-            height: 50.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFFE2E8F0), // Silver
-              borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-              border: Border.all(color: const Color(0xFF94A3B8), width: 2),
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Colors.white, Color(0xFFCBD5E1)],
-              ),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // The Cloche (Silver Dome)
+        Container(
+          height: 50.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFFE2E8F0), // Silver
+            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+            border: Border.all(color: const Color(0xFF94A3B8), width: 2),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.white, Color(0xFFCBD5E1)],
             ),
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                margin: EdgeInsets.only(top: 4.h),
-                width: 15.w,
-                height: 8.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF94A3B8), // Dome handle
-                  borderRadius: BorderRadius.circular(4.r),
-                ),
+          ),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              margin: EdgeInsets.only(top: 4.h),
+              width: 15.w,
+              height: 8.h,
+              decoration: BoxDecoration(
+                color: const Color(0xFF94A3B8), // Dome handle
+                borderRadius: BorderRadius.circular(4.r),
               ),
             ),
           ),
-          // The Platter Base
-          Container(
-            height: 35.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: const Color(0xFFF1F5F9), // Light silver plate
-              borderRadius: BorderRadius.vertical(
-                bottom: Radius.circular(16.r),
+        ),
+        // The Platter Base
+        Container(
+          height: 35.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: const Color(0xFFF1F5F9), // Light silver plate
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(16.r)),
+            border: Border.all(color: const Color(0xFF94A3B8), width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                offset: const Offset(0, 4),
               ),
-              border: Border.all(color: const Color(0xFF94A3B8), width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  offset: const Offset(0, 4),
+            ],
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              child: AutoSizeText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF0F172A),
                 ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: AutoSizeText(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF0F172A),
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 8,
-                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 8,
               ),
             ),
           ),
-        ],
-      );
+        ),
+      ],
+    );
 
     return Draggable<String>(
       data: text,
@@ -288,16 +300,10 @@ class KidsFoodLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: platterWidget,
-          ),
+          child: Opacity(opacity: 0.9, child: platterWidget),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: platterWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: platterWidget),
       child: platterWidget,
     );
   }

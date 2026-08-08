@@ -35,16 +35,22 @@ class KidsAlphabetLayout extends StatelessWidget {
           children: [
             SizedBox(height: 120.h), // Mascot space
             // The Chalkboard for the Question
-            Expanded(flex: 5, child: Center(child: _buildChalkboard(context, state, quest))),
-            
+            Expanded(
+              flex: 5,
+              child: Center(child: _buildChalkboard(context, state, quest)),
+            ),
+
             Text(
-              context.tr('games.kids_alphabet_drag', fallback: 'Drag the block to the chalkboard! 👆'),
+              context.tr(
+                'games.kids_alphabet_drag',
+                fallback: 'Drag the block to the chalkboard! 👆',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
-                color: Theme.of(context).brightness == Brightness.dark 
-                    ? Colors.white.withValues(alpha: 0.8) 
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
             ),
@@ -80,7 +86,11 @@ class KidsAlphabetLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildChalkboard(BuildContext context, KidsLoaded state, dynamic quest) {
+  Widget _buildChalkboard(
+    BuildContext context,
+    KidsLoaded state,
+    dynamic quest,
+  ) {
     bool isRevealed = false; // Local state for progressive disclosure
 
     return StatefulBuilder(
@@ -101,10 +111,14 @@ class KidsAlphabetLayout extends StatelessWidget {
               height: 220.h,
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: isHovering ? const Color(0xFF2D6A4F) : const Color(0xFF1B4332), // Highlight green when hovering
+                color: isHovering
+                    ? const Color(0xFF2D6A4F)
+                    : const Color(0xFF1B4332), // Highlight green when hovering
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: isHovering ? const Color(0xFFB07D45) : const Color(0xFF8B5A2B),
+                  color: isHovering
+                      ? const Color(0xFFB07D45)
+                      : const Color(0xFF8B5A2B),
                   width: 12.r,
                 ), // Wooden frame
                 boxShadow: [
@@ -116,32 +130,42 @@ class KidsAlphabetLayout extends StatelessWidget {
                 ],
               ),
               child: InkWell(
-                onTap: state.lastAnswerCorrect != null ? null : () {
-                  // Play the instruction sound
-                  if (quest.instruction != null) {
-                    di.sl<KidsTTSService>().speak(quest.instruction!);
-                  }
-                  // Reveal the visual clues if not already revealed
-                  if (!isRevealed) {
-                    setState(() => isRevealed = true);
-                  }
-                },
+                onTap: state.lastAnswerCorrect != null
+                    ? null
+                    : () {
+                        // Play the instruction sound
+                        if (quest.instruction != null) {
+                          di.sl<KidsTTSService>().speak(quest.instruction!);
+                        }
+                        // Reveal the visual clues if not already revealed
+                        if (!isRevealed) {
+                          setState(() => isRevealed = true);
+                        }
+                      },
                 child: Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       // The instruction is now handled entirely by the Kidz Buddy mascot bubble!
-                      
+
                       // The interactive mystery button / letter
                       AnimatedSwitcher(
                         duration: const Duration(milliseconds: 400),
-                        transitionBuilder: (Widget child, Animation<double> animation) {
-                          return ScaleTransition(scale: animation, child: child);
-                        },
+                        transitionBuilder:
+                            (Widget child, Animation<double> animation) {
+                              return ScaleTransition(
+                                scale: animation,
+                                child: child,
+                              );
+                            },
                         child: isRevealed
                             ? ((quest.wordEmoji ?? quest.emoji) != null
-                                ? Text((quest.wordEmoji ?? quest.emoji)!, key: const ValueKey('emoji'), style: TextStyle(fontSize: 64.sp))
-                                : const SizedBox.shrink())
+                                  ? Text(
+                                      (quest.wordEmoji ?? quest.emoji)!,
+                                      key: const ValueKey('emoji'),
+                                      style: TextStyle(fontSize: 64.sp),
+                                    )
+                                  : const SizedBox.shrink())
                             : Column(
                                 key: const ValueKey('mystery'),
                                 mainAxisSize: MainAxisSize.min,
@@ -149,9 +173,14 @@ class KidsAlphabetLayout extends StatelessWidget {
                                   Container(
                                     padding: EdgeInsets.all(16.r),
                                     decoration: BoxDecoration(
-                                      color: const Color(0xFFFDE68A).withValues(alpha: 0.2),
+                                      color: const Color(
+                                        0xFFFDE68A,
+                                      ).withValues(alpha: 0.2),
                                       shape: BoxShape.circle,
-                                      border: Border.all(color: const Color(0xFFFDE68A), width: 3.w),
+                                      border: Border.all(
+                                        color: const Color(0xFFFDE68A),
+                                        width: 3.w,
+                                      ),
                                     ),
                                     child: Icon(
                                       Icons.volume_up_rounded,
@@ -161,24 +190,34 @@ class KidsAlphabetLayout extends StatelessWidget {
                                   ),
                                   SizedBox(height: 12.h),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 8.h,
+                                    ),
                                     decoration: BoxDecoration(
                                       color: const Color(0xFFFDE68A),
                                       borderRadius: BorderRadius.circular(20.r),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.black.withValues(alpha: 0.1),
+                                          color: Colors.black.withValues(
+                                            alpha: 0.1,
+                                          ),
                                           offset: Offset(0, 4.h),
                                         ),
                                       ],
                                     ),
                                     child: Text(
-                                      context.tr('games.kids_tap_me', fallback: 'TAP ME!'),
+                                      context.tr(
+                                        'games.kids_tap_me',
+                                        fallback: 'TAP ME!',
+                                      ),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w900,
-                                        color: const Color(0xFF78350F), // Etched wood color
+                                        color: const Color(
+                                          0xFF78350F,
+                                        ), // Etched wood color
                                         letterSpacing: 1.5,
                                       ),
                                     ),
@@ -186,22 +225,31 @@ class KidsAlphabetLayout extends StatelessWidget {
                                 ],
                               ),
                       ),
-                      
+
                       // The visual word clue (fade in without jumping layout)
                       AnimatedOpacity(
                         opacity: isRevealed ? 1.0 : 0.0,
                         duration: const Duration(milliseconds: 500),
-                        child: quest.wordExample != null 
+                        child: quest.wordExample != null
                             ? Padding(
-                                padding: EdgeInsets.only(top: 8.h, left: 8.w, right: 8.w),
+                                padding: EdgeInsets.only(
+                                  top: 8.h,
+                                  left: 8.w,
+                                  right: 8.w,
+                                ),
                                 child: AutoSizeText.rich(
                                   TextSpan(
                                     children: [
-                                      ..._buildHighlightedWordSpans(quest.wordExample!, quest.correctAnswer),
+                                      ..._buildHighlightedWordSpans(
+                                        quest.wordExample!,
+                                        quest.correctAnswer,
+                                      ),
                                       if (quest.phonetic != null)
                                         TextSpan(
                                           text: ' (/${quest.phonetic}/)',
-                                          style: const TextStyle(color: Color(0xFFFCD34D)), // Bright yellow to highlight phonetic sound
+                                          style: const TextStyle(
+                                            color: Color(0xFFFCD34D),
+                                          ), // Bright yellow to highlight phonetic sound
                                         ),
                                     ],
                                   ),
@@ -223,7 +271,11 @@ class KidsAlphabetLayout extends StatelessWidget {
                           opacity: isRevealed ? 1.0 : 0.0,
                           duration: const Duration(milliseconds: 500),
                           child: Padding(
-                            padding: EdgeInsets.only(top: 12.h, left: 16.w, right: 16.w),
+                            padding: EdgeInsets.only(
+                              top: 12.h,
+                              left: 16.w,
+                              right: 16.w,
+                            ),
                             child: _buildChalkText(
                               quest.funFact!,
                               const Color(0xFF93C5FD), // Light chalk blue
@@ -254,29 +306,29 @@ class KidsAlphabetLayout extends StatelessWidget {
     final shadowColor = const Color(0xFFD97706); // Dark wood
 
     final blockWidget = Container(
-        height: 100.h,
-        padding: EdgeInsets.symmetric(horizontal: 8.w),
-        decoration: BoxDecoration(
-          color: baseColor,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: shadowColor, width: 2),
-          boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
-        ),
-        child: Center(
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              color: const Color(0xFF78350F), // Etched wood color
-            ),
-            maxLines: 1,
-            minFontSize: 12,
-            textAlign: TextAlign.center,
+      height: 100.h,
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      decoration: BoxDecoration(
+        color: baseColor,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: shadowColor, width: 2),
+        boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
+      ),
+      child: Center(
+        child: AutoSizeText(
+          text,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 32.sp,
+            fontWeight: FontWeight.w900,
+            color: const Color(0xFF78350F), // Etched wood color
           ),
+          maxLines: 1,
+          minFontSize: 12,
+          textAlign: TextAlign.center,
         ),
-      );
+      ),
+    );
 
     if (state.lastAnswerCorrect != null) {
       return blockWidget;
@@ -289,35 +341,41 @@ class KidsAlphabetLayout extends StatelessWidget {
         child: Transform.scale(
           scale: 1.15, // Make it pop more when picked up
           child: Transform.rotate(
-            angle: 0.08, // Playful slight tilt while dragging (AAA micro-interaction)
-            child: Opacity(
-              opacity: 0.95,
-              child: blockWidget,
-            ),
+            angle:
+                0.08, // Playful slight tilt while dragging (AAA micro-interaction)
+            child: Opacity(opacity: 0.95, child: blockWidget),
           ),
         ),
       ),
-      childWhenDragging: Opacity(
-        opacity: 0.3,
-        child: blockWidget,
-      ),
+      childWhenDragging: Opacity(opacity: 0.3, child: blockWidget),
       child: blockWidget,
     );
   }
 
   /// Helper to highlight the target letter in the word to teach phonetic connection
-  List<TextSpan> _buildHighlightedWordSpans(String word, String? correctAnswer) {
+  List<TextSpan> _buildHighlightedWordSpans(
+    String word,
+    String? correctAnswer,
+  ) {
     if (correctAnswer == null || correctAnswer.isEmpty) {
-      return [TextSpan(text: word, style: const TextStyle(color: Color(0xFFA7F3D0)))];
+      return [
+        TextSpan(
+          text: word,
+          style: const TextStyle(color: Color(0xFFA7F3D0)),
+        ),
+      ];
     }
-    
+
     if (word.toLowerCase().startsWith(correctAnswer.toLowerCase())) {
       final firstPart = word.substring(0, correctAnswer.length);
       final restPart = word.substring(correctAnswer.length);
       return [
         TextSpan(
           text: firstPart,
-          style: const TextStyle(color: Color(0xFFFCD34D), fontWeight: FontWeight.w900), // Highlight Yellow
+          style: const TextStyle(
+            color: Color(0xFFFCD34D),
+            fontWeight: FontWeight.w900,
+          ), // Highlight Yellow
         ),
         TextSpan(
           text: restPart,
@@ -325,7 +383,12 @@ class KidsAlphabetLayout extends StatelessWidget {
         ),
       ];
     }
-    return [TextSpan(text: word, style: const TextStyle(color: Color(0xFFA7F3D0)))];
+    return [
+      TextSpan(
+        text: word,
+        style: const TextStyle(color: Color(0xFFA7F3D0)),
+      ),
+    ];
   }
 
   /// Helper to reduce DRY AutoSizeText boilerplate on the chalkboard

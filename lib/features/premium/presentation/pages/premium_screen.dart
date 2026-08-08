@@ -6,6 +6,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'dart:async';
+import 'dart:ui' as ui;
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -426,47 +427,50 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildProcessingOverlay() {
     return Positioned.fill(
-      child: Container(
-        color: Colors.black.withValues(alpha: 0.85),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 60.r,
-                height: 60.r,
-                child: const VowlButtonSpinner(color: Color(0xFFF59E0B)),
-              ),
-              SizedBox(height: 20.h),
-              Semantics(
-                liveRegion: true,
-                child: Text(
-                  context.tr(
-                    'premium.processing_title',
-                    fallback: 'Processing...',
+      child: BackdropFilter(
+        filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+        child: Container(
+          color: Colors.black.withValues(alpha: 0.6),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 60.r,
+                  height: 60.r,
+                  child: const VowlButtonSpinner(color: Color(0xFFF59E0B)),
+                ),
+                SizedBox(height: 20.h),
+                Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    context.tr(
+                      'premium.processing_title',
+                      fallback: 'Processing...',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  context.tr(
+                    'premium.processing_subtitle',
+                    fallback: 'Please wait while we confirm your purchase.',
+                  ),
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
+                    color: Colors.white70,
+                    fontSize: 12.sp,
                   ),
                 ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                context.tr(
-                  'premium.processing_subtitle',
-                  fallback: 'Please wait while we confirm your purchase.',
-                ),
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  color: Colors.white70,
-                  fontSize: 12.sp,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -475,26 +479,29 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   Widget _buildCompletedOverlay() {
     return Positioned.fill(
-      child: Container(
-        color: Colors.black.withValues(alpha: 0.85),
-        child: Center(
-          child: _paymentSuccess == true
-              ? PremiumSuccessOverlay(
-                  transactionId: _transactionId,
-                  onBeginAdventure: () => context.pop(),
-                )
-              : PremiumFailureOverlay(
-                  errorMessage: _errorMessage,
-                  onRetry: () {
-                    setState(() {
-                      _paymentCompleted = false;
-                      _paymentSuccess = null;
-                      _errorMessage = null;
-                      _transactionId = null;
-                    });
-                  },
-                  onClose: () => context.pop(),
-                ),
+      child: BackdropFilter(
+        filter: ui.ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+        child: Container(
+          color: Colors.black.withValues(alpha: 0.6),
+          child: Center(
+            child: _paymentSuccess == true
+                ? PremiumSuccessOverlay(
+                    transactionId: _transactionId,
+                    onBeginAdventure: () => context.pop(),
+                  )
+                : PremiumFailureOverlay(
+                    errorMessage: _errorMessage,
+                    onRetry: () {
+                      setState(() {
+                        _paymentCompleted = false;
+                        _paymentSuccess = null;
+                        _errorMessage = null;
+                        _transactionId = null;
+                      });
+                    },
+                    onClose: () => context.pop(),
+                  ),
+          ),
         ),
       ),
     );

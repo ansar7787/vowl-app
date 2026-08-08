@@ -88,7 +88,10 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.play(AssetSource('sounds/level_completed.mp3'), volume: 1.0);
+      await _sfxPlayer.play(
+        AssetSource('sounds/level_completed.mp3'),
+        volume: 1.0,
+      );
     } catch (e) {
       debugPrint("Kids SFX Level Complete Error: $e");
       await playSuccessSFX();
