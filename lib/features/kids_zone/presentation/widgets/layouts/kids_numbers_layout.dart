@@ -44,6 +44,7 @@ class KidsNumbersLayout extends StatelessWidget {
               child: Center(child: _buildRocketWindow(context, state, quest)),
             ),
 
+            SizedBox(height: 24.h), // Increased space so it doesn't touch the circle
             Text(
               context.tr(
                 'games.kids_numbers_drag',
@@ -58,7 +59,7 @@ class KidsNumbersLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: 16.h), // Increased space below the text as well
 
             // The Planets/Asteroids for Options
             Flexible(
@@ -89,7 +90,7 @@ class KidsNumbersLayout extends StatelessWidget {
             // Small AAA Design Card for Fun Facts
             if (quest.funFact != null)
               Padding(
-                padding: EdgeInsets.only(bottom: 24.h, left: 32.w, right: 32.w),
+                padding: EdgeInsets.only(top: 16.h, bottom: 24.h, left: 32.w, right: 32.w),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                   decoration: BoxDecoration(
@@ -265,17 +266,19 @@ class KidsNumbersLayout extends StatelessWidget {
       ),
       child: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.w),
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 36.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: AutoSizeText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 36.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+              ),
+              maxLines: 1,
             ),
-            maxLines: 1,
-            minFontSize: 12,
           ),
         ),
       ),

@@ -475,10 +475,11 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       ),
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 18.sp,
-          fontWeight: FontWeight.w800,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
           color: const Color(0xFF1E293B),
           height: 1.2,
         ),
