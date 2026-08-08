@@ -1659,6 +1659,16 @@ class GameInstructionService {
           tip:
               "The cat is 'on' the mat! Can you find something 'under' your chair? 📦",
         );
+      case 'handwriting':
+        return const GameBriefing(
+          title: "Write and Learn",
+          icon: Icons.draw_rounded,
+          objective:
+              "MAGIC PEN: Learn how to write letters perfectly using your magic finger!",
+          rules: ["Trace the letter", "Follow the arrows", "Write it yourself"],
+          actionText: "Start Writing",
+          tip: "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
+        );
       case 'routine':
         return const GameBriefing(
           title: "My Daily Day",

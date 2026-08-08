@@ -68,9 +68,7 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.setSource(AssetSource('sounds/correct.mp3'));
-      await _sfxPlayer.setVolume(0.8);
-      await _sfxPlayer.resume();
+      await _sfxPlayer.play(AssetSource('sounds/correct.mp3'), volume: 0.8);
     } catch (e) {
       debugPrint("Kids SFX Success Error: $e");
     }
@@ -80,9 +78,7 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.setSource(AssetSource('sounds/wrong.mp3'));
-      await _sfxPlayer.setVolume(0.8);
-      await _sfxPlayer.resume();
+      await _sfxPlayer.play(AssetSource('sounds/wrong.mp3'), volume: 0.8);
     } catch (e) {
       debugPrint("Kids SFX Failure Error: $e");
     }
@@ -92,9 +88,7 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.setSource(AssetSource('sounds/level_completed.mp3'));
-      await _sfxPlayer.setVolume(1.0);
-      await _sfxPlayer.resume();
+      await _sfxPlayer.play(AssetSource('sounds/level_completed.mp3'), volume: 1.0);
     } catch (e) {
       debugPrint("Kids SFX Level Complete Error: $e");
       await playSuccessSFX();
