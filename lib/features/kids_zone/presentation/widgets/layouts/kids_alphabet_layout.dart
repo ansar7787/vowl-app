@@ -66,112 +66,167 @@ class KidsAlphabetLayout extends StatelessWidget {
   }
 
   Widget _buildChalkboard(BuildContext context, KidsLoaded state, dynamic quest) {
-    return DragTarget<String>(
-      onAcceptWithDetails: (details) {
-        final text = details.data;
-        final isCorrect = (text == quest.correctAnswer);
-        di.sl<KidsTTSService>().speak(text);
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
-      },
-      builder: (context, candidateData, rejectedData) {
-        final isHovering = candidateData.isNotEmpty;
-        return AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: 320.w,
-          height: 220.h,
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: isHovering ? const Color(0xFF2D6A4F) : const Color(0xFF1B4332), // Highlight green when hovering
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: isHovering ? const Color(0xFFB07D45) : const Color(0xFF8B5A2B),
-              width: 12.r,
-            ), // Wooden frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                blurRadius: 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (quest.instruction != null)
-              Padding(
-                padding: EdgeInsets.only(bottom: 12.h, left: 16.w, right: 16.w),
-                child: AutoSizeText(
-                  quest.instruction!,
-                  style: TextStyle(
-                    fontFamily: 'ComicSans',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white.withValues(alpha: 0.9), // Chalk white
+    bool isRevealed = false; // Local state for progressive disclosure
+
+    return StatefulBuilder(
+      key: ValueKey(quest), // CRITICAL: Reset state when the question changes
+      builder: (context, setState) {
+        return DragTarget<String>(
+          onAcceptWithDetails: (details) {
+            final text = details.data;
+            final isCorrect = (text == quest.correctAnswer);
+            di.sl<KidsTTSService>().speak(text);
+            context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+          },
+          builder: (context, candidateData, rejectedData) {
+            final isHovering = candidateData.isNotEmpty;
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              width: 320.w,
+              height: 220.h,
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isHovering ? const Color(0xFF2D6A4F) : const Color(0xFF1B4332), // Highlight green when hovering
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isHovering ? const Color(0xFFB07D45) : const Color(0xFF8B5A2B),
+                  width: 12.r,
+                ), // Wooden frame
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 10),
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 12,
+                ],
+              ),
+              child: InkWell(
+                onTap: () {
+                  // Play the instruction sound
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                  // Reveal the visual clues if not already revealed
+                  if (!isRevealed) {
+                    setState(() => isRevealed = true);
+                  }
+                },
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // The instruction is now handled entirely by the Kidz Buddy mascot bubble!
+                      
+                      // The interactive mystery button / letter
+                      AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 400),
+                        transitionBuilder: (Widget child, Animation<double> animation) {
+                          return ScaleTransition(scale: animation, child: child);
+                        },
+                        child: isRevealed
+                            ? ((quest.wordEmoji ?? quest.emoji) != null
+                                ? Text((quest.wordEmoji ?? quest.emoji)!, key: const ValueKey('emoji'), style: TextStyle(fontSize: 64.sp))
+                                : const SizedBox.shrink())
+                            : Column(
+                                key: const ValueKey('mystery'),
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(16.r),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFFDE68A).withValues(alpha: 0.2),
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: const Color(0xFFFDE68A), width: 3.w),
+                                    ),
+                                    child: Icon(
+                                      Icons.volume_up_rounded,
+                                      size: 40.sp,
+                                      color: const Color(0xFFFDE68A),
+                                    ),
+                                  ),
+                                  SizedBox(height: 12.h),
+                                  Container(
+                                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFFDE68A),
+                                      borderRadius: BorderRadius.circular(20.r),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withValues(alpha: 0.1),
+                                          offset: Offset(0, 4.h),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Text(
+                                      "TAP ME!",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: const Color(0xFF78350F), // Etched wood color
+                                        letterSpacing: 1.5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                      ),
+                      
+                      // The visual word clue (fade in without jumping layout)
+                      AnimatedOpacity(
+                        opacity: isRevealed ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 500),
+                        child: quest.wordExample != null 
+                            ? Padding(
+                                padding: EdgeInsets.only(top: 8.h, left: 8.w, right: 8.w),
+                                child: AutoSizeText.rich(
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: _getMaskedWord(quest.wordExample!, quest.correctAnswer),
+                                        style: const TextStyle(color: Color(0xFFA7F3D0)), // Chalk mint for the word
+                                      ),
+                                      if (quest.phonetic != null)
+                                        TextSpan(
+                                          text: ' (/${quest.phonetic}/)',
+                                          style: const TextStyle(color: Color(0xFFFCD34D)), // Bright yellow to highlight phonetic sound
+                                        ),
+                                    ],
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  maxLines: 1,
+                                  minFontSize: 12,
+                                ),
+                              )
+                            : const SizedBox.shrink(),
+                      ),
+
+                      if (quest.funFact != null)
+                        AnimatedOpacity(
+                          opacity: isRevealed ? 1.0 : 0.0,
+                          duration: const Duration(milliseconds: 500),
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 12.h, left: 16.w, right: 16.w),
+                            child: _buildChalkText(
+                              quest.funFact!,
+                              const Color(0xFF93C5FD), // Light chalk blue
+                              12,
+                              maxLines: 2,
+                              minFontSize: 8,
+                            ),
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
-            if (quest.wordEmoji != null)
-              Text(quest.wordEmoji!, style: TextStyle(fontSize: 48.sp))
-            else if (quest.emoji != null)
-              Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
-            if (quest.capitalLetter != null)
-              Flexible(
-                child: AutoSizeText(
-                  quest.capitalLetter!,
-                  style: TextStyle(
-                    fontFamily: 'ComicSans',
-                    fontSize: 80.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFFFDE68A), // Chalk yellow
-                  ),
-                  maxLines: 1,
-                  minFontSize: 40,
-                ),
-              ),
-            if (quest.wordExample != null) ...[
-              SizedBox(height: 8.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: AutoSizeText(
-                  "${quest.wordExample!} ${quest.phonetic != null ? '(/${quest.phonetic}/)' : ''}",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFFA7F3D0), // Chalk mint
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 12,
-                ),
-              ),
-            ],
-            if (quest.funFact != null) ...[
-              SizedBox(height: 12.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: AutoSizeText(
-                  quest.funFact!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF93C5FD), // Light chalk blue
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  minFontSize: 8,
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
+            );
+          },
         );
       },
     );
@@ -216,10 +271,13 @@ class KidsAlphabetLayout extends StatelessWidget {
       feedback: Material(
         color: Colors.transparent,
         child: Transform.scale(
-          scale: 1.05,
-          child: Opacity(
-            opacity: 0.9,
-            child: blockWidget,
+          scale: 1.15, // Make it pop more when picked up
+          child: Transform.rotate(
+            angle: 0.08, // Playful slight tilt while dragging (AAA micro-interaction)
+            child: Opacity(
+              opacity: 0.95,
+              child: blockWidget,
+            ),
           ),
         ),
       ),
@@ -228,6 +286,38 @@ class KidsAlphabetLayout extends StatelessWidget {
         child: blockWidget,
       ),
       child: blockWidget,
+    );
+  }
+
+  /// Helper to mask the first letter of the word if it matches the correct answer
+  String _getMaskedWord(String word, String? correctAnswer) {
+    if (correctAnswer == null || correctAnswer.isEmpty) return word;
+    if (word.toLowerCase().startsWith(correctAnswer.toLowerCase())) {
+      return "_${word.substring(correctAnswer.length)}"; // e.g., Giraffe -> _iraffe
+    }
+    return word;
+  }
+
+  /// Helper to reduce DRY AutoSizeText boilerplate on the chalkboard
+  Widget _buildChalkText(
+    String text,
+    Color color,
+    double fontSize, {
+    String fontFamily = 'Outfit',
+    int maxLines = 1,
+    double minFontSize = 12,
+  }) {
+    return AutoSizeText(
+      text,
+      style: TextStyle(
+        fontFamily: fontFamily,
+        fontSize: fontSize.sp,
+        fontWeight: FontWeight.bold,
+        color: color,
+      ),
+      textAlign: TextAlign.center,
+      maxLines: maxLines,
+      minFontSize: minFontSize,
     );
   }
 }
