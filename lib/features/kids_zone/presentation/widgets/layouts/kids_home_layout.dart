@@ -137,9 +137,11 @@ class KidsHomeLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
             // Dollhouse Roof
             ClipPath(
               clipper: _TriangleClipper(),
@@ -201,7 +203,7 @@ class KidsHomeLayout extends StatelessWidget {
               ),
             ),
           ],
-        );
+        ));
       },
     );
   }
