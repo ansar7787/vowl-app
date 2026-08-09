@@ -65,6 +65,48 @@ class KidsColorsLayout extends StatelessWidget {
                 ),
               ),
             ),
+            
+            // Small AAA Design Card for Fun Facts (Standardized across modules)
+            if (quest.funFact != null)
+              Padding(
+                padding: EdgeInsets.only(top: 16.h, bottom: 24.h, left: 32.w, right: 32.w),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.3),
+                      width: 2.w,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.lightbulb_circle_rounded,
+                        color: primaryColor,
+                        size: 28.r,
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : Colors.black.withValues(alpha: 0.8),
+                          ),
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
           ],
         );
       },
@@ -138,24 +180,6 @@ class KidsColorsLayout extends StatelessWidget {
                         quest.emoji!,
                         style: TextStyle(fontSize: 80.sp),
                       ), // Enlarge emoji, hide question text
-                    if (quest.funFact != null) ...[
-                      SizedBox(height: 8.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 16.w),
-                        child: AutoSizeText(
-                          quest.funFact!,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF71717A), // Gray fact text
-                          ),
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          minFontSize: 10,
-                        ),
-                      ),
-                    ],
                   ],
                 ),
               ),
