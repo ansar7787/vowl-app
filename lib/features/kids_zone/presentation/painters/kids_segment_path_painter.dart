@@ -27,14 +27,15 @@ class SegmentPathPainter extends CustomPainter {
     final incomingPath = Path();
 
     if (level == 1) {
-      // 1. Clean Connection from Dashboard
+      // 1. Clean Connection from Dashboard (reaching up to touch the header)
+      final double headerGap = -30.h;
       canvas.drawCircle(
-        Offset(size.width / 2, 0),
+        Offset(size.width / 2, headerGap),
         10.r,
-        Paint()..color = Colors.white,
+        Paint()..color = incomingColor,
       );
 
-      incomingPath.moveTo(size.width / 2, 0);
+      incomingPath.moveTo(size.width / 2, headerGap);
       incomingPath.lineTo(startX, centerY);
     } else {
       // 2. Continuous Path from previous level
