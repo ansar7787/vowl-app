@@ -333,6 +333,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                             isCompleted,
                             isPlayable,
                             isNextZone,
+                            level == 1 ? true : (level - 1) <= highestCompleted,
                           );
                         }, childCount: 200),
                       ),
@@ -480,6 +481,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
     bool isCompleted,
     bool isPlayable,
     bool isNextZone,
+    bool isPrevCompleted,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -489,11 +491,16 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
 
     return CustomPaint(
       painter: SegmentPathPainter(
-        color: isCompleted
+        incomingColor: isPrevCompleted
             ? widget.primaryColor
             : (isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05)),
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05)),
+        outgoingColor: isCompleted
+            ? widget.primaryColor
+            : (isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : Colors.black.withValues(alpha: 0.05)),
         currentOffset: currentOffset,
         nextOffset: nextOffset,
         isLast: isLast,
@@ -691,7 +698,8 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       highlightColor: highlightColor,
       child: CustomPaint(
         painter: SegmentPathPainter(
-          color: Colors.white,
+          incomingColor: Colors.white,
+          outgoingColor: Colors.white,
           currentOffset: currentOffset,
           nextOffset: nextOffset,
           isLast: isLast,
