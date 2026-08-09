@@ -169,7 +169,9 @@ class KidsHomeLayout extends StatelessWidget {
       onAcceptWithDetails: (details) {
         final text = details.data;
         final isCorrect = (text == quest.correctAnswer);
-        di.sl<KidsTTSService>().speak(text);
+        if (!isCorrect) {
+          di.sl<KidsTTSService>().speak(text);
+        }
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
       },
       builder: (context, candidateData, rejectedData) {
