@@ -101,7 +101,9 @@ class KidsWeatherLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Container(
           width: 320.w,
           padding: EdgeInsets.all(24.r),
           decoration: BoxDecoration(
@@ -179,7 +181,7 @@ class KidsWeatherLayout extends StatelessWidget {
               ],
             ],
           ),
-        );
+        ));
       },
     );
   }
