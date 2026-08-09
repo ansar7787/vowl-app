@@ -199,7 +199,7 @@ class KidsTimeLayout extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       AutoSizeText(
-                        quest.instruction ?? "?", // Use instruction
+                        quest.question ?? "?", // Use instruction
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,

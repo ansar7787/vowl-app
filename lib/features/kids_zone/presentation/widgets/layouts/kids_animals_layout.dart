@@ -206,7 +206,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 8.w),
                         child: AutoSizeText(
-                          quest.instruction ??
+                          quest.question ??
                               "?", // Use instruction, hide emoji to prevent cheating
                           style: TextStyle(
                             fontFamily: 'Outfit',

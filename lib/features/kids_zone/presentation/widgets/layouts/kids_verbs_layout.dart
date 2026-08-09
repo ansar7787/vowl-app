@@ -160,7 +160,7 @@ class KidsVerbsLayout extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: AutoSizeText(
-                    quest.instruction ??
+                    quest.question ??
                         "?", // Show instruction, hide emoji/question to prevent cheat
                     style: TextStyle(
                       fontFamily: 'Outfit',

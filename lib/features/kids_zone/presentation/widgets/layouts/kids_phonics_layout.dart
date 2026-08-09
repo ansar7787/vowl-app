@@ -176,7 +176,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ??
+                        quest.question ??
                             "?", // Use instruction, hide emoji/question
                         style: TextStyle(
                           fontFamily: 'Outfit',

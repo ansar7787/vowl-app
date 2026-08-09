@@ -219,7 +219,7 @@ class KidsNatureLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ??
+                        quest.question ??
                             "?", // Show instruction, hide question/emoji
                         style: TextStyle(
                           fontFamily: 'Outfit',

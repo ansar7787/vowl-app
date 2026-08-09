@@ -182,7 +182,7 @@ class KidsDayNightLayout extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: AutoSizeText(
-                        quest.instruction ?? "?",
+                        quest.question ?? "?",
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
