@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Split World Theme for Opposites Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsOppositesLayout extends StatelessWidget {
               child: Center(child: _buildSplitWorld(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_opposites_drag',
                 fallback: 'Drag the matching plaque! ✨',
@@ -57,7 +58,6 @@ class KidsOppositesLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -205,7 +205,7 @@ class KidsOppositesLayout extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 12.w),
-                            child: AutoSizeText(
+                            child: KidsFittedText(
                               quest.question ??
                                   "?", // Use instruction, hide emoji/question to prevent cheat
                               style: TextStyle(
@@ -216,7 +216,6 @@ class KidsOppositesLayout extends StatelessWidget {
                               ),
                               textAlign: TextAlign.center,
                               maxLines: 4,
-                              minFontSize: 12,
                             ),
                           ),
                         ],

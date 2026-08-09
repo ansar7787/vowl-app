@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Dollhouse Theme for Home Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsHomeLayout extends StatelessWidget {
               child: Center(child: _buildDollhouse(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_home_drag',
                 fallback: 'Drag the furniture into the house! ✨',
@@ -57,7 +58,6 @@ class KidsHomeLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -184,7 +184,7 @@ class KidsHomeLayout extends StatelessWidget {
                       Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: AutoSizeText(
+                      child: KidsFittedText(
                         quest.question ??
                             "?", // Use instruction as clue, hide question
                         style: TextStyle(
@@ -195,7 +195,6 @@ class KidsHomeLayout extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 4,
-                        minFontSize: 10,
                       ),
                     ),
                   ],

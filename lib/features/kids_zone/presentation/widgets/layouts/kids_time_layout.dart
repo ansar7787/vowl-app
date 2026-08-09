@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Giant Clock Tower Theme for Time Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsTimeLayout extends StatelessWidget {
               child: Center(child: _buildClockFace(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_time_drag',
                 fallback: 'Drag the pocket watch to the clock tower! ✨',
@@ -57,7 +58,6 @@ class KidsTimeLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -198,7 +198,7 @@ class KidsTimeLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      AutoSizeText(
+                      KidsFittedText(
                         quest.question ?? "?", // Use instruction
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -208,7 +208,6 @@ class KidsTimeLayout extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 4,
-                        minFontSize: 10,
                       ),
                     ],
                   ),

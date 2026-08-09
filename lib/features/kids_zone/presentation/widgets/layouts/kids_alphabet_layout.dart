@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 class KidsAlphabetLayout extends StatelessWidget {
   final int level;
@@ -40,7 +41,7 @@ class KidsAlphabetLayout extends StatelessWidget {
               child: Center(child: _buildChalkboard(context, state, quest)),
             ),
 
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_alphabet_drag',
                 fallback: 'Drag the block to the chalkboard! 👆',
@@ -54,7 +55,6 @@ class KidsAlphabetLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 12.h),
@@ -295,7 +295,7 @@ class KidsAlphabetLayout extends StatelessWidget {
             children: [
               Icon(Icons.volume_up_rounded, size: 20.sp, color: const Color(0xFF78350F)),
               SizedBox(width: 8.w),
-              AutoSizeText(
+              KidsFittedText(
                 context.tr('games.kids_tap_clue', fallback: 'TAP FOR CLUE!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -342,7 +342,6 @@ class KidsAlphabetLayout extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 1,
-                minFontSize: 14,
                 overflow: TextOverflow.ellipsis,
               ),
             if (quest.wordExample != null) SizedBox(height: 12.h),

@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Sports Stadium Theme for Verbs (Action Words) Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsVerbsLayout extends StatelessWidget {
               child: Center(child: _buildScoreboard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_verbs_drag',
                 fallback: 'Drag the sports ball to the scoreboard! ✨',
@@ -57,7 +58,6 @@ class KidsVerbsLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -159,7 +159,7 @@ class KidsVerbsLayout extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: AutoSizeText(
+                  child: KidsFittedText(
                     quest.question ??
                         "?", // Show instruction, hide emoji/question to prevent cheat
                     style: TextStyle(
@@ -173,7 +173,6 @@ class KidsVerbsLayout extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 4,
-                    minFontSize: 12,
                   ),
                 ),
               ],

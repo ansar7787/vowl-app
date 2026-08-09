@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Cozy Living Room Theme for Family Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsFamilyLayout extends StatelessWidget {
               child: Center(child: _buildFramedPainting(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_family_drag',
                 fallback: 'Drag the photo to the frame! ✨',
@@ -57,7 +58,6 @@ class KidsFamilyLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -225,7 +225,7 @@ class KidsFamilyLayout extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             // Handwriting text
-            AutoSizeText(
+            KidsFittedText(
               text,
               style: TextStyle(
                 fontFamily: 'ComicSans', // Or any casual font
@@ -234,7 +234,6 @@ class KidsFamilyLayout extends StatelessWidget {
                 color: const Color(0xFF334155),
               ),
               maxLines: 2,
-              minFontSize: 8,
               textAlign: TextAlign.center,
             ),
           ],

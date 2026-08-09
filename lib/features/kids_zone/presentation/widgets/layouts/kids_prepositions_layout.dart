@@ -9,6 +9,7 @@ import 'dart:math' as math;
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Magic Show Theme for Prepositions Game
 /// Space Complexity: O(1)
@@ -45,7 +46,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
               child: Center(child: _buildMagicStage(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_prepositions_drag',
                 fallback: 'Drag the magic hat to the stage! ✨',
@@ -59,7 +60,6 @@ class KidsPrepositionsLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),

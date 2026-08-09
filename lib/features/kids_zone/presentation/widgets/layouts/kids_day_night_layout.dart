@@ -8,6 +8,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Sky Observatory Theme for Day & Night Game
 /// Space Complexity: O(1)
@@ -51,7 +52,7 @@ class KidsDayNightLayout extends StatelessWidget {
                   child: Center(child: _buildSkyView(context, state, quest)),
                 ),
                 SizedBox(height: 24.h),
-                AutoSizeText(
+                KidsFittedText(
                   context.tr(
                     'games.kids_day_night_drag',
                     fallback: 'Drag the card to the sky! ✨',
@@ -65,7 +66,6 @@ class KidsDayNightLayout extends StatelessWidget {
                         : Colors.black.withValues(alpha: 0.6),
                   ),
                   maxLines: 2,
-                  minFontSize: 10,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.h),
@@ -181,7 +181,7 @@ class KidsDayNightLayout extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: AutoSizeText(
+                      child: KidsFittedText(
                         quest.question ?? "?",
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -191,7 +191,6 @@ class KidsDayNightLayout extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                         maxLines: 4,
-                        minFontSize: 12,
                       ),
                     ),
                   ],

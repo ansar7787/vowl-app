@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Space / Rocket Theme for Numbers Game
 /// Space Complexity: O(1)
@@ -47,7 +48,7 @@ class KidsNumbersLayout extends StatelessWidget {
             SizedBox(
               height: 24.h,
             ), // Increased space so it doesn't touch the circle
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_numbers_drag',
                 fallback: 'Drag the planet to the rocket! 🚀',
@@ -61,7 +62,6 @@ class KidsNumbersLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h), // Increased space below the text as well
@@ -164,7 +164,7 @@ class KidsNumbersLayout extends StatelessWidget {
                   padding: EdgeInsets.all(24.r),
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
-                    child: AutoSizeText(
+                    child: KidsFittedText(
                       quest.question ?? "?",
                       style: TextStyle(
                         fontFamily: 'Outfit',

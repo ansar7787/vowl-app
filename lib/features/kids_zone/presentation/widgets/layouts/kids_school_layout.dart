@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// School Bus Theme for School Game
 /// Space Complexity: O(1)
@@ -43,7 +44,7 @@ class KidsSchoolLayout extends StatelessWidget {
               child: Center(child: _buildBusWindow(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_school_drag',
                 fallback: 'Drag the backpack to the bus window! ✨',
@@ -57,7 +58,6 @@ class KidsSchoolLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -233,7 +233,7 @@ class KidsSchoolLayout extends StatelessWidget {
                   ),
                   Expanded(
                     child: Center(
-                      child: AutoSizeText(
+                      child: KidsFittedText(
                         text,
                         style: TextStyle(
                           fontFamily: 'Outfit',
@@ -242,7 +242,6 @@ class KidsSchoolLayout extends StatelessWidget {
                           color: Colors.white,
                         ),
                         maxLines: 2,
-                        minFontSize: 8,
                         textAlign: TextAlign.center,
                       ),
                     ),

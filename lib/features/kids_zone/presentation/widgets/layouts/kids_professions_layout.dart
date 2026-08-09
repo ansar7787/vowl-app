@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// City Theme for Professions Game
 class KidsProfessionsLayout extends StatelessWidget {
@@ -41,7 +42,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               child: Center(child: _buildTownHallBoard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_professions_drag',
                 fallback: 'Drag the ID badge to the town board! ✨',
@@ -55,7 +56,6 @@ class KidsProfessionsLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -138,7 +138,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                 Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)),
               SizedBox(height: 8.h),
               Flexible(
-                child: AutoSizeText(
+                child: KidsFittedText(
                   quest.question ?? "?",
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -148,7 +148,6 @@ class KidsProfessionsLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 3,
-                  minFontSize: 16,
                 ),
               ),
               if (quest.phonetic != null) ...[
@@ -170,7 +169,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               if (quest.wordExample != null) ...[
                 SizedBox(height: 12.h),
                 Flexible(
-                  child: AutoSizeText(
+                  child: KidsFittedText(
                     '"${quest.wordExample!}"',
                     style: TextStyle(
                       fontFamily: 'Outfit',
@@ -181,7 +180,6 @@ class KidsProfessionsLayout extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                     maxLines: 2,
-                    minFontSize: 10,
                   ),
                 ),
               ],

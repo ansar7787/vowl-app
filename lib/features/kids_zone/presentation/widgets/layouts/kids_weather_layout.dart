@@ -7,6 +7,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_scre
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
 /// Sky Theme for Weather Game
 class KidsWeatherLayout extends StatelessWidget {
@@ -41,7 +42,7 @@ class KidsWeatherLayout extends StatelessWidget {
               child: Center(child: _buildSkyBillboard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            AutoSizeText(
+            KidsFittedText(
               context.tr(
                 'games.kids_weather_drag',
                 fallback: 'Drag the weather cloud to the sky! ✨',
@@ -55,7 +56,6 @@ class KidsWeatherLayout extends StatelessWidget {
                     : Colors.black.withValues(alpha: 0.6),
               ),
               maxLines: 2,
-              minFontSize: 10,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
@@ -138,7 +138,7 @@ class KidsWeatherLayout extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              AutoSizeText(
+              KidsFittedText(
                 quest.question ?? "?",
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -148,7 +148,6 @@ class KidsWeatherLayout extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
                 maxLines: 3,
-                minFontSize: 16,
               ),
               if (quest.phonetic != null) ...[
                 SizedBox(height: 4.h),
@@ -166,7 +165,7 @@ class KidsWeatherLayout extends StatelessWidget {
 
               if (quest.wordExample != null) ...[
                 SizedBox(height: 12.h),
-                AutoSizeText(
+                KidsFittedText(
                   '"${quest.wordExample!}"',
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -177,7 +176,6 @@ class KidsWeatherLayout extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
-                  minFontSize: 10,
                 ),
               ],
             ],
