@@ -224,23 +224,20 @@ class KidsNumbersLayout extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.all(12.r),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 36.sp,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                ),
-              ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 8.w),
+        child: Center(
+          child: AutoSizeText(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
             ),
+            textAlign: TextAlign.center,
+            maxLines: 3,
+            minFontSize: 8,
           ),
         ),
       ),

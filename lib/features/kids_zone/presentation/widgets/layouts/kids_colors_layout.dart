@@ -234,18 +234,17 @@ class KidsColorsLayout extends StatelessWidget {
               Container(height: 30.h, width: double.infinity, color: tubeColor),
               Expanded(
                 child: Center(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      text,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                        color: const Color(0xFF3F3F46),
-                      ),
-                      textAlign: TextAlign.center,
+                  child: AutoSizeText(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF3F3F46),
                     ),
+                    textAlign: TextAlign.center,
+                    maxLines: 3,
+                    minFontSize: 8,
                   ),
                 ),
               ),

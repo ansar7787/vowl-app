@@ -235,18 +235,21 @@ class KidsShapesLayout extends StatelessWidget {
               ),
             ],
           ),
-          child: Center(
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: Center(
+              child: AutoSizeText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 3,
+                minFontSize: 8,
               ),
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              minFontSize: 8,
             ),
           ),
         ),
