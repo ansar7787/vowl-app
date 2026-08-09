@@ -130,7 +130,9 @@ class KidsFoodLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Stack(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Stack(
           alignment: Alignment.topCenter,
           clipBehavior: Clip.none,
           children: [
@@ -220,7 +222,7 @@ class KidsFoodLayout extends StatelessWidget {
               ),
             ),
           ],
-        );
+        ));
       },
     );
   }

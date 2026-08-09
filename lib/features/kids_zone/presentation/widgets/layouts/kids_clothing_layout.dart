@@ -180,7 +180,7 @@ class KidsClothingLayout extends StatelessWidget {
               ],
             ),
           ),
-        );
+        ));
       },
     );
   }

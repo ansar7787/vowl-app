@@ -139,7 +139,9 @@ class KidsFamilyLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return AnimatedContainer(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           width: 280.w,
           height: 200.h,
@@ -174,7 +176,7 @@ class KidsFamilyLayout extends StatelessWidget {
               ],
             ),
           ),
-        );
+        ));
       },
     );
   }

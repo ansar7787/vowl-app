@@ -231,7 +231,7 @@ class KidsAnimalsLayout extends StatelessWidget {
               ),
             ],
           ),
-        );
+        ));
       },
     );
   }
