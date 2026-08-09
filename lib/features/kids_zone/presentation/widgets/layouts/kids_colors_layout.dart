@@ -129,40 +129,49 @@ class KidsColorsLayout extends StatelessWidget {
               ),
             ),
             // The Canvas
-            Container(
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFFFDE047)
-                    : Colors.white, // Highlight canvas on hover
-                borderRadius: BorderRadius.circular(4.r),
-                border: Border.all(
+            InkWell(
+              onTap: state.lastAnswerCorrect != null
+                  ? null
+                  : () {
+                      if (quest.instruction != null) {
+                        di.sl<KidsTTSService>().speak(quest.instruction!);
+                      }
+                    },
+              child: Container(
+                width: 280.w,
+                height: 200.h,
+                decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFEAB308)
-                      : const Color(0xFFD4D4D8),
-                  width: isHovering ? 4 : 2,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: isHovering ? 0.3 : 0.1,
-                    ),
-                    blurRadius: isHovering ? 20 : 10,
-                    offset: const Offset(0, 8),
+                      ? const Color(0xFFFDE047)
+                      : Colors.white, // Highlight canvas on hover
+                  borderRadius: BorderRadius.circular(4.r),
+                  border: Border.all(
+                    color: isHovering
+                        ? const Color(0xFFEAB308)
+                        : const Color(0xFFD4D4D8),
+                    width: isHovering ? 4 : 2,
                   ),
-                ],
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (quest.emoji != null)
-                      Text(
-                        quest.emoji!,
-                        style: TextStyle(fontSize: 80.sp),
-                      ), // Enlarge emoji, hide question text
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isHovering ? 0.3 : 0.1,
+                      ),
+                      blurRadius: isHovering ? 20 : 10,
+                      offset: const Offset(0, 8),
+                    ),
                   ],
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (quest.emoji != null)
+                        Text(
+                          quest.emoji!,
+                          style: TextStyle(fontSize: 80.sp),
+                        ), // Enlarge emoji, hide question text
+                    ],
+                  ),
                 ),
               ),
             ),
