@@ -138,9 +138,17 @@ class KidsClothingLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
-          width: 280.w,
-          height: 200.h,
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
+          child: Container(
+            width: 280.w,
+            height: 200.h,
           decoration: BoxDecoration(
             color: isHovering
                 ? const Color(0xFFFDE68A)

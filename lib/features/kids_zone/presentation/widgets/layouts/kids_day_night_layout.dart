@@ -132,8 +132,16 @@ class KidsDayNightLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
-          width: 280.w,
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
+          child: Container(
+            width: 280.w,
           height: 220.h,
           decoration: BoxDecoration(
             color: isHovering

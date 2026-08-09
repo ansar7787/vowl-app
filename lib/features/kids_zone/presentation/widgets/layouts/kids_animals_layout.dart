@@ -156,16 +156,24 @@ class KidsAnimalsLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
-          width: 300.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFFFEF9C3)
-                : const Color(0xFFFEF3C7), // Safari Khaki
-            borderRadius: BorderRadius.circular(
-              100.r,
-            ), // Pill shape for binoculars
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
+          child: Container(
+            width: 300.w,
+            height: 200.h,
+            decoration: BoxDecoration(
+              color: isHovering
+                  ? const Color(0xFFFEF9C3)
+                  : const Color(0xFFFEF3C7), // Safari Khaki
+              borderRadius: BorderRadius.circular(
+                100.r,
+              ), // Pill shape for binoculars
             border: Border.all(
               color: isHovering
                   ? const Color(0xFF92400E)

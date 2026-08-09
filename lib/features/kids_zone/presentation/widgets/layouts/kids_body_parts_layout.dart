@@ -135,15 +135,23 @@ class KidsBodyPartsLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFF1E293B)
-                : const Color(0xFF0F172A), // Dark X-Ray background
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
+          child: Container(
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
+              color: isHovering
+                  ? const Color(0xFF1E293B)
+                  : const Color(0xFF0F172A), // Dark X-Ray background
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(
               color: isHovering
                   ? const Color(0xFF38BDF8)
                   : const Color(0xFFE2E8F0),
