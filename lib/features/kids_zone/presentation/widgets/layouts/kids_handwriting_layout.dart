@@ -14,6 +14,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
 
 class KidsHandwritingLayout extends StatefulWidget {
   final int level;
@@ -146,7 +147,13 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
               height: 120.h,
             ), // Mascot space reserved by KidsGameBaseScreen
             // Flashcard Target Word Display
-            Container(
+            InkWell(
+              onTap: state.lastAnswerCorrect != null
+                  ? null
+                  : () {
+                      di.sl<KidsTTSService>().speak(state.currentQuest.instruction);
+                    },
+              child: Container(
               width: 300.w,
               padding: EdgeInsets.symmetric(vertical: 20.h),
               decoration: BoxDecoration(
@@ -190,7 +197,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                   ),
                 ],
               ),
-            ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
+            )).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
 
             SizedBox(height: 16.h),
 

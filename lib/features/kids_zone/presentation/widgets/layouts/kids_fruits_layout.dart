@@ -107,7 +107,9 @@ class KidsFruitsLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Stack(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Stack(
           alignment: Alignment.center,
           children: [
             // Main wooden board
@@ -192,7 +194,7 @@ class KidsFruitsLayout extends StatelessWidget {
               ),
             ),
           ],
-        );
+        ));
       },
     );
   }
