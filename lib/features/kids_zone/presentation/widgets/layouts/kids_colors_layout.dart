@@ -6,6 +6,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Art Studio Theme for Colors Game
 /// Space Complexity: O(1)
@@ -41,6 +42,24 @@ class KidsColorsLayout extends StatelessWidget {
               flex: 5,
               child: Center(child: _buildEasel(context, state, quest)),
             ),
+
+            SizedBox(height: 24.h),
+            Text(
+              context.tr(
+                'games.kids_colors_drag',
+                fallback: 'Drag the paint to the canvas! 🎨',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white.withValues(alpha: 0.8)
+                    : Colors.black.withValues(alpha: 0.6),
+              ),
+            ),
+            SizedBox(height: 16.h),
+
             // The Squeezed Paint Tubes
             Flexible(
               flex: 5,
