@@ -329,6 +329,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
           ),
         ),
       ],
+    ),
     );
 
     return Draggable<String>(
