@@ -146,132 +146,17 @@ class KidsAlphabetLayout extends StatelessWidget {
                         }
                       },
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      // The instruction is now handled entirely by the Kidz Buddy mascot bubble!
-
-                      // The interactive mystery button / letter
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 400),
-                        transitionBuilder:
-                            (Widget child, Animation<double> animation) {
-                              return ScaleTransition(
-                                scale: animation,
-                                child: child,
-                              );
-                            },
-                        child: isRevealed
-                            ? ((quest.wordEmoji ?? quest.emoji) != null
-                                  ? Text(
-                                      (quest.wordEmoji ?? quest.emoji)!,
-                                      key: const ValueKey('emoji'),
-                                      style: TextStyle(fontSize: 64.sp),
-                                    )
-                                  : const SizedBox.shrink())
-                            : Column(
-                                key: const ValueKey('mystery'),
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(16.r),
-                                    decoration: BoxDecoration(
-                                      color: const Color(
-                                        0xFFFDE68A,
-                                      ).withValues(alpha: 0.2),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: const Color(0xFFFDE68A),
-                                        width: 3.w,
-                                      ),
-                                    ),
-                                    child: Icon(
-                                      Icons.volume_up_rounded,
-                                      size: 40.sp,
-                                      color: const Color(0xFFFDE68A),
-                                    ),
-                                  ),
-                                  SizedBox(height: 12.h),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 16.w,
-                                      vertical: 8.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFFDE68A),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          offset: Offset(0, 4.h),
-                                        ),
-                                      ],
-                                    ),
-                                    child: AutoSizeText(
-                                      context.tr(
-                                        'games.kids_tap_me',
-                                        fallback: 'TAP ME!',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: const Color(
-                                          0xFF78350F,
-                                        ), // Etched wood color
-                                        letterSpacing: 1.5,
-                                      ),
-                                      maxLines: 2,
-                                      minFontSize: 10,
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                      ),
-
-                      // The visual word clue (fade in without jumping layout)
-                      AnimatedOpacity(
-                        opacity: isRevealed ? 1.0 : 0.0,
-                        duration: const Duration(milliseconds: 500),
-                        child: quest.wordExample != null
-                            ? Padding(
-                                padding: EdgeInsets.only(
-                                  top: 8.h,
-                                  left: 8.w,
-                                  right: 8.w,
-                                ),
-                                child: AutoSizeText.rich(
-                                  TextSpan(
-                                    children: [
-                                      ..._buildHighlightedWordSpans(
-                                        quest.wordExample!,
-                                        quest.correctAnswer,
-                                      ),
-                                      if (quest.phonetic != null)
-                                        TextSpan(
-                                          text: ' (/${quest.phonetic}/)',
-                                          style: const TextStyle(
-                                            color: Color(0xFFFCD34D),
-                                          ), // Bright yellow to highlight phonetic sound
-                                        ),
-                                    ],
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                  minFontSize: 12,
-                                ),
-                              )
-                            : const SizedBox.shrink(),
-                      ),
-                    ],
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 500),
+                    transitionBuilder: (child, animation) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: ScaleTransition(scale: animation, child: child),
+                      );
+                    },
+                    child: !isRevealed
+                        ? _buildUnrevealedState(context)
+                        : _buildRevealedState(context, quest),
                   ),
                 ),
               ),
@@ -377,5 +262,96 @@ class KidsAlphabetLayout extends StatelessWidget {
         style: const TextStyle(color: Color(0xFFA7F3D0)),
       ),
     ];
+  }
+
+  Widget _buildUnrevealedState(BuildContext context) {
+    return Column(
+      key: const ValueKey('unrevealed'),
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          Icons.help_outline_rounded,
+          size: 64.sp,
+          color: const Color(0xFFFDE68A).withValues(alpha: 0.5),
+        ),
+        SizedBox(height: 16.h),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: const Color(0xFFFDE68A),
+            borderRadius: BorderRadius.circular(24.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                offset: Offset(0, 4.h),
+                blurRadius: 4,
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.volume_up_rounded, size: 20.sp, color: const Color(0xFF78350F)),
+              SizedBox(width: 8.w),
+              AutoSizeText(
+                context.tr('games.kids_tap_clue', fallback: 'TAP FOR CLUE!'),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w800,
+                  color: const Color(0xFF78350F),
+                  letterSpacing: 1.2,
+                ),
+                maxLines: 1,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildRevealedState(BuildContext context, dynamic quest) {
+    return Padding(
+      key: const ValueKey('revealed'),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (quest.wordExample != null)
+              AutoSizeText.rich(
+                TextSpan(
+                  children: [
+                    ..._buildHighlightedWordSpans(quest.wordExample!, quest.correctAnswer),
+                    if (quest.phonetic != null)
+                      TextSpan(
+                        text: ' (/${quest.phonetic}/)',
+                        style: const TextStyle(color: Color(0xFFFCD34D)), 
+                      ),
+                  ],
+                ),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 32.sp, // Made bigger since it's the main focus now
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                minFontSize: 14,
+                overflow: TextOverflow.ellipsis,
+              ),
+            if (quest.wordExample != null) SizedBox(height: 12.h),
+            if ((quest.wordEmoji ?? quest.emoji) != null)
+              Text(
+                (quest.wordEmoji ?? quest.emoji)!,
+                style: TextStyle(fontSize: 80.sp),
+              ),
+          ],
+        ),
+      ),
+    );
   }
 }
