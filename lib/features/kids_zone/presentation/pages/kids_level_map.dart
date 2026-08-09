@@ -531,8 +531,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                       .scale(
                         begin: const Offset(0.7, 0.7),
                         curve: Curves.easeOutBack,
-                      )
-                      .moveY(begin: 40, end: 0, curve: Curves.easeOutQuad),
+                      ),
             ),
             if (isCurrent)
               Positioned(
