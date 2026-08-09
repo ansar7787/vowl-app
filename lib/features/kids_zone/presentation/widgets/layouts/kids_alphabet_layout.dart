@@ -137,7 +137,9 @@ class KidsAlphabetLayout extends StatelessWidget {
                     ? null
                     : () {
                         // Play the instruction sound
-                        if (quest.question != null) {
+                        if (quest.wordExample != null) {
+                          di.sl<KidsTTSService>().speak(quest.wordExample!);
+                        } else if (quest.question != null) {
                           di.sl<KidsTTSService>().speak(quest.question!);
                         }
                         // Reveal the visual clues if not already revealed
