@@ -6,6 +6,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Sports Stadium Theme for Verbs (Action Words) Game
 /// Space Complexity: O(1)
@@ -41,6 +42,22 @@ class KidsVerbsLayout extends StatelessWidget {
               flex: 5,
               child: Center(child: _buildScoreboard(context, state, quest)),
             ),
+            SizedBox(height: 24.h),
+            Text(
+              context.tr(
+                'games.kids_verbs_drag',
+                fallback: 'Drag the sports ball to the scoreboard! ✨',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white.withValues(alpha: 0.8)
+                    : Colors.black.withValues(alpha: 0.6),
+              ),
+            ),
+            SizedBox(height: 16.h),
             // The Sports Balls (Bouncing slightly)
             Flexible(
               flex: 5,
@@ -89,6 +106,47 @@ class KidsVerbsLayout extends StatelessWidget {
                 ],
               ),
             ),
+            // Small AAA Design Card for Fun Facts
+            if (quest.funFact != null)
+              Padding(
+                padding: EdgeInsets.only(top: 16.h, bottom: 24.h, left: 32.w, right: 32.w),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.3),
+                      width: 2.w,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.lightbulb_circle_rounded,
+                        color: primaryColor,
+                        size: 28.r,
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : Colors.black.withValues(alpha: 0.8),
+                          ),
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
           ],
         );
       },
@@ -154,24 +212,6 @@ class KidsVerbsLayout extends StatelessWidget {
                     minFontSize: 12,
                   ),
                 ),
-                if (quest.funFact != null) ...[
-                  SizedBox(height: 8.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w),
-                    child: AutoSizeText(
-                      quest.funFact!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFFFDE68A), // Light glowing yellow
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                      minFontSize: 8,
-                    ),
-                  ),
-                ],
               ],
             ),
           ),
@@ -214,8 +254,10 @@ class KidsVerbsLayout extends StatelessWidget {
         break;
     }
 
-    final ballWidget = Container(
-      height: 80.r,
+    final ballWidget = SizedBox(
+      width: 80.w,
+      child: Container(
+        height: 80.r,
       decoration: BoxDecoration(
         color: ballColor,
         shape: BoxShape.circle,
@@ -248,6 +290,7 @@ class KidsVerbsLayout extends StatelessWidget {
           ),
         ),
       ),
+    ),
     );
 
     return Draggable<String>(
