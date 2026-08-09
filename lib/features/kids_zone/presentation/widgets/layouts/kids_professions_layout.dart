@@ -6,6 +6,7 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// City Theme for Professions Game
 class KidsProfessionsLayout extends StatelessWidget {
@@ -39,27 +40,88 @@ class KidsProfessionsLayout extends StatelessWidget {
               flex: 6,
               child: Center(child: _buildTownHallBoard(context, state, quest)),
             ),
+            SizedBox(height: 24.h),
+            Text(
+              context.tr(
+                'games.kids_professions_drag',
+                fallback: 'Drag the ID badge to the town board! ✨',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white.withValues(alpha: 0.8)
+                    : Colors.black.withValues(alpha: 0.6),
+              ),
+            ),
+            SizedBox(height: 16.h),
             // The Professional ID Badges (Options)
             Flexible(
               flex: 4,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 16.w,
-                  runSpacing: 16.h,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: List.generate(quest.options?.length ?? 0, (index) {
                     final option = quest.options![index];
-                    return _buildIdBadge(
-                      context,
-                      state,
-                      option,
-                      quest.correctAnswer == option,
+                    return Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 4.w),
+                        child: _buildIdBadge(
+                          context,
+                          state,
+                          option,
+                          quest.correctAnswer == option,
+                        ),
+                      ),
                     );
                   }),
                 ),
               ),
             ),
+            // Small AAA Design Card for Fun Facts
+            if (quest.funFact != null)
+              Padding(
+                padding: EdgeInsets.only(top: 16.h, bottom: 24.h, left: 32.w, right: 32.w),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.3),
+                      width: 2.w,
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.lightbulb_circle_rounded,
+                        color: primaryColor,
+                        size: 28.r,
+                      ),
+                      SizedBox(width: 12.w),
+                      Expanded(
+                        child: AutoSizeText(
+                          quest.funFact!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : Colors.black.withValues(alpha: 0.8),
+                          ),
+                          maxLines: 2,
+                          minFontSize: 10,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
           ],
         );
       },
@@ -139,37 +201,6 @@ class KidsProfessionsLayout extends StatelessWidget {
                   maxLines: 1,
                 ),
               ],
-              if (quest.funFact != null) ...[
-                SizedBox(height: 16.h),
-                Flexible(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 8.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(
-                        color: const Color(0xFFC7D2FE),
-                        width: 2,
-                      ),
-                    ),
-                    child: AutoSizeText(
-                      "🏢 ${quest.funFact!}",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.bold,
-                        color: const Color(0xFF4338CA), // Indigo 700
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 3,
-                      minFontSize: 10,
-                    ),
-                  ),
-                ),
-              ],
               if (quest.wordExample != null) ...[
                 SizedBox(height: 12.h),
                 Flexible(
@@ -202,8 +233,8 @@ class KidsProfessionsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final badgeWidget = Container(
-      width: 140.w,
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
+      width: 80.w,
+      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
