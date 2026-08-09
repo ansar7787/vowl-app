@@ -47,6 +47,9 @@ class GameFeedbackCard extends StatelessWidget {
   /// Optional: required points for an answer (used in writing games).
   final List<String>? requiredPoints;
 
+  /// Optional: a fun fact to reward the user.
+  final String? funFact;
+
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
@@ -61,6 +64,7 @@ class GameFeedbackCard extends StatelessWidget {
     this.ruleContent,
     this.sampleAnswer,
     this.requiredPoints,
+    this.funFact,
   });
 
   static const _successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
@@ -151,6 +155,22 @@ class GameFeedbackCard extends StatelessWidget {
                   _ExplanationCard(
                     originalExplanation: explanation!,
                     accentColor: shadowColor,
+                    isDark: isDark,
+                  ),
+                ],
+
+                if (showEducationalInfo &&
+                    funFact != null &&
+                    funFact!.isNotEmpty) ...[
+                  SizedBox(height: 16.h),
+                  PedagogicalRuleBox(
+                    icon: Icons.lightbulb_rounded,
+                    capsKey: 'games.fun_fact_caps',
+                    capsFallback: 'FUN FACT',
+                    titleKey: 'games.fun_fact',
+                    titleFallback: 'Fun Fact',
+                    rule: funFact!,
+                    shadowColor: shadowColor,
                     isDark: isDark,
                   ),
                 ],

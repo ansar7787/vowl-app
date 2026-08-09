@@ -265,26 +265,6 @@ class KidsAlphabetLayout extends StatelessWidget {
                               )
                             : const SizedBox.shrink(),
                       ),
-
-                      if (quest.funFact != null)
-                        AnimatedOpacity(
-                          opacity: isRevealed ? 1.0 : 0.0,
-                          duration: const Duration(milliseconds: 500),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                              top: 12.h,
-                              left: 16.w,
-                              right: 16.w,
-                            ),
-                            child: _buildChalkText(
-                              quest.funFact!,
-                              const Color(0xFF93C5FD), // Light chalk blue
-                              12,
-                              maxLines: 2,
-                              minFontSize: 8,
-                            ),
-                          ),
-                        ),
                     ],
                   ),
                 ),
@@ -389,28 +369,5 @@ class KidsAlphabetLayout extends StatelessWidget {
         style: const TextStyle(color: Color(0xFFA7F3D0)),
       ),
     ];
-  }
-
-  /// Helper to reduce DRY AutoSizeText boilerplate on the chalkboard
-  Widget _buildChalkText(
-    String text,
-    Color color,
-    double fontSize, {
-    String fontFamily = 'Outfit',
-    int maxLines = 1,
-    double minFontSize = 12,
-  }) {
-    return AutoSizeText(
-      text,
-      style: TextStyle(
-        fontFamily: fontFamily,
-        fontSize: fontSize.sp,
-        fontWeight: FontWeight.bold,
-        color: color,
-      ),
-      textAlign: TextAlign.center,
-      maxLines: maxLines,
-      minFontSize: minFontSize,
-    );
   }
 }
