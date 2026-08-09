@@ -227,17 +227,22 @@ class KidsNumbersLayout extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w),
         child: Center(
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: SizedBox(
+              width: 90.w, // Match approximate width of planet
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 3,
+              ),
             ),
-            textAlign: TextAlign.center,
-            maxLines: 3,
-            minFontSize: 8,
           ),
         ),
       ),
