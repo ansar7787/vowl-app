@@ -43,7 +43,7 @@ class KidsRoutineLayout extends StatelessWidget {
               child: Center(child: _buildBedroomWindow(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_routine_drag',
                 fallback: 'Drag the pillow to the window! ✨',
@@ -56,6 +56,9 @@ class KidsRoutineLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Bed with Pillows
@@ -268,17 +271,18 @@ class KidsRoutineLayout extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.w),
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w800,
-              color: const Color(0xFF475569),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xFF475569),
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            minFontSize: 8,
           ),
         ),
       ),

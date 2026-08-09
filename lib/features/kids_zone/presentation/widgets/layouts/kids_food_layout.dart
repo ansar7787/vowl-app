@@ -43,7 +43,7 @@ class KidsFoodLayout extends StatelessWidget {
               child: Center(child: _buildKitchenBoard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_food_drag',
                 fallback: 'Drag the food to the plate! ✨',
@@ -56,6 +56,9 @@ class KidsFoodLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // Serving Platters (Options)
@@ -171,7 +174,7 @@ class KidsFoodLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: const Color(0xFFE11D48), // Tasty red text
                         ),
                         textAlign: TextAlign.center,
@@ -277,17 +280,18 @@ class KidsFoodLayout extends StatelessWidget {
           child: Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xFF0F172A),
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
               ),
             ),
           ),

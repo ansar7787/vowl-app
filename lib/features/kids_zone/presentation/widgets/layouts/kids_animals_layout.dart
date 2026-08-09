@@ -64,7 +64,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                Text(
+                AutoSizeText(
                   context.tr(
                     'games.kids_animals_drag',
                     fallback: 'Drag the animal to the binoculars! ✨',
@@ -77,6 +77,9 @@ class KidsAnimalsLayout extends StatelessWidget {
                         ? Colors.white.withValues(alpha: 0.8)
                         : Colors.black.withValues(alpha: 0.6),
                   ),
+                  maxLines: 2,
+                  minFontSize: 10,
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.h),
                 // Wooden Signposts for Options
@@ -208,7 +211,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 24.sp,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             color: const Color(0xFF1E293B),
                           ),
                           textAlign: TextAlign.center,
@@ -257,17 +260,18 @@ class KidsAnimalsLayout extends StatelessWidget {
           child: Center(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF451A03), // Very dark wood text
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w700,
+                    color: const Color(0xFF451A03), // Very dark wood text
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
               ),
             ),
           ),

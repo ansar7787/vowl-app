@@ -44,7 +44,7 @@ class KidsShapesLayout extends StatelessWidget {
             ),
 
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_shapes_drag',
                 fallback: 'Drag the shape to the blueprint! 🏗️',
@@ -57,6 +57,9 @@ class KidsShapesLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
 
@@ -229,7 +232,7 @@ class KidsShapesLayout extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 16.sp,
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w700,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,

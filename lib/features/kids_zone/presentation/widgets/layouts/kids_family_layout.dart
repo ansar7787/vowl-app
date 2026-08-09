@@ -43,7 +43,7 @@ class KidsFamilyLayout extends StatelessWidget {
               child: Center(child: _buildFramedPainting(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_family_drag',
                 fallback: 'Drag the photo to the frame! ✨',
@@ -56,6 +56,9 @@ class KidsFamilyLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Polaroid Pictures on Mantle
@@ -227,7 +230,7 @@ class KidsFamilyLayout extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'ComicSans', // Or any casual font
                 fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w700,
                 color: const Color(0xFF334155),
               ),
               maxLines: 2,

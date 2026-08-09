@@ -44,8 +44,10 @@ class KidsNumbersLayout extends StatelessWidget {
               child: Center(child: _buildRocketWindow(context, state, quest)),
             ),
 
-            SizedBox(height: 24.h), // Increased space so it doesn't touch the circle
-            Text(
+            SizedBox(
+              height: 24.h,
+            ), // Increased space so it doesn't touch the circle
+            AutoSizeText(
               context.tr(
                 'games.kids_numbers_drag',
                 fallback: 'Drag the planet to the rocket! 🚀',
@@ -58,9 +60,11 @@ class KidsNumbersLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h), // Increased space below the text as well
-
             // The Planets/Asteroids for Options
             Flexible(
               flex: 5,
@@ -123,9 +127,9 @@ class KidsNumbersLayout extends StatelessWidget {
             boxShadow: [
               // Outer glow for the window
               BoxShadow(
-                color: const Color(0xFF0EA5E9).withValues(
-                  alpha: isHovering ? 0.6 : 0.3,
-                ),
+                color: const Color(
+                  0xFF0EA5E9,
+                ).withValues(alpha: isHovering ? 0.6 : 0.3),
                 blurRadius: isHovering ? 40 : 30,
                 spreadRadius: isHovering ? 10 : 5,
               ),
@@ -164,14 +168,12 @@ class KidsNumbersLayout extends StatelessWidget {
                       quest.question ?? "?",
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 80.sp, // Made larger since it's the only thing in the window
-                        fontWeight: FontWeight.w900,
+                        fontSize: 80
+                            .sp, // Made larger since it's the only thing in the window
+                        fontWeight: FontWeight.w700,
                         color: Colors.white,
                         shadows: const [
-                          Shadow(
-                            color: Color(0xFF38BDF8),
-                            blurRadius: 15,
-                          ),
+                          Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
                         ],
                       ),
                       textAlign: TextAlign.center,
@@ -227,15 +229,17 @@ class KidsNumbersLayout extends StatelessWidget {
           padding: EdgeInsets.all(12.r),
           child: FittedBox(
             fit: BoxFit.scaleDown,
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 36.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 36.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
               ),
-              maxLines: 1,
             ),
           ),
         ),
@@ -261,7 +265,12 @@ class KidsNumbersLayout extends StatelessWidget {
             onPlay: (controller) => controller.repeat(reverse: true),
             delay: Duration(milliseconds: 300 * index), // Staggered start
           )
-          .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut),
+          .moveY(
+            begin: -5,
+            end: 5,
+            duration: 2.seconds,
+            curve: Curves.easeInOut,
+          ),
     );
   }
 }

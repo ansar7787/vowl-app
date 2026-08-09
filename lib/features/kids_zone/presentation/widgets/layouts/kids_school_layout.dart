@@ -43,7 +43,7 @@ class KidsSchoolLayout extends StatelessWidget {
               child: Center(child: _buildBusWindow(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_school_drag',
                 fallback: 'Drag the backpack to the bus window! ✨',
@@ -56,6 +56,9 @@ class KidsSchoolLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // Backpacks on Seats
@@ -194,7 +197,10 @@ class KidsSchoolLayout extends StatelessWidget {
             height: 20.h,
             decoration: BoxDecoration(
               color: Colors.transparent,
-              border: Border.all(color: color.withValues(alpha: 0.8), width: 4.r),
+              border: Border.all(
+                color: color.withValues(alpha: 0.8),
+                width: 4.r,
+              ),
               borderRadius: BorderRadius.vertical(top: Radius.circular(10.r)),
             ),
           ),
@@ -232,7 +238,7 @@ class KidsSchoolLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white,
                         ),
                         maxLines: 2,

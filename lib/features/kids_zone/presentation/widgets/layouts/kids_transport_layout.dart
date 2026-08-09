@@ -43,7 +43,7 @@ class KidsTransportLayout extends StatelessWidget {
               child: Center(child: _buildRoadSign(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_transport_drag',
                 fallback: 'Drag the license plate to the road sign! ✨',
@@ -56,6 +56,9 @@ class KidsTransportLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The License Plates (Options)
@@ -134,9 +137,9 @@ class KidsTransportLayout extends StatelessWidget {
           onAcceptWithDetails: (details) {
             final text = details.data;
             final isCorrect = (text == quest.correctAnswer);
-        if (!isCorrect) {
-          di.sl<KidsTTSService>().speak(text);
-        }
+            if (!isCorrect) {
+              di.sl<KidsTTSService>().speak(text);
+            }
             context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
           },
           builder: (context, candidateData, rejectedData) {
@@ -209,47 +212,48 @@ class KidsTransportLayout extends StatelessWidget {
       width: 80.w,
       child: Container(
         height: 60.h,
-      decoration: BoxDecoration(
-        color: plateColor,
-        borderRadius: BorderRadius.circular(8.r),
-        border: Border.all(color: const Color(0xFF475569), width: 3),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Stack(
-        children: [
-          // Screw holes
-          Positioned(top: 4.h, left: 6.w, child: _buildScrew()),
-          Positioned(top: 4.h, right: 6.w, child: _buildScrew()),
-          Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
-          Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
+        decoration: BoxDecoration(
+          color: plateColor,
+          borderRadius: BorderRadius.circular(8.r),
+          border: Border.all(color: const Color(0xFF475569), width: 3),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Stack(
+          children: [
+            // Screw holes
+            Positioned(top: 4.h, left: 6.w, child: _buildScrew()),
+            Positioned(top: 4.h, right: 6.w, child: _buildScrew()),
+            Positioned(bottom: 4.h, left: 6.w, child: _buildScrew()),
+            Positioned(bottom: 4.h, right: 6.w, child: _buildScrew()),
 
-          Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: AutoSizeText(
-                text.toUpperCase(),
-                style: TextStyle(
-                  fontFamily:
-                      'Outfit', // A rigid font looks more like a license plate
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
-                  letterSpacing: 1.5,
+            Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily:
+                          'Outfit', // A rigid font looks more like a license plate
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF0F172A),
+                      letterSpacing: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
     );
 
     return Draggable<String>(

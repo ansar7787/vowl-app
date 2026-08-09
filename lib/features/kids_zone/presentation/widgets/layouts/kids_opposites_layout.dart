@@ -43,7 +43,7 @@ class KidsOppositesLayout extends StatelessWidget {
               child: Center(child: _buildSplitWorld(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_opposites_drag',
                 fallback: 'Drag the matching plaque! ✨',
@@ -56,6 +56,9 @@ class KidsOppositesLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Split Plaques (Options)
@@ -208,7 +211,7 @@ class KidsOppositesLayout extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 22.sp,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 color: const Color(0xFF0F172A),
                               ),
                               textAlign: TextAlign.center,
@@ -286,17 +289,18 @@ class KidsOppositesLayout extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4.r),
                   border: Border.all(color: const Color(0xFF1E293B), width: 1),
                 ),
-                child: AutoSizeText(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: const Color(0xFF0F172A),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF0F172A),
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  minFontSize: 8,
                 ),
               ),
             ),

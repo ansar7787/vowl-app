@@ -43,7 +43,7 @@ class KidsTimeLayout extends StatelessWidget {
               child: Center(child: _buildClockFace(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_time_drag',
                 fallback: 'Drag the pocket watch to the clock tower! ✨',
@@ -56,6 +56,9 @@ class KidsTimeLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Pocket Watches (Options)
@@ -200,7 +203,7 @@ class KidsTimeLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: const Color(0xFF1E293B),
                         ),
                         textAlign: TextAlign.center,
@@ -222,7 +225,7 @@ class KidsTimeLayout extends StatelessWidget {
     return TextStyle(
       fontFamily: 'Outfit',
       fontSize: 24.sp,
-      fontWeight: FontWeight.w900,
+      fontWeight: FontWeight.w700,
       color: const Color(0xFF78350F).withValues(alpha: 0.3),
     );
   }
@@ -252,50 +255,51 @@ class KidsTimeLayout extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-        // The chain
-        Container(
-          height: 15.h,
-          width: 4.w,
-          color: const Color(0xFFFBBF24), // Gold chain
-        ),
-        // The Watch body
-        Container(
-          height: 75.r,
-          width: 75.r,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: const Color(0xFFFBBF24),
-              width: 6.r,
-            ), // Gold rim
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.2),
-                offset: const Offset(0, 4),
-              ),
-            ],
+          // The chain
+          Container(
+            height: 15.h,
+            width: 4.w,
+            color: const Color(0xFFFBBF24), // Gold chain
           ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
-              child: AutoSizeText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF0F172A),
+          // The Watch body
+          Container(
+            height: 75.r,
+            width: 75.r,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: const Color(0xFFFBBF24),
+                width: 6.r,
+              ), // Gold rim
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  offset: const Offset(0, 4),
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                minFontSize: 8,
+              ],
+            ),
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF0F172A),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
     );
 
     return Draggable<String>(

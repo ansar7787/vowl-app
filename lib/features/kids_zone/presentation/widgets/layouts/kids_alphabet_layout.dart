@@ -40,7 +40,7 @@ class KidsAlphabetLayout extends StatelessWidget {
               child: Center(child: _buildChalkboard(context, state, quest)),
             ),
 
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_alphabet_drag',
                 fallback: 'Drag the block to the chalkboard! 👆',
@@ -53,6 +53,9 @@ class KidsAlphabetLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 12.h),
 
@@ -206,7 +209,7 @@ class KidsAlphabetLayout extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    child: Text(
+                                    child: AutoSizeText(
                                       context.tr(
                                         'games.kids_tap_me',
                                         fallback: 'TAP ME!',
@@ -214,12 +217,15 @@ class KidsAlphabetLayout extends StatelessWidget {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
-                                        fontWeight: FontWeight.w900,
+                                        fontWeight: FontWeight.w700,
                                         color: const Color(
                                           0xFF78350F,
                                         ), // Etched wood color
                                         letterSpacing: 1.5,
                                       ),
+                                      maxLines: 2,
+                                      minFontSize: 10,
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ],
@@ -295,17 +301,19 @@ class KidsAlphabetLayout extends StatelessWidget {
         boxShadow: [BoxShadow(color: shadowColor, offset: Offset(0, 8.h))],
       ),
       child: Center(
-        child: AutoSizeText(
-          text,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 32.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFF78350F), // Etched wood color
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 32.sp,
+              fontWeight: FontWeight.w700,
+              color: const Color(0xFF78350F), // Etched wood color
+            ),
+
+            textAlign: TextAlign.center,
           ),
-          maxLines: 1,
-          minFontSize: 12,
-          textAlign: TextAlign.center,
         ),
       ),
     );
@@ -354,7 +362,7 @@ class KidsAlphabetLayout extends StatelessWidget {
           text: firstPart,
           style: const TextStyle(
             color: Color(0xFFFCD34D),
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
           ), // Highlight Yellow
         ),
         TextSpan(

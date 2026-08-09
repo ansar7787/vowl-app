@@ -43,7 +43,7 @@ class KidsVerbsLayout extends StatelessWidget {
               child: Center(child: _buildScoreboard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_verbs_drag',
                 fallback: 'Drag the sports ball to the scoreboard! ✨',
@@ -56,6 +56,9 @@ class KidsVerbsLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Sports Balls (Bouncing slightly)
@@ -162,7 +165,7 @@ class KidsVerbsLayout extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       color: const Color(0xFFFBBF24), // Glowing yellow
                       shadows: const [
                         Shadow(color: Color(0xFFF59E0B), blurRadius: 10),
@@ -219,39 +222,40 @@ class KidsVerbsLayout extends StatelessWidget {
       width: 80.w,
       child: Container(
         height: 80.r,
-      decoration: BoxDecoration(
-        color: ballColor,
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: Colors.black.withValues(alpha: 0.2),
-          width: 2,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.3),
-            offset: const Offset(0, 6),
-            blurRadius: 4,
+        decoration: BoxDecoration(
+          color: ballColor,
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: Colors.black.withValues(alpha: 0.2),
+            width: 2,
           ),
-        ],
-      ),
-      child: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.w),
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: textColor,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              offset: const Offset(0, 6),
+              blurRadius: 4,
             ),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            minFontSize: 8,
+          ],
+        ),
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: textColor,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
         ),
       ),
-    ),
     );
 
     return Draggable<String>(

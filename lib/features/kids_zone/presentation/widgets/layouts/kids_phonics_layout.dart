@@ -43,7 +43,7 @@ class KidsPhonicsLayout extends StatelessWidget {
               child: Center(child: _buildStudioMonitor(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_phonics_drag',
                 fallback: 'Drag the vinyl record to the monitor! ✨',
@@ -56,6 +56,9 @@ class KidsPhonicsLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // Vinyl Records
@@ -178,7 +181,7 @@ class KidsPhonicsLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white,
                           shadows: [
                             Shadow(
@@ -323,16 +326,17 @@ class KidsPhonicsLayout extends StatelessWidget {
             borderRadius: BorderRadius.circular(4.r),
             border: Border.all(color: labelColor, width: 2),
           ),
-          child: AutoSizeText(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: const Color(0xFF0F172A),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xFF0F172A),
+              ),
             ),
-            maxLines: 1,
-            minFontSize: 8,
           ),
         ),
       ],

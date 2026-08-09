@@ -51,7 +51,7 @@ class KidsDayNightLayout extends StatelessWidget {
                   child: Center(child: _buildSkyView(context, state, quest)),
                 ),
                 SizedBox(height: 24.h),
-                Text(
+                AutoSizeText(
                   context.tr(
                     'games.kids_day_night_drag',
                     fallback: 'Drag the card to the sky! ✨',
@@ -64,6 +64,9 @@ class KidsDayNightLayout extends StatelessWidget {
                         ? Colors.white.withValues(alpha: 0.8)
                         : Colors.black.withValues(alpha: 0.6),
                   ),
+                  maxLines: 2,
+                  minFontSize: 10,
+                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 16.h),
                 // Celestial Cards (Options)
@@ -183,7 +186,7 @@ class KidsDayNightLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
@@ -267,24 +270,25 @@ class KidsDayNightLayout extends StatelessWidget {
 
             SizedBox(height: 12.h),
 
-            AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                shadows: [
-                  Shadow(
-                    color: Colors.black.withValues(alpha: 0.2),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black.withValues(alpha: 0.2),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              minFontSize: 8,
             ),
           ],
         ),

@@ -41,7 +41,7 @@ class KidsProfessionsLayout extends StatelessWidget {
               child: Center(child: _buildTownHallBoard(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_professions_drag',
                 fallback: 'Drag the ID badge to the town board! ✨',
@@ -54,6 +54,9 @@ class KidsProfessionsLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // The Professional ID Badges (Options)
@@ -140,7 +143,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 40.sp,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     color: const Color(0xFF312E81), // Indigo 900
                   ),
                   textAlign: TextAlign.center,
@@ -150,16 +153,18 @@ class KidsProfessionsLayout extends StatelessWidget {
               ),
               if (quest.phonetic != null) ...[
                 SizedBox(height: 4.h),
-                AutoSizeText(
-                  quest.phonetic!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF6366F1), // Indigo 500
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    quest.phonetic!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF6366F1), // Indigo 500
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
                 ),
               ],
               if (quest.wordExample != null) ...[
@@ -235,7 +240,7 @@ class KidsProfessionsLayout extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w700,
               color: const Color(0xFF312E81),
             ),
             textAlign: TextAlign.center,

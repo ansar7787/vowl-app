@@ -183,7 +183,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 64.sp,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w700,
                       color: widget.primaryColor,
                       letterSpacing: 6,
                     ),
@@ -271,7 +271,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 26.sp,
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
                             ),

@@ -43,7 +43,7 @@ class KidsFruitsLayout extends StatelessWidget {
               child: Center(child: _buildAwningFrame(context, state, quest)),
             ),
             SizedBox(height: 24.h),
-            Text(
+            AutoSizeText(
               context.tr(
                 'games.kids_fruits_drag',
                 fallback: 'Drag the fruit to the stand! ✨',
@@ -56,6 +56,9 @@ class KidsFruitsLayout extends StatelessWidget {
                     ? Colors.white.withValues(alpha: 0.8)
                     : Colors.black.withValues(alpha: 0.6),
               ),
+              maxLines: 2,
+              minFontSize: 10,
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
             // Wicker Baskets for Options
@@ -145,7 +148,7 @@ class KidsFruitsLayout extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                           color: const Color(0xFF78350F),
                         ),
                         textAlign: TextAlign.center,
@@ -218,16 +221,17 @@ class KidsFruitsLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(color: const Color(0xFF92400E), width: 1),
             ),
-            child: AutoSizeText(
-              text,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF451A03),
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF451A03),
+                ),
               ),
-              maxLines: 1,
-              minFontSize: 8,
             ),
           ),
         ),
