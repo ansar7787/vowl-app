@@ -1,622 +1,622 @@
 [
-  {
-    "level": 171,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L171_Q1",
-        "gameType": "time",
+    {
         "level": 171,
-        "instruction": "Which time is earliest: 6:50 AM, 12:20 PM, or 4:40 PM?",
-        "question": "6:50 AM",
-        "correctAnswer": "6:50 AM",
-        "options": [
-          "6:50 AM",
-          "4:40 PM",
-          "12:20 PM"
-        ],
-        "hint": "Look at 6:50 AM, 12:20 PM, 4:40 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 6:50 AM happens first, ahead of 12:20 PM and 4:40 PM.",
-        "funFact": "The earliest time of the day is always the one with the smallest AM hour.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L171_Q2",
-        "gameType": "time",
-        "level": 171,
-        "instruction": "Morning announcements play at 8:45 AM. The spelling test is at 11:00 AM. Which happens first?",
-        "question": "8:45 AM",
-        "correctAnswer": "8:45 AM",
-        "options": [
-          "11:00 AM",
-          "8:45 AM",
-          "1:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 8:45 AM and 11:00 AM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 8:45 AM is the earlier one.",
-        "funFact": "Morning announcements usually open the school day before any tests.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L171_Q3",
-        "gameType": "time",
-        "level": 171,
-        "instruction": "The book fair opens at 10:00 AM and runs for 5 hours. What time does it close?",
-        "question": "3:00 PM",
-        "correctAnswer": "3:00 PM",
-        "options": [
-          "3:00 PM",
-          "4:00 PM",
-          "2:00 PM"
-        ],
-        "hint": "Counting 5 hours past 10:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the book fair, 5 hours after 10:00 AM is 3:00 PM.",
-        "funFact": "Five hours gives readers plenty of time to find a new favorite book.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 172,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L172_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L171_Q1",
+                "gameType": "time",
+                "level": 171,
+                "instruction": "Which time is earliest: 6:50 AM, 12:20 PM, or 4:40 PM?",
+                "question": "6:50 AM",
+                "correctAnswer": "6:50 AM ⏳",
+                "options": [
+                    "6:50 AM ⏳",
+                    "4:40 PM ⏳",
+                    "12:20 PM 🕐"
+                ],
+                "hint": "Look at 6:50 AM, 12:20 PM, 4:40 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 6:50 AM happens first, ahead of 12:20 PM and 4:40 PM.",
+                "funFact": "The earliest time of the day is always the one with the smallest AM hour.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L171_Q2",
+                "gameType": "time",
+                "level": 171,
+                "instruction": "Morning announcements play at 8:45 AM. The spelling test is at 11:00 AM. Which happens first?",
+                "question": "8:45 AM",
+                "correctAnswer": "8:45 AM 📅",
+                "options": [
+                    "11:00 AM 🎨",
+                    "8:45 AM 📅",
+                    "1:00 PM 📚"
+                ],
+                "hint": "Picture a daily schedule with 8:45 AM and 11:00 AM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 8:45 AM is the earlier one.",
+                "funFact": "Morning announcements usually open the school day before any tests.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L171_Q3",
+                "gameType": "time",
+                "level": 171,
+                "instruction": "The book fair opens at 10:00 AM and runs for 5 hours. What time does it close?",
+                "question": "3:00 PM",
+                "correctAnswer": "3:00 PM 🗓️",
+                "options": [
+                    "3:00 PM 🗓️",
+                    "4:00 PM 🛝",
+                    "2:00 PM 😴"
+                ],
+                "hint": "Counting 5 hours past 10:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the book fair, 5 hours after 10:00 AM is 3:00 PM.",
+                "funFact": "Five hours gives readers plenty of time to find a new favorite book.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 172,
-        "instruction": "Which time is latest: 7:40 AM, 3:10 PM, or 8:20 PM?",
-        "question": "8:20 PM",
-        "correctAnswer": "8:20 PM",
-        "options": [
-          "8:20 PM",
-          "3:10 PM",
-          "7:40 AM"
-        ],
-        "hint": "Look at 7:40 AM, 3:10 PM, 8:20 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 8:20 PM happens last, after 7:40 AM and 3:10 PM.",
-        "funFact": "An evening PM hour is always later than any hour that same afternoon.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L172_Q2",
-        "gameType": "time",
-        "level": 172,
-        "instruction": "Silent reading is at 1:00 PM. Science class is at 2:30 PM. Which happens first?",
-        "question": "1:00 PM",
-        "correctAnswer": "1:00 PM",
-        "options": [
-          "4:00 PM",
-          "2:30 PM",
-          "1:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 1:00 PM and 2:30 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 1:00 PM is the earlier one.",
-        "funFact": "Silent reading is a calm way to begin the school afternoon.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L172_Q3",
-        "gameType": "time",
-        "level": 172,
-        "instruction": "The craft fair opens at 9:00 AM and stays open 5 hours. What time does it close?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "2:00 PM",
-          "3:00 PM",
-          "1:00 PM"
-        ],
-        "hint": "Counting 5 hours past 9:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the craft fair, 5 hours after 9:00 AM is 2:00 PM.",
-        "funFact": "Five hours gives shoppers plenty of time to browse handmade crafts.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 173,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L173_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L172_Q1",
+                "gameType": "time",
+                "level": 172,
+                "instruction": "Which time is latest: 7:40 AM, 3:10 PM, or 8:20 PM?",
+                "question": "8:20 PM",
+                "correctAnswer": "8:20 PM ⏳",
+                "options": [
+                    "8:20 PM ⏳",
+                    "3:10 PM 🕐",
+                    "7:40 AM ⏮️"
+                ],
+                "hint": "Look at 7:40 AM, 3:10 PM, 8:20 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 8:20 PM happens last, after 7:40 AM and 3:10 PM.",
+                "funFact": "An evening PM hour is always later than any hour that same afternoon.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L172_Q2",
+                "gameType": "time",
+                "level": 172,
+                "instruction": "Silent reading is at 1:00 PM. Science class is at 2:30 PM. Which happens first?",
+                "question": "1:00 PM",
+                "correctAnswer": "1:00 PM 📅",
+                "options": [
+                    "4:00 PM 🛝",
+                    "2:30 PM ⏱️",
+                    "1:00 PM 📅"
+                ],
+                "hint": "Picture a daily schedule with 1:00 PM and 2:30 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 1:00 PM is the earlier one.",
+                "funFact": "Silent reading is a calm way to begin the school afternoon.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L172_Q3",
+                "gameType": "time",
+                "level": 172,
+                "instruction": "The craft fair opens at 9:00 AM and stays open 5 hours. What time does it close?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 🗓️",
+                "options": [
+                    "2:00 PM 🗓️",
+                    "3:00 PM 🎒",
+                    "1:00 PM 📚"
+                ],
+                "hint": "Counting 5 hours past 9:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the craft fair, 5 hours after 9:00 AM is 2:00 PM.",
+                "funFact": "Five hours gives shoppers plenty of time to browse handmade crafts.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 173,
-        "instruction": "Which time is earliest: 6:05 AM, 1:45 PM, or 9:20 PM?",
-        "question": "6:05 AM",
-        "correctAnswer": "6:05 AM",
-        "options": [
-          "1:45 PM",
-          "9:20 PM",
-          "6:05 AM"
-        ],
-        "hint": "Look at 6:05 AM, 1:45 PM, 9:20 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 6:05 AM happens first, ahead of 1:45 PM and 9:20 PM.",
-        "funFact": "When the hours look close, checking AM versus PM settles it fast.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L173_Q2",
-        "gameType": "time",
-        "level": 173,
-        "instruction": "The class photo is taken at 11:15 AM. Afternoon gym class is at 2:00 PM. Which happens first?",
-        "question": "11:15 AM",
-        "correctAnswer": "11:15 AM",
-        "options": [
-          "4:00 PM",
-          "11:15 AM",
-          "2:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 11:15 AM and 2:00 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 11:15 AM is the earlier one.",
-        "funFact": "Class photos are often taken before lunch, while everyone looks their best.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L173_Q3",
-        "gameType": "time",
-        "level": 173,
-        "instruction": "The charity walk begins at 7:00 AM and lasts 6 hours. What time does it end?",
-        "question": "1:00 PM",
-        "correctAnswer": "1:00 PM",
-        "options": [
-          "1:00 PM",
-          "12:00 PM",
-          "2:00 PM"
-        ],
-        "hint": "Counting 6 hours past 7:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the charity walk, 6 hours after 7:00 AM is 1:00 PM.",
-        "funFact": "Six hours gives walkers plenty of time to finish a long charity route.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 174,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L174_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L173_Q1",
+                "gameType": "time",
+                "level": 173,
+                "instruction": "Which time is earliest: 6:05 AM, 1:45 PM, or 9:20 PM?",
+                "question": "6:05 AM",
+                "correctAnswer": "6:05 AM ⏳",
+                "options": [
+                    "1:45 PM ⏱️",
+                    "9:20 PM ⏱️",
+                    "6:05 AM ⏳"
+                ],
+                "hint": "Look at 6:05 AM, 1:45 PM, 9:20 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 6:05 AM happens first, ahead of 1:45 PM and 9:20 PM.",
+                "funFact": "When the hours look close, checking AM versus PM settles it fast.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L173_Q2",
+                "gameType": "time",
+                "level": 173,
+                "instruction": "The class photo is taken at 11:15 AM. Afternoon gym class is at 2:00 PM. Which happens first?",
+                "question": "11:15 AM",
+                "correctAnswer": "11:15 AM 📅",
+                "options": [
+                    "4:00 PM 🛝",
+                    "11:15 AM 📅",
+                    "2:00 PM 😴"
+                ],
+                "hint": "Picture a daily schedule with 11:15 AM and 2:00 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 11:15 AM is the earlier one.",
+                "funFact": "Class photos are often taken before lunch, while everyone looks their best.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L173_Q3",
+                "gameType": "time",
+                "level": 173,
+                "instruction": "The charity walk begins at 7:00 AM and lasts 6 hours. What time does it end?",
+                "question": "1:00 PM",
+                "correctAnswer": "1:00 PM 🗓️",
+                "options": [
+                    "1:00 PM 🗓️",
+                    "12:00 PM 🍽️",
+                    "2:00 PM 😴"
+                ],
+                "hint": "Counting 6 hours past 7:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the charity walk, 6 hours after 7:00 AM is 1:00 PM.",
+                "funFact": "Six hours gives walkers plenty of time to finish a long charity route.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 174,
-        "instruction": "Which time is latest: 6:30 AM, 4:50 PM, or 9:10 PM?",
-        "question": "9:10 PM",
-        "correctAnswer": "9:10 PM",
-        "options": [
-          "9:10 PM",
-          "6:30 AM",
-          "4:50 PM"
-        ],
-        "hint": "Look at 6:30 AM, 4:50 PM, 9:10 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 9:10 PM happens last, after 6:30 AM and 4:50 PM.",
-        "funFact": "Late evening PM hours always come after every hour earlier that day.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L174_Q2",
-        "gameType": "time",
-        "level": 174,
-        "instruction": "Quiet reading is at 2:00 PM. The class party is at 3:30 PM. Which happens first?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "3:30 PM",
-          "2:00 PM",
-          "5:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 2:00 PM and 3:30 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 2:00 PM is the earlier one.",
-        "funFact": "Quiet reading time often comes before an exciting class party.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L174_Q3",
-        "gameType": "time",
-        "level": 174,
-        "instruction": "The school carnival opens at 11:00 AM and runs for 4 hours. What time does it end?",
-        "question": "3:00 PM",
-        "correctAnswer": "3:00 PM",
-        "options": [
-          "2:00 PM",
-          "3:00 PM",
-          "4:00 PM"
-        ],
-        "hint": "Counting 4 hours past 11:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the school carnival, 4 hours after 11:00 AM is 3:00 PM.",
-        "funFact": "Four hours gives a carnival plenty of time for games and prizes.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 175,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L175_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L174_Q1",
+                "gameType": "time",
+                "level": 174,
+                "instruction": "Which time is latest: 6:30 AM, 4:50 PM, or 9:10 PM?",
+                "question": "9:10 PM",
+                "correctAnswer": "9:10 PM ⏳",
+                "options": [
+                    "9:10 PM ⏳",
+                    "6:30 AM 🕡",
+                    "4:50 PM 🕐"
+                ],
+                "hint": "Look at 6:30 AM, 4:50 PM, 9:10 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 9:10 PM happens last, after 6:30 AM and 4:50 PM.",
+                "funFact": "Late evening PM hours always come after every hour earlier that day.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L174_Q2",
+                "gameType": "time",
+                "level": 174,
+                "instruction": "Quiet reading is at 2:00 PM. The class party is at 3:30 PM. Which happens first?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 📅",
+                "options": [
+                    "3:30 PM 🕓",
+                    "2:00 PM 📅",
+                    "5:00 PM 🧃"
+                ],
+                "hint": "Picture a daily schedule with 2:00 PM and 3:30 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 2:00 PM is the earlier one.",
+                "funFact": "Quiet reading time often comes before an exciting class party.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L174_Q3",
+                "gameType": "time",
+                "level": 174,
+                "instruction": "The school carnival opens at 11:00 AM and runs for 4 hours. What time does it end?",
+                "question": "3:00 PM",
+                "correctAnswer": "3:00 PM 🗓️",
+                "options": [
+                    "2:00 PM 😴",
+                    "3:00 PM 🗓️",
+                    "4:00 PM 🛝"
+                ],
+                "hint": "Counting 4 hours past 11:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the school carnival, 4 hours after 11:00 AM is 3:00 PM.",
+                "funFact": "Four hours gives a carnival plenty of time for games and prizes.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 175,
-        "instruction": "Which time is earliest: 7:20 AM, 12:50 PM, or 6:10 PM?",
-        "question": "7:20 AM",
-        "correctAnswer": "7:20 AM",
-        "options": [
-          "12:50 PM",
-          "6:10 PM",
-          "7:20 AM"
-        ],
-        "hint": "Look at 7:20 AM, 12:50 PM, 6:10 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 7:20 AM happens first, ahead of 12:50 PM and 6:10 PM.",
-        "funFact": "On a timeline, morning AM hours are always drawn before afternoon PM hours.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L175_Q2",
-        "gameType": "time",
-        "level": 175,
-        "instruction": "The class visits the computer lab at 9:15 AM. Lunch is at 12:00 PM. Which happens first?",
-        "question": "9:15 AM",
-        "correctAnswer": "9:15 AM",
-        "options": [
-          "2:00 PM",
-          "9:15 AM",
-          "12:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 9:15 AM and 12:00 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 9:15 AM is the earlier one.",
-        "funFact": "A morning computer lab visit fits neatly before the midday meal.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L175_Q3",
-        "gameType": "time",
-        "level": 175,
-        "instruction": "The school open house begins at 8:00 AM and lasts 4 hours. What time does it end?",
-        "question": "12:00 PM",
-        "correctAnswer": "12:00 PM",
-        "options": [
-          "12:00 PM",
-          "1:00 PM",
-          "11:00 AM"
-        ],
-        "hint": "Counting 4 hours past 8:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the school open house, 4 hours after 8:00 AM is 12:00 PM.",
-        "funFact": "Four hours gives families plenty of time to visit every classroom.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 176,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L176_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L175_Q1",
+                "gameType": "time",
+                "level": 175,
+                "instruction": "Which time is earliest: 7:20 AM, 12:50 PM, or 6:10 PM?",
+                "question": "7:20 AM",
+                "correctAnswer": "7:20 AM ⏳",
+                "options": [
+                    "12:50 PM ⏱️",
+                    "6:10 PM 🕐",
+                    "7:20 AM ⏳"
+                ],
+                "hint": "Look at 7:20 AM, 12:50 PM, 6:10 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 7:20 AM happens first, ahead of 12:50 PM and 6:10 PM.",
+                "funFact": "On a timeline, morning AM hours are always drawn before afternoon PM hours.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L175_Q2",
+                "gameType": "time",
+                "level": 175,
+                "instruction": "The class visits the computer lab at 9:15 AM. Lunch is at 12:00 PM. Which happens first?",
+                "question": "9:15 AM",
+                "correctAnswer": "9:15 AM 📅",
+                "options": [
+                    "2:00 PM 😴",
+                    "9:15 AM 📅",
+                    "12:00 PM 🍽️"
+                ],
+                "hint": "Picture a daily schedule with 9:15 AM and 12:00 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 9:15 AM is the earlier one.",
+                "funFact": "A morning computer lab visit fits neatly before the midday meal.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L175_Q3",
+                "gameType": "time",
+                "level": 175,
+                "instruction": "The school open house begins at 8:00 AM and lasts 4 hours. What time does it end?",
+                "question": "12:00 PM",
+                "correctAnswer": "12:00 PM 🗓️",
+                "options": [
+                    "12:00 PM 🗓️",
+                    "1:00 PM 📚",
+                    "11:00 AM 🎨"
+                ],
+                "hint": "Counting 4 hours past 8:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the school open house, 4 hours after 8:00 AM is 12:00 PM.",
+                "funFact": "Four hours gives families plenty of time to visit every classroom.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 176,
-        "instruction": "Which time is latest: 6:40 AM, 5:25 PM, or 9:55 PM?",
-        "question": "9:55 PM",
-        "correctAnswer": "9:55 PM",
-        "options": [
-          "9:55 PM",
-          "6:40 AM",
-          "5:25 PM"
-        ],
-        "hint": "Look at 6:40 AM, 5:25 PM, 9:55 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 9:55 PM happens last, after 6:40 AM and 5:25 PM.",
-        "funFact": "The very latest time of the day is usually the biggest PM hour.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L176_Q2",
-        "gameType": "time",
-        "level": 176,
-        "instruction": "The spelling bee begins at 10:45 AM. Afternoon art class starts at 1:30 PM. Which happens first?",
-        "question": "10:45 AM",
-        "correctAnswer": "10:45 AM",
-        "options": [
-          "3:00 PM",
-          "10:45 AM",
-          "1:30 PM"
-        ],
-        "hint": "Picture a daily schedule with 10:45 AM and 1:30 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 10:45 AM is the earlier one.",
-        "funFact": "A morning spelling bee gives students a fun academic challenge before lunch.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L176_Q3",
-        "gameType": "time",
-        "level": 176,
-        "instruction": "The pumpkin patch opens at 10:00 AM and the family stays for 4 hours. What time do they leave?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "2:00 PM",
-          "1:00 PM",
-          "3:00 PM"
-        ],
-        "hint": "Counting 4 hours past 10:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the pumpkin patch, 4 hours after 10:00 AM is 2:00 PM.",
-        "funFact": "Four hours gives a family plenty of time to pick the perfect pumpkin.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 177,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L177_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L176_Q1",
+                "gameType": "time",
+                "level": 176,
+                "instruction": "Which time is latest: 6:40 AM, 5:25 PM, or 9:55 PM?",
+                "question": "9:55 PM",
+                "correctAnswer": "9:55 PM ⏳",
+                "options": [
+                    "9:55 PM ⏳",
+                    "6:40 AM ⏱️",
+                    "5:25 PM"
+                ],
+                "hint": "Look at 6:40 AM, 5:25 PM, 9:55 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 9:55 PM happens last, after 6:40 AM and 5:25 PM.",
+                "funFact": "The very latest time of the day is usually the biggest PM hour.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L176_Q2",
+                "gameType": "time",
+                "level": 176,
+                "instruction": "The spelling bee begins at 10:45 AM. Afternoon art class starts at 1:30 PM. Which happens first?",
+                "question": "10:45 AM",
+                "correctAnswer": "10:45 AM 📅",
+                "options": [
+                    "3:00 PM 🎒",
+                    "10:45 AM 📅",
+                    "1:30 PM 🕜"
+                ],
+                "hint": "Picture a daily schedule with 10:45 AM and 1:30 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 10:45 AM is the earlier one.",
+                "funFact": "A morning spelling bee gives students a fun academic challenge before lunch.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L176_Q3",
+                "gameType": "time",
+                "level": 176,
+                "instruction": "The pumpkin patch opens at 10:00 AM and the family stays for 4 hours. What time do they leave?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 🗓️",
+                "options": [
+                    "2:00 PM 🗓️",
+                    "1:00 PM 📚",
+                    "3:00 PM 🎒"
+                ],
+                "hint": "Counting 4 hours past 10:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the pumpkin patch, 4 hours after 10:00 AM is 2:00 PM.",
+                "funFact": "Four hours gives a family plenty of time to pick the perfect pumpkin.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 177,
-        "instruction": "Which time is earliest: 6:35 AM, 2:05 PM, or 7:50 PM?",
-        "question": "6:35 AM",
-        "correctAnswer": "6:35 AM",
-        "options": [
-          "7:50 PM",
-          "6:35 AM",
-          "2:05 PM"
-        ],
-        "hint": "Look at 6:35 AM, 2:05 PM, 7:50 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 6:35 AM happens first, ahead of 2:05 PM and 7:50 PM.",
-        "funFact": "Sorting times gets easy once you group the AM ones before the PM ones.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L177_Q2",
-        "gameType": "time",
-        "level": 177,
-        "instruction": "The morning walk to school takes place at 8:30 AM. The class test is at 10:00 AM. Which happens first?",
-        "question": "8:30 AM",
-        "correctAnswer": "8:30 AM",
-        "options": [
-          "12:00 PM",
-          "10:00 AM",
-          "8:30 AM"
-        ],
-        "hint": "Picture a daily schedule with 8:30 AM and 10:00 AM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 8:30 AM is the earlier one.",
-        "funFact": "The walk to school always comes before the school day's first test.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L177_Q3",
-        "gameType": "time",
-        "level": 177,
-        "instruction": "The robotics competition begins at 9:00 AM and runs for 4 hours. What time does it end?",
-        "question": "1:00 PM",
-        "correctAnswer": "1:00 PM",
-        "options": [
-          "1:00 PM",
-          "12:00 PM",
-          "2:00 PM"
-        ],
-        "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the robotics competition, 4 hours after 9:00 AM is 1:00 PM.",
-        "funFact": "Four hours gives every robotics team a chance to compete.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 178,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L178_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L177_Q1",
+                "gameType": "time",
+                "level": 177,
+                "instruction": "Which time is earliest: 6:35 AM, 2:05 PM, or 7:50 PM?",
+                "question": "6:35 AM",
+                "correctAnswer": "6:35 AM ⏳",
+                "options": [
+                    "7:50 PM",
+                    "6:35 AM ⏳",
+                    "2:05 PM"
+                ],
+                "hint": "Look at 6:35 AM, 2:05 PM, 7:50 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 6:35 AM happens first, ahead of 2:05 PM and 7:50 PM.",
+                "funFact": "Sorting times gets easy once you group the AM ones before the PM ones.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L177_Q2",
+                "gameType": "time",
+                "level": 177,
+                "instruction": "The morning walk to school takes place at 8:30 AM. The class test is at 10:00 AM. Which happens first?",
+                "question": "8:30 AM",
+                "correctAnswer": "8:30 AM 📅",
+                "options": [
+                    "12:00 PM 🍽️",
+                    "10:00 AM 🍎",
+                    "8:30 AM 📅"
+                ],
+                "hint": "Picture a daily schedule with 8:30 AM and 10:00 AM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 8:30 AM is the earlier one.",
+                "funFact": "The walk to school always comes before the school day's first test.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L177_Q3",
+                "gameType": "time",
+                "level": 177,
+                "instruction": "The robotics competition begins at 9:00 AM and runs for 4 hours. What time does it end?",
+                "question": "1:00 PM",
+                "correctAnswer": "1:00 PM 🗓️",
+                "options": [
+                    "1:00 PM 🗓️",
+                    "12:00 PM 🍽️",
+                    "2:00 PM 😴"
+                ],
+                "hint": "Counting 4 hours past 9:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the robotics competition, 4 hours after 9:00 AM is 1:00 PM.",
+                "funFact": "Four hours gives every robotics team a chance to compete.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 178,
-        "instruction": "Which time is latest: 7:05 AM, 3:35 PM, or 8:05 PM?",
-        "question": "8:05 PM",
-        "correctAnswer": "8:05 PM",
-        "options": [
-          "3:35 PM",
-          "8:05 PM",
-          "7:05 AM"
-        ],
-        "hint": "Look at 7:05 AM, 3:35 PM, 8:05 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 8:05 PM happens last, after 7:05 AM and 3:35 PM.",
-        "funFact": "When PM hours appear in a list, they mark the later part of the day.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L178_Q2",
-        "gameType": "time",
-        "level": 178,
-        "instruction": "The class visits the school garden at 1:15 PM. The spelling quiz is at 2:45 PM. Which happens first?",
-        "question": "1:15 PM",
-        "correctAnswer": "1:15 PM",
-        "options": [
-          "2:45 PM",
-          "1:15 PM",
-          "4:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 1:15 PM and 2:45 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 1:15 PM is the earlier one.",
-        "funFact": "A garden visit is a refreshing way to start the school afternoon.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L178_Q3",
-        "gameType": "time",
-        "level": 178,
-        "instruction": "The science center opens at 9:00 AM and the class explores for 6 hours. What time do they leave?",
-        "question": "3:00 PM",
-        "correctAnswer": "3:00 PM",
-        "options": [
-          "3:00 PM",
-          "2:00 PM",
-          "4:00 PM"
-        ],
-        "hint": "Counting 6 hours past 9:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the science center, 6 hours after 9:00 AM is 3:00 PM.",
-        "funFact": "Six hours gives a class plenty of time to enjoy every science exhibit.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 179,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L179_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L178_Q1",
+                "gameType": "time",
+                "level": 178,
+                "instruction": "Which time is latest: 7:05 AM, 3:35 PM, or 8:05 PM?",
+                "question": "8:05 PM",
+                "correctAnswer": "8:05 PM ⏳",
+                "options": [
+                    "3:35 PM",
+                    "8:05 PM ⏳",
+                    "7:05 AM ⏱️"
+                ],
+                "hint": "Look at 7:05 AM, 3:35 PM, 8:05 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 8:05 PM happens last, after 7:05 AM and 3:35 PM.",
+                "funFact": "When PM hours appear in a list, they mark the later part of the day.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L178_Q2",
+                "gameType": "time",
+                "level": 178,
+                "instruction": "The class visits the school garden at 1:15 PM. The spelling quiz is at 2:45 PM. Which happens first?",
+                "question": "1:15 PM",
+                "correctAnswer": "1:15 PM 📅",
+                "options": [
+                    "2:45 PM ⏱️",
+                    "1:15 PM 📅",
+                    "4:00 PM 🛝"
+                ],
+                "hint": "Picture a daily schedule with 1:15 PM and 2:45 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 1:15 PM is the earlier one.",
+                "funFact": "A garden visit is a refreshing way to start the school afternoon.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L178_Q3",
+                "gameType": "time",
+                "level": 178,
+                "instruction": "The science center opens at 9:00 AM and the class explores for 6 hours. What time do they leave?",
+                "question": "3:00 PM",
+                "correctAnswer": "3:00 PM 🗓️",
+                "options": [
+                    "3:00 PM 🗓️",
+                    "2:00 PM 😴",
+                    "4:00 PM 🛝"
+                ],
+                "hint": "Counting 6 hours past 9:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the science center, 6 hours after 9:00 AM is 3:00 PM.",
+                "funFact": "Six hours gives a class plenty of time to enjoy every science exhibit.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 179,
-        "instruction": "Which time is earliest: 6:55 AM, 1:25 PM, or 9:40 PM?",
-        "question": "6:55 AM",
-        "correctAnswer": "6:55 AM",
-        "options": [
-          "1:25 PM",
-          "9:40 PM",
-          "6:55 AM"
-        ],
-        "hint": "Look at 6:55 AM, 1:25 PM, 9:40 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 6:55 AM happens first, ahead of 1:25 PM and 9:40 PM.",
-        "funFact": "When the hour numbers look similar, the AM or PM label breaks the tie.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L179_Q2",
-        "gameType": "time",
-        "level": 179,
-        "instruction": "The class bakes bread at 11:30 AM. The taste test happens at 1:00 PM. Which happens first?",
-        "question": "11:30 AM",
-        "correctAnswer": "11:30 AM",
-        "options": [
-          "11:30 AM",
-          "3:00 PM",
-          "1:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 11:30 AM and 1:00 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 11:30 AM is the earlier one.",
-        "funFact": "Bread needs time to bake before it's ready for a taste test.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L179_Q3",
-        "gameType": "time",
-        "level": 179,
-        "instruction": "The 5K charity race begins at 7:00 AM and the finish line closes 5 hours later. What time does it close?",
-        "question": "12:00 PM",
-        "correctAnswer": "12:00 PM",
-        "options": [
-          "12:00 PM",
-          "1:00 PM",
-          "11:00 AM"
-        ],
-        "hint": "Counting 5 hours past 7:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the 5K charity race, 5 hours after 7:00 AM is 12:00 PM.",
-        "funFact": "Five hours gives every runner plenty of time to reach the finish line.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 180,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L180_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L179_Q1",
+                "gameType": "time",
+                "level": 179,
+                "instruction": "Which time is earliest: 6:55 AM, 1:25 PM, or 9:40 PM?",
+                "question": "6:55 AM",
+                "correctAnswer": "6:55 AM ⏳",
+                "options": [
+                    "1:25 PM ⏱️",
+                    "9:40 PM",
+                    "6:55 AM ⏳"
+                ],
+                "hint": "Look at 6:55 AM, 1:25 PM, 9:40 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 6:55 AM happens first, ahead of 1:25 PM and 9:40 PM.",
+                "funFact": "When the hour numbers look similar, the AM or PM label breaks the tie.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L179_Q2",
+                "gameType": "time",
+                "level": 179,
+                "instruction": "The class bakes bread at 11:30 AM. The taste test happens at 1:00 PM. Which happens first?",
+                "question": "11:30 AM",
+                "correctAnswer": "11:30 AM 📅",
+                "options": [
+                    "11:30 AM 📅",
+                    "3:00 PM 🎒",
+                    "1:00 PM 📚"
+                ],
+                "hint": "Picture a daily schedule with 11:30 AM and 1:00 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 11:30 AM is the earlier one.",
+                "funFact": "Bread needs time to bake before it's ready for a taste test.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L179_Q3",
+                "gameType": "time",
+                "level": 179,
+                "instruction": "The 5K charity race begins at 7:00 AM and the finish line closes 5 hours later. What time does it close?",
+                "question": "12:00 PM",
+                "correctAnswer": "12:00 PM 🗓️",
+                "options": [
+                    "12:00 PM 🗓️",
+                    "1:00 PM 📚",
+                    "11:00 AM 🎨"
+                ],
+                "hint": "Counting 5 hours past 7:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the 5K charity race, 5 hours after 7:00 AM is 12:00 PM.",
+                "funFact": "Five hours gives every runner plenty of time to reach the finish line.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 180,
-        "instruction": "Which time is latest: 6:10 AM, 12:40 PM, or 9:30 PM?",
-        "question": "9:30 PM",
-        "correctAnswer": "9:30 PM",
-        "options": [
-          "12:40 PM",
-          "6:10 AM",
-          "9:30 PM"
-        ],
-        "hint": "Look at 6:10 AM, 12:40 PM, 9:30 PM — check which are AM and which are PM first.",
-        "emoji": "⏳",
-        "explanation": "Comparing all three, 9:30 PM happens last, after 6:10 AM and 12:40 PM.",
-        "funFact": "By the end of the day, only the biggest PM hour remains the latest.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L180_Q2",
-        "gameType": "time",
-        "level": 180,
-        "instruction": "The class plants seeds at 9:45 AM. The class checks on them again at 2:00 PM. Which happens first?",
-        "question": "9:45 AM",
-        "correctAnswer": "9:45 AM",
-        "options": [
-          "2:00 PM",
-          "9:45 AM",
-          "4:00 PM"
-        ],
-        "hint": "Picture a daily schedule with 9:45 AM and 2:00 PM on it.",
-        "emoji": "📅",
-        "explanation": "Comparing the two times, 9:45 AM is the earlier one.",
-        "funFact": "Seeds are planted first, then checked on later to see how they're growing.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L180_Q3",
-        "gameType": "time",
-        "level": 180,
-        "instruction": "The end-of-year school fair begins at 8:00 AM and runs for 6 hours. What time does it end?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "2:00 PM",
-          "3:00 PM",
-          "1:00 PM"
-        ],
-        "hint": "Counting 6 hours past 8:00 AM lands you at the answer.",
-        "emoji": "🗓️",
-        "explanation": "For the end-of-year school fair, 6 hours after 8:00 AM is 2:00 PM.",
-        "funFact": "Six hours gives a whole school community time to celebrate together.",
-        "subtype": "schedule_reasoning",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  }
+        "quests": [
+            {
+                "id": "KIDS_TIME_L180_Q1",
+                "gameType": "time",
+                "level": 180,
+                "instruction": "Which time is latest: 6:10 AM, 12:40 PM, or 9:30 PM?",
+                "question": "9:30 PM",
+                "correctAnswer": "9:30 PM ⏳",
+                "options": [
+                    "12:40 PM ⏱️",
+                    "6:10 AM",
+                    "9:30 PM ⏳"
+                ],
+                "hint": "Look at 6:10 AM, 12:40 PM, 9:30 PM — check which are AM and which are PM first.",
+                "emoji": "⏳",
+                "explanation": "Comparing all three, 9:30 PM happens last, after 6:10 AM and 12:40 PM.",
+                "funFact": "By the end of the day, only the biggest PM hour remains the latest.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L180_Q2",
+                "gameType": "time",
+                "level": 180,
+                "instruction": "The class plants seeds at 9:45 AM. The class checks on them again at 2:00 PM. Which happens first?",
+                "question": "9:45 AM",
+                "correctAnswer": "9:45 AM 📅",
+                "options": [
+                    "2:00 PM 😴",
+                    "9:45 AM 📅",
+                    "4:00 PM 🛝"
+                ],
+                "hint": "Picture a daily schedule with 9:45 AM and 2:00 PM on it.",
+                "emoji": "📅",
+                "explanation": "Comparing the two times, 9:45 AM is the earlier one.",
+                "funFact": "Seeds are planted first, then checked on later to see how they're growing.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L180_Q3",
+                "gameType": "time",
+                "level": 180,
+                "instruction": "The end-of-year school fair begins at 8:00 AM and runs for 6 hours. What time does it end?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 🗓️",
+                "options": [
+                    "2:00 PM 🗓️",
+                    "3:00 PM 🎒",
+                    "1:00 PM 📚"
+                ],
+                "hint": "Counting 6 hours past 8:00 AM lands you at the answer.",
+                "emoji": "🗓️",
+                "explanation": "For the end-of-year school fair, 6 hours after 8:00 AM is 2:00 PM.",
+                "funFact": "Six hours gives a whole school community time to celebrate together.",
+                "subtype": "schedule_reasoning",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    }
 ]

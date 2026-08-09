@@ -1,622 +1,622 @@
 [
-  {
-    "level": 181,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L181_Q1",
-        "gameType": "time",
+    {
         "level": 181,
-        "instruction": "Mia starts a road trip at 10:30 AM. After 2 hours and 15 minutes, what time is it?",
-        "question": "12:45 PM",
-        "correctAnswer": "12:45 PM",
-        "options": [
-          "10:45 AM",
-          "12:45 PM",
-          "12:30 PM"
-        ],
-        "hint": "Add the hours in 2 hours and 15 minutes first, then add the minutes, starting from 10:30 AM.",
-        "emoji": "🌗",
-        "explanation": "Adding 2 hours and 15 minutes to 10:30 AM carries the clock all the way around to 12:45 PM.",
-        "funFact": "Adding the hours first and then the minutes makes two-step problems easier.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L181_Q2",
-        "gameType": "time",
-        "level": 181,
-        "instruction": "Which time is the same as quarter to six in the evening?",
-        "question": "5:45 PM",
-        "correctAnswer": "5:45 PM",
-        "options": [
-          "5:15 PM",
-          "5:45 PM",
-          "6:15 PM"
-        ],
-        "hint": "For \"quarter to six\": quarter to means minutes before the hour, quarter past means minutes after it.",
-        "emoji": "🔁",
-        "explanation": "5:45 PM is the digital match for that spoken time.",
-        "funFact": "Quarter to six means fifteen minutes remain before six o'clock arrives.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L181_Q3",
-        "gameType": "time",
-        "level": 181,
-        "instruction": "The overnight train arrives at 6:15 AM after a 7 hour and 30 minute journey. What time did it depart?",
-        "question": "10:45 PM",
-        "correctAnswer": "10:45 PM",
-        "options": [
-          "5:45 AM",
-          "11:15 PM",
-          "10:45 PM"
-        ],
-        "hint": "Starting at 6:15 AM, count 7 hours and 30 minutes backward one part at a time.",
-        "emoji": "⏮️",
-        "explanation": "Subtracting 7 hours and 30 minutes from 6:15 AM lands exactly on 10:45 PM.",
-        "funFact": "Overnight train journeys often begin the evening before they arrive.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 182,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L182_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L181_Q1",
+                "gameType": "time",
+                "level": 181,
+                "instruction": "Mia starts a road trip at 10:30 AM. After 2 hours and 15 minutes, what time is it?",
+                "question": "12:45 PM",
+                "correctAnswer": "12:45 PM 🌗",
+                "options": [
+                    "10:45 AM ⏱️",
+                    "12:45 PM 🌗",
+                    "12:30 PM 🕧"
+                ],
+                "hint": "Add the hours in 2 hours and 15 minutes first, then add the minutes, starting from 10:30 AM.",
+                "emoji": "🌗",
+                "explanation": "Adding 2 hours and 15 minutes to 10:30 AM carries the clock all the way around to 12:45 PM.",
+                "funFact": "Adding the hours first and then the minutes makes two-step problems easier.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L181_Q2",
+                "gameType": "time",
+                "level": 181,
+                "instruction": "Which time is the same as quarter to six in the evening?",
+                "question": "5:45 PM",
+                "correctAnswer": "5:45 PM 🔁",
+                "options": [
+                    "5:15 PM ⏳",
+                    "5:45 PM 🔁",
+                    "6:15 PM 🕰️"
+                ],
+                "hint": "For \"quarter to six\": quarter to means minutes before the hour, quarter past means minutes after it.",
+                "emoji": "🔁",
+                "explanation": "5:45 PM is the digital match for that spoken time.",
+                "funFact": "Quarter to six means fifteen minutes remain before six o'clock arrives.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L181_Q3",
+                "gameType": "time",
+                "level": 181,
+                "instruction": "The overnight train arrives at 6:15 AM after a 7 hour and 30 minute journey. What time did it depart?",
+                "question": "10:45 PM",
+                "correctAnswer": "10:45 PM ⏮️",
+                "options": [
+                    "5:45 AM",
+                    "11:15 PM",
+                    "10:45 PM ⏮️"
+                ],
+                "hint": "Starting at 6:15 AM, count 7 hours and 30 minutes backward one part at a time.",
+                "emoji": "⏮️",
+                "explanation": "Subtracting 7 hours and 30 minutes from 6:15 AM lands exactly on 10:45 PM.",
+                "funFact": "Overnight train journeys often begin the evening before they arrive.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 182,
-        "instruction": "Which time is earliest: 11:50 PM, 12:10 AM, or 11:30 PM?",
-        "question": "11:50 PM",
-        "correctAnswer": "11:50 PM",
-        "options": [
-          "11:50 PM",
-          "11:30 PM",
-          "12:10 AM"
-        ],
-        "hint": "Look closely at 11:50 PM, 12:10 AM, 11:30 PM — remember that midnight flips PM into AM.",
-        "emoji": "🌙",
-        "explanation": "11:50 PM is the earliest, coming before both 12:10 AM and 11:30 PM.",
-        "funFact": "Once midnight passes, a 12:10 AM time actually belongs to the NEXT day.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L182_Q2",
-        "gameType": "time",
-        "level": 182,
-        "instruction": "It is 10:40 PM. What time will it be in 3 hours and 15 minutes?",
-        "question": "1:55 AM",
-        "correctAnswer": "1:55 AM",
-        "options": [
-          "1:55 AM",
-          "1:40 AM",
-          "10:55 PM"
-        ],
-        "hint": "Add the hours in 3 hours and 15 minutes first, then add the minutes, starting from 10:40 PM.",
-        "emoji": "🌗",
-        "explanation": "3 hours and 15 minutes after 10:40 PM is 1:55 AM, after rolling over into a new half of the day.",
-        "funFact": "Late-night additions like this one often cross right over midnight.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L182_Q3",
-        "gameType": "time",
-        "level": 182,
-        "instruction": "Leo's train leaves at 9:45 AM and the ride takes 3 hours and 20 minutes. What time does it arrive?",
-        "question": "1:05 PM",
-        "correctAnswer": "1:05 PM",
-        "options": [
-          "1:05 PM",
-          "12:45 PM",
-          "10:05 AM"
-        ],
-        "hint": "Break 3 hours and 20 minutes into two steps: add the hours, then the minutes, from 9:45 AM.",
-        "emoji": "🌗",
-        "explanation": "Adding 3 hours and 20 minutes to 9:45 AM rolls past the halfway point of the day, landing on 1:05 PM for Leo.",
-        "funFact": "Long train rides often take a few hours to reach a new city.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 183,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L183_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L182_Q1",
+                "gameType": "time",
+                "level": 182,
+                "instruction": "Which time is earliest: 11:50 PM, 12:10 AM, or 11:30 PM?",
+                "question": "11:50 PM",
+                "correctAnswer": "11:50 PM 🌙",
+                "options": [
+                    "11:50 PM 🌙",
+                    "11:30 PM",
+                    "12:10 AM"
+                ],
+                "hint": "Look closely at 11:50 PM, 12:10 AM, 11:30 PM — remember that midnight flips PM into AM.",
+                "emoji": "🌙",
+                "explanation": "11:50 PM is the earliest, coming before both 12:10 AM and 11:30 PM.",
+                "funFact": "Once midnight passes, a 12:10 AM time actually belongs to the NEXT day.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L182_Q2",
+                "gameType": "time",
+                "level": 182,
+                "instruction": "It is 10:40 PM. What time will it be in 3 hours and 15 minutes?",
+                "question": "1:55 AM",
+                "correctAnswer": "1:55 AM 🌗",
+                "options": [
+                    "1:55 AM 🌗",
+                    "1:40 AM",
+                    "10:55 PM"
+                ],
+                "hint": "Add the hours in 3 hours and 15 minutes first, then add the minutes, starting from 10:40 PM.",
+                "emoji": "🌗",
+                "explanation": "3 hours and 15 minutes after 10:40 PM is 1:55 AM, after rolling over into a new half of the day.",
+                "funFact": "Late-night additions like this one often cross right over midnight.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L182_Q3",
+                "gameType": "time",
+                "level": 182,
+                "instruction": "Leo's train leaves at 9:45 AM and the ride takes 3 hours and 20 minutes. What time does it arrive?",
+                "question": "1:05 PM",
+                "correctAnswer": "1:05 PM 🌗",
+                "options": [
+                    "1:05 PM 🌗",
+                    "12:45 PM 🌗",
+                    "10:05 AM"
+                ],
+                "hint": "Break 3 hours and 20 minutes into two steps: add the hours, then the minutes, from 9:45 AM.",
+                "emoji": "🌗",
+                "explanation": "Adding 3 hours and 20 minutes to 9:45 AM rolls past the halfway point of the day, landing on 1:05 PM for Leo.",
+                "funFact": "Long train rides often take a few hours to reach a new city.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 183,
-        "instruction": "Which time is the same as quarter past eight in the morning?",
-        "question": "8:15 AM",
-        "correctAnswer": "8:15 AM",
-        "options": [
-          "8:15 AM",
-          "7:45 AM",
-          "8:45 AM"
-        ],
-        "hint": "Break \"quarter past eight\" into the hour word and the quarter word separately.",
-        "emoji": "🔁",
-        "explanation": "Written as a digital time, that phrase becomes 8:15 AM.",
-        "funFact": "Quarter past eight means fifteen minutes have passed since eight o'clock.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L183_Q2",
-        "gameType": "time",
-        "level": 183,
-        "instruction": "The bake sale is ready at 1:00 PM after 2 hours and 45 minutes of baking. What time did baking begin?",
-        "question": "10:15 AM",
-        "correctAnswer": "10:15 AM",
-        "options": [
-          "10:15 AM",
-          "12:15 PM",
-          "11:00 AM"
-        ],
-        "hint": "Break 2 hours and 45 minutes into two steps: subtract the hours, then the minutes, from 1:00 PM.",
-        "emoji": "⏮️",
-        "explanation": "2 hours and 45 minutes before 1:00 PM is 10:15 AM.",
-        "funFact": "Baking a big batch of treats can take a few hours from start to finish.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L183_Q3",
-        "gameType": "time",
-        "level": 183,
-        "instruction": "Which time is latest: 12:05 AM, 11:55 PM, or 11:40 PM?",
-        "question": "12:05 AM",
-        "correctAnswer": "12:05 AM",
-        "options": [
-          "12:05 AM",
-          "11:55 PM",
-          "11:40 PM"
-        ],
-        "hint": "Line up 12:05 AM, 11:55 PM, 11:40 PM in the order a clock would tick through them.",
-        "emoji": "🌙",
-        "explanation": "Since 12:05 AM happens last on the clock, it is later than 11:55 PM and 11:40 PM.",
-        "funFact": "A time just after midnight is technically later than any time the night before.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 184,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L184_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L183_Q1",
+                "gameType": "time",
+                "level": 183,
+                "instruction": "Which time is the same as quarter past eight in the morning?",
+                "question": "8:15 AM",
+                "correctAnswer": "8:15 AM 🔁",
+                "options": [
+                    "8:15 AM 🔁",
+                    "7:45 AM ⏳",
+                    "8:45 AM ⏱️"
+                ],
+                "hint": "Break \"quarter past eight\" into the hour word and the quarter word separately.",
+                "emoji": "🔁",
+                "explanation": "Written as a digital time, that phrase becomes 8:15 AM.",
+                "funFact": "Quarter past eight means fifteen minutes have passed since eight o'clock.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L183_Q2",
+                "gameType": "time",
+                "level": 183,
+                "instruction": "The bake sale is ready at 1:00 PM after 2 hours and 45 minutes of baking. What time did baking begin?",
+                "question": "10:15 AM",
+                "correctAnswer": "10:15 AM ⏮️",
+                "options": [
+                    "10:15 AM ⏮️",
+                    "12:15 PM ⏱️",
+                    "11:00 AM 🎨"
+                ],
+                "hint": "Break 2 hours and 45 minutes into two steps: subtract the hours, then the minutes, from 1:00 PM.",
+                "emoji": "⏮️",
+                "explanation": "2 hours and 45 minutes before 1:00 PM is 10:15 AM.",
+                "funFact": "Baking a big batch of treats can take a few hours from start to finish.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L183_Q3",
+                "gameType": "time",
+                "level": 183,
+                "instruction": "Which time is latest: 12:05 AM, 11:55 PM, or 11:40 PM?",
+                "question": "12:05 AM",
+                "correctAnswer": "12:05 AM 🌙",
+                "options": [
+                    "12:05 AM 🌙",
+                    "11:55 PM",
+                    "11:40 PM"
+                ],
+                "hint": "Line up 12:05 AM, 11:55 PM, 11:40 PM in the order a clock would tick through them.",
+                "emoji": "🌙",
+                "explanation": "Since 12:05 AM happens last on the clock, it is later than 11:55 PM and 11:40 PM.",
+                "funFact": "A time just after midnight is technically later than any time the night before.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 184,
-        "instruction": "It is 6:50 AM. What time will it be in 5 hours and 25 minutes?",
-        "question": "12:15 PM",
-        "correctAnswer": "12:15 PM",
-        "options": [
-          "7:15 AM",
-          "11:50 AM",
-          "12:15 PM"
-        ],
-        "hint": "Break 5 hours and 25 minutes into two steps: add the hours, then the minutes, from 6:50 AM.",
-        "emoji": "🌗",
-        "explanation": "Adding 5 hours and 25 minutes to 6:50 AM carries the clock all the way around to 12:15 PM.",
-        "funFact": "Morning additions like this one can carry you past noon into the afternoon.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L184_Q2",
-        "gameType": "time",
-        "level": 184,
-        "instruction": "Ava falls asleep at 11:00 PM. If she sleeps for 2 hours before stirring, what time is it?",
-        "question": "1:00 AM",
-        "correctAnswer": "1:00 AM",
-        "options": [
-          "1:00 AM",
-          "11:00 PM",
-          "12:00 AM"
-        ],
-        "hint": "Starting at 11:00 PM, count 2 hours forward one part at a time.",
-        "emoji": "🌗",
-        "explanation": "2 hours after 11:00 PM is 1:00 AM, after rolling over into a new half of the day.",
-        "funFact": "Crossing midnight means the clock rolls from PM all the way back to AM.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L184_Q3",
-        "gameType": "time",
-        "level": 184,
-        "instruction": "Which time is the same as quarter to twelve in the late morning?",
-        "question": "11:45 AM",
-        "correctAnswer": "11:45 AM",
-        "options": [
-          "11:45 AM",
-          "12:15 PM",
-          "11:15 AM"
-        ],
-        "hint": "Turn \"quarter to twelve\" into a digital time one small piece at a time.",
-        "emoji": "🔁",
-        "explanation": "That wording matches 11:45 AM on a digital clock.",
-        "funFact": "Quarter to twelve means fifteen minutes remain before noon arrives.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 185,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L185_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L184_Q1",
+                "gameType": "time",
+                "level": 184,
+                "instruction": "It is 6:50 AM. What time will it be in 5 hours and 25 minutes?",
+                "question": "12:15 PM",
+                "correctAnswer": "12:15 PM 🌗",
+                "options": [
+                    "7:15 AM 🕰️",
+                    "11:50 AM",
+                    "12:15 PM 🌗"
+                ],
+                "hint": "Break 5 hours and 25 minutes into two steps: add the hours, then the minutes, from 6:50 AM.",
+                "emoji": "🌗",
+                "explanation": "Adding 5 hours and 25 minutes to 6:50 AM carries the clock all the way around to 12:15 PM.",
+                "funFact": "Morning additions like this one can carry you past noon into the afternoon.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L184_Q2",
+                "gameType": "time",
+                "level": 184,
+                "instruction": "Ava falls asleep at 11:00 PM. If she sleeps for 2 hours before stirring, what time is it?",
+                "question": "1:00 AM",
+                "correctAnswer": "1:00 AM 🌗",
+                "options": [
+                    "1:00 AM 🌗",
+                    "11:00 PM 💡",
+                    "12:00 AM"
+                ],
+                "hint": "Starting at 11:00 PM, count 2 hours forward one part at a time.",
+                "emoji": "🌗",
+                "explanation": "2 hours after 11:00 PM is 1:00 AM, after rolling over into a new half of the day.",
+                "funFact": "Crossing midnight means the clock rolls from PM all the way back to AM.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L184_Q3",
+                "gameType": "time",
+                "level": 184,
+                "instruction": "Which time is the same as quarter to twelve in the late morning?",
+                "question": "11:45 AM",
+                "correctAnswer": "11:45 AM 🔁",
+                "options": [
+                    "11:45 AM 🔁",
+                    "12:15 PM ⏱️",
+                    "11:15 AM ⏱️"
+                ],
+                "hint": "Turn \"quarter to twelve\" into a digital time one small piece at a time.",
+                "emoji": "🔁",
+                "explanation": "That wording matches 11:45 AM on a digital clock.",
+                "funFact": "Quarter to twelve means fifteen minutes remain before noon arrives.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 185,
-        "instruction": "Recess ends at 9:30 AM after the class worked for 1 hour and 50 minutes straight. What time did class begin?",
-        "question": "7:40 AM",
-        "correctAnswer": "7:40 AM",
-        "options": [
-          "7:40 AM",
-          "8:30 AM",
-          "8:40 AM"
-        ],
-        "hint": "Subtract the hours in 1 hour and 50 minutes first, then subtract the minutes, from 9:30 AM.",
-        "emoji": "⏮️",
-        "explanation": "Going back 1 hour and 50 minutes from 9:30 AM gives 7:40 AM.",
-        "funFact": "Almost two hours of steady class time can fly by when a lesson is fun.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L185_Q2",
-        "gameType": "time",
-        "level": 185,
-        "instruction": "Which time is latest: 11:58 PM, 12:02 AM, or 11:45 PM?",
-        "question": "11:58 PM",
-        "correctAnswer": "11:58 PM",
-        "options": [
-          "11:58 PM",
-          "12:02 AM",
-          "11:45 PM"
-        ],
-        "hint": "Among 11:58 PM, 12:02 AM, 11:45 PM, watch for which times are just before or just after midnight.",
-        "emoji": "🌙",
-        "explanation": "11:58 PM is the latest, coming after both 12:02 AM and 11:45 PM.",
-        "funFact": "11:58 PM is the very last moment of one day, just before midnight strikes.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L185_Q3",
-        "gameType": "time",
-        "level": 185,
-        "instruction": "It is 2:35 PM. What time will it be in 2 hours and 40 minutes?",
-        "question": "5:15 PM",
-        "correctAnswer": "5:15 PM",
-        "options": [
-          "3:15 PM",
-          "4:35 PM",
-          "5:15 PM"
-        ],
-        "hint": "Starting at 2:35 PM, count 2 hours and 40 minutes forward one part at a time.",
-        "emoji": "⏳",
-        "explanation": "Adding 2 hours and 40 minutes to 2:35 PM lands exactly on 5:15 PM.",
-        "funFact": "Adding hours and minutes separately keeps two-step problems simple.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 186,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L186_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L185_Q1",
+                "gameType": "time",
+                "level": 185,
+                "instruction": "Recess ends at 9:30 AM after the class worked for 1 hour and 50 minutes straight. What time did class begin?",
+                "question": "7:40 AM",
+                "correctAnswer": "7:40 AM ⏮️",
+                "options": [
+                    "7:40 AM ⏮️",
+                    "8:30 AM ⏱️",
+                    "8:40 AM"
+                ],
+                "hint": "Subtract the hours in 1 hour and 50 minutes first, then subtract the minutes, from 9:30 AM.",
+                "emoji": "⏮️",
+                "explanation": "Going back 1 hour and 50 minutes from 9:30 AM gives 7:40 AM.",
+                "funFact": "Almost two hours of steady class time can fly by when a lesson is fun.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L185_Q2",
+                "gameType": "time",
+                "level": 185,
+                "instruction": "Which time is latest: 11:58 PM, 12:02 AM, or 11:45 PM?",
+                "question": "11:58 PM",
+                "correctAnswer": "11:58 PM 🌙",
+                "options": [
+                    "11:58 PM 🌙",
+                    "12:02 AM",
+                    "11:45 PM"
+                ],
+                "hint": "Among 11:58 PM, 12:02 AM, 11:45 PM, watch for which times are just before or just after midnight.",
+                "emoji": "🌙",
+                "explanation": "11:58 PM is the latest, coming after both 12:02 AM and 11:45 PM.",
+                "funFact": "11:58 PM is the very last moment of one day, just before midnight strikes.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L185_Q3",
+                "gameType": "time",
+                "level": 185,
+                "instruction": "It is 2:35 PM. What time will it be in 2 hours and 40 minutes?",
+                "question": "5:15 PM",
+                "correctAnswer": "5:15 PM ⏳",
+                "options": [
+                    "3:15 PM ⏱️",
+                    "4:35 PM 🕐",
+                    "5:15 PM ⏳"
+                ],
+                "hint": "Starting at 2:35 PM, count 2 hours and 40 minutes forward one part at a time.",
+                "emoji": "⏳",
+                "explanation": "Adding 2 hours and 40 minutes to 2:35 PM lands exactly on 5:15 PM.",
+                "funFact": "Adding hours and minutes separately keeps two-step problems simple.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 186,
-        "instruction": "The overnight campfire starts at 9:00 PM and burns for 3 hours and 30 minutes. What time does it burn out?",
-        "question": "12:30 AM",
-        "correctAnswer": "12:30 AM",
-        "options": [
-          "12:30 AM",
-          "9:30 PM",
-          "12:00 AM"
-        ],
-        "hint": "Watch closely — adding 3 hours and 30 minutes to 9:00 PM rolls over into a new half of the day.",
-        "emoji": "🌗",
-        "explanation": "Adding 3 hours and 30 minutes to 9:00 PM carries the clock all the way around to 12:30 AM.",
-        "funFact": "A crackling campfire can burn for hours under a starry sky.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L186_Q2",
-        "gameType": "time",
-        "level": 186,
-        "instruction": "Which time is the same as quarter to three in the afternoon?",
-        "question": "2:45 PM",
-        "correctAnswer": "2:45 PM",
-        "options": [
-          "2:45 PM",
-          "2:15 PM",
-          "3:15 PM"
-        ],
-        "hint": "For \"quarter to three\": quarter to means minutes before the hour, quarter past means minutes after it.",
-        "emoji": "🔁",
-        "explanation": "2:45 PM is the digital match for that spoken time.",
-        "funFact": "Quarter to three means fifteen minutes remain before three o'clock arrives.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L186_Q3",
-        "gameType": "time",
-        "level": 186,
-        "instruction": "The stargazing club packs up at 12:20 AM after watching the sky for 3 hours and 40 minutes. What time did they start?",
-        "question": "8:40 PM",
-        "correctAnswer": "8:40 PM",
-        "options": [
-          "8:40 PM",
-          "11:40 PM",
-          "9:20 PM"
-        ],
-        "hint": "Starting at 12:20 AM, count 3 hours and 40 minutes backward one part at a time.",
-        "emoji": "⏮️",
-        "explanation": "Subtracting 3 hours and 40 minutes from 12:20 AM lands exactly on 8:40 PM.",
-        "funFact": "Stargazing after dark can stretch on for hours under a clear sky.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 187,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L187_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L186_Q1",
+                "gameType": "time",
+                "level": 186,
+                "instruction": "The overnight campfire starts at 9:00 PM and burns for 3 hours and 30 minutes. What time does it burn out?",
+                "question": "12:30 AM",
+                "correctAnswer": "12:30 AM 🌗",
+                "options": [
+                    "12:30 AM 🌗",
+                    "9:30 PM ⏱️",
+                    "12:00 AM"
+                ],
+                "hint": "Watch closely — adding 3 hours and 30 minutes to 9:00 PM rolls over into a new half of the day.",
+                "emoji": "🌗",
+                "explanation": "Adding 3 hours and 30 minutes to 9:00 PM carries the clock all the way around to 12:30 AM.",
+                "funFact": "A crackling campfire can burn for hours under a starry sky.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L186_Q2",
+                "gameType": "time",
+                "level": 186,
+                "instruction": "Which time is the same as quarter to three in the afternoon?",
+                "question": "2:45 PM",
+                "correctAnswer": "2:45 PM 🔁",
+                "options": [
+                    "2:45 PM 🔁",
+                    "2:15 PM 🕰️",
+                    "3:15 PM ⏱️"
+                ],
+                "hint": "For \"quarter to three\": quarter to means minutes before the hour, quarter past means minutes after it.",
+                "emoji": "🔁",
+                "explanation": "2:45 PM is the digital match for that spoken time.",
+                "funFact": "Quarter to three means fifteen minutes remain before three o'clock arrives.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L186_Q3",
+                "gameType": "time",
+                "level": 186,
+                "instruction": "The stargazing club packs up at 12:20 AM after watching the sky for 3 hours and 40 minutes. What time did they start?",
+                "question": "8:40 PM",
+                "correctAnswer": "8:40 PM ⏮️",
+                "options": [
+                    "8:40 PM ⏮️",
+                    "11:40 PM",
+                    "9:20 PM ⏱️"
+                ],
+                "hint": "Starting at 12:20 AM, count 3 hours and 40 minutes backward one part at a time.",
+                "emoji": "⏮️",
+                "explanation": "Subtracting 3 hours and 40 minutes from 12:20 AM lands exactly on 8:40 PM.",
+                "funFact": "Stargazing after dark can stretch on for hours under a clear sky.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 187,
-        "instruction": "Which time is earliest: 12:01 AM, 11:59 PM, or 11:30 PM?",
-        "question": "12:01 AM",
-        "correctAnswer": "12:01 AM",
-        "options": [
-          "11:59 PM",
-          "11:30 PM",
-          "12:01 AM"
-        ],
-        "hint": "Look closely at 12:01 AM, 11:59 PM, 11:30 PM — remember that midnight flips PM into AM.",
-        "emoji": "🌙",
-        "explanation": "Since 12:01 AM happens first on the clock, it is earlier than 11:59 PM and 11:30 PM.",
-        "funFact": "12:01 AM belongs to a brand-new day that has only just begun.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L187_Q2",
-        "gameType": "time",
-        "level": 187,
-        "instruction": "It is 11:25 AM. What time will it be in 1 hour and 50 minutes?",
-        "question": "1:15 PM",
-        "correctAnswer": "1:15 PM",
-        "options": [
-          "1:15 PM",
-          "12:25 PM",
-          "12:15 PM"
-        ],
-        "hint": "Watch closely — adding 1 hour and 50 minutes to 11:25 AM rolls over into a new half of the day.",
-        "emoji": "🌗",
-        "explanation": "1 hour and 50 minutes after 11:25 AM is 1:15 PM, after rolling over into a new half of the day.",
-        "funFact": "Adding just under two hours to a late-morning time often lands in the afternoon.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L187_Q3",
-        "gameType": "time",
-        "level": 187,
-        "instruction": "Sam's science experiment begins at 1:15 PM and takes 1 hour and 40 minutes. What time does it finish?",
-        "question": "2:55 PM",
-        "correctAnswer": "2:55 PM",
-        "options": [
-          "2:15 PM",
-          "2:55 PM",
-          "1:55 PM"
-        ],
-        "hint": "Starting at 1:15 PM, count 1 hour and 40 minutes forward one part at a time.",
-        "emoji": "⏳",
-        "explanation": "Adding 1 hour and 40 minutes to 1:15 PM lands exactly on 2:55 PM for Sam.",
-        "funFact": "Careful experiments often take more than an hour to complete.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 188,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L188_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L187_Q1",
+                "gameType": "time",
+                "level": 187,
+                "instruction": "Which time is earliest: 12:01 AM, 11:59 PM, or 11:30 PM?",
+                "question": "12:01 AM",
+                "correctAnswer": "12:01 AM 🌙",
+                "options": [
+                    "11:59 PM",
+                    "11:30 PM",
+                    "12:01 AM 🌙"
+                ],
+                "hint": "Look closely at 12:01 AM, 11:59 PM, 11:30 PM — remember that midnight flips PM into AM.",
+                "emoji": "🌙",
+                "explanation": "Since 12:01 AM happens first on the clock, it is earlier than 11:59 PM and 11:30 PM.",
+                "funFact": "12:01 AM belongs to a brand-new day that has only just begun.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L187_Q2",
+                "gameType": "time",
+                "level": 187,
+                "instruction": "It is 11:25 AM. What time will it be in 1 hour and 50 minutes?",
+                "question": "1:15 PM",
+                "correctAnswer": "1:15 PM 🌗",
+                "options": [
+                    "1:15 PM 🌗",
+                    "12:25 PM",
+                    "12:15 PM ⏱️"
+                ],
+                "hint": "Watch closely — adding 1 hour and 50 minutes to 11:25 AM rolls over into a new half of the day.",
+                "emoji": "🌗",
+                "explanation": "1 hour and 50 minutes after 11:25 AM is 1:15 PM, after rolling over into a new half of the day.",
+                "funFact": "Adding just under two hours to a late-morning time often lands in the afternoon.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L187_Q3",
+                "gameType": "time",
+                "level": 187,
+                "instruction": "Sam's science experiment begins at 1:15 PM and takes 1 hour and 40 minutes. What time does it finish?",
+                "question": "2:55 PM",
+                "correctAnswer": "2:55 PM ⏳",
+                "options": [
+                    "2:15 PM 🕰️",
+                    "2:55 PM ⏳",
+                    "1:55 PM 🕐"
+                ],
+                "hint": "Starting at 1:15 PM, count 1 hour and 40 minutes forward one part at a time.",
+                "emoji": "⏳",
+                "explanation": "Adding 1 hour and 40 minutes to 1:15 PM lands exactly on 2:55 PM for Sam.",
+                "funFact": "Careful experiments often take more than an hour to complete.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 188,
-        "instruction": "Which time is the same as quarter past six in the early morning?",
-        "question": "6:15 AM",
-        "correctAnswer": "6:15 AM",
-        "options": [
-          "6:15 AM",
-          "5:45 AM",
-          "6:45 AM"
-        ],
-        "hint": "Break \"quarter past six\" into the hour word and the quarter word separately.",
-        "emoji": "🔁",
-        "explanation": "Written as a digital time, that phrase becomes 6:15 AM.",
-        "funFact": "Quarter past six means fifteen minutes have passed since six o'clock.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L188_Q2",
-        "gameType": "time",
-        "level": 188,
-        "instruction": "The school carnival wraps up at 2:10 PM after running for 4 hours and 15 minutes. What time did it start?",
-        "question": "9:55 AM",
-        "correctAnswer": "9:55 AM",
-        "options": [
-          "10:10 AM",
-          "1:55 PM",
-          "9:55 AM"
-        ],
-        "hint": "Break 4 hours and 15 minutes into two steps: subtract the hours, then the minutes, from 2:10 PM.",
-        "emoji": "⏮️",
-        "explanation": "4 hours and 15 minutes before 2:10 PM is 9:55 AM.",
-        "funFact": "A carnival that runs over four hours gives everyone plenty of time to visit each booth.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L188_Q3",
-        "gameType": "time",
-        "level": 188,
-        "instruction": "Which time is earliest: 11:40 AM, 12:05 PM, or 12:15 PM?",
-        "question": "11:40 AM",
-        "correctAnswer": "11:40 AM",
-        "options": [
-          "12:15 PM",
-          "12:05 PM",
-          "11:40 AM"
-        ],
-        "hint": "Line up 11:40 AM, 12:05 PM, 12:15 PM in the order a clock would tick through them.",
-        "emoji": "🌙",
-        "explanation": "11:40 AM is the earliest, coming before both 12:05 PM and 12:15 PM.",
-        "funFact": "Any AM time, even close to noon, still comes before every PM time that day.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 189,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L189_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L188_Q1",
+                "gameType": "time",
+                "level": 188,
+                "instruction": "Which time is the same as quarter past six in the early morning?",
+                "question": "6:15 AM",
+                "correctAnswer": "6:15 AM 🔁",
+                "options": [
+                    "6:15 AM 🔁",
+                    "5:45 AM",
+                    "6:45 AM ⏳"
+                ],
+                "hint": "Break \"quarter past six\" into the hour word and the quarter word separately.",
+                "emoji": "🔁",
+                "explanation": "Written as a digital time, that phrase becomes 6:15 AM.",
+                "funFact": "Quarter past six means fifteen minutes have passed since six o'clock.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L188_Q2",
+                "gameType": "time",
+                "level": 188,
+                "instruction": "The school carnival wraps up at 2:10 PM after running for 4 hours and 15 minutes. What time did it start?",
+                "question": "9:55 AM",
+                "correctAnswer": "9:55 AM ⏮️",
+                "options": [
+                    "10:10 AM ⏱️",
+                    "1:55 PM 🕐",
+                    "9:55 AM ⏮️"
+                ],
+                "hint": "Break 4 hours and 15 minutes into two steps: subtract the hours, then the minutes, from 2:10 PM.",
+                "emoji": "⏮️",
+                "explanation": "4 hours and 15 minutes before 2:10 PM is 9:55 AM.",
+                "funFact": "A carnival that runs over four hours gives everyone plenty of time to visit each booth.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L188_Q3",
+                "gameType": "time",
+                "level": 188,
+                "instruction": "Which time is earliest: 11:40 AM, 12:05 PM, or 12:15 PM?",
+                "question": "11:40 AM",
+                "correctAnswer": "11:40 AM 🌙",
+                "options": [
+                    "12:15 PM ⏱️",
+                    "12:05 PM ⏱️",
+                    "11:40 AM 🌙"
+                ],
+                "hint": "Line up 11:40 AM, 12:05 PM, 12:15 PM in the order a clock would tick through them.",
+                "emoji": "🌙",
+                "explanation": "11:40 AM is the earliest, coming before both 12:05 PM and 12:15 PM.",
+                "funFact": "Any AM time, even close to noon, still comes before every PM time that day.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 189,
-        "instruction": "It is 9:15 PM. What time will it be in 4 hours and 20 minutes?",
-        "question": "1:35 AM",
-        "correctAnswer": "1:35 AM",
-        "options": [
-          "1:15 AM",
-          "9:35 PM",
-          "1:35 AM"
-        ],
-        "hint": "Add the hours in 4 hours and 20 minutes first, then add the minutes, starting from 9:15 PM.",
-        "emoji": "🌗",
-        "explanation": "Adding 4 hours and 20 minutes to 9:15 PM carries the clock all the way around to 1:35 AM.",
-        "funFact": "Adding several hours to a nighttime start often crosses into the very early morning.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L189_Q2",
-        "gameType": "time",
-        "level": 189,
-        "instruction": "Zoe's overnight flight takes off at 10:00 PM and lasts 4 hours. What time does it land?",
-        "question": "2:00 AM",
-        "correctAnswer": "2:00 AM",
-        "options": [
-          "1:00 AM",
-          "2:00 AM",
-          "10:00 PM"
-        ],
-        "hint": "Break 4 hours into two steps: add the hours, then the minutes, from 10:00 PM.",
-        "emoji": "🌗",
-        "explanation": "4 hours after 10:00 PM is 2:00 AM, after rolling over into a new half of the day for Zoe.",
-        "funFact": "Overnight flights often land in the very early hours of the morning.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L189_Q3",
-        "gameType": "time",
-        "level": 189,
-        "instruction": "Which time is the same as quarter to ten at night?",
-        "question": "9:45 PM",
-        "correctAnswer": "9:45 PM",
-        "options": [
-          "9:15 PM",
-          "10:15 PM",
-          "9:45 PM"
-        ],
-        "hint": "Turn \"quarter to ten\" into a digital time one small piece at a time.",
-        "emoji": "🔁",
-        "explanation": "That wording matches 9:45 PM on a digital clock.",
-        "funFact": "Quarter to ten means fifteen minutes remain before ten o'clock arrives.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 190,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L190_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L189_Q1",
+                "gameType": "time",
+                "level": 189,
+                "instruction": "It is 9:15 PM. What time will it be in 4 hours and 20 minutes?",
+                "question": "1:35 AM",
+                "correctAnswer": "1:35 AM 🌗",
+                "options": [
+                    "1:15 AM 🌗",
+                    "9:35 PM ⏱️",
+                    "1:35 AM 🌗"
+                ],
+                "hint": "Add the hours in 4 hours and 20 minutes first, then add the minutes, starting from 9:15 PM.",
+                "emoji": "🌗",
+                "explanation": "Adding 4 hours and 20 minutes to 9:15 PM carries the clock all the way around to 1:35 AM.",
+                "funFact": "Adding several hours to a nighttime start often crosses into the very early morning.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L189_Q2",
+                "gameType": "time",
+                "level": 189,
+                "instruction": "Zoe's overnight flight takes off at 10:00 PM and lasts 4 hours. What time does it land?",
+                "question": "2:00 AM",
+                "correctAnswer": "2:00 AM 🌗",
+                "options": [
+                    "1:00 AM 🌗",
+                    "2:00 AM 🌗",
+                    "10:00 PM 🐶"
+                ],
+                "hint": "Break 4 hours into two steps: add the hours, then the minutes, from 10:00 PM.",
+                "emoji": "🌗",
+                "explanation": "4 hours after 10:00 PM is 2:00 AM, after rolling over into a new half of the day for Zoe.",
+                "funFact": "Overnight flights often land in the very early hours of the morning.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L189_Q3",
+                "gameType": "time",
+                "level": 189,
+                "instruction": "Which time is the same as quarter to ten at night?",
+                "question": "9:45 PM",
+                "correctAnswer": "9:45 PM 🔁",
+                "options": [
+                    "9:15 PM 🕰️",
+                    "10:15 PM 🔁",
+                    "9:45 PM 🔁"
+                ],
+                "hint": "Turn \"quarter to ten\" into a digital time one small piece at a time.",
+                "emoji": "🔁",
+                "explanation": "That wording matches 9:45 PM on a digital clock.",
+                "funFact": "Quarter to ten means fifteen minutes remain before ten o'clock arrives.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 190,
-        "instruction": "The birthday movie night ends at 11:05 PM after 2 hours and 20 minutes of movies and snacks. What time did it start?",
-        "question": "8:45 PM",
-        "correctAnswer": "8:45 PM",
-        "options": [
-          "9:05 PM",
-          "10:45 PM",
-          "8:45 PM"
-        ],
-        "hint": "Subtract the hours in 2 hours and 20 minutes first, then subtract the minutes, from 11:05 PM.",
-        "emoji": "⏮️",
-        "explanation": "Going back 2 hours and 20 minutes from 11:05 PM gives 8:45 PM.",
-        "funFact": "Movie nights with popcorn breaks can run a bit longer than the movie itself.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L190_Q2",
-        "gameType": "time",
-        "level": 190,
-        "instruction": "Which time is latest: 12:10 PM, 11:55 AM, or 12:00 PM?",
-        "question": "12:10 PM",
-        "correctAnswer": "12:10 PM",
-        "options": [
-          "12:10 PM",
-          "12:00 PM",
-          "11:55 AM"
-        ],
-        "hint": "Among 12:10 PM, 11:55 AM, 12:00 PM, watch for which times are just before or just after midnight.",
-        "emoji": "🌙",
-        "explanation": "Since 12:10 PM happens last on the clock, it is later than 11:55 AM and 12:00 PM.",
-        "funFact": "12:10 PM comes just a little after noon, making it the latest of these three.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L190_Q3",
-        "gameType": "time",
-        "level": 190,
-        "instruction": "It is 7:45 AM. What time will it be in 6 hours and 10 minutes?",
-        "question": "1:55 PM",
-        "correctAnswer": "1:55 PM",
-        "options": [
-          "1:45 PM",
-          "7:55 AM",
-          "1:55 PM"
-        ],
-        "hint": "Break 6 hours and 10 minutes into two steps: add the hours, then the minutes, from 7:45 AM.",
-        "emoji": "🌗",
-        "explanation": "Adding 6 hours and 10 minutes to 7:45 AM rolls past the halfway point of the day, landing on 1:55 PM.",
-        "funFact": "Six hours from a morning start usually lands in the afternoon.",
-        "subtype": "advanced_time_concepts",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  }
+        "quests": [
+            {
+                "id": "KIDS_TIME_L190_Q1",
+                "gameType": "time",
+                "level": 190,
+                "instruction": "The birthday movie night ends at 11:05 PM after 2 hours and 20 minutes of movies and snacks. What time did it start?",
+                "question": "8:45 PM",
+                "correctAnswer": "8:45 PM ⏮️",
+                "options": [
+                    "9:05 PM",
+                    "10:45 PM ⏮️",
+                    "8:45 PM ⏮️"
+                ],
+                "hint": "Subtract the hours in 2 hours and 20 minutes first, then subtract the minutes, from 11:05 PM.",
+                "emoji": "⏮️",
+                "explanation": "Going back 2 hours and 20 minutes from 11:05 PM gives 8:45 PM.",
+                "funFact": "Movie nights with popcorn breaks can run a bit longer than the movie itself.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L190_Q2",
+                "gameType": "time",
+                "level": 190,
+                "instruction": "Which time is latest: 12:10 PM, 11:55 AM, or 12:00 PM?",
+                "question": "12:10 PM",
+                "correctAnswer": "12:10 PM 🌙",
+                "options": [
+                    "12:10 PM 🌙",
+                    "12:00 PM 🍽️",
+                    "11:55 AM ⏱️"
+                ],
+                "hint": "Among 12:10 PM, 11:55 AM, 12:00 PM, watch for which times are just before or just after midnight.",
+                "emoji": "🌙",
+                "explanation": "Since 12:10 PM happens last on the clock, it is later than 11:55 AM and 12:00 PM.",
+                "funFact": "12:10 PM comes just a little after noon, making it the latest of these three.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L190_Q3",
+                "gameType": "time",
+                "level": 190,
+                "instruction": "It is 7:45 AM. What time will it be in 6 hours and 10 minutes?",
+                "question": "1:55 PM",
+                "correctAnswer": "1:55 PM 🌗",
+                "options": [
+                    "1:45 PM ⏱️",
+                    "7:55 AM ⏱️",
+                    "1:55 PM 🌗"
+                ],
+                "hint": "Break 6 hours and 10 minutes into two steps: add the hours, then the minutes, from 7:45 AM.",
+                "emoji": "🌗",
+                "explanation": "Adding 6 hours and 10 minutes to 7:45 AM rolls past the halfway point of the day, landing on 1:55 PM.",
+                "funFact": "Six hours from a morning start usually lands in the afternoon.",
+                "subtype": "advanced_time_concepts",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    }
 ]

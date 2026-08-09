@@ -1,622 +1,622 @@
 [
-  {
-    "level": 21,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L21_Q1",
-        "gameType": "time",
+    {
         "level": 21,
-        "instruction": "Leo looks at the clock. It shows six o'clock in the morning. What time is it?",
-        "question": "6:00 AM",
-        "correctAnswer": "6:00 AM",
-        "options": [
-          "6:00 PM",
-          "7:00 AM",
-          "6:00 AM"
-        ],
-        "hint": "Say the hour number first, then add the letters for morning.",
-        "emoji": "🕕",
-        "explanation": "Six o'clock in the morning is written as 6:00 AM.",
-        "funFact": "On a clock, when the long minute hand points straight up to 12, the hour is exact.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L21_Q2",
-        "gameType": "time",
-        "level": 21,
-        "instruction": "On Ava's clock, the short hand rests on 3 while the long hand stands tall on 12, in the afternoon. What time is it?",
-        "question": "3:00 PM",
-        "correctAnswer": "3:00 PM",
-        "options": [
-          "4:00 PM",
-          "3:00 AM",
-          "3:00 PM"
-        ],
-        "hint": "The short hand tells you the hour — check where it is pointing.",
-        "emoji": "🕒",
-        "explanation": "When the short hand sits on 3 and the long hand sits on 12, that's exactly 3:00 — afternoon makes it 3:00 PM.",
-        "funFact": "The short hand on a clock always shows the hour, while the long hand shows the minutes.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L21_Q3",
-        "gameType": "time",
-        "level": 21,
-        "instruction": "Ava's clock shows nine o'clock at night. What time is it?",
-        "question": "9:00 PM",
-        "correctAnswer": "9:00 PM",
-        "options": [
-          "9:00 AM",
-          "8:00 PM",
-          "9:00 PM"
-        ],
-        "hint": "Say the hour first, then think about whether it's day or night.",
-        "emoji": "🕘",
-        "explanation": "Nine o'clock at night is written as 9:00 PM.",
-        "funFact": "The letters PM stand for the hours after noon, all the way until midnight.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 22,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L22_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L21_Q1",
+                "gameType": "time",
+                "level": 21,
+                "instruction": "Leo looks at the clock. It shows six o'clock in the morning. What time is it?",
+                "question": "6:00 AM",
+                "correctAnswer": "6:00 AM 🕕",
+                "options": [
+                    "6:00 PM 🍲",
+                    "7:00 AM 🛏️",
+                    "6:00 AM 🕕"
+                ],
+                "hint": "Say the hour number first, then add the letters for morning.",
+                "emoji": "🕕",
+                "explanation": "Six o'clock in the morning is written as 6:00 AM.",
+                "funFact": "On a clock, when the long minute hand points straight up to 12, the hour is exact.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L21_Q2",
+                "gameType": "time",
+                "level": 21,
+                "instruction": "On Ava's clock, the short hand rests on 3 while the long hand stands tall on 12, in the afternoon. What time is it?",
+                "question": "3:00 PM",
+                "correctAnswer": "3:00 PM 🕒",
+                "options": [
+                    "4:00 PM 🛝",
+                    "3:00 AM",
+                    "3:00 PM 🕒"
+                ],
+                "hint": "The short hand tells you the hour — check where it is pointing.",
+                "emoji": "🕒",
+                "explanation": "When the short hand sits on 3 and the long hand sits on 12, that's exactly 3:00 — afternoon makes it 3:00 PM.",
+                "funFact": "The short hand on a clock always shows the hour, while the long hand shows the minutes.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L21_Q3",
+                "gameType": "time",
+                "level": 21,
+                "instruction": "Ava's clock shows nine o'clock at night. What time is it?",
+                "question": "9:00 PM",
+                "correctAnswer": "9:00 PM 🕘",
+                "options": [
+                    "9:00 AM 🏫",
+                    "8:00 PM 📖",
+                    "9:00 PM 🕘"
+                ],
+                "hint": "Say the hour first, then think about whether it's day or night.",
+                "emoji": "🕘",
+                "explanation": "Nine o'clock at night is written as 9:00 PM.",
+                "funFact": "The letters PM stand for the hours after noon, all the way until midnight.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 22,
-        "instruction": "Sam wakes up and checks the clock. It shows seven o'clock in the morning. What time is it?",
-        "question": "7:00 AM",
-        "correctAnswer": "7:00 AM",
-        "options": [
-          "7:00 AM",
-          "7:00 PM",
-          "8:00 AM"
-        ],
-        "hint": "Morning times always use the letters AM.",
-        "emoji": "🕖",
-        "explanation": "Seven o'clock in the morning is written as 7:00 AM.",
-        "funFact": "The letters AM stand for the hours after midnight, all the way until noon.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L22_Q2",
-        "gameType": "time",
-        "level": 22,
-        "instruction": "Zoe's minute hand stands on 12 and her hour hand rests on 2. It is afternoon. What time is it?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "2:00 PM",
-          "1:00 PM",
-          "2:00 AM"
-        ],
-        "hint": "Whichever number the shorter hand touches is your hour.",
-        "emoji": "🕑",
-        "explanation": "A short hand on 2 and a long hand on 12 means the clock reads 2:00 — in the afternoon, that's 2:00 PM.",
-        "funFact": "A clock face has 12 numbers, and the hour hand moves slowly around all of them in a day.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L22_Q3",
-        "gameType": "time",
-        "level": 22,
-        "instruction": "Zoe's clock shows eight o'clock in the evening. What time is it?",
-        "question": "8:00 PM",
-        "correctAnswer": "8:00 PM",
-        "options": [
-          "7:00 PM",
-          "8:00 AM",
-          "8:00 PM"
-        ],
-        "hint": "Evening times always use the letters PM.",
-        "emoji": "🕗",
-        "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
-        "funFact": "Evening is the part of the day between afternoon and nighttime.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 23,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L23_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L22_Q1",
+                "gameType": "time",
+                "level": 22,
+                "instruction": "Sam wakes up and checks the clock. It shows seven o'clock in the morning. What time is it?",
+                "question": "7:00 AM",
+                "correctAnswer": "7:00 AM 🕖",
+                "options": [
+                    "7:00 AM 🕖",
+                    "7:00 PM 🛁",
+                    "8:00 AM 🍳"
+                ],
+                "hint": "Morning times always use the letters AM.",
+                "emoji": "🕖",
+                "explanation": "Seven o'clock in the morning is written as 7:00 AM.",
+                "funFact": "The letters AM stand for the hours after midnight, all the way until noon.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L22_Q2",
+                "gameType": "time",
+                "level": 22,
+                "instruction": "Zoe's minute hand stands on 12 and her hour hand rests on 2. It is afternoon. What time is it?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 🕑",
+                "options": [
+                    "2:00 PM 🕑",
+                    "1:00 PM 📚",
+                    "2:00 AM 🌗"
+                ],
+                "hint": "Whichever number the shorter hand touches is your hour.",
+                "emoji": "🕑",
+                "explanation": "A short hand on 2 and a long hand on 12 means the clock reads 2:00 — in the afternoon, that's 2:00 PM.",
+                "funFact": "A clock face has 12 numbers, and the hour hand moves slowly around all of them in a day.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L22_Q3",
+                "gameType": "time",
+                "level": 22,
+                "instruction": "Zoe's clock shows eight o'clock in the evening. What time is it?",
+                "question": "8:00 PM",
+                "correctAnswer": "8:00 PM 🕗",
+                "options": [
+                    "7:00 PM 🛁",
+                    "8:00 AM 🍳",
+                    "8:00 PM 🕗"
+                ],
+                "hint": "Evening times always use the letters PM.",
+                "emoji": "🕗",
+                "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
+                "funFact": "Evening is the part of the day between afternoon and nighttime.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 23,
-        "instruction": "Ben's classroom clock shows nine o'clock in the morning. What time is it?",
-        "question": "9:00 AM",
-        "correctAnswer": "9:00 AM",
-        "options": [
-          "9:00 AM",
-          "10:00 AM",
-          "9:00 PM"
-        ],
-        "hint": "This hour comes just one step after eight.",
-        "emoji": "🕘",
-        "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
-        "funFact": "On a digital clock, the numbers before the colon always show the hour.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L23_Q2",
-        "gameType": "time",
-        "level": 23,
-        "instruction": "Look closely: the long hand points to 12 and the short hand points to 1, and it is afternoon. What time is it?",
-        "question": "1:00 PM",
-        "correctAnswer": "1:00 PM",
-        "options": [
-          "2:00 PM",
-          "1:00 PM",
-          "1:00 AM"
-        ],
-        "hint": "Find the smaller hand — it names the hour.",
-        "emoji": "🕐",
-        "explanation": "A long hand on 12 with a short hand on 1 means it's 1:00 — since it's afternoon, write it as 1:00 PM.",
-        "funFact": "1:00 PM is the very first hour of the afternoon, right after noon.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L23_Q3",
-        "gameType": "time",
-        "level": 23,
-        "instruction": "Ella's clock shows ten o'clock at night. What time is it?",
-        "question": "10:00 PM",
-        "correctAnswer": "10:00 PM",
-        "options": [
-          "9:00 PM",
-          "10:00 AM",
-          "10:00 PM"
-        ],
-        "hint": "Nighttime hours are always written with PM.",
-        "emoji": "🕙",
-        "explanation": "Ten o'clock at night is written as 10:00 PM.",
-        "funFact": "By 10:00 PM, most children have already been asleep for a little while.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 24,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L24_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L23_Q1",
+                "gameType": "time",
+                "level": 23,
+                "instruction": "Ben's classroom clock shows nine o'clock in the morning. What time is it?",
+                "question": "9:00 AM",
+                "correctAnswer": "9:00 AM 🕘",
+                "options": [
+                    "9:00 AM 🕘",
+                    "10:00 AM 🍎",
+                    "9:00 PM 🌙"
+                ],
+                "hint": "This hour comes just one step after eight.",
+                "emoji": "🕘",
+                "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
+                "funFact": "On a digital clock, the numbers before the colon always show the hour.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L23_Q2",
+                "gameType": "time",
+                "level": 23,
+                "instruction": "Look closely: the long hand points to 12 and the short hand points to 1, and it is afternoon. What time is it?",
+                "question": "1:00 PM",
+                "correctAnswer": "1:00 PM 🕐",
+                "options": [
+                    "2:00 PM 😴",
+                    "1:00 PM 🕐",
+                    "1:00 AM 🌗"
+                ],
+                "hint": "Find the smaller hand — it names the hour.",
+                "emoji": "🕐",
+                "explanation": "A long hand on 12 with a short hand on 1 means it's 1:00 — since it's afternoon, write it as 1:00 PM.",
+                "funFact": "1:00 PM is the very first hour of the afternoon, right after noon.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L23_Q3",
+                "gameType": "time",
+                "level": 23,
+                "instruction": "Ella's clock shows ten o'clock at night. What time is it?",
+                "question": "10:00 PM",
+                "correctAnswer": "10:00 PM 🕙",
+                "options": [
+                    "9:00 PM 🌙",
+                    "10:00 AM 🍎",
+                    "10:00 PM 🕙"
+                ],
+                "hint": "Nighttime hours are always written with PM.",
+                "emoji": "🕙",
+                "explanation": "Ten o'clock at night is written as 10:00 PM.",
+                "funFact": "By 10:00 PM, most children have already been asleep for a little while.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 24,
-        "instruction": "Omar checks the clock. It shows ten o'clock in the morning. What time is it?",
-        "question": "10:00 AM",
-        "correctAnswer": "10:00 AM",
-        "options": [
-          "11:00 AM",
-          "10:00 AM",
-          "10:00 PM"
-        ],
-        "hint": "Count one hour past nine to find this one.",
-        "emoji": "🕙",
-        "explanation": "Ten o'clock in the morning is written as 10:00 AM.",
-        "funFact": "10:00 AM is a common time for a short snack break at school.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L24_Q2",
-        "gameType": "time",
-        "level": 24,
-        "instruction": "On the wall, a clock's short hand touches 4 and its long hand touches 12. It is afternoon. What time is it?",
-        "question": "4:00 PM",
-        "correctAnswer": "4:00 PM",
-        "options": [
-          "5:00 PM",
-          "4:00 PM",
-          "4:00 AM"
-        ],
-        "hint": "The little hand is the one that names the hour.",
-        "emoji": "🕓",
-        "explanation": "A short hand on 4 and a long hand on 12 make it exactly 4:00 — afternoon means it's 4:00 PM.",
-        "funFact": "When both clock hands point straight up and down like this, it is always an exact hour.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L24_Q3",
-        "gameType": "time",
-        "level": 24,
-        "instruction": "Lily's clock shows seven o'clock in the evening. What time is it?",
-        "question": "7:00 PM",
-        "correctAnswer": "7:00 PM",
-        "options": [
-          "7:00 AM",
-          "7:00 PM",
-          "6:00 PM"
-        ],
-        "hint": "Say the hour, then remember evening ends in PM.",
-        "emoji": "🕖",
-        "explanation": "Seven o'clock in the evening is written as 7:00 PM.",
-        "funFact": "7:00 PM is a common time for families to relax together after dinner.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 25,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L25_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L24_Q1",
+                "gameType": "time",
+                "level": 24,
+                "instruction": "Omar checks the clock. It shows ten o'clock in the morning. What time is it?",
+                "question": "10:00 AM",
+                "correctAnswer": "10:00 AM 🕙",
+                "options": [
+                    "11:00 AM 🎨",
+                    "10:00 AM 🕙",
+                    "10:00 PM 🐶"
+                ],
+                "hint": "Count one hour past nine to find this one.",
+                "emoji": "🕙",
+                "explanation": "Ten o'clock in the morning is written as 10:00 AM.",
+                "funFact": "10:00 AM is a common time for a short snack break at school.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L24_Q2",
+                "gameType": "time",
+                "level": 24,
+                "instruction": "On the wall, a clock's short hand touches 4 and its long hand touches 12. It is afternoon. What time is it?",
+                "question": "4:00 PM",
+                "correctAnswer": "4:00 PM 🕓",
+                "options": [
+                    "5:00 PM 🧃",
+                    "4:00 PM 🕓",
+                    "4:00 AM"
+                ],
+                "hint": "The little hand is the one that names the hour.",
+                "emoji": "🕓",
+                "explanation": "A short hand on 4 and a long hand on 12 make it exactly 4:00 — afternoon means it's 4:00 PM.",
+                "funFact": "When both clock hands point straight up and down like this, it is always an exact hour.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L24_Q3",
+                "gameType": "time",
+                "level": 24,
+                "instruction": "Lily's clock shows seven o'clock in the evening. What time is it?",
+                "question": "7:00 PM",
+                "correctAnswer": "7:00 PM 🕖",
+                "options": [
+                    "7:00 AM 🛏️",
+                    "7:00 PM 🕖",
+                    "6:00 PM 🍲"
+                ],
+                "hint": "Say the hour, then remember evening ends in PM.",
+                "emoji": "🕖",
+                "explanation": "Seven o'clock in the evening is written as 7:00 PM.",
+                "funFact": "7:00 PM is a common time for families to relax together after dinner.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 25,
-        "instruction": "Noah's clock shows eleven o'clock in the morning. What time is it?",
-        "question": "11:00 AM",
-        "correctAnswer": "11:00 AM",
-        "options": [
-          "12:00 PM",
-          "11:00 AM",
-          "11:00 PM"
-        ],
-        "hint": "This hour arrives just before noon.",
-        "emoji": "🕚",
-        "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
-        "funFact": "11:00 AM is the last hour of the morning before noon arrives.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L25_Q2",
-        "gameType": "time",
-        "level": 25,
-        "instruction": "Picture a clock where the short hand leans on 5 and the long hand stands on 12, in the afternoon. What time is it?",
-        "question": "5:00 PM",
-        "correctAnswer": "5:00 PM",
-        "options": [
-          "6:00 PM",
-          "5:00 AM",
-          "5:00 PM"
-        ],
-        "hint": "The hour hand is shorter — see which number it leans on.",
-        "emoji": "🕔",
-        "explanation": "With the short hand on 5 and the long hand on 12, the clock says 5:00 — afternoon makes it 5:00 PM.",
-        "funFact": "5:00 PM is often called \"late afternoon,\" just before evening begins.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L25_Q3",
-        "gameType": "time",
-        "level": 25,
-        "instruction": "Ivy's clock shows six o'clock in the evening. What time is it?",
-        "question": "6:00 PM",
-        "correctAnswer": "6:00 PM",
-        "options": [
-          "5:00 PM",
-          "6:00 AM",
-          "6:00 PM"
-        ],
-        "hint": "Once you say the hour, add the letters for evening.",
-        "emoji": "🕕",
-        "explanation": "Six o'clock in the evening is written as 6:00 PM.",
-        "funFact": "6:00 PM is a popular time for families to enjoy dinner together.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 26,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L26_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L25_Q1",
+                "gameType": "time",
+                "level": 25,
+                "instruction": "Noah's clock shows eleven o'clock in the morning. What time is it?",
+                "question": "11:00 AM",
+                "correctAnswer": "11:00 AM 🕚",
+                "options": [
+                    "12:00 PM 🍽️",
+                    "11:00 AM 🕚",
+                    "11:00 PM 💡"
+                ],
+                "hint": "This hour arrives just before noon.",
+                "emoji": "🕚",
+                "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
+                "funFact": "11:00 AM is the last hour of the morning before noon arrives.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L25_Q2",
+                "gameType": "time",
+                "level": 25,
+                "instruction": "Picture a clock where the short hand leans on 5 and the long hand stands on 12, in the afternoon. What time is it?",
+                "question": "5:00 PM",
+                "correctAnswer": "5:00 PM 🕔",
+                "options": [
+                    "6:00 PM 🍲",
+                    "5:00 AM ⏪",
+                    "5:00 PM 🕔"
+                ],
+                "hint": "The hour hand is shorter — see which number it leans on.",
+                "emoji": "🕔",
+                "explanation": "With the short hand on 5 and the long hand on 12, the clock says 5:00 — afternoon makes it 5:00 PM.",
+                "funFact": "5:00 PM is often called \"late afternoon,\" just before evening begins.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L25_Q3",
+                "gameType": "time",
+                "level": 25,
+                "instruction": "Ivy's clock shows six o'clock in the evening. What time is it?",
+                "question": "6:00 PM",
+                "correctAnswer": "6:00 PM 🕕",
+                "options": [
+                    "5:00 PM 🧃",
+                    "6:00 AM 🌅",
+                    "6:00 PM 🕕"
+                ],
+                "hint": "Once you say the hour, add the letters for evening.",
+                "emoji": "🕕",
+                "explanation": "Six o'clock in the evening is written as 6:00 PM.",
+                "funFact": "6:00 PM is a popular time for families to enjoy dinner together.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 26,
-        "instruction": "Max looks up at the clock. It shows twelve o'clock, right in the middle of the day. What time is it?",
-        "question": "12:00 PM",
-        "correctAnswer": "12:00 PM",
-        "options": [
-          "11:00 AM",
-          "12:00 PM",
-          "1:00 PM"
-        ],
-        "hint": "This special hour has its very own nickname: noon.",
-        "emoji": "🕛",
-        "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
-        "funFact": "12:00 PM is called noon, and 12:00 AM is called midnight.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L26_Q2",
-        "gameType": "time",
-        "level": 26,
-        "instruction": "A sunrise clock shows its short hand on 6 and its long hand on 12. What time is it?",
-        "question": "6:00 AM",
-        "correctAnswer": "6:00 AM",
-        "options": [
-          "7:00 AM",
-          "6:00 PM",
-          "6:00 AM"
-        ],
-        "hint": "Whichever number the little hand touches names your hour.",
-        "emoji": "🕕",
-        "explanation": "A short hand on 6 with a long hand on 12 gives an exact 6:00, and this early clock reads 6:00 AM.",
-        "funFact": "6:00 AM is often when the sun begins to rise in the morning sky.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L26_Q3",
-        "gameType": "time",
-        "level": 26,
-        "instruction": "Rosa's clock shows eleven o'clock at night. What time is it?",
-        "question": "11:00 PM",
-        "correctAnswer": "11:00 PM",
-        "options": [
-          "11:00 AM",
-          "11:00 PM",
-          "10:00 PM"
-        ],
-        "hint": "Late-night hours are always written with PM.",
-        "emoji": "🕚",
-        "explanation": "Eleven o'clock at night is written as 11:00 PM.",
-        "funFact": "By 11:00 PM, even grown-ups are usually getting ready for sleep.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 27,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L27_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L26_Q1",
+                "gameType": "time",
+                "level": 26,
+                "instruction": "Max looks up at the clock. It shows twelve o'clock, right in the middle of the day. What time is it?",
+                "question": "12:00 PM",
+                "correctAnswer": "12:00 PM 🕛",
+                "options": [
+                    "11:00 AM 🎨",
+                    "12:00 PM 🕛",
+                    "1:00 PM 📚"
+                ],
+                "hint": "This special hour has its very own nickname: noon.",
+                "emoji": "🕛",
+                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
+                "funFact": "12:00 PM is called noon, and 12:00 AM is called midnight.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L26_Q2",
+                "gameType": "time",
+                "level": 26,
+                "instruction": "A sunrise clock shows its short hand on 6 and its long hand on 12. What time is it?",
+                "question": "6:00 AM",
+                "correctAnswer": "6:00 AM 🕕",
+                "options": [
+                    "7:00 AM 🛏️",
+                    "6:00 PM 🍲",
+                    "6:00 AM 🕕"
+                ],
+                "hint": "Whichever number the little hand touches names your hour.",
+                "emoji": "🕕",
+                "explanation": "A short hand on 6 with a long hand on 12 gives an exact 6:00, and this early clock reads 6:00 AM.",
+                "funFact": "6:00 AM is often when the sun begins to rise in the morning sky.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L26_Q3",
+                "gameType": "time",
+                "level": 26,
+                "instruction": "Rosa's clock shows eleven o'clock at night. What time is it?",
+                "question": "11:00 PM",
+                "correctAnswer": "11:00 PM 🕚",
+                "options": [
+                    "11:00 AM 🎨",
+                    "11:00 PM 🕚",
+                    "10:00 PM 🐶"
+                ],
+                "hint": "Late-night hours are always written with PM.",
+                "emoji": "🕚",
+                "explanation": "Eleven o'clock at night is written as 11:00 PM.",
+                "funFact": "By 11:00 PM, even grown-ups are usually getting ready for sleep.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 27,
-        "instruction": "Theo's clock shows eight o'clock in the morning. What time is it?",
-        "question": "8:00 AM",
-        "correctAnswer": "8:00 AM",
-        "options": [
-          "8:00 PM",
-          "9:00 AM",
-          "8:00 AM"
-        ],
-        "hint": "This hour comes just one step after seven.",
-        "emoji": "🕗",
-        "explanation": "Eight o'clock in the morning is written as 8:00 AM.",
-        "funFact": "8:00 AM is a common time for the school day to begin.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L27_Q2",
-        "gameType": "time",
-        "level": 27,
-        "instruction": "Nina's clock shows three o'clock in the afternoon. What time is it?",
-        "question": "3:00 PM",
-        "correctAnswer": "3:00 PM",
-        "options": [
-          "4:00 PM",
-          "3:00 AM",
-          "3:00 PM"
-        ],
-        "hint": "Say the hour, then remember afternoon ends in PM.",
-        "emoji": "🕒",
-        "explanation": "Three o'clock in the afternoon is written as 3:00 PM.",
-        "funFact": "3:00 PM is a common time for the school day to end.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L27_Q3",
-        "gameType": "time",
-        "level": 27,
-        "instruction": "The lunchroom clock shows twelve o'clock, right in the middle of the day. What time is it?",
-        "question": "12:00 PM",
-        "correctAnswer": "12:00 PM",
-        "options": [
-          "12:00 PM",
-          "11:00 AM",
-          "1:00 PM"
-        ],
-        "hint": "The sun is at its very highest at this special hour.",
-        "emoji": "🕛",
-        "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM — that's noon.",
-        "funFact": "At 12:00 PM, your shadow becomes very short if the sun is out.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 28,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L28_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L27_Q1",
+                "gameType": "time",
+                "level": 27,
+                "instruction": "Theo's clock shows eight o'clock in the morning. What time is it?",
+                "question": "8:00 AM",
+                "correctAnswer": "8:00 AM 🕗",
+                "options": [
+                    "8:00 PM 📖",
+                    "9:00 AM 🏫",
+                    "8:00 AM 🕗"
+                ],
+                "hint": "This hour comes just one step after seven.",
+                "emoji": "🕗",
+                "explanation": "Eight o'clock in the morning is written as 8:00 AM.",
+                "funFact": "8:00 AM is a common time for the school day to begin.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L27_Q2",
+                "gameType": "time",
+                "level": 27,
+                "instruction": "Nina's clock shows three o'clock in the afternoon. What time is it?",
+                "question": "3:00 PM",
+                "correctAnswer": "3:00 PM 🕒",
+                "options": [
+                    "4:00 PM 🛝",
+                    "3:00 AM",
+                    "3:00 PM 🕒"
+                ],
+                "hint": "Say the hour, then remember afternoon ends in PM.",
+                "emoji": "🕒",
+                "explanation": "Three o'clock in the afternoon is written as 3:00 PM.",
+                "funFact": "3:00 PM is a common time for the school day to end.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L27_Q3",
+                "gameType": "time",
+                "level": 27,
+                "instruction": "The lunchroom clock shows twelve o'clock, right in the middle of the day. What time is it?",
+                "question": "12:00 PM",
+                "correctAnswer": "12:00 PM 🕛",
+                "options": [
+                    "12:00 PM 🕛",
+                    "11:00 AM 🎨",
+                    "1:00 PM 📚"
+                ],
+                "hint": "The sun is at its very highest at this special hour.",
+                "emoji": "🕛",
+                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM — that's noon.",
+                "funFact": "At 12:00 PM, your shadow becomes very short if the sun is out.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 28,
-        "instruction": "Eli's alarm rings at seven o'clock in the morning. What time is it?",
-        "question": "7:00 AM",
-        "correctAnswer": "7:00 AM",
-        "options": [
-          "7:00 AM",
-          "7:00 PM",
-          "8:00 AM"
-        ],
-        "hint": "This hour comes right after six in the morning.",
-        "emoji": "🕖",
-        "explanation": "When it's seven o'clock in the morning, we write it as 7:00 AM.",
-        "funFact": "7:00 AM is a popular time for families to start getting ready together.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L28_Q2",
-        "gameType": "time",
-        "level": 28,
-        "instruction": "A kitchen clock's short hand sits on 1 and its long hand sits on 12, after lunch. What time is it?",
-        "question": "1:00 PM",
-        "correctAnswer": "1:00 PM",
-        "options": [
-          "1:00 PM",
-          "2:00 PM",
-          "1:00 AM"
-        ],
-        "hint": "The hour hand is the short one — read its number.",
-        "emoji": "🕐",
-        "explanation": "Short hand on 1, long hand on 12 means it's 1:00 — since it's after lunch, that's 1:00 PM.",
-        "funFact": "1:00 PM comes right after 12:00 PM, the very start of the afternoon.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L28_Q3",
-        "gameType": "time",
-        "level": 28,
-        "instruction": "Kai's clock shows ten o'clock at night. What time is it?",
-        "question": "10:00 PM",
-        "correctAnswer": "10:00 PM",
-        "options": [
-          "10:00 PM",
-          "10:00 AM",
-          "9:00 PM"
-        ],
-        "hint": "Once you say the hour, add the letters for night.",
-        "emoji": "🕙",
-        "explanation": "When it's ten o'clock at night, we write it as 10:00 PM.",
-        "funFact": "10:00 PM is late enough that most streets outside grow quiet.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 29,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L29_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L28_Q1",
+                "gameType": "time",
+                "level": 28,
+                "instruction": "Eli's alarm rings at seven o'clock in the morning. What time is it?",
+                "question": "7:00 AM",
+                "correctAnswer": "7:00 AM 🕖",
+                "options": [
+                    "7:00 AM 🕖",
+                    "7:00 PM 🛁",
+                    "8:00 AM 🍳"
+                ],
+                "hint": "This hour comes right after six in the morning.",
+                "emoji": "🕖",
+                "explanation": "When it's seven o'clock in the morning, we write it as 7:00 AM.",
+                "funFact": "7:00 AM is a popular time for families to start getting ready together.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L28_Q2",
+                "gameType": "time",
+                "level": 28,
+                "instruction": "A kitchen clock's short hand sits on 1 and its long hand sits on 12, after lunch. What time is it?",
+                "question": "1:00 PM",
+                "correctAnswer": "1:00 PM 🕐",
+                "options": [
+                    "1:00 PM 🕐",
+                    "2:00 PM 😴",
+                    "1:00 AM 🌗"
+                ],
+                "hint": "The hour hand is the short one — read its number.",
+                "emoji": "🕐",
+                "explanation": "Short hand on 1, long hand on 12 means it's 1:00 — since it's after lunch, that's 1:00 PM.",
+                "funFact": "1:00 PM comes right after 12:00 PM, the very start of the afternoon.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L28_Q3",
+                "gameType": "time",
+                "level": 28,
+                "instruction": "Kai's clock shows ten o'clock at night. What time is it?",
+                "question": "10:00 PM",
+                "correctAnswer": "10:00 PM 🕙",
+                "options": [
+                    "10:00 PM 🕙",
+                    "10:00 AM 🍎",
+                    "9:00 PM 🌙"
+                ],
+                "hint": "Once you say the hour, add the letters for night.",
+                "emoji": "🕙",
+                "explanation": "When it's ten o'clock at night, we write it as 10:00 PM.",
+                "funFact": "10:00 PM is late enough that most streets outside grow quiet.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 29,
-        "instruction": "June's clock shows nine o'clock in the morning. What time is it?",
-        "question": "9:00 AM",
-        "correctAnswer": "9:00 AM",
-        "options": [
-          "9:00 PM",
-          "10:00 AM",
-          "9:00 AM"
-        ],
-        "hint": "Count one hour past eight to find this one.",
-        "emoji": "🕘",
-        "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
-        "funFact": "9:00 AM is a common time for the first lesson of the school day.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L29_Q2",
-        "gameType": "time",
-        "level": 29,
-        "instruction": "A round clock shows its long hand on 12 and its short hand on 2, in the afternoon. What time is it?",
-        "question": "2:00 PM",
-        "correctAnswer": "2:00 PM",
-        "options": [
-          "3:00 PM",
-          "2:00 PM",
-          "2:00 AM"
-        ],
-        "hint": "The number the little hand touches tells you the hour.",
-        "emoji": "🕑",
-        "explanation": "Long hand on 12 and short hand on 2 means the time is 2:00 — afternoon makes it 2:00 PM.",
-        "funFact": "2:00 PM is right in the middle of a typical school afternoon.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L29_Q3",
-        "gameType": "time",
-        "level": 29,
-        "instruction": "Milo's clock shows eight o'clock in the evening. What time is it?",
-        "question": "8:00 PM",
-        "correctAnswer": "8:00 PM",
-        "options": [
-          "7:00 PM",
-          "8:00 PM",
-          "8:00 AM"
-        ],
-        "hint": "Say the hour, then remember evening ends in PM.",
-        "emoji": "🕗",
-        "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
-        "funFact": "8:00 PM is a cozy time for pajamas and a bedtime story.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  },
-  {
-    "level": 30,
-    "quests": [
-      {
-        "id": "KIDS_TIME_L30_Q1",
-        "gameType": "time",
+        "quests": [
+            {
+                "id": "KIDS_TIME_L29_Q1",
+                "gameType": "time",
+                "level": 29,
+                "instruction": "June's clock shows nine o'clock in the morning. What time is it?",
+                "question": "9:00 AM",
+                "correctAnswer": "9:00 AM 🕘",
+                "options": [
+                    "9:00 PM 🌙",
+                    "10:00 AM 🍎",
+                    "9:00 AM 🕘"
+                ],
+                "hint": "Count one hour past eight to find this one.",
+                "emoji": "🕘",
+                "explanation": "Nine o'clock in the morning is written as 9:00 AM.",
+                "funFact": "9:00 AM is a common time for the first lesson of the school day.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L29_Q2",
+                "gameType": "time",
+                "level": 29,
+                "instruction": "A round clock shows its long hand on 12 and its short hand on 2, in the afternoon. What time is it?",
+                "question": "2:00 PM",
+                "correctAnswer": "2:00 PM 🕑",
+                "options": [
+                    "3:00 PM 🎒",
+                    "2:00 PM 🕑",
+                    "2:00 AM 🌗"
+                ],
+                "hint": "The number the little hand touches tells you the hour.",
+                "emoji": "🕑",
+                "explanation": "Long hand on 12 and short hand on 2 means the time is 2:00 — afternoon makes it 2:00 PM.",
+                "funFact": "2:00 PM is right in the middle of a typical school afternoon.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L29_Q3",
+                "gameType": "time",
+                "level": 29,
+                "instruction": "Milo's clock shows eight o'clock in the evening. What time is it?",
+                "question": "8:00 PM",
+                "correctAnswer": "8:00 PM 🕗",
+                "options": [
+                    "7:00 PM 🛁",
+                    "8:00 PM 🕗",
+                    "8:00 AM 🍳"
+                ],
+                "hint": "Say the hour, then remember evening ends in PM.",
+                "emoji": "🕗",
+                "explanation": "Eight o'clock in the evening is written as 8:00 PM.",
+                "funFact": "8:00 PM is a cozy time for pajamas and a bedtime story.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    },
+    {
         "level": 30,
-        "instruction": "Ana's clock shows eleven o'clock in the morning. What time is it?",
-        "question": "11:00 AM",
-        "correctAnswer": "11:00 AM",
-        "options": [
-          "12:00 PM",
-          "11:00 AM",
-          "11:00 PM"
-        ],
-        "hint": "Count one hour before noon to find this one.",
-        "emoji": "🕚",
-        "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
-        "funFact": "11:00 AM is a great time for art or music class at school.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L30_Q2",
-        "gameType": "time",
-        "level": 30,
-        "instruction": "Leo's clock shows twelve o'clock, right in the middle of the day, for the second time today. What time is it?",
-        "question": "12:00 PM",
-        "correctAnswer": "12:00 PM",
-        "options": [
-          "12:00 PM",
-          "1:00 PM",
-          "11:00 AM"
-        ],
-        "hint": "Both hands point straight up at this special hour.",
-        "emoji": "🕛",
-        "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
-        "funFact": "At 12:00 PM, the sun sits at its very highest point in the sky.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      },
-      {
-        "id": "KIDS_TIME_L30_Q3",
-        "gameType": "time",
-        "level": 30,
-        "instruction": "Sam's clock shows six o'clock in the evening. What time is it?",
-        "question": "6:00 PM",
-        "correctAnswer": "6:00 PM",
-        "options": [
-          "6:00 PM",
-          "6:00 AM",
-          "5:00 PM"
-        ],
-        "hint": "Once you say the hour, add the letters for evening.",
-        "emoji": "🕕",
-        "explanation": "Six o'clock in the evening is written as 6:00 PM.",
-        "funFact": "6:00 PM is a favorite time for families to sit down to dinner.",
-        "subtype": "o_clock",
-        "interactionType": "multiple_choice"
-      }
-    ]
-  }
+        "quests": [
+            {
+                "id": "KIDS_TIME_L30_Q1",
+                "gameType": "time",
+                "level": 30,
+                "instruction": "Ana's clock shows eleven o'clock in the morning. What time is it?",
+                "question": "11:00 AM",
+                "correctAnswer": "11:00 AM 🕚",
+                "options": [
+                    "12:00 PM 🍽️",
+                    "11:00 AM 🕚",
+                    "11:00 PM 💡"
+                ],
+                "hint": "Count one hour before noon to find this one.",
+                "emoji": "🕚",
+                "explanation": "Eleven o'clock in the morning is written as 11:00 AM.",
+                "funFact": "11:00 AM is a great time for art or music class at school.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L30_Q2",
+                "gameType": "time",
+                "level": 30,
+                "instruction": "Leo's clock shows twelve o'clock, right in the middle of the day, for the second time today. What time is it?",
+                "question": "12:00 PM",
+                "correctAnswer": "12:00 PM 🕛",
+                "options": [
+                    "12:00 PM 🕛",
+                    "1:00 PM 📚",
+                    "11:00 AM 🎨"
+                ],
+                "hint": "Both hands point straight up at this special hour.",
+                "emoji": "🕛",
+                "explanation": "Twelve o'clock in the middle of the day is written as 12:00 PM, or noon.",
+                "funFact": "At 12:00 PM, the sun sits at its very highest point in the sky.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            },
+            {
+                "id": "KIDS_TIME_L30_Q3",
+                "gameType": "time",
+                "level": 30,
+                "instruction": "Sam's clock shows six o'clock in the evening. What time is it?",
+                "question": "6:00 PM",
+                "correctAnswer": "6:00 PM 🕕",
+                "options": [
+                    "6:00 PM 🕕",
+                    "6:00 AM 🌅",
+                    "5:00 PM 🧃"
+                ],
+                "hint": "Once you say the hour, add the letters for evening.",
+                "emoji": "🕕",
+                "explanation": "Six o'clock in the evening is written as 6:00 PM.",
+                "funFact": "6:00 PM is a favorite time for families to sit down to dinner.",
+                "subtype": "o_clock",
+                "interactionType": "multiple_choice"
+            }
+        ]
+    }
 ]
