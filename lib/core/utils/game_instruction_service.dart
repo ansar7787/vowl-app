@@ -1465,253 +1465,226 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Alphabet Adventure",
           icon: Icons.abc_rounded,
-          objective:
-              "LEARN LETTERS: Tap the mystery box to hear the sound, then drag the correct letter to the chalkboard!",
-          rules: [
-            "Tap to listen closely",
-            "Find the matching block",
-            "Drag it to the board",
-          ],
+          objective: "Tap the mystery box to hear the sound, then drag the correct letter to the chalkboard!",
+          rules: ["Tap to listen closely", "Find the matching block", "Drag it to the board"],
           actionText: "Play ABCs",
-          tip:
-              "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
+          tip: "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
         );
       case 'animals':
         return const GameBriefing(
           title: "Animal Safari",
           icon: Icons.pets_rounded,
-          objective:
-              "EXPLORE NATURE: Learn the names and sounds of your favorite animals!",
-          rules: [
-            "Watch the animals",
-            "Listen to their sounds",
-            "Match the names",
-          ],
+          objective: "Read the clue on the clipboard, then drag the correct animal tag to the binoculars!",
+          rules: ["Read the animal clue", "Find the matching animal", "Drag it to the binoculars"],
           actionText: "Go Safari",
-          tip: "Try making the animal sound yourself to remember it better! 🦁",
+          tip: "PRO TIP: Think about the sound the animal makes or where it lives! 🦁",
         );
       case 'numbers':
         return const GameBriefing(
           title: "Number Fun",
           icon: Icons.numbers_rounded,
-          objective:
-              "COUNTING TIME: Look through the rocket window to see the puzzle, then drag the correct planet to the rocket!",
-          rules: [
-            "Look at the rocket window",
-            "Find the matching planet",
-            "Drag it to the rocket",
-          ],
+          objective: "Look through the rocket window to read the number clue, then drag the correct planet to the rocket!",
+          rules: ["Read the rocket clue", "Find the matching planet", "Drag it to the rocket"],
           actionText: "Start Counting",
-          tip: "PRO TIP: Count out loud or tap the rocket window to hear the number! 🚀",
+          tip: "PRO TIP: Count the items carefully if you need to! 🚀",
         );
       case 'colors':
         return const GameBriefing(
           title: "Rainbow World",
           icon: Icons.palette_rounded,
-          objective:
-              "COLOR MIXER: Identify and name all the colors of the rainbow!",
-          rules: ["Look at the colors", "Match the word", "Paint the world"],
+          objective: "Read the clue on the artist's easel, then drag the correct paint tube to the canvas!",
+          rules: ["Read the color clue", "Find the matching paint", "Drag it to the canvas"],
           actionText: "Paint Colors",
-          tip:
-              "Look around your room—how many colors from the game can you see? 🌈",
+          tip: "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨",
         );
       case 'fruits':
         return const GameBriefing(
           title: "Fruit Garden",
           icon: Icons.shopping_basket_rounded,
-          objective:
-              "TASTY LEARNING: Discover delicious fruits and their healthy names!",
-          rules: ["Pick the fruit", "Match the shape", "Learn the name"],
+          objective: "Read the clue on the wooden sign, then drag the correct fruit to the picnic basket!",
+          rules: ["Read the fruit clue", "Find the matching fruit", "Drag it to the basket"],
           actionText: "Pick Fruits",
-          tip: "Fruits are super healthy and give you energy to play! 🍎",
+          tip: "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎",
         );
       case 'shapes':
         return const GameBriefing(
           title: "Shape Explorer",
           icon: Icons.category_rounded,
-          objective:
-              "GEOMETRY FUN: Learn about circles, squares, triangles, and more!",
-          rules: ["Find the shape", "Match the edges", "Learn the name"],
+          objective: "Read the clue on the notebook, then drag the correct shape block to the desk!",
+          rules: ["Read the shape clue", "Find the matching block", "Drag it to the desk"],
           actionText: "Explore Shapes",
-          tip:
-              "Shapes are everywhere! A clock is a circle and a door is a rectangle. 📐",
+          tip: "PRO TIP: Count the corners or edges if you are stuck! 📐",
         );
       case 'body_parts':
         return const GameBriefing(
           title: "My Body",
           icon: Icons.accessibility_new_rounded,
-          objective:
-              "SELF DISCOVERY: Learn the names of different parts of your body!",
-          rules: ["Touch your nose", "Find the eyes", "Name the parts"],
+          objective: "Read the clue on the clipboard, then drag the correct bandage to the medical cross!",
+          rules: ["Read the body clue", "Find the matching part", "Drag the bandage"],
           actionText: "Start Learning",
-          tip: "Can you point to the body part as you hear its name? 🧍",
+          tip: "PRO TIP: Can you point to that body part on yourself? 🧍",
         );
       case 'family':
         return const GameBriefing(
           title: "Family Tree",
           icon: Icons.family_restroom_rounded,
-          objective:
-              "KINDRED SPIRITS: Learn about family members like Mom, Dad, and more!",
-          rules: ["Meet the family", "Match the names", "Listen to the roles"],
+          objective: "Read the clue on the banner, then drag the correct portrait to the family tree!",
+          rules: ["Read the family clue", "Find the matching portrait", "Drag it to the tree"],
           actionText: "Meet Family",
-          tip: "Family is all about love and helping each other! ❤️",
+          tip: "PRO TIP: Family words show how people are related, like brother or sister! ❤️",
         );
       case 'food_kids':
         return const GameBriefing(
           title: "Yummy Food",
           icon: Icons.restaurant_rounded,
-          objective:
-              "CHEF'S KITCHEN: Learn the names of yummy foods we eat every day!",
-          rules: ["See the food", "Match the taste", "Name the meal"],
+          objective: "Read the clue on the restaurant menu, then drag the correct food to the plate!",
+          rules: ["Read the food clue", "Find the matching order", "Drag it to the plate"],
           actionText: "Eat Up",
-          tip: "Eating a variety of foods helps you grow big and strong! 🥛",
+          tip: "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛",
         );
       case 'clothing':
         return const GameBriefing(
           title: "Dress Up",
           icon: Icons.checkroom_rounded,
-          objective:
-              "FASHION FUN: Learn the names of clothes like shirts, hats, and shoes!",
-          rules: ["Pick the outfit", "Dress the buddy", "Name the clothes"],
+          objective: "Read the clue on the mirror, then drag the correct clothing item to the wardrobe!",
+          rules: ["Read the clothes clue", "Find the matching item", "Drag it to the wardrobe"],
           actionText: "Get Dressed",
-          tip: "What are you wearing today? Try to name it in English! 👕",
+          tip: "PRO TIP: Think about what you wear when it's hot or cold outside! 👕",
         );
       case 'nature':
         return const GameBriefing(
           title: "Nature Walk",
           icon: Icons.forest_rounded,
-          objective:
-              "OUTDOOR FUN: Explore trees, flowers, the sun, and the moon!",
-          rules: ["See the plants", "Look at the sky", "Name nature"],
+          objective: "Read the clue on the wooden sign, then drag the correct leaf to the tree stump!",
+          rules: ["Read the nature clue", "Find the matching leaf", "Drag it to the stump"],
           actionText: "Start Walk",
-          tip:
-              "Nature is beautiful! Always remember to be kind to the Earth. 🌳",
+          tip: "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳",
         );
       case 'transport':
         return const GameBriefing(
           title: "Zoom Zoom!",
           icon: Icons.directions_car_rounded,
-          objective:
-              "FAST TRAVEL: Learn about cars, planes, trains, and boats!",
-          rules: ["Watch them go", "Listen to engines", "Match the vehicle"],
+          objective: "Read the clue on the asphalt, then drag the correct license plate to the intersection!",
+          rules: ["Read the vehicle clue", "Find the matching plate", "Drag it to the road"],
           actionText: "Start Engine",
-          tip: "Which way do you like to travel? Beep beep! 🚗",
+          tip: "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗",
         );
       case 'emotions':
         return const GameBriefing(
           title: "Feeling Happy",
           icon: Icons.mood_rounded,
-          objective:
-              "EMOTION CHECK: Understand feelings like happy, sad, and surprised!",
-          rules: ["Look at the faces", "Match the feeling", "Be kind"],
+          objective: "Read the clue on the banner, then drag the correct face mask to the stage!",
+          rules: ["Read the feeling clue", "Find the matching face", "Drag it to the stage"],
           actionText: "Share Feelings",
-          tip:
-              "It's okay to feel different things! Talk to a buddy about it. 😊",
+          tip: "PRO TIP: Try making that face in a mirror to see how it feels! 😊",
         );
       case 'school':
         return const GameBriefing(
           title: "School Days",
           icon: Icons.school_rounded,
-          objective:
-              "CLASSROOM FUN: Learn about pencils, books, and your teacher!",
-          rules: ["Pack your bag", "Find the tools", "Learn and play"],
+          objective: "Read the clue on the notepad, then drag the correct school supply to the desk!",
+          rules: ["Read the school clue", "Find the matching tool", "Drag it to the desk"],
           actionText: "Go to School",
-          tip: "School is a place to make friends and learn new things! 🎒",
+          tip: "PRO TIP: Think about what you carry in your backpack! 🎒",
         );
       case 'home_kids':
         return const GameBriefing(
           title: "My Sweet Home",
           icon: Icons.home_rounded,
-          objective:
-              "HOUSE TOUR: Discover rooms and things found in your house!",
-          rules: ["Visit the rooms", "Find the items", "Name the furniture"],
+          objective: "Read the clue on the blueprint, then drag the correct furniture box to the house!",
+          rules: ["Read the house clue", "Find the matching box", "Drag it to the house"],
           actionText: "Enter House",
-          tip: "There's no place like home! What's your favorite room? 🏠",
+          tip: "PRO TIP: Think about which room you would find this item in! 🏠",
         );
       case 'opposites':
         return const GameBriefing(
           title: "Big and Small",
           icon: Icons.compare_rounded,
-          objective:
-              "DIFFERENCE DETECTOR: Learn about opposites like hot/cold and up/down!",
-          rules: ["See the difference", "Match the pair", "Find the opposite"],
+          objective: "Read the clue on the scale, then drag the correct opposite block to balance it!",
+          rules: ["Read the clue", "Find its opposite", "Drag it to the scale"],
           actionText: "Match Pairs",
-          tip:
-              "Opposites are everywhere! Like the sun is 'hot' and ice is 'cold'. 🧊",
+          tip: "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊",
         );
       case 'verbs':
         return const GameBriefing(
           title: "Action Time!",
           icon: Icons.directions_run_rounded,
-          objective:
-              "ACTIVE LEARNING: Learn action words like run, jump, and sleep!",
-          rules: ["Do the action", "Watch the buddy", "Match the verb"],
+          objective: "Read the clue on the scoreboard, then drag the correct sports ball to the stadium!",
+          rules: ["Read the action clue", "Find the matching ball", "Drag it to the stadium"],
           actionText: "Get Active",
-          tip: "Can you jump as you hear the word 'jump'? Give it a try! 🏃",
+          tip: "PRO TIP: A verb is something you can DO, like jump or run! 🏃",
         );
       case 'prepositions':
         return const GameBriefing(
           title: "Where is it?",
           icon: Icons.location_on_rounded,
-          objective:
-              "POSITION FINDER: Learn words like in, on, under, and next to!",
-          rules: ["Find the object", "Check the spot", "Learn the position"],
+          objective: "Read the clue on the banner, then drag the correct arrow block to the map!",
+          rules: ["Read the position clue", "Find the matching block", "Drag it to the map"],
           actionText: "Find It",
-          tip:
-              "The cat is 'on' the mat! Can you find something 'under' your chair? 📦",
+          tip: "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦",
         );
       case 'handwriting':
         return const GameBriefing(
           title: "Write and Learn",
           icon: Icons.draw_rounded,
-          objective:
-              "MAGIC PEN: Learn how to write letters perfectly using your magic finger!",
-          rules: ["Trace the letter", "Follow the arrows", "Write it yourself"],
+          objective: "Use your magic finger to trace the letter perfectly on the chalkboard!",
+          rules: ["Look at the arrows", "Trace inside the lines", "Write it yourself"],
           actionText: "Start Writing",
-          tip:
-              "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
+          tip: "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
         );
       case 'routine':
         return const GameBriefing(
           title: "My Daily Day",
           icon: Icons.today_rounded,
-          objective:
-              "DAILY HABITS: Learn about brushing teeth, eating, and sleeping!",
-          rules: ["Follow the day", "Sequence the habits", "Learn the names"],
+          objective: "Read the clue on the clock, then drag the correct routine card to the calendar!",
+          rules: ["Read the routine clue", "Find the matching card", "Drag it to the calendar"],
           actionText: "Start Day",
-          tip: "Having a good routine helps you stay healthy and happy! 🪥",
+          tip: "PRO TIP: Think about what you do when you wake up or go to bed! 🪥",
         );
       case 'phonics':
         return const GameBriefing(
           title: "Sound Master",
           icon: Icons.record_voice_over_rounded,
-          objective:
-              "PHONICS POWER: Master the sounds of different letters and blends!",
-          rules: ["Listen to sound", "Say it clearly", "Match the blend"],
+          objective: "Read the clue on the speaker, then drag the correct sound wave to the amplifier!",
+          rules: ["Read the sound clue", "Find the matching wave", "Drag it to the amplifier"],
           actionText: "Make Sounds",
-          tip:
-              "Phonics is the secret key to reading! Keep practicing your sounds. 🗣️",
+          tip: "PRO TIP: Say the sound out loud to help you find the right match! 🗣️",
         );
       case 'time':
         return const GameBriefing(
           title: "Tick Tock!",
           icon: Icons.access_time_rounded,
-          objective:
-              "TIME TELLER: Learn about morning, afternoon, and the clock!",
-          rules: ["Check the clock", "Follow the sun", "Name the time"],
+          objective: "Read the clue on the chalkboard, then drag the correct digital clock to the smartwatch!",
+          rules: ["Read the time clue", "Find the matching clock", "Drag it to the watch"],
           actionText: "Check Time",
-          tip:
-              "What time is it? The clock tells us when to play and when to eat! ⏰",
+          tip: "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰",
         );
       case 'day_night':
         return const GameBriefing(
           title: "Sun and Moon",
           icon: Icons.brightness_6_rounded,
-          objective:
-              "DAY & NIGHT: Learn about the differences between day and night!",
-          rules: ["Watch the sky", "See the stars", "Match the activity"],
+          objective: "Read the clue on the telescope, then drag the correct sky orb to the window!",
+          rules: ["Read the sky clue", "Find the matching orb", "Drag it to the window"],
           actionText: "Switch Sky",
-          tip: "The sun brings the day, and the moon brings the stars! 🌙",
+          tip: "PRO TIP: Does this happen when it's sunny or dark outside? 🌙",
+        );
+      case 'weather':
+        return const GameBriefing(
+          title: "Sky Explorer",
+          icon: Icons.cloud_rounded,
+          objective: "Read the clue on the billboard, then drag the correct weather cloud to the sky!",
+          rules: ["Read the weather clue", "Find the matching cloud", "Drag it to the sky"],
+          actionText: "Check Sky",
+          tip: "PRO TIP: Think about what you wear when it rains or snows! ☁️",
+        );
+      case 'professions':
+        return const GameBriefing(
+          title: "Community Helpers",
+          icon: Icons.work_rounded,
+          objective: "Read the clue on the building, then drag the correct ID badge to the town board!",
+          rules: ["Read the job clue", "Find the matching badge", "Drag it to the board"],
+          actionText: "Go to Work",
+          tip: "PRO TIP: Think about what this person does to help the town! 👩‍🚒",
         );
       default:
         return null;
