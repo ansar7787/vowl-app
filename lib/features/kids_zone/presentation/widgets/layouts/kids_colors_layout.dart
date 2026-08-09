@@ -306,6 +306,40 @@ class KidsColorsLayout extends StatelessWidget {
 
   Color _getColorFromName(String name, Color fallback) {
     final lower = name.toLowerCase();
+    
+    // Advanced Shades (must check before base colors)
+    if (lower.contains('light blue') || lower.contains('baby blue') || lower.contains('sky blue')) return Colors.lightBlue;
+    if (lower.contains('dark blue') || lower.contains('navy')) return const Color(0xFF000080);
+    if (lower.contains('light green') || lower.contains('mint') || lower.contains('sage')) return Colors.lightGreen;
+    if (lower.contains('dark green') || lower.contains('forest') || lower.contains('olive')) return const Color(0xFF006400);
+    if (lower.contains('dark red') || lower.contains('maroon') || lower.contains('burgundy')) return const Color(0xFF800000);
+    if (lower.contains('light red') || lower.contains('salmon')) return const Color(0xFFFA8072);
+    if (lower.contains('light yellow') || lower.contains('pastel yellow')) return const Color(0xFFFFFACD);
+    if (lower.contains('dark purple') || lower.contains('plum') || lower.contains('eggplant')) return const Color(0xFF4B0082);
+    if (lower.contains('light purple') || lower.contains('lavender') || lower.contains('lilac')) return const Color(0xFFE6E6FA);
+    if (lower.contains('dark brown') || lower.contains('chocolate') || lower.contains('espresso')) return const Color(0xFF3E2723);
+    if (lower.contains('light brown') || lower.contains('tan') || lower.contains('khaki') || lower.contains('beige') || lower.contains('cream') || lower.contains('oatmeal')) return const Color(0xFFD2B48C);
+    if (lower.contains('dark gray') || lower.contains('dark grey') || lower.contains('charcoal')) return const Color(0xFF424242);
+    if (lower.contains('light gray') || lower.contains('light grey') || lower.contains('silver')) return const Color(0xFFBDBDBD);
+    if (lower.contains('hot pink') || lower.contains('neon pink') || lower.contains('fuchsia') || lower.contains('magenta')) return Colors.pinkAccent;
+
+    // Mixed & Tertiary Colors
+    if (lower.contains('teal')) return Colors.teal;
+    if (lower.contains('cyan') || lower.contains('aqua') || lower.contains('turquoise')) return Colors.cyan;
+    if (lower.contains('peach') || lower.contains('coral') || lower.contains('apricot')) return const Color(0xFFFFDAB9);
+    if (lower.contains('gold')) return const Color(0xFFFFD700);
+    if (lower.contains('lime') || lower.contains('chartreuse')) return const Color(0xFF32CD32);
+    if (lower.contains('indigo')) return Colors.indigo;
+
+    // Gemstones & Minerals
+    if (lower.contains('ruby') || lower.contains('garnet') || lower.contains('scarlet') || lower.contains('brick')) return const Color(0xFFB22222);
+    if (lower.contains('emerald') || lower.contains('jade')) return const Color(0xFF50C878);
+    if (lower.contains('sapphire')) return const Color(0xFF0F52BA);
+    if (lower.contains('amethyst')) return const Color(0xFF9966CC);
+    if (lower.contains('topaz') || lower.contains('citrine')) return const Color(0xFFFFC87C);
+    if (lower.contains('onyx') || lower.contains('coal')) return Colors.black87;
+
+    // Base Colors
     if (lower.contains('red')) return Colors.red;
     if (lower.contains('blue')) return Colors.blue;
     if (lower.contains('green')) return Colors.green;
@@ -314,10 +348,12 @@ class KidsColorsLayout extends StatelessWidget {
     if (lower.contains('purple')) return Colors.purple;
     if (lower.contains('pink')) return Colors.pink;
     if (lower.contains('black')) return Colors.black;
-    if (lower.contains('white')) {
-      return const Color(0xFFE4E4E7); // Off-white for visibility
+    if (lower.contains('white') || lower.contains('snow') || lower.contains('pearl')) {
+      return const Color(0xFFE4E4E7); // Off-white for visibility on canvas
     }
     if (lower.contains('brown')) return Colors.brown;
+    if (lower.contains('gray') || lower.contains('grey')) return Colors.grey;
+
     return fallback;
   }
 }
