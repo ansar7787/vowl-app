@@ -266,9 +266,16 @@ class KidsAnimalsLayout extends StatelessWidget {
                   text,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFF451A03), // Very dark wood text
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
+                    shadows: [
+                      Shadow(
+                        color: shadowColor,
+                        offset: const Offset(1, 2),
+                        blurRadius: 2,
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
                 ),
