@@ -130,7 +130,9 @@ class KidsVerbsLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Container(
           width: 280.w,
           height: 180.h,
           decoration: BoxDecoration(
@@ -177,7 +179,7 @@ class KidsVerbsLayout extends StatelessWidget {
               ],
             ),
           ),
-        );
+        ));
       },
     );
   }
