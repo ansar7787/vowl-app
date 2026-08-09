@@ -1465,26 +1465,43 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Alphabet Adventure",
           icon: Icons.abc_rounded,
-          objective: "Tap the mystery box to hear the sound, then drag the correct letter to the chalkboard!",
-          rules: ["Tap to listen closely", "Find the matching block", "Drag it to the board"],
+          objective:
+              "Let's unlock the magic of letters! Tap the mystery box to hear the hidden sound, and stick the correct letter onto the chalkboard.",
+          rules: [
+            "Listen to the phonetic sound",
+            "Find the matching letter",
+            "Place it on the board",
+          ],
           actionText: "Play ABCs",
-          tip: "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
+          tip:
+              "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵",
         );
       case 'animals':
         return const GameBriefing(
           title: "Animal Safari",
           icon: Icons.pets_rounded,
-          objective: "Read the clue on the clipboard, then drag the correct animal tag to the binoculars!",
-          rules: ["Read the animal clue", "Find the matching animal", "Drag it to the binoculars"],
+          objective:
+              "It's safari time! We need to identify the hidden animal. Read the field notes on the clipboard and hand the right tag to the explorer.",
+          rules: [
+            "Read the animal field notes",
+            "Look for hidden clues",
+            "Tag the correct species",
+          ],
           actionText: "Go Safari",
-          tip: "PRO TIP: Think about the sound the animal makes or where it lives! 🦁",
+          tip:
+              "PRO TIP: Think about the sound the animal makes or where it lives! 🦁",
         );
       case 'numbers':
         return const GameBriefing(
           title: "Number Fun",
           icon: Icons.numbers_rounded,
-          objective: "Look through the rocket window to read the number clue, then drag the correct planet to the rocket!",
-          rules: ["Read the rocket clue", "Find the matching planet", "Drag it to the rocket"],
+          objective:
+              "Houston, we are ready for liftoff! Look out the rocket window to read the clues, and lock the matching planet into the ship.",
+          rules: [
+            "Read the space clues",
+            "Find the matching number",
+            "Lock it into the rocket",
+          ],
           actionText: "Start Counting",
           tip: "PRO TIP: Count the items carefully if you need to! 🚀",
         );
@@ -1492,26 +1509,43 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Rainbow World",
           icon: Icons.palette_rounded,
-          objective: "Read the clue on the artist's easel, then drag the correct paint tube to the canvas!",
-          rules: ["Read the color clue", "Find the matching paint", "Drag it to the canvas"],
+          objective:
+              "Time to paint a masterpiece! Look at the easel to see what color we are mixing, and squeeze the right paint tube onto the canvas.",
+          rules: [
+            "Check the requested color",
+            "Find the matching tube",
+            "Squeeze the paint",
+          ],
           actionText: "Paint Colors",
-          tip: "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨",
+          tip:
+              "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨",
         );
       case 'fruits':
         return const GameBriefing(
           title: "Fruit Garden",
           icon: Icons.shopping_basket_rounded,
-          objective: "Read the clue on the wooden sign, then drag the correct fruit to the picnic basket!",
-          rules: ["Read the fruit clue", "Find the matching fruit", "Drag it to the basket"],
+          objective:
+              "Let's harvest some yummy treats! Check the wooden sign to see what fruit we need, and pack it safely into the picnic basket.",
+          rules: [
+            "Identify the fresh fruit",
+            "Pick the matching shape",
+            "Pack it in the basket",
+          ],
           actionText: "Pick Fruits",
-          tip: "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎",
+          tip:
+              "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎",
         );
       case 'shapes':
         return const GameBriefing(
           title: "Shape Explorer",
           icon: Icons.category_rounded,
-          objective: "Read the clue on the notebook, then drag the correct shape block to the desk!",
-          rules: ["Read the shape clue", "Find the matching block", "Drag it to the desk"],
+          objective:
+              "Let's learn about geometry! Look closely at the notebook to see which shape we need, and place the right block on the desk.",
+          rules: [
+            "Count the edges carefully",
+            "Match the silhouette",
+            "Drop the shape in place",
+          ],
           actionText: "Explore Shapes",
           tip: "PRO TIP: Count the corners or edges if you are stuck! 📐",
         );
@@ -1519,8 +1553,13 @@ class GameInstructionService {
         return const GameBriefing(
           title: "My Body",
           icon: Icons.accessibility_new_rounded,
-          objective: "Read the clue on the clipboard, then drag the correct bandage to the medical cross!",
-          rules: ["Read the body clue", "Find the matching part", "Drag the bandage"],
+          objective:
+              "Time for a quick checkup! Read the symptoms on the doctor's clipboard, and place the healing bandage on the correct body part.",
+          rules: [
+            "Read the medical clues",
+            "Identify the body part",
+            "Apply the bandage",
+          ],
           actionText: "Start Learning",
           tip: "PRO TIP: Can you point to that body part on yourself? 🧍",
         );
@@ -1528,62 +1567,103 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Family Tree",
           icon: Icons.family_restroom_rounded,
-          objective: "Read the clue on the banner, then drag the correct portrait to the family tree!",
-          rules: ["Read the family clue", "Find the matching portrait", "Drag it to the tree"],
+          objective:
+              "Let's build our family history! Check the grand banner to see who we are looking for, and hang their portrait on the family tree.",
+          rules: [
+            "Read the family title",
+            "Find the right relative",
+            "Hang the portrait",
+          ],
           actionText: "Meet Family",
-          tip: "PRO TIP: Family words show how people are related, like brother or sister! ❤️",
+          tip:
+              "PRO TIP: Family words show how people are related, like brother or sister! ❤️",
         );
       case 'food_kids':
         return const GameBriefing(
           title: "Yummy Food",
           icon: Icons.restaurant_rounded,
-          objective: "Read the clue on the restaurant menu, then drag the correct food to the plate!",
-          rules: ["Read the food clue", "Find the matching order", "Drag it to the plate"],
+          objective:
+              "Order up! The customers are hungry. Read the order on the restaurant menu, and serve the correct yummy dish onto the plate.",
+          rules: [
+            "Read the hungry order",
+            "Find the tasty dish",
+            "Serve it on the plate",
+          ],
           actionText: "Eat Up",
-          tip: "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛",
+          tip:
+              "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛",
         );
       case 'clothing':
         return const GameBriefing(
           title: "Dress Up",
           icon: Icons.checkroom_rounded,
-          objective: "Read the clue on the mirror, then drag the correct clothing item to the wardrobe!",
-          rules: ["Read the clothes clue", "Find the matching item", "Drag it to the wardrobe"],
+          objective:
+              "Let's get dressed for the day! Look at the mirror to see what the weather is like, and put the perfect outfit into the wardrobe.",
+          rules: [
+            "Check the weather clue",
+            "Pick the right outfit",
+            "Hang it in the closet",
+          ],
           actionText: "Get Dressed",
-          tip: "PRO TIP: Think about what you wear when it's hot or cold outside! 👕",
+          tip:
+              "PRO TIP: Think about what you wear when it's hot or cold outside! 👕",
         );
       case 'nature':
         return const GameBriefing(
           title: "Nature Walk",
           icon: Icons.forest_rounded,
-          objective: "Read the clue on the wooden sign, then drag the correct leaf to the tree stump!",
-          rules: ["Read the nature clue", "Find the matching leaf", "Drag it to the stump"],
+          objective:
+              "Let's go on a wilderness adventure! Read the wooden trail sign, and collect the correct piece of nature on the tree stump.",
+          rules: [
+            "Read the nature guide",
+            "Find the forest item",
+            "Collect it on the stump",
+          ],
           actionText: "Start Walk",
-          tip: "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳",
+          tip:
+              "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳",
         );
       case 'transport':
         return const GameBriefing(
           title: "Zoom Zoom!",
           icon: Icons.directions_car_rounded,
-          objective: "Read the clue on the asphalt, then drag the correct license plate to the intersection!",
-          rules: ["Read the vehicle clue", "Find the matching plate", "Drag it to the road"],
+          objective:
+              "Beep beep! Let's manage the city traffic. Read the directions on the asphalt, and guide the correct vehicle to the intersection.",
+          rules: [
+            "Read the travel clues",
+            "Spot the right vehicle",
+            "Guide it to the road",
+          ],
           actionText: "Start Engine",
-          tip: "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗",
+          tip:
+              "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗",
         );
       case 'emotions':
         return const GameBriefing(
           title: "Feeling Happy",
           icon: Icons.mood_rounded,
-          objective: "Read the clue on the banner, then drag the correct face mask to the stage!",
-          rules: ["Read the feeling clue", "Find the matching face", "Drag it to the stage"],
+          objective:
+              "How are you feeling today? Read the feelings banner, and help the actor put on the correct emotion mask on the stage.",
+          rules: [
+            "Read the feeling word",
+            "Find the matching expression",
+            "Put on the mask",
+          ],
           actionText: "Share Feelings",
-          tip: "PRO TIP: Try making that face in a mirror to see how it feels! 😊",
+          tip:
+              "PRO TIP: Try making that face in a mirror to see how it feels! 😊",
         );
       case 'school':
         return const GameBriefing(
           title: "School Days",
           icon: Icons.school_rounded,
-          objective: "Read the clue on the notepad, then drag the correct school supply to the desk!",
-          rules: ["Read the school clue", "Find the matching tool", "Drag it to the desk"],
+          objective:
+              "Ring ring, time for class! Check the teacher's notepad, and pack the correct school supply onto your desk.",
+          rules: [
+            "Check the supply list",
+            "Find your school tool",
+            "Place it on the desk",
+          ],
           actionText: "Go to School",
           tip: "PRO TIP: Think about what you carry in your backpack! 🎒",
         );
@@ -1591,26 +1671,43 @@ class GameInstructionService {
         return const GameBriefing(
           title: "My Sweet Home",
           icon: Icons.home_rounded,
-          objective: "Read the clue on the blueprint, then drag the correct furniture box to the house!",
-          rules: ["Read the house clue", "Find the matching box", "Drag it to the house"],
+          objective:
+              "Let's decorate our dream house! Read the architect's blueprint, and move the correct piece of furniture into the home.",
+          rules: [
+            "Read the room blueprint",
+            "Find the furniture box",
+            "Move it into the house",
+          ],
           actionText: "Enter House",
-          tip: "PRO TIP: Think about which room you would find this item in! 🏠",
+          tip:
+              "PRO TIP: Think about which room you would find this item in! 🏠",
         );
       case 'opposites':
         return const GameBriefing(
           title: "Big and Small",
           icon: Icons.compare_rounded,
-          objective: "Read the clue on the scale, then drag the correct opposite block to balance it!",
-          rules: ["Read the clue", "Find its opposite", "Drag it to the scale"],
+          objective:
+              "Let's find the perfect balance! Read the clue on the golden scale, and drop the exact opposite word to level it out.",
+          rules: [
+            "Read the starting word",
+            "Think of its total opposite",
+            "Balance the scale",
+          ],
           actionText: "Match Pairs",
-          tip: "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊",
+          tip:
+              "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊",
         );
       case 'verbs':
         return const GameBriefing(
           title: "Action Time!",
           icon: Icons.directions_run_rounded,
-          objective: "Read the clue on the scoreboard, then drag the correct sports ball to the stadium!",
-          rules: ["Read the action clue", "Find the matching ball", "Drag it to the stadium"],
+          objective:
+              "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
+          rules: [
+            "Read the action word",
+            "Find the matching ball",
+            "Throw it in the stadium",
+          ],
           actionText: "Get Active",
           tip: "PRO TIP: A verb is something you can DO, like jump or run! 🏃",
         );
@@ -1618,44 +1715,73 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Where is it?",
           icon: Icons.location_on_rounded,
-          objective: "Read the clue on the banner, then drag the correct arrow block to the map!",
-          rules: ["Read the position clue", "Find the matching block", "Drag it to the map"],
+          objective:
+              "Let's go on a treasure hunt! Read the directional banner, and drop the correct arrow block onto the treasure map.",
+          rules: [
+            "Read the position clue",
+            "Find the matching arrow",
+            "Place it on the map",
+          ],
           actionText: "Find It",
-          tip: "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦",
+          tip:
+              "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦",
         );
       case 'handwriting':
         return const GameBriefing(
           title: "Write and Learn",
           icon: Icons.draw_rounded,
-          objective: "Use your magic finger to trace the letter perfectly on the chalkboard!",
-          rules: ["Look at the arrows", "Trace inside the lines", "Write it yourself"],
+          objective:
+              "Unlock your magic pen! Follow the glowing arrows to trace the letter perfectly on the chalkboard.",
+          rules: [
+            "Follow the glowing arrows",
+            "Trace inside the lines",
+            "Write the letter yourself",
+          ],
           actionText: "Start Writing",
-          tip: "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
+          tip:
+              "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨",
         );
       case 'routine':
         return const GameBriefing(
           title: "My Daily Day",
           icon: Icons.today_rounded,
-          objective: "Read the clue on the clock, then drag the correct routine card to the calendar!",
-          rules: ["Read the routine clue", "Find the matching card", "Drag it to the calendar"],
+          objective:
+              "Let's plan a healthy day! Check the alarm clock to see what time it is, and stick the right daily habit on your calendar.",
+          rules: [
+            "Check the time of day",
+            "Find the healthy habit",
+            "Stick it on the schedule",
+          ],
           actionText: "Start Day",
-          tip: "PRO TIP: Think about what you do when you wake up or go to bed! 🪥",
+          tip:
+              "PRO TIP: Think about what you do when you wake up or go to bed! 🪥",
         );
       case 'phonics':
         return const GameBriefing(
           title: "Sound Master",
           icon: Icons.record_voice_over_rounded,
-          objective: "Read the clue on the speaker, then drag the correct sound wave to the amplifier!",
-          rules: ["Read the sound clue", "Find the matching wave", "Drag it to the amplifier"],
+          objective:
+              "Turn up the volume! Read the phonetic clue on the speaker, and plug the matching sound wave into the amplifier.",
+          rules: [
+            "Read the sound blend",
+            "Find the matching wave",
+            "Plug it into the amp",
+          ],
           actionText: "Make Sounds",
-          tip: "PRO TIP: Say the sound out loud to help you find the right match! 🗣️",
+          tip:
+              "PRO TIP: Say the sound out loud to help you find the right match! 🗣️",
         );
       case 'time':
         return const GameBriefing(
           title: "Tick Tock!",
           icon: Icons.access_time_rounded,
-          objective: "Read the clue on the chalkboard, then drag the correct digital clock to the smartwatch!",
-          rules: ["Read the time clue", "Find the matching clock", "Drag it to the watch"],
+          objective:
+              "Tick tock! Look at the time on the chalkboard, and strap the matching digital clock onto the smartwatch.",
+          rules: [
+            "Read the chalkboard time",
+            "Find the matching digital clock",
+            "Strap it to the watch",
+          ],
           actionText: "Check Time",
           tip: "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰",
         );
@@ -1663,8 +1789,13 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Sun and Moon",
           icon: Icons.brightness_6_rounded,
-          objective: "Read the clue on the telescope, then drag the correct sky orb to the window!",
-          rules: ["Read the sky clue", "Find the matching orb", "Drag it to the window"],
+          objective:
+              "Look up at the sky! Peer through the telescope to read the clue, and switch the window to show the correct time of day.",
+          rules: [
+            "Read the sky clue",
+            "Decide if it's day or night",
+            "Switch the window scene",
+          ],
           actionText: "Switch Sky",
           tip: "PRO TIP: Does this happen when it's sunny or dark outside? 🌙",
         );
@@ -1672,8 +1803,13 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Sky Explorer",
           icon: Icons.cloud_rounded,
-          objective: "Read the clue on the billboard, then drag the correct weather cloud to the sky!",
-          rules: ["Read the weather clue", "Find the matching cloud", "Drag it to the sky"],
+          objective:
+              "Let's become a meteorologist! Read the weather report on the billboard, and float the correct cloud into the sky.",
+          rules: [
+            "Read the weather report",
+            "Find the matching cloud",
+            "Float it into the sky",
+          ],
           actionText: "Check Sky",
           tip: "PRO TIP: Think about what you wear when it rains or snows! ☁️",
         );
@@ -1681,10 +1817,16 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Community Helpers",
           icon: Icons.work_rounded,
-          objective: "Read the clue on the building, then drag the correct ID badge to the town board!",
-          rules: ["Read the job clue", "Find the matching badge", "Drag it to the board"],
+          objective:
+              "Meet our community heroes! Read the job description on the building, and pin the correct worker badge to the town board.",
+          rules: [
+            "Read the job description",
+            "Find the right worker",
+            "Pin their badge",
+          ],
           actionText: "Go to Work",
-          tip: "PRO TIP: Think about what this person does to help the town! 👩‍🚒",
+          tip:
+              "PRO TIP: Think about what this person does to help the town! 👩‍🚒",
         );
       default:
         return null;
