@@ -136,7 +136,9 @@ class KidsPhonicsLayout extends StatelessWidget {
       },
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
-        return Container(
+        return InkWell(
+          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          child: Container(
           width: 280.w,
           height: 200.h,
           decoration: BoxDecoration(
@@ -200,7 +202,7 @@ class KidsPhonicsLayout extends StatelessWidget {
               ),
             ],
           ),
-        );
+        ));
       },
     );
   }
