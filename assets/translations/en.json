@@ -1641,28 +1641,28 @@
   "instructions": {
     "numbers": {
       "title": "Number Fun",
-      "objective": "COUNTING TIME: Look through the rocket window to see the puzzle, then drag the correct planet to the rocket!",
-      "tip": "PRO TIP: Count out loud or tap the rocket window to hear the number! 🚀",
+      "objective": "Houston, we are ready for liftoff! Look out the rocket window to read the clues, and lock the matching planet into the ship.",
+      "rule_0": "Read the space clues",
+      "rule_1": "Find the matching number",
+      "rule_2": "Lock it into the rocket",
       "actionText": "Start Counting",
-      "rule_0": "Look at the rocket window",
-      "rule_1": "Find the matching planet",
-      "rule_2": "Drag it to the rocket"
+      "tip": "PRO TIP: Count the items carefully if you need to! 🚀"
     },
     "alphabet": {
       "title": "Alphabet Adventure",
-      "objective": "LEARN LETTERS: Tap the mystery box to hear the sound, then drag the correct letter to the chalkboard!",
-      "rule_0": "Tap to listen closely",
-      "rule_1": "Find the matching block",
-      "rule_2": "Drag it to the board",
+      "objective": "Let's unlock the magic of letters! Tap the mystery box to hear the hidden sound, and stick the correct letter onto the chalkboard.",
+      "rule_0": "Listen to the phonetic sound",
+      "rule_1": "Find the matching letter",
+      "rule_2": "Place it on the board",
       "actionText": "Play ABCs",
       "tip": "PRO TIP: Listen closely! The phonetic sound will guide you to the right letter. 🎵"
     },
     "handwriting": {
       "title": "Write and Learn",
-      "objective": "MAGIC PEN: Learn how to write letters perfectly using your magic finger!",
-      "rule_0": "Trace the letter",
-      "rule_1": "Follow the arrows",
-      "rule_2": "Write it yourself",
+      "objective": "Unlock your magic pen! Follow the glowing arrows to trace the letter perfectly on the chalkboard.",
+      "rule_0": "Follow the glowing arrows",
+      "rule_1": "Trace inside the lines",
+      "rule_2": "Write the letter yourself",
       "actionText": "Start Writing",
       "tip": "PRO TIP: Take your time and stay inside the lines to unlock the magic! ✨"
     },
@@ -2673,6 +2673,204 @@
       "rule_0": "Listen to the question",
       "rule_1": "Speak confirmation clearly",
       "rule_2": "Be quick and clear"
+    },
+    "animals": {
+      "title": "Animal Safari",
+      "objective": "It's safari time! We need to identify the hidden animal. Read the field notes on the clipboard and hand the right tag to the explorer.",
+      "rule_0": "Read the animal field notes",
+      "rule_1": "Look for hidden clues",
+      "rule_2": "Tag the correct species",
+      "actionText": "Go Safari",
+      "tip": "PRO TIP: Think about the sound the animal makes or where it lives! 🦁"
+    },
+    "colors": {
+      "title": "Rainbow World",
+      "objective": "Time to paint a masterpiece! Look at the easel to see what color we are mixing, and squeeze the right paint tube onto the canvas.",
+      "rule_0": "Check the requested color",
+      "rule_1": "Find the matching tube",
+      "rule_2": "Squeeze the paint",
+      "actionText": "Paint Colors",
+      "tip": "PRO TIP: Colors are everywhere! Think about the color of the sky or grass. 🎨"
+    },
+    "fruits": {
+      "title": "Fruit Garden",
+      "objective": "Let's harvest some yummy treats! Check the wooden sign to see what fruit we need, and pack it safely into the picnic basket.",
+      "rule_0": "Identify the fresh fruit",
+      "rule_1": "Pick the matching shape",
+      "rule_2": "Pack it in the basket",
+      "actionText": "Pick Fruits",
+      "tip": "PRO TIP: Fruits can be sweet or sour. Think about how they taste! 🍎"
+    },
+    "shapes": {
+      "title": "Shape Explorer",
+      "objective": "Let's learn about geometry! Look closely at the notebook to see which shape we need, and place the right block on the desk.",
+      "rule_0": "Count the edges carefully",
+      "rule_1": "Match the silhouette",
+      "rule_2": "Drop the shape in place",
+      "actionText": "Explore Shapes",
+      "tip": "PRO TIP: Count the corners or edges if you are stuck! 📐"
+    },
+    "body_parts": {
+      "title": "My Body",
+      "objective": "Time for a quick checkup! Read the symptoms on the doctor's clipboard, and place the healing bandage on the correct body part.",
+      "rule_0": "Read the medical clues",
+      "rule_1": "Identify the body part",
+      "rule_2": "Apply the bandage",
+      "actionText": "Start Learning",
+      "tip": "PRO TIP: Can you point to that body part on yourself? 🧍"
+    },
+    "family": {
+      "title": "Family Tree",
+      "objective": "Let's build our family history! Check the grand banner to see who we are looking for, and hang their portrait on the family tree.",
+      "rule_0": "Read the family title",
+      "rule_1": "Find the right relative",
+      "rule_2": "Hang the portrait",
+      "actionText": "Meet Family",
+      "tip": "PRO TIP: Family words show how people are related, like brother or sister! ❤️"
+    },
+    "food_kids": {
+      "title": "Yummy Food",
+      "objective": "Order up! The customers are hungry. Read the order on the restaurant menu, and serve the correct yummy dish onto the plate.",
+      "rule_0": "Read the hungry order",
+      "rule_1": "Find the tasty dish",
+      "rule_2": "Serve it on the plate",
+      "actionText": "Eat Up",
+      "tip": "PRO TIP: Think about what you eat for breakfast, lunch, or dinner! 🥛"
+    },
+    "clothing": {
+      "title": "Dress Up",
+      "objective": "Let's get dressed for the day! Look at the mirror to see what the weather is like, and put the perfect outfit into the wardrobe.",
+      "rule_0": "Check the weather clue",
+      "rule_1": "Pick the right outfit",
+      "rule_2": "Hang it in the closet",
+      "actionText": "Get Dressed",
+      "tip": "PRO TIP: Think about what you wear when it's hot or cold outside! 👕"
+    },
+    "nature": {
+      "title": "Nature Walk",
+      "objective": "Let's go on a wilderness adventure! Read the wooden trail sign, and collect the correct piece of nature on the tree stump.",
+      "rule_0": "Read the nature guide",
+      "rule_1": "Find the forest item",
+      "rule_2": "Collect it on the stump",
+      "actionText": "Start Walk",
+      "tip": "PRO TIP: Look outside! Nature is everything that grows and lives outside. 🌳"
+    },
+    "transport": {
+      "title": "Zoom Zoom!",
+      "objective": "Beep beep! Let's manage the city traffic. Read the directions on the asphalt, and guide the correct vehicle to the intersection.",
+      "rule_0": "Read the travel clues",
+      "rule_1": "Spot the right vehicle",
+      "rule_2": "Guide it to the road",
+      "actionText": "Start Engine",
+      "tip": "PRO TIP: Think about whether it goes on land, in the water, or in the sky! 🚗"
+    },
+    "emotions": {
+      "title": "Feeling Happy",
+      "objective": "How are you feeling today? Read the feelings banner, and help the actor put on the correct emotion mask on the stage.",
+      "rule_0": "Read the feeling word",
+      "rule_1": "Find the matching expression",
+      "rule_2": "Put on the mask",
+      "actionText": "Share Feelings",
+      "tip": "PRO TIP: Try making that face in a mirror to see how it feels! 😊"
+    },
+    "school": {
+      "title": "School Days",
+      "objective": "Ring ring, time for class! Check the teacher's notepad, and pack the correct school supply onto your desk.",
+      "rule_0": "Check the supply list",
+      "rule_1": "Find your school tool",
+      "rule_2": "Place it on the desk",
+      "actionText": "Go to School",
+      "tip": "PRO TIP: Think about what you carry in your backpack! 🎒"
+    },
+    "home_kids": {
+      "title": "My Sweet Home",
+      "objective": "Let's decorate our dream house! Read the architect's blueprint, and move the correct piece of furniture into the home.",
+      "rule_0": "Read the room blueprint",
+      "rule_1": "Find the furniture box",
+      "rule_2": "Move it into the house",
+      "actionText": "Enter House",
+      "tip": "PRO TIP: Think about which room you would find this item in! 🏠"
+    },
+    "opposites": {
+      "title": "Big and Small",
+      "objective": "Let's find the perfect balance! Read the clue on the golden scale, and drop the exact opposite word to level it out.",
+      "rule_0": "Read the starting word",
+      "rule_1": "Think of its total opposite",
+      "rule_2": "Balance the scale",
+      "actionText": "Match Pairs",
+      "tip": "PRO TIP: Opposites are totally different, like Hot and Cold! 🧊"
+    },
+    "verbs": {
+      "title": "Action Time!",
+      "objective": "Get ready for the big game! Look at the jumbotron scoreboard, and throw the correct action-word sports ball into the stadium.",
+      "rule_0": "Read the action word",
+      "rule_1": "Find the matching ball",
+      "rule_2": "Throw it in the stadium",
+      "actionText": "Get Active",
+      "tip": "PRO TIP: A verb is something you can DO, like jump or run! 🏃"
+    },
+    "prepositions": {
+      "title": "Where is it?",
+      "objective": "Let's go on a treasure hunt! Read the directional banner, and drop the correct arrow block onto the treasure map.",
+      "rule_0": "Read the position clue",
+      "rule_1": "Find the matching arrow",
+      "rule_2": "Place it on the map",
+      "actionText": "Find It",
+      "tip": "PRO TIP: Think about where things are placed, like IN a box or ON a table! 📦"
+    },
+    "routine": {
+      "title": "My Daily Day",
+      "objective": "Let's plan a healthy day! Check the alarm clock to see what time it is, and stick the right daily habit on your calendar.",
+      "rule_0": "Check the time of day",
+      "rule_1": "Find the healthy habit",
+      "rule_2": "Stick it on the schedule",
+      "actionText": "Start Day",
+      "tip": "PRO TIP: Think about what you do when you wake up or go to bed! 🪥"
+    },
+    "phonics": {
+      "title": "Sound Master",
+      "objective": "Turn up the volume! Read the phonetic clue on the speaker, and plug the matching sound wave into the amplifier.",
+      "rule_0": "Read the sound blend",
+      "rule_1": "Find the matching wave",
+      "rule_2": "Plug it into the amp",
+      "actionText": "Make Sounds",
+      "tip": "PRO TIP: Say the sound out loud to help you find the right match! 🗣️"
+    },
+    "time": {
+      "title": "Tick Tock!",
+      "objective": "Tick tock! Look at the time on the chalkboard, and strap the matching digital clock onto the smartwatch.",
+      "rule_0": "Read the chalkboard time",
+      "rule_1": "Find the matching digital clock",
+      "rule_2": "Strap it to the watch",
+      "actionText": "Check Time",
+      "tip": "PRO TIP: Remember, 12:00 can be noon or midnight! ⏰"
+    },
+    "day_night": {
+      "title": "Sun and Moon",
+      "objective": "Look up at the sky! Peer through the telescope to read the clue, and switch the window to show the correct time of day.",
+      "rule_0": "Read the sky clue",
+      "rule_1": "Decide if it's day or night",
+      "rule_2": "Switch the window scene",
+      "actionText": "Switch Sky",
+      "tip": "PRO TIP: Does this happen when it's sunny or dark outside? 🌙"
+    },
+    "weather": {
+      "title": "Sky Explorer",
+      "objective": "Let's become a meteorologist! Read the weather report on the billboard, and float the correct cloud into the sky.",
+      "rule_0": "Read the weather report",
+      "rule_1": "Find the matching cloud",
+      "rule_2": "Float it into the sky",
+      "actionText": "Check Sky",
+      "tip": "PRO TIP: Think about what you wear when it rains or snows! ☁️"
+    },
+    "professions": {
+      "title": "Community Helpers",
+      "objective": "Meet our community heroes! Read the job description on the building, and pin the correct worker badge to the town board.",
+      "rule_0": "Read the job description",
+      "rule_1": "Find the right worker",
+      "rule_2": "Pin their badge",
+      "actionText": "Go to Work",
+      "tip": "PRO TIP: Think about what this person does to help the town! 👩‍🚒"
     }
   },
   "economy": {
