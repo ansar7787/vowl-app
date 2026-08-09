@@ -426,19 +426,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         } else if (state.lastAnswerCorrect == null) {
           displayMessage = state.currentQuest.instruction;
 
-          // Close the visual loophole in the Alphabet game!
-          // If the instruction is "Find the uppercase letter H" and the answer is "H",
-          // we replace the 'H' with a blank so they can't just visually match it.
-          if (widget.gameType == 'alphabet' &&
-              state.currentQuest.correctAnswer != null) {
-            final answer = state.currentQuest.correctAnswer!;
-            // Use regex to replace the exact letter only when it's a standalone word
-            final regex = RegExp(
-              r'\b' + RegExp.escape(answer) + r'\b',
-              caseSensitive: true,
-            );
-            displayMessage = displayMessage.replaceAll(regex, "___");
-          }
+          // The data layer now safely ensures the target letter is never printed
+          // directly in the instruction, eliminating the need for regex dash replacement.
         } else {
           // Hide message during feedback overlay
           displayMessage = "";
