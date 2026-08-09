@@ -198,6 +198,7 @@ class KidsColorsLayout extends StatelessWidget {
         // The Tube
         Container(
           height: 90.h,
+          width: 75.w, // Fixed width prevents infinite constraint crash in Draggable feedback
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
