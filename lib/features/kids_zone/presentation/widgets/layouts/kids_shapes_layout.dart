@@ -130,48 +130,57 @@ class KidsShapesLayout extends StatelessWidget {
               color: const Color(0xFF52525B), // Steel cable
             ),
             // The Blueprint Paper
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF3B82F6)
-                    : const Color(
-                        0xFF1E3A8A,
-                      ), // Blueprint Blue (lighter when hovering)
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(
-                  color: isHovering ? Colors.yellowAccent : Colors.white,
-                  width: 4,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.15),
-                    blurRadius: 10,
-                    offset: const Offset(0, 8),
+            InkWell(
+              onTap: state.lastAnswerCorrect != null
+                  ? null
+                  : () {
+                      if (quest.instruction != null) {
+                        di.sl<KidsTTSService>().speak(quest.instruction!);
+                      }
+                    },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 280.w,
+                height: 200.h,
+                decoration: BoxDecoration(
+                  color: isHovering
+                      ? const Color(0xFF3B82F6)
+                      : const Color(
+                          0xFF1E3A8A,
+                        ), // Blueprint Blue (lighter when hovering)
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: isHovering ? Colors.yellowAccent : Colors.white,
+                    width: 4,
                   ),
-                ],
-              ),
-              child: Stack(
-                children: [
-                  // Grid pattern for blueprint
-                  Positioned.fill(
-                    child: CustomPaint(painter: _BlueprintGridPainter()),
-                  ),
-                  Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if (quest.emoji != null)
-                          Text(
-                            quest.emoji!,
-                            style: TextStyle(fontSize: 64.sp),
-                          ), // Enlarge emoji since question is removed
-                      ],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.15),
+                      blurRadius: 10,
+                      offset: const Offset(0, 8),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    // Grid pattern for blueprint
+                    Positioned.fill(
+                      child: CustomPaint(painter: _BlueprintGridPainter()),
+                    ),
+                    Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.emoji != null)
+                            Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 64.sp),
+                            ), // Enlarge emoji since question is removed
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
