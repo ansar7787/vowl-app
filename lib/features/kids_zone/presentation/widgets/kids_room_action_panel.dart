@@ -8,7 +8,7 @@ class KidsRoomActionPanel extends StatelessWidget {
   final VoidCallback onFeed;
   final VoidCallback onSleepToggle;
   final VoidCallback onTalk;
-  final VoidCallback onThemeCycle;
+  final VoidCallback onThemeTap;
 
   const KidsRoomActionPanel({
     super.key,
@@ -17,7 +17,7 @@ class KidsRoomActionPanel extends StatelessWidget {
     required this.onFeed,
     required this.onSleepToggle,
     required this.onTalk,
-    required this.onThemeCycle,
+    required this.onThemeTap,
   });
 
   @override
@@ -80,7 +80,7 @@ class KidsRoomActionPanel extends StatelessWidget {
               "Theme",
               "✨",
               Colors.teal,
-              onThemeCycle,
+              onThemeTap,
             ),
           ),
         ],

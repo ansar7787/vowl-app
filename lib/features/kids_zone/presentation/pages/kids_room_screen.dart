@@ -26,6 +26,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_action_pa
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_exit_dialog.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_decor_sheet.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_food_sheet.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_theme_sheet.dart';
 
 class KidsRoomScreen extends StatefulWidget {
   const KidsRoomScreen({super.key});
@@ -36,7 +37,6 @@ class KidsRoomScreen extends StatefulWidget {
 
 class _KidsRoomScreenState extends State<KidsRoomScreen> {
   String _currentTheme = 'nature';
-  final List<String> _themes = ['nature', 'space', 'ocean', 'sweet'];
   bool _isFeeding = false;
   String _currentFood = "🍎";
   bool _isTalking = false;
@@ -116,22 +116,30 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     });
   }
 
-  void _cycleTheme() {
-    setState(() {
-      final index = _themes.indexOf(_currentTheme);
-      _currentTheme = _themes[(index + 1) % _themes.length];
+  void _showThemeMenu(BuildContext context, UserEntity user) {
+    KidsRoomThemeSheet.show(
+      context,
+      user: user,
+      currentTheme: _currentTheme,
+      onThemeSelected: (theme) {
+        setState(() {
+          _currentTheme = theme;
 
-      if (_currentTheme == 'space') {
-        _weather = 'starry';
-      } else if (_currentTheme == 'ocean') {
-        _weather = 'rainy';
-      } else if (_currentTheme == 'sweet') {
-        _weather = 'party';
-      } else {
-        _weather = 'sunny';
-      }
-    });
-    di.sl<SoundService>().playClick();
+          if (_currentTheme == 'space') {
+            _weather = 'starry';
+          } else if (_currentTheme == 'ocean') {
+            _weather = 'rainy';
+          } else if (_currentTheme == 'sweet') {
+            _weather = 'party';
+          } else {
+            _weather = 'sunny';
+          }
+        });
+        di.sl<SoundService>().playClick();
+        Navigator.pop(context);
+        _speak("Ooh, I love this theme!");
+      },
+    );
   }
 
   void _addHappiness(double amount, UserEntity user) {
@@ -206,7 +214,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                               );
                               _addHappiness(0.02, user);
                             },
-                            onThemeCycle: _cycleTheme,
+                            onThemeTap: () => _showThemeMenu(context, user),
                           ),
                         ],
                       ),
@@ -331,11 +339,20 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     return Stack(
       children: [
         Positioned.fill(
-          child: KidsBackgroundRenderer(
-            painterName: painterName,
-            gameType: 'room',
-            shaderName: _weather == 'starry' ? 'star_field' : 'magic_twinkle',
-            primaryColor: _themeColors[_currentTheme]!,
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 800),
+            switchInCurve: Curves.easeInOut,
+            switchOutCurve: Curves.easeInOut,
+            transitionBuilder: (Widget child, Animation<double> animation) {
+              return FadeTransition(opacity: animation, child: child);
+            },
+            child: KidsBackgroundRenderer(
+              key: ValueKey(painterName), // VERY IMPORTANT FOR ANIMATED SWITCHER
+              painterName: painterName,
+              gameType: 'room',
+              shaderName: _weather == 'starry' ? 'star_field' : 'magic_twinkle',
+              primaryColor: _themeColors[_currentTheme]!,
+            ),
           ),
         ),
 
