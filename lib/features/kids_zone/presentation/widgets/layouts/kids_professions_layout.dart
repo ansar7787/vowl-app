@@ -8,7 +8,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
-/// City Theme for Professions Game
+/// Immersive Storefront Theme for Professions Game
 class KidsProfessionsLayout extends StatelessWidget {
   final int level;
   final String title;
@@ -35,16 +35,16 @@ class KidsProfessionsLayout extends StatelessWidget {
         return Column(
           children: [
             SizedBox(height: 60.h),
-            // The Town Hall Board
+            // The Shop Storefront (Target)
             Expanded(
               flex: 6,
-              child: Center(child: _buildTownHallBoard(context, state, quest)),
+              child: Center(child: _buildCareerStorefront(context, state, quest)),
             ),
             SizedBox(height: 24.h),
             KidsFittedText(
               context.tr(
                 'games.kids_professions_drag',
-                fallback: 'Drag the ID badge to the town board! ✨',
+                fallback: 'Drag the clipboard to the shop! ✨',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -58,26 +58,23 @@ class KidsProfessionsLayout extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 16.h),
-            // The Professional ID Badges (Options)
+            // The Job Clipboards (Options)
             Flexible(
               flex: 4,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 16.w,
+                  runSpacing: 16.h,
                   children: List.generate(quest.options?.length ?? 0, (index) {
                     final option = quest.options![index];
-                    return Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 4.w),
-                        child: _buildIdBadge(
-                          context,
-                          state,
-                          option,
-                          quest.correctAnswer == option,
-                        ),
-                      ),
+                    return _buildClipboardOption(
+                      context,
+                      state,
+                      option,
+                      quest.correctAnswer == option,
+                      index,
                     );
                   }),
                 ),
@@ -89,7 +86,7 @@ class KidsProfessionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildTownHallBoard(
+  Widget _buildCareerStorefront(
     BuildContext context,
     KidsLoaded state,
     dynamic quest,
@@ -113,81 +110,124 @@ class KidsProfessionsLayout extends StatelessWidget {
                     di.sl<KidsTTSService>().speak(quest.instruction!);
                   }
                 },
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 200),
+          child: Container(
             width: 320.w,
-            padding: EdgeInsets.all(24.r),
+            height: 260.h,
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: isHovering
-                    ? [const Color(0xFFC7D2FE), const Color(0xFF818CF8)]
-                    : [const Color(0xFFEEF2FF), const Color(0xFFE0E7FF)],
-              ),
-              borderRadius: BorderRadius.circular(
-                20.r,
-              ), // Blocky, building shape
+              color: const Color(0xFFFDE047), // Yellow building
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering
-                    ? Colors.yellowAccent
-                    : const Color(0xFF818CF8),
-                width: 6,
+                color: isHovering ? Colors.white : const Color(0xFFCA8A04),
+                width: isHovering ? 8 : 6,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF4F46E5).withValues(alpha: 0.15),
+                  color: Colors.black.withValues(alpha: 0.2),
                   blurRadius: 15,
                   offset: const Offset(0, 10),
                 ),
               ],
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+            child: Stack(
               children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    if (quest.emoji != null &&
-                        (quest.question == "?" || quest.question == null))
-                      state.lastAnswerCorrect == true
-                          ? Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 80.sp),
-                            )
-                          : ColorFiltered(
-                              colorFilter: ColorFilter.mode(
-                                const Color(0xFF312E81).withValues(alpha: 0.3),
-                                BlendMode.srcIn,
-                              ),
-                              child: Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              ),
+                // Striped Awning at the top
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    children: List.generate(8, (index) {
+                      return Expanded(
+                        child: Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(
+                            color: index % 2 == 0 ? const Color(0xFFEF4444) : Colors.white,
+                            borderRadius: BorderRadius.vertical(
+                              bottom: Radius.circular(16.r),
                             ),
-                    if (state.lastAnswerCorrect != true ||
-                        (quest.question != "?" && quest.question != null))
-                      KidsFittedText(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize:
-                              (quest.question == "?" || quest.question == null)
-                              ? 70.sp
-                              : 40.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFF312E81).withValues(
-                            alpha:
-                                (quest.question == "?" ||
-                                    quest.question == null)
-                                ? 0.7
-                                : 1.0,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.2),
+                                offset: const Offset(0, 4),
+                              ),
+                            ],
                           ),
                         ),
-                        textAlign: TextAlign.center,
-                        maxLines: 6,
-                      ),
-                  ],
+                      );
+                    }),
+                  ),
+                ),
+                // The Shop Window
+                Positioned(
+                  top: 60.h,
+                  left: 30.w,
+                  right: 30.w,
+                  bottom: 20.h,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFDBEAFE), // Glass blue
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: const Color(0xFF93C5FD), width: 4),
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        // Glass glare effect
+                        Positioned(
+                          top: 10.h,
+                          left: 10.w,
+                          child: Container(
+                            width: 60.w,
+                            height: 15.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.5),
+                              borderRadius: BorderRadius.circular(5.r),
+                            ),
+                          ),
+                        ),
+                        // The emoji / question mark
+                        if (quest.emoji != null &&
+                            (quest.question == "?" || quest.question == null))
+                          state.lastAnswerCorrect == true
+                              ? Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                )
+                              : ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    const Color(0xFF1E40AF).withValues(alpha: 0.3),
+                                    BlendMode.srcIn,
+                                  ),
+                                  child: Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  ),
+                                ),
+                        if (state.lastAnswerCorrect != true ||
+                            (quest.question != "?" && quest.question != null))
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: KidsFittedText(
+                              quest.question ?? "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize:
+                                    (quest.question == "?" || quest.question == null)
+                                    ? 80.sp
+                                    : 32.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFF1E3A8A).withValues(
+                                  alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0,
+                                ),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 6,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -197,63 +237,88 @@ class KidsProfessionsLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildIdBadge(
+  Widget _buildClipboardOption(
     BuildContext context,
     KidsLoaded state,
     String text,
     bool isCorrect,
+    int index,
   ) {
-    final badgeWidget = Container(
-      width: 90.w,
-      height: 110.h,
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.white,
-            Color(0xFFEEF2FF), // Slight indigo tint at the bottom of the badge
-          ],
-        ),
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          color: const Color(0xFF4F46E5),
-          width: 3,
-        ), // Indigo 600
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF4F46E5).withValues(alpha: 0.2),
-            blurRadius: 4,
-            offset: const Offset(0, 6),
-          ),
-        ],
-      ),
-      child: Column(
+    final clipboardWidget = SizedBox(
+      width: 100.w,
+      height: 130.h,
+      child: Stack(
+        alignment: Alignment.topCenter,
         children: [
-          // Badge hole punch
-          Container(
-            width: 20.w,
-            height: 6.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFFE0E7FF),
-              borderRadius: BorderRadius.circular(4.r),
+          // The wooden board
+          Positioned(
+            top: 10.h,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0xFFB45309), // Dark Wood
+                borderRadius: BorderRadius.circular(8.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    offset: const Offset(0, 6),
+                  ),
+                ],
+              ),
             ),
           ),
-          SizedBox(height: 8.h),
-          Expanded(
-            child: Center(
-              child: KidsFittedText(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xFF312E81),
-                  height: 1.1,
+          // The white paper
+          Positioned(
+            top: 25.h,
+            bottom: 10.h,
+            left: 10.w,
+            right: 10.w,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(4.r),
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.w),
+                  child: KidsFittedText(
+                    text,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF1E293B),
+                      height: 1.1,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 3,
+                  ),
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 3,
+              ),
+            ),
+          ),
+          // The silver clip
+          Positioned(
+            top: 0,
+            child: Container(
+              width: 40.w,
+              height: 20.h,
+              decoration: BoxDecoration(
+                color: const Color(0xFF94A3B8), // Silver metal
+                borderRadius: BorderRadius.circular(6.r),
+                border: Border.all(color: const Color(0xFF475569), width: 2),
+              ),
+              child: Center(
+                child: Container(
+                  width: 20.w,
+                  height: 4.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF334155),
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
               ),
             ),
           ),
@@ -267,11 +332,11 @@ class KidsProfessionsLayout extends StatelessWidget {
         color: Colors.transparent,
         child: Transform.scale(
           scale: 1.05,
-          child: Opacity(opacity: 0.9, child: badgeWidget),
+          child: Opacity(opacity: 0.9, child: clipboardWidget),
         ),
       ),
-      childWhenDragging: Opacity(opacity: 0.3, child: badgeWidget),
-      child: badgeWidget,
+      childWhenDragging: Opacity(opacity: 0.3, child: clipboardWidget),
+      child: clipboardWidget,
     );
   }
 }

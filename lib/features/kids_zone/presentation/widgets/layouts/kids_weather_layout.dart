@@ -8,7 +8,7 @@ import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 
-/// Sky Theme for Weather Game
+/// Immersive Sky Window Theme for Weather Game
 class KidsWeatherLayout extends StatelessWidget {
   final int level;
   final String title;
@@ -35,10 +35,10 @@ class KidsWeatherLayout extends StatelessWidget {
         return Column(
           children: [
             SizedBox(height: 60.h),
-            // The Sky Billboard
+            // The Weather Window (Target)
             Expanded(
               flex: 6,
-              child: Center(child: _buildSkyBillboard(context, state, quest)),
+              child: Center(child: _buildWeatherWindow(context, state, quest)),
             ),
             SizedBox(height: 24.h),
             KidsFittedText(
@@ -85,7 +85,7 @@ class KidsWeatherLayout extends StatelessWidget {
     );
   }
 
-  Widget _buildSkyBillboard(
+  Widget _buildWeatherWindow(
     BuildContext context,
     KidsLoaded state,
     dynamic quest,
@@ -111,85 +111,143 @@ class KidsWeatherLayout extends StatelessWidget {
                 },
           child: Container(
             width: 320.w,
-            padding: EdgeInsets.all(24.r),
+            height: 240.h,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  isHovering
-                      ? const Color(0xFFE0F2FE)
-                      : const Color(0xFFF0F9FF), // Sky 50
-                  isHovering
-                      ? const Color(0xFFBAE6FD)
-                      : const Color(0xFFE0F2FE), // Sky 100
-                ],
-              ),
-              borderRadius: BorderRadius.circular(32.r),
+              color: const Color(0xFF8B5A2B), // Wooden brown outer frame
+              borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isHovering
-                    ? const Color(0xFF38BDF8)
-                    : const Color(0xFFBAE6FD),
-                width: isHovering ? 6 : 4,
+                color: isHovering ? Colors.yellow : const Color(0xFF5C3A21),
+                width: isHovering ? 8 : 6,
               ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(
-                    0xFF38BDF8,
-                  ).withValues(alpha: isHovering ? 0.4 : 0.2),
-                  blurRadius: isHovering ? 25 : 15,
-                  offset: const Offset(0, 8),
+                  color: Colors.black.withValues(alpha: 0.3),
+                  blurRadius: 15,
+                  offset: const Offset(0, 10),
                 ),
               ],
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    if (quest.emoji != null &&
-                        (quest.question == "?" || quest.question == null))
-                      state.lastAnswerCorrect == true
-                          ? Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 80.sp),
-                            )
-                          : ColorFiltered(
-                              colorFilter: ColorFilter.mode(
-                                const Color(0xFF0369A1).withValues(alpha: 0.3),
-                                BlendMode.srcIn,
-                              ),
-                              child: Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              ),
-                            ),
-                    if (state.lastAnswerCorrect != true ||
-                        (quest.question != "?" && quest.question != null))
-                      KidsFittedText(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize:
-                              (quest.question == "?" || quest.question == null)
-                              ? 70.sp
-                              : 32.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFF0369A1).withValues(
-                            alpha:
-                                (quest.question == "?" ||
-                                    quest.question == null)
-                                ? 0.7
-                                : 1.0,
-                          ),
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 6,
-                      ),
+            child: Container(
+              margin: EdgeInsets.all(12.r),
+              clipBehavior: Clip.hardEdge,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xFF87CEEB), // Sky blue
+                    Color(0xFFE0F6FF), // Lighter sky
                   ],
                 ),
-              ],
+              ),
+              child: Stack(
+                children: [
+                  // Window crossbars
+                  Center(
+                    child: Container(
+                      width: double.infinity,
+                      height: 8.h,
+                      color: const Color(0xFF8B5A2B),
+                    ),
+                  ),
+                  Center(
+                    child: Container(
+                      width: 8.w,
+                      height: double.infinity,
+                      color: const Color(0xFF8B5A2B),
+                    ),
+                  ),
+                  // Curtains
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Container(
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEF4444), // Red curtains
+                        borderRadius: BorderRadius.horizontal(
+                          right: Radius.circular(30.r),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 4,
+                            offset: const Offset(2, 0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Container(
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFEF4444), // Red curtains
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(30.r),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 4,
+                            offset: const Offset(-2, 0),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // The riddle / emoji
+                  Center(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (quest.emoji != null &&
+                            (quest.question == "?" || quest.question == null))
+                          state.lastAnswerCorrect == true
+                              ? Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                )
+                              : ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    const Color(0xFF0369A1).withValues(alpha: 0.4),
+                                    BlendMode.srcIn,
+                                  ),
+                                  child: Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  ),
+                                ),
+                        if (state.lastAnswerCorrect != true ||
+                            (quest.question != "?" && quest.question != null))
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: KidsFittedText(
+                              quest.question ?? "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize:
+                                    (quest.question == "?" || quest.question == null)
+                                    ? 80.sp
+                                    : 32.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFF0C4A6E).withValues(
+                                  alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0,
+                                ),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 6,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -203,41 +261,77 @@ class KidsWeatherLayout extends StatelessWidget {
     String text,
     bool isCorrect,
   ) {
-    final cloudWidget = Container(
-      width: 120.w,
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 12.w),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.white,
-            Color(0xFFF0F9FF), // Very soft blue at bottom of cloud
-          ],
-        ),
-        borderRadius: BorderRadius.circular(40.r), // Cloud-like pill shape
-        border: Border.all(color: const Color(0xFFE0F2FE), width: 3),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF7DD3FC).withValues(alpha: 0.3),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
+    final cloudWidget = SizedBox(
+      width: 140.w,
+      height: 90.h,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Base pill (Bottom of cloud)
+          Positioned(
+            bottom: 10.h,
+            child: Container(
+              width: 130.w,
+              height: 50.h,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF93C5FD).withValues(alpha: 0.5),
+                    offset: const Offset(0, 6),
+                    blurRadius: 0, // Hard shadow for cartoon style
+                  )
+                ],
+              ),
+            ),
           ),
-        ],
-      ),
-      child: Center(
+          // Top left puff
+          Positioned(
+            left: 20.w,
+            bottom: 25.h,
+            child: Container(
+              width: 50.w,
+              height: 50.w,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          // Top right puff
+          Positioned(
+            right: 25.w,
+            bottom: 20.h,
+            child: Container(
+              width: 60.w,
+              height: 60.w,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          // Text on top
+          Positioned(
+            bottom: 22.h,
+            child: SizedBox(
+              width: 110.w,
               child: KidsFittedText(
                 text,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w800,
                   color: const Color(0xFF0369A1),
                   height: 1.1,
                 ),
                 textAlign: TextAlign.center,
-                maxLines: 3,
+                maxLines: 2,
               ),
+            ),
+          ),
+        ],
       ),
     );
 
