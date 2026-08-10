@@ -188,6 +188,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                         maxLines: 6,
                       ),
                   ],
+                ),
               ],
             ),
           ),

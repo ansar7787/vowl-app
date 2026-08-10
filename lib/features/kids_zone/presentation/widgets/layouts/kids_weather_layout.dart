@@ -188,6 +188,7 @@ class KidsWeatherLayout extends StatelessWidget {
                         maxLines: 6,
                       ),
                   ],
+                ),
               ],
             ),
           ),
