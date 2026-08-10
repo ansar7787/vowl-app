@@ -176,36 +176,56 @@ class KidsTransportLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.emoji != null)
-                        state.lastAnswerCorrect == true
-                            ? Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 80.sp),
-                              )
-                            : ColorFiltered(
-                                colorFilter: ColorFilter.mode(
-                                  const Color(
-                                    0xFF166534,
-                                  ).withValues(alpha: 0.15),
-                                  BlendMode.srcIn,
-                                ),
-                                child: Text(
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        if (quest.emoji != null &&
+                            (quest.question == "?" || quest.question == null))
+                          state.lastAnswerCorrect == true
+                              ? Text(
                                   quest.emoji!,
                                   style: TextStyle(fontSize: 80.sp),
+                                )
+                              : ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    const Color(
+                                      0xFF166534,
+                                    ).withValues(alpha: 0.4),
+                                    BlendMode.srcIn,
+                                  ),
+                                  child: Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  ),
+                                ),
+                        if (state.lastAnswerCorrect != true ||
+                            (quest.question != "?" && quest.question != null))
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 16.w),
+                            child: KidsFittedText(
+                              quest.question ?? "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize:
+                                    (quest.question == "?" ||
+                                        quest.question == null)
+                                    ? 70.sp
+                                    : 24.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white.withValues(
+                                  alpha:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 0.7
+                                      : 1.0,
                                 ),
                               ),
-                      if (quest.emoji == null)
-                        KidsFittedText(
-                          "?",
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 80.sp,
-                            fontWeight: FontWeight.w900,
-                            color: const Color(
-                              0xFF166534,
-                            ).withValues(alpha: 0.3),
+                              textAlign: TextAlign.center,
+                              maxLines: 6,
+                            ),
                           ),
-                        ),
+                      ],
+                    ),
                     ],
                   ),
                 ),
@@ -270,14 +290,13 @@ class KidsTransportLayout extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    text.toUpperCase(),
+                    text,
                     style: TextStyle(
                       fontFamily:
                           'Outfit', // A rigid font looks more like a license plate
-                      fontSize: 18.sp,
+                      fontSize: 40.sp,
                       fontWeight: FontWeight.w700,
                       color: const Color(0xFF0F172A),
-                      letterSpacing: 1.5,
                     ),
                     textAlign: TextAlign.center,
                   ),
