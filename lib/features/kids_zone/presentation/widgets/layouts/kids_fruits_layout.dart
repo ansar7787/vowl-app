@@ -36,17 +36,17 @@ class KidsFruitsLayout extends StatelessWidget {
 
         return Column(
           children: [
-            SizedBox(height: 120.h),
+            SizedBox(height: 80.h),
             // The Fruit Stand Awning
             Expanded(
               flex: 5,
               child: Center(child: _buildAwningFrame(context, state, quest)),
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 32.h),
             KidsFittedText(
               context.tr(
                 'games.kids_fruits_drag',
-                fallback: 'Drag the fruit to the stand! ✨',
+                fallback: 'Drag the correct fruit to the stand! 🧺',
               ),
               style: TextStyle(
                 fontFamily: 'Outfit',
@@ -59,7 +59,7 @@ class KidsFruitsLayout extends StatelessWidget {
               maxLines: 2,
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 32.h),
             // Wicker Baskets for Options
             Flexible(
               flex: 5,
@@ -147,27 +147,33 @@ class KidsFruitsLayout extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           if (quest.emoji != null && (quest.question == "?" || quest.question == null))
-                            ColorFiltered(
-                              colorFilter: ColorFilter.mode(
-                                const Color(0xFF78350F).withValues(alpha: 0.15),
-                                BlendMode.srcIn,
+                            state.lastAnswerCorrect == true
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 100.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(0xFF78350F).withValues(alpha: 0.15),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 100.sp),
+                                    ),
+                                  ),
+                          if (state.lastAnswerCorrect != true || (quest.question != "?" && quest.question != null))
+                            KidsFittedText(
+                              quest.question ?? "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFF78350F).withValues(alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
                               ),
-                              child: Text(
-                                quest.emoji!,
-                                style: TextStyle(fontSize: 100.sp),
-                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 4,
                             ),
-                          KidsFittedText(
-                            quest.question ?? "?",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
-                              fontWeight: FontWeight.w900,
-                              color: const Color(0xFF78350F).withValues(alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
-                            ),
-                            textAlign: TextAlign.center,
-                            maxLines: 4,
-                          ),
                         ],
                       ),
                     ),
@@ -230,22 +236,26 @@ class KidsFruitsLayout extends StatelessWidget {
         Positioned(
           top: -20.h,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            constraints: BoxConstraints(maxWidth: 90.w),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(4.r),
               border: Border.all(color: const Color(0xFF92400E), width: 1),
             ),
+            alignment: Alignment.center,
             child: FittedBox(
               fit: BoxFit.scaleDown,
+              alignment: Alignment.center,
               child: Text(
-                text,
+                text.trim(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF451A03),
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
           ),
