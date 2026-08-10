@@ -47,9 +47,6 @@ class GameFeedbackCard extends StatelessWidget {
   /// Optional: required points for an answer (used in writing games).
   final List<String>? requiredPoints;
 
-  /// Optional: a fun fact to reward the user.
-  final String? funFact;
-
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
@@ -64,7 +61,6 @@ class GameFeedbackCard extends StatelessWidget {
     this.ruleContent,
     this.sampleAnswer,
     this.requiredPoints,
-    this.funFact,
   });
 
   static const _successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
@@ -159,21 +155,7 @@ class GameFeedbackCard extends StatelessWidget {
                   ),
                 ],
 
-                if (showEducationalInfo &&
-                    funFact != null &&
-                    funFact!.isNotEmpty) ...[
-                  SizedBox(height: 16.h),
-                  PedagogicalRuleBox(
-                    icon: Icons.lightbulb_rounded,
-                    capsKey: 'games.fun_fact_caps',
-                    capsFallback: 'FUN FACT',
-                    titleKey: 'games.fun_fact',
-                    titleFallback: 'Fun Fact',
-                    rule: funFact!,
-                    shadowColor: shadowColor,
-                    isDark: isDark,
-                  ),
-                ],
+
 
                 if (showEducationalInfo &&
                     sampleAnswer != null &&
@@ -396,13 +378,14 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                     ),
                 ],
               ),
-              SizedBox(height: 4.h),
+              SizedBox(height: 8.h),
               Text(
                 displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  height: 1.4,
                   color: widget.isDark ? Colors.white : Colors.black87,
                 ),
               ),

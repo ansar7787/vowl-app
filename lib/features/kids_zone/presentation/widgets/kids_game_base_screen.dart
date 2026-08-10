@@ -286,7 +286,6 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 explanation: state.lastAnswerCorrect == true
                     ? state.currentQuest.explanation
                     : null,
-                funFact: null, // Moved to mascot bubble
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
                   if (state.lastAnswerCorrect == true ||
