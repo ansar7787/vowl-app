@@ -383,7 +383,7 @@ class _ExplanationCardState extends State<_ExplanationCard> {
                 displayText,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 15.sp,
+                  fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
                   height: 1.4,
                   color: widget.isDark ? Colors.white : Colors.black87,

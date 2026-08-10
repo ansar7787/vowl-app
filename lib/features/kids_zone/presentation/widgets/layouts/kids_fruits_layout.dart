@@ -172,7 +172,7 @@ class KidsFruitsLayout extends StatelessWidget {
                                 color: const Color(0xFF78350F).withValues(alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
                               ),
                               textAlign: TextAlign.center,
-                              maxLines: 4,
+                              maxLines: 6,
                             ),
                         ],
                       ),

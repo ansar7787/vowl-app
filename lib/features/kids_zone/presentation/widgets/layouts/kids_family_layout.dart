@@ -174,11 +174,38 @@ class KidsFamilyLayout extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (quest.emoji != null)
-                    Text(
-                      quest.emoji!,
-                      style: TextStyle(fontSize: 64.sp),
-                    ), // Bigger emoji since we removed question
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      if (quest.emoji != null)
+                        state.lastAnswerCorrect == true
+                            ? Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              )
+                            : ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  const Color(0xFF78350F).withValues(alpha: 0.15),
+                                  BlendMode.srcIn,
+                                ),
+                                child: Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                ),
+                              ),
+                      if (state.lastAnswerCorrect != true)
+                        KidsFittedText(
+                          "?",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 60.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFF78350F).withValues(alpha: 0.7),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -197,6 +224,11 @@ class KidsFamilyLayout extends StatelessWidget {
   ) {
     // Slight random rotation for polaroids
     final double rotation = index % 2 == 0 ? -0.05 : 0.05;
+
+    // Extract emoji and text
+    final parts = text.split(' ');
+    final String emoji = parts.length > 1 ? parts.last : '';
+    final String word = parts.length > 1 ? parts.sublist(0, parts.length - 1).join(' ') : text;
 
     final polaroidWidget = Transform.rotate(
       angle: rotation,
@@ -217,24 +249,29 @@ class KidsFamilyLayout extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Photo area (placeholder color)
+            // Photo area
             Expanded(
               child: Container(
                 width: double.infinity,
                 color: const Color(0xFFE2E8F0), // Blank photo grey
                 child: Center(
-                  child: Icon(
-                    Icons.photo_rounded,
-                    color: const Color(0xFF94A3B8),
-                    size: 24.r,
-                  ),
+                  child: emoji.isNotEmpty
+                      ? Text(
+                          emoji,
+                          style: TextStyle(fontSize: 32.sp),
+                        )
+                      : Icon(
+                          Icons.photo_rounded,
+                          color: const Color(0xFF94A3B8),
+                          size: 24.r,
+                        ),
                 ),
               ),
             ),
             SizedBox(height: 8.h),
             // Handwriting text
             KidsFittedText(
-              text,
+              word,
               style: TextStyle(
                 fontFamily: 'ComicSans', // Or any casual font
                 fontSize: 16.sp,

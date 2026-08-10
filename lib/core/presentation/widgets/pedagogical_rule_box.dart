@@ -93,7 +93,7 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                   displayText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 14.sp,
+                    fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                     color: widget.isDark
                         ? Colors.white.withValues(alpha: 0.8)

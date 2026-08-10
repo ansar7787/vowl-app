@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -12,6 +12,7 @@ import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_header.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_fitted_text.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_dialogs.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -481,7 +482,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
         ],
       ),
-      child: AutoSizeText(
+      child: KidsFittedText(
         text,
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -491,9 +492,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           color: const Color(0xFF1E293B),
           height: 1.2,
         ),
-        maxLines: 4,
-        minFontSize: 8,
-        overflow: TextOverflow.ellipsis,
+        maxLines: 6,
       ),
     ).animate().scale(
       begin: Offset.zero,

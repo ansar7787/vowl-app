@@ -200,7 +200,7 @@ class KidsNumbersLayout extends StatelessWidget {
                             ],
                           ),
                           textAlign: TextAlign.center,
-                          maxLines: 2,
+                          maxLines: 6,
                         ),
                       ),
                   ],
