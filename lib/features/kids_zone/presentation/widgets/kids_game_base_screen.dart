@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -209,7 +210,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                             _buildBody(context, state),
                             if (state is KidsLoaded)
                               _buildDynamicMascot(context, state)
-                            else if ((state is KidsGameComplete || state is KidsGameOver) && _lastLoadedState != null)
+                            else if ((state is KidsGameComplete ||
+                                    state is KidsGameOver) &&
+                                _lastLoadedState != null)
                               _buildDynamicMascot(context, _lastLoadedState!),
                           ],
                         ),
@@ -258,7 +261,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
     final displayState = (state is KidsLoaded) ? state : _lastLoadedState;
 
-    if (displayState != null && (state is KidsLoaded || state is KidsGameComplete || state is KidsGameOver)) {
+    if (displayState != null &&
+        (state is KidsLoaded ||
+            state is KidsGameComplete ||
+            state is KidsGameOver)) {
       return Stack(
         children: [
           widget.buildGameUI(
@@ -280,9 +286,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 explanation: state.lastAnswerCorrect == true
                     ? state.currentQuest.explanation
                     : null,
-                funFact: state.lastAnswerCorrect == true
-                    ? state.currentQuest.funFact
-                    : null,
+                funFact: null, // Moved to mascot bubble
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
                   if (state.lastAnswerCorrect == true ||
@@ -428,8 +432,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
 
           // The data layer now safely ensures the target letter is never printed
           // directly in the instruction, eliminating the need for regex dash replacement.
+        } else if (state.lastAnswerCorrect == true) {
+          displayMessage =
+              state.currentQuest.funFact ??
+              state.currentQuest.explanation ??
+              "Great job!";
         } else {
-          // Hide message during feedback overlay
           displayMessage = "";
         }
 
@@ -474,7 +482,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           BoxShadow(color: Colors.grey.shade300, offset: Offset(0, 5.h)),
         ],
       ),
-      child: Text(
+      child: AutoSizeText(
         text,
         textAlign: TextAlign.center,
         style: TextStyle(
@@ -484,6 +492,9 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           color: const Color(0xFF1E293B),
           height: 1.2,
         ),
+        maxLines: 4,
+        minFontSize: 8,
+        overflow: TextOverflow.ellipsis,
       ),
     ).animate().scale(
       begin: Offset.zero,
