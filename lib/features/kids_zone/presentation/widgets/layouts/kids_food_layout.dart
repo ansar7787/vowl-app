@@ -186,13 +186,13 @@ class KidsFoodLayout extends StatelessWidget {
                                       style: TextStyle(fontSize: 80.sp),
                                     ),
                                   ),
-                          if (quest.emoji == null || (quest.question != "?" && quest.question != null))
+                          if (state.lastAnswerCorrect != true || (quest.question != "?" && quest.question != null))
                             KidsFittedText(
                               quest.question ?? "?",
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w800,
                                 color: const Color(0xFFE11D48).withValues(
                                     alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
                               ),
