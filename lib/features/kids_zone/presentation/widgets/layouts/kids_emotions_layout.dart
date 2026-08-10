@@ -189,32 +189,38 @@ class KidsEmotionsLayout extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        if (quest.emoji != null)
-                          state.lastAnswerCorrect == true
-                              ? Text(
-                                  quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
-                                )
-                              : ColorFiltered(
-                                  colorFilter: ColorFilter.mode(
-                                    Colors.black.withValues(alpha: 0.1),
-                                    BlendMode.srcIn,
-                                  ),
-                                  child: Text(
-                                    quest.emoji!,
-                                    style: TextStyle(fontSize: 80.sp),
-                                  ),
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null)
+                              state.lastAnswerCorrect == true
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        Colors.black.withValues(alpha: 0.1),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
+                                    ),
+                            if (state.lastAnswerCorrect != true)
+                              KidsFittedText(
+                                "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 60.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black.withValues(alpha: 0.5),
                                 ),
-                        if (quest.emoji == null)
-                          KidsFittedText(
-                            "?",
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 80.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.black.withValues(alpha: 0.1),
-                            ),
-                          ),
+                                textAlign: TextAlign.center,
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

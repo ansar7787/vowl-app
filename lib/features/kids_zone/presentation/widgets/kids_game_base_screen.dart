@@ -83,6 +83,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   @override
   void dispose() {
     di.sl<KidsAudioService>().stopBgm();
+    di.sl<KidsTTSService>().stop();
     super.dispose();
   }
 

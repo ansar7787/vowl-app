@@ -94,7 +94,7 @@ class _PedagogicalRuleBoxState extends State<PedagogicalRuleBox> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
                     color: widget.isDark
                         ? Colors.white.withValues(alpha: 0.8)
                         : const Color(0xFF475569),

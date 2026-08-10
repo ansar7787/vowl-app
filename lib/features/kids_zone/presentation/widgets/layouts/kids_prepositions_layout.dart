@@ -158,8 +158,8 @@ class KidsPrepositionsLayout extends StatelessWidget {
                     ),
 
                     Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
+                      child: Stack(
+                        alignment: Alignment.center,
                         children: [
                           if (quest.emoji != null)
                             state.lastAnswerCorrect == true
@@ -179,16 +179,16 @@ class KidsPrepositionsLayout extends StatelessWidget {
                                       style: TextStyle(fontSize: 80.sp),
                                     ),
                                   ),
-                          if (quest.emoji == null)
+                          if (state.lastAnswerCorrect != true)
                             KidsFittedText(
                               "?",
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 80.sp,
+                                fontSize: 60.sp,
                                 fontWeight: FontWeight.w900,
                                 color: const Color(
                                   0xFFC084FC,
-                                ).withValues(alpha: 0.3),
+                                ).withValues(alpha: 0.7),
                               ),
                             ),
                         ],
@@ -226,112 +226,118 @@ class KidsPrepositionsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final hatWidget = SizedBox(
-      width: 80.w,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        clipBehavior: Clip.none,
+      width: 90.w,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          // Little bunny ears popping out of the hat for fun
-          Positioned(
-            top: -15.h,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+          SizedBox(
+            height: 100.h,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              clipBehavior: Clip.none,
               children: [
-                Transform.rotate(
-                  angle: -math.pi / 8,
-                  child: Container(
-                    width: 8.w,
-                    height: 25.h,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(color: Colors.pink[200]!),
+                // Little bunny ears popping out of the hat for fun
+                Positioned(
+                  top: 5.h,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Transform.rotate(
+                          angle: -math.pi / 8,
+                          child: Container(
+                            width: 8.w,
+                            height: 25.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: Colors.pink[200]!),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 5.w),
+                        Transform.rotate(
+                          angle: math.pi / 8,
+                          child: Container(
+                            width: 8.w,
+                            height: 25.h,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: Colors.pink[200]!),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-                SizedBox(width: 5.w),
-                Transform.rotate(
-                  angle: math.pi / 8,
-                  child: Container(
-                    width: 8.w,
-                    height: 25.h,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.r),
-                      border: Border.all(color: Colors.pink[200]!),
-                    ),
+
+                // Main Top Hat body
+                Positioned(
+                  bottom: 0,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Hat cylinder
+                      Container(
+                        height: 55.h,
+                        width: 60.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF1E293B), // Black/dark grey hat
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(8.r),
+                          ),
+                          border: Border.all(color: Colors.white24, width: 1),
+                        ),
+                        child: Column(
+                          children: [
+                            const Spacer(),
+                            // Red ribbon band
+                            Container(
+                              height: 12.h,
+                              width: double.infinity,
+                              color: const Color(0xFFE11D48),
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Hat brim
+                      Container(
+                        height: 10.h,
+                        width: 80.w,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF0F172A),
+                          borderRadius: BorderRadius.circular(10.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.3),
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
           ),
-
-          // Main Top Hat body
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Hat cylinder
-              Container(
-                height: 70.h,
-                width: 60.w,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF1E293B), // Black/dark grey hat
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(8.r),
-                  ),
-                  border: Border.all(color: Colors.white24, width: 1),
-                ),
-                child: Column(
-                  children: [
-                    const Spacer(),
-                    // Red ribbon band
-                    Container(
-                      height: 12.h,
-                      width: double.infinity,
-                      color: const Color(0xFFE11D48),
-                    ),
-                  ],
-                ),
-              ),
-              // Hat brim
-              Container(
-                height: 10.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF0F172A),
-                  borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.3),
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          // Option Text Plaque resting on the hat brim
-          Positioned(
-            bottom: 20.h,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-              decoration: BoxDecoration(
+          SizedBox(height: 8.h),
+          // Option Text below the hat
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 2.w),
+            child: KidsFittedText(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w800,
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(4.r),
-                border: Border.all(color: const Color(0xFF9333EA), width: 1),
+                shadows: const [
+                  Shadow(color: Colors.black54, blurRadius: 4),
+                ],
               ),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFF4C1D95),
-                  ),
-                ),
-              ),
+              maxLines: 2,
+              textAlign: TextAlign.center,
             ),
           ),
         ],
