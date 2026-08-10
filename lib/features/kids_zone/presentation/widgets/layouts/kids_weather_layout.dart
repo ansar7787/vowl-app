@@ -188,36 +188,6 @@ class KidsWeatherLayout extends StatelessWidget {
                         maxLines: 6,
                       ),
                   ],
-                ),
-                if (quest.phonetic != null) ...[
-                  SizedBox(height: 4.h),
-                  Text(
-                    quest.phonetic!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF7DD3FC),
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-
-                if (quest.wordExample != null) ...[
-                  SizedBox(height: 12.h),
-                  KidsFittedText(
-                    '"${quest.wordExample!}"',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xFF0C4A6E),
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                  ),
-                ],
               ],
             ),
           ),

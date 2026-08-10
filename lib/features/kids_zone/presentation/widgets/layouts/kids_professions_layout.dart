@@ -188,40 +188,6 @@ class KidsProfessionsLayout extends StatelessWidget {
                         maxLines: 6,
                       ),
                   ],
-                ),
-                if (quest.phonetic != null) ...[
-                  SizedBox(height: 4.h),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      quest.phonetic!,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600,
-                        color: const Color(0xFF6366F1), // Indigo 500
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-                if (quest.wordExample != null) ...[
-                  SizedBox(height: 12.h),
-                  Flexible(
-                    child: KidsFittedText(
-                      '"${quest.wordExample!}"',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFF3730A3), // Indigo 800
-                      ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                    ),
-                  ),
-                ],
               ],
             ),
           ),
