@@ -159,7 +159,7 @@ class KidsAlphabetLayout extends StatelessWidget {
                       );
                     },
                     child: !isRevealed
-                        ? _buildUnrevealedState(context)
+                        ? _buildUnrevealedState(context, quest)
                         : _buildRevealedState(context, quest),
                   ),
                 ),
@@ -268,16 +268,26 @@ class KidsAlphabetLayout extends StatelessWidget {
     ];
   }
 
-  Widget _buildUnrevealedState(BuildContext context) {
+  Widget _buildUnrevealedState(BuildContext context, dynamic quest) {
+    final emoji = quest.wordEmoji ?? quest.emoji;
     return Column(
       key: const ValueKey('unrevealed'),
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(
-          Icons.help_outline_rounded,
-          size: 64.sp,
-          color: const Color(0xFFFDE68A).withValues(alpha: 0.5),
-        ),
+        if (emoji != null)
+          ColorFiltered(
+            colorFilter: ColorFilter.mode(
+              const Color(0xFF1B4332).withValues(alpha: 0.15), // Dark green chalk dust shadow
+              BlendMode.srcIn,
+            ),
+            child: Text(emoji, style: TextStyle(fontSize: 80.sp)),
+          )
+        else
+          Icon(
+            Icons.help_outline_rounded,
+            size: 64.sp,
+            color: const Color(0xFFFDE68A).withValues(alpha: 0.5),
+          ),
         SizedBox(height: 16.h),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
@@ -348,21 +358,10 @@ class KidsAlphabetLayout extends StatelessWidget {
               ),
             if (quest.wordExample != null) SizedBox(height: 12.h),
             if ((quest.wordEmoji ?? quest.emoji) != null)
-              state.lastAnswerCorrect == true
-                  ? Text(
-                      (quest.wordEmoji ?? quest.emoji)!,
-                      style: TextStyle(fontSize: 80.sp),
-                    )
-                  : ColorFiltered(
-                      colorFilter: ColorFilter.mode(
-                        const Color(0xFF1B4332).withValues(alpha: 0.15), // Dark green chalk dust shadow
-                        BlendMode.srcIn,
-                      ),
-                      child: Text(
-                        (quest.wordEmoji ?? quest.emoji)!,
-                        style: TextStyle(fontSize: 80.sp),
-                      ),
-                    ),
+              Text(
+                (quest.wordEmoji ?? quest.emoji)!,
+                style: TextStyle(fontSize: 80.sp),
+              ),
           ],
         ),
       ),
