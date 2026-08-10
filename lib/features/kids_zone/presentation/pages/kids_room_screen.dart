@@ -319,7 +319,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   }
 
   Widget _buildModernBackground({required bool isDark}) {
-    String painterName = 'SunnyMeadow';
+    String painterName = 'ForestFriend';
     if (_weather == 'rainy') {
       painterName = 'OceanWave';
     } else if (_weather == 'starry') {

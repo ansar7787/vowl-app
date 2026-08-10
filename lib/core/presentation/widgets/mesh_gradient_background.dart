@@ -41,7 +41,7 @@ class MeshGradientBackground extends StatelessWidget {
     );
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final List<Color> backgroundColors = (isMidnight || isDark)
+    final List<Color> backgroundColors = colors ?? ((isMidnight || isDark)
         ? const [
             Color(0xFF0F172A),
             Color(0xFF312E81),
@@ -53,7 +53,7 @@ class MeshGradientBackground extends StatelessWidget {
             Color(0xFFE0F2FE),
             Color(0xFFFCE7F3),
             Color(0xFFDCFCE7),
-          ];
+          ]);
 
     return RepaintBoundary(
       child: Stack(
@@ -87,17 +87,17 @@ class MeshGradientBackground extends StatelessWidget {
           if (!isMidnight) ...[
             _StaticBlob(
               alignment: const Alignment(-1.5, -0.8),
-              color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
+              color: backgroundColors[1 % backgroundColors.length].withValues(alpha: isDark ? 0.3 : 0.5),
               size: 700.w,
             ),
             _StaticBlob(
               alignment: const Alignment(1.5, -0.4),
-              color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
+              color: backgroundColors[2 % backgroundColors.length].withValues(alpha: isDark ? 0.2 : 0.4),
               size: 800.w,
             ),
             _StaticBlob(
               alignment: const Alignment(-0.8, 1.5),
-              color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
+              color: backgroundColors[3 % backgroundColors.length].withValues(alpha: isDark ? 0.15 : 0.3),
               size: 600.w,
             ),
             _StaticBlob(
