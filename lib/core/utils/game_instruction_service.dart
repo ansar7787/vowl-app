@@ -1578,7 +1578,7 @@ class GameInstructionService {
           tip:
               "PRO TIP: Family words show how people are related, like brother or sister! ❤️",
         );
-      case 'food_kids':
+      case 'food':
         return const GameBriefing(
           title: "Yummy Food",
           icon: Icons.restaurant_rounded,
@@ -1667,7 +1667,7 @@ class GameInstructionService {
           actionText: "Go to School",
           tip: "PRO TIP: Think about what you carry in your backpack! 🎒",
         );
-      case 'home_kids':
+      case 'home':
         return const GameBriefing(
           title: "My Sweet Home",
           icon: Icons.home_rounded,

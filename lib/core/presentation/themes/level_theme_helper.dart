@@ -175,10 +175,8 @@ class LevelThemeHelper {
       case 'nature':
         return const Color(0xFF22C55E);
       case 'home':
-      case 'home_kids':
         return const Color(0xFFCA8A04);
       case 'food':
-      case 'food_kids':
         return const Color(0xFFEA580C);
       case 'transport':
         return const Color(0xFF0EA5E9);
