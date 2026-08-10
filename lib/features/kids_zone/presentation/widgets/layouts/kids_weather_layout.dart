@@ -157,7 +157,7 @@ class KidsWeatherLayout extends StatelessWidget {
                             )
                           : ColorFiltered(
                               colorFilter: ColorFilter.mode(
-                                const Color(0xFF0369A1).withValues(alpha: 0.15),
+                                const Color(0xFF0369A1).withValues(alpha: 0.3),
                                 BlendMode.srcIn,
                               ),
                               child: Text(
@@ -165,7 +165,7 @@ class KidsWeatherLayout extends StatelessWidget {
                                 style: TextStyle(fontSize: 80.sp),
                               ),
                             ),
-                    if (quest.emoji == null ||
+                    if (state.lastAnswerCorrect != true ||
                         (quest.question != "?" && quest.question != null))
                       KidsFittedText(
                         quest.question ?? "?",
@@ -185,7 +185,7 @@ class KidsWeatherLayout extends StatelessWidget {
                           ),
                         ),
                         textAlign: TextAlign.center,
-                        maxLines: 3,
+                        maxLines: 6,
                       ),
                   ],
                 ),
@@ -255,19 +255,18 @@ class KidsWeatherLayout extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xFF0369A1),
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
+              child: KidsFittedText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF0369A1),
+                  height: 1.1,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 3,
+              ),
       ),
     );
 

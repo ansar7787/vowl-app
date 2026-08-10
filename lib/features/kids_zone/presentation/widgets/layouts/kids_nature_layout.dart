@@ -240,7 +240,7 @@ class KidsNatureLayout extends StatelessWidget {
                                       colorFilter: ColorFilter.mode(
                                         const Color(
                                           0xFFFEF3C7,
-                                        ).withValues(alpha: 0.15),
+                                        ).withValues(alpha: 0.4),
                                         BlendMode.srcIn,
                                       ),
                                       child: Text(
@@ -248,29 +248,27 @@ class KidsNatureLayout extends StatelessWidget {
                                         style: TextStyle(fontSize: 80.sp),
                                       ),
                                     ),
-                            if (quest.emoji == null ||
+                            if (state.lastAnswerCorrect != true ||
                                 (quest.question != "?" &&
                                     quest.question != null))
                               KidsFittedText(
                                 quest.question ?? "?",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize:
-                                      (quest.question == "?" ||
+                                  fontSize: (quest.question == "?" ||
                                           quest.question == null)
                                       ? 70.sp
                                       : 22.sp,
                                   fontWeight: FontWeight.w700,
                                   color: const Color(0xFFFEF3C7).withValues(
-                                    alpha:
-                                        (quest.question == "?" ||
+                                    alpha: (quest.question == "?" ||
                                             quest.question == null)
                                         ? 0.7
                                         : 1.0,
                                   ),
                                 ),
                                 textAlign: TextAlign.center,
-                                maxLines: 4,
+                                maxLines: 6,
                               ),
                           ],
                         ),

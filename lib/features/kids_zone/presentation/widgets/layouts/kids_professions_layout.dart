@@ -157,7 +157,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                             )
                           : ColorFiltered(
                               colorFilter: ColorFilter.mode(
-                                const Color(0xFF312E81).withValues(alpha: 0.15),
+                                const Color(0xFF312E81).withValues(alpha: 0.3),
                                 BlendMode.srcIn,
                               ),
                               child: Text(
@@ -165,7 +165,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                                 style: TextStyle(fontSize: 80.sp),
                               ),
                             ),
-                    if (quest.emoji == null ||
+                    if (state.lastAnswerCorrect != true ||
                         (quest.question != "?" && quest.question != null))
                       KidsFittedText(
                         quest.question ?? "?",
@@ -185,7 +185,7 @@ class KidsProfessionsLayout extends StatelessWidget {
                           ),
                         ),
                         textAlign: TextAlign.center,
-                        maxLines: 3,
+                        maxLines: 6,
                       ),
                   ],
                 ),
@@ -237,8 +237,9 @@ class KidsProfessionsLayout extends StatelessWidget {
     bool isCorrect,
   ) {
     final badgeWidget = Container(
-      width: 80.w,
-      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 4.w),
+      width: 90.w,
+      height: 110.h,
+      padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
@@ -272,18 +273,22 @@ class KidsProfessionsLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(4.r),
             ),
           ),
-          SizedBox(height: 12.h),
-          Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xFF312E81),
+          SizedBox(height: 8.h),
+          Expanded(
+            child: Center(
+              child: KidsFittedText(
+                text,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF312E81),
+                  height: 1.1,
+                ),
+                textAlign: TextAlign.center,
+                maxLines: 3,
+              ),
             ),
-            textAlign: TextAlign.center,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
