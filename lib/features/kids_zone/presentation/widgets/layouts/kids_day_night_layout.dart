@@ -200,8 +200,8 @@ class KidsDayNightLayout extends StatelessWidget {
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
                                   const Color(
-                                    0xFF0F172A,
-                                  ).withValues(alpha: 0.15),
+                                    0xFF38BDF8, // Sky Blue
+                                  ).withValues(alpha: 0.3),
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -209,7 +209,7 @@ class KidsDayNightLayout extends StatelessWidget {
                                   style: TextStyle(fontSize: 80.sp),
                                 ),
                               ),
-                      if (quest.emoji == null ||
+                      if (state.lastAnswerCorrect != true ||
                           (quest.question != "?" && quest.question != null))
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -232,7 +232,7 @@ class KidsDayNightLayout extends StatelessWidget {
                               ),
                             ),
                             textAlign: TextAlign.center,
-                            maxLines: 4,
+                            maxLines: 6,
                           ),
                         ),
                     ],

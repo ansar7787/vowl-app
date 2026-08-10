@@ -225,7 +225,7 @@ class KidsOppositesLayout extends StatelessWidget {
                                           colorFilter: ColorFilter.mode(
                                             const Color(
                                               0xFF0F172A,
-                                            ).withValues(alpha: 0.15),
+                                            ).withValues(alpha: 0.4),
                                             BlendMode.srcIn,
                                           ),
                                           child: Text(
@@ -233,7 +233,7 @@ class KidsOppositesLayout extends StatelessWidget {
                                             style: TextStyle(fontSize: 80.sp),
                                           ),
                                         ),
-                                if (quest.emoji == null ||
+                                if (state.lastAnswerCorrect != true ||
                                     (quest.question != "?" &&
                                         quest.question != null))
                                   Padding(
@@ -260,7 +260,7 @@ class KidsOppositesLayout extends StatelessWidget {
                                             ),
                                       ),
                                       textAlign: TextAlign.center,
-                                      maxLines: 4,
+                                      maxLines: 6,
                                     ),
                                   ),
                               ],

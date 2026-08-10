@@ -322,19 +322,33 @@ class KidsPrepositionsLayout extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8.h),
-          // Option Text below the hat
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 2.w),
+          // Option Text Plaque
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color(0xFFFBBF24), Color(0xFFF59E0B)], // Rich gold
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+              borderRadius: BorderRadius.circular(8.r),
+              border: Border.all(color: const Color(0xFFB45309), width: 2), // Bronze border
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black38,
+                  offset: Offset(0, 3),
+                  blurRadius: 4,
+                ),
+              ],
+            ),
             child: KidsFittedText(
               text,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
-                shadows: const [
-                  Shadow(color: Colors.black54, blurRadius: 4),
-                ],
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w900,
+                color: const Color(0xFF4C1D95), // Deep magical purple text
               ),
               maxLines: 2,
               textAlign: TextAlign.center,

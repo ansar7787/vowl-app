@@ -220,7 +220,7 @@ class KidsTimeLayout extends StatelessWidget {
                                       colorFilter: ColorFilter.mode(
                                         const Color(
                                           0xFFD97706,
-                                        ).withValues(alpha: 0.15),
+                                        ).withValues(alpha: 0.4),
                                         BlendMode.srcIn,
                                       ),
                                       child: Text(
@@ -228,7 +228,7 @@ class KidsTimeLayout extends StatelessWidget {
                                         style: TextStyle(fontSize: 80.sp),
                                       ),
                                     ),
-                            if (quest.emoji == null ||
+                            if (state.lastAnswerCorrect != true ||
                                 (quest.question != "?" &&
                                     quest.question != null))
                               KidsFittedText(
@@ -250,7 +250,7 @@ class KidsTimeLayout extends StatelessWidget {
                                   ),
                                 ),
                                 textAlign: TextAlign.center,
-                                maxLines: 4,
+                                maxLines: 6,
                               ),
                           ],
                         ),
