@@ -166,78 +166,122 @@ class KidsNatureLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFF92400E)
-                : const Color(0xFF78350F), // Dark wood
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFF16A34A)
-                  : const Color(0xFF451A03),
-              width: isHovering ? 10.r : 6.r,
+                  ? const Color(0xFF92400E)
+                  : const Color(0xFF78350F), // Dark wood
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF16A34A)
+                    : const Color(0xFF451A03),
+                width: isHovering ? 10.r : 6.r,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 10),
+                ),
+              ],
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            clipBehavior: Clip.none,
-            children: [
-              // Leaves on the sign
-              Positioned(
-                top: -20.h,
-                left: -10.w,
-                child: Icon(
-                  Icons.eco_rounded,
-                  color: const Color(0xFF16A34A),
-                  size: 60.r,
+            child: Stack(
+              alignment: Alignment.center,
+              clipBehavior: Clip.none,
+              children: [
+                // Leaves on the sign
+                Positioned(
+                  top: -20.h,
+                  left: -10.w,
+                  child: Icon(
+                    Icons.eco_rounded,
+                    color: const Color(0xFF16A34A),
+                    size: 60.r,
+                  ),
                 ),
-              ),
-              Positioned(
-                bottom: -15.h,
-                right: -10.w,
-                child: Icon(
-                  Icons.eco_rounded,
-                  color: const Color(0xFF15803D),
-                  size: 50.r,
+                Positioned(
+                  bottom: -15.h,
+                  right: -10.w,
+                  child: Icon(
+                    Icons.eco_rounded,
+                    color: const Color(0xFF15803D),
+                    size: 50.r,
+                  ),
                 ),
-              ),
 
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: KidsFittedText(
-                        quest.question ??
-                            "?", // Show instruction, hide question/emoji
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFFFEF3C7), // Light wood text
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null &&
+                                (quest.question == "?" ||
+                                    quest.question == null))
+                              state.lastAnswerCorrect == true
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFFFEF3C7,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
+                                    ),
+                            if (quest.emoji == null ||
+                                (quest.question != "?" &&
+                                    quest.question != null))
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 22.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFFFEF3C7).withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
+                              ),
+                          ],
                         ),
-                        textAlign: TextAlign.center,
-                        maxLines: 4,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

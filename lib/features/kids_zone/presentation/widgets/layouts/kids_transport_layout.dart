@@ -144,41 +144,73 @@ class KidsTransportLayout extends StatelessWidget {
           builder: (context, candidateData, rejectedData) {
             final isHovering = candidateData.isNotEmpty;
             return InkWell(
-              onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+              onTap: state.lastAnswerCorrect != null
+                  ? null
+                  : () {
+                      if (quest.instruction != null) {
+                        di.sl<KidsTTSService>().speak(quest.instruction!);
+                      }
+                    },
               child: AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              width: 280.w,
-              height: 180.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF22C55E)
-                    : const Color(0xFF166534), // Highway Green
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: isHovering ? Colors.yellow : Colors.white,
-                  width: 4.r,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.3),
-                    blurRadius: 15,
-                    offset: const Offset(0, 10),
+                duration: const Duration(milliseconds: 200),
+                width: 280.w,
+                height: 180.h,
+                decoration: BoxDecoration(
+                  color: isHovering
+                      ? const Color(0xFF22C55E)
+                      : const Color(0xFF166534), // Highway Green
+                  borderRadius: BorderRadius.circular(12.r),
+                  border: Border.all(
+                    color: isHovering ? Colors.yellow : Colors.white,
+                    width: 4.r,
                   ),
-                ],
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (quest.emoji != null)
-                      Text(
-                        quest.emoji!,
-                        style: TextStyle(fontSize: 64.sp),
-                      ), // Bigger emoji, hidden question
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.3),
+                      blurRadius: 15,
+                      offset: const Offset(0, 10),
+                    ),
                   ],
                 ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (quest.emoji != null)
+                        state.lastAnswerCorrect == true
+                            ? Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              )
+                            : ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  const Color(
+                                    0xFF166534,
+                                  ).withValues(alpha: 0.15),
+                                  BlendMode.srcIn,
+                                ),
+                                child: Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                ),
+                              ),
+                      if (quest.emoji == null)
+                        KidsFittedText(
+                          "?",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 80.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(
+                              0xFF166534,
+                            ).withValues(alpha: 0.3),
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
               ),
-            ));
+            );
           },
         ),
         // The metal pole holding it

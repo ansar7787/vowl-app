@@ -131,43 +131,68 @@ class KidsSchoolLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFFBAE6FD)
-                : const Color(0xFFE0F2FE), // Sky blue outside window
-            borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(
+            duration: const Duration(milliseconds: 200),
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFFDE047)
-                  : const Color(0xFFFACC15),
-              width: 16.r,
-            ), // School bus yellow frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.15),
-                blurRadius: 10,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 80.sp),
-                  ), // Enlarge emoji since question is hidden
+                  ? const Color(0xFFBAE6FD)
+                  : const Color(0xFFE0F2FE), // Sky blue outside window
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFFFDE047)
+                    : const Color(0xFFFACC15),
+                width: 16.r,
+              ), // School bus yellow frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.15),
+                  blurRadius: 10,
+                  offset: const Offset(0, 8),
+                ),
               ],
             ),
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (quest.emoji != null)
+                    state.lastAnswerCorrect == true
+                        ? Text(quest.emoji!, style: TextStyle(fontSize: 80.sp))
+                        : ColorFiltered(
+                            colorFilter: ColorFilter.mode(
+                              const Color(0xFFE0F2FE).withValues(alpha: 0.15),
+                              BlendMode.srcIn,
+                            ),
+                            child: Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            ),
+                          ),
+                  if (quest.emoji == null)
+                    KidsFittedText(
+                      "?",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 80.sp,
+                        fontWeight: FontWeight.w900,
+                        color: const Color(0xFFE0F2FE).withValues(alpha: 0.3),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ),
-        ));
+        );
       },
     );
   }

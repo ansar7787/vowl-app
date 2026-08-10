@@ -106,87 +106,126 @@ class KidsProfessionsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: 320.w,
-          padding: EdgeInsets.all(24.r),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: isHovering
-                  ? [const Color(0xFFC7D2FE), const Color(0xFF818CF8)]
-                  : [const Color(0xFFEEF2FF), const Color(0xFFE0E7FF)],
-            ),
-            borderRadius: BorderRadius.circular(20.r), // Blocky, building shape
-            border: Border.all(
-              color: isHovering ? Colors.yellowAccent : const Color(0xFF818CF8),
-              width: 6,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF4F46E5).withValues(alpha: 0.15),
-                blurRadius: 15,
-                offset: const Offset(0, 10),
+            duration: const Duration(milliseconds: 200),
+            width: 320.w,
+            padding: EdgeInsets.all(24.r),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: isHovering
+                    ? [const Color(0xFFC7D2FE), const Color(0xFF818CF8)]
+                    : [const Color(0xFFEEF2FF), const Color(0xFFE0E7FF)],
               ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              if (quest.emoji != null)
-                Text(quest.emoji!, style: TextStyle(fontSize: 64.sp)),
-              SizedBox(height: 8.h),
-              Flexible(
-                child: KidsFittedText(
-                  quest.question ?? "?",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 40.sp,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFF312E81), // Indigo 900
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 3,
-                ),
+              borderRadius: BorderRadius.circular(
+                20.r,
+              ), // Blocky, building shape
+              border: Border.all(
+                color: isHovering
+                    ? Colors.yellowAccent
+                    : const Color(0xFF818CF8),
+                width: 6,
               ),
-              if (quest.phonetic != null) ...[
-                SizedBox(height: 4.h),
-                FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    quest.phonetic!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF6366F1), // Indigo 500
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF4F46E5).withValues(alpha: 0.15),
+                  blurRadius: 15,
+                  offset: const Offset(0, 10),
                 ),
               ],
-              if (quest.wordExample != null) ...[
-                SizedBox(height: 12.h),
-                Flexible(
-                  child: KidsFittedText(
-                    '"${quest.wordExample!}"',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xFF3730A3), // Indigo 800
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                  ),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    if (quest.emoji != null &&
+                        (quest.question == "?" || quest.question == null))
+                      state.lastAnswerCorrect == true
+                          ? Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            )
+                          : ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                const Color(0xFF312E81).withValues(alpha: 0.15),
+                                BlendMode.srcIn,
+                              ),
+                              child: Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              ),
+                            ),
+                    if (quest.emoji == null ||
+                        (quest.question != "?" && quest.question != null))
+                      KidsFittedText(
+                        quest.question ?? "?",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize:
+                              (quest.question == "?" || quest.question == null)
+                              ? 70.sp
+                              : 40.sp,
+                          fontWeight: FontWeight.w700,
+                          color: const Color(0xFF312E81).withValues(
+                            alpha:
+                                (quest.question == "?" ||
+                                    quest.question == null)
+                                ? 0.7
+                                : 1.0,
+                          ),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 3,
+                      ),
+                  ],
                 ),
+                if (quest.phonetic != null) ...[
+                  SizedBox(height: 4.h),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      quest.phonetic!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF6366F1), // Indigo 500
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+                if (quest.wordExample != null) ...[
+                  SizedBox(height: 12.h),
+                  Flexible(
+                    child: KidsFittedText(
+                      '"${quest.wordExample!}"',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w500,
+                        color: const Color(0xFF3730A3), // Indigo 800
+                      ),
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                    ),
+                  ),
+                ],
               ],
-            ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

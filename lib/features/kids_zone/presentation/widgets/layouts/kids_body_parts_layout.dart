@@ -172,10 +172,31 @@ class KidsBodyPartsLayout extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 80.sp),
-                  ), // Enlarge emoji, hidden question
+                  state.lastAnswerCorrect == true
+                      ? Text(
+                          quest.emoji!,
+                          style: TextStyle(fontSize: 80.sp),
+                        )
+                      : ColorFiltered(
+                          colorFilter: ColorFilter.mode(
+                            const Color(0xFFE2E8F0).withValues(alpha: 0.15),
+                            BlendMode.srcIn,
+                          ),
+                          child: Text(
+                            quest.emoji!,
+                            style: TextStyle(fontSize: 80.sp),
+                          ),
+                        ),
+                if (quest.emoji == null)
+                  KidsFittedText(
+                    "?",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 80.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFFE2E8F0).withValues(alpha: 0.3),
+                    ),
+                  ),
               ],
             ),
           ),

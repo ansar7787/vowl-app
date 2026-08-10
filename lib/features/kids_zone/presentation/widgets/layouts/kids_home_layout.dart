@@ -181,21 +181,41 @@ class KidsHomeLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    if (quest.emoji != null)
-                      Text(quest.emoji!, style: TextStyle(fontSize: 48.sp)),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: KidsFittedText(
-                        quest.question ??
-                            "?", // Use instruction as clue, hide question
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFF451A03),
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 4,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (quest.emoji != null && (quest.question == "?" || quest.question == null))
+                            state.lastAnswerCorrect == true
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(0xFF451A03).withValues(alpha: 0.15),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ),
+                                  ),
+                          if (quest.emoji == null || (quest.question != "?" && quest.question != null))
+                            KidsFittedText(
+                              quest.question ?? "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
+                                fontWeight: FontWeight.w700,
+                                color: const Color(0xFF451A03).withValues(
+                                    alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
+                              ),
+                              textAlign: TextAlign.center,
+                              maxLines: 4,
+                            ),
+                        ],
                       ),
                     ),
                   ],

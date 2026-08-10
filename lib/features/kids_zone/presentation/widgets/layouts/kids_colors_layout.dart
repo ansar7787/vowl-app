@@ -164,11 +164,7 @@ class KidsColorsLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.emoji != null)
-                        Text(
-                          quest.emoji!,
-                          style: TextStyle(fontSize: 80.sp),
-                        ), // Enlarge emoji, hide question text
+                      if (quest.emoji != null) state.lastAnswerCorrect == true ? Text(quest.emoji!, style: TextStyle(fontSize: 100.sp)) : ColorFiltered(colorFilter: const ColorFilter.mode(Color(0xFF9CA3AF), BlendMode.srcIn), child: Text(quest.emoji!, style: TextStyle(fontSize: 100.sp))) // Enlarge emoji, hide question text
                     ],
                   ),
                 ),
@@ -441,3 +437,4 @@ class KidsColorsLayout extends StatelessWidget {
     return fallback;
   }
 }
+
