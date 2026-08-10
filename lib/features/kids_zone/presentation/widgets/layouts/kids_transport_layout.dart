@@ -189,8 +189,8 @@ class KidsTransportLayout extends StatelessWidget {
                               : ColorFiltered(
                                   colorFilter: ColorFilter.mode(
                                     const Color(
-                                      0xFF166534,
-                                    ).withValues(alpha: 0.4),
+                                      0xFF064E3B, // Darker green/black silhouette
+                                    ).withValues(alpha: 0.5),
                                     BlendMode.srcIn,
                                   ),
                                   child: Text(
