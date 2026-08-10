@@ -171,10 +171,35 @@ class KidsShapesLayout extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           if (quest.emoji != null)
-                            Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 64.sp),
-                            ), // Enlarge emoji since question is removed
+                            state.lastAnswerCorrect == true
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(
+                                        0xFF1E3A8A,
+                                      ).withValues(alpha: 0.15),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ),
+                                  ),
+                          if (quest.emoji == null)
+                            KidsFittedText(
+                              "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 80.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(
+                                  0xFF1E3A8A,
+                                ).withValues(alpha: 0.3),
+                              ),
+                            ),
                         ],
                       ),
                     ),

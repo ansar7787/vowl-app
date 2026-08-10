@@ -348,10 +348,21 @@ class KidsAlphabetLayout extends StatelessWidget {
               ),
             if (quest.wordExample != null) SizedBox(height: 12.h),
             if ((quest.wordEmoji ?? quest.emoji) != null)
-              Text(
-                (quest.wordEmoji ?? quest.emoji)!,
-                style: TextStyle(fontSize: 80.sp),
-              ),
+              state.lastAnswerCorrect == true
+                  ? Text(
+                      (quest.wordEmoji ?? quest.emoji)!,
+                      style: TextStyle(fontSize: 80.sp),
+                    )
+                  : ColorFiltered(
+                      colorFilter: ColorFilter.mode(
+                        const Color(0xFF1B4332).withValues(alpha: 0.15), // Dark green chalk dust shadow
+                        BlendMode.srcIn,
+                      ),
+                      child: Text(
+                        (quest.wordEmoji ?? quest.emoji)!,
+                        style: TextStyle(fontSize: 80.sp),
+                      ),
+                    ),
           ],
         ),
       ),

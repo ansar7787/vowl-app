@@ -102,86 +102,126 @@ class KidsWeatherLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Container(
-          width: 320.w,
-          padding: EdgeInsets.all(24.r),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                isHovering
-                    ? const Color(0xFFE0F2FE)
-                    : const Color(0xFFF0F9FF), // Sky 50
-                isHovering
-                    ? const Color(0xFFBAE6FD)
-                    : const Color(0xFFE0F2FE), // Sky 100
+            width: 320.w,
+            padding: EdgeInsets.all(24.r),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  isHovering
+                      ? const Color(0xFFE0F2FE)
+                      : const Color(0xFFF0F9FF), // Sky 50
+                  isHovering
+                      ? const Color(0xFFBAE6FD)
+                      : const Color(0xFFE0F2FE), // Sky 100
+                ],
+              ),
+              borderRadius: BorderRadius.circular(32.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF38BDF8)
+                    : const Color(0xFFBAE6FD),
+                width: isHovering ? 6 : 4,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(
+                    0xFF38BDF8,
+                  ).withValues(alpha: isHovering ? 0.4 : 0.2),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 8),
+                ),
               ],
             ),
-            borderRadius: BorderRadius.circular(32.r),
-            border: Border.all(
-              color: isHovering
-                  ? const Color(0xFF38BDF8)
-                  : const Color(0xFFBAE6FD),
-              width: isHovering ? 6 : 4,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(
-                  0xFF38BDF8,
-                ).withValues(alpha: isHovering ? 0.4 : 0.2),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 8),
-              ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              KidsFittedText(
-                quest.question ?? "?",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 32.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xFF0369A1), // Dark sky blue
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    if (quest.emoji != null &&
+                        (quest.question == "?" || quest.question == null))
+                      state.lastAnswerCorrect == true
+                          ? Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            )
+                          : ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                const Color(0xFF0369A1).withValues(alpha: 0.15),
+                                BlendMode.srcIn,
+                              ),
+                              child: Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              ),
+                            ),
+                    if (quest.emoji == null ||
+                        (quest.question != "?" && quest.question != null))
+                      KidsFittedText(
+                        quest.question ?? "?",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize:
+                              (quest.question == "?" || quest.question == null)
+                              ? 70.sp
+                              : 32.sp,
+                          fontWeight: FontWeight.w700,
+                          color: const Color(0xFF0369A1).withValues(
+                            alpha:
+                                (quest.question == "?" ||
+                                    quest.question == null)
+                                ? 0.7
+                                : 1.0,
+                          ),
+                        ),
+                        textAlign: TextAlign.center,
+                        maxLines: 3,
+                      ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
-                maxLines: 3,
-              ),
-              if (quest.phonetic != null) ...[
-                SizedBox(height: 4.h),
-                Text(
-                  quest.phonetic!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF7DD3FC),
+                if (quest.phonetic != null) ...[
+                  SizedBox(height: 4.h),
+                  Text(
+                    quest.phonetic!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF7DD3FC),
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                ],
 
-              if (quest.wordExample != null) ...[
-                SizedBox(height: 12.h),
-                KidsFittedText(
-                  '"${quest.wordExample!}"',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                    color: const Color(0xFF0C4A6E),
+                if (quest.wordExample != null) ...[
+                  SizedBox(height: 12.h),
+                  KidsFittedText(
+                    '"${quest.wordExample!}"',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w500,
+                      color: const Color(0xFF0C4A6E),
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
                   ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                ),
+                ],
               ],
-            ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

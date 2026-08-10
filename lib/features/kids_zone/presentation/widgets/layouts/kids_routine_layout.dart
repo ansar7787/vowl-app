@@ -142,108 +142,140 @@ class KidsRoutineLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // The Window pane
-            Container(
-              width: 240.w,
-              height: 180.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF0284C7)
-                    : const Color(0xFF38BDF8), // Light blue daytime sky
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(
-                  color: Colors.white,
-                  width: 8.r,
-                ), // White window frame
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: isHovering ? 0.3 : 0.1,
-                    ),
-                    blurRadius: isHovering ? 20 : 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Stack(
-                children: [
-                  // Window mullions (cross pattern)
-                  Center(
-                    child: Container(
-                      width: double.infinity,
-                      height: 4.h,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Center(
-                    child: Container(
-                      width: 4.w,
-                      height: double.infinity,
-                      color: Colors.white,
-                    ),
-                  ),
-                  // The text
-                  Center(
-                    child: Container(
-                      width: 180.w,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 8.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.8),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          if (quest.emoji != null)
-                            Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 80.sp),
-                            ), // Enlarge emoji, hidden question string
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // Curtains
-            Positioned(
-              left: 10.w,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: 40.w,
+            alignment: Alignment.center,
+            children: [
+              // The Window pane
+              Container(
+                width: 240.w,
+                height: 180.h,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF43F5E), // Rose red curtains
-                  borderRadius: BorderRadius.horizontal(
-                    left: Radius.circular(8.r),
+                  color: isHovering
+                      ? const Color(0xFF0284C7)
+                      : const Color(0xFF38BDF8), // Light blue daytime sky
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 8.r,
+                  ), // White window frame
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isHovering ? 0.3 : 0.1,
+                      ),
+                      blurRadius: isHovering ? 20 : 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    // Window mullions (cross pattern)
+                    Center(
+                      child: Container(
+                        width: double.infinity,
+                        height: 4.h,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        width: 4.w,
+                        height: double.infinity,
+                        color: Colors.white,
+                      ),
+                    ),
+                    // The text
+                    Center(
+                      child: Container(
+                        width: 180.w,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 8.w,
+                          vertical: 8.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withValues(alpha: 0.8),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (quest.emoji != null)
+                              state.lastAnswerCorrect == true
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFF38BDF8,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
+                                    ),
+                            if (quest.emoji == null)
+                              KidsFittedText(
+                                "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 80.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(
+                                    0xFF38BDF8,
+                                  ).withValues(alpha: 0.3),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Curtains
+              Positioned(
+                left: 10.w,
+                top: 0,
+                bottom: 0,
+                child: Container(
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF43F5E), // Rose red curtains
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(8.r),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              right: 10.w,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: 40.w,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF43F5E), // Rose red curtains
-                  borderRadius: BorderRadius.horizontal(
-                    right: Radius.circular(8.r),
+              Positioned(
+                right: 10.w,
+                top: 0,
+                bottom: 0,
+                child: Container(
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF43F5E), // Rose red curtains
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(8.r),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ));
+            ],
+          ),
+        );
       },
     );
   }

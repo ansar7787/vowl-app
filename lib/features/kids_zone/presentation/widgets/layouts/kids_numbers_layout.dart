@@ -158,27 +158,52 @@ class KidsNumbersLayout extends StatelessWidget {
                 Positioned(bottom: 60.r, right: 40.r, child: _buildStar(14)),
                 Positioned(top: 80.r, right: 60.r, child: _buildStar(8)),
 
-                // The Question ALWAYS visible (No progressive disclosure loophole)
-                Padding(
-                  padding: EdgeInsets.all(24.r),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: KidsFittedText(
-                      quest.question ?? "?",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 80
-                            .sp, // Made larger since it's the only thing in the window
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                        shadows: const [
-                          Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
-                        ],
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    if (quest.emoji != null &&
+                        (quest.question == "?" || quest.question == null))
+                      state.lastAnswerCorrect == true
+                          ? Text(
+                              quest.emoji!,
+                              style: TextStyle(fontSize: 80.sp),
+                            )
+                          : ColorFiltered(
+                              colorFilter: ColorFilter.mode(
+                                const Color(0xFF1E1B4B).withValues(alpha: 0.15),
+                                BlendMode.srcIn,
+                              ),
+                              child: Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              ),
+                            ),
+                    if (quest.emoji == null ||
+                        (quest.question != "?" && quest.question != null))
+                      Padding(
+                        padding: EdgeInsets.all(24.r),
+                        child: KidsFittedText(
+                          quest.question ?? "?",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 80.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white.withValues(
+                              alpha:
+                                  (quest.question == "?" ||
+                                      quest.question == null)
+                                  ? 0.7
+                                  : 1.0,
+                            ),
+                            shadows: const [
+                              Shadow(color: Color(0xFF38BDF8), blurRadius: 15),
+                            ],
+                          ),
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
-                      maxLines: 2,
-                    ),
-                  ),
+                  ],
                 ),
               ],
             ),

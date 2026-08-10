@@ -110,56 +110,94 @@ class KidsPrepositionsLayout extends StatelessWidget {
           builder: (context, candidateData, rejectedData) {
             final isHovering = candidateData.isNotEmpty;
             return InkWell(
-              onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+              onTap: state.lastAnswerCorrect != null
+                  ? null
+                  : () {
+                      if (quest.instruction != null) {
+                        di.sl<KidsTTSService>().speak(quest.instruction!);
+                      }
+                    },
               child: Container(
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF4C1D95)
-                    : const Color(0xFF2E1065), // Deep magical purple
-                borderRadius: BorderRadius.circular(100.r), // Magical orb shape
-                border: Border.all(
+                width: 280.w,
+                height: 200.h,
+                decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFE9D5FF)
-                      : const Color(0xFFC084FC),
-                  width: 4.r,
-                ), // Glowing border
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF9333EA).withValues(alpha: 0.5),
-                    blurRadius: isHovering ? 30 : 20,
-                    spreadRadius: isHovering ? 10 : 5,
-                  ),
-                ],
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Magic sparkles
-                  Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
-                  Positioned(
-                    bottom: 40.h,
-                    right: 30.w,
-                    child: _buildSparkle(20),
-                  ),
-                  Positioned(top: 80.h, right: 20.w, child: _buildSparkle(10)),
-
-                  Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if (quest.emoji != null)
-                          Text(
-                            quest.emoji!,
-                            style: TextStyle(fontSize: 80.sp),
-                          ), // Enlarged emoji, hidden question
-                      ],
+                      ? const Color(0xFF4C1D95)
+                      : const Color(0xFF2E1065), // Deep magical purple
+                  borderRadius: BorderRadius.circular(
+                    100.r,
+                  ), // Magical orb shape
+                  border: Border.all(
+                    color: isHovering
+                        ? const Color(0xFFE9D5FF)
+                        : const Color(0xFFC084FC),
+                    width: 4.r,
+                  ), // Glowing border
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF9333EA).withValues(alpha: 0.5),
+                      blurRadius: isHovering ? 30 : 20,
+                      spreadRadius: isHovering ? 10 : 5,
                     ),
-                  ),
-                ],
+                  ],
+                ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    // Magic sparkles
+                    Positioned(top: 30.h, left: 40.w, child: _buildSparkle(15)),
+                    Positioned(
+                      bottom: 40.h,
+                      right: 30.w,
+                      child: _buildSparkle(20),
+                    ),
+                    Positioned(
+                      top: 80.h,
+                      right: 20.w,
+                      child: _buildSparkle(10),
+                    ),
+
+                    Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          if (quest.emoji != null)
+                            state.lastAnswerCorrect == true
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(
+                                        0xFFC084FC,
+                                      ).withValues(alpha: 0.15),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ),
+                                  ),
+                          if (quest.emoji == null)
+                            KidsFittedText(
+                              "?",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 80.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(
+                                  0xFFC084FC,
+                                ).withValues(alpha: 0.3),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ));
+            );
           },
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))

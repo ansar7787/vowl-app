@@ -140,43 +140,50 @@ class KidsFamilyLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFFFEF9C3)
-                : const Color(0xFFFEF08A), // Highlight yellow
-            borderRadius: BorderRadius.circular(4.r),
-            border: Border.all(
+            duration: const Duration(milliseconds: 200),
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFD97706)
-                  : const Color(0xFFB45309),
-              width: 16.r,
-            ), // Ornate wooden frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.25),
-                blurRadius: 15,
-                offset: const Offset(0, 12),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (quest.emoji != null)
-                  Text(
-                    quest.emoji!,
-                    style: TextStyle(fontSize: 64.sp),
-                  ), // Bigger emoji since we removed question
+                  ? const Color(0xFFFEF9C3)
+                  : const Color(0xFFFEF08A), // Highlight yellow
+              borderRadius: BorderRadius.circular(4.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFFD97706)
+                    : const Color(0xFFB45309),
+                width: 16.r,
+              ), // Ornate wooden frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.25),
+                  blurRadius: 15,
+                  offset: const Offset(0, 12),
+                ),
               ],
             ),
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (quest.emoji != null)
+                    Text(
+                      quest.emoji!,
+                      style: TextStyle(fontSize: 64.sp),
+                    ), // Bigger emoji since we removed question
+                ],
+              ),
+            ),
           ),
-        ));
+        );
       },
     );
   }

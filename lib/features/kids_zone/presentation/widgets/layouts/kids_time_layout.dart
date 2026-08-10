@@ -132,91 +132,136 @@ class KidsTimeLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Container(
-          width: 260.r,
-          height: 260.r,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFFFEF9C3)
-                : const Color(0xFFFEF3C7), // Antique clock face
-            shape: BoxShape.circle,
-            border: Border.all(
+            width: 260.r,
+            height: 260.r,
+            decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFFD97706)
-                  : const Color(0xFFB45309),
-              width: isHovering ? 16.r : 12.r,
-            ), // Brass frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Clock numbers (visual decoration)
-              Positioned(
-                top: 10.r,
-                child: Text("12", style: _clockNumStyle()),
-              ),
-              Positioned(
-                bottom: 10.r,
-                child: Text("6", style: _clockNumStyle()),
-              ),
-              Positioned(
-                left: 15.r,
-                child: Text("9", style: _clockNumStyle()),
-              ),
-              Positioned(
-                right: 15.r,
-                child: Text("3", style: _clockNumStyle()),
-              ),
+                  ? const Color(0xFFFEF9C3)
+                  : const Color(0xFFFEF3C7), // Antique clock face
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFFD97706)
+                    : const Color(0xFFB45309),
+                width: isHovering ? 16.r : 12.r,
+              ), // Brass frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Clock numbers (visual decoration)
+                Positioned(
+                  top: 10.r,
+                  child: Text("12", style: _clockNumStyle()),
+                ),
+                Positioned(
+                  bottom: 10.r,
+                  child: Text("6", style: _clockNumStyle()),
+                ),
+                Positioned(
+                  left: 15.r,
+                  child: Text("9", style: _clockNumStyle()),
+                ),
+                Positioned(
+                  right: 15.r,
+                  child: Text("3", style: _clockNumStyle()),
+                ),
 
-              // Background gears
-              _buildGear(40, -40, 60, true),
-              _buildGear(-40, 30, 80, false),
+                // Background gears
+                _buildGear(40, -40, 60, true),
+                _buildGear(-40, 30, 80, false),
 
-              // Main Instruction text in the center (Hide question/emoji)
-              Center(
-                child: Container(
-                  width: 200.w,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.95),
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(
-                      color: const Color(0xFFD97706),
-                      width: 2,
+                // Main Instruction text in the center (Hide question/emoji)
+                Center(
+                  child: Container(
+                    width: 200.w,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.95),
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: const Color(0xFFD97706),
+                        width: 2,
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null &&
+                                (quest.question == "?" ||
+                                    quest.question == null))
+                              state.lastAnswerCorrect == true
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFFD97706,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
+                                    ),
+                            if (quest.emoji == null ||
+                                (quest.question != "?" &&
+                                    quest.question != null))
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 20.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFF1E293B).withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
+                              ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      KidsFittedText(
-                        quest.question ?? "?", // Use instruction
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xFF1E293B),
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 4,
-                      ),
-                    ],
-                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

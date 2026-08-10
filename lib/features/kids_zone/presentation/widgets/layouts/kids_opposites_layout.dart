@@ -130,104 +130,151 @@ class KidsOppositesLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Container(
-          width: 280.w,
-          height: 220.h,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: isHovering
-                  ? const Color(0xFF6366F1)
-                  : const Color(0xFF1E293B),
-              width: isHovering ? 10.r : 8.r,
-            ), // Dark frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8.r),
-            child: Stack(
-              children: [
-                // Left Half (Fire / Warm)
-                Positioned(
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: 140.w, // Half width approx
-                  child: Container(
-                    color: isHovering
-                        ? const Color(0xFFFECACA)
-                        : const Color(0xFFFCA5A5),
-                  ), // Light red
-                ),
-                // Right Half (Ice / Cold)
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: 140.w,
-                  child: Container(
-                    color: isHovering
-                        ? const Color(0xFFBFDBFE)
-                        : const Color(0xFF93C5FD),
-                  ), // Light blue
-                ),
-                // Center Divider Line
-                Center(
-                  child: Container(
-                    width: 4.w,
-                    height: double.infinity,
-                    color: const Color(0xFF1E293B),
-                  ),
-                ),
-                // Main Text in a central circle
-                Center(
-                  child: Container(
-                    width: 220.w,
-                    height: 160.h,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.95),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: const Color(0xFF1E293B),
-                        width: 4.r,
-                      ),
-                    ),
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 12.w),
-                            child: KidsFittedText(
-                              quest.question ??
-                                  "?", // Use instruction, hide emoji/question to prevent cheat
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 22.sp,
-                                fontWeight: FontWeight.w700,
-                                color: const Color(0xFF0F172A),
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+            width: 280.w,
+            height: 220.h,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF6366F1)
+                    : const Color(0xFF1E293B),
+                width: isHovering ? 10.r : 8.r,
+              ), // Dark frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 10),
                 ),
               ],
             ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.r),
+              child: Stack(
+                children: [
+                  // Left Half (Fire / Warm)
+                  Positioned(
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 140.w, // Half width approx
+                    child: Container(
+                      color: isHovering
+                          ? const Color(0xFFFECACA)
+                          : const Color(0xFFFCA5A5),
+                    ), // Light red
+                  ),
+                  // Right Half (Ice / Cold)
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: 140.w,
+                    child: Container(
+                      color: isHovering
+                          ? const Color(0xFFBFDBFE)
+                          : const Color(0xFF93C5FD),
+                    ), // Light blue
+                  ),
+                  // Center Divider Line
+                  Center(
+                    child: Container(
+                      width: 4.w,
+                      height: double.infinity,
+                      color: const Color(0xFF1E293B),
+                    ),
+                  ),
+                  // Main Text in a central circle
+                  Center(
+                    child: Container(
+                      width: 220.w,
+                      height: 160.h,
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.95),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: const Color(0xFF1E293B),
+                          width: 4.r,
+                        ),
+                      ),
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                if (quest.emoji != null &&
+                                    (quest.question == "?" ||
+                                        quest.question == null))
+                                  state.lastAnswerCorrect == true
+                                      ? Text(
+                                          quest.emoji!,
+                                          style: TextStyle(fontSize: 80.sp),
+                                        )
+                                      : ColorFiltered(
+                                          colorFilter: ColorFilter.mode(
+                                            const Color(
+                                              0xFF0F172A,
+                                            ).withValues(alpha: 0.15),
+                                            BlendMode.srcIn,
+                                          ),
+                                          child: Text(
+                                            quest.emoji!,
+                                            style: TextStyle(fontSize: 80.sp),
+                                          ),
+                                        ),
+                                if (quest.emoji == null ||
+                                    (quest.question != "?" &&
+                                        quest.question != null))
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 12.w,
+                                    ),
+                                    child: KidsFittedText(
+                                      quest.question ?? "?",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize:
+                                            (quest.question == "?" ||
+                                                quest.question == null)
+                                            ? 70.sp
+                                            : 22.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: const Color(0xFF0F172A)
+                                            .withValues(
+                                              alpha:
+                                                  (quest.question == "?" ||
+                                                      quest.question == null)
+                                                  ? 0.7
+                                                  : 1.0,
+                                            ),
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      maxLines: 4,
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ));
+        );
       },
     );
   }

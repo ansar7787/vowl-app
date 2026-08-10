@@ -137,72 +137,114 @@ class KidsPhonicsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Container(
-          width: 280.w,
-          height: 200.h,
-          decoration: BoxDecoration(
-            color: const Color(0xFF09090B), // Deep black screen
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: isHovering
-                  ? const Color(0xFF6366F1)
-                  : const Color(0xFF52525B),
-              width: isHovering ? 14.r : 12.r,
-            ), // Silver monitor frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.6 : 0.4),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Simulated Soundwave Equalizer Background
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: List.generate(15, (index) {
-                  return _buildEqBar(index);
-                }),
-              ),
-
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: KidsFittedText(
-                        quest.question ??
-                            "?", // Use instruction, hide emoji/question
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                          shadows: [
-                            Shadow(
-                              color: isHovering
-                                  ? const Color(0xFF818CF8)
-                                  : const Color(0xFF22C55E),
-                              blurRadius: 15,
-                            ), // Neon glow
-                          ],
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
+            width: 280.w,
+            height: 200.h,
+            decoration: BoxDecoration(
+              color: const Color(0xFF09090B), // Deep black screen
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF6366F1)
+                    : const Color(0xFF52525B),
+                width: isHovering ? 14.r : 12.r,
+              ), // Silver monitor frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.6 : 0.4),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 10),
                 ),
-              ),
-            ],
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Simulated Soundwave Equalizer Background
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: List.generate(15, (index) {
+                    return _buildEqBar(index);
+                  }),
+                ),
+
+                Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (quest.emoji != null &&
+                              (quest.question == "?" || quest.question == null))
+                            state.lastAnswerCorrect == true
+                                ? Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(
+                                        0xFF0F172A,
+                                      ).withValues(alpha: 0.15),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ),
+                                  ),
+                          if (quest.emoji == null ||
+                              (quest.question != "?" && quest.question != null))
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16.w),
+                              child: KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white.withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
+                                  shadows: [
+                                    Shadow(
+                                      color: isHovering
+                                          ? const Color(0xFF818CF8)
+                                          : const Color(0xFF22C55E),
+                                      blurRadius: 15,
+                                    ),
+                                  ],
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }

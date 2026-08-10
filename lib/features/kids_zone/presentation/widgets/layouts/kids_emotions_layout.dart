@@ -134,131 +134,159 @@ class KidsEmotionsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.lastAnswerCorrect != null
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // The Stage background
-            Container(
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFF334155)
-                    : const Color(0xFF1E293B), // Dark backstage
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(
+            alignment: Alignment.center,
+            children: [
+              // The Stage background
+              Container(
+                width: 280.w,
+                height: 200.h,
+                decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFD97706)
-                      : const Color(0xFF78350F),
-                  width: 8.r,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: isHovering ? 0.5 : 0.3,
+                      ? const Color(0xFF334155)
+                      : const Color(0xFF1E293B), // Dark backstage
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: isHovering
+                        ? const Color(0xFFD97706)
+                        : const Color(0xFF78350F),
+                    width: 8.r,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isHovering ? 0.5 : 0.3,
+                      ),
+                      blurRadius: isHovering ? 25 : 15,
+                      offset: const Offset(0, 8),
                     ),
-                    blurRadius: isHovering ? 25 : 15,
-                    offset: const Offset(0, 8),
+                  ],
+                ),
+                child: Center(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.r),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0, 4),
+                          blurRadius: 4,
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (quest.emoji != null)
+                          state.lastAnswerCorrect == true
+                              ? Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                )
+                              : ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    Colors.black.withValues(alpha: 0.1),
+                                    BlendMode.srcIn,
+                                  ),
+                                  child: Text(
+                                    quest.emoji!,
+                                    style: TextStyle(fontSize: 80.sp),
+                                  ),
+                                ),
+                        if (quest.emoji == null)
+                          KidsFittedText(
+                            "?",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 80.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black.withValues(alpha: 0.1),
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
-                ],
+                ),
               ),
-              child: Center(
+              // Red Velvet Curtains (Left)
+              Positioned(
+                left: 0,
+                top: 0,
+                bottom: 0,
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
-                    vertical: 12.h,
-                  ),
+                  width: 40.w,
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
+                    color: const Color(0xFF9F1239), // Velvet red
+                    borderRadius: BorderRadius.horizontal(
+                      left: Radius.circular(4.r),
+                    ),
+                    border: Border(
+                      right: BorderSide(
+                        color: const Color(0xFFE11D48),
+                        width: 4.w,
+                      ), // Curtain fold highlight
+                    ),
+                  ),
+                ),
+              ),
+              // Red Velvet Curtains (Right)
+              Positioned(
+                right: 0,
+                top: 0,
+                bottom: 0,
+                child: Container(
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF9F1239),
+                    borderRadius: BorderRadius.horizontal(
+                      right: Radius.circular(4.r),
+                    ),
+                    border: Border(
+                      left: BorderSide(
+                        color: const Color(0xFFE11D48),
+                        width: 4.w,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // Stage Valance (Top curtain)
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  height: 30.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFBE123C),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(4.r),
+                    ),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.black26,
+                        color: Colors.black45,
                         offset: Offset(0, 4),
                         blurRadius: 4,
                       ),
                     ],
                   ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      if (quest.emoji != null)
-                        Text(
-                          quest.emoji!,
-                          style: TextStyle(fontSize: 80.sp),
-                        ), // Enlarge emoji, hide question string
-                    ],
-                  ),
                 ),
               ),
-            ),
-            // Red Velvet Curtains (Left)
-            Positioned(
-              left: 0,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: 40.w,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF9F1239), // Velvet red
-                  borderRadius: BorderRadius.horizontal(
-                    left: Radius.circular(4.r),
-                  ),
-                  border: Border(
-                    right: BorderSide(
-                      color: const Color(0xFFE11D48),
-                      width: 4.w,
-                    ), // Curtain fold highlight
-                  ),
-                ),
-              ),
-            ),
-            // Red Velvet Curtains (Right)
-            Positioned(
-              right: 0,
-              top: 0,
-              bottom: 0,
-              child: Container(
-                width: 40.w,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF9F1239),
-                  borderRadius: BorderRadius.horizontal(
-                    right: Radius.circular(4.r),
-                  ),
-                  border: Border(
-                    left: BorderSide(
-                      color: const Color(0xFFE11D48),
-                      width: 4.w,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            // Stage Valance (Top curtain)
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                height: 30.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFBE123C),
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(4.r),
-                  ),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black45,
-                      offset: Offset(0, 4),
-                      blurRadius: 4,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ));
+            ],
+          ),
+        );
       },
     );
   }

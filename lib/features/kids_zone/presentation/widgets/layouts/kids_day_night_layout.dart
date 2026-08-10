@@ -142,70 +142,106 @@ class KidsDayNightLayout extends StatelessWidget {
                 },
           child: Container(
             width: 280.w,
-          height: 220.h,
-          decoration: BoxDecoration(
-            color: isHovering
-                ? const Color(0xFF1E293B)
-                : const Color(0xFF0F172A),
-            borderRadius: BorderRadius.circular(
-              40.r,
-            ), // Chunky rounded rectangle
-            border: Border.all(
+            height: 220.h,
+            decoration: BoxDecoration(
               color: isHovering
-                  ? const Color(0xFF38BDF8)
-                  : const Color(0xFF64748B),
-              width: isHovering ? 12.r : 8.r,
-            ), // Thick observatory metal frame
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
-                blurRadius: isHovering ? 30 : 20,
-                offset: const Offset(0, 10),
-              ),
-              BoxShadow(
-                color: const Color(0xFF0EA5E9).withValues(
-                  alpha: isHovering ? 0.3 : 0.1,
-                ), // Slight atmospheric glow
-                blurRadius: isHovering ? 60 : 40,
-                spreadRadius: isHovering ? 10 : 5,
-              ),
-            ],
-          ),
-          child: Stack(
-            children: [
-              // Twinkling stars in the observatory view
-              Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
-              Positioned(
-                bottom: 40.h,
-                right: 40.w,
-                child: _buildTwinklingStar(),
-              ),
-              Positioned(top: 60.h, right: 30.w, child: _buildTwinklingStar()),
-
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: KidsFittedText(
-                        quest.question ?? "?",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                        maxLines: 4,
-                      ),
-                    ),
-                  ],
+                  ? const Color(0xFF1E293B)
+                  : const Color(0xFF0F172A),
+              borderRadius: BorderRadius.circular(
+                40.r,
+              ), // Chunky rounded rectangle
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF38BDF8)
+                    : const Color(0xFF64748B),
+                width: isHovering ? 12.r : 8.r,
+              ), // Thick observatory metal frame
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.5 : 0.3),
+                  blurRadius: isHovering ? 30 : 20,
+                  offset: const Offset(0, 10),
                 ),
-              ),
-            ],
+                BoxShadow(
+                  color: const Color(0xFF0EA5E9).withValues(
+                    alpha: isHovering ? 0.3 : 0.1,
+                  ), // Slight atmospheric glow
+                  blurRadius: isHovering ? 60 : 40,
+                  spreadRadius: isHovering ? 10 : 5,
+                ),
+              ],
+            ),
+            child: Stack(
+              children: [
+                // Twinkling stars in the observatory view
+                Positioned(top: 20.h, left: 30.w, child: _buildTwinklingStar()),
+                Positioned(
+                  bottom: 40.h,
+                  right: 40.w,
+                  child: _buildTwinklingStar(),
+                ),
+                Positioned(
+                  top: 60.h,
+                  right: 30.w,
+                  child: _buildTwinklingStar(),
+                ),
+
+                Center(
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      if (quest.emoji != null &&
+                          (quest.question == "?" || quest.question == null))
+                        state.lastAnswerCorrect == true
+                            ? Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              )
+                            : ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  const Color(
+                                    0xFF0F172A,
+                                  ).withValues(alpha: 0.15),
+                                  BlendMode.srcIn,
+                                ),
+                                child: Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                ),
+                              ),
+                      if (quest.emoji == null ||
+                          (quest.question != "?" && quest.question != null))
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16.w),
+                          child: KidsFittedText(
+                            quest.question ?? "?",
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize:
+                                  (quest.question == "?" ||
+                                      quest.question == null)
+                                  ? 70.sp
+                                  : 24.sp,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.white.withValues(
+                                alpha:
+                                    (quest.question == "?" ||
+                                        quest.question == null)
+                                    ? 0.7
+                                    : 1.0,
+                              ),
+                            ),
+                            textAlign: TextAlign.center,
+                            maxLines: 4,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }
