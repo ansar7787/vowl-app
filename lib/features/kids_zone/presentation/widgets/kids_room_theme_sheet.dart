@@ -75,38 +75,43 @@ class KidsRoomThemeSheet extends StatelessWidget {
     final isSelected = t['id'] == currentTheme;
     final color = t['color'] as MaterialColor;
     
-    return ScaleButton(
-      onTap: () => onThemeSelected(t['id'] as String),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: isSelected ? color.withValues(alpha: 0.2) : color.withValues(alpha: 0.05),
-              shape: BoxShape.circle,
-              border: Border.all(color: color, width: isSelected ? 4.w : 2.w),
-              boxShadow: isSelected ? [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.4),
-                  offset: Offset(0, 4.h),
-                ),
-              ] : [],
+    return Expanded(
+      child: ScaleButton(
+        onTap: () => onThemeSelected(t['id'] as String),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                color: isSelected ? color.withValues(alpha: 0.2) : color.withValues(alpha: 0.05),
+                shape: BoxShape.circle,
+                border: Border.all(color: color, width: isSelected ? 4.w : 2.w),
+                boxShadow: isSelected ? [
+                  BoxShadow(
+                    color: color.withValues(alpha: 0.4),
+                    offset: Offset(0, 4.h),
+                  ),
+                ] : [],
+              ),
+              child: Text(t['icon'] as String, style: TextStyle(fontSize: 35.sp)),
             ),
-            child: Text(t['icon'] as String, style: TextStyle(fontSize: 35.sp)),
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            (t['name'] as String).toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? (isSelected ? color.shade300 : Colors.white70)
-                  : (isSelected ? color.shade700 : Colors.black87),
+            SizedBox(height: 12.h),
+            Text(
+              (t['name'] as String).toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w900,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? (isSelected ? color.shade300 : Colors.white70)
+                    : (isSelected ? color.shade700 : Colors.black87),
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
