@@ -165,29 +165,38 @@ class KidsSchoolLayout extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (quest.emoji != null)
-                    state.lastAnswerCorrect == true
-                        ? Text(quest.emoji!, style: TextStyle(fontSize: 80.sp))
-                        : ColorFiltered(
-                            colorFilter: ColorFilter.mode(
-                              const Color(0xFFE0F2FE).withValues(alpha: 0.15),
-                              BlendMode.srcIn,
-                            ),
-                            child: Text(
-                              quest.emoji!,
-                              style: TextStyle(fontSize: 80.sp),
-                            ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      if (quest.emoji != null)
+                        state.lastAnswerCorrect == true
+                            ? Text(
+                                quest.emoji!,
+                                style: TextStyle(fontSize: 80.sp),
+                              )
+                            : ColorFiltered(
+                                colorFilter: ColorFilter.mode(
+                                  const Color(0xFF0369A1).withValues(alpha: 0.15), // Dark blue silhouette
+                                  BlendMode.srcIn,
+                                ),
+                                child: Text(
+                                  quest.emoji!,
+                                  style: TextStyle(fontSize: 80.sp),
+                                ),
+                              ),
+                      if (state.lastAnswerCorrect != true)
+                        KidsFittedText(
+                          "?",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 60.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFF0369A1).withValues(alpha: 0.7), // Dark blue question mark
                           ),
-                  if (quest.emoji == null)
-                    KidsFittedText(
-                      "?",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 80.sp,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFFE0F2FE).withValues(alpha: 0.3),
-                      ),
-                    ),
+                          textAlign: TextAlign.center,
+                        ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -211,6 +220,11 @@ class KidsSchoolLayout extends StatelessWidget {
       const Color(0xFF8B5CF6), // Purple
     ];
     final color = colors[index % colors.length];
+
+    // Extract emoji and text
+    final parts = text.split(' ');
+    final String emoji = parts.length > 1 ? parts.last : '';
+    final String word = parts.length > 1 ? parts.sublist(0, parts.length - 1).join(' ') : text;
 
     final backpackWidget = SizedBox(
       width: 80.w,
@@ -251,24 +265,38 @@ class KidsSchoolLayout extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  // Top section (Emoji)
+                  SizedBox(
+                    height: 30.h,
+                    child: Center(
+                      child: emoji.isNotEmpty
+                          ? Text(
+                              emoji,
+                              style: TextStyle(fontSize: 16.sp),
+                            )
+                          : const SizedBox.shrink(),
+                    ),
+                  ),
                   // Front Pocket Line
                   Container(
-                    margin: EdgeInsets.only(top: 30.h),
                     height: 2.h,
                     color: Colors.black.withValues(alpha: 0.2),
                   ),
                   Expanded(
                     child: Center(
-                      child: KidsFittedText(
-                        text,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 2.w),
+                        child: KidsFittedText(
+                          word,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
+                          maxLines: 2,
+                          textAlign: TextAlign.center,
                         ),
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
