@@ -234,14 +234,18 @@ class KidsFruitsLayout extends StatelessWidget {
       children: [
         // The label sticking out
         Positioned(
-          top: -20.h,
+          top: -24.h,
           child: Container(
-            constraints: BoxConstraints(maxWidth: 90.w),
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+            constraints: BoxConstraints(
+              minWidth: 60.w,
+              maxWidth: 90.w,
+              minHeight: 34.h,
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(4.r),
-              border: Border.all(color: const Color(0xFF92400E), width: 1),
+              borderRadius: BorderRadius.circular(6.r),
+              border: Border.all(color: const Color(0xFF92400E), width: 1.5),
             ),
             alignment: Alignment.center,
             child: FittedBox(
@@ -251,11 +255,13 @@ class KidsFruitsLayout extends StatelessWidget {
                 text.trim(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w800,
+                  height: 1.2, // Fixes descenders like p, g from touching bottom
                   color: const Color(0xFF451A03),
                 ),
                 textAlign: TextAlign.center,
+                maxLines: 1,
               ),
             ),
           ),
