@@ -36,12 +36,12 @@ class ProfileStickersProgress extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
+                  color: const Color(0xFF06B6D4), // Cyan 500
                   borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(color: Colors.orange.shade700, width: 2.w),
+                  border: Border.all(color: const Color(0xFF0891B2), width: 2.w),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.orange.shade700,
+                      color: const Color(0xFF0891B2), // Cyan 600
                       offset: Offset(0, 4.h),
                     ),
                   ],
@@ -69,7 +69,7 @@ class ProfileStickersProgress extends StatelessWidget {
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
-                        color: Colors.orange[400],
+                        color: const Color(0xFF06B6D4), // Cyan 500
                         letterSpacing: 1,
                       ),
                     ),
@@ -113,7 +113,7 @@ class ProfileStickersProgress extends StatelessWidget {
                           vertical: 8.h,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.orange,
+                          color: const Color(0xFF06B6D4), // Cyan 500
                           borderRadius: BorderRadius.circular(16.r),
                         ),
                         child: Text(
@@ -170,7 +170,7 @@ class ProfileStickersProgress extends StatelessWidget {
                             : Colors.white,
                         shape: BoxShape.circle,
                         border: Border.all(
-                          color: Colors.orange.withValues(alpha: 0.2),
+                          color: const Color(0xFF06B6D4).withValues(alpha: 0.2),
                           width: 1.5,
                         ),
                       ),
