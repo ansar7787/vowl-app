@@ -125,28 +125,31 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        bubble.color.withValues(alpha: 0.4),
-                        bubble.color.withValues(alpha: 0.8),
+                        Colors.yellowAccent.withValues(alpha: 0.9),
+                        Colors.orange.withValues(alpha: 0.9),
                       ],
                     ),
-                    border: Border.all(color: Colors.white, width: 2),
+                    border: Border.all(color: Colors.amber, width: 3),
                     boxShadow: [
                       BoxShadow(
-                        color: bubble.color.withValues(alpha: 0.5),
-                        blurRadius: 10,
-                        spreadRadius: 2,
+                        color: Colors.orangeAccent.withValues(alpha: 0.6),
+                        blurRadius: 15,
+                        spreadRadius: 4,
                       )
                     ]
                   ),
                   child: Center(
-                    child: Container(
-                      width: bubble.size.r * 0.3,
-                      height: bubble.size.r * 0.3,
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
+                    child: Text(
+                      "⭐",
+                      style: TextStyle(
+                        fontSize: bubble.size.r * 0.5,
+                        shadows: [
+                          Shadow(
+                            color: Colors.white,
+                            blurRadius: 10,
+                          ),
+                        ],
                       ),
-                      alignment: Alignment.topRight,
                     ),
                   ),
                 ),
@@ -185,15 +188,15 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(color: Colors.green, width: 3.w),
+                      border: Border.all(color: Colors.orange, width: 3.w),
                     ),
                     child: Text(
-                      "🫧 $_score",
+                      "⭐ $_score",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
-                        color: Colors.green,
+                        color: Colors.orange,
                       ),
                     ),
                   ),

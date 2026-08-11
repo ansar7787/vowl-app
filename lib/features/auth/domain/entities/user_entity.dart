@@ -106,6 +106,8 @@ class UserEntity {
   final int kidsRoomLevel;
   final String kidsRoomTheme; // nature, space, ocean, sweet
   final DateTime? kidsLastFeedTime;
+  final int kidsGamesPlayedToday;
+  final DateTime? kidsLastGameDate;
 
   const UserEntity({
     required this.id,
@@ -166,6 +168,8 @@ class UserEntity {
     this.kidsRoomLevel = 1,
     this.kidsRoomTheme = 'nature',
     this.kidsLastFeedTime,
+    this.kidsGamesPlayedToday = 0,
+    this.kidsLastGameDate,
   });
 
   // ---------------------------------------------------------------------------
@@ -329,6 +333,7 @@ class UserEntity {
     int? kidsCareStreak,
     int? kidsRoomLevel,
     String? kidsRoomTheme,
+    int? kidsGamesPlayedToday,
 
     // Nullable fields use Object? + _absent sentinel so callers can pass null
     // explicitly to clear the value, or omit entirely to preserve existing.
@@ -350,6 +355,7 @@ class UserEntity {
     Object? lastAdSpinDate = _absent,
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
+    Object? kidsLastGameDate = _absent,
   }) {
     return UserEntity(
       id: id,
@@ -394,6 +400,7 @@ class UserEntity {
       kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
       kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
       kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
+      kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
       // Nullable: sentinel pattern — explicit null clears; absent preserves.
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -449,6 +456,9 @@ class UserEntity {
       kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
           ? this.kidsLastFeedTime
           : kidsLastFeedTime as DateTime?,
+      kidsLastGameDate: identical(kidsLastGameDate, _absent)
+          ? this.kidsLastGameDate
+          : kidsLastGameDate as DateTime?,
     );
   }
 

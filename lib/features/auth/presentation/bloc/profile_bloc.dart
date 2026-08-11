@@ -150,6 +150,8 @@ class ProfileUpdateBuddyRoomRequested extends ProfileEvent {
   final String? theme;
   final DateTime? lastCareDate;
   final DateTime? lastFeedTime;
+  final int? gamesPlayedToday;
+  final DateTime? lastGameDate;
 
   const ProfileUpdateBuddyRoomRequested({
     this.mood,
@@ -160,12 +162,14 @@ class ProfileUpdateBuddyRoomRequested extends ProfileEvent {
     this.theme,
     this.lastCareDate,
     this.lastFeedTime,
+    this.gamesPlayedToday,
+    this.lastGameDate,
   });
 
   @override
   List<Object?> get props => [
     mood, energy, hunger, careStreak, roomLevel, theme,
-    lastCareDate, lastFeedTime,
+    lastCareDate, lastFeedTime, gamesPlayedToday, lastGameDate,
   ];
 }
 
@@ -616,6 +620,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       kidsRoomTheme: event.theme,
       kidsLastCareDate: event.lastCareDate,
       kidsLastFeedTime: event.lastFeedTime,
+      kidsGamesPlayedToday: event.gamesPlayedToday,
+      kidsLastGameDate: event.lastGameDate,
     );
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(

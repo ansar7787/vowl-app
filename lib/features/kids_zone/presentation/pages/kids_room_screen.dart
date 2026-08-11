@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -247,6 +248,21 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     onFeed: () => _showFoodMenu(context, user),
                     onPlay: () {
                       if (_isSleeping) return;
+                      
+                      final now = DateTime.now();
+                      final isGameToday = user.kidsLastGameDate != null &&
+                          user.kidsLastGameDate!.year == now.year &&
+                          user.kidsLastGameDate!.month == now.month &&
+                          user.kidsLastGameDate!.day == now.day;
+                      
+                      final playedCount = isGameToday ? user.kidsGamesPlayedToday : 0;
+                      
+                      if (playedCount >= 3) {
+                        _speak("I'm tired of playing today. Come back tomorrow! 😴");
+                        di.sl<SoundService>().playClick();
+                        return;
+                      }
+
                       showDialog(
                         context: context,
                         barrierDismissible: false,
@@ -255,13 +271,16 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             Navigator.pop(context);
                             final isFirstPlay = !_hasPlayedToday && !_hasClaimedToday(user);
                             setState(() => _hasPlayedToday = true);
-                            // Update energy/happiness logic
+                            
+                            // Update energy/happiness logic & daily game limit
                             final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
                             final newHunger = (user.kidsBuddyHunger + 5).clamp(0, 100);
                             context.read<ProfileBloc>().add(
                               ProfileUpdateBuddyRoomRequested(
                                 energy: newEnergy,
                                 hunger: newHunger,
+                                gamesPlayedToday: playedCount + 1,
+                                lastGameDate: DateTime.now(),
                               ),
                             );
                             if (isFirstPlay) {
@@ -483,9 +502,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                         .fadeOut(),
                               ),
                             ),
+                          
+                          // The Theme-Specific Nest underneath the mascot
+                          Positioned(
+                            bottom: -20.h,
+                            child: _buildThemeNest(user.kidsRoomTheme),
+                          ),
 
                           VowlMascot(
-                            size: 130.r,
+                            size: 100.r,
                             state: _isSleeping
                                 ? VowlMascotState.neutral
                                 : (_isFeeding
@@ -553,16 +578,30 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         ),
         SizedBox(height: 20.h),
         if (_isTalking)
-          Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(24.r),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(color: Colors.lightBlue, width: 4.w),
+                  color: Colors.white.withValues(alpha: 0.5),
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.8),
+                    width: 2.w,
+                  ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.lightBlue.shade700,
+                      color: Colors.white.withValues(alpha: 0.6),
+                      blurRadius: 10,
+                      spreadRadius: -2,
+                      offset: const Offset(0, -2), // Inner top glow
+                    ),
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.1),
                       offset: Offset(0, 6.h),
+                      blurRadius: 15,
                     ),
                   ],
                 ),
@@ -570,15 +609,17 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                   _buddyMessage,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 14.sp,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w900,
-                    color: Colors.lightBlue.shade700,
+                    color: Colors.black87,
                   ),
                 ),
-              )
-              .animate()
-              .scale(curve: Curves.easeOutBack, duration: 400.ms)
-              .fadeIn(),
+              ),
+            ),
+          )
+          .animate()
+          .scale(curve: Curves.easeOutBack, duration: 400.ms)
+          .fadeIn(),
       ],
     );
   }
@@ -607,6 +648,108 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         ),
       ),
     );
+  }
+
+  Widget _buildThemeNest(String theme) {
+    switch (theme) {
+      case 'space':
+        // Glowing anti-gravity neon ring
+        return Container(
+          width: 120.r,
+          height: 30.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(60.r, 15.r)),
+            border: Border.all(color: Colors.cyanAccent, width: 3.w),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.cyanAccent.withValues(alpha: 0.6),
+                blurRadius: 15,
+                spreadRadius: 2,
+              )
+            ],
+          ),
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+          begin: const Offset(0.95, 0.95),
+          end: const Offset(1.05, 1.05),
+          duration: 1.5.seconds,
+        );
+      case 'ocean':
+        // Glowing coral/bubble pad
+        return Container(
+          width: 130.r,
+          height: 40.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(65.r, 20.r)),
+            gradient: RadialGradient(
+              colors: [
+                Colors.lightBlueAccent.withValues(alpha: 0.8),
+                Colors.blue.withValues(alpha: 0.2),
+              ],
+            ),
+          ),
+          child: Center(
+            child: Text(
+              "🫧",
+              style: TextStyle(fontSize: 24.sp),
+            ),
+          ),
+        );
+      case 'sweet':
+        // Pink cotton candy cloud
+        return Container(
+          width: 140.r,
+          height: 50.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(70.r, 25.r)),
+            color: Colors.pinkAccent.withValues(alpha: 0.3),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.pinkAccent.withValues(alpha: 0.4),
+                blurRadius: 20,
+                spreadRadius: 10,
+              )
+            ],
+          ),
+          child: Center(
+            child: Text(
+              "☁️",
+              style: TextStyle(fontSize: 40.sp, color: Colors.pink.withValues(alpha: 0.8)),
+            ),
+          ),
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
+          begin: -3,
+          end: 3,
+          duration: 2.seconds,
+        );
+      case 'nature':
+      default:
+        // Leafy wooden nest
+        return Container(
+          width: 130.r,
+          height: 40.r,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.elliptical(65.r, 20.r)),
+            color: Colors.brown.shade700.withValues(alpha: 0.8),
+            border: Border.all(color: Colors.green.shade600, width: 4.w),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                blurRadius: 10,
+                offset: const Offset(0, 5),
+              )
+            ],
+          ),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text("🌿", style: TextStyle(fontSize: 16.sp)),
+                Text("🍃", style: TextStyle(fontSize: 16.sp)),
+              ],
+            ),
+          ),
+        );
+    }
   }
 
   void _showDecorStore(BuildContext context, UserEntity user) {

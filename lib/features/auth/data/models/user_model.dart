@@ -86,6 +86,8 @@ class UserModel extends UserEntity {
     super.kidsRoomLevel,
     super.kidsRoomTheme,
     super.kidsLastFeedTime,
+    super.kidsGamesPlayedToday,
+    super.kidsLastGameDate,
   });
 
   // ---------------------------------------------------------------------------
@@ -166,6 +168,8 @@ class UserModel extends UserEntity {
       kidsRoomLevel: (map['kidsRoomLevel'] as num?)?.toInt() ?? 1,
       kidsRoomTheme: (map['kidsRoomTheme'] as String?) ?? 'nature',
       kidsLastFeedTime: _parseDateTime(map['kidsLastFeedTime']),
+      kidsGamesPlayedToday: (map['kidsGamesPlayedToday'] as num?)?.toInt() ?? 0,
+      kidsLastGameDate: _parseDateTime(map['kidsLastGameDate']),
     );
   }
 
@@ -242,6 +246,8 @@ class UserModel extends UserEntity {
       kidsRoomLevel: entity.kidsRoomLevel,
       kidsRoomTheme: entity.kidsRoomTheme,
       kidsLastFeedTime: entity.kidsLastFeedTime,
+      kidsGamesPlayedToday: entity.kidsGamesPlayedToday,
+      kidsLastGameDate: entity.kidsLastGameDate,
     );
   }
 
@@ -333,6 +339,10 @@ class UserModel extends UserEntity {
       'kidsLastFeedTime': kidsLastFeedTime != null
           ? Timestamp.fromDate(kidsLastFeedTime!)
           : null,
+      'kidsGamesPlayedToday': kidsGamesPlayedToday,
+      'kidsLastGameDate': kidsLastGameDate != null
+          ? Timestamp.fromDate(kidsLastGameDate!)
+          : null,
     };
   }
 
@@ -378,6 +388,7 @@ class UserModel extends UserEntity {
     int? kidsCareStreak,
     int? kidsRoomLevel,
     String? kidsRoomTheme,
+    int? kidsGamesPlayedToday,
     // Nullable sentinel fields
     Object? displayName = _absent,
     Object? photoUrl = _absent,
@@ -397,6 +408,7 @@ class UserModel extends UserEntity {
     Object? lastAdSpinDate = _absent,
     Object? kidsLastCareDate = _absent,
     Object? kidsLastFeedTime = _absent,
+    Object? kidsLastGameDate = _absent,
   }) {
     return UserModel(
       id: id,
@@ -440,6 +452,7 @@ class UserModel extends UserEntity {
       kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
       kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
       kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
+      kidsGamesPlayedToday: kidsGamesPlayedToday ?? this.kidsGamesPlayedToday,
       // Sentinel nullable fields
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -495,6 +508,9 @@ class UserModel extends UserEntity {
       kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
           ? this.kidsLastFeedTime
           : kidsLastFeedTime as DateTime?,
+      kidsLastGameDate: identical(kidsLastGameDate, _absent)
+          ? this.kidsLastGameDate
+          : kidsLastGameDate as DateTime?,
     );
   }
 
