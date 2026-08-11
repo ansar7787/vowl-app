@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -48,7 +49,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   bool _isSleeping = false;
   String _buddyMessage = "";
 
-  bool _hasPlayedToday = false;
   bool _hasCleanedToday = false;
   bool _dailyCareClaimed = false;
   bool _showConfetti = false;
@@ -109,9 +109,22 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   @override
   void initState() {
     super.initState();
+    _loadLocalState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _applyLifecycleDecay();
     });
+  }
+
+  Future<void> _loadLocalState() async {
+    final prefs = await SharedPreferences.getInstance();
+    final lastClean = prefs.getString('kids_last_clean_date');
+    if (lastClean != null && mounted) {
+      final date = DateTime.parse(lastClean);
+      final now = DateTime.now();
+      if (date.year == now.year && date.month == now.month && date.day == now.day) {
+        setState(() => _hasCleanedToday = true);
+      }
+    }
   }
 
   @override
@@ -212,6 +225,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                   : (isDark
                         ? const Color(0xFF0F172A)
                         : const Color(0xFFF8FAFC));
+              final now = DateTime.now();
+              final isGameToday = user.kidsLastGameDate != null &&
+                  user.kidsLastGameDate!.year == now.year &&
+                  user.kidsLastGameDate!.month == now.month &&
+                  user.kidsLastGameDate!.day == now.day;
+              final hasPlayedToday = isGameToday && user.kidsGamesPlayedToday > 0;
+
               return Scaffold(
                 backgroundColor: bgColor,
                 body: KidsRoomLayout(
@@ -232,7 +252,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           padding: EdgeInsets.only(left: 16.w, top: 4.h),
                           child: KidsRoomDailyCareCard(
                             user: user,
-                            hasPlayed: _hasPlayedToday,
+                            hasPlayed: hasPlayedToday,
                             hasCleaned: _hasCleanedToday,
                             onClaim: () {
                               setState(() => _dailyCareClaimed = true);
@@ -259,12 +279,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     onPlay: () {
                       if (_isSleeping) return;
                       
-                      final now = DateTime.now();
-                      final isGameToday = user.kidsLastGameDate != null &&
-                          user.kidsLastGameDate!.year == now.year &&
-                          user.kidsLastGameDate!.month == now.month &&
-                          user.kidsLastGameDate!.day == now.day;
-                      
                       final playedCount = isGameToday ? user.kidsGamesPlayedToday : 0;
                       
                       if (playedCount >= 3) {
@@ -279,7 +293,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         builder: (_) => KidsRoomPlayGame(
                           onComplete: (score) {
                             Navigator.pop(context);
-                            setState(() => _hasPlayedToday = true);
                             
                             // Update energy/happiness logic & daily game limit
                             final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
@@ -314,6 +327,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             Navigator.pop(context);
                             final isFirstClean = !_hasCleanedToday && !_hasClaimedToday(user);
                             setState(() => _hasCleanedToday = true);
+                            SharedPreferences.getInstance().then((prefs) {
+                              prefs.setString('kids_last_clean_date', DateTime.now().toIso8601String());
+                            });
                             if (isFirstClean) {
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
                               _speak("Wow! The room is so clean! 10 Kids Coins! 🪙");
