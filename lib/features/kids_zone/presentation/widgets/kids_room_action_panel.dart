@@ -29,29 +29,34 @@ class KidsRoomActionPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
-    return Padding(
-      padding: EdgeInsets.only(bottom: 24.h, left: 16.w, right: 16.w),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(40.r),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 8.w),
-            decoration: BoxDecoration(
-              color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.4),
-              borderRadius: BorderRadius.circular(40.r),
-              border: Border.all(
+    return ClipRRect(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 20.h,
+            bottom: 20.h + MediaQuery.paddingOf(context).bottom,
+            left: 8.w,
+            right: 8.w,
+          ),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.4),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+            border: Border(
+              top: BorderSide(
                 color: Colors.white.withValues(alpha: isDark ? 0.1 : 0.5),
                 width: 1.5.w,
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 30,
-                  offset: Offset(0, 10.h),
-                ),
-              ],
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.1),
+                blurRadius: 30,
+                offset: Offset(0, -10.h),
+              ),
+            ],
+          ),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
