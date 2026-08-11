@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/features/profile/presentation/widgets/kids_profile_card.dart';
 
 class ProfileStickersProgress extends StatelessWidget {
   final UserEntity user;
@@ -18,106 +16,27 @@ class ProfileStickersProgress extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final earnedStickers = user.kidsStickers;
-    // NOTE: this constant duplicates the real source of truth (the
-    // category/sticker definitions presumably owned by `KidsAssets`).
-    // If that catalog ever grows, this number will silently drift out of
-    // sync. Out of scope to fix here since `KidsAssets` isn't part of
-    // this reviewed slice, but consider exposing
-    // `KidsAssets.totalStickerCount` and reading it from there instead.
-    const totalPossible = 100; // Total 100 stickers
+    const totalPossible = 100;
 
-    return ScaleButton(
+    return KidsProfileCard(
+      icon: Icons.stars_rounded,
+      color: Colors.orange.shade400,
+      shadowColor: Colors.orange.shade700,
+      title: context.tr(
+        'profile.stickers_count',
+        fallback: '{0}/{1} Stickers',
+        args: ['${earnedStickers.length}', '$totalPossible'],
+      ),
+      subtitle: context.tr(
+        'profile.collection_progress',
+        fallback: 'Collection Progress',
+      ),
       onTap: () => context.push(AppRouter.kidsStickerBookRoute),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-      padding: EdgeInsets.all(20.w),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(color: Colors.orange.shade700, width: 2.w),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.orange.shade700,
-                      offset: Offset(0, 4.h),
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.stars_rounded,
-                  color: Colors.white,
-                  size: 24.r,
-                ),
-              ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AutoSizeText(
-                      context.tr(
-                        'profile.collection_progress',
-                        fallback: 'Collection Progress',
-                      ),
-                      maxLines: 1,
-                      minFontSize: 6,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.orange[400],
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    AutoSizeText(
-                      context.tr(
-                        'profile.stickers_count',
-                        fallback: 'Stickers',
-                        args: ['${earnedStickers.length}', '$totalPossible'],
-                      ),
-                      maxLines: 1,
-                      minFontSize: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Icon(
-                Icons.arrow_forward_ios_rounded,
-                color: isDark ? Colors.white24 : Colors.black12,
-                size: 16.r,
-              ),
-            ],
-          ),
-          if (earnedStickers.isNotEmpty) ...[
-            SizedBox(height: 20.h),
-            SizedBox(
+      bottomContent: earnedStickers.isNotEmpty
+          ? SizedBox(
               height: 50.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                // BUG FIX: this was `NeverScrollableScrollPhysics`, which
-                // defeats the entire point of using a ListView here. On
-                // any screen narrower than ~6 sticker-circles-wide (very
-                // common on small/standard phones once you account for
-                // screen padding), the stickers beyond what fit were
-                // simply cut off at the edge with no way for the user to
-                // scroll over and see them - they'd just silently
-                // disappear. Using BouncingScrollPhysics (matching the
-                // horizontal-scroller pattern already used elsewhere in
-                // this app, e.g. the badge carousel) so every earned
-                // sticker is actually reachable.
                 physics: const BouncingScrollPhysics(),
                 itemCount: earnedStickers.length.clamp(0, 6),
                 itemBuilder: (context, index) {
@@ -150,13 +69,8 @@ class ProfileStickersProgress extends StatelessWidget {
                   );
                 },
               ),
-            ),
-          ] else ...[
-            SizedBox(height: 12.h),
-          ],
-        ],
-      ),
-    ),
+            )
+          : null,
     );
   }
 }

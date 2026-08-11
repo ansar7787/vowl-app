@@ -22,6 +22,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
+import 'package:vowl/features/profile/presentation/widgets/kids_profile_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -318,81 +319,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildKidsRoomCard(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return ScaleButton(
+    return KidsProfileCard(
+      icon: Icons.toys_rounded,
+      color: Colors.red.shade400,
+      shadowColor: Colors.red.shade700,
+      title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),
+      subtitle: context.tr(
+        'profile.kids_room_subtitle',
+        fallback: 'Play, customize, and explore your room!',
+      ),
       onTap: () {
         di.sl<HapticService>().selection();
         context.push('/kids-room');
       },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: Colors.orange.shade400,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: Colors.orange.shade700, width: 2.w),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.orange.shade700,
-                    offset: Offset(0, 4.h),
-                  ),
-                ],
-              ),
-              child: Icon(
-                Icons.toys_rounded,
-                color: Colors.white,
-                size: 24.r,
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr(
-                      'profile.kids_room_title',
-                      fallback: 'Kids Room',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    context.tr(
-                      'profile.kids_room_subtitle',
-                      fallback: 'Play, customize, and explore your room!',
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white60 : Colors.black54,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 16.r,
-            ),
-          ],
-        ),
-      ),
     );
   }
 
