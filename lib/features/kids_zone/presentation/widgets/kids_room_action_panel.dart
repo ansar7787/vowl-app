@@ -35,10 +35,8 @@ class KidsRoomActionPanel extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
           padding: EdgeInsets.only(
-            top: 12.h,
-            bottom: 12.h + MediaQuery.paddingOf(context).bottom,
-            left: 8.w,
-            right: 8.w,
+            top: 16.h,
+            bottom: 16.h + MediaQuery.paddingOf(context).bottom,
           ),
           decoration: BoxDecoration(
             color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.4),
@@ -60,7 +58,8 @@ class KidsRoomActionPanel extends StatelessWidget {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              clipBehavior: Clip.none,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
