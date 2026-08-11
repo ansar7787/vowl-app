@@ -162,7 +162,7 @@ class KidsRoomLayout extends StatelessWidget {
 
         // 7. Mascot (Center Stage)
         Positioned(
-          bottom: 150.h,
+          bottom: 220.h,
           left: 0,
           right: 0,
           child: mascotWidget,

@@ -436,6 +436,52 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        if (_isTalking)
+          Padding(
+            padding: EdgeInsets.only(bottom: 20.h),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(24.r),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.8),
+                      width: 2.w,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withValues(alpha: 0.6),
+                        blurRadius: 10,
+                        spreadRadius: -2,
+                        offset: const Offset(0, -2), // Inner top glow
+                      ),
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        offset: Offset(0, 6.h),
+                        blurRadius: 15,
+                      ),
+                    ],
+                  ),
+                  child: Text(
+                    _buddyMessage,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ),
+              ),
+            )
+            .animate()
+            .scale(curve: Curves.easeOutBack, duration: 400.ms)
+            .fadeIn(),
+          ),
         Stack(
           alignment: Alignment.center,
           clipBehavior: Clip.none,
@@ -575,51 +621,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     .fadeOut(delay: 600.ms),
               ),
           ],
-        ),
-        SizedBox(height: 20.h),
-        if (_isTalking)
-          ClipRRect(
-            borderRadius: BorderRadius.circular(24.r),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(24.r),
-                  border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.8),
-                    width: 2.w,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white.withValues(alpha: 0.6),
-                      blurRadius: 10,
-                      spreadRadius: -2,
-                      offset: const Offset(0, -2), // Inner top glow
-                    ),
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      offset: Offset(0, 6.h),
-                      blurRadius: 15,
-                    ),
-                  ],
-                ),
-                child: Text(
-                  _buddyMessage,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.black87,
-                  ),
-                ),
-              ),
-            ),
-          )
-          .animate()
-          .scale(curve: Curves.easeOutBack, duration: 400.ms)
-          .fadeIn(),
       ],
     );
   }

@@ -35,8 +35,8 @@ class KidsRoomActionPanel extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
         child: Container(
           padding: EdgeInsets.only(
-            top: 20.h,
-            bottom: 20.h + MediaQuery.paddingOf(context).bottom,
+            top: 12.h,
+            bottom: 12.h + MediaQuery.paddingOf(context).bottom,
             left: 8.w,
             right: 8.w,
           ),
@@ -143,7 +143,7 @@ class KidsRoomActionPanel extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: EdgeInsets.all(16.r),
+              padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
@@ -153,12 +153,12 @@ class KidsRoomActionPanel extends StatelessWidget {
                     color,
                   ],
                 ),
-                borderRadius: BorderRadius.circular(24.r),
+                borderRadius: BorderRadius.circular(20.r),
                 boxShadow: [
                   BoxShadow(
                     color: color.withValues(alpha: 0.4),
-                    blurRadius: 15,
-                    offset: Offset(0, 8.h),
+                    blurRadius: 10,
+                    offset: Offset(0, 5.h),
                   ),
                   BoxShadow(
                     color: Colors.white.withValues(alpha: 0.4),
@@ -171,7 +171,7 @@ class KidsRoomActionPanel extends StatelessWidget {
               child: Text(
                 emoji,
                 style: TextStyle(
-                  fontSize: 26.sp,
+                  fontSize: 22.sp,
                   shadows: [
                     Shadow(
                       color: Colors.black.withValues(alpha: 0.2),
@@ -187,7 +187,7 @@ class KidsRoomActionPanel extends StatelessWidget {
               label.toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 11.sp,
+                fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : const Color(0xFF1E293B),
                 letterSpacing: 1.2,
