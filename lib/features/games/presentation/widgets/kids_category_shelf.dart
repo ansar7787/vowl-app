@@ -6,6 +6,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/kids_game_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsCategoryShelf extends StatelessWidget {
   const KidsCategoryShelf({super.key, required this.user});
@@ -161,21 +162,61 @@ class _KidsGameEntryCard extends StatelessWidget {
   }
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
-    // Basic fallback level indicator since we don't track kids games in the same exact format as adult subtypes
-    // Actually, kids games use user.kidsStats or just start at level 1 unless we query KidsBloc
-    // Let's just return a star or play icon for now
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(6.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Icon(
-        Icons.play_arrow_rounded,
-        size: 14.sp,
-        color: color,
-      ),
+    final currentLevel = user.unlockedLevels[metadata.gameType] ?? 1;
+    final isNew = currentLevel == 1 &&
+        (user.completedLevels[metadata.gameType]?.isEmpty ?? true);
+
+    if (isNew) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(6.r),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            context.tr('quest_archive.new_badge', fallback: 'New'),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 8.sp,
+              fontWeight: FontWeight.w900,
+              color: color,
+              letterSpacing: 0.5,
+            ),
+          ),
+        ),
+      );
+    }
+
+    final levelsCleared = currentLevel > 1 ? currentLevel - 1 : 0;
+    final progress = (levelsCleared % 10) / 10.0;
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        SizedBox(
+          width: 24.r,
+          height: 24.r,
+          child: CircularProgressIndicator(
+            value: progress == 0 ? 0.05 : progress,
+            backgroundColor: color.withValues(alpha: 0.1),
+            valueColor: AlwaysStoppedAnimation<Color>(color),
+            strokeWidth: 2.5.r,
+          ),
+        ),
+        Text(
+          '$currentLevel',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+          ),
+          maxLines: 1,
+        ),
+      ],
     );
   }
 }

@@ -178,6 +178,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(height: 40.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildKidsRoomCard(context),
+                          ),
+
+                          SizedBox(height: 40.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: _buildSectionHeader(
                               context,
                               context.tr(
@@ -307,6 +313,93 @@ class _ProfileScreenState extends State<ProfileScreen> {
               size: 16.r,
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildKidsRoomCard(BuildContext context) {
+    return ScaleButton(
+      onTap: () {
+        di.sl<HapticService>().selection();
+        context.push('/kids-room');
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24.r),
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFF4081), Color(0xFFE040FB)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFFF4081).withValues(alpha: 0.3),
+              blurRadius: 16,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: GlassTile(
+          borderRadius: BorderRadius.circular(24.r),
+          padding: EdgeInsets.all(20.w),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.toys_rounded,
+                  color: Colors.white,
+                  size: 28.r,
+                ),
+              ),
+              SizedBox(width: 16.w),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      context.tr(
+                        'profile.kids_room_title',
+                        fallback: 'Kids Room',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    SizedBox(height: 4.h),
+                    Text(
+                      context.tr(
+                        'profile.kids_room_subtitle',
+                        fallback: 'Play, customize, and explore your room!',
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        color: Colors.white.withValues(alpha: 0.9),
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: Colors.white54,
+                size: 16.r,
+              ),
+            ],
+          ),
         ),
       ),
     );
