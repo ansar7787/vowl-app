@@ -333,12 +333,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: const Color(0xFF06B6D4), // Cyan 500
+                color: Colors.orange.shade400,
                 borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: const Color(0xFF0891B2), width: 2.w),
+                border: Border.all(color: Colors.orange.shade700, width: 2.w),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF0891B2), // Cyan 600
+                    color: Colors.orange.shade700,
                     offset: Offset(0, 4.h),
                   ),
                 ],
