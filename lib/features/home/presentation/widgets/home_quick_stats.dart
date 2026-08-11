@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -26,7 +27,7 @@ class HomeQuickStats extends StatelessWidget {
             const Color(0xFFF97316),
             AppRouter.streakRoute,
           ),
-        ),
+        ).animate().fadeIn(delay: 100.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
         SizedBox(width: 12.w),
         Expanded(
           child: _buildMiniStatTile(
@@ -37,7 +38,7 @@ class HomeQuickStats extends StatelessWidget {
             const Color(0xFF10B981),
             AppRouter.questCoinsRoute,
           ),
-        ),
+        ).animate().fadeIn(delay: 200.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
         SizedBox(width: 12.w),
         Expanded(
           child: _buildMiniStatTile(
@@ -48,7 +49,7 @@ class HomeQuickStats extends StatelessWidget {
             const Color(0xFFF59E0B),
             '${AppRouter.kidsZoneRoute}/boutique',
           ),
-        ),
+        ).animate().fadeIn(delay: 300.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
       ],
     );
   }

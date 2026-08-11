@@ -187,37 +187,37 @@ class GlobalProgressCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '$completed',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFF6366F1),
-                                height: 1,
-                              ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            '$completed',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFF6366F1),
+                              height: 1,
                             ),
-                            TextSpan(
-                              text: context.tr(
-                                'home.levels_suffix',
-                                fallback: 'Levels',
-                                args: [totalLevels.toString()],
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? Colors.white38
-                                    : const Color(0xFF94A3B8),
-                                height: 1,
-                              ),
+                          ),
+                          Text(
+                            context.tr(
+                              'home.levels_suffix',
+                              fallback: 'Levels',
+                              args: [totalLevels.toString()],
                             ),
-                          ],
-                        ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? Colors.white38
+                                  : const Color(0xFF94A3B8),
+                              height: 1,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 12.h),
                       Row(
@@ -346,7 +346,7 @@ class GlobalProgressCard extends StatelessWidget {
   Widget _buildCategoryDot(BuildContext context, String emoji, int count) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
-      padding: EdgeInsets.only(left: 3.w),
+      padding: EdgeInsets.only(left: 4.w),
       child: Tooltip(
         message: context.tr(
           'home.levels_count',
@@ -354,14 +354,14 @@ class GlobalProgressCard extends StatelessWidget {
           args: [count.toString()],
         ),
         child: Container(
-          padding: EdgeInsets.all(4.r),
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.08)
                 : Colors.black.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(6.r),
+            borderRadius: BorderRadius.circular(8.r),
           ),
-          child: Text(emoji, style: TextStyle(fontSize: 10.sp)),
+          child: Text(emoji, style: TextStyle(fontSize: 11.sp)),
         ),
       ),
     );

@@ -45,9 +45,48 @@ class CommandPod extends StatelessWidget {
     ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.05, end: 0);
   }
 
+  /// Returns a dynamic rank label and accent color based on the user's level.
+  static ({String label, Color color, IconData icon}) _rankForLevel(int level) {
+    if (level >= 50) {
+      return (
+        label: 'LEGEND',
+        color: const Color(0xFFFFD700),
+        icon: Icons.workspace_premium_rounded,
+      );
+    }
+    if (level >= 30) {
+      return (
+        label: 'ELITE',
+        color: const Color(0xFFA855F7),
+        icon: Icons.diamond_rounded,
+      );
+    }
+    if (level >= 15) {
+      return (
+        label: 'COMMANDER',
+        color: const Color(0xFF3B82F6),
+        icon: Icons.shield_rounded,
+      );
+    }
+    if (level >= 5) {
+      return (
+        label: 'OPERATIVE',
+        color: const Color(0xFF6366F1),
+        icon: Icons.bolt_rounded,
+      );
+    }
+    return (
+      label: 'ROOKIE',
+      color: const Color(0xFF10B981),
+      icon: Icons.explore_rounded,
+    );
+  }
+
   Widget _buildDiscoveryHero(BuildContext context) {
     // XP-to-next-level progress; guarded against a zero/undefined modulus.
     final progress = (user.totalExp % 100) / 100.0;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final rank = _rankForLevel(user.level);
 
     return Container(
       decoration: BoxDecoration(
@@ -65,7 +104,9 @@ class CommandPod extends StatelessWidget {
         padding: EdgeInsets.all(24.r),
         child: Column(
           children: [
+            // ── Identity Area ──────────────────────────────────
             Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Stack(
                   alignment: Alignment.center,
@@ -94,27 +135,34 @@ class CommandPod extends StatelessWidget {
 
                     MasteryAvatar(user: user, progress: progress),
 
+                    // Level badge on avatar
                     PositionedDirectional(
                       end: 0,
                       bottom: 0,
                       child: Container(
-                        padding: EdgeInsets.all(5.r),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 6.w,
+                          vertical: 3.h,
+                        ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF6366F1),
-                          shape: BoxShape.circle,
+                          color: rank.color,
+                          borderRadius: BorderRadius.circular(10.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.4),
+                              color: rank.color.withValues(alpha: 0.4),
                               blurRadius: 10,
                             ),
                           ],
                         ),
-                        child: Icon(
-                          Icons.bolt_rounded,
-                          size: 12.r,
-                          color: Colors.white,
+                        child: Text(
+                          '${user.level}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            height: 1,
+                          ),
                         ),
                       ),
                     ),
@@ -126,30 +174,48 @@ class CommandPod extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildDynamicGreeting(context),
-                      SizedBox(height: 12.h),
+                      SizedBox(height: 8.h),
+                      // Dynamic Rank Badge
                       Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: 10.w,
-                          vertical: 4.h,
+                          vertical: 5.h,
                         ),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                          color: rank.color.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12.r),
+                          border: Border.all(
+                            color: rank.color.withValues(alpha: 0.2),
+                            width: 1,
+                          ),
                         ),
-                        child: Text(
-                          context.tr(
-                            'home.rank_operative',
-                            fallback: 'Operative',
-                          ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w800,
-                            color: const Color(0xFF6366F1),
-                            letterSpacing: 1.0,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              rank.icon,
+                              size: 11.r,
+                              color: rank.color,
+                            ),
+                            SizedBox(width: 6.w),
+                            Flexible(
+                              child: Text(
+                                context.tr(
+                                  'home.rank_operative',
+                                  fallback: rank.label,
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 9.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: rank.color,
+                                  letterSpacing: 1.2,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
@@ -157,7 +223,27 @@ class CommandPod extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 24.h),
+
+            // ── Divider ───────────────────────────────────────
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 18.h),
+              child: Container(
+                height: 1,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.transparent,
+                      isDark
+                          ? Colors.white.withValues(alpha: 0.08)
+                          : Colors.black.withValues(alpha: 0.06),
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+            // ── XP Progress Bar ───────────────────────────────
             _buildFuturisticXPBar(context, progress),
           ],
         ),
@@ -339,7 +425,7 @@ class CommandPod extends StatelessWidget {
                         padding: EdgeInsetsDirectional.fromSTEB(
                           24.w,
                           16.h,
-                          150.w,
+                          130.w,
                           16.h,
                         ),
                         child: Column(
@@ -431,7 +517,7 @@ class CommandPod extends StatelessWidget {
 
               // Mascot Area (Concentric & Engaging Design) OUTSIDE ClipRRect
               PositionedDirectional(
-                end: -10.w,
+                end: 0,
                 bottom: 0,
                 top: 0,
                 child: SizedBox(
@@ -693,36 +779,37 @@ class CommandPod extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         AutoSizeText(
           '$greeting,',
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 13.sp, // Professional secondary size
-            fontWeight: FontWeight.w600, // Medium weight for contrast
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w600,
             color: const Color(
               0xFF6366F1,
             ).withValues(alpha: isDark ? 0.8 : 0.9),
             letterSpacing: 0.5,
+            height: 1.2,
           ),
           maxLines: 1,
           minFontSize: 10,
           overflow: TextOverflow.ellipsis,
         ),
-        SizedBox(height: 2.h), // Micro-spacing for breathing room
-
+        SizedBox(height: 3.h),
         AutoSizeText(
           name,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 26.sp, // Punchy hero size
+            fontSize: 24.sp,
             fontWeight: FontWeight.w900,
             color: MeshGradientBackground.getContrastColor(context),
-            letterSpacing: -1.0,
-            height: 1.1,
+            letterSpacing: -0.8,
+            height: 1.15,
           ),
           maxLines: 1,
-          minFontSize: 18, // Enforce larger minimum size
+          minFontSize: 16,
           overflow: TextOverflow.ellipsis,
         ),
       ],

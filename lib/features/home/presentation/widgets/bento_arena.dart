@@ -171,27 +171,27 @@ class _BentoCategoryTile extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    if (!isLeft) const Spacer(),
-                    // Icon Container with Pulse
-                    Container(
-                      padding: EdgeInsets.all(14.r),
-                      decoration: BoxDecoration(
-                        color: color.withValues(alpha: 0.1),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.2),
-                            blurRadius: 10,
-                            spreadRadius: 2,
-                          ),
-                        ],
+                    if (isLeft) ...[
+                      // Icon Container with Pulse
+                      Container(
+                        padding: EdgeInsets.all(14.r),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.2),
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Icon(icon, color: color, size: 26.r),
                       ),
-                      child: Icon(icon, color: color, size: 26.r),
-                    ),
-                    SizedBox(width: 20.w),
+                      SizedBox(width: 20.w),
+                    ],
                     // Content Section
                     Expanded(
-                      flex: 5,
                       child: Column(
                         crossAxisAlignment: isLeft
                             ? CrossAxisAlignment.start
@@ -227,6 +227,9 @@ class _BentoCategoryTile extends StatelessWidget {
                           // Title
                           FittedBox(
                             fit: BoxFit.scaleDown,
+                            alignment: isLeft
+                                ? Alignment.centerLeft
+                                : Alignment.centerRight,
                             child: Text(
                               type.name.toUpperCase(),
                               maxLines: 1,
@@ -242,7 +245,6 @@ class _BentoCategoryTile extends StatelessWidget {
                               ),
                             ),
                           ),
-
                           SizedBox(height: 12.h),
                           // Progress
                           _bentoProgressLine(context, progress, color),
@@ -262,7 +264,25 @@ class _BentoCategoryTile extends StatelessWidget {
                         ],
                       ),
                     ),
-                    if (isLeft) const Spacer(),
+                    if (!isLeft) ...[
+                      SizedBox(width: 20.w),
+                      // Icon Container with Pulse
+                      Container(
+                        padding: EdgeInsets.all(14.r),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: color.withValues(alpha: 0.2),
+                              blurRadius: 10,
+                              spreadRadius: 2,
+                            ),
+                          ],
+                        ),
+                        child: Icon(icon, color: color, size: 26.r),
+                      ),
+                    ],
                   ],
                 ),
               ),

@@ -189,37 +189,37 @@ class KidsGlobalProgressCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: '$completed',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFFF43F5E),
-                                height: 1,
-                              ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: [
+                          Text(
+                            '$completed',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFFF43F5E),
+                              height: 1,
                             ),
-                            TextSpan(
-                              text: context.tr(
-                                'home.levels_suffix',
-                                fallback: 'Levels',
-                                args: [totalLevels.toString()],
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? Colors.white38
-                                    : const Color(0xFF94A3B8),
-                                height: 1,
-                              ),
+                          ),
+                          Text(
+                            context.tr(
+                              'home.levels_suffix',
+                              fallback: 'Levels',
+                              args: [totalLevels.toString()],
                             ),
-                          ],
-                        ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? Colors.white38
+                                  : const Color(0xFF94A3B8),
+                              height: 1,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 12.h),
                       Row(
