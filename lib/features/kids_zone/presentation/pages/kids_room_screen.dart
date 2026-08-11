@@ -621,6 +621,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     .fadeOut(delay: 600.ms),
               ),
           ],
+        ),
       ],
     );
   }
