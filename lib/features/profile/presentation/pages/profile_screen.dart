@@ -22,7 +22,7 @@ import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_bento_stats.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_badges_list.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_stickers_progress.dart';
-import 'package:vowl/features/profile/presentation/widgets/kids_profile_card.dart';
+import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 import 'package:vowl/features/profile/presentation/widgets/profile_preferences_list.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
@@ -127,11 +127,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ],
 
-                          SizedBox(height: 12.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: const AdRewardCard(margin: EdgeInsets.zero),
-                          ),
 
                           SizedBox(height: 12.h),
                           Padding(
@@ -219,6 +214,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ),
 
+                          SizedBox(height: 40.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
+                              context,
+                              context.tr(
+                                'profile.earn_rewards',
+                                fallback: 'Earn Rewards',
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: const AdRewardCard(margin: EdgeInsets.zero),
+                          ),
+
                           SizedBox(height: 140.h),
                         ],
                       ),
@@ -272,8 +284,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildKidsRoomCard(BuildContext context) {
-    return KidsProfileCard(
-      icon: Icons.toys_rounded,
+    return ProfileFeatureCard(
+      iconContent: Icon(
+        Icons.toys_rounded,
+        color: Colors.white,
+        size: 24.r,
+      ),
       color: Colors.red.shade400,
       shadowColor: Colors.red.shade700,
       title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),
@@ -288,7 +304,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildKeyShopBanner(BuildContext context, UserEntity user) {
+  Widget _buildKeyShopBanner(BuildContext context, dynamic user) {
     final keys = user.keys ?? 0;
 
     return ProfileFeatureCard(
