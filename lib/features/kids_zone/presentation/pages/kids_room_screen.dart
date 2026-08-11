@@ -551,12 +551,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           
                           // The Theme-Specific Nest underneath the mascot
                           Positioned(
-                            bottom: -20.h,
+                            bottom: -5.h,
                             child: _buildThemeNest(user.kidsRoomTheme),
                           ),
 
                           VowlMascot(
-                            size: 100.r,
+                            size: 85.r,
                             state: _isSleeping
                                 ? VowlMascotState.neutral
                                 : (_isFeeding
@@ -657,10 +657,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       case 'space':
         // Glowing anti-gravity neon ring
         return Container(
-          width: 120.r,
-          height: 30.r,
+          width: 140.r,
+          height: 35.r,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(60.r, 15.r)),
+            borderRadius: BorderRadius.all(Radius.elliptical(70.r, 17.5.r)),
             border: Border.all(color: Colors.cyanAccent, width: 3.w),
             boxShadow: [
               BoxShadow(
@@ -678,10 +678,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       case 'ocean':
         // Glowing coral/bubble pad
         return Container(
-          width: 130.r,
-          height: 40.r,
+          width: 150.r,
+          height: 45.r,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(65.r, 20.r)),
+            borderRadius: BorderRadius.all(Radius.elliptical(75.r, 22.5.r)),
             gradient: RadialGradient(
               colors: [
                 Colors.lightBlueAccent.withValues(alpha: 0.8),
@@ -699,10 +699,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       case 'sweet':
         // Pink cotton candy cloud
         return Container(
-          width: 140.r,
-          height: 50.r,
+          width: 160.r,
+          height: 55.r,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(70.r, 25.r)),
+            borderRadius: BorderRadius.all(Radius.elliptical(80.r, 27.5.r)),
             color: Colors.pinkAccent.withValues(alpha: 0.3),
             boxShadow: [
               BoxShadow(
@@ -727,10 +727,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       default:
         // Leafy wooden nest
         return Container(
-          width: 130.r,
-          height: 40.r,
+          width: 150.r,
+          height: 45.r,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(65.r, 20.r)),
+            borderRadius: BorderRadius.all(Radius.elliptical(75.r, 22.5.r)),
             color: Colors.brown.shade700.withValues(alpha: 0.8),
             border: Border.all(color: Colors.green.shade600, width: 4.w),
             boxShadow: [
