@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_mood_indicator.dart' as import_indicator;
 
 class KidsRoomTopBar extends StatelessWidget {

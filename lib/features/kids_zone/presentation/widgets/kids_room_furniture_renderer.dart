@@ -20,12 +20,11 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
         width: _getWidthForCategory(),
         height: _getHeightForCategory(),
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.05),
+          color: Colors.black.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
-            color: Colors.white.withOpacity(0.2),
+            color: Colors.white.withValues(alpha: 0.2),
             width: 2.w,
-            style: BorderStyle.dash,
           ),
         ),
       );
@@ -46,7 +45,7 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
             width: _getWidthForCategory() * 0.8,
             height: 15.h,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(isDark ? 0.4 : 0.15),
+              color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.15),
               borderRadius: BorderRadius.circular(100),
             ),
           ).animate().fadeIn(duration: 400.ms),
@@ -56,15 +55,15 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(bottom: 5.h),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(isDark ? 0.1 : 0.8),
+                color: Colors.white.withValues(alpha: isDark ? 0.1 : 0.8),
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(
-                  color: Colors.white.withOpacity(isDark ? 0.2 : 1.0),
+                  color: Colors.white.withValues(alpha: isDark ? 0.2 : 1.0),
                   width: 3.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(isDark ? 0.2 : 0.05),
+                    color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
                     blurRadius: 10,
                     offset: const Offset(0, 5),
                   ),

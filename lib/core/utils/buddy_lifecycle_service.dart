@@ -126,7 +126,6 @@ class BuddyLifecycleService {
 
   /// Returns the total care actions needed for the given room level.
   /// Level 1 = 0, Level 2 = 10, Level 3 = 25, Level 4 = 50, Level 5 = 100.
-  static const _levelThresholds = [0, 10, 25, 50, 100, 200, 500];
 
   /// Returns coins bonus for reaching a room level.
   int roomLevelBonus(int level) {

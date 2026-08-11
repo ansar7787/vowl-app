@@ -85,13 +85,13 @@ class KidsRoomLayout extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  _getThemeColor().withOpacity(0.1),
-                  _getThemeColor().withOpacity(0.4),
+                  _getThemeColor().withValues(alpha: 0.1),
+                  _getThemeColor().withValues(alpha: 0.4),
                 ],
               ),
               border: Border(
                 top: BorderSide(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   width: 2.h,
                 ),
               ),
@@ -181,12 +181,12 @@ class KidsRoomLayout extends StatelessWidget {
     if (hour >= 20 || hour < 6) {
       // Night time
       overlayColor = isDark 
-          ? const Color(0xFF0F172A).withOpacity(0.5) 
-          : const Color(0xFF1E1B4B).withOpacity(0.4);
+          ? const Color(0xFF0F172A).withValues(alpha: 0.5) 
+          : const Color(0xFF1E1B4B).withValues(alpha: 0.4);
       blendMode = BlendMode.darken;
     } else if (hour >= 18 && hour < 20) {
       // Evening/Sunset
-      overlayColor = const Color(0xFFF59E0B).withOpacity(0.2);
+      overlayColor = const Color(0xFFF59E0B).withValues(alpha: 0.2);
       blendMode = BlendMode.overlay;
     }
 
