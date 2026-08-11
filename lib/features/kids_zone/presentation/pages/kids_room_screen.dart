@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,6 +49,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   bool _hasPlayedToday = false;
   bool _hasCleanedToday = false;
   bool _dailyCareClaimed = false;
+
+  Timer? _speechTimer;
 
   final BuddyLifecycleService _lifecycleService = const BuddyLifecycleService();
 
@@ -108,6 +111,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     });
   }
 
+  @override
+  void dispose() {
+    _speechTimer?.cancel();
+    super.dispose();
+  }
+
   void _applyLifecycleDecay() {
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
@@ -133,7 +142,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     if (_buddyMessage.isEmpty) {
       _buddyMessage = _lifecycleService.getGreeting(user);
       _isTalking = true;
-      Future.delayed(const Duration(seconds: 4), () {
+      _speechTimer?.cancel();
+      _speechTimer = Timer(const Duration(seconds: 4), () {
         if (mounted) setState(() => _isTalking = false);
       });
     }
@@ -145,7 +155,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       _buddyMessage = text;
       _isTalking = true;
     });
-    Future.delayed(const Duration(seconds: 3), () {
+    _speechTimer?.cancel();
+    _speechTimer = Timer(const Duration(seconds: 3), () {
       if (mounted) setState(() => _isTalking = false);
     });
   }
