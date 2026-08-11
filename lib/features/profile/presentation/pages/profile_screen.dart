@@ -178,6 +178,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(height: 40.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: _buildSectionHeader(
+                              context,
+                              context.tr(
+                                'profile.kids_zone',
+                                fallback: 'Kids Zone',
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 20.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: _buildKidsRoomCard(context),
                           ),
 
