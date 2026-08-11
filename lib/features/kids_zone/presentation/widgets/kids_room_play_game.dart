@@ -125,14 +125,14 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        Colors.yellowAccent.withValues(alpha: 0.9),
-                        Colors.orange.withValues(alpha: 0.9),
+                        bubble.color.withValues(alpha: 0.5),
+                        bubble.color.withValues(alpha: 0.9),
                       ],
                     ),
-                    border: Border.all(color: Colors.amber, width: 3),
+                    border: Border.all(color: Colors.white, width: 3),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.orangeAccent.withValues(alpha: 0.6),
+                        color: bubble.color.withValues(alpha: 0.6),
                         blurRadius: 15,
                         spreadRadius: 4,
                       )
@@ -140,13 +140,13 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                   ),
                   child: Center(
                     child: Text(
-                      "⭐",
+                      "🪙",
                       style: TextStyle(
                         fontSize: bubble.size.r * 0.5,
                         shadows: [
                           Shadow(
                             color: Colors.white,
-                            blurRadius: 10,
+                            blurRadius: 15,
                           ),
                         ],
                       ),
@@ -191,7 +191,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                       border: Border.all(color: Colors.orange, width: 3.w),
                     ),
                     child: Text(
-                      "⭐ $_score",
+                      "🪙 $_score",
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 24.sp,
