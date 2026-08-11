@@ -12,17 +12,23 @@ class ShimmerLoading extends StatelessWidget {
   final double? width;
   final double? height;
   final ShapeBorder shapeBorder;
+  final Color? baseColor;
+  final Color? highlightColor;
 
   const ShimmerLoading.rectangular({
     super.key,
     this.width,
     required this.height,
+    this.baseColor,
+    this.highlightColor,
   }) : shapeBorder = const RoundedRectangleBorder();
 
   const ShimmerLoading.circular({
     super.key,
     required this.width,
     required this.height,
+    this.baseColor,
+    this.highlightColor,
     this.shapeBorder = const CircleBorder(),
   });
 
@@ -31,6 +37,8 @@ class ShimmerLoading extends StatelessWidget {
     this.width,
     required this.height,
     double borderRadius = 12,
+    this.baseColor,
+    this.highlightColor,
   }) : shapeBorder = RoundedRectangleBorder(
          borderRadius: BorderRadius.circular(borderRadius.r),
        );
@@ -41,12 +49,12 @@ class ShimmerLoading extends StatelessWidget {
 
     return RepaintBoundary(
       child: Shimmer.fromColors(
-        baseColor: isDark
+        baseColor: baseColor ?? (isDark
             ? Colors.white.withValues(alpha: 0.05)
-            : Colors.grey[300]!,
-        highlightColor: isDark
+            : Colors.grey[300]!),
+        highlightColor: highlightColor ?? (isDark
             ? Colors.white.withValues(alpha: 0.1)
-            : Colors.grey[100]!,
+            : Colors.grey[100]!),
         period: const Duration(milliseconds: 1500),
         child: Container(
           width: width,

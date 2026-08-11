@@ -573,9 +573,20 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ShimmerLoading.circular(width: 120.r, height: 120.r),
+            ShimmerLoading.circular(
+              width: 120.r, 
+              height: 120.r,
+              baseColor: Colors.white.withValues(alpha: 0.1),
+              highlightColor: Colors.white.withValues(alpha: 0.3),
+            ),
             SizedBox(height: 32.h),
-            ShimmerLoading.rounded(width: 180.w, height: 24.h, borderRadius: 12),
+            ShimmerLoading.rounded(
+              width: 180.w, 
+              height: 24.h, 
+              borderRadius: 12,
+              baseColor: Colors.white.withValues(alpha: 0.1),
+              highlightColor: Colors.white.withValues(alpha: 0.3),
+            ),
           ],
         ),
       ),
