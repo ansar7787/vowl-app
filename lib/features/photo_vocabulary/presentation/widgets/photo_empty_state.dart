@@ -16,80 +16,105 @@ class PhotoEmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textColor = isDark ? Colors.white : Colors.black87;
-    final iconColor = isDark ? Colors.white : const Color(0xFF14B8A6);
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Animated Radar/Sonar
-          SizedBox(
+          // Standby AI Core Radar
+          Container(
             height: 200.r,
             width: 200.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: const Color(0xFF14B8A6).withValues(alpha: 0.2),
+                width: 1.w,
+              ),
+            ),
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Expanding Ripple 1
+                // Pulsing rings
                 Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
-                          width: 2,
-                        ),
-                      ),
-                    )
-                    .animate(onPlay: (controller) => controller.repeat())
-                    .scaleXY(begin: 0.5, end: 1.5, duration: 2.5.seconds)
-                    .fade(begin: 0.8, end: 0.0),
-
-                // Expanding Ripple 2
-                Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: const Color(0xFF14B8A6).withValues(alpha: 0.5),
-                          width: 3,
-                        ),
-                      ),
-                    )
-                    .animate(onPlay: (controller) => controller.repeat())
-                    .scaleXY(
-                      begin: 0.5,
-                      end: 1.5,
-                      duration: 2.5.seconds,
-                      delay: 1.2.seconds,
-                    )
-                    .fade(begin: 0.8, end: 0.0),
-
-                // Solid Center Circle
-                Container(
-                  height: 100.r,
-                  width: 100.r,
+                  height: 140.r,
+                  width: 140.r,
                   decoration: BoxDecoration(
-                    color: const Color(0xFF14B8A6).withValues(alpha: 0.15),
                     shape: BoxShape.circle,
+                    border: Border.all(
+                      color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                      width: 1.5.w,
+                    ),
                   ),
+                )
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
+                // Glowing Core
+                Container(
+                  height: 80.r,
+                  width: 80.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                        blurRadius: 30,
+                        spreadRadius: 10,
+                      )
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.camera_alt_rounded,
+                    size: 40.r,
+                    color: const Color(0xFF14B8A6),
+                  )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
                 ),
-
-                // Center Icon
-                Icon(LucideIcons.camera, size: 48.r, color: iconColor)
-                    .animate(
-                      onPlay: (controller) => controller.repeat(reverse: true),
-                    )
-                    .scaleXY(begin: 0.9, end: 1.1, duration: 1.5.seconds),
+                // Radar sweep line
+                Positioned.fill(
+                  child: Center(
+                    child: Container(
+                      width: 2.w,
+                      height: 180.r,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF14B8A6).withValues(alpha: 0.0),
+                            const Color(0xFF14B8A6).withValues(alpha: 0.8),
+                            const Color(0xFF14B8A6).withValues(alpha: 0.0),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                    ),
+                  ),
+                ).animate(onPlay: (c) => c.repeat()).rotate(duration: 4.seconds),
               ],
             ),
           ),
           SizedBox(height: 32.h),
           Text(
+            "SYSTEM STANDBY",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF14B8A6),
+              letterSpacing: 4.0,
+            ),
+          ).animate(onPlay: (c) => c.repeat(reverse: true)).fade(duration: 800.ms),
+          SizedBox(height: 8.h),
+          Text(
             context.tr(
-              'vocabulary.photo_prompt',
-              fallback: 'Discover words around you!',
+              'vocabulary.photo_vocab_title',
+              fallback: 'Photo Vocabulary',
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 26.sp,
+              fontSize: 32.sp,
               fontWeight: FontWeight.w900,
               color: textColor,
               letterSpacing: -0.5,
@@ -99,11 +124,15 @@ class PhotoEmptyState extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.w),
             child: Text(
-              'Snap a photo and let our AI engine instantly identify objects in your environment.',
+              context.tr(
+                'vocabulary.photo_vocab_desc',
+                fallback:
+                    'Snap a photo and let our AI engine instantly identify objects in your environment.',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white70 : Colors.black54,
                 height: 1.4,
@@ -146,28 +175,36 @@ class PhotoEmptyState extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(
-          40.r,
-        ), // Pill shape for organic feel
+        borderRadius: BorderRadius.circular(40.r), // Pill shape
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
             decoration: BoxDecoration(
-              color: const Color(0xFF14B8A6),
+              gradient: LinearGradient(
+                colors: [
+                  const Color(0xFF14B8A6).withValues(alpha: 0.15),
+                  const Color(0xFF0D9488).withValues(alpha: 0.05),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
               borderRadius: BorderRadius.circular(40.r),
+              border: Border.all(
+                color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
+                width: 1.5.w,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF14B8A6).withValues(alpha: 0.4),
-                  blurRadius: 15,
-                  offset: const Offset(0, 5),
+                  color: const Color(0xFF14B8A6).withValues(alpha: 0.1),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),
             child: Row(
-              // Row layout for pill shape
               children: [
-                Icon(icon, color: Colors.white, size: 24.r),
+                Icon(icon, color: const Color(0xFF14B8A6), size: 24.r),
                 SizedBox(width: 8.w),
                 Text(
                   label,
@@ -175,7 +212,7 @@ class PhotoEmptyState extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
                   ),
                 ),
               ],

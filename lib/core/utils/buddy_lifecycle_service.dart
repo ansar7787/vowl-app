@@ -196,42 +196,93 @@ class BuddyLifecycleService {
     switch (mood) {
       case 'hungry':
         return [
-          "Feed me something yummy! 🍎",
-          "My tummy is making noises! 🥺",
-          "A snack would be amazing! 🍰",
-          "Please, I'm starving! 😢",
+          "My tummy is doing a little rumbly dance! 🥺",
+          "Do you have any yummy snacks for me? 🍎",
+          "I think it's time for a little treat! 🍰",
+          "I'm so hungry I could eat a whole watermelon! 🍉",
+          "Feed me, please! I promise I'll be good! 😢",
+          "A tiny cookie would make me so happy right now! 🍪",
+          "My tummy says it's lunch time! 🥪",
+          "Can we share a yummy snack together? 🥕",
+          "I need some food to grow big and strong! 💪",
+          "I'm dreaming about delicious pancakes! 🥞",
+          "Do you hear that? That's my empty tummy! 🍽️",
+          "Just one little bite of something sweet? 🍯",
+          "I would love some fresh fruit! 🍌",
+          "Feeding time is my favorite time! 😋",
+          "I'm a very hungry little buddy! 🐾"
         ];
       case 'sleepy':
         return [
-          "I could use a nap... 😴",
-          "My eyes are getting heavy... 💤",
-          "Tuck me in? 🛏️",
-          "So... tired... 🥱",
+          "I'm feeling a little bit snoozy... 😴",
+          "My eyes are getting so, so heavy... 💤",
+          "Can you tuck me into bed, please? 🛏️",
+          "Yawn... excuse me, I'm just so tired! 🥱",
+          "Is it time to wear our pajamas? 🌙",
+          "Just five more minutes of sleep, okay? 🛌",
+          "I want to dream about flying in the sky... ☁️",
+          "Let's take a tiny little nap together. 💤",
+          "I'm too sleepy to keep my eyes open! 😴",
+          "Can you sing me a quiet lullaby? 🎶",
+          "It's time for sweet dreams, best friend. 🌠",
+          "I need to rest my little paws... 🐾",
+          "The dream world is calling my name! 🌌",
+          "Goodnight... wait, I'm not asleep yet! 🥱",
+          "A soft pillow sounds amazing right now. 🧸"
         ];
       case 'bored':
         return [
-          "Let's do something fun! 🎮",
-          "I'm bored! Play with me! 🎈",
-          "Teach me something new! 📚",
-          "Adventure awaits! 🗺️",
+          "Let's play a silly game together! 🎮",
+          "I want to jump and play and run! 🎈",
+          "Can we do something super duper fun? 🎪",
+          "I'm waiting for a fun adventure with you! 🗺️",
+          "Let's see who can make the funniest face! 🤪",
+          "I want to explore the room! 🔭",
+          "Sitting still is so tricky, let's wiggle! 🤸‍♂️",
+          "Tell me a funny story, please! 📖",
+          "I wonder what toys we can play with? 🎯",
+          "Let's pretend we are magical wizards! 🧙‍♂️",
+          "I'm a little bored, let's learn something new! 🎨",
+          "Can we build a tall tower out of blocks? 🧱",
+          "Let's play hide and seek! You count first! 🫣",
+          "Do you want to sing a song with me? 🎵",
+          "I'm ready for playtime whenever you are! 🏃‍♂️"
         ];
       case 'excited':
         return [
-          "WOOHOO! You're amazing! 🎉",
-          "I love learning with you! 🌟",
-          "We're the best team! 💪",
-          "Let's conquer the world! 🚀",
-          "You make me SO happy! ❤️",
+          "WOOHOO! Today is the best day ever! 🎉",
+          "I love playing and learning with you! 🌟",
+          "We are the best team in the whole wide world! 💫",
+          "Let's jump up and down together! 🦘",
+          "You make me SO happy, best friend! ❤️",
+          "I have so many wiggles inside me! ⚡",
+          "YAY! Let's play another fun game! 🎊",
+          "High five! You are super awesome! ✋",
+          "I'm so excited I could do a backflip! 🤸‍♀️",
+          "Everything is just so much fun today! 🎈",
+          "You always know how to make me smile! 😊",
+          "I'm bouncing off the walls with joy! 🌟",
+          "Look at us go! We are super smart! 🦉",
+          "I can't wait to see what we do next! 🚀",
+          "Hooray for playtime with my favorite person! 🏆"
         ];
       default: // happy
         return [
-          "You are doing amazing! 🌟",
-          "I love playing with you! 🎈",
-          "You are getting so smart! 🧠",
-          "Keep up the great work! ✨",
-          "You're my best friend! 🦉",
-          "We learned so much today! 📖",
-          "I'm proud of you! 💖",
+          "You are doing such a great job! 🌟",
+          "I love being your special buddy! 🎈",
+          "You are getting so smart every day! 🧠",
+          "Keep smiling, it makes me happy! ✨",
+          "You're my absolute best friend! 🦉",
+          "We learned so many cool things today! 📖",
+          "I'm so, so proud of you! 💖",
+          "I love our cozy little room! 🏡",
+          "Spending time with you is my favorite! 😊",
+          "You shine brighter than a star! 🌠",
+          "Learning new words is like magic! 🎨",
+          "Your brain is growing so big and strong! 🌻",
+          "Every day is a happy adventure with you! 🌍",
+          "I give you a big virtual hug! 🤗",
+          "Thanks for taking such good care of me! 🥰"
         ];
     }
   }

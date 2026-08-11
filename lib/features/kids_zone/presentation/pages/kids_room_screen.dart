@@ -139,17 +139,28 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     
     final newEnergy = _lifecycleService.computeDecayedEnergy(user);
     final newHunger = _lifecycleService.computeIncreasedHunger(user);
+    
+    // Compute the new mood using the updated energy and hunger
+    final tempUser = user.copyWith(
+      kidsBuddyEnergy: newEnergy,
+      kidsBuddyHunger: newHunger,
+    );
+    final newMood = _lifecycleService.computeMood(tempUser);
+    
     final theme = user.kidsRoomTheme;
 
     setState(() {
       _currentTheme = theme;
     });
 
-    if (newEnergy != user.kidsBuddyEnergy || newHunger != user.kidsBuddyHunger) {
+    if (newEnergy != user.kidsBuddyEnergy || 
+        newHunger != user.kidsBuddyHunger || 
+        newMood != user.kidsBuddyMood) {
       context.read<ProfileBloc>().add(
         ProfileUpdateBuddyRoomRequested(
           energy: newEnergy,
           hunger: newHunger,
+          mood: newMood,
         ),
       );
     }
@@ -198,7 +209,58 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         );
         di.sl<SoundService>().playClick();
         Navigator.pop(context);
-        _speak("Ooh, I love this theme!");
+        final themeMessages = {
+          'nature': [
+            "Wow, it smells like pine trees!", 
+            "Let's play hide and seek in the bushes!", 
+            "I love the forest!", 
+            "Look, a butterfly!", 
+            "This is the perfect place for a picnic!", 
+            "It feels so breezy and nice here.", 
+            "I can hear the birds singing to us!", 
+            "Let's build a little treehouse!", 
+            "The leaves are so green and pretty!",
+            "I feel like a little forest explorer!"
+          ],
+          'space': [
+            "Whoa, we are floating in space!", 
+            "Look at all those shiny stars!", 
+            "Zero gravity is so bouncy!", 
+            "Are there aliens out here? Hello?", 
+            "To the moon, best friend!", 
+            "I feel like a real astronaut now!", 
+            "Can we ride a comet?", 
+            "The galaxy is so huge and sparkly!",
+            "Ground control, we are ready to play!",
+            "Look, a shooting star! Make a wish!"
+          ],
+          'ocean': [
+            "Splish splash! Time to swim!", 
+            "Under the sea is the best place to be!", 
+            "Look at those funny little bubbles!", 
+            "Do you think we'll see a dolphin?", 
+            "I feel like a happy little fish!", 
+            "The water is so blue and wavy!", 
+            "Let's look for hidden pirate treasure!",
+            "I love swimming around with you!",
+            "Glub glub! That's fish talk for hello!",
+            "It's a beautiful day at the bottom of the sea!"
+          ],
+          'sweet': [
+            "Yummy! The clouds look like cotton candy!", 
+            "Everything is so pink and sweet!", 
+            "I want to take a tiny bite out of the wall!", 
+            "This room makes me so happy and giggly!", 
+            "It's like a giant candy land!", 
+            "I love sugar and sprinkles!", 
+            "Can we build a castle out of chocolate?",
+            "It smells like warm cookies in here!",
+            "This is the yummiest room ever!",
+            "Welcome to our sweet little bakery!"
+          ],
+        };
+        final messages = themeMessages[theme] ?? ["Ooh, I love this theme!", "This looks amazing!", "Wow, so pretty!"];
+        _speak(messages[Random().nextInt(messages.length)]);
       },
     );
   }
@@ -297,10 +359,18 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             // Update energy/happiness logic & daily game limit
                             final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
                             final newHunger = (user.kidsBuddyHunger + 5).clamp(0, 100);
+                            
+                            final tempUser = user.copyWith(
+                              kidsBuddyEnergy: newEnergy,
+                              kidsBuddyHunger: newHunger,
+                            );
+                            final newMood = _lifecycleService.computeMood(tempUser);
+                            
                             context.read<ProfileBloc>().add(
                               ProfileUpdateBuddyRoomRequested(
                                 energy: newEnergy,
                                 hunger: newHunger,
+                                mood: newMood,
                                 gamesPlayedToday: playedCount + 1,
                                 lastGameDate: DateTime.now(),
                               ),
@@ -859,10 +929,18 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           di.sl<SoundService>().playCorrect();
           final newHunger = (user.kidsBuddyHunger - 20).clamp(0, 100);
           final newEnergy = (user.kidsBuddyEnergy + 10).clamp(0, 100);
+          
+          final tempUser = user.copyWith(
+            kidsBuddyEnergy: newEnergy,
+            kidsBuddyHunger: newHunger,
+          );
+          final newMood = _lifecycleService.computeMood(tempUser);
+          
           context.read<ProfileBloc>().add(
             ProfileUpdateBuddyRoomRequested(
               hunger: newHunger,
               energy: newEnergy,
+              mood: newMood,
               lastFeedTime: DateTime.now(),
             ),
           );

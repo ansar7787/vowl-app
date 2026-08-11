@@ -16,66 +16,97 @@ class ScanEmptyState extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final textColor = isDark ? Colors.white : Colors.black87;
-    final iconColor = isDark ? Colors.white : const Color(0xFF6366F1);
 
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Animated Laser Scanner
-          SizedBox(
-            height: 180.r,
-            width: 140.r,
+          // Standby AI Core Radar
+          Container(
+            height: 200.r,
+            width: 200.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                width: 1.w,
+              ),
+            ),
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Viewfinder Corners
-                _buildViewfinderCorner(Alignment.topLeft, iconColor),
-                _buildViewfinderCorner(Alignment.topRight, iconColor),
-                _buildViewfinderCorner(Alignment.bottomLeft, iconColor),
-                _buildViewfinderCorner(Alignment.bottomRight, iconColor),
-
-                // Center Icon
-                Icon(
-                  Icons.description_outlined,
-                  size: 80.r,
-                  color: iconColor.withValues(alpha: 0.2),
+                // Pulsing rings
+                Container(
+                  height: 140.r,
+                  width: 140.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                      width: 1.5.w,
+                    ),
+                  ),
+                )
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
+                // Glowing Core
+                Container(
+                  height: 80.r,
+                  width: 80.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        blurRadius: 30,
+                        spreadRadius: 10,
+                      )
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.document_scanner_rounded,
+                    size: 40.r,
+                    color: const Color(0xFF6366F1),
+                  )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
                 ),
-
-                // Moving Laser Line
-                Positioned(
-                  top: 0,
-                  left: 20.w,
-                  right: 20.w,
-                  child:
-                      Container(
-                            height: 2.h,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF6366F1),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0xFF6366F1),
-                                  blurRadius: 10,
-                                  spreadRadius: 2,
-                                ),
-                              ],
-                            ),
-                          )
-                          .animate(
-                            onPlay: (controller) =>
-                                controller.repeat(reverse: true),
-                          )
-                          .moveY(
-                            begin: 10.h,
-                            end: 170.h,
-                            duration: 1.5.seconds,
-                            curve: Curves.easeInOut,
-                          ),
-                ),
+                // Radar sweep line
+                Positioned.fill(
+                  child: Center(
+                    child: Container(
+                      width: 2.w,
+                      height: 180.r,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF6366F1).withValues(alpha: 0.0),
+                            const Color(0xFF6366F1).withValues(alpha: 0.8),
+                            const Color(0xFF6366F1).withValues(alpha: 0.0),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                    ),
+                  ),
+                ).animate(onPlay: (c) => c.repeat()).rotate(duration: 4.seconds),
               ],
             ),
           ),
           SizedBox(height: 32.h),
+          Text(
+            "SYSTEM STANDBY",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFF6366F1),
+              letterSpacing: 4.0,
+            ),
+          ).animate(onPlay: (c) => c.repeat(reverse: true)).fade(duration: 800.ms),
+          SizedBox(height: 8.h),
           Text(
             context.tr(
               'translation.scan_learn_title',
@@ -83,7 +114,7 @@ class ScanEmptyState extends StatelessWidget {
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 26.sp,
+              fontSize: 32.sp,
               fontWeight: FontWeight.w900,
               color: textColor,
               letterSpacing: -0.5,
@@ -93,11 +124,15 @@ class ScanEmptyState extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.w),
             child: Text(
-              'Capture a photo of text, signs, or menus to instantly translate them to your language.',
+              context.tr(
+                'translation.scan_learn_desc',
+                fallback:
+                    'Capture a photo of text, signs, or menus to instantly translate them to your language.',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white70 : Colors.black54,
                 height: 1.4,
@@ -130,54 +165,6 @@ class ScanEmptyState extends StatelessWidget {
     ).animate().fadeIn(duration: 800.ms);
   }
 
-  Widget _buildViewfinderCorner(Alignment alignment, Color color) {
-    return Align(
-      alignment: alignment,
-      child: Container(
-        width: 32.r,
-        height: 32.r,
-        decoration: BoxDecoration(
-          border: Border(
-            top:
-                (alignment == Alignment.topLeft ||
-                    alignment == Alignment.topRight)
-                ? BorderSide(color: color, width: 4)
-                : BorderSide.none,
-            bottom:
-                (alignment == Alignment.bottomLeft ||
-                    alignment == Alignment.bottomRight)
-                ? BorderSide(color: color, width: 4)
-                : BorderSide.none,
-            left:
-                (alignment == Alignment.topLeft ||
-                    alignment == Alignment.bottomLeft)
-                ? BorderSide(color: color, width: 4)
-                : BorderSide.none,
-            right:
-                (alignment == Alignment.topRight ||
-                    alignment == Alignment.bottomRight)
-                ? BorderSide(color: color, width: 4)
-                : BorderSide.none,
-          ),
-          borderRadius: BorderRadius.only(
-            topLeft: alignment == Alignment.topLeft
-                ? Radius.circular(8.r)
-                : Radius.zero,
-            topRight: alignment == Alignment.topRight
-                ? Radius.circular(8.r)
-                : Radius.zero,
-            bottomLeft: alignment == Alignment.bottomLeft
-                ? Radius.circular(8.r)
-                : Radius.zero,
-            bottomRight: alignment == Alignment.bottomRight
-                ? Radius.circular(8.r)
-                : Radius.zero,
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildGlassAction(
     BuildContext context, {
     required IconData icon,
@@ -188,25 +175,36 @@ class ScanEmptyState extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.r), // Sharper structural corners
+        borderRadius: BorderRadius.circular(24.r),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
             decoration: BoxDecoration(
-              color: const Color(0xFF6366F1),
-              borderRadius: BorderRadius.circular(16.r),
+              gradient: LinearGradient(
+                colors: [
+                  const Color(0xFF6366F1).withValues(alpha: 0.15),
+                  const Color(0xFF4F46E5).withValues(alpha: 0.05),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                width: 1.5.w,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                  blurRadius: 15,
-                  offset: const Offset(0, 5),
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                  blurRadius: 20,
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),
             child: Column(
               children: [
-                Icon(icon, color: Colors.white, size: 36.r),
+                Icon(icon, color: const Color(0xFF6366F1), size: 36.r),
                 SizedBox(height: 12.h),
                 Text(
                   label,
@@ -214,7 +212,7 @@ class ScanEmptyState extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w800,
-                    color: Colors.white,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
                   ),
                 ),
               ],
