@@ -124,9 +124,8 @@ class KidsRoomActionPanel extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
+    }
 
   Widget _buildModernActionButton({
     required BuildContext context,
