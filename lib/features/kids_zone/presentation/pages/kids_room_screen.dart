@@ -11,7 +11,6 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -573,19 +572,28 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ShimmerLoading.circular(
-              width: 120.r, 
+            Container(
+              width: 120.r,
               height: 120.r,
-              baseColor: Colors.white.withValues(alpha: 0.1),
-              highlightColor: Colors.white.withValues(alpha: 0.3),
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+            ).animate(onPlay: (c) => c.repeat()).shimmer(
+              duration: 1.seconds, 
+              color: Colors.white.withValues(alpha: 0.5),
             ),
             SizedBox(height: 32.h),
-            ShimmerLoading.rounded(
-              width: 180.w, 
-              height: 24.h, 
-              borderRadius: 12,
-              baseColor: Colors.white.withValues(alpha: 0.1),
-              highlightColor: Colors.white.withValues(alpha: 0.3),
+            Container(
+              width: 180.w,
+              height: 24.h,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+            ).animate(onPlay: (c) => c.repeat()).shimmer(
+              duration: 1.seconds, 
+              color: Colors.white.withValues(alpha: 0.5),
             ),
           ],
         ),
