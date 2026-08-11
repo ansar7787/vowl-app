@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,21 +16,31 @@ class KidsRoomMoodIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     final mood = user.kidsBuddyMood;
     final moodData = _getMoodData(mood);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: moodData.color, width: 3.w),
-        boxShadow: [
-          BoxShadow(
-            color: moodData.color.withValues(alpha: 0.5),
-            offset: Offset(0, 4.h),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.r),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.6),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: moodData.color.withValues(alpha: 0.8), 
+              width: 2.w,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withValues(alpha: isDark ? 0.05 : 0.5),
+                blurRadius: 8,
+                spreadRadius: -2,
+                offset: const Offset(0, -2),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Row(
+          child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           // Mood Emoji
@@ -52,7 +63,7 @@ class KidsRoomMoodIndicator extends StatelessWidget {
               fontFamily: 'Outfit',
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
-              color: moodData.color,
+              color: isDark ? moodData.color.withValues(alpha: 0.8) : moodData.color,
               letterSpacing: 1.5,
             ),
           ),
@@ -90,6 +101,8 @@ class KidsRoomMoodIndicator extends StatelessWidget {
             ),
           ]
         ],
+      ),
+        ),
       ),
     );
   }
