@@ -85,8 +85,10 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: _onPanUpdate,
-      child: Stack(
-        children: [
+      child: Material(
+        type: MaterialType.transparency,
+        child: Stack(
+          children: [
           // Background frosted glass effect for dirty/soapy room
           if (!_isFinished)
             BackdropFilter(
@@ -227,6 +229,7 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
             ),
         ],
+      ),
       ),
     );
   }

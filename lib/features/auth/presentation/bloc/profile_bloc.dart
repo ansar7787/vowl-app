@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -611,22 +612,25 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final user = authBloc.state.user;
     if (user == null) return;
 
-    final updatedUser = user.copyWith(
-      kidsBuddyMood: event.mood,
-      kidsBuddyEnergy: event.energy,
-      kidsBuddyHunger: event.hunger,
-      kidsCareStreak: event.careStreak,
-      kidsRoomLevel: event.roomLevel,
-      kidsRoomTheme: event.theme,
-      kidsLastCareDate: event.lastCareDate,
-      kidsLastFeedTime: event.lastFeedTime,
-      kidsGamesPlayedToday: event.gamesPlayedToday,
-      kidsLastGameDate: event.lastGameDate,
-    );
-    final result = await updateUser(UpdateUserParams(user: updatedUser));
-    result.fold(
-      (failure) => emit(state.copyWith(message: () => failure.message)),
-      (_) => authBloc.add(const AuthReloadUser()),
-    );
+    final updates = <String, dynamic>{};
+    if (event.mood != null) updates['kidsBuddyMood'] = event.mood;
+    if (event.energy != null) updates['kidsBuddyEnergy'] = event.energy;
+    if (event.hunger != null) updates['kidsBuddyHunger'] = event.hunger;
+    if (event.careStreak != null) updates['kidsCareStreak'] = event.careStreak;
+    if (event.roomLevel != null) updates['kidsRoomLevel'] = event.roomLevel;
+    if (event.theme != null) updates['kidsRoomTheme'] = event.theme;
+    if (event.lastCareDate != null) updates['kidsLastCareDate'] = Timestamp.fromDate(event.lastCareDate!);
+    if (event.lastFeedTime != null) updates['kidsLastFeedTime'] = Timestamp.fromDate(event.lastFeedTime!);
+    if (event.gamesPlayedToday != null) updates['kidsGamesPlayedToday'] = event.gamesPlayedToday;
+    if (event.lastGameDate != null) updates['kidsLastGameDate'] = Timestamp.fromDate(event.lastGameDate!);
+
+    if (updates.isNotEmpty) {
+      try {
+        await FirebaseFirestore.instance.collection('users').doc(user.id).update(updates);
+        authBloc.add(const AuthReloadUser());
+      } catch (e) {
+        emit(state.copyWith(message: () => e.toString()));
+      }
+    }
   }
 }
