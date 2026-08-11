@@ -27,21 +27,28 @@ class ProfileStickersProgress extends StatelessWidget {
     const totalPossible = 100; // Total 100 stickers
 
     return GlassTile(
-      borderRadius: BorderRadius.circular(32.r),
-      padding: EdgeInsets.all(20.r),
+      borderRadius: BorderRadius.circular(24.r),
+      padding: EdgeInsets.all(20.w),
       child: Column(
         children: [
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(12.r),
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
                 decoration: BoxDecoration(
-                  color: Colors.orange.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
+                  color: Colors.orange.shade400,
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(color: Colors.orange.shade700, width: 2.w),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.orange.shade700,
+                      offset: Offset(0, 4.h),
+                    ),
+                  ],
                 ),
                 child: Icon(
                   Icons.stars_rounded,
-                  color: Colors.orange,
+                  color: Colors.white,
                   size: 24.r,
                 ),
               ),
