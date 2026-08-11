@@ -12,6 +12,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
+import 'package:vowl/features/games/presentation/widgets/kids_category_shelf.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -124,6 +125,7 @@ class GamesScreen extends StatelessWidget {
       type: QuestType.eliteMastery,
       user: user,
     ),
+    _KidsGameSection(user: user),
   ];
 }
 
@@ -248,6 +250,41 @@ class _GameSection extends StatelessWidget {
 }
 
 // ---------------------------------------------------------------------------
+// Private: Kids game category section (header + shelf)
+// ---------------------------------------------------------------------------
+
+class _KidsGameSection extends StatelessWidget {
+  final UserEntity user;
+
+  const _KidsGameSection({required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    const color = Color(0xFFFF4081); // Bright pink for Kids Zone
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 32.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: _GameSectionHeader(
+            titleKey: 'kids_zone.title',
+            subtitleKey: 'kids_zone.subtitle',
+            fallbackTitle: 'Kids Zone',
+            fallbackSubtitle: 'Play & Learn',
+            color: color,
+            onSeeAll: () => context.push('/kids-zone'),
+          ),
+        ),
+        SizedBox(height: 16.h),
+        KidsCategoryShelf(user: user),
+      ],
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Private: Section header (colour bar + title + subtitle + see-all button)
 // FIX (HIGH-4): Extracted from _buildSectionHeader().
 // ---------------------------------------------------------------------------
@@ -255,12 +292,16 @@ class _GameSection extends StatelessWidget {
 class _GameSectionHeader extends StatelessWidget {
   final String titleKey;
   final String subtitleKey;
+  final String? fallbackTitle;
+  final String? fallbackSubtitle;
   final Color color;
   final VoidCallback? onSeeAll;
 
   const _GameSectionHeader({
     required this.titleKey,
     required this.subtitleKey,
+    this.fallbackTitle,
+    this.fallbackSubtitle,
     required this.color,
     this.onSeeAll,
   });
@@ -295,7 +336,7 @@ class _GameSectionHeader extends StatelessWidget {
             children: [
               Text(
                 // FIX (HIGH-2): Category name resolved via l10n, then uppercased.
-                context.tr(titleKey).toUpperCase(),
+                context.tr(titleKey, fallback: fallbackTitle).toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 18.sp,
@@ -305,7 +346,7 @@ class _GameSectionHeader extends StatelessWidget {
                 ),
               ),
               Text(
-                context.tr(subtitleKey),
+                context.tr(subtitleKey, fallback: fallbackSubtitle),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,

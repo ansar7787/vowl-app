@@ -8,8 +8,8 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/ml_services/digital_ink_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/features/kids_zone/kids_routes.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/kids_game_helper.dart';
 
 class KidsCategoryGrid extends StatefulWidget {
   final bool isDark;
@@ -52,425 +52,108 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
           crossAxisSpacing: 20.w,
           childAspectRatio: 0.85,
         ),
-        delegate: SliverChildListDelegate([
-          _buildCategoryCard(
-            context,
-            () async {
-              if (!_isModelDownloaded) {
-                final networkInfo = di.sl<NetworkInfo>();
-                final isConnected = await networkInfo.isConnected;
-                if (!isConnected && context.mounted) {
-                  CustomSnackBar.show(
-                    context: context,
-                    message:
-                        'Internet connection required to download smart pen model.',
-                    type: CustomSnackBarType.warning,
-                  );
-                  return;
-                }
-              }
+        delegate: SliverChildListDelegate(
+          KidsGameHelper.allGames.map((game) {
+            if (game.gameType == 'handwriting') {
+              return _buildCategoryCard(
+                context,
+                () async {
+                  if (!_isModelDownloaded) {
+                    final networkInfo = di.sl<NetworkInfo>();
+                    final isConnected = await networkInfo.isConnected;
+                    if (!isConnected && context.mounted) {
+                      CustomSnackBar.show(
+                        context: context,
+                        message:
+                            'Internet connection required to download smart pen model.',
+                        type: CustomSnackBarType.warning,
+                      );
+                      return;
+                    }
+                  }
 
-              final service = di.sl<DigitalInkService>();
-              bool isDownloaded = await service.isModelDownloaded();
+                  final service = di.sl<DigitalInkService>();
+                  bool isDownloaded = await service.isModelDownloaded();
 
-              if (!isDownloaded && context.mounted) {
-                final success = await showDialog<bool>(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) => _DownloadModelDialog(
-                    primaryColor: KidsRoutes.getKidsGameColor('handwriting'),
-                  ),
-                );
-
-                if (success != true) {
-                  if (context.mounted) {
-                    CustomSnackBar.show(
+                  if (!isDownloaded && context.mounted) {
+                    final success = await showDialog<bool>(
                       context: context,
-                      message: 'Failed to download handwriting model.',
-                      type: CustomSnackBarType.error,
+                      barrierDismissible: false,
+                      builder: (context) => _DownloadModelDialog(
+                        primaryColor: game.color,
+                      ),
+                    );
+
+                    if (success != true) {
+                      if (context.mounted) {
+                        CustomSnackBar.show(
+                          context: context,
+                          message: 'Failed to download handwriting model.',
+                          type: CustomSnackBarType.error,
+                        );
+                      }
+                      return;
+                    }
+
+                    setState(() {
+                      _isModelDownloaded = true;
+                    });
+                  }
+
+                  if (context.mounted) {
+                    context.push(
+                      '/kids/map/handwriting',
+                      extra: {
+                        'title': game.fullTitle,
+                        'primaryColor': game.color,
+                      },
                     );
                   }
-                  return;
-                }
+                },
+                game.gridTitle,
+                _isCheckingModel
+                    ? 'Checking...'
+                    : (!_isModelDownloaded
+                          ? 'Download Required'
+                          : game.subtitle),
+                game.color,
+                game.icon,
+                trailing: _isCheckingModel
+                    ? Icon(
+                            Icons.sync_rounded,
+                            color: game.color,
+                            size: 24.sp,
+                          )
+                          .animate(onPlay: (c) => c.repeat())
+                          .rotate(duration: 1.5.seconds)
+                    : (!_isModelDownloaded
+                          ? Icon(
+                                  Icons.cloud_download_rounded,
+                                  color: game.color,
+                                  size: 28.sp,
+                                )
+                                .animate(onPlay: (c) => c.repeat(reverse: true))
+                                .scaleXY(begin: 1.0, end: 1.15, duration: 1.seconds)
+                          : null),
+              );
+            }
 
-                setState(() {
-                  _isModelDownloaded = true;
-                });
-              }
-
-              if (context.mounted) {
-                context.push(
-                  '/kids/map/handwriting',
-                  extra: {
-                    'title': 'Handwriting',
-                    'primaryColor': KidsRoutes.getKidsGameColor('handwriting'),
-                  },
-                );
-              }
-            },
-            'Write & Learn',
-            _isCheckingModel
-                ? 'Checking...'
-                : (!_isModelDownloaded
-                      ? 'Download Required'
-                      : 'Handwriting Fun'),
-            KidsRoutes.getKidsGameColor('handwriting'),
-            Icons.edit_rounded,
-            trailing: _isCheckingModel
-                ? Icon(
-                        Icons.sync_rounded,
-                        color: KidsRoutes.getKidsGameColor('handwriting'),
-                        size: 24.sp,
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .rotate(duration: 1.5.seconds)
-                : (!_isModelDownloaded
-                      ? Icon(
-                              Icons.cloud_download_rounded,
-                              color: KidsRoutes.getKidsGameColor('handwriting'),
-                              size: 28.sp,
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .scaleXY(begin: 1.0, end: 1.15, duration: 1.seconds)
-                      : null),
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/alphabet',
-              extra: {
-                'title': 'Alphabet',
-                'primaryColor': KidsRoutes.getKidsGameColor('alphabet'),
-              },
-            ),
-            'ABC',
-            'Letters & Phonics',
-            KidsRoutes.getKidsGameColor('alphabet'),
-            Icons.abc_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/numbers',
-              extra: {
-                'title': 'Numbers',
-                'primaryColor': KidsRoutes.getKidsGameColor('numbers'),
-              },
-            ),
-            '123',
-            'Numbers & Math',
-            KidsRoutes.getKidsGameColor('numbers'),
-            Icons.pin_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/colors',
-              extra: {
-                'title': 'Colors',
-                'primaryColor': KidsRoutes.getKidsGameColor('colors'),
-              },
-            ),
-            'Colors',
-            'Rainbow Fun',
-            KidsRoutes.getKidsGameColor('colors'),
-            Icons.palette_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/shapes',
-              extra: {
-                'title': 'Shapes',
-                'primaryColor': KidsRoutes.getKidsGameColor('shapes'),
-              },
-            ),
-            'Shapes',
-            'Geometry Fun',
-            KidsRoutes.getKidsGameColor('shapes'),
-            Icons.category_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/animals',
-              extra: {
-                'title': 'Animals',
-                'primaryColor': KidsRoutes.getKidsGameColor('animals'),
-              },
-            ),
-            'Animals',
-            'Farm & Wild',
-            KidsRoutes.getKidsGameColor('animals'),
-            Icons.pets_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/fruits',
-              extra: {
-                'title': 'Fruits',
-                'primaryColor': KidsRoutes.getKidsGameColor('fruits'),
-              },
-            ),
-            'Fruits',
-            'Healthy Eating',
-            KidsRoutes.getKidsGameColor('fruits'),
-            Icons.apple_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/family',
-              extra: {
-                'title': 'Family',
-                'primaryColor': KidsRoutes.getKidsGameColor('family'),
-              },
-            ),
-            'Family',
-            'Love & Home',
-            KidsRoutes.getKidsGameColor('family'),
-            Icons.people_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/school',
-              extra: {
-                'title': 'School',
-                'primaryColor': KidsRoutes.getKidsGameColor('school'),
-              },
-            ),
-            'School',
-            'Let\'s Learn',
-            KidsRoutes.getKidsGameColor('school'),
-            Icons.school_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/verbs',
-              extra: {
-                'title': 'Verbs',
-                'primaryColor': KidsRoutes.getKidsGameColor('verbs'),
-              },
-            ),
-            'Verbs',
-            'Action Words',
-            KidsRoutes.getKidsGameColor('verbs'),
-            Icons.run_circle_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/routine',
-              extra: {
-                'title': 'Routine',
-                'primaryColor': KidsRoutes.getKidsGameColor('routine'),
-              },
-            ),
-            'Routine',
-            'My Day',
-            KidsRoutes.getKidsGameColor('routine'),
-            Icons.schedule_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/emotions',
-              extra: {
-                'title': 'Emotions',
-                'primaryColor': KidsRoutes.getKidsGameColor('emotions'),
-              },
-            ),
-            'Emotions',
-            'Feelings',
-            KidsRoutes.getKidsGameColor('emotions'),
-            Icons.mood_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/prepositions',
-              extra: {
-                'title': 'Prepositions',
-                'primaryColor': KidsRoutes.getKidsGameColor('prepositions'),
-              },
-            ),
-            'Positions',
-            'Where is it?',
-            KidsRoutes.getKidsGameColor('prepositions'),
-            Icons.place_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/phonics',
-              extra: {
-                'title': 'Phonics',
-                'primaryColor': KidsRoutes.getKidsGameColor('phonics'),
-              },
-            ),
-            'Phonics',
-            'Sound Out',
-            KidsRoutes.getKidsGameColor('phonics'),
-            Icons.record_voice_over_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/time',
-              extra: {
-                'title': 'Time',
-                'primaryColor': KidsRoutes.getKidsGameColor('time'),
-              },
-            ),
-            'Time',
-            'Tick Tock',
-            KidsRoutes.getKidsGameColor('time'),
-            Icons.watch_later_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/opposites',
-              extra: {
-                'title': 'Opposites',
-                'primaryColor': KidsRoutes.getKidsGameColor('opposites'),
-              },
-            ),
-            'Opposites',
-            'Flip It',
-            KidsRoutes.getKidsGameColor('opposites'),
-            Icons.swap_horiz_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/day_night',
-              extra: {
-                'title': 'Day/Night',
-                'primaryColor': KidsRoutes.getKidsGameColor('day_night'),
-              },
-            ),
-            'Day & Night',
-            'Sun & Moon',
-            KidsRoutes.getKidsGameColor('day_night'),
-            Icons.brightness_4_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/nature',
-              extra: {
-                'title': 'Nature',
-                'primaryColor': KidsRoutes.getKidsGameColor('nature'),
-              },
-            ),
-            'Nature',
-            'Outdoors',
-            KidsRoutes.getKidsGameColor('nature'),
-            Icons.forest_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/home',
-              extra: {
-                'title': 'Home',
-                'primaryColor': KidsRoutes.getKidsGameColor('home'),
-              },
-            ),
-            'Home',
-            'Rooms & Items',
-            KidsRoutes.getKidsGameColor('home'),
-            Icons.home_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/food',
-              extra: {
-                'title': 'Food',
-                'primaryColor': KidsRoutes.getKidsGameColor('food'),
-              },
-            ),
-            'Food',
-            'Yummy!',
-            KidsRoutes.getKidsGameColor('food'),
-            Icons.restaurant_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/transport',
-              extra: {
-                'title': 'Transport',
-                'primaryColor': KidsRoutes.getKidsGameColor('transport'),
-              },
-            ),
-            'Transport',
-            'Vroom Vroom',
-            KidsRoutes.getKidsGameColor('transport'),
-            Icons.directions_car_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/body_parts',
-              extra: {
-                'title': 'Body Parts',
-                'primaryColor': KidsRoutes.getKidsGameColor('body_parts'),
-              },
-            ),
-            'Body',
-            'My Body',
-            KidsRoutes.getKidsGameColor('body_parts'),
-            Icons.accessibility_new_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/clothing',
-              extra: {
-                'title': 'Clothing',
-                'primaryColor': KidsRoutes.getKidsGameColor('clothing'),
-              },
-            ),
-            'Clothing',
-            'Dress Up',
-            KidsRoutes.getKidsGameColor('clothing'),
-            Icons.checkroom_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/weather',
-              extra: {
-                'title': 'Weather',
-                'primaryColor': KidsRoutes.getKidsGameColor('weather'),
-              },
-            ),
-            'Weather',
-            'Sun & Rain',
-            KidsRoutes.getKidsGameColor('weather'),
-            Icons.cloud_rounded,
-          ),
-          _buildCategoryCard(
-            context,
-            () => context.push(
-              '/kids/map/professions',
-              extra: {
-                'title': 'Professions',
-                'primaryColor': KidsRoutes.getKidsGameColor('professions'),
-              },
-            ),
-            'Professions',
-            'When I Grow Up',
-            KidsRoutes.getKidsGameColor('professions'),
-            Icons.work_rounded,
-          ),
-        ]),
+            return _buildCategoryCard(
+              context,
+              () => context.push(
+                '/kids/map/${game.gameType}',
+                extra: {
+                  'title': game.fullTitle,
+                  'primaryColor': game.color,
+                },
+              ),
+              game.gridTitle,
+              game.subtitle,
+              game.color,
+              game.icon,
+            );
+          }).toList(),
+        ),
       ),
     );
   }
