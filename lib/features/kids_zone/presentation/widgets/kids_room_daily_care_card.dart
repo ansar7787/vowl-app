@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -20,7 +21,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Determine if tasks are done
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final now = DateTime.now();
     final hasFed = user.kidsLastFeedTime != null &&
         user.kidsLastFeedTime!.year == now.year &&
@@ -29,19 +30,32 @@ class KidsRoomDailyCareCard extends StatelessWidget {
     
     final allDone = hasFed && hasPlayed && hasCleaned;
 
-    return Container(
-      padding: EdgeInsets.all(16.r),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.amber, width: 3.w),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.amber.shade700,
-            offset: Offset(0, 4.h),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24.r),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+        child: Container(
+          padding: EdgeInsets.all(16.r),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.4 : 0.6),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(
+              color: Colors.amber.withValues(alpha: 0.8),
+              width: 2.w,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withValues(alpha: isDark ? 0.05 : 0.5),
+                blurRadius: 10,
+                spreadRadius: -2,
+                offset: const Offset(0, -2),
+              ),
+              BoxShadow(
+                color: Colors.amber.withValues(alpha: 0.2),
+                blurRadius: 20,
+              ),
+            ],
           ),
-        ],
-      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -64,11 +78,11 @@ class KidsRoomDailyCareCard extends StatelessWidget {
             ],
           ),
           SizedBox(height: 12.h),
-          _buildTaskItem("Feed Buddy", hasFed),
+          _buildTaskItem("Feed Buddy", hasFed, isDark),
           SizedBox(height: 8.h),
-          _buildTaskItem("Play Game", hasPlayed),
+          _buildTaskItem("Play Game", hasPlayed, isDark),
           SizedBox(height: 8.h),
-          _buildTaskItem("Clean Room", hasCleaned),
+          _buildTaskItem("Clean Room", hasCleaned, isDark),
           
           if (allDone) ...[
             SizedBox(height: 16.h),
@@ -106,16 +120,18 @@ class KidsRoomDailyCareCard extends StatelessWidget {
           ]
         ],
       ),
+        ),
+      ),
     );
   }
 
-  Widget _buildTaskItem(String label, bool isDone) {
+  Widget _buildTaskItem(String label, bool isDone, bool isDark) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(
           isDone ? Icons.check_circle_rounded : Icons.circle_outlined,
-          color: isDone ? Colors.green : Colors.grey.shade400,
+          color: isDone ? Colors.greenAccent.shade400 : Colors.grey.shade400,
           size: 20.sp,
         ),
         SizedBox(width: 8.w),
@@ -124,8 +140,11 @@ class KidsRoomDailyCareCard extends StatelessWidget {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: isDone ? FontWeight.w800 : FontWeight.w600,
-            color: isDone ? Colors.green.shade700 : Colors.grey.shade600,
+            color: isDone 
+                ? (isDark ? Colors.greenAccent.shade100 : Colors.green.shade800)
+                : (isDark ? Colors.white60 : Colors.black54),
             decoration: isDone ? TextDecoration.lineThrough : null,
+            decorationColor: isDone ? Colors.greenAccent.shade400 : null,
             decorationThickness: 2,
           ),
         ),

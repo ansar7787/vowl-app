@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -16,29 +17,41 @@ class KidsRoomTopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       child: Row(
             children: [
               ScaleButton(
                 onTap: onBack,
-                child: Container(
-                  padding: EdgeInsets.all(12.r),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: Colors.grey.shade300, width: 3.w),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade300,
-                        offset: Offset(0, 4.h),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Container(
+                      padding: EdgeInsets.all(12.r),
+                      decoration: BoxDecoration(
+                        color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.6),
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: isDark ? 0.1 : 0.5), 
+                          width: 2.w,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.1),
+                            blurRadius: 10,
+                            offset: Offset(0, 4.h),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  child: Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: Colors.grey.shade600,
-                    size: 20.sp,
+                      child: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        color: isDark ? Colors.white70 : Colors.grey.shade700,
+                        size: 20.sp,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -53,30 +66,46 @@ class KidsRoomTopBar extends StatelessWidget {
 
 
   Widget _buildCurrencyBadge(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.amber, width: 3.w),
-        boxShadow: [
-          BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 4.h)),
-        ],
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.monetization_on_rounded, color: Colors.amber, size: 24.sp),
-          SizedBox(width: 8.w),
-          Text(
-            "${user.kidsCoins}",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.amber.shade700,
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20.r),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.6),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: Colors.amber.withValues(alpha: 0.8), 
+              width: 2.w,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.white.withValues(alpha: isDark ? 0.05 : 0.5),
+                blurRadius: 8,
+                spreadRadius: -2,
+                offset: const Offset(0, -2),
+              ),
+            ],
           ),
-        ],
+          child: Row(
+            children: [
+              Icon(Icons.monetization_on_rounded, color: Colors.amberAccent.shade400, size: 24.sp),
+              SizedBox(width: 8.w),
+              Text(
+                "${user.kidsCoins}",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.amberAccent.shade100 : Colors.amber.shade700,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

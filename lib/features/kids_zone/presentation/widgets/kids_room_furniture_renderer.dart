@@ -55,17 +55,30 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(bottom: 5.h),
               decoration: BoxDecoration(
-                color: Colors.white.withValues(alpha: isDark ? 0.1 : 0.8),
-                borderRadius: BorderRadius.circular(20.r),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.white.withValues(alpha: isDark ? 0.2 : 0.9),
+                    Colors.white.withValues(alpha: isDark ? 0.05 : 0.6),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(
-                  color: Colors.white.withValues(alpha: isDark ? 0.2 : 1.0),
-                  width: 3.w,
+                  color: Colors.white.withValues(alpha: isDark ? 0.3 : 1.0),
+                  width: 2.w,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
+                    color: Colors.white.withValues(alpha: isDark ? 0.1 : 0.6),
+                    blurRadius: 15,
+                    spreadRadius: -2,
+                    offset: const Offset(0, -2), // Inner top glow
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.15),
+                    blurRadius: 20,
+                    offset: const Offset(0, 10),
                   ),
                 ],
               ),

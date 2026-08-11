@@ -85,16 +85,26 @@ class KidsRoomLayout extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  _getThemeColor().withValues(alpha: 0.1),
-                  _getThemeColor().withValues(alpha: 0.4),
+                  _getThemeColor().withValues(alpha: 0.15),
+                  _getThemeColor().withValues(alpha: 0.5),
+                  _getThemeColor().withValues(alpha: 0.8),
                 ],
+                stops: const [0.0, 0.5, 1.0],
               ),
               border: Border(
                 top: BorderSide(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 2.h,
+                  color: Colors.white.withValues(alpha: 0.4),
+                  width: 3.h,
                 ),
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: _getThemeColor().withValues(alpha: 0.3),
+                  blurRadius: 40,
+                  spreadRadius: 5,
+                  offset: const Offset(0, -10),
+                )
+              ]
             ),
           ),
         ),
