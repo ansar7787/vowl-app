@@ -191,19 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: _buildKidsRoomCard(context),
                           ),
-
-                          SizedBox(height: 40.h),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: _buildSectionHeader(
-                              context,
-                              context.tr(
-                                'profile.kids_stickers',
-                                fallback: 'Sticker Book',
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
+                          SizedBox(height: 16.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: ProfileStickersProgress(user: user),
