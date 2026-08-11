@@ -23,6 +23,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_daily_car
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_top_bar.dart';
@@ -50,6 +51,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   bool _hasPlayedToday = false;
   bool _hasCleanedToday = false;
   bool _dailyCareClaimed = false;
+  bool _showConfetti = false;
 
   Timer? _speechTimer;
 
@@ -162,6 +164,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     });
   }
 
+  void _triggerConfetti() {
+    setState(() => _showConfetti = true);
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) setState(() => _showConfetti = false);
+    });
+  }
+
   void _showThemeMenu(BuildContext context, UserEntity user) {
     KidsRoomThemeSheet.show(
       context,
@@ -236,6 +245,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                               );
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(25));
                               _speak("Great job! You earned 25 Kids Coins! 🪙");
+                              _triggerConfetti();
                               di.sl<SoundService>().playCorrect();
                             },
                           ),
@@ -286,6 +296,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             if (score > 0) {
                               context.read<EconomyBloc>().add(EconomyAddKidsCoinsRequested(score));
                               _speak("Yay! You got $score Kids Coins! 🪙");
+                              _triggerConfetti();
                             } else {
                               _speak("That was fun! Let's try again! 🎮");
                             }
@@ -306,6 +317,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             if (isFirstClean) {
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
                               _speak("Wow! The room is so clean! 10 Kids Coins! 🪙");
+                              _triggerConfetti();
                             } else {
                               _speak("Sparkling clean! ✨");
                             }
@@ -327,7 +339,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     },
                     onThemeTap: () => _showThemeMenu(context, user),
                   ),
-                  overlayWidget: _isSleeping ? GestureDetector(
+                  overlayWidget: (_isSleeping || _showConfetti) ? Stack(
+                    children: [
+                      if (_isSleeping)
+                        GestureDetector(
                         onTap: () {
                           setState(() => _isSleeping = false);
                           _speak("I'm awake! Let's play!");
@@ -421,7 +436,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             ],
                           ),
                         ),
-                      ).animate().fadeIn(duration: 600.ms) : null,
+                      ).animate().fadeIn(duration: 600.ms),
+                      
+                      if (_showConfetti)
+                        const Positioned.fill(
+                          child: IgnorePointer(child: GameConfetti()),
+                        ),
+                    ],
+                  ) : null,
                 ),
               );
             },
