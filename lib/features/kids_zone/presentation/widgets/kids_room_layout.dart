@@ -1,3 +1,4 @@
+import 'dart:math' as dart_math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
@@ -194,18 +195,15 @@ class KidsRoomLayout extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     Color overlayColor = Colors.transparent;
-    BlendMode blendMode = BlendMode.dstOver;
 
     if (hour >= 20 || hour < 6) {
       // Night time
       overlayColor = isDark 
           ? const Color(0xFF0F172A).withValues(alpha: 0.5) 
           : const Color(0xFF1E1B4B).withValues(alpha: 0.4);
-      blendMode = BlendMode.darken;
     } else if (hour >= 18 && hour < 20) {
       // Evening/Sunset
       overlayColor = const Color(0xFFF59E0B).withValues(alpha: 0.2);
-      blendMode = BlendMode.overlay;
     }
 
     if (overlayColor == Colors.transparent) return const SizedBox();
@@ -242,6 +240,26 @@ class KidsRoomLayout extends StatelessWidget {
           opacity: 0.1,
           child: CustomPaint(painter: _GrassTexturePainter(color: Colors.greenAccent)),
         );
+    }
+  }
+
+  String _getThemePainter() {
+    switch (theme) {
+      case 'space': return 'StarryNight';
+      case 'ocean': return 'OceanWave';
+      case 'sweet': return 'CandyCloud';
+      case 'nature':
+      default: return 'ForestFriend';
+    }
+  }
+
+  Color _getThemeColor() {
+    switch (theme) {
+      case 'space': return const Color(0xFF312E81); // Indigo 900
+      case 'ocean': return const Color(0xFF0284C7); // Light Blue 600
+      case 'sweet': return const Color(0xFFBE185D); // Pink 700
+      case 'nature':
+      default: return const Color(0xFF15803D); // Green 700
     }
   }
 }
@@ -354,24 +372,4 @@ class _GrassTexturePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-
-  String _getThemePainter() {
-    switch (theme) {
-      case 'space': return 'StarryNight';
-      case 'ocean': return 'OceanWave';
-      case 'sweet': return 'CandyCloud';
-      case 'nature':
-      default: return 'ForestFriend';
-    }
-  }
-
-  Color _getThemeColor() {
-    switch (theme) {
-      case 'space': return const Color(0xFF312E81); // Indigo 900
-      case 'ocean': return const Color(0xFF0284C7); // Light Blue 600
-      case 'sweet': return const Color(0xFFBE185D); // Pink 700
-      case 'nature':
-      default: return const Color(0xFF15803D); // Green 700
-    }
-  }
 }
