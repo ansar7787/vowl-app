@@ -3,10 +3,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+
 class KidsRoomExitDialog extends StatelessWidget {
   final VoidCallback onExit;
+  final UserEntity user;
 
-  const KidsRoomExitDialog({super.key, required this.onExit});
+  const KidsRoomExitDialog({
+    super.key,
+    required this.onExit,
+    required this.user,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +50,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                 ),
                 SizedBox(height: 12.h),
                 Text(
-                  "Your buddy will miss you! Stay a bit longer to earn more coins? ❤️",
+                  _getMoodMessage(user.kidsBuddyMood),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -132,10 +139,30 @@ class KidsRoomExitDialog extends StatelessWidget {
     );
   }
 
-  static void show(BuildContext context, {required VoidCallback onExit}) {
+  static void show(
+    BuildContext context, {
+    required UserEntity user,
+    required VoidCallback onExit,
+  }) {
     showDialog(
       context: context,
-      builder: (context) => KidsRoomExitDialog(onExit: onExit),
+      builder: (context) => KidsRoomExitDialog(user: user, onExit: onExit),
     );
+  }
+
+  String _getMoodMessage(String mood) {
+    switch (mood) {
+      case 'hungry':
+        return "I'm still so hungry! Please don't leave yet! 🥺";
+      case 'sleepy':
+        return "I'm so sleepy... tuck me in before you go? 😴";
+      case 'bored':
+        return "But we haven't played yet! Stay a bit longer? 😒";
+      case 'excited':
+        return "Aww, I was having so much fun! See you soon! 🤩";
+      case 'happy':
+      default:
+        return "Your buddy will miss you! Stay a bit longer to earn more coins? ❤️";
+    }
   }
 }

@@ -218,6 +218,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                           "Room",
                           Colors.purpleAccent,
                           () => context.push('/kids-room'),
+                          badgeEmoji: _getMoodEmoji(user.kidsBuddyMood),
                         ),
                         _buildNavIcon(
                           context,
@@ -265,20 +266,48 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     IconData icon,
     String label,
     Color color,
-    VoidCallback onTap,
-  ) {
+    VoidCallback onTap, {
+    String? badgeEmoji,
+  }) {
     return ScaleButton(
       onTap: onTap,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            padding: EdgeInsets.all(10.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(icon, color: color, size: 24.sp),
+          Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: color, size: 24.sp),
+              ),
+              if (badgeEmoji != null)
+                Positioned(
+                  top: -4.h,
+                  right: -4.w,
+                  child: Container(
+                    padding: EdgeInsets.all(2.r),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 4,
+                        )
+                      ]
+                    ),
+                    child: Text(
+                      badgeEmoji,
+                      style: TextStyle(fontSize: 12.sp),
+                    ),
+                  ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -2, end: 2, duration: 1.seconds),
+                ),
+            ],
           ),
           SizedBox(height: 4.h),
           Text(
@@ -295,6 +324,17 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         ],
       ),
     );
+  }
+
+  String _getMoodEmoji(String mood) {
+    switch(mood) {
+      case 'hungry': return '🥺';
+      case 'sleepy': return '😴';
+      case 'bored': return '😒';
+      case 'excited': return '🤩';
+      case 'happy': 
+      default: return '😊';
+    }
   }
 
   Widget _buildSlimAppBar(BuildContext context, int coins) {

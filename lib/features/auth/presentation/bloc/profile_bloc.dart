@@ -136,6 +136,39 @@ class ProfileBuyKeyRequested extends ProfileEvent {
   List<Object?> get props => [cost, isKidsMode];
 }
 
+/// Atomically updates one or more buddy-room lifecycle fields.
+///
+/// Accepts a partial update map — only the fields the caller passes are
+/// mutated; everything else preserves its current value. This avoids
+/// creating a separate event class for every single buddy-room field.
+class ProfileUpdateBuddyRoomRequested extends ProfileEvent {
+  final String? mood;
+  final int? energy;
+  final int? hunger;
+  final int? careStreak;
+  final int? roomLevel;
+  final String? theme;
+  final DateTime? lastCareDate;
+  final DateTime? lastFeedTime;
+
+  const ProfileUpdateBuddyRoomRequested({
+    this.mood,
+    this.energy,
+    this.hunger,
+    this.careStreak,
+    this.roomLevel,
+    this.theme,
+    this.lastCareDate,
+    this.lastFeedTime,
+  });
+
+  @override
+  List<Object?> get props => [
+    mood, energy, hunger, careStreak, roomLevel, theme,
+    lastCareDate, lastFeedTime,
+  ];
+}
+
 // ============================================================================
 // STATE
 // ============================================================================
@@ -245,6 +278,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<ProfileEquipStickerRequested>(_onEquipSticker);
     on<ProfileUpdateKeysRequested>(_onUpdateKeys);
     on<ProfileBuyKeyRequested>(_onBuyKey);
+    on<ProfileUpdateBuddyRoomRequested>(_onUpdateBuddyRoom);
     on<ProfileClearPurchaseFeedback>(
       (_, emit) => emit(
         state.copyWith(
@@ -555,6 +589,35 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await purchaseGoldenKey(
       PurchaseGoldenKeyParams(cost: event.cost, isKidsMode: event.isKidsMode),
     );
+    result.fold(
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => authBloc.add(const AuthReloadUser()),
+    );
+  }
+
+  /// Persists buddy-room lifecycle fields via the generic [updateUser] path.
+  ///
+  /// This is non-transactional (equip-only pattern — no currency at risk).
+  /// The buddy state is advisory/cosmetic, so last-write-wins is acceptable.
+  Future<void> _onUpdateBuddyRoom(
+    ProfileUpdateBuddyRoomRequested event,
+    Emitter<ProfileState> emit,
+  ) async {
+    if (!_isAuthenticated) return;
+    final user = authBloc.state.user;
+    if (user == null) return;
+
+    final updatedUser = user.copyWith(
+      kidsBuddyMood: event.mood,
+      kidsBuddyEnergy: event.energy,
+      kidsBuddyHunger: event.hunger,
+      kidsCareStreak: event.careStreak,
+      kidsRoomLevel: event.roomLevel,
+      kidsRoomTheme: event.theme,
+      kidsLastCareDate: event.lastCareDate,
+      kidsLastFeedTime: event.lastFeedTime,
+    );
+    final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) => authBloc.add(const AuthReloadUser()),

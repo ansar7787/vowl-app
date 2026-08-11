@@ -7,15 +7,17 @@ import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/buddy_lifecycle_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_layout.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_play_game.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_clean_activity.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_daily_care_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -42,26 +44,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   bool _isTalking = false;
   bool _isSleeping = false;
   String _buddyMessage = "";
-  double _happiness = 0.2;
-  String _weather = 'sunny'; // sunny, rainy, starry, party
-  bool _hasHiddenCoin = false;
-  String _coinLocation = ""; // bed or window
-  bool _isCoinFound = false;
 
-  final Map<String, Color> _themeColors = {
-    'nature': const Color(0xFFF0FDF4),
-    'space': const Color(0xFFF5F3FF),
-    'ocean': const Color(0xFFF0F9FF),
-    'sweet': const Color(0xFFFFF1F2),
-  };
+  bool _hasPlayedToday = false;
+  bool _hasCleanedToday = false;
+  bool _dailyCareClaimed = false;
 
-  final List<String> _encouragements = [
-    "You are doing amazing! 🌟",
-    "I love playing with you! 🎈",
-    "You are getting so smart! 🧠",
-    "Keep up the great work! ✨",
-    "You're my best friend! 🦉",
-  ];
+  final BuddyLifecycleService _lifecycleService = const BuddyLifecycleService();
 
   final Map<String, List<Map<String, dynamic>>> _furnitureStore = {
     'bed': [
@@ -86,21 +74,69 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         'price': 1500,
       },
     ],
+    'shelf': [
+      {'id': 'default_shelf', 'name': 'Wood Shelf', 'icon': '📚', 'price': 0},
+      {'id': 'toy_shelf', 'name': 'Toy Rack', 'icon': '🧸', 'price': 500},
+      {'id': 'magic_shelf', 'name': 'Potion Shelf', 'icon': '🧪', 'price': 800},
+      {'id': 'trophy_shelf', 'name': 'Trophy Case', 'icon': '🏆', 'price': 1200},
+    ],
+    'toy': [
+      {'id': 'default_toy', 'name': 'Toy Train', 'icon': '🚂', 'price': 0},
+      {'id': 'robot_toy', 'name': 'Robot', 'icon': '🤖', 'price': 300},
+      {'id': 'puzzle_toy', 'name': 'Rubik Cube', 'icon': '🧩', 'price': 400},
+      {'id': 'magic_toy', 'name': 'Magic Ball', 'icon': '🔮', 'price': 600},
+    ],
+    'plant': [
+      {'id': 'default_plant', 'name': 'Potted Fern', 'icon': '🪴', 'price': 0},
+      {'id': 'flower_plant', 'name': 'Sunflower', 'icon': '🌻', 'price': 200},
+      {'id': 'cactus_plant', 'name': 'Cactus', 'icon': '🌵', 'price': 250},
+      {'id': 'tree_plant', 'name': 'Bonsai', 'icon': '🌳', 'price': 500},
+    ],
+    'rug': [
+      {'id': 'default_rug', 'name': 'Blue Rug', 'icon': '🟦', 'price': 0},
+      {'id': 'star_rug', 'name': 'Star Mat', 'icon': '⭐', 'price': 300},
+      {'id': 'flower_rug', 'name': 'Flower Rug', 'icon': '🌸', 'price': 450},
+      {'id': 'magic_rug', 'name': 'Magic Carpet', 'icon': '🧞‍♂️', 'price': 800},
+    ],
   };
 
   @override
   void initState() {
     super.initState();
-    _spawnHiddenCoin();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _applyLifecycleDecay();
+    });
   }
 
-  void _spawnHiddenCoin() {
-    final rand = Random();
-    if (rand.nextDouble() < 0.3) {
-      setState(() {
-        _hasHiddenCoin = true;
-        _coinLocation = rand.nextBool() ? "bed" : "window";
-        _isCoinFound = false;
+  void _applyLifecycleDecay() {
+    final user = context.read<AuthBloc>().state.user;
+    if (user == null) return;
+    
+    final newEnergy = _lifecycleService.computeDecayedEnergy(user);
+    final newHunger = _lifecycleService.computeIncreasedHunger(user);
+    final streak = _lifecycleService.computeUpdatedStreak(user);
+    final theme = user.kidsRoomTheme;
+
+    setState(() {
+      _currentTheme = theme;
+    });
+
+    if (newEnergy != user.kidsBuddyEnergy || newHunger != user.kidsBuddyHunger) {
+      context.read<ProfileBloc>().add(
+        ProfileUpdateBuddyRoomRequested(
+          energy: newEnergy,
+          hunger: newHunger,
+          careStreak: streak,
+        ),
+      );
+    }
+    
+    // Set initial greeting
+    if (_buddyMessage.isEmpty) {
+      _buddyMessage = _lifecycleService.getGreeting(user);
+      _isTalking = true;
+      Future.delayed(const Duration(seconds: 4), () {
+        if (mounted) setState(() => _isTalking = false);
       });
     }
   }
@@ -124,34 +160,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       onThemeSelected: (theme) {
         setState(() {
           _currentTheme = theme;
-
-          if (_currentTheme == 'space') {
-            _weather = 'starry';
-          } else if (_currentTheme == 'ocean') {
-            _weather = 'rainy';
-          } else if (_currentTheme == 'sweet') {
-            _weather = 'party';
-          } else {
-            _weather = 'sunny';
-          }
         });
+        context.read<ProfileBloc>().add(
+          ProfileUpdateBuddyRoomRequested(theme: theme),
+        );
         di.sl<SoundService>().playClick();
         Navigator.pop(context);
         _speak("Ooh, I love this theme!");
       },
     );
-  }
-
-  void _addHappiness(double amount, UserEntity user) {
-    if (_isSleeping) return;
-    setState(() {
-      _happiness = (_happiness + amount).clamp(0.0, 1.0);
-      if (_happiness >= 1.0) {
-        _happiness = 0.2;
-        context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-        _speak("I am so happy! You are the best! ❤️ +10 Coins");
-      }
-    });
   }
 
   @override
@@ -165,7 +182,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           canPop: false,
           onPopInvokedWithResult: (didPop, result) {
             if (didPop) return;
-            _showBackConfirmation(context);
+            _showBackConfirmation(context, user);
           },
           child: Builder(
             builder: (context) {
@@ -178,50 +195,94 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         : const Color(0xFFF8FAFC));
               return Scaffold(
                 backgroundColor: bgColor,
-                body: Stack(
-                  children: [
-                    _buildModernBackground(isDark: isDark),
-                    ..._buildLivingBackgroundItems(),
-                    _buildFurnitureLayer(user),
-                    SafeArea(
-                      child: Column(
-                        children: [
-                          KidsRoomTopBar(
-                            user: user,
-                            happiness: _happiness,
-                            onBack: () => _showBackConfirmation(context),
-                          ),
-                          const Spacer(),
-                          _buildMascotSection(user),
-                          const Spacer(),
-                          KidsRoomActionPanel(
-                            isSleeping: _isSleeping,
-                            onDecor: () => _showDecorStore(context, user),
-                            onFeed: () => _showFoodMenu(context, user),
-                            onSleepToggle: () {
-                              setState(() => _isSleeping = !_isSleeping);
-                              _speak(
-                                _isSleeping
-                                    ? "Goodnight! Shhh..."
-                                    : "I'm awake! Let's play!",
-                              );
-                            },
-                            onTalk: () {
-                              _speak(
-                                _encouragements[Random().nextInt(
-                                  _encouragements.length,
-                                )],
-                              );
-                              _addHappiness(0.02, user);
-                            },
-                            onThemeTap: () => _showThemeMenu(context, user),
-                          ),
-                        ],
+                body: KidsRoomLayout(
+                  theme: _currentTheme,
+                  equippedFurniture: user.kidsEquippedFurniture,
+                  furnitureStore: _furnitureStore,
+                  mascotWidget: _buildMascotSection(user),
+                  topBarWidget: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      KidsRoomTopBar(
+                        user: user,
+                        onBack: () => _showBackConfirmation(context, user),
                       ),
-                    ),
-
-                    if (_isSleeping)
-                      GestureDetector(
+                      if (!_dailyCareClaimed)
+                        Padding(
+                          padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                          child: KidsRoomDailyCareCard(
+                            user: user,
+                            hasPlayed: _hasPlayedToday,
+                            hasCleaned: _hasCleanedToday,
+                            onClaim: () {
+                              setState(() => _dailyCareClaimed = true);
+                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(25));
+                              _speak("Great job! You earned 25 coins! ⭐");
+                              di.sl<SoundService>().playCorrect();
+                            },
+                          ),
+                        ),
+                    ],
+                  ),
+                  actionPanelWidget: KidsRoomActionPanel(
+                    isSleeping: _isSleeping,
+                    onDecor: () => _showDecorStore(context, user),
+                    onFeed: () => _showFoodMenu(context, user),
+                    onPlay: () {
+                      if (_isSleeping) return;
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (_) => KidsRoomPlayGame(
+                          onComplete: () {
+                            Navigator.pop(context);
+                            setState(() => _hasPlayedToday = true);
+                            // Update energy/happiness logic
+                            final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
+                            final newHunger = (user.kidsBuddyHunger + 5).clamp(0, 100);
+                            context.read<ProfileBloc>().add(
+                              ProfileUpdateBuddyRoomRequested(
+                                energy: newEnergy,
+                                hunger: newHunger,
+                              ),
+                            );
+                            context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
+                            _speak("Yay! 15 Coins! Let's play again soon! 🎮");
+                          },
+                        ),
+                      );
+                    },
+                    onClean: () {
+                      if (_isSleeping) return;
+                      showDialog(
+                        context: context,
+                        barrierDismissible: false,
+                        builder: (_) => KidsRoomCleanActivity(
+                          onComplete: () {
+                            Navigator.pop(context);
+                            setState(() => _hasCleanedToday = true);
+                            context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
+                            _speak("Wow! The room is so clean! 10 Coins! ✨");
+                          },
+                        ),
+                      );
+                    },
+                    onSleepToggle: () {
+                      setState(() => _isSleeping = !_isSleeping);
+                      _speak(
+                        _isSleeping
+                            ? "Goodnight! Shhh..."
+                            : "I'm awake! Let's play!",
+                      );
+                    },
+                    onTalk: () {
+                      final messages = _lifecycleService.getMoodMessages(user.kidsBuddyMood);
+                      _speak(messages[Random().nextInt(messages.length)]);
+                    },
+                    onThemeTap: () => _showThemeMenu(context, user),
+                  ),
+                  overlayWidget: _isSleeping ? GestureDetector(
                         onTap: () {
                           setState(() => _isSleeping = false);
                           _speak("I'm awake! Let's play!");
@@ -315,8 +376,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             ],
                           ),
                         ),
-                      ).animate().fadeIn(duration: 600.ms),
-                  ],
+                      ).animate().fadeIn(duration: 600.ms) : null,
                 ),
               );
             },
@@ -324,249 +384,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         );
       },
     );
-  }
-
-  Widget _buildModernBackground({required bool isDark}) {
-    String painterName = 'ForestFriend';
-    if (_weather == 'rainy') {
-      painterName = 'OceanWave';
-    } else if (_weather == 'starry') {
-      painterName = 'StarryNight';
-    } else if (_weather == 'party') {
-      painterName = 'CandyCloud';
-    }
-
-    return Stack(
-      children: [
-        Positioned.fill(
-          child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 800),
-            switchInCurve: Curves.easeInOut,
-            switchOutCurve: Curves.easeInOut,
-            transitionBuilder: (Widget child, Animation<double> animation) {
-              return FadeTransition(opacity: animation, child: child);
-            },
-            child: KidsBackgroundRenderer(
-              key: ValueKey(painterName), // VERY IMPORTANT FOR ANIMATED SWITCHER
-              painterName: painterName,
-              gameType: 'room',
-              shaderName: _weather == 'starry' ? 'star_field' : 'magic_twinkle',
-              primaryColor: _themeColors[_currentTheme]!,
-            ),
-          ),
-        ),
-
-        if (_weather == 'rainy')
-          ...List.generate(
-            15,
-            (i) => Positioned(
-              top: -20,
-              left: Random().nextDouble() * 1.sw,
-              child:
-                  const Text(
-                        "💧",
-                        style: TextStyle(fontSize: 10, color: Colors.blue),
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .moveY(
-                        begin: -50,
-                        end: 1.sh + 50,
-                        duration: (1 + Random().nextDouble()).seconds,
-                      )
-                      .fadeOut(),
-            ),
-          ),
-
-        if (_weather == 'party')
-          ...List.generate(
-            15,
-            (i) => Positioned(
-              top: -20,
-              left: Random().nextDouble() * 1.sw,
-              child: Text("🎊", style: TextStyle(fontSize: 14.sp))
-                  .animate(onPlay: (c) => c.repeat())
-                  .moveY(
-                    begin: -50,
-                    end: 1.sh + 50,
-                    duration: (2 + Random().nextDouble()).seconds,
-                  )
-                  .rotate(begin: 0, end: 2, duration: 1.seconds),
-            ),
-          ),
-
-        Positioned.fill(
-          child: IgnorePointer(
-            child: const Text("✨", style: TextStyle(fontSize: 20))
-                .animate(key: ValueKey(_currentTheme))
-                .scale(
-                  begin: const Offset(0, 0),
-                  end: const Offset(5, 5),
-                  duration: 600.ms,
-                )
-                .fadeOut(duration: 600.ms),
-          ),
-        ),
-      ],
-    );
-  }
-
-  List<Widget> _buildLivingBackgroundItems() {
-    return [
-      _buildMicroEmoji('✨', 50.h, 40.w),
-      _buildMicroEmoji('🎈', 200.h, 300.w),
-      _buildMicroEmoji('🌈', 400.h, 20.w),
-      _buildFlyingBird(120.h, 3.seconds),
-      _buildFlyingBird(250.h, 5.seconds, isSlow: true),
-    ];
-  }
-
-  Widget _buildFlyingBird(double top, Duration delay, {bool isSlow = false}) {
-    return Positioned(
-      top: top,
-      left: -50.w,
-      child:
-          Text(
-                "🕊️",
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  color: Colors.black.withValues(alpha: 0.15),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .moveX(
-                begin: -50,
-                end: 1.sw + 50,
-                duration: (isSlow ? 12 : 8).seconds,
-                delay: delay,
-              )
-              .moveY(
-                begin: 0,
-                end: 20,
-                duration: 2.seconds,
-                curve: Curves.easeInOutSine,
-              )
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(0.8, 0.8),
-                duration: 2.seconds,
-              ),
-    );
-  }
-
-  Widget _buildMicroEmoji(String emoji, double top, double left) {
-    return Positioned(
-      top: top,
-      left: left,
-      child:
-          Text(
-                emoji,
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  color: Colors.black.withValues(alpha: 0.1),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: 0,
-                end: -20,
-                duration: 3.seconds,
-                curve: Curves.easeInOutSine,
-              )
-              .fadeOut(begin: 0.2),
-    );
-  }
-
-  Widget _buildFurnitureLayer(UserEntity user) {
-    final equipped = user.kidsEquippedFurniture;
-    final bedId = equipped['bed'] ?? 'default_bed';
-    final windowId = equipped['window'] ?? 'default_window';
-
-    return Stack(
-      children: [
-        Positioned(
-          top: 180.h,
-          left: 30.w,
-          child: _buildFurnitureItem("window", windowId, 90.r, user),
-        ),
-        Positioned(
-          bottom: 120.h,
-          right: 40.w,
-          child: _buildFurnitureItem("bed", bedId, 120.r, user),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildFurnitureItem(
-    String category,
-    String id,
-    double size,
-    UserEntity user,
-  ) {
-    String emoji = '🏠';
-    for (var cat in _furnitureStore.values) {
-      for (var item in cat) {
-        if (item['id'] == id) emoji = item['icon'] as String;
-      }
-    }
-
-    final isHidingCoin =
-        _hasHiddenCoin && _coinLocation == category && !_isCoinFound;
-
-    return ScaleButton(
-      onTap: () {
-        if (isHidingCoin) {
-          _collectHiddenCoin(user);
-        } else {
-          di.sl<SoundService>().playClick();
-        }
-      },
-      child: Stack(
-        alignment: Alignment.center,
-        clipBehavior: Clip.none,
-        children: [
-          if (isHidingCoin)
-            Positioned(
-              top: -10,
-              child: Icon(Icons.star_rounded, color: Colors.amber, size: 24.sp)
-                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                  .scale(
-                    begin: const Offset(0.8, 0.8),
-                    end: const Offset(1.2, 1.2),
-                    duration: 1.seconds,
-                  )
-                  .shimmer(),
-            ),
-
-          Container(
-            width: size,
-            height: size,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.amber, width: 4.w),
-              boxShadow: [
-                BoxShadow(color: Colors.amber.shade700, offset: Offset(0, 6.h)),
-              ],
-            ),
-            child: Center(
-              child: Text(emoji, style: TextStyle(fontSize: size * 0.45)),
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn().scale();
-  }
-
-  void _collectHiddenCoin(UserEntity user) {
-    setState(() => _isCoinFound = true);
-    di.sl<SoundService>().playCorrect();
-    Haptics.vibrate(HapticsType.success);
-
-    context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
-    _speak("WOW! You found a hidden treasure! ⭐💎");
-
-    _showModernNotification(context, "FOUND 15 KIDS COINS! ⭐✨");
   }
 
   Widget _buildMascotSection(UserEntity user) {
@@ -593,16 +410,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
             GestureDetector(
               onTap: () {
-                _speak(
-                  _encouragements[Random().nextInt(_encouragements.length)],
-                );
-                _addHappiness(0.01, user);
+                final messages = _lifecycleService.getMoodMessages(user.kidsBuddyMood);
+                _speak(messages[Random().nextInt(messages.length)]);
               },
               child:
                   Stack(
                         alignment: Alignment.center,
                         children: [
-                          if (_happiness > 0.5)
+                          if (user.kidsBuddyMood == 'excited' || user.kidsBuddyMood == 'happy')
                             Container(
                                   width: 150.r,
                                   height: 150.r,
@@ -611,10 +426,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     boxShadow: [
                                       BoxShadow(
                                         color: Colors.amber.withValues(
-                                          alpha: (_happiness - 0.5) * 0.5,
+                                          alpha: user.kidsBuddyMood == 'excited' ? 0.3 : 0.1,
                                         ),
-                                        blurRadius: 40 * _happiness,
-                                        spreadRadius: 20 * _happiness,
+                                        blurRadius: user.kidsBuddyMood == 'excited' ? 40 : 20,
+                                        spreadRadius: user.kidsBuddyMood == 'excited' ? 20 : 10,
                                       ),
                                     ],
                                   ),
@@ -626,7 +441,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                   duration: 2.seconds,
                                 ),
 
-                          if (_happiness > 0.8)
+                          if (user.kidsBuddyMood == 'excited')
                             ...List.generate(
                               5,
                               (i) => Positioned(
@@ -647,9 +462,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             size: 130.r,
                             state: _isSleeping
                                 ? VowlMascotState.neutral
-                                : (_isFeeding || _happiness > 0.8
+                                : (_isFeeding
                                       ? VowlMascotState.happy
-                                      : VowlMascotState.neutral),
+                                      : _getMascotStateForMood(user.kidsBuddyMood)),
                             useFloatingAnimation: !_isSleeping,
                             isKidsMode: true,
                           ),
@@ -819,7 +634,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             _isFeeding = true;
           });
           di.sl<SoundService>().playCorrect();
-          _addHappiness(f['happiness'] as double, user);
+          final newHunger = (user.kidsBuddyHunger - 20).clamp(0, 100);
+          final newEnergy = (user.kidsBuddyEnergy + 10).clamp(0, 100);
+          context.read<ProfileBloc>().add(
+            ProfileUpdateBuddyRoomRequested(
+              hunger: newHunger,
+              energy: newEnergy,
+              lastFeedTime: DateTime.now(),
+            ),
+          );
           Future.delayed(const Duration(seconds: 2), () {
             if (mounted) setState(() => _isFeeding = false);
           });
@@ -836,9 +659,10 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  void _showBackConfirmation(BuildContext context) {
+  void _showBackConfirmation(BuildContext context, UserEntity user) {
     KidsRoomExitDialog.show(
       context,
+      user: user,
       onExit: () {
         Navigator.pop(context);
         Navigator.pop(context);
@@ -907,5 +731,20 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
     overlay.insert(entry);
     Future.delayed(const Duration(seconds: 3), () => entry.remove());
+  }
+
+  VowlMascotState _getMascotStateForMood(String mood) {
+    switch (mood) {
+      case 'hungry':
+        return VowlMascotState.worried;
+      case 'sleepy':
+        return VowlMascotState.sleeping;
+      case 'bored':
+        return VowlMascotState.thinking;
+      case 'excited':
+      case 'happy':
+      default:
+        return VowlMascotState.happy;
+    }
   }
 }

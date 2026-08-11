@@ -95,6 +95,18 @@ class UserEntity {
   final Map<String, String> kidsEquippedFurniture;
   final int keys;
 
+  // ---------------------------------------------------------------------------
+  // Kids Room — Buddy Lifecycle (persisted)
+  // ---------------------------------------------------------------------------
+  final String kidsBuddyMood; // happy, hungry, sleepy, bored
+  final int kidsBuddyEnergy; // 0-100
+  final int kidsBuddyHunger; // 0-100
+  final DateTime? kidsLastCareDate;
+  final int kidsCareStreak;
+  final int kidsRoomLevel;
+  final String kidsRoomTheme; // nature, space, ocean, sweet
+  final DateTime? kidsLastFeedTime;
+
   const UserEntity({
     required this.id,
     required this.email,
@@ -146,6 +158,14 @@ class UserEntity {
     this.lastAdSpinDate,
     this.adSpinsUsedToday = 0,
     this.keys = 0,
+    this.kidsBuddyMood = 'happy',
+    this.kidsBuddyEnergy = 100,
+    this.kidsBuddyHunger = 0,
+    this.kidsLastCareDate,
+    this.kidsCareStreak = 0,
+    this.kidsRoomLevel = 1,
+    this.kidsRoomTheme = 'nature',
+    this.kidsLastFeedTime,
   });
 
   // ---------------------------------------------------------------------------
@@ -303,6 +323,12 @@ class UserEntity {
     Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
+    String? kidsBuddyMood,
+    int? kidsBuddyEnergy,
+    int? kidsBuddyHunger,
+    int? kidsCareStreak,
+    int? kidsRoomLevel,
+    String? kidsRoomTheme,
 
     // Nullable fields use Object? + _absent sentinel so callers can pass null
     // explicitly to clear the value, or omit entirely to preserve existing.
@@ -322,6 +348,8 @@ class UserEntity {
     Object? vowlEquippedAccessory = _absent,
     Object? lastFreeSpinDate = _absent,
     Object? lastAdSpinDate = _absent,
+    Object? kidsLastCareDate = _absent,
+    Object? kidsLastFeedTime = _absent,
   }) {
     return UserEntity(
       id: id,
@@ -360,6 +388,12 @@ class UserEntity {
           kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
+      kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
+      kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
+      kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
+      kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
+      kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
+      kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
       // Nullable: sentinel pattern — explicit null clears; absent preserves.
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -409,6 +443,12 @@ class UserEntity {
       lastAdSpinDate: identical(lastAdSpinDate, _absent)
           ? this.lastAdSpinDate
           : lastAdSpinDate as DateTime?,
+      kidsLastCareDate: identical(kidsLastCareDate, _absent)
+          ? this.kidsLastCareDate
+          : kidsLastCareDate as DateTime?,
+      kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
+          ? this.kidsLastFeedTime
+          : kidsLastFeedTime as DateTime?,
     );
   }
 
@@ -471,7 +511,15 @@ class UserEntity {
         other.adSpinsUsedToday == adSpinsUsedToday &&
         _listEq.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
         _mapEq.equals(other.kidsEquippedFurniture, kidsEquippedFurniture) &&
-        other.keys == keys;
+        other.keys == keys &&
+        other.kidsBuddyMood == kidsBuddyMood &&
+        other.kidsBuddyEnergy == kidsBuddyEnergy &&
+        other.kidsBuddyHunger == kidsBuddyHunger &&
+        other.kidsLastCareDate == kidsLastCareDate &&
+        other.kidsCareStreak == kidsCareStreak &&
+        other.kidsRoomLevel == kidsRoomLevel &&
+        other.kidsRoomTheme == kidsRoomTheme &&
+        other.kidsLastFeedTime == kidsLastFeedTime;
   }
 
   @override
@@ -533,6 +581,14 @@ class UserEntity {
       _listEq.hash(kidsOwnedFurniture),
       _mapEq.hash(kidsEquippedFurniture),
       keys,
+      kidsBuddyMood,
+      kidsBuddyEnergy,
+      kidsBuddyHunger,
+      kidsLastCareDate,
+      kidsCareStreak,
+      kidsRoomLevel,
+      kidsRoomTheme,
+      kidsLastFeedTime,
     ]);
     return Object.hash(h1, h2, h3);
   }

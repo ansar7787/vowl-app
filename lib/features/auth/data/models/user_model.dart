@@ -78,6 +78,14 @@ class UserModel extends UserEntity {
     super.kidsOwnedFurniture,
     super.kidsEquippedFurniture,
     super.keys,
+    super.kidsBuddyMood,
+    super.kidsBuddyEnergy,
+    super.kidsBuddyHunger,
+    super.kidsLastCareDate,
+    super.kidsCareStreak,
+    super.kidsRoomLevel,
+    super.kidsRoomTheme,
+    super.kidsLastFeedTime,
   });
 
   // ---------------------------------------------------------------------------
@@ -150,6 +158,14 @@ class UserModel extends UserEntity {
           ? _parseStringMap(map['kidsEquippedFurniture'])
           : UserGameConstants.kDefaultKidsEquippedFurniture,
       keys: (map['keys'] as num?)?.toInt() ?? 0,
+      kidsBuddyMood: (map['kidsBuddyMood'] as String?) ?? 'happy',
+      kidsBuddyEnergy: (map['kidsBuddyEnergy'] as num?)?.toInt() ?? 100,
+      kidsBuddyHunger: (map['kidsBuddyHunger'] as num?)?.toInt() ?? 0,
+      kidsLastCareDate: _parseDateTime(map['kidsLastCareDate']),
+      kidsCareStreak: (map['kidsCareStreak'] as num?)?.toInt() ?? 0,
+      kidsRoomLevel: (map['kidsRoomLevel'] as num?)?.toInt() ?? 1,
+      kidsRoomTheme: (map['kidsRoomTheme'] as String?) ?? 'nature',
+      kidsLastFeedTime: _parseDateTime(map['kidsLastFeedTime']),
     );
   }
 
@@ -218,6 +234,14 @@ class UserModel extends UserEntity {
       kidsOwnedFurniture: entity.kidsOwnedFurniture,
       kidsEquippedFurniture: entity.kidsEquippedFurniture,
       keys: entity.keys,
+      kidsBuddyMood: entity.kidsBuddyMood,
+      kidsBuddyEnergy: entity.kidsBuddyEnergy,
+      kidsBuddyHunger: entity.kidsBuddyHunger,
+      kidsLastCareDate: entity.kidsLastCareDate,
+      kidsCareStreak: entity.kidsCareStreak,
+      kidsRoomLevel: entity.kidsRoomLevel,
+      kidsRoomTheme: entity.kidsRoomTheme,
+      kidsLastFeedTime: entity.kidsLastFeedTime,
     );
   }
 
@@ -297,6 +321,18 @@ class UserModel extends UserEntity {
       'kidsOwnedFurniture': kidsOwnedFurniture,
       'kidsEquippedFurniture': kidsEquippedFurniture,
       'keys': keys,
+      'kidsBuddyMood': kidsBuddyMood,
+      'kidsBuddyEnergy': kidsBuddyEnergy,
+      'kidsBuddyHunger': kidsBuddyHunger,
+      'kidsLastCareDate': kidsLastCareDate != null
+          ? Timestamp.fromDate(kidsLastCareDate!)
+          : null,
+      'kidsCareStreak': kidsCareStreak,
+      'kidsRoomLevel': kidsRoomLevel,
+      'kidsRoomTheme': kidsRoomTheme,
+      'kidsLastFeedTime': kidsLastFeedTime != null
+          ? Timestamp.fromDate(kidsLastFeedTime!)
+          : null,
     };
   }
 
@@ -336,6 +372,12 @@ class UserModel extends UserEntity {
     Map<String, String>? kidsEquippedFurniture,
     List<Map<String, dynamic>>? recentActivities,
     int? keys,
+    String? kidsBuddyMood,
+    int? kidsBuddyEnergy,
+    int? kidsBuddyHunger,
+    int? kidsCareStreak,
+    int? kidsRoomLevel,
+    String? kidsRoomTheme,
     // Nullable sentinel fields
     Object? displayName = _absent,
     Object? photoUrl = _absent,
@@ -353,6 +395,8 @@ class UserModel extends UserEntity {
     Object? vowlEquippedAccessory = _absent,
     Object? lastFreeSpinDate = _absent,
     Object? lastAdSpinDate = _absent,
+    Object? kidsLastCareDate = _absent,
+    Object? kidsLastFeedTime = _absent,
   }) {
     return UserModel(
       id: id,
@@ -390,6 +434,12 @@ class UserModel extends UserEntity {
           kidsEquippedFurniture ?? this.kidsEquippedFurniture,
       recentActivities: recentActivities ?? this.recentActivities,
       keys: keys ?? this.keys,
+      kidsBuddyMood: kidsBuddyMood ?? this.kidsBuddyMood,
+      kidsBuddyEnergy: kidsBuddyEnergy ?? this.kidsBuddyEnergy,
+      kidsBuddyHunger: kidsBuddyHunger ?? this.kidsBuddyHunger,
+      kidsCareStreak: kidsCareStreak ?? this.kidsCareStreak,
+      kidsRoomLevel: kidsRoomLevel ?? this.kidsRoomLevel,
+      kidsRoomTheme: kidsRoomTheme ?? this.kidsRoomTheme,
       // Sentinel nullable fields
       displayName: identical(displayName, _absent)
           ? this.displayName
@@ -439,6 +489,12 @@ class UserModel extends UserEntity {
       lastAdSpinDate: identical(lastAdSpinDate, _absent)
           ? this.lastAdSpinDate
           : lastAdSpinDate as DateTime?,
+      kidsLastCareDate: identical(kidsLastCareDate, _absent)
+          ? this.kidsLastCareDate
+          : kidsLastCareDate as DateTime?,
+      kidsLastFeedTime: identical(kidsLastFeedTime, _absent)
+          ? this.kidsLastFeedTime
+          : kidsLastFeedTime as DateTime?,
     );
   }
 
