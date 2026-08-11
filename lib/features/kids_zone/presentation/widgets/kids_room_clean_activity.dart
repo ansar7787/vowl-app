@@ -202,11 +202,23 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
+                        Icon(
+                          Icons.auto_awesome_rounded,
+                          size: 56.sp,
+                          color: Colors.amber.shade400,
+                        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                          begin: const Offset(0.9, 0.9),
+                          end: const Offset(1.1, 1.1),
+                          duration: 1.seconds,
+                        ),
+                        SizedBox(height: 16.h),
                         Text(
-                          "SQUEAKY CLEAN!",
+                          "SQUEAKY\nCLEAN!",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 32.sp,
+                            fontSize: 36.sp,
+                            height: 1.1,
                             fontWeight: FontWeight.w900,
                             color: Colors.teal.shade800,
                             shadows: [
@@ -214,12 +226,13 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20.h),
+                        SizedBox(height: 16.h),
                         Text(
                           "Sparkling! ✨",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 24.sp,
-                            fontWeight: FontWeight.w600,
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w700,
                             color: Colors.teal.shade900,
                           ),
                         ),
