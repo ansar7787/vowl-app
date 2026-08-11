@@ -110,7 +110,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
-            backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }

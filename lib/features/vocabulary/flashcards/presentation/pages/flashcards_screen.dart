@@ -157,7 +157,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
-            backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: _theme.primaryColor),
           );
         }
@@ -266,7 +265,6 @@ class _ErrorScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0F172A),
       body: Center(
         child: Padding(
           padding: EdgeInsets.all(32.r),

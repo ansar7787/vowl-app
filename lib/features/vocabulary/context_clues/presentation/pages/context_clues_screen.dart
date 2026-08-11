@@ -180,7 +180,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
-            backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
