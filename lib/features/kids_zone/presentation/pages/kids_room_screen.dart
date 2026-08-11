@@ -466,6 +466,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
               child: BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                 child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 24.w),
                   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.5),
@@ -527,9 +528,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 _speak(messages[Random().nextInt(messages.length)]);
               },
               child:
-                  Stack(
-                        alignment: Alignment.center,
-                        children: [
+                  SizedBox(
+                        width: 180.r,
+                        height: 180.r,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          clipBehavior: Clip.none,
+                          children: [
                           if (user.kidsBuddyMood == 'excited' || user.kidsBuddyMood == 'happy')
                             Container(
                                   width: 150.r,
@@ -588,7 +593,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             isKidsMode: true,
                           ),
                         ],
-                      )
+                      ),
+                  )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .moveY(
                         begin: -5,
