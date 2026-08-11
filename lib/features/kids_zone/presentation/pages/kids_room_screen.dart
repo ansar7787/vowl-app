@@ -43,8 +43,13 @@ class KidsRoomScreen extends StatefulWidget {
 
 class _KidsRoomScreenState extends State<KidsRoomScreen> {
   String _currentTheme = 'nature';
+  String _currentFood = '';
+  
+  bool _isInitializing = true;
+
+  // ---------------------------------------------------------------------------
+  // State: Animations & Flow
   bool _isFeeding = false;
-  String _currentFood = "🍎";
   bool _isTalking = false;
   bool _isSleeping = false;
   String _buddyMessage = "";
@@ -109,16 +114,23 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   @override
   void initState() {
     super.initState();
-    _loadLocalState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _applyLifecycleDecay();
+    
+    // Defer heavy database writes and disk I/O until the route transition finishes (400ms)
+    // to ensure a buttery smooth 120fps entry animation.
+    Future.delayed(const Duration(milliseconds: 400), () {
+      if (mounted) {
+        _loadLocalState();
+        _applyLifecycleDecay();
+        setState(() => _isInitializing = false);
+      }
     });
   }
 
   Future<void> _loadLocalState() async {
     final prefs = await SharedPreferences.getInstance();
+    if (!mounted) return;
     final lastClean = prefs.getString('kids_last_clean_date');
-    if (lastClean != null && mounted) {
+    if (lastClean != null) {
       final date = DateTime.parse(lastClean);
       final now = DateTime.now();
       if (date.year == now.year && date.month == now.month && date.day == now.day) {
@@ -296,12 +308,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
               return Scaffold(
                 backgroundColor: bgColor,
-                body: KidsRoomLayout(
-                  theme: _currentTheme,
-                  equippedFurniture: user.kidsEquippedFurniture,
-                  furnitureStore: _furnitureStore,
-                  mascotWidget: _buildMascotSection(user),
-                  topBarWidget: Column(
+                body: Stack(
+                  children: [
+                    KidsRoomLayout(
+                      theme: _currentTheme,
+                      equippedFurniture: user.kidsEquippedFurniture,
+                      furnitureStore: _furnitureStore,
+                      mascotWidget: _buildMascotSection(user),
+                      topBarWidget: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -531,11 +545,59 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     ],
                   ) : null,
                 ),
+                    // Premium Shimmer Overlay
+                    IgnorePointer(
+                      ignoring: !_isInitializing,
+                      child: AnimatedOpacity(
+                        opacity: _isInitializing ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                        child: _buildShimmerScreen(bgColor),
+                      ),
+                    ),
+                  ],
+                ),
               );
             },
           ),
         );
       },
+    );
+  }
+
+  Widget _buildShimmerScreen(Color bgColor) {
+    return Container(
+      color: bgColor,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 120.r,
+              height: 120.r,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+            ).animate(onPlay: (c) => c.repeat()).shimmer(
+              duration: 1.seconds, 
+              color: Colors.white.withValues(alpha: 0.5),
+            ),
+            SizedBox(height: 32.h),
+            Container(
+              width: 180.w,
+              height: 24.h,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+            ).animate(onPlay: (c) => c.repeat()).shimmer(
+              duration: 1.seconds, 
+              color: Colors.white.withValues(alpha: 0.5),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
