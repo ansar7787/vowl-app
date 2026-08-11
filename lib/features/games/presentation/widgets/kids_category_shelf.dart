@@ -57,8 +57,8 @@ class _KidsGameEntryCard extends StatelessWidget {
     final displayColor = isDark
         ? color
         : HSLColor.fromColor(color).withLightness(0.4).toColor();
-    final title = metadata.fullTitle;
-    final subtitle = metadata.subtitle;
+    final title = metadata.subtitle; // The descriptive phrase (e.g. "Letters & Phonics")
+    final subtitle = metadata.fullTitle; // The core generic name (e.g. "Alphabet")
     final icon = metadata.icon;
 
     return Semantics(
@@ -69,7 +69,7 @@ class _KidsGameEntryCard extends StatelessWidget {
           context.push(
             '/kids/map/${metadata.gameType}',
             extra: {
-              'title': title,
+              'title': metadata.fullTitle,
               'primaryColor': color,
             },
           );

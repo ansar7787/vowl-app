@@ -184,18 +184,6 @@ class ProfileStickersProgress extends StatelessWidget {
             ),
           ] else ...[
             SizedBox(height: 12.h),
-            Text(
-              context.tr(
-                'profile.start_collection_hint',
-                fallback: 'Complete Kids quests to start collecting!',
-              ),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                color: isDark ? Colors.white38 : Colors.black38,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
           ],
         ],
       ),
