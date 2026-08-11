@@ -248,73 +248,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildPremiumBanner(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
+    return ProfileFeatureCard(
+      iconContent: Icon(
+        Icons.workspace_premium_rounded,
+        color: Colors.white,
+        size: 24.r,
+      ),
+      color: Colors.amber.shade400,
+      shadowColor: Colors.amber.shade700,
+      title: context.tr(
+        'profile.upgrade_to_premium',
+        fallback: 'Upgrade to Premium',
+      ),
+      subtitle: context.tr(
+        'profile.upgrade_to_premium_subtitle',
+        fallback: 'Unlock all features and remove limits.',
+      ),
       onTap: () {
         di.sl<HapticService>().selection();
         context.push(AppRouter.premiumRoute);
       },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.workspace_premium_rounded,
-                color: const Color(0xFFF59E0B),
-                size: 28.r,
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    context.tr(
-                      'profile.upgrade_to_premium',
-                      fallback: 'Upgrade to Premium',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    context.tr(
-                      'profile.upgrade_to_premium_subtitle',
-                      fallback: 'Unlock all features and remove limits.',
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white38 : Colors.black38,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 16.r,
-            ),
-          ],
-        ),
-      ),
     );
   }
 
@@ -335,88 +288,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildKeyShopBanner(BuildContext context, user) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+  Widget _buildKeyShopBanner(BuildContext context, UserEntity user) {
     final keys = user.keys ?? 0;
 
-    return ScaleButton(
+    return ProfileFeatureCard(
+      iconContent: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.key_rounded, color: Colors.white, size: 20.r),
+          SizedBox(width: 8.w),
+          Text(
+            keys.toString(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+      color: Colors.amber.shade400,
+      shadowColor: Colors.amber.shade700,
+      title: 'Golden Keys',
+      subtitle: 'Get more keys to unlock gates instantly!',
       onTap: () {
         di.sl<HapticService>().selection();
         KeyShopBottomSheet.show(context: context, isKidsMode: false);
       },
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(20.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: Colors.amber.shade400,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: Colors.amber.shade700, width: 2.w),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.amber.shade700,
-                    offset: Offset(0, 4.h),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(Icons.key_rounded, color: Colors.white, size: 20.r),
-                  SizedBox(width: 8.w),
-                  Text(
-                    keys.toString(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Golden Keys',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    'Get more keys to unlock gates instantly!',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      color: isDark ? Colors.white60 : Colors.black54,
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 16.r,
-            ),
-          ],
-        ),
-      ),
     );
   }
 

@@ -4,8 +4,8 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
-class KidsProfileCard extends StatelessWidget {
-  final IconData icon;
+class ProfileFeatureCard extends StatelessWidget {
+  final Widget iconContent;
   final Color color;
   final Color shadowColor;
   final String title;
@@ -13,9 +13,9 @@ class KidsProfileCard extends StatelessWidget {
   final VoidCallback onTap;
   final Widget? bottomContent;
 
-  const KidsProfileCard({
+  const ProfileFeatureCard({
     super.key,
-    required this.icon,
+    required this.iconContent,
     required this.color,
     required this.shadowColor,
     required this.title,
@@ -50,11 +50,7 @@ class KidsProfileCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: Icon(
-                    icon,
-                    color: Colors.white,
-                    size: 24.r,
-                  ),
+                  child: iconContent,
                 ),
                 SizedBox(width: 16.w),
                 Expanded(

@@ -5,7 +5,7 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/features/profile/presentation/widgets/kids_profile_card.dart';
+import 'package:vowl/features/profile/presentation/widgets/profile_feature_card.dart';
 
 class ProfileStickersProgress extends StatelessWidget {
   final UserEntity user;
@@ -18,8 +18,12 @@ class ProfileStickersProgress extends StatelessWidget {
     final earnedStickers = user.kidsStickers;
     const totalPossible = 100;
 
-    return KidsProfileCard(
-      icon: Icons.stars_rounded,
+    return ProfileFeatureCard(
+      iconContent: Icon(
+        Icons.stars_rounded,
+        color: Colors.white,
+        size: 24.r,
+      ),
       color: Colors.orange.shade400,
       shadowColor: Colors.orange.shade700,
       title: context.tr(
