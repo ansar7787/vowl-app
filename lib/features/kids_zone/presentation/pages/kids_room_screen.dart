@@ -305,7 +305,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             setState(() => _hasCleanedToday = true);
                             if (isFirstClean) {
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-                              _speak("Wow! The room is so clean! 10 Coins! ✨");
+                              _speak("Wow! The room is so clean! 10 Kids Coins! 🪙");
                             } else {
                               _speak("Sparkling clean! ✨");
                             }
