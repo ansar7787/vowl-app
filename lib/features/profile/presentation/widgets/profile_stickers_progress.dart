@@ -26,8 +26,10 @@ class ProfileStickersProgress extends StatelessWidget {
     // `KidsAssets.totalStickerCount` and reading it from there instead.
     const totalPossible = 100; // Total 100 stickers
 
-    return GlassTile(
-      borderRadius: BorderRadius.circular(24.r),
+    return ScaleButton(
+      onTap: () => context.push(AppRouter.kidsStickerBookRoute),
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(24.r),
       padding: EdgeInsets.all(20.w),
       child: Column(
         children: [
@@ -92,43 +94,10 @@ class ProfileStickersProgress extends StatelessWidget {
                   ],
                 ),
               ),
-              // ACCESSIBILITY FIX: ~30dp visible tap target (14w/8h
-              // padding around 11sp text) was under the 48dp minimum.
-              // Expanded the tappable area via a centered SizedBox
-              // without changing the visible pill's size at all.
-              Semantics(
-                button: true,
-                label: context.tr(
-                  'profile.view_all_stickers',
-                  fallback: 'View All Stickers',
-                ),
-                child: SizedBox(
-                  height: 48.r,
-                  child: Center(
-                    child: ScaleButton(
-                      onTap: () => context.push(AppRouter.kidsStickerBookRoute),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 14.w,
-                          vertical: 8.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        child: Text(
-                          context.tr('profile.view_all', fallback: 'View All'),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: isDark ? Colors.white24 : Colors.black12,
+                size: 16.r,
               ),
             ],
           ),
@@ -187,6 +156,7 @@ class ProfileStickersProgress extends StatelessWidget {
           ],
         ],
       ),
+    ),
     );
   }
 }
