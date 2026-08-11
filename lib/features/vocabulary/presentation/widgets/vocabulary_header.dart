@@ -133,7 +133,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     final button = QuestHintButton(
       used: hintUsed,
       primaryColor: primaryColor,
-      hintText: widget.gameType == GameSubtype.topicVocab
+      hintText: (widget.gameType == GameSubtype.topicVocab || widget.gameType == GameSubtype.flashcards)
           ? null
           : currentQuest.hint,
       soundService: _soundService,

@@ -107,6 +107,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
   void _submitAnswer(bool mastered) {
     if (_isAnswered) return;
+    _hintTimer?.cancel();
     // Fire-and-forget: audio/haptic must not block the immediate card animation.
     if (mastered) {
       _hapticService.success();
@@ -133,7 +134,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     });
     _hintTimer?.cancel();
     _hintTimer = Timer(const Duration(seconds: 4), () {
-      if (!mounted || !_isHintActive) return;
+      if (!mounted || !_isHintActive || _isAnswered) return;
       setState(() {
         _isFlipped = false;
         _isHintActive = false;

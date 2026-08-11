@@ -3,8 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
-class FlashcardSwipeFront extends StatelessWidget {
-  // FIX: was dynamic — now VocabularyQuest for full compile-time safety.
+class FlashcardSwipeFront extends StatefulWidget {
   final VocabularyQuest quest;
   final Color color;
   final bool isDark;
@@ -21,18 +20,36 @@ class FlashcardSwipeFront extends StatelessWidget {
   });
 
   @override
+  State<FlashcardSwipeFront> createState() => _FlashcardSwipeFrontState();
+}
+
+class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
+  late final ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Word: ${quest.word ?? ""}. Tap to reveal definition.',
+      label: 'Hint: ${widget.quest.hint ?? widget.quest.instruction}. Tap to reveal word.',
       child: Container(
-        width: width,
-        height: height,
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+        width: widget.width,
+        height: widget.height,
         decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
+          color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: isDark ? Colors.white10 : color.withValues(alpha: 0.15),
+            color: widget.isDark ? Colors.white10 : widget.color.withValues(alpha: 0.15),
             width: 1,
           ),
           boxShadow: const [
@@ -43,80 +60,65 @@ class FlashcardSwipeFront extends StatelessWidget {
             ),
           ],
         ),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final compactHeight = constraints.maxHeight < 260;
-            final compactWidth = constraints.maxWidth < 290;
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24.r),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final compactHeight = constraints.maxHeight < 260;
+              final compactWidth = constraints.maxWidth < 290;
 
-            return Column(
-              children: [
-                const Spacer(flex: 2),
-                Container(
-                  padding: EdgeInsets.all(compactHeight ? 16.r : 20.r),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.10),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Text(
-                    quest.topicEmoji ?? '🏷️',
-                    style: TextStyle(fontSize: compactHeight ? 44.sp : 58.sp),
-                  ),
-                ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-                SizedBox(height: compactHeight ? 16.h : 24.h),
-                Flexible(
-                  flex: 4,
-                  child: Center(
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
+              return Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                child: Column(
+                  children: [
+                    const Spacer(flex: 2),
+                    Container(
+                      padding: EdgeInsets.all(compactHeight ? 16.r : 20.r),
+                      decoration: BoxDecoration(
+                        color: widget.color.withValues(alpha: 0.10),
+                        shape: BoxShape.circle,
+                      ),
                       child: Text(
-                        quest.word?.toUpperCase() ?? '',
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: compactWidth ? 28.sp : 34.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : Colors.black87,
-                          letterSpacing: compactWidth ? 2.5 : 3.5,
+                        widget.quest.topicEmoji ?? '🏷️',
+                        style: TextStyle(fontSize: compactHeight ? 44.sp : 58.sp),
+                      ),
+                    ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+                    SizedBox(height: compactHeight ? 16.h : 24.h),
+                    Flexible(
+                      flex: 6,
+                      child: Center(
+                        child: RawScrollbar(
+                          controller: _scrollController,
+                          thumbColor: widget.color.withValues(alpha: 0.4),
+                          radius: Radius.circular(8.r),
+                          thickness: 4.w,
+                          crossAxisMargin: -16.w, // Push scrollbar to the very edge of the card
+                          child: SingleChildScrollView(
+                            controller: _scrollController,
+                            physics: const BouncingScrollPhysics(),
+                            child: Text(
+                          widget.quest.hint ?? widget.quest.instruction,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: compactWidth ? 18.sp : 22.sp, // Standardized
+                            fontWeight: FontWeight.w600, // Reduced from w700
+                            color: widget.isDark ? Colors.white : Colors.black87,
+                            height: 1.4, // Increased line height for readability
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                const Spacer(flex: 1),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 8.w,
-                  runSpacing: 4.h,
-                  children: [
-                    Icon(
-                      Icons.touch_app_rounded,
-                      size: 14.r,
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.72)
-                          : color.withValues(alpha: 0.72),
-                    ),
-                    Text(
-                      'TAP TO FLIP',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.72)
-                            : color.withValues(alpha: 0.72),
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 2,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 16.h),
               ],
-            );
+            ),
+          );
           },
         ),
       ),
-    );
+    ),
+  );
   }
 }
