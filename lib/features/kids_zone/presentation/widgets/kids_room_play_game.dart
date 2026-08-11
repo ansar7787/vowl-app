@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math';
+import 'dart:async';
 
 class KidsRoomPlayGame extends StatefulWidget {
   final VoidCallback onComplete;
@@ -23,11 +24,20 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
   int _score = 0;
   int _timeLeft = 10;
   bool _isPlaying = false;
+  Timer? _gameTimer;
+  Timer? _spawnTimer;
 
   @override
   void initState() {
     super.initState();
     _startGame();
+  }
+
+  @override
+  void dispose() {
+    _gameTimer?.cancel();
+    _spawnTimer?.cancel();
+    super.dispose();
   }
 
   void _startGame() {
@@ -38,42 +48,41 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
       _bubbles.clear();
     });
     
-    // Game loop
-    _gameTick();
-    _spawnTick();
-  }
+    _gameTimer?.cancel();
+    _spawnTimer?.cancel();
 
-  void _gameTick() {
-    if (!mounted || !_isPlaying) return;
-    Future.delayed(const Duration(seconds: 1), () {
-      if (!mounted) return;
+    _gameTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
       setState(() {
         _timeLeft--;
         if (_timeLeft <= 0) {
           _isPlaying = false;
+          timer.cancel();
+          _spawnTimer?.cancel();
           _endGame();
         }
       });
-      if (_timeLeft > 0) _gameTick();
     });
-  }
 
-  void _spawnTick() {
-    if (!mounted || !_isPlaying) return;
-    Future.delayed(const Duration(milliseconds: 600), () {
-      if (!mounted) return;
+    _spawnTimer = Timer.periodic(const Duration(milliseconds: 600), (timer) {
+      if (!mounted || !_isPlaying) {
+        timer.cancel();
+        return;
+      }
       if (_bubbles.length < 5) {
         setState(() {
           _bubbles.add(_Bubble(
             id: DateTime.now().millisecondsSinceEpoch.toString() + Random().nextInt(1000).toString(),
-            x: 0.1 + Random().nextDouble() * 0.8, // 10% to 90% of screen width
-            y: 0.2 + Random().nextDouble() * 0.6, // 20% to 80% of screen height
-            size: 40 + Random().nextDouble() * 40, // 40 to 80 size
+            x: 0.1 + Random().nextDouble() * 0.8,
+            y: 0.2 + Random().nextDouble() * 0.6,
+            size: 40 + Random().nextDouble() * 40,
             color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
           ));
         });
       }
-      if (_isPlaying) _spawnTick();
     });
   }
 
