@@ -266,8 +266,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         color: Colors.white,
         size: 24.r,
       ),
-      color: Colors.amber.shade400,
-      shadowColor: Colors.amber.shade700,
+      color: const Color(0xFF6366F1), // Premium screen Indigo
+      shadowColor: const Color(0xFF4F46E5), // Darker Indigo for shadow
       title: context.tr(
         'profile.upgrade_to_premium',
         fallback: 'Upgrade to Premium',
@@ -324,7 +324,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ],
       ),
-      color: Colors.amber.shade400,
+      color: Colors.amber,
       shadowColor: Colors.amber.shade700,
       title: 'Golden Keys',
       subtitle: 'Get more keys to unlock gates instantly!',
