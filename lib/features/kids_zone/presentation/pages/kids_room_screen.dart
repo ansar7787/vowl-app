@@ -235,7 +235,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                 ),
                               );
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(25));
-                              _speak("Great job! You earned 25 coins! ⭐");
+                              _speak("Great job! You earned 25 Kids Coins! 🪙");
                               di.sl<SoundService>().playCorrect();
                             },
                           ),
@@ -267,9 +267,8 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         context: context,
                         barrierDismissible: false,
                         builder: (_) => KidsRoomPlayGame(
-                          onComplete: () {
+                          onComplete: (score) {
                             Navigator.pop(context);
-                            final isFirstPlay = !_hasPlayedToday && !_hasClaimedToday(user);
                             setState(() => _hasPlayedToday = true);
                             
                             // Update energy/happiness logic & daily game limit
@@ -283,11 +282,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                 lastGameDate: DateTime.now(),
                               ),
                             );
-                            if (isFirstPlay) {
-                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
-                              _speak("Yay! 15 Coins! Let's play again soon! 🎮");
+                            
+                            if (score > 0) {
+                              context.read<EconomyBloc>().add(EconomyAddKidsCoinsRequested(score));
+                              _speak("Yay! You got $score Kids Coins! 🪙");
                             } else {
-                              _speak("That was fun! 🎮");
+                              _speak("That was fun! Let's try again! 🎮");
                             }
                           },
                         ),

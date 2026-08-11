@@ -8,7 +8,7 @@ import 'dart:math';
 import 'dart:async';
 
 class KidsRoomPlayGame extends StatefulWidget {
-  final VoidCallback onComplete;
+  final void Function(int score) onComplete;
 
   const KidsRoomPlayGame({
     super.key,
@@ -101,7 +101,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
   void _endGame() {
     di.sl<SoundService>().playCorrect();
     Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) widget.onComplete();
+      if (mounted) widget.onComplete(_score);
     });
   }
 
@@ -235,7 +235,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                     ),
                     SizedBox(height: 20.h),
                     Text(
-                      "You popped $_score bubbles! 🫧",
+                      "You collected $_score Kids Coins! 🪙",
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w600,

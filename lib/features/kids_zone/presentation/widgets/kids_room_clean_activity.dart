@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:math';
+import 'dart:ui';
 
 class KidsRoomCleanActivity extends StatefulWidget {
   final VoidCallback onComplete;
@@ -84,99 +85,148 @@ class _KidsRoomCleanActivityState extends State<KidsRoomCleanActivity> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: _onPanUpdate,
-      child: Material(
-        color: Colors.black.withValues(alpha: 0.5),
-        child: Stack(
-          children: [
-            // Instructions
-            if (!_isFinished)
-              Positioned(
-                top: 100.h,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30.r),
-                      border: Border.all(color: Colors.teal, width: 3.w),
-                    ),
-                    child: Text(
-                      "Swipe to clean the dust! 🧹",
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.teal,
-                      ),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                    begin: const Offset(0.95, 0.95),
-                    end: const Offset(1.05, 1.05),
-                    duration: 1.seconds,
-                  ),
-                ),
+      child: Stack(
+        children: [
+          // Background frosted glass effect for dirty/soapy room
+          if (!_isFinished)
+            BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+              child: Container(
+                color: Colors.lightBlueAccent.withValues(alpha: 0.2), // Soapy tint
               ),
+            ),
 
-            // Dust Particles
-            ..._dustParticles.map((dust) {
-              return Positioned(
-                left: MediaQuery.of(context).size.width * dust.x - (dust.size / 2),
-                top: MediaQuery.of(context).size.height * dust.y - (dust.size / 2),
-                child: Text(
-                  "💨",
-                  style: TextStyle(
-                    fontSize: dust.size.sp,
-                    color: Colors.white.withValues(alpha: 0.8),
-                  ),
-                ),
-              );
-            }),
-
-            // Finished overlay
-            if (_isFinished)
-              Center(
-                child: Container(
-                  padding: EdgeInsets.all(40.r),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(40.r),
-                    border: Border.all(color: Colors.teal, width: 4.w),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.teal.withValues(alpha: 0.5),
-                        blurRadius: 20,
-                        spreadRadius: 5,
-                      )
-                    ]
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "SQUEAKY CLEAN!",
+          // Instructions
+          if (!_isFinished)
+            Positioned(
+              top: 100.h,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(30.r),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.6),
+                        borderRadius: BorderRadius.circular(30.r),
+                        border: Border.all(color: Colors.white, width: 2.w),
+                      ),
+                      child: Text(
+                        "Swipe to wipe the bubbles! 🧽",
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 32.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.teal.shade700,
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.blue.shade800,
                         ),
                       ),
-                      SizedBox(height: 20.h),
-                      Text(
-                        "Sparkling! ✨",
-                        style: TextStyle(
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    ),
+                  ),
+                ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                  begin: const Offset(0.95, 0.95),
+                  end: const Offset(1.05, 1.05),
+                  duration: 1.seconds,
+                ),
+              ),
+            ),
+
+          // Dirt/Bubbles Particles
+          ..._dustParticles.map((dust) {
+            return Positioned(
+              left: MediaQuery.of(context).size.width * dust.x - (dust.size / 2),
+              top: MediaQuery.of(context).size.height * dust.y - (dust.size / 2),
+              child: Container(
+                width: dust.size,
+                height: dust.size,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      Colors.white.withValues(alpha: 0.7),
+                      Colors.lightBlueAccent.withValues(alpha: 0.5),
                     ],
                   ),
-                ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                  border: Border.all(color: Colors.white, width: 2),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.blueAccent.withValues(alpha: 0.4),
+                      blurRadius: 10,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Text(
+                    "🫧",
+                    style: TextStyle(
+                      fontSize: dust.size * 0.5,
+                    ),
+                  ),
+                ),
               ),
-          ],
-        ),
+            );
+          }),
+
+          // Finished overlay
+          if (_isFinished)
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(40.r),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                  child: Container(
+                    padding: EdgeInsets.all(40.r),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.7),
+                      borderRadius: BorderRadius.circular(40.r),
+                      border: Border.all(color: Colors.white, width: 4.w),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withValues(alpha: 0.5),
+                          blurRadius: 20,
+                          spreadRadius: 5,
+                        ),
+                        BoxShadow(
+                          color: Colors.tealAccent.withValues(alpha: 0.2),
+                          blurRadius: 40,
+                          spreadRadius: 10,
+                        ),
+                      ]
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "SQUEAKY CLEAN!",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 32.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.teal.shade800,
+                            shadows: [
+                              Shadow(color: Colors.white, blurRadius: 10)
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 20.h),
+                        Text(
+                          "Sparkling! ✨",
+                          style: TextStyle(
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.teal.shade900,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+            ),
+        ],
       ),
     );
   }
