@@ -687,7 +687,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
 
           // 2. Interactive Mesh Alpha Gradient
           MeshGradientBackground(
-            colors: [theme.primaryColor, theme.accentColor],
             auraColor: _touchAuraColor,
           ),
 
