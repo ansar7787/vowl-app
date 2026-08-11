@@ -217,7 +217,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         user: user,
                         onBack: () => _showBackConfirmation(context, user),
                       ),
-                      if (!_dailyCareClaimed)
+                      if (!_dailyCareClaimed && !_hasClaimedToday(user))
                         Padding(
                           padding: EdgeInsets.only(left: 16.w, top: 4.h),
                           child: KidsRoomDailyCareCard(
@@ -253,7 +253,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         builder: (_) => KidsRoomPlayGame(
                           onComplete: () {
                             Navigator.pop(context);
-                            final isFirstPlay = !_hasPlayedToday;
+                            final isFirstPlay = !_hasPlayedToday && !_hasClaimedToday(user);
                             setState(() => _hasPlayedToday = true);
                             // Update energy/happiness logic
                             final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
@@ -282,7 +282,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         builder: (_) => KidsRoomCleanActivity(
                           onComplete: () {
                             Navigator.pop(context);
-                            final isFirstClean = !_hasCleanedToday;
+                            final isFirstClean = !_hasCleanedToday && !_hasClaimedToday(user);
                             setState(() => _hasCleanedToday = true);
                             if (isFirstClean) {
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
@@ -616,6 +616,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       furnitureStore: _furnitureStore,
       onItemTap: (category, item) => _handleFurnitureTap(category, item, user),
     );
+  }
+
+  bool _hasClaimedToday(UserEntity user) {
+    if (user.kidsLastCareDate == null) return false;
+    final now = DateTime.now();
+    return user.kidsLastCareDate!.year == now.year &&
+        user.kidsLastCareDate!.month == now.month &&
+        user.kidsLastCareDate!.day == now.day;
   }
 
   void _handleFurnitureTap(

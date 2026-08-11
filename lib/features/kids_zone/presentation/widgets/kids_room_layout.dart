@@ -106,6 +106,14 @@ class KidsRoomLayout extends StatelessWidget {
                 )
               ]
             ),
+            child: Stack(
+              children: [
+                // Theme specific floor texture
+                Positioned.fill(
+                  child: _buildThemeFloorTexture(),
+                ),
+              ],
+            ),
           ),
         ),
 
@@ -200,15 +208,152 @@ class KidsRoomLayout extends StatelessWidget {
       blendMode = BlendMode.overlay;
     }
 
-    return Container(
-      decoration: BoxDecoration(
+    if (overlayColor == Colors.transparent) return const SizedBox();
+
+    return IgnorePointer(
+      child: Container(
         color: overlayColor,
-        backgroundBlendMode: blendMode,
+        // Using ColorFiltered or BlendMode is better done via IgnorePointer with color
+        // since we just want a flat tint.
       ),
-      // Prevent pointer events from being blocked
-      child: const IgnorePointer(),
     );
   }
+
+  Widget _buildThemeFloorTexture() {
+    // Add immersive 3D grid, waves, or sparkles based on theme
+    switch (theme) {
+      case 'space':
+        return Opacity(
+          opacity: 0.3,
+          child: CustomPaint(painter: _GridPainter(color: Colors.purpleAccent)),
+        );
+      case 'ocean':
+        return Opacity(
+          opacity: 0.15,
+          child: CustomPaint(painter: _WavePainter(color: Colors.white)),
+        );
+      case 'sweet':
+        return Opacity(
+          opacity: 0.4,
+          child: CustomPaint(painter: _SparklePainter(color: Colors.pinkAccent)),
+        );
+      default:
+        return Opacity(
+          opacity: 0.1,
+          child: CustomPaint(painter: _GrassTexturePainter(color: Colors.greenAccent)),
+        );
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// Theme Specific Floor Painters
+// ---------------------------------------------------------
+
+class _GridPainter extends CustomPainter {
+  final Color color;
+  _GridPainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1.0
+      ..style = PaintingStyle.stroke;
+    
+    // Draw perspective grid
+    final vanishY = -size.height * 2;
+    for (double x = -size.width; x <= size.width * 2; x += 40) {
+      canvas.drawLine(Offset(x, size.height), Offset(size.width / 2, vanishY), paint);
+    }
+    for (double y = 0; y <= size.height; y += size.height / 6) {
+      // Curve horizontal lines slightly for perspective
+      final path = Path();
+      path.moveTo(0, y);
+      path.quadraticBezierTo(size.width / 2, y + 10, size.width, y);
+      canvas.drawPath(path, paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class _WavePainter extends CustomPainter {
+  final Color color;
+  _WavePainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 2.0
+      ..style = PaintingStyle.stroke;
+
+    for (double y = 20; y < size.height; y += 30) {
+      final path = Path();
+      path.moveTo(0, y);
+      for (double x = 0; x <= size.width; x += 40) {
+        path.quadraticBezierTo(x + 20, y - 10, x + 40, y);
+      }
+      canvas.drawPath(path, paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class _SparklePainter extends CustomPainter {
+  final Color color;
+  _SparklePainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color;
+    final random = dart_math.Random(42); // deterministic
+
+    for (int i = 0; i < 30; i++) {
+      final x = random.nextDouble() * size.width;
+      final y = random.nextDouble() * size.height;
+      final r = random.nextDouble() * 3 + 1;
+      canvas.drawCircle(Offset(x, y), r, paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
+
+class _GrassTexturePainter extends CustomPainter {
+  final Color color;
+  _GrassTexturePainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 2.0
+      ..strokeCap = StrokeCap.round;
+    
+    final random = dart_math.Random(42);
+    for (int i = 0; i < 60; i++) {
+      final x = random.nextDouble() * size.width;
+      final y = random.nextDouble() * size.height;
+      final length = random.nextDouble() * 10 + 5;
+      final angle = (random.nextDouble() - 0.5) * 0.5;
+      
+      canvas.drawLine(
+        Offset(x, y),
+        Offset(x + dart_math.sin(angle) * length, y - dart_math.cos(angle) * length),
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
 
   String _getThemePainter() {
     switch (theme) {
