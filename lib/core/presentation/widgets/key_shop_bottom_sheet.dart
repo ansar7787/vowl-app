@@ -59,12 +59,16 @@ class _KeyShopContent extends StatelessWidget {
             color: Theme.of(context).brightness == Brightness.dark
                 ? const Color(0xFF1E293B)
                 : Colors.white,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-            border: Border.all(color: primaryColor, width: 4.w),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            border: Border.all(
+              color: primaryColor.withValues(alpha: 0.3),
+              width: 1.5.w,
+            ),
             boxShadow: [
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.6),
-                offset: Offset(0, -6.h),
+                color: primaryColor.withValues(alpha: 0.15),
+                blurRadius: 24.r,
+                offset: Offset(0, -4.h),
               ),
             ],
           ),
@@ -76,13 +80,30 @@ class _KeyShopContent extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
-                    color: Colors.amber.withValues(alpha: 0.15),
+                    gradient: LinearGradient(
+                      colors: [
+                        primaryColor.withValues(alpha: 0.15),
+                        primaryColor.withValues(alpha: 0.25),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                     shape: BoxShape.circle,
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.4),
+                      width: 1.w,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: primaryColor.withValues(alpha: 0.2),
+                        blurRadius: 16.r,
+                      ),
+                    ],
                   ),
                   child: Icon(
                     Icons.key_rounded,
                     size: 56.r,
-                    color: Colors.amber.shade600,
+                    color: primaryColor,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -253,22 +274,23 @@ class _KeyShopContent extends StatelessWidget {
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 14.h),
                         decoration: BoxDecoration(
-                          color: userCoins >= cost
-                              ? Colors.amber
-                              : Colors.grey.shade400,
+                          gradient: LinearGradient(
+                            colors: userCoins >= cost
+                                ? [primaryColor, Colors.amber.shade700]
+                                : [Colors.grey.shade400, Colors.grey.shade500],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                           borderRadius: BorderRadius.circular(16.r),
                           border: Border.all(
-                            color: userCoins >= cost
-                                ? Colors.amber.shade700
-                                : Colors.grey.shade600,
-                            width: 3.w,
+                            color: Colors.white.withValues(alpha: 0.3),
+                            width: 1.w,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: userCoins >= cost
-                                  ? Colors.amber.shade700
-                                  : Colors.grey.shade600,
+                              color: (userCoins >= cost ? primaryColor : Colors.grey.shade500).withValues(alpha: 0.4),
                               offset: Offset(0, 4.h),
+                              blurRadius: 8.r,
                             ),
                           ],
                         ),
@@ -432,16 +454,21 @@ class _KeyShopContent extends StatelessWidget {
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
-                      color: primaryColor,
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF0EA5E9), Color(0xFF0284C7)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                       borderRadius: BorderRadius.circular(16.r),
                       border: Border.all(
-                        color: primaryColor.withValues(alpha: 0.8),
-                        width: 3.w,
+                        color: Colors.white.withValues(alpha: 0.3),
+                        width: 1.w,
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: primaryColor.withValues(alpha: 0.8),
+                          color: const Color(0xFF0EA5E9).withValues(alpha: 0.4),
                           offset: Offset(0, 4.h),
+                          blurRadius: 8.r,
                         ),
                       ],
                     ),
@@ -493,6 +520,10 @@ class _KeyShopContent extends StatelessWidget {
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.3),
+                        width: 1.w,
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFF6366F1).withValues(alpha: 0.4),
@@ -544,11 +575,11 @@ class _KeyShopContent extends StatelessWidget {
                       horizontal: 16.w,
                     ),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(16.r),
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(20.r),
                       border: Border.all(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
-                        width: 1.5.w,
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                        width: 1.w,
                       ),
                     ),
                     child: Row(
@@ -605,9 +636,9 @@ class _KeyShopContent extends StatelessWidget {
                           ),
                         ),
                         Icon(
-                          Icons.arrow_forward_ios_rounded,
+                          Icons.chevron_right_rounded,
                           color: const Color(0xFFF59E0B),
-                          size: 16.r,
+                          size: 24.r,
                         ),
                       ],
                     ),

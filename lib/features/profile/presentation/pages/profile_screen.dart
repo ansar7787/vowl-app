@@ -338,111 +338,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildInteractiveAILab(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final features = [
-      (
-        icon: Icons.document_scanner_rounded,
-        title: context.tr(
-          'translation.scan_learn_title',
-          fallback: 'Scan & Learn',
-        ),
-        subtitle: context.tr(
-          'translation.scan_learn_desc',
-          fallback: 'Extract & translate real-world text.',
-        ),
-        color: const Color(0xFF6366F1),
-        onTap: () {
-          di.sl<HapticService>().selection();
-          context.push(AppRouter.scanAndLearnRoute);
-        },
-      ),
-      (
-        icon: Icons.camera_alt_rounded,
-        title: context.tr(
-          'vocabulary.photo_vocab_title',
-          fallback: 'Photo Vocab',
-        ),
-        subtitle: context.tr(
-          'vocabulary.photo_vocab_desc',
-          fallback: 'Point camera to learn object names.',
-        ),
-        color: const Color(0xFF14B8A6),
-        onTap: () {
-          di.sl<HapticService>().selection();
-          context.push(AppRouter.photoVocabularyRoute);
-        },
-      ),
-      (
-        icon: Icons.translate_rounded,
-        title: 'Translation',
-        subtitle: 'Real-time native hints.',
-        color: const Color(0xFFF43F5E),
-        onTap: () => _showEngineInfoSheet(
-          context,
-          icon: Icons.translate_rounded,
-          color: const Color(0xFFF43F5E),
-          title: 'Instant Translation',
-          desc:
-              'Runs directly on your device to provide real-time translations during reading and speaking games without needing internet.',
-        ),
-      ),
-      (
-        icon: Icons.auto_awesome_rounded,
-        title: 'Smart Reply',
-        subtitle: 'AI conversation suggestions.',
-        color: const Color(0xFF8B5CF6),
-        onTap: () => _showEngineInfoSheet(
-          context,
-          icon: Icons.auto_awesome_rounded,
-          color: const Color(0xFF8B5CF6),
-          title: 'AI Smart Reply',
-          desc:
-              'Generates context-aware conversation replies during the Dialogue Roleplay modules to keep the chat flowing naturally.',
-        ),
-      ),
-      (
-        icon: Icons.search_rounded,
-        title: 'Entity Extract',
-        subtitle: 'Finds dates & places.',
-        color: const Color(0xFF10B981),
-        onTap: () => _showEngineInfoSheet(
-          context,
-          icon: Icons.search_rounded,
-          color: const Color(0xFF10B981),
-          title: 'Entity Extraction',
-          desc:
-              'Automatically scans reading passages to highlight important entities like dates, times, money, and locations.',
-        ),
-      ),
-      (
-        icon: Icons.language_rounded,
-        title: 'Language ID',
-        subtitle: 'Detects native language.',
-        color: const Color(0xFFF59E0B),
-        onTap: () => _showEngineInfoSheet(
-          context,
-          icon: Icons.language_rounded,
-          color: const Color(0xFFF59E0B),
-          title: 'Language ID',
-          desc:
-              'Runs silently during speaking exercises to detect if you accidentally spoke in your native language instead of English.',
-        ),
-      ),
-      (
-        icon: Icons.draw_rounded,
-        title: 'Digital Ink',
-        subtitle: 'Handwriting recognition.',
-        color: const Color(0xFFEC4899),
-        onTap: () => _showEngineInfoSheet(
-          context,
-          icon: Icons.draw_rounded,
-          color: const Color(0xFFEC4899),
-          title: 'Digital Ink',
-          desc:
-              'Powers the handwriting canvas in the Kids Zone, translating drawn strokes into digital text instantly.',
-        ),
-      ),
-    ];
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -469,7 +364,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           child: Text(
             context.tr(
               'profile.ai_lab_desc',
-              fallback: '7 powerful AI engines running 100% offline.',
+              fallback: 'Powerful AI engines running 100% offline.',
             ),
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -479,173 +374,56 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         SizedBox(height: 16.h),
-        SizedBox(
-          height: 170.h,
-          child: ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            clipBehavior: Clip.none,
-            scrollDirection: Axis.horizontal,
-            itemCount: features.length,
-            separatorBuilder: (context, index) => SizedBox(width: 12.w),
-            itemBuilder: (context, index) {
-              final f = features[index];
-              return ScaleButton(
-                onTap: f.onTap,
-                child: Container(
-                  width: 145.w,
-                  padding: EdgeInsets.all(16.w),
-                  decoration: BoxDecoration(
-                    color: f.color.withValues(alpha: isDark ? 0.15 : 0.08),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: f.color.withValues(alpha: 0.3),
-                      width: 1.5,
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: f.color.withValues(alpha: 0.2),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(f.icon, color: f.color, size: 24.r),
-                      ),
-                      const Spacer(),
-                      Text(
-                        f.title,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: isDark ? Colors.white : Colors.black87,
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        f.subtitle,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          color: isDark ? Colors.white70 : Colors.black54,
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w600,
-                          height: 1.2,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: ProfileFeatureCard(
+            iconContent: Icon(
+              Icons.document_scanner_rounded,
+              color: Colors.white,
+              size: 24.r,
+            ),
+            color: const Color(0xFF6366F1),
+            shadowColor: const Color(0xFF4F46E5),
+            title: context.tr(
+              'translation.scan_learn_title',
+              fallback: 'Scan & Learn',
+            ),
+            subtitle: context.tr(
+              'translation.scan_learn_desc',
+              fallback: 'Extract & translate real-world text.',
+            ),
+            onTap: () {
+              di.sl<HapticService>().selection();
+              context.push(AppRouter.scanAndLearnRoute);
+            },
+          ),
+        ),
+        SizedBox(height: 16.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: ProfileFeatureCard(
+            iconContent: Icon(
+              Icons.camera_alt_rounded,
+              color: Colors.white,
+              size: 24.r,
+            ),
+            color: const Color(0xFF14B8A6),
+            shadowColor: const Color(0xFF0D9488),
+            title: context.tr(
+              'vocabulary.photo_vocab_title',
+              fallback: 'Photo Vocab',
+            ),
+            subtitle: context.tr(
+              'vocabulary.photo_vocab_desc',
+              fallback: 'Point camera to learn object names.',
+            ),
+            onTap: () {
+              di.sl<HapticService>().selection();
+              context.push(AppRouter.photoVocabularyRoute);
             },
           ),
         ),
       ],
-    );
-  }
-
-  void _showEngineInfoSheet(
-    BuildContext context, {
-    required IconData icon,
-    required Color color,
-    required String title,
-    required String desc,
-  }) {
-    di.sl<HapticService>().selection();
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      useRootNavigator: true,
-      builder: (context) => Container(
-        padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 40.h),
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 40.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white24 : Colors.black12,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-            ),
-            SizedBox(height: 24.h),
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.15),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(icon, color: color, size: 32.r),
-            ),
-            SizedBox(height: 20.h),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : Colors.black87,
-              ),
-            ),
-            SizedBox(height: 12.h),
-            Text(
-              desc,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white70 : Colors.black54,
-                height: 1.5,
-              ),
-            ),
-            SizedBox(height: 32.h),
-            ScaleButton(
-              onTap: () => Navigator.pop(context),
-              child: Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 16.h),
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(16.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.3),
-                      blurRadius: 12,
-                      offset: const Offset(0, 6),
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    context.tr('common.got_it', fallback: 'Got it!'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16.sp,
-                      color: Colors.white,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 

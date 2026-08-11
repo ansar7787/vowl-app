@@ -18,18 +18,28 @@ class ProfileBentoStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final xpProgress = (user.totalExp % 100) / 100;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       children: [
-        _AdventureLevelCard(user: user),
+        _BentoWideCard(
+          title: context.tr('profile.current_level_label', fallback: 'Current Level'),
+          value: context.tr('profile.level_value', fallback: 'Lvl {0}', args: ['${user.level}']),
+          subtitle: context.tr('profile.tap_view_rank_details', fallback: 'Tap to view rank details'),
+          icon: Icons.workspace_premium_rounded,
+          color: const Color(0xFF8B5CF6),
+          onTap: () {
+            di.sl<HapticService>().selection();
+            context.push(AppRouter.levelRoute);
+          },
+        ),
         SizedBox(height: 16.h),
         Row(
           children: [
             Expanded(
               child: _StatPod(
-                title: context.tr(
-                  'profile.vowl_treasury',
-                  fallback: 'Vowl Treasury',
-                ),
+                title: context.tr('profile.vowl_treasury', fallback: 'Vowl Treasury'),
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
                 color: const Color(0xFF10B981),
@@ -39,15 +49,8 @@ class ProfileBentoStats extends StatelessWidget {
             SizedBox(width: 16.w),
             Expanded(
               child: _StatPod(
-                title: context.tr(
-                  'profile.daily_streak',
-                  fallback: 'Daily Streak',
-                ),
-                value: context.tr(
-                  'profile.streak_days',
-                  fallback: 'Days',
-                  args: ['${user.currentStreak}'],
-                ),
+                title: context.tr('profile.daily_streak', fallback: 'Daily Streak'),
+                value: context.tr('profile.streak_days', fallback: '{0} Days', args: ['${user.currentStreak}']),
                 icon: Icons.local_fire_department_rounded,
                 color: const Color(0xFFEF4444),
                 onTap: () => context.push(AppRouter.streakRoute),
@@ -56,126 +59,115 @@ class ProfileBentoStats extends StatelessWidget {
           ],
         ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.1),
         SizedBox(height: 16.h),
-        _AdventureXPCard(
-          user: user,
+        _BentoWideCard(
+          title: context.tr('profile.adventure_xp_label', fallback: 'Adventure XP'),
+          value: context.tr('profile.total_experience', fallback: 'Total Experience: {0}', args: ['${user.totalExp}']),
+          icon: Icons.auto_awesome_rounded,
+          color: const Color(0xFF3B82F6),
+          onTap: () {
+            di.sl<HapticService>().selection();
+            context.push(AppRouter.adventureXPRoute);
+          },
+          bottomContent: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: AutoSizeText(
+                      context.tr(
+                        'profile.progress_to_level',
+                        fallback: 'Progress to next level',
+                        args: ['${user.level + 1}'],
+                      ),
+                      maxLines: 1,
+                      minFontSize: 6,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w800,
+                        color: isDark ? Colors.white38 : Colors.black38,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    '${(xpProgress * 100).toInt()}%',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF3B82F6),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10.h),
+              LayoutBuilder(
+                builder: (context, trackConstraints) {
+                  final trackWidth = trackConstraints.maxWidth;
+                  return Stack(
+                    children: [
+                      Container(
+                        height: 10.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white10
+                              : Colors.black.withValues(alpha: 0.05),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                      AnimatedContainer(
+                        duration: 800.ms,
+                        height: 10.h,
+                        width: trackWidth * xpProgress.clamp(0.0, 1.0),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
+                          ),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
         ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.1),
       ],
     );
   }
 }
 
-class _AdventureLevelCard extends StatelessWidget {
-  final UserEntity user;
+class _BentoWideCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final String? subtitle;
+  final IconData icon;
+  final Color color;
+  final VoidCallback onTap;
+  final Widget? bottomContent;
 
-  const _AdventureLevelCard({required this.user});
+  const _BentoWideCard({
+    required this.title,
+    required this.value,
+    this.subtitle,
+    required this.icon,
+    required this.color,
+    required this.onTap,
+    this.bottomContent,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ScaleButton(
-      onTap: () => context.push(AppRouter.levelRoute),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(32.r),
-        padding: EdgeInsets.all(24.w),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFF8B5CF6).withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: const Color(0xFF8B5CF6).withValues(alpha: 0.2),
-                  width: 2,
-                ),
-              ),
-              child: Icon(
-                Icons.workspace_premium_rounded,
-                color: const Color(0xFF8B5CF6),
-                size: 32.r,
-              ),
-            ),
-            SizedBox(width: 20.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AutoSizeText(
-                    context.tr(
-                      'profile.current_level_label',
-                      fallback: 'Current Level',
-                    ),
-                    maxLines: 1,
-                    minFontSize: 8,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      color: const Color(0xFF8B5CF6),
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  AutoSizeText(
-                    context.tr(
-                      'profile.level_value',
-                      fallback: 'Lvl',
-                      args: ['${user.level}'],
-                    ),
-                    maxLines: 1,
-                    minFontSize: 14,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 26.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    ),
-                  ),
-                  AutoSizeText(
-                    context.tr(
-                      'profile.tap_view_rank_details',
-                      fallback: 'Tap to view rank details',
-                    ),
-                    maxLines: 1,
-                    minFontSize: 8,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white38 : Colors.black38,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(
-              Icons.chevron_right_rounded,
-              color: isDark ? Colors.white24 : Colors.black12,
-              size: 28.r,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _AdventureXPCard extends StatelessWidget {
-  final UserEntity user;
-
-  const _AdventureXPCard({required this.user});
-
-  @override
-  Widget build(BuildContext context) {
-    final xpProgress = (user.totalExp % 100) / 100;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return ScaleButton(
-      onTap: () => context.push(AppRouter.adventureXPRoute),
+      onTap: onTap,
       child: GlassTile(
         borderRadius: BorderRadius.circular(32.r),
         padding: EdgeInsets.all(24.w),
@@ -184,16 +176,12 @@ class _AdventureXPCard extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.all(12.r),
+                  padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(16.r),
+                    color: color.withValues(alpha: 0.15),
+                    shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Icons.auto_awesome_rounded,
-                    color: const Color(0xFF3B82F6),
-                    size: 24.r,
-                  ),
+                  child: Icon(icon, color: color, size: 28.r),
                 ),
                 SizedBox(width: 16.w),
                 Expanded(
@@ -201,10 +189,7 @@ class _AdventureXPCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AutoSizeText(
-                        context.tr(
-                          'profile.adventure_xp_label',
-                          fallback: 'Adventure XP',
-                        ),
+                        title,
                         maxLines: 1,
                         minFontSize: 8,
                         overflow: TextOverflow.ellipsis,
@@ -212,28 +197,38 @@ class _AdventureXPCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
-                          color: const Color(0xFF3B82F6),
+                          color: color,
                           letterSpacing: 1.5,
                         ),
                       ),
+                      SizedBox(height: 4.h),
                       AutoSizeText(
-                        context.tr(
-                          'profile.total_experience',
-                          fallback: 'Total Experience',
-                          args: ['${user.totalExp}'],
-                        ),
+                        value,
                         maxLines: 1,
-                        minFontSize: 10,
+                        minFontSize: 14,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
                         ),
                       ),
+                      if (subtitle != null) ...[
+                        SizedBox(height: 2.h),
+                        AutoSizeText(
+                          subtitle!,
+                          maxLines: 1,
+                          minFontSize: 8,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: isDark ? Colors.white38 : Colors.black38,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
@@ -244,94 +239,10 @@ class _AdventureXPCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: AutoSizeText(
-                        context.tr(
-                          'profile.progress_to_level',
-                          fallback: 'Progress to next level',
-                          args: ['${user.level + 1}'],
-                        ),
-                        maxLines: 1,
-                        minFontSize: 6,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white38 : Colors.black38,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      '${(xpProgress * 100).toInt()}%',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFF3B82F6),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10.h),
-                // MAINTAINABILITY / CORRECTNESS FIX: the original computed
-                // this bar's width as `(MediaQuery.of(context).size.width -
-                // 96.w) * xpProgress`. The `96.w` magic number only "worked"
-                // because it happened to match 2x the screen's outer
-                // horizontal padding (in profile_screen.dart) plus 2x this
-                // card's own padding - two values defined in two other
-                // files. Any future change to either padding silently
-                // breaks this bar's width with no compile error. It also
-                // used the broad `MediaQuery.of(context).size`, which
-                // rebuilds this whole widget on *any* MediaQuery change
-                // (keyboard insets, orientation, text scale), not just
-                // width changes.
-                //
-                // Fixed with `LayoutBuilder`, which reports the *actual*
-                // width this widget was given by its real parent - no
-                // magic numbers, no dependency on padding values defined
-                // in other files, and no MediaQuery subscription at all.
-                // The animation itself (duration/curve) is unchanged.
-                LayoutBuilder(
-                  builder: (context, trackConstraints) {
-                    final trackWidth = trackConstraints.maxWidth;
-                    return Stack(
-                      children: [
-                        Container(
-                          height: 10.h,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? Colors.white10
-                                : Colors.black.withValues(alpha: 0.05),
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                        ),
-                        AnimatedContainer(
-                          duration: 800.ms,
-                          height: 10.h,
-                          width: trackWidth * xpProgress.clamp(0.0, 1.0),
-                          decoration: BoxDecoration(
-                            gradient: const LinearGradient(
-                              colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
-                            ),
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ],
-            ),
+            if (bottomContent != null) ...[
+              SizedBox(height: 20.h),
+              bottomContent!,
+            ],
           ],
         ),
       ),
@@ -360,48 +271,56 @@ class _StatPod extends StatelessWidget {
 
     return ScaleButton(
       onTap: () {
-        di.sl<HapticService>().light();
+        di.sl<HapticService>().selection();
         onTap();
       },
       child: GlassTile(
-        borderRadius: BorderRadius.circular(28.r),
+        borderRadius: BorderRadius.circular(32.r),
         padding: EdgeInsets.all(20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(12.r),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(12.r),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(icon, color: color, size: 24.r),
               ),
-              child: Icon(icon, color: color, size: 20.r),
-            ),
-            SizedBox(height: 16.h),
-            AutoSizeText(
-              value,
-              maxLines: 1,
-              minFontSize: 10,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : const Color(0xFF0F172A),
+              SizedBox(height: 12.h),
+              AutoSizeText(
+                value,
+                maxLines: 1,
+                minFontSize: 14,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                ),
               ),
-            ),
-            AutoSizeText(
-              title,
-              maxLines: 1,
-              minFontSize: 6,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white38 : Colors.black38,
+              SizedBox(height: 4.h),
+              AutoSizeText(
+                title,
+                maxLines: 1,
+                minFontSize: 8,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w800,
+                  color: color,
+                  letterSpacing: 0.5,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

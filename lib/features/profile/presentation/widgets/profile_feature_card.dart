@@ -38,14 +38,18 @@ class ProfileFeatureCard extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  padding: EdgeInsets.all(14.r),
                   decoration: BoxDecoration(
-                    color: color,
+                    gradient: LinearGradient(
+                      colors: [color, shadowColor],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                     borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(color: shadowColor, width: 2.w),
                     boxShadow: [
                       BoxShadow(
-                        color: shadowColor,
+                        color: shadowColor.withValues(alpha: 0.4),
+                        blurRadius: 12.r,
                         offset: Offset(0, 4.h),
                       ),
                     ],
@@ -65,7 +69,7 @@ class ProfileFeatureCard extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w800,
                           color: isDark ? Colors.white : const Color(0xFF0F172A),
                         ),
                       ),
@@ -77,19 +81,19 @@ class ProfileFeatureCard extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          color: color,
-                          letterSpacing: 0.5,
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w500,
+                          color: isDark ? Colors.white60 : Colors.black54,
+                          height: 1.3,
                         ),
                       ),
                     ],
                   ),
                 ),
                 Icon(
-                  Icons.arrow_forward_ios_rounded,
+                  Icons.chevron_right_rounded,
                   color: isDark ? Colors.white24 : Colors.black12,
-                  size: 16.r,
+                  size: 28.r,
                 ),
               ],
             ),
