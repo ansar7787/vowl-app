@@ -114,7 +114,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     
     final newEnergy = _lifecycleService.computeDecayedEnergy(user);
     final newHunger = _lifecycleService.computeIncreasedHunger(user);
-    final streak = _lifecycleService.computeUpdatedStreak(user);
     final theme = user.kidsRoomTheme;
 
     setState(() {
@@ -126,7 +125,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         ProfileUpdateBuddyRoomRequested(
           energy: newEnergy,
           hunger: newHunger,
-          careStreak: streak,
         ),
       );
     }
@@ -217,6 +215,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                             hasCleaned: _hasCleanedToday,
                             onClaim: () {
                               setState(() => _dailyCareClaimed = true);
+                              final newStreak = _lifecycleService.computeUpdatedStreak(user);
+                              context.read<ProfileBloc>().add(
+                                ProfileUpdateBuddyRoomRequested(
+                                  careStreak: newStreak,
+                                  lastCareDate: DateTime.now(),
+                                ),
+                              );
                               context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(25));
                               _speak("Great job! You earned 25 coins! ⭐");
                               di.sl<SoundService>().playCorrect();
@@ -237,6 +242,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         builder: (_) => KidsRoomPlayGame(
                           onComplete: () {
                             Navigator.pop(context);
+                            final isFirstPlay = !_hasPlayedToday;
                             setState(() => _hasPlayedToday = true);
                             // Update energy/happiness logic
                             final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
@@ -247,8 +253,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                 hunger: newHunger,
                               ),
                             );
-                            context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
-                            _speak("Yay! 15 Coins! Let's play again soon! 🎮");
+                            if (isFirstPlay) {
+                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
+                              _speak("Yay! 15 Coins! Let's play again soon! 🎮");
+                            } else {
+                              _speak("That was fun! 🎮");
+                            }
                           },
                         ),
                       );
@@ -261,9 +271,14 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         builder: (_) => KidsRoomCleanActivity(
                           onComplete: () {
                             Navigator.pop(context);
+                            final isFirstClean = !_hasCleanedToday;
                             setState(() => _hasCleanedToday = true);
-                            context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-                            _speak("Wow! The room is so clean! 10 Coins! ✨");
+                            if (isFirstClean) {
+                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
+                              _speak("Wow! The room is so clean! 10 Coins! ✨");
+                            } else {
+                              _speak("Sparkling clean! ✨");
+                            }
                           },
                         ),
                       );
