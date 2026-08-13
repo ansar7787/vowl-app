@@ -63,7 +63,7 @@ class SegmentPathPainter extends CustomPainter {
       ..color = Colors.black.withValues(alpha: 0.05)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14.r
-      ..strokeCap = StrokeCap.round
+      ..strokeCap = StrokeCap.butt
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r);
 
     canvas.drawPath(incomingPath, shadowPaint);
@@ -76,7 +76,7 @@ class SegmentPathPainter extends CustomPainter {
       ..color = incomingColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 14.r
-      ..strokeCap = StrokeCap.round;
+      ..strokeCap = StrokeCap.butt;
 
     canvas.drawPath(incomingPath, incomingPaint);
 
@@ -94,7 +94,7 @@ class SegmentPathPainter extends CustomPainter {
             ..color = outgoingColor.withValues(alpha: 0.3 * glowPulse)
             ..style = PaintingStyle.stroke
             ..strokeWidth = (14.r + 12.r * glowPulse)
-            ..strokeCap = StrokeCap.round
+            ..strokeCap = StrokeCap.butt
             ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowPulse);
           canvas.drawPath(extractedPath, glowPaint);
         }
@@ -103,7 +103,7 @@ class SegmentPathPainter extends CustomPainter {
           ..color = outgoingColor
           ..style = PaintingStyle.stroke
           ..strokeWidth = 14.r
-          ..strokeCap = StrokeCap.round;
+          ..strokeCap = StrokeCap.butt;
         canvas.drawPath(extractedPath, outgoingPaint);
 
         // Sparkle dot at the tip of the animated path
