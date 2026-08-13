@@ -530,23 +530,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   double _getVerticalSpacing(GameCategory category) {
     switch (category) {
       case GameCategory.vocabulary:
-        return 200.h;
+        return 170.h;
       case GameCategory.grammar:
-        return 210.h;
+        return 180.h;
       case GameCategory.listening:
-        return 200.h;
+        return 170.h;
       case GameCategory.speaking:
-        return 220.h;
+        return 190.h;
       case GameCategory.reading:
-        return 210.h;
+        return 180.h;
       case GameCategory.writing:
-        return 220.h;
+        return 190.h;
       case GameCategory.accent:
-        return 200.h;
+        return 170.h;
       case GameCategory.roleplay:
-        return 230.h;
+        return 190.h;
       case GameCategory.eliteMastery:
-        return 230.h;
+        return 190.h;
     }
   }
 
