@@ -29,7 +29,7 @@ class VocabularyHeader extends StatefulWidget {
   final GameSubtype gameType;
   final VoidCallback onExit;
   final VoidCallback onBriefingShow;
-  final VoidCallback onHint;
+  final VoidCallback? onHint;
 
   const VocabularyHeader({
     super.key,
@@ -43,7 +43,7 @@ class VocabularyHeader extends StatefulWidget {
     required this.gameType,
     required this.onExit,
     required this.onBriefingShow,
-    required this.onHint,
+    this.onHint,
   });
 
   @override
@@ -109,7 +109,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
           ),
 
           // ── Hint button ───────────────────────────────────────────────
-          if (currentQuest != null && !widget.isAnswered)
+          if (currentQuest != null && !widget.isAnswered && widget.onHint != null)
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: _buildHintButton(
@@ -140,7 +140,7 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
       onTap: () {
         context.read<VocabularyBloc>().add(const VocabularyHintUsed());
         context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
-        widget.onHint();
+        widget.onHint?.call();
       },
     );
 

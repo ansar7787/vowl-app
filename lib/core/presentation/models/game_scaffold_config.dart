@@ -9,7 +9,7 @@ class GameScaffoldConfig {
   final bool? isCorrect;
   final bool isFinalFailure;
   final VoidCallback onContinue;
-  final VoidCallback onHint;
+  final VoidCallback? onHint;
   final bool showConfetti;
   final bool useScrolling;
   final bool disablePadding;
@@ -22,7 +22,7 @@ class GameScaffoldConfig {
     this.isCorrect,
     this.isFinalFailure = false,
     required this.onContinue,
-    required this.onHint,
+    this.onHint,
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
