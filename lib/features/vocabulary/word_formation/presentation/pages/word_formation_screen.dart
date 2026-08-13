@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -161,8 +162,38 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          useScrolling: false,
-          onHint: null,
+          onHint: () {
+            // Find correct suffix index
+            final correct = quest?.correctAnswer ?? "";
+            
+            // Speak the target word as a powerful audio hint
+            if (correct.isNotEmpty) {
+              di.sl<TtsService>().speak(correct);
+            }
+
+            final options = quest?.options ?? [];
+            int? correctIdx;
+            for (int i = 0; i < options.length; i++) {
+              final cleanS = options[i]
+                  .replaceAll('-', '')
+                  .trim()
+                  .toLowerCase();
+              if (correct.toLowerCase().endsWith(cleanS) ||
+                  correct.toLowerCase().startsWith(cleanS)) {
+                correctIdx = i;
+                break;
+              }
+            }
+            if (correctIdx != null) {
+              setState(() => _hoveringSuffixIndex = correctIdx);
+              // Auto-reset after a short delay if they don't drag
+              Future.delayed(2.seconds, () {
+                if (mounted && !_isAnswered) {
+                  setState(() => _hoveringSuffixIndex = null);
+                }
+              });
+            }
+          },
           child: quest == null
               ? const SizedBox()
               : LayoutBuilder(
