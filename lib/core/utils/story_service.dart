@@ -213,7 +213,7 @@ class StoryServiceImpl implements StoryService {
     'synonymSearch':
         "The Lexical Explorer. Find the many shades of meaning in every word.",
     'topicVocab':
-        "Domain Mastery. Learn the specific words that define any subject area.",
+        "Word Sorter. Group words by topic to easily build your vocabulary.",
     'wordFormation':
         "The Morphologist. Learn how words are built from their core roots.",
     'contextualUsage':

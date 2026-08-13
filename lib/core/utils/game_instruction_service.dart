@@ -1187,13 +1187,13 @@ class GameInstructionService {
           "PRO TIP: Academic words are highly precise—pay attention to logical hints in the surrounding text!",
     ),
     GameSubtype.topicVocab: GameBriefing(
-      title: "Topic Nexus",
+      title: "Word Sorter",
       icon: Icons.category_rounded,
       objective:
-          "Sort words into their correct thematic category bins. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Analyze the word", "Swipe into matching bin", "Clear the queue"],
+          "Sort words into the correct topic. Grouping words together makes them much easier to remember for real-world conversations.",
+      rules: ["Look at the new word", "Swipe it to the right topic", "Sort them all to win"],
       actionText: "Start Sorting",
-      tip: "Sorting by topic builds semantic memory 2x faster!",
+      tip: "PRO TIP: Try to picture the word in your mind before swiping it into the category!",
     ),
     GameSubtype.wordFormation: GameBriefing(
       title: "Morpheme Mixer",

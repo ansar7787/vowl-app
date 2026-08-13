@@ -52,15 +52,18 @@ class VocabularyQuestModel extends VocabularyQuest {
     List<String>? shuffledOptions;
     int? newCorrectIndex = (map['correctAnswerIndex'] as num?)?.toInt();
 
-    if (rawOptions != null &&
-        newCorrectIndex != null &&
-        newCorrectIndex >= 0 &&
-        newCorrectIndex < rawOptions.length) {
-      final correctOption = rawOptions[newCorrectIndex];
-      shuffledOptions = List<String>.from(rawOptions)..shuffle();
-      newCorrectIndex = shuffledOptions.indexOf(correctOption);
-    } else {
-      shuffledOptions = rawOptions;
+    if (rawOptions != null) {
+      if (newCorrectIndex != null &&
+          newCorrectIndex >= 0 &&
+          newCorrectIndex < rawOptions.length) {
+        final correctOption = rawOptions[newCorrectIndex];
+        shuffledOptions = List<String>.from(rawOptions)..shuffle();
+        newCorrectIndex = shuffledOptions.indexOf(correctOption);
+      } else if (subtype == GameSubtype.topicVocab) {
+        shuffledOptions = List<String>.from(rawOptions)..shuffle();
+      } else {
+        shuffledOptions = rawOptions;
+      }
     }
 
     return VocabularyQuestModel(

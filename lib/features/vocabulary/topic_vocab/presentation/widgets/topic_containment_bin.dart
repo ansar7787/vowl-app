@@ -26,16 +26,26 @@ class TopicContainmentBin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Robust check: trim and lowercase to ensure match regardless of JSON formatting quirks
+    // Robust validation check parsing the JSON string accurately
     final cleanWord = currentWord.trim().toLowerCase();
     final cleanLabel = label.trim().toLowerCase();
-    final target1 = "$cleanLabel:$cleanWord";
-    final target2 = "$cleanLabel: $cleanWord";
-    final lowerAnswer = correctAnswer.toLowerCase();
+    bool isHinted = false;
 
-    bool isHinted =
-        isHintActive &&
-        (lowerAnswer.contains(target1) || lowerAnswer.contains(target2));
+    if (isHintActive) {
+      final pairs = correctAnswer.split(',');
+      for (var pair in pairs) {
+        final parts = pair.split(':');
+        if (parts.length == 2) {
+          final targetBucket = parts[0].trim().toLowerCase();
+          final targetWord = parts[1].trim().toLowerCase();
+          
+          if (targetWord == cleanWord && targetBucket == cleanLabel) {
+            isHinted = true;
+            break;
+          }
+        }
+      }
+    }
 
     // Contextual Icons for Categories
     IconData bucketIcon = Icons.settings_input_component_rounded;

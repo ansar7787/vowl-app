@@ -43,6 +43,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   int? _lastProcessedIndex = -1;
   bool _isHintActive = false;
   VocabularyQuest? _lastQuest;
+  List<String> _shuffledOptions = [];
 
   // Track the user's choices for the batch check
   final List<Map<String, String>> _userChoices = [];
@@ -133,11 +134,20 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     final cleanWord = word.trim().toLowerCase();
     final cleanLabel = bucket.trim().toLowerCase();
 
-    final target1 = "$cleanLabel:$cleanWord";
-    final target2 = "$cleanLabel: $cleanWord";
-    final lowerAnswer = correctAnswer.toLowerCase();
-
-    return lowerAnswer.contains(target1) || lowerAnswer.contains(target2);
+    // Safely parse "Hot:Boiling, Cold:Freezing" into exact matches
+    final pairs = correctAnswer.split(',');
+    for (var pair in pairs) {
+      final parts = pair.split(':');
+      if (parts.length == 2) {
+        final targetBucket = parts[0].trim().toLowerCase();
+        final targetWord = parts[1].trim().toLowerCase();
+        
+        if (targetWord == cleanWord) {
+          return targetBucket == cleanLabel;
+        }
+      }
+    }
+    return false;
   }
 
   @override
@@ -160,6 +170,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               _isHintActive = false;
               _userChoices.clear();
               _wordsInBins.forEach((_, list) => list.clear());
+              _shuffledOptions = List<String>.from(state.currentQuest.options ?? [])..shuffle();
             });
           }
         }
@@ -172,7 +183,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             context,
             xp: xp,
             coins: coins,
-            title: 'TOPIC NEXUS!',
+            title: 'WORD SORTER!',
             enableDoubleUp: true,
           );
         }
@@ -197,15 +208,12 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        final options = quest?.options ?? [];
+        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? []);
         final buckets = quest?.topicBuckets ?? ["A", "B"];
         final currentWord = _currentWordIndex < options.length
             ? options[_currentWordIndex]
             : "";
         final correctAnswer = quest?.correctAnswer ?? "";
-
-        String displayInstruction =
-            quest?.instruction ?? "SORT THE WORDS INTO BINS";
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -225,14 +233,13 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               final isCompact = maxHeight < 580;
 
               // Define relative positions as percentages of the actual available height or absolute sizes
-              final counterTop = 0.0;
-              final instructionTop = isCompact ? 25.h : maxHeight * 0.08;
-              final machineTop = isCompact ? 95.h : maxHeight * 0.27;
+              final counterTop = isCompact ? 15.h : maxHeight * 0.05;
+              final machineTop = isCompact ? 65.h : maxHeight * 0.18;
 
               // Word is positioned relative to bottom to work nicely with flicking physics
-              final wordBottom = isCompact ? 135.h : maxHeight * 0.40;
-              final flyingWordBottom = isCompact ? 135.h : maxHeight * 0.40;
-              final binBottom = isCompact ? 4.h : maxHeight * 0.02;
+              final wordBottom = isCompact ? 145.h : maxHeight * 0.42;
+              final flyingWordBottom = isCompact ? 145.h : maxHeight * 0.42;
+              final binBottom = isCompact ? 10.h : maxHeight * 0.04;
 
               return SizedBox(
                 height: maxHeight,
@@ -251,26 +258,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                           color: theme.primaryColor,
                         ),
                       ),
-                    ),
-
-                    // 2. INSTRUCTION
-                    Positioned(
-                      top: instructionTop,
-                      child: isCompact
-                          ? SizedBox(
-                              height: 60.h,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: _buildInstruction(
-                                  displayInstruction,
-                                  theme.primaryColor,
-                                ),
-                              ),
-                            )
-                          : _buildInstruction(
-                              displayInstruction,
-                              theme.primaryColor,
-                            ),
                     ),
 
                     // 3. EMISSION MACHINE
@@ -414,6 +401,53 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   .fadeIn(),
                       ),
 
+                    // Tutorial Hand Overlay
+                    if (!_isAnswered &&
+                        currentWord.isNotEmpty &&
+                        _flickedWord == null &&
+                        _currentWordIndex == 0 &&
+                        _userChoices.isEmpty)
+                      Positioned(
+                        bottom: wordBottom - 35.h,
+                        child: IgnorePointer(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.keyboard_double_arrow_left_rounded,
+                                color: Colors.white.withValues(alpha: 0.5),
+                                size: 24.r,
+                              )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .fadeIn(duration: 500.ms)
+                                  .fadeOut(delay: 500.ms),
+                              SizedBox(width: 8.w),
+                              Icon(
+                                Icons.touch_app_rounded,
+                                color: Colors.white.withValues(alpha: 0.9),
+                                size: 32.r,
+                              )
+                                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                                  .moveX(
+                                    begin: -25.w,
+                                    end: 25.w,
+                                    duration: 1200.ms,
+                                    curve: Curves.easeInOutSine,
+                                  ),
+                              SizedBox(width: 8.w),
+                              Icon(
+                                Icons.keyboard_double_arrow_right_rounded,
+                                color: Colors.white.withValues(alpha: 0.5),
+                                size: 24.r,
+                              )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .fadeIn(duration: 500.ms)
+                                  .fadeOut(delay: 500.ms),
+                            ],
+                          ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
+                        ),
+                      ),
+
                     // Flying Word Animation
                     if (_flickedWord != null)
                       Positioned(
@@ -474,60 +508,4 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     );
   }
 
-  Widget _buildInstruction(String text, Color color) {
-    return Column(
-      children: [
-        Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(8.r),
-                boxShadow: [BoxShadow(color: color, blurRadius: 10)],
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.swipe_right_rounded,
-                    color: Colors.white,
-                    size: 12.r,
-                  ),
-                  SizedBox(width: 4.w),
-                  Text(
-                    "FLICK TO SORT",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
-        SizedBox(height: 12.h),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-          ),
-          child: Text(
-            text.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
-              color: color.withValues(alpha: 0.9),
-              letterSpacing: 1.5,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ],
-    );
-  }
 }
