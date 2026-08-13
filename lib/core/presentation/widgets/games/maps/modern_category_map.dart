@@ -528,26 +528,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   double _getVerticalSpacing(GameCategory category) {
-    switch (category) {
-      case GameCategory.vocabulary:
-        return 170.h;
-      case GameCategory.grammar:
-        return 180.h;
-      case GameCategory.listening:
-        return 170.h;
-      case GameCategory.speaking:
-        return 190.h;
-      case GameCategory.reading:
-        return 180.h;
-      case GameCategory.writing:
-        return 190.h;
-      case GameCategory.accent:
-        return 170.h;
-      case GameCategory.roleplay:
-        return 190.h;
-      case GameCategory.eliteMastery:
-        return 190.h;
-    }
+    // A unified 190.h across all categories ensures the exact same
+    // premium "Diamond Standard" layout consistency everywhere.
+    return 190.h;
   }
 
   /// Cached wrapper around [_generatePoints]: recomputes only when
