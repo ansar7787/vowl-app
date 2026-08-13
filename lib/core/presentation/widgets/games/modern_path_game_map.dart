@@ -300,30 +300,7 @@ class ModernPathGameMap extends StatelessWidget {
               child: _buildTopicTooltip(context, theme, isDark),
             ),
 
-          // Pulse animation for current level — isolated since it's the
-          // one part of this node that repaints continuously.
-          if (isCurrent)
-            RepaintBoundary(
-              child:
-                  Container(
-                        width: 130.r,
-                        height: 130.r,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: theme.primaryColor.withValues(alpha: 0.3),
-                            width: 2,
-                          ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat())
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.2, 1.2),
-                        duration: 2.seconds,
-                      )
-                      .fadeOut(),
-            ),
+
 
           // Floating Vowl Mascot near the current level
           if (isCurrent)

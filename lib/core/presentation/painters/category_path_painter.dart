@@ -108,18 +108,19 @@ class CategoryPathPainter extends CustomPainter {
         }
       }
 
-      // ── Current-node glow pulse at the active path endpoint ──
+      // ── Current-node elegant thin breathing ring ──
       if (glowPulse > 0.0 && activeNodeCount > 0) {
         final currentPoint = points[(activeNodeCount - 1)
             .clamp(0, points.length - 1)];
+            
         canvas.drawCircle(
           currentPoint,
-          55.0 + 10.0 * glowPulse,
+          52.0 + 8.0 * glowPulse,
           Paint()
-            ..color = color.withValues(alpha: 0.2 * glowPulse)
+            ..color = color.withValues(alpha: 0.5 * glowPulse)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 3.0
-            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.0 * glowPulse),
+            ..strokeWidth = 1.5 // Thin and elegant
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.0),
         );
       }
     }

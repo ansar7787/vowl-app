@@ -86,7 +86,7 @@ class _MinimalErrorFallback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ColoredBox(color: Color(0xFF0F172A), child: SizedBox.expand());
+    return const SizedBox.shrink();
   }
 }
 

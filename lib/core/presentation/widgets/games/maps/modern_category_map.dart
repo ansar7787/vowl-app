@@ -60,7 +60,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   // ── Smooth Animation Controllers ──
   late AnimationController _entryController;
   late AnimationController _unlockPathController;
-  late AnimationController _glowController;
   int? _previousUnlockedLevel;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
@@ -100,12 +99,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       vsync: this,
       duration: const Duration(milliseconds: 1000),
     );
-
-    // 3. Current-node glow pulse (loops forever)
-    _glowController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1800),
-    )..repeat(reverse: true);
 
     // Kick off smooth entry after initial build
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -266,7 +259,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     _scrollController.dispose();
     _entryController.dispose();
     _unlockPathController.dispose();
-    _glowController.dispose();
     super.dispose();
   }
 
@@ -444,31 +436,31 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                             animation: Listenable.merge([
                               _entryController,
                               _unlockPathController,
-                              _glowController,
                             ]),
                             builder: (context, _) {
                               final entryProgress = Curves.easeOutCubic
                                   .transform(_entryController.value);
-                              final glowValue = Curves.easeInOutSine
-                                  .transform(_glowController.value);
 
                               return Stack(
                                 children: [
                                   // Decoupled Path Line Graphics
-                                  CustomPaint(
-                                    size: Size(
-                                      ScreenUtil().screenWidth,
-                                      totalContentHeight,
-                                    ),
-                                    painter: CategoryPathPainter(
-                                      points: points,
-                                      color: theme.primaryColor,
-                                      category: theme.category,
-                                      isDark: isDark,
-                                      unlockedLevels: unlockedLevels,
-                                      completedLevels: completedLevels,
-                                      activePathProgress: entryProgress,
-                                      glowPulse: glowValue,
+                                  Opacity(
+                                    opacity: entryProgress,
+                                    child: CustomPaint(
+                                      size: Size(
+                                        ScreenUtil().screenWidth,
+                                        totalContentHeight,
+                                      ),
+                                      painter: CategoryPathPainter(
+                                        points: points,
+                                        color: theme.primaryColor,
+                                        category: theme.category,
+                                        isDark: isDark,
+                                        unlockedLevels: unlockedLevels,
+                                        completedLevels: completedLevels,
+                                        activePathProgress: 1.0,
+                                        glowPulse: 0.0,
+                                      ),
                                     ),
                                   ),
 
@@ -501,15 +493,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
                                     // Staggered entry: first ~12 visible nodes cascade in
                                     final nodeDelay = (index.clamp(0, 12)) * 0.06;
-                                    final nodeT = Curves.easeOutBack.transform(
-                                      (entryProgress - nodeDelay).clamp(0.0, 1.0) /
-                                          (1.0 - nodeDelay).clamp(0.01, 1.0),
-                                    );
+                                    final rawT = (entryProgress - nodeDelay).clamp(0.0, 1.0) /
+                                        (1.0 - nodeDelay).clamp(0.01, 1.0);
+                                    final nodeScaleT = Curves.easeOutBack.transform(rawT);
 
                                     return Opacity(
-                                      opacity: nodeT,
+                                      opacity: rawT,
                                       child: Transform.scale(
-                                        scale: 0.7 + 0.3 * nodeT,
+                                        scale: 0.7 + 0.3 * nodeScaleT,
                                         child: Container(
                                           height: rowSpacing,
                                           alignment: Alignment.center,
