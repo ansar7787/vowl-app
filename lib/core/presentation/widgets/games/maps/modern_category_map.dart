@@ -225,24 +225,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
-    final double targetY =
-        64.h +
-        150.h +
-        ((unlockedLevels - 1) * rowSpacing) +
-        (rowSpacing / 2) -
-        (MediaQuery.of(context).size.height / 2.2);
-
-    final double maxScroll = _scrollController.position.maxScrollExtent;
-    final double safeTargetY = targetY.clamp(0.0, maxScroll);
+    final double absoluteNodeY = 64.h + 150.h + ((unlockedLevels - 1) * rowSpacing) + (rowSpacing / 2);
+    final double screenHalf = MediaQuery.of(context).size.height / 2.2;
+    
+    // Do NOT clamp to maxScrollExtent here! Lazy SliverLists do not know their 
+    // true maxScrollExtent until fully rendered. Clamping it early causes it 
+    // to stop at the wrong position. Flutter's animateTo handles bounds internally.
+    final double targetY = math.max(0.0, absoluteNodeY - screenHalf);
 
     if (animate) {
       _scrollController.animateTo(
-        safeTargetY,
+        targetY,
         duration: 1200.milliseconds,
         curve: Curves.easeInOutCubic,
       );
     } else {
-      _scrollController.jumpTo(safeTargetY);
+      _scrollController.jumpTo(targetY);
     }
   }
 
