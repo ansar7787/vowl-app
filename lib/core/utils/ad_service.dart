@@ -439,6 +439,21 @@ class AdService {
       return;
     }
 
+    // COPPA FIX: If childSafe is requested but the pre-loaded ad was built
+    // with personalized params (adult user in Kids Zone), dispose it and
+    // reload with a forced child-safe request. This ensures COPPA compliance
+    // regardless of the age gate result.
+    if (childSafe && AgeGateService.isAdultCached && _rewardedAd != null) {
+      _rewardedAd!.dispose();
+      _rewardedAd = null;
+      _loadAndShowChildSafeRewarded(
+        context: context,
+        onUserEarnedReward: onUserEarnedReward,
+        onDismissed: onDismissed,
+      );
+      return;
+    }
+
     if (_rewardedAd == null) {
       if (kDebugMode) {
         debugPrint('AdService: Rewarded ad not loaded yet.');
@@ -500,6 +515,77 @@ class AdService {
       childSafe: childSafe,
       onUserEarnedReward: (_) => onHintEarned(),
       onDismissed: onDismissed,
+    );
+  }
+
+  /// Loads a fresh rewarded ad with forced child-safe request parameters,
+  /// then shows it immediately upon successful load.
+  ///
+  /// Used when an adult user enters Kids Zone — the pre-loaded ad was built
+  /// with personalized params, so we must reload with COPPA-compliant settings.
+  void _loadAndShowChildSafeRewarded({
+    BuildContext? context,
+    required Function(RewardItem) onUserEarnedReward,
+    required VoidCallback onDismissed,
+  }) {
+    final adUnitId = _rewardedAdUnitId();
+    if (adUnitId.isEmpty) {
+      onDismissed();
+      return;
+    }
+
+    final childSafeRequest = _buildAdRequest(forceChildSafe: true);
+
+    RewardedAd.load(
+      adUnitId: adUnitId,
+      request: childSafeRequest,
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          if (_isDisposed) {
+            ad.dispose();
+            onDismissed();
+            return;
+          }
+
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              ad.dispose();
+              loadRewardedAd(); // Reload normal ad for next time
+              onDismissed();
+            },
+            onAdFailedToShowFullScreenContent: (ad, error) {
+              if (kDebugMode) {
+                debugPrint('AdService: Child-safe rewarded failed to show: $error');
+              }
+              ad.dispose();
+              loadRewardedAd();
+              onDismissed();
+            },
+          );
+
+          ad.setImmersiveMode(true);
+          ad.show(
+            onUserEarnedReward: (_, reward) => onUserEarnedReward(reward),
+          );
+        },
+        onAdFailedToLoad: (error) {
+          if (kDebugMode) {
+            debugPrint(
+              'AdService: Child-safe rewarded load failed (${error.code}): ${error.message}',
+            );
+          }
+          if (context != null && context.mounted) {
+            CustomSnackBar.show(
+              context: context,
+              message:
+                  'Ad is not ready yet. Please wait a few seconds and try again.',
+              type: CustomSnackBarType.error,
+            );
+          }
+          loadRewardedAd(); // Reload normal ad for next time
+          onDismissed();
+        },
+      ),
     );
   }
 }

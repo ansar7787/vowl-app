@@ -15,6 +15,9 @@ abstract class TtsService {
 
   /// Aborts active audio speech outputs immediately.
   Future<void> stop();
+
+  /// Releases the TTS engine and all associated platform resources.
+  Future<void> dispose();
 }
 
 /// Concrete high-performance implementation of [TtsService] integrating with the `flutter_tts` package.
@@ -144,5 +147,12 @@ class TtsServiceImpl implements TtsService {
     } catch (e) {
       sl<AppLogger>().error('TtsService: Stop execution error', error: e);
     }
+  }
+
+  @override
+  Future<void> dispose() async {
+    try {
+      await _flutterTts.stop();
+    } catch (_) {}
   }
 }
