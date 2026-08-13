@@ -45,7 +45,8 @@ class ModernCategoryMap extends StatefulWidget {
   State<ModernCategoryMap> createState() => _ModernCategoryMapState();
 }
 
-class _ModernCategoryMapState extends State<ModernCategoryMap> {
+class _ModernCategoryMapState extends State<ModernCategoryMap>
+    with TickerProviderStateMixin {
   Color? _touchAuraColor;
   Timer? _auraTimer;
   String? _buddyMessage;
@@ -55,6 +56,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   int _totalLevels = 10;
   bool _isLoading = true;
   bool _showFullBackground = false;
+
+  // ── Smooth Animation Controllers ──
+  late AnimationController _entryController;
+  late AnimationController _unlockPathController;
+  late AnimationController _glowController;
+  int? _previousUnlockedLevel;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
   // (constant for this widget's lifetime) category — not on every build
@@ -81,6 +88,29 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+
+    // 1. Staggered screen-entry path draw animation
+    _entryController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1400),
+    );
+
+    // 2. Path-draw animation when a level unlocks
+    _unlockPathController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    );
+
+    // 3. Current-node glow pulse (loops forever)
+    _glowController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1800),
+    )..repeat(reverse: true);
+
+    // Kick off smooth entry after initial build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _entryController.forward();
+    });
 
     // 1. Check Cache Synchronously for Instant Load
     final cachedLevels = CurriculumService.getCachedLevels(widget.gameType);
@@ -234,6 +264,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     _auraTimer?.cancel();
     _buddyMessageTimer?.cancel();
     _scrollController.dispose();
+    _entryController.dispose();
+    _unlockPathController.dispose();
+    _glowController.dispose();
     super.dispose();
   }
 
@@ -272,11 +305,24 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final double totalContentHeight =
         40.h + (_totalLevels * rowSpacing) + 100.h;
 
+    // Store initial unlocked level for delta detection
+    _previousUnlockedLevel ??= unlockedLevels;
+
     return BlocListener<AuthBloc, AuthState>(
       listenWhen: (prev, curr) =>
           prev.user?.unlockedLevels[widget.gameType] !=
           curr.user?.unlockedLevels[widget.gameType],
       listener: (context, state) {
+        // Trigger smooth unlock-path-draw animation
+        final prevLevel = _previousUnlockedLevel;
+        final currLevel = state.user?.unlockedLevels[widget.gameType] ?? 1;
+        _previousUnlockedLevel = currLevel;
+
+        if (prevLevel != null && currLevel > prevLevel) {
+          _unlockPathController.reset();
+          _unlockPathController.forward();
+        }
+
         Future.delayed(const Duration(milliseconds: 1500), () {
           if (mounted) {
             _scrollToCurrentLevel(animate: true);
@@ -390,27 +436,41 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                     ),
                   ),
 
-                  // Track View
+                  // Track View — Animated Path & Staggered Nodes
                   SliverToBoxAdapter(
                     child: _isLoading
                         ? SizedBox(height: ScreenUtil().screenHeight)
-                        : Stack(
-                            children: [
-                              // Decoupled Path Line Graphics
-                              CustomPaint(
-                                size: Size(
-                                  ScreenUtil().screenWidth,
-                                  totalContentHeight,
-                                ),
-                                painter: CategoryPathPainter(
-                                  points: points,
-                                  color: theme.primaryColor,
-                                  category: theme.category,
-                                  isDark: isDark,
-                                  unlockedLevels: unlockedLevels,
-                                  completedLevels: completedLevels,
-                                ),
-                              ),
+                        : AnimatedBuilder(
+                            animation: Listenable.merge([
+                              _entryController,
+                              _unlockPathController,
+                              _glowController,
+                            ]),
+                            builder: (context, _) {
+                              final entryProgress = Curves.easeOutCubic
+                                  .transform(_entryController.value);
+                              final glowValue = Curves.easeInOutSine
+                                  .transform(_glowController.value);
+
+                              return Stack(
+                                children: [
+                                  // Decoupled Path Line Graphics
+                                  CustomPaint(
+                                    size: Size(
+                                      ScreenUtil().screenWidth,
+                                      totalContentHeight,
+                                    ),
+                                    painter: CategoryPathPainter(
+                                      points: points,
+                                      color: theme.primaryColor,
+                                      category: theme.category,
+                                      isDark: isDark,
+                                      unlockedLevels: unlockedLevels,
+                                      completedLevels: completedLevels,
+                                      activePathProgress: entryProgress,
+                                      glowPulse: glowValue,
+                                    ),
+                                  ),
 
                               // Interactive Stage Nodes
                               //
@@ -437,26 +497,38 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                 children: [
                                   ...List.generate(_totalLevels, (index) {
                                     final levelNumber = index + 1;
-
                                     final point = points[index];
 
-                                    return Container(
-                                      height: rowSpacing,
-                                      alignment: Alignment.center,
-                                      child: Transform.translate(
-                                        offset: Offset(
-                                          point.dx -
-                                              ScreenUtil().screenWidth / 2,
-                                          0,
-                                        ),
-                                        child: _buildPathNode(
-                                          context,
-                                          levelNumber,
-                                          unlockedLevels,
-                                          completedLevels,
-                                          isDark,
-                                          theme,
-                                          isPremium,
+                                    // Staggered entry: first ~12 visible nodes cascade in
+                                    final nodeDelay = (index.clamp(0, 12)) * 0.06;
+                                    final nodeT = Curves.easeOutBack.transform(
+                                      (entryProgress - nodeDelay).clamp(0.0, 1.0) /
+                                          (1.0 - nodeDelay).clamp(0.01, 1.0),
+                                    );
+
+                                    return Opacity(
+                                      opacity: nodeT,
+                                      child: Transform.scale(
+                                        scale: 0.7 + 0.3 * nodeT,
+                                        child: Container(
+                                          height: rowSpacing,
+                                          alignment: Alignment.center,
+                                          child: Transform.translate(
+                                            offset: Offset(
+                                              point.dx -
+                                                  ScreenUtil().screenWidth / 2,
+                                              0,
+                                            ),
+                                            child: _buildPathNode(
+                                              context,
+                                              levelNumber,
+                                              unlockedLevels,
+                                              completedLevels,
+                                              isDark,
+                                              theme,
+                                              isPremium,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     );
@@ -465,7 +537,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                 ],
                               ),
                             ],
-                          ),
+                          );
+                        },
+                      ),
                   ),
                 ],
               ),
@@ -1257,14 +1331,67 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     );
 
     if (isCurrent) {
-      return circleWidget
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: -6.r,
-            end: 6.r,
-            duration: 1.2.seconds,
-            curve: Curves.easeInOut,
-          );
+      return Stack(
+        alignment: Alignment.center,
+        children: [
+          // Inner soft glow ring
+          Container(
+                width: 115.r,
+                height: 115.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: tierColor.withValues(alpha: 0.4),
+                    width: 3.r,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: tierColor.withValues(alpha: 0.15),
+                      blurRadius: 20.r,
+                      spreadRadius: 4.r,
+                    ),
+                  ],
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(0.92, 0.92),
+                end: const Offset(1.05, 1.05),
+                duration: 1.8.seconds,
+                curve: Curves.easeInOutSine,
+              )
+              .fadeIn(begin: 0.5),
+          // Outer expanding pulse ring
+          Container(
+                width: 130.r,
+                height: 130.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: tierColor.withValues(alpha: 0.2),
+                    width: 2.r,
+                  ),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .scale(
+                begin: const Offset(0.8, 0.8),
+                end: const Offset(1.3, 1.3),
+                duration: 2.seconds,
+                curve: Curves.easeOut,
+              )
+              .fadeOut(duration: 2.seconds),
+          // The node itself with smooth float
+          circleWidget
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .moveY(
+                begin: -6.r,
+                end: 6.r,
+                duration: 1.2.seconds,
+                curve: Curves.easeInOut,
+              ),
+        ],
+      );
     }
 
     return circleWidget;

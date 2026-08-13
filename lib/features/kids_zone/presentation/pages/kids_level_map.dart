@@ -47,16 +47,48 @@ class KidsLevelMap extends StatefulWidget {
   State<KidsLevelMap> createState() => _KidsLevelMapState();
 }
 
-class _KidsLevelMapState extends State<KidsLevelMap> {
+class _KidsLevelMapState extends State<KidsLevelMap>
+    with TickerProviderStateMixin {
   StoryBeat? _activeStoryBeat;
   late ScrollController _scrollController;
   String? _buddyMessage;
   Timer? _buddyMessageTimer;
 
+  // ── Smooth Animation Controllers ──
+  late AnimationController _entryController;
+  late AnimationController _unlockPathController;
+  late AnimationController _glowController;
+  int? _previousUnlockedLevel;
+  bool _isUnlockAnimating = false;
+
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+
+    // 1. Staggered screen-entry animation (nodes cascade in)
+    _entryController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1200),
+    );
+
+    // 2. Path-draw animation when a level unlocks
+    _unlockPathController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    );
+
+    // 3. Current-node glow pulse (loops forever)
+    _glowController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1800),
+    )..repeat(reverse: true);
+
+    // Kick off smooth entry
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _entryController.forward();
+    });
+
     _checkAndShowStoryBeat();
     _scrollToUnlockedLevel();
   }
@@ -65,6 +97,9 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
   void dispose() {
     _scrollController.dispose();
     _buddyMessageTimer?.cancel();
+    _entryController.dispose();
+    _unlockPathController.dispose();
+    _glowController.dispose();
     super.dispose();
   }
 
@@ -79,14 +114,17 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
           final unlockedLevel = user.unlockedLevels[widget.gameType] ?? 1;
+          // Store for unlock-animation delta detection
+          _previousUnlockedLevel ??= unlockedLevel;
+
           final double targetOffset = (unlockedLevel - 1) * 200.h;
           final double centeredOffset = max(0, targetOffset - 300.h);
 
           if (targetOffset > 100) {
             _scrollController.animateTo(
               centeredOffset,
-              duration: 800.milliseconds,
-              curve: Curves.easeInOutQuart,
+              duration: 1200.milliseconds,
+              curve: Curves.easeInOutCubic,
             );
           }
         }
@@ -190,6 +228,20 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
         return prevUnlocked != currUnlocked;
       },
       listener: (context, state) {
+        // Trigger smooth unlock-path-draw animation
+        final prevLevel = _previousUnlockedLevel;
+        final currLevel = state.user?.unlockedLevels[widget.gameType] ?? 1;
+        _previousUnlockedLevel = currLevel;
+
+        if (prevLevel != null && currLevel > prevLevel) {
+          _isUnlockAnimating = true;
+          _unlockPathController.reset();
+          _unlockPathController.forward().then((_) {
+            if (mounted) {
+              setState(() => _isUnlockAnimating = false);
+            }
+          });
+        }
         _scrollToUnlockedLevel();
       },
       child: BlocBuilder<AuthBloc, AuthState>(
@@ -489,23 +541,65 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
       return _buildShimmerSegment(context, currentOffset, nextOffset, isLast);
     }
 
-    return CustomPaint(
-      painter: SegmentPathPainter(
-        incomingColor: isPrevCompleted
-            ? widget.primaryColor
-            : (isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05)),
-        outgoingColor: isCompleted
-            ? widget.primaryColor
-            : (isDark
-                ? Colors.white.withValues(alpha: 0.1)
-                : Colors.black.withValues(alpha: 0.05)),
-        currentOffset: currentOffset,
-        nextOffset: nextOffset,
-        isLast: isLast,
-        level: level,
-      ),
+
+    return AnimatedBuilder(
+      animation: Listenable.merge([
+        _unlockPathController,
+        _glowController,
+        _entryController,
+      ]),
+      builder: (context, child) {
+        // Staggered entry: each level fades in with a slight cascade
+        final entryDelay = (level.clamp(1, 10) - 1) * 0.08;
+        final entryT = Curves.easeOutCubic.transform(
+          (_entryController.value - entryDelay).clamp(0.0, 1.0) /
+              (1.0 - entryDelay).clamp(0.01, 1.0),
+        );
+
+        // Path-draw progress for the segment right before the current node
+        double pathProgress = 1.0;
+        if (_isUnlockAnimating && isCompleted) {
+          // The just-completed level's outgoing path draws in
+          final user = context.read<AuthBloc>().state.user;
+          final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
+          if (level == currUnlocked - 1) {
+            pathProgress = Curves.easeInOutCubic
+                .transform(_unlockPathController.value);
+          }
+        }
+
+        final glowValue = Curves.easeInOutSine
+            .transform(_glowController.value);
+
+        return Opacity(
+          opacity: entryT,
+          child: Transform.scale(
+            scale: 0.85 + 0.15 * entryT,
+            child: CustomPaint(
+              painter: SegmentPathPainter(
+                incomingColor: isPrevCompleted
+                    ? widget.primaryColor
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.05)),
+                outgoingColor: isCompleted
+                    ? widget.primaryColor
+                    : (isDark
+                        ? Colors.white.withValues(alpha: 0.1)
+                        : Colors.black.withValues(alpha: 0.05)),
+                currentOffset: currentOffset,
+                nextOffset: nextOffset,
+                isLast: isLast,
+                level: level,
+                pathProgress: pathProgress,
+                isCurrent: isCurrent,
+                glowPulse: isCurrent ? glowValue : 0.0,
+              ),
+              child: child,
+            ),
+          ),
+        );
+      },
       child: SizedBox(
         height: 200.h,
         width: double.infinity,
@@ -527,9 +621,11 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                         isNextZone,
                       )
                       .animate()
-                      .fadeIn(duration: 800.ms, delay: (level % 5 * 100).ms)
+                      .fadeIn(duration: 600.ms, delay: (level % 5 * 80).ms)
                       .scale(
-                        begin: const Offset(0.7, 0.7),
+                        begin: const Offset(0.6, 0.6),
+                        end: const Offset(1.0, 1.0),
+                        duration: 700.ms,
                         curve: Curves.easeOutBack,
                       ),
             ),
@@ -1136,15 +1232,43 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 curve: Curves.easeInOutSine,
               ),
 
-          // 3. Current Level Indicator
-          if (isCurrent)
+          // 3. Current Level – Double-Ring Glow Beacon
+          if (isCurrent) ...[
+            // Inner soft glow ring
             Container(
-                  width: 120.r,
-                  height: 120.r,
+                  width: 115.r,
+                  height: 115.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: widget.primaryColor.withValues(alpha: 0.3),
+                      color: widget.primaryColor.withValues(alpha: 0.4),
+                      width: 3.r,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: widget.primaryColor.withValues(alpha: 0.15),
+                        blurRadius: 20.r,
+                        spreadRadius: 4.r,
+                      ),
+                    ],
+                  ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(
+                  begin: const Offset(0.92, 0.92),
+                  end: const Offset(1.05, 1.05),
+                  duration: 1.8.seconds,
+                  curve: Curves.easeInOutSine,
+                )
+                .fadeIn(begin: 0.5),
+            // Outer expanding pulse ring
+            Container(
+                  width: 130.r,
+                  height: 130.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: widget.primaryColor.withValues(alpha: 0.2),
                       width: 2.r,
                     ),
                   ),
@@ -1152,10 +1276,12 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 .animate(onPlay: (c) => c.repeat())
                 .scale(
                   begin: const Offset(0.8, 0.8),
-                  end: const Offset(1.2, 1.2),
-                  duration: 1.5.seconds,
+                  end: const Offset(1.3, 1.3),
+                  duration: 2.seconds,
+                  curve: Curves.easeOut,
                 )
-                .fadeOut(),
+                .fadeOut(duration: 2.seconds),
+          ],
         ],
       ),
     );

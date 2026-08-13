@@ -15,6 +15,12 @@ class CategoryPathPainter extends CustomPainter {
   final int unlockedLevels;
   final int completedLevels;
 
+  /// 0.0 → 1.0: animated active-path draw progress (for screen-entry & unlock)
+  final double activePathProgress;
+
+  /// 0.0 → 1.0: glow pulse value for the current-node connection
+  final double glowPulse;
+
   const CategoryPathPainter({
     required this.points,
     required this.color,
@@ -22,6 +28,8 @@ class CategoryPathPainter extends CustomPainter {
     required this.isDark,
     required this.unlockedLevels,
     required this.completedLevels,
+    this.activePathProgress = 1.0,
+    this.glowPulse = 0.0,
   });
 
   @override
@@ -47,32 +55,73 @@ class CategoryPathPainter extends CustomPainter {
     // ── Top connection point with glow ──────────────────────────────────
     canvas.drawCircle(topCenter, 10.0, Paint()..color = color);
 
-    final glowPaint = Paint()
+    final topGlowPaint = Paint()
       ..shader = RadialGradient(
         colors: [color.withValues(alpha: 0.5), Colors.transparent],
       ).createShader(Rect.fromCircle(center: topCenter, radius: 25.0));
-    canvas.drawCircle(topCenter, 25.0, glowPaint);
+    canvas.drawCircle(topCenter, 25.0, topGlowPaint);
 
     // ── Full locked path ─────────────────────────────────────────────────
     final lockedPath = _buildPath(topCenter, points, 0, points.length);
     canvas.drawPath(lockedPath, lockedPaint);
 
-    // ── Active (unlocked) path ───────────────────────────────────────────
+    // ── Active (unlocked) path with animated draw ────────────────────────
     if (points.isNotEmpty) {
       final activeNodeCount = (completedLevels + 1).clamp(0, points.length);
       final activePath = _buildPath(topCenter, points, 0, activeNodeCount);
 
-      // Soft glow layer beneath the active path.
-      canvas.drawPath(
-        activePath,
-        Paint()
-          ..color = color.withValues(alpha: 0.4)
-          ..strokeWidth = 16.0
-          ..style = PaintingStyle.stroke
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10.0),
-      );
+      // Clip the active path based on activePathProgress
+      for (final metric in activePath.computeMetrics()) {
+        final clippedPath =
+            metric.extractPath(0, metric.length * activePathProgress);
 
-      canvas.drawPath(activePath, activePaint);
+        // Soft glow layer beneath the active path
+        canvas.drawPath(
+          clippedPath,
+          Paint()
+            ..color = color.withValues(alpha: 0.4)
+            ..strokeWidth = 16.0
+            ..style = PaintingStyle.stroke
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10.0),
+        );
+
+        canvas.drawPath(clippedPath, activePaint);
+
+        // Sparkle tip during animated draw
+        if (activePathProgress < 1.0 && activePathProgress > 0.0) {
+          final tangent =
+              metric.getTangentForOffset(metric.length * activePathProgress);
+          if (tangent != null) {
+            canvas.drawCircle(
+              tangent.position,
+              8.0,
+              Paint()
+                ..color = Colors.white
+                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6.0),
+            );
+            canvas.drawCircle(
+              tangent.position,
+              5.0,
+              Paint()..color = color,
+            );
+          }
+        }
+      }
+
+      // ── Current-node glow pulse at the active path endpoint ──
+      if (glowPulse > 0.0 && activeNodeCount > 0) {
+        final currentPoint = points[(activeNodeCount - 1)
+            .clamp(0, points.length - 1)];
+        canvas.drawCircle(
+          currentPoint,
+          55.0 + 10.0 * glowPulse,
+          Paint()
+            ..color = color.withValues(alpha: 0.2 * glowPulse)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = 3.0
+            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.0 * glowPulse),
+        );
+      }
     }
 
     // ── Toll Gate Path (Dashed Gold) ──────────────────────────────────────
@@ -147,7 +196,9 @@ class CategoryPathPainter extends CustomPainter {
         oldDelegate.color != color ||
         oldDelegate.isDark != isDark ||
         oldDelegate.points.length != points.length ||
-        oldDelegate.category != category;
+        oldDelegate.category != category ||
+        oldDelegate.activePathProgress != activePathProgress ||
+        oldDelegate.glowPulse != glowPulse;
   }
 }
 

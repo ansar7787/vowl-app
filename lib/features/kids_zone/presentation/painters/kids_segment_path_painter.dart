@@ -8,6 +8,9 @@ class SegmentPathPainter extends CustomPainter {
   final double nextOffset;
   final bool isLast;
   final int level;
+  final double pathProgress; // 0.0 → 1.0: animated path draw progress
+  final bool isCurrent;
+  final double glowPulse; // 0.0 → 1.0: glow pulse for current node path
 
   SegmentPathPainter({
     required this.incomingColor,
@@ -16,6 +19,9 @@ class SegmentPathPainter extends CustomPainter {
     required this.nextOffset,
     required this.isLast,
     required this.level,
+    this.pathProgress = 1.0,
+    this.isCurrent = false,
+    this.glowPulse = 0.0,
   });
 
   @override
@@ -65,6 +71,7 @@ class SegmentPathPainter extends CustomPainter {
       canvas.drawPath(outgoingPath, shadowPaint);
     }
 
+    // ── Incoming Path ──
     final incomingPaint = Paint()
       ..color = incomingColor
       ..style = PaintingStyle.stroke
@@ -73,13 +80,59 @@ class SegmentPathPainter extends CustomPainter {
 
     canvas.drawPath(incomingPath, incomingPaint);
 
+    // ── Outgoing Path with animated draw ──
     if (!isLast) {
-      final outgoingPaint = Paint()
-        ..color = outgoingColor
+      // Create a clipped version of the outgoing path based on pathProgress
+      final pathMetrics = outgoingPath.computeMetrics();
+      for (final metric in pathMetrics) {
+        final extractedPath =
+            metric.extractPath(0, metric.length * pathProgress);
+
+        // If this is the "just-unlocked" path, draw a glow underneath
+        if (glowPulse > 0.0) {
+          final glowPaint = Paint()
+            ..color = outgoingColor.withValues(alpha: 0.3 * glowPulse)
+            ..style = PaintingStyle.stroke
+            ..strokeWidth = (14.r + 12.r * glowPulse)
+            ..strokeCap = StrokeCap.round
+            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowPulse);
+          canvas.drawPath(extractedPath, glowPaint);
+        }
+
+        final outgoingPaint = Paint()
+          ..color = outgoingColor
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = 14.r
+          ..strokeCap = StrokeCap.round;
+        canvas.drawPath(extractedPath, outgoingPaint);
+
+        // Sparkle dot at the tip of the animated path
+        if (pathProgress < 1.0 && pathProgress > 0.0) {
+          final tangent = metric.getTangentForOffset(metric.length * pathProgress);
+          if (tangent != null) {
+            final tipPaint = Paint()
+              ..color = Colors.white
+              ..style = PaintingStyle.fill
+              ..maskFilter = MaskFilter.blur(BlurStyle.normal, 6.r);
+            canvas.drawCircle(tangent.position, 8.r, tipPaint);
+
+            final dotPaint = Paint()
+              ..color = outgoingColor
+              ..style = PaintingStyle.fill;
+            canvas.drawCircle(tangent.position, 5.r, dotPaint);
+          }
+        }
+      }
+    }
+
+    // ── Current-Node glow ring at the node center ──
+    if (isCurrent && glowPulse > 0.0) {
+      final glowPaint = Paint()
+        ..color = incomingColor.withValues(alpha: 0.25 * glowPulse)
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 14.r
-        ..strokeCap = StrokeCap.round;
-      canvas.drawPath(outgoingPath, outgoingPaint);
+        ..strokeWidth = 4.r
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 12.r * glowPulse);
+      canvas.drawCircle(Offset(startX, centerY), 55.r, glowPaint);
     }
   }
 
@@ -89,6 +142,9 @@ class SegmentPathPainter extends CustomPainter {
         oldDelegate.outgoingColor != outgoingColor ||
         oldDelegate.currentOffset != currentOffset ||
         oldDelegate.nextOffset != nextOffset ||
-        oldDelegate.level != level;
+        oldDelegate.level != level ||
+        oldDelegate.pathProgress != pathProgress ||
+        oldDelegate.isCurrent != isCurrent ||
+        oldDelegate.glowPulse != glowPulse;
   }
 }
