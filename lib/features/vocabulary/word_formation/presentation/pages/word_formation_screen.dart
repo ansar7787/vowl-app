@@ -332,7 +332,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           minFontSize: 6,
           style: TextStyle(
             fontFamily: 'Outfit',
-            fontSize: 10.sp,
+            fontSize: 11.sp,
             fontWeight: FontWeight.w600,
             color: color,
             letterSpacing: 0.2,
@@ -341,7 +341,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         ),
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 11.sp,
+          fontSize: 13.sp,
           fontWeight: FontWeight.w600,
           color: color,
           letterSpacing: 0.2,
