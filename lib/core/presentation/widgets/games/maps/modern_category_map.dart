@@ -530,23 +530,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   double _getVerticalSpacing(GameCategory category) {
     switch (category) {
       case GameCategory.vocabulary:
-        return 150.h;
+        return 200.h;
       case GameCategory.grammar:
-        return 160.h;
+        return 210.h;
       case GameCategory.listening:
-        return 150.h;
+        return 200.h;
       case GameCategory.speaking:
-        return 170.h;
+        return 220.h;
       case GameCategory.reading:
-        return 160.h;
+        return 210.h;
       case GameCategory.writing:
-        return 170.h;
+        return 220.h;
       case GameCategory.accent:
-        return 150.h;
+        return 200.h;
       case GameCategory.roleplay:
-        return 180.h;
+        return 230.h;
       case GameCategory.eliteMastery:
-        return 180.h;
+        return 230.h;
     }
   }
 
@@ -1089,8 +1089,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   ) {
     // Real-world standard sizes: highly tapable but leaves room for the path
     Widget circleWidget = Container(
-      width: isCurrent ? 96.r : 82.r,
-      height: isCurrent ? 96.r : 82.r,
+      width: isCurrent ? 96.r : 88.r,
+      height: isCurrent ? 96.r : 88.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
