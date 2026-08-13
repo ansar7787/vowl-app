@@ -36,7 +36,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     final double nodeX = currentPoint.dx;
     final double centerY = size.height / 2;
     const double strokeW = 12.0;
-    final double lockedAlpha = isDark ? 0.22 : 0.14;
+    final double lockedAlpha = isDark ? 0.08 : 0.05;
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
@@ -101,7 +101,7 @@ class ModernSegmentPathPainter extends CustomPainter {
           ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
-          ..strokeCap = StrokeCap.round,
+          ..strokeCap = StrokeCap.butt,
       );
 
       if (isActive) {
@@ -153,7 +153,7 @@ class ModernSegmentPathPainter extends CustomPainter {
             ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
             ..style = PaintingStyle.stroke
             ..strokeWidth = strokeW
-            ..strokeCap = StrokeCap.round,
+            ..strokeCap = StrokeCap.butt,
         );
 
         if (isActive) {
