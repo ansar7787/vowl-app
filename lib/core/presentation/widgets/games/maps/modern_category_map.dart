@@ -530,23 +530,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   double _getVerticalSpacing(GameCategory category) {
     switch (category) {
       case GameCategory.vocabulary:
-        return 190.h;
+        return 140.h;
       case GameCategory.grammar:
-        return 200.h;
+        return 150.h;
       case GameCategory.listening:
-        return 190.h;
+        return 140.h;
       case GameCategory.speaking:
-        return 210.h;
+        return 160.h;
       case GameCategory.reading:
-        return 200.h;
+        return 150.h;
       case GameCategory.writing:
-        return 210.h;
+        return 160.h;
       case GameCategory.accent:
-        return 190.h;
+        return 140.h;
       case GameCategory.roleplay:
-        return 220.h;
+        return 170.h;
       case GameCategory.eliteMastery:
-        return 220.h;
+        return 170.h;
     }
   }
 
@@ -571,12 +571,16 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final screenWidth = ScreenUtil().screenWidth;
     final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final maxOffset = screenWidth * 0.30;
+    final maxOffset = screenWidth * 0.35;
 
-    // Perfectly smooth, elegant sine wave curve that alternates left/right/center naturally
+    // Organic, beautiful wandering path that feels completely unpredictable
+    // and premium, like top-tier mobile games (Candy Crush, etc.)
+    final List<double> organicPath = [
+      0.0, -0.6, -0.85, -0.3, 0.45, 0.85, 0.5, 0.1, -0.5, -0.75, -0.2, 0.35, 0.8, 0.9, 0.4, -0.1
+    ];
+
     for (int i = 0; i < _totalLevels; i++) {
-      // 1.5 multiplier makes it rhythmically sweep across the screen
-      final factor = math.sin(i * 1.5);
+      final factor = organicPath[i % organicPath.length];
       final offsetX = centerX + (factor * maxOffset);
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));
@@ -1084,8 +1088,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     bool isDark,
   ) {
     Widget circleWidget = Container(
-      width: isCurrent ? 115.r : 90.r,
-      height: isCurrent ? 115.r : 90.r,
+      width: isCurrent ? 84.r : 72.r,
+      height: isCurrent ? 84.r : 72.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -1239,8 +1243,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             children: [
               // Premium breathing beacon aura — subtle, modern, zero lag
               Container(
-                width: (96 + 18 * glowValue).r,
-                height: (96 + 18 * glowValue).r,
+                width: (92 + 16 * glowValue).r,
+                height: (92 + 16 * glowValue).r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: tierColor.withValues(
