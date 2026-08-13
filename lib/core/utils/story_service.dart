@@ -215,7 +215,7 @@ class StoryServiceImpl implements StoryService {
     'topicVocab':
         "Word Sorter. Group words by topic to easily build your vocabulary.",
     'wordFormation':
-        "The Morphologist. Learn how words are built from their core roots.",
+        "Welcome to word building! We're going to learn how to create powerful new words by mixing and matching their core pieces.",
     'contextualUsage':
         "Strategic Application. Use the right word in exactly the right way.",
     'collocations':
@@ -1215,11 +1215,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'wordformation': [
       "",
-      "Excellent start! Your understanding of word formation is growing.",
-      "Your skills in word formation are becoming incredibly sharp.",
-      "Halfway there! You are a rising star in word formation.",
-      "Level 100! Your expertise in word formation is elite.",
-      "Level 200 reached! Your grasp of word formation is legendary.",
+      "Great job! You're really getting the hang of how words fit together.",
+      "You're doing fantastic! Your vocabulary is growing stronger every day.",
+      "Halfway to a hundred! You're building words like a true natural now.",
+      "Level 100! This is a massive milestone. You've truly mastered the art of word building!",
+      "Level 200! Absolutely incredible. You understand the very DNA of the English language.",
     ],
     'contextualusage': [
       "",

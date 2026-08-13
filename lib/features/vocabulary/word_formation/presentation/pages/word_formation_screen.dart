@@ -60,7 +60,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
     bool isCorrect = false;
     String cleanS = suffix.replaceAll('-', '').trim().toLowerCase();
-    if (target.endsWith(cleanS) || target.contains(cleanS)) {
+    if (target.endsWith(cleanS) || target.startsWith(cleanS)) {
       isCorrect = true;
     }
 
@@ -173,7 +173,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                   .trim()
                   .toLowerCase();
               if (correct.toLowerCase().endsWith(cleanS) ||
-                  correct.toLowerCase().contains(cleanS)) {
+                  correct.toLowerCase().startsWith(cleanS)) {
                 correctIdx = i;
                 break;
               }
@@ -197,7 +197,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
                     // Spacing calculations
                     final double estimatedContentHeight =
-                        (isCompact ? 20.h : 40.h) +
+                        (isCompact ? 60.h : 80.h) +
                         (isCompact ? 120.h : 180.h) +
                         (options.length * (isCompact ? 46.h : 72.h)) +
                         20.h;
@@ -217,28 +217,29 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         : 12.0;
 
                     return Column(
+                      key: ValueKey(quest.id),
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: _buildInstruction(
-                                        theme.primaryColor,
-                                        quest,
-                                      ),
-                                    ),
-                                  )
-                                : _buildInstruction(theme.primaryColor, quest),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 24.w),
+                              child: _buildInstruction(theme.primaryColor, quest)
+                                  .animate()
+                                  .fadeIn(duration: 500.ms)
+                                  .slideY(
+                                    begin: -0.5,
+                                    end: 0,
+                                    duration: 500.ms,
+                                    curve: Curves.easeOutBack,
+                                  ),
+                            ),
                             SizedBox(height: gapMiddle),
 
                             // Reaction Core
-                            isCompact
+                            (isCompact
                                 ? SizedBox(
                                     height: 120.h,
                                     child: FittedBox(
@@ -261,7 +262,15 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                     activeSuffix,
                                     theme.primaryColor,
                                     isDark,
-                                  ),
+                                  ))
+                                .animate()
+                                .scale(
+                                  begin: const Offset(0.8, 0.8),
+                                  end: const Offset(1.0, 1.0),
+                                  duration: 600.ms,
+                                  curve: Curves.easeOutBack,
+                                )
+                                .fadeIn(duration: 600.ms),
                           ],
                         ),
 
@@ -291,22 +300,28 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
   }
 
   Widget _buildInstruction(Color color, GameQuest? quest) {
+    final text = quest?.hint ??
+        quest?.instruction ??
+        "SLIDE FUEL CELLS INTO THE REACTION CORE";
+    
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
+        borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Text(
-        (quest?.instruction ?? "SLIDE FUEL CELLS INTO THE REACTION CORE")
-            .toUpperCase(),
+        text.toUpperCase(),
+        textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 9.sp,
-          fontWeight: FontWeight.w900,
+          fontSize: 13.sp,
+          fontWeight: FontWeight.bold,
           color: color,
-          letterSpacing: 2,
+          letterSpacing: 1,
+          height: 1.3,
         ),
       ),
     );
@@ -507,7 +522,16 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                 ),
               ),
             ),
-          );
+          )
+              .animate()
+              .fadeIn(duration: 400.ms, delay: (entry.key * 100).ms)
+              .slideX(
+                begin: 0.5,
+                end: 0,
+                duration: 400.ms,
+                curve: Curves.easeOutCubic,
+                delay: (entry.key * 100).ms,
+              );
         }).toList(),
       ),
     );

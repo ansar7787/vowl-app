@@ -138,6 +138,8 @@ class VocabularyBaseLayout extends StatelessWidget {
             }).join(' • ');
           }
           finalExplanation = quest.explanation;
+        } else if (gameType == GameSubtype.wordFormation) {
+          ruleTitle = 'WORD BUILDING';
         }
 
         return GameFeedbackCard(

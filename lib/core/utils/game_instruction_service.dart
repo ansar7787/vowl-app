@@ -1196,13 +1196,13 @@ class GameInstructionService {
       tip: "PRO TIP: Try to picture the word in your mind before swiping it into the category!",
     ),
     GameSubtype.wordFormation: GameBriefing(
-      title: "Morpheme Mixer",
+      title: "Word Builder",
       icon: Icons.science_rounded,
       objective:
-          "Combine prefixes, suffixes, and roots to form correct words. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Analyze root", "Slide suffix", "Form word"],
-      actionText: "Ready to Mix?",
-      tip: "Suffixes change words from verbs to nouns or adjectives!",
+          "Read the hint closely and build the exact word it describes by adding the right ending to the root word. Mastering word construction unlocks a massive new vocabulary for you!",
+      rules: ["Read the hint", "Choose the right ending", "Build the new word"],
+      actionText: "Start Building",
+      tip: "Think about what kind of word you need—like a person, a feeling, or an action—before choosing the ending!",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
       title: "Word Roots",
