@@ -571,24 +571,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final screenWidth = ScreenUtil().screenWidth;
     final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final maxOffset = screenWidth * 0.35;
+    final maxOffset = screenWidth * 0.30;
 
-    // Structured serpentine factors for dramatic, winding game map curves
-    final List<double> serpentineFactors = [
-      0.0,    // Level 1: Center
-      -0.75,  // Level 2: Left
-      0.80,   // Level 3: Right
-      -0.40,  // Level 4: Mid-left
-      0.70,   // Level 5: Mid-right
-      -0.80,  // Level 6: Far left
-      0.35,   // Level 7: Mid-right
-      -0.70,  // Level 8: Mid-left
-      0.75,   // Level 9: Far right
-      0.00,   // Level 10: Center checkpoint
-    ];
-
+    // Perfectly smooth, elegant sine wave curve that alternates left/right/center naturally
     for (int i = 0; i < _totalLevels; i++) {
-      final factor = serpentineFactors[i % serpentineFactors.length];
+      // 1.5 multiplier makes it rhythmically sweep across the screen
+      final factor = math.sin(i * 1.5);
       final offsetX = centerX + (factor * maxOffset);
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));
@@ -1096,8 +1084,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     bool isDark,
   ) {
     Widget circleWidget = Container(
-      width: 90.r,
-      height: 90.r,
+      width: isCurrent ? 115.r : 90.r,
+      height: isCurrent ? 115.r : 90.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(

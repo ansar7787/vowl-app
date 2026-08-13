@@ -35,16 +35,8 @@ class ModernSegmentPathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final double nodeX = currentPoint.dx;
     final double centerY = size.height / 2;
-    const double strokeW = 14.0;
+    const double strokeW = 12.0;
     final double lockedAlpha = isDark ? 0.22 : 0.14;
-
-    // Soft drop shadow for 3D depth
-    final shadowPaint = Paint()
-      ..color = Colors.black.withValues(alpha: isDark ? 0.30 : 0.10)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = strokeW + 2.0
-      ..strokeCap = StrokeCap.round
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4.0);
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
@@ -55,15 +47,14 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(topCenter.dx, topCenter.dy)
         ..cubicTo(
           topCenter.dx,
-          centerY * 0.20,
+          centerY * 0.50,
           nodeX,
-          centerY * 0.80,
+          centerY * 0.50,
           nodeX,
           centerY,
         );
 
       final isActive = isPrevCompleted;
-      canvas.drawPath(headerPath, shadowPaint);
 
       canvas.drawPath(
         headerPath,
@@ -95,15 +86,14 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(midX, 0)
         ..cubicTo(
           midX,
-          centerY * 0.15,
+          centerY * 0.50,
           nodeX,
-          centerY * 0.85,
+          centerY * 0.50,
           nodeX,
           centerY,
         );
 
       final isActive = isPrevCompleted;
-      canvas.drawPath(incomingPath, shadowPaint);
 
       canvas.drawPath(
         incomingPath,
@@ -137,9 +127,9 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(nodeX, centerY)
         ..cubicTo(
           nodeX,
-          centerY + remainingH * 0.15,
+          centerY + remainingH * 0.50,
           midNextX,
-          centerY + remainingH * 0.85,
+          centerY + remainingH * 0.50,
           midNextX,
           bottomY,
         );
@@ -157,8 +147,6 @@ class ModernSegmentPathPainter extends CustomPainter {
             ..strokeCap = StrokeCap.round,
         );
       } else {
-        canvas.drawPath(outgoingPath, shadowPaint);
-
         canvas.drawPath(
           outgoingPath,
           Paint()
