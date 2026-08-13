@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -318,12 +319,29 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
-      child: Text(
+      child: AutoSizeText(
         text.toUpperCase(),
         textAlign: TextAlign.center,
+        maxLines: 2,
+        minFontSize: 8,
+        stepGranularity: 1,
+        overflowReplacement: AutoSizeText(
+          text.toUpperCase(),
+          textAlign: TextAlign.center,
+          maxLines: 3,
+          minFontSize: 6,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.bold,
+            color: color,
+            letterSpacing: 0.5,
+            height: 1.2,
+          ),
+        ),
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 13.sp,
+          fontSize: 12.sp,
           fontWeight: FontWeight.bold,
           color: color,
           letterSpacing: 1,
