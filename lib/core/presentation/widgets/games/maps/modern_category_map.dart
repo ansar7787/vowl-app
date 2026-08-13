@@ -571,7 +571,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final screenWidth = ScreenUtil().screenWidth;
     final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final maxOffset = screenWidth * 0.30;
+    final maxOffset = screenWidth * 0.35;
 
     // Structured serpentine factors for dramatic, winding game map curves
     final List<double> serpentineFactors = [
@@ -1096,8 +1096,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     bool isDark,
   ) {
     Widget circleWidget = Container(
-      width: isCurrent ? 100.r : 85.r,
-      height: isCurrent ? 100.r : 85.r,
+      width: 90.r,
+      height: 90.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -1135,7 +1135,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               : isNextZone
               ? Colors.amber.withValues(alpha: 0.4)
               : Colors.white24,
-          width: isCurrent ? 4.r : 3.r,
+          width: 3.r,
         ),
       ),
       child: Container(
@@ -1251,8 +1251,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             children: [
               // Premium breathing beacon aura — subtle, modern, zero lag
               Container(
-                width: (96 + 14 * glowValue).r,
-                height: (96 + 14 * glowValue).r,
+                width: (96 + 18 * glowValue).r,
+                height: (96 + 18 * glowValue).r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: tierColor.withValues(
@@ -1260,25 +1260,28 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                   ),
                   border: Border.all(
                     color: tierColor.withValues(
-                      alpha: 0.20 + 0.20 * glowValue,
+                      alpha: 0.25 + 0.25 * glowValue,
                     ),
                     width: 2.r,
                   ),
                   boxShadow: [
                     BoxShadow(
                       color: tierColor.withValues(
-                        alpha: 0.12 + 0.14 * glowValue,
+                        alpha: 0.15 + 0.15 * glowValue,
                       ),
-                      blurRadius: 16.r + 10.r * glowValue,
-                      spreadRadius: 2.r + 2.r * glowValue,
+                      blurRadius: 18.r + 10.r * glowValue,
+                      spreadRadius: 2.r + 3.r * glowValue,
                     ),
                   ],
                 ),
               ),
-              // Interactive level node with organic scale pulse
-              Transform.scale(
-                scale: 1.0 + 0.04 * glowValue,
-                child: child!,
+              // Interactive level node with organic scale pulse and vertical float
+              Transform.translate(
+                offset: Offset(0, -6.h * glowValue),
+                child: Transform.scale(
+                  scale: 1.0 + 0.08 * glowValue,
+                  child: child!,
+                ),
               ),
             ],
           );
