@@ -22,7 +22,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/toll_gate_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/star_vault_bottom_sheet.dart';
-import 'package:vowl/core/presentation/painters/category_path_painter.dart';
+import 'package:vowl/core/presentation/painters/modern_segment_path_painter.dart';
 import 'package:vowl/core/presentation/widgets/games/maps/components/glass_map_header.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
@@ -47,19 +47,17 @@ class ModernCategoryMap extends StatefulWidget {
 
 class _ModernCategoryMapState extends State<ModernCategoryMap>
     with TickerProviderStateMixin {
-  Color? _touchAuraColor;
-  Timer? _auraTimer;
   String? _buddyMessage;
   Timer? _buddyMessageTimer;
   late ScrollController _scrollController;
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
   bool _isLoading = true;
-  bool _showFullBackground = false;
 
   // ── Smooth Animation Controllers ──
   late AnimationController _entryController;
   late AnimationController _unlockPathController;
+  late AnimationController _glowController;
   int? _previousUnlockedLevel;
 
   // PERF: point geometry only actually depends on `_totalLevels` and the
@@ -88,10 +86,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     super.initState();
     _scrollController = ScrollController();
 
-    // 1. Staggered screen-entry path draw animation
+    // 1. Unified fade-in entry animation (path + nodes together)
     _entryController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1400),
+      duration: const Duration(milliseconds: 800),
     );
 
     // 2. Path-draw animation when a level unlocks
@@ -100,12 +98,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       duration: const Duration(milliseconds: 1000),
     );
 
+    // 3. Current-node subtle glow pulse (like Kids map)
+    _glowController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1800),
+    )..repeat(reverse: true);
+
     // Kick off smooth entry after initial build
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _entryController.forward();
     });
 
-    // 1. Check Cache Synchronously for Instant Load
+    // Check Cache Synchronously for Instant Load
     final cachedLevels = CurriculumService.getCachedLevels(widget.gameType);
     if (cachedLevels != null) {
       _totalLevels = cachedLevels;
@@ -113,16 +117,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     }
 
     _loadCurriculum();
-
-    // 2. Delay background icons to ensure smooth page transition AND smooth initial scroll
-    // PERF: reduced from 1600ms → 600ms — 1600ms was unnecessarily long;
-    // the route fade transition completes in 250ms, so 600ms is generous
-    // enough to avoid jank while making the map feel alive faster.
-    Future.delayed(const Duration(milliseconds: 600), () {
-      if (mounted) {
-        setState(() => _showFullBackground = true);
-      }
-    });
   }
 
   Future<void> _loadCurriculum() async {
@@ -254,11 +248,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
   @override
   void dispose() {
-    _auraTimer?.cancel();
     _buddyMessageTimer?.cancel();
     _scrollController.dispose();
     _entryController.dispose();
     _unlockPathController.dispose();
+    _glowController.dispose();
     super.dispose();
   }
 
@@ -294,8 +288,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     final List<Offset> points = _generatePointsCached(theme.category);
     final double rowSpacing = _getVerticalSpacing(theme.category);
-    final double totalContentHeight =
-        40.h + (_totalLevels * rowSpacing) + 100.h;
 
     // Store initial unlocked level for delta detection
     _previousUnlockedLevel ??= unlockedLevels;
@@ -339,21 +331,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               // 1. Clean Minimal Static Background
               _buildBackground(theme, isDark),
 
-              // Touch Listener for Engagement
-              GestureDetector(
-                onTapDown: (details) {
-                  _auraTimer?.cancel();
-                  setState(() {
-                    _touchAuraColor = theme.primaryColor;
-                  });
-                  _auraTimer = Timer(const Duration(milliseconds: 1500), () {
-                    if (mounted) {
-                      setState(() => _touchAuraColor = null);
-                    }
-                  });
-                },
-                child: Container(color: Colors.transparent),
-              ),
+
 
               // 2. Scrollable Map Core
               CustomScrollView(
@@ -428,109 +406,88 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     ),
                   ),
 
-                  // Track View — Animated Path & Staggered Nodes
-                  SliverToBoxAdapter(
-                    child: _isLoading
-                        ? SizedBox(height: ScreenUtil().screenHeight)
-                        : AnimatedBuilder(
-                            animation: Listenable.merge([
-                              _entryController,
-                              _unlockPathController,
-                            ]),
-                            builder: (context, _) {
-                              final entryProgress = Curves.easeOutCubic
-                                  .transform(_entryController.value);
+                  // Track View — Lazy SliverList with per-segment path painting & smooth entrance fade
+                  SliverFadeTransition(
+                    opacity: CurvedAnimation(
+                      parent: _entryController,
+                      curve: Curves.easeOut,
+                    ),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          // Last item: bottom spacer
+                          if (index == _totalLevels) {
+                            return SizedBox(height: 150.h);
+                          }
+                          final levelNumber = index + 1;
+                          final point = points[index];
+                          final isNodeCompleted = levelNumber <= completedLevels;
+                          final isPrevNodeCompleted = index == 0
+                              ? true
+                              : (index <= completedLevels);
+                          final isPlayable = levelNumber == completedLevels + 1 &&
+                              (levelNumber <= unlockedLevels || isPremium);
+                          final isTollGateSegment =
+                              levelNumber == completedLevels + 1 &&
+                              levelNumber > unlockedLevels &&
+                              !isPremium;
+                          final isCurrent = isPlayable || isTollGateSegment;
 
-                              return Stack(
-                                children: [
-                                  // Decoupled Path Line Graphics
-                                  Opacity(
-                                    opacity: entryProgress,
-                                    child: CustomPaint(
-                                      size: Size(
-                                        ScreenUtil().screenWidth,
-                                        totalContentHeight,
-                                      ),
-                                      painter: CategoryPathPainter(
-                                        points: points,
-                                        color: theme.primaryColor,
-                                        category: theme.category,
-                                        isDark: isDark,
-                                        unlockedLevels: unlockedLevels,
-                                        completedLevels: completedLevels,
-                                        activePathProgress: 1.0,
-                                        glowPulse: 0.0,
-                                      ),
+                          final glowValue = isCurrent
+                              ? Curves.easeInOutSine
+                                  .transform(_glowController.value)
+                              : 0.0;
+
+                          return RepaintBoundary(
+                            child: AnimatedBuilder(
+                              animation: isCurrent ? _glowController : const AlwaysStoppedAnimation(0),
+                              builder: (context, child) => CustomPaint(
+                                painter: ModernSegmentPathPainter(
+                                  currentPoint: Offset(point.dx, rowSpacing / 2),
+                                  prevPoint: index > 0
+                                      ? Offset(points[index - 1].dx, 0)
+                                      : null,
+                                  nextPoint: index < _totalLevels - 1
+                                      ? Offset(points[index + 1].dx, rowSpacing)
+                                      : null,
+                                  activeColor: theme.primaryColor,
+                                  isCompleted: isNodeCompleted,
+                                  isPrevCompleted: isPrevNodeCompleted,
+                                  isFirst: index == 0,
+                                  isLast: index == _totalLevels - 1,
+                                  isDark: isDark,
+                                  isTollGate: isTollGateSegment,
+                                  glowPulse: glowValue,
+                                ),
+                                child: child,
+                              ),
+                              child: SizedBox(
+                                height: rowSpacing,
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Transform.translate(
+                                    offset: Offset(
+                                      point.dx - ScreenUtil().screenWidth / 2,
+                                      0,
+                                    ),
+                                    child: _buildPathNode(
+                                      context,
+                                      levelNumber,
+                                      unlockedLevels,
+                                      completedLevels,
+                                      isDark,
+                                      theme,
+                                      isPremium,
                                     ),
                                   ),
-
-                              // Interactive Stage Nodes
-                              //
-                              // PERFORMANCE NOTE: every node here floats
-                              // with a perpetual `.animate(...).moveY(...)`
-                              // — not just the current level — and all
-                              // `_totalLevels` (up to 200) nodes are built
-                              // eagerly in this Column rather than lazily,
-                              // for the same reason as ModernPathGameMap:
-                              // the connecting CategoryPathPainter curve is
-                              // computed from every point up front, which
-                              // doesn't lend itself to simple sliver-based
-                              // lazy loading without a deeper rendering
-                              // rework. A true fix needs a custom
-                              // RenderSliver that only paints visible path
-                              // segments — too large a structural change to
-                              // make blind without the ability to visually
-                              // test it. RepaintBoundary per node is the
-                              // safe, valuable mitigation that *is* applied
-                              // here: each node's perpetual float animation
-                              // no longer forces Flutter to walk/repaint
-                              // every sibling node alongside it.
-                              Column(
-                                children: [
-                                  ...List.generate(_totalLevels, (index) {
-                                    final levelNumber = index + 1;
-                                    final point = points[index];
-
-                                    // Staggered entry: first ~12 visible nodes cascade in
-                                    final nodeDelay = (index.clamp(0, 12)) * 0.06;
-                                    final rawT = (entryProgress - nodeDelay).clamp(0.0, 1.0) /
-                                        (1.0 - nodeDelay).clamp(0.01, 1.0);
-                                    final nodeScaleT = Curves.easeOutBack.transform(rawT);
-
-                                    return Opacity(
-                                      opacity: rawT,
-                                      child: Transform.scale(
-                                        scale: 0.7 + 0.3 * nodeScaleT,
-                                        child: Container(
-                                          height: rowSpacing,
-                                          alignment: Alignment.center,
-                                          child: Transform.translate(
-                                            offset: Offset(
-                                              point.dx -
-                                                  ScreenUtil().screenWidth / 2,
-                                              0,
-                                            ),
-                                            child: _buildPathNode(
-                                              context,
-                                              levelNumber,
-                                              unlockedLevels,
-                                              completedLevels,
-                                              isDark,
-                                              theme,
-                                              isPremium,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  }),
-                                  SizedBox(height: 150.h),
-                                ],
+                                ),
                               ),
-                            ],
+                            ),
                           );
                         },
+                        childCount: _isLoading ? 0 : _totalLevels + 1,
                       ),
+                    ),
                   ),
                 ],
               ),
@@ -573,21 +530,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   double _getVerticalSpacing(GameCategory category) {
     switch (category) {
       case GameCategory.vocabulary:
-        return 160.h;
-      case GameCategory.grammar:
-        return 180.h;
-      case GameCategory.listening:
-        return 150.h;
-      case GameCategory.speaking:
-        return 200.h;
-      case GameCategory.reading:
         return 190.h;
-      case GameCategory.writing:
+      case GameCategory.grammar:
         return 200.h;
-      case GameCategory.accent:
-        return 170.h;
-      case GameCategory.roleplay:
+      case GameCategory.listening:
+        return 190.h;
+      case GameCategory.speaking:
         return 210.h;
+      case GameCategory.reading:
+        return 200.h;
+      case GameCategory.writing:
+        return 210.h;
+      case GameCategory.accent:
+        return 190.h;
+      case GameCategory.roleplay:
+        return 220.h;
       case GameCategory.eliteMastery:
         return 220.h;
     }
@@ -613,12 +570,11 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final List<Offset> points = [];
     final centerX = ScreenUtil().screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final amplitude = 120.w;
+    final amplitude = 95.w;
 
     for (int i = 0; i < _totalLevels; i++) {
       final wave = math.sin(i * 0.5) * amplitude;
-      final secondaryWave = math.cos(i * 0.3) * (amplitude * 0.3);
-      final offsetX = centerX + wave + secondaryWave;
+      final offsetX = centerX + wave;
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));
     }
@@ -750,102 +706,51 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             ),
           ),
 
-          // 2. Interactive Mesh Alpha Gradient
-          MeshGradientBackground(
-            auraColor: _touchAuraColor,
-          ),
+          // 2. Ambient Mesh Gradient
+          const MeshGradientBackground(),
 
-          if (_showFullBackground) ...[
-            // 3. Floating Icons
-            ...List.generate(15, (index) {
-              final random = math.Random(index + 700);
-              final duration = (40 + random.nextInt(30)).seconds;
+          // 3. Static ambient category icons — no animation controllers
+          ...List.generate(5, (index) {
+            final random = math.Random(index + 700);
+            IconData icon;
+            switch (theme.category) {
+              case GameCategory.reading:
+                icon = [Icons.menu_book_rounded, Icons.auto_stories_rounded, Icons.chrome_reader_mode_rounded, Icons.library_books_rounded, Icons.book_rounded][index];
+                break;
+              case GameCategory.writing:
+                icon = [Icons.edit_note_rounded, Icons.history_edu_rounded, Icons.draw_rounded, Icons.create_rounded, Icons.article_rounded][index];
+                break;
+              case GameCategory.speaking:
+                icon = [Icons.mic_external_on_rounded, Icons.record_voice_over_rounded, Icons.mic_rounded, Icons.campaign_rounded, Icons.interpreter_mode_rounded][index];
+                break;
+              case GameCategory.listening:
+                icon = [Icons.headset_rounded, Icons.graphic_eq_rounded, Icons.hearing_rounded, Icons.music_note_rounded, Icons.volume_up_rounded][index];
+                break;
+              case GameCategory.grammar:
+                icon = [Icons.architecture_rounded, Icons.account_tree_rounded, Icons.hub_rounded, Icons.schema_rounded, Icons.lan_rounded][index];
+                break;
+              case GameCategory.vocabulary:
+                icon = [Icons.bubble_chart_rounded, Icons.category_rounded, Icons.extension_rounded, Icons.widgets_rounded, Icons.apps_rounded][index];
+                break;
+              case GameCategory.eliteMastery:
+                icon = [Icons.workspace_premium_rounded, Icons.military_tech_rounded, Icons.diamond_rounded, Icons.emoji_events_rounded, Icons.star_rounded][index];
+                break;
+              default:
+                icon = Icons.star_rounded;
+            }
 
-              IconData icon;
-              switch (theme.category) {
-                case GameCategory.reading:
-                  icon = random.nextBool()
-                      ? Icons.menu_book_rounded
-                      : Icons.auto_stories_rounded;
-                  break;
-                case GameCategory.writing:
-                  icon = random.nextBool()
-                      ? Icons.edit_note_rounded
-                      : Icons.history_edu_rounded;
-                  break;
-                case GameCategory.speaking:
-                  icon = random.nextBool()
-                      ? Icons.mic_external_on_rounded
-                      : Icons.record_voice_over_rounded;
-                  break;
-                case GameCategory.listening:
-                  icon = random.nextBool()
-                      ? Icons.headset_rounded
-                      : Icons.graphic_eq_rounded;
-                  break;
-                case GameCategory.grammar:
-                  icon = random.nextBool()
-                      ? Icons.architecture_rounded
-                      : Icons.account_tree_rounded;
-                  break;
-                case GameCategory.vocabulary:
-                  icon = random.nextBool()
-                      ? Icons.bubble_chart_rounded
-                      : Icons.category_rounded;
-                  break;
-                case GameCategory.eliteMastery:
-                  icon = random.nextBool()
-                      ? Icons.workspace_premium_rounded
-                      : Icons.military_tech_rounded;
-                  break;
-                default:
-                  icon = Icons.star_rounded;
-              }
-
-              return Positioned(
-                left: random.nextDouble() * 1.sw,
-                top: random.nextDouble() * 2.sh,
-                child:
-                    Icon(
-                          icon,
-                          size: (12 + random.nextInt(18)).r,
-                          color: theme.primaryColor.withValues(
-                            alpha: isDark ? 0.20 : 0.12,
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat())
-                        .moveY(
-                          begin: 1.1.sh,
-                          end: -100.h,
-                          duration: duration,
-                          curve: Curves.linear,
-                        ),
-              );
-            }),
-
-            // 4. Shimmering Particles
-            ...List.generate(20, (index) {
-              final random = math.Random(index + 800);
-              return Positioned(
-                left: random.nextDouble() * 1.sw,
-                top: random.nextDouble() * 2.sh,
-                child:
-                    Container(
-                          width: 3.r,
-                          height: 3.r,
-                          decoration: const BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                          ),
-                        )
-                        .animate(onPlay: (c) => c.repeat(reverse: true))
-                        .fadeOut(
-                          duration: (1 + random.nextDouble() * 2).seconds,
-                          curve: Curves.easeInOut,
-                        ),
-              );
-            }),
-          ],
+            return Positioned(
+              left: (0.1 + random.nextDouble() * 0.8) * 1.sw,
+              top: (0.05 + index * 0.2) * 1.sh,
+              child: Icon(
+                icon,
+                size: (14 + random.nextInt(12)).r,
+                color: theme.primaryColor.withValues(
+                  alpha: isDark ? 0.12 : 0.08,
+                ),
+              ),
+            );
+          }),
         ],
       ),
     );
@@ -1092,7 +997,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
           setState(() {
             _buddyMessage = message;
-            _touchAuraColor = theme.primaryColor;
           });
 
           final cleanMessage = message
@@ -1155,7 +1059,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               ).animate().scale(curve: Curves.elasticOut, duration: 500.ms),
               CustomPaint(
                 size: Size(12.w, 8.h),
-                painter: TrianglePainter(color: theme.primaryColor),
+                painter: _TrianglePainter(color: theme.primaryColor),
               ),
             ],
           ),
@@ -1322,69 +1226,74 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
 
     if (isCurrent) {
-      return Stack(
-        alignment: Alignment.center,
-        children: [
-          // Inner soft glow ring
-          Container(
-                width: 115.r,
-                height: 115.r,
+      return AnimatedBuilder(
+        animation: _glowController,
+        builder: (context, child) {
+          final glowValue = Curves.easeInOutSine
+              .transform(_glowController.value);
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              // Premium breathing beacon aura — subtle, modern, zero lag
+              Container(
+                width: (96 + 14 * glowValue).r,
+                height: (96 + 14 * glowValue).r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
+                  color: tierColor.withValues(
+                    alpha: 0.12 * (1.0 - glowValue * 0.5),
+                  ),
                   border: Border.all(
-                    color: tierColor.withValues(alpha: 0.4),
-                    width: 3.r,
+                    color: tierColor.withValues(
+                      alpha: 0.20 + 0.20 * glowValue,
+                    ),
+                    width: 2.r,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: tierColor.withValues(alpha: 0.15),
-                      blurRadius: 20.r,
-                      spreadRadius: 4.r,
+                      color: tierColor.withValues(
+                        alpha: 0.12 + 0.14 * glowValue,
+                      ),
+                      blurRadius: 16.r + 10.r * glowValue,
+                      spreadRadius: 2.r + 2.r * glowValue,
                     ),
                   ],
                 ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(0.92, 0.92),
-                end: const Offset(1.05, 1.05),
-                duration: 1.8.seconds,
-                curve: Curves.easeInOutSine,
-              )
-              .fadeIn(begin: 0.5),
-          // Outer expanding pulse ring
-          Container(
-                width: 130.r,
-                height: 130.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: tierColor.withValues(alpha: 0.2),
-                    width: 2.r,
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .scale(
-                begin: const Offset(0.8, 0.8),
-                end: const Offset(1.3, 1.3),
-                duration: 2.seconds,
-                curve: Curves.easeOut,
-              )
-              .fadeOut(duration: 2.seconds),
-          // The node itself with smooth float
-          circleWidget
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: -6.r,
-                end: 6.r,
-                duration: 1.2.seconds,
-                curve: Curves.easeInOut,
               ),
-        ],
+              // Interactive level node with organic scale pulse
+              Transform.scale(
+                scale: 1.0 + 0.04 * glowValue,
+                child: child!,
+              ),
+            ],
+          );
+        },
+        child: circleWidget,
       );
     }
 
     return circleWidget;
   }
+}
+
+class _TrianglePainter extends CustomPainter {
+  final Color color;
+  const _TrianglePainter({required this.color});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.fill;
+    final path = Path()
+      ..moveTo(0, 0)
+      ..lineTo(size.width, 0)
+      ..lineTo(size.width / 2, size.height)
+      ..close();
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant _TrianglePainter oldDelegate) =>
+      oldDelegate.color != color;
 }
