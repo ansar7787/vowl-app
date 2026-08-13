@@ -13,6 +13,9 @@ import 'package:vowl/features/auth/domain/usecases/log_out.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
 import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
 import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:flutter/painting.dart' show imageCache;
 
 // ============================================================================
 // EVENTS
@@ -229,6 +232,22 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     if (state.status == AuthStatus.loggingOut) return;
     emit(state.copyWith(status: AuthStatus.loggingOut));
+
+    // Cancel all scheduled local notifications (streak reminders, weekly
+    // motivation, etc.) so they don't fire for the NEXT user who logs in on
+    // this device. Without this, User A's streak reminder could appear after
+    // User B signs in — a privacy and UX violation.
+    try {
+      await di.sl<NotificationService>().cancelAllReminders();
+    } catch (e) {
+      if (kDebugMode) debugPrint('AuthBloc: notification cleanup failed: $e');
+    }
+
+    // Clear the in-memory image cache so stale profile photos / avatars from
+    // the previous user don't flash on the next sign-in.
+    imageCache.clear();
+    imageCache.clearLiveImages();
+
     await _logOut(const NoParams());
     emit(const AuthState.unauthenticated());
   }

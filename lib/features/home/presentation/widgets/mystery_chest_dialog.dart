@@ -40,7 +40,8 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
 
   Future<void> _openChest() async {
     if (_chestOpened || !mounted) return;
-    setState(() => _chestOpened = true);
+
+    // Fire haptics for the "shake" phase
     try {
       Haptics.vibrate(HapticsType.heavy);
     } catch (e) {
@@ -71,22 +72,34 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
     }
 
     if (!mounted) return;
+
+    // Set reward FIRST, then trigger open — so the overlay can show the
+    // amount as soon as the reward card animates in.
     setState(() {
       _rewardAmount = totalCoins;
+      _chestOpened = true;
+    });
+
+    // Second haptic burst at the "flash" moment (~350ms into the animation)
+    Future.delayed(const Duration(milliseconds: 350), () {
+      try {
+        Haptics.vibrate(HapticsType.success);
+      } catch (_) {}
     });
 
     if (!_confettiPlayed) {
       _confettiPlayed = true;
-      _confettiController.play();
+      // Confetti is now triggered by the overlay animation at the right moment
     }
+
     context.read<EconomyBloc>().add(
       EconomyClaimDailyChestRequested(totalCoins),
     );
 
-    // Wait for animation then close dialog. Stored so it can be cancelled if
-    // the dialog is dismissed (e.g. by the system back button) before it fires.
+    // Wait for the full animation sequence + viewing time, then auto-close.
+    // Stored so it can be cancelled if the dialog is dismissed early.
     _autoCloseTimer?.cancel();
-    _autoCloseTimer = Timer(const Duration(milliseconds: 3000), () {
+    _autoCloseTimer = Timer(const Duration(milliseconds: 4000), () {
       if (mounted) {
         Navigator.of(context).pop();
       }
