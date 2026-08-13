@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Per-segment path painter for the Modern Category Map.
 ///
@@ -40,7 +41,9 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
-      final topCenter = Offset(size.width / 2, 0);
+      // Reaches up across the 10.h padding gap to perfectly touch the bottom of the header card
+      final double headerGap = -14.h; 
+      final topCenter = Offset(size.width / 2, headerGap);
       canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
       final headerPath = Path()
