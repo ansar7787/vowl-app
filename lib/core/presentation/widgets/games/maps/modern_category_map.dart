@@ -530,23 +530,23 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   double _getVerticalSpacing(GameCategory category) {
     switch (category) {
       case GameCategory.vocabulary:
-        return 140.h;
+        return 150.h;
       case GameCategory.grammar:
-        return 150.h;
+        return 160.h;
       case GameCategory.listening:
-        return 140.h;
-      case GameCategory.speaking:
-        return 160.h;
-      case GameCategory.reading:
         return 150.h;
-      case GameCategory.writing:
+      case GameCategory.speaking:
+        return 170.h;
+      case GameCategory.reading:
         return 160.h;
+      case GameCategory.writing:
+        return 170.h;
       case GameCategory.accent:
-        return 140.h;
+        return 150.h;
       case GameCategory.roleplay:
-        return 170.h;
+        return 180.h;
       case GameCategory.eliteMastery:
-        return 170.h;
+        return 180.h;
     }
   }
 
@@ -1087,9 +1087,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     Color tierColor,
     bool isDark,
   ) {
+    // Real-world standard sizes: highly tapable but leaves room for the path
     Widget circleWidget = Container(
-      width: isCurrent ? 84.r : 72.r,
-      height: isCurrent ? 84.r : 72.r,
+      width: isCurrent ? 96.r : 82.r,
+      height: isCurrent ? 96.r : 82.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: LinearGradient(
@@ -1243,8 +1244,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             children: [
               // Premium breathing beacon aura — subtle, modern, zero lag
               Container(
-                width: (92 + 16 * glowValue).r,
-                height: (92 + 16 * glowValue).r,
+                width: (102 + 16 * glowValue).r,
+                height: (102 + 16 * glowValue).r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: tierColor.withValues(
