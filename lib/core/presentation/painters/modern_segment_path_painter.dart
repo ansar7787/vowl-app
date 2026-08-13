@@ -44,7 +44,6 @@ class ModernSegmentPathPainter extends CustomPainter {
       // Reaches up across the 10.h padding gap to perfectly touch the bottom of the header card
       final double headerGap = -14.h; 
       final topCenter = Offset(size.width / 2, headerGap);
-      canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
       final headerPath = Path()
         ..moveTo(topCenter.dx, topCenter.dy)
