@@ -85,8 +85,8 @@ class ModernSegmentPathPainter extends CustomPainter {
       final incomingPath = Path()
         ..moveTo(midX, 0)
         ..cubicTo(
-          midX,
-          centerY * 0.50,
+          (prevX + 3 * nodeX) / 4,
+          centerY * 0.25,
           nodeX,
           centerY * 0.50,
           nodeX,
@@ -128,8 +128,8 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..cubicTo(
           nodeX,
           centerY + remainingH * 0.50,
-          midNextX,
-          centerY + remainingH * 0.50,
+          (3 * nodeX + nextX) / 4,
+          centerY + remainingH * 0.75,
           midNextX,
           bottomY,
         );
