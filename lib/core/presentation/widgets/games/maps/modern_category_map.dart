@@ -225,13 +225,10 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
-    final double absoluteNodeY = 64.h + 150.h + ((unlockedLevels - 1) * rowSpacing) + (rowSpacing / 2);
-    final double screenHalf = MediaQuery.of(context).size.height / 2.2;
-    
-    // Do NOT clamp to maxScrollExtent here! Lazy SliverLists do not know their 
-    // true maxScrollExtent until fully rendered. Clamping it early causes it 
-    // to stop at the wrong position. Flutter's animateTo handles bounds internally.
-    final double targetY = math.max(0.0, absoluteNodeY - screenHalf);
+    final double targetOffset = (unlockedLevels - 1) * rowSpacing;
+    // Uses the exact math from the Kids Map: ignoring header heights pushes the 
+    // node perfectly into the comfortable lower-middle of the screen.
+    final double targetY = math.max(0.0, targetOffset - 300.h);
 
     if (animate) {
       _scrollController.animateTo(
