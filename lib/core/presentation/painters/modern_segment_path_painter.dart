@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 
 /// Per-segment path painter for the Modern Category Map.
 ///
-/// Draws the incoming path (from previous segment boundary to this node's center)
-/// and the outgoing path (from this node's center to the next segment boundary).
-///
-/// Midpoint continuity math guarantees 100% seamless alignment between
-/// adjacent SliverList items without gaps or control-point mismatches.
+/// Draws a thick, rich, 3D-shadowed path line with exact midpoint continuity math.
+/// Guarantees 100% seamless alignment between adjacent SliverList items.
 class ModernSegmentPathPainter extends CustomPainter {
   final Offset currentPoint;
   final Offset? nextPoint;
@@ -38,31 +35,42 @@ class ModernSegmentPathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final double nodeX = currentPoint.dx;
     final double centerY = size.height / 2;
-    final double lockedAlpha = isDark ? 0.15 : 0.10;
+    const double strokeW = 14.0;
+    final double lockedAlpha = isDark ? 0.22 : 0.14;
+
+    // Soft drop shadow for 3D depth
+    final shadowPaint = Paint()
+      ..color = Colors.black.withValues(alpha: isDark ? 0.30 : 0.10)
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = strokeW + 2.0
+      ..strokeCap = StrokeCap.round
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4.0);
 
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
       final topCenter = Offset(size.width / 2, 0);
-      canvas.drawCircle(topCenter, 6.0, Paint()..color = activeColor);
+      canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
       final headerPath = Path()
         ..moveTo(topCenter.dx, topCenter.dy)
         ..cubicTo(
           topCenter.dx,
-          centerY * 0.4,
+          centerY * 0.40,
           nodeX,
-          centerY * 0.6,
+          centerY * 0.60,
           nodeX,
           centerY,
         );
 
       final isActive = isPrevCompleted;
+      canvas.drawPath(headerPath, shadowPaint);
+
       canvas.drawPath(
         headerPath,
         Paint()
           ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 8.0
+          ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.round,
       );
 
@@ -70,10 +78,10 @@ class ModernSegmentPathPainter extends CustomPainter {
         canvas.drawPath(
           headerPath,
           Paint()
-            ..color = activeColor.withValues(alpha: 0.25)
-            ..strokeWidth = 14.0
+            ..color = activeColor.withValues(alpha: 0.35)
+            ..strokeWidth = strokeW + 8.0
             ..style = PaintingStyle.stroke
-            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6.0),
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
       }
     }
@@ -87,20 +95,22 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(midX, 0)
         ..cubicTo(
           midX,
-          centerY * 0.35,
+          centerY * 0.40,
           nodeX,
-          centerY * 0.65,
+          centerY * 0.60,
           nodeX,
           centerY,
         );
 
       final isActive = isPrevCompleted;
+      canvas.drawPath(incomingPath, shadowPaint);
+
       canvas.drawPath(
         incomingPath,
         Paint()
           ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 8.0
+          ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.round,
       );
 
@@ -108,10 +118,10 @@ class ModernSegmentPathPainter extends CustomPainter {
         canvas.drawPath(
           incomingPath,
           Paint()
-            ..color = activeColor.withValues(alpha: 0.25)
-            ..strokeWidth = 14.0
+            ..color = activeColor.withValues(alpha: 0.35)
+            ..strokeWidth = strokeW + 8.0
             ..style = PaintingStyle.stroke
-            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6.0),
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
         );
       }
     }
@@ -119,7 +129,7 @@ class ModernSegmentPathPainter extends CustomPainter {
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
     if (!isLast && nextPoint != null) {
       final nextX = nextPoint!.dx;
-      final midX = (nodeX + nextX) / 2;
+      final midNextX = (nodeX + nextX) / 2;
       final bottomY = size.height;
       final remainingH = bottomY - centerY;
 
@@ -127,10 +137,10 @@ class ModernSegmentPathPainter extends CustomPainter {
         ..moveTo(nodeX, centerY)
         ..cubicTo(
           nodeX,
-          centerY + remainingH * 0.35,
-          midX,
-          centerY + remainingH * 0.65,
-          midX,
+          centerY + remainingH * 0.40,
+          midNextX,
+          centerY + remainingH * 0.60,
+          midNextX,
           bottomY,
         );
 
@@ -143,16 +153,18 @@ class ModernSegmentPathPainter extends CustomPainter {
           Paint()
             ..color = Colors.amber
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 6.0
+            ..strokeWidth = 8.0
             ..strokeCap = StrokeCap.round,
         );
       } else {
+        canvas.drawPath(outgoingPath, shadowPaint);
+
         canvas.drawPath(
           outgoingPath,
           Paint()
             ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 8.0
+            ..strokeWidth = strokeW
             ..strokeCap = StrokeCap.round,
         );
 
@@ -160,10 +172,10 @@ class ModernSegmentPathPainter extends CustomPainter {
           canvas.drawPath(
             outgoingPath,
             Paint()
-              ..color = activeColor.withValues(alpha: 0.25)
-              ..strokeWidth = 14.0
+              ..color = activeColor.withValues(alpha: 0.35)
+              ..strokeWidth = strokeW + 8.0
               ..style = PaintingStyle.stroke
-              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6.0),
+              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
           );
         }
       }
@@ -171,22 +183,22 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Current node subtle beacon glow ──
     if (glowPulse > 0.0) {
-      final pulseRadius = 46.0 + 8.0 * glowPulse;
+      final pulseRadius = 50.0 + 8.0 * glowPulse;
       canvas.drawCircle(
         Offset(nodeX, centerY),
         pulseRadius,
         Paint()
-          ..color = activeColor.withValues(alpha: 0.25 * (1.0 - glowPulse))
+          ..color = activeColor.withValues(alpha: 0.28 * (1.0 - glowPulse))
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 2.0
+          ..strokeWidth = 2.5
           ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4.0),
       );
     }
   }
 
   void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    const dashWidth = 12.0;
-    const dashSpace = 8.0;
+    const dashWidth = 14.0;
+    const dashSpace = 10.0;
     for (final metric in path.computeMetrics()) {
       double distance = 0.0;
       while (distance < metric.length) {

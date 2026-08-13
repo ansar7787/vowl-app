@@ -568,13 +568,28 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
   List<Offset> _generatePoints(GameCategory category) {
     final List<Offset> points = [];
-    final centerX = ScreenUtil().screenWidth / 2;
+    final screenWidth = ScreenUtil().screenWidth;
+    final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final amplitude = 95.w;
+    final maxOffset = screenWidth * 0.30;
+
+    // Structured serpentine factors for dramatic, winding game map curves
+    final List<double> serpentineFactors = [
+      0.0,    // Level 1: Center
+      -0.75,  // Level 2: Left
+      0.80,   // Level 3: Right
+      -0.40,  // Level 4: Mid-left
+      0.70,   // Level 5: Mid-right
+      -0.80,  // Level 6: Far left
+      0.35,   // Level 7: Mid-right
+      -0.70,  // Level 8: Mid-left
+      0.75,   // Level 9: Far right
+      0.00,   // Level 10: Center checkpoint
+    ];
 
     for (int i = 0; i < _totalLevels; i++) {
-      final wave = math.sin(i * 0.5) * amplitude;
-      final offsetX = centerX + wave;
+      final factor = serpentineFactors[i % serpentineFactors.length];
+      final offsetX = centerX + (factor * maxOffset);
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));
     }
