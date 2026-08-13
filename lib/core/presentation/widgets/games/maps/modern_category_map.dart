@@ -230,7 +230,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         150.h +
         ((unlockedLevels - 1) * rowSpacing) +
         (rowSpacing / 2) -
-        300.h;
+        (MediaQuery.of(context).size.height / 2.2);
 
     final double maxScroll = _scrollController.position.maxScrollExtent;
     final double safeTargetY = targetY.clamp(0.0, maxScroll);

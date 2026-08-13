@@ -35,6 +35,11 @@ class SegmentPathPainter extends CustomPainter {
     if (level == 1) {
       // 1. Clean Connection from Dashboard (reaching up to touch the header)
       final double headerGap = -30.h;
+      canvas.drawCircle(
+        Offset(size.width / 2, headerGap),
+        10.r,
+        Paint()..color = incomingColor,
+      );
 
       incomingPath.moveTo(size.width / 2, headerGap);
       incomingPath.lineTo(startX, centerY);
@@ -50,7 +55,13 @@ class SegmentPathPainter extends CustomPainter {
       // 3. Smooth Modern Curve to next level
       final midY = centerY + (size.height - centerY) * 0.5;
       outgoingPath.cubicTo(
-          startX, centerY + 50.h, endX, midY - 50.h, endX, size.height);
+        startX,
+        centerY + 50.h,
+        endX,
+        midY - 50.h,
+        endX,
+        size.height,
+      );
     }
 
     // Subtle Shadow for the lines
@@ -80,8 +91,10 @@ class SegmentPathPainter extends CustomPainter {
       // Create a clipped version of the outgoing path based on pathProgress
       final pathMetrics = outgoingPath.computeMetrics();
       for (final metric in pathMetrics) {
-        final extractedPath =
-            metric.extractPath(0, metric.length * pathProgress);
+        final extractedPath = metric.extractPath(
+          0,
+          metric.length * pathProgress,
+        );
 
         // If this is the "just-unlocked" path, draw a glow underneath
         if (glowPulse > 0.0) {
@@ -103,7 +116,9 @@ class SegmentPathPainter extends CustomPainter {
 
         // Sparkle dot at the tip of the animated path
         if (pathProgress < 1.0 && pathProgress > 0.0) {
-          final tangent = metric.getTangentForOffset(metric.length * pathProgress);
+          final tangent = metric.getTangentForOffset(
+            metric.length * pathProgress,
+          );
           if (tangent != null) {
             final tipPaint = Paint()
               ..color = Colors.white

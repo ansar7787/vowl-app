@@ -42,8 +42,9 @@ class ModernSegmentPathPainter extends CustomPainter {
     // ── Header connection (level 1 top connection) ──
     if (isFirst) {
       // Reaches up across the 10.h padding gap to perfectly touch the bottom of the header card
-      final double headerGap = -14.h; 
+      final double headerGap = -14.h;
       final topCenter = Offset(size.width / 2, headerGap);
+      canvas.drawCircle(topCenter, 8.0, Paint()..color = activeColor);
 
       final headerPath = Path()
         ..moveTo(topCenter.dx, topCenter.dy)
@@ -61,7 +62,9 @@ class ModernSegmentPathPainter extends CustomPainter {
       canvas.drawPath(
         headerPath,
         Paint()
-          ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
+          ..color = isActive
+              ? activeColor
+              : activeColor.withValues(alpha: lockedAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.round,
@@ -100,7 +103,9 @@ class ModernSegmentPathPainter extends CustomPainter {
       canvas.drawPath(
         incomingPath,
         Paint()
-          ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
+          ..color = isActive
+              ? activeColor
+              : activeColor.withValues(alpha: lockedAlpha)
           ..style = PaintingStyle.stroke
           ..strokeWidth = strokeW
           ..strokeCap = StrokeCap.butt,
@@ -152,7 +157,9 @@ class ModernSegmentPathPainter extends CustomPainter {
         canvas.drawPath(
           outgoingPath,
           Paint()
-            ..color = isActive ? activeColor : activeColor.withValues(alpha: lockedAlpha)
+            ..color = isActive
+                ? activeColor
+                : activeColor.withValues(alpha: lockedAlpha)
             ..style = PaintingStyle.stroke
             ..strokeWidth = strokeW
             ..strokeCap = StrokeCap.butt,
