@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class DynamicAnagramWrapper extends StatefulWidget {
   final String expectedText;
@@ -84,6 +86,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     String currentWord = _placedTiles.map((t) => t!.letter).join('');
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
+      if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
+        context.read<EconomyBloc>().add(EconomyAddCoinsRequested(widget.bonusCoins!));
+      }
       widget.onConfirmed();
     } else {
       setState(() {
@@ -330,36 +335,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                         // Controls
                         Row(
                           children: [
-                            if (widget.allowSkip) ...[
-                              Expanded(
-                                flex: 1,
-                                child: TextButton(
-                                  onPressed: widget.onSkipped,
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.symmetric(
-                                      vertical: 16.h,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16.r),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    'Skip',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 14.sp,
-                                      fontWeight: FontWeight.w600,
-                                      color: subtitleColor,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-                            ],
                             Expanded(
-                              flex: 2,
                               child: ElevatedButton(
-                                onPressed: _onSubmit,
+                                onPressed: _placedTiles.contains(null) ? null : _onSubmit,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: _hasError
                                       ? errorColor
