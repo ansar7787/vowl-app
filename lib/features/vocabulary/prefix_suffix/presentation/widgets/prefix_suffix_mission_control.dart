@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class PrefixSuffixMissionControl extends StatelessWidget {
   final Color primaryColor;
@@ -14,37 +15,36 @@ class PrefixSuffixMissionControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [primaryColor, primaryColor.withValues(alpha: 0.7)],
-                ),
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: primaryColor.withValues(alpha: 0.3),
-                    blurRadius: 10,
-                  ),
-                ],
+    return Container(
+          width: MediaQuery.of(context).size.width * 0.9,
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [primaryColor, primaryColor.withValues(alpha: 0.7)],
+            ),
+            borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [
+              BoxShadow(
+                color: primaryColor.withValues(alpha: 0.3),
+                blurRadius: 10,
               ),
-              child: Text(
-                instruction.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  letterSpacing: 1,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .shimmer(duration: 2.seconds),
-      ],
-    );
+            ],
+          ),
+          child: AutoSizeText(
+            instruction.toUpperCase(),
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              letterSpacing: 1,
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            minFontSize: 8,
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2.seconds);
   }
 }

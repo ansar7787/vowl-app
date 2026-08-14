@@ -74,16 +74,22 @@ class PrefixSuffixRootRover extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 12.h),
-                    Text(
-                      rootWord.toUpperCase(),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : Colors.black87,
-                        letterSpacing: 1.2,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          rootWord.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : Colors.black87,
+                            letterSpacing: 1.2,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ],
                 ),

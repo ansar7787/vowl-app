@@ -285,9 +285,20 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         alignment: Alignment.center,
                         clipBehavior: Clip.none,
                         children: [
-                          PrefixSuffixMissionControl(
-                            primaryColor: theme.primaryColor,
-                            instruction: quest.instruction,
+                          Positioned(
+                            top: 20.h,
+                            child: PrefixSuffixMissionControl(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.hint ?? quest.instruction,
+                            )
+                                .animate(target: _isAnswered ? 1 : 0)
+                                .fadeOut(duration: 400.ms)
+                                .slideY(
+                                  begin: 0,
+                                  end: -1.5,
+                                  duration: 400.ms,
+                                  curve: Curves.easeIn,
+                                ),
                           ),
 
                           // Docking Terminals (Options)

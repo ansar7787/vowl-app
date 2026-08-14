@@ -1191,11 +1191,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'prefixsuffix': [
       "",
-      "Excellent start! Your understanding of affixes is growing.",
-      "You are decoding affixes with impressive accuracy.",
-      "Level 50! Your command of affixes is exceptional.",
-      "Level 100! Your expertise in affixes is elite.",
-      "200 levels cleared! Your affixes abilities are unmatched globally.",
+      "Great start! You're learning how to build and modify words perfectly.",
+      "You are getting so good at connecting prefixes and suffixes!",
+      "Halfway to 100! Your vocabulary is growing stronger with every new affix you learn.",
+      "Level 100! You can now confidently shape and transform words like a native speaker.",
+      "Level 200 reached! You have completely mastered the art of word building.",
     ],
     'synonymsearch': [
       "",

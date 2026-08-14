@@ -61,13 +61,19 @@ class PrefixSuffixDockingTerminal extends StatelessWidget {
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          text.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                            color: primaryColor,
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 4.w),
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              text.toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.bold,
+                                color: primaryColor,
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(height: 2.h),

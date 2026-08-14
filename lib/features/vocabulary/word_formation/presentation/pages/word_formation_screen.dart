@@ -309,7 +309,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
   Widget _buildInstruction(Color color, GameQuest? quest) {
     final text = quest?.hint ??
         quest?.instruction ??
-        "SLIDE FUEL CELLS INTO THE REACTION CORE";
+        "Analyze the meaning and select the correct ending.";
     
     return Container(
       width: double.infinity,
@@ -436,19 +436,25 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                (_isAnswered
-                                        ? (quest?.correctAnswer ?? "")
-                                        : root)
-                                    .toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 24.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A),
-                                  letterSpacing: 4,
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    (_isAnswered
+                                            ? (quest?.correctAnswer ?? "")
+                                            : root)
+                                        .toUpperCase(),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 24.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: isDark
+                                          ? Colors.white
+                                          : const Color(0xFF0F172A),
+                                      letterSpacing: 4,
+                                    ),
+                                  ),
                                 ),
                               ).animate().fadeIn().shimmer(duration: 2.seconds),
                               if (suffix != null && !_isAnswered) ...[
@@ -458,14 +464,20 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                   color: color,
                                   size: 20.r,
                                 ),
-                                Text(
-                                  suffix.toUpperCase(),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold,
-                                    color: color,
-                                    letterSpacing: 2,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                  child: FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: Text(
+                                      suffix.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 20.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: color,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
                                   ),
                                 ).animate().slideY(begin: 0.5, end: 0),
                               ],

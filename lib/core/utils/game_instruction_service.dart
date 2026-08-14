@@ -1199,20 +1199,20 @@ class GameInstructionService {
       title: "Word Builder",
       icon: Icons.science_rounded,
       objective:
-          "Read the hint closely and build the exact word it describes by adding the right ending to the root word. Mastering word construction unlocks a massive new vocabulary for you!",
-      rules: ["Read the hint", "Choose the right ending", "Build the new word"],
+          "Read the meaning closely and build the exact word it describes by adding the right ending to the root word. Mastering word construction unlocks a massive new vocabulary for you!",
+      rules: ["Read the meaning", "Choose the right ending", "Build the new word"],
       actionText: "Start Building",
       tip: "Think about what kind of word you need—like a person, a feeling, or an action—before choosing the ending!",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
-      title: "Word Roots",
+      title: "Word Builder",
       icon: Icons.spa_rounded,
       objective:
-          "Build words by attaching the correct prefixes or suffixes to roots. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Analyze root", "Attach correct affix", "3 Hearts left"],
-      actionText: "Build Words",
+          "Carefully analyze the root word and attach the correct prefix or suffix. Understanding how word parts connect is a powerful way to instantly grow your vocabulary!",
+      rules: ["Read the meaning", "Find the matching affix", "Drag to connect"],
+      actionText: "Start Building",
       tip:
-          "Roots are the DNA of English! Master them to expand vocabulary rapidly.",
+          "PRO TIP: Look closely at the meaning first! A small prefix like 're-' completely changes the word.",
     ),
     GameSubtype.collocations: GameBriefing(
       title: "Pair Pop",

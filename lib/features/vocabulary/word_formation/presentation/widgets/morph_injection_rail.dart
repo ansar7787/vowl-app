@@ -216,16 +216,18 @@ class _HandleDecoration extends StatelessWidget {
             ),
             SizedBox(width: 4.w),
             Flexible(
-              child: Text(
-                suffix.toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 1,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  suffix.toUpperCase(),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: 1,
+                  ),
                 ),
-                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
