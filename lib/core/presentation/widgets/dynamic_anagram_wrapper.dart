@@ -64,6 +64,14 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         _placedTiles[emptyIndex] = tile;
         _availableTiles.remove(tile);
       });
+
+      // Auto-submit if the word is fully placed and correct
+      if (!_placedTiles.contains(null)) {
+        String currentWord = _placedTiles.map((t) => t!.letter).join('');
+        if (currentWord == widget.expectedText.toUpperCase().trim()) {
+          _onSubmit();
+        }
+      }
     }
   }
 
@@ -100,7 +108,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         _hasError = true;
         _isSubmitting = true;
       });
-      Future.delayed(const Duration(milliseconds: 1000), () {
+      Future.delayed(400.ms, () {
         if (!mounted) return;
         if (widget.onFailedWithSpelling != null) {
           widget.onFailedWithSpelling!(currentWord);
