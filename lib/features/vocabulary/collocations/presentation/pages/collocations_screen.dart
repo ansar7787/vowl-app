@@ -230,10 +230,42 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                 SizedBox(height: gapInstruction),
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: CollocationAnchorBubble(
-                                    text: quest.word ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
+                                  child: DragTarget<String>(
+                                    onWillAcceptWithDetails: (details) {
+                                      _hapticService.selection();
+                                      return !_isAnswered && !_isFirstStagePassed;
+                                    },
+                                    onAcceptWithDetails: (details) {
+                                      _submitAnswer(details.data, quest.correctAnswer ?? "");
+                                    },
+                                    builder: (context, candidateData, rejectedData) {
+                                      bool isHovered = candidateData.isNotEmpty;
+                                      return AnimatedScale(
+                                        scale: isHovered ? 1.05 : 1.0,
+                                        duration: 200.ms,
+                                        curve: Curves.easeOutBack,
+                                        child: AnimatedContainer(
+                                          duration: 200.ms,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(40.r),
+                                            boxShadow: isHovered
+                                                ? [
+                                                    BoxShadow(
+                                                      color: theme.primaryColor.withValues(alpha: 0.8),
+                                                      blurRadius: 40,
+                                                      spreadRadius: 10,
+                                                    )
+                                                  ]
+                                                : [],
+                                          ),
+                                          child: CollocationAnchorBubble(
+                                            text: quest.word ?? "",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                          ),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ),
                               ],
@@ -305,7 +337,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       runSpacing: isCompact ? 15.h : 30.h,
       alignment: WrapAlignment.center,
       children: (quest.options ?? []).asMap().entries.map((entry) {
-        return CollocationOptionBubble(
+        final bubble = CollocationOptionBubble(
           text: entry.value,
           correct: quest.correctAnswer ?? "",
           color: color,
@@ -322,6 +354,39 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               _submitAnswer(entry.value, quest.correctAnswer ?? "");
             }
           },
+        );
+
+        if (_isAnswered || _isFirstStagePassed) {
+          return bubble;
+        }
+
+        return Draggable<String>(
+          data: entry.value,
+          feedback: Material(
+            color: Colors.transparent,
+            child: Transform.scale(
+              scale: 1.1,
+              child: CollocationOptionBubble(
+                text: entry.value,
+                correct: quest.correctAnswer ?? "",
+                color: color,
+                isDark: isDark,
+                isAnswered: false,
+                isCorrect: null,
+                selectedOption: null,
+                isFinalFailure: false,
+                isFirstStagePassed: false,
+                index: entry.key,
+                onTap: () {},
+              ),
+            ),
+          ),
+          childWhenDragging: Opacity(
+            opacity: 0.3,
+            child: bubble,
+          ),
+          onDragStarted: () => _hapticService.selection(),
+          child: bubble,
         );
       }).toList(),
     );
