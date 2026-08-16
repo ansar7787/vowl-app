@@ -1136,13 +1136,13 @@ class GameInstructionService {
       tip: "Focus on the core meaning, and filter out visual distractions!",
     ),
     GameSubtype.antonymSearch: GameBriefing(
-      title: "Polarity Pull",
+      title: "Polarity Master",
       icon: Icons.electrical_services_rounded,
       objective:
-          "Identify and select the correct antonym for the target word. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Find the Antonym", "Opposites Attract", "3 Hearts left"],
-      actionText: "Start Pull",
-      tip: "Opposite meaning = Opposite pole! Match them quickly.",
+          "Identify the exact opposite meaning of the target word. Searching for opposites builds a flexible vocabulary, helping you sound much more expressive in real-world conversations.",
+      rules: ["Find the opposite word", "Drag to the opposite pole", "Don't fall for synonyms"],
+      actionText: "Start Search",
+      tip: "Think magnetically: Opposite meaning goes to the opposite glowing pole!",
     ),
     GameSubtype.contextClues: GameBriefing(
       title: "Detective Lens",
