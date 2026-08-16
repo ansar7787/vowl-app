@@ -4,12 +4,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class CollocationAnchorBubble extends StatelessWidget {
   final String text;
+  final String? subtitle;
   final Color color;
   final bool isDark;
 
   const CollocationAnchorBubble({
     super.key,
     required this.text,
+    this.subtitle,
     required this.color,
     required this.isDark,
   });
@@ -30,15 +32,35 @@ class CollocationAnchorBubble extends StatelessWidget {
               ),
             ],
           ),
-          child: Text(
-            text.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              letterSpacing: 2,
-            ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                text.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 28.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 2,
+                ),
+              ),
+              if (subtitle != null && subtitle!.isNotEmpty) ...[
+                SizedBox(height: 6.h),
+                Text(
+                  subtitle!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white.withValues(alpha: 0.85),
+                    fontStyle: FontStyle.italic,
+                  ),
+                ),
+              ],
+            ],
           ),
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))

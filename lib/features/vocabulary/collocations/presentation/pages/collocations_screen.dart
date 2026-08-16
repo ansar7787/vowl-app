@@ -220,41 +220,24 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: _buildInstruction(
-                                            theme.primaryColor,
-                                            isDark,
-                                            quest.instruction,
-                                          ),
-                                        ),
-                                      )
-                                    : _buildInstruction(
-                                        theme.primaryColor,
-                                        isDark,
-                                        quest.instruction,
-                                      ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: _buildInstruction(
+                                    theme.primaryColor,
+                                    isDark,
+                                    quest.instruction,
+                                  ),
+                                ),
                                 SizedBox(height: gapInstruction),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 80.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: CollocationAnchorBubble(
-                                            text: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                        ),
-                                      )
-                                    : CollocationAnchorBubble(
-                                        text: quest.word ?? "",
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                      ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: CollocationAnchorBubble(
+                                    text: quest.word ?? "",
+                                    subtitle: quest.hint,
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                  ),
+                                ),
                               ],
                             ),
                             Column(
