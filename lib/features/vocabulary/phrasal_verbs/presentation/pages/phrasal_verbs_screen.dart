@@ -16,7 +16,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;
@@ -354,11 +354,12 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                       },
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
-                      DynamicJigsawWrapper(
-                        expectedText: quest.correctAnswer ?? '',
+                      DynamicAnagramWrapper(
+                        expectedText: "${quest.word} ${quest.correctAnswer}",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+                        onFailed: () {},
+                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                       ),
                   ],
                 ),
