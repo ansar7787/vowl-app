@@ -40,14 +40,20 @@ class AntonymPulsar extends StatelessWidget {
               ],
             ),
             child: Center(
-              child: Text(
-                isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w900,
-                  color: color.withValues(alpha: isActive ? 1.0 : 0.3),
-                  letterSpacing: 3,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: color.withValues(alpha: isActive ? 1.0 : 0.3),
+                      letterSpacing: 3,
+                    ),
+                  ),
                 ),
               ),
             ),
