@@ -1140,7 +1140,7 @@ class GameInstructionService {
       icon: Icons.electrical_services_rounded,
       objective:
           "Identify the exact opposite meaning of the target word. Searching for opposites builds a flexible vocabulary, helping you sound much more expressive in real-world conversations.",
-      rules: ["Find the opposite word", "Drag to the opposite pole", "Don't fall for synonyms"],
+      rules: ["Find the opposite word", "Match to opposite pole", "Don't fall for synonyms"],
       actionText: "Start Search",
       tip: "Think magnetically: Opposite meaning goes to the opposite glowing pole!",
     ),

@@ -23,7 +23,7 @@ class AntonymNebulaCore extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          "DRAG TO OPPOSITE",
+          "MATCH TO OPPOSITE",
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
