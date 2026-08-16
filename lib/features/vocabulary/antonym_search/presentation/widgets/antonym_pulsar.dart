@@ -5,11 +5,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 class AntonymPulsar extends StatelessWidget {
   final bool isTop;
   final bool targetIsPositive;
+  final VoidCallback? onTap;
 
   const AntonymPulsar({
     super.key,
     required this.isTop,
     required this.targetIsPositive,
+    this.onTap,
   });
 
   @override
@@ -22,8 +24,10 @@ class AntonymPulsar extends StatelessWidget {
           bottom: isTop ? null : 10.h,
           left: 20.w,
           right: 20.w,
-          child: Container(
-            height: 80.h,
+          child: GestureDetector(
+            onTap: onTap,
+            child: Container(
+              height: 80.h,
             decoration: BoxDecoration(
               color: const Color(0xFF0F172A).withValues(alpha: 0.9),
               borderRadius: BorderRadius.circular(16.r),

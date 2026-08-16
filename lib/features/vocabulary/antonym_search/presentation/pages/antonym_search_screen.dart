@@ -148,10 +148,12 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   AntonymPulsar(
                     isTop: true,
                     targetIsPositive: _targetIsPositive,
+                    onTap: () => _onPulsarTapped(true),
                   ),
                   AntonymPulsar(
                     isTop: false,
                     targetIsPositive: _targetIsPositive,
+                    onTap: () => _onPulsarTapped(false),
                   ),
 
                   // Instruction removed: It was overlapping the top Pulsar, 
@@ -194,6 +196,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                       onPanStart: () => _onShardStart(i),
                       onPanUpdate: (d) => _onShardUpdate(i, d),
                       onPanEnd: () => _onShardEnd(i),
+                      onTap: () => _onShardTapped(i),
                     ),
                   ),
 
@@ -285,24 +288,40 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
         currentY > (maxHeight - (isCompact ? 100.h : 130.h));
 
     if (nearTop || nearBottom) {
-      final bool toPositive = nearTop;
-      final bool isOpposite =
-          (toPositive && !_targetIsPositive) ||
-          (!toPositive && _targetIsPositive);
-      final bool isAntonym =
-          _lastQuest!.options![index].trim().toLowerCase() ==
-          _lastQuest!.correctAnswer?.trim().toLowerCase();
-
-      if (isAntonym && isOpposite) {
-        _onSuccess(index);
-      } else {
-        _onFailure(index);
-      }
+      _evaluateShard(index, nearTop);
     } else {
       setState(() {
         _shardOffsets[index] = Offset.zero;
         _activeShardIndex = null;
       });
+      _hapticService.light();
+    }
+  }
+
+  void _onShardTapped(int index) {
+    if (_isAnswered || _isFused[index] == true) return;
+    setState(() => _activeShardIndex = index);
+    _hapticService.light();
+  }
+
+  void _onPulsarTapped(bool isTop) {
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) return;
+    _evaluateShard(_activeShardIndex!, isTop);
+  }
+
+  void _evaluateShard(int index, bool toTop) {
+    final bool toPositive = toTop;
+    final bool isOpposite =
+        (toPositive && !_targetIsPositive) ||
+        (!toPositive && _targetIsPositive);
+    final bool isAntonym =
+        _lastQuest!.options![index].trim().toLowerCase() ==
+        _lastQuest!.correctAnswer?.trim().toLowerCase();
+
+    if (isAntonym && isOpposite) {
+      _onSuccess(index);
+    } else {
+      _onFailure(index);
     }
   }
 

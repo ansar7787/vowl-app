@@ -17,6 +17,7 @@ class SynonymWordShard extends StatelessWidget {
   final Function(DragStartDetails) onPanStart;
   final Function(DragUpdateDetails) onPanUpdate;
   final VoidCallback onPanEnd;
+  final VoidCallback? onTap;
 
   const SynonymWordShard({
     super.key,
@@ -33,6 +34,7 @@ class SynonymWordShard extends StatelessWidget {
     required this.onPanStart,
     required this.onPanUpdate,
     required this.onPanEnd,
+    this.onTap,
   });
 
   @override
@@ -44,6 +46,7 @@ class SynonymWordShard extends StatelessWidget {
         onPanStart: onPanStart,
         onPanUpdate: onPanUpdate,
         onPanEnd: (_) => onPanEnd(),
+        onTap: onTap,
         child:
             TweenAnimationBuilder<double>(
                   duration: 400.ms,

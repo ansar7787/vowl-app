@@ -135,6 +135,23 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     }
   }
 
+  void _onShardTapped(int index) {
+    if (_isAnswered || _isWarping[index] == true) return;
+    setState(() {
+      _activeShardIndex = index;
+    });
+    _hapticService.light();
+  }
+
+  void _onWarpGateTapped(VocabularyQuest quest) {
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) return;
+    final index = _activeShardIndex!;
+    final options = quest.options ?? [];
+    if (index >= options.length) return;
+    
+    _warpShard(index, options[index], quest);
+  }
+
   void _warpShard(int index, String text, VocabularyQuest quest) {
     setState(() {
       _isWarping[index] = true;
@@ -346,6 +363,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                       word: quest.word ?? "",
                                       color: theme.primaryColor,
                                       isDark: isDark,
+                                      onTap: () => _onWarpGateTapped(quest),
                                     ),
                                   ),
                                 )
@@ -353,6 +371,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                   word: quest.word ?? "",
                                   color: theme.primaryColor,
                                   isDark: isDark,
+                                  onTap: () => _onWarpGateTapped(quest),
                                 ),
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             if (_activeShardIndex == i &&
@@ -434,6 +453,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                                 _onShardDragUpdate(i, d),
                                             onPanEnd: () =>
                                                 _onShardDragEnd(i, quest),
+                                            onTap: () => _onShardTapped(i),
                                           ),
                                         ),
                                       ),
@@ -458,6 +478,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                     onPanUpdate: (d) =>
                                         _onShardDragUpdate(i, d),
                                     onPanEnd: () => _onShardDragEnd(i, quest),
+                                    onTap: () => _onShardTapped(i),
                                   );
                           }),
                           Positioned(

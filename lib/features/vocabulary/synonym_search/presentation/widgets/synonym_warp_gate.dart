@@ -7,22 +7,26 @@ class SynonymWarpGate extends StatelessWidget {
   final String word;
   final Color color;
   final bool isDark;
+  final VoidCallback? onTap;
 
   const SynonymWarpGate({
     super.key,
     required this.word,
     required this.color,
     required this.isDark,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return RepaintBoundary(
-      child: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Center(
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
                   width: 220.r,
                   height: 220.r,
                   decoration: BoxDecoration(

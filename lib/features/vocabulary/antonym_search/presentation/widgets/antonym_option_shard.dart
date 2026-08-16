@@ -14,6 +14,7 @@ class AntonymOptionShard extends StatelessWidget {
   final Function() onPanStart;
   final Function(DragUpdateDetails) onPanUpdate;
   final Function() onPanEnd;
+  final Function()? onTap;
 
   const AntonymOptionShard({
     super.key,
@@ -28,6 +29,7 @@ class AntonymOptionShard extends StatelessWidget {
     required this.onPanStart,
     required this.onPanUpdate,
     required this.onPanEnd,
+    this.onTap,
   });
 
   @override
@@ -40,6 +42,7 @@ class AntonymOptionShard extends StatelessWidget {
         onPanStart: (_) => onPanStart(),
         onPanUpdate: onPanUpdate,
         onPanEnd: (_) => onPanEnd(),
+        onTap: onTap,
         child:
             Container(
                   width: 140.w,
