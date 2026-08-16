@@ -203,12 +203,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                   if (_activeShardIndex != null)
                     _buildPlasmaThunder(targetColor, isCompact),
 
-                  if (_isFirstStagePassed && !_isAnswered && quest != null)
+                  if (_isFirstStagePassed && !_isAnswered)
                     DynamicAnagramWrapper(
-                      expectedText: quest.correctAnswer ?? '',
+                      title: 'SPELL THE ANTONYM',
+                      subtitle: 'Tap all letters to rebuild the word!',
+                      expectedText: _lastQuest!.correctAnswer ?? '',
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitVerbalEvaluation(true),
-                      onFailed: () => _submitVerbalEvaluation(false),
+                      onFailed: () {},
+                      onFailedWithSpelling: (wrongWord) => _submitVerbalEvaluation(false),
                     ),
                 ],
               );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -15,7 +16,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -182,11 +183,14 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                     _buildChatInterface(quest, theme.primaryColor, isDarkMode),
                     if (_isFirstStagePassed &&
                         (!_isAnswered || _isCorrect == null))
-                      DynamicJigsawWrapper(
+                      DynamicAnagramWrapper(
+                        title: 'SPELL THE IDIOM',
+                        subtitle: 'Tap all letters to rebuild the hidden phrase!',
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+                        onFailed: () {},
+                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                       ),
                   ],
                 ),
@@ -219,8 +223,16 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             ? (gapUnit * 2.5).clamp(15.0, 40.0)
             : 15.0;
 
-        return Column(
-          children: [
+        final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
+        final double requiredHeight = estimatedContentHeight + totalGaps;
+        final double finalHeight = math.max(maxHeight, requiredHeight);
+
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: SizedBox(
+            height: finalHeight,
+            child: Column(
+              children: [
             SizedBox(height: gapTop),
             isCompact
                 ? SizedBox(
@@ -330,6 +342,8 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                 .slideY(begin: 0.3, curve: Curves.easeOutCubic),
             SizedBox(height: gapBottom),
           ],
+        ),
+          ),
         );
       },
     );

@@ -506,10 +506,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                           ),
                           if (_isFirstStagePassed && !_isAnswered)
                             DynamicAnagramWrapper(
+                              title: 'SPELL THE SYNONYM',
+                              subtitle: 'Tap all letters to rebuild the word!',
                               expectedText: quest.correctAnswer ?? '',
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitVerbalEvaluation(true),
-                              onFailed: () => _submitVerbalEvaluation(false),
+                              onFailed: () {},
+                              onFailedWithSpelling: (wrongWord) => _submitVerbalEvaluation(false),
                             ),
                         ],
                       ),

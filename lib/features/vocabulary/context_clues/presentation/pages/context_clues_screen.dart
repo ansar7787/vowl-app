@@ -225,6 +225,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
                       DynamicAnagramWrapper(
+                        title: 'SPELL THE MYSTERY WORD',
+                        subtitle: 'Tap all letters to rebuild the hidden word!',
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),

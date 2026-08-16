@@ -1167,24 +1167,23 @@ class GameInstructionService {
       title: "Emojify",
       icon: Icons.forum_rounded,
       objective:
-          "Decode emojis and phrases into correct English idioms. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
+          "Decode emojis and phrases into correct English idioms. Mastering idioms is the ultimate secret to sounding like a true native speaker!",
       rules: ["Interpret emojis", "Select matching idiom", "Crack the idiom code"],
       actionText: "Send Message",
-      tip: "Idioms are colorful cultural keys! Don't take them literally.",
+      tip: "PRO TIP: Idioms are colorful cultural keys! Don't take them literally.",
     ),
     GameSubtype.academicWord: GameBriefing(
       title: "Thesis Thrust",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Read the context carefully and select the advanced vocabulary word that fits perfectly. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
+          "Read the context carefully and select the advanced vocabulary word that fits perfectly. Expanding your academic vocabulary elevates your professional and intellectual communication.",
       rules: [
         "Read the passage",
         "Analyze the context",
         "Drag the correct word",
       ],
       actionText: "Initiate Thrust",
-      tip:
-          "PRO TIP: Academic words are highly precise—pay attention to logical hints in the surrounding text!",
+      tip: "PRO TIP: Look for tone! Academic words often have a formal, precise feeling compared to everyday speech.",
     ),
     GameSubtype.topicVocab: GameBriefing(
       title: "Word Sorter",
@@ -1228,11 +1227,11 @@ class GameInstructionService {
       title: "Usage Unfold",
       icon: Icons.auto_stories_rounded,
       objective:
-          "Identify the word that fits perfectly in the context of the sentence. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
+          "Identify the word that fits perfectly in the context of the sentence. Mastering contextual usage eliminates embarrassing mix-ups and makes your writing flawless.",
       rules: ["Evaluate context", "Unfold the correct fit", "Ensure logical flow"],
       actionText: "Unfold Truth",
       tip:
-          "Nuance is key! Choose the word that logically belongs in the sentence.",
+          "PRO TIP: Nuance is key! Read the sentence quietly to yourself to 'feel' which word logically belongs.",
     ),
 
     // 7. Accent

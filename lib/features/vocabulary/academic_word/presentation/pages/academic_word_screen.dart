@@ -194,10 +194,13 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                 ),
                 if (_isFirstStagePassed && !isAnswered)
                   DynamicAnagramWrapper(
+                    title: 'SPELL THE TARGET WORD',
+                    subtitle: 'Tap all letters to rebuild the word!',
                     expectedText: quest.correctAnswer ?? '',
                     primaryColor: _cachedTheme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
-                    onFailed: () => _submitFinalAnswer(false),
+                    onFailed: () {},
+                    onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                   ),
               ],
             ),

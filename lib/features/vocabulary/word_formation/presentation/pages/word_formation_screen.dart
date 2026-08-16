@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -223,81 +224,91 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ? (gapUnit * 2).clamp(12.0, 30.0)
                         : 12.0;
 
-                    return Column(
-                      key: ValueKey(quest.id),
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(height: gapTop),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: _buildInstruction(theme.primaryColor, quest)
-                                  .animate()
-                                  .fadeIn(duration: 500.ms)
-                                  .slideY(
-                                    begin: -0.5,
-                                    end: 0,
-                                    duration: 500.ms,
-                                    curve: Curves.easeOutBack,
-                                  ),
-                            ),
-                            SizedBox(height: gapMiddle),
+                    final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
+                    final double requiredHeight = estimatedContentHeight + totalGaps;
+                    final double finalHeight = math.max(maxHeight, requiredHeight);
 
-                            // Reaction Core
-                            (isCompact
-                                ? SizedBox(
-                                    height: 120.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: SizedBox(
-                                        width: constraints.maxWidth,
-                                        child: _buildReactionCore(
-                                          quest,
-                                          root,
-                                          activeSuffix,
-                                          theme.primaryColor,
-                                          isDark,
-                                        ),
+                    return SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: SizedBox(
+                        height: finalHeight,
+                        child: Column(
+                          key: ValueKey(quest.id),
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapTop),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  child: _buildInstruction(theme.primaryColor, quest)
+                                      .animate()
+                                      .fadeIn(duration: 500.ms)
+                                      .slideY(
+                                        begin: -0.5,
+                                        end: 0,
+                                        duration: 500.ms,
+                                        curve: Curves.easeOutBack,
                                       ),
-                                    ),
-                                  )
-                                : _buildReactionCore(
-                                    quest,
-                                    root,
-                                    activeSuffix,
-                                    theme.primaryColor,
-                                    isDark,
-                                  ))
-                                .animate()
-                                .scale(
-                                  begin: const Offset(0.8, 0.8),
-                                  end: const Offset(1.0, 1.0),
-                                  duration: 600.ms,
-                                  curve: Curves.easeOutBack,
-                                )
-                                .fadeIn(duration: 600.ms),
-                          ],
-                        ),
+                                ),
+                                SizedBox(height: gapMiddle),
 
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(height: gapMiddle),
-                            // Injection Rails
-                            _buildInjectionRails(
-                              options,
-                              root,
-                              quest.correctAnswer ?? "",
-                              theme.primaryColor,
-                              isDark,
-                              isCompact,
+                                // Reaction Core
+                                (isCompact
+                                    ? SizedBox(
+                                        height: 120.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: SizedBox(
+                                            width: constraints.maxWidth,
+                                            child: _buildReactionCore(
+                                              quest,
+                                              root,
+                                              activeSuffix,
+                                              theme.primaryColor,
+                                              isDark,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    : _buildReactionCore(
+                                        quest,
+                                        root,
+                                        activeSuffix,
+                                        theme.primaryColor,
+                                        isDark,
+                                      ))
+                                    .animate()
+                                    .scale(
+                                      begin: const Offset(0.8, 0.8),
+                                      end: const Offset(1.0, 1.0),
+                                      duration: 600.ms,
+                                      curve: Curves.easeOutBack,
+                                    )
+                                    .fadeIn(duration: 600.ms),
+                              ],
                             ),
-                            SizedBox(height: gapBottom),
+
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                SizedBox(height: gapMiddle),
+                                // Injection Rails
+                                _buildInjectionRails(
+                                  options,
+                                  root,
+                                  quest.correctAnswer ?? "",
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
+                                ),
+                                SizedBox(height: gapBottom),
+                              ],
+                            ),
                           ],
                         ),
-                      ],
+                      ),
                     );
                   },
                 ),

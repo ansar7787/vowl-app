@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -207,15 +208,21 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ? (gapUnit * 2).clamp(12.0, 60.0)
                         : 12.0;
 
+                    final double totalGaps = gapTop + gapInstruction + gapAnchor + gapBottom;
+                    final double requiredHeight = estimatedContentHeight + totalGaps;
+                    final double finalHeight = math.max(maxHeight, requiredHeight);
+
                     return SizedBox(
-                      height: constraints.maxHeight,
+                      height: maxHeight, // Keep outer stack constrained to viewport
                       child: Stack(
                         children: [
-                          SizedBox(
-                            height: constraints.maxHeight,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                          SingleChildScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            child: SizedBox(
+                              height: finalHeight,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
                             Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -308,16 +315,19 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                 SizedBox(height: gapBottom),
                               ],
                             ),
-                          ],
-                        ),
-                      ),
+                                ],
+                              ),
+                            ),
+                          ),
                         if (_isFirstStagePassed &&
                             (!_isAnswered || _isCorrect == null))
                           DynamicAnagramWrapper(
+                            title: 'SPELL THE COLLOCATION',
+                            subtitle: 'Tap all letters to rebuild the word pair!',
                             expectedText: quest.correctAnswer ?? '',
                             primaryColor: theme.primaryColor,
                             onConfirmed: () => _submitFinalAnswer(true),
-                            onFailed: () {}, // Optional empty handler
+                            onFailed: () {}, 
                             onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                           ),
                       ],

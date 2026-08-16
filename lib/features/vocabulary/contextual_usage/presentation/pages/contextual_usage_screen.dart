@@ -15,7 +15,8 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_painters.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_card.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_option_chip.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'dart:math' as math;
 
 class ContextualUsageScreen extends StatefulWidget {
   final int level;
@@ -178,11 +179,14 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                     _buildUnfoldContent(quest, theme.primaryColor, isDarkMode),
                     if (_isFirstStagePassed &&
                         (!_isAnswered || _isCorrect == null))
-                      DynamicJigsawWrapper(
+                      DynamicAnagramWrapper(
+                        title: 'SPELL THE TARGET WORD',
+                        subtitle: 'Tap all letters to rebuild the word!',
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+                        onFailed: () {},
+                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                       ),
                   ],
                 ),
@@ -215,8 +219,16 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
             ? (gapUnit * 2.5).clamp(20.0, 60.0)
             : 20.0;
 
-        return Column(
-          children: [
+        final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
+        final double requiredHeight = estimatedContentHeight + totalGaps;
+        final double finalHeight = math.max(maxHeight, requiredHeight);
+
+        return SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: SizedBox(
+            height: finalHeight,
+            child: Column(
+              children: [
             SizedBox(height: gapTop),
             isCompact
                 ? SizedBox(
@@ -299,6 +311,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 : _buildChipsWrap(quest, color, isDark, isCompact),
             SizedBox(height: gapBottom),
           ],
+        ),
+          ),
         );
       },
     );
