@@ -71,8 +71,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection();
       _vaultController.forward(from: 0);
       setState(() {
         _isFirstStagePassed = true;
