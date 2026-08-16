@@ -52,30 +52,27 @@ class _CollocationsScreenState extends State<CollocationsScreen>
   }
 
   void _submitAnswer(String selected, String correct) {
-    if (_isAnswered || _isFirstStagePassed) return;
-
-    setState(() {
-      _selectedOption = selected;
-      _isAnswered = true;
-    });
+    if (_isAnswered || _isFirstStagePassed || _selectedOption != null) return;
 
     bool isCorrect =
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    Future.delayed(400.ms, () {
-      if (!mounted) return;
-
-      if (isCorrect) {
-        _hapticService.selection(); // Light haptic instead of full success
-        setState(() => _isFirstStagePassed = true);
-        // Wait for Phase 2
-      } else {
-        _hapticService.error();
-        _soundService.playWrong();
-        setState(() => _isCorrect = isCorrect);
-        context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
-      }
+    setState(() {
+      _selectedOption = selected;
     });
+
+    if (isCorrect) {
+      _hapticService.selection();
+      setState(() => _isFirstStagePassed = true);
+    } else {
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   void _submitFinalAnswer(bool nailedIt) {
