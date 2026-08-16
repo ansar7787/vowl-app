@@ -66,8 +66,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
       if (!mounted) return;
 
       if (isCorrect) {
-        _hapticService.success();
-        _soundService.playCorrect();
+        _hapticService.selection(); // Light haptic instead of full success
         setState(() => _isFirstStagePassed = true);
         // Wait for Phase 2
       } else {
