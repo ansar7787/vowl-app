@@ -418,6 +418,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
       height: isCompact ? 60.h : 80.h,
       width: double.infinity,
       child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 24.w),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.1),
