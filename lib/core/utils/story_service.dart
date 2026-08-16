@@ -65,43 +65,43 @@ class StoryServiceImpl implements StoryService {
 
     // Grammar
     'articleInsertion':
-        "A, An, The. The small words that build big structures. Let's place them perfectly.",
+        "Let's master 'a', 'an', and 'the'! These small words make a huge difference in sounding completely fluent.",
     'clauseConnector':
-        "The Bridge Builder. Link your thoughts into powerful, complex sentences.",
+        "Let's practice linking ideas! Combining short sentences into longer ones makes your English flow beautifully.",
     'grammarQuest':
-        "The Nexus Trial. Prove your mastery of the laws that govern the language.",
+        "Time for a mixed grammar review! Let's test everything you've learned to build rock-solid confidence.",
     'modifierPlacement':
-        "Precision description. Place your modifiers for maximum clarity and impact.",
+        "Word order matters! Let's practice putting adjectives and adverbs in exactly the right spot.",
     'partsOfSpeech':
-        "The Building Blocks. Identify the core components of every great sentence.",
+        "Knowing your nouns from your verbs is the first step to true fluency. Let's break down these sentences!",
     'questionFormatter':
-        "The Seeker of Truth. Learn to craft the perfect questions for any situation.",
+        "Asking good questions is how you keep a conversation going. Let's practice formatting them perfectly!",
     'sentenceCorrection':
-        "The Architect's Eye. Find and fix the structural flaws in these sentences.",
+        "Even native speakers make mistakes! Let's train your eye to catch these common grammar errors.",
     'subjectVerbAgreement':
-        "Perfect Harmony. Ensure your subjects and verbs work together in total unity.",
+        "This is the golden rule of English! Let's make sure your subjects and verbs are always working together perfectly.",
     'tenseMastery':
-        "The Time Traveler. Command the past, present, and future with absolute confidence.",
+        "Past, present, or future? Mastering your tenses is the key to telling great stories in English.",
     'voiceSwap':
-        "Active to Passive. Change the perspective of your sentences with strategic skill.",
+        "Let's practice switching between active and passive voice. It's a great trick for professional writing!",
     'wordReorder':
-        "The Puzzle Master. Rearrange these words to reveal the hidden meaning within.",
+        "These sentences are all mixed up! Can you put the words back in the natural, native order?",
     'modalsSelection':
-        "Degrees of Certainty. Use modals to express possibility, ability, and necessity.",
+        "Words like 'can', 'should', and 'must' change the whole feeling of a sentence. Let's choose the right one!",
     'prepositionChoice':
-        "Spatial Intelligence. Place your objects in the perfect context with prepositions.",
+        "Prepositions can be tricky, but you'll get the hang of them! Let's practice putting objects in the right place.",
     'pronounResolution':
-        "Identity Logic. Master the art of clear reference through perfect pronouns.",
+        "Using pronouns like 'he', 'she', or 'it' makes your speaking much faster. Let's practice keeping track of who is who!",
     'punctuationMastery':
-        "The Rhythm of Reading. Use punctuation to guide the breath and the mind.",
+        "Punctuation isn't just for writing; it tells us when to pause when speaking! Let's get the rhythm right.",
     'relativeClauses':
-        "Depth of Detail. Add layers of meaning to your subjects with relative clauses.",
+        "Let's add some extra details! Using words like 'who' or 'which' helps you build rich, descriptive sentences.",
     'conditionals':
-        "The Logic of 'If'. Explore the world of possibility and consequence.",
+        "What if? Let's practice talking about imaginary situations and possibilities!",
     'conjunctions':
-        "Logic Links. Use conjunctions to create smooth, logical transitions.",
+        "Words like 'and', 'but', and 'because' are the glue that holds your sentences together. Let's practice linking them up!",
     'directIndirectSpeech':
-        "The Messenger's Art. Master the subtle shift between quoted and reported speech.",
+        "How do you repeat what someone else said? Let's practice the rules for reporting speech accurately.",
 
     // Listening
     'ambientId':
