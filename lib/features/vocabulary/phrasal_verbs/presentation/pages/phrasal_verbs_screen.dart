@@ -452,6 +452,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           height: 1.4,
         ),
       ),
+        ),
+      ),
     );
   }
 
