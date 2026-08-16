@@ -36,11 +36,12 @@ class CollocationOptionBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     final isSelected = selectedOption == text;
     final isPhase1Correct = isFirstStagePassed && isSelected;
-    final showCorrect =
+    final isExploding =
         (isAnswered && isCorrect == true && text == correct) ||
         (isAnswered && isFinalFailure && text == correct) ||
-        isPhase1Correct ||
-        (isHintUsed && text == correct && !isFirstStagePassed);
+        isPhase1Correct;
+    final isGlowingHint = isHintUsed && text == correct && !isFirstStagePassed;
+    final showCorrect = isExploding || isGlowingHint;
     final showWrong = isAnswered && isSelected && isCorrect == false && !isPhase1Correct;
 
     Color bubbleColor = isDark
@@ -116,13 +117,25 @@ class CollocationOptionBubble extends StatelessWidget {
 
     // Apply the massive "Pop Fusion" explosion if correct
     animatedBubble = animatedBubble
-        .animate(target: showCorrect ? 1 : 0)
+        .animate(target: isExploding ? 1 : 0)
         .scale(
           end: const Offset(1.8, 1.8),
           duration: 600.ms,
           curve: Curves.easeOutBack,
         )
         .fadeOut(duration: 500.ms);
+
+    // Apply a pulsing glow if it's a hint
+    if (isGlowingHint) {
+      animatedBubble = animatedBubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.05, 1.05),
+            duration: 800.ms,
+            curve: Curves.easeInOutSine,
+          );
+    }
 
     // Apply the staggered responsive vertical offset and continuous floating
     double staggeredOffset = index % 2 == 0 ? -15.h : 15.h;
