@@ -908,7 +908,7 @@ class GameInstructionService {
       rules: [
         "Check for time markers",
         "Identify frequency",
-        "3 Hearts per mission",
+        "Achieve 100% accuracy",
       ],
       actionText: "Master Tenses",
       tip:
@@ -1168,7 +1168,7 @@ class GameInstructionService {
       icon: Icons.forum_rounded,
       objective:
           "Decode emojis and phrases into correct English idioms. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Interpret emojis", "Select matching idiom", "3 Hearts left"],
+      rules: ["Interpret emojis", "Select matching idiom", "Crack the idiom code"],
       actionText: "Send Message",
       tip: "Idioms are colorful cultural keys! Don't take them literally.",
     ),
@@ -1229,7 +1229,7 @@ class GameInstructionService {
       icon: Icons.auto_stories_rounded,
       objective:
           "Identify the word that fits perfectly in the context of the sentence. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts left"],
+      rules: ["Evaluate context", "Unfold the correct fit", "Ensure logical flow"],
       actionText: "Unfold Truth",
       tip:
           "Nuance is key! Choose the word that logically belongs in the sentence.",
@@ -1334,7 +1334,7 @@ class GameInstructionService {
       icon: Icons.flash_on_rounded,
       objective:
           "Choose the most appropriate and polite social response for the scenario. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Match social tone", "Be polite/direct", "3 Hearts left"],
+      rules: ["Match social tone", "Be polite/direct", "Navigate social nuances"],
       actionText: "Respond Now",
       tip:
           "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
@@ -1354,7 +1354,7 @@ class GameInstructionService {
       icon: Icons.medical_services_rounded,
       objective:
           "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Be accurate", "Describe physical feelings", "3 Hearts left"],
+      rules: ["Be accurate", "Describe physical feelings", "Be precise and clear"],
       actionText: "Start Consult",
       tip:
           "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
@@ -1402,7 +1402,7 @@ class GameInstructionService {
       icon: Icons.rocket_launch_rounded,
       objective:
           "Deliver a compelling, high-impact business message in 30 seconds. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Be concise", "High emotional impact", "3 Hearts left"],
+      rules: ["Be concise", "High emotional impact", "Deliver with confidence"],
       actionText: "Start Pitch",
       tip:
           "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
@@ -1840,7 +1840,7 @@ class GameInstructionService {
       objective:
           "Complete the challenge to earn rewards and master your skills!",
       rules: [
-        "3 Hearts per mission",
+        "Complete the mission",
         "2 Strikes (Mistakes Re-queued)",
         "Achieve 100% Mastery",
       ],
