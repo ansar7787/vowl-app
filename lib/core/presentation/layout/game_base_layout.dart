@@ -76,6 +76,12 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _showBriefing = _kBriefingLevels.contains(widget.config.level);
   }
 
+  @override
+  void dispose() {
+    _ttsService.stop();
+    super.dispose();
+  }
+
   void _handleLastLifeNudge() {
     if (_hasSpokenNudge) return;
     _hasSpokenNudge = true;
