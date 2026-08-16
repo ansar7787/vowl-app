@@ -401,15 +401,15 @@ class GameInstructionService {
       title: "Lexical Speaker",
       icon: Icons.library_books_rounded,
       objective:
-          "Orally state a correct synonym for the target word. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
+          "Orally state a word that means the exact same thing. Having multiple words for the same idea gives your speech much more color and variety.",
       rules: [
-        "Find similar meaning",
-        "Speak synonym clearly",
-        "Expand your voice",
+        "Find the twin meaning",
+        "Speak clearly",
+        "Build a rich vocabulary",
       ],
-      actionText: "Vocalize Synonym",
+      actionText: "Speak Synonym",
       tip:
-          "PRO TIP: Expand your vocabulary by grouping similar words together.",
+          "PRO TIP: Don't stress! Even simple, everyday synonyms are perfectly acceptable.",
     ),
     GameSubtype.dialogueRoleplay: GameBriefing(
       title: "Scene Architect",
@@ -439,11 +439,11 @@ class GameInstructionService {
       title: "Antonym Orator",
       icon: Icons.compare_arrows_rounded,
       objective:
-          "Orally state the direct opposite/antonym of the prompt word. Mastering this skill ensures your spoken English sounds clear and natural in real-world conversations.",
-      rules: ["Analyze target", "Speak the antonym", "Maintain accuracy"],
-      actionText: "Vocalize Opposite",
+          "Speak the exact opposite meaning of the prompt word. Thinking of opposites rapidly builds a flexible, expressive vocabulary.",
+      rules: ["Think of the opposite", "Speak clearly", "Avoid synonyms"],
+      actionText: "Speak Opposite",
       tip:
-          "PRO TIP: Think of contrasting poles (e.g. fast/slow, build/destroy).",
+          "PRO TIP: Think magnetically: What is the polar opposite of the given word?",
     ),
     GameSubtype.dailyExpression: GameBriefing(
       title: "Social Fluent",
@@ -1127,13 +1127,13 @@ class GameInstructionService {
           "Speed isn't the goal—mastery is! Take your time to review definitions.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
-      title: "Word Warp",
+      title: "Synonym Warp",
       icon: Icons.cyclone,
       objective:
-          "Identify and match the correct synonym for the target word. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Find the twin", "Drag into Warp Gate", "Avoid distractions"],
+          "Identify the exact same meaning for the target word. Learning multiple words for the same idea gives your speaking and writing much more color and variety.",
+      rules: ["Find the twin word", "Warp the correct match", "Ignore visual tricks"],
       actionText: "Start Warp",
-      tip: "Focus on the core meaning, and filter out visual distractions!",
+      tip: "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
     ),
     GameSubtype.antonymSearch: GameBriefing(
       title: "Polarity Master",
