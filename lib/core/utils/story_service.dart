@@ -207,7 +207,7 @@ class StoryServiceImpl implements StoryService {
     'idioms':
         "Cultural Secrets. Unlock the colorful phrases that define native speech.",
     'phrasalVerbs':
-        "The Action Multiplier. Master the complex combinations of verbs and prepositions.",
+        "Verb Vault. Unlock the secret combinations of verbs and prepositions to sound absolutely native.",
     'prefixSuffix':
         "Word Alchemy. Use prefixes and suffixes to transform and create new words.",
     'synonymSearch':
@@ -1183,11 +1183,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'phrasalverbs': [
       "",
-      "Excellent start! Your understanding of phrasal verbs is growing.",
-      "Your mastery of phrasal verbs is noticeably improving daily.",
-      "Halfway there! You are a rising star in phrasal verbs.",
-      "100 levels beat! You truly dominate phrasal verbs.",
-      "Level 200! You have transcended the limits of phrasal verbs.",
+      "Great start! You're discovering how adding a simple particle completely changes a verb's meaning.",
+      "You're getting the hang of it! Phrasal verbs are the secret to sounding like a native speaker.",
+      "Halfway to 100! Your ability to crack the meaning of these verb vaults is seriously impressive.",
+      "Level 100! You are mastering the trickiest part of the English language. Keep up this amazing momentum!",
+      "Level 200! You've completely unlocked the verb vault. Your conversational English is absolutely phenomenal!",
     ],
     'prefixsuffix': [
       "",

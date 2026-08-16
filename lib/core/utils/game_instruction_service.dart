@@ -1157,7 +1157,7 @@ class GameInstructionService {
       title: "Verb Vault",
       icon: Icons.vpn_key_rounded,
       objective:
-          "Select correct prepositions or particles to complete phrasal verbs. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
+          "Master the hidden combinations of verbs and prepositions. Unlocking these pairs will make your conversational English sound incredibly natural and fluent!",
       rules: ["Read Definition", "Select Particle", "Crack Vault"],
       actionText: "Start Hack",
       tip:

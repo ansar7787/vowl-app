@@ -62,7 +62,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
   }
 
   void _submitChoice(String selected, String correct) async {
-    if (_isAnswered || _isFirstStagePassed) return;
+    if (_isAnswered || _isFirstStagePassed || _selectedOption != null) return;
 
     setState(() => _selectedOption = selected);
     bool isCorrect =
@@ -221,8 +221,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        return SizedBox(
+                          height: constraints.maxHeight,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Column(
                               mainAxisSize: MainAxisSize.min,
@@ -330,6 +332,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                               isDark,
                                               isFinalFailure,
                                               isCompact,
+                                              state is VocabularyLoaded ? state.hintUsed : false,
                                             ),
                                           ),
                                         ),
@@ -340,11 +343,13 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                         isDark,
                                         isFinalFailure,
                                         isCompact,
+                                        state is VocabularyLoaded ? state.hintUsed : false,
                                       ),
-                                SizedBox(height: gapBottom),
-                              ],
-                            ),
-                          ],
+                                  SizedBox(height: gapBottom),
+                                ],
+                              ),
+                            ],
+                          ),
                         );
                       },
                     ),
@@ -415,6 +420,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     bool isDark,
     bool isFinalFailure,
     bool isCompact,
+    bool hintUsed,
   ) {
     return Wrap(
       spacing: 15.w,
@@ -431,6 +437,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           selectedOption: _selectedOption,
           isFinalFailure: isFinalFailure,
           index: entry.key,
+          isHintUsed: hintUsed,
           onTap: () => _submitChoice(entry.value, quest.correctAnswer ?? ""),
         );
       }).toList(),

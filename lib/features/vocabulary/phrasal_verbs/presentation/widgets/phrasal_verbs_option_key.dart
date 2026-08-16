@@ -12,6 +12,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
   final bool? isCorrect;
   final String? selectedOption;
   final bool isFinalFailure;
+  final bool isHintUsed;
   final int index;
   final VoidCallback onTap;
 
@@ -25,6 +26,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
     required this.isCorrect,
     required this.selectedOption,
     required this.isFinalFailure,
+    this.isHintUsed = false,
     required this.index,
     required this.onTap,
   });
@@ -32,9 +34,11 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSelected = selectedOption == text;
-    final showCorrect =
+    final isExploding =
         (isAnswered && isCorrect == true && text == correct) ||
         (isAnswered && isFinalFailure && text == correct);
+    final isGlowingHint = isHintUsed && text == correct && !isAnswered;
+    final showCorrect = isExploding || isGlowingHint;
     final isWrong = isAnswered && isSelected && isCorrect == false;
 
     Color cardBg = isDark ? color.withValues(alpha: 0.1) : Colors.white;
@@ -91,7 +95,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
       ),
     );
 
-    if (showCorrect) {
+    if (isExploding) {
       keyCard = keyCard.animate().scale(
         end: const Offset(1.1, 1.1),
         duration: 300.ms,
@@ -99,6 +103,13 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
       );
     } else if (isWrong) {
       keyCard = keyCard.animate().shakeX(amount: 5, duration: 400.ms);
+    } else if (isGlowingHint) {
+      keyCard = keyCard.animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+        begin: const Offset(1.0, 1.0),
+        end: const Offset(1.05, 1.05),
+        duration: 800.ms,
+        curve: Curves.easeInOutSine,
+      );
     }
 
     return keyCard
