@@ -62,8 +62,9 @@ class AntonymPulsar extends StatelessWidget {
               ),
             ),
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 4.seconds);
+        ),
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true))
+     .shimmer(duration: 4.seconds);
   }
 }
