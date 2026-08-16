@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+
 
 class ContextCluesEvidenceSentence extends StatelessWidget {
   final String sentence;
@@ -25,26 +25,37 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
   Widget build(BuildContext context) {
     final parts = sentence.split("[TARGET]");
 
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: isCompact ? 15.w : 30.w),
-      child: Center(
-        child: AutoSizeText.rich(
-          TextSpan(
-            children: [
-              _buildTextSpan(parts[0]),
-              WidgetSpan(
-                child: _buildRedactedBlock(),
-                alignment: PlaceholderAlignment.middle,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final double horizontalPadding = isCompact ? 15.w : 30.w;
+        final double availableWidth =
+            constraints.maxWidth - (horizontalPadding * 2);
+
+        return Container(
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+          child: Center(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: SizedBox(
+                width: availableWidth > 0 ? availableWidth : 100,
+                child: RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: [
+                      _buildTextSpan(parts[0]),
+                      WidgetSpan(
+                        child: _buildRedactedBlock(),
+                        alignment: PlaceholderAlignment.middle,
+                      ),
+                      if (parts.length > 1) _buildTextSpan(parts[1]),
+                    ],
+                  ),
+                ),
               ),
-              if (parts.length > 1) _buildTextSpan(parts[1]),
-            ],
+            ),
           ),
-          textAlign: TextAlign.center,
-          minFontSize: 12,
-          maxLines: 8,
-          overflow: TextOverflow.visible,
-        ),
-      ),
+        );
+      },
     );
   }
 
