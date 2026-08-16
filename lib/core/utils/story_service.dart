@@ -1151,11 +1151,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'antonymsearch': [
       "",
-      "Fantastic! Exploring antonyms will elevate your skills rapidly.",
-      "You are navigating antonyms with increasing confidence.",
-      "50 levels cleared! Your antonyms skills are rock solid.",
-      "Level 100! Your expertise in antonyms is elite.",
-      "Level 200! You have transcended the limits of antonyms.",
+      "Great start! Finding exact opposites forces you to think twice as fast.",
+      "You're getting so quick at identifying opposite meanings!",
+      "Halfway to a hundred! Your brain is making word connections faster than ever.",
+      "Level 100! That takes serious dedication. You should be really proud of how much your vocabulary has grown.",
+      "Level 200! Honestly, your vocabulary is incredible. You understand the absolute edges of the English language.",
     ],
     'contextclues': [
       "",
