@@ -1215,8 +1215,8 @@ class GameInstructionService {
           "PRO TIP: Look closely at the meaning first! A small prefix like 're-' completely changes the word.",
     ),
     GameSubtype.collocations: GameBriefing(
-      title: "Pair Pop",
-      icon: Icons.bubble_chart_rounded,
+      title: "Magnetic Fusion",
+      icon: Icons.join_inner_rounded,
       objective:
           "Discover words that naturally magnetize to each other. Mastering these common pairings will make your speech sound incredibly fluent and native-like.",
       rules: ["Examine the main word", "Find its natural partner", "Fuse them together"],
