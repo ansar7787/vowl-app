@@ -157,20 +157,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       );
     }
 
-    // Read from loadedState when available; fall back to cached instance
-    // fields during state transitions (e.g. VocabularyLoading).
-    final isAnswered = loadedState != null
-        ? loadedState.lastAnswerCorrect != null
-        : _isAnswered;
-    final isCorrect = loadedState != null
-        ? loadedState.lastAnswerCorrect
-        : _isCorrect;
-
     return VocabularyBaseLayout(
       gameType: widget.gameType,
       level: widget.level,
-      isAnswered: isAnswered,
-      isCorrect: isCorrect,
+      isAnswered: _isAnswered,
+      isCorrect: _isCorrect,
       showConfetti: _showConfetti,
       onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
       onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
@@ -182,8 +173,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
               children: [
                 _AcademicWordGameBody(
                   quest: quest,
-                  isAnswered: isAnswered,
-                  isCorrect: isCorrect,
+                  isAnswered: _isAnswered,
+                  isCorrect: _isCorrect,
                   misspelledWord: _misspelledWord,
                   slotKey: _slotKey,
                   activeShardIndex: _activeShardIndex,
@@ -195,7 +186,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                   onDragEnd: (i) => _onShardDragEnd(i, quest),
                   getInitialPosition: _getShardInitialPosition,
                 ),
-                if (_isFirstStagePassed && !isAnswered)
+                if (_isFirstStagePassed && !_isAnswered)
                   DynamicAnagramWrapper(
                     title: 'SPELL THE TARGET WORD',
                     subtitle: 'Tap all letters to rebuild the word!',

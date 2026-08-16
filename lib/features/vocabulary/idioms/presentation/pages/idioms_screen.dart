@@ -154,8 +154,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           );
         }
 
-        _isAnswered = loadedState?.lastAnswerCorrect != null;
-        _isCorrect = loadedState?.lastAnswerCorrect;
         final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
         return VocabularyBaseLayout(
