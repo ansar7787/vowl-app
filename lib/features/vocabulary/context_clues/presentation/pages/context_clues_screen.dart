@@ -311,7 +311,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       TweenAnimationBuilder<double>(
                         tween: Tween<double>(
                           begin: 5.0,
-                          end: _isAnswered ? 0.0 : 5.0,
+                          end: (_isAnswered || _isFirstStagePassed) ? 0.0 : 5.0,
                         ),
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeOut,
@@ -324,7 +324,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         },
                         child: AnimatedOpacity(
                           duration: const Duration(milliseconds: 500),
-                          opacity: _isAnswered ? 1.0 : 0.4,
+                          opacity: (_isAnswered || _isFirstStagePassed) ? 1.0 : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",
                             color: color,
@@ -335,7 +335,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                           ),
                         ),
                       ),
-                      if (!_isAnswered)
+                      // LENS SYSTEM (The Flashlight)
+                      if (!_isAnswered && !_isFirstStagePassed)
                         ValueListenableBuilder<Offset>(
                           valueListenable: _lensPosition,
                           builder: (context, pos, _) {
