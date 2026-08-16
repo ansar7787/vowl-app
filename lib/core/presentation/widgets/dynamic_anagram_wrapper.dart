@@ -9,6 +9,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onFailed;
+  final Function(String)? onFailedWithSpelling;
   final int? bonusCoins;
 
   const DynamicAnagramWrapper({
@@ -17,6 +18,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onFailed,
+    this.onFailedWithSpelling,
     this.bonusCoins = 5,
   });
 
@@ -98,8 +100,13 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         _hasError = true;
         _isSubmitting = true;
       });
-      Future.delayed(const Duration(milliseconds: 400), () {
-        if (mounted) widget.onFailed();
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        if (!mounted) return;
+        if (widget.onFailedWithSpelling != null) {
+          widget.onFailedWithSpelling!(currentWord);
+        } else {
+          widget.onFailed();
+        }
       });
     }
   }

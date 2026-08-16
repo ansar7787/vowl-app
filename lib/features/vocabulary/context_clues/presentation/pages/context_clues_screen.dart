@@ -111,12 +111,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, [String? misspelledWord]) {
     if (_isAnswered) return;
 
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
+      if (misspelledWord != null) {
+        _selectedOption = misspelledWord;
+      }
     });
 
     if (nailedIt) {
@@ -225,7 +228,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onFailed: () => _submitFinalAnswer(false),
+                        onFailed: () {}, // Handled by onFailedWithSpelling
+                        onFailedWithSpelling: (wrongWord) =>
+                            _submitFinalAnswer(false, wrongWord),
                       ),
                   ],
                 ),
