@@ -143,7 +143,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
-        final loadedState = state is VocabularyLoaded ? state : null;
 
         if (state is VocabularyLoading ||
             (quest == null &&
