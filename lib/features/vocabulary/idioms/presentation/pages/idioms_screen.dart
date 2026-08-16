@@ -65,7 +65,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
       if (!mounted) return;
       if (isCorrect) {
         _hapticService.success();
-        _soundService.playCorrect();
         setState(() {
           _isFirstStagePassed = true;
         });
@@ -79,12 +78,15 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     });
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
     if (_isAnswered && _isCorrect != null) return;
 
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
+      if (wrongWord != null && wrongWord.isNotEmpty) {
+        _selectedOption = wrongWord;
+      }
     });
 
     if (nailedIt) {
@@ -190,7 +192,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onFailed: () {},
-                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
+                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false, wrongWord: wrongWord),
                       ),
                   ],
                 ),

@@ -11,6 +11,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final String? correctAnswer;
+  final String? userSpelledWord;
 
   const AcademicWordThesisPaper({
     super.key,
@@ -20,6 +21,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
     required this.isAnswered,
     required this.isCorrect,
     required this.correctAnswer,
+    this.userSpelledWord,
   });
 
   @override
@@ -57,6 +59,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
                     isAnswered: isAnswered,
                     isCorrect: isCorrect,
                     correctAnswer: correctAnswer,
+                    userSpelledWord: userSpelledWord,
                     isDark: isDark,
                     slotWidth: slotWidth,
                     slotHeight: slotHeight,
@@ -103,6 +106,7 @@ class _ThesisPaperContent extends StatefulWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final String? correctAnswer;
+  final String? userSpelledWord;
   final bool isDark;
   final double slotWidth;
   final double slotHeight;
@@ -114,6 +118,7 @@ class _ThesisPaperContent extends StatefulWidget {
     required this.isAnswered,
     required this.isCorrect,
     required this.correctAnswer,
+    required this.userSpelledWord,
     required this.isDark,
     required this.slotWidth,
     required this.slotHeight,
@@ -189,6 +194,7 @@ class _ThesisPaperContentState extends State<_ThesisPaperContent> {
               isAnswered: widget.isAnswered,
               isCorrect: widget.isCorrect,
               correctAnswer: widget.correctAnswer,
+              userSpelledWord: widget.userSpelledWord,
               answerStyle: _answerStyle(widget.color),
               pendingColor: pendingColor,
             ),
@@ -210,6 +216,7 @@ class _AnswerSlot extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final String? correctAnswer;
+  final String? userSpelledWord;
   final TextStyle answerStyle;
   final Color pendingColor;
 
@@ -222,6 +229,7 @@ class _AnswerSlot extends StatelessWidget {
     required this.isAnswered,
     required this.isCorrect,
     required this.correctAnswer,
+    required this.userSpelledWord,
     required this.answerStyle,
     required this.pendingColor,
   });
@@ -238,12 +246,12 @@ class _AnswerSlot extends StatelessWidget {
         border: Border(bottom: BorderSide(color: underlineColor, width: 2.5)),
       ),
       child: Center(
-        child: isAnswered && isCorrect == true
+        child: (isAnswered && isCorrect == true) || (isAnswered && isCorrect == false && userSpelledWord != null)
             ? Text(
-                correctAnswer?.toUpperCase() ?? '',
+                (isCorrect == true ? correctAnswer : userSpelledWord)?.toUpperCase() ?? '',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
-                style: answerStyle,
+                style: isCorrect == true ? answerStyle : answerStyle.copyWith(color: AcademicWordColors.slotError),
               ).animate().fadeIn().scale()
             : Text(
                 AcademicWordStrings.slotPending,

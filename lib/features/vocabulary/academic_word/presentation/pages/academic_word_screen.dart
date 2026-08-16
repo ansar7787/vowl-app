@@ -49,6 +49,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   bool _isFirstStagePassed = false;
+  String? _misspelledWord;
 
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
@@ -107,6 +108,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
           _isAnswered = false;
           _isCorrect = null;
           _isFirstStagePassed = false;
+          _misspelledWord = null;
           _dragOffset = Offset.zero;
           _activeShardIndex = null;
         });
@@ -182,6 +184,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                   quest: quest,
                   isAnswered: isAnswered,
                   isCorrect: isCorrect,
+                  misspelledWord: _misspelledWord,
                   slotKey: _slotKey,
                   activeShardIndex: _activeShardIndex,
                   dragOffset: _dragOffset,
@@ -200,7 +203,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                     primaryColor: _cachedTheme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
                     onFailed: () {},
-                    onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
+                    onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false, wrongWord: wrongWord),
                   ),
               ],
             ),
@@ -284,12 +287,15 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
     if (_isAnswered) return;
 
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
+      if (wrongWord != null && wrongWord.isNotEmpty) {
+        _misspelledWord = wrongWord;
+      }
     });
 
     if (nailedIt) {
@@ -384,6 +390,7 @@ class _AcademicWordGameBody extends StatelessWidget {
   final VocabularyQuest quest;
   final bool isAnswered;
   final bool? isCorrect;
+  final String? misspelledWord;
   final GlobalKey slotKey;
   final int? activeShardIndex;
   final Offset dragOffset;
@@ -398,6 +405,7 @@ class _AcademicWordGameBody extends StatelessWidget {
     required this.quest,
     required this.isAnswered,
     required this.isCorrect,
+    required this.misspelledWord,
     required this.slotKey,
     required this.activeShardIndex,
     required this.dragOffset,
@@ -521,6 +529,7 @@ class _AcademicWordGameBody extends StatelessWidget {
             isAnswered: isAnswered,
             isCorrect: isCorrect,
             correctAnswer: quest.correctAnswer,
+            userSpelledWord: misspelledWord,
           ),
         ),
       ),
