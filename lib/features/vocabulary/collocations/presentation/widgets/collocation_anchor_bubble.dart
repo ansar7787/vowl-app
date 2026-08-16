@@ -30,15 +30,18 @@ class CollocationAnchorBubble extends StatelessWidget {
               ),
             ],
           ),
-          child: Text(
-            text.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              letterSpacing: 2,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              text.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 28.sp,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                letterSpacing: 2,
+              ),
             ),
           ),
         )

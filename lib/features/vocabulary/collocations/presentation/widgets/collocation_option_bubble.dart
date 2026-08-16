@@ -87,15 +87,18 @@ class CollocationOptionBubble extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: EdgeInsets.all(15.r),
-            child: Text(
-              text.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-                color: textColor,
-                letterSpacing: 1,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                text.toUpperCase(),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.bold,
+                  color: textColor,
+                  letterSpacing: 1,
+                ),
               ),
             ),
           ),
