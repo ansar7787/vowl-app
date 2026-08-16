@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -296,11 +296,12 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ),
                         if (_isFirstStagePassed &&
                             (!_isAnswered || _isCorrect == null))
-                          DynamicJigsawWrapper(
+                          DynamicAnagramWrapper(
                             expectedText: quest.correctAnswer ?? '',
                             primaryColor: theme.primaryColor,
                             onConfirmed: () => _submitFinalAnswer(true),
-                            onSkipped: () => _submitFinalAnswer(false),
+                            onFailed: () {}, // Optional empty handler
+                            onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                           ),
                       ],
                     );
