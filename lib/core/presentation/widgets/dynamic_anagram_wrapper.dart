@@ -10,7 +10,6 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final VoidCallback onConfirmed;
   final VoidCallback onFailed;
   final int? bonusCoins;
-  final bool allowSkip;
 
   const DynamicAnagramWrapper({
     super.key,
@@ -19,7 +18,6 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.onConfirmed,
     required this.onFailed,
     this.bonusCoins = 5,
-    this.allowSkip = true,
   });
 
   @override
@@ -30,6 +28,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   late List<_Tile> _availableTiles;
   late List<_Tile?> _placedTiles;
   bool _hasError = false;
+  bool _isSubmitting = false;
 
   @override
   void initState() {
@@ -54,6 +53,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   }
 
   void _onAvailableTileTapped(_Tile tile) {
+    if (_isSubmitting) return;
     if (_hasError) setState(() => _hasError = false);
 
     int emptyIndex = _placedTiles.indexWhere((t) => t == null);
@@ -66,6 +66,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   }
 
   void _onPlacedTileTapped(int index) {
+    if (_isSubmitting) return;
     if (_hasError) setState(() => _hasError = false);
 
     _Tile? tile = _placedTiles[index];
@@ -79,6 +80,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
   }
 
   void _onSubmit() {
+    if (_isSubmitting) return;
     if (_placedTiles.contains(null)) {
       setState(() => _hasError = true);
       return;
@@ -86,6 +88,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
 
     String currentWord = _placedTiles.map((t) => t!.letter).join('');
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
+      setState(() => _isSubmitting = true);
       if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
         context.read<EconomyBloc>().add(EconomyAddCoinsRequested(widget.bonusCoins!));
       }
@@ -93,6 +96,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     } else {
       setState(() {
         _hasError = true;
+        _isSubmitting = true;
       });
       Future.delayed(const Duration(milliseconds: 400), () {
         if (mounted) widget.onFailed();
@@ -340,7 +344,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                onPressed: _placedTiles.contains(null) ? null : _onSubmit,
+                                onPressed: (_placedTiles.contains(null) || _isSubmitting) 
+                                    ? null 
+                                    : _onSubmit,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: _hasError
                                       ? errorColor
