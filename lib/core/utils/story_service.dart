@@ -1159,11 +1159,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'contextclues': [
       "",
-      "Excellent start! Your understanding of context clues is growing.",
-      "Your progress in context clues is genuinely impressive.",
-      "50 levels cleared! Your context clues skills are rock solid.",
-      "100 levels beat! You truly dominate context clues.",
-      "200 levels cleared! Your context clues abilities are unmatched globally.",
+      "Excellent start! Finding hints hidden in the sentence forces you to think like a native speaker.",
+      "You're getting so quick at scanning sentences for context clues!",
+      "Halfway to a hundred! Your brain is naturally reading between the lines faster than ever.",
+      "Level 100! That takes serious dedication. You should be incredibly proud of your reading comprehension.",
+      "Level 200! Honestly, your ability to infer meaning is incredible. Nothing gets past you.",
     ],
     'flashcards': [
       "",

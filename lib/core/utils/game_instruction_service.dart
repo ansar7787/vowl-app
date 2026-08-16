@@ -1148,10 +1148,10 @@ class GameInstructionService {
       title: "Detective Lens",
       icon: Icons.search_rounded,
       objective:
-          "Use context clues to identify the meaning of unknown words. Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Drag to reveal clues", "Analyze context", "3 Hearts left"],
+          "Use surrounding words to figure out the hidden meaning. Being able to read between the lines is essential for native-level fluency.",
+      rules: ["Drag to reveal clues", "Analyze the context", "Select the right evidence"],
       actionText: "Start Scan",
-      tip: "Clues often hide right next to the redacted or highlighted word!",
+      tip: "Clues are usually hiding right next to the highlighted or redacted word!",
     ),
     GameSubtype.phrasalVerbs: GameBriefing(
       title: "Verb Vault",
