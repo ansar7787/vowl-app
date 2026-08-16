@@ -154,23 +154,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                     targetIsPositive: _targetIsPositive,
                   ),
 
-                  if (quest?.instruction.isNotEmpty == true)
-                    Positioned(
-                      top: isCompact ? 10.h : 20.h,
-                      left: 20.w,
-                      right: 20.w,
-                      child: Text(
-                        quest!.instruction.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white70 : Colors.black54,
-                          letterSpacing: 2.0,
-                        ),
-                      ),
-                    ),
+                  // Instruction removed: It was overlapping the top Pulsar, 
+                  // and AntonymNebulaCore already says "DRAG TO OPPOSITE"
 
                   Center(
                     child: isCompact
