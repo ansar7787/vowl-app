@@ -12,6 +12,7 @@ class CollocationOptionBubble extends StatelessWidget {
   final String? selectedOption;
   final bool isFinalFailure;
   final bool isFirstStagePassed;
+  final bool isHintUsed;
   final int index;
   final VoidCallback onTap;
 
@@ -26,6 +27,7 @@ class CollocationOptionBubble extends StatelessWidget {
     required this.selectedOption,
     required this.isFinalFailure,
     required this.isFirstStagePassed,
+    this.isHintUsed = false,
     required this.index,
     required this.onTap,
   });
@@ -37,7 +39,8 @@ class CollocationOptionBubble extends StatelessWidget {
     final showCorrect =
         (isAnswered && isCorrect == true && text == correct) ||
         (isAnswered && isFinalFailure && text == correct) ||
-        isPhase1Correct;
+        isPhase1Correct ||
+        (isHintUsed && text == correct && !isFirstStagePassed);
     final showWrong = isAnswered && isSelected && isCorrect == false && !isPhase1Correct;
 
     Color bubbleColor = isDark

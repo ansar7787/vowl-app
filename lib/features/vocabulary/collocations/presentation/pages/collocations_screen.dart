@@ -293,6 +293,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                   ? state.isFinalFailure
                                                   : false,
                                               isCompact,
+                                              state is VocabularyLoaded ? state.isHintUsed : false,
                                             ),
                                           ),
                                         ),
@@ -305,6 +306,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                             ? state.isFinalFailure
                                             : false,
                                         isCompact,
+                                        state is VocabularyLoaded ? state.isHintUsed : false,
                                       ),
                                 SizedBox(height: gapBottom),
                               ],
@@ -337,6 +339,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     bool isDark,
     bool isFinalFailure,
     bool isCompact,
+    bool isHintUsed,
   ) {
     return Wrap(
       spacing: 20.w,
@@ -354,6 +357,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           isFinalFailure: isFinalFailure,
           isFirstStagePassed: _isFirstStagePassed,
           index: entry.key,
+          isHintUsed: isHintUsed,
           onTap: () {
             if (!_isAnswered) {
               _hapticService.light();
@@ -383,6 +387,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                 isFinalFailure: false,
                 isFirstStagePassed: false,
                 index: entry.key,
+                isHintUsed: isHintUsed,
                 onTap: () {},
               ),
             ),
