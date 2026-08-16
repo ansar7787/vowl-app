@@ -293,7 +293,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                   ? state.isFinalFailure
                                                   : false,
                                               isCompact,
-                                              state is VocabularyLoaded ? state.isHintUsed : false,
+                                              state is VocabularyLoaded ? state.hintUsed : false,
                                             ),
                                           ),
                                         ),
@@ -306,7 +306,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                             ? state.isFinalFailure
                                             : false,
                                         isCompact,
-                                        state is VocabularyLoaded ? state.isHintUsed : false,
+                                        state is VocabularyLoaded ? state.hintUsed : false,
                                       ),
                                 SizedBox(height: gapBottom),
                               ],
