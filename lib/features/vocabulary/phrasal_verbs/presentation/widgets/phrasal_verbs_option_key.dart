@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class PhrasalVerbsOptionKey extends StatelessWidget {
   final String text;
@@ -81,8 +82,13 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
           ],
         ),
         child: Center(
-          child: Text(
+          child: AutoSizeText(
             text.toUpperCase(),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            minFontSize: 4,
+            stepGranularity: 0.5,
+            overflow: TextOverflow.visible,
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 15.sp,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -221,13 +222,18 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return SizedBox(
-                          height: constraints.maxHeight,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                        return SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minHeight: constraints.maxHeight,
+                            ),
+                            child: IntrinsicHeight(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
                               children: [
                                 SizedBox(height: gapTop),
                                 isCompact
@@ -350,11 +356,15 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                               ),
                             ],
                           ),
-                        );
+                        ),
+                      ),
+                    );
                       },
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
                       DynamicAnagramWrapper(
+                        title: 'SPELL THE PHRASAL VERB',
+                        subtitle: 'Tap all letters to build the full phrase!',
                         expectedText: "${quest.word} ${quest.correctAnswer}",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
@@ -381,8 +391,11 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             children: [
               Icon(Icons.vpn_key_rounded, size: 16.r, color: color),
               SizedBox(width: 10.w),
-              Text(
+              AutoSizeText(
                 "VAULT SECURITY: L-${widget.level}",
+                maxLines: 1,
+                minFontSize: 4,
+                stepGranularity: 0.5,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
@@ -400,11 +413,34 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
   Widget _buildInstruction(String text, Color color) {
     if (text.isEmpty) return const SizedBox.shrink();
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Text(
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
+      ),
+      child: AutoSizeText(
         text,
         textAlign: TextAlign.center,
+        maxLines: 2,
+        minFontSize: 8,
+        stepGranularity: 1,
+        overflowReplacement: AutoSizeText(
+          text,
+          textAlign: TextAlign.center,
+          maxLines: 4,
+          minFontSize: 6,
+          stepGranularity: 0.5,
+          overflow: TextOverflow.visible,
+          style: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w600,
+            color: color.withValues(alpha: 0.9),
+            height: 1.3,
+          ),
+        ),
         style: TextStyle(
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class DynamicAnagramWrapper extends StatefulWidget {
@@ -12,6 +13,9 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final Function(String)? onFailedWithSpelling;
   final int? bonusCoins;
 
+  final String? title;
+  final String? subtitle;
+
   const DynamicAnagramWrapper({
     super.key,
     required this.expectedText,
@@ -20,6 +24,8 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.onFailed,
     this.onFailedWithSpelling,
     this.bonusCoins = 5,
+    this.title,
+    this.subtitle,
   });
 
   @override
@@ -108,7 +114,7 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
         _hasError = true;
         _isSubmitting = true;
       });
-      Future.delayed(400.ms, () {
+      Future.delayed(200.ms, () {
         if (!mounted) return;
         if (widget.onFailedWithSpelling != null) {
           widget.onFailedWithSpelling!(currentWord);
@@ -195,8 +201,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    'NOW SPELL IT!',
+                                  AutoSizeText(
+                                    widget.title ?? 'NOW SPELL IT!',
+                                    maxLines: 1,
+                                    minFontSize: 4,
+                                    stepGranularity: 0.5,
+                                    overflow: TextOverflow.visible,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 14.sp,
@@ -206,8 +216,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                     ),
                                   ),
                                   SizedBox(height: 2.h),
-                                  Text(
-                                    'Tap the letters in the correct order',
+                                  AutoSizeText(
+                                    widget.subtitle ?? 'Tap the letters in the correct order',
+                                    maxLines: 2,
+                                    minFontSize: 4,
+                                    stepGranularity: 0.5,
+                                    overflow: TextOverflow.visible,
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 11.sp,
@@ -235,8 +249,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                   ),
                                   borderRadius: BorderRadius.circular(20.r),
                                 ),
-                                child: Text(
+                                child: AutoSizeText(
                                   '+${widget.bonusCoins} Coins',
+                                  maxLines: 1,
+                                  minFontSize: 4,
+                                  stepGranularity: 0.5,
+                                  overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 10.sp,
@@ -289,8 +307,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                     ),
                                     alignment: Alignment.center,
                                     child: tile != null
-                                        ? Text(
+                                        ? AutoSizeText(
                                             tile.letter,
+                                            maxLines: 1,
+                                            minFontSize: 4,
+                                            stepGranularity: 0.5,
+                                            overflow: TextOverflow.visible,
                                             style: TextStyle(
                                               fontFamily: 'Outfit',
                                               fontSize: 20.sp,
@@ -338,8 +360,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                   ],
                                 ),
                                 alignment: Alignment.center,
-                                child: Text(
+                                child: AutoSizeText(
                                   tile.letter,
+                                  maxLines: 1,
+                                  minFontSize: 4,
+                                  stepGranularity: 0.5,
+                                  overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 20.sp,
@@ -372,8 +398,12 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                     borderRadius: BorderRadius.circular(16.r),
                                   ),
                                 ),
-                                child: Text(
+                                child: AutoSizeText(
                                   'Submit',
+                                  maxLines: 1,
+                                  minFontSize: 4,
+                                  stepGranularity: 0.5,
+                                  overflow: TextOverflow.visible,
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 16.sp,

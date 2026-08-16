@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class PhrasalVerbsVaultHandle extends StatelessWidget {
   final String verb;
@@ -88,8 +89,12 @@ class PhrasalVerbsVaultHandle extends StatelessWidget {
             ],
           ),
           child: Center(
-            child: Text(
+            child: AutoSizeText(
               verb.toUpperCase(),
+              maxLines: 1,
+              minFontSize: 4,
+              stepGranularity: 0.5,
+              overflow: TextOverflow.visible,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 18.sp,
