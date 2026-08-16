@@ -222,13 +222,11 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return SingleChildScrollView(
+                        return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(
-                              minHeight: constraints.maxHeight,
-                            ),
-                            child: IntrinsicHeight(
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -357,7 +355,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ],
                           ),
                         ),
-                      ),
+                      ],
                     );
                       },
                     ),
