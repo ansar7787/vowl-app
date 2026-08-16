@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -308,43 +309,73 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       const Positioned.fill(
                         child: ContextCluesCaseFileBackground(),
                       ),
-                      ContextCluesEvidenceSentence(
-                        sentence: quest.sentence ?? "",
-                        color: color,
-                        isCompact: isCompact,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
-                        selectedOption: _selectedOption,
+                      // BLURRED BACKGROUND (The mystery)
+                      ImageFiltered(
+                        imageFilter: ImageFilter.blur(
+                            sigmaX: _isAnswered ? 0 : 5.0,
+                            sigmaY: _isAnswered ? 0 : 5.0),
+                        child: Opacity(
+                          opacity: _isAnswered ? 1.0 : 0.4,
+                          child: ContextCluesEvidenceSentence(
+                            sentence: quest.sentence ?? "",
+                            color: color,
+                            isCompact: isCompact,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            selectedOption: _selectedOption,
+                          ),
+                        ),
                       ),
                       if (!_isAnswered)
                         ValueListenableBuilder<Offset>(
                           valueListenable: _lensPosition,
                           builder: (context, pos, _) {
                             final lensSize = isCompact ? 100.r : 160.r;
-                            return Positioned(
-                              left:
-                                  (innerConstraints.maxWidth / 2) +
-                                  pos.dx -
-                                  (lensSize / 2),
-                              top:
-                                  (innerConstraints.maxHeight / 2) +
-                                  pos.dy -
-                                  (lensSize / 2),
-                              child: GestureDetector(
-                                onPanUpdate: (d) =>
-                                    _onLensMove(d, innerConstraints),
-                                child: isCompact
-                                    ? SizedBox(
-                                        width: lensSize,
-                                        height: lensSize,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: ContextCluesScanner(
-                                            color: color,
-                                          ),
-                                        ),
-                                      )
-                                    : ContextCluesScanner(color: color),
+                            final lensRadius = lensSize / 2;
+                            final centerPos = Offset(
+                              (innerConstraints.maxWidth / 2) + pos.dx,
+                              (innerConstraints.maxHeight / 2) + pos.dy,
+                            );
+
+                            return Positioned.fill(
+                              child: Stack(
+                                children: [
+                                  // SHARP TEXT (Revealed inside the lens)
+                                  Positioned.fill(
+                                    child: ClipPath(
+                                      clipper: CircleClipper(centerPos, lensRadius * 0.85),
+                                      child: ContextCluesEvidenceSentence(
+                                        sentence: quest.sentence ?? "",
+                                        color: color,
+                                        isCompact: isCompact,
+                                        isAnswered: _isAnswered,
+                                        isCorrect: _isCorrect,
+                                        selectedOption: _selectedOption,
+                                      ),
+                                    ),
+                                  ),
+                                  // THE PHYSICAL LENS UI
+                                  Positioned(
+                                    left: centerPos.dx - lensRadius,
+                                    top: centerPos.dy - lensRadius,
+                                    child: GestureDetector(
+                                      onPanUpdate: (d) =>
+                                          _onLensMove(d, innerConstraints),
+                                      child: isCompact
+                                          ? SizedBox(
+                                              width: lensSize,
+                                              height: lensSize,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: ContextCluesScanner(
+                                                  color: color,
+                                                ),
+                                              ),
+                                            )
+                                          : ContextCluesScanner(color: color),
+                                    ),
+                                  ),
+                                ],
                               ),
                             );
                           },
@@ -373,3 +404,21 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     );
   }
 }
+
+class CircleClipper extends CustomClipper<Path> {
+  final Offset center;
+  final double radius;
+
+  CircleClipper(this.center, this.radius);
+
+  @override
+  Path getClip(Size size) {
+    return Path()..addOval(Rect.fromCircle(center: center, radius: radius));
+  }
+
+  @override
+  bool shouldReclip(covariant CircleClipper oldClipper) {
+    return oldClipper.center != center || oldClipper.radius != radius;
+  }
+}
+
