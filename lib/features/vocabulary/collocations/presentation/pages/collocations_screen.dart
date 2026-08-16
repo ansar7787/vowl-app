@@ -232,7 +232,6 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   child: CollocationAnchorBubble(
                                     text: quest.word ?? "",
-                                    subtitle: quest.hint,
                                     color: theme.primaryColor,
                                     isDark: isDark,
                                   ),
