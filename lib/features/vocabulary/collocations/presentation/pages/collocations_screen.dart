@@ -332,6 +332,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           isCorrect: _isCorrect,
           selectedOption: _selectedOption,
           isFinalFailure: isFinalFailure,
+          isFirstStagePassed: _isFirstStagePassed,
           index: entry.key,
           onTap: () {
             if (!_isAnswered) {

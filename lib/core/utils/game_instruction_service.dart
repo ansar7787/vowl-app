@@ -1218,11 +1218,11 @@ class GameInstructionService {
       title: "Pair Pop",
       icon: Icons.bubble_chart_rounded,
       objective:
-          "Match words that naturally pair together (e.g., 'make a decision'). Expanding your vocabulary helps you express your thoughts precisely in everyday scenarios.",
-      rules: ["Analyze anchor", "Select partner bubble", "Fuse the pair"],
-      actionText: "Initiate Fusion",
+          "Discover words that naturally magnetize to each other. Mastering these common pairings will make your speech sound incredibly fluent and native-like.",
+      rules: ["Examine the main word", "Find its natural partner", "Fuse them together"],
+      actionText: "Start Fusion",
       tip:
-          "Collocations are words that naturally go together like peanut butter and jelly!",
+          "PRO TIP: Sometimes multiple words make sense, but only one is the natural, native-sounding pair!",
     ),
     GameSubtype.contextualUsage: GameBriefing(
       title: "Usage Unfold",

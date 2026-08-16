@@ -1231,11 +1231,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'collocations': [
       "",
-      "Well done! You are building a strong foundation in collocations.",
-      "You are decoding collocations with impressive accuracy.",
-      "Halfway to 100! You are handling collocations effortlessly.",
-      "100 levels beat! You truly dominate collocations.",
-      "200 levels cleared! Your collocations abilities are unmatched globally.",
+      "Great start! You're discovering how words naturally magnetize to each other.",
+      "You're developing a real instinct for natural-sounding word pairs.",
+      "Halfway to 100! Your vocabulary is starting to sound incredibly fluent.",
+      "100 levels cleared! You are linking words together like a native speaker.",
+      "Level 200 reached! Your mastery of natural phrasing is absolutely legendary.",
     ],
     'completesentence': [
       "",

@@ -11,6 +11,7 @@ class CollocationOptionBubble extends StatelessWidget {
   final bool? isCorrect;
   final String? selectedOption;
   final bool isFinalFailure;
+  final bool isFirstStagePassed;
   final int index;
   final VoidCallback onTap;
 
@@ -24,6 +25,7 @@ class CollocationOptionBubble extends StatelessWidget {
     required this.isCorrect,
     required this.selectedOption,
     required this.isFinalFailure,
+    required this.isFirstStagePassed,
     required this.index,
     required this.onTap,
   });
@@ -31,10 +33,12 @@ class CollocationOptionBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isSelected = selectedOption == text;
+    final isPhase1Correct = isFirstStagePassed && isSelected;
     final showCorrect =
         (isAnswered && isCorrect == true && text == correct) ||
-        (isAnswered && isFinalFailure && text == correct);
-    final showWrong = isAnswered && isSelected && isCorrect == false;
+        (isAnswered && isFinalFailure && text == correct) ||
+        isPhase1Correct;
+    final showWrong = isAnswered && isSelected && isCorrect == false && !isPhase1Correct;
 
     Color bubbleColor = isDark
         ? Colors.white.withValues(alpha: 0.05)
