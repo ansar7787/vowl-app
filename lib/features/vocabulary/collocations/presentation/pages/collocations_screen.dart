@@ -210,11 +210,15 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ? (gapUnit * 2).clamp(12.0, 60.0)
                         : 12.0;
 
-                    return Stack(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                    return SizedBox(
+                      height: constraints.maxHeight,
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: constraints.maxHeight,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
                             Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -307,6 +311,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                             ),
                           ],
                         ),
+                      ),
                         if (_isFirstStagePassed &&
                             (!_isAnswered || _isCorrect == null))
                           DynamicAnagramWrapper(
@@ -317,7 +322,8 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                             onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
                           ),
                       ],
-                    );
+                    ),
+                  );
                   },
                 ),
         );
