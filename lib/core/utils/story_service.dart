@@ -197,29 +197,29 @@ class StoryServiceImpl implements StoryService {
 
     // Vocabulary
     'academicWord':
-        "Scholarly Power. Master the advanced vocabulary of higher learning.",
+        "Let's elevate your speaking! Academic words are perfect for sounding professional and confident in any situation.",
     'antonymSearch':
-        "The Shadow Side. Find the perfect opposite for every word in your arsenal.",
+        "Finding exact opposites is a great way to double your vocabulary instantly. Let's practice some contrast!",
     'contextClues':
-        "The Detective's Mind. Use the surrounding world to unlock unknown meanings.",
+        "You don't need to know every single word in English! Let's practice reading between the lines to figure out what things mean.",
     'flashcards':
-        "The Memory Bank. Build your foundation through rapid, focused repetition.",
+        "Repetition is the secret to a great memory. Let's do a quick review to make sure these words stick with you forever!",
     'idioms':
-        "Cultural Secrets. Unlock the colorful phrases that define native speech.",
+        "Native speakers use idioms all the time! Let's learn these colorful phrases so you can sound completely natural.",
     'phrasalVerbs':
-        "Verb Vault. Unlock the secret combinations of verbs and prepositions to sound absolutely native.",
+        "Phrasal verbs are the secret to conversational English! Let's master these combinations so you sound totally fluent.",
     'prefixSuffix':
-        "Word Alchemy. Use prefixes and suffixes to transform and create new words.",
+        "Let's play with prefixes and suffixes! Knowing how to attach these small pieces will help you understand thousands of new words.",
     'synonymSearch':
-        "The Lexical Explorer. Find the many shades of meaning in every word.",
+        "Having a variety of words for the same thing makes you a much better speaker. Let's build your word flexibility!",
     'topicVocab':
-        "Word Sorter. Group words by topic to easily build your vocabulary.",
+        "Let's build your vocabulary naturally by organizing words into groups. It's much easier to remember them this way!",
     'wordFormation':
         "Welcome to word building! We're going to learn how to create powerful new words by mixing and matching their core pieces.",
     'contextualUsage':
-        "Strategic Application. Use the right word in exactly the right way.",
+        "Knowing a word is good, but knowing exactly how to use it in a sentence is true mastery. Let's get it right!",
     'collocations':
-        "Natural Pairs. Learn which words naturally belong together in fluent speech.",
+        "Some words just naturally belong together! Let's practice these natural pairs so your English flows perfectly.",
 
     // Writing
     'completeSentence':
