@@ -201,7 +201,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
                         final double estimatedContentHeight =
                             (isCompact ? 30.h : 40.h) +
-                            (isCompact ? 30.h : 40.h) + // Instruction height
+                            (quest.instruction.isNotEmpty ? (isCompact ? 60.h : 80.h) : 0) +
                             (isCompact ? 70.h : 90.h) +
                             (isCompact ? 110.h : 160.h) +
                             (isCompact ? 90.h : 130.h) +
@@ -257,6 +257,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                   _buildInstruction(
                                     quest.instruction,
                                     theme.primaryColor,
+                                    isCompact,
                                   ),
                                 ],
                                 SizedBox(height: gapMiddle),
@@ -411,17 +412,20 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         .shimmer(duration: 3.seconds);
   }
 
-  Widget _buildInstruction(String text, Color color) {
+  Widget _buildInstruction(String text, Color color, bool isCompact) {
     if (text.isEmpty) return const SizedBox.shrink();
-    return Container(
+    return SizedBox(
+      height: isCompact ? 60.h : 80.h,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: AutoSizeText(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(color: color.withValues(alpha: 0.2)),
+        ),
+        child: Center(
+          child: AutoSizeText(
         text,
         textAlign: TextAlign.center,
         maxLines: 2,
