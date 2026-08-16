@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'dart:math' as math;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -222,13 +223,16 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        return CustomScrollView(
+                        final double totalGaps = gapTop + (quest.instruction.isNotEmpty ? gapTop / 2 : 0) + gapMiddle * 2 + gapBottom;
+                        final double requiredHeight = estimatedContentHeight + totalGaps;
+                        final double finalHeight = math.max(maxHeight, requiredHeight);
+
+                        return SingleChildScrollView(
                           physics: const BouncingScrollPhysics(),
-                          slivers: [
-                            SliverFillRemaining(
-                              hasScrollBody: false,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          child: SizedBox(
+                            height: finalHeight,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -355,8 +359,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ],
                           ),
                         ),
-                      ],
-                    );
+                      );
                       },
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
