@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,15 +70,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     final double halfHeight = constraints.maxHeight / 2;
     final double padding = 90.r;
 
+    final double maxX = math.max(0.0, halfWidth - padding);
+    final double maxY = math.max(0.0, halfHeight - padding);
+
     // Keep lens safely inside Paper dossier boundaries
-    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(
-      -halfWidth + padding,
-      halfWidth - padding,
-    );
-    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(
-      -halfHeight + padding,
-      halfHeight - padding,
-    );
+    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(-maxX, maxX);
+    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(-maxY, maxY);
 
     _lensPosition.value = Offset(newX, newY);
 
@@ -310,11 +308,22 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         child: ContextCluesCaseFileBackground(),
                       ),
                       // BLURRED BACKGROUND (The mystery)
-                      ImageFiltered(
-                        imageFilter: ImageFilter.blur(
-                            sigmaX: _isAnswered ? 0 : 5.0,
-                            sigmaY: _isAnswered ? 0 : 5.0),
-                        child: Opacity(
+                      TweenAnimationBuilder<double>(
+                        tween: Tween<double>(
+                          begin: 5.0,
+                          end: _isAnswered ? 0.0 : 5.0,
+                        ),
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeOut,
+                        builder: (context, blurValue, child) {
+                          return ImageFiltered(
+                            imageFilter: ImageFilter.blur(
+                                sigmaX: blurValue, sigmaY: blurValue),
+                            child: child,
+                          );
+                        },
+                        child: AnimatedOpacity(
+                          duration: const Duration(milliseconds: 500),
                           opacity: _isAnswered ? 1.0 : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",

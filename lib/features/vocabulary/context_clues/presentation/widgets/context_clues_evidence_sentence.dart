@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class ContextCluesEvidenceSentence extends StatelessWidget {
   final String sentence;
@@ -26,17 +27,22 @@ class ContextCluesEvidenceSentence extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: isCompact ? 15.w : 30.w),
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          children: [
-            _buildTextSpan(parts[0]),
-            WidgetSpan(
-              child: _buildRedactedBlock(),
-              alignment: PlaceholderAlignment.middle,
-            ),
-            if (parts.length > 1) _buildTextSpan(parts[1]),
-          ],
+      child: Center(
+        child: AutoSizeText.rich(
+          TextSpan(
+            children: [
+              _buildTextSpan(parts[0]),
+              WidgetSpan(
+                child: _buildRedactedBlock(),
+                alignment: PlaceholderAlignment.middle,
+              ),
+              if (parts.length > 1) _buildTextSpan(parts[1]),
+            ],
+          ),
+          textAlign: TextAlign.center,
+          minFontSize: 12,
+          maxLines: 8,
+          overflow: TextOverflow.visible,
         ),
       ),
     );
