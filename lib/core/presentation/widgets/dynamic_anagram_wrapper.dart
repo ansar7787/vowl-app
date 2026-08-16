@@ -8,7 +8,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
   final String expectedText;
   final Color primaryColor;
   final VoidCallback onConfirmed;
-  final VoidCallback onSkipped;
+  final VoidCallback onFailed;
   final int? bonusCoins;
   final bool allowSkip;
 
@@ -17,7 +17,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
     required this.expectedText,
     required this.primaryColor,
     required this.onConfirmed,
-    required this.onSkipped,
+    required this.onFailed,
     this.bonusCoins = 5,
     this.allowSkip = true,
   });
@@ -93,6 +93,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     } else {
       setState(() {
         _hasError = true;
+      });
+      Future.delayed(const Duration(milliseconds: 400), () {
+        if (mounted) widget.onFailed();
       });
     }
   }

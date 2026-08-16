@@ -197,7 +197,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                     expectedText: quest.correctAnswer ?? '',
                     primaryColor: _cachedTheme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
-                    onSkipped: () => _submitFinalAnswer(false),
+                    onFailed: () => _submitFinalAnswer(false),
                   ),
               ],
             ),
@@ -263,8 +263,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     final correct = quest.correctAnswer?.trim().toLowerCase() ?? '';
 
     if (selected == correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection(); // Subtle feedback for Phase 1
       setState(() {
         _isFirstStagePassed = true;
         _activeShardIndex = null;

@@ -97,8 +97,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
         selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection(); // Subtle feedback for Phase 1
       setState(() {
         _isFirstStagePassed = true;
       });
@@ -227,7 +226,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+                        onFailed: () => _submitFinalAnswer(false),
                       ),
                   ],
                 ),

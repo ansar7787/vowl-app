@@ -145,8 +145,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final isCorrect = text.trim().toLowerCase() == correct;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
+      _hapticService.selection(); // Subtle feedback for Phase 1
       setState(() {
         _isFirstStagePassed = true;
       });
@@ -489,7 +488,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               expectedText: quest.correctAnswer ?? '',
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitVerbalEvaluation(true),
-                              onSkipped: () => _submitVerbalEvaluation(false),
+                              onFailed: () => _submitVerbalEvaluation(false),
                             ),
                         ],
                       ),

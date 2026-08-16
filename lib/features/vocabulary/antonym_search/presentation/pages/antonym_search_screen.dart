@@ -220,7 +220,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                       expectedText: quest.correctAnswer ?? '',
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitVerbalEvaluation(true),
-                      onSkipped: () => _submitVerbalEvaluation(false),
+                      onFailed: () => _submitVerbalEvaluation(false),
                     ),
                 ],
               );
@@ -322,8 +322,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onSuccess(int index) {
-    _hapticService.success();
-    _soundService.playCorrect();
+    _hapticService.selection(); // Subtle feedback for Phase 1
     setState(() {
       _isFused[index] = true;
       _isFirstStagePassed = true;

@@ -190,7 +190,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                         expectedText: quest.targetWord ?? "",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+                        onFailed: () => _submitFinalAnswer(false),
                       ),
                   ],
                 ),

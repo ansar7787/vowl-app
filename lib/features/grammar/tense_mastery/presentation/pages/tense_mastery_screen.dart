@@ -311,7 +311,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                         expectedText: _currentTense,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(quest, true),
-                        onSkipped: () => _submitFinalAnswer(quest, false),
+                        onFailed: () => _submitFinalAnswer(quest, false),
                       ),
                   ],
                 ),
