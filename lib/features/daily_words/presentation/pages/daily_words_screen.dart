@@ -108,11 +108,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     await _slideController.forward();
     if (!mounted) return;
 
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
     _slideController.reset();
     _flipController.reset();
     setState(() {
       _isFlipped = false;
       _isAnimating = false;
+      _translationUnlocked = isPremium;
       // Reset translations for the new card
       _translatedWord = null;
       _translatedDefinition = null;
@@ -648,6 +651,7 @@ class _WordCardFront extends StatelessWidget {
               children: [
                 _TranslateButton(
                   isTranslating: isTranslating,
+                  isTranslated: translatedWord != null,
                   onTap: onTranslate,
                 ),
                 SizedBox(width: 8.w),
@@ -804,6 +808,7 @@ class _WordCardBack extends StatelessWidget {
               children: [
                 _TranslateButton(
                   isTranslating: isTranslating,
+                  isTranslated: translatedDefinition != null,
                   onTap: onTranslate,
                 ),
                 SizedBox(width: 8.w),
@@ -822,25 +827,29 @@ class _WordCardBack extends StatelessWidget {
 
 class _TranslateButton extends StatelessWidget {
   final bool isTranslating;
+  final bool isTranslated;
   final VoidCallback onTap;
 
   const _TranslateButton({
     required this.isTranslating,
+    required this.isTranslated,
     required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: isTranslated ? null : onTap,
       child: Container(
         width: 44.r,
         height: 44.r,
         decoration: BoxDecoration(
-          color: const Color(0xFF10B981).withValues(alpha: 0.15),
+          color: isTranslated 
+              ? const Color(0xFF10B981)
+              : const Color(0xFF10B981).withValues(alpha: 0.15),
           shape: BoxShape.circle,
           border: Border.all(
-            color: const Color(0xFF10B981).withValues(alpha: 0.3),
+            color: const Color(0xFF10B981).withValues(alpha: isTranslated ? 1.0 : 0.3),
           ),
         ),
         child: Center(
@@ -848,14 +857,16 @@ class _TranslateButton extends StatelessWidget {
               ? SizedBox(
                   width: 18.r,
                   height: 18.r,
-                  child: const CircularProgressIndicator(
+                  child: CircularProgressIndicator(
                     strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      isTranslated ? Colors.white : const Color(0xFF10B981),
+                    ),
                   ),
                 )
               : Icon(
-                  Icons.g_translate_rounded,
-                  color: const Color(0xFF10B981),
+                  isTranslated ? Icons.check_rounded : Icons.g_translate_rounded,
+                  color: isTranslated ? Colors.white : const Color(0xFF10B981),
                   size: 20.r,
                 ),
         ),
