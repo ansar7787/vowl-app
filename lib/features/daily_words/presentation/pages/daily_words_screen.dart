@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -101,9 +102,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       _flipController.reverse();
     }
   }
-
   Future<bool> _showHalfwayMonetizationGate() async {
-    bool unlocked = false;
+    final completer = Completer<bool>();
+
     await showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -152,14 +153,18 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   width: double.infinity,
                   height: 56.h,
                   child: ElevatedButton.icon(
-                    onPressed: () async {
+                    onPressed: () {
                       context.pop();
                       final adService = di.sl<AdService>();
                       adService.showRewardedAd(
                         context: context,
-                        isKidsZone: false,
-                        onSuccess: () {
-                          unlocked = true;
+                        isPremium: false,
+                        childSafe: false,
+                        onUserEarnedReward: (_) {
+                          if (!completer.isCompleted) completer.complete(true);
+                        },
+                        onDismissed: () {
+                          if (!completer.isCompleted) completer.complete(false);
                         },
                       );
                     },
@@ -196,8 +201,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           ),
         );
       },
-    );
-    return unlocked;
+    ).then((_) {
+      if (!completer.isCompleted) completer.complete(false);
+    });
+    
+    return completer.future;
   }
 
   Future<void> _markLearnedAndNext(DailyWord word) async {
