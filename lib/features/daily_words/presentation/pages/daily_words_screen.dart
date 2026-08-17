@@ -804,6 +804,7 @@ class _WordCardBack extends StatelessWidget {
           ),
         ),
       ),
+      ),
     );
   }
 }
