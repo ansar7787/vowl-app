@@ -7,6 +7,8 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 
 class DailyWordsHomeCard extends StatefulWidget {
@@ -54,7 +56,7 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
     }
 
     final int day = _service.currentDay;
-    final int streak = _service.streak;
+    final int streak = context.watch<AuthBloc>().state.user?.currentStreak ?? 0;
 
     // Premium Emerald Green Theme matching the app's aesthetic
     final Color primaryAccent = const Color(0xFF10B981);

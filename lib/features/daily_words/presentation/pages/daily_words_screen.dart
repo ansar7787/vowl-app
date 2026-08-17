@@ -190,7 +190,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               if (state.status == DailyWordsStatus.sessionComplete) {
                 return SafeArea(
                   child: _SessionCompleteView(
-                    streak: state.streak,
+                    streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
                     totalLearned: state.totalWordsLearned,
                     day: state.currentDay,
                   ),
@@ -272,7 +272,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 padding: EdgeInsets.only(top: 40.h),
                 child: _DailyWordsHeader(
                   day: state.currentDay,
-                  streak: state.streak,
+                  streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
                   progress: state.totalWords > 0
                       ? (state.currentIndex + 1) / state.totalWords
                       : 0,
