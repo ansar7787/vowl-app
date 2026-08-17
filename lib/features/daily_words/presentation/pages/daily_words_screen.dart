@@ -16,6 +16,7 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
 import 'package:vowl/core/utils/widgets/translation_download_sheet.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
@@ -42,6 +43,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   bool _isFlipped = false;
   bool _isAnimating = false;
   
+  // Session Access State
+  bool _hasUnlockedFullSession = false;
+
   // Translation Session State
   bool _translationUnlocked = false;
   bool _isTranslating = false;
@@ -73,6 +77,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
     _translationUnlocked = isPremium;
+    _hasUnlockedFullSession = isPremium;
 
     context.read<DailyWordsBloc>().add(
           DailyWordsLoadRequested(isPremium: isPremium),
@@ -97,8 +102,117 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     }
   }
 
+  Future<bool> _showHalfwayMonetizationGate() async {
+    bool unlocked = false;
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        return Container(
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+          ),
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.local_fire_department_rounded,
+                  color: const Color(0xFFF59E0B),
+                  size: 64.r,
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  context.tr('daily_words.halfway_title', fallback: 'You\'re on fire! 🔥'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                Text(
+                  context.tr(
+                    'daily_words.halfway_desc',
+                    fallback: 'You\'ve completed your 5 free words for today. Watch a quick ad to unlock the remaining 5 words, or upgrade to Premium for an ad-free experience!',
+                  ),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                  ),
+                ),
+                SizedBox(height: 32.h),
+                SizedBox(
+                  width: double.infinity,
+                  height: 56.h,
+                  child: ElevatedButton.icon(
+                    onPressed: () async {
+                      context.pop();
+                      final adService = di.sl<AdService>();
+                      adService.showRewardedAd(
+                        context: context,
+                        isKidsZone: false,
+                        onSuccess: () {
+                          unlocked = true;
+                        },
+                      );
+                    },
+                    icon: const Icon(Icons.play_circle_fill_rounded),
+                    label: Text(
+                      context.tr('daily_words.watch_ad', fallback: 'Watch Ad to Unlock'),
+                      style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w800),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF6366F1),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                TextButton(
+                  onPressed: () {
+                    context.pop();
+                    context.push('/premium');
+                  },
+                  child: Text(
+                    context.tr('daily_words.go_premium', fallback: 'Go Premium'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w800,
+                      color: const Color(0xFFF59E0B),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+    return unlocked;
+  }
+
   Future<void> _markLearnedAndNext(DailyWord word) async {
     if (_isAnimating) return;
+    final state = context.read<DailyWordsBloc>().state;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
+    // GATING LOGIC: If they are on the 5th word (index 4) and haven't unlocked the rest
+    if (!isPremium && state.currentIndex == 4 && !_hasUnlockedFullSession) {
+      final unlocked = await _showHalfwayMonetizationGate();
+      if (!unlocked) return; // User chose not to watch ad, stay on word 5
+      
+      setState(() => _hasUnlockedFullSession = true);
+    }
+
     _isAnimating = true;
     _haptics.success();
     _sound.playCorrect();

@@ -171,16 +171,13 @@ class DailyWordsService {
         orElse: () => batchData.days.first,
       );
 
-      // Apply word limit based on subscription status
-      final limit = isPremium ? premiumWordLimit : freeWordLimit;
-      final limitedWords = data.words.length > limit
-          ? data.words.sublist(0, limit)
-          : data.words;
-
+      // We no longer truncate based on subscription here. 
+      // All users see 10 words to trigger the Zeigarnik effect (completion psychology).
+      // Monetization gating is handled in the UI layer after word 5.
       _cachedWordSet = DailyWordSet(
         day: data.day,
         theme: data.theme,
-        words: limitedWords,
+        words: data.words,
       );
 
       return _cachedWordSet;
