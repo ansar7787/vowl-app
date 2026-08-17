@@ -22,6 +22,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 import 'package:vowl/features/daily_words/presentation/widgets/daily_words_widgets.dart';
+import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 
 
 class DailyWordsScreen extends StatefulWidget {
@@ -469,6 +470,16 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 return _buildShimmerLoading(isDark);
               }
               return _buildContent(context, state, word, isDark);
+            },
+          ),
+          BlocBuilder<DailyWordsBloc, DailyWordsState>(
+            builder: (context, state) {
+              if (state.status == DailyWordsStatus.sessionComplete) {
+                return const IgnorePointer(
+                  child: GameConfetti(),
+                );
+              }
+              return const SizedBox.shrink();
             },
           ),
         ],
