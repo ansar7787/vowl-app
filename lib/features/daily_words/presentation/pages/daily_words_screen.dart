@@ -204,7 +204,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20.r),
                       onTap: () {
-                        context.pop();
+                        // FIX: Do NOT pop the modal immediately!
+                        // Popping it triggers the bottom sheet's .then() callback which prematurely completes the
+                        // future with `false`, breaking the Zeigarnik gate flow.
+                        // We must wait for the ad to finish before popping.
                         final adService = di.sl<AdService>();
                         adService.showRewardedAd(
                           context: context,
@@ -215,6 +218,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                           },
                           onDismissed: () {
                             if (!completer.isCompleted) completer.complete(false);
+                            if (context.mounted) {
+                              // Only close the bottom sheet after the ad is completely dismissed
+                              context.pop(); 
+                            }
                           },
                         );
                       },
