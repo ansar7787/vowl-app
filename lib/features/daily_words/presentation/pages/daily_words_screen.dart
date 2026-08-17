@@ -579,90 +579,84 @@ class _WordCardFront extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.zero,
-      child: Stack(
-        children: [
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Text(
-                    word.partOfSpeech.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF6366F1),
-                      letterSpacing: 1.5,
-                    ),
-                  ),
+      padding: EdgeInsets.all(24.r),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(20.r),
+              ),
+              child: Text(
+                word.partOfSpeech.toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF6366F1),
+                  letterSpacing: 1.5,
                 ),
-                SizedBox(height: 24.h),
-                AutoSizeText(
-                  word.word,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 48.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    letterSpacing: -1,
-                  ),
-                  maxLines: 1,
-                ),
-                if (translatedWord != null) ...[
-                  SizedBox(height: 12.h),
-                  AutoSizeText(
-                    translatedWord!,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w700,
-                      color: const Color(0xFF10B981),
-                    ),
-                    maxLines: 1,
-                  ),
-                ],
-                SizedBox(height: 16.h),
-                AutoSizeText(
-                  word.phonetic,
-                  style: TextStyle(
-                    fontFamily: 'Spectral',
-                    fontSize: 20.sp,
-                    fontStyle: FontStyle.italic,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.5)
-                        : const Color(0xFF64748B),
-                  ),
-                  maxLines: 1,
-                ),
-              ],
+              ),
             ),
-          ),
-          Positioned(
-            top: 16.r,
-            right: 16.r,
-            child: Row(
+            SizedBox(height: 24.h),
+            AutoSizeText(
+              word.word,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 48.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                letterSpacing: -1,
+              ),
+              maxLines: 1,
+            ),
+            if (translatedWord != null) ...[
+              SizedBox(height: 12.h),
+              AutoSizeText(
+                translatedWord!,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w700,
+                  color: const Color(0xFF10B981),
+                ),
+                maxLines: 1,
+              ),
+            ],
+            SizedBox(height: 16.h),
+            AutoSizeText(
+              word.phonetic,
+              style: TextStyle(
+                fontFamily: 'Spectral',
+                fontSize: 20.sp,
+                fontStyle: FontStyle.italic,
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.5)
+                    : const Color(0xFF64748B),
+              ),
+              maxLines: 1,
+            ),
+            SizedBox(height: 48.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _TranslateButton(
                   isTranslating: isTranslating,
                   isTranslated: translatedWord != null,
                   onTap: onTranslate,
                 ),
-                SizedBox(width: 8.w),
+                SizedBox(width: 16.w),
                 _IconButton(
                   icon: Icons.volume_up_rounded,
                   onTap: onSpeak,
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -691,135 +685,133 @@ class _WordCardBack extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassTile(
       padding: EdgeInsets.zero,
-      child: Stack(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(24.r),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      child: Padding(
+        padding: EdgeInsets.all(24.r),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10.h),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 10.h),
-                  // Word header
-                  Center(
+                  Expanded(
                     child: AutoSizeText(
                       word.word,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 28.sp,
+                        fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: const Color(0xFF6366F1),
                       ),
                       maxLines: 1,
                     ),
                   ),
-                  SizedBox(height: 30.h),
-                  // Definition
-                  _SectionLabel(
-                    label: context.tr(
-                      'daily_words.definition',
-                      fallback: 'Definition',
-                    ),
+                  SizedBox(width: 12.w),
+                  _TranslateButton(
+                    isTranslating: isTranslating,
+                    isTranslated: translatedDefinition != null,
+                    onTap: onTranslate,
                   ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    word.definition,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
-                      height: 1.5,
-                    ),
+                  SizedBox(width: 8.w),
+                  _IconButton(
+                    icon: Icons.volume_up_rounded,
+                    onTap: onSpeak,
                   ),
-                  if (translatedDefinition != null) ...[
-                    SizedBox(height: 6.h),
+                ],
+              ),
+              SizedBox(height: 20.h),
+              Divider(
+                color: isDark ? Colors.white12 : Colors.black12,
+                height: 1,
+              ),
+              SizedBox(height: 24.h),
+              // Definition
+              _SectionLabel(
+                label: context.tr(
+                  'daily_words.definition',
+                  fallback: 'Definition',
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                word.definition,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                  height: 1.5,
+                ),
+              ),
+              if (translatedDefinition != null) ...[
+                SizedBox(height: 6.h),
+                Text(
+                  translatedDefinition!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF10B981),
+                    height: 1.5,
+                  ),
+                ),
+              ],
+              SizedBox(height: 24.h),
+              // Example
+              _SectionLabel(
+                label: context.tr(
+                  'daily_words.example',
+                  fallback: 'Example',
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(14.r),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Text(
-                      translatedDefinition!,
+                      '"${word.example}"',
                       style: TextStyle(
-                        fontFamily: 'Outfit',
+                        fontFamily: 'Spectral',
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w600,
-                        color: const Color(0xFF10B981),
+                        fontStyle: FontStyle.italic,
+                        color: isDark ? Colors.white70 : const Color(0xFF334155),
                         height: 1.5,
                       ),
                     ),
-                  ],
-                  SizedBox(height: 24.h),
-                  // Example
-                  _SectionLabel(
-                    label: context.tr(
-                      'daily_words.example',
-                      fallback: 'Example',
-                    ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.all(14.r),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: const Color(0xFF6366F1).withValues(alpha: 0.15),
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          '"${word.example}"',
-                          style: TextStyle(
-                            fontFamily: 'Spectral',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w600,
-                            fontStyle: FontStyle.italic,
-                            color: isDark ? Colors.white70 : const Color(0xFF334155),
-                            height: 1.5,
-                          ),
+                    if (translatedExample != null) ...[
+                      SizedBox(height: 8.h),
+                      Text(
+                        '"${translatedExample!}"',
+                        style: TextStyle(
+                          fontFamily: 'Spectral',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w600,
+                          fontStyle: FontStyle.italic,
+                          color: const Color(0xFF10B981),
+                          height: 1.5,
                         ),
-                        if (translatedExample != null) ...[
-                          SizedBox(height: 8.h),
-                          Text(
-                            '"${translatedExample!}"',
-                            style: TextStyle(
-                              fontFamily: 'Spectral',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FontStyle.italic,
-                              color: const Color(0xFF10B981),
-                              height: 1.5,
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 40.h),
-                ],
+                      ),
+                    ],
+                  ],
+                ),
               ),
-            ),
+              SizedBox(height: 40.h),
+            ],
           ),
-          Positioned(
-            top: 16.r,
-            right: 16.r,
-            child: Row(
-              children: [
-                _TranslateButton(
-                  isTranslating: isTranslating,
-                  isTranslated: translatedDefinition != null,
-                  onTap: onTranslate,
-                ),
-                SizedBox(width: 8.w),
-                _IconButton(
-                  icon: Icons.volume_up_rounded,
-                  onTap: onSpeak,
-                ),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
