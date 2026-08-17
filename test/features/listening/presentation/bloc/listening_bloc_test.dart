@@ -47,6 +47,9 @@ class FakeUpdateCategoryStatsParams extends Fake
 class FakeUpdateUnlockedLevelParams extends Fake
     implements UpdateUnlockedLevelParams {}
 
+class FakeGetListeningQuestsParams extends Fake
+    implements GetListeningQuestsParams {}
+
 void main() {
   late ListeningBloc bloc;
   late MockGetListeningQuests mockGetQuest;
@@ -64,6 +67,7 @@ void main() {
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
+    registerFallbackValue(FakeGetListeningQuestsParams());
     registerFallbackValue(GameSubtype.audioMultipleChoice);
   });
 
@@ -139,7 +143,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
+      expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
     );
 
     blocTest<ListeningBloc, ListeningState>(
@@ -154,7 +158,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -173,7 +177,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],

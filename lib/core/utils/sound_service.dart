@@ -51,6 +51,9 @@ abstract class SoundService {
 
   /// Aborts all active synthesized speech playback.
   Future<void> stopTts();
+
+  /// Stops any currently playing audio track.
+  Future<void> stopAudio();
 }
 
 /// Concrete implementation of [SoundService] utilizing `audioplayers` SDK.
@@ -285,6 +288,20 @@ class SoundServiceImpl implements SoundService {
       await _ttsService.stop();
     } catch (e) {
       di.sl<AppLogger>().error('SoundService: Error stopping TTS', error: e);
+    }
+  }
+
+  @override
+  Future<void> stopAudio() async {
+    try {
+      if (_player.state == PlayerState.playing) {
+        await _player.stop();
+      }
+      if (_overlayPlayer.state == PlayerState.playing) {
+        await _overlayPlayer.stop();
+      }
+    } catch (e) {
+      di.sl<AppLogger>().error('SoundService: Error stopping audio', error: e);
     }
   }
 }
