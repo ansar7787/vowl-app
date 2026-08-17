@@ -11,7 +11,6 @@ class DailyWord extends Equatable {
   final String partOfSpeech;
   final String definition;
   final String example;
-  final List<String> synonyms;
   final int difficulty;
   final int frequencyRank;
 
@@ -22,7 +21,6 @@ class DailyWord extends Equatable {
     required this.partOfSpeech,
     required this.definition,
     required this.example,
-    required this.synonyms,
     required this.difficulty,
     required this.frequencyRank,
   });
@@ -35,10 +33,6 @@ class DailyWord extends Equatable {
       partOfSpeech: json['partOfSpeech'] as String? ?? '',
       definition: json['definition'] as String? ?? '',
       example: json['example'] as String? ?? '',
-      synonyms: (json['synonyms'] as List<dynamic>?)
-              ?.map((e) => e.toString())
-              .toList() ??
-          const [],
       difficulty: json['difficulty'] as int? ?? 1,
       frequencyRank: json['frequencyRank'] as int? ?? 0,
     );
@@ -51,7 +45,6 @@ class DailyWord extends Equatable {
         'partOfSpeech': partOfSpeech,
         'definition': definition,
         'example': example,
-        'synonyms': synonyms,
         'difficulty': difficulty,
         'frequencyRank': frequencyRank,
       };

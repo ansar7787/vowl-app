@@ -618,42 +618,7 @@ class _WordCardBack extends StatelessWidget {
                 maxLines: 3,
               ),
             ),
-            if (word.synonyms.isNotEmpty) ...[
-              SizedBox(height: 20.h),
-              _SectionLabel(
-                label: context.tr(
-                  'daily_words.synonyms',
-                  fallback: 'Synonyms',
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Wrap(
-                spacing: 6.w,
-                runSpacing: 6.h,
-                children: word.synonyms
-                    .map((s) => Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 4.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF10B981)
-                                .withValues(alpha: 0.12),
-                            borderRadius: BorderRadius.circular(12.r),
-                          ),
-                          child: Text(
-                            s,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: const Color(0xFF10B981),
-                            ),
-                          ),
-                        ))
-                    .toList(),
-              ),
-            ],
+            SizedBox(height: 24.h),
           ],
         ),
       ),
