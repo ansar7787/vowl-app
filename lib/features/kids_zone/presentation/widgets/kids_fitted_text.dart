@@ -26,8 +26,10 @@ class KidsFittedText extends StatelessWidget {
       builder: (context, constraints) {
         // If parent has a bounded width (e.g., inside an Expanded or Container), use it.
         // If unbounded (e.g., Row), fallback to a safe max width to ensure wrapping triggers.
-        final maxWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : 300.0;
-        
+        final maxWidth = constraints.maxWidth.isFinite
+            ? constraints.maxWidth
+            : 300.0;
+
         return FittedBox(
           fit: BoxFit.scaleDown,
           child: ConstrainedBox(
@@ -45,5 +47,3 @@ class KidsFittedText extends StatelessWidget {
     );
   }
 }
-
-

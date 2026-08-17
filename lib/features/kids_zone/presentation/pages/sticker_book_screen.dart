@@ -791,4 +791,3 @@ class _StickerBookScreenState extends State<StickerBookScreen>
     );
   }
 }
-

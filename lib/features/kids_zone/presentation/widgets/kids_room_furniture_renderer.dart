@@ -31,7 +31,7 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
     }
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // Instead of just an emoji in a circle, render a styled container
     // that looks like actual furniture with depth and shadows.
     return SizedBox(
@@ -49,7 +49,7 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
               borderRadius: BorderRadius.circular(100),
             ),
           ).animate().fadeIn(duration: 400.ms),
-          
+
           // Furniture Base/Platform
           if (category != 'window') // Windows don't need a floor platform
             Container(
@@ -83,22 +83,22 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
                 ],
               ),
             ),
-            
+
           // The item icon (scaled up)
           Center(
-            child: Text(
-              item!['icon'] as String,
-              style: TextStyle(
-                fontSize: _getIconSizeForCategory(),
-              ),
-            ).animate()
-              .scale(
-                begin: const Offset(0.8, 0.8),
-                end: const Offset(1, 1),
-                curve: Curves.elasticOut,
-                duration: 800.ms,
-              )
-              .fadeIn(duration: 300.ms),
+            child:
+                Text(
+                      item!['icon'] as String,
+                      style: TextStyle(fontSize: _getIconSizeForCategory()),
+                    )
+                    .animate()
+                    .scale(
+                      begin: const Offset(0.8, 0.8),
+                      end: const Offset(1, 1),
+                      curve: Curves.elasticOut,
+                      duration: 800.ms,
+                    )
+                    .fadeIn(duration: 300.ms),
           ),
         ],
       ),
@@ -107,39 +107,58 @@ class KidsRoomFurnitureRenderer extends StatelessWidget {
 
   double _getWidthForCategory() {
     switch (category) {
-      case 'bed': return 160.w;
-      case 'window': return 120.w;
-      case 'shelf': return 100.w;
-      case 'toy': return 80.w;
-      case 'plant': return 70.w;
-      case 'rug': return 200.w;
-      default: return 100.w;
+      case 'bed':
+        return 160.w;
+      case 'window':
+        return 120.w;
+      case 'shelf':
+        return 100.w;
+      case 'toy':
+        return 80.w;
+      case 'plant':
+        return 70.w;
+      case 'rug':
+        return 200.w;
+      default:
+        return 100.w;
     }
   }
 
   double _getHeightForCategory() {
     switch (category) {
-      case 'bed': return 120.h;
-      case 'window': return 140.h;
-      case 'shelf': return 150.h;
-      case 'toy': return 80.h;
-      case 'plant': return 100.h;
-      case 'rug': return 40.h;
-      default: return 100.h;
+      case 'bed':
+        return 120.h;
+      case 'window':
+        return 140.h;
+      case 'shelf':
+        return 150.h;
+      case 'toy':
+        return 80.h;
+      case 'plant':
+        return 100.h;
+      case 'rug':
+        return 40.h;
+      default:
+        return 100.h;
     }
   }
 
   double _getIconSizeForCategory() {
     switch (category) {
-      case 'bed': return 80.sp;
-      case 'window': return 90.sp;
-      case 'shelf': return 80.sp;
-      case 'toy': return 50.sp;
-      case 'plant': return 60.sp;
-      case 'rug': return 70.sp;
-      default: return 60.sp;
+      case 'bed':
+        return 80.sp;
+      case 'window':
+        return 90.sp;
+      case 'shelf':
+        return 80.sp;
+      case 'toy':
+        return 50.sp;
+      case 'plant':
+        return 60.sp;
+      case 'rug':
+        return 70.sp;
+      default:
+        return 60.sp;
     }
   }
 }
-
-

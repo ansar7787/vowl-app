@@ -144,7 +144,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
           } else if (state.answerStatus == AnswerStatus.incorrect) {
             audio.playFailureSFX();
           }
-          if (state.answerStatus == AnswerStatus.unanswered && !state.hintUsed) {
+          if (state.answerStatus == AnswerStatus.unanswered &&
+              !state.hintUsed) {
             _speakInstruction(state.currentQuest.instruction);
           }
           if (state.answerStatus == AnswerStatus.unanswered &&
@@ -503,5 +504,3 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     );
   }
 }
-
-

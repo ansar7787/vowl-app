@@ -156,9 +156,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                     onTap: () => _onPulsarTapped(false),
                   ),
 
-                  // Instruction removed: It was overlapping the top Pulsar, 
+                  // Instruction removed: It was overlapping the top Pulsar,
                   // and AntonymNebulaCore already says "DRAG TO OPPOSITE"
-
                   Center(
                     child: isCompact
                         ? SizedBox(
@@ -211,7 +210,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                       primaryColor: theme.primaryColor,
                       onConfirmed: () => _submitVerbalEvaluation(true),
                       onFailed: () {},
-                      onFailedWithSpelling: (wrongWord) => _submitVerbalEvaluation(false),
+                      onFailedWithSpelling: (wrongWord) =>
+                          _submitVerbalEvaluation(false),
                     ),
                 ],
               );
@@ -308,7 +308,8 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onPulsarTapped(bool isTop) {
-    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) return;
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null)
+      return;
     _evaluateShard(_activeShardIndex!, isTop);
   }
 
@@ -393,4 +394,3 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     );
   }
 }
-

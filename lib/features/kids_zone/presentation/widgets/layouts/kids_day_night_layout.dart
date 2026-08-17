@@ -351,5 +351,3 @@ class KidsDayNightLayout extends StatelessWidget {
     );
   }
 }
-
-

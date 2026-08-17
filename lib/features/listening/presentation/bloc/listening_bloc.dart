@@ -175,7 +175,8 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     final hasMore = s.currentIndex + 1 < s.quests.length;
 
     if (hasMore) {
-      final canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
+      final canAdvance =
+          s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
       emit(
         canAdvance
             ? s.copyWith(
@@ -185,7 +186,10 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
                 wrongCount: 0,
                 isFinalFailure: false,
               )
-            : s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+            : s.copyWith(
+                answerStatus: AnswerStatus.unanswered,
+                hintUsed: false,
+              ),
       );
     } else if (s.answerStatus == AnswerStatus.correct) {
       await _completeLevel(s, emit);

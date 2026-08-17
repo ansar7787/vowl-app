@@ -127,7 +127,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                           ],
 
-
                           SizedBox(height: 12.h),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -170,7 +169,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               subtitle: context.tr(
                                 'profile.progress_dashboard_subtitle',
-                                fallback: 'View streaks, radars, and weak areas.',
+                                fallback:
+                                    'View streaks, radars, and weak areas.',
                               ),
                               onTap: () {
                                 di.sl<HapticService>().selection();
@@ -310,11 +310,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildKidsRoomCard(BuildContext context) {
     return ProfileFeatureCard(
-      iconContent: Icon(
-        Icons.toys_rounded,
-        color: Colors.white,
-        size: 24.r,
-      ),
+      iconContent: Icon(Icons.toys_rounded, color: Colors.white, size: 24.r),
       color: Colors.red.shade400,
       shadowColor: Colors.red.shade700,
       title: context.tr('profile.kids_room_title', fallback: 'Kids Room'),

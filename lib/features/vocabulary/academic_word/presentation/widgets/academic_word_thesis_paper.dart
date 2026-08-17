@@ -246,12 +246,18 @@ class _AnswerSlot extends StatelessWidget {
         border: Border(bottom: BorderSide(color: underlineColor, width: 2.5)),
       ),
       child: Center(
-        child: (isAnswered && isCorrect == true) || (isAnswered && isCorrect == false && userSpelledWord != null)
+        child:
+            (isAnswered && isCorrect == true) ||
+                (isAnswered && isCorrect == false && userSpelledWord != null)
             ? Text(
-                (isCorrect == true ? correctAnswer : userSpelledWord)?.toUpperCase() ?? '',
+                (isCorrect == true ? correctAnswer : userSpelledWord)
+                        ?.toUpperCase() ??
+                    '',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
-                style: isCorrect == true ? answerStyle : answerStyle.copyWith(color: AcademicWordColors.slotError),
+                style: isCorrect == true
+                    ? answerStyle
+                    : answerStyle.copyWith(color: AcademicWordColors.slotError),
               ).animate().fadeIn().scale()
             : Text(
                 AcademicWordStrings.slotPending,

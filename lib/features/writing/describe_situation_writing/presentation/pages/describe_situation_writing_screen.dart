@@ -316,7 +316,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             .toList();
         final minWords = activeQuest?.minWords ?? 15;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
         final bool isFinalFailure = state.livesRemaining == 0;
 
         return WritingBaseLayout(

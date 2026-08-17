@@ -46,7 +46,7 @@ class KidsGameDialogs {
               children: [
                 // Darken layer to maintain contrast
                 Container(color: Colors.black.withValues(alpha: 0.4)),
-                
+
                 // Radiant Sunburst Background
                 KidsSunburstBackground(color: primaryColor),
 
@@ -344,104 +344,110 @@ class KidsGameDialogs {
       context: context,
       barrierDismissible: false,
       builder: (context) => BackdropFilter(
-        filter: ui.ImageFilter.blur(sigmaX: 4, sigmaY: 4), // Reduced blur to fix GPU lag
+        filter: ui.ImageFilter.blur(
+          sigmaX: 4,
+          sigmaY: 4,
+        ), // Reduced blur to fix GPU lag
         child: Container(
           color: Colors.black.withValues(alpha: 0.4), // Darken layer
           child: Center(
             child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: KidsDialogContainer(
-              primaryColor: const Color(0xFF6366F1), // Moody purple/indigo
-              title: context.tr('games.kids_game_over', fallback: 'Game Over'),
-              ribbonColor: Colors.redAccent,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                        padding: EdgeInsets.all(24.r),
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.redAccent.withValues(alpha: 0.2),
-                              blurRadius: 20,
-                            ),
-                          ],
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: KidsDialogContainer(
+                primaryColor: const Color(0xFF6366F1), // Moody purple/indigo
+                title: context.tr(
+                  'games.kids_game_over',
+                  fallback: 'Game Over',
+                ),
+                ribbonColor: Colors.redAccent,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                          padding: EdgeInsets.all(24.r),
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent.withValues(alpha: 0.1),
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.redAccent.withValues(alpha: 0.2),
+                                blurRadius: 20,
+                              ),
+                            ],
+                          ),
+                          child: Icon(
+                            Icons.heart_broken_rounded,
+                            color: Colors.redAccent,
+                            size: 60.sp,
+                          ),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.1, 1.1),
+                          duration: 1.seconds,
                         ),
-                        child: Icon(
-                          Icons.heart_broken_rounded,
-                          color: Colors.redAccent,
-                          size: 60.sp,
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                        duration: 1.seconds,
+
+                    SizedBox(height: 16.h),
+                    Text(
+                      context.tr(
+                        'games.kids_game_over_subtitle',
+                        fallback: 'Great effort!',
                       ),
-
-                  SizedBox(height: 16.h),
-                  Text(
-                    context.tr(
-                      'games.kids_game_over_subtitle',
-                      fallback: 'Great effort!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        color: Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white70
+                            : Colors.black54,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white70
-                          : Colors.black54,
-                      fontWeight: FontWeight.w700,
+
+                    SizedBox(height: 32.h),
+
+                    Kids3DButton(
+                      text: context.tr(
+                        'games.kids_resume_game',
+                        fallback: 'Resume Game',
+                      ),
+                      color: const Color(
+                        0xFF10B981,
+                      ), // Bright neon green for Revive
+                      icon: Icons.play_circle_fill_rounded,
+                      onTap: () {
+                        adService.showRewardedAd(
+                          context: context,
+                          isPremium: isPremium,
+                          childSafe: true,
+                          onUserEarnedReward: (_) {
+                            kidsBloc.add(RestoreKidsLife());
+                            navigator.pop();
+                          },
+                          onDismissed: () {},
+                        );
+                      },
                     ),
-                  ),
 
-                  SizedBox(height: 32.h),
+                    SizedBox(height: 16.h),
 
-                  Kids3DButton(
-                    text: context.tr(
-                      'games.kids_resume_game',
-                      fallback: 'Resume Game',
+                    Kids3DButton(
+                      text: context.tr(
+                        'games.kids_exit_to_map',
+                        fallback: 'Exit to Map',
+                      ),
+                      color: Colors.grey.shade600,
+                      onTap: () {
+                        navigator.pop();
+                        navigator.pop();
+                      },
                     ),
-                    color: const Color(
-                      0xFF10B981,
-                    ), // Bright neon green for Revive
-                    icon: Icons.play_circle_fill_rounded,
-                    onTap: () {
-                      adService.showRewardedAd(
-                        context: context,
-                        isPremium: isPremium,
-                        childSafe: true,
-                        onUserEarnedReward: (_) {
-                          kidsBloc.add(RestoreKidsLife());
-                          navigator.pop();
-                        },
-                        onDismissed: () {},
-                      );
-                    },
-                  ),
-
-                  SizedBox(height: 16.h),
-
-                  Kids3DButton(
-                    text: context.tr(
-                      'games.kids_exit_to_map',
-                      fallback: 'Exit to Map',
-                    ),
-                    color: Colors.grey.shade600,
-                    onTap: () {
-                      navigator.pop();
-                      navigator.pop();
-                    },
-                  ),
-                ],
-              ),
-            ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                  ],
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+            ),
           ),
-        ),
         ),
       ),
     );
@@ -680,5 +686,3 @@ class KidsGameDialogs {
     );
   }
 }
-
-

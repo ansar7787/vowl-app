@@ -219,5 +219,3 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
     );
   }
 }
-
-

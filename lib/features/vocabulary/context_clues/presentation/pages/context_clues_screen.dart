@@ -74,8 +74,14 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     final double maxY = math.max(0.0, halfHeight - padding);
 
     // Keep lens safely inside Paper dossier boundaries
-    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(-maxX, maxX);
-    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(-maxY, maxY);
+    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(
+      -maxX,
+      maxX,
+    );
+    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(
+      -maxY,
+      maxY,
+    );
 
     _lensPosition.value = Offset(newX, newY);
 
@@ -325,13 +331,17 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                         builder: (context, blurValue, child) {
                           return ImageFiltered(
                             imageFilter: ImageFilter.blur(
-                                sigmaX: blurValue, sigmaY: blurValue),
+                              sigmaX: blurValue,
+                              sigmaY: blurValue,
+                            ),
                             child: child,
                           );
                         },
                         child: AnimatedOpacity(
                           duration: const Duration(milliseconds: 500),
-                          opacity: (_isAnswered || _isFirstStagePassed) ? 1.0 : 0.4,
+                          opacity: (_isAnswered || _isFirstStagePassed)
+                              ? 1.0
+                              : 0.4,
                           child: ContextCluesEvidenceSentence(
                             sentence: quest.sentence ?? "",
                             color: color,
@@ -360,7 +370,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                   // SHARP TEXT (Revealed inside the lens)
                                   Positioned.fill(
                                     child: ClipPath(
-                                      clipper: CircleClipper(centerPos, lensRadius * 0.85),
+                                      clipper: CircleClipper(
+                                        centerPos,
+                                        lensRadius * 0.85,
+                                      ),
                                       child: ContextCluesEvidenceSentence(
                                         sentence: quest.sentence ?? "",
                                         color: color,
@@ -438,5 +451,3 @@ class CircleClipper extends CustomClipper<Path> {
     return oldClipper.center != center || oldClipper.radius != radius;
   }
 }
-
-

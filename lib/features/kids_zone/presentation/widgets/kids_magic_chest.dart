@@ -260,5 +260,3 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
     );
   }
 }
-
-

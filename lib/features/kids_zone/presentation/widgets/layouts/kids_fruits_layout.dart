@@ -108,114 +108,137 @@ class KidsFruitsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.answerStatus.isAnswered ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.answerStatus.isAnswered
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Main wooden board
-            Container(
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFFFEF9C3)
-                    : const Color(0xFFFEF3C7), // Light wood
-                borderRadius: BorderRadius.circular(8.r),
-                border: Border.all(
-                  color: isHovering
-                      ? const Color(0xFFB45309)
-                      : const Color(0xFF92400E),
-                  width: isHovering ? 8.r : 6.r,
-                ), // Dark wood frame
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: isHovering ? 0.3 : 0.15,
-                    ),
-                    blurRadius: isHovering ? 20 : 10,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          if (quest.emoji != null && (quest.question == "?" || quest.question == null))
-                            state.answerStatus == AnswerStatus.correct
-                                ? Text(
-                                    quest.emoji!,
-                                    style: TextStyle(fontSize: 100.sp),
-                                  )
-                                : ColorFiltered(
-                                    colorFilter: ColorFilter.mode(
-                                      const Color(0xFF78350F).withValues(alpha: 0.15),
-                                      BlendMode.srcIn,
-                                    ),
-                                    child: Text(
-                                      quest.emoji!,
-                                      style: TextStyle(fontSize: 100.sp),
-                                    ),
-                                  ),
-                          if (state.answerStatus != AnswerStatus.correct || (quest.question != "?" && quest.question != null))
-                            KidsFittedText(
-                              quest.question ?? "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
-                                fontWeight: FontWeight.w900,
-                                color: const Color(0xFF78350F).withValues(alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
-                            ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // Red and White striped awning on top
-            Positioned(
-              top: -15.h,
-              child: Container(
+            alignment: Alignment.center,
+            children: [
+              // Main wooden board
+              Container(
                 width: 280.w,
-                height: 40.h,
+                height: 200.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.r),
+                  color: isHovering
+                      ? const Color(0xFFFEF9C3)
+                      : const Color(0xFFFEF3C7), // Light wood
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(
+                    color: isHovering
+                        ? const Color(0xFFB45309)
+                        : const Color(0xFF92400E),
+                    width: isHovering ? 8.r : 6.r,
+                  ), // Dark wood frame
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.2),
-                      blurRadius: 5,
-                      offset: const Offset(0, 4),
+                      color: Colors.black.withValues(
+                        alpha: isHovering ? 0.3 : 0.15,
+                      ),
+                      blurRadius: isHovering ? 20 : 10,
+                      offset: const Offset(0, 8),
                     ),
                   ],
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4.r),
-                  child: Row(
-                    children: List.generate(
-                      8,
-                      (index) => Expanded(
-                        child: Container(
-                          color: index % 2 == 0
-                              ? Colors.red[600]
-                              : Colors.white,
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null &&
+                                (quest.question == "?" ||
+                                    quest.question == null))
+                              state.answerStatus == AnswerStatus.correct
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 100.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFF78350F,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 100.sp),
+                                      ),
+                                    ),
+                            if (state.answerStatus != AnswerStatus.correct ||
+                                (quest.question != "?" &&
+                                    quest.question != null))
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFF78350F).withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 6,
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              // Red and White striped awning on top
+              Positioned(
+                top: -15.h,
+                child: Container(
+                  width: 280.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.2),
+                        blurRadius: 5,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4.r),
+                    child: Row(
+                      children: List.generate(
+                        8,
+                        (index) => Expanded(
+                          child: Container(
+                            color: index % 2 == 0
+                                ? Colors.red[600]
+                                : Colors.white,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
-        ));
+            ],
+          ),
+        );
       },
     );
   }
@@ -257,7 +280,8 @@ class KidsFruitsLayout extends StatelessWidget {
                   fontFamily: 'Outfit',
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w800,
-                  height: 1.2, // Fixes descenders like p, g from touching bottom
+                  height:
+                      1.2, // Fixes descenders like p, g from touching bottom
                   color: const Color(0xFF451A03),
                 ),
                 textAlign: TextAlign.center,
@@ -323,5 +347,3 @@ class _WickerPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-
-

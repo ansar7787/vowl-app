@@ -65,7 +65,9 @@ void main() {
     mockActivateDoubleXP = MockActivateDoubleXP();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
-    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')));
+    when(() => mockAuthBloc.state).thenReturn(
+      AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
+    );
     mockNotificationService = MockNotificationService();
     mockRepairStreakFree = MockRepairStreakFree();
     mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
@@ -113,5 +115,3 @@ void main() {
     );
   });
 }
-
-

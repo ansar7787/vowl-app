@@ -214,7 +214,8 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       return;
     }
 
-    final canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
+    final canAdvance =
+        s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
     final isLastQuest = s.currentIndex + 1 >= s.quests.length;
 
     if (!isLastQuest) {
@@ -231,7 +232,9 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           ),
         );
       } else {
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
       return;
     }
@@ -328,7 +331,11 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     final s = state as RoleplayLoaded;
 
     emit(
-      s.copyWith(answerStatus: AnswerStatus.correct, wrongCount: 0, isFinalFailure: false),
+      s.copyWith(
+        answerStatus: AnswerStatus.correct,
+        wrongCount: 0,
+        isFinalFailure: false,
+      ),
     );
     soundService.playCorrect();
     hapticService.success();

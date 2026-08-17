@@ -95,7 +95,10 @@ class KidsAudioService {
         volume: 1.0,
       );
     } catch (e) {
-      di.sl<AppLogger>().warning("Kids SFX Level Complete Error: $e", tag: 'KidsZone');
+      di.sl<AppLogger>().warning(
+        "Kids SFX Level Complete Error: $e",
+        tag: 'KidsZone',
+      );
       await playSuccessSFX();
     }
   }
@@ -105,4 +108,3 @@ class KidsAudioService {
     _sfxPlayer.dispose();
   }
 }
-

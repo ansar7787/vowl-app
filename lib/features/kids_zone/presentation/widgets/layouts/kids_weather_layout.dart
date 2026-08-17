@@ -214,7 +214,9 @@ class KidsWeatherLayout extends StatelessWidget {
                                 )
                               : ColorFiltered(
                                   colorFilter: ColorFilter.mode(
-                                    const Color(0xFF0369A1).withValues(alpha: 0.4),
+                                    const Color(
+                                      0xFF0369A1,
+                                    ).withValues(alpha: 0.4),
                                     BlendMode.srcIn,
                                   ),
                                   child: Text(
@@ -231,12 +233,17 @@ class KidsWeatherLayout extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize:
-                                    (quest.question == "?" || quest.question == null)
+                                    (quest.question == "?" ||
+                                        quest.question == null)
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFF0C4A6E).withValues(
-                                  alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0,
+                                  alpha:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 0.7
+                                      : 1.0,
                                 ),
                               ),
                               textAlign: TextAlign.center,
@@ -281,7 +288,7 @@ class KidsWeatherLayout extends StatelessWidget {
                     color: const Color(0xFF93C5FD).withValues(alpha: 0.5),
                     offset: const Offset(0, 6),
                     blurRadius: 0, // Hard shadow for cartoon style
-                  )
+                  ),
                 ],
               ),
             ),
@@ -349,5 +356,3 @@ class KidsWeatherLayout extends StatelessWidget {
     );
   }
 }
-
-

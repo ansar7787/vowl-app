@@ -173,7 +173,9 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
 
         final options = activeQuest?.options ?? [];
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,

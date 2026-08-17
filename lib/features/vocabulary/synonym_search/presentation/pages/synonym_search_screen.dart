@@ -144,11 +144,12 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onWarpGateTapped(VocabularyQuest quest) {
-    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) return;
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null)
+      return;
     final index = _activeShardIndex!;
     final options = quest.options ?? [];
     if (index >= options.length) return;
-    
+
     _warpShard(index, options[index], quest);
   }
 
@@ -512,7 +513,8 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onFailed: () {},
-                              onFailedWithSpelling: (wrongWord) => _submitVerbalEvaluation(false),
+                              onFailedWithSpelling: (wrongWord) =>
+                                  _submitVerbalEvaluation(false),
                             ),
                         ],
                       ),
@@ -524,4 +526,3 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
   }
 }
-

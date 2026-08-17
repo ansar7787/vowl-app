@@ -624,115 +624,155 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
       fit: StackFit.expand,
       children: [
         // Darker overlay while scanning for dramatic effect
-        Container(
-          color: Colors.black.withValues(alpha: 0.4),
-        ),
+        Container(color: Colors.black.withValues(alpha: 0.4)),
         // HUD Reticle (Corners)
         Center(
-          child: Container(
-            width: 280.w,
-            height: 280.w,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
-                width: 1.w,
-              ),
-            ),
-            child: Stack(
-              children: [
-                // Top Left Corner
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  child: Container(
-                    width: 40.w,
-                    height: 40.w,
+          child:
+              Container(
+                    width: 280.w,
+                    height: 280.w,
                     decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                        left: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
+                      border: Border.all(
+                        color: const Color(0xFF14B8A6).withValues(alpha: 0.3),
+                        width: 1.w,
                       ),
                     ),
-                  ),
-                ),
-                // Top Right Corner
-                Positioned(
-                  top: 0,
-                  right: 0,
-                  child: Container(
-                    width: 40.w,
-                    height: 40.w,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                        right: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                      ),
-                    ),
-                  ),
-                ),
-                // Bottom Left Corner
-                Positioned(
-                  bottom: 0,
-                  left: 0,
-                  child: Container(
-                    width: 40.w,
-                    height: 40.w,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                        left: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                      ),
-                    ),
-                  ),
-                ),
-                // Bottom Right Corner
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    width: 40.w,
-                    height: 40.w,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                        right: BorderSide(color: const Color(0xFF14B8A6), width: 4.w),
-                      ),
-                    ),
-                  ),
-                ),
-                // "ANALYZING..." Text & Icon
-                Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.camera_alt_rounded,
-                        color: const Color(0xFF14B8A6).withValues(alpha: 0.8),
-                        size: 48.r,
-                      )
-                          .animate(onPlay: (controller) => controller.repeat())
-                          .shimmer(duration: 1.seconds, color: Colors.white),
-                      SizedBox(height: 16.h),
-                      Text(
-                        "ANALYZING...",
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontWeight: FontWeight.w900,
-                          fontSize: 16.sp,
-                          color: const Color(0xFF14B8A6),
-                          letterSpacing: 4.0,
+                    child: Stack(
+                      children: [
+                        // Top Left Corner
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          child: Container(
+                            width: 40.w,
+                            height: 40.w,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                                left: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                      )
-                          .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                          .fade(duration: 500.ms),
-                    ],
+                        // Top Right Corner
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                            width: 40.w,
+                            height: 40.w,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                                right: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        // Bottom Left Corner
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          child: Container(
+                            width: 40.w,
+                            height: 40.w,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                                left: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        // Bottom Right Corner
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Container(
+                            width: 40.w,
+                            height: 40.w,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                                right: BorderSide(
+                                  color: const Color(0xFF14B8A6),
+                                  width: 4.w,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        // "ANALYZING..." Text & Icon
+                        Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                    Icons.camera_alt_rounded,
+                                    color: const Color(
+                                      0xFF14B8A6,
+                                    ).withValues(alpha: 0.8),
+                                    size: 48.r,
+                                  )
+                                  .animate(
+                                    onPlay: (controller) => controller.repeat(),
+                                  )
+                                  .shimmer(
+                                    duration: 1.seconds,
+                                    color: Colors.white,
+                                  ),
+                              SizedBox(height: 16.h),
+                              Text(
+                                    "ANALYZING...",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16.sp,
+                                      color: const Color(0xFF14B8A6),
+                                      letterSpacing: 4.0,
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (controller) =>
+                                        controller.repeat(reverse: true),
+                                  )
+                                  .fade(duration: 500.ms),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate(
+                    onPlay: (controller) => controller.repeat(reverse: true),
+                  )
+                  .scaleXY(
+                    begin: 0.98,
+                    end: 1.02,
+                    duration: 1.seconds,
+                    curve: Curves.easeInOut,
                   ),
-                ),
-              ],
-            ),
-          )
-              .animate(onPlay: (controller) => controller.repeat(reverse: true))
-              .scaleXY(begin: 0.98, end: 1.02, duration: 1.seconds, curve: Curves.easeInOut),
         ),
 
         // Moving Laser Line
@@ -741,7 +781,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
             animation: _scannerController,
             builder: (context, child) {
               return Align(
-                alignment: Alignment(0, -1.0 + (_scannerController.value * 2.0)),
+                alignment: Alignment(
+                  0,
+                  -1.0 + (_scannerController.value * 2.0),
+                ),
                 child: child,
               );
             },

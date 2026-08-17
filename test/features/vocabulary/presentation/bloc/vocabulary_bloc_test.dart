@@ -42,7 +42,8 @@ class FakeUpdateUserRewardsParams extends Fake
 class FakeUpdateCategoryStatsParams extends Fake
     implements UpdateCategoryStatsParams {}
 
-class FakeGetVocabularyQuestsParams extends Fake implements GetVocabularyQuestsParams {}
+class FakeGetVocabularyQuestsParams extends Fake
+    implements GetVocabularyQuestsParams {}
 
 class FakeUpdateUnlockedLevelParams extends Fake
     implements UpdateUnlockedLevelParams {}
@@ -276,6 +277,3 @@ void main() {
     );
   });
 }
-
-
-

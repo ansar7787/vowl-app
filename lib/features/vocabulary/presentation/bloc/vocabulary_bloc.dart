@@ -214,7 +214,9 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       if (s.answerStatus == AnswerStatus.correct) {
         await _handleLevelComplete(s, emit);
       } else {
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
       return;
     }

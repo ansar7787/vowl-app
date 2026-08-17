@@ -229,5 +229,3 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     );
   }
 }
-
-

@@ -63,7 +63,9 @@ class LanguageManagerSheet extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                        color: isDark
+                            ? Colors.white38
+                            : const Color(0xFF94A3B8),
                       ),
                     ),
                   );
@@ -94,7 +96,9 @@ class LanguageManagerSheet extends StatelessWidget {
                                   fontFamily: 'Outfit',
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w700,
-                                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                  color: isDark
+                                      ? Colors.white
+                                      : const Color(0xFF0F172A),
                                 ),
                                 maxLines: 1,
                               ),
@@ -149,12 +153,17 @@ class LanguageManagerSheet extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              context.read<TranslationBloc>().add(TranslationModelDeleted(lang));
+              context.read<TranslationBloc>().add(
+                TranslationModelDeleted(lang),
+              );
               Navigator.pop(ctx);
             },
             child: const Text(
               'Delete',
-              style: TextStyle(color: Color(0xFFEF4444), fontWeight: FontWeight.bold),
+              style: TextStyle(
+                color: Color(0xFFEF4444),
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],

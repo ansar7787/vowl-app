@@ -98,9 +98,7 @@ void main() {
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
       expect: () => [
-        tLoadedState.copyWith(
-          answerStatus: AnswerStatus.incorrect,
-        ),
+        tLoadedState.copyWith(answerStatus: AnswerStatus.incorrect),
         tLoadedState.copyWith(
           livesRemaining: 2,
           answerStatus: AnswerStatus.incorrect,
@@ -159,4 +157,3 @@ void main() {
     );
   });
 }
-

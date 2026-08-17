@@ -364,5 +364,3 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     return 24.sp;
   }
 }
-
-

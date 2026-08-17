@@ -287,5 +287,3 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     );
   }
 }
-
-

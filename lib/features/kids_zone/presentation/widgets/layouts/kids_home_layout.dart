@@ -138,92 +138,114 @@ class KidsHomeLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.answerStatus.isAnswered ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.answerStatus.isAnswered
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-            // Dollhouse Roof
-            ClipPath(
-              clipper: _TriangleClipper(),
-              child: Container(
-                width: 280.w,
-                height: 60.h,
-                color: isHovering
-                    ? const Color(0xFFDC2626)
-                    : const Color(0xFFEF4444), // Red roof
-              ),
-            ),
-            // Dollhouse Room
-            Container(
-              width: 240.w,
-              height: 160.h, // Made slightly taller to fit instruction
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFFFEF3C7)
-                    : const Color(0xFFFDE68A), // Warm yellow wallpaper
-                border: Border.all(
+              // Dollhouse Roof
+              ClipPath(
+                clipper: _TriangleClipper(),
+                child: Container(
+                  width: 280.w,
+                  height: 60.h,
                   color: isHovering
-                      ? const Color(0xFF92400E)
-                      : const Color(0xFF78350F),
-                  width: isHovering ? 8.r : 6.r,
-                ), // Wooden walls
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(
-                      alpha: isHovering ? 0.3 : 0.15,
-                    ),
-                    blurRadius: isHovering ? 20 : 10,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
+                      ? const Color(0xFFDC2626)
+                      : const Color(0xFFEF4444), // Red roof
+                ),
               ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          if (quest.emoji != null && (quest.question == "?" || quest.question == null))
-                            state.answerStatus == AnswerStatus.correct
-                                ? Text(
-                                    quest.emoji!,
-                                    style: TextStyle(fontSize: 80.sp),
-                                  )
-                                : ColorFiltered(
-                                    colorFilter: ColorFilter.mode(
-                                      const Color(0xFF451A03).withValues(alpha: 0.15),
-                                      BlendMode.srcIn,
-                                    ),
-                                    child: Text(
-                                      quest.emoji!,
-                                      style: TextStyle(fontSize: 80.sp),
-                                    ),
-                                  ),
-                          if (state.answerStatus != AnswerStatus.correct || (quest.question != "?" && quest.question != null))
-                            KidsFittedText(
-                              quest.question ?? "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
-                                fontWeight: FontWeight.w800,
-                                color: const Color(0xFF451A03).withValues(
-                                    alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
-                              ),
-                              textAlign: TextAlign.center,
-                              maxLines: 4,
-                            ),
-                        ],
+              // Dollhouse Room
+              Container(
+                width: 240.w,
+                height: 160.h, // Made slightly taller to fit instruction
+                decoration: BoxDecoration(
+                  color: isHovering
+                      ? const Color(0xFFFEF3C7)
+                      : const Color(0xFFFDE68A), // Warm yellow wallpaper
+                  border: Border.all(
+                    color: isHovering
+                        ? const Color(0xFF92400E)
+                        : const Color(0xFF78350F),
+                    width: isHovering ? 8.r : 6.r,
+                  ), // Wooden walls
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(
+                        alpha: isHovering ? 0.3 : 0.15,
                       ),
+                      blurRadius: isHovering ? 20 : 10,
+                      offset: const Offset(0, 8),
                     ),
                   ],
                 ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null &&
+                                (quest.question == "?" ||
+                                    quest.question == null))
+                              state.answerStatus == AnswerStatus.correct
+                                  ? Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFF451A03,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
+                                    ),
+                            if (state.answerStatus != AnswerStatus.correct ||
+                                (quest.question != "?" &&
+                                    quest.question != null))
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: const Color(0xFF451A03).withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
+                              ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
-        ));
+            ],
+          ),
+        );
       },
     );
   }
@@ -318,5 +340,3 @@ class _TriangleClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }
-
-

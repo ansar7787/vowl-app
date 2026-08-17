@@ -23,11 +23,12 @@ class KidsRoomDailyCareCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final now = DateTime.now();
-    final hasFed = user.kidsLastFeedTime != null &&
+    final hasFed =
+        user.kidsLastFeedTime != null &&
         user.kidsLastFeedTime!.year == now.year &&
         user.kidsLastFeedTime!.month == now.month &&
         user.kidsLastFeedTime!.day == now.day;
-    
+
     final allDone = hasFed && hasPlayed && hasCleaned;
 
     return ClipRRect(
@@ -37,7 +38,9 @@ class KidsRoomDailyCareCard extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
-            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.4 : 0.6),
+            color: (isDark ? Colors.black : Colors.white).withValues(
+              alpha: isDark ? 0.4 : 0.6,
+            ),
             borderRadius: BorderRadius.circular(24.r),
             border: Border.all(
               color: Colors.amber.withValues(alpha: 0.8),
@@ -56,70 +59,80 @@ class KidsRoomDailyCareCard extends StatelessWidget {
               ),
             ],
           ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.check_circle_outline_rounded, color: Colors.amber.shade700, size: 24.sp),
-              SizedBox(width: 8.w),
-              Text(
-                "DAILY CARE",
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.amber.shade700,
-                  letterSpacing: 1.2,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          _buildTaskItem("Feed Buddy", hasFed, isDark),
-          SizedBox(height: 8.h),
-          _buildTaskItem("Play Game", hasPlayed, isDark),
-          SizedBox(height: 8.h),
-          _buildTaskItem("Clean Room", hasCleaned, isDark),
-          
-          if (allDone) ...[
-            SizedBox(height: 16.h),
-            Center(
-              child: ScaleButton(
-                onTap: onClaim,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
-                  decoration: BoxDecoration(
-                    color: Colors.green.shade500,
-                    borderRadius: BorderRadius.circular(20.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.green.shade700,
-                        offset: Offset(0, 4.h),
-                      ),
-                    ],
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.check_circle_outline_rounded,
+                    color: Colors.amber.shade700,
+                    size: 24.sp,
                   ),
-                  child: Text(
-                    "CLAIM 25 ⭐",
+                  SizedBox(width: 8.w),
+                  Text(
+                    "DAILY CARE",
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 14.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
-                      color: Colors.white,
+                      color: Colors.amber.shade700,
+                      letterSpacing: 1.2,
                     ),
                   ),
-                ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                begin: const Offset(0.95, 0.95),
-                end: const Offset(1.05, 1.05),
-                duration: 1.seconds,
+                ],
               ),
-            ),
-          ]
-        ],
-      ),
+              SizedBox(height: 12.h),
+              _buildTaskItem("Feed Buddy", hasFed, isDark),
+              SizedBox(height: 8.h),
+              _buildTaskItem("Play Game", hasPlayed, isDark),
+              SizedBox(height: 8.h),
+              _buildTaskItem("Clean Room", hasCleaned, isDark),
+
+              if (allDone) ...[
+                SizedBox(height: 16.h),
+                Center(
+                  child:
+                      ScaleButton(
+                            onTap: onClaim,
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.w,
+                                vertical: 8.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.green.shade500,
+                                borderRadius: BorderRadius.circular(20.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.green.shade700,
+                                    offset: Offset(0, 4.h),
+                                  ),
+                                ],
+                              ),
+                              child: Text(
+                                "CLAIM 25 ⭐",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .scale(
+                            begin: const Offset(0.95, 0.95),
+                            end: const Offset(1.05, 1.05),
+                            duration: 1.seconds,
+                          ),
+                ),
+              ],
+            ],
+          ),
         ),
       ),
     );
@@ -140,7 +153,7 @@ class KidsRoomDailyCareCard extends StatelessWidget {
           style: TextStyle(
             fontSize: 14.sp,
             fontWeight: isDone ? FontWeight.w800 : FontWeight.w600,
-            color: isDone 
+            color: isDone
                 ? (isDark ? Colors.greenAccent.shade100 : Colors.green.shade800)
                 : (isDark ? Colors.white60 : Colors.black54),
             decoration: isDone ? TextDecoration.lineThrough : null,
@@ -152,5 +165,3 @@ class KidsRoomDailyCareCard extends StatelessWidget {
     );
   }
 }
-
-

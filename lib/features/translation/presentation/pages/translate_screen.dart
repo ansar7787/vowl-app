@@ -176,7 +176,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                          color: isDark
+                              ? Colors.white54
+                              : const Color(0xFF94A3B8),
                         ),
                       ),
                       SizedBox(height: 2.h),
@@ -186,7 +188,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                         maxLines: 1,
                       ),
@@ -228,7 +232,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 GestureDetector(
                   onTap: () {
                     _inputController.clear();
-                    context.read<TranslationBloc>().add(const TranslationTextChanged(''));
+                    context.read<TranslationBloc>().add(
+                      const TranslationTextChanged(''),
+                    );
                     _haptics.light();
                   },
                   child: Icon(
@@ -319,14 +325,20 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
-                        color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                        color: isDark
+                            ? Colors.white70
+                            : const Color(0xFF64748B),
                         fontStyle: FontStyle.italic,
                       ),
                     ),
                     SizedBox(height: 8.h),
                     LinearProgressIndicator(
-                      backgroundColor: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
-                      valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                      backgroundColor: isDark
+                          ? Colors.white10
+                          : const Color(0xFFE2E8F0),
+                      valueColor: const AlwaysStoppedAnimation<Color>(
+                        Color(0xFF10B981),
+                      ),
                     ),
                   ],
                 )
@@ -356,14 +368,12 @@ class _LanguagePickerSheet extends StatelessWidget {
   final bool isDark;
   final Function(String) onSelected;
 
-  const _LanguagePickerSheet({
-    required this.isDark,
-    required this.onSelected,
-  });
+  const _LanguagePickerSheet({required this.isDark, required this.onSelected});
 
   @override
   Widget build(BuildContext context) {
-    final languages = TranslationService.supportedLanguages.keys.toList()..sort();
+    final languages = TranslationService.supportedLanguages.keys.toList()
+      ..sort();
 
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,

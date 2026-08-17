@@ -51,9 +51,7 @@ class KidsRoomLayout extends StatelessWidget {
         ),
 
         // 2. Day/Night Ambient Overlay based on device clock
-        Positioned.fill(
-          child: _buildAmbientOverlay(context),
-        ),
+        Positioned.fill(child: _buildAmbientOverlay(context)),
 
         // 3. Wall Furniture (Window, Shelf)
         Positioned(
@@ -104,15 +102,13 @@ class KidsRoomLayout extends StatelessWidget {
                   blurRadius: 40,
                   spreadRadius: 5,
                   offset: const Offset(0, -10),
-                )
-              ]
+                ),
+              ],
             ),
             child: Stack(
               children: [
                 // Theme specific floor texture
-                Positioned.fill(
-                  child: _buildThemeFloorTexture(),
-                ),
+                Positioned.fill(child: _buildThemeFloorTexture()),
               ],
             ),
           ),
@@ -161,31 +157,19 @@ class KidsRoomLayout extends StatelessWidget {
           ),
 
         // 7. Mascot (Center Stage)
-        Positioned(
-          bottom: 220.h,
-          left: 0,
-          right: 0,
-          child: mascotWidget,
-        ),
+        Positioned(bottom: 220.h, left: 0, right: 0, child: mascotWidget),
 
         // 8. Top Bar & Action Panel
         Positioned.fill(
           child: SafeArea(
             child: Column(
-              children: [
-                topBarWidget,
-                const Spacer(),
-                actionPanelWidget,
-              ],
+              children: [topBarWidget, const Spacer(), actionPanelWidget],
             ),
           ),
         ),
 
         // 9. Overlays (Dialogs, interactions)
-        if (overlayWidget != null)
-          Positioned.fill(
-            child: overlayWidget!,
-          ),
+        if (overlayWidget != null) Positioned.fill(child: overlayWidget!),
       ],
     );
   }
@@ -193,13 +177,13 @@ class KidsRoomLayout extends StatelessWidget {
   Widget _buildAmbientOverlay(BuildContext context) {
     final hour = DateTime.now().hour;
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     Color overlayColor = Colors.transparent;
 
     if (hour >= 20 || hour < 6) {
       // Night time
-      overlayColor = isDark 
-          ? const Color(0xFF0F172A).withValues(alpha: 0.5) 
+      overlayColor = isDark
+          ? const Color(0xFF0F172A).withValues(alpha: 0.5)
           : const Color(0xFF1E1B4B).withValues(alpha: 0.4);
     } else if (hour >= 18 && hour < 20) {
       // Evening/Sunset
@@ -233,33 +217,45 @@ class KidsRoomLayout extends StatelessWidget {
       case 'sweet':
         return Opacity(
           opacity: 0.4,
-          child: CustomPaint(painter: _SparklePainter(color: Colors.pinkAccent)),
+          child: CustomPaint(
+            painter: _SparklePainter(color: Colors.pinkAccent),
+          ),
         );
       default:
         return Opacity(
           opacity: 0.1,
-          child: CustomPaint(painter: _GrassTexturePainter(color: Colors.greenAccent)),
+          child: CustomPaint(
+            painter: _GrassTexturePainter(color: Colors.greenAccent),
+          ),
         );
     }
   }
 
   String _getThemePainter() {
     switch (theme) {
-      case 'space': return 'StarryNight';
-      case 'ocean': return 'OceanWave';
-      case 'sweet': return 'CandyCloud';
+      case 'space':
+        return 'StarryNight';
+      case 'ocean':
+        return 'OceanWave';
+      case 'sweet':
+        return 'CandyCloud';
       case 'nature':
-      default: return 'ForestFriend';
+      default:
+        return 'ForestFriend';
     }
   }
 
   Color _getThemeColor() {
     switch (theme) {
-      case 'space': return const Color(0xFF312E81); // Indigo 900
-      case 'ocean': return const Color(0xFF0284C7); // Light Blue 600
-      case 'sweet': return const Color(0xFFBE185D); // Pink 700
+      case 'space':
+        return const Color(0xFF312E81); // Indigo 900
+      case 'ocean':
+        return const Color(0xFF0284C7); // Light Blue 600
+      case 'sweet':
+        return const Color(0xFFBE185D); // Pink 700
       case 'nature':
-      default: return const Color(0xFF15803D); // Green 700
+      default:
+        return const Color(0xFF15803D); // Green 700
     }
   }
 }
@@ -278,11 +274,15 @@ class _GridPainter extends CustomPainter {
       ..color = color
       ..strokeWidth = 1.0
       ..style = PaintingStyle.stroke;
-    
+
     // Draw perspective grid
     final vanishY = -size.height * 2;
     for (double x = -size.width; x <= size.width * 2; x += 40) {
-      canvas.drawLine(Offset(x, size.height), Offset(size.width / 2, vanishY), paint);
+      canvas.drawLine(
+        Offset(x, size.height),
+        Offset(size.width / 2, vanishY),
+        paint,
+      );
     }
     for (double y = 0; y <= size.height; y += size.height / 6) {
       // Curve horizontal lines slightly for perspective
@@ -353,17 +353,20 @@ class _GrassTexturePainter extends CustomPainter {
       ..color = color
       ..strokeWidth = 2.0
       ..strokeCap = StrokeCap.round;
-    
+
     final random = dart_math.Random(42);
     for (int i = 0; i < 60; i++) {
       final x = random.nextDouble() * size.width;
       final y = random.nextDouble() * size.height;
       final length = random.nextDouble() * 10 + 5;
       final angle = (random.nextDouble() - 0.5) * 0.5;
-      
+
       canvas.drawLine(
         Offset(x, y),
-        Offset(x + dart_math.sin(angle) * length, y - dart_math.cos(angle) * length),
+        Offset(
+          x + dart_math.sin(angle) * length,
+          y - dart_math.cos(angle) * length,
+        ),
         paint,
       );
     }
@@ -372,5 +375,3 @@ class _GrassTexturePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-
-

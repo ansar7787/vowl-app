@@ -110,12 +110,14 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
     } else if (isWrong) {
       keyCard = keyCard.animate().shakeX(amount: 5, duration: 400.ms);
     } else if (isGlowingHint) {
-      keyCard = keyCard.animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-        begin: const Offset(1.0, 1.0),
-        end: const Offset(1.05, 1.05),
-        duration: 800.ms,
-        curve: Curves.easeInOutSine,
-      );
+      keyCard = keyCard
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .scale(
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(1.05, 1.05),
+            duration: 800.ms,
+            curve: Curves.easeInOutSine,
+          );
     }
 
     return keyCard

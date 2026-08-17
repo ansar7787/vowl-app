@@ -188,7 +188,9 @@ class ScanResultBlock extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 13.sp,
                                     fontWeight: FontWeight.w500,
-                                    color: isDark ? Colors.white70 : Colors.black87,
+                                    color: isDark
+                                        ? Colors.white70
+                                        : Colors.black87,
                                     fontStyle: FontStyle.italic,
                                   ),
                                 ),
@@ -281,7 +283,9 @@ class ScanResultBlock extends StatelessWidget {
                               gradient: LinearGradient(
                                 colors: [
                                   primaryIndigo.withValues(alpha: 0.2),
-                                  const Color(0xFF4F46E5).withValues(alpha: 0.05),
+                                  const Color(
+                                    0xFF4F46E5,
+                                  ).withValues(alpha: 0.05),
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,

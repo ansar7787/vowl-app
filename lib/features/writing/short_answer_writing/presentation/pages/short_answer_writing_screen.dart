@@ -190,7 +190,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
         final targetKeywords =
             quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
         final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
         final int livesRemaining = state.livesRemaining;
 

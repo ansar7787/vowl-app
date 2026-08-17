@@ -24,9 +24,19 @@ class ProfileBentoStats extends StatelessWidget {
     return Column(
       children: [
         _BentoWideCard(
-          title: context.tr('profile.current_level_label', fallback: 'Current Level'),
-          value: context.tr('profile.level_value', fallback: 'Lvl {0}', args: ['${user.level}']),
-          subtitle: context.tr('profile.tap_view_rank_details', fallback: 'Tap to view rank details'),
+          title: context.tr(
+            'profile.current_level_label',
+            fallback: 'Current Level',
+          ),
+          value: context.tr(
+            'profile.level_value',
+            fallback: 'Lvl {0}',
+            args: ['${user.level}'],
+          ),
+          subtitle: context.tr(
+            'profile.tap_view_rank_details',
+            fallback: 'Tap to view rank details',
+          ),
           icon: Icons.workspace_premium_rounded,
           color: const Color(0xFF8B5CF6),
           onTap: () {
@@ -39,7 +49,10 @@ class ProfileBentoStats extends StatelessWidget {
           children: [
             Expanded(
               child: _StatPod(
-                title: context.tr('profile.vowl_treasury', fallback: 'Vowl Treasury'),
+                title: context.tr(
+                  'profile.vowl_treasury',
+                  fallback: 'Vowl Treasury',
+                ),
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
                 color: const Color(0xFF10B981),
@@ -49,8 +62,15 @@ class ProfileBentoStats extends StatelessWidget {
             SizedBox(width: 16.w),
             Expanded(
               child: _StatPod(
-                title: context.tr('profile.daily_streak', fallback: 'Daily Streak'),
-                value: context.tr('profile.streak_days', fallback: '{0} Days', args: ['${user.currentStreak}']),
+                title: context.tr(
+                  'profile.daily_streak',
+                  fallback: 'Daily Streak',
+                ),
+                value: context.tr(
+                  'profile.streak_days',
+                  fallback: '{0} Days',
+                  args: ['${user.currentStreak}'],
+                ),
                 icon: Icons.local_fire_department_rounded,
                 color: const Color(0xFFEF4444),
                 onTap: () => context.push(AppRouter.streakRoute),
@@ -60,8 +80,15 @@ class ProfileBentoStats extends StatelessWidget {
         ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.1),
         SizedBox(height: 16.h),
         _BentoWideCard(
-          title: context.tr('profile.adventure_xp_label', fallback: 'Adventure XP'),
-          value: context.tr('profile.total_experience', fallback: 'Total Experience: {0}', args: ['${user.totalExp}']),
+          title: context.tr(
+            'profile.adventure_xp_label',
+            fallback: 'Adventure XP',
+          ),
+          value: context.tr(
+            'profile.total_experience',
+            fallback: 'Total Experience: {0}',
+            args: ['${user.totalExp}'],
+          ),
           icon: Icons.auto_awesome_rounded,
           color: const Color(0xFF3B82F6),
           onTap: () {
@@ -211,7 +238,9 @@ class _BentoWideCard extends StatelessWidget {
                           fontFamily: 'Outfit',
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                       ),
                       if (subtitle != null) ...[

@@ -173,7 +173,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             : (quest?.options ?? []);
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
         final bool isFinalFailure = isLoaded
             ? state.isFinalFailure
             : (state is WritingGameOver);

@@ -122,20 +122,25 @@ class VocabularyBaseLayout extends StatelessWidget {
         }
 
         String? ruleContent = quest.definition ?? explanation;
-        String? finalExplanation = (ruleContent == explanation) ? null : explanation;
+        String? finalExplanation = (ruleContent == explanation)
+            ? null
+            : explanation;
         String ruleTitle = 'VOCABULARY TIP';
 
         if (gameType == GameSubtype.topicVocab) {
           ruleTitle = 'TOPIC REVIEW';
           final rawAns = quest.correctAnswer ?? "";
           if (rawAns.isNotEmpty) {
-            ruleContent = rawAns.split(',').map((pair) {
-              final parts = pair.split(':');
-              if (parts.length == 2) {
-                return "${parts[1].trim()} (${parts[0].trim()})";
-              }
-              return pair.trim();
-            }).join(' • ');
+            ruleContent = rawAns
+                .split(',')
+                .map((pair) {
+                  final parts = pair.split(':');
+                  if (parts.length == 2) {
+                    return "${parts[1].trim()} (${parts[0].trim()})";
+                  }
+                  return pair.trim();
+                })
+                .join(' • ');
           }
           finalExplanation = quest.explanation;
         } else if (gameType == GameSubtype.wordFormation) {

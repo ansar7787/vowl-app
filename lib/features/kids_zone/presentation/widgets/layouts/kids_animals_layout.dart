@@ -174,68 +174,69 @@ class KidsAnimalsLayout extends StatelessWidget {
               borderRadius: BorderRadius.circular(
                 100.r,
               ), // Pill shape for binoculars
-            border: Border.all(
-              color: isHovering
-                  ? const Color(0xFF92400E)
-                  : const Color(0xFF78350F),
-              width: isHovering ? 10.r : 8.r,
-            ), // Dark leather
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
-                blurRadius: isHovering ? 25 : 15,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Middle split of binoculars
-              Container(
-                width: 12.w,
-                height: double.infinity,
-                color: const Color(0xFF78350F),
-              ),
-              Center(
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
-                    vertical: 12.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.circular(20.r),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 8.w),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            KidsFittedText(
-                              quest.question ?? "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 40.sp,
-                                fontWeight: FontWeight.w700,
-                                color: const Color(0xFF1E293B),
+              border: Border.all(
+                color: isHovering
+                    ? const Color(0xFF92400E)
+                    : const Color(0xFF78350F),
+                width: isHovering ? 10.r : 8.r,
+              ), // Dark leather
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: isHovering ? 0.4 : 0.2),
+                  blurRadius: isHovering ? 25 : 15,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Middle split of binoculars
+                Container(
+                  width: 12.w,
+                  height: double.infinity,
+                  color: const Color(0xFF78350F),
+                ),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
+                      vertical: 12.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.9),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 40.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: const Color(0xFF1E293B),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 4,
                               ),
-                              textAlign: TextAlign.center,
-                              maxLines: 4,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ));
+        );
       },
     );
   }
@@ -274,9 +275,7 @@ class KidsAnimalsLayout extends StatelessWidget {
                 fit: BoxFit.scaleDown,
                 child: Text(
                   text,
-                  style: TextStyle(
-                    fontSize: 40.sp,
-                  ),
+                  style: TextStyle(fontSize: 40.sp),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -309,5 +308,3 @@ class KidsAnimalsLayout extends StatelessWidget {
     );
   }
 }
-
-

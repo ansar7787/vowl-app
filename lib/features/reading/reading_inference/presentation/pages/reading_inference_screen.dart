@@ -246,5 +246,3 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     );
   }
 }
-
-

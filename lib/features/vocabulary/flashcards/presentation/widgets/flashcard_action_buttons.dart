@@ -61,10 +61,12 @@ class FlashcardActionButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
-            Icons.keyboard_double_arrow_left_rounded,
-            color: Colors.red.withValues(alpha: 0.5),
-            size: 24.r,
-          ).animate(onPlay: (c) => c.repeat()).moveX(begin: 2, end: -2, duration: 1.seconds),
+                Icons.keyboard_double_arrow_left_rounded,
+                color: Colors.red.withValues(alpha: 0.5),
+                size: 24.r,
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .moveX(begin: 2, end: -2, duration: 1.seconds),
           SizedBox(width: 12.w),
           Text(
             'SWIPE TO DECIDE',
@@ -79,10 +81,12 @@ class FlashcardActionButtons extends StatelessWidget {
           ),
           SizedBox(width: 12.w),
           Icon(
-            Icons.keyboard_double_arrow_right_rounded,
-            color: Colors.green.withValues(alpha: 0.5),
-            size: 24.r,
-          ).animate(onPlay: (c) => c.repeat()).moveX(begin: -2, end: 2, duration: 1.seconds),
+                Icons.keyboard_double_arrow_right_rounded,
+                color: Colors.green.withValues(alpha: 0.5),
+                size: 24.r,
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .moveX(begin: -2, end: 2, duration: 1.seconds),
         ],
       ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2),
     );

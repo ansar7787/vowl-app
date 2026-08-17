@@ -64,7 +64,9 @@ void main() {
     mockEquipKidsAccessory = MockEquipKidsAccessory();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
-    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')));
+    when(() => mockAuthBloc.state).thenReturn(
+      AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')),
+    );
     mockBuyKidsFurniture = MockBuyKidsFurniture();
     mockBuyVowlMascot = MockBuyVowlMascot();
     mockBuyVowlAccessory = MockBuyVowlAccessory();
@@ -115,5 +117,3 @@ void main() {
     );
   });
 }
-
-

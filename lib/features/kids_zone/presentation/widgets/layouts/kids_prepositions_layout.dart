@@ -241,35 +241,35 @@ class KidsPrepositionsLayout extends StatelessWidget {
                   top: 5.h,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Transform.rotate(
-                          angle: -math.pi / 8,
-                          child: Container(
-                            width: 8.w,
-                            height: 25.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(color: Colors.pink[200]!),
-                            ),
+                    children: [
+                      Transform.rotate(
+                        angle: -math.pi / 8,
+                        child: Container(
+                          width: 8.w,
+                          height: 25.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(color: Colors.pink[200]!),
                           ),
                         ),
-                        SizedBox(width: 5.w),
-                        Transform.rotate(
-                          angle: math.pi / 8,
-                          child: Container(
-                            width: 8.w,
-                            height: 25.h,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(color: Colors.pink[200]!),
-                            ),
+                      ),
+                      SizedBox(width: 5.w),
+                      Transform.rotate(
+                        angle: math.pi / 8,
+                        child: Container(
+                          width: 8.w,
+                          height: 25.h,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(color: Colors.pink[200]!),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                ),
 
                 // Main Top Hat body
                 Positioned(
@@ -333,7 +333,10 @@ class KidsPrepositionsLayout extends StatelessWidget {
                 end: Alignment.bottomCenter,
               ),
               borderRadius: BorderRadius.circular(8.r),
-              border: Border.all(color: const Color(0xFFB45309), width: 2), // Bronze border
+              border: Border.all(
+                color: const Color(0xFFB45309),
+                width: 2,
+              ), // Bronze border
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black38,
@@ -372,5 +375,3 @@ class KidsPrepositionsLayout extends StatelessWidget {
     );
   }
 }
-
-

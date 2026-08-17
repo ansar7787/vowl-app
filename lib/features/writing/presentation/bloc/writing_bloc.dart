@@ -194,7 +194,8 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     }
 
     final bool hasMore = s.currentIndex + 1 < s.quests.length;
-    final bool canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
+    final bool canAdvance =
+        s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
 
     if (hasMore) {
       if (canAdvance) {
@@ -209,7 +210,9 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         );
       } else {
         // First wrong answer — stay and retry.
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
     } else if (s.answerStatus == AnswerStatus.correct) {
       await _completeLevel(s, emit);

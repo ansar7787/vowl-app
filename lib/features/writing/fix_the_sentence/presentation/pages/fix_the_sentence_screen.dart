@@ -146,7 +146,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,

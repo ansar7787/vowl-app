@@ -152,5 +152,3 @@ class KidsBackgroundRenderer extends StatelessWidget {
     );
   }
 }
-
-

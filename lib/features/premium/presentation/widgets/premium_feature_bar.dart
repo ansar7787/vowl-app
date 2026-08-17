@@ -25,7 +25,8 @@ class ModernFeatureBar extends StatelessWidget {
           ),
           subtitle: context.tr(
             'premium.feature_daily_words_desc',
-            fallback: 'Unlock the ultimate word bank with zero ad interruptions.',
+            fallback:
+                'Unlock the ultimate word bank with zero ad interruptions.',
           ),
           isDark: isDark,
           customColor: const Color(0xFF3B82F6), // Blue

@@ -65,7 +65,10 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('Vowl'), findsOneWidget);
-    expect(find.text('Welcome back! Your journey continues here.'), findsOneWidget);
+    expect(
+      find.text('Welcome back! Your journey continues here.'),
+      findsOneWidget,
+    );
     expect(find.text('explorer@vowl.com'), findsOneWidget);
     expect(find.text('Make it strong!'), findsOneWidget);
     expect(find.text('Log In'), findsOneWidget);

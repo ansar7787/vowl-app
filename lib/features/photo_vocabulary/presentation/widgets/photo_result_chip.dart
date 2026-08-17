@@ -287,7 +287,9 @@ class PhotoResultChip extends StatelessWidget {
                               gradient: LinearGradient(
                                 colors: [
                                   primaryTeal.withValues(alpha: 0.2),
-                                  const Color(0xFF0D9488).withValues(alpha: 0.05),
+                                  const Color(
+                                    0xFF0D9488,
+                                  ).withValues(alpha: 0.05),
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,

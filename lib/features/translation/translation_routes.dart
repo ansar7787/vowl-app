@@ -6,13 +6,13 @@ import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dar
 import 'package:vowl/features/translation/presentation/pages/translate_screen.dart';
 
 List<RouteBase> get translationRoutes => [
-      GoRoute(
-        path: AppRouter.translateRoute,
-        builder: (context, state) {
-          return BlocProvider(
-            create: (_) => di.sl<TranslationBloc>(),
-            child: const TranslateScreen(),
-          );
-        },
-      ),
-    ];
+  GoRoute(
+    path: AppRouter.translateRoute,
+    builder: (context, state) {
+      return BlocProvider(
+        create: (_) => di.sl<TranslationBloc>(),
+        child: const TranslateScreen(),
+      );
+    },
+  ),
+];

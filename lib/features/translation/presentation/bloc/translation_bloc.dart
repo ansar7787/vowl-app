@@ -73,7 +73,8 @@ class TranslationState extends Equatable {
       status: status ?? this.status,
       sourceText: sourceText ?? this.sourceText,
       translatedText: translatedText ?? this.translatedText,
-      currentTargetLanguage: currentTargetLanguage ?? this.currentTargetLanguage,
+      currentTargetLanguage:
+          currentTargetLanguage ?? this.currentTargetLanguage,
       downloadedLanguages: downloadedLanguages ?? this.downloadedLanguages,
       isModelDownloading: isModelDownloading ?? this.isModelDownloading,
       errorMessage: errorMessage,
@@ -82,14 +83,14 @@ class TranslationState extends Equatable {
 
   @override
   List<Object?> get props => [
-        status,
-        sourceText,
-        translatedText,
-        currentTargetLanguage,
-        downloadedLanguages,
-        isModelDownloading,
-        errorMessage,
-      ];
+    status,
+    sourceText,
+    translatedText,
+    currentTargetLanguage,
+    downloadedLanguages,
+    isModelDownloading,
+    errorMessage,
+  ];
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -100,8 +101,8 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   final TranslationService _service;
 
   TranslationBloc({required TranslationService service})
-      : _service = service,
-        super(const TranslationState()) {
+    : _service = service,
+      super(const TranslationState()) {
     on<TranslationInitRequested>(_onInitRequested);
     on<TranslationTextChanged>(_onTextChanged);
     on<TranslationLanguageChanged>(_onLanguageChanged);
@@ -117,16 +118,20 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final currentLang = await _service.getConfiguredLanguageName();
       final downloaded = await _service.getDownloadedLanguageNames();
 
-      emit(state.copyWith(
-        status: TranslationStatus.loaded,
-        currentTargetLanguage: currentLang,
-        downloadedLanguages: downloaded,
-      ));
+      emit(
+        state.copyWith(
+          status: TranslationStatus.loaded,
+          currentTargetLanguage: currentLang,
+          downloadedLanguages: downloaded,
+        ),
+      );
     } catch (e) {
-      emit(state.copyWith(
-        status: TranslationStatus.error,
-        errorMessage: 'Failed to load translation settings.',
-      ));
+      emit(
+        state.copyWith(
+          status: TranslationStatus.error,
+          errorMessage: 'Failed to load translation settings.',
+        ),
+      );
     }
   }
 
@@ -143,29 +148,37 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     }
 
     if (state.currentTargetLanguage == null) {
-      emit(state.copyWith(errorMessage: 'Please select a target language first.'));
+      emit(
+        state.copyWith(errorMessage: 'Please select a target language first.'),
+      );
       return;
     }
 
     try {
-      final isDownloaded = state.downloadedLanguages.contains(state.currentTargetLanguage);
+      final isDownloaded = state.downloadedLanguages.contains(
+        state.currentTargetLanguage,
+      );
       if (!isDownloaded) {
-         emit(state.copyWith(isModelDownloading: true));
+        emit(state.copyWith(isModelDownloading: true));
       }
-      
+
       final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
-      
-      emit(state.copyWith(
-        translatedText: result,
-        isModelDownloading: false,
-        downloadedLanguages: newDownloaded,
-      ));
+
+      emit(
+        state.copyWith(
+          translatedText: result,
+          isModelDownloading: false,
+          downloadedLanguages: newDownloaded,
+        ),
+      );
     } catch (e) {
-      emit(state.copyWith(
-        isModelDownloading: false,
-        errorMessage: e.toString().replaceAll('Exception: ', ''),
-      ));
+      emit(
+        state.copyWith(
+          isModelDownloading: false,
+          errorMessage: e.toString().replaceAll('Exception: ', ''),
+        ),
+      );
     }
   }
 
@@ -177,30 +190,34 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     if (lang == state.currentTargetLanguage) return;
 
     emit(state.copyWith(currentTargetLanguage: lang, errorMessage: null));
-    
+
     final target = TranslationService.supportedLanguages[lang];
     if (target != null) {
-       emit(state.copyWith(isModelDownloading: true));
-       try {
-         await _service.setTargetLanguage(target);
-         final newDownloaded = await _service.getDownloadedLanguageNames();
-         emit(state.copyWith(
-           isModelDownloading: false,
-           downloadedLanguages: newDownloaded,
-         ));
-         
-         if (state.sourceText.isNotEmpty) {
-           add(TranslationTextChanged(state.sourceText));
-         }
-       } catch (e) {
-         emit(state.copyWith(
-           isModelDownloading: false,
-           errorMessage: 'Failed to download language model.',
-         ));
-       }
+      emit(state.copyWith(isModelDownloading: true));
+      try {
+        await _service.setTargetLanguage(target);
+        final newDownloaded = await _service.getDownloadedLanguageNames();
+        emit(
+          state.copyWith(
+            isModelDownloading: false,
+            downloadedLanguages: newDownloaded,
+          ),
+        );
+
+        if (state.sourceText.isNotEmpty) {
+          add(TranslationTextChanged(state.sourceText));
+        }
+      } catch (e) {
+        emit(
+          state.copyWith(
+            isModelDownloading: false,
+            errorMessage: 'Failed to download language model.',
+          ),
+        );
+      }
     }
   }
-  
+
   Future<void> _onModelDeleted(
     TranslationModelDeleted event,
     Emitter<TranslationState> emit,
@@ -208,18 +225,20 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     try {
       await _service.deleteLanguageModel(event.targetLanguageName);
       final newDownloaded = await _service.getDownloadedLanguageNames();
-      
+
       String? currentLang = state.currentTargetLanguage;
       if (currentLang == event.targetLanguageName) {
         currentLang = null;
         emit(state.copyWith(translatedText: ''));
       }
-      
-      emit(state.copyWith(
-        downloadedLanguages: newDownloaded,
-        currentTargetLanguage: currentLang,
-        errorMessage: null,
-      ));
+
+      emit(
+        state.copyWith(
+          downloadedLanguages: newDownloaded,
+          currentTargetLanguage: currentLang,
+          errorMessage: null,
+        ),
+      );
     } catch (e) {
       emit(state.copyWith(errorMessage: 'Failed to delete language model.'));
     }

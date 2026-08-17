@@ -406,4 +406,3 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     );
   }
 }
-

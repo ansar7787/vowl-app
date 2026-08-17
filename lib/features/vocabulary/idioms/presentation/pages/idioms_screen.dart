@@ -184,12 +184,14 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                         (!_isAnswered || _isCorrect == null))
                       DynamicAnagramWrapper(
                         title: 'SPELL THE IDIOM',
-                        subtitle: 'Tap all letters to rebuild the hidden phrase!',
+                        subtitle:
+                            'Tap all letters to rebuild the hidden phrase!',
                         expectedText: quest.correctAnswer ?? '',
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onFailed: () {},
-                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false, wrongWord: wrongWord),
+                        onFailedWithSpelling: (wrongWord) =>
+                            _submitFinalAnswer(false, wrongWord: wrongWord),
                       ),
                   ],
                 ),
@@ -232,116 +234,119 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             height: finalHeight,
             child: Column(
               children: [
-            SizedBox(height: gapTop),
-            isCompact
-                ? SizedBox(
-                    height: 30.h,
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: _buildHeaderBadge(color),
+                SizedBox(height: gapTop),
+                isCompact
+                    ? SizedBox(
+                        height: 30.h,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: _buildHeaderBadge(color),
+                        ),
+                      )
+                    : _buildHeaderBadge(color),
+
+                SizedBox(height: gapMiddle),
+
+                Expanded(
+                  child: ListView(
+                    physics: const BouncingScrollPhysics(),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 5.h,
                     ),
-                  )
-                : _buildHeaderBadge(color),
-
-            SizedBox(height: gapMiddle),
-
-            Expanded(
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
-                children: [
-                  IdiomsSystemMessage(
-                    text: "INCOMING TRANSMISSION...",
-                    color: color,
-                  ),
-                  SizedBox(height: isCompact ? 10.h : 20.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      CircleAvatar(
-                        radius: isCompact ? 14.r : 18.r,
-                        backgroundColor: color.withValues(alpha: 0.2),
-                        child: Icon(
-                          Icons.psychology_alt_rounded,
-                          size: isCompact ? 16.r : 20.r,
-                          color: color,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      IdiomsStrangerMessage(
-                        emojis: quest.topicEmoji ?? "❓",
+                      IdiomsSystemMessage(
+                        text: "INCOMING TRANSMISSION...",
                         color: color,
-                        isDark: isDark,
                       ),
-                    ],
-                  ),
-
-                  if (_selectedOption != null) ...[
-                    SizedBox(height: isCompact ? 14.h : 24.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        IdiomsUserMessage(
-                          text: _selectedOption!,
-                          color: color,
-                          isCorrect: _isCorrect,
-                          isDark: isDark,
-                        ),
-                        SizedBox(width: 10.w),
-                        CircleAvatar(
-                          radius: isCompact ? 14.r : 18.r,
-                          backgroundColor: color.withValues(alpha: 0.1),
-                          child: Icon(
-                            Icons.face_retouching_natural_rounded,
-                            size: isCompact ? 16.r : 20.r,
-                            color: color,
+                      SizedBox(height: isCompact ? 10.h : 20.h),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          CircleAvatar(
+                            radius: isCompact ? 14.r : 18.r,
+                            backgroundColor: color.withValues(alpha: 0.2),
+                            child: Icon(
+                              Icons.psychology_alt_rounded,
+                              size: isCompact ? 16.r : 20.r,
+                              color: color,
+                            ),
                           ),
+                          SizedBox(width: 10.w),
+                          IdiomsStrangerMessage(
+                            emojis: quest.topicEmoji ?? "❓",
+                            color: color,
+                            isDark: isDark,
+                          ),
+                        ],
+                      ),
+
+                      if (_selectedOption != null) ...[
+                        SizedBox(height: isCompact ? 14.h : 24.h),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            IdiomsUserMessage(
+                              text: _selectedOption!,
+                              color: color,
+                              isCorrect: _isCorrect,
+                              isDark: isDark,
+                            ),
+                            SizedBox(width: 10.w),
+                            CircleAvatar(
+                              radius: isCompact ? 14.r : 18.r,
+                              backgroundColor: color.withValues(alpha: 0.1),
+                              child: Icon(
+                                Icons.face_retouching_natural_rounded,
+                                size: isCompact ? 16.r : 20.r,
+                                color: color,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
-                    ),
-                  ],
 
-                  if (_isAnswered && _isCorrect == false) ...[
-                    SizedBox(height: 10.h),
-                    IdiomsSystemMessage(
-                      text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
-                      color: Colors.redAccent,
-                    ),
-                  ],
-                ],
-              ),
-            ),
-
-            SizedBox(height: gapMiddle),
-
-            Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  child: Wrap(
-                    spacing: 12.w,
-                    runSpacing: isCompact ? 8.h : 12.h,
-                    alignment: WrapAlignment.center,
-                    children: (quest.options ?? []).map((o) {
-                      return IdiomsOptionChip(
-                        text: o,
-                        correct: quest.correctAnswer ?? "",
-                        color: color,
-                        isDark: isDark,
-                        isAnswered: _isAnswered,
-                        isCorrect: _isCorrect,
-                        selectedOption: _selectedOption,
-                        onTap: () =>
-                            _submitAnswer(o, quest.correctAnswer ?? ""),
-                      );
-                    }).toList(),
+                      if (_isAnswered && _isCorrect == false) ...[
+                        SizedBox(height: 10.h),
+                        IdiomsSystemMessage(
+                          text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.",
+                          color: Colors.redAccent,
+                        ),
+                      ],
+                    ],
                   ),
-                )
-                .animate()
-                .fadeIn(delay: 800.ms)
-                .slideY(begin: 0.3, curve: Curves.easeOutCubic),
-            SizedBox(height: gapBottom),
-          ],
-        ),
+                ),
+
+                SizedBox(height: gapMiddle),
+
+                Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: Wrap(
+                        spacing: 12.w,
+                        runSpacing: isCompact ? 8.h : 12.h,
+                        alignment: WrapAlignment.center,
+                        children: (quest.options ?? []).map((o) {
+                          return IdiomsOptionChip(
+                            text: o,
+                            correct: quest.correctAnswer ?? "",
+                            color: color,
+                            isDark: isDark,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            selectedOption: _selectedOption,
+                            onTap: () =>
+                                _submitAnswer(o, quest.correctAnswer ?? ""),
+                          );
+                        }).toList(),
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(delay: 800.ms)
+                    .slideY(begin: 0.3, curve: Curves.easeOutCubic),
+                SizedBox(height: gapBottom),
+              ],
+            ),
           ),
         );
       },
@@ -385,4 +390,3 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     );
   }
 }
-

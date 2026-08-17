@@ -371,4 +371,3 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
     );
   }
 }
-

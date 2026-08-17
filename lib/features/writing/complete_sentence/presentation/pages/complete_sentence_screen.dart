@@ -190,7 +190,9 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
         final quest = isLoaded ? state.currentQuest : _lastQuest;
         final options = quest?.options ?? const [];
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
         final bool isFinalFailure = isLoaded
             ? state.isFinalFailure
             : (state.livesRemaining == 0);

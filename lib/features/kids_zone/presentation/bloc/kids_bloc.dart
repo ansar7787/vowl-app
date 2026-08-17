@@ -130,7 +130,6 @@ class KidsLoaded extends KidsState {
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
-
   }) {
     return KidsLoaded(
       quests: quests ?? this.quests,
@@ -254,7 +253,12 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             options: reshuffledOptions,
           );
 
-          emit(s.copyWith(quests: updatedQuests, answerStatus: AnswerStatus.unanswered));
+          emit(
+            s.copyWith(
+              quests: updatedQuests,
+              answerStatus: AnswerStatus.unanswered,
+            ),
+          );
         } else {
           emit(s.copyWith(answerStatus: AnswerStatus.unanswered));
         }
@@ -309,10 +313,15 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   void _onSubmitAnswer(SubmitKidsAnswer event, Emitter<KidsState> emit) {
     if (state is! KidsLoaded) return;
     final s = state as KidsLoaded;
-    if (s.answerStatus != AnswerStatus.unanswered || s.livesRemaining <= 0) return;
+    if (s.answerStatus != AnswerStatus.unanswered || s.livesRemaining <= 0)
+      return;
 
     // Synchronously lock state transition to prevent double-tap race conditions
-    final lockedState = s.copyWith(answerStatus: event.isCorrect ? AnswerStatus.correct : AnswerStatus.incorrect);
+    final lockedState = s.copyWith(
+      answerStatus: event.isCorrect
+          ? AnswerStatus.correct
+          : AnswerStatus.incorrect,
+    );
     emit(lockedState);
 
     if (event.isCorrect) {
@@ -345,7 +354,9 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          answerStatus: event.isCorrect ? AnswerStatus.correct : AnswerStatus.incorrect,
+          answerStatus: event.isCorrect
+              ? AnswerStatus.correct
+              : AnswerStatus.incorrect,
           wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
           isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2),
         ),
@@ -411,7 +422,11 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         } else {
           // Wrong answer on the very last quest
           emit(
-            s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false, wrongCount: 0),
+            s.copyWith(
+              answerStatus: AnswerStatus.unanswered,
+              hintUsed: false,
+              wrongCount: 0,
+            ),
           );
         }
       } else if (s.answerStatus == AnswerStatus.correct || s.isFinalFailure) {
@@ -426,7 +441,9 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         );
       } else {
         // First-time wrong answer, stay and retry
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
     }
   }
@@ -491,4 +508,3 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     }
   }
 }
-

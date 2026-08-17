@@ -126,7 +126,8 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
           });
         }
 
-        if (state.answerStatus == AnswerStatus.unanswered && _isCorrect != null) {
+        if (state.answerStatus == AnswerStatus.unanswered &&
+            _isCorrect != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
               setState(() {
@@ -151,53 +152,56 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
               onTap: state.answerStatus.isAnswered
                   ? null
                   : () {
-                      di.sl<KidsTTSService>().speak(state.currentQuest.instruction);
+                      di.sl<KidsTTSService>().speak(
+                        state.currentQuest.instruction,
+                      );
                     },
               child: Container(
-              width: 300.w,
-              padding: EdgeInsets.symmetric(vertical: 20.h),
-              decoration: BoxDecoration(
-                color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                borderRadius: BorderRadius.circular(32.r),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(alpha: 0.3),
-                  width: 4.w,
+                width: 300.w,
+                padding: EdgeInsets.symmetric(vertical: 20.h),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(32.r),
+                  border: Border.all(
+                    color: widget.primaryColor.withValues(alpha: 0.3),
+                    width: 4.w,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: widget.primaryColor.withValues(alpha: 0.2),
+                      blurRadius: 16,
+                      offset: Offset(0, 8.h),
+                    ),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: widget.primaryColor.withValues(alpha: 0.2),
-                    blurRadius: 16,
-                    offset: Offset(0, 8.h),
-                  ),
-                ],
+                child: Column(
+                  children: [
+                    Text(
+                      context.tr(
+                        'kids_zone.handwriting_instruction',
+                        fallback: 'Draw this word:',
+                      ),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade500,
+                      ),
+                    ),
+                    Text(
+                      targetWord,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 64.sp,
+                        fontWeight: FontWeight.w700,
+                        color: widget.primaryColor,
+                        letterSpacing: 6,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              child: Column(
-                children: [
-                  Text(
-                    context.tr(
-                      'kids_zone.handwriting_instruction',
-                      fallback: 'Draw this word:',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey.shade500,
-                    ),
-                  ),
-                  Text(
-                    targetWord,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 64.sp,
-                      fontWeight: FontWeight.w700,
-                      color: widget.primaryColor,
-                      letterSpacing: 6,
-                    ),
-                  ),
-                ],
-              ),
-            )).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
+            ).animate().scale(delay: 200.ms, curve: Curves.easeOutBack),
 
             SizedBox(height: 16.h),
 
@@ -294,5 +298,3 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     );
   }
 }
-
-

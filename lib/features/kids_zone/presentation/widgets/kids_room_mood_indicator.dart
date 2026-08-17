@@ -7,10 +7,7 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 class KidsRoomMoodIndicator extends StatelessWidget {
   final UserEntity user;
 
-  const KidsRoomMoodIndicator({
-    super.key,
-    required this.user,
-  });
+  const KidsRoomMoodIndicator({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +22,12 @@ class KidsRoomMoodIndicator extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
           decoration: BoxDecoration(
-            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.6),
+            color: (isDark ? Colors.black : Colors.white).withValues(
+              alpha: isDark ? 0.3 : 0.6,
+            ),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: moodData.color.withValues(alpha: 0.8), 
+              color: moodData.color.withValues(alpha: 0.8),
               width: 2.w,
             ),
             boxShadow: [
@@ -41,67 +40,70 @@ class KidsRoomMoodIndicator extends StatelessWidget {
             ],
           ),
           child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Mood Emoji
-          Text(
-            moodData.emoji,
-            style: TextStyle(fontSize: 20.sp),
-          )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.seconds,
-              ),
-          SizedBox(width: 8.w),
-          
-          // Mood Label
-          Text(
-            moodData.label.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: isDark ? moodData.color.withValues(alpha: 0.8) : moodData.color,
-              letterSpacing: 1.5,
-            ),
-          ),
-
-          // Streak Divider
-          if (user.kidsCareStreak > 0) ...[
-            SizedBox(width: 12.w),
-            Container(
-              width: 2.w,
-              height: 20.h,
-              color: Colors.grey.shade300,
-            ),
-            SizedBox(width: 12.w),
-            
-            // Streak Counter
-            Row(
-              children: [
-                Icon(
-                  Icons.local_fire_department_rounded,
-                  color: Colors.orange,
-                  size: 18.sp,
-                ).animate(onPlay: (c) => c.repeat(reverse: true))
-                 .scale(begin: const Offset(0.9, 0.9), end: const Offset(1.1, 1.1)),
-                SizedBox(width: 4.w),
-                Text(
-                  "${user.kidsCareStreak}",
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.orange.shade700,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Mood Emoji
+              Text(moodData.emoji, style: TextStyle(fontSize: 20.sp))
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(
+                    begin: const Offset(1, 1),
+                    end: const Offset(1.15, 1.15),
+                    duration: 1.seconds,
                   ),
+              SizedBox(width: 8.w),
+
+              // Mood Label
+              Text(
+                moodData.label.toUpperCase(),
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark
+                      ? moodData.color.withValues(alpha: 0.8)
+                      : moodData.color,
+                  letterSpacing: 1.5,
+                ),
+              ),
+
+              // Streak Divider
+              if (user.kidsCareStreak > 0) ...[
+                SizedBox(width: 12.w),
+                Container(
+                  width: 2.w,
+                  height: 20.h,
+                  color: Colors.grey.shade300,
+                ),
+                SizedBox(width: 12.w),
+
+                // Streak Counter
+                Row(
+                  children: [
+                    Icon(
+                          Icons.local_fire_department_rounded,
+                          color: Colors.orange,
+                          size: 18.sp,
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(0.9, 0.9),
+                          end: const Offset(1.1, 1.1),
+                        ),
+                    SizedBox(width: 4.w),
+                    Text(
+                      "${user.kidsCareStreak}",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.orange.shade700,
+                      ),
+                    ),
+                  ],
                 ),
               ],
-            ),
-          ]
-        ],
-      ),
+            ],
+          ),
         ),
       ),
     );
@@ -149,11 +151,5 @@ class _MoodData {
   final String label;
   final Color color;
 
-  _MoodData({
-    required this.emoji,
-    required this.label,
-    required this.color,
-  });
+  _MoodData({required this.emoji, required this.label, required this.color});
 }
-
-

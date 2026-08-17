@@ -20,7 +20,7 @@ class TranslationBottomSheet extends StatelessWidget {
     required String text,
   }) async {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     // Auto-remove any trailing punctuation to get clean translations for words
     final cleanText = text.replaceAll(RegExp(r'[^\w\s]+'), '').trim();
     if (cleanText.isEmpty) return;
@@ -44,7 +44,12 @@ class TranslationBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(24.w, 12.h, 24.w, 32.h + MediaQuery.of(context).viewInsets.bottom),
+      padding: EdgeInsets.fromLTRB(
+        24.w,
+        12.h,
+        24.w,
+        32.h + MediaQuery.of(context).viewInsets.bottom,
+      ),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
@@ -61,7 +66,7 @@ class TranslationBottomSheet extends StatelessWidget {
             ),
           ),
           SizedBox(height: 24.h),
-          
+
           // Source Text
           Text(
             textToTranslate,
@@ -74,11 +79,12 @@ class TranslationBottomSheet extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16.h),
-          
+
           // Target Language Indicator
           BlocBuilder<TranslationBloc, TranslationState>(
             builder: (context, state) {
-              if (state.currentTargetLanguage == null && !state.isModelDownloading) {
+              if (state.currentTargetLanguage == null &&
+                  !state.isModelDownloading) {
                 return Text(
                   'Please select a language in the Translate tab first.',
                   textAlign: TextAlign.center,
@@ -106,7 +112,11 @@ class TranslationBottomSheet extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12.w),
-                        child: Icon(Icons.arrow_forward_rounded, size: 16.r, color: const Color(0xFF10B981)),
+                        child: Icon(
+                          Icons.arrow_forward_rounded,
+                          size: 16.r,
+                          color: const Color(0xFF10B981),
+                        ),
                       ),
                       Text(
                         state.currentTargetLanguage ?? '...',
@@ -119,9 +129,9 @@ class TranslationBottomSheet extends StatelessWidget {
                       ),
                     ],
                   ),
-                  
+
                   SizedBox(height: 20.h),
-                  
+
                   // Translation Result
                   GlassTile(
                     padding: EdgeInsets.all(20.r),
@@ -149,7 +159,7 @@ class TranslationBottomSheet extends StatelessWidget {
         ),
       );
     }
-    
+
     if (state.errorMessage != null && state.errorMessage!.isNotEmpty) {
       return Text(
         state.errorMessage!,
@@ -161,7 +171,7 @@ class TranslationBottomSheet extends StatelessWidget {
         ),
       );
     }
-    
+
     return Text(
       state.translatedText.isEmpty ? '...' : state.translatedText,
       textAlign: TextAlign.center,
@@ -169,7 +179,7 @@ class TranslationBottomSheet extends StatelessWidget {
         fontFamily: 'Outfit',
         fontSize: 22.sp,
         fontWeight: FontWeight.w600,
-        color: state.translatedText.isEmpty 
+        color: state.translatedText.isEmpty
             ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
             : (isDark ? Colors.white : const Color(0xFF0F172A)),
       ),

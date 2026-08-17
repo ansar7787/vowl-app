@@ -368,4 +368,3 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     );
   }
 }
-

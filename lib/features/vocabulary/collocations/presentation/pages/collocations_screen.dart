@@ -208,12 +208,18 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ? (gapUnit * 2).clamp(12.0, 60.0)
                         : 12.0;
 
-                    final double totalGaps = gapTop + gapInstruction + gapAnchor + gapBottom;
-                    final double requiredHeight = estimatedContentHeight + totalGaps;
-                    final double finalHeight = math.max(maxHeight, requiredHeight);
+                    final double totalGaps =
+                        gapTop + gapInstruction + gapAnchor + gapBottom;
+                    final double requiredHeight =
+                        estimatedContentHeight + totalGaps;
+                    final double finalHeight = math.max(
+                      maxHeight,
+                      requiredHeight,
+                    );
 
                     return SizedBox(
-                      height: maxHeight, // Keep outer stack constrained to viewport
+                      height:
+                          maxHeight, // Keep outer stack constrained to viewport
                       child: Stack(
                         children: [
                           SingleChildScrollView(
@@ -221,75 +227,117 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                             child: SizedBox(
                               height: finalHeight,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapTop),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: _buildInstruction(
-                                    theme.primaryColor,
-                                    isDark,
-                                    quest.instruction,
-                                  ),
-                                ),
-                                SizedBox(height: gapInstruction),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: DragTarget<String>(
-                                    onWillAcceptWithDetails: (details) {
-                                      _hapticService.selection();
-                                      return !_isAnswered && !_isFirstStagePassed;
-                                    },
-                                    onAcceptWithDetails: (details) {
-                                      _submitAnswer(details.data, quest.correctAnswer ?? "");
-                                    },
-                                    builder: (context, candidateData, rejectedData) {
-                                      bool isHovered = candidateData.isNotEmpty;
-                                      return AnimatedScale(
-                                        scale: isHovered ? 1.05 : 1.0,
-                                        duration: 200.ms,
-                                        curve: Curves.easeOutBack,
-                                        child: AnimatedContainer(
-                                          duration: 200.ms,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(40.r),
-                                            boxShadow: isHovered
-                                                ? [
-                                                    BoxShadow(
-                                                      color: theme.primaryColor.withValues(alpha: 0.8),
-                                                      blurRadius: 40,
-                                                      spreadRadius: 10,
-                                                    )
-                                                  ]
-                                                : [],
-                                          ),
-                                          child: CollocationAnchorBubble(
-                                            text: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: gapTop),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
                                         ),
-                                      );
-                                    },
+                                        child: _buildInstruction(
+                                          theme.primaryColor,
+                                          isDark,
+                                          quest.instruction,
+                                        ),
+                                      ),
+                                      SizedBox(height: gapInstruction),
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 20.w,
+                                        ),
+                                        child: DragTarget<String>(
+                                          onWillAcceptWithDetails: (details) {
+                                            _hapticService.selection();
+                                            return !_isAnswered &&
+                                                !_isFirstStagePassed;
+                                          },
+                                          onAcceptWithDetails: (details) {
+                                            _submitAnswer(
+                                              details.data,
+                                              quest.correctAnswer ?? "",
+                                            );
+                                          },
+                                          builder:
+                                              (
+                                                context,
+                                                candidateData,
+                                                rejectedData,
+                                              ) {
+                                                bool isHovered =
+                                                    candidateData.isNotEmpty;
+                                                return AnimatedScale(
+                                                  scale: isHovered ? 1.05 : 1.0,
+                                                  duration: 200.ms,
+                                                  curve: Curves.easeOutBack,
+                                                  child: AnimatedContainer(
+                                                    duration: 200.ms,
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            40.r,
+                                                          ),
+                                                      boxShadow: isHovered
+                                                          ? [
+                                                              BoxShadow(
+                                                                color: theme
+                                                                    .primaryColor
+                                                                    .withValues(
+                                                                      alpha:
+                                                                          0.8,
+                                                                    ),
+                                                                blurRadius: 40,
+                                                                spreadRadius:
+                                                                    10,
+                                                              ),
+                                                            ]
+                                                          : [],
+                                                    ),
+                                                    child:
+                                                        CollocationAnchorBubble(
+                                                          text:
+                                                              quest.word ?? "",
+                                                          color: theme
+                                                              .primaryColor,
+                                                          isDark: isDark,
+                                                        ),
+                                                  ),
+                                                );
+                                              },
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapAnchor),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 100.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth,
-                                            child: _buildOptionsWrap(
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: gapAnchor),
+                                      isCompact
+                                          ? SizedBox(
+                                              height: 100.h,
+                                              child: FittedBox(
+                                                fit: BoxFit.scaleDown,
+                                                child: SizedBox(
+                                                  width: constraints.maxWidth,
+                                                  child: _buildOptionsWrap(
+                                                    quest,
+                                                    theme.primaryColor,
+                                                    isDark,
+                                                    state is VocabularyLoaded
+                                                        ? state.isFinalFailure
+                                                        : false,
+                                                    isCompact,
+                                                    state is VocabularyLoaded
+                                                        ? state.hintUsed
+                                                        : false,
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          : _buildOptionsWrap(
                                               quest,
                                               theme.primaryColor,
                                               isDark,
@@ -297,42 +345,33 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                                   ? state.isFinalFailure
                                                   : false,
                                               isCompact,
-                                              state is VocabularyLoaded ? state.hintUsed : false,
+                                              state is VocabularyLoaded
+                                                  ? state.hintUsed
+                                                  : false,
                                             ),
-                                          ),
-                                        ),
-                                      )
-                                    : _buildOptionsWrap(
-                                        quest,
-                                        theme.primaryColor,
-                                        isDark,
-                                        state is VocabularyLoaded
-                                            ? state.isFinalFailure
-                                            : false,
-                                        isCompact,
-                                        state is VocabularyLoaded ? state.hintUsed : false,
-                                      ),
-                                SizedBox(height: gapBottom),
-                              ],
-                            ),
+                                      SizedBox(height: gapBottom),
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
                           ),
-                        if (_isFirstStagePassed &&
-                            (!_isAnswered || _isCorrect == null))
-                          DynamicAnagramWrapper(
-                            title: 'SPELL THE COLLOCATION',
-                            subtitle: 'Tap all letters to rebuild the word pair!',
-                            expectedText: quest.correctAnswer ?? '',
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(true),
-                            onFailed: () {}, 
-                            onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
-                          ),
-                      ],
-                    ),
-                  );
+                          if (_isFirstStagePassed &&
+                              (!_isAnswered || _isCorrect == null))
+                            DynamicAnagramWrapper(
+                              title: 'SPELL THE COLLOCATION',
+                              subtitle:
+                                  'Tap all letters to rebuild the word pair!',
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onFailed: () {},
+                              onFailedWithSpelling: (wrongWord) =>
+                                  _submitFinalAnswer(false),
+                            ),
+                        ],
+                      ),
+                    );
                   },
                 ),
         );
@@ -399,10 +438,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               ),
             ),
           ),
-          childWhenDragging: Opacity(
-            opacity: 0.3,
-            child: bubble,
-          ),
+          childWhenDragging: Opacity(opacity: 0.3, child: bubble),
           onDragStarted: () => _hapticService.selection(),
           child: bubble,
         );
@@ -436,4 +472,3 @@ class _CollocationsScreenState extends State<CollocationsScreen>
         .shimmer(duration: 2.seconds);
   }
 }
-

@@ -176,7 +176,9 @@ class KidsSchoolLayout extends StatelessWidget {
                               )
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  const Color(0xFF0369A1).withValues(alpha: 0.15), // Dark blue silhouette
+                                  const Color(0xFF0369A1).withValues(
+                                    alpha: 0.15,
+                                  ), // Dark blue silhouette
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -191,7 +193,9 @@ class KidsSchoolLayout extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 60.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF0369A1).withValues(alpha: 0.7), // Dark blue question mark
+                            color: const Color(
+                              0xFF0369A1,
+                            ).withValues(alpha: 0.7), // Dark blue question mark
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -224,7 +228,9 @@ class KidsSchoolLayout extends StatelessWidget {
     // Extract emoji and text
     final parts = text.split(' ');
     final String emoji = parts.length > 1 ? parts.last : '';
-    final String word = parts.length > 1 ? parts.sublist(0, parts.length - 1).join(' ') : text;
+    final String word = parts.length > 1
+        ? parts.sublist(0, parts.length - 1).join(' ')
+        : text;
 
     final backpackWidget = SizedBox(
       width: 80.w,
@@ -270,10 +276,7 @@ class KidsSchoolLayout extends StatelessWidget {
                     height: 30.h,
                     child: Center(
                       child: emoji.isNotEmpty
-                          ? Text(
-                              emoji,
-                              style: TextStyle(fontSize: 16.sp),
-                            )
+                          ? Text(emoji, style: TextStyle(fontSize: 16.sp))
                           : const SizedBox.shrink(),
                     ),
                   ),
@@ -322,5 +325,3 @@ class KidsSchoolLayout extends StatelessWidget {
     );
   }
 }
-
-

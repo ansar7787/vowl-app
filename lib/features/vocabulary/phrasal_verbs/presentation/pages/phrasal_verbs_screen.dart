@@ -201,7 +201,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
 
                         final double estimatedContentHeight =
                             (isCompact ? 30.h : 40.h) +
-                            (quest.instruction.isNotEmpty ? (isCompact ? 60.h : 80.h) : 0) +
+                            (quest.instruction.isNotEmpty
+                                ? (isCompact ? 60.h : 80.h)
+                                : 0) +
                             (isCompact ? 70.h : 90.h) +
                             (isCompact ? 110.h : 160.h) +
                             (isCompact ? 90.h : 130.h) +
@@ -222,9 +224,17 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        final double totalGaps = gapTop + (quest.instruction.isNotEmpty ? gapTop / 2 : 0) + gapMiddle * 2 + gapBottom;
-                        final double requiredHeight = estimatedContentHeight + totalGaps;
-                        final double finalHeight = math.max(maxHeight, requiredHeight);
+                        final double totalGaps =
+                            gapTop +
+                            (quest.instruction.isNotEmpty ? gapTop / 2 : 0) +
+                            gapMiddle * 2 +
+                            gapBottom;
+                        final double requiredHeight =
+                            estimatedContentHeight + totalGaps;
+                        final double finalHeight = math.max(
+                          maxHeight,
+                          requiredHeight,
+                        );
 
                         return SingleChildScrollView(
                           physics: const BouncingScrollPhysics(),
@@ -235,41 +245,59 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                               children: [
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 30.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: _buildVaultStatus(
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 30.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: _buildVaultStatus(
+                                                theme.primaryColor,
+                                                isDark,
+                                              ),
+                                            ),
+                                          )
+                                        : _buildVaultStatus(
                                             theme.primaryColor,
                                             isDark,
                                           ),
-                                        ),
-                                      )
-                                    : _buildVaultStatus(
+                                    if (quest.instruction.isNotEmpty) ...[
+                                      SizedBox(height: gapTop / 2),
+                                      _buildInstruction(
+                                        quest.instruction,
                                         theme.primaryColor,
-                                        isDark,
+                                        isCompact,
                                       ),
-                                if (quest.instruction.isNotEmpty) ...[
-                                  SizedBox(height: gapTop / 2),
-                                  _buildInstruction(
-                                    quest.instruction,
-                                    theme.primaryColor,
-                                    isCompact,
-                                  ),
-                                ],
-                                SizedBox(height: gapMiddle),
+                                    ],
+                                    SizedBox(height: gapMiddle),
 
-                                // LCD Display
-                                isCompact
-                                    ? SizedBox(
-                                        height: 70.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth - 40.w,
+                                    // LCD Display
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 70.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width:
+                                                    constraints.maxWidth - 40.w,
+                                                child: PhrasalVerbsLcd(
+                                                  text:
+                                                      quest.hint?.replaceFirst(
+                                                        "DEFINITION: ",
+                                                        "",
+                                                      ) ??
+                                                      "ANALYZING VAULT...",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 20.w,
+                                            ),
                                             child: PhrasalVerbsLcd(
                                               text:
                                                   quest.hint?.replaceFirst(
@@ -281,85 +309,72 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                               isDark: isDark,
                                             ),
                                           ),
+                                  ],
+                                ),
+
+                                // The Central Vault Handle
+                                isCompact
+                                    ? SizedBox(
+                                        height: 110.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: PhrasalVerbsVaultHandle(
+                                            verb: quest.word ?? "VERB",
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            vaultController: _vaultController,
+                                          ),
                                         ),
                                       )
-                                    : Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 20.w,
-                                        ),
-                                        child: PhrasalVerbsLcd(
-                                          text:
-                                              quest.hint?.replaceFirst(
-                                                "DEFINITION: ",
-                                                "",
-                                              ) ??
-                                              "ANALYZING VAULT...",
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                        ),
-                                      ),
-                              ],
-                            ),
-
-                            // The Central Vault Handle
-                            isCompact
-                                ? SizedBox(
-                                    height: 110.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: PhrasalVerbsVaultHandle(
+                                    : PhrasalVerbsVaultHandle(
                                         verb: quest.word ?? "VERB",
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                         vaultController: _vaultController,
                                       ),
-                                    ),
-                                  )
-                                : PhrasalVerbsVaultHandle(
-                                    verb: quest.word ?? "VERB",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    vaultController: _vaultController,
-                                  ),
 
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapMiddle),
-                                // Key Options (Particles)
-                                isCompact
-                                    ? SizedBox(
-                                        height: 90.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth,
-                                            child: _buildOptionsWrap(
-                                              quest,
-                                              theme.primaryColor,
-                                              isDark,
-                                              isFinalFailure,
-                                              isCompact,
-                                              state is VocabularyLoaded ? state.hintUsed : false,
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapMiddle),
+                                    // Key Options (Particles)
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 90.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth,
+                                                child: _buildOptionsWrap(
+                                                  quest,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isFinalFailure,
+                                                  isCompact,
+                                                  state is VocabularyLoaded
+                                                      ? state.hintUsed
+                                                      : false,
+                                                ),
+                                              ),
                                             ),
+                                          )
+                                        : _buildOptionsWrap(
+                                            quest,
+                                            theme.primaryColor,
+                                            isDark,
+                                            isFinalFailure,
+                                            isCompact,
+                                            state is VocabularyLoaded
+                                                ? state.hintUsed
+                                                : false,
                                           ),
-                                        ),
-                                      )
-                                    : _buildOptionsWrap(
-                                        quest,
-                                        theme.primaryColor,
-                                        isDark,
-                                        isFinalFailure,
-                                        isCompact,
-                                        state is VocabularyLoaded ? state.hintUsed : false,
-                                      ),
-                                  SizedBox(height: gapBottom),
-                                ],
-                              ),
-                            ],
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      );
+                        );
                       },
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
@@ -370,7 +385,8 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onFailed: () {},
-                        onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false),
+                        onFailedWithSpelling: (wrongWord) =>
+                            _submitFinalAnswer(false),
                       ),
                   ],
                 ),
@@ -427,32 +443,32 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         ),
         child: Center(
           child: AutoSizeText(
-        text,
-        textAlign: TextAlign.center,
-        maxLines: 2,
-        minFontSize: 8,
-        stepGranularity: 1,
-        overflowReplacement: AutoSizeText(
-          text,
-          textAlign: TextAlign.center,
-          maxLines: 4,
-          minFontSize: 6,
-          stepGranularity: 0.5,
-          overflow: TextOverflow.visible,
-          style: TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w600,
-            color: color.withValues(alpha: 0.9),
-            height: 1.3,
+            text,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            minFontSize: 8,
+            stepGranularity: 1,
+            overflowReplacement: AutoSizeText(
+              text,
+              textAlign: TextAlign.center,
+              maxLines: 4,
+              minFontSize: 6,
+              stepGranularity: 0.5,
+              overflow: TextOverflow.visible,
+              style: TextStyle(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                color: color.withValues(alpha: 0.9),
+                height: 1.3,
+              ),
+            ),
+            style: TextStyle(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w600,
+              color: color.withValues(alpha: 0.9),
+              height: 1.4,
+            ),
           ),
-        ),
-        style: TextStyle(
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600,
-          color: color.withValues(alpha: 0.9),
-          height: 1.4,
-        ),
-      ),
         ),
       ),
     );
@@ -488,4 +504,3 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     );
   }
 }
-

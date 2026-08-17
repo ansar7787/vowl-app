@@ -234,5 +234,3 @@ class _SentenceOrderReadingScreenState
     );
   }
 }
-
-

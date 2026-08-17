@@ -62,6 +62,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
   final int currentIndex;
   @override
   final int livesRemaining;
+
   /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
   final AnswerStatus answerStatus;
 

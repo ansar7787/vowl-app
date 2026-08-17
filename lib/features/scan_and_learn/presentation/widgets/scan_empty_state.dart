@@ -37,16 +37,16 @@ class ScanEmptyState extends StatelessWidget {
               children: [
                 // Pulsing rings
                 Container(
-                  height: 140.r,
-                  width: 140.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                      width: 1.5.w,
-                    ),
-                  ),
-                )
+                      height: 140.r,
+                      width: 140.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                          width: 1.5.w,
+                        ),
+                      ),
+                    )
                     .animate(onPlay: (c) => c.repeat(reverse: true))
                     .scaleXY(begin: 0.9, end: 1.1, duration: 2.seconds),
                 // Glowing Core
@@ -61,51 +61,56 @@ class ScanEmptyState extends StatelessWidget {
                         color: const Color(0xFF6366F1).withValues(alpha: 0.3),
                         blurRadius: 30,
                         spreadRadius: 10,
-                      )
+                      ),
                     ],
                   ),
-                  child: Icon(
-                    Icons.document_scanner_rounded,
-                    size: 40.r,
-                    color: const Color(0xFF6366F1),
-                  )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
+                  child:
+                      Icon(
+                            Icons.document_scanner_rounded,
+                            size: 40.r,
+                            color: const Color(0xFF6366F1),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .fade(begin: 0.5, end: 1.0, duration: 1.seconds),
                 ),
                 // Radar sweep line
                 Positioned.fill(
-                  child: Center(
-                    child: Container(
-                      width: 2.w,
-                      height: 180.r,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            const Color(0xFF6366F1).withValues(alpha: 0.0),
-                            const Color(0xFF6366F1).withValues(alpha: 0.8),
-                            const Color(0xFF6366F1).withValues(alpha: 0.0),
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
+                      child: Center(
+                        child: Container(
+                          width: 2.w,
+                          height: 180.r,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                const Color(0xFF6366F1).withValues(alpha: 0.0),
+                                const Color(0xFF6366F1).withValues(alpha: 0.8),
+                                const Color(0xFF6366F1).withValues(alpha: 0.0),
+                              ],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ).animate(onPlay: (c) => c.repeat()).rotate(duration: 4.seconds),
+                    )
+                    .animate(onPlay: (c) => c.repeat())
+                    .rotate(duration: 4.seconds),
               ],
             ),
           ),
           SizedBox(height: 32.h),
           Text(
-            "SYSTEM STANDBY",
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w900,
-              color: const Color(0xFF6366F1),
-              letterSpacing: 4.0,
-            ),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).fade(duration: 800.ms),
+                "SYSTEM STANDBY",
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w900,
+                  color: const Color(0xFF6366F1),
+                  letterSpacing: 4.0,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .fade(duration: 800.ms),
           SizedBox(height: 8.h),
           Text(
             context.tr(

@@ -407,4 +407,3 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     );
   }
 }
-

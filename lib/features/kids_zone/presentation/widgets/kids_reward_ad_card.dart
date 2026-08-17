@@ -50,10 +50,7 @@ class _KidsRewardAdCardState extends State<KidsRewardAdCard> {
       'home.kids_claim_subtitle',
       fallback: 'Watch a quick video to unlock rewards',
     );
-    final startLabel = context.tr(
-      'home.kids_start_button',
-      fallback: 'START',
-    );
+    final startLabel = context.tr('home.kids_start_button', fallback: 'START');
 
     return Semantics(
       button: true,
@@ -260,5 +257,3 @@ class _KidsRewardAdCardState extends State<KidsRewardAdCard> {
     }
   }
 }
-
-

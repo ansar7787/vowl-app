@@ -361,5 +361,3 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 }
-
-

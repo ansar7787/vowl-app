@@ -398,5 +398,3 @@ class KidsPhonicsLayout extends StatelessWidget {
     );
   }
 }
-
-

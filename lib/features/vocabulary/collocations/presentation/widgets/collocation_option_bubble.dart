@@ -42,7 +42,8 @@ class CollocationOptionBubble extends StatelessWidget {
         isPhase1Correct;
     final isGlowingHint = isHintUsed && text == correct && !isFirstStagePassed;
     final showCorrect = isExploding || isGlowingHint;
-    final showWrong = isAnswered && isSelected && isCorrect == false && !isPhase1Correct;
+    final showWrong =
+        isAnswered && isSelected && isCorrect == false && !isPhase1Correct;
 
     Color bubbleColor = isDark
         ? Colors.white.withValues(alpha: 0.05)

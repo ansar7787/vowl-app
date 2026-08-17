@@ -10,10 +10,7 @@ import 'dart:async';
 class KidsRoomPlayGame extends StatefulWidget {
   final void Function(int score) onComplete;
 
-  const KidsRoomPlayGame({
-    super.key,
-    required this.onComplete,
-  });
+  const KidsRoomPlayGame({super.key, required this.onComplete});
 
   @override
   State<KidsRoomPlayGame> createState() => _KidsRoomPlayGameState();
@@ -47,7 +44,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
       _timeLeft = 10;
       _bubbles.clear();
     });
-    
+
     _gameTimer?.cancel();
     _spawnTimer?.cancel();
 
@@ -74,13 +71,18 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
       }
       if (_bubbles.length < 5) {
         setState(() {
-          _bubbles.add(_Bubble(
-            id: DateTime.now().millisecondsSinceEpoch.toString() + Random().nextInt(1000).toString(),
-            x: 0.1 + Random().nextDouble() * 0.8,
-            y: 0.2 + Random().nextDouble() * 0.6,
-            size: 40 + Random().nextDouble() * 40,
-            color: Colors.primaries[Random().nextInt(Colors.primaries.length)],
-          ));
+          _bubbles.add(
+            _Bubble(
+              id:
+                  DateTime.now().millisecondsSinceEpoch.toString() +
+                  Random().nextInt(1000).toString(),
+              x: 0.1 + Random().nextDouble() * 0.8,
+              y: 0.2 + Random().nextDouble() * 0.6,
+              size: 40 + Random().nextDouble() * 40,
+              color:
+                  Colors.primaries[Random().nextInt(Colors.primaries.length)],
+            ),
+          );
         });
       }
     });
@@ -135,20 +137,15 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                         color: bubble.color.withValues(alpha: 0.6),
                         blurRadius: 15,
                         spreadRadius: 4,
-                      )
-                    ]
+                      ),
+                    ],
                   ),
                   child: Center(
                     child: Text(
                       "🪙",
                       style: TextStyle(
                         fontSize: bubble.size.r * 0.5,
-                        shadows: [
-                          Shadow(
-                            color: Colors.white,
-                            blurRadius: 15,
-                          ),
-                        ],
+                        shadows: [Shadow(color: Colors.white, blurRadius: 15)],
                       ),
                     ),
                   ),
@@ -166,7 +163,10 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                 children: [
                   // Time
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 10.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.r),
@@ -184,7 +184,10 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                   ),
                   // Score
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 10.h,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20.r),
@@ -218,8 +221,8 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                       color: Colors.amber.withValues(alpha: 0.5),
                       blurRadius: 20,
                       spreadRadius: 5,
-                    )
-                  ]
+                    ),
+                  ],
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -245,7 +248,7 @@ class _KidsRoomPlayGameState extends State<KidsRoomPlayGame> {
                   ],
                 ),
               ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
-            )
+            ),
         ],
       ),
     );
@@ -267,5 +270,3 @@ class _Bubble {
     required this.color,
   });
 }
-
-

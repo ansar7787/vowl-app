@@ -170,7 +170,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         final options = quest?.options ?? [];
         final slotsFilled = _slots.values.every((v) => v != null);
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         final lives = state.livesRemaining;
         final bool isFinalFailure = isLoaded

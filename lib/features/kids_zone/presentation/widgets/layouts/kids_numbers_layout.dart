@@ -300,5 +300,3 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 }
-
-

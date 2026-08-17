@@ -211,5 +211,3 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
     );
   }
 }
-
-

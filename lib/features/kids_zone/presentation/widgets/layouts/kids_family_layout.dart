@@ -185,7 +185,9 @@ class KidsFamilyLayout extends StatelessWidget {
                               )
                             : ColorFiltered(
                                 colorFilter: ColorFilter.mode(
-                                  const Color(0xFF78350F).withValues(alpha: 0.15),
+                                  const Color(
+                                    0xFF78350F,
+                                  ).withValues(alpha: 0.15),
                                   BlendMode.srcIn,
                                 ),
                                 child: Text(
@@ -200,7 +202,9 @@ class KidsFamilyLayout extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 60.sp,
                             fontWeight: FontWeight.w900,
-                            color: const Color(0xFF78350F).withValues(alpha: 0.7),
+                            color: const Color(
+                              0xFF78350F,
+                            ).withValues(alpha: 0.7),
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -228,7 +232,9 @@ class KidsFamilyLayout extends StatelessWidget {
     // Extract emoji and text
     final parts = text.split(' ');
     final String emoji = parts.length > 1 ? parts.last : '';
-    final String word = parts.length > 1 ? parts.sublist(0, parts.length - 1).join(' ') : text;
+    final String word = parts.length > 1
+        ? parts.sublist(0, parts.length - 1).join(' ')
+        : text;
 
     final polaroidWidget = Transform.rotate(
       angle: rotation,
@@ -256,10 +262,7 @@ class KidsFamilyLayout extends StatelessWidget {
                 color: const Color(0xFFE2E8F0), // Blank photo grey
                 child: Center(
                   child: emoji.isNotEmpty
-                      ? Text(
-                          emoji,
-                          style: TextStyle(fontSize: 32.sp),
-                        )
+                      ? Text(emoji, style: TextStyle(fontSize: 32.sp))
                       : Icon(
                           Icons.photo_rounded,
                           color: const Color(0xFF94A3B8),
@@ -300,5 +303,3 @@ class KidsFamilyLayout extends StatelessWidget {
     );
   }
 }
-
-

@@ -193,7 +193,10 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       '',
     );
 
-    di.sl<AppLogger>().warning("KIDS_MAP: Buddy speaking: $cleanMessage", tag: 'KidsZone');
+    di.sl<AppLogger>().warning(
+      "KIDS_MAP: Buddy speaking: $cleanMessage",
+      tag: 'KidsZone',
+    );
     di.sl<SoundService>().playMascotInteraction();
     di.sl<TtsService>().speak(cleanMessage);
 
@@ -542,7 +545,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       return _buildShimmerSegment(context, currentOffset, nextOffset, isLast);
     }
 
-
     return AnimatedBuilder(
       animation: Listenable.merge([
         _unlockPathController,
@@ -564,13 +566,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           final user = context.read<AuthBloc>().state.user;
           final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
           if (level == currUnlocked - 1) {
-            pathProgress = Curves.easeInOutCubic
-                .transform(_unlockPathController.value);
+            pathProgress = Curves.easeInOutCubic.transform(
+              _unlockPathController.value,
+            );
           }
         }
 
-        final glowValue = Curves.easeInOutSine
-            .transform(_glowController.value);
+        final glowValue = Curves.easeInOutSine.transform(_glowController.value);
 
         return Opacity(
           opacity: entryT,
@@ -581,13 +583,13 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                 incomingColor: isPrevCompleted
                     ? widget.primaryColor
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.05)),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05)),
                 outgoingColor: isCompleted
                     ? widget.primaryColor
                     : (isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : Colors.black.withValues(alpha: 0.05)),
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05)),
                 currentOffset: currentOffset,
                 nextOffset: nextOffset,
                 isLast: isLast,
@@ -1356,4 +1358,3 @@ class _BubbleTailPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-

@@ -303,4 +303,3 @@ class _ErrorScaffold extends StatelessWidget {
     );
   }
 }
-

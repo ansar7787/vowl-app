@@ -359,5 +359,3 @@ class KidsEmotionsLayout extends StatelessWidget {
     );
   }
 }
-
-

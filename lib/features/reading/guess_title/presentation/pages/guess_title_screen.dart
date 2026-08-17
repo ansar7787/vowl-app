@@ -190,5 +190,3 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 }
-
-

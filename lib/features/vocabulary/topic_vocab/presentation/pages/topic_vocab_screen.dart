@@ -141,7 +141,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       if (parts.length == 2) {
         final targetBucket = parts[0].trim().toLowerCase();
         final targetWord = parts[1].trim().toLowerCase();
-        
+
         if (targetWord == cleanWord) {
           return targetBucket == cleanLabel;
         }
@@ -170,7 +170,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               _isHintActive = false;
               _userChoices.clear();
               _wordsInBins.forEach((_, list) => list.clear());
-              _shuffledOptions = List<String>.from(state.currentQuest.options ?? [])..shuffle();
+              _shuffledOptions = List<String>.from(
+                state.currentQuest.options ?? [],
+              )..shuffle();
             });
           }
         }
@@ -208,7 +210,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        final options = _shuffledOptions.isNotEmpty ? _shuffledOptions : (quest?.options ?? []);
+        final options = _shuffledOptions.isNotEmpty
+            ? _shuffledOptions
+            : (quest?.options ?? []);
         final buckets = quest?.topicBuckets ?? ["A", "B"];
         final currentWord = _currentWordIndex < options.length
             ? options[_currentWordIndex]
@@ -414,20 +418,22 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
-                                Icons.keyboard_double_arrow_left_rounded,
-                                color: Colors.white.withValues(alpha: 0.5),
-                                size: 24.r,
-                              )
+                                    Icons.keyboard_double_arrow_left_rounded,
+                                    color: Colors.white.withValues(alpha: 0.5),
+                                    size: 24.r,
+                                  )
                                   .animate(onPlay: (c) => c.repeat())
                                   .fadeIn(duration: 500.ms)
                                   .fadeOut(delay: 500.ms),
                               SizedBox(width: 8.w),
                               Icon(
-                                Icons.touch_app_rounded,
-                                color: Colors.white.withValues(alpha: 0.9),
-                                size: 32.r,
-                              )
-                                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                                    Icons.touch_app_rounded,
+                                    color: Colors.white.withValues(alpha: 0.9),
+                                    size: 32.r,
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
                                   .moveX(
                                     begin: -25.w,
                                     end: 25.w,
@@ -436,10 +442,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   ),
                               SizedBox(width: 8.w),
                               Icon(
-                                Icons.keyboard_double_arrow_right_rounded,
-                                color: Colors.white.withValues(alpha: 0.5),
-                                size: 24.r,
-                              )
+                                    Icons.keyboard_double_arrow_right_rounded,
+                                    color: Colors.white.withValues(alpha: 0.5),
+                                    size: 24.r,
+                                  )
                                   .animate(onPlay: (c) => c.repeat())
                                   .fadeIn(duration: 500.ms)
                                   .fadeOut(delay: 500.ms),
@@ -507,6 +513,4 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       },
     );
   }
-
 }
-

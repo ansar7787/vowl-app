@@ -199,5 +199,3 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     );
   }
 }
-
-

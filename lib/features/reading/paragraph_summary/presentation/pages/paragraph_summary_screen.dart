@@ -255,5 +255,3 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
     );
   }
 }
-
-

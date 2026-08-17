@@ -160,7 +160,9 @@ class FlashcardGameBody extends StatelessWidget {
           '${isFlipped ? "Definition revealed." : "Tap to reveal definition."}',
       child: GestureDetector(
         onHorizontalDragUpdate: isFlipped ? onHorizontalDragUpdate : null,
-        onHorizontalDragEnd: isFlipped ? (d) => onHorizontalDragEnd(d, swipeThreshold) : null,
+        onHorizontalDragEnd: isFlipped
+            ? (d) => onHorizontalDragEnd(d, swipeThreshold)
+            : null,
         onTap: onCardTap,
         child: Stack(
           alignment: Alignment.center,

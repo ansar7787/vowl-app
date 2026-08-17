@@ -397,4 +397,3 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     );
   }
 }
-

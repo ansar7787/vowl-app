@@ -28,7 +28,7 @@ class KidsRoomActionPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return ClipRRect(
       borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
       child: BackdropFilter(
@@ -39,7 +39,9 @@ class KidsRoomActionPanel extends StatelessWidget {
             bottom: 16.h + MediaQuery.paddingOf(context).bottom,
           ),
           decoration: BoxDecoration(
-            color: (isDark ? Colors.black : Colors.white).withValues(alpha: isDark ? 0.3 : 0.4),
+            color: (isDark ? Colors.black : Colors.white).withValues(
+              alpha: isDark ? 0.3 : 0.4,
+            ),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border(
               top: BorderSide(
@@ -55,77 +57,77 @@ class KidsRoomActionPanel extends StatelessWidget {
               ),
             ],
           ),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              clipBehavior: Clip.none,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Decor",
-                    emoji: "🎨",
-                    color: Colors.indigoAccent,
-                    onTap: onDecor,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Feed",
-                    emoji: "🍎",
-                    color: Colors.greenAccent.shade700,
-                    onTap: onFeed,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Play",
-                    emoji: "🎮",
-                    color: Colors.orangeAccent.shade700,
-                    onTap: onPlay,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Clean",
-                    emoji: "🧹",
-                    color: Colors.tealAccent.shade700,
-                    onTap: onClean,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: isSleeping ? "Wake" : "Sleep",
-                    emoji: isSleeping ? "☀️" : "🌙",
-                    color: Colors.deepPurpleAccent,
-                    onTap: onSleepToggle,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Talk",
-                    emoji: "💬",
-                    color: Colors.lightBlueAccent.shade700,
-                    onTap: onTalk,
-                    isDark: isDark,
-                  ),
-                  _buildModernActionButton(
-                    context: context,
-                    label: "Theme",
-                    emoji: "✨",
-                    color: Colors.pinkAccent.shade400,
-                    onTap: onThemeTap,
-                    isDark: isDark,
-                  ),
-                ],
-              ),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            clipBehavior: Clip.none,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildModernActionButton(
+                  context: context,
+                  label: "Decor",
+                  emoji: "🎨",
+                  color: Colors.indigoAccent,
+                  onTap: onDecor,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: "Feed",
+                  emoji: "🍎",
+                  color: Colors.greenAccent.shade700,
+                  onTap: onFeed,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: "Play",
+                  emoji: "🎮",
+                  color: Colors.orangeAccent.shade700,
+                  onTap: onPlay,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: "Clean",
+                  emoji: "🧹",
+                  color: Colors.tealAccent.shade700,
+                  onTap: onClean,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: isSleeping ? "Wake" : "Sleep",
+                  emoji: isSleeping ? "☀️" : "🌙",
+                  color: Colors.deepPurpleAccent,
+                  onTap: onSleepToggle,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: "Talk",
+                  emoji: "💬",
+                  color: Colors.lightBlueAccent.shade700,
+                  onTap: onTalk,
+                  isDark: isDark,
+                ),
+                _buildModernActionButton(
+                  context: context,
+                  label: "Theme",
+                  emoji: "✨",
+                  color: Colors.pinkAccent.shade400,
+                  onTap: onThemeTap,
+                  isDark: isDark,
+                ),
+              ],
             ),
           ),
         ),
-      );
-    }
+      ),
+    );
+  }
 
   Widget _buildModernActionButton({
     required BuildContext context,
@@ -148,10 +150,7 @@ class KidsRoomActionPanel extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [
-                    color.withValues(alpha: 0.8),
-                    color,
-                  ],
+                  colors: [color.withValues(alpha: 0.8), color],
                 ),
                 borderRadius: BorderRadius.circular(20.r),
                 boxShadow: [
@@ -177,8 +176,8 @@ class KidsRoomActionPanel extends StatelessWidget {
                       color: Colors.black.withValues(alpha: 0.2),
                       blurRadius: 4,
                       offset: const Offset(1, 2),
-                    )
-                  ]
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -196,8 +195,8 @@ class KidsRoomActionPanel extends StatelessWidget {
                     Shadow(
                       color: Colors.black.withValues(alpha: 0.5),
                       blurRadius: 4,
-                    )
-                ]
+                    ),
+                ],
               ),
             ),
           ],
@@ -206,5 +205,3 @@ class KidsRoomActionPanel extends StatelessWidget {
     );
   }
 }
-
-

@@ -38,7 +38,7 @@ class TopicContainmentBin extends StatelessWidget {
         if (parts.length == 2) {
           final targetBucket = parts[0].trim().toLowerCase();
           final targetWord = parts[1].trim().toLowerCase();
-          
+
           if (targetWord == cleanWord && targetBucket == cleanLabel) {
             isHinted = true;
             break;

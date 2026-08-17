@@ -167,7 +167,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           onHint: () {
             // Find correct suffix index
             final correct = quest?.correctAnswer ?? "";
-            
+
             // Speak the target word as a powerful audio hint
             if (correct.isNotEmpty) {
               di.sl<TtsService>().speak(correct);
@@ -225,8 +225,12 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         : 12.0;
 
                     final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
-                    final double requiredHeight = estimatedContentHeight + totalGaps;
-                    final double finalHeight = math.max(maxHeight, requiredHeight);
+                    final double requiredHeight =
+                        estimatedContentHeight + totalGaps;
+                    final double finalHeight = math.max(
+                      maxHeight,
+                      requiredHeight,
+                    );
 
                     return SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
@@ -241,44 +245,50 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                               children: [
                                 SizedBox(height: gapTop),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                                  child: _buildInstruction(theme.primaryColor, quest)
-                                      .animate()
-                                      .fadeIn(duration: 500.ms)
-                                      .slideY(
-                                        begin: -0.5,
-                                        end: 0,
-                                        duration: 500.ms,
-                                        curve: Curves.easeOutBack,
-                                      ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child:
+                                      _buildInstruction(
+                                            theme.primaryColor,
+                                            quest,
+                                          )
+                                          .animate()
+                                          .fadeIn(duration: 500.ms)
+                                          .slideY(
+                                            begin: -0.5,
+                                            end: 0,
+                                            duration: 500.ms,
+                                            curve: Curves.easeOutBack,
+                                          ),
                                 ),
                                 SizedBox(height: gapMiddle),
 
                                 // Reaction Core
                                 (isCompact
-                                    ? SizedBox(
-                                        height: 120.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: SizedBox(
-                                            width: constraints.maxWidth,
-                                            child: _buildReactionCore(
-                                              quest,
-                                              root,
-                                              activeSuffix,
-                                              theme.primaryColor,
-                                              isDark,
+                                        ? SizedBox(
+                                            height: 120.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth,
+                                                child: _buildReactionCore(
+                                                  quest,
+                                                  root,
+                                                  activeSuffix,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                        ),
-                                      )
-                                    : _buildReactionCore(
-                                        quest,
-                                        root,
-                                        activeSuffix,
-                                        theme.primaryColor,
-                                        isDark,
-                                      ))
+                                          )
+                                        : _buildReactionCore(
+                                            quest,
+                                            root,
+                                            activeSuffix,
+                                            theme.primaryColor,
+                                            isDark,
+                                          ))
                                     .animate()
                                     .scale(
                                       begin: const Offset(0.8, 0.8),
@@ -318,10 +328,11 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
   }
 
   Widget _buildInstruction(Color color, GameQuest? quest) {
-    final text = quest?.hint ??
+    final text =
+        quest?.hint ??
         quest?.instruction ??
         "Analyze the meaning and select the correct ending.";
-    
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -476,7 +487,9 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                   size: 20.r,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.w,
+                                  ),
                                   child: FittedBox(
                                     fit: BoxFit.scaleDown,
                                     child: Text(
@@ -542,34 +555,34 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
       child: Column(
         children: options.asMap().entries.map((entry) {
           return Padding(
-            padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
-            child: SizedBox(
-              width: 1.sw,
-              height: isCompact ? 40.h : 60.h,
-              child: FittedBox(
-                fit: BoxFit.fill,
+                padding: EdgeInsets.only(bottom: isCompact ? 6.h : 12.h),
                 child: SizedBox(
-                  width: 1.sw - 48.w,
-                  height: 60.h,
-                  child: MorphInjectionRail(
-                    index: entry.key,
-                    suffix: entry.value,
-                    color: color,
-                    isDark: isDark,
-                    isBlocked: _isAnswered,
-                    onMorph: (suffix) {
-                      _submitMorph(suffix, root, correct, entry.key);
-                    },
-                    onHover: (index) {
-                      if (!_isAnswered) {
-                        setState(() => _hoveringSuffixIndex = index);
-                      }
-                    },
+                  width: 1.sw,
+                  height: isCompact ? 40.h : 60.h,
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: SizedBox(
+                      width: 1.sw - 48.w,
+                      height: 60.h,
+                      child: MorphInjectionRail(
+                        index: entry.key,
+                        suffix: entry.value,
+                        color: color,
+                        isDark: isDark,
+                        isBlocked: _isAnswered,
+                        onMorph: (suffix) {
+                          _submitMorph(suffix, root, correct, entry.key);
+                        },
+                        onHover: (index) {
+                          if (!_isAnswered) {
+                            setState(() => _hoveringSuffixIndex = index);
+                          }
+                        },
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ),
-          )
+              )
               .animate()
               .fadeIn(duration: 400.ms, delay: (entry.key * 100).ms)
               .slideX(
@@ -584,4 +597,3 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 }
-

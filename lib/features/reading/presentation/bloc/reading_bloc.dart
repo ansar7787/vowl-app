@@ -224,7 +224,9 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
           ),
         );
       } else {
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
       return;
     }

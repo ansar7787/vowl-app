@@ -153,7 +153,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           });
         }
 
-        if (state is WritingLoaded && state.answerStatus == AnswerStatus.correct) {
+        if (state is WritingLoaded &&
+            state.answerStatus == AnswerStatus.correct) {
           _ttsService.speak(state.currentQuest.correctAnswer ?? '');
         }
 
@@ -190,7 +191,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         final quest = isLoaded ? state.currentQuest : _lastQuest;
         final pool = quest?.shuffledWords ?? const [];
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         final lives = state.livesRemaining;
         final isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);

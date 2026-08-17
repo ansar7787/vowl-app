@@ -132,7 +132,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   final String? currentNodeId;
   @override
   final int livesRemaining;
-  
+
   /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
   final AnswerStatus answerStatus;
 

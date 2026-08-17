@@ -131,118 +131,143 @@ class KidsFoodLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.answerStatus.isAnswered ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.answerStatus.isAnswered
+              ? null
+              : () {
+                  if (quest.instruction != null) {
+                    di.sl<KidsTTSService>().speak(quest.instruction!);
+                  }
+                },
           child: Stack(
-          alignment: Alignment.topCenter,
-          clipBehavior: Clip.none,
-          children: [
-            // The White Kitchen Tile Board
-            Container(
-              width: 280.w,
-              height: 200.h,
-              decoration: BoxDecoration(
-                color: isHovering
-                    ? const Color(0xFFFEF2F2)
-                    : Colors.white, // Light red tint on hover
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
+            alignment: Alignment.topCenter,
+            clipBehavior: Clip.none,
+            children: [
+              // The White Kitchen Tile Board
+              Container(
+                width: 280.w,
+                height: 200.h,
+                decoration: BoxDecoration(
                   color: isHovering
-                      ? const Color(0xFFE11D48)
-                      : const Color(0xFFD4D4D8),
-                  width: isHovering ? 6.r : 4.r,
-                ), // Light grey tile border
-                boxShadow: [
-                  BoxShadow(
+                      ? const Color(0xFFFEF2F2)
+                      : Colors.white, // Light red tint on hover
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
                     color: isHovering
-                        ? const Color(0xFFE11D48).withValues(alpha: 0.3)
-                        : Colors.black.withValues(alpha: 0.1),
-                    blurRadius: isHovering ? 20 : 10,
-                    offset: const Offset(0, 8),
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          if (quest.emoji != null && (quest.question == "?" || quest.question == null))
-                            state.answerStatus == AnswerStatus.correct
-                                ? Text(
-                                    quest.emoji!,
-                                    style: TextStyle(fontSize: 80.sp),
-                                  )
-                                : ColorFiltered(
-                                    colorFilter: ColorFilter.mode(
-                                      const Color(0xFFE11D48).withValues(alpha: 0.15),
-                                      BlendMode.srcIn,
-                                    ),
-                                    child: Text(
+                        ? const Color(0xFFE11D48)
+                        : const Color(0xFFD4D4D8),
+                    width: isHovering ? 6.r : 4.r,
+                  ), // Light grey tile border
+                  boxShadow: [
+                    BoxShadow(
+                      color: isHovering
+                          ? const Color(0xFFE11D48).withValues(alpha: 0.3)
+                          : Colors.black.withValues(alpha: 0.1),
+                      blurRadius: isHovering ? 20 : 10,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            if (quest.emoji != null &&
+                                (quest.question == "?" ||
+                                    quest.question == null))
+                              state.answerStatus == AnswerStatus.correct
+                                  ? Text(
                                       quest.emoji!,
                                       style: TextStyle(fontSize: 80.sp),
+                                    )
+                                  : ColorFiltered(
+                                      colorFilter: ColorFilter.mode(
+                                        const Color(
+                                          0xFFE11D48,
+                                        ).withValues(alpha: 0.15),
+                                        BlendMode.srcIn,
+                                      ),
+                                      child: Text(
+                                        quest.emoji!,
+                                        style: TextStyle(fontSize: 80.sp),
+                                      ),
                                     ),
+                            if (state.answerStatus != AnswerStatus.correct ||
+                                (quest.question != "?" &&
+                                    quest.question != null))
+                              KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 70.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: const Color(0xFFE11D48).withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
                                   ),
-                          if (state.answerStatus != AnswerStatus.correct || (quest.question != "?" && quest.question != null))
-                            KidsFittedText(
-                              quest.question ?? "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: (quest.question == "?" || quest.question == null) ? 70.sp : 24.sp,
-                                fontWeight: FontWeight.w800,
-                                color: const Color(0xFFE11D48).withValues(
-                                    alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0),
+                                ),
+                                textAlign: TextAlign.center,
+                                maxLines: 3,
                               ),
-                              textAlign: TextAlign.center,
-                              maxLines: 3,
-                            ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // A cute chef hat resting on top
-            Positioned(
-              top: -30.h,
-              child: Container(
-                width: 80.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(40.r),
+                    ],
                   ),
-                  border: Border.all(color: const Color(0xFFE4E4E7), width: 2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: 2.w,
-                      height: 20.h,
-                      color: const Color(0xFFE4E4E7),
-                    ),
-                    Container(
-                      width: 2.w,
-                      height: 25.h,
-                      color: const Color(0xFFE4E4E7),
-                    ),
-                    Container(
-                      width: 2.w,
-                      height: 20.h,
-                      color: const Color(0xFFE4E4E7),
-                    ),
-                  ],
                 ),
               ),
-            ),
-          ],
-        ));
+              // A cute chef hat resting on top
+              Positioned(
+                top: -30.h,
+                child: Container(
+                  width: 80.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(40.r),
+                    ),
+                    border: Border.all(
+                      color: const Color(0xFFE4E4E7),
+                      width: 2,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        width: 2.w,
+                        height: 20.h,
+                        color: const Color(0xFFE4E4E7),
+                      ),
+                      Container(
+                        width: 2.w,
+                        height: 25.h,
+                        color: const Color(0xFFE4E4E7),
+                      ),
+                      Container(
+                        width: 2.w,
+                        height: 20.h,
+                        color: const Color(0xFFE4E4E7),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
       },
     );
   }
@@ -352,5 +377,3 @@ class _CheckeredPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-
-

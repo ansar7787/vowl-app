@@ -214,5 +214,3 @@ class KidsSmartMixWidget extends StatelessWidget {
     );
   }
 }
-
-

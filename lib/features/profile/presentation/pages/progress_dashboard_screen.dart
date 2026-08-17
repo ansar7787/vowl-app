@@ -23,7 +23,7 @@ class ProgressDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
       body: BlocBuilder<AuthBloc, AuthState>(
@@ -53,7 +53,7 @@ class ProgressDashboardScreen extends StatelessWidget {
                             // Heatmap (Task 2)
                             StreakCalendar(user: user),
                             SizedBox(height: 24.h),
-                            
+
                             // Radar Chart (Task 4)
                             GlassTile(
                               padding: EdgeInsets.all(20.r),
@@ -66,7 +66,9 @@ class ProgressDashboardScreen extends StatelessWidget {
                                       fontFamily: 'Outfit',
                                       fontSize: 16.sp,
                                       fontWeight: FontWeight.w800,
-                                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                      color: isDark
+                                          ? Colors.white
+                                          : const Color(0xFF0F172A),
                                     ),
                                   ),
                                   SizedBox(height: 16.h),
@@ -83,7 +85,7 @@ class ProgressDashboardScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 24.h),
-                            
+
                             // Weak Areas Detection (Task 3)
                             Text(
                               'Focus Areas',
@@ -91,7 +93,9 @@ class ProgressDashboardScreen extends StatelessWidget {
                                 fontFamily: 'Outfit',
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w900,
-                                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF0F172A),
                               ),
                             ),
                             SizedBox(height: 12.h),
@@ -104,61 +108,74 @@ class ProgressDashboardScreen extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 14.sp,
-                                    color: isDark ? Colors.white60 : Colors.black54,
+                                    color: isDark
+                                        ? Colors.white60
+                                        : Colors.black54,
                                   ),
                                 ),
                               )
                             else
-                              ...weakAreas.map((area) => Padding(
-                                padding: EdgeInsets.only(bottom: 12.h),
-                                child: GlassTile(
-                                  padding: EdgeInsets.all(16.r),
-                                  borderColor: const Color(0xFFF43F5E).withValues(alpha: 0.3),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFFF43F5E).withValues(alpha: 0.1),
-                                          shape: BoxShape.circle,
+                              ...weakAreas.map(
+                                (area) => Padding(
+                                  padding: EdgeInsets.only(bottom: 12.h),
+                                  child: GlassTile(
+                                    padding: EdgeInsets.all(16.r),
+                                    borderColor: const Color(
+                                      0xFFF43F5E,
+                                    ).withValues(alpha: 0.3),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(12.r),
+                                          decoration: BoxDecoration(
+                                            color: const Color(
+                                              0xFFF43F5E,
+                                            ).withValues(alpha: 0.1),
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Icon(
+                                            Icons.trending_up_rounded,
+                                            color: const Color(0xFFF43F5E),
+                                            size: 20.r,
+                                          ),
                                         ),
-                                        child: Icon(
-                                          Icons.trending_up_rounded,
-                                          color: const Color(0xFFF43F5E),
-                                          size: 20.r,
-                                        ),
-                                      ),
-                                      SizedBox(width: 16.w),
-                                      Expanded(
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              _formatCategoryName(area.key),
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 16.sp,
-                                                fontWeight: FontWeight.w800,
-                                                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                        SizedBox(width: 16.w),
+                                        Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                _formatCategoryName(area.key),
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 16.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: isDark
+                                                      ? Colors.white
+                                                      : const Color(0xFF0F172A),
+                                                ),
                                               ),
-                                            ),
-                                            SizedBox(height: 4.h),
-                                            Text(
-                                              'Needs improvement (Score: ${area.value})',
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 12.sp,
-                                                color: isDark ? Colors.white60 : Colors.black54,
+                                              SizedBox(height: 4.h),
+                                              Text(
+                                                'Needs improvement (Score: ${area.value})',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  color: isDark
+                                                      ? Colors.white60
+                                                      : Colors.black54,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              )),
-                            
+                              ),
+
                             SizedBox(height: 48.h),
                           ],
                         ),
@@ -189,7 +206,10 @@ class ProgressDashboardScreen extends StatelessWidget {
           SizedBox(width: 8.w),
           Expanded(
             child: Text(
-              context.tr('profile.progress_dashboard', fallback: 'Progress Dashboard'),
+              context.tr(
+                'profile.progress_dashboard',
+                fallback: 'Progress Dashboard',
+              ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
@@ -203,12 +223,15 @@ class ProgressDashboardScreen extends StatelessWidget {
       ),
     );
   }
-  
+
   String _formatCategoryName(String raw) {
     // Converts e.g. "word_formation" to "Word Formation"
-    return raw.split('_').map((word) {
-      if (word.isEmpty) return word;
-      return word[0].toUpperCase() + word.substring(1).toLowerCase();
-    }).join(' ');
+    return raw
+        .split('_')
+        .map((word) {
+          if (word.isEmpty) return word;
+          return word[0].toUpperCase() + word.substring(1).toLowerCase();
+        })
+        .join(' ');
   }
 }

@@ -350,5 +350,3 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     );
   }
 }
-
-

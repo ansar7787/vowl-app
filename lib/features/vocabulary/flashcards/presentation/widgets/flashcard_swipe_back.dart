@@ -81,110 +81,123 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                 child: SingleChildScrollView(
                   controller: _scrollController,
                   physics: const BouncingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h), // Re-added padding here
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 24.w,
+                    vertical: 24.h,
+                  ), // Re-added padding here
                   child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: constraints.maxHeight - 48.h,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 8.h),
-                      FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          widget.quest.word?.toUpperCase() ?? '',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: compact ? 24.sp : 28.sp,
-                            color: widget.isDark ? Colors.white : Colors.black87,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 2,
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight - 48.h,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 8.h),
+                        FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            widget.quest.word?.toUpperCase() ?? '',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: compact ? 24.sp : 28.sp,
+                              color: widget.isDark
+                                  ? Colors.white
+                                  : Colors.black87,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 2,
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(height: compact ? 12.h : 16.h),
-                      Text(
-                        'DEFINITION',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          color: widget.color,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                      SizedBox(height: compact ? 8.h : 12.h),
-                      Text(
-                        widget.quest.definition ?? '',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: compact ? 17.sp : 19.sp,
-                          color: widget.isHintActive
-                              ? widget.color
-                              : (widget.isDark ? Colors.white : Colors.black87),
-                          height: 1.4,
-                          fontWeight: widget.isHintActive
-                              ? FontWeight.w900
-                              : FontWeight.w500,
-                          shadows: widget.isHintActive
-                              ? [
-                                  Shadow(
-                                    color: widget.color.withValues(alpha: 0.5),
-                                    blurRadius: 10,
-                                  ),
-                                ]
-                              : null,
-                        ),
-                      ),
-                      if (widget.quest.example != null && widget.quest.example!.isNotEmpty) ...[
-                        SizedBox(height: compact ? 18.h : 28.h),
-                        Divider(
-                          color: widget.color.withValues(alpha: 0.1),
-                          thickness: 1,
-                          indent: dividerInset,
-                          endIndent: dividerInset,
-                        ),
-                        SizedBox(height: compact ? 16.h : 24.h),
-                      ],
-                      if (widget.quest.example != null && widget.quest.example!.isNotEmpty) ...[
+                        SizedBox(height: compact ? 12.h : 16.h),
                         Text(
-                          'EXAMPLE',
+                          'DEFINITION',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,
-                            color: Colors.amber.shade700,
+                            color: widget.color,
                             fontWeight: FontWeight.w900,
                             letterSpacing: 2,
                           ),
                         ),
-                        SizedBox(height: 12.h),
+                        SizedBox(height: compact ? 8.h : 12.h),
                         Text(
-                          widget.quest.example!,
+                          widget.quest.definition ?? '',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: compact ? 14.sp : 15.sp,
-                            color: widget.isDark ? Colors.white70 : Colors.black54,
-                            fontStyle: FontStyle.italic,
-                            height: 1.5,
+                            fontSize: compact ? 17.sp : 19.sp,
+                            color: widget.isHintActive
+                                ? widget.color
+                                : (widget.isDark
+                                      ? Colors.white
+                                      : Colors.black87),
+                            height: 1.4,
+                            fontWeight: widget.isHintActive
+                                ? FontWeight.w900
+                                : FontWeight.w500,
+                            shadows: widget.isHintActive
+                                ? [
+                                    Shadow(
+                                      color: widget.color.withValues(
+                                        alpha: 0.5,
+                                      ),
+                                      blurRadius: 10,
+                                    ),
+                                  ]
+                                : null,
                           ),
                         ),
+                        if (widget.quest.example != null &&
+                            widget.quest.example!.isNotEmpty) ...[
+                          SizedBox(height: compact ? 18.h : 28.h),
+                          Divider(
+                            color: widget.color.withValues(alpha: 0.1),
+                            thickness: 1,
+                            indent: dividerInset,
+                            endIndent: dividerInset,
+                          ),
+                          SizedBox(height: compact ? 16.h : 24.h),
+                        ],
+                        if (widget.quest.example != null &&
+                            widget.quest.example!.isNotEmpty) ...[
+                          Text(
+                            'EXAMPLE',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              color: Colors.amber.shade700,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 2,
+                            ),
+                          ),
+                          SizedBox(height: 12.h),
+                          Text(
+                            widget.quest.example!,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: compact ? 14.sp : 15.sp,
+                              color: widget.isDark
+                                  ? Colors.white70
+                                  : Colors.black54,
+                              fontStyle: FontStyle.italic,
+                              height: 1.5,
+                            ),
+                          ),
+                        ],
+                        SizedBox(height: 8.h),
                       ],
-                      SizedBox(height: 8.h),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
-    ),
-  );
+    );
   }
 }

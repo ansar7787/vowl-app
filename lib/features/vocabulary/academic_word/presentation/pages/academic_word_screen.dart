@@ -193,7 +193,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                     primaryColor: _cachedTheme.primaryColor,
                     onConfirmed: () => _submitFinalAnswer(true),
                     onFailed: () {},
-                    onFailedWithSpelling: (wrongWord) => _submitFinalAnswer(false, wrongWord: wrongWord),
+                    onFailedWithSpelling: (wrongWord) =>
+                        _submitFinalAnswer(false, wrongWord: wrongWord),
                   ),
               ],
             ),
@@ -552,4 +553,3 @@ class _AcademicWordGameBody extends StatelessWidget {
     });
   }
 }
-

@@ -79,9 +79,8 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                     final success = await showDialog<bool>(
                       context: context,
                       barrierDismissible: false,
-                      builder: (context) => _DownloadModelDialog(
-                        primaryColor: game.color,
-                      ),
+                      builder: (context) =>
+                          _DownloadModelDialog(primaryColor: game.color),
                     );
 
                     if (success != true) {
@@ -119,11 +118,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                 game.color,
                 game.icon,
                 trailing: _isCheckingModel
-                    ? Icon(
-                            Icons.sync_rounded,
-                            color: game.color,
-                            size: 24.sp,
-                          )
+                    ? Icon(Icons.sync_rounded, color: game.color, size: 24.sp)
                           .animate(onPlay: (c) => c.repeat())
                           .rotate(duration: 1.5.seconds)
                     : (!_isModelDownloaded
@@ -133,7 +128,11 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                                   size: 28.sp,
                                 )
                                 .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .scaleXY(begin: 1.0, end: 1.15, duration: 1.seconds)
+                                .scaleXY(
+                                  begin: 1.0,
+                                  end: 1.15,
+                                  duration: 1.seconds,
+                                )
                           : null),
               );
             }
@@ -142,10 +141,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
               context,
               () => context.push(
                 '/kids/map/${game.gameType}',
-                extra: {
-                  'title': game.fullTitle,
-                  'primaryColor': game.color,
-                },
+                extra: {'title': game.fullTitle, 'primaryColor': game.color},
               ),
               game.gridTitle,
               game.subtitle,
@@ -369,5 +365,3 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
     );
   }
 }
-
-

@@ -73,5 +73,3 @@ class GenericKidsBackgroundPainter extends StatelessWidget {
     );
   }
 }
-
-

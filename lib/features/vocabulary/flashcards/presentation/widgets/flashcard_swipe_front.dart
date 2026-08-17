@@ -41,7 +41,8 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: 'Hint: ${widget.quest.hint ?? widget.quest.instruction}. Tap to reveal word.',
+      label:
+          'Hint: ${widget.quest.hint ?? widget.quest.instruction}. Tap to reveal word.',
       child: Container(
         width: widget.width,
         height: widget.height,
@@ -49,7 +50,9 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
           color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: widget.isDark ? Colors.white10 : widget.color.withValues(alpha: 0.15),
+            color: widget.isDark
+                ? Colors.white10
+                : widget.color.withValues(alpha: 0.15),
             width: 1,
           ),
           boxShadow: const [
@@ -80,9 +83,14 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                       ),
                       child: Text(
                         widget.quest.topicEmoji ?? '🏷️',
-                        style: TextStyle(fontSize: compactHeight ? 44.sp : 58.sp),
+                        style: TextStyle(
+                          fontSize: compactHeight ? 44.sp : 58.sp,
+                        ),
                       ),
-                    ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+                    ).animate().scale(
+                      duration: 600.ms,
+                      curve: Curves.elasticOut,
+                    ),
                     SizedBox(height: compactHeight ? 16.h : 24.h),
                     Flexible(
                       flex: 6,
@@ -92,33 +100,40 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
                           thumbColor: widget.color.withValues(alpha: 0.4),
                           radius: Radius.circular(8.r),
                           thickness: 4.w,
-                          crossAxisMargin: -16.w, // Push scrollbar to the very edge of the card
+                          crossAxisMargin: -16
+                              .w, // Push scrollbar to the very edge of the card
                           child: SingleChildScrollView(
                             controller: _scrollController,
                             physics: const BouncingScrollPhysics(),
                             child: Text(
-                          widget.quest.hint ?? widget.quest.instruction,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: compactWidth ? 18.sp : 22.sp, // Standardized
-                            fontWeight: FontWeight.w600, // Reduced from w700
-                            color: widget.isDark ? Colors.white : Colors.black87,
-                            height: 1.4, // Increased line height for readability
+                              widget.quest.hint ?? widget.quest.instruction,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: compactWidth
+                                    ? 18.sp
+                                    : 22.sp, // Standardized
+                                fontWeight:
+                                    FontWeight.w600, // Reduced from w700
+                                color: widget.isDark
+                                    ? Colors.white
+                                    : Colors.black87,
+                                height:
+                                    1.4, // Increased line height for readability
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                    SizedBox(height: 16.h),
+                  ],
                 ),
-                SizedBox(height: 16.h),
-              ],
-            ),
-          );
-          },
+              );
+            },
+          ),
         ),
       ),
-    ),
-  );
+    );
   }
 }

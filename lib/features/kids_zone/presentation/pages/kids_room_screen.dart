@@ -45,7 +45,7 @@ class KidsRoomScreen extends StatefulWidget {
 class _KidsRoomScreenState extends State<KidsRoomScreen> {
   String _currentTheme = 'nature';
   String _currentFood = '';
-  
+
   bool _isInitializing = true;
 
   // ---------------------------------------------------------------------------
@@ -90,7 +90,12 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       {'id': 'default_shelf', 'name': 'Wood Shelf', 'icon': '📚', 'price': 0},
       {'id': 'toy_shelf', 'name': 'Toy Rack', 'icon': '🧸', 'price': 500},
       {'id': 'magic_shelf', 'name': 'Potion Shelf', 'icon': '🧪', 'price': 800},
-      {'id': 'trophy_shelf', 'name': 'Trophy Case', 'icon': '🏆', 'price': 1200},
+      {
+        'id': 'trophy_shelf',
+        'name': 'Trophy Case',
+        'icon': '🏆',
+        'price': 1200,
+      },
     ],
     'toy': [
       {'id': 'default_toy', 'name': 'Toy Train', 'icon': '🚂', 'price': 0},
@@ -108,14 +113,19 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       {'id': 'default_rug', 'name': 'Blue Rug', 'icon': '🟦', 'price': 0},
       {'id': 'star_rug', 'name': 'Star Mat', 'icon': '⭐', 'price': 300},
       {'id': 'flower_rug', 'name': 'Flower Rug', 'icon': '🌸', 'price': 450},
-      {'id': 'magic_rug', 'name': 'Magic Carpet', 'icon': '🧞‍♂️', 'price': 800},
+      {
+        'id': 'magic_rug',
+        'name': 'Magic Carpet',
+        'icon': '🧞‍♂️',
+        'price': 800,
+      },
     ],
   };
 
   @override
   void initState() {
     super.initState();
-    
+
     // Defer heavy database writes and disk I/O until the route transition finishes (400ms)
     // to ensure a buttery smooth 120fps entry animation.
     Future.delayed(const Duration(milliseconds: 400), () {
@@ -134,7 +144,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     if (lastClean != null) {
       final date = DateTime.parse(lastClean);
       final now = DateTime.now();
-      if (date.year == now.year && date.month == now.month && date.day == now.day) {
+      if (date.year == now.year &&
+          date.month == now.month &&
+          date.day == now.day) {
         setState(() => _hasCleanedToday = true);
       }
     }
@@ -149,25 +161,25 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   void _applyLifecycleDecay() {
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
-    
+
     final newEnergy = _lifecycleService.computeDecayedEnergy(user);
     final newHunger = _lifecycleService.computeIncreasedHunger(user);
-    
+
     // Compute the new mood using the updated energy and hunger
     final tempUser = user.copyWith(
       kidsBuddyEnergy: newEnergy,
       kidsBuddyHunger: newHunger,
     );
     final newMood = _lifecycleService.computeMood(tempUser);
-    
+
     final theme = user.kidsRoomTheme;
 
     setState(() {
       _currentTheme = theme;
     });
 
-    if (newEnergy != user.kidsBuddyEnergy || 
-        newHunger != user.kidsBuddyHunger || 
+    if (newEnergy != user.kidsBuddyEnergy ||
+        newHunger != user.kidsBuddyHunger ||
         newMood != user.kidsBuddyMood) {
       context.read<ProfileBloc>().add(
         ProfileUpdateBuddyRoomRequested(
@@ -177,7 +189,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         ),
       );
     }
-    
+
     // Set initial greeting
     if (_buddyMessage.isEmpty) {
       _buddyMessage = _lifecycleService.getGreeting(user);
@@ -224,55 +236,61 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         Navigator.pop(context);
         final themeMessages = {
           'nature': [
-            "Wow, it smells like pine trees!", 
-            "Let's play hide and seek in the bushes!", 
-            "I love the forest!", 
-            "Look, a butterfly!", 
-            "This is the perfect place for a picnic!", 
-            "It feels so breezy and nice here.", 
-            "I can hear the birds singing to us!", 
-            "Let's build a little treehouse!", 
+            "Wow, it smells like pine trees!",
+            "Let's play hide and seek in the bushes!",
+            "I love the forest!",
+            "Look, a butterfly!",
+            "This is the perfect place for a picnic!",
+            "It feels so breezy and nice here.",
+            "I can hear the birds singing to us!",
+            "Let's build a little treehouse!",
             "The leaves are so green and pretty!",
-            "I feel like a little forest explorer!"
+            "I feel like a little forest explorer!",
           ],
           'space': [
-            "Whoa, we are floating in space!", 
-            "Look at all those shiny stars!", 
-            "Zero gravity is so bouncy!", 
-            "Are there aliens out here? Hello?", 
-            "To the moon, best friend!", 
-            "I feel like a real astronaut now!", 
-            "Can we ride a comet?", 
+            "Whoa, we are floating in space!",
+            "Look at all those shiny stars!",
+            "Zero gravity is so bouncy!",
+            "Are there aliens out here? Hello?",
+            "To the moon, best friend!",
+            "I feel like a real astronaut now!",
+            "Can we ride a comet?",
             "The galaxy is so huge and sparkly!",
             "Ground control, we are ready to play!",
-            "Look, a shooting star! Make a wish!"
+            "Look, a shooting star! Make a wish!",
           ],
           'ocean': [
-            "Splish splash! Time to swim!", 
-            "Under the sea is the best place to be!", 
-            "Look at those funny little bubbles!", 
-            "Do you think we'll see a dolphin?", 
-            "I feel like a happy little fish!", 
-            "The water is so blue and wavy!", 
+            "Splish splash! Time to swim!",
+            "Under the sea is the best place to be!",
+            "Look at those funny little bubbles!",
+            "Do you think we'll see a dolphin?",
+            "I feel like a happy little fish!",
+            "The water is so blue and wavy!",
             "Let's look for hidden pirate treasure!",
             "I love swimming around with you!",
             "Glub glub! That's fish talk for hello!",
-            "It's a beautiful day at the bottom of the sea!"
+            "It's a beautiful day at the bottom of the sea!",
           ],
           'sweet': [
-            "Yummy! The clouds look like cotton candy!", 
-            "Everything is so pink and sweet!", 
-            "I want to take a tiny bite out of the wall!", 
-            "This room makes me so happy and giggly!", 
-            "It's like a giant candy land!", 
-            "I love sugar and sprinkles!", 
+            "Yummy! The clouds look like cotton candy!",
+            "Everything is so pink and sweet!",
+            "I want to take a tiny bite out of the wall!",
+            "This room makes me so happy and giggly!",
+            "It's like a giant candy land!",
+            "I love sugar and sprinkles!",
             "Can we build a castle out of chocolate?",
             "It smells like warm cookies in here!",
             "This is the yummiest room ever!",
-            "Welcome to our sweet little bakery!"
+            "Welcome to our sweet little bakery!",
           ],
         };
-        final messages = themeMessages[theme] ?? ["Ooh, I love this theme!", "This looks amazing!", "Wow, so pretty!"];
+        final messages =
+            themeMessages[theme] ??
+            [
+              "Ooh, I love this theme!",
+              "This looks amazing!",
+              "Wow, so pretty!",
+            ];
         _speak(messages[Random().nextInt(messages.length)]);
       },
     );
@@ -301,11 +319,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                         ? const Color(0xFF0F172A)
                         : const Color(0xFFF8FAFC));
               final now = DateTime.now();
-              final isGameToday = user.kidsLastGameDate != null &&
+              final isGameToday =
+                  user.kidsLastGameDate != null &&
                   user.kidsLastGameDate!.year == now.year &&
                   user.kidsLastGameDate!.month == now.month &&
                   user.kidsLastGameDate!.day == now.day;
-              final hasPlayedToday = isGameToday && user.kidsGamesPlayedToday > 0;
+              final hasPlayedToday =
+                  isGameToday && user.kidsGamesPlayedToday > 0;
 
               return Scaffold(
                 backgroundColor: bgColor,
@@ -317,235 +337,284 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                       furnitureStore: _furnitureStore,
                       mascotWidget: _buildMascotSection(user),
                       topBarWidget: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      KidsRoomTopBar(
-                        user: user,
-                        onBack: () => _showBackConfirmation(context, user),
-                      ),
-                      if (!_dailyCareClaimed && !_hasClaimedToday(user))
-                        Padding(
-                          padding: EdgeInsets.only(left: 16.w, top: 4.h),
-                          child: KidsRoomDailyCareCard(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          KidsRoomTopBar(
                             user: user,
-                            hasPlayed: hasPlayedToday,
-                            hasCleaned: _hasCleanedToday,
-                            onClaim: () {
-                              setState(() => _dailyCareClaimed = true);
-                              final newStreak = _lifecycleService.computeUpdatedStreak(user);
-                              context.read<ProfileBloc>().add(
-                                ProfileUpdateBuddyRoomRequested(
-                                  careStreak: newStreak,
-                                  lastCareDate: DateTime.now(),
-                                ),
-                              );
-                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(25));
-                              _speak("Great job! You earned 25 Kids Coins! 🪙");
-                              _triggerConfetti();
-                              di.sl<SoundService>().playCorrect();
-                            },
+                            onBack: () => _showBackConfirmation(context, user),
                           ),
-                        ),
-                    ],
-                  ),
-                  actionPanelWidget: KidsRoomActionPanel(
-                    isSleeping: _isSleeping,
-                    onDecor: () => _showDecorStore(context, user),
-                    onFeed: () => _showFoodMenu(context, user),
-                    onPlay: () {
-                      if (_isSleeping) return;
-                      
-                      final playedCount = isGameToday ? user.kidsGamesPlayedToday : 0;
-                      
-                      if (playedCount >= 3) {
-                        _speak("I'm tired of playing today. Come back tomorrow! 😴");
-                        di.sl<SoundService>().playClick();
-                        return;
-                      }
+                          if (!_dailyCareClaimed && !_hasClaimedToday(user))
+                            Padding(
+                              padding: EdgeInsets.only(left: 16.w, top: 4.h),
+                              child: KidsRoomDailyCareCard(
+                                user: user,
+                                hasPlayed: hasPlayedToday,
+                                hasCleaned: _hasCleanedToday,
+                                onClaim: () {
+                                  setState(() => _dailyCareClaimed = true);
+                                  final newStreak = _lifecycleService
+                                      .computeUpdatedStreak(user);
+                                  context.read<ProfileBloc>().add(
+                                    ProfileUpdateBuddyRoomRequested(
+                                      careStreak: newStreak,
+                                      lastCareDate: DateTime.now(),
+                                    ),
+                                  );
+                                  context.read<EconomyBloc>().add(
+                                    const EconomyAddKidsCoinsRequested(25),
+                                  );
+                                  _speak(
+                                    "Great job! You earned 25 Kids Coins! 🪙",
+                                  );
+                                  _triggerConfetti();
+                                  di.sl<SoundService>().playCorrect();
+                                },
+                              ),
+                            ),
+                        ],
+                      ),
+                      actionPanelWidget: KidsRoomActionPanel(
+                        isSleeping: _isSleeping,
+                        onDecor: () => _showDecorStore(context, user),
+                        onFeed: () => _showFoodMenu(context, user),
+                        onPlay: () {
+                          if (_isSleeping) return;
 
-                      showDialog(
-                        context: context,
-                        barrierDismissible: false,
-                        builder: (_) => KidsRoomPlayGame(
-                          onComplete: (score) {
-                            Navigator.pop(context);
-                            
-                            // Update energy/happiness logic & daily game limit
-                            final newEnergy = (user.kidsBuddyEnergy - 10).clamp(0, 100);
-                            final newHunger = (user.kidsBuddyHunger + 5).clamp(0, 100);
-                            
-                            final tempUser = user.copyWith(
-                              kidsBuddyEnergy: newEnergy,
-                              kidsBuddyHunger: newHunger,
+                          final playedCount = isGameToday
+                              ? user.kidsGamesPlayedToday
+                              : 0;
+
+                          if (playedCount >= 3) {
+                            _speak(
+                              "I'm tired of playing today. Come back tomorrow! 😴",
                             );
-                            final newMood = _lifecycleService.computeMood(tempUser);
-                            
-                            context.read<ProfileBloc>().add(
-                              ProfileUpdateBuddyRoomRequested(
-                                energy: newEnergy,
-                                hunger: newHunger,
-                                mood: newMood,
-                                gamesPlayedToday: playedCount + 1,
-                                lastGameDate: DateTime.now(),
-                              ),
-                            );
-                            
-                            if (score > 0) {
-                              context.read<EconomyBloc>().add(EconomyAddKidsCoinsRequested(score));
-                              _speak("Yay! You got $score Kids Coins! 🪙");
-                              _triggerConfetti();
-                            } else {
-                              _speak("That was fun! Let's try again! 🎮");
-                            }
-                          },
-                        ),
-                      );
-                    },
-                    onClean: () {
-                      if (_isSleeping) return;
-                      showDialog(
-                        context: context,
-                        barrierDismissible: false,
-                        builder: (_) => KidsRoomCleanActivity(
-                          onComplete: () {
-                            Navigator.pop(context);
-                            final isFirstClean = !_hasCleanedToday && !_hasClaimedToday(user);
-                            setState(() => _hasCleanedToday = true);
-                            SharedPreferences.getInstance().then((prefs) {
-                              prefs.setString('kids_last_clean_date', DateTime.now().toIso8601String());
-                            });
-                            if (isFirstClean) {
-                              context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-                              _speak("Wow! The room is so clean! 10 Kids Coins! 🪙");
-                              _triggerConfetti();
-                            } else {
-                              _speak("Sparkling clean! ✨");
-                            }
-                          },
-                        ),
-                      );
-                    },
-                    onSleepToggle: () {
-                      setState(() => _isSleeping = !_isSleeping);
-                      _speak(
-                        _isSleeping
-                            ? "Goodnight! Shhh..."
-                            : "I'm awake! Let's play!",
-                      );
-                    },
-                    onTalk: () {
-                      final messages = _lifecycleService.getMoodMessages(user.kidsBuddyMood);
-                      _speak(messages[Random().nextInt(messages.length)]);
-                    },
-                    onThemeTap: () => _showThemeMenu(context, user),
-                  ),
-                  overlayWidget: (_isSleeping || _showConfetti) ? Stack(
-                    children: [
-                      if (_isSleeping)
-                        GestureDetector(
-                        onTap: () {
-                          setState(() => _isSleeping = false);
-                          _speak("I'm awake! Let's play!");
+                            di.sl<SoundService>().playClick();
+                            return;
+                          }
+
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (_) => KidsRoomPlayGame(
+                              onComplete: (score) {
+                                Navigator.pop(context);
+
+                                // Update energy/happiness logic & daily game limit
+                                final newEnergy = (user.kidsBuddyEnergy - 10)
+                                    .clamp(0, 100);
+                                final newHunger = (user.kidsBuddyHunger + 5)
+                                    .clamp(0, 100);
+
+                                final tempUser = user.copyWith(
+                                  kidsBuddyEnergy: newEnergy,
+                                  kidsBuddyHunger: newHunger,
+                                );
+                                final newMood = _lifecycleService.computeMood(
+                                  tempUser,
+                                );
+
+                                context.read<ProfileBloc>().add(
+                                  ProfileUpdateBuddyRoomRequested(
+                                    energy: newEnergy,
+                                    hunger: newHunger,
+                                    mood: newMood,
+                                    gamesPlayedToday: playedCount + 1,
+                                    lastGameDate: DateTime.now(),
+                                  ),
+                                );
+
+                                if (score > 0) {
+                                  context.read<EconomyBloc>().add(
+                                    EconomyAddKidsCoinsRequested(score),
+                                  );
+                                  _speak("Yay! You got $score Kids Coins! 🪙");
+                                  _triggerConfetti();
+                                } else {
+                                  _speak("That was fun! Let's try again! 🎮");
+                                }
+                              },
+                            ),
+                          );
                         },
-                        child: Container(
-                          color: const Color(0xFF0F172A).withValues(alpha: 0.6),
-                          child: Stack(
-                            children: [
-                              ...List.generate(
-                                25,
-                                (i) => Positioned(
-                                  top: Random().nextDouble() * 1.sh,
-                                  left: Random().nextDouble() * 1.sw,
-                                  child:
-                                      const Text(
-                                            "⭐",
-                                            style: TextStyle(
-                                              fontSize: 10,
-                                              color: Colors.white30,
+                        onClean: () {
+                          if (_isSleeping) return;
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder: (_) => KidsRoomCleanActivity(
+                              onComplete: () {
+                                Navigator.pop(context);
+                                final isFirstClean =
+                                    !_hasCleanedToday &&
+                                    !_hasClaimedToday(user);
+                                setState(() => _hasCleanedToday = true);
+                                SharedPreferences.getInstance().then((prefs) {
+                                  prefs.setString(
+                                    'kids_last_clean_date',
+                                    DateTime.now().toIso8601String(),
+                                  );
+                                });
+                                if (isFirstClean) {
+                                  context.read<EconomyBloc>().add(
+                                    const EconomyAddKidsCoinsRequested(10),
+                                  );
+                                  _speak(
+                                    "Wow! The room is so clean! 10 Kids Coins! 🪙",
+                                  );
+                                  _triggerConfetti();
+                                } else {
+                                  _speak("Sparkling clean! ✨");
+                                }
+                              },
+                            ),
+                          );
+                        },
+                        onSleepToggle: () {
+                          setState(() => _isSleeping = !_isSleeping);
+                          _speak(
+                            _isSleeping
+                                ? "Goodnight! Shhh..."
+                                : "I'm awake! Let's play!",
+                          );
+                        },
+                        onTalk: () {
+                          final messages = _lifecycleService.getMoodMessages(
+                            user.kidsBuddyMood,
+                          );
+                          _speak(messages[Random().nextInt(messages.length)]);
+                        },
+                        onThemeTap: () => _showThemeMenu(context, user),
+                      ),
+                      overlayWidget: (_isSleeping || _showConfetti)
+                          ? Stack(
+                              children: [
+                                if (_isSleeping)
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() => _isSleeping = false);
+                                      _speak("I'm awake! Let's play!");
+                                    },
+                                    child: Container(
+                                      color: const Color(
+                                        0xFF0F172A,
+                                      ).withValues(alpha: 0.6),
+                                      child: Stack(
+                                        children: [
+                                          ...List.generate(
+                                            25,
+                                            (i) => Positioned(
+                                              top: Random().nextDouble() * 1.sh,
+                                              left:
+                                                  Random().nextDouble() * 1.sw,
+                                              child:
+                                                  const Text(
+                                                        "⭐",
+                                                        style: TextStyle(
+                                                          fontSize: 10,
+                                                          color: Colors.white30,
+                                                        ),
+                                                      )
+                                                      .animate(
+                                                        onPlay: (c) => c.repeat(
+                                                          reverse: true,
+                                                        ),
+                                                      )
+                                                      .fadeOut(
+                                                        duration:
+                                                            (1 +
+                                                                    Random().nextDouble() *
+                                                                        2)
+                                                                .seconds,
+                                                      ),
                                             ),
-                                          )
-                                          .animate(
-                                            onPlay: (c) =>
-                                                c.repeat(reverse: true),
-                                          )
-                                          .fadeOut(
-                                            duration:
-                                                (1 + Random().nextDouble() * 2)
-                                                    .seconds,
                                           ),
-                                ),
-                              ),
-                              Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(height: 200.h),
-                                    Container(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 24.w,
-                                            vertical: 12.h,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: Colors.white.withValues(
-                                              alpha: 0.1,
+                                          Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                SizedBox(height: 200.h),
+                                                Container(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                            horizontal: 24.w,
+                                                            vertical: 12.h,
+                                                          ),
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white
+                                                            .withValues(
+                                                              alpha: 0.1,
+                                                            ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              30.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          color: Colors.white24,
+                                                        ),
+                                                      ),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        children: [
+                                                          Icon(
+                                                            Icons
+                                                                .touch_app_rounded,
+                                                            color: Colors.white,
+                                                            size: 20.sp,
+                                                          ),
+                                                          SizedBox(width: 10.w),
+                                                          Text(
+                                                            context.tr(
+                                                              'games.kids_tap_wake',
+                                                              fallback:
+                                                                  'Tap to wake',
+                                                            ),
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 12.sp,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w900,
+                                                              color:
+                                                                  Colors.white,
+                                                              letterSpacing: 1,
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    )
+                                                    .animate(
+                                                      onPlay: (c) => c.repeat(
+                                                        reverse: true,
+                                                      ),
+                                                    )
+                                                    .scale(
+                                                      begin: const Offset(1, 1),
+                                                      end: const Offset(
+                                                        1.05,
+                                                        1.05,
+                                                      ),
+                                                      duration: 1.seconds,
+                                                    ),
+                                              ],
                                             ),
-                                            borderRadius: BorderRadius.circular(
-                                              30.r,
-                                            ),
-                                            border: Border.all(
-                                              color: Colors.white24,
-                                            ),
                                           ),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Icon(
-                                                Icons.touch_app_rounded,
-                                                color: Colors.white,
-                                                size: 20.sp,
-                                              ),
-                                              SizedBox(width: 10.w),
-                                              Text(
-                                                context.tr(
-                                                  'games.kids_tap_wake',
-                                                  fallback: 'Tap to wake',
-                                                ),
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  fontWeight: FontWeight.w900,
-                                                  color: Colors.white,
-                                                  letterSpacing: 1,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .scale(
-                                          begin: const Offset(1, 1),
-                                          end: const Offset(1.05, 1.05),
-                                          duration: 1.seconds,
-                                        ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ).animate().fadeIn(duration: 600.ms),
-                      
-                      if (_showConfetti)
-                        const Positioned.fill(
-                          child: IgnorePointer(child: GameConfetti()),
-                        ),
-                    ],
-                  ) : null,
-                ),
+                                        ],
+                                      ),
+                                    ),
+                                  ).animate().fadeIn(duration: 600.ms),
+
+                                if (_showConfetti)
+                                  const Positioned.fill(
+                                    child: IgnorePointer(child: GameConfetti()),
+                                  ),
+                              ],
+                            )
+                          : null,
+                    ),
                     // Premium Shimmer Overlay
                     IgnorePointer(
                       ignoring: !_isInitializing,
@@ -575,7 +644,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           children: [
             ShimmerLoading.circular(width: 120.r, height: 120.r),
             SizedBox(height: 32.h),
-            ShimmerLoading.rounded(width: 180.w, height: 24.h, borderRadius: 12),
+            ShimmerLoading.rounded(
+              width: 180.w,
+              height: 24.h,
+              borderRadius: 12,
+            ),
           ],
         ),
       ),
@@ -590,49 +663,53 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         if (_isTalking)
           Padding(
             padding: EdgeInsets.only(bottom: 20.h),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(24.r),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 24.w),
-                  padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: Colors.white.withValues(alpha: 0.8),
-                      width: 2.w,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white.withValues(alpha: 0.6),
-                        blurRadius: 10,
-                        spreadRadius: -2,
-                        offset: const Offset(0, -2), // Inner top glow
+            child:
+                ClipRRect(
+                      borderRadius: BorderRadius.circular(24.r),
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 24.w),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20.w,
+                            vertical: 14.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.5),
+                            borderRadius: BorderRadius.circular(24.r),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.8),
+                              width: 2.w,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white.withValues(alpha: 0.6),
+                                blurRadius: 10,
+                                spreadRadius: -2,
+                                offset: const Offset(0, -2), // Inner top glow
+                              ),
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.1),
+                                offset: Offset(0, 6.h),
+                                blurRadius: 15,
+                              ),
+                            ],
+                          ),
+                          child: Text(
+                            _buddyMessage,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black87,
+                            ),
+                          ),
+                        ),
                       ),
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        offset: Offset(0, 6.h),
-                        blurRadius: 15,
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    _buddyMessage,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ),
-              ),
-            )
-            .animate()
-            .scale(curve: Curves.easeOutBack, duration: 400.ms)
-            .fadeIn(),
+                    )
+                    .animate()
+                    .scale(curve: Curves.easeOutBack, duration: 400.ms)
+                    .fadeIn(),
           ),
         Stack(
           alignment: Alignment.center,
@@ -653,7 +730,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
             GestureDetector(
               onTap: () {
-                final messages = _lifecycleService.getMoodMessages(user.kidsBuddyMood);
+                final messages = _lifecycleService.getMoodMessages(
+                  user.kidsBuddyMood,
+                );
                 _speak(messages[Random().nextInt(messages.length)]);
               },
               child:
@@ -664,66 +743,80 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           alignment: Alignment.center,
                           clipBehavior: Clip.none,
                           children: [
-                          if (user.kidsBuddyMood == 'excited' || user.kidsBuddyMood == 'happy')
-                            Container(
-                                  width: 150.r,
-                                  height: 150.r,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.amber.withValues(
-                                          alpha: user.kidsBuddyMood == 'excited' ? 0.3 : 0.1,
+                            if (user.kidsBuddyMood == 'excited' ||
+                                user.kidsBuddyMood == 'happy')
+                              Container(
+                                    width: 150.r,
+                                    height: 150.r,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.amber.withValues(
+                                            alpha:
+                                                user.kidsBuddyMood == 'excited'
+                                                ? 0.3
+                                                : 0.1,
+                                          ),
+                                          blurRadius:
+                                              user.kidsBuddyMood == 'excited'
+                                              ? 40
+                                              : 20,
+                                          spreadRadius:
+                                              user.kidsBuddyMood == 'excited'
+                                              ? 20
+                                              : 10,
                                         ),
-                                        blurRadius: user.kidsBuddyMood == 'excited' ? 40 : 20,
-                                        spreadRadius: user.kidsBuddyMood == 'excited' ? 20 : 10,
-                                      ),
-                                    ],
+                                      ],
+                                    ),
+                                  )
+                                  .animate(
+                                    onPlay: (c) => c.repeat(reverse: true),
+                                  )
+                                  .scale(
+                                    begin: const Offset(0.9, 0.9),
+                                    end: const Offset(1.1, 1.1),
+                                    duration: 2.seconds,
                                   ),
-                                )
-                                .animate(onPlay: (c) => c.repeat(reverse: true))
-                                .scale(
-                                  begin: const Offset(0.9, 0.9),
-                                  end: const Offset(1.1, 1.1),
-                                  duration: 2.seconds,
+
+                            if (user.kidsBuddyMood == 'excited')
+                              ...List.generate(
+                                5,
+                                (i) => Positioned(
+                                  top: Random().nextDouble() * 100 - 50,
+                                  left: Random().nextDouble() * 100 - 50,
+                                  child:
+                                      const Text(
+                                            "✨",
+                                            style: TextStyle(fontSize: 16),
+                                          )
+                                          .animate(onPlay: (c) => c.repeat())
+                                          .scale(duration: 1.seconds)
+                                          .fadeOut(),
                                 ),
-
-                          if (user.kidsBuddyMood == 'excited')
-                            ...List.generate(
-                              5,
-                              (i) => Positioned(
-                                top: Random().nextDouble() * 100 - 50,
-                                left: Random().nextDouble() * 100 - 50,
-                                child:
-                                    const Text(
-                                          "✨",
-                                          style: TextStyle(fontSize: 16),
-                                        )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .scale(duration: 1.seconds)
-                                        .fadeOut(),
                               ),
-                            ),
-                          
-                          // The Theme-Specific Nest underneath the mascot
-                          Positioned(
-                            bottom: -5.h,
-                            child: _buildThemeNest(user.kidsRoomTheme),
-                          ),
 
-                          VowlMascot(
-                            size: 85.r,
-                            state: _isSleeping
-                                ? VowlMascotState.neutral
-                                : (_isFeeding
-                                      ? VowlMascotState.happy
-                                      : _getMascotStateForMood(user.kidsBuddyMood)),
-                            useFloatingAnimation: !_isSleeping,
-                            isKidsMode: true,
-                          ),
-                        ],
-                      ),
-                  )
+                            // The Theme-Specific Nest underneath the mascot
+                            Positioned(
+                              bottom: -5.h,
+                              child: _buildThemeNest(user.kidsRoomTheme),
+                            ),
+
+                            VowlMascot(
+                              size: 85.r,
+                              state: _isSleeping
+                                  ? VowlMascotState.neutral
+                                  : (_isFeeding
+                                        ? VowlMascotState.happy
+                                        : _getMascotStateForMood(
+                                            user.kidsBuddyMood,
+                                          )),
+                              useFloatingAnimation: !_isSleeping,
+                              isKidsMode: true,
+                            ),
+                          ],
+                        ),
+                      )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .moveY(
                         begin: -5,
@@ -814,24 +907,26 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       case 'space':
         // Glowing anti-gravity neon ring
         return Container(
-          width: 140.r,
-          height: 35.r,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(70.r, 17.5.r)),
-            border: Border.all(color: Colors.cyanAccent, width: 3.w),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.cyanAccent.withValues(alpha: 0.6),
-                blurRadius: 15,
-                spreadRadius: 2,
-              )
-            ],
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-          begin: const Offset(0.95, 0.95),
-          end: const Offset(1.05, 1.05),
-          duration: 1.5.seconds,
-        );
+              width: 140.r,
+              height: 35.r,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.elliptical(70.r, 17.5.r)),
+                border: Border.all(color: Colors.cyanAccent, width: 3.w),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.cyanAccent.withValues(alpha: 0.6),
+                    blurRadius: 15,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .scale(
+              begin: const Offset(0.95, 0.95),
+              end: const Offset(1.05, 1.05),
+              duration: 1.5.seconds,
+            );
       case 'ocean':
         // Glowing coral/bubble pad
         return Container(
@@ -847,39 +942,37 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             ),
           ),
           child: Center(
-            child: Text(
-              "🫧",
-              style: TextStyle(fontSize: 24.sp),
-            ),
+            child: Text("🫧", style: TextStyle(fontSize: 24.sp)),
           ),
         );
       case 'sweet':
         // Pink cotton candy cloud
         return Container(
-          width: 160.r,
-          height: 55.r,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.elliptical(80.r, 27.5.r)),
-            color: Colors.pinkAccent.withValues(alpha: 0.3),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.pinkAccent.withValues(alpha: 0.4),
-                blurRadius: 20,
-                spreadRadius: 10,
-              )
-            ],
-          ),
-          child: Center(
-            child: Text(
-              "☁️",
-              style: TextStyle(fontSize: 40.sp, color: Colors.pink.withValues(alpha: 0.8)),
-            ),
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
-          begin: -3,
-          end: 3,
-          duration: 2.seconds,
-        );
+              width: 160.r,
+              height: 55.r,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.elliptical(80.r, 27.5.r)),
+                color: Colors.pinkAccent.withValues(alpha: 0.3),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.pinkAccent.withValues(alpha: 0.4),
+                    blurRadius: 20,
+                    spreadRadius: 10,
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Text(
+                  "☁️",
+                  style: TextStyle(
+                    fontSize: 40.sp,
+                    color: Colors.pink.withValues(alpha: 0.8),
+                  ),
+                ),
+              ),
+            )
+            .animate(onPlay: (c) => c.repeat(reverse: true))
+            .moveY(begin: -3, end: 3, duration: 2.seconds);
       case 'nature':
       default:
         // Leafy wooden nest
@@ -895,7 +988,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 color: Colors.black.withValues(alpha: 0.3),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
-              )
+              ),
             ],
           ),
           child: Center(
@@ -972,13 +1065,13 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           di.sl<SoundService>().playCorrect();
           final newHunger = (user.kidsBuddyHunger - 20).clamp(0, 100);
           final newEnergy = (user.kidsBuddyEnergy + 10).clamp(0, 100);
-          
+
           final tempUser = user.copyWith(
             kidsBuddyEnergy: newEnergy,
             kidsBuddyHunger: newHunger,
           );
           final newMood = _lifecycleService.computeMood(tempUser);
-          
+
           context.read<ProfileBloc>().add(
             ProfileUpdateBuddyRoomRequested(
               hunger: newHunger,
@@ -1092,4 +1185,3 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     }
   }
 }
-

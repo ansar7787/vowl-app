@@ -109,7 +109,9 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
           ),
 
           // ── Hint button ───────────────────────────────────────────────
-          if (currentQuest != null && !widget.isAnswered && widget.onHint != null)
+          if (currentQuest != null &&
+              !widget.isAnswered &&
+              widget.onHint != null)
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: _buildHintButton(
@@ -133,13 +135,14 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     final button = QuestHintButton(
       used: hintUsed,
       primaryColor: primaryColor,
-      hintText: (widget.gameType == GameSubtype.topicVocab || 
-                 widget.gameType == GameSubtype.flashcards ||
-                 widget.gameType == GameSubtype.wordFormation)
+      hintText:
+          (widget.gameType == GameSubtype.topicVocab ||
+              widget.gameType == GameSubtype.flashcards ||
+              widget.gameType == GameSubtype.wordFormation)
           ? null
           : (widget.gameType == GameSubtype.prefixSuffix
-              ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
-              : currentQuest.hint),
+                ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
+                : currentQuest.hint),
       soundService: _soundService,
       onTap: () {
         context.read<VocabularyBloc>().add(const VocabularyHintUsed());

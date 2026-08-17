@@ -871,4 +871,3 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 }
-

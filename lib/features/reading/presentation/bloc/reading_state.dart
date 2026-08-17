@@ -138,7 +138,8 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      answerStatus: answerStatus ?? AnswerStatus.unanswered, // enum override intentional
+      answerStatus:
+          answerStatus ?? AnswerStatus.unanswered, // enum override intentional
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,

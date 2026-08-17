@@ -19,11 +19,7 @@ class ProfileStickersProgress extends StatelessWidget {
     const totalPossible = 100;
 
     return ProfileFeatureCard(
-      iconContent: Icon(
-        Icons.stars_rounded,
-        color: Colors.white,
-        size: 24.r,
-      ),
+      iconContent: Icon(Icons.stars_rounded, color: Colors.white, size: 24.r),
       color: Colors.orange.shade400,
       shadowColor: Colors.orange.shade700,
       title: context.tr(

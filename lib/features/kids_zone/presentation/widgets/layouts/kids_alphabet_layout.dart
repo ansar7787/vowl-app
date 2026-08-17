@@ -277,7 +277,9 @@ class KidsAlphabetLayout extends StatelessWidget {
         if (emoji != null)
           ColorFiltered(
             colorFilter: ColorFilter.mode(
-              const Color(0xFF1B4332).withValues(alpha: 0.15), // Dark green chalk dust shadow
+              const Color(
+                0xFF1B4332,
+              ).withValues(alpha: 0.15), // Dark green chalk dust shadow
               BlendMode.srcIn,
             ),
             child: Text(emoji, style: TextStyle(fontSize: 80.sp)),
@@ -305,7 +307,11 @@ class KidsAlphabetLayout extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.volume_up_rounded, size: 20.sp, color: const Color(0xFF78350F)),
+              Icon(
+                Icons.volume_up_rounded,
+                size: 20.sp,
+                color: const Color(0xFF78350F),
+              ),
               SizedBox(width: 8.w),
               KidsFittedText(
                 context.tr('games.kids_tap_clue', fallback: 'TAP FOR CLUE!'),
@@ -339,11 +345,14 @@ class KidsAlphabetLayout extends StatelessWidget {
               AutoSizeText.rich(
                 TextSpan(
                   children: [
-                    ..._buildHighlightedWordSpans(quest.wordExample!, quest.correctAnswer),
+                    ..._buildHighlightedWordSpans(
+                      quest.wordExample!,
+                      quest.correctAnswer,
+                    ),
                     if (quest.phonetic != null)
                       TextSpan(
                         text: ' (/${quest.phonetic}/)',
-                        style: const TextStyle(color: Color(0xFFFCD34D)), 
+                        style: const TextStyle(color: Color(0xFFFCD34D)),
                       ),
                   ],
                 ),
@@ -368,5 +377,3 @@ class KidsAlphabetLayout extends StatelessWidget {
     );
   }
 }
-
-

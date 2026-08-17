@@ -255,13 +255,15 @@ class KidsNatureLayout extends StatelessWidget {
                                 quest.question ?? "?",
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: (quest.question == "?" ||
+                                  fontSize:
+                                      (quest.question == "?" ||
                                           quest.question == null)
                                       ? 70.sp
                                       : 22.sp,
                                   fontWeight: FontWeight.w700,
                                   color: const Color(0xFFFEF3C7).withValues(
-                                    alpha: (quest.question == "?" ||
+                                    alpha:
+                                        (quest.question == "?" ||
                                             quest.question == null)
                                         ? 0.7
                                         : 1.0,
@@ -360,5 +362,3 @@ class KidsNatureLayout extends StatelessWidget {
     );
   }
 }
-
-

@@ -240,5 +240,3 @@ class KidsGameHeader extends StatelessWidget {
     );
   }
 }
-
-

@@ -182,7 +182,9 @@ class _SummarizeStoryWritingScreenState
         final options = quest?.options ?? [];
         final isSlotsFilled = _slots.every((s) => s.sentence != null);
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,

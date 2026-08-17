@@ -74,7 +74,7 @@ class KidsRoomThemeSheet extends StatelessWidget {
   Widget _buildThemeItem(BuildContext context, Map<String, dynamic> t) {
     final isSelected = t['id'] == currentTheme;
     final color = t['color'] as MaterialColor;
-    
+
     return Expanded(
       child: ScaleButton(
         onTap: () => onThemeSelected(t['id'] as String),
@@ -83,17 +83,24 @@ class KidsRoomThemeSheet extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
-                color: isSelected ? color.withValues(alpha: 0.2) : color.withValues(alpha: 0.05),
+                color: isSelected
+                    ? color.withValues(alpha: 0.2)
+                    : color.withValues(alpha: 0.05),
                 shape: BoxShape.circle,
                 border: Border.all(color: color, width: isSelected ? 4.w : 2.w),
-                boxShadow: isSelected ? [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.4),
-                    offset: Offset(0, 4.h),
-                  ),
-                ] : [],
+                boxShadow: isSelected
+                    ? [
+                        BoxShadow(
+                          color: color.withValues(alpha: 0.4),
+                          offset: Offset(0, 4.h),
+                        ),
+                      ]
+                    : [],
               ),
-              child: Text(t['icon'] as String, style: TextStyle(fontSize: 35.sp)),
+              child: Text(
+                t['icon'] as String,
+                style: TextStyle(fontSize: 35.sp),
+              ),
             ),
             SizedBox(height: 12.h),
             Text(
@@ -125,10 +132,11 @@ class KidsRoomThemeSheet extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
-      builder: (context) =>
-          KidsRoomThemeSheet(user: user, currentTheme: currentTheme, onThemeSelected: onThemeSelected),
+      builder: (context) => KidsRoomThemeSheet(
+        user: user,
+        currentTheme: currentTheme,
+        onThemeSelected: onThemeSelected,
+      ),
     );
   }
 }
-
-

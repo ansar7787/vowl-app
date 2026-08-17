@@ -480,4 +480,3 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     );
   }
 }
-

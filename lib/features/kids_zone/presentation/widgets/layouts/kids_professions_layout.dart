@@ -38,7 +38,9 @@ class KidsProfessionsLayout extends StatelessWidget {
             // The Shop Storefront (Target)
             Expanded(
               flex: 6,
-              child: Center(child: _buildCareerStorefront(context, state, quest)),
+              child: Center(
+                child: _buildCareerStorefront(context, state, quest),
+              ),
             ),
             SizedBox(height: 24.h),
             KidsFittedText(
@@ -142,7 +144,9 @@ class KidsProfessionsLayout extends StatelessWidget {
                         child: Container(
                           height: 40.h,
                           decoration: BoxDecoration(
-                            color: index % 2 == 0 ? const Color(0xFFEF4444) : Colors.white,
+                            color: index % 2 == 0
+                                ? const Color(0xFFEF4444)
+                                : Colors.white,
                             borderRadius: BorderRadius.vertical(
                               bottom: Radius.circular(16.r),
                             ),
@@ -168,7 +172,10 @@ class KidsProfessionsLayout extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xFFDBEAFE), // Glass blue
                       borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(color: const Color(0xFF93C5FD), width: 4),
+                      border: Border.all(
+                        color: const Color(0xFF93C5FD),
+                        width: 4,
+                      ),
                     ),
                     child: Stack(
                       alignment: Alignment.center,
@@ -196,7 +203,9 @@ class KidsProfessionsLayout extends StatelessWidget {
                                 )
                               : ColorFiltered(
                                   colorFilter: ColorFilter.mode(
-                                    const Color(0xFF1E40AF).withValues(alpha: 0.3),
+                                    const Color(
+                                      0xFF1E40AF,
+                                    ).withValues(alpha: 0.3),
                                     BlendMode.srcIn,
                                   ),
                                   child: Text(
@@ -213,12 +222,17 @@ class KidsProfessionsLayout extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize:
-                                    (quest.question == "?" || quest.question == null)
+                                    (quest.question == "?" ||
+                                        quest.question == null)
                                     ? 80.sp
                                     : 32.sp,
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFF1E3A8A).withValues(
-                                  alpha: (quest.question == "?" || quest.question == null) ? 0.7 : 1.0,
+                                  alpha:
+                                      (quest.question == "?" ||
+                                          quest.question == null)
+                                      ? 0.7
+                                      : 1.0,
                                 ),
                               ),
                               textAlign: TextAlign.center,
@@ -340,5 +354,3 @@ class KidsProfessionsLayout extends StatelessWidget {
     );
   }
 }
-
-

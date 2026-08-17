@@ -728,5 +728,3 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     );
   }
 }
-
-

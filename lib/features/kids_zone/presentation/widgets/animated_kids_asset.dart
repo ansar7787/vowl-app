@@ -86,5 +86,3 @@ class AnimatedKidsAsset extends StatelessWidget {
     return animated;
   }
 }
-
-

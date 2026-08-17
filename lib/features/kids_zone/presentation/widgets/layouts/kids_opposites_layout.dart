@@ -233,7 +233,8 @@ class KidsOppositesLayout extends StatelessWidget {
                                             style: TextStyle(fontSize: 80.sp),
                                           ),
                                         ),
-                                if (state.answerStatus != AnswerStatus.correct ||
+                                if (state.answerStatus !=
+                                        AnswerStatus.correct ||
                                     (quest.question != "?" &&
                                         quest.question != null))
                                   Padding(
@@ -370,5 +371,3 @@ class KidsOppositesLayout extends StatelessWidget {
     );
   }
 }
-
-

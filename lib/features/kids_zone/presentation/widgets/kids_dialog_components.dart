@@ -226,5 +226,3 @@ class KidsDialogContainer extends StatelessWidget {
     );
   }
 }
-
-

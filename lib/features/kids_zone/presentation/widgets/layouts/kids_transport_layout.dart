@@ -176,56 +176,56 @@ class KidsTransportLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        if (quest.emoji != null &&
-                            (quest.question == "?" || quest.question == null))
-                          state.answerStatus == AnswerStatus.correct
-                              ? Text(
-                                  quest.emoji!,
-                                  style: TextStyle(fontSize: 80.sp),
-                                )
-                              : ColorFiltered(
-                                  colorFilter: ColorFilter.mode(
-                                    const Color(
-                                      0xFF064E3B, // Darker green/black silhouette
-                                    ).withValues(alpha: 0.5),
-                                    BlendMode.srcIn,
-                                  ),
-                                  child: Text(
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (quest.emoji != null &&
+                              (quest.question == "?" || quest.question == null))
+                            state.answerStatus == AnswerStatus.correct
+                                ? Text(
                                     quest.emoji!,
                                     style: TextStyle(fontSize: 80.sp),
+                                  )
+                                : ColorFiltered(
+                                    colorFilter: ColorFilter.mode(
+                                      const Color(
+                                        0xFF064E3B, // Darker green/black silhouette
+                                      ).withValues(alpha: 0.5),
+                                      BlendMode.srcIn,
+                                    ),
+                                    child: Text(
+                                      quest.emoji!,
+                                      style: TextStyle(fontSize: 80.sp),
+                                    ),
                                   ),
-                                ),
-                        if (state.answerStatus != AnswerStatus.correct ||
-                            (quest.question != "?" && quest.question != null))
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: KidsFittedText(
-                              quest.question ?? "?",
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize:
-                                    (quest.question == "?" ||
-                                        quest.question == null)
-                                    ? 70.sp
-                                    : 24.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white.withValues(
-                                  alpha:
+                          if (state.answerStatus != AnswerStatus.correct ||
+                              (quest.question != "?" && quest.question != null))
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16.w),
+                              child: KidsFittedText(
+                                quest.question ?? "?",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize:
                                       (quest.question == "?" ||
                                           quest.question == null)
-                                      ? 0.7
-                                      : 1.0,
+                                      ? 70.sp
+                                      : 24.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white.withValues(
+                                    alpha:
+                                        (quest.question == "?" ||
+                                            quest.question == null)
+                                        ? 0.7
+                                        : 1.0,
+                                  ),
                                 ),
+                                textAlign: TextAlign.center,
+                                maxLines: 6,
                               ),
-                              textAlign: TextAlign.center,
-                              maxLines: 6,
                             ),
-                          ),
-                      ],
-                    ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -333,5 +333,3 @@ class KidsTransportLayout extends StatelessWidget {
     );
   }
 }
-
-

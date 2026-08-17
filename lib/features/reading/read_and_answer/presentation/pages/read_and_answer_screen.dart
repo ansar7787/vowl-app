@@ -123,7 +123,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         final isLoaded = state is ReadingLoaded;
         final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
         final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
-        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
+        final bool? isCorrect = isLoaded
+            ? state.answerStatus.asBoolOrNull
+            : null;
 
         return ReadingBaseLayout(
           gameType: widget.gameType,
@@ -250,5 +252,3 @@ class _QuestContent extends StatelessWidget {
     );
   }
 }
-
-

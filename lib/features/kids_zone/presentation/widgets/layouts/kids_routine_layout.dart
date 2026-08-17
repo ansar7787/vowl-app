@@ -335,5 +335,3 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 }
-
-

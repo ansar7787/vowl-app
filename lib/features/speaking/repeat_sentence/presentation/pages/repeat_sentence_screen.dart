@@ -272,4 +272,3 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     );
   }
 }
-

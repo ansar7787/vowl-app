@@ -254,5 +254,3 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     );
   }
 }
-
-

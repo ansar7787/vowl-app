@@ -349,4 +349,3 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     );
   }
 }
-

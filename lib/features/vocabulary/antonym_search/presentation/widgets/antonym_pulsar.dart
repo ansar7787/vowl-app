@@ -28,39 +28,39 @@ class AntonymPulsar extends StatelessWidget {
             onTap: onTap,
             child: Container(
               height: 80.h,
-            decoration: BoxDecoration(
-              color: const Color(0xFF0F172A).withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: color.withValues(alpha: isActive ? 1.0 : 0.2),
-                width: isActive ? 3 : 1,
+              decoration: BoxDecoration(
+                color: const Color(0xFF0F172A).withValues(alpha: 0.9),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: color.withValues(alpha: isActive ? 1.0 : 0.2),
+                  width: isActive ? 3 : 1,
+                ),
+                boxShadow: [
+                  if (isActive)
+                    BoxShadow(
+                      color: color.withValues(alpha: 0.3),
+                      blurRadius: 25,
+                    ),
+                ],
               ),
-              boxShadow: [
-                if (isActive)
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 25,
-                  ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w900,
-                      color: color.withValues(alpha: isActive ? 1.0 : 0.3),
-                      letterSpacing: 3,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: color.withValues(alpha: isActive ? 1.0 : 0.3),
+                        letterSpacing: 3,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
             ),
           ),
         )

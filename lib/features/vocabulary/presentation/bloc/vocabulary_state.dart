@@ -123,7 +123,6 @@ class VocabularyLoaded extends VocabularyState implements GameLoadedState {
     int? wrongCount,
     bool? isFinalFailure,
     int? hintsAvailable,
-
   }) {
     return VocabularyLoaded(
       quests: quests ?? this.quests,

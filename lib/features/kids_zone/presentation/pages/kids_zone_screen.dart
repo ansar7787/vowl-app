@@ -290,23 +290,23 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                 Positioned(
                   top: -4.h,
                   right: -4.w,
-                  child: Container(
-                    padding: EdgeInsets.all(2.r),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 4,
-                        )
-                      ]
-                    ),
-                    child: Text(
-                      badgeEmoji,
-                      style: TextStyle(fontSize: 12.sp),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -2, end: 2, duration: 1.seconds),
+                  child:
+                      Container(
+                            padding: EdgeInsets.all(2.r),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(color: Colors.black12, blurRadius: 4),
+                              ],
+                            ),
+                            child: Text(
+                              badgeEmoji,
+                              style: TextStyle(fontSize: 12.sp),
+                            ),
+                          )
+                          .animate(onPlay: (c) => c.repeat(reverse: true))
+                          .moveY(begin: -2, end: 2, duration: 1.seconds),
                 ),
             ],
           ),
@@ -328,13 +328,18 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   }
 
   String _getMoodEmoji(String mood) {
-    switch(mood) {
-      case 'hungry': return '🥺';
-      case 'sleepy': return '😴';
-      case 'bored': return '😒';
-      case 'excited': return '🤩';
-      case 'happy': 
-      default: return '😊';
+    switch (mood) {
+      case 'hungry':
+        return '🥺';
+      case 'sleepy':
+        return '😴';
+      case 'bored':
+        return '😒';
+      case 'excited':
+        return '🤩';
+      case 'happy':
+      default:
+        return '😊';
     }
   }
 
@@ -560,4 +565,3 @@ class _FloatingCoinState extends State<_FloatingCoin>
     );
   }
 }
-
