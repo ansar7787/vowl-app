@@ -245,7 +245,9 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         );
       } else {
         // First wrong answer — stay on this quest.
-        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
+        emit(
+          s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
+        );
       }
     } else if (s.answerStatus == AnswerStatus.correct) {
       // All quests complete → level won.

@@ -552,7 +552,9 @@ class AdService {
             },
             onAdFailedToShowFullScreenContent: (ad, error) {
               if (kDebugMode) {
-                debugPrint('AdService: Child-safe rewarded failed to show: $error');
+                debugPrint(
+                  'AdService: Child-safe rewarded failed to show: $error',
+                );
               }
               ad.dispose();
               loadRewardedAd();

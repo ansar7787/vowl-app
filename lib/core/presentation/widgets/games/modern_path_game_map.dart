@@ -300,8 +300,6 @@ class ModernPathGameMap extends StatelessWidget {
               child: _buildTopicTooltip(context, theme, isDark),
             ),
 
-
-
           // Floating Vowl Mascot near the current level
           if (isCurrent)
             PositionedDirectional(

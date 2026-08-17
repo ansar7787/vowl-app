@@ -18,9 +18,7 @@ class DailyWordsRoutes {
       path: dailyWordsRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: BlocProvider<DailyWordsBloc>(
-          create: (_) => DailyWordsBloc(
-            service: di.sl<DailyWordsService>(),
-          ),
+          create: (_) => DailyWordsBloc(service: di.sl<DailyWordsService>()),
           child: const DailyWordsScreen(),
         ),
         state: state,
@@ -30,9 +28,7 @@ class DailyWordsRoutes {
       path: wordBankRoute,
       pageBuilder: (context, state) => fadeTransitionPage(
         child: BlocProvider<DailyWordsBloc>(
-          create: (_) => DailyWordsBloc(
-            service: di.sl<DailyWordsService>(),
-          ),
+          create: (_) => DailyWordsBloc(service: di.sl<DailyWordsService>()),
           child: const WordBankScreen(),
         ),
         state: state,

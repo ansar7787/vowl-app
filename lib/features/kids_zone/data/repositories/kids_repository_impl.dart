@@ -54,4 +54,3 @@ class KidsRepositoryImpl implements KidsRepository {
     }
   }
 }
-

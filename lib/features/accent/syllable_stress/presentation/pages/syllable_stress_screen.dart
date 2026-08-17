@@ -365,4 +365,3 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
     );
   }
 }
-

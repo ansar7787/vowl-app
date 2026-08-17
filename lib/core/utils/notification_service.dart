@@ -590,7 +590,10 @@ class NotificationService {
 
     await _localNotifications.zonedSchedule(
       id: streakReminderNotificationId,
-      title: _t('notifications.streak_reminder_title', fallback: streakMessages.title),
+      title: _t(
+        'notifications.streak_reminder_title',
+        fallback: streakMessages.title,
+      ),
       body: _t(
         'notifications.streak_reminder_body',
         args: [currentStreak.toString()],
@@ -767,7 +770,10 @@ class NotificationService {
 
     await _localNotifications.zonedSchedule(
       id: dailyWordsReminderNotificationId,
-      title: _t('notifications.daily_words_title', fallback: 'Your 10 words are ready! 📚'),
+      title: _t(
+        'notifications.daily_words_title',
+        fallback: 'Your 10 words are ready! 📚',
+      ),
       body: _t(
         'notifications.daily_words_body',
         fallback: 'Only takes 2 minutes. Tap to unlock today\'s vocabulary.',

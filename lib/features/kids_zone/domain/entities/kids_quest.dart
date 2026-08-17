@@ -122,4 +122,3 @@ class KidsQuest extends Equatable {
     );
   }
 }
-

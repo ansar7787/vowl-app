@@ -273,4 +273,3 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
   }
 }
-

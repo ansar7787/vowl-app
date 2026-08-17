@@ -155,8 +155,6 @@ class GameFeedbackCard extends StatelessWidget {
                   ),
                 ],
 
-
-
                 if (showEducationalInfo &&
                     sampleAnswer != null &&
                     sampleAnswer!.isNotEmpty) ...[

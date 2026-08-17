@@ -140,8 +140,10 @@ class HomeRoutes {
     ),
     GoRoute(
       path: AppRouter.progressDashboardRoute,
-      pageBuilder: (context, state) =>
-          fadeTransitionPage(child: const ProgressDashboardScreen(), state: state),
+      pageBuilder: (context, state) => fadeTransitionPage(
+        child: const ProgressDashboardScreen(),
+        state: state,
+      ),
     ),
     GoRoute(
       path: scanAndLearnRoute,

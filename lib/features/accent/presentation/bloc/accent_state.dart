@@ -145,7 +145,8 @@ class AccentLoaded extends AccentState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      answerStatus: answerStatus ?? AnswerStatus.unanswered, // enum override intentional
+      answerStatus:
+          answerStatus ?? AnswerStatus.unanswered, // enum override intentional
       hintUsed: hintUsed ?? this.hintUsed,
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,

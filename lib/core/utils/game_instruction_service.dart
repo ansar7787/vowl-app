@@ -1131,27 +1131,42 @@ class GameInstructionService {
       icon: Icons.cyclone,
       objective:
           "Identify the exact same meaning for the target word. Learning multiple words for the same idea gives your speaking and writing much more color and variety.",
-      rules: ["Find the twin word", "Warp the correct match", "Ignore visual tricks"],
+      rules: [
+        "Find the twin word",
+        "Warp the correct match",
+        "Ignore visual tricks",
+      ],
       actionText: "Start Warp",
-      tip: "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
+      tip:
+          "Don't get tricked by words that just look similar. Focus entirely on the core meaning!",
     ),
     GameSubtype.antonymSearch: GameBriefing(
       title: "Polarity Master",
       icon: Icons.electrical_services_rounded,
       objective:
           "Identify the exact opposite meaning of the target word. Searching for opposites builds a flexible vocabulary, helping you sound much more expressive in real-world conversations.",
-      rules: ["Find the opposite word", "Match to opposite pole", "Don't fall for synonyms"],
+      rules: [
+        "Find the opposite word",
+        "Match to opposite pole",
+        "Don't fall for synonyms",
+      ],
       actionText: "Start Search",
-      tip: "Think magnetically: Opposite meaning goes to the opposite glowing pole!",
+      tip:
+          "Think magnetically: Opposite meaning goes to the opposite glowing pole!",
     ),
     GameSubtype.contextClues: GameBriefing(
       title: "Detective Lens",
       icon: Icons.search_rounded,
       objective:
           "Use surrounding words to figure out the hidden meaning. Being able to read between the lines is essential for native-level fluency.",
-      rules: ["Drag to reveal clues", "Analyze the context", "Select the right evidence"],
+      rules: [
+        "Drag to reveal clues",
+        "Analyze the context",
+        "Select the right evidence",
+      ],
       actionText: "Start Scan",
-      tip: "Clues are usually hiding right next to the highlighted or redacted word!",
+      tip:
+          "Clues are usually hiding right next to the highlighted or redacted word!",
     ),
     GameSubtype.phrasalVerbs: GameBriefing(
       title: "Verb Vault",
@@ -1168,9 +1183,14 @@ class GameInstructionService {
       icon: Icons.forum_rounded,
       objective:
           "Decode emojis and phrases into correct English idioms. Mastering idioms is the ultimate secret to sounding like a true native speaker!",
-      rules: ["Interpret emojis", "Select matching idiom", "Crack the idiom code"],
+      rules: [
+        "Interpret emojis",
+        "Select matching idiom",
+        "Crack the idiom code",
+      ],
       actionText: "Send Message",
-      tip: "PRO TIP: Idioms are colorful cultural keys! Don't take them literally.",
+      tip:
+          "PRO TIP: Idioms are colorful cultural keys! Don't take them literally.",
     ),
     GameSubtype.academicWord: GameBriefing(
       title: "Thesis Thrust",
@@ -1183,25 +1203,36 @@ class GameInstructionService {
         "Drag the correct word",
       ],
       actionText: "Initiate Thrust",
-      tip: "PRO TIP: Look for tone! Academic words often have a formal, precise feeling compared to everyday speech.",
+      tip:
+          "PRO TIP: Look for tone! Academic words often have a formal, precise feeling compared to everyday speech.",
     ),
     GameSubtype.topicVocab: GameBriefing(
       title: "Word Sorter",
       icon: Icons.category_rounded,
       objective:
           "Sort words into the correct topic. Grouping words together makes them much easier to remember for real-world conversations.",
-      rules: ["Look at the new word", "Swipe it to the right topic", "Sort them all to win"],
+      rules: [
+        "Look at the new word",
+        "Swipe it to the right topic",
+        "Sort them all to win",
+      ],
       actionText: "Start Sorting",
-      tip: "PRO TIP: Try to picture the word in your mind before swiping it into the category!",
+      tip:
+          "PRO TIP: Try to picture the word in your mind before swiping it into the category!",
     ),
     GameSubtype.wordFormation: GameBriefing(
       title: "Word Builder",
       icon: Icons.science_rounded,
       objective:
           "Read the meaning closely and build the exact word it describes by adding the right ending to the root word. Mastering word construction unlocks a massive new vocabulary for you!",
-      rules: ["Read the meaning", "Choose the right ending", "Build the new word"],
+      rules: [
+        "Read the meaning",
+        "Choose the right ending",
+        "Build the new word",
+      ],
       actionText: "Start Building",
-      tip: "Think about what kind of word you need—like a person, a feeling, or an action—before choosing the ending!",
+      tip:
+          "Think about what kind of word you need—like a person, a feeling, or an action—before choosing the ending!",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
       title: "Word Builder",
@@ -1218,7 +1249,11 @@ class GameInstructionService {
       icon: Icons.join_inner_rounded,
       objective:
           "Discover words that naturally magnetize to each other. Mastering these common pairings will make your speech sound incredibly fluent and native-like.",
-      rules: ["Examine the main word", "Find its natural partner", "Fuse them together"],
+      rules: [
+        "Examine the main word",
+        "Find its natural partner",
+        "Fuse them together",
+      ],
       actionText: "Start Fusion",
       tip:
           "PRO TIP: Sometimes multiple words make sense, but only one is the natural, native-sounding pair!",
@@ -1228,7 +1263,11 @@ class GameInstructionService {
       icon: Icons.auto_stories_rounded,
       objective:
           "Identify the word that fits perfectly in the context of the sentence. Mastering contextual usage eliminates embarrassing mix-ups and makes your writing flawless.",
-      rules: ["Evaluate context", "Unfold the correct fit", "Ensure logical flow"],
+      rules: [
+        "Evaluate context",
+        "Unfold the correct fit",
+        "Ensure logical flow",
+      ],
       actionText: "Unfold Truth",
       tip:
           "PRO TIP: Nuance is key! Read the sentence quietly to yourself to 'feel' which word logically belongs.",
@@ -1333,7 +1372,11 @@ class GameInstructionService {
       icon: Icons.flash_on_rounded,
       objective:
           "Choose the most appropriate and polite social response for the scenario. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Match social tone", "Be polite/direct", "Navigate social nuances"],
+      rules: [
+        "Match social tone",
+        "Be polite/direct",
+        "Navigate social nuances",
+      ],
       actionText: "Respond Now",
       tip:
           "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
@@ -1353,7 +1396,11 @@ class GameInstructionService {
       icon: Icons.medical_services_rounded,
       objective:
           "Clearly explain symptoms or follow a doctor's detailed instructions. Mastering situational responses ensures you can navigate social interactions with confidence.",
-      rules: ["Be accurate", "Describe physical feelings", "Be precise and clear"],
+      rules: [
+        "Be accurate",
+        "Describe physical feelings",
+        "Be precise and clear",
+      ],
       actionText: "Start Consult",
       tip:
           "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",

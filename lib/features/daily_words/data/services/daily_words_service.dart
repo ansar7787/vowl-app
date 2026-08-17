@@ -87,8 +87,10 @@ class DailyWordsService {
       if (bankJson != null && bankJson.isNotEmpty) {
         final Map<String, dynamic> decoded = jsonDecode(bankJson);
         _wordBank = decoded.map(
-          (key, value) =>
-              MapEntry(key, WordProgress.fromJson(value as Map<String, dynamic>)),
+          (key, value) => MapEntry(
+            key,
+            WordProgress.fromJson(value as Map<String, dynamic>),
+          ),
         );
       }
 
@@ -150,10 +152,11 @@ class DailyWordsService {
       final batchIndex = ((day - 1) ~/ 10) + 1;
       final startDay = (batchIndex - 1) * 10 + 1;
       final endDay = batchIndex * 10;
-      
+
       final paddedStart = startDay.toString().padLeft(3, '0');
       final paddedEnd = endDay.toString().padLeft(3, '0');
-      final path = 'assets/curriculum/daily_words/daily_words_${paddedStart}_$paddedEnd.json';
+      final path =
+          'assets/curriculum/daily_words/daily_words_${paddedStart}_$paddedEnd.json';
 
       final jsonString = await rootBundle.loadString(path);
       if (jsonString.isEmpty) return null;
@@ -161,7 +164,7 @@ class DailyWordsService {
       // Parse in isolate for UI smoothness (follows AssetQuestService pattern)
       final batchData = await compute(_parseWordBatchInIsolate, jsonString);
       if (batchData == null) return null;
-      
+
       // Find the specific day
       final data = batchData.days.firstWhere(
         (d) => d.day == day,
@@ -198,7 +201,10 @@ class DailyWordsService {
     if (_wordBank.containsKey(word.id)) return;
 
     final today = _todayString();
-    final nextReview = _calculateNextReview(today, 1); // Box 1 = review tomorrow
+    final nextReview = _calculateNextReview(
+      today,
+      1,
+    ); // Box 1 = review tomorrow
 
     _wordBank[word.id] = WordProgress(
       wordId: word.id,
@@ -272,10 +278,11 @@ class DailyWordsService {
     }
 
     final lowerQuery = query.toLowerCase();
-    var results = _wordBank.values
-        .where((wp) => wp.word.toLowerCase().contains(lowerQuery))
-        .toList()
-      ..sort((a, b) => b.learnedDate.compareTo(a.learnedDate));
+    var results =
+        _wordBank.values
+            .where((wp) => wp.word.toLowerCase().contains(lowerQuery))
+            .toList()
+          ..sort((a, b) => b.learnedDate.compareTo(a.learnedDate));
 
     if (!isPremium && results.length > 50) {
       results = results.sublist(0, 50);

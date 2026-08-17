@@ -147,19 +147,19 @@ class DailyWordsState extends Equatable {
 
   @override
   List<Object?> get props => [
-        status,
-        wordSet,
-        currentIndex,
-        streak,
-        longestStreak,
-        totalWordsLearned,
-        currentDay,
-        wordBankEntries,
-        reviewQueue,
-        masteryStats,
-        errorMessage,
-        learnedThisSession,
-      ];
+    status,
+    wordSet,
+    currentIndex,
+    streak,
+    longestStreak,
+    totalWordsLearned,
+    currentDay,
+    wordBankEntries,
+    reviewQueue,
+    masteryStats,
+    errorMessage,
+    learnedThisSession,
+  ];
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -170,8 +170,8 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
   final DailyWordsService _service;
 
   DailyWordsBloc({required DailyWordsService service})
-      : _service = service,
-        super(const DailyWordsState()) {
+    : _service = service,
+      super(const DailyWordsState()) {
     on<DailyWordsLoadRequested>(_onLoadRequested);
     on<DailyWordMarkedLearned>(_onWordMarkedLearned);
     on<DailyWordNextRequested>(_onNextRequested);
@@ -191,35 +191,43 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
 
     try {
       await _service.init();
-      final wordSet = await _service.loadTodaysWords(isPremium: event.isPremium);
+      final wordSet = await _service.loadTodaysWords(
+        isPremium: event.isPremium,
+      );
 
       if (wordSet == null || wordSet.words.isEmpty) {
-        emit(state.copyWith(
-          status: DailyWordsStatus.error,
-          errorMessage: 'No words available for today. Check back tomorrow!',
-        ));
+        emit(
+          state.copyWith(
+            status: DailyWordsStatus.error,
+            errorMessage: 'No words available for today. Check back tomorrow!',
+          ),
+        );
         return;
       }
 
-      emit(state.copyWith(
-        status: DailyWordsStatus.loaded,
-        wordSet: wordSet,
-        currentIndex: 0,
-        streak: _service.streak,
-        longestStreak: _service.longestStreak,
-        totalWordsLearned: _service.totalWordsLearned,
-        currentDay: _service.currentDay,
-        reviewQueue: _service.wordsForReview,
-        masteryStats: _service.masteryStats,
-        learnedThisSession: const {},
-        errorMessage: null,
-      ));
+      emit(
+        state.copyWith(
+          status: DailyWordsStatus.loaded,
+          wordSet: wordSet,
+          currentIndex: 0,
+          streak: _service.streak,
+          longestStreak: _service.longestStreak,
+          totalWordsLearned: _service.totalWordsLearned,
+          currentDay: _service.currentDay,
+          reviewQueue: _service.wordsForReview,
+          masteryStats: _service.masteryStats,
+          learnedThisSession: const {},
+          errorMessage: null,
+        ),
+      );
     } catch (e) {
       if (kDebugMode) debugPrint('DailyWordsBloc: load failed: $e');
-      emit(state.copyWith(
-        status: DailyWordsStatus.error,
-        errorMessage: 'Failed to load daily words. Please try again.',
-      ));
+      emit(
+        state.copyWith(
+          status: DailyWordsStatus.error,
+          errorMessage: 'Failed to load daily words. Please try again.',
+        ),
+      );
     }
   }
 
@@ -231,11 +239,13 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     final updatedLearned = Set<String>.from(state.learnedThisSession)
       ..add(event.word.id);
 
-    emit(state.copyWith(
-      totalWordsLearned: _service.totalWordsLearned,
-      masteryStats: _service.masteryStats,
-      learnedThisSession: updatedLearned,
-    ));
+    emit(
+      state.copyWith(
+        totalWordsLearned: _service.totalWordsLearned,
+        masteryStats: _service.masteryStats,
+        learnedThisSession: updatedLearned,
+      ),
+    );
   }
 
   Future<void> _onNextRequested(
@@ -251,12 +261,14 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       } catch (e) {
         if (kDebugMode) debugPrint('Failed to schedule reminder: $e');
       }
-      
-      emit(state.copyWith(
-        status: DailyWordsStatus.sessionComplete,
-        currentIndex: nextIndex,
-        currentDay: _service.currentDay,
-      ));
+
+      emit(
+        state.copyWith(
+          status: DailyWordsStatus.sessionComplete,
+          currentIndex: nextIndex,
+          currentDay: _service.currentDay,
+        ),
+      );
     } else {
       emit(state.copyWith(currentIndex: nextIndex));
     }
@@ -267,10 +279,12 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     Emitter<DailyWordsState> emit,
   ) async {
     await _service.completeDailySession();
-    emit(state.copyWith(
-      status: DailyWordsStatus.sessionComplete,
-      currentDay: _service.currentDay,
-    ));
+    emit(
+      state.copyWith(
+        status: DailyWordsStatus.sessionComplete,
+        currentDay: _service.currentDay,
+      ),
+    );
   }
 
   Future<void> _onWordReviewed(
@@ -278,10 +292,12 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     Emitter<DailyWordsState> emit,
   ) async {
     await _service.recordReview(event.wordId, correct: event.correct);
-    emit(state.copyWith(
-      reviewQueue: _service.wordsForReview,
-      masteryStats: _service.masteryStats,
-    ));
+    emit(
+      state.copyWith(
+        reviewQueue: _service.wordsForReview,
+        masteryStats: _service.masteryStats,
+      ),
+    );
   }
 
   Future<void> _onWordBankLoadRequested(
@@ -292,11 +308,13 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       event.query,
       isPremium: event.isPremium,
     );
-    emit(state.copyWith(
-      wordBankEntries: results,
-      reviewQueue: _service.wordsForReview,
-      masteryStats: _service.masteryStats,
-    ));
+    emit(
+      state.copyWith(
+        wordBankEntries: results,
+        reviewQueue: _service.wordsForReview,
+        masteryStats: _service.masteryStats,
+      ),
+    );
   }
 
   Future<void> _onResetRequested(

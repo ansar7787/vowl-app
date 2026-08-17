@@ -25,8 +25,7 @@ class BuddyLifecycleService {
 
     final lastCare = user.kidsLastCareDate;
     if (lastCare != null) {
-      final hoursSinceCare =
-          DateTime.now().difference(lastCare).inHours;
+      final hoursSinceCare = DateTime.now().difference(lastCare).inHours;
       if (hoursSinceCare >= 2) return 'bored';
     } else {
       // Never cared for → bored
@@ -52,8 +51,10 @@ class BuddyLifecycleService {
     if (lastCare == null) return 50; // Default for first-ever visit
 
     final hoursSince = DateTime.now().difference(lastCare).inMinutes / 60.0;
-    final decayed = (user.kidsBuddyEnergy - (hoursSince * 5).toInt())
-        .clamp(0, 100);
+    final decayed = (user.kidsBuddyEnergy - (hoursSince * 5).toInt()).clamp(
+      0,
+      100,
+    );
     return decayed;
   }
 
@@ -64,8 +65,10 @@ class BuddyLifecycleService {
     if (lastFeed == null) return 60; // Default for first-ever visit
 
     final hoursSince = DateTime.now().difference(lastFeed).inMinutes / 60.0;
-    final increased = (user.kidsBuddyHunger + (hoursSince * 8).toInt())
-        .clamp(0, 100);
+    final increased = (user.kidsBuddyHunger + (hoursSince * 8).toInt()).clamp(
+      0,
+      100,
+    );
     return increased;
   }
 
@@ -130,11 +133,16 @@ class BuddyLifecycleService {
   /// Returns coins bonus for reaching a room level.
   int roomLevelBonus(int level) {
     switch (level) {
-      case 2: return 50;
-      case 3: return 100;
-      case 4: return 200;
-      case 5: return 500;
-      default: return 25;
+      case 2:
+        return 50;
+      case 3:
+        return 100;
+      case 4:
+        return 200;
+      case 5:
+        return 500;
+      default:
+        return 25;
     }
   }
 
@@ -155,39 +163,57 @@ class BuddyLifecycleService {
 
   String _morningGreeting(String mood) {
     switch (mood) {
-      case 'hungry': return "Good morning! I'm so hungry... 🥺";
-      case 'sleepy': return "Mmm... still so sleepy... 😴";
-      case 'bored': return "Finally! I missed you! 🎈";
-      case 'excited': return "GOOD MORNING! Let's learn! 🌟";
-      default: return "Good morning, best friend! ☀️";
+      case 'hungry':
+        return "Good morning! I'm so hungry... 🥺";
+      case 'sleepy':
+        return "Mmm... still so sleepy... 😴";
+      case 'bored':
+        return "Finally! I missed you! 🎈";
+      case 'excited':
+        return "GOOD MORNING! Let's learn! 🌟";
+      default:
+        return "Good morning, best friend! ☀️";
     }
   }
 
   String _afternoonGreeting(String mood) {
     switch (mood) {
-      case 'hungry': return "My tummy is rumbling! 🍽️";
-      case 'sleepy': return "I need a little nap... 💤";
-      case 'bored': return "Can we play something? 🎮";
-      case 'excited': return "This is so much fun! 🎉";
-      default: return "Hey there, buddy! 🌈";
+      case 'hungry':
+        return "My tummy is rumbling! 🍽️";
+      case 'sleepy':
+        return "I need a little nap... 💤";
+      case 'bored':
+        return "Can we play something? 🎮";
+      case 'excited':
+        return "This is so much fun! 🎉";
+      default:
+        return "Hey there, buddy! 🌈";
     }
   }
 
   String _eveningGreeting(String mood) {
     switch (mood) {
-      case 'hungry': return "Dinner time please! 🍕";
-      case 'sleepy': return "I'm getting really sleepy... 🌙";
-      case 'bored': return "One more game before bed? 🎲";
-      case 'excited': return "What a great day! ⭐";
-      default: return "It's getting late! 🌅";
+      case 'hungry':
+        return "Dinner time please! 🍕";
+      case 'sleepy':
+        return "I'm getting really sleepy... 🌙";
+      case 'bored':
+        return "One more game before bed? 🎲";
+      case 'excited':
+        return "What a great day! ⭐";
+      default:
+        return "It's getting late! 🌅";
     }
   }
 
   String _nightGreeting(String mood) {
     switch (mood) {
-      case 'hungry': return "A midnight snack? 🍪";
-      case 'sleepy': return "Zzz... let me sleep... 💤";
-      default: return "Shh... it's bedtime! 🌙";
+      case 'hungry':
+        return "A midnight snack? 🍪";
+      case 'sleepy':
+        return "Zzz... let me sleep... 💤";
+      default:
+        return "Shh... it's bedtime! 🌙";
     }
   }
 
@@ -210,7 +236,7 @@ class BuddyLifecycleService {
           "Just one little bite of something sweet? 🍯",
           "I would love some fresh fruit! 🍌",
           "Feeding time is my favorite time! 😋",
-          "I'm a very hungry little buddy! 🐾"
+          "I'm a very hungry little buddy! 🐾",
         ];
       case 'sleepy':
         return [
@@ -228,7 +254,7 @@ class BuddyLifecycleService {
           "I need to rest my little paws... 🐾",
           "The dream world is calling my name! 🌌",
           "Goodnight... wait, I'm not asleep yet! 🥱",
-          "A soft pillow sounds amazing right now. 🧸"
+          "A soft pillow sounds amazing right now. 🧸",
         ];
       case 'bored':
         return [
@@ -246,7 +272,7 @@ class BuddyLifecycleService {
           "Can we build a tall tower out of blocks? 🧱",
           "Let's play hide and seek! You count first! 🫣",
           "Do you want to sing a song with me? 🎵",
-          "I'm ready for playtime whenever you are! 🏃‍♂️"
+          "I'm ready for playtime whenever you are! 🏃‍♂️",
         ];
       case 'excited':
         return [
@@ -264,7 +290,7 @@ class BuddyLifecycleService {
           "I'm bouncing off the walls with joy! 🌟",
           "Look at us go! We are super smart! 🦉",
           "I can't wait to see what we do next! 🚀",
-          "Hooray for playtime with my favorite person! 🏆"
+          "Hooray for playtime with my favorite person! 🏆",
         ];
       default: // happy
         return [
@@ -282,7 +308,7 @@ class BuddyLifecycleService {
           "Your brain is growing so big and strong! 🌻",
           "Every day is a happy adventure with you! 🌍",
           "I give you a big virtual hug! 🤗",
-          "Thanks for taking such good care of me! 🥰"
+          "Thanks for taking such good care of me! 🥰",
         ];
     }
   }

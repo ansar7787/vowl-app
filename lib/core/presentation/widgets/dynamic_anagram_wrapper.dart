@@ -106,7 +106,9 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     if (currentWord == widget.expectedText.toUpperCase().trim()) {
       setState(() => _isSubmitting = true);
       if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
-        context.read<EconomyBloc>().add(EconomyAddCoinsRequested(widget.bonusCoins!));
+        context.read<EconomyBloc>().add(
+          EconomyAddCoinsRequested(widget.bonusCoins!),
+        );
       }
       widget.onConfirmed();
     } else {
@@ -217,7 +219,8 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                                   ),
                                   SizedBox(height: 2.h),
                                   AutoSizeText(
-                                    widget.subtitle ?? 'Tap the letters in the correct order',
+                                    widget.subtitle ??
+                                        'Tap the letters in the correct order',
                                     maxLines: 2,
                                     minFontSize: 4,
                                     stepGranularity: 0.5,
@@ -385,8 +388,10 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                onPressed: (_placedTiles.contains(null) || _isSubmitting) 
-                                    ? null 
+                                onPressed:
+                                    (_placedTiles.contains(null) ||
+                                        _isSubmitting)
+                                    ? null
                                     : _onSubmit,
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: _hasError

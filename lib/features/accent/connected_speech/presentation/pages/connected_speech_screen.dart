@@ -338,4 +338,3 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     );
   }
 }
-

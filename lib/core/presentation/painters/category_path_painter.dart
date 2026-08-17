@@ -72,8 +72,10 @@ class CategoryPathPainter extends CustomPainter {
 
       // Clip the active path based on activePathProgress
       for (final metric in activePath.computeMetrics()) {
-        final clippedPath =
-            metric.extractPath(0, metric.length * activePathProgress);
+        final clippedPath = metric.extractPath(
+          0,
+          metric.length * activePathProgress,
+        );
 
         // Soft glow layer beneath the active path
         canvas.drawPath(
@@ -89,8 +91,9 @@ class CategoryPathPainter extends CustomPainter {
 
         // Sparkle tip during animated draw
         if (activePathProgress < 1.0 && activePathProgress > 0.0) {
-          final tangent =
-              metric.getTangentForOffset(metric.length * activePathProgress);
+          final tangent = metric.getTangentForOffset(
+            metric.length * activePathProgress,
+          );
           if (tangent != null) {
             canvas.drawCircle(
               tangent.position,
@@ -99,27 +102,24 @@ class CategoryPathPainter extends CustomPainter {
                 ..color = Colors.white
                 ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6.0),
             );
-            canvas.drawCircle(
-              tangent.position,
-              5.0,
-              Paint()..color = color,
-            );
+            canvas.drawCircle(tangent.position, 5.0, Paint()..color = color);
           }
         }
       }
 
       // ── Current-node elegant thin breathing ring ──
       if (glowPulse > 0.0 && activeNodeCount > 0) {
-        final currentPoint = points[(activeNodeCount - 1)
-            .clamp(0, points.length - 1)];
-            
+        final currentPoint =
+            points[(activeNodeCount - 1).clamp(0, points.length - 1)];
+
         canvas.drawCircle(
           currentPoint,
           52.0 + 8.0 * glowPulse,
           Paint()
             ..color = color.withValues(alpha: 0.5 * glowPulse)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = 1.5 // Thin and elegant
+            ..strokeWidth =
+                1.5 // Thin and elegant
             ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2.0),
         );
       }

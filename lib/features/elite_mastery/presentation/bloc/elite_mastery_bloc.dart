@@ -301,7 +301,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       ]);
     } else {
       // Wrong answer on the last quest — stay and retry.
-      emit(currentState.copyWith(answerStatus: AnswerStatus.unanswered, isHintVisible: false));
+      emit(
+        currentState.copyWith(
+          answerStatus: AnswerStatus.unanswered,
+          isHintVisible: false,
+        ),
+      );
     }
   }
 

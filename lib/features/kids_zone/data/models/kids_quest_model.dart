@@ -88,4 +88,3 @@ class KidsQuestModel extends KidsQuest {
     };
   }
 }
-

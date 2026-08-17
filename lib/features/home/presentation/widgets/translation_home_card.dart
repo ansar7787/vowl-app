@@ -13,7 +13,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class TranslationHomeCard extends StatelessWidget {
   final bool isDark;
-  
+
   const TranslationHomeCard({super.key, required this.isDark});
 
   void _launchTranslate(BuildContext context) {
@@ -91,7 +91,7 @@ class TranslationHomeCard extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 16.w),
-              
+
               // Text Content
               Expanded(
                 child: Column(
@@ -101,18 +101,26 @@ class TranslationHomeCard extends StatelessWidget {
                       children: [
                         Expanded(
                           child: AutoSizeText(
-                            context.tr('home.translation_title', fallback: 'Instant Translate'),
+                            context.tr(
+                              'home.translation_title',
+                              fallback: 'Instant Translate',
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : const Color(0xFF0F172A),
+                              color: isDark
+                                  ? Colors.white
+                                  : const Color(0xFF0F172A),
                             ),
                             maxLines: 1,
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 4.h,
+                          ),
                           decoration: BoxDecoration(
                             color: primaryAccent.withValues(alpha: 0.2),
                             borderRadius: BorderRadius.circular(12.r),
@@ -131,12 +139,17 @@ class TranslationHomeCard extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     AutoSizeText(
-                      context.tr('home.translation_subtitle', fallback: 'Translate words & phrases offline for free'),
+                      context.tr(
+                        'home.translation_subtitle',
+                        fallback: 'Translate words & phrases offline for free',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : const Color(0xFF64748B),
+                        color: isDark
+                            ? Colors.white60
+                            : const Color(0xFF64748B),
                       ),
                       maxLines: 2,
                     ),

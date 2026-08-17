@@ -60,6 +60,7 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
   final int currentIndex;
   @override
   final int livesRemaining;
+
   /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
   final AnswerStatus answerStatus;
 
@@ -160,7 +161,6 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
     bool? isFinalFailure,
     List<int>? removedIndices,
     bool? isLetterRevealed,
-
   }) {
     return EliteMasteryLoaded(
       gameType: gameType ?? this.gameType,

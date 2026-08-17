@@ -169,8 +169,16 @@ class ProfileUpdateBuddyRoomRequested extends ProfileEvent {
 
   @override
   List<Object?> get props => [
-    mood, energy, hunger, careStreak, roomLevel, theme,
-    lastCareDate, lastFeedTime, gamesPlayedToday, lastGameDate,
+    mood,
+    energy,
+    hunger,
+    careStreak,
+    roomLevel,
+    theme,
+    lastCareDate,
+    lastFeedTime,
+    gamesPlayedToday,
+    lastGameDate,
   ];
 }
 
@@ -619,14 +627,21 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (event.careStreak != null) updates['kidsCareStreak'] = event.careStreak;
     if (event.roomLevel != null) updates['kidsRoomLevel'] = event.roomLevel;
     if (event.theme != null) updates['kidsRoomTheme'] = event.theme;
-    if (event.lastCareDate != null) updates['kidsLastCareDate'] = Timestamp.fromDate(event.lastCareDate!);
-    if (event.lastFeedTime != null) updates['kidsLastFeedTime'] = Timestamp.fromDate(event.lastFeedTime!);
-    if (event.gamesPlayedToday != null) updates['kidsGamesPlayedToday'] = event.gamesPlayedToday;
-    if (event.lastGameDate != null) updates['kidsLastGameDate'] = Timestamp.fromDate(event.lastGameDate!);
+    if (event.lastCareDate != null)
+      updates['kidsLastCareDate'] = Timestamp.fromDate(event.lastCareDate!);
+    if (event.lastFeedTime != null)
+      updates['kidsLastFeedTime'] = Timestamp.fromDate(event.lastFeedTime!);
+    if (event.gamesPlayedToday != null)
+      updates['kidsGamesPlayedToday'] = event.gamesPlayedToday;
+    if (event.lastGameDate != null)
+      updates['kidsLastGameDate'] = Timestamp.fromDate(event.lastGameDate!);
 
     if (updates.isNotEmpty) {
       try {
-        await FirebaseFirestore.instance.collection('users').doc(user.id).update(updates);
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.id)
+            .update(updates);
         authBloc.add(const AuthReloadUser());
       } catch (e) {
         emit(state.copyWith(message: () => e.toString()));

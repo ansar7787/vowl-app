@@ -273,4 +273,3 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
     );
   }
 }
-

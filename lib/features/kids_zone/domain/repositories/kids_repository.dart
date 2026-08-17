@@ -8,4 +8,3 @@ abstract class KidsRepository {
     int level,
   );
 }
-

@@ -39,15 +39,15 @@ class DailyWord extends Equatable {
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
-        'word': word,
-        'phonetic': phonetic,
-        'partOfSpeech': partOfSpeech,
-        'definition': definition,
-        'example': example,
-        'difficulty': difficulty,
-        'frequencyRank': frequencyRank,
-      };
+    'id': id,
+    'word': word,
+    'phonetic': phonetic,
+    'partOfSpeech': partOfSpeech,
+    'definition': definition,
+    'example': example,
+    'difficulty': difficulty,
+    'frequencyRank': frequencyRank,
+  };
 
   @override
   List<Object?> get props => [id, word, frequencyRank];
@@ -69,10 +69,9 @@ class DailyWordSet extends Equatable {
     return DailyWordSet(
       day: json['day'] as int? ?? 1,
       theme: json['theme'] as String? ?? '',
-      words: (json['words'] as List<dynamic>?)
-              ?.map(
-                (e) => DailyWord.fromJson(e as Map<String, dynamic>),
-              )
+      words:
+          (json['words'] as List<dynamic>?)
+              ?.map((e) => DailyWord.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
@@ -91,7 +90,8 @@ class DailyWordBatch extends Equatable {
 
   factory DailyWordBatch.fromJson(Map<String, dynamic> json) {
     return DailyWordBatch(
-      days: (json['days'] as List<dynamic>?)
+      days:
+          (json['days'] as List<dynamic>?)
               ?.map((e) => DailyWordSet.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],

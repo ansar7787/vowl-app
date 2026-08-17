@@ -226,7 +226,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final double rowSpacing = _getVerticalSpacing(theme.category);
 
     final double targetOffset = (unlockedLevels - 1) * rowSpacing;
-    // Uses the exact math from the Kids Map: ignoring header heights pushes the 
+    // Uses the exact math from the Kids Map: ignoring header heights pushes the
     // node perfectly into the comfortable lower-middle of the screen.
     final double targetY = math.max(0.0, targetOffset - 300.h);
 
@@ -326,8 +326,6 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
               // 1. Clean Minimal Static Background
               _buildBackground(theme, isDark),
 
-
-
               // 2. Scrollable Map Core
               CustomScrollView(
                 controller: _scrollController,
@@ -408,80 +406,81 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                       curve: Curves.easeOut,
                     ),
                     sliver: SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (context, index) {
-                          // Last item: bottom spacer
-                          if (index == _totalLevels) {
-                            return SizedBox(height: 150.h);
-                          }
-                          final levelNumber = index + 1;
-                          final point = points[index];
-                          final isNodeCompleted = levelNumber <= completedLevels;
-                          final isPrevNodeCompleted = index == 0
-                              ? true
-                              : (index <= completedLevels);
-                          final isPlayable = levelNumber == completedLevels + 1 &&
-                              (levelNumber <= unlockedLevels || isPremium);
-                          final isTollGateSegment =
-                              levelNumber == completedLevels + 1 &&
-                              levelNumber > unlockedLevels &&
-                              !isPremium;
-                          final isCurrent = isPlayable || isTollGateSegment;
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        // Last item: bottom spacer
+                        if (index == _totalLevels) {
+                          return SizedBox(height: 150.h);
+                        }
+                        final levelNumber = index + 1;
+                        final point = points[index];
+                        final isNodeCompleted = levelNumber <= completedLevels;
+                        final isPrevNodeCompleted = index == 0
+                            ? true
+                            : (index <= completedLevels);
+                        final isPlayable =
+                            levelNumber == completedLevels + 1 &&
+                            (levelNumber <= unlockedLevels || isPremium);
+                        final isTollGateSegment =
+                            levelNumber == completedLevels + 1 &&
+                            levelNumber > unlockedLevels &&
+                            !isPremium;
+                        final isCurrent = isPlayable || isTollGateSegment;
 
-                          final glowValue = isCurrent
-                              ? Curves.easeInOutSine
-                                  .transform(_glowController.value)
-                              : 0.0;
+                        final glowValue = isCurrent
+                            ? Curves.easeInOutSine.transform(
+                                _glowController.value,
+                              )
+                            : 0.0;
 
-                          return RepaintBoundary(
-                            child: AnimatedBuilder(
-                              animation: isCurrent ? _glowController : const AlwaysStoppedAnimation(0),
-                              builder: (context, child) => CustomPaint(
-                                painter: ModernSegmentPathPainter(
-                                  currentPoint: Offset(point.dx, rowSpacing / 2),
-                                  prevPoint: index > 0
-                                      ? Offset(points[index - 1].dx, 0)
-                                      : null,
-                                  nextPoint: index < _totalLevels - 1
-                                      ? Offset(points[index + 1].dx, rowSpacing)
-                                      : null,
-                                  activeColor: theme.primaryColor,
-                                  isCompleted: isNodeCompleted,
-                                  isPrevCompleted: isPrevNodeCompleted,
-                                  isFirst: index == 0,
-                                  isLast: index == _totalLevels - 1,
-                                  isDark: isDark,
-                                  isTollGate: isTollGateSegment,
-                                  glowPulse: glowValue,
-                                ),
-                                child: child,
+                        return RepaintBoundary(
+                          child: AnimatedBuilder(
+                            animation: isCurrent
+                                ? _glowController
+                                : const AlwaysStoppedAnimation(0),
+                            builder: (context, child) => CustomPaint(
+                              painter: ModernSegmentPathPainter(
+                                currentPoint: Offset(point.dx, rowSpacing / 2),
+                                prevPoint: index > 0
+                                    ? Offset(points[index - 1].dx, 0)
+                                    : null,
+                                nextPoint: index < _totalLevels - 1
+                                    ? Offset(points[index + 1].dx, rowSpacing)
+                                    : null,
+                                activeColor: theme.primaryColor,
+                                isCompleted: isNodeCompleted,
+                                isPrevCompleted: isPrevNodeCompleted,
+                                isFirst: index == 0,
+                                isLast: index == _totalLevels - 1,
+                                isDark: isDark,
+                                isTollGate: isTollGateSegment,
+                                glowPulse: glowValue,
                               ),
-                              child: SizedBox(
-                                height: rowSpacing,
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Transform.translate(
-                                    offset: Offset(
-                                      point.dx - ScreenUtil().screenWidth / 2,
-                                      0,
-                                    ),
-                                    child: _buildPathNode(
-                                      context,
-                                      levelNumber,
-                                      unlockedLevels,
-                                      completedLevels,
-                                      isDark,
-                                      theme,
-                                      isPremium,
-                                    ),
+                              child: child,
+                            ),
+                            child: SizedBox(
+                              height: rowSpacing,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Transform.translate(
+                                  offset: Offset(
+                                    point.dx - ScreenUtil().screenWidth / 2,
+                                    0,
+                                  ),
+                                  child: _buildPathNode(
+                                    context,
+                                    levelNumber,
+                                    unlockedLevels,
+                                    completedLevels,
+                                    isDark,
+                                    theme,
+                                    isPremium,
                                   ),
                                 ),
                               ),
                             ),
-                          );
-                        },
-                        childCount: _isLoading ? 0 : _totalLevels + 1,
-                      ),
+                          ),
+                        );
+                      }, childCount: _isLoading ? 0 : _totalLevels + 1),
                     ),
                   ),
                 ],
@@ -554,7 +553,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     // Organic, beautiful wandering path that feels completely unpredictable
     // and premium, like top-tier mobile games (Candy Crush, etc.)
     final List<double> organicPath = [
-      0.0, -0.6, -0.85, -0.3, 0.45, 0.85, 0.5, 0.1, -0.5, -0.75, -0.2, 0.35, 0.8, 0.9, 0.4, -0.1
+      0.0,
+      -0.6,
+      -0.85,
+      -0.3,
+      0.45,
+      0.85,
+      0.5,
+      0.1,
+      -0.5,
+      -0.75,
+      -0.2,
+      0.35,
+      0.8,
+      0.9,
+      0.4,
+      -0.1,
     ];
 
     for (int i = 0; i < _totalLevels; i++) {
@@ -700,25 +714,67 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             IconData icon;
             switch (theme.category) {
               case GameCategory.reading:
-                icon = [Icons.menu_book_rounded, Icons.auto_stories_rounded, Icons.chrome_reader_mode_rounded, Icons.library_books_rounded, Icons.book_rounded][index];
+                icon = [
+                  Icons.menu_book_rounded,
+                  Icons.auto_stories_rounded,
+                  Icons.chrome_reader_mode_rounded,
+                  Icons.library_books_rounded,
+                  Icons.book_rounded,
+                ][index];
                 break;
               case GameCategory.writing:
-                icon = [Icons.edit_note_rounded, Icons.history_edu_rounded, Icons.draw_rounded, Icons.create_rounded, Icons.article_rounded][index];
+                icon = [
+                  Icons.edit_note_rounded,
+                  Icons.history_edu_rounded,
+                  Icons.draw_rounded,
+                  Icons.create_rounded,
+                  Icons.article_rounded,
+                ][index];
                 break;
               case GameCategory.speaking:
-                icon = [Icons.mic_external_on_rounded, Icons.record_voice_over_rounded, Icons.mic_rounded, Icons.campaign_rounded, Icons.interpreter_mode_rounded][index];
+                icon = [
+                  Icons.mic_external_on_rounded,
+                  Icons.record_voice_over_rounded,
+                  Icons.mic_rounded,
+                  Icons.campaign_rounded,
+                  Icons.interpreter_mode_rounded,
+                ][index];
                 break;
               case GameCategory.listening:
-                icon = [Icons.headset_rounded, Icons.graphic_eq_rounded, Icons.hearing_rounded, Icons.music_note_rounded, Icons.volume_up_rounded][index];
+                icon = [
+                  Icons.headset_rounded,
+                  Icons.graphic_eq_rounded,
+                  Icons.hearing_rounded,
+                  Icons.music_note_rounded,
+                  Icons.volume_up_rounded,
+                ][index];
                 break;
               case GameCategory.grammar:
-                icon = [Icons.architecture_rounded, Icons.account_tree_rounded, Icons.hub_rounded, Icons.schema_rounded, Icons.lan_rounded][index];
+                icon = [
+                  Icons.architecture_rounded,
+                  Icons.account_tree_rounded,
+                  Icons.hub_rounded,
+                  Icons.schema_rounded,
+                  Icons.lan_rounded,
+                ][index];
                 break;
               case GameCategory.vocabulary:
-                icon = [Icons.bubble_chart_rounded, Icons.category_rounded, Icons.extension_rounded, Icons.widgets_rounded, Icons.apps_rounded][index];
+                icon = [
+                  Icons.bubble_chart_rounded,
+                  Icons.category_rounded,
+                  Icons.extension_rounded,
+                  Icons.widgets_rounded,
+                  Icons.apps_rounded,
+                ][index];
                 break;
               case GameCategory.eliteMastery:
-                icon = [Icons.workspace_premium_rounded, Icons.military_tech_rounded, Icons.diamond_rounded, Icons.emoji_events_rounded, Icons.star_rounded][index];
+                icon = [
+                  Icons.workspace_premium_rounded,
+                  Icons.military_tech_rounded,
+                  Icons.diamond_rounded,
+                  Icons.emoji_events_rounded,
+                  Icons.star_rounded,
+                ][index];
                 break;
               default:
                 icon = Icons.star_rounded;
@@ -1215,8 +1271,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       return AnimatedBuilder(
         animation: _glowController,
         builder: (context, child) {
-          final glowValue = Curves.easeInOutSine
-              .transform(_glowController.value);
+          final glowValue = Curves.easeInOutSine.transform(
+            _glowController.value,
+          );
           return Stack(
             alignment: Alignment.center,
             children: [
@@ -1230,9 +1287,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                     alpha: 0.12 * (1.0 - glowValue * 0.5),
                   ),
                   border: Border.all(
-                    color: tierColor.withValues(
-                      alpha: 0.25 + 0.25 * glowValue,
-                    ),
+                    color: tierColor.withValues(alpha: 0.25 + 0.25 * glowValue),
                     width: 2.r,
                   ),
                   boxShadow: [

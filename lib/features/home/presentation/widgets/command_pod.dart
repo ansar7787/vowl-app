@@ -192,11 +192,7 @@ class CommandPod extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(
-                              rank.icon,
-                              size: 11.r,
-                              color: rank.color,
-                            ),
+                            Icon(rank.icon, size: 11.r, color: rank.color),
                             SizedBox(width: 6.w),
                             Flexible(
                               child: Text(

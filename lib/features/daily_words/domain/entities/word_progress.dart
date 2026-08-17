@@ -49,14 +49,14 @@ class WordProgress extends Equatable {
   }
 
   Map<String, dynamic> toJson() => {
-        'wordId': wordId,
-        'word': word,
-        'learnedDate': learnedDate,
-        'reviewCount': reviewCount,
-        'box': box,
-        'nextReviewDate': nextReviewDate,
-        'lastScore': lastScore,
-      };
+    'wordId': wordId,
+    'word': word,
+    'learnedDate': learnedDate,
+    'reviewCount': reviewCount,
+    'box': box,
+    'nextReviewDate': nextReviewDate,
+    'lastScore': lastScore,
+  };
 
   WordProgress copyWith({
     String? wordId,

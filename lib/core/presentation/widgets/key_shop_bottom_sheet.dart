@@ -288,7 +288,11 @@ class _KeyShopContent extends StatelessWidget {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: (userCoins >= cost ? primaryColor : Colors.grey.shade500).withValues(alpha: 0.4),
+                              color:
+                                  (userCoins >= cost
+                                          ? primaryColor
+                                          : Colors.grey.shade500)
+                                      .withValues(alpha: 0.4),
                               offset: Offset(0, 4.h),
                               blurRadius: 8.r,
                             ),

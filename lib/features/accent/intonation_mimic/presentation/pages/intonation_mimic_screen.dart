@@ -410,4 +410,3 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     );
   }
 }
-

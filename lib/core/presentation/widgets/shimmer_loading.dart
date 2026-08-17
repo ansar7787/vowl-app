@@ -49,12 +49,12 @@ class ShimmerLoading extends StatelessWidget {
 
     return RepaintBoundary(
       child: Shimmer.fromColors(
-        baseColor: baseColor ?? (isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.grey[300]!),
-        highlightColor: highlightColor ?? (isDark
-            ? Colors.white.withValues(alpha: 0.1)
-            : Colors.grey[100]!),
+        baseColor:
+            baseColor ??
+            (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[300]!),
+        highlightColor:
+            highlightColor ??
+            (isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[100]!),
         period: const Duration(milliseconds: 1500),
         child: Container(
           width: width,

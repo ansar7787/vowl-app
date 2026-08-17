@@ -16,7 +16,7 @@ class KidsCategoryShelf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final games = KidsGameHelper.allGames;
-    
+
     return SizedBox(
       height: 215.h,
       child: MediaQuery.withClampedTextScaling(
@@ -31,10 +31,7 @@ class KidsCategoryShelf extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(right: 16.w),
-                child: _KidsGameEntryCard(
-                  metadata: games[index],
-                  user: user,
-                ),
+                child: _KidsGameEntryCard(metadata: games[index], user: user),
               );
             },
           ),
@@ -57,8 +54,10 @@ class _KidsGameEntryCard extends StatelessWidget {
     final displayColor = isDark
         ? color
         : HSLColor.fromColor(color).withLightness(0.4).toColor();
-    final title = metadata.subtitle; // The descriptive phrase (e.g. "Letters & Phonics")
-    final subtitle = metadata.fullTitle; // The core generic name (e.g. "Alphabet")
+    final title =
+        metadata.subtitle; // The descriptive phrase (e.g. "Letters & Phonics")
+    final subtitle =
+        metadata.fullTitle; // The core generic name (e.g. "Alphabet")
     final icon = metadata.icon;
 
     return Semantics(
@@ -68,10 +67,7 @@ class _KidsGameEntryCard extends StatelessWidget {
         onTap: () {
           context.push(
             '/kids/map/${metadata.gameType}',
-            extra: {
-              'title': metadata.fullTitle,
-              'primaryColor': color,
-            },
+            extra: {'title': metadata.fullTitle, 'primaryColor': color},
           );
         },
         child: ExcludeSemantics(
@@ -101,11 +97,7 @@ class _KidsGameEntryCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Icon(
-                        icon,
-                        color: displayColor,
-                        size: 22.r,
-                      ),
+                      child: Icon(icon, color: displayColor, size: 22.r),
                     ),
                     _buildCardIndicator(context, displayColor),
                   ],
@@ -163,7 +155,8 @@ class _KidsGameEntryCard extends StatelessWidget {
 
   Widget _buildCardIndicator(BuildContext context, Color color) {
     final currentLevel = user.unlockedLevels[metadata.gameType] ?? 1;
-    final isNew = currentLevel == 1 &&
+    final isNew =
+        currentLevel == 1 &&
         (user.completedLevels[metadata.gameType]?.isEmpty ?? true);
 
     if (isNew) {

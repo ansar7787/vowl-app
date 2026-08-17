@@ -28,7 +28,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
   void initState() {
     super.initState();
     _isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-    
+
     // Initial load of the word bank
     context.read<DailyWordsBloc>().add(
       WordBankLoadRequested(query: '', isPremium: _isPremium),
@@ -73,7 +73,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                       if (state.status == DailyWordsStatus.loading) {
                         return const Center(child: CircularProgressIndicator());
                       }
-                      
+
                       return Column(
                         children: [
                           _buildMasteryStats(state.masteryStats, isDark),
@@ -132,10 +132,14 @@ class _WordBankScreenState extends State<WordBankScreen> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.1) : const Color(0xFFF1F5F9),
+          color: isDark
+              ? Colors.white.withValues(alpha: 0.1)
+              : const Color(0xFFF1F5F9),
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(
-            color: isDark ? Colors.white.withValues(alpha: 0.05) : const Color(0xFFE2E8F0),
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.05)
+                : const Color(0xFFE2E8F0),
           ),
         ),
         child: Row(
@@ -156,7 +160,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
                 ),
                 decoration: InputDecoration(
                   border: InputBorder.none,
-                  hintText: context.tr('word_bank.search_hint', fallback: 'Search learned words...'),
+                  hintText: context.tr(
+                    'word_bank.search_hint',
+                    fallback: 'Search learned words...',
+                  ),
                   hintStyle: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
@@ -236,7 +243,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                         maxLines: 1,
                       ),
@@ -246,7 +255,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
-                          color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                          color: isDark
+                              ? Colors.white54
+                              : const Color(0xFF64748B),
                         ),
                         maxLines: 1,
                       ),
@@ -321,8 +332,14 @@ class _WordBankScreenState extends State<WordBankScreen> {
             SizedBox(height: 16.h),
             AutoSizeText(
               _searchController.text.isEmpty
-                  ? context.tr('word_bank.empty', fallback: 'No words learned yet.')
-                  : context.tr('word_bank.no_results', fallback: 'No matching words found.'),
+                  ? context.tr(
+                      'word_bank.empty',
+                      fallback: 'No words learned yet.',
+                    )
+                  : context.tr(
+                      'word_bank.no_results',
+                      fallback: 'No matching words found.',
+                    ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

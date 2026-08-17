@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:vowl/core/presentation/widgets/translatable_text.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
@@ -33,9 +35,17 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   final HapticService _haptics = di.sl<HapticService>();
   final SoundService _sound = di.sl<SoundService>();
   final TtsService _tts = di.sl<TtsService>();
+  final TranslationService _translationService = di.sl<TranslationService>();
 
   bool _isFlipped = false;
   bool _isAnimating = false;
+  
+  // Translation Session State
+  bool _translationUnlocked = false;
+  bool _isTranslating = false;
+  String? _translatedWord;
+  String? _translatedDefinition;
+  String? _translatedExample;
 
   @override
   void initState() {
@@ -59,9 +69,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       CurvedAnimation(parent: _slideController, curve: Curves.easeInCubic),
     );
 
-    // Load words
-    final isPremium =
-        context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    _translationUnlocked = isPremium;
+
     context.read<DailyWordsBloc>().add(
           DailyWordsLoadRequested(isPremium: isPremium),
         );
@@ -96,12 +106,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     await _slideController.forward();
     if (!mounted) return;
 
-    // Reset for next card
     _slideController.reset();
     _flipController.reset();
     setState(() {
       _isFlipped = false;
       _isAnimating = false;
+      // Reset translations for the new card
+      _translatedWord = null;
+      _translatedDefinition = null;
+      _translatedExample = null;
     });
 
     context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
@@ -110,6 +123,52 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   void _speakWord(String word) {
     _tts.speak(word);
     _haptics.selection();
+  }
+
+  Future<void> _handleTranslate(DailyWord word) async {
+    if (_isTranslating) return;
+    
+    // Check unlock
+    if (!_translationUnlocked) {
+      di.sl<AdService>().showRewardedAd(
+        context: context,
+        isPremium: false,
+        onUserEarnedReward: (_) {},
+        onDismissed: () async {
+          setState(() => _translationUnlocked = true);
+          await _performTranslation(word);
+        },
+      );
+      return;
+    }
+
+    await _performTranslation(word);
+  }
+
+  Future<void> _performTranslation(DailyWord word) async {
+    setState(() => _isTranslating = true);
+    try {
+      final tWord = await _translationService.translate(word.word);
+      final tDef = await _translationService.translate(word.definition);
+      final tEx = await _translationService.translate(word.example);
+      
+      if (mounted) {
+        setState(() {
+          _translatedWord = tWord;
+          _translatedDefinition = tDef;
+          _translatedExample = tEx;
+          _isTranslating = false;
+        });
+        _haptics.success();
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() => _isTranslating = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Translation model downloading... Please wait.')),
+        );
+      }
+    }
   }
 
   @override
@@ -121,125 +180,192 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
-          SafeArea(
-            child: BlocBuilder<DailyWordsBloc, DailyWordsState>(
-              builder: (context, state) {
-                if (state.status == DailyWordsStatus.loading) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                if (state.status == DailyWordsStatus.error) {
-                  return _ErrorView(message: state.errorMessage ?? '');
-                }
-                if (state.status == DailyWordsStatus.sessionComplete) {
-                  return _SessionCompleteView(
+          BlocBuilder<DailyWordsBloc, DailyWordsState>(
+            builder: (context, state) {
+              if (state.status == DailyWordsStatus.loading) {
+                return _buildShimmerLoading(isDark);
+              }
+              if (state.status == DailyWordsStatus.error) {
+                return SafeArea(child: _ErrorView(message: state.errorMessage ?? ''));
+              }
+              if (state.status == DailyWordsStatus.sessionComplete) {
+                return SafeArea(
+                  child: _SessionCompleteView(
                     streak: state.streak,
                     totalLearned: state.totalWordsLearned,
-                    day: state.currentDay - 1,
-                  );
-                }
-                final word = state.currentWord;
-                if (word == null) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                return _buildContent(context, state, word, isDark);
-              },
-            ),
+                    day: state.currentDay,
+                  ),
+                );
+              }
+              final word = state.currentWord;
+              if (word == null) {
+                return _buildShimmerLoading(isDark);
+              }
+              return _buildSliverContent(context, state, word, isDark);
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildContent(
+  Widget _buildShimmerLoading(bool isDark) {
+    final baseColor = isDark ? Colors.white10 : Colors.grey[300]!;
+    final highlightColor = isDark ? Colors.white24 : Colors.grey[100]!;
+
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.all(24.w),
+        child: Column(
+          children: [
+            SizedBox(height: 40.h),
+            Shimmer.fromColors(
+              baseColor: baseColor,
+              highlightColor: highlightColor,
+              child: Container(
+                height: 40.h,
+                width: 200.w,
+                decoration: BoxDecoration(
+                  color: baseColor,
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+              ),
+            ),
+            SizedBox(height: 40.h),
+            Expanded(
+              child: Shimmer.fromColors(
+                baseColor: baseColor,
+                highlightColor: highlightColor,
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: baseColor,
+                    borderRadius: BorderRadius.circular(32.r),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 40.h),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSliverContent(
     BuildContext context,
     DailyWordsState state,
     DailyWord word,
     bool isDark,
   ) {
-    return Column(
-      children: [
-        // ── Header ──
-        _DailyWordsHeader(
-          day: state.currentDay,
-          streak: state.streak,
-          progress: state.totalWords > 0
-              ? (state.currentIndex + 1) / state.totalWords
-              : 0,
-          currentIndex: state.currentIndex + 1,
-          totalWords: state.totalWords,
-          theme: state.wordSet?.theme ?? '',
-        ),
-        // ── Card ──
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: SlideTransition(
-              position: _slideAnimation,
-              child: GestureDetector(
-                onTap: _toggleFlip,
-                child: AnimatedBuilder(
-                  animation: _flipAnimation,
-                  builder: (context, child) {
-                    final angle = _flipAnimation.value * 3.14159;
-                    final showBack = _flipAnimation.value > 0.5;
-                    return Transform(
-                      alignment: Alignment.center,
-                      transform: Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(angle),
-                      child: showBack
-                          ? Transform(
-                              alignment: Alignment.center,
-                              transform: Matrix4.identity()..rotateY(3.14159),
-                              child: _WordCardBack(
-                                word: word,
-                                isDark: isDark,
-                                onSpeak: () => _speakWord(word.word),
-                              ),
-                            )
-                          : _WordCardFront(
-                              word: word,
-                              isDark: isDark,
-                              onSpeak: () => _speakWord(word.word),
-                            ),
-                    );
-                  },
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverAppBar(
+          expandedHeight: 120.h,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          pinned: true,
+          iconTheme: IconThemeData(color: isDark ? Colors.white : Colors.black87),
+          flexibleSpace: FlexibleSpaceBar(
+            background: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(top: 40.h),
+                child: _DailyWordsHeader(
+                  day: state.currentDay,
+                  streak: state.streak,
+                  progress: state.totalWords > 0
+                      ? (state.currentIndex + 1) / state.totalWords
+                      : 0,
+                  currentIndex: state.currentIndex + 1,
+                  totalWords: state.totalWords,
+                  theme: state.wordSet?.theme ?? '',
                 ),
               ),
             ),
           ),
         ),
-        // ── Actions ──
-        Padding(
-          padding: EdgeInsets.fromLTRB(24.w, 8.h, 24.w, 24.h),
-          child: Row(
-            children: [
-              Expanded(
-                child: _ActionButton(
-                  label: context.tr(
-                    'daily_words.flip_card',
-                    fallback: 'Flip Card',
-                  ),
-                  icon: Icons.flip_rounded,
-                  color: const Color(0xFF6366F1),
-                  isDark: isDark,
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            child: SizedBox(
+              height: 460.h,
+              child: SlideTransition(
+                position: _slideAnimation,
+                child: GestureDetector(
                   onTap: _toggleFlip,
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: _ActionButton(
-                  label: context.tr(
-                    'daily_words.learned',
-                    fallback: 'Learned ✓',
+                  child: AnimatedBuilder(
+                    animation: _flipAnimation,
+                    builder: (context, child) {
+                      final angle = _flipAnimation.value * 3.14159;
+                      final showBack = _flipAnimation.value > 0.5;
+                      return Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.identity()
+                          ..setEntry(3, 2, 0.001)
+                          ..rotateY(angle),
+                        child: showBack
+                            ? Transform(
+                                alignment: Alignment.center,
+                                transform: Matrix4.identity()..rotateY(3.14159),
+                                child: _WordCardBack(
+                                  word: word,
+                                  isDark: isDark,
+                                  onSpeak: () => _speakWord(word.word),
+                                  onTranslate: () => _handleTranslate(word),
+                                  isTranslating: _isTranslating,
+                                  translatedDefinition: _translatedDefinition,
+                                  translatedExample: _translatedExample,
+                                ),
+                              )
+                            : _WordCardFront(
+                                word: word,
+                                isDark: isDark,
+                                onSpeak: () => _speakWord(word.word),
+                                onTranslate: () => _handleTranslate(word),
+                                isTranslating: _isTranslating,
+                                translatedWord: _translatedWord,
+                              ),
+                      );
+                    },
                   ),
-                  icon: Icons.check_circle_rounded,
-                  color: const Color(0xFF10B981),
-                  isDark: isDark,
-                  onTap: () => _markLearnedAndNext(word),
                 ),
               ),
-            ],
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 40.h),
+            child: Row(
+              children: [
+                Expanded(
+                  child: _ActionButton(
+                    label: context.tr(
+                      'daily_words.flip_card',
+                      fallback: 'Flip Card',
+                    ),
+                    icon: Icons.360_rounded, // Better icon
+                    color: const Color(0xFF6366F1),
+                    isDark: isDark,
+                    onTap: _toggleFlip,
+                  ),
+                ),
+                SizedBox(width: 16.w), // Increased spacing
+                Expanded(
+                  child: _ActionButton(
+                    label: context.tr(
+                      'daily_words.learned',
+                      fallback: 'Learned ✓',
+                    ),
+                    icon: Icons.verified_rounded, // Premium icon
+                    color: const Color(0xFF10B981),
+                    isDark: isDark,
+                    onTap: () => _markLearnedAndNext(word),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
@@ -248,7 +374,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// SUB-WIDGETS
+// WIDGETS
 // ═══════════════════════════════════════════════════════════════════════════════
 
 class _DailyWordsHeader extends StatelessWidget {
@@ -271,125 +397,81 @@ class _DailyWordsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    
     return Padding(
-      padding: EdgeInsets.fromLTRB(16.w, 8.h, 16.w, 0),
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Column(
         children: [
-          // Top row: back, title, streak
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                onPressed: () => context.pop(),
-                icon: Icon(
-                  Icons.arrow_back_rounded,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  children: [
-                    AutoSizeText(
-                      context.tr(
-                        'daily_words.title',
-                        fallback: 'Daily 10 Words',
-                      ),
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Lesson $day',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
-                    if (theme.isNotEmpty)
-                      AutoSizeText(
-                        theme,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text(
+                    theme,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF6366F1),
+                    ),
+                  ),
+                ],
+              ),
+              if (streak > 0)
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.local_fire_department_rounded,
+                        color: const Color(0xFFF59E0B),
+                        size: 16.r,
+                      ),
+                      SizedBox(width: 4.w),
+                      Text(
+                        '$streak',
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark
-                              ? Colors.white54
-                              : const Color(0xFF64748B),
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFFF59E0B),
                         ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
                       ),
-                  ],
-                ),
-              ),
-              // Streak badge
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFF59E0B), Color(0xFFEF4444)],
-                  ),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.local_fire_department_rounded,
-                        color: Colors.white, size: 14.r),
-                    SizedBox(width: 4.w),
-                    Text(
-                      '$streak',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 12.w),
-              // Word Bank Button
-              GestureDetector(
-                onTap: () {
-                  di.sl<HapticService>().selection();
-                  context.push(AppRouter.wordBankRoute);
-                },
-                child: Container(
-                  padding: EdgeInsets.all(8.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white10 : const Color(0xFFF1F5F9),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.menu_book_rounded,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                    size: 20.r,
+                    ],
                   ),
                 ),
-              ),
             ],
           ),
-          SizedBox(height: 12.h),
-          // Progress bar
+          SizedBox(height: 20.h),
           Row(
             children: [
-              Text(
-                'Day $day',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w700,
-                  color: const Color(0xFF6366F1),
-                ),
-              ),
-              SizedBox(width: 8.w),
               Expanded(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4.r),
+                  borderRadius: BorderRadius.circular(8.r),
                   child: LinearProgressIndicator(
                     value: progress,
-                    minHeight: 6.h,
+                    minHeight: 8.h,
                     backgroundColor: isDark
-                        ? Colors.white.withValues(alpha: 0.08)
+                        ? Colors.white.withValues(alpha: 0.1)
                         : const Color(0xFFE2E8F0),
                     valueColor: const AlwaysStoppedAnimation<Color>(
                       Color(0xFF6366F1),
@@ -397,19 +479,20 @@ class _DailyWordsHeader extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 8.w),
+              SizedBox(width: 12.w),
               Text(
                 '$currentIndex / $totalWords',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w800,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.7)
+                      : const Color(0xFF64748B),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 16.h),
         ],
       ),
     );
@@ -420,113 +503,102 @@ class _WordCardFront extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
   final VoidCallback onSpeak;
+  final VoidCallback onTranslate;
+  final bool isTranslating;
+  final String? translatedWord;
 
   const _WordCardFront({
     required this.word,
     required this.isDark,
     required this.onSpeak,
+    required this.onTranslate,
+    required this.isTranslating,
+    this.translatedWord,
   });
 
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(28.r),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.zero,
+      child: Stack(
         children: [
-          // Part of speech badge
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-            decoration: BoxDecoration(
-              color: const Color(0xFF6366F1).withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(16.r),
-            ),
-            child: AutoSizeText(
-              word.partOfSpeech.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF6366F1),
-                letterSpacing: 1.2,
-              ),
-              maxLines: 1,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          // Word
-          AutoSizeText(
-            word.word,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 42.sp,
-              fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : const Color(0xFF0F172A),
-            ),
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: 8.h),
-          // Phonetic
-          GestureDetector(
-            onTap: onSpeak,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.volume_up_rounded,
-                  color: const Color(0xFF6366F1),
-                  size: 18.r,
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: Text(
+                    word.partOfSpeech.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFF6366F1),
+                      letterSpacing: 1.5,
+                    ),
+                  ),
                 ),
-                SizedBox(width: 6.w),
+                SizedBox(height: 24.h),
                 AutoSizeText(
-                  word.phonetic,
+                  word.word,
                   style: TextStyle(
-                    fontFamily: 'RobotoMono',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                    color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                    fontFamily: 'Outfit',
+                    fontSize: 48.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    letterSpacing: -1,
                   ),
                   maxLines: 1,
+                ),
+                if (translatedWord != null) ...[
+                  SizedBox(height: 12.h),
+                  AutoSizeText(
+                    translatedWord!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF10B981),
+                    ),
+                    maxLines: 1,
+                  ),
+                ],
+                SizedBox(height: 16.h),
+                Text(
+                  word.phonetic,
+                  style: TextStyle(
+                    fontFamily: 'Spectral',
+                    fontSize: 20.sp,
+                    fontStyle: FontStyle.italic,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.5)
+                        : const Color(0xFF64748B),
+                  ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 32.h),
-          // Frequency badge
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: const Color(0xFF10B981).withValues(alpha: 0.12),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: const Color(0xFF10B981).withValues(alpha: 0.3),
-              ),
+          Positioned(
+            top: 16.r,
+            right: 16.r,
+            child: Row(
+              children: [
+                _TranslateButton(
+                  isTranslating: isTranslating,
+                  onTap: onTranslate,
+                ),
+                SizedBox(width: 8.w),
+                _IconButton(
+                  icon: Icons.volume_up_rounded,
+                  onTap: onSpeak,
+                ),
+              ],
             ),
-            child: AutoSizeText(
-              '#${word.frequencyRank} most used',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: const Color(0xFF10B981),
-              ),
-              maxLines: 1,
-            ),
-          ),
-          SizedBox(height: 24.h),
-          // Tap hint
-          AutoSizeText(
-            context.tr('daily_words.tap_to_flip', fallback: 'Tap to flip →'),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w500,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.3)
-                  : const Color(0xFF94A3B8),
-            ),
-            maxLines: 1,
           ),
         ],
       ),
@@ -538,88 +610,226 @@ class _WordCardBack extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
   final VoidCallback onSpeak;
+  final VoidCallback onTranslate;
+  final bool isTranslating;
+  final String? translatedDefinition;
+  final String? translatedExample;
 
   const _WordCardBack({
     required this.word,
     required this.isDark,
     required this.onSpeak,
+    required this.onTranslate,
+    required this.isTranslating,
+    this.translatedDefinition,
+    this.translatedExample,
   });
 
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Word header
-            Center(
-              child: AutoSizeText(
-                word.word,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 28.sp,
-                  fontWeight: FontWeight.w900,
-                  color: const Color(0xFF6366F1),
+      padding: EdgeInsets.zero,
+      child: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(24.r),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10.h),
+                  // Word header
+                  Center(
+                    child: AutoSizeText(
+                      word.word,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 28.sp,
+                        fontWeight: FontWeight.w900,
+                        color: const Color(0xFF6366F1),
+                      ),
+                      maxLines: 1,
+                    ),
+                  ),
+                  SizedBox(height: 30.h),
+                  // Definition
+                  _SectionLabel(
+                    label: context.tr(
+                      'daily_words.definition',
+                      fallback: 'Definition',
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Text(
+                    word.definition,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                      height: 1.5,
+                    ),
+                  ),
+                  if (translatedDefinition != null) ...[
+                    SizedBox(height: 6.h),
+                    Text(
+                      translatedDefinition!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        color: const Color(0xFF10B981),
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
+                  SizedBox(height: 24.h),
+                  // Example
+                  _SectionLabel(
+                    label: context.tr(
+                      'daily_words.example',
+                      fallback: 'Example',
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(14.r),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '"${word.example}"',
+                          style: TextStyle(
+                            fontFamily: 'Spectral',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                            color: isDark ? Colors.white70 : const Color(0xFF334155),
+                            height: 1.5,
+                          ),
+                        ),
+                        if (translatedExample != null) ...[
+                          SizedBox(height: 8.h),
+                          Text(
+                            '"${translatedExample!}"',
+                            style: TextStyle(
+                              fontFamily: 'Spectral',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              fontStyle: FontStyle.italic,
+                              color: const Color(0xFF10B981),
+                              height: 1.5,
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 40.h),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 16.r,
+            right: 16.r,
+            child: Row(
+              children: [
+                _TranslateButton(
+                  isTranslating: isTranslating,
+                  onTap: onTranslate,
                 ),
-                maxLines: 1,
-              ),
-            ),
-            SizedBox(height: 20.h),
-            // Definition
-            _SectionLabel(
-              label: context.tr(
-                'daily_words.definition',
-                fallback: 'Definition',
-              ),
-            ),
-            SizedBox(height: 6.h),
-            TranslatableText(
-              word.definition,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
-                height: 1.5,
-              ),
-              maxLines: 4,
-            ),
-            SizedBox(height: 20.h),
-            // Example
-            _SectionLabel(
-              label: context.tr(
-                'daily_words.example',
-                fallback: 'Example',
-              ),
-            ),
-            SizedBox(height: 6.h),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(14.r),
-              decoration: BoxDecoration(
-                color: const Color(0xFF6366F1).withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                SizedBox(width: 8.w),
+                _IconButton(
+                  icon: Icons.volume_up_rounded,
+                  onTap: onSpeak,
                 ),
-              ),
-              child: TranslatableText(
-                '"${word.example}"',
-                style: TextStyle(
-                  fontFamily: 'Spectral',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                  color: isDark ? Colors.white70 : const Color(0xFF334155),
-                  height: 1.5,
-                ),
-                maxLines: 3,
-              ),
+              ],
             ),
-            SizedBox(height: 24.h),
-          ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _TranslateButton extends StatelessWidget {
+  final bool isTranslating;
+  final VoidCallback onTap;
+
+  const _TranslateButton({
+    required this.isTranslating,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 44.r,
+        height: 44.r,
+        decoration: BoxDecoration(
+          color: const Color(0xFF10B981).withValues(alpha: 0.15),
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: const Color(0xFF10B981).withValues(alpha: 0.3),
+          ),
+        ),
+        child: Center(
+          child: isTranslating
+              ? SizedBox(
+                  width: 18.r,
+                  height: 18.r,
+                  child: const CircularProgressIndicator(
+                    strokeWidth: 2,
+                    valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                  ),
+                )
+              : Icon(
+                  Icons.g_translate_rounded,
+                  color: const Color(0xFF10B981),
+                  size: 20.r,
+                ),
+        ),
+      ),
+    );
+  }
+}
+
+class _IconButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const _IconButton({
+    required this.icon,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 44.r,
+        height: 44.r,
+        decoration: BoxDecoration(
+          color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          icon,
+          color: const Color(0xFF6366F1),
+          size: 20.r,
         ),
       ),
     );
@@ -632,17 +842,15 @@ class _SectionLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return AutoSizeText(
+    return Text(
       label.toUpperCase(),
       style: TextStyle(
         fontFamily: 'Outfit',
-        fontSize: 10.sp,
-        fontWeight: FontWeight.w800,
-        color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+        fontSize: 11.sp,
+        fontWeight: FontWeight.w900,
+        color: const Color(0xFF64748B),
         letterSpacing: 1.5,
       ),
-      maxLines: 1,
     );
   }
 }
@@ -665,30 +873,78 @@ class _ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: color.withValues(alpha: isDark ? 0.2 : 0.1),
-      borderRadius: BorderRadius.circular(16.r),
+      color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        borderRadius: BorderRadius.circular(16.r),
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 14.h),
+        borderRadius: BorderRadius.circular(20.r), // Premium rounded
+        splashColor: color.withValues(alpha: 0.2),
+        highlightColor: color.withValues(alpha: 0.1),
+        child: Ink(
+          padding: EdgeInsets.symmetric(vertical: 18.h), // Taller button
+          decoration: BoxDecoration(
+            color: isDark ? color.withValues(alpha: 0.15) : color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: color.withValues(alpha: 0.3),
+              width: 1.5,
+            ),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, color: color, size: 20.r),
+              Icon(icon, color: color, size: 24.r),
               SizedBox(width: 8.w),
-              AutoSizeText(
+              Text(
                 label,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 14.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
                   color: color,
                 ),
-                maxLines: 1,
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ErrorView extends StatelessWidget {
+  final String message;
+
+  const _ErrorView({required this.message});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.all(24.r),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.error_outline_rounded,
+              size: 64.r,
+              color: Colors.redAccent,
+            ),
+            SizedBox(height: 16.h),
+            Text(
+              message,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 24.h),
+            ElevatedButton(
+              onPressed: () => context.pop(),
+              child: const Text('Go Back'),
+            ),
+          ],
         ),
       ),
     );
@@ -711,172 +967,71 @@ class _SessionCompleteView extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Center(
       child: Padding(
-        padding: EdgeInsets.all(32.r),
-        child: GlassTile(
-          padding: EdgeInsets.all(32.r),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.celebration_rounded,
-                  color: const Color(0xFFF59E0B), size: 56.r),
-              SizedBox(height: 16.h),
-              AutoSizeText(
-                context.tr(
-                  'daily_words.session_complete',
-                  fallback: 'Great Work! 🎉',
-                ),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
-                maxLines: 1,
-              ),
-              SizedBox(height: 8.h),
-              AutoSizeText(
-                'Day $day complete!',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  color: isDark ? Colors.white54 : const Color(0xFF64748B),
-                ),
-                maxLines: 1,
-              ),
-              SizedBox(height: 24.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _StatPill(
-                    icon: Icons.local_fire_department_rounded,
-                    value: '$streak',
-                    label: 'Streak',
-                    color: const Color(0xFFEF4444),
-                  ),
-                  _StatPill(
-                    icon: Icons.auto_stories_rounded,
-                    value: '$totalLearned',
-                    label: 'Total',
-                    color: const Color(0xFF6366F1),
-                  ),
-                ],
-              ),
-              SizedBox(height: 28.h),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => context.pop(),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF6366F1),
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 14.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
-                  child: Text(
-                    context.tr('daily_words.back_home', fallback: 'Back Home'),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 12.h),
-              TextButton(
-                onPressed: () => context.push(AppRouter.wordBankRoute),
-                child: Text(
-                  context.tr('word_bank.view', fallback: 'View Word Bank →'),
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _StatPill extends StatelessWidget {
-  final IconData icon;
-  final String value;
-  final String label;
-  final Color color;
-
-  const _StatPill({
-    required this.icon,
-    required this.value,
-    required this.label,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Column(
-      children: [
-        Icon(icon, color: color, size: 24.r),
-        SizedBox(height: 4.h),
-        Text(
-          value,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w900,
-            color: isDark ? Colors.white : const Color(0xFF0F172A),
-          ),
-        ),
-        Text(
-          label,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 10.sp,
-            color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _ErrorView extends StatelessWidget {
-  final String message;
-  const _ErrorView({required this.message});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.all(32.r),
+        padding: EdgeInsets.all(24.r),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.error_outline_rounded,
-                color: const Color(0xFFEF4444), size: 48.r),
-            SizedBox(height: 16.h),
-            AutoSizeText(
-              message,
+            Container(
+              padding: EdgeInsets.all(24.r),
+              decoration: BoxDecoration(
+                color: const Color(0xFF10B981).withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.emoji_events_rounded,
+                size: 80.r,
+                color: const Color(0xFF10B981),
+              ),
+            ),
+            SizedBox(height: 32.h),
+            Text(
+              context.tr(
+                'daily_words.session_complete',
+                fallback: 'Lesson Complete!',
+              ),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 32.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              context.tr(
+                'daily_words.come_back_tomorrow',
+                fallback: 'Great job! You finished Lesson $day.',
+              ),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 14.sp,
+                fontSize: 16.sp,
                 color: isDark ? Colors.white70 : const Color(0xFF64748B),
               ),
-              maxLines: 3,
             ),
-            SizedBox(height: 24.h),
-            TextButton(
-              onPressed: () => context.pop(),
-              child: const Text('Go Back'),
+            SizedBox(height: 48.h),
+            SizedBox(
+              width: double.infinity,
+              height: 56.h,
+              child: ElevatedButton(
+                onPressed: () => context.pop(),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF6366F1),
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.r),
+                  ),
+                  elevation: 0,
+                ),
+                child: Text(
+                  context.tr('common.continue', fallback: 'Continue'),
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

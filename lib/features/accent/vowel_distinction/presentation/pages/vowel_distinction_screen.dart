@@ -420,4 +420,3 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     );
   }
 }
-

@@ -102,15 +102,16 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
     );
 
     // 0.25–0.50: White flash
-    _flashOpacity = TweenSequence<double>([
-      TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 40),
-      TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 60),
-    ]).animate(
-      CurvedAnimation(
-        parent: _openSequenceCtrl,
-        curve: const Interval(0.25, 0.55, curve: Curves.easeOut),
-      ),
-    );
+    _flashOpacity =
+        TweenSequence<double>([
+          TweenSequenceItem(tween: Tween(begin: 0.0, end: 1.0), weight: 40),
+          TweenSequenceItem(tween: Tween(begin: 1.0, end: 0.0), weight: 60),
+        ]).animate(
+          CurvedAnimation(
+            parent: _openSequenceCtrl,
+            curve: const Interval(0.25, 0.55, curve: Curves.easeOut),
+          ),
+        );
 
     // 0.30–0.50: Closed chest fades out
     _closedChestFade = Tween<double>(begin: 1.0, end: 0.0).animate(
@@ -211,7 +212,9 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
 
   @override
   Widget build(BuildContext context) {
-    final chestColor = widget.isPremium ? const Color(0xFFF59E0B) : Colors.amber;
+    final chestColor = widget.isPremium
+        ? const Color(0xFFF59E0B)
+        : Colors.amber;
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -326,11 +329,11 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
         isOpen
             ? context.tr('home.chest_claimed', fallback: 'Chest Claimed')
             : (widget.isPremium
-                ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
-                : context.tr(
-                    'home.chest_daily_mystery',
-                    fallback: 'Daily Mystery',
-                  )),
+                  ? context.tr('home.chest_vip_gift', fallback: 'VIP Gift')
+                  : context.tr(
+                      'home.chest_daily_mystery',
+                      fallback: 'Daily Mystery',
+                    )),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: widget.isPremium && !isOpen ? 26.sp : 28.sp,
@@ -341,10 +344,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
           letterSpacing: 4,
           decoration: TextDecoration.none,
           shadows: [
-            Shadow(
-              color: chestColor.withValues(alpha: 0.5),
-              blurRadius: 20,
-            ),
+            Shadow(color: chestColor.withValues(alpha: 0.5), blurRadius: 20),
           ],
         ),
         textAlign: TextAlign.center,
@@ -363,11 +363,11 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
               fallback: 'Treasure Unlocked!',
             )
           : (widget.isPremium
-              ? context.tr('home.chest_pro_reward', fallback: 'Pro Reward')
-              : context.tr(
-                  'home.chest_ready_to_open',
-                  fallback: 'Ready to open',
-                )),
+                ? context.tr('home.chest_pro_reward', fallback: 'Pro Reward')
+                : context.tr(
+                    'home.chest_ready_to_open',
+                    fallback: 'Ready to open',
+                  )),
       style: TextStyle(
         fontFamily: 'Outfit',
         fontSize: 14.sp,
@@ -422,9 +422,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                       shape: BoxShape.circle,
                       gradient: RadialGradient(
                         colors: [
-                          Colors.white.withValues(
-                            alpha: _flashOpacity.value,
-                          ),
+                          Colors.white.withValues(alpha: _flashOpacity.value),
                           Colors.white.withValues(
                             alpha: _flashOpacity.value * 0.6,
                           ),
@@ -577,10 +575,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
             args: ['${widget.rewardAmount}'],
           ),
           child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 32.w,
-              vertical: 20.h,
-            ),
+            padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
             decoration: BoxDecoration(
               color: Colors.white.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(30.r),
@@ -661,10 +656,7 @@ class _MysteryChestOverlayState extends State<MysteryChestOverlay>
                   'home.chest_tap_vip_loot',
                   fallback: 'Tap for VIP Loot',
                 )
-              : context.tr(
-                  'home.chest_tap_unveil',
-                  fallback: 'Tap to unveil',
-                ),
+              : context.tr('home.chest_tap_unveil', fallback: 'Tap to unveil'),
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,

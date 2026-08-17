@@ -19,37 +19,46 @@ class HomeQuickStats extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: _buildMiniStatTile(
-            context,
-            context.tr('home.streak', fallback: 'Streak'),
-            '${user.currentStreak}',
-            Icons.local_fire_department_rounded,
-            const Color(0xFFF97316),
-            AppRouter.streakRoute,
-          ),
-        ).animate().fadeIn(delay: 100.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
+              child: _buildMiniStatTile(
+                context,
+                context.tr('home.streak', fallback: 'Streak'),
+                '${user.currentStreak}',
+                Icons.local_fire_department_rounded,
+                const Color(0xFFF97316),
+                AppRouter.streakRoute,
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 100.ms, duration: 500.ms)
+            .slideY(begin: 0.15, end: 0),
         SizedBox(width: 12.w),
         Expanded(
-          child: _buildMiniStatTile(
-            context,
-            context.tr('home.coins', fallback: 'Coins'),
-            '${user.coins}',
-            Icons.paid_rounded,
-            const Color(0xFF10B981),
-            AppRouter.questCoinsRoute,
-          ),
-        ).animate().fadeIn(delay: 200.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
+              child: _buildMiniStatTile(
+                context,
+                context.tr('home.coins', fallback: 'Coins'),
+                '${user.coins}',
+                Icons.paid_rounded,
+                const Color(0xFF10B981),
+                AppRouter.questCoinsRoute,
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 200.ms, duration: 500.ms)
+            .slideY(begin: 0.15, end: 0),
         SizedBox(width: 12.w),
         Expanded(
-          child: _buildMiniStatTile(
-            context,
-            context.tr('home.kids', fallback: 'Kids'),
-            '${user.kidsCoins}',
-            Icons.monetization_on_rounded,
-            const Color(0xFFF59E0B),
-            '${AppRouter.kidsZoneRoute}/boutique',
-          ),
-        ).animate().fadeIn(delay: 300.ms, duration: 500.ms).slideY(begin: 0.15, end: 0),
+              child: _buildMiniStatTile(
+                context,
+                context.tr('home.kids', fallback: 'Kids'),
+                '${user.kidsCoins}',
+                Icons.monetization_on_rounded,
+                const Color(0xFFF59E0B),
+                '${AppRouter.kidsZoneRoute}/boutique',
+              ),
+            )
+            .animate()
+            .fadeIn(delay: 300.ms, duration: 500.ms)
+            .slideY(begin: 0.15, end: 0),
       ],
     );
   }
