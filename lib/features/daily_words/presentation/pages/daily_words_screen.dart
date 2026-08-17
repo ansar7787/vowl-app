@@ -225,12 +225,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     _haptics.success();
     _sound.playCorrect();
 
+    if (!mounted) return;
     context.read<DailyWordsBloc>().add(DailyWordMarkedLearned(word));
 
     await _slideController.forward();
     if (!mounted) return;
-
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     _slideController.reset();
     _flipController.reset();
