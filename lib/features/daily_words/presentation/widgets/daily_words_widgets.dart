@@ -328,13 +328,13 @@ class PulsingIcon extends StatefulWidget {
   final IconData icon;
   final Color color;
 
-  const PulsingIcon({super.key, super.key, required this.icon, required this.color});
+  const PulsingIcon({super.key, required this.icon, required this.color});
 
   @override
   State<PulsingIcon> createState() => _PulsingIconState();
 }
 
-class PulsingIconState extends State<PulsingIcon>
+class _PulsingIconState extends State<PulsingIcon>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
