@@ -100,9 +100,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
       listenWhen: (prev, curr) =>
           (curr is ReadingGameComplete && prev is! ReadingGameComplete) ||
           (curr is ReadingGameOver && prev is! ReadingGameOver) ||
-          (curr is ReadingLoaded && curr.lastAnswerCorrect == null),
+          (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is ReadingLoaded && state.lastAnswerCorrect == null) {
+        if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _selectedIndex = null;
             _pendingSelectedIndex = null;
@@ -122,8 +122,8 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
       builder: (context, state) {
         final isLoaded = state is ReadingLoaded;
         final ReadingQuest? quest = isLoaded ? state.currentQuest : null;
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
 
         return ReadingBaseLayout(
           gameType: widget.gameType,
@@ -250,3 +250,5 @@ class _QuestContent extends StatelessWidget {
     );
   }
 }
+
+

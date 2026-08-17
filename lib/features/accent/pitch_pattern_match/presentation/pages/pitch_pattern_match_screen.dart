@@ -186,7 +186,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -372,3 +372,4 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     );
   }
 }
+

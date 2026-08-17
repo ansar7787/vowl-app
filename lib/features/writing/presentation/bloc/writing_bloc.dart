@@ -134,7 +134,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     if (s is! WritingLoaded || s.livesRemaining <= 0) return;
 
     // Prevent duplicate submissions from rapid taps while state is transitioning
-    if (s.lastAnswerCorrect != null) return;
+    if (s.answerStatus.isAnswered) return;
 
     if (!event.isCorrect) {
       final newLives = s.livesRemaining - 1;
@@ -153,7 +153,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: updatedQuests,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
@@ -165,7 +165,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
 
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -194,14 +194,14 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     }
 
     final bool hasMore = s.currentIndex + 1 < s.quests.length;
-    final bool canAdvance = s.lastAnswerCorrect == true || s.isFinalFailure;
+    final bool canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
 
     if (hasMore) {
       if (canAdvance) {
         emit(
           s.copyWith(
             currentIndex: s.currentIndex + 1,
-            lastAnswerCorrect: null,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
@@ -209,13 +209,13 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         );
       } else {
         // First wrong answer — stay and retry.
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
-    } else if (s.lastAnswerCorrect == true) {
+    } else if (s.answerStatus == AnswerStatus.correct) {
       await _completeLevel(s, emit);
     } else {
       // Wrong answer on the final question — stay and retry.
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -254,7 +254,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   ) {
     final s = state;
     if (s is! WritingLoaded) return;
-    emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
   }
 
   // ---------------------------------------------------------------------------

@@ -220,7 +220,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != _lastProcessedIndex;
-      final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+      final isRetry = !state.answerStatus.isAnswered && _isAnswered;
       if (isNew || isRetry) {
         _hintTimer?.cancel();
         setState(() {
@@ -303,3 +303,4 @@ class _ErrorScaffold extends StatelessWidget {
     );
   }
 }
+

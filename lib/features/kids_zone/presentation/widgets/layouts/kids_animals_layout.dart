@@ -157,7 +157,7 @@ class KidsAnimalsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null
+          onTap: state.answerStatus.isAnswered
               ? null
               : () {
                   if (quest.instruction != null) {
@@ -309,3 +309,5 @@ class KidsAnimalsLayout extends StatelessWidget {
     );
   }
 }
+
+

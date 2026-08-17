@@ -5,12 +5,29 @@ import '../../domain/entities/reading_quest.dart';
 import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
 // ---------------------------------------------------------------------------
-// copyWith sentinel
+// Base
 // ---------------------------------------------------------------------------
 
-/// Distinguishes "caller omitted lastAnswerCorrect" from
-/// "caller explicitly passed null" in [ReadingLoaded.copyWith].
-const _kCopyWithUndefined = Object();
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Base
@@ -49,11 +66,12 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
   @override
   final int livesRemaining;
 
-  /// `null`  — question not yet answered this turn.
-  /// `true`  — player answered correctly.
-  /// `false` — player answered incorrectly.
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
 
   @override
   final bool hintUsed;
@@ -83,7 +101,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -94,7 +112,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     wrongCount,
     isFinalFailure,
@@ -111,7 +129,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
     List<ReadingQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    Object? lastAnswerCorrect = _kCopyWithUndefined,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
@@ -120,9 +138,7 @@ class ReadingLoaded extends ReadingState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: identical(lastAnswerCorrect, _kCopyWithUndefined)
-          ? this.lastAnswerCorrect
-          : lastAnswerCorrect as bool?,
+      answerStatus: answerStatus ?? AnswerStatus.unanswered, // enum override intentional
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,

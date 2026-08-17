@@ -267,3 +267,5 @@ class _Bubble {
     required this.color,
   });
 }
+
+

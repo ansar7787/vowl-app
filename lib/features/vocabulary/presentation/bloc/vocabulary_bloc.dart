@@ -165,7 +165,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       await hapticService.success();
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -187,7 +187,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         s.copyWith(
           quests: updatedQuests,
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: isFinal ? 0 : newWrong,
           isFinalFailure: isFinal || newLives <= 0,
         ),
@@ -211,26 +211,26 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
 
     final isLast = s.currentIndex >= s.quests.length - 1;
     if (isLast) {
-      if (s.lastAnswerCorrect == true) {
+      if (s.answerStatus == AnswerStatus.correct) {
         await _handleLevelComplete(s, emit);
       } else {
-        emit(s.copyWith(clearLastAnswerCorrect: true, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
       return;
     }
 
-    if (s.lastAnswerCorrect == true || s.isFinalFailure) {
+    if (s.answerStatus == AnswerStatus.correct || s.isFinalFailure) {
       emit(
         s.copyWith(
           currentIndex: s.currentIndex + 1,
-          clearLastAnswerCorrect: true,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
           wrongCount: 0,
           isFinalFailure: false,
         ),
       );
     } else {
-      emit(s.copyWith(clearLastAnswerCorrect: true, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -284,7 +284,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (state is! VocabularyLoaded) return;
     emit(
       (state as VocabularyLoaded).copyWith(
-        clearLastAnswerCorrect: true,
+        answerStatus: AnswerStatus.unanswered,
         hintUsed: false,
       ),
     );

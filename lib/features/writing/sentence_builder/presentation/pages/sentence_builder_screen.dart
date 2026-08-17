@@ -143,9 +143,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           (curr is WritingLoaded && prev is! WritingLoaded) ||
           (prev is WritingLoaded &&
               curr is WritingLoaded &&
-              prev.lastAnswerCorrect != curr.lastAnswerCorrect),
+              prev.answerStatus != curr.answerStatus),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           // New question loaded or retry triggered â€” clear the selected option.
           setState(() {
             _assembledPieces.clear();
@@ -153,7 +153,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           });
         }
 
-        if (state is WritingLoaded && state.lastAnswerCorrect == true) {
+        if (state is WritingLoaded && state.answerStatus == AnswerStatus.correct) {
           _ttsService.speak(state.currentQuest.correctAnswer ?? '');
         }
 
@@ -181,7 +181,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
               prev.currentIndex != curr.currentIndex) ||
           (prev is WritingLoaded &&
               curr is WritingLoaded &&
-              prev.lastAnswerCorrect != curr.lastAnswerCorrect),
+              prev.answerStatus != curr.answerStatus),
       builder: (context, state) {
         final isLoaded = state is WritingLoaded;
         if (isLoaded) {
@@ -189,8 +189,8 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
         }
         final quest = isLoaded ? state.currentQuest : _lastQuest;
         final pool = quest?.shuffledWords ?? const [];
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
 
         final lives = state.livesRemaining;
         final isFinalFailure = isLoaded ? state.isFinalFailure : (lives == 0);

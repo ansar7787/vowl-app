@@ -179,7 +179,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -410,3 +410,4 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
     );
   }
 }
+

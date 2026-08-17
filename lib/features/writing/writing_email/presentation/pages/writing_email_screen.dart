@@ -139,9 +139,9 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _slots.updateAll((k, v) => null);
             final quest = state.currentQuest;
@@ -169,8 +169,8 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
         final options = quest?.options ?? [];
         final slotsFilled = _slots.values.every((v) => v != null);
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
 
         final lives = state.livesRemaining;
         final bool isFinalFailure = isLoaded

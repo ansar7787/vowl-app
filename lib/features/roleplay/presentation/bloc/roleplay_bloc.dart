@@ -110,7 +110,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     if (state is RoleplayLoaded) {
       emit(
         (state as RoleplayLoaded).copyWith(
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
         ),
       );
@@ -125,13 +125,13 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
   ) {
     if (state is! RoleplayLoaded) return;
     final s = state as RoleplayLoaded;
-    if (s.livesRemaining <= 0 || s.lastAnswerCorrect != null) return;
+    if (s.livesRemaining <= 0 || s.answerStatus.isAnswered) return;
 
     final isCorrect = (event.choice.score ?? 100) >= 50;
     if (isCorrect) {
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           currentNodeId: event.choice.next,
           wrongCount: 0,
           isFinalFailure: false,
@@ -144,7 +144,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       emit(
         s.copyWith(
           livesRemaining: r.newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: r.updatedQuests,
           currentNodeId: event.choice.next,
           wrongCount: r.newWrongCount,
@@ -165,12 +165,12 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
   void _onSubmitAnswer(SubmitAnswer event, Emitter<RoleplayState> emit) {
     if (state is! RoleplayLoaded) return;
     final s = state as RoleplayLoaded;
-    if (s.livesRemaining <= 0 || s.lastAnswerCorrect != null) return;
+    if (s.livesRemaining <= 0 || s.answerStatus.isAnswered) return;
 
     if (event.isCorrect) {
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -182,7 +182,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       emit(
         s.copyWith(
           livesRemaining: r.newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: r.updatedQuests,
           wrongCount: r.newWrongCount,
           isFinalFailure: r.isFinalFailure,
@@ -214,7 +214,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
       return;
     }
 
-    final canAdvance = s.lastAnswerCorrect == true || s.isFinalFailure;
+    final canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
     final isLastQuest = s.currentIndex + 1 >= s.quests.length;
 
     if (!isLastQuest) {
@@ -222,7 +222,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         emit(
           s.copyWith(
             currentIndex: s.currentIndex + 1,
-            lastAnswerCorrect: null,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             currentNodeId: 'start',
             errorMessage: null,
@@ -231,13 +231,13 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           ),
         );
       } else {
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
       return;
     }
 
-    if (s.lastAnswerCorrect != true) {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    if (s.answerStatus != AnswerStatus.correct) {
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       return;
     }
 
@@ -328,7 +328,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     final s = state as RoleplayLoaded;
 
     emit(
-      s.copyWith(lastAnswerCorrect: true, wrongCount: 0, isFinalFailure: false),
+      s.copyWith(answerStatus: AnswerStatus.correct, wrongCount: 0, isFinalFailure: false),
     );
     soundService.playCorrect();
     hapticService.success();

@@ -108,9 +108,9 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _isWiped = false;
             _selectedOption = null;
@@ -145,8 +145,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           _shuffledOptions = List.from(_lastQuest!.options ?? [])..shuffle();
         }
         final WritingQuest? quest = isLoaded ? state.currentQuest : _lastQuest;
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
 
         return WritingBaseLayout(
           gameType: widget.gameType,

@@ -157,7 +157,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               // real crash risk, not just a style nit.
               _shuffledChars = (quest.word ?? '').split('')..shuffle();
             });
-          } else if (state.lastAnswerCorrect == null) {
+          } else if (!state.answerStatus.isAnswered) {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
@@ -166,7 +166,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               _shuffledChars = (quest.word ?? '').split('')..shuffle();
             });
           }
-          if (state.lastAnswerCorrect == false) {
+          if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               // If it's a final failure (either 2 strikes or out of lives), lock screen
@@ -423,3 +423,4 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
     );
   }
 }
+

@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
@@ -62,6 +63,7 @@ class GameBaseLayout<B extends StateStreamableSource<S>, S>
 class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     extends State<GameBaseLayout<B, S>> {
   late final TtsService _ttsService;
+  late final SoundService _soundService;
   late final HapticService _hapticService;
 
   bool _hasSpokenNudge = false;
@@ -72,6 +74,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   void initState() {
     super.initState();
     _ttsService = di.sl<TtsService>();
+    _soundService = di.sl<SoundService>();
     _hapticService = di.sl<HapticService>();
     _showBriefing = _kBriefingLevels.contains(widget.config.level);
   }
@@ -79,6 +82,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
   @override
   void dispose() {
     _ttsService.stop();
+    _soundService.stopAudio();
     super.dispose();
   }
 

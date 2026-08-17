@@ -91,7 +91,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
 
           if (isNewQuestion || isRetry) {
             setState(() {
@@ -103,10 +103,10 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
               _activeSuffixIndex = null;
               _hoveringSuffixIndex = null;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
         }
@@ -584,3 +584,4 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 }
+

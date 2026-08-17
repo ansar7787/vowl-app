@@ -158,7 +158,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
 
           if (isNewQuestion || isRetry) {
             setState(() {
@@ -509,3 +509,4 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   }
 
 }
+

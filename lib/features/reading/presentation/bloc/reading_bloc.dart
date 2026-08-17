@@ -87,7 +87,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     if (state is ReadingLoaded) {
       emit(
         (state as ReadingLoaded).copyWith(
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
         ),
       );
@@ -163,7 +163,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     final s = state;
     if (s is! ReadingLoaded ||
         s.livesRemaining <= 0 ||
-        s.lastAnswerCorrect != null) {
+        s.answerStatus.isAnswered) {
       return;
     }
 
@@ -172,7 +172,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
       hapticService.success();
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -190,7 +190,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
         s.copyWith(
           quests: isFinal ? [...s.quests, s.currentQuest] : s.quests,
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
         ),
@@ -213,23 +213,23 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     final isLastQuestion = s.currentIndex + 1 >= s.quests.length;
 
     if (!isLastQuestion) {
-      if (s.lastAnswerCorrect == true || s.isFinalFailure) {
+      if (s.answerStatus == AnswerStatus.correct || s.isFinalFailure) {
         emit(
           s.copyWith(
             currentIndex: s.currentIndex + 1,
-            lastAnswerCorrect: null,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
           ),
         );
       } else {
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
       return;
     }
 
-    if (s.lastAnswerCorrect == true) {
+    if (s.answerStatus == AnswerStatus.correct) {
       soundService.playLevelComplete();
       emit(
         ReadingGameComplete(
@@ -240,7 +240,7 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
       );
       await _persistLevelCompletion(s.livesRemaining);
     } else {
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 

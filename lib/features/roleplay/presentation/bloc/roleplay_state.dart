@@ -4,6 +4,27 @@ import 'package:vowl/features/roleplay/presentation/constants/roleplay_constants
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/entities/roleplay_quest.dart';
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 // ── Helper ─────────────────────────────────────────────────────────────────
 
 /// Result record returned by [processWrongAnswer].
@@ -96,7 +117,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     required this.currentIndex,
     this.currentNodeId,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.errorMessage,
     required this.gameType,
@@ -111,8 +132,14 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
   final String? currentNodeId;
   @override
   final int livesRemaining;
+  
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
+
   @override
   final bool hintUsed;
   final String? errorMessage;
@@ -142,7 +169,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     currentIndex,
     currentNodeId,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     errorMessage,
     gameType,
@@ -156,7 +183,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     int? currentIndex,
     String? currentNodeId,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     String? errorMessage,
     GameSubtype? gameType,
@@ -168,7 +195,7 @@ class RoleplayLoaded extends RoleplayState implements GameLoadedState {
     currentIndex: currentIndex ?? this.currentIndex,
     currentNodeId: currentNodeId ?? this.currentNodeId,
     livesRemaining: livesRemaining ?? this.livesRemaining,
-    lastAnswerCorrect: lastAnswerCorrect,
+    answerStatus: answerStatus ?? AnswerStatus.unanswered,
     hintUsed: hintUsed ?? this.hintUsed,
     errorMessage: errorMessage,
     gameType: gameType ?? this.gameType,

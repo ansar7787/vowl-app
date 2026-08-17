@@ -102,7 +102,7 @@ class KidsNumbersLayout extends StatelessWidget {
   ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) {
-        if (state.lastAnswerCorrect != null) return;
+        if (state.answerStatus.isAnswered) return;
         final text = details.data;
         final isCorrect = (text == quest.correctAnswer);
         context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
@@ -142,7 +142,7 @@ class KidsNumbersLayout extends StatelessWidget {
           ),
           child: InkWell(
             customBorder: const CircleBorder(),
-            onTap: state.lastAnswerCorrect != null
+            onTap: state.answerStatus.isAnswered
                 ? null
                 : () {
                     // Play the instruction sound
@@ -163,7 +163,7 @@ class KidsNumbersLayout extends StatelessWidget {
                   children: [
                     if (quest.emoji != null &&
                         (quest.question == "?" || quest.question == null))
-                      state.lastAnswerCorrect == true
+                      state.answerStatus == AnswerStatus.correct
                           ? Text(
                               quest.emoji!,
                               style: TextStyle(fontSize: 80.sp),
@@ -272,7 +272,7 @@ class KidsNumbersLayout extends StatelessWidget {
       ),
     );
 
-    if (state.lastAnswerCorrect != null) {
+    if (state.answerStatus.isAnswered) {
       return planetWidget;
     }
 
@@ -300,3 +300,5 @@ class KidsNumbersLayout extends StatelessWidget {
     );
   }
 }
+
+

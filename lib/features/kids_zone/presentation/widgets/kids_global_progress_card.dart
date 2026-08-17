@@ -313,3 +313,5 @@ class KidsGlobalProgressCard extends StatelessWidget {
     return [const Color(0xFFF43F5E), const Color(0xFFE11D48)];
   }
 }
+
+

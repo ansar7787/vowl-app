@@ -213,7 +213,7 @@ class _GenericRoleplayScenarioScreenState
           final shouldReset =
               state.currentIndex != _lastProcessedIndex ||
               livesRestored ||
-              (state.lastAnswerCorrect == null && _isAnswered);
+              (!state.answerStatus.isAnswered && _isAnswered);
 
           if (shouldReset) {
             _dialogShown = false;

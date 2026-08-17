@@ -269,9 +269,9 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _usedKeywords.clear();
             _textController.clear();
@@ -315,8 +315,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             .expand((element) => element)
             .toList();
         final minWords = activeQuest?.minWords ?? 15;
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
         final bool isFinalFailure = state.livesRemaining == 0;
 
         return WritingBaseLayout(

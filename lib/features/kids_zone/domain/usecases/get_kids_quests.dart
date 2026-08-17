@@ -12,3 +12,4 @@ class GetKidsQuests {
     return repository.getQuestsByLevel(gameType, level);
   }
 }
+

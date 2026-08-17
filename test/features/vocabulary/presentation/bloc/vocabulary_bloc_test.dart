@@ -42,6 +42,8 @@ class FakeUpdateUserRewardsParams extends Fake
 class FakeUpdateCategoryStatsParams extends Fake
     implements UpdateCategoryStatsParams {}
 
+class FakeGetVocabularyQuestsParams extends Fake implements GetVocabularyQuestsParams {}
+
 class FakeUpdateUnlockedLevelParams extends Fake
     implements UpdateUnlockedLevelParams {}
 
@@ -59,6 +61,7 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
 
   setUpAll(() {
+    registerFallbackValue(FakeGetVocabularyQuestsParams());
     registerFallbackValue(FakeUpdateUserRewardsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
@@ -109,6 +112,7 @@ void main() {
         when(
           () => mockGetQuests(any()),
         ).thenAnswer((_) async => const Right(tQuests));
+        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
         return bloc;
       },
       act: (bloc) =>
@@ -130,6 +134,7 @@ void main() {
       'should emit [Loading, Error] when data fetch fails',
       build: () {
         when(() => mockGetQuests(any())).thenThrow(Exception('failed'));
+        when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
         return bloc;
       },
       act: (bloc) =>
@@ -146,7 +151,7 @@ void main() {
     );
 
     blocTest<VocabularyBloc, VocabularyState>(
-      'should emit state with lastAnswerCorrect: true when answer is correct',
+      'should emit state with answerStatus: AnswerStatus.correct when answer is correct',
       build: () {
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
@@ -154,7 +159,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
+      expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
       verify: (_) {
         verify(() => mockSoundService.playCorrect()).called(1);
         verify(() => mockHapticService.success()).called(1);
@@ -173,7 +178,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -192,7 +197,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],
@@ -212,7 +217,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 0,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: true,
         ),
@@ -225,7 +230,7 @@ void main() {
       quests: tQuests,
       currentIndex: 0,
       livesRemaining: 3,
-      lastAnswerCorrect: true,
+      answerStatus: AnswerStatus.correct,
     );
 
     blocTest<VocabularyBloc, VocabularyState>(
@@ -236,7 +241,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           currentIndex: 1,
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
         ),
       ],
@@ -264,10 +269,13 @@ void main() {
       },
       seed: () => tLoadedState.copyWith(
         currentIndex: tQuests.length - 1,
-        lastAnswerCorrect: true,
+        answerStatus: AnswerStatus.correct,
       ),
       act: (bloc) => bloc.add(NextQuestion()),
       expect: () => [isA<VocabularyGameComplete>()],
     );
   });
 }
+
+
+

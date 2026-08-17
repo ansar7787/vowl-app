@@ -136,9 +136,9 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
           (curr is WritingGameOver && prev is! WritingGameOver) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _leftPanArgs.clear();
             _rightPanArgs.clear();
@@ -172,8 +172,8 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
             ? _shuffledOptions
             : (quest?.options ?? []);
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
         final bool isFinalFailure = isLoaded
             ? state.isFinalFailure
             : (state is WritingGameOver);

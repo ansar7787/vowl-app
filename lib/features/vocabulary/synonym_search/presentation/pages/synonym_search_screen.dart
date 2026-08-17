@@ -240,7 +240,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
 
           if (isNewQuestion || isRetry) {
             setState(() {
@@ -251,10 +251,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               _isFirstStagePassed = false;
               _initShards(state.currentQuest.options?.length ?? 0);
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
         }
@@ -524,3 +524,4 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     );
   }
 }
+

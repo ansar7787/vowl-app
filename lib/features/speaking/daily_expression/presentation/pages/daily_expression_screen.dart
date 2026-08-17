@@ -124,7 +124,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -132,7 +132,7 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
               _scratchProgress = 0.0;
             });
             // Removed Future.delayed auto-play to preserve scratch card mystery
-          } else if (state.lastAnswerCorrect == false) {
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               _isAnswered = true;
@@ -407,3 +407,4 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     );
   }
 }
+

@@ -39,29 +39,29 @@ class StoryServiceImpl implements StoryService {
   static const Map<String, String> modernGameScripts = {
     // Accent
     'consonantClarity':
-        "Tap the exact consonant sound you hear to speak clearly and confidently.",
+        "Let's tune your ear to tricky sounds! Tapping the right consonant helps you speak clearly and confidently.",
     'dialectDrill':
-        "Listen closely to the speaker to identify where in the world they are from.",
+        "English sounds different everywhere! Let's listen closely and discover where this speaker is from.",
     'intonationMimic':
-        "Follow the voice and slide the fader up or down to match the pitch perfectly.",
+        "Let's practice the melody of English! Slide the fader up or down to perfectly match the speaker's pitch.",
     'minimalPairs':
-        "Listen carefully to spot the tiny differences between two very similar words.",
+        "Can you hear the subtle difference? Let's practice spotting the tiny changes between two very similar words.",
     'pitchPatternMatch':
-        "Slide the fader to match the exact melody and rhythm of the sentence.",
+        "Every sentence has a rhythm! Let's slide the fader to match the exact melody and flow of the words.",
     'shadowingChallenge':
-        "Tap the chat bubble that exactly matches the sentence you just heard.",
+        "Let's act like an echo! Listen carefully and find the chat bubble that matches exactly what you just heard.",
     'speedVariance':
-        "Train your ears to understand English whether it's spoken fast, medium, or slow.",
+        "Native speakers can talk fast! Let's train your ears to catch every word, whether it's spoken quickly or slowly.",
     'syllableStress':
-        "Listen to the word and find the part that sounds the loudest and longest.",
+        "Let's find the strong beat! Listen to the word and pick the part that sounds the loudest and longest.",
     'vowelDistinction':
-        "Slide left or right to find the exact vowel sound spoken in the audio.",
+        "Vowels can be tricky! Let's slide left or right to pinpoint the exact vowel sound the speaker is using.",
     'wordLinking':
-        "Listen to how native speakers link two separate words into one smooth sound.",
+        "Native speakers often blend words together. Let's practice hearing how they link words into one smooth sound!",
     'pitchModulation':
-        "Learn how changing your pitch can show surprise, excitement, or calm.",
+        "Your voice shows your emotion! Let's learn how changing your pitch can show surprise, excitement, or calm.",
     'connectedSpeech':
-        "Find the floating card that perfectly links the words together.",
+        "Let's make your speaking flow naturally! Find the floating card that perfectly links these words together.",
 
     // Grammar
     'articleInsertion':
@@ -127,73 +127,73 @@ class StoryServiceImpl implements StoryService {
 
     // Reading
     'findWordMeaning':
-        "Contextual Detective. Unlock the meaning of new words through the power of context.",
+        "Let's be vocabulary detectives! We'll use the surrounding words as clues to uncover the meaning of new vocabulary.",
     'guessTitle':
-        "The Big Picture. Identify the core theme and give this story its true name.",
+        "What's the big picture? Let's read the passage and figure out the perfect title that captures its core theme.",
     'paragraphSummary':
-        "The Essence of Thought. Condense complex ideas into their purest form.",
+        "Let's get to the point! Read the text and practice condensing complex ideas into a simple, clear summary.",
     'readAndAnswer':
-        "Knowledge Retrieval. Prove your comprehension by finding the key facts.",
+        "Let's put your comprehension to the test! Read the passage carefully and hunt down the key facts to answer the questions.",
     'readAndMatch':
-        "Pattern Recognition. Connect related ideas across a vast landscape of text.",
+        "Let's connect the dots! Read the descriptions and match the related ideas together to see the whole picture.",
     'readingConclusion':
-        "The Logical Leap. Draw the final conclusion from the evidence provided.",
+        "Time for some logical thinking! Let's read the evidence in the text and draw the final, logical conclusion.",
     'readingInference':
-        "Silent Discovery. Read between the lines to find the hidden truth.",
+        "Sometimes the truth is hidden! Let's practice 'reading between the lines' to discover what the author implies but doesn't say.",
     'readingSpeedCheck':
-        "Rapid Comprehension. Read with speed without sacrificing your understanding.",
+        "Let's test your reading flow! Read the passage quickly but carefully, ensuring you understand the core message without slowing down.",
     'sentenceOrderReading':
-        "Narrative Logic. Rebuild the story by placing every sentence in its home.",
+        "This story is all mixed up! Let's use narrative logic to rebuild the paragraph by putting every sentence back in its proper place.",
     'trueFalseReading':
-        "Critical Analysis. Verify the facts and separate truth from assumption.",
+        "Don't let them trick you! Let's carefully verify the facts in the text to separate the truth from false assumptions.",
     'skimmingScanning':
-        "Visual Efficiency. Find exactly what you need in a sea of information.",
+        "Let's practice reading efficiently! Skim the text quickly to find exactly the specific information you need.",
     'clozeTest':
-        "The Completionist. Use logic and context to fill the gaps in the narrative.",
+        "Something is missing! Let's use logic and the context of the story to fill in the blank words perfectly.",
 
     // Roleplay
     'branchingDialogue':
-        "Infinite Paths. Every choice you make creates a new reality. Choose wisely.",
+        "Let's practice choosing the best responses in real-time conversations. This will help you sound natural and confident!",
     'conflictResolver':
-        "The Peacekeeper. Use the power of words to turn tension into harmony.",
+        "Navigating disagreements can be tricky. Let's practice using polite and tactful language to keep conversations positive!",
     'elevatorPitch':
-        "Impact in Seconds. Deliver your message with maximum power and brevity.",
+        "Got a great idea? Let's practice delivering your message clearly and concisely so you always leave a strong impression.",
     'emergencyHub':
-        "Calm in Chaos. Use precise language to handle high-pressure situations.",
+        "In stressful moments, clear communication is key. Let's practice staying calm and giving exact details when it matters most.",
     'gourmetOrder':
-        "The Social Connoisseur. Handle sophisticated dining scenarios with grace.",
+        "Dining out should be fun! Let's practice placing orders and making special requests so you always get exactly what you want.",
     'jobInterview':
-        "Professional Zenith. Present your best self and win the future you want.",
+        "Ready to land your dream job? Let's practice answering common interview questions professionally and confidently.",
     'medicalConsult':
-        "Clarity of Care. Use precise language to communicate health and wellness.",
+        "Your health is important. Let's practice describing symptoms clearly so you can get the best care possible.",
     'situationalResponse':
-        "Adaptive Intelligence. React to any social scenario with perfect timing.",
+        "Every conversation is unique! Let's practice adapting your tone to fit any social scenario effortlessly.",
     'socialSpark':
-        "The Charismatic Leader. Ignite connections and lead any conversation.",
+        "Meeting new people is exciting! Let's practice starting and maintaining engaging small talk with confidence.",
     'travelDesk':
-        "Global Citizen. Navigate the world with confidence and linguistic skill.",
+        "Exploring the world? Let's practice handling check-ins, asking for directions, and navigating travel scenarios smoothly.",
 
     // Speaking
     'dailyExpression':
-        "The Natural Voice. Master the common phrases used in everyday life.",
+        "Let's practice the natural, everyday phrases that native speakers actually use. It's the secret to sounding completely fluent!",
     'dialogueRoleplay':
-        "The Conversationist. Practice the art of back-and-forth social interaction.",
+        "Conversations are a two-way street! Let's practice smooth back-and-forth interactions so you can chat with anyone, anywhere.",
     'pronunciationFocus':
-        "Phonetic Perfection. Refine the specific sounds that define your speech.",
+        "Let's polish your accent! We'll focus on tricky sounds to make sure your speech is crystal clear and easy to understand.",
     'repeatSentence':
-        "The Vocal Mirror. Mirror the rhythm and tone of a native speaker.",
+        "Shadowing is a powerful technique! By mimicking a native speaker's rhythm and tone, you'll naturally improve your own fluency.",
     'sceneDescriptionSpeaking':
-        "Vivid Imagery. Use your voice to paint a picture for your listeners.",
+        "Can you paint a picture with your words? Let's practice describing what you see clearly and vividly!",
     'situationSpeaking':
-        "Contextual Speech. Adapt your voice to meet the needs of any situation.",
+        "Different situations require different tones. Let's practice adapting your speech so you always sound perfectly appropriate.",
     'speakMissingWord':
-        "Cognitive Speech. Think and speak simultaneously to complete the thought.",
+        "Let's test your real-time thinking! Practice finding and speaking the missing word without pausing the conversation.",
     'speakOpposite':
-        "Dynamic Reversal. Train your brain to find the antonym in real-time.",
+        "Let's train your linguistic reflexes! Instantly providing the opposite word is a fantastic way to sharpen your active recall.",
     'speakSynonym':
-        "Linguistic Variety. Expand your range by finding new ways to say the same thing.",
+        "Why use the same word twice? Let's expand your active vocabulary by finding completely new ways to say the same thing.",
     'yesNoSpeaking':
-        "Rapid Response. Train your reflexes for fast, accurate communication.",
+        "Sometimes you just need to think fast! Let's practice your rapid response skills to build real-world conversation reflexes.",
 
     // Vocabulary
     'academicWord':
@@ -223,37 +223,37 @@ class StoryServiceImpl implements StoryService {
 
     // Writing
     'completeSentence':
-        "The Architect of Thought. Build a complete, powerful message from a fragment.",
+        "A complete sentence is a complete thought! Let's practice building clear and expressive sentences from small fragments.",
     'correctionWriting':
-        "The Editor's Edge. Refine and polish your writing to professional standards.",
+        "Everyone makes mistakes! Let's practice proofreading and polishing your writing so it looks completely professional.",
     'dailyJournal':
-        "Personal Reflection. Use writing to explore your own thoughts and experiences.",
+        "Writing about your day is a fantastic way to learn. Let's practice capturing your personal thoughts and experiences in English.",
     'describeSituationWriting':
-        "Atmospheric Prose. Paint a scene using only the power of your words.",
+        "Let's bring a scene to life! Practice using descriptive words to paint a clear picture for your readers.",
     'essayDrafting':
-        "Logical Structure. Build a compelling argument through structured writing.",
+        "Great essays are built on clear structure. Let's practice organizing your thoughts into a strong, compelling argument.",
     'fixTheSentence':
-        "The Structural Fixer. Identify and repair errors in complex written logic.",
+        "Even the best writers need to edit! Let's practice spotting and fixing structural errors to make your sentences shine.",
     'opinionWriting':
-        "The Persuader. Use your written voice to influence and convince others.",
+        "Your voice matters! Let's practice sharing your opinions clearly and persuasively so others understand your perspective.",
     'sentenceBuilder':
-        "Construction Logic. Assemble the pieces of a sentence into a perfect whole.",
+        "Let's put the puzzle together! Practice combining different parts of speech to form perfectly structured sentences.",
     'shortAnswerWriting':
-        "Brevity and Power. Convey your message with maximum efficiency.",
+        "Sometimes less is more! Let's practice answering questions clearly and concisely to deliver your message perfectly.",
     'summarizeStoryWriting':
-        "The Narrative Distiller. Capture the core of a story in just a few words.",
+        "Can you capture the main idea? Let's practice reading a story and distilling it down to its most important points.",
     'writingEmail':
-        "Digital Correspondence. Master the art of professional and personal emails.",
+        "Emails are essential for work and life! Let's practice crafting polite, professional, and clear digital messages.",
 
     // Elite Mastery
     'storyBuilder':
-        "Read the scrambled sentences and arrange them in the correct logical order to build a complete story.",
+        "Let's be architects of language! Read the scrambled sentences and arrange them in the correct logical order to build a complete, cohesive story.",
     'idiomMatch':
-        "Read the context and choose the correct English idiom that matches the meaning.",
+        "Time to sound like a native! Read the context and choose the correct English idiom that perfectly matches the situation.",
     'speedSpelling':
-        "Unscramble the letters to spell the hidden vocabulary word correctly.",
+        "Let's test your reflexes and memory! Unscramble the flying letters as quickly as you can to spell the hidden vocabulary word.",
     'accentShadowing':
-        "Tap the chat bubble that exactly matches the sentence you just heard.",
+        "Listen closely and mimic the rhythm! Tap the chat bubble that exactly matches the sentence you just heard.",
   };
 
   static const Map<String, List<String>> kidsScripts = {

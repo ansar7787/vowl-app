@@ -110,7 +110,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
           builder: (context, candidateData, rejectedData) {
             final isHovering = candidateData.isNotEmpty;
             return InkWell(
-              onTap: state.lastAnswerCorrect != null
+              onTap: state.answerStatus.isAnswered
                   ? null
                   : () {
                       if (quest.instruction != null) {
@@ -162,7 +162,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           if (quest.emoji != null)
-                            state.lastAnswerCorrect == true
+                            state.answerStatus == AnswerStatus.correct
                                 ? Text(
                                     quest.emoji!,
                                     style: TextStyle(fontSize: 80.sp),
@@ -179,7 +179,7 @@ class KidsPrepositionsLayout extends StatelessWidget {
                                       style: TextStyle(fontSize: 80.sp),
                                     ),
                                   ),
-                          if (state.lastAnswerCorrect != true)
+                          if (state.answerStatus != AnswerStatus.correct)
                             KidsFittedText(
                               "?",
                               style: TextStyle(
@@ -372,3 +372,5 @@ class KidsPrepositionsLayout extends StatelessWidget {
     );
   }
 }
+
+

@@ -4,6 +4,27 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_event.dart
 
 import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 // ─── Base state ───────────────────────────────────────────────────────────────
 
 abstract class VocabularyState extends Equatable implements GameStateBase {
@@ -37,10 +58,12 @@ class VocabularyLoaded extends VocabularyState implements GameLoadedState {
   @override
   final int livesRemaining;
 
-  /// `true` = last answer correct, `false` = wrong, `null` = no answer yet /
-  /// intentionally cleared (use [clearLastAnswerCorrect] in [copyWith]).
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
 
   @override
   final bool hintUsed;
@@ -53,7 +76,7 @@ class VocabularyLoaded extends VocabularyState implements GameLoadedState {
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -89,28 +112,24 @@ class VocabularyLoaded extends VocabularyState implements GameLoadedState {
 
   // ── copyWith ─────────────────────────────────────────────────────────────
 
-  /// [clearLastAnswerCorrect] must be passed explicitly as `true` to null-out
-  /// [lastAnswerCorrect].  Passing `lastAnswerCorrect: null` preserves the
-  /// existing value — avoiding accidental resets at call sites that simply
-  /// forget the field.
+  /// A dedicated flag is no longer necessary because passing AnswerStatus.unanswered
+  /// explicitly resets it.
   VocabularyLoaded copyWith({
     List<VocabularyQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
     int? hintsAvailable,
-    bool clearLastAnswerCorrect = false,
+
   }) {
     return VocabularyLoaded(
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: clearLastAnswerCorrect
-          ? null
-          : (lastAnswerCorrect ?? this.lastAnswerCorrect),
+      answerStatus: answerStatus ?? this.answerStatus,
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,
@@ -123,7 +142,7 @@ class VocabularyLoaded extends VocabularyState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     wrongCount,
     isFinalFailure,

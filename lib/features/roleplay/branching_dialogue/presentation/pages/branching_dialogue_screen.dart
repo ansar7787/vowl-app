@@ -195,7 +195,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
       listener: (context, state) {
         if (state is RoleplayLoaded) {
           if (state.currentIndex != _lastProcessedIndex ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;

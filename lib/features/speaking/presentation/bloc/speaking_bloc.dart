@@ -141,7 +141,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     if (s is SpeakingLoaded) {
       emit(
         s.copyWith(
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
           removedIndices: const [],
           isLetterRevealed: false,
@@ -157,7 +157,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   void _onSubmit(SubmitAnswer event, Emitter<SpeakingState> emit) {
     final s = state;
     if (s is! SpeakingLoaded || s.livesRemaining <= 0) return;
-    if (s.lastAnswerCorrect != null) return; // feedback already visible
+    if (s.answerStatus.isAnswered) return; // feedback already visible
 
     if (!event.isCorrect) {
       final newLives = s.livesRemaining - 1;
@@ -179,7 +179,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: updated,
           wrongCount: isFinal ? 0 : newWrong,
           isFinalFailure: isFinal || newLives <= 0,
@@ -190,7 +190,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       unawaited(hapticService.success());
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -205,7 +205,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
   Future<void> _onNext(NextQuestion event, Emitter<SpeakingState> emit) async {
     final s = state;
     if (s is! SpeakingLoaded) return;
-    if (s.lastAnswerCorrect == null) return; // no answer submitted yet
+    if (!s.answerStatus.isAnswered) return; // no answer submitted yet
 
     if (s.livesRemaining <= 0) {
       emit(
@@ -219,7 +219,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       return;
     }
 
-    final wasCorrect = s.lastAnswerCorrect == true;
+    final wasCorrect = s.answerStatus == AnswerStatus.correct;
     final isLastQuestion = s.currentIndex + 1 >= s.quests.length;
 
     if (isLastQuestion) {
@@ -228,7 +228,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       } else {
         emit(
           s.copyWith(
-            lastAnswerCorrect: null,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             removedIndices: const [],
             isLetterRevealed: false,
@@ -242,7 +242,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       emit(
         s.copyWith(
           currentIndex: s.currentIndex + 1,
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
           wrongCount: 0,
           isFinalFailure: false,
@@ -253,7 +253,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     } else {
       emit(
         s.copyWith(
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
           hintUsed: false,
           removedIndices: const [],
           isLetterRevealed: false,
@@ -401,7 +401,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           quests: updated,
         ),
       );
@@ -416,7 +416,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
           livesRemaining: 1,
           gameType: s.gameType,
           level: s.level,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
         ),
       );
     }

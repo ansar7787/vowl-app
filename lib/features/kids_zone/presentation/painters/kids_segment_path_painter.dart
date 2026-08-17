@@ -158,3 +158,4 @@ class SegmentPathPainter extends CustomPainter {
         oldDelegate.glowPulse != glowPulse;
   }
 }
+

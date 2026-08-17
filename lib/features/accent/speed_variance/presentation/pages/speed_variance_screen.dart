@@ -182,7 +182,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
               _lastLives != null && currentLives > _lastLives!;
           if (state.currentIndex != _lastProcessedIndex ||
               livesRestored ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -347,3 +347,4 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
     );
   }
 }
+

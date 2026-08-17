@@ -260,3 +260,5 @@ class _KidsRewardAdCardState extends State<KidsRewardAdCard> {
     }
   }
 }
+
+

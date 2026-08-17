@@ -131,7 +131,7 @@ void main() {
     );
 
     blocTest<ReadingBloc, ReadingState>(
-      'should emit state with lastAnswerCorrect: true when correct',
+      'should emit state with answerStatus: AnswerStatus.correct when correct',
       build: () {
         when(() => mockSoundService.playCorrect()).thenAnswer((_) async => {});
         when(() => mockHapticService.success()).thenAnswer((_) async => {});
@@ -139,7 +139,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
+      expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
     );
 
     blocTest<ReadingBloc, ReadingState>(
@@ -154,7 +154,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -173,7 +173,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],

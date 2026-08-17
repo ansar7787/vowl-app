@@ -134,19 +134,19 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             primaryColor: widget.primaryColor,
           );
         } else if (state is KidsLoaded) {
-          if (state.lastAnswerCorrect == true) {
+          if (state.answerStatus == AnswerStatus.correct) {
             audio.playSuccessSFX();
             final explanation = state.currentQuest.explanation;
             if (explanation != null && explanation.isNotEmpty) {
               _speakInstruction(explanation);
             }
-          } else if (state.lastAnswerCorrect == false) {
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
             audio.playFailureSFX();
           }
-          if (state.lastAnswerCorrect == null && !state.hintUsed) {
+          if (state.answerStatus == AnswerStatus.unanswered && !state.hintUsed) {
             _speakInstruction(state.currentQuest.instruction);
           }
-          if (state.lastAnswerCorrect == null &&
+          if (state.answerStatus == AnswerStatus.unanswered &&
               state.hintUsed &&
               _hintText == null) {
             speakHint(state.currentQuest.hint);
@@ -274,23 +274,23 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
             displayState,
             () => speakHint(displayState.currentQuest.hint),
           ),
-          if (state is KidsLoaded && state.lastAnswerCorrect != null)
+          if (state is KidsLoaded && state.answerStatus.isAnswered)
             Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: GameFeedbackCard(
-                isCorrect: state.lastAnswerCorrect,
+                isCorrect: state.answerStatus.asBoolOrNull,
                 isFinalFailure: state.isFinalFailure,
                 livesRemaining: state.livesRemaining,
                 isDark: isDark,
                 primaryColor: widget.primaryColor,
-                explanation: state.lastAnswerCorrect == true
+                explanation: state.answerStatus == AnswerStatus.correct
                     ? state.currentQuest.explanation
                     : null,
                 onContinue: () {
                   di.sl<KidsTTSService>().stop();
-                  if (state.lastAnswerCorrect == true ||
+                  if (state.answerStatus == AnswerStatus.correct ||
                       state.isFinalFailure ||
                       state.livesRemaining <= 0) {
                     context.read<KidsBloc>().add(NextKidsQuestion());
@@ -411,8 +411,8 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   Widget _buildDynamicMascot(BuildContext context, KidsLoaded state) {
     bool isComplete = false;
     bool isGameOver = false;
-    bool isAnswered = state.lastAnswerCorrect != null;
-    bool? isCorrect = state.lastAnswerCorrect;
+    bool isAnswered = state.answerStatus.isAnswered;
+    bool? isCorrect = state.answerStatus.asBoolOrNull;
     int lives = state.livesRemaining;
 
     final mascotState = MascotMessageHelper.getMascotState(
@@ -428,12 +428,12 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         String displayMessage = "";
         if (_hintText != null) {
           displayMessage = _hintText!;
-        } else if (state.lastAnswerCorrect == null) {
+        } else if (state.answerStatus == AnswerStatus.unanswered) {
           displayMessage = state.currentQuest.instruction;
 
           // The data layer now safely ensures the target letter is never printed
           // directly in the instruction, eliminating the need for regex dash replacement.
-        } else if (state.lastAnswerCorrect == true) {
+        } else if (state.answerStatus == AnswerStatus.correct) {
           displayMessage =
               state.currentQuest.funFact ??
               state.currentQuest.explanation ??
@@ -502,3 +502,5 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     );
   }
 }
+
+

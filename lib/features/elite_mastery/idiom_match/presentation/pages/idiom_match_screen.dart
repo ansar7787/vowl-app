@@ -179,7 +179,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
 
           if (_lastQuestId != state.currentQuest.id ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastQuestId = state.currentQuest.id;
               _isAnswered = false;
@@ -187,7 +187,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _isFirstStagePassed = false;
             });
             _initializeOptions(state.currentQuest);
-          } else if (state.lastAnswerCorrect == null) {
+          } else if (!state.answerStatus.isAnswered) {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
@@ -195,7 +195,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               _isFirstStagePassed = false;
             });
           }
-          if (state.lastAnswerCorrect == false) {
+          if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               if (state.isFinalFailure || state.livesRemaining <= 0) {
@@ -425,3 +425,4 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     );
   }
 }
+

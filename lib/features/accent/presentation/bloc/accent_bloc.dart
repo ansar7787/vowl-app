@@ -151,7 +151,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
   void _onRetry(RetryCurrentQuestion event, Emitter<AccentState> emit) {
     if (state is AccentLoaded) {
       final s = state as AccentLoaded;
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -165,7 +165,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     final s = state;
     if (s is! AccentLoaded ||
         s.livesRemaining <= 0 ||
-        s.lastAnswerCorrect != null) {
+        s.answerStatus.isAnswered) {
       return;
     }
 
@@ -187,7 +187,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: updatedQuests,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
@@ -199,7 +199,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
 
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -233,11 +233,11 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
     final hasNext = s.currentIndex + 1 < s.quests.length;
 
     if (hasNext) {
-      if (s.lastAnswerCorrect == true || s.isFinalFailure) {
+      if (s.answerStatus == AnswerStatus.correct || s.isFinalFailure) {
         emit(
           s.copyWith(
             currentIndex: s.currentIndex + 1,
-            lastAnswerCorrect: null,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
@@ -245,9 +245,9 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         );
       } else {
         // First wrong answer — stay on this quest.
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
-    } else if (s.lastAnswerCorrect == true) {
+    } else if (s.answerStatus == AnswerStatus.correct) {
       // All quests complete → level won.
       soundService.playLevelComplete();
 
@@ -294,7 +294,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       }
     } else {
       // Wrong answer on the final quest — stay for retry.
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -350,7 +350,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           quests: updatedQuests,
         ),
       );
@@ -363,7 +363,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           quests: s.quests,
           currentIndex: s.currentIndex,
           livesRemaining: 1,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           gameType: s.gameType,
           level: s.level,
         ),

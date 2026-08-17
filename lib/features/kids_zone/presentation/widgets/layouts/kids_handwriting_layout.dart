@@ -126,7 +126,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
           });
         }
 
-        if (state.lastAnswerCorrect == null && _isCorrect != null) {
+        if (state.answerStatus == AnswerStatus.unanswered && _isCorrect != null) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (mounted) {
               setState(() {
@@ -148,7 +148,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             ), // Mascot space reserved by KidsGameBaseScreen
             // Flashcard Target Word Display
             InkWell(
-              onTap: state.lastAnswerCorrect != null
+              onTap: state.answerStatus.isAnswered
                   ? null
                   : () {
                       di.sl<KidsTTSService>().speak(state.currentQuest.instruction);
@@ -221,7 +221,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                   borderColor: const Color(0xFF8B4513), // Wood brown frame
                   borderWidth: 12.w, // Thick wood frame
                   onInkUpdated: (ink) {
-                    if (state.lastAnswerCorrect != null) {
+                    if (state.answerStatus.isAnswered) {
                       return;
                     }
                     _currentInk = ink;
@@ -230,7 +230,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
                     }
                   },
                   onClear: () {
-                    if (state.lastAnswerCorrect != null) {
+                    if (state.answerStatus.isAnswered) {
                       return;
                     }
                     _currentInk = null;
@@ -245,7 +245,7 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
             SizedBox(height: 16.h),
 
             // Action Button
-            if (state.lastAnswerCorrect == null)
+            if (state.answerStatus == AnswerStatus.unanswered)
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: ScaleButton(
@@ -294,3 +294,5 @@ class _KidsHandwritingLayoutState extends State<KidsHandwritingLayout> {
     );
   }
 }
+
+

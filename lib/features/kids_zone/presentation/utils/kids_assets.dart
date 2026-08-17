@@ -296,3 +296,4 @@ class KidsAssets {
     return stickerMap[category]?[0] ?? '⭐';
   }
 }
+

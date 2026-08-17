@@ -8,6 +8,27 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 // Speaking States
 // =============================================================================
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 abstract class SpeakingState extends Equatable implements GameStateBase {
   const SpeakingState();
 
@@ -40,15 +61,12 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
   @override
   final int livesRemaining;
 
-  /// `null`  → no answer submitted yet (question is active).
-  /// `true`  → last answer was correct (success feedback visible).
-  /// `false` → last answer was wrong   (failure feedback visible).
-  ///
-  /// **copyWith contract:** this field does NOT fall back to `this.value`
-  /// when omitted. Omitting it intentionally resets it to `null`.
-  /// All call sites that want to preserve the current value must pass it.
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
 
   @override
   final bool hintUsed;
@@ -81,7 +99,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
     required this.livesRemaining,
     required this.gameType,
     required this.level,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -94,7 +112,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     wrongCount,
     isFinalFailure,
@@ -108,7 +126,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
     List<SpeakingQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
@@ -122,7 +140,7 @@ class SpeakingLoaded extends SpeakingState implements GameLoadedState {
       livesRemaining: livesRemaining ?? this.livesRemaining,
       gameType: gameType,
       level: level,
-      lastAnswerCorrect: lastAnswerCorrect,
+      answerStatus: answerStatus ?? AnswerStatus.unanswered,
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,

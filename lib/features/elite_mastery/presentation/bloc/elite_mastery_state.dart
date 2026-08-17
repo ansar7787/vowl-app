@@ -1,5 +1,26 @@
 part of 'elite_mastery_bloc.dart';
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 abstract class EliteMasteryState extends Equatable implements GameStateBase {
   const EliteMasteryState();
 
@@ -39,8 +60,12 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
   final int currentIndex;
   @override
   final int livesRemaining;
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
   final bool isHintVisible;
   final bool isHintUsed;
   final int wrongCount;
@@ -93,7 +118,7 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.isHintVisible = false,
     this.isHintUsed = false,
     this.wrongCount = 0,
@@ -109,7 +134,7 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     isHintVisible,
     isHintUsed,
     wrongCount,
@@ -120,23 +145,22 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
 
   /// Returns a copy with the supplied fields replaced.
   ///
-  /// Use [resetLastAnswer] to explicitly set [lastAnswerCorrect] back to
-  /// `null`.  A dedicated flag is necessary because passing
-  /// `lastAnswerCorrect: null` is indistinguishable from "no change".
+  /// A dedicated flag is no longer necessary because passing AnswerStatus.unanswered
+  /// explicitly resets it.
   EliteMasteryLoaded copyWith({
     GameSubtype? gameType,
     int? level,
     List<EliteMasteryQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? isHintVisible,
     bool? isHintUsed,
     int? wrongCount,
     bool? isFinalFailure,
     List<int>? removedIndices,
     bool? isLetterRevealed,
-    bool resetLastAnswer = false,
+
   }) {
     return EliteMasteryLoaded(
       gameType: gameType ?? this.gameType,
@@ -144,9 +168,7 @@ class EliteMasteryLoaded extends EliteMasteryState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: resetLastAnswer
-          ? null
-          : (lastAnswerCorrect ?? this.lastAnswerCorrect),
+      answerStatus: answerStatus ?? this.answerStatus,
       isHintVisible: isHintVisible ?? this.isHintVisible,
       isHintUsed: isHintUsed ?? this.isHintUsed,
       wrongCount: wrongCount ?? this.wrongCount,

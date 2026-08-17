@@ -90,7 +90,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) {
         setState(() => _isOverTarget = true);
-        return state.lastAnswerCorrect == null;
+        return state.answerStatus == AnswerStatus.unanswered;
       },
       onLeave: (data) => setState(() => _isOverTarget = false),
       onAcceptWithDetails: (details) {
@@ -235,7 +235,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
       children: List.generate(options.length, (index) {
         final option = options[index];
         final isCorrect = quest.correctAnswer == option;
-        final isAnswered = state.lastAnswerCorrect != null;
+        final isAnswered = state.answerStatus.isAnswered;
 
         // 50/50 Lifeline Logic
         bool isRemovedByHint = false;
@@ -364,3 +364,5 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
     return 24.sp;
   }
 }
+
+

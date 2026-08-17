@@ -126,7 +126,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
           final livesChanged = (state.livesRemaining > _lastLives);
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             _resetTimer?.cancel();
 
             final quest = state.currentQuest;
@@ -338,3 +338,4 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     );
   }
 }
+

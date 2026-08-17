@@ -139,7 +139,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
             setState(() {
@@ -151,10 +151,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
               _isFirstStagePassed = false;
               _lensPosition.value = Offset.zero;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
         }
@@ -438,4 +438,5 @@ class CircleClipper extends CustomClipper<Path> {
     return oldClipper.center != center || oldClipper.radius != radius;
   }
 }
+
 

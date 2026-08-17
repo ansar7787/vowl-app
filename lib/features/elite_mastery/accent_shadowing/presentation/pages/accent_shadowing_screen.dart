@@ -112,7 +112,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
         } else if (state is EliteMasteryLoaded) {
           final quest = state.currentQuest;
           if (_lastQuestId != quest.id ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastQuestId = quest.id;
               _isAnswered = false;
@@ -120,7 +120,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
               _attempts = 0;
               _matchedIndices = {};
             });
-          } else if (state.lastAnswerCorrect == false) {
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               if (state.isFinalFailure || state.livesRemaining <= 0) {
@@ -273,3 +273,4 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     );
   }
 }
+

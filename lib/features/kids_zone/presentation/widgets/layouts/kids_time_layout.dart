@@ -132,7 +132,7 @@ class KidsTimeLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null
+          onTap: state.answerStatus.isAnswered
               ? null
               : () {
                   if (quest.instruction != null) {
@@ -211,7 +211,7 @@ class KidsTimeLayout extends StatelessWidget {
                             if (quest.emoji != null &&
                                 (quest.question == "?" ||
                                     quest.question == null))
-                              state.lastAnswerCorrect == true
+                              state.answerStatus == AnswerStatus.correct
                                   ? Text(
                                       quest.emoji!,
                                       style: TextStyle(fontSize: 80.sp),
@@ -228,7 +228,7 @@ class KidsTimeLayout extends StatelessWidget {
                                         style: TextStyle(fontSize: 80.sp),
                                       ),
                                     ),
-                            if (state.lastAnswerCorrect != true ||
+                            if (state.answerStatus != AnswerStatus.correct ||
                                 (quest.question != "?" &&
                                     quest.question != null))
                               KidsFittedText(
@@ -361,3 +361,5 @@ class KidsTimeLayout extends StatelessWidget {
     );
   }
 }
+
+

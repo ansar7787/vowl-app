@@ -130,7 +130,7 @@ class KidsShapesLayout extends StatelessWidget {
             ),
             // The Blueprint Paper
             InkWell(
-              onTap: state.lastAnswerCorrect != null
+              onTap: state.answerStatus.isAnswered
                   ? null
                   : () {
                       if (quest.instruction != null) {
@@ -323,3 +323,5 @@ class _BlueprintGridPainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
+
+

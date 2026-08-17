@@ -160,9 +160,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     return BlocConsumer<WritingBloc, WritingState>(
       listenWhen: (prev, curr) =>
           (curr is WritingGameComplete && prev is! WritingGameComplete) ||
-          (curr is WritingLoaded && curr.lastAnswerCorrect == null),
+          (curr is WritingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
-        if (state is WritingLoaded && state.lastAnswerCorrect == null) {
+        if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _answerController.clear();
             _inkLevel = 0.0;
@@ -189,8 +189,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
 
         final targetKeywords =
             quest?.options ?? ["bacteria", "sulfide", "chemosynthesis"];
-        final bool isAnswered = isLoaded && state.lastAnswerCorrect != null;
-        final bool? isCorrect = isLoaded ? state.lastAnswerCorrect : null;
+        final bool isAnswered = isLoaded && state.answerStatus.isAnswered;
+        final bool? isCorrect = isLoaded ? state.answerStatus.asBoolOrNull : null;
         final bool isFinalFailure = isLoaded ? state.isFinalFailure : false;
         final int livesRemaining = state.livesRemaining;
 

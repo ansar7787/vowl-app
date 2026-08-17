@@ -129,7 +129,7 @@ class KidsColorsLayout extends StatelessWidget {
             ),
             // The Canvas
             InkWell(
-              onTap: state.lastAnswerCorrect != null
+              onTap: state.answerStatus.isAnswered
                   ? null
                   : () {
                       if (quest.instruction != null) {
@@ -164,7 +164,7 @@ class KidsColorsLayout extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      if (quest.emoji != null) state.lastAnswerCorrect == true ? Text(quest.emoji!, style: TextStyle(fontSize: 100.sp)) : ColorFiltered(colorFilter: const ColorFilter.mode(Color(0xFF9CA3AF), BlendMode.srcIn), child: Text(quest.emoji!, style: TextStyle(fontSize: 100.sp))) // Enlarge emoji, hide question text
+                      if (quest.emoji != null) state.answerStatus == AnswerStatus.correct ? Text(quest.emoji!, style: TextStyle(fontSize: 100.sp)) : ColorFiltered(colorFilter: const ColorFilter.mode(Color(0xFF9CA3AF), BlendMode.srcIn), child: Text(quest.emoji!, style: TextStyle(fontSize: 100.sp))) // Enlarge emoji, hide question text
                     ],
                   ),
                 ),
@@ -437,4 +437,6 @@ class KidsColorsLayout extends StatelessWidget {
     return fallback;
   }
 }
+
+
 

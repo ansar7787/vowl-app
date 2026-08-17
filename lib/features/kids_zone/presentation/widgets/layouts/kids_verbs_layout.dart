@@ -131,7 +131,7 @@ class KidsVerbsLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null
+          onTap: state.answerStatus.isAnswered
               ? null
               : () {
                   if (quest.instruction != null) {
@@ -169,7 +169,7 @@ class KidsVerbsLayout extends StatelessWidget {
                     children: [
                       if (quest.emoji != null &&
                           (quest.question == "?" || quest.question == null))
-                        state.lastAnswerCorrect == true
+                        state.answerStatus == AnswerStatus.correct
                             ? Text(
                                 quest.emoji!,
                                 style: TextStyle(fontSize: 80.sp),
@@ -186,7 +186,7 @@ class KidsVerbsLayout extends StatelessWidget {
                                   style: TextStyle(fontSize: 80.sp),
                                 ),
                               ),
-                      if (state.lastAnswerCorrect != true ||
+                      if (state.answerStatus != AnswerStatus.correct ||
                           (quest.question != "?" && quest.question != null))
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -317,3 +317,5 @@ class KidsVerbsLayout extends StatelessWidget {
     );
   }
 }
+
+

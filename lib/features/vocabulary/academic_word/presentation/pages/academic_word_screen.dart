@@ -99,7 +99,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
   void _onStateChange(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-      final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+      final isRetry = _isAnswered && !state.answerStatus.isAnswered;
 
       if (isNewQuestion || isRetry) {
         setState(() {
@@ -115,10 +115,10 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
         return;
       }
 
-      if (state.lastAnswerCorrect != null && !_isAnswered) {
+      if (state.answerStatus.isAnswered && !_isAnswered) {
         setState(() {
           _isAnswered = true;
-          _isCorrect = state.lastAnswerCorrect;
+          _isCorrect = state.answerStatus.asBoolOrNull;
         });
       }
     }
@@ -552,3 +552,4 @@ class _AcademicWordGameBody extends StatelessWidget {
     });
   }
 }
+

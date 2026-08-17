@@ -8,6 +8,27 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 // Base state
 // ---------------------------------------------------------------------------
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 abstract class AccentState extends Equatable implements GameStateBase {
   const AccentState();
 
@@ -48,11 +69,12 @@ class AccentLoaded extends AccentState implements GameLoadedState {
   @override
   final int livesRemaining;
 
-  /// `null`  = no answer submitted yet for this quest.
-  /// `true`  = last submitted answer was correct.
-  /// `false` = last submitted answer was wrong.
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
 
   @override
   final bool hintUsed;
@@ -83,7 +105,7 @@ class AccentLoaded extends AccentState implements GameLoadedState {
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     required this.gameType,
     required this.level,
@@ -96,7 +118,7 @@ class AccentLoaded extends AccentState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     gameType,
     level,
@@ -112,7 +134,7 @@ class AccentLoaded extends AccentState implements GameLoadedState {
     List<AccentQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     GameSubtype? gameType,
     int? level,
@@ -123,7 +145,7 @@ class AccentLoaded extends AccentState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect, // nullable override intentional
+      answerStatus: answerStatus ?? AnswerStatus.unanswered, // enum override intentional
       hintUsed: hintUsed ?? this.hintUsed,
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,

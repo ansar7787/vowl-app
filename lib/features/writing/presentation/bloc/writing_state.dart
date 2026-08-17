@@ -14,6 +14,27 @@ import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 // NextQuestion handler reads them, and keeps each state fully self-contained.
 // ---------------------------------------------------------------------------
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 abstract class WritingState extends Equatable implements GameStateBase {
   const WritingState();
 
@@ -41,8 +62,12 @@ class WritingLoaded extends WritingState implements GameLoadedState {
   final int currentIndex;
   @override
   final int livesRemaining;
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
   @override
   final bool hintUsed;
   final int wrongCount;
@@ -71,7 +96,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
     required this.livesRemaining,
     required this.gameType,
     required this.level,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -82,7 +107,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     wrongCount,
     isFinalFailure,
@@ -94,8 +119,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
     List<WritingQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    // Explicitly nullable so callers can clear lastAnswerCorrect back to null.
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
@@ -106,7 +130,7 @@ class WritingLoaded extends WritingState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect,
+      answerStatus: answerStatus ?? AnswerStatus.unanswered,
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,

@@ -166,7 +166,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               _visualConfig = quest.visualConfig;
             });
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
-          } else if (state.lastAnswerCorrect == null) {
+          } else if (!state.answerStatus.isAnswered) {
             setState(() {
               _isAnswered = false;
               _isCorrect = null;
@@ -177,12 +177,12 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
           if (state.isHintVisible) {
             _hapticService.selection();
           }
-          if (state.lastAnswerCorrect == true) {
+          if (state.answerStatus == AnswerStatus.correct) {
             setState(() {
               _isAnswered = true;
               _isCorrect = true;
             });
-          } else if (state.lastAnswerCorrect == false) {
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               // If it's a final failure (either 2 strikes or out of lives), lock screen
@@ -430,3 +430,4 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
     );
   }
 }
+

@@ -107,3 +107,5 @@ class _DotGridPainter extends CustomPainter {
     return oldDelegate.color != color || oldDelegate.spacing != spacing;
   }
 }
+
+

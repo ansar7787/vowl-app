@@ -138,7 +138,7 @@ class KidsHomeLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
+          onTap: state.answerStatus.isAnswered ? null : () { if (quest.instruction != null) { di.sl<KidsTTSService>().speak(quest.instruction!); } },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -187,7 +187,7 @@ class KidsHomeLayout extends StatelessWidget {
                         alignment: Alignment.center,
                         children: [
                           if (quest.emoji != null && (quest.question == "?" || quest.question == null))
-                            state.lastAnswerCorrect == true
+                            state.answerStatus == AnswerStatus.correct
                                 ? Text(
                                     quest.emoji!,
                                     style: TextStyle(fontSize: 80.sp),
@@ -202,7 +202,7 @@ class KidsHomeLayout extends StatelessWidget {
                                       style: TextStyle(fontSize: 80.sp),
                                     ),
                                   ),
-                          if (state.lastAnswerCorrect != true || (quest.question != "?" && quest.question != null))
+                          if (state.answerStatus != AnswerStatus.correct || (quest.question != "?" && quest.question != null))
                             KidsFittedText(
                               quest.question ?? "?",
                               style: TextStyle(
@@ -318,3 +318,5 @@ class _TriangleClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
 }
+
+

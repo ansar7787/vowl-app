@@ -56,6 +56,27 @@ class ResetKidsGame extends KidsEvent {}
 
 class ClearKidsFeedback extends KidsEvent {}
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 // States
 abstract class KidsState extends Equatable {
   const KidsState();
@@ -76,7 +97,7 @@ class KidsLoaded extends KidsState {
   final int originalTotalQuests;
   final int currentIndex;
   final int livesRemaining;
-  final bool? lastAnswerCorrect;
+  final AnswerStatus answerStatus;
   final String gameType;
   final int level;
   final bool hintUsed;
@@ -90,7 +111,7 @@ class KidsLoaded extends KidsState {
     required this.level,
     this.currentIndex = 0,
     this.livesRemaining = 3,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -103,22 +124,20 @@ class KidsLoaded extends KidsState {
     int? originalTotalQuests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     String? gameType,
     int? level,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
-    bool resetLastAnswer = false,
+
   }) {
     return KidsLoaded(
       quests: quests ?? this.quests,
       originalTotalQuests: originalTotalQuests ?? this.originalTotalQuests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: resetLastAnswer
-          ? null
-          : (lastAnswerCorrect ?? this.lastAnswerCorrect),
+      answerStatus: answerStatus ?? this.answerStatus,
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,
       hintUsed: hintUsed ?? this.hintUsed,
@@ -133,7 +152,7 @@ class KidsLoaded extends KidsState {
     originalTotalQuests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     gameType,
     level,
     hintUsed,
@@ -235,9 +254,9 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             options: reshuffledOptions,
           );
 
-          emit(s.copyWith(quests: updatedQuests, resetLastAnswer: true));
+          emit(s.copyWith(quests: updatedQuests, answerStatus: AnswerStatus.unanswered));
         } else {
-          emit(s.copyWith(resetLastAnswer: true));
+          emit(s.copyWith(answerStatus: AnswerStatus.unanswered));
         }
       }
     });
@@ -290,10 +309,10 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   void _onSubmitAnswer(SubmitKidsAnswer event, Emitter<KidsState> emit) {
     if (state is! KidsLoaded) return;
     final s = state as KidsLoaded;
-    if (s.lastAnswerCorrect != null || s.livesRemaining <= 0) return;
+    if (s.answerStatus != AnswerStatus.unanswered || s.livesRemaining <= 0) return;
 
     // Synchronously lock state transition to prevent double-tap race conditions
-    final lockedState = s.copyWith(lastAnswerCorrect: event.isCorrect);
+    final lockedState = s.copyWith(answerStatus: event.isCorrect ? AnswerStatus.correct : AnswerStatus.incorrect);
     emit(lockedState);
 
     if (event.isCorrect) {
@@ -317,7 +336,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         s.copyWith(
           quests: updatedQuests,
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0, // Reset wrongCount after re-queue
           isFinalFailure: true,
         ),
@@ -326,7 +345,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       emit(
         s.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: event.isCorrect,
+          answerStatus: event.isCorrect ? AnswerStatus.correct : AnswerStatus.incorrect,
           wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
           isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2),
         ),
@@ -356,7 +375,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       int nextIndex = s.currentIndex + 1;
 
       if (nextIndex >= s.quests.length) {
-        if (s.lastAnswerCorrect == true) {
+        if (s.answerStatus == AnswerStatus.correct) {
           // Level Complete
           String? newSticker;
           if (s.level == 10) {
@@ -392,14 +411,14 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         } else {
           // Wrong answer on the very last quest
           emit(
-            s.copyWith(resetLastAnswer: true, hintUsed: false, wrongCount: 0),
+            s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false, wrongCount: 0),
           );
         }
-      } else if (s.lastAnswerCorrect == true || s.isFinalFailure) {
+      } else if (s.answerStatus == AnswerStatus.correct || s.isFinalFailure) {
         emit(
           s.copyWith(
             currentIndex: nextIndex,
-            resetLastAnswer: true,
+            answerStatus: AnswerStatus.unanswered,
             hintUsed: false,
             wrongCount: 0,
             isFinalFailure: false,
@@ -407,7 +426,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
         );
       } else {
         // First-time wrong answer, stay and retry
-        emit(s.copyWith(resetLastAnswer: true, hintUsed: false));
+        emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
       }
     }
   }
@@ -439,7 +458,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           gameType: s.gameType,
           level: s.level,
           livesRemaining: 1,
-          lastAnswerCorrect: null,
+          answerStatus: AnswerStatus.unanswered,
         ),
       );
     }
@@ -472,3 +491,4 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     }
   }
 }
+

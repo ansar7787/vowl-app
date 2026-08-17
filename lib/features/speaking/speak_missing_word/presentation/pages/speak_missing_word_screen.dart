@@ -217,7 +217,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           if (state.currentIndex != _lastProcessedIndex ||
               livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+              (!state.answerStatus.isAnswered && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -233,7 +233,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
-          } else if (state.lastAnswerCorrect == false) {
+          } else if (state.answerStatus == AnswerStatus.incorrect) {
             setState(() {
               _isCorrect = false;
               if (state.isFinalFailure || state.livesRemaining <= 0) {
@@ -480,3 +480,4 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
     );
   }
 }
+

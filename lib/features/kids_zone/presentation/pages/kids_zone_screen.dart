@@ -560,3 +560,4 @@ class _FloatingCoinState extends State<_FloatingCoin>
     );
   }
 }
+

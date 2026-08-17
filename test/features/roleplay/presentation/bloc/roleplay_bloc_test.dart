@@ -44,6 +44,9 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 class FakeUpdateUserRewardsParams extends Fake
     implements UpdateUserRewardsParams {}
 
+class FakeGetRoleplayQuestParams extends Fake
+    implements GetRoleplayQuestParams {}
+
 class FakeUpdateUserCoinsParams extends Fake implements UpdateUserCoinsParams {}
 
 class FakeUpdateCategoryStatsParams extends Fake
@@ -71,6 +74,7 @@ void main() {
     registerFallbackValue(FakeUpdateUserCoinsParams());
     registerFallbackValue(FakeUpdateCategoryStatsParams());
     registerFallbackValue(FakeUpdateUnlockedLevelParams());
+    registerFallbackValue(FakeGetRoleplayQuestParams());
     registerFallbackValue(GameSubtype.flashcards);
   });
 
@@ -153,7 +157,7 @@ void main() {
       },
       seed: () => tLoadedState,
       act: (bloc) => bloc.add(SubmitAnswer(true)),
-      expect: () => [tLoadedState.copyWith(lastAnswerCorrect: true)],
+      expect: () => [tLoadedState.copyWith(answerStatus: AnswerStatus.correct)],
     );
 
     blocTest<RoleplayBloc, RoleplayState>(
@@ -168,7 +172,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -187,7 +191,7 @@ void main() {
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0,
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]],

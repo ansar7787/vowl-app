@@ -302,3 +302,4 @@ class MascotSelectionScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 3), () => entry.remove());
   }
 }
+

@@ -99,8 +99,11 @@ void main() {
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
       expect: () => [
         tLoadedState.copyWith(
+          answerStatus: AnswerStatus.incorrect,
+        ),
+        tLoadedState.copyWith(
           livesRemaining: 2,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 1,
           isFinalFailure: false,
         ),
@@ -118,8 +121,13 @@ void main() {
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
       expect: () => [
         tLoadedState.copyWith(
+          wrongCount: 1,
+          livesRemaining: 2,
+          answerStatus: AnswerStatus.incorrect,
+        ),
+        tLoadedState.copyWith(
           livesRemaining: 1,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: 0, // Reset after re-queue
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]], // Re-queued
@@ -136,7 +144,19 @@ void main() {
       },
       seed: () => tLoadedState.copyWith(livesRemaining: 1),
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
-      expect: () => [isA<KidsGameOver>()],
+      expect: () => [
+        tLoadedState.copyWith(
+          livesRemaining: 1,
+          answerStatus: AnswerStatus.incorrect,
+        ),
+        tLoadedState.copyWith(
+          livesRemaining: 0,
+          answerStatus: AnswerStatus.incorrect,
+          wrongCount: 1,
+          isFinalFailure: false,
+        ),
+      ],
     );
   });
 }
+

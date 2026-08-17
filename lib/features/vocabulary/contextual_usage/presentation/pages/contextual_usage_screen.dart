@@ -102,7 +102,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
 
           if (isNewQuestion || isRetry) {
             setState(() {
@@ -113,10 +113,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               _selectedOption = null;
               _isFirstStagePassed = false;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
         }
@@ -343,3 +343,4 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
         .slideY(begin: 0.2, curve: Curves.easeOutCubic);
   }
 }
+

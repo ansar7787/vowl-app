@@ -142,7 +142,7 @@ class KidsRoutineLayout extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final isHovering = candidateData.isNotEmpty;
         return InkWell(
-          onTap: state.lastAnswerCorrect != null
+          onTap: state.answerStatus.isAnswered
               ? null
               : () {
                   if (quest.instruction != null) {
@@ -208,7 +208,7 @@ class KidsRoutineLayout extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             if (quest.emoji != null)
-                              state.lastAnswerCorrect == true
+                              state.answerStatus == AnswerStatus.correct
                                   ? Text(
                                       quest.emoji!,
                                       style: TextStyle(fontSize: 80.sp),
@@ -335,3 +335,5 @@ class KidsRoutineLayout extends StatelessWidget {
     );
   }
 }
+
+

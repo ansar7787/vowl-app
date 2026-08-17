@@ -71,7 +71,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     final s = state as EliteMasteryLoaded;
     emit(
       s.copyWith(
-        resetLastAnswer: true,
+        answerStatus: AnswerStatus.unanswered,
         isHintUsed: false,
         removedIndices: const [],
         isLetterRevealed: false,
@@ -133,7 +133,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     final currentState = state;
     if (currentState is! EliteMasteryLoaded ||
         currentState.livesRemaining <= 0 ||
-        currentState.lastAnswerCorrect == true) {
+        currentState.answerStatus == AnswerStatus.correct) {
       return;
     }
 
@@ -153,7 +153,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       emit(
         currentState.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           quests: updatedQuests,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
@@ -164,7 +164,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       hapticService.success();
       emit(
         currentState.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -196,12 +196,12 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         currentState.currentIndex + 1 < currentState.quests.length;
 
     if (hasMoreQuests) {
-      if (currentState.lastAnswerCorrect == true ||
+      if (currentState.answerStatus == AnswerStatus.correct ||
           currentState.isFinalFailure) {
         emit(
           currentState.copyWith(
             currentIndex: currentState.currentIndex + 1,
-            resetLastAnswer: true,
+            answerStatus: AnswerStatus.unanswered,
             isHintVisible: false,
             isHintUsed: false,
             wrongCount: 0,
@@ -213,14 +213,14 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       } else {
         emit(
           currentState.copyWith(
-            resetLastAnswer: true,
+            answerStatus: AnswerStatus.unanswered,
             isHintVisible: false,
             removedIndices: const [],
             isLetterRevealed: false,
           ),
         );
       }
-    } else if (currentState.lastAnswerCorrect == true) {
+    } else if (currentState.answerStatus == AnswerStatus.correct) {
       // ── Level complete ────────────────────────────────────────────────────
       soundService.playLevelComplete();
 
@@ -301,7 +301,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       ]);
     } else {
       // Wrong answer on the last quest — stay and retry.
-      emit(currentState.copyWith(resetLastAnswer: true, isHintVisible: false));
+      emit(currentState.copyWith(answerStatus: AnswerStatus.unanswered, isHintVisible: false));
     }
   }
 
@@ -416,7 +416,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       emit(
         currentState.copyWith(
           livesRemaining: newLives,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           quests: _trimRequeuedFailure(currentState.quests),
         ),
       );
@@ -439,7 +439,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           quests: _trimRequeuedFailure(currentState.quests),
           currentIndex: currentState.currentIndex,
           livesRemaining: 1,
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
         ),
       );
     }
