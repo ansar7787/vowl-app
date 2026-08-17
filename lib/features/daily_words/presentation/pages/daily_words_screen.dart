@@ -112,87 +112,181 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       builder: (context) {
         final isDark = Theme.of(context).brightness == Brightness.dark;
         return Container(
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 24.h),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+            color: isDark ? const Color(0xFF0F172A) : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 20,
+                offset: const Offset(0, -5),
+              ),
+            ],
           ),
           child: SafeArea(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  Icons.local_fire_department_rounded,
-                  color: const Color(0xFFF59E0B),
-                  size: 64.r,
+                // Glowing Icon
+                Container(
+                  padding: EdgeInsets.all(20.r),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
+                        blurRadius: 30,
+                        spreadRadius: 5,
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.local_fire_department_rounded,
+                    color: const Color(0xFFF59E0B),
+                    size: 56.r,
+                  ),
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 24.h),
                 Text(
                   context.tr('daily_words.halfway_title', fallback: 'You\'re on fire! 🔥'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 24.sp,
+                    fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  context.tr(
-                    'daily_words.halfway_desc',
-                    fallback: 'You\'ve completed your 5 free words for today. Watch a quick ad to unlock the remaining 5 words, or upgrade to Premium for an ad-free experience!',
-                  ),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                  ),
-                ),
-                SizedBox(height: 32.h),
-                SizedBox(
-                  width: double.infinity,
-                  height: 56.h,
-                  child: ElevatedButton.icon(
-                    onPressed: () {
-                      context.pop();
-                      final adService = di.sl<AdService>();
-                      adService.showRewardedAd(
-                        context: context,
-                        isPremium: false,
-                        childSafe: false,
-                        onUserEarnedReward: (_) {
-                          if (!completer.isCompleted) completer.complete(true);
-                        },
-                        onDismissed: () {
-                          if (!completer.isCompleted) completer.complete(false);
-                        },
-                      );
-                    },
-                    icon: const Icon(Icons.play_circle_fill_rounded),
-                    label: Text(
-                      context.tr('daily_words.watch_ad', fallback: 'Watch Ad to Unlock'),
-                      style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w800),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF6366F1),
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-                    ),
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    letterSpacing: -0.5,
                   ),
                 ),
                 SizedBox(height: 12.h),
-                TextButton(
-                  onPressed: () {
-                    context.pop();
-                    context.push('/premium');
-                  },
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
-                    context.tr('daily_words.go_premium', fallback: 'Go Premium'),
+                    context.tr(
+                      'daily_words.halfway_desc',
+                      fallback: 'You\'ve completed your 5 free words.\nWatch a quick ad to unlock the rest of today\'s lesson, or upgrade to Premium for an ad-free experience!',
+                    ),
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
-                      color: const Color(0xFFF59E0B),
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white70 : const Color(0xFF475569),
+                      height: 1.5,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40.h),
+                // Watch Ad Button (Primary)
+                Container(
+                  width: double.infinity,
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                        blurRadius: 20,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20.r),
+                      onTap: () {
+                        context.pop();
+                        final adService = di.sl<AdService>();
+                        adService.showRewardedAd(
+                          context: context,
+                          isPremium: false,
+                          childSafe: false,
+                          onUserEarnedReward: (_) {
+                            if (!completer.isCompleted) completer.complete(true);
+                          },
+                          onDismissed: () {
+                            if (!completer.isCompleted) completer.complete(false);
+                          },
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 24.r),
+                          SizedBox(width: 12.w),
+                          Text(
+                            context.tr('daily_words.watch_ad', fallback: 'Watch Ad to Unlock'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                // Go Premium Button (Secondary)
+                Container(
+                  width: double.infinity,
+                  height: 60.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(color: const Color(0xFFF59E0B).withValues(alpha: 0.3), width: 2),
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.05),
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(20.r),
+                      onTap: () {
+                        context.pop();
+                        context.push('/premium');
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.workspace_premium_rounded, color: const Color(0xFFF59E0B), size: 24.r),
+                          SizedBox(width: 12.w),
+                          Text(
+                            context.tr('daily_words.go_premium', fallback: 'Unlock Premium'),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w800,
+                              color: const Color(0xFFF59E0B),
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                // Dismiss Ghost Button
+                TextButton(
+                  onPressed: () => context.pop(),
+                  style: TextButton.styleFrom(
+                    foregroundColor: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                  ),
+                  child: Text(
+                    context.tr('daily_words.maybe_later', fallback: 'Maybe Later'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
