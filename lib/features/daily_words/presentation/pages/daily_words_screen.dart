@@ -242,7 +242,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               if (word == null) {
                 return _buildShimmerLoading(isDark);
               }
-              return _buildSliverContent(context, state, word, isDark);
+              return _buildContent(context, state, word, isDark);
             },
           ),
         ],
