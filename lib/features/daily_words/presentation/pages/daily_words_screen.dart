@@ -940,6 +940,7 @@ class _ActionButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const _ActionButton({
+    super.key,
     required this.label,
     required this.icon,
     required this.color,
