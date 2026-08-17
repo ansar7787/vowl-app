@@ -13,6 +13,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/core/utils/translation_monetization_controller.dart';
+import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
+import 'package:vowl/core/utils/widgets/translation_download_sheet.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
@@ -127,25 +130,57 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
   Future<void> _handleTranslate(DailyWord word) async {
     if (_isTranslating) return;
     
-    // Check unlock
-    if (!_translationUnlocked) {
-      di.sl<AdService>().showRewardedAd(
-        context: context,
-        isPremium: false,
-        onUserEarnedReward: (_) {},
-        onDismissed: () async {
-          setState(() => _translationUnlocked = true);
+    setState(() => _isTranslating = true);
+
+    try {
+      // 1. Check if language is configured
+      final isConfigured = await _translationService.isLanguageConfigured();
+      if (!isConfigured) {
+        if (!mounted) return;
+        await LanguageSelectionBottomSheet.show(context);
+
+        // Check again if they configured it
+        final recheck = await _translationService.isLanguageConfigured();
+        if (!recheck) {
+          setState(() => _isTranslating = false);
+          return;
+        }
+      }
+
+      // 2. Check if model is downloaded
+      final isDownloaded = await _translationService.isTargetModelDownloaded();
+
+      // 3. Monetization gate
+      if (!mounted) return;
+      await TranslationMonetizationController.attemptTranslation(
+        context,
+        isKidsZone: false,
+        onSuccess: () async {
+          if (!isDownloaded && mounted) {
+            await TranslationDownloadSheet.show(
+              context,
+              _translationService.ensureModelDownloaded(),
+            );
+          }
           await _performTranslation(word);
         },
       );
-      return;
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Translation failed. Please check internet connection.'),
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isTranslating = false);
+      }
     }
-
-    await _performTranslation(word);
   }
 
   Future<void> _performTranslation(DailyWord word) async {
-    setState(() => _isTranslating = true);
     try {
       final tWord = await _translationService.translate(word.word);
       final tDef = await _translationService.translate(word.definition);
@@ -156,13 +191,12 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
           _translatedWord = tWord;
           _translatedDefinition = tDef;
           _translatedExample = tEx;
-          _isTranslating = false;
+          _translationUnlocked = true;
         });
         _haptics.success();
       }
     } catch (e) {
       if (mounted) {
-        setState(() => _isTranslating = false);
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Translation model downloading... Please wait.')),
         );
