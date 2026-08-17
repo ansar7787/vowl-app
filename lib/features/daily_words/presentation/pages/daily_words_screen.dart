@@ -343,7 +343,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 ),
               ),
               if (state.wordSet != null)
-                Text(
+                AutoSizeText(
                   state.wordSet!.theme,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -351,6 +351,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     fontWeight: FontWeight.w600,
                     color: const Color(0xFF6366F1),
                   ),
+                  maxLines: 1,
                 ),
             ],
           ),
@@ -626,7 +627,7 @@ class _WordCardFront extends StatelessWidget {
                   ),
                 ],
                 SizedBox(height: 16.h),
-                Text(
+                AutoSizeText(
                   word.phonetic,
                   style: TextStyle(
                     fontFamily: 'Spectral',
@@ -636,6 +637,7 @@ class _WordCardFront extends StatelessWidget {
                         ? Colors.white.withValues(alpha: 0.5)
                         : const Color(0xFF64748B),
                   ),
+                  maxLines: 1,
                 ),
               ],
             ),
@@ -907,7 +909,7 @@ class _SectionLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return AutoSizeText(
       label.toUpperCase(),
       style: TextStyle(
         fontFamily: 'Outfit',
@@ -916,6 +918,7 @@ class _SectionLabel extends StatelessWidget {
         color: const Color(0xFF64748B),
         letterSpacing: 1.5,
       ),
+      maxLines: 1,
     );
   }
 }
@@ -960,13 +963,16 @@ class _ActionButton extends StatelessWidget {
             children: [
               Icon(icon, color: color, size: 24.r),
               SizedBox(width: 8.w),
-              Text(
-                label,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                  color: color,
+              Flexible(
+                child: AutoSizeText(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800,
+                    color: color,
+                  ),
+                  maxLines: 1,
                 ),
               ),
             ],
