@@ -627,14 +627,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (event.careStreak != null) updates['kidsCareStreak'] = event.careStreak;
     if (event.roomLevel != null) updates['kidsRoomLevel'] = event.roomLevel;
     if (event.theme != null) updates['kidsRoomTheme'] = event.theme;
-    if (event.lastCareDate != null)
+    if (event.lastCareDate != null) {
       updates['kidsLastCareDate'] = Timestamp.fromDate(event.lastCareDate!);
-    if (event.lastFeedTime != null)
+    }
+    if (event.lastFeedTime != null) {
       updates['kidsLastFeedTime'] = Timestamp.fromDate(event.lastFeedTime!);
-    if (event.gamesPlayedToday != null)
+    }
+    if (event.gamesPlayedToday != null) {
       updates['kidsGamesPlayedToday'] = event.gamesPlayedToday;
-    if (event.lastGameDate != null)
+    }
+    if (event.lastGameDate != null) {
       updates['kidsLastGameDate'] = Timestamp.fromDate(event.lastGameDate!);
+    }
 
     if (updates.isNotEmpty) {
       try {

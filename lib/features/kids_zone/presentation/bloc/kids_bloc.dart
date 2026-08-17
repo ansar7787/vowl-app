@@ -313,8 +313,9 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   void _onSubmitAnswer(SubmitKidsAnswer event, Emitter<KidsState> emit) {
     if (state is! KidsLoaded) return;
     final s = state as KidsLoaded;
-    if (s.answerStatus != AnswerStatus.unanswered || s.livesRemaining <= 0)
+    if (s.answerStatus != AnswerStatus.unanswered || s.livesRemaining <= 0) {
       return;
+    }
 
     // Synchronously lock state transition to prevent double-tap race conditions
     final lockedState = s.copyWith(

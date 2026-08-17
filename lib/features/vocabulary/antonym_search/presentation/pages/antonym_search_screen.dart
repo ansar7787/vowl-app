@@ -308,8 +308,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   }
 
   void _onPulsarTapped(bool isTop) {
-    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null)
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) {
       return;
+    }
     _evaluateShard(_activeShardIndex!, isTop);
   }
 

@@ -144,8 +144,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   }
 
   void _onWarpGateTapped(VocabularyQuest quest) {
-    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null)
+    if (_activeShardIndex == null || _isAnswered || _lastConstraints == null) {
       return;
+    }
     final index = _activeShardIndex!;
     final options = quest.options ?? [];
     if (index >= options.length) return;
