@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -92,7 +93,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
       final tts = di.sl<KidsTTSService>();
       if (await tts.isNarrationEnabled()) await tts.speak(instruction);
     } catch (e) {
-      debugPrint("KIDS_TTS_ERROR: \$e");
+      di.sl<AppLogger>().warning("KIDS_TTS_ERROR: \$e", tag: 'KidsZone');
     }
   }
 
@@ -109,7 +110,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
         if (mounted) setState(() => _hintText = null);
       });
     } catch (e) {
-      debugPrint("KIDS_HINT_TTS_ERROR: \$e");
+      di.sl<AppLogger>().warning("KIDS_HINT_TTS_ERROR: \$e", tag: 'KidsZone');
     }
   }
 

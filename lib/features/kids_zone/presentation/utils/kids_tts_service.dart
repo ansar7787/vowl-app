@@ -1,5 +1,7 @@
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KidsTTSService {
@@ -39,7 +41,7 @@ class KidsTTSService {
       await _flutterTts.stop();
       await _flutterTts.speak(text);
     } catch (e) {
-      debugPrint("Kids TTS Error: $e");
+      di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
     }
   }
 
@@ -47,7 +49,7 @@ class KidsTTSService {
     try {
       await _flutterTts.stop();
     } catch (e) {
-      debugPrint("Kids TTS Error: $e");
+      di.sl<AppLogger>().warning("Kids TTS Error: $e", tag: 'KidsZone');
     }
   }
 }

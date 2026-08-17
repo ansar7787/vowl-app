@@ -47,6 +47,12 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
   AccentQuest? _lastQuest;
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     context.read<AccentBloc>().add(

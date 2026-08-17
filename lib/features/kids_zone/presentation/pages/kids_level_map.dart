@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/app_logger.dart';
 import 'dart:async';
 import 'dart:math' as math;
 import 'dart:ui';
@@ -192,7 +193,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       '',
     );
 
-    debugPrint("KIDS_MAP: Buddy speaking: $cleanMessage");
+    di.sl<AppLogger>().warning("KIDS_MAP: Buddy speaking: $cleanMessage", tag: 'KidsZone');
     di.sl<SoundService>().playMascotInteraction();
     di.sl<TtsService>().speak(cleanMessage);
 

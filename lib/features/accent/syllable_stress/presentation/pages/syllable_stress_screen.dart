@@ -46,6 +46,12 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
   bool _isFirstStagePassed = false;
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     context.read<AccentBloc>().add(

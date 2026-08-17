@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/app_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -42,7 +43,7 @@ class _KidsExplanationCardState extends State<KidsExplanationCard> {
           await tts.speak(explanation);
         }
       } catch (e) {
-        debugPrint("KIDS_TTS_ERROR: $e");
+        di.sl<AppLogger>().warning("KIDS_TTS_ERROR: $e", tag: 'KidsZone');
       }
     }
   }

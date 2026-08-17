@@ -1,5 +1,7 @@
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/services.dart';
 import 'package:vowl/features/kids_zone/data/models/kids_quest_model.dart';
 
@@ -40,7 +42,7 @@ class KidsLocalDataSourceImpl implements KidsLocalDataSource {
 
       return [];
     } catch (e) {
-      debugPrint("KIDS_LOCAL_ERROR: $e");
+      di.sl<AppLogger>().warning("KIDS_LOCAL_ERROR: $e", tag: 'KidsZone');
       return [];
     }
   }

@@ -1,5 +1,7 @@
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class KidsAudioService {
@@ -52,7 +54,7 @@ class KidsAudioService {
       await _bgmPlayer.setVolume(0.3); // Low volume for BGM
       await _bgmPlayer.resume();
     } catch (e) {
-      debugPrint("Kids BGM Error: $e");
+      di.sl<AppLogger>().warning("Kids BGM Error: $e", tag: 'KidsZone');
     }
   }
 
@@ -60,7 +62,7 @@ class KidsAudioService {
     try {
       await _bgmPlayer.stop();
     } catch (e) {
-      debugPrint("Kids BGM Stop Error: $e");
+      di.sl<AppLogger>().warning("Kids BGM Stop Error: $e", tag: 'KidsZone');
     }
   }
 
@@ -70,7 +72,7 @@ class KidsAudioService {
       await _sfxPlayer.stop();
       await _sfxPlayer.play(AssetSource('sounds/correct.mp3'), volume: 0.8);
     } catch (e) {
-      debugPrint("Kids SFX Success Error: $e");
+      di.sl<AppLogger>().warning("Kids SFX Success Error: $e", tag: 'KidsZone');
     }
   }
 
@@ -80,7 +82,7 @@ class KidsAudioService {
       await _sfxPlayer.stop();
       await _sfxPlayer.play(AssetSource('sounds/wrong.mp3'), volume: 0.8);
     } catch (e) {
-      debugPrint("Kids SFX Failure Error: $e");
+      di.sl<AppLogger>().warning("Kids SFX Failure Error: $e", tag: 'KidsZone');
     }
   }
 
@@ -93,7 +95,7 @@ class KidsAudioService {
         volume: 1.0,
       );
     } catch (e) {
-      debugPrint("Kids SFX Level Complete Error: $e");
+      di.sl<AppLogger>().warning("Kids SFX Level Complete Error: $e", tag: 'KidsZone');
       await playSuccessSFX();
     }
   }
