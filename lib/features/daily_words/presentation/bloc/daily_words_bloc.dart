@@ -205,11 +205,41 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
         return;
       }
 
+      int startingIndex = 0;
+      for (int i = 0; i < wordSet.words.length; i++) {
+        final id = wordSet.words[i].id;
+        final alreadyLearned = _service.wordBankEntries.any((wp) => wp.wordId == id);
+        if (alreadyLearned) {
+          startingIndex = i + 1;
+        } else {
+          break;
+        }
+      }
+
+      if (startingIndex >= wordSet.words.length) {
+        emit(
+          state.copyWith(
+            status: DailyWordsStatus.sessionComplete,
+            wordSet: wordSet,
+            currentIndex: startingIndex,
+            streak: _service.streak,
+            longestStreak: _service.longestStreak,
+            totalWordsLearned: _service.totalWordsLearned,
+            currentDay: _service.currentDay,
+            reviewQueue: _service.wordsForReview,
+            masteryStats: _service.masteryStats,
+            learnedThisSession: const {},
+            errorMessage: null,
+          ),
+        );
+        return;
+      }
+
       emit(
         state.copyWith(
           status: DailyWordsStatus.loaded,
           wordSet: wordSet,
-          currentIndex: 0,
+          currentIndex: startingIndex,
           streak: _service.streak,
           longestStreak: _service.longestStreak,
           totalWordsLearned: _service.totalWordsLearned,
