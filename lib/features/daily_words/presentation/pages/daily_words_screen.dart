@@ -398,35 +398,43 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 40.h),
-            child: Row(
-              children: [
-                Expanded(
-                  child: _ActionButton(
-                    label: context.tr(
-                      'daily_words.flip_card',
-                      fallback: 'Flip Card',
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                switchInCurve: Curves.easeOutCubic,
+                switchOutCurve: Curves.easeInCubic,
+                transitionBuilder: (child, animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: ScaleTransition(
+                      scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
+                      child: child,
                     ),
-                    icon: Icons.flip_rounded, // Better icon
-                    color: const Color(0xFF6366F1),
-                    isDark: isDark,
-                    onTap: _toggleFlip,
-                  ),
-                ),
-                SizedBox(width: 16.w), // Increased spacing
-                Expanded(
-                  child: _ActionButton(
-                    label: context.tr(
-                      'daily_words.learned',
-                      fallback: 'Learned ✓',
-                    ),
-                    icon: Icons.verified_rounded, // Premium icon
-                    color: const Color(0xFF10B981),
-                    isDark: isDark,
-                    onTap: () => _markLearnedAndNext(word),
-                  ),
-                ),
-              ],
-            ),
+                  );
+                },
+                child: !_isFlipped
+                    ? _ActionButton(
+                        key: const ValueKey('flip_btn'),
+                        label: context.tr(
+                          'daily_words.show_definition',
+                          fallback: 'Show Definition',
+                        ),
+                        icon: Icons.visibility_rounded,
+                        color: const Color(0xFF6366F1),
+                        isDark: isDark,
+                        onTap: _toggleFlip,
+                      )
+                    : _ActionButton(
+                        key: const ValueKey('learned_btn'),
+                        label: context.tr(
+                          'daily_words.learned',
+                          fallback: 'Got it! Next Word',
+                        ),
+                        icon: Icons.verified_rounded,
+                        color: const Color(0xFF10B981),
+                        isDark: isDark,
+                        onTap: () => _markLearnedAndNext(word),
+                      ),
+              ),
           ),
         ),
       ],
