@@ -405,95 +405,97 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             ),
           ),
         ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-            child: SizedBox(
-              height: 460.h,
-              child: SlideTransition(
-                position: _slideAnimation,
-                child: GestureDetector(
-                  onTap: _toggleFlip,
-                  child: AnimatedBuilder(
-                    animation: _flipAnimation,
-                    builder: (context, child) {
-                      final angle = _flipAnimation.value * 3.14159;
-                      final showBack = _flipAnimation.value > 0.5;
-                      return Transform(
-                        alignment: Alignment.center,
-                        transform: Matrix4.identity()
-                          ..setEntry(3, 2, 0.001)
-                          ..rotateY(angle),
-                        child: showBack
-                            ? Transform(
-                                alignment: Alignment.center,
-                                transform: Matrix4.identity()..rotateY(3.14159),
-                                child: _WordCardBack(
-                                  word: word,
-                                  isDark: isDark,
-                                  onSpeak: () => _speakWord(word.word),
-                                  onTranslate: () => _handleTranslate(word),
-                                  isTranslating: _isTranslating,
-                                  translatedDefinition: _translatedDefinition,
-                                  translatedExample: _translatedExample,
-                                ),
-                              )
-                            : _WordCardFront(
-                                word: word,
-                                isDark: isDark,
-                                onSpeak: () => _speakWord(word.word),
-                                onTranslate: () => _handleTranslate(word),
-                                isTranslating: _isTranslating,
-                                translatedWord: _translatedWord,
-                              ),
-                      );
-                    },
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+                  child: SlideTransition(
+                    position: _slideAnimation,
+                    child: GestureDetector(
+                      onTap: _toggleFlip,
+                      child: AnimatedBuilder(
+                        animation: _flipAnimation,
+                        builder: (context, child) {
+                          final angle = _flipAnimation.value * 3.14159;
+                          final showBack = _flipAnimation.value > 0.5;
+                          return Transform(
+                            alignment: Alignment.center,
+                            transform: Matrix4.identity()
+                              ..setEntry(3, 2, 0.001)
+                              ..rotateY(angle),
+                            child: showBack
+                                ? Transform(
+                                    alignment: Alignment.center,
+                                    transform: Matrix4.identity()..rotateY(3.14159),
+                                    child: _WordCardBack(
+                                      word: word,
+                                      isDark: isDark,
+                                      onSpeak: () => _speakWord(word.word),
+                                      onTranslate: () => _handleTranslate(word),
+                                      isTranslating: _isTranslating,
+                                      translatedDefinition: _translatedDefinition,
+                                      translatedExample: _translatedExample,
+                                    ),
+                                  )
+                                : _WordCardFront(
+                                    word: word,
+                                    isDark: isDark,
+                                    onSpeak: () => _speakWord(word.word),
+                                    onTranslate: () => _handleTranslate(word),
+                                    isTranslating: _isTranslating,
+                                    translatedWord: _translatedWord,
+                                  ),
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 40.h),
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 300),
-                switchInCurve: Curves.easeOutCubic,
-                switchOutCurve: Curves.easeInCubic,
-                transitionBuilder: (child, animation) {
-                  return FadeTransition(
-                    opacity: animation,
-                    child: ScaleTransition(
-                      scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
-                      child: child,
-                    ),
-                  );
-                },
-                child: !_isFlipped
-                    ? _ActionButton(
-                        key: const ValueKey('flip_btn'),
-                        label: context.tr(
-                          'daily_words.show_definition',
-                          fallback: 'Show Definition',
-                        ),
-                        icon: Icons.visibility_rounded,
-                        color: const Color(0xFF6366F1),
-                        isDark: isDark,
-                        onTap: _toggleFlip,
-                      )
-                    : _ActionButton(
-                        key: const ValueKey('learned_btn'),
-                        label: context.tr(
-                          'daily_words.learned',
-                          fallback: 'Got it! Next Word',
-                        ),
-                        icon: Icons.verified_rounded,
-                        color: const Color(0xFF10B981),
-                        isDark: isDark,
-                        onTap: () => _markLearnedAndNext(word),
+              Padding(
+                padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 40.h),
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  switchInCurve: Curves.easeOutCubic,
+                  switchOutCurve: Curves.easeInCubic,
+                  transitionBuilder: (child, animation) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child: ScaleTransition(
+                        scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
+                        child: child,
                       ),
+                    );
+                  },
+                  child: !_isFlipped
+                      ? _ActionButton(
+                          key: const ValueKey('flip_btn'),
+                          label: context.tr(
+                            'daily_words.show_definition',
+                            fallback: 'Show Definition',
+                          ),
+                          icon: Icons.visibility_rounded,
+                          color: const Color(0xFF6366F1),
+                          isDark: isDark,
+                          onTap: _toggleFlip,
+                        )
+                      : _ActionButton(
+                          key: const ValueKey('learned_btn'),
+                          label: context.tr(
+                            'daily_words.learned',
+                            fallback: 'Got it! Next Word',
+                          ),
+                          icon: Icons.verified_rounded,
+                          color: const Color(0xFF10B981),
+                          isDark: isDark,
+                          onTap: () => _markLearnedAndNext(word),
+                        ),
+                ),
               ),
+            ],
           ),
         ),
       ],
