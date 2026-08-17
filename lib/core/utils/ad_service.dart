@@ -141,12 +141,9 @@ class AdService {
     MobileAds.instance.updateRequestConfiguration(
       RequestConfiguration(
         testDeviceIds: kDebugMode ? ['6739FCB31DECCBA1A191319DC27E562A'] : null,
-        tagForChildDirectedTreatment: isAdult
-            ? TagForChildDirectedTreatment.unspecified
-            : TagForChildDirectedTreatment.yes,
-        tagForUnderAgeOfConsent: isAdult
-            ? TagForUnderAgeOfConsent.unspecified
-            : TagForUnderAgeOfConsent.yes,
+        ageRestrictedTreatment: isAdult
+            ? AgeRestrictedTreatment.unspecified
+            : AgeRestrictedTreatment.child,
         maxAdContentRating: isAdult
             ? MaxAdContentRating.ma
             : MaxAdContentRating.g,
