@@ -293,74 +293,69 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     );
   }
 
-  Widget _buildSliverContent(
+  Widget _buildContent(
     BuildContext context,
     DailyWordsState state,
     DailyWord word,
     bool isDark,
   ) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverAppBar(
-          toolbarHeight: 70.h,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          pinned: true,
-          leadingWidth: 64.w,
-          leading: Padding(
-            padding: EdgeInsets.only(left: 20.w, top: 12.h, bottom: 12.h),
-            child: GestureDetector(
-              onTap: () {
-                di.sl<HapticService>().light();
-                context.pop();
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.05),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  size: 20.r,
-                  color: isDark ? Colors.white : Colors.black,
-                ),
-              ),
-            ),
-          ),
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Lesson ${state.currentDay}',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
-              ),
-              if (state.wordSet != null)
-                AutoSizeText(
-                  state.wordSet!.theme,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF6366F1),
-                  ),
-                  maxLines: 1,
-                ),
-            ],
-          ),
-          actions: [
-            if ((context.watch<AuthBloc>().state.user?.currentStreak ?? 0) > 0)
-              Padding(
-                padding: EdgeInsets.only(right: 24.w),
-                child: Center(
+    return SafeArea(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+            child: Row(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    di.sl<HapticService>().light();
+                    context.pop();
+                  },
                   child: Container(
+                    padding: EdgeInsets.all(8.r),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.1)
+                          : Colors.black.withValues(alpha: 0.05),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      size: 20.r,
+                      color: isDark ? Colors.white : Colors.black,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Lesson ${state.currentDay}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        ),
+                      ),
+                      if (state.wordSet != null)
+                        AutoSizeText(
+                          state.wordSet!.theme,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFF6366F1),
+                          ),
+                          maxLines: 1,
+                        ),
+                    ],
+                  ),
+                ),
+                if ((context.watch<AuthBloc>().state.user?.currentStreak ?? 0) > 0)
+                  Container(
                     padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
@@ -389,12 +384,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       ],
                     ),
                   ),
-                ),
-              ),
-          ],
-        ),
-        SliverToBoxAdapter(
-          child: Padding(
+              ],
+            ),
+          ),
+          Padding(
             padding: EdgeInsets.only(top: 10.h),
             child: _DailyWordsProgressBar(
               progress: state.totalWords > 0
@@ -404,101 +397,94 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               totalWords: state.totalWords,
             ),
           ),
-        ),
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: Column(
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-                  child: SlideTransition(
-                    position: _slideAnimation,
-                    child: GestureDetector(
-                      onTap: _toggleFlip,
-                      child: AnimatedBuilder(
-                        animation: _flipAnimation,
-                        builder: (context, child) {
-                          final angle = _flipAnimation.value * 3.14159;
-                          final showBack = _flipAnimation.value > 0.5;
-                          return Transform(
-                            alignment: Alignment.center,
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.001)
-                              ..rotateY(angle),
-                            child: showBack
-                                ? Transform(
-                                    alignment: Alignment.center,
-                                    transform: Matrix4.identity()..rotateY(3.14159),
-                                    child: _WordCardBack(
-                                      word: word,
-                                      isDark: isDark,
-                                      onSpeak: () => _speakWord(word.word),
-                                      onTranslate: () => _handleTranslate(word),
-                                      isTranslating: _isTranslating,
-                                      translatedDefinition: _translatedDefinition,
-                                      translatedExample: _translatedExample,
-                                    ),
-                                  )
-                                : _WordCardFront(
-                                    word: word,
-                                    isDark: isDark,
-                                    onSpeak: () => _speakWord(word.word),
-                                    onTranslate: () => _handleTranslate(word),
-                                    isTranslating: _isTranslating,
-                                    translatedWord: _translatedWord,
-                                  ),
-                          );
-                        },
-                      ),
-                    ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+              child: SlideTransition(
+                position: _slideAnimation,
+                child: GestureDetector(
+                  onTap: _toggleFlip,
+                  child: AnimatedBuilder(
+                    animation: _flipAnimation,
+                    builder: (context, child) {
+                      final angle = _flipAnimation.value * 3.14159;
+                      final showBack = _flipAnimation.value > 0.5;
+                      return Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.identity()
+                          ..setEntry(3, 2, 0.001)
+                          ..rotateY(angle),
+                        child: showBack
+                            ? Transform(
+                                alignment: Alignment.center,
+                                transform: Matrix4.identity()..rotateY(3.14159),
+                                child: _WordCardBack(
+                                  word: word,
+                                  isDark: isDark,
+                                  onSpeak: () => _speakWord(word.word),
+                                  onTranslate: () => _handleTranslate(word),
+                                  isTranslating: _isTranslating,
+                                  translatedDefinition: _translatedDefinition,
+                                  translatedExample: _translatedExample,
+                                ),
+                              )
+                            : _WordCardFront(
+                                word: word,
+                                isDark: isDark,
+                                onSpeak: () => _speakWord(word.word),
+                                onTranslate: () => _handleTranslate(word),
+                                isTranslating: _isTranslating,
+                                translatedWord: _translatedWord,
+                              ),
+                      );
+                    },
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 40.h),
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 300),
-                  switchInCurve: Curves.easeOutCubic,
-                  switchOutCurve: Curves.easeInCubic,
-                  transitionBuilder: (child, animation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: ScaleTransition(
-                        scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: !_isFlipped
-                      ? _ActionButton(
-                          key: const ValueKey('flip_btn'),
-                          label: context.tr(
-                            'daily_words.show_definition',
-                            fallback: 'Show Definition',
-                          ),
-                          icon: Icons.visibility_rounded,
-                          color: const Color(0xFF6366F1),
-                          isDark: isDark,
-                          onTap: _toggleFlip,
-                        )
-                      : _ActionButton(
-                          key: const ValueKey('learned_btn'),
-                          label: context.tr(
-                            'daily_words.learned',
-                            fallback: 'Got it! Next Word',
-                          ),
-                          icon: Icons.verified_rounded,
-                          color: const Color(0xFF10B981),
-                          isDark: isDark,
-                          onTap: () => _markLearnedAndNext(word),
-                        ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-      ],
+          Padding(
+            padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 20.h),
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              switchInCurve: Curves.easeOutCubic,
+              switchOutCurve: Curves.easeInCubic,
+              transitionBuilder: (child, animation) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: ScaleTransition(
+                    scale: Tween<double>(begin: 0.95, end: 1.0).animate(animation),
+                    child: child,
+                  ),
+                );
+              },
+              child: !_isFlipped
+                  ? _ActionButton(
+                      key: const ValueKey('flip_btn'),
+                      label: context.tr(
+                        'daily_words.show_definition',
+                        fallback: 'Show Definition',
+                      ),
+                      icon: Icons.visibility_rounded,
+                      color: const Color(0xFF6366F1),
+                      isDark: isDark,
+                      onTap: _toggleFlip,
+                    )
+                  : _ActionButton(
+                      key: const ValueKey('learned_btn'),
+                      label: context.tr(
+                        'daily_words.learned',
+                        fallback: 'Got it! Next Word',
+                      ),
+                      icon: Icons.verified_rounded,
+                      color: const Color(0xFF10B981),
+                      isDark: isDark,
+                      onTap: () => _markLearnedAndNext(word),
+                    ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
