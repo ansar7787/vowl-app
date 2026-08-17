@@ -703,12 +703,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     )
                   : Row(
                       children: [
-                        ActionButton(
-                          label: 'Pronounce',
-                          icon: Icons.volume_up_rounded,
-                          color: const Color(0xFF6366F1),
-                          isDark: isDark,
-                          onTap: () => _speakWord(word.word),
+                        Expanded(
+                          child: ActionButton(
+                            label: 'Pronounce',
+                            icon: Icons.volume_up_rounded,
+                            color: const Color(0xFF6366F1),
+                            isDark: isDark,
+                            onTap: () => _speakWord(word.word),
+                          ),
                         ),
                         SizedBox(width: 12.w),
                         Expanded(
