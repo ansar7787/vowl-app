@@ -335,7 +335,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return PopScope(
-      canPop: false,
+      canPop: _imagePath == null,
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
         GameDialogHelper.showExitConfirmation(
@@ -468,6 +468,10 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
           color: _imagePath != null || isDark ? Colors.white : Colors.black87,
         ),
         onPressed: () {
+          if (_imagePath == null) {
+            context.pop();
+            return;
+          }
           GameDialogHelper.showExitConfirmation(
             context,
             title: context.tr(
