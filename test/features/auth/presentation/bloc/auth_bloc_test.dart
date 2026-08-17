@@ -34,6 +34,7 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 class FakeNoParams extends Fake implements NoParams {}
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   setUpAll(() {
     registerFallbackValue(const NoParams());
   });
@@ -137,3 +138,4 @@ void main() {
     );
   });
 }
+

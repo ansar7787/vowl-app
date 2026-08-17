@@ -32,7 +32,7 @@ void main() {
         ),
       );
 
-      final container = tester.widget<Container>(find.byType(Container));
+      final container = tester.widget<Container>(find.descendant(of: find.byType(GlassTile), matching: find.byType(Container)).first);
       final decoration = container.decoration as BoxDecoration;
       expect(decoration.borderRadius, equals(borderRadius));
     });
@@ -52,7 +52,7 @@ void main() {
         ),
       );
 
-      final container = tester.widget<Container>(find.byType(Container));
+      final container = tester.widget<Container>(find.descendant(of: find.byType(GlassTile), matching: find.byType(Container)).last);
       final decoration = container.decoration as BoxDecoration;
       expect(decoration.gradient, isA<LinearGradient>());
 

@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/domain/usecases/claim_level_milestone.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/notification_service.dart';
 
 class MockRepairStreak extends Mock implements RepairStreak {}
@@ -64,6 +65,7 @@ void main() {
     mockActivateDoubleXP = MockActivateDoubleXP();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
+    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')));
     mockNotificationService = MockNotificationService();
     mockRepairStreakFree = MockRepairStreakFree();
     mockPurchasePermanentXPBoost = MockPurchasePermanentXPBoost();
@@ -111,3 +113,5 @@ void main() {
     );
   });
 }
+
+

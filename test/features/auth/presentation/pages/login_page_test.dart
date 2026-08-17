@@ -61,13 +61,14 @@ void main() {
     addTearDown(tester.view.resetDevicePixelRatio);
 
     await tester.pumpWidget(createWidgetUnderTest());
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('Vowl'), findsOneWidget);
-    expect(find.text('Login to continue your adventure'), findsOneWidget);
-    expect(find.text('Email'), findsOneWidget);
-    expect(find.text('Password'), findsOneWidget);
-    expect(find.text('Login'), findsOneWidget);
+    expect(find.text('Welcome back! Your journey continues here.'), findsOneWidget);
+    expect(find.text('explorer@vowl.com'), findsOneWidget);
+    expect(find.text('Make it strong!'), findsOneWidget);
+    expect(find.text('Log In'), findsOneWidget);
     expect(find.text('Sign in with Google'), findsOneWidget);
   });
 
@@ -88,7 +89,8 @@ void main() {
     );
 
     await tester.pumpWidget(createWidgetUnderTest());
-    await tester.pumpAndSettle();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('Invalid credentials'), findsOneWidget);
   });

@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/domain/usecases/update_profile_picture.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class MockUpdateProfilePicture extends Mock implements UpdateProfilePicture {}
 
@@ -63,6 +64,7 @@ void main() {
     mockEquipKidsAccessory = MockEquipKidsAccessory();
     mockUpdateUser = MockUpdateUser();
     mockAuthBloc = MockAuthBloc();
+    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')));
     mockBuyKidsFurniture = MockBuyKidsFurniture();
     mockBuyVowlMascot = MockBuyVowlMascot();
     mockBuyVowlAccessory = MockBuyVowlAccessory();
@@ -113,3 +115,5 @@ void main() {
     );
   });
 }
+
+

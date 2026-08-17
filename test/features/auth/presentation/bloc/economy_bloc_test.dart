@@ -14,6 +14,7 @@ import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class MockUpdateUserCoins extends Mock implements UpdateUserCoins {}
 
@@ -68,6 +69,7 @@ void main() {
     mockAwardKidsCoins = MockAwardKidsCoins();
     mockUseHint = MockUseHint();
     mockAuthBloc = MockAuthBloc();
+    when(() => mockAuthBloc.state).thenReturn(AuthState.authenticated(UserEntity(id: '1', email: 'test@vowl.com')));
 
     bloc = EconomyBloc(
       updateUserCoins: mockUpdateUserCoins,
@@ -104,3 +106,5 @@ void main() {
     );
   });
 }
+
+
