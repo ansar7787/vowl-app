@@ -7,7 +7,6 @@ import 'package:shimmer/shimmer.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
