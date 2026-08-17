@@ -134,7 +134,9 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (_isTranslating) return;
 
     if (_translationUnlocked) {
+      setState(() => _isTranslating = true);
       await _performTranslation(word);
+      if (mounted) setState(() => _isTranslating = false);
       return;
     }
     
@@ -354,36 +356,41 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     ],
                   ),
                 ),
-                if ((context.watch<AuthBloc>().state.user?.currentStreak ?? 0) > 0)
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                Builder(
+                  builder: (context) {
+                    final streak = context.watch<AuthBloc>().state.user?.currentStreak ?? 0;
+                    if (streak == 0) return const SizedBox.shrink();
+                    return Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                        ),
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.local_fire_department_rounded,
-                          color: const Color(0xFFF59E0B),
-                          size: 16.r,
-                        ),
-                        SizedBox(width: 4.w),
-                        Text(
-                          '${context.watch<AuthBloc>().state.user?.currentStreak ?? 0}',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w900,
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.local_fire_department_rounded,
                             color: const Color(0xFFF59E0B),
+                            size: 16.r,
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
+                          SizedBox(width: 4.w),
+                          Text(
+                            '$streak',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFFF59E0B),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -625,7 +632,7 @@ class _WordCardFront extends StatelessWidget {
               ),
               maxLines: 1,
             ),
-            SizedBox(height: 48.h),
+            SizedBox(height: 32.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -683,126 +690,126 @@ class _WordCardBack extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              SizedBox(height: 10.h),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: AutoSizeText(
-                      word.word,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: const Color(0xFF6366F1),
+                SizedBox(height: 10.h),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: AutoSizeText(
+                        word.word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF6366F1),
+                        ),
+                        maxLines: 1,
                       ),
-                      maxLines: 1,
                     ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _TranslateButton(
-                    isTranslating: isTranslating,
-                    isTranslated: translatedDefinition != null,
-                    onTap: onTranslate,
-                  ),
-                  SizedBox(width: 8.w),
-                  _IconButton(
-                    icon: Icons.volume_up_rounded,
-                    onTap: onSpeak,
-                  ),
-                ],
-              ),
-              SizedBox(height: 20.h),
-              Divider(
-                color: isDark ? Colors.white12 : Colors.black12,
-                height: 1,
-              ),
-              SizedBox(height: 24.h),
-              // Definition
-              _SectionLabel(
-                label: context.tr(
-                  'daily_words.definition',
-                  fallback: 'Definition',
+                    SizedBox(width: 12.w),
+                    _TranslateButton(
+                      isTranslating: isTranslating,
+                      isTranslated: translatedDefinition != null,
+                      onTap: onTranslate,
+                    ),
+                    SizedBox(width: 8.w),
+                    _IconButton(
+                      icon: Icons.volume_up_rounded,
+                      onTap: onSpeak,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 8.h),
-              Text(
-                word.definition,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : const Color(0xFF1E293B),
-                  height: 1.5,
+                SizedBox(height: 20.h),
+                Divider(
+                  color: isDark ? Colors.white12 : Colors.black12,
+                  height: 1,
                 ),
-              ),
-              if (translatedDefinition != null) ...[
-                SizedBox(height: 6.h),
+                SizedBox(height: 24.h),
+                // Definition
+                _SectionLabel(
+                  label: context.tr(
+                    'daily_words.definition',
+                    fallback: 'Definition',
+                  ),
+                ),
+                SizedBox(height: 8.h),
                 Text(
-                  translatedDefinition!,
+                  word.definition,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 15.sp,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xFF10B981),
+                    color: isDark ? Colors.white : const Color(0xFF1E293B),
                     height: 1.5,
                   ),
                 ),
-              ],
-              SizedBox(height: 24.h),
-              // Example
-              _SectionLabel(
-                label: context.tr(
-                  'daily_words.example',
-                  fallback: 'Example',
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(14.r),
-                decoration: BoxDecoration(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.15),
+                if (translatedDefinition != null) ...[
+                  SizedBox(height: 6.h),
+                  Text(
+                    translatedDefinition!,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w600,
+                      color: const Color(0xFF10B981),
+                      height: 1.5,
+                    ),
+                  ),
+                ],
+                SizedBox(height: 24.h),
+                // Example
+                _SectionLabel(
+                  label: context.tr(
+                    'daily_words.example',
+                    fallback: 'Example',
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '"${word.example}"',
-                      style: TextStyle(
-                        fontFamily: 'Spectral',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        fontStyle: FontStyle.italic,
-                        color: isDark ? Colors.white70 : const Color(0xFF334155),
-                        height: 1.5,
-                      ),
+                SizedBox(height: 8.h),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(14.r),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.15),
                     ),
-                    if (translatedExample != null) ...[
-                      SizedBox(height: 8.h),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Text(
-                        '"${translatedExample!}"',
+                        '"${word.example}"',
                         style: TextStyle(
                           fontFamily: 'Spectral',
-                          fontSize: 14.sp,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                           fontStyle: FontStyle.italic,
-                          color: const Color(0xFF10B981),
+                          color: isDark ? Colors.white70 : const Color(0xFF334155),
                           height: 1.5,
                         ),
                       ),
+                      if (translatedExample != null) ...[
+                        SizedBox(height: 8.h),
+                        Text(
+                          '"${translatedExample!}"',
+                          style: TextStyle(
+                            fontFamily: 'Spectral',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FontStyle.italic,
+                            color: const Color(0xFF10B981),
+                            height: 1.5,
+                          ),
+                        ),
+                      ],
                     ],
-                  ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 40.h),
-            ],
+                SizedBox(height: 40.h),
+              ],
+            ),
           ),
-        ),
       ),
       ),
     );
