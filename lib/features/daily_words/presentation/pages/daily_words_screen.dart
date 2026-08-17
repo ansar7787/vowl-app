@@ -345,7 +345,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       'daily_words.flip_card',
                       fallback: 'Flip Card',
                     ),
-                    icon: Icons.360_rounded, // Better icon
+                    icon: Icons.flip_rounded, // Better icon
                     color: const Color(0xFF6366F1),
                     isDark: isDark,
                     onTap: _toggleFlip,
