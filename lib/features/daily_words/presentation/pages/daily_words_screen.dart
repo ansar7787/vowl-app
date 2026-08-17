@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -683,7 +683,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 );
               },
               child: !_isFlipped
-                  ? _ActionButton(
+                  ? ActionButton(
                       key: const ValueKey('flip_btn'),
                       label: context.tr(
                         'daily_words.show_definition',
@@ -694,16 +694,30 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       isDark: isDark,
                       onTap: _toggleFlip,
                     )
-                  : _ActionButton(
-                      key: const ValueKey('learned_btn'),
-                      label: context.tr(
-                        'daily_words.learned',
-                        fallback: 'Got it! Next Word',
-                      ),
-                      icon: Icons.verified_rounded,
-                      color: const Color(0xFF10B981),
-                      isDark: isDark,
-                      onTap: () => _markLearnedAndNext(word),
+                  : Row(
+                      children: [
+                        ActionButton(
+                          label: 'Pronounce',
+                          icon: Icons.volume_up_rounded,
+                          color: const Color(0xFF6366F1),
+                          isDark: isDark,
+                          onTap: () => _speakWord(word.word),
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: ActionButton(
+                            key: const ValueKey('learned_btn'),
+                            label: context.tr(
+                              'daily_words.learned',
+                              fallback: 'Got it! Next Word',
+                            ),
+                            icon: Icons.verified_rounded,
+                            color: const Color(0xFF10B981),
+                            isDark: isDark,
+                            onTap: () => _markLearnedAndNext(word),
+                          ),
+                        ),
+                      ],
                     ),
             ),
           ),

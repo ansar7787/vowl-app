@@ -14,7 +14,7 @@ class WordCardFront extends StatelessWidget {
   final bool isTranslating;
   final String? translatedWord;
 
-  const WordCardFront({
+  const WordCardFront({super.key, 
     required this.word,
     required this.isDark,
     required this.onSpeak,
@@ -118,7 +118,7 @@ class WordCardBack extends StatelessWidget {
   final String? translatedDefinition;
   final String? translatedExample;
 
-  const WordCardBack({
+  const WordCardBack({super.key, 
     required this.word,
     required this.isDark,
     required this.onSpeak,
@@ -328,13 +328,13 @@ class PulsingIcon extends StatefulWidget {
   final IconData icon;
   final Color color;
 
-  const PulsingIcon({super.key, required this.icon, required this.color});
+  const PulsingIcon({super.key, super.key, required this.icon, required this.color});
 
   @override
-  State<_PulsingIcon> createState() => _PulsingIconState();
+  State<PulsingIcon> createState() => _PulsingIconState();
 }
 
-class PulsingIconState extends State<_PulsingIcon>
+class PulsingIconState extends State<PulsingIcon>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
@@ -372,7 +372,7 @@ class DailyWordsIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
 
-  const DailyWordsIconButton({
+  const DailyWordsIconButton({super.key, 
     required this.icon,
     required this.onTap,
   });
@@ -400,7 +400,7 @@ class DailyWordsIconButton extends StatelessWidget {
 
 class SectionLabel extends StatelessWidget {
   final String label;
-  const SectionLabel({required this.label});
+  const SectionLabel({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -481,7 +481,7 @@ class ActionButton extends StatelessWidget {
 class DailyWordsErrorView extends StatelessWidget {
   final String message;
 
-  const DailyWordsErrorView({required this.message});
+  const DailyWordsErrorView({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -523,7 +523,7 @@ class SessionCompleteView extends StatelessWidget {
   final int totalLearned;
   final int day;
 
-  const SessionCompleteView({
+  const SessionCompleteView({super.key, 
     required this.streak,
     required this.totalLearned,
     required this.day,
