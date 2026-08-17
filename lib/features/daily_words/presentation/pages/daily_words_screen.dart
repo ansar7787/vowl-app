@@ -152,7 +152,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                 ),
                 SizedBox(height: 24.h),
                 Text(
-                  context.tr('daily_words.halfway_title', fallback: 'You\'re on fire! 🔥'),
+                  context.tr('daily_words.halfway_title', fallback: 'You\'re on fire!'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 28.sp,
@@ -167,7 +167,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                   child: Text(
                     context.tr(
                       'daily_words.halfway_desc',
-                      fallback: 'You\'ve completed your 5 free words.\nWatch a quick ad to unlock the rest of today\'s lesson, or upgrade to Premium for an ad-free experience!',
+                      fallback: 'Unlock the final 5 words with a quick ad, or go Premium for an ad-free experience.',
                     ),
                     textAlign: TextAlign.center,
                     style: TextStyle(
