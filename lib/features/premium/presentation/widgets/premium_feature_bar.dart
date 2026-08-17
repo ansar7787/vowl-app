@@ -18,6 +18,21 @@ class ModernFeatureBar extends StatelessWidget {
       children: [
         _buildFeatureCard(
           context,
+          icon: LucideIcons.bookOpen,
+          title: context.tr(
+            'premium.feature_daily_words',
+            fallback: '10,000 Daily Words',
+          ),
+          subtitle: context.tr(
+            'premium.feature_daily_words_desc',
+            fallback: 'Unlock the ultimate word bank with zero ad interruptions.',
+          ),
+          isDark: isDark,
+          customColor: const Color(0xFF3B82F6), // Blue
+        ),
+        SizedBox(height: 12.h),
+        _buildFeatureCard(
+          context,
           icon: LucideIcons.camera,
           title: context.tr(
             'premium.feature_photo_vocab',
@@ -53,11 +68,11 @@ class ModernFeatureBar extends StatelessWidget {
           icon: LucideIcons.sparkles,
           title: context.tr(
             'premium.feature_translations',
-            fallback: 'Instant AI Translations',
+            fallback: 'Offline AI Translations',
           ),
           subtitle: context.tr(
             'premium.feature_translations_desc',
-            fallback: 'Ad-free, real-time native hints powered by AI.',
+            fallback: 'Zero-lag, 100% offline native hints across all modules.',
           ),
           isDark: isDark,
           customColor: const Color(0xFFF43F5E), // Rose

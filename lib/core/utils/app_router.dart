@@ -16,6 +16,8 @@ import 'package:vowl/features/auth/auth_routes.dart';
 import 'package:vowl/features/kids_zone/kids_routes.dart';
 import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
+import 'package:vowl/features/daily_words/daily_words_routes.dart';
+import 'package:vowl/features/translation/translation_routes.dart';
 
 class AppRouter {
   AppRouter._(); // Non-instantiable.
@@ -32,6 +34,7 @@ class AppRouter {
   static const String signupRoute = '/signup';
   static const String premiumRoute = '/premium';
   static const String profileRoute = '/profile';
+  static const String progressDashboardRoute = '/progress-dashboard';
   static const String adminRoute = '/admin';
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
@@ -50,6 +53,12 @@ class AppRouter {
   static const String questSequenceRoute = '/quest-sequence';
   static const String scanAndLearnRoute = '/scan-and-learn';
   static const String photoVocabularyRoute = '/photo-vocabulary';
+  // Daily Words
+  static const String dailyWordsRoute = DailyWordsRoutes.dailyWordsRoute;
+  static const String wordBankRoute = DailyWordsRoutes.wordBankRoute;
+  
+  // Translation
+  static const String translateRoute = '/translate';
 
   // ── Kids Zone routes ──────────────────────────────────────────────────────
 
@@ -115,6 +124,8 @@ class AppRouter {
       ...KidsRoutes.routes,
       ...GameRoutes.routes,
       ...HomeRoutes.routes,
+      ...DailyWordsRoutes.routes,
+      ...translationRoutes,
     ],
     // FIX (HIGH-6): Replace bare Text with an actionable error page that
     // gives the user a path back to safety instead of a dead-end screen.

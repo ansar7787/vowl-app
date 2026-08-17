@@ -231,6 +231,29 @@ class TranslationService {
     return null;
   }
 
+  /// Returns a list of language names that are currently downloaded on the device.
+  Future<List<String>> getDownloadedLanguageNames() async {
+    final downloaded = <String>[];
+    for (final entry in supportedLanguages.entries) {
+      if (await _modelManager.isModelDownloaded(entry.value.bcpCode)) {
+        downloaded.add(entry.key);
+      }
+    }
+    return downloaded;
+  }
+
+  /// Deletes the ML model for a specific language to free up storage space.
+  Future<void> deleteLanguageModel(String languageName) async {
+    final target = supportedLanguages[languageName];
+    if (target != null) {
+      await _modelManager.deleteModel(target.bcpCode);
+      if (_currentTargetLanguage == target) {
+        await _translator?.close();
+        _translator = null;
+      }
+    }
+  }
+
   Future<void> dispose() async {
     await _translator?.close();
     _translator = null;

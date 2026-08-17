@@ -29,6 +29,7 @@ import 'package:vowl/core/utils/subscription_plans_service.dart';
 import 'package:vowl/core/utils/coin_packs_service.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/features/daily_words/data/services/daily_words_service.dart';
 import 'package:vowl/core/utils/ml_services/language_id_service.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_services/text_recognition_service.dart';
@@ -156,6 +157,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
   sl.registerLazySingleton<LocaleService>(() => LocaleService());
+  sl.registerLazySingleton<DailyWordsService>(() => DailyWordsService());
   sl.registerLazySingleton<LanguageIdService>(
     () => LanguageIdService(),
     dispose: (service) => service.dispose(),

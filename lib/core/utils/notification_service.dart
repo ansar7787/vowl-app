@@ -75,6 +75,7 @@ class NotificationService {
   static const int weeklyMotivationNotificationId = 202;
   static const int leaderboardNotificationId = 303;
   static const int milestoneNotificationId = 404;
+  static const int dailyWordsReminderNotificationId = 505;
   static const int maxLocalNotificationModulo = 100000;
 
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
@@ -699,6 +700,89 @@ class NotificationService {
         ),
       ];
       return options[_idRandom.nextInt(options.length)];
+    }
+  }
+
+  /// SCHEDULES DAILY WORDS REMINDER
+  ///
+  /// Timing: 9:00 AM local time — morning routine.
+  Future<void> scheduleDailyWordsReminder() async {
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) {
+      await _localNotifications.cancel(id: dailyWordsReminderNotificationId);
+      return;
+    }
+
+    await _localNotifications.cancel(id: dailyWordsReminderNotificationId);
+
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+          mainChannelId,
+          'Main Notifications',
+          channelDescription: 'Used for game updates and daily words',
+          importance: Importance.max,
+          priority: Priority.high,
+        );
+
+    const DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: true,
+    );
+
+    const NotificationDetails platformDetails = NotificationDetails(
+      android: androidDetails,
+      iOS: iosDetails,
+    );
+
+    bool useExact = true;
+    if (Platform.isAndroid) {
+      useExact = await Permission.scheduleExactAlarm.isGranted;
+    }
+
+    if (!_timezoneInitialized) {
+      int retry = 0;
+      while (!_timezoneInitialized && retry < 10) {
+        await Future.delayed(const Duration(milliseconds: 200));
+        retry++;
+      }
+    }
+
+    final location = _currentLocation;
+    final now = tz.TZDateTime.now(location);
+    // Anchor to 9:00 AM local time
+    var scheduledDate = tz.TZDateTime(
+      location,
+      now.year,
+      now.month,
+      now.day,
+      9, // 9 AM
+      0, // 0 mins
+    );
+
+    // If it's already past 9:00 AM today, schedule for tomorrow
+    if (scheduledDate.isBefore(now)) {
+      scheduledDate = scheduledDate.add(const Duration(days: 1));
+    }
+
+    await _localNotifications.zonedSchedule(
+      id: dailyWordsReminderNotificationId,
+      title: _t('notifications.daily_words_title', fallback: 'Your 10 words are ready! 📚'),
+      body: _t(
+        'notifications.daily_words_body',
+        fallback: 'Only takes 2 minutes. Tap to unlock today\'s vocabulary.',
+      ),
+      scheduledDate: scheduledDate,
+      notificationDetails: platformDetails,
+      androidScheduleMode: useExact
+          ? AndroidScheduleMode.exactAllowWhileIdle
+          : AndroidScheduleMode.inexactAllowWhileIdle,
+      matchDateTimeComponents: DateTimeComponents.time,
+      payload: AppRouter.dailyWordsRoute,
+    );
+
+    if (kDebugMode) {
+      debugPrint('Scheduled daily words reminder for 9:00 AM local time');
     }
   }
 

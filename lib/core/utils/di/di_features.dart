@@ -82,6 +82,10 @@ import 'package:vowl/features/elite_mastery/data/repositories/elite_mastery_repo
 import 'package:vowl/features/elite_mastery/domain/usecases/get_elite_mastery_quests.dart';
 import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc.dart';
 
+// Translation
+import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
+
 // Shared use cases
 import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
@@ -109,6 +113,7 @@ void initFeatures(GetIt sl) {
   _initVocabulary(sl);
   _initKidsZone(sl);
   _initEliteMastery(sl);
+  _initTranslation(sl);
 }
 
 // ── Reading ───────────────────────────────────────────────────────────────────
@@ -455,5 +460,13 @@ void _initEliteMastery(GetIt sl) {
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),
     ),
+  );
+}
+
+// ── Translation ─────────────────────────────────────────────────────────────
+
+void _initTranslation(GetIt sl) {
+  sl.registerFactory<TranslationBloc>(
+    () => TranslationBloc(service: sl<TranslationService>()),
   );
 }

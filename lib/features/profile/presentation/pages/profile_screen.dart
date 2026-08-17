@@ -153,6 +153,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: ProfileBentoStats(user: user),
                           ),
+                          SizedBox(height: 16.h),
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: ProfileFeatureCard(
+                              iconContent: Icon(
+                                Icons.analytics_rounded,
+                                color: Colors.white,
+                                size: 24.r,
+                              ),
+                              color: const Color(0xFF10B981), // Emerald
+                              shadowColor: const Color(0xFF059669),
+                              title: context.tr(
+                                'profile.progress_dashboard',
+                                fallback: 'Progress Dashboard',
+                              ),
+                              subtitle: context.tr(
+                                'profile.progress_dashboard_subtitle',
+                                fallback: 'View streaks, radars, and weak areas.',
+                              ),
+                              onTap: () {
+                                di.sl<HapticService>().selection();
+                                context.push(AppRouter.progressDashboardRoute);
+                              },
+                            ),
+                          ),
 
                           SizedBox(height: 40.h),
                           Padding(

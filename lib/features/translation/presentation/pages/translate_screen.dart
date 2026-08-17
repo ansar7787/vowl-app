@@ -1,0 +1,421 @@
+import 'dart:async';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/translation_service.dart';
+import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
+import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
+
+class TranslateScreen extends StatefulWidget {
+  const TranslateScreen({super.key});
+
+  @override
+  State<TranslateScreen> createState() => _TranslateScreenState();
+}
+
+class _TranslateScreenState extends State<TranslateScreen> {
+  final TextEditingController _inputController = TextEditingController();
+  final HapticService _haptics = di.sl<HapticService>();
+  Timer? _debounce;
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<TranslationBloc>().add(TranslationInitRequested());
+  }
+
+  @override
+  void dispose() {
+    _debounce?.cancel();
+    _inputController.dispose();
+    super.dispose();
+  }
+
+  void _onInputChanged(String text) {
+    if (_debounce?.isActive ?? false) _debounce!.cancel();
+    _debounce = Timer(const Duration(milliseconds: 500), () {
+      context.read<TranslationBloc>().add(TranslationTextChanged(text));
+    });
+  }
+
+  void _showLanguagePicker(BuildContext context, bool isDark) {
+    _haptics.selection();
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (ctx) => _LanguagePickerSheet(
+        isDark: isDark,
+        onSelected: (lang) {
+          context.read<TranslationBloc>().add(TranslationLanguageChanged(lang));
+          Navigator.pop(ctx);
+        },
+      ),
+    );
+  }
+
+  void _showLanguageManager(BuildContext context, bool isDark) {
+    _haptics.selection();
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (ctx) => BlocProvider.value(
+        value: context.read<TranslationBloc>(),
+        child: LanguageManagerSheet(isDark: isDark),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Scaffold(
+      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      body: Stack(
+        children: [
+          const MeshGradientBackground(showLetters: false),
+          SafeArea(
+            child: Column(
+              children: [
+                _buildHeader(context, isDark),
+                Expanded(
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                    physics: const BouncingScrollPhysics(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SizedBox(height: 24.h),
+                        _buildLanguageSelector(context, isDark),
+                        SizedBox(height: 24.h),
+                        _buildInputArea(context, isDark),
+                        SizedBox(height: 24.h),
+                        _buildOutputArea(context, isDark),
+                        SizedBox(height: 48.h),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHeader(BuildContext context, bool isDark) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 16.h),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () => context.pop(),
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+            ),
+          ),
+          SizedBox(width: 8.w),
+          Expanded(
+            child: AutoSizeText(
+              context.tr('translation.title', fallback: 'Translate'),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+              ),
+              maxLines: 1,
+            ),
+          ),
+          IconButton(
+            onPressed: () => _showLanguageManager(context, isDark),
+            icon: Icon(
+              Icons.settings_rounded,
+              color: isDark ? Colors.white70 : const Color(0xFF64748B),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLanguageSelector(BuildContext context, bool isDark) {
+    return BlocBuilder<TranslationBloc, TranslationState>(
+      builder: (context, state) {
+        final lang = state.currentTargetLanguage ?? 'Select Language';
+        return GestureDetector(
+          onTap: () => _showLanguagePicker(context, isDark),
+          child: GlassTile(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.language_rounded,
+                  color: const Color(0xFF6366F1),
+                  size: 24.r,
+                ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'English →',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                        ),
+                      ),
+                      SizedBox(height: 2.h),
+                      AutoSizeText(
+                        lang,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: isDark ? Colors.white54 : const Color(0xFF94A3B8),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildInputArea(BuildContext context, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(20.r),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'ENGLISH',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w800,
+                  color: const Color(0xFF6366F1),
+                  letterSpacing: 1.2,
+                ),
+              ),
+              if (_inputController.text.isNotEmpty)
+                GestureDetector(
+                  onTap: () {
+                    _inputController.clear();
+                    context.read<TranslationBloc>().add(const TranslationTextChanged(''));
+                    _haptics.light();
+                  },
+                  child: Icon(
+                    Icons.close_rounded,
+                    color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+                    size: 18.r,
+                  ),
+                ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+          TextField(
+            controller: _inputController,
+            onChanged: _onInputChanged,
+            maxLines: 5,
+            minLines: 3,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w500,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+            ),
+            decoration: InputDecoration(
+              hintText: 'Type something to translate...',
+              hintStyle: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
+              ),
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.zero,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildOutputArea(BuildContext context, bool isDark) {
+    return BlocBuilder<TranslationBloc, TranslationState>(
+      builder: (context, state) {
+        return GlassTile(
+          padding: EdgeInsets.all(20.r),
+          borderColor: const Color(0xFF10B981).withValues(alpha: 0.3),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    state.currentTargetLanguage?.toUpperCase() ?? 'TRANSLATION',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w800,
+                      color: const Color(0xFF10B981),
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  if (state.isModelDownloading)
+                    SizedBox(
+                      width: 14.r,
+                      height: 14.r,
+                      child: const CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: Color(0xFF10B981),
+                      ),
+                    ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              if (state.errorMessage != null && state.errorMessage!.isNotEmpty)
+                Text(
+                  state.errorMessage!,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 14.sp,
+                    color: const Color(0xFFEF4444),
+                  ),
+                )
+              else if (state.isModelDownloading)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Downloading offline language pack (~30MB)...',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        color: isDark ? Colors.white70 : const Color(0xFF64748B),
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    LinearProgressIndicator(
+                      backgroundColor: isDark ? Colors.white10 : const Color(0xFFE2E8F0),
+                      valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF10B981)),
+                    ),
+                  ],
+                )
+              else
+                SelectableText(
+                  state.translatedText.isEmpty
+                      ? 'Translation will appear here.'
+                      : state.translatedText,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w500,
+                    color: state.translatedText.isEmpty
+                        ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
+                        : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                  ),
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _LanguagePickerSheet extends StatelessWidget {
+  final bool isDark;
+  final Function(String) onSelected;
+
+  const _LanguagePickerSheet({
+    required this.isDark,
+    required this.onSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final languages = TranslationService.supportedLanguages.keys.toList()..sort();
+
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.7,
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: 12.h),
+          Container(
+            width: 40.w,
+            height: 4.h,
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white24 : const Color(0xFFCBD5E1),
+              borderRadius: BorderRadius.circular(2.r),
+            ),
+          ),
+          SizedBox(height: 20.h),
+          Text(
+            'Select Target Language',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 20.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+            ),
+          ),
+          SizedBox(height: 16.h),
+          Expanded(
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: languages.length,
+              itemBuilder: (context, index) {
+                final lang = languages[index];
+                return ListTile(
+                  title: Text(
+                    lang,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                    ),
+                  ),
+                  onTap: () => onSelected(lang),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

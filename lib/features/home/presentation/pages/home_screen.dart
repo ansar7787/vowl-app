@@ -27,6 +27,8 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
+import 'package:vowl/features/home/presentation/widgets/daily_words_home_card.dart';
+import 'package:vowl/features/home/presentation/widgets/translation_home_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -221,6 +223,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               InlineNotificationCard(
                                 streak: user.currentStreak,
                               ),
+                              SizedBox(height: 12.h),
+                              DailyWordsHomeCard(isDark: isDark),
+                              SizedBox(height: 14.h),
+                              TranslationHomeCard(isDark: isDark),
+                              SizedBox(height: 14.h),
                               GlobalProgressCard(
                                 user: user,
                                 globalRank: _globalRank,
