@@ -303,13 +303,13 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
-          toolbarHeight: 60.h,
+          toolbarHeight: 70.h,
           backgroundColor: Colors.transparent,
           elevation: 0,
           pinned: true,
-          leadingWidth: 70.w,
+          leadingWidth: 64.w,
           leading: Padding(
-            padding: EdgeInsets.only(left: 20.w, top: 10.h, bottom: 10.h),
+            padding: EdgeInsets.only(left: 20.w, top: 12.h, bottom: 12.h),
             child: GestureDetector(
               onTap: () {
                 di.sl<HapticService>().light();
@@ -330,19 +330,77 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
               ),
             ),
           ),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Lesson ${state.currentDay}',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                ),
+              ),
+              if (state.wordSet != null)
+                Text(
+                  state.wordSet!.theme,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w600,
+                    color: const Color(0xFF6366F1),
+                  ),
+                ),
+            ],
+          ),
+          actions: [
+            if ((context.watch<AuthBloc>().state.user?.currentStreak ?? 0) > 0)
+              Padding(
+                padding: EdgeInsets.only(right: 24.w),
+                child: Center(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.local_fire_department_rounded,
+                          color: const Color(0xFFF59E0B),
+                          size: 16.r,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          '${context.watch<AuthBloc>().state.user?.currentStreak ?? 0}',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            color: const Color(0xFFF59E0B),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+          ],
         ),
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(top: 10.h),
-            child: _DailyWordsHeader(
-              day: state.currentDay,
-              streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
+            child: _DailyWordsProgressBar(
               progress: state.totalWords > 0
                   ? (state.currentIndex + 1) / state.totalWords
                   : 0,
               currentIndex: state.currentIndex + 1,
               totalWords: state.totalWords,
-              theme: state.wordSet?.theme ?? '',
             ),
           ),
         ),
@@ -446,21 +504,15 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 // WIDGETS
 // ═══════════════════════════════════════════════════════════════════════════════
 
-class _DailyWordsHeader extends StatelessWidget {
-  final int day;
-  final int streak;
+class _DailyWordsProgressBar extends StatelessWidget {
   final double progress;
   final int currentIndex;
   final int totalWords;
-  final String theme;
 
-  const _DailyWordsHeader({
-    required this.day,
-    required this.streak,
+  const _DailyWordsProgressBar({
     required this.progress,
     required this.currentIndex,
     required this.totalWords,
-    required this.theme,
   });
 
   @override
@@ -469,98 +521,34 @@ class _DailyWordsHeader extends StatelessWidget {
     
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(
+      child: Row(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Lesson $day',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    ),
-                  ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    theme,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF6366F1),
-                    ),
-                  ),
-                ],
-              ),
-              if (streak > 0)
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(16.r),
-                    border: Border.all(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.local_fire_department_rounded,
-                        color: const Color(0xFFF59E0B),
-                        size: 16.r,
-                      ),
-                      SizedBox(width: 4.w),
-                      Text(
-                        '$streak',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFFF59E0B),
-                        ),
-                      ),
-                    ],
-                  ),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.r),
+              child: LinearProgressIndicator(
+                value: progress,
+                minHeight: 8.h,
+                backgroundColor: isDark
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : const Color(0xFFE2E8F0),
+                valueColor: const AlwaysStoppedAnimation<Color>(
+                  Color(0xFF6366F1),
                 ),
-            ],
+              ),
+            ),
           ),
-          SizedBox(height: 20.h),
-          Row(
-            children: [
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 8.h,
-                    backgroundColor: isDark
-                        ? Colors.white.withValues(alpha: 0.1)
-                        : const Color(0xFFE2E8F0),
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      Color(0xFF6366F1),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Text(
-                '$currentIndex / $totalWords',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w800,
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.7)
-                      : const Color(0xFF64748B),
-                ),
-              ),
-            ],
+          SizedBox(width: 12.w),
+          Text(
+            '$currentIndex / $totalWords',
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.7)
+                  : const Color(0xFF64748B),
+            ),
           ),
         ],
       ),
