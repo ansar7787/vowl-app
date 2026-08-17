@@ -671,13 +671,18 @@ class _WordCardBack extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassTile(
       padding: EdgeInsets.zero,
-      child: Padding(
-        padding: EdgeInsets.all(24.r),
+      child: RawScrollbar(
+        thumbColor: isDark ? Colors.white30 : Colors.black26,
+        radius: Radius.circular(8.r),
+        thickness: 6.w,
+        padding: EdgeInsets.all(6.r),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          child: Padding(
+            padding: EdgeInsets.all(24.r),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               SizedBox(height: 10.h),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
