@@ -817,37 +817,85 @@ class _TranslateButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: isTranslated ? null : onTap,
-      child: Container(
+      onTap: isTranslated || isTranslating ? null : onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
         width: 44.r,
         height: 44.r,
         decoration: BoxDecoration(
           color: isTranslated 
               ? const Color(0xFF10B981)
-              : const Color(0xFF10B981).withValues(alpha: 0.15),
+              : const Color(0xFF10B981).withValues(alpha: isTranslating ? 0.05 : 0.15),
           shape: BoxShape.circle,
           border: Border.all(
-            color: const Color(0xFF10B981).withValues(alpha: isTranslated ? 1.0 : 0.3),
+            color: const Color(0xFF10B981).withValues(alpha: isTranslated ? 1.0 : (isTranslating ? 0.1 : 0.3)),
           ),
         ),
         child: Center(
-          child: isTranslating
-              ? SizedBox(
-                  width: 18.r,
-                  height: 18.r,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      isTranslated ? Colors.white : const Color(0xFF10B981),
-                    ),
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 300),
+            transitionBuilder: (child, animation) => ScaleTransition(
+              scale: Tween<double>(begin: 0.8, end: 1.0).animate(animation),
+              child: FadeTransition(opacity: animation, child: child),
+            ),
+            child: isTranslating
+                ? _PulsingIcon(
+                    key: const ValueKey('translating'),
+                    icon: Icons.g_translate_rounded,
+                    color: const Color(0xFF10B981),
+                  )
+                : Icon(
+                    isTranslated ? Icons.check_rounded : Icons.g_translate_rounded,
+                    key: ValueKey(isTranslated ? 'check' : 'translate'),
+                    color: isTranslated ? Colors.white : const Color(0xFF10B981),
+                    size: 20.r,
                   ),
-                )
-              : Icon(
-                  isTranslated ? Icons.check_rounded : Icons.g_translate_rounded,
-                  color: isTranslated ? Colors.white : const Color(0xFF10B981),
-                  size: 20.r,
-                ),
+          ),
         ),
+      ),
+    );
+  }
+}
+
+class _PulsingIcon extends StatefulWidget {
+  final IconData icon;
+  final Color color;
+
+  const _PulsingIcon({super.key, required this.icon, required this.color});
+
+  @override
+  State<_PulsingIcon> createState() => _PulsingIconState();
+}
+
+class _PulsingIconState extends State<_PulsingIcon>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 600),
+    )..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: Tween<double>(begin: 0.3, end: 1.0).animate(
+        CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+      ),
+      child: Icon(
+        widget.icon,
+        color: widget.color,
+        size: 20.r,
       ),
     );
   }
