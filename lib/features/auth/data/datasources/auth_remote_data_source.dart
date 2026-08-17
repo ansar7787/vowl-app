@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:google_sign_in/google_sign_in.dart' as gsignin;
 import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 /// Data source interface handling direct backend network API integrations for
 /// authentication.
@@ -106,12 +108,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     // document on the next read if it's still missing.
     try {
       await _firestore.collection('users').doc(newUser.id).set(newUser.toMap());
-    } catch (e) {
-      if (kDebugMode) {
-        debugPrint(
-          'AuthRemoteDataSource: Firestore provisioning write after signUp failed: $e',
-        );
-      }
+    } catch (e, stack) {
+      di.sl<AppLogger>().error(
+        'AuthRemoteDataSource: Firestore provisioning write after signUp failed: $e',
+        error: e,
+        stackTrace: stack,
+        tag: 'AuthRemoteDataSource',
+      );
     }
 
     return newUser;
@@ -156,11 +159,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // If the Firestore fetch fails (e.g., offline), fall through to the
       // minimal model. The persistent stream in AuthRepositoryImpl will
       // deliver the full profile once connectivity is restored.
-      if (kDebugMode) {
-        debugPrint(
-          'AuthRemoteDataSource: Firestore fetch after email login failed: $e',
-        );
-      }
+      di.sl<AppLogger>().warning(
+        'AuthRemoteDataSource: Firestore fetch after email login failed: $e',
+        tag: 'AuthRemoteDataSource',
+      );
     }
 
     // Fallback: return a minimal model built from auth credentials only.
@@ -233,12 +235,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // write error and leave the caller unsure whether sign-in worked.
       try {
         await userDocRef.set(newUser.toMap());
-      } catch (e) {
-        if (kDebugMode) {
-          debugPrint(
-            'AuthRemoteDataSource: Firestore provisioning write after Google sign-in failed: $e',
-          );
-        }
+      } catch (e, stack) {
+        di.sl<AppLogger>().error(
+          'AuthRemoteDataSource: Firestore provisioning write after Google sign-in failed: $e',
+          error: e,
+          stackTrace: stack,
+          tag: 'AuthRemoteDataSource',
+        );
       }
     }
 
@@ -257,11 +260,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     try {
       await _googleSignIn.signOut();
     } catch (e) {
-      if (kDebugMode) {
-        debugPrint(
-          'AuthRemoteDataSource: Google sign-out failed (non-critical): $e',
-        );
-      }
+      di.sl<AppLogger>().warning(
+        'AuthRemoteDataSource: Google sign-out failed (non-critical): $e',
+        tag: 'AuthRemoteDataSource',
+      );
     }
 
     // Firebase Auth sign-out must always succeed; propagate any exception.

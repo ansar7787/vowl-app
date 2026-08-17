@@ -131,7 +131,9 @@ class _FullErrorScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
-                    minHeight: constraints.maxHeight - 48.h,
+                    minHeight: constraints.maxHeight.isFinite
+                        ? constraints.maxHeight - 48.h
+                        : 300.h, // Fallback for infinite constraints
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -1,9 +1,11 @@
-import 'package:flutter/foundation.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/speaking/data/models/speaking_quest_model.dart';
+import 'package:vowl/core/utils/app_logger.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 abstract class SpeakingRemoteDataSource {
   Future<List<SpeakingQuestModel>> getSpeakingQuest({
@@ -38,8 +40,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
               ),
             );
           } catch (e, stack) {
-            debugPrint('Error parsing speaking quest from local assets: $e');
-            debugPrint(stack.toString());
+            di.sl<AppLogger>().error(
+              'Error parsing speaking quest from local assets: $e',
+              error: e,
+              stackTrace: stack,
+              tag: 'SpeakingRemoteDataSource',
+            );
           }
         }
         if (quests.isNotEmpty) return quests;
@@ -94,10 +100,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
                   ),
                 );
               } catch (e, stack) {
-                debugPrint(
+                di.sl<AppLogger>().error(
                   'Error parsing speaking quest item from Firestore list: $e',
+                  error: e,
+                  stackTrace: stack,
+                  tag: 'SpeakingRemoteDataSource',
                 );
-                debugPrint(stack.toString());
               }
             }
           }
@@ -122,8 +130,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         );
       }
     } on FirebaseException catch (e, stack) {
-      debugPrint('Firestore error in getSpeakingQuest: $e');
-      debugPrint(stack.toString());
+      di.sl<AppLogger>().error(
+        'Firestore error in getSpeakingQuest: $e',
+        error: e,
+        stackTrace: stack,
+        tag: 'SpeakingRemoteDataSource',
+      );
       throw ServerException(
         e.message ?? 'Firestore database query failed.',
         e.code,
@@ -131,8 +143,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         e,
       );
     } catch (e, stack) {
-      debugPrint('Unexpected error in getSpeakingQuest: $e');
-      debugPrint(stack.toString());
+      di.sl<AppLogger>().error(
+        'Unexpected error in getSpeakingQuest: $e',
+        error: e,
+        stackTrace: stack,
+        tag: 'SpeakingRemoteDataSource',
+      );
       if (e is ServerException) rethrow;
       throw ServerException(e.toString());
     }
