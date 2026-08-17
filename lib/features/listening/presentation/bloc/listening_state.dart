@@ -3,6 +3,27 @@ import '../../domain/entities/listening_quest.dart';
 
 import 'package:vowl/core/presentation/bloc/game_state_base.dart';
 
+/// Represents the status of the current question's answer submission.
+/// Replaces the previous `bool? lastAnswerCorrect` tri-state.
+enum AnswerStatus {
+  unanswered,
+  correct,
+  incorrect;
+
+  bool get isAnswered => this != AnswerStatus.unanswered;
+
+  bool? get asBoolOrNull {
+    switch (this) {
+      case AnswerStatus.unanswered:
+        return null;
+      case AnswerStatus.correct:
+        return true;
+      case AnswerStatus.incorrect:
+        return false;
+    }
+  }
+}
+
 /// All possible states emitted by [ListeningBloc].
 abstract class ListeningState extends Equatable implements GameStateBase {
   const ListeningState();
@@ -32,12 +53,12 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
   @override
   final int livesRemaining;
 
-  /// `null` = unanswered · `true` = correct · `false` = wrong.
-  ///
-  /// This field is **always replaced** by [copyWith] — pass `null` explicitly
-  /// to clear it (retry state). No sentinel object is required.
+  /// Replaces `lastAnswerCorrect`. Defaults to `unanswered`.
+  final AnswerStatus answerStatus;
+
+  /// Legacy accessor for backward compatibility in parts of the UI layer.
   @override
-  final bool? lastAnswerCorrect;
+  bool? get lastAnswerCorrect => answerStatus.asBoolOrNull;
 
   @override
   final bool hintUsed;
@@ -61,7 +82,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
-    this.lastAnswerCorrect,
+    this.answerStatus = AnswerStatus.unanswered,
     this.hintUsed = false,
     this.wrongCount = 0,
     this.isFinalFailure = false,
@@ -72,7 +93,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
     quests,
     currentIndex,
     livesRemaining,
-    lastAnswerCorrect,
+    answerStatus,
     hintUsed,
     wrongCount,
     isFinalFailure,
@@ -82,7 +103,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
     List<ListeningQuest>? quests,
     int? currentIndex,
     int? livesRemaining,
-    bool? lastAnswerCorrect,
+    AnswerStatus? answerStatus,
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
@@ -91,7 +112,7 @@ class ListeningLoaded extends ListeningState implements GameLoadedState {
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect, // intentional: always replaced
+      answerStatus: answerStatus ?? AnswerStatus.unanswered,
       hintUsed: hintUsed ?? this.hintUsed,
       wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,

@@ -164,18 +164,18 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
           // Detect a life-restore (lives increased, e.g. 0 → 1).
           final isLifeRestored =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
           if (isNewQuestion || isRetry || isLifeRestored) {
             _resetForNextQuestion(state.currentIndex);
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             // Bloc already knows the result; sync local state.
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
 

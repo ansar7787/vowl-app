@@ -105,25 +105,25 @@ class StoryServiceImpl implements StoryService {
 
     // Listening
     'ambientId':
-        "Soundscape Discovery. Identify the subtle sounds hidden in your environment.",
+        "Listen closely to the background! Identifying everyday sounds helps you build real-world situational awareness.",
     'audioFillBlanks':
-        "The Missing Link. Hear the gaps and complete the message with total accuracy.",
+        "Let's train your ears to catch every single word. Listen to the sentence and type out what you hear!",
     'audioMultipleChoice':
-        "Selective Hearing. Identify the true message amidst a sea of options.",
+        "Listening to a native speaker can be tricky! Let's practice picking out the exact message from the audio.",
     'audioSentenceOrder':
-        "The Rhythm of Story. Reconstruct the sequence of sounds into a narrative.",
+        "Can you follow the flow of the conversation? Listen and put the sentences back in the order they were spoken.",
     'audioTrueFalse':
-        "Fact or Fiction. Train your ears to detect the truth in spoken messages.",
+        "Listen to the statement carefully. Did they actually say that, or is it a trick? Let's find out!",
     'detailSpotlight':
-        "Laser Focus. Tune in to the specific details that others usually miss.",
+        "Native speakers talk fast and hide important details. Let's practice laser-focusing on the exact information we need!",
     'emotionRecognition':
-        "The Heart's Resonance. Hear the feelings hidden behind every spoken word.",
+        "It's not just what they say, it's *how* they say it. Can you hear if the speaker is happy, angry, or confused?",
     'fastSpeechDecoder':
-        "Speed Listening. Unlock the meaning of fast-paced, natural conversation.",
+        "Ready for a challenge? Let's practice listening to natural, fast-paced English without slowing it down.",
     'listeningInference':
-        "Between the Whispers. Hear what isn't said and understand the subtext.",
+        "Sometimes people don't say exactly what they mean. Let's practice 'reading between the lines' when listening!",
     'soundImageMatch':
-        "Visual Harmony. Connect the sounds of the world with their visual forms.",
+        "Let's connect what you hear with what you see! Listen to the audio and match it to the perfect picture.",
 
     // Reading
     'findWordMeaning':

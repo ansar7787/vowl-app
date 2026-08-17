@@ -112,7 +112,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     final s = state;
     if (s is! ListeningLoaded ||
         s.livesRemaining <= 0 ||
-        s.lastAnswerCorrect != null) {
+        s.answerStatus.isAnswered) {
       return;
     }
 
@@ -128,7 +128,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
       hapticService.success();
       emit(
         s.copyWith(
-          lastAnswerCorrect: true,
+          answerStatus: AnswerStatus.correct,
           wrongCount: 0,
           isFinalFailure: false,
         ),
@@ -145,7 +145,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
               ? (List<ListeningQuest>.from(s.quests)..add(s.currentQuest))
               : null,
           livesRemaining: newLives,
-          lastAnswerCorrect: false,
+          answerStatus: AnswerStatus.incorrect,
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
         ),
@@ -175,23 +175,23 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     final hasMore = s.currentIndex + 1 < s.quests.length;
 
     if (hasMore) {
-      final canAdvance = s.lastAnswerCorrect == true || s.isFinalFailure;
+      final canAdvance = s.answerStatus == AnswerStatus.correct || s.isFinalFailure;
       emit(
         canAdvance
             ? s.copyWith(
                 currentIndex: s.currentIndex + 1,
-                lastAnswerCorrect: null,
+                answerStatus: AnswerStatus.unanswered,
                 hintUsed: false,
                 wrongCount: 0,
                 isFinalFailure: false,
               )
-            : s.copyWith(lastAnswerCorrect: null, hintUsed: false),
+            : s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false),
       );
-    } else if (s.lastAnswerCorrect == true) {
+    } else if (s.answerStatus == AnswerStatus.correct) {
       await _completeLevel(s, emit);
     } else {
       // Wrong on the final question — allow one more attempt.
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -200,7 +200,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
   void _onRetry(RetryCurrentQuestion event, Emitter<ListeningState> emit) {
     if (state is ListeningLoaded) {
       final s = state as ListeningLoaded;
-      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      emit(s.copyWith(answerStatus: AnswerStatus.unanswered, hintUsed: false));
     }
   }
 
@@ -244,7 +244,7 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
         quests: s.quests,
         currentIndex: s.currentIndex,
         livesRemaining: 1,
-        lastAnswerCorrect: null,
+        answerStatus: AnswerStatus.unanswered,
         hintUsed: false,
         wrongCount: 0,
         isFinalFailure: false,

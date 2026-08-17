@@ -77,7 +77,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
@@ -87,10 +87,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _isAnswered = false;
               _isCorrect = null;
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;

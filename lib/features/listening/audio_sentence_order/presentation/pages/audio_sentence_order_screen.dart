@@ -126,7 +126,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
@@ -138,10 +138,10 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
               _segments = List.from(state.currentQuest.shuffledSentences ?? []);
               _slots = List.generate(_segments.length, (_) => "");
             });
-          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+          } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
-              _isCorrect = state.lastAnswerCorrect;
+              _isCorrect = state.answerStatus.asBoolOrNull;
             });
           }
           _lastLives = state.livesRemaining;

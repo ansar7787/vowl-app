@@ -143,6 +143,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
   void dispose() {
     _nudgeTimer?.cancel();
     _audioController.dispose();
+    _soundService.stopTts();
+    _soundService.stopAudio();
     super.dispose();
   }
 

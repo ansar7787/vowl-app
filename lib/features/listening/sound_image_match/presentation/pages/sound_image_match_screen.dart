@@ -105,7 +105,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final isRetry = _isAnswered && !state.answerStatus.isAnswered;
           final livesChanged =
               _lastLives != null && state.livesRemaining > _lastLives!;
 
