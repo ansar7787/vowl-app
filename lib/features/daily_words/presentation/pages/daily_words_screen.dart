@@ -11,7 +11,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/ad_service.dart';
+
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/core/utils/translation_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/language_selection_bottom_sheet.dart';
@@ -129,6 +129,11 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
 
   Future<void> _handleTranslate(DailyWord word) async {
     if (_isTranslating) return;
+
+    if (_translationUnlocked) {
+      await _performTranslation(word);
+      return;
+    }
     
     setState(() => _isTranslating = true);
 
