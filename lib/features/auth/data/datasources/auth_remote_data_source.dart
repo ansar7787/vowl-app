@@ -48,7 +48,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     gsignin.GoogleSignIn? googleSignIn,
     FirebaseFirestore? firestore,
   }) : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-       _googleSignIn = googleSignIn ?? gsignin.GoogleSignIn(),
+       _googleSignIn = googleSignIn ?? gsignin.GoogleSignIn.instance,
        _firestore = firestore ?? FirebaseFirestore.instance;
 
   // ---------------------------------------------------------------------------
@@ -173,21 +173,25 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<bool> logInWithGoogle() async {
-    final googleUser = await _googleSignIn.signIn();
-    if (googleUser == null) {
+    gsignin.GoogleSignInAccount googleUser;
+    try {
+      // In google_sign_in v7+, initialize() must be called before authenticate().
+      // It is safe to call multiple times.
+      await _googleSignIn.initialize();
+      googleUser = await _googleSignIn.authenticate();
+    } catch (e) {
       throw FirebaseAuthException(
         code: 'aborted-by-user',
-        message: 'Google sign-in was cancelled by the user.',
+        message: 'Google sign-in was cancelled or failed: $e',
       );
     }
 
-    final googleAuth = await googleUser.authentication;
+    final googleAuth = googleUser.authentication;
 
     // accessToken is not guaranteed on all platforms (notably iOS can return
     // null). idToken alone is sufficient for Firebase credential creation when
     // accessToken is absent.
     final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken, // may be null — Firebase handles it
       idToken: googleAuth.idToken,
     );
 

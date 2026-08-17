@@ -153,7 +153,7 @@ class NotificationService {
     );
 
     await _localNotifications.initialize(
-      initSettings,
+      settings: initSettings,
       onDidReceiveNotificationResponse: (NotificationResponse response) {
         if (kDebugMode) {
           debugPrint('Local Notification tapped! Payload: ${response.payload}');
@@ -494,10 +494,10 @@ class NotificationService {
     );
 
     await _localNotifications.show(
-      _generateNotificationId(),
-      title,
-      body,
-      platformDetails,
+      id: _generateNotificationId(),
+      title: title,
+      body: body,
+      notificationDetails: platformDetails,
       payload: payload,
     );
   }
@@ -520,12 +520,12 @@ class NotificationService {
   Future<void> scheduleStreakReminder(int currentStreak) async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(streakReminderNotificationId);
+      await _localNotifications.cancel(id: streakReminderNotificationId);
       return;
     }
 
     // Cancel existing reminders to avoid double-messages
-    await _localNotifications.cancel(streakReminderNotificationId);
+    await _localNotifications.cancel(id: streakReminderNotificationId);
 
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
@@ -588,20 +588,18 @@ class NotificationService {
     final streakMessages = _getStreakNotificationCopy(currentStreak);
 
     await _localNotifications.zonedSchedule(
-      streakReminderNotificationId,
-      _t('notifications.streak_reminder_title', fallback: streakMessages.title),
-      _t(
+      id: streakReminderNotificationId,
+      title: _t('notifications.streak_reminder_title', fallback: streakMessages.title),
+      body: _t(
         'notifications.streak_reminder_body',
         args: [currentStreak.toString()],
         fallback: streakMessages.body,
       ),
-      scheduledDate,
-      platformDetails,
+      scheduledDate: scheduledDate,
+      notificationDetails: platformDetails,
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time,
       payload: AppRouter.streakRoute,
     );
@@ -713,7 +711,7 @@ class NotificationService {
   Future<void> scheduleWeeklyMotivation() async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(weeklyMotivationNotificationId);
+      await _localNotifications.cancel(id: weeklyMotivationNotificationId);
       return;
     }
 
@@ -762,16 +760,14 @@ class NotificationService {
     final msg = weeklyMessages[_idRandom.nextInt(weeklyMessages.length)];
 
     await _localNotifications.zonedSchedule(
-      weeklyMotivationNotificationId,
-      _t('notifications.weekly_motivation_title', fallback: msg.title),
-      _t('notifications.weekly_motivation_body', fallback: msg.body),
-      _nextInstanceOfSundayMorning(location),
-      platformDetails,
+      id: weeklyMotivationNotificationId,
+      title: _t('notifications.weekly_motivation_title', fallback: msg.title),
+      body: _t('notifications.weekly_motivation_body', fallback: msg.body),
+      scheduledDate: _nextInstanceOfSundayMorning(location),
+      notificationDetails: platformDetails,
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
       payload: AppRouter.homeRoute,
     );
@@ -808,12 +804,12 @@ class NotificationService {
   Future<void> scheduleLeaderboardChallenge() async {
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(leaderboardNotificationId);
+      await _localNotifications.cancel(id: leaderboardNotificationId);
       return;
     }
 
     // Cancel existing to avoid stacking
-    await _localNotifications.cancel(leaderboardNotificationId);
+    await _localNotifications.cancel(id: leaderboardNotificationId);
 
     const AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
@@ -870,16 +866,14 @@ class NotificationService {
         leaderboardMessages[_idRandom.nextInt(leaderboardMessages.length)];
 
     await _localNotifications.zonedSchedule(
-      leaderboardNotificationId,
-      _t('notifications.leaderboard_title', fallback: msg.title),
-      _t('notifications.leaderboard_body', fallback: msg.body),
-      scheduledDate,
-      platformDetails,
+      id: leaderboardNotificationId,
+      title: _t('notifications.leaderboard_title', fallback: msg.title),
+      body: _t('notifications.leaderboard_body', fallback: msg.body),
+      scheduledDate: scheduledDate,
+      notificationDetails: platformDetails,
       androidScheduleMode: useExact
           ? AndroidScheduleMode.exactAllowWhileIdle
           : AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
       payload: AppRouter.leaderboardRoute,
     );
 
@@ -921,10 +915,10 @@ class NotificationService {
     );
 
     await _localNotifications.show(
-      milestoneNotificationId,
-      milestoneName,
-      description,
-      platformDetails,
+      id: milestoneNotificationId,
+      title: milestoneName,
+      body: description,
+      notificationDetails: platformDetails,
       payload: AppRouter.streakRoute,
     );
   }

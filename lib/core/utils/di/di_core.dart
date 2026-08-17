@@ -51,7 +51,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
   sl.registerLazySingleton<FirebaseMessaging>(() => FirebaseMessaging.instance);
-  sl.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn());
+  sl.registerLazySingleton<GoogleSignIn>(() => GoogleSignIn.instance);
   sl.registerLazySingleton<InternetConnection>(
     () => InternetConnection.createInstance(
       checkInterval: const Duration(seconds: 5),
