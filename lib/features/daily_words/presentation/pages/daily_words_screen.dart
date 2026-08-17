@@ -261,26 +261,46 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
-          expandedHeight: 120.h,
+          toolbarHeight: 60.h,
           backgroundColor: Colors.transparent,
           elevation: 0,
           pinned: true,
-          iconTheme: IconThemeData(color: isDark ? Colors.white : Colors.black87),
-          flexibleSpace: FlexibleSpaceBar(
-            background: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.only(top: 40.h),
-                child: _DailyWordsHeader(
-                  day: state.currentDay,
-                  streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
-                  progress: state.totalWords > 0
-                      ? (state.currentIndex + 1) / state.totalWords
-                      : 0,
-                  currentIndex: state.currentIndex + 1,
-                  totalWords: state.totalWords,
-                  theme: state.wordSet?.theme ?? '',
+          leadingWidth: 70.w,
+          leading: Padding(
+            padding: EdgeInsets.only(left: 20.w, top: 10.h, bottom: 10.h),
+            child: GestureDetector(
+              onTap: () {
+                di.sl<HapticService>().light();
+                context.pop();
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.05),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  size: 20.r,
+                  color: isDark ? Colors.white : Colors.black,
                 ),
               ),
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(top: 10.h),
+            child: _DailyWordsHeader(
+              day: state.currentDay,
+              streak: context.watch<AuthBloc>().state.user?.currentStreak ?? 0,
+              progress: state.totalWords > 0
+                  ? (state.currentIndex + 1) / state.totalWords
+                  : 0,
+              currentIndex: state.currentIndex + 1,
+              totalWords: state.totalWords,
+              theme: state.wordSet?.theme ?? '',
             ),
           ),
         ),
