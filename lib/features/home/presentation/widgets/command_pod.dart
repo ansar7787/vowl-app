@@ -349,7 +349,7 @@ class CommandPod extends StatelessWidget {
     return Semantics(
       button: true,
       label:
-          '${context.tr('home.junior_adventure', fallback: 'Junior Adventure')}. ${context.tr('home.junior_adventure_subtitle', fallback: 'For younger explorers')}',
+          '${context.tr('home.junior_adventure', fallback: 'KIDS ZONE')}. ${context.tr('home.junior_adventure_subtitle', fallback: 'PLAYFUL MISSIONS')}',
       child: ScaleButton(
         onTap: () => context.push(AppRouter.kidsZoneRoute),
         child: ExcludeSemantics(

@@ -61,7 +61,7 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
 
     return Semantics(
       button: true,
-      label: 'Daily Words',
+      label: context.tr('home.daily_words_title', fallback: 'DAILY WORDS'),
       child: ScaleButton(
         onTap: _launchDailyWords,
         child: ExcludeSemantics(
@@ -70,7 +70,7 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
             alignment: Alignment.centerLeft,
             children: [
               Container(
-                constraints: BoxConstraints(minHeight: 140.h),
+                constraints: BoxConstraints(minHeight: 160.h),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(32.r),
