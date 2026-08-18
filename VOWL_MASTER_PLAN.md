@@ -54,12 +54,12 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | 2 | Speak Missing Word | Sees sentence with blank → says the word | Active recall + context prediction | ✅ | ✅ `SpeakMissingWordScreen` | ✅ | ✅ |
 | 3 | Situation Speaking | Given real situation → speaks response | Spontaneous speech under pressure | ✅ | ✅ `SituationSpeakingScreen` | ✅ | ✅ |
 | 4 | Scene Description | Sees scene prompt → describes verbally | Descriptive vocabulary + fluency | ✅ | ✅ `SceneDescriptionScreen` | ✅ | ✅ |
-| 5 | Yes/No Speaking | Hears question → says yes/no + reason | Quick response + justification skills | ✅ | ✅ `YesNoSpeakingScreen` | ✅ | ⬜ |
-| 6 | Speak Synonym | Sees word → says a synonym out loud | Vocabulary breadth via active production | ✅ | ✅ `SpeakSynonymScreen` | ✅ | ⬜ |
-| 7 | Dialogue Roleplay | Takes turns in conversation → speaks | Conversational flow + turn-taking | ✅ | ✅ `DialogueRoleplayScreen` | ✅ | ⬜ |
-| 8 | Pronunciation Focus | Targets specific sound → records & compares | Phoneme-level accuracy | ✅ | ✅ `PronunciationFocusScreen` | ✅ | ⬜ |
-| 9 | Speak Opposite | Hears word → says antonym out loud | Vocabulary + speed of recall | ✅ | ✅ `SpeakOppositeScreen` | ✅ | ⬜ |
-| 10 | Daily Expression | Learns expression → practices saying it | Real-world phrases for daily use | ✅ | ✅ `DailyExpressionScreen` | ✅ | ⬜ |
+| 5 | Yes/No Speaking | Hears question → says yes/no + reason | Quick response + justification skills | ✅ | ✅ `YesNoSpeakingScreen` | ✅ | ✅ |
+| 6 | Speak Synonym | Sees word → says a synonym out loud | Vocabulary breadth via active production | ✅ | ✅ `SpeakSynonymScreen` | ✅ | ✅ |
+| 7 | Dialogue Roleplay | Takes turns in conversation → speaks | Conversational flow + turn-taking | ✅ | ✅ `DialogueRoleplayScreen` | ✅ | ✅ |
+| 8 | Pronunciation Focus | Targets specific sound → records & compares | Phoneme-level accuracy | ✅ | ✅ `PronunciationFocusScreen` | ✅ | ✅ |
+| 9 | Speak Opposite | Hears word → says antonym out loud | Vocabulary + speed of recall | ✅ | ✅ `SpeakOppositeScreen` | ✅ | ✅ |
+| 10 | Daily Expression | Learns expression → practices saying it | Real-world phrases for daily use | ✅ | ✅ `DailyExpressionScreen` | ✅ | ✅ |
 
 ### CAT-2: 🔊 LISTENING (10 games) — User MUST listen to audio first
 

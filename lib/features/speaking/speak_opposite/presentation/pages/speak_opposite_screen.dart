@@ -180,187 +180,72 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 100.h : 160.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 6
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 12.0)
-                          : 8.0;
-                      final double gapPositive = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapConduit = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapNegative = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SpeakOppositeHeader(
-                                                instruction: quest.instruction,
-                                              ),
-                                            ),
-                                          )
-                                        : SpeakOppositeHeader(
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    SpeakOppositePositivePolePanel(
-                                                      quest: quest,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onPlayTts: () =>
-                                                          _soundService.playTts(
-                                                            (quest.textToSpeak ??
-                                                                    "")
-                                                                .replaceAll(
-                                                                  '*',
-                                                                  '',
-                                                                ),
-                                                          ),
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : SpeakOppositePositivePolePanel(
-                                            quest: quest,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onPlayTts: () =>
-                                                _soundService.playTts(
-                                                  (quest.textToSpeak ?? "")
-                                                      .replaceAll('*', ''),
-                                                ),
-                                          ),
-                                    SizedBox(height: gapPositive),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 80.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    SpeakOppositePlasmaConduitPanel(
-                                                      pullProgress:
-                                                          _pullProgress,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isListening: false,
-                                                      timeVal: _timeVal,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : SpeakOppositePlasmaConduitPanel(
-                                            pullProgress: _pullProgress,
-                                            primaryColor: theme.primaryColor,
-                                            isListening: false,
-                                            timeVal: _timeVal,
-                                            isDark: isDark,
-                                          ),
-                                    SizedBox(height: gapConduit),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 60.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    SpeakOppositeNegativePolePanel(
-                                                      pullProgress:
-                                                          _pullProgress,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : SpeakOppositeNegativePolePanel(
-                                            pullProgress: _pullProgress,
-                                            isDark: isDark,
-                                          ),
-                                  ],
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SpeakOppositeHeader(
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              SpeakOppositePositivePolePanel(
+                                quest: quest,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onPlayTts: () => _soundService.playTts(
+                                  (quest.textToSpeak ?? "").replaceAll('*', ''),
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapNegative),
-
-                                    if (!_isAnswered)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText: expectedText,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
-                                      ),
-
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                              SizedBox(height: 32.h),
+                              SpeakOppositePlasmaConduitPanel(
+                                pullProgress: _pullProgress,
+                                primaryColor: theme.primaryColor,
+                                isListening: false,
+                                timeVal: _timeVal,
+                                isDark: isDark,
+                              ),
+                              SizedBox(height: 32.h),
+                              SpeakOppositeNegativePolePanel(
+                                pullProgress: _pullProgress,
+                                isDark: isDark,
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (!_isAnswered)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: expectedText,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

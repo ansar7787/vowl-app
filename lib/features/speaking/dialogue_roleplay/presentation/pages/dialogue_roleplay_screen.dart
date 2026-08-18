@@ -222,174 +222,110 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 100.h : 160.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 5
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 16.0)
-                          : 8.0;
-                      final double gapStage = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: DialogueRoleplayHeader(
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              DialogueRoleplayHeader(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              DialogueRoleplayExchangeStage(
+                                quest: quest,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                timeVal: _timeVal,
+                                isAnswered: _isAnswered,
+                                isCorrect: _isCorrect ?? false,
+                              ),
+                              if (_smartReplies.isNotEmpty && !_isAnswered) ...[
+                                SizedBox(height: 16.h),
+                                SizedBox(
+                                  height: 44.h,
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: _smartReplies.length,
+                                    itemBuilder: (context, index) {
+                                      final reply = _smartReplies[index];
+                                      final isPremium =
+                                          context
+                                              .read<AuthBloc>()
+                                              .state
+                                              .user
+                                              ?.isPremium ??
+                                          false;
+                                      return SmartReplyChip(
+                                        text: reply,
+                                        isPremium: isPremium,
+                                        onTap: () {
+                                          MlMonetizationController.attemptFeature(
+                                            context,
+                                            featureIcon:
+                                                Icons.auto_awesome_rounded,
+                                            featureTitle: context.tr(
+                                              'translation.smart_reply_title',
+                                              fallback: 'AI Smart Reply',
                                             ),
-                                          )
-                                        : DialogueRoleplayHeader(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 120.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    DialogueRoleplayExchangeStage(
-                                                      quest: quest,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      timeVal: _timeVal,
-                                                      isAnswered: _isAnswered,
-                                                      isCorrect:
-                                                          _isCorrect ?? false,
-                                                    ),
-                                              ),
+                                            featureSubtitle: context.tr(
+                                              'translation.smart_reply_desc',
+                                              fallback:
+                                                  'Get AI-powered conversation suggestions',
                                             ),
-                                          )
-                                        : DialogueRoleplayExchangeStage(
-                                            quest: quest,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            timeVal: _timeVal,
-                                            isAnswered: _isAnswered,
-                                            isCorrect: _isCorrect ?? false,
-                                          ),
-                                    SizedBox(height: gapStage),
-
-                                    if (_smartReplies.isNotEmpty &&
-                                        !_isAnswered) ...[
-                                      SizedBox(height: 16.h),
-                                      SizedBox(
-                                        height: 44.h,
-                                        child: ListView.builder(
-                                          scrollDirection: Axis.horizontal,
-                                          itemCount: _smartReplies.length,
-                                          itemBuilder: (context, index) {
-                                            final reply = _smartReplies[index];
-                                            final isPremium =
-                                                context
-                                                    .read<AuthBloc>()
-                                                    .state
-                                                    .user
-                                                    ?.isPremium ??
-                                                false;
-                                            return SmartReplyChip(
-                                              text: reply,
-                                              isPremium: isPremium,
-                                              onTap: () {
-                                                MlMonetizationController.attemptFeature(
-                                                  context,
-                                                  featureIcon: Icons
-                                                      .auto_awesome_rounded,
-                                                  featureTitle: context.tr(
-                                                    'translation.smart_reply_title',
-                                                    fallback: 'AI Smart Reply',
-                                                  ),
-                                                  featureSubtitle: context.tr(
-                                                    'translation.smart_reply_desc',
-                                                    fallback:
-                                                        'Get AI-powered conversation suggestions',
-                                                  ),
-                                                  adButtonLabel: context.tr(
-                                                    'translation.smart_reply_ad',
-                                                    fallback:
-                                                        'Watch Ad (1 Suggestion)',
-                                                  ),
-                                                  onSuccess: () {
-                                                    setState(() {
-                                                      _chosenReply = reply;
-                                                    });
-                                                  },
-                                                );
-                                              },
-                                            );
-                                          },
-                                        ),
-                                      ),
-                                    ],
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (!_isAnswered)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText: expectedText,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
-                                      ),
-                                    SizedBox(height: gapBottom),
-                                  ],
+                                            adButtonLabel: context.tr(
+                                              'translation.smart_reply_ad',
+                                              fallback:
+                                                  'Watch Ad (1 Suggestion)',
+                                            ),
+                                            onSuccess: () {
+                                              setState(() {
+                                                _chosenReply = reply;
+                                              });
+                                            },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
                                 ),
                               ],
-                            ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (!_isAnswered)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: expectedText,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

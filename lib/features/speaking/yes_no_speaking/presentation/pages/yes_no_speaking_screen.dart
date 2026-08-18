@@ -193,177 +193,80 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 100.h : 160.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 5
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 16.0)
-                          : 8.0;
-                      final double gapAudition = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapTilt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  YesNoSpeakingHeaderInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    isSnapped: _isSnapped,
-                                                    instruction:
-                                                        quest.instruction,
-                                                  ),
-                                            ),
-                                          )
-                                        : YesNoSpeakingHeaderInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            isSnapped: _isSnapped,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    YesNoSpeakingAuditionCard(
-                                                      quest: quest,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onPlayTts: () =>
-                                                          _soundService.playTts(
-                                                            quest.prompt ?? "",
-                                                          ),
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : YesNoSpeakingAuditionCard(
-                                            quest: quest,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onPlayTts: () => _soundService
-                                                .playTts(quest.prompt ?? ""),
-                                          ),
-                                    SizedBox(height: gapAudition),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 80.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child: YesNoSpeakingTiltArena(
-                                                  tiltValue: _tiltValue,
-                                                  isSnapped: _isSnapped,
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  isDark: isDark,
-                                                  onTiltDragged: _onTiltDragged,
-                                                  onTiltDragEnd: () {
-                                                    if (!_isSnapped) {
-                                                      setState(
-                                                        () => _tiltValue = 0.0,
-                                                      );
-                                                    }
-                                                  },
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : YesNoSpeakingTiltArena(
-                                            tiltValue: _tiltValue,
-                                            isSnapped: _isSnapped,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onTiltDragged: _onTiltDragged,
-                                            onTiltDragEnd: () {
-                                              if (!_isSnapped) {
-                                                setState(
-                                                  () => _tiltValue = 0.0,
-                                                );
-                                              }
-                                            },
-                                          ),
-                                  ],
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              YesNoSpeakingHeaderInstruction(
+                                primaryColor: theme.primaryColor,
+                                isSnapped: _isSnapped,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              YesNoSpeakingAuditionCard(
+                                quest: quest,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onPlayTts: () => _soundService.playTts(
+                                  quest.prompt ?? "",
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTilt),
-                                    if (_isSnapped && !_isAnswered)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText: quest.sampleAnswer ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(
-                                              true,
-                                              doTheyMatch,
-                                            ),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(
-                                              false,
-                                              doTheyMatch,
-                                            ),
-                                      ),
-
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                              SizedBox(height: 32.h),
+                              YesNoSpeakingTiltArena(
+                                tiltValue: _tiltValue,
+                                isSnapped: _isSnapped,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onTiltDragged: _onTiltDragged,
+                                onTiltDragEnd: () {
+                                  if (!_isSnapped) {
+                                    setState(() => _tiltValue = 0.0);
+                                  }
+                                },
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (_isSnapped && !_isAnswered)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: quest.sampleAnswer ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(
+                                        true,
+                                        doTheyMatch,
+                                      ),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(
+                                        false,
+                                        doTheyMatch,
+                                      ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );
