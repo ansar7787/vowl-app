@@ -244,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             SizedBox(height: 24.h),
                             SizedBox(
-                              height: 160.h,
+                              height: 190.h, // 160.h for card + 30.h for shadow
                               child: PageView(
                                 clipBehavior: Clip.none,
                                 controller: _carouselController,
@@ -254,24 +254,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                 },
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
                                     child: CommandPod(
                                       user: user,
                                       mode: CommandPodMode.kidsOnly,
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
                                     child: DailyWordsHomeCard(isDark: isDark),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
                                     child: const VowlMascotCard(),
                                   ),
                                 ],
                               ),
                             ),
-                            SizedBox(height: 32.h),
+                            SizedBox(height: 16.h), // Reduced from 32.h since we added 30.h to the bottom of the cards
                             ValueListenableBuilder<int>(
                               valueListenable: _carouselIndex,
                               builder: (context, currentIndex, _) {
