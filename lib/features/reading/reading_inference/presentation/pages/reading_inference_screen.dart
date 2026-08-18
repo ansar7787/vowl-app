@@ -5,16 +5,14 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
-import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_option.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;
@@ -31,12 +29,9 @@ class ReadingInferenceScreen extends StatefulWidget {
 
 class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
 
   final List<Offset> _rubPoints = [];
   double _clarity = 0.0;
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -62,43 +57,15 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     });
   }
 
-  void _onChoiceTap(int index) {
-    if (_isAnswered || _clarity < 0.3 || _pendingSelectedIndex != null) return;
-    setState(() => _pendingSelectedIndex = index);
-  }
-
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
-    if (_pendingSelectedIndex == null) return;
-
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _selectedIndex = _pendingSelectedIndex;
-      });
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
-      return;
-    }
-
-    final selected = quest.options![_pendingSelectedIndex!];
-    final correct = quest.correctAnswer ?? "";
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
+  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
     setState(() {
-      _selectedIndex = _pendingSelectedIndex;
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -121,8 +88,6 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
-              _pendingSelectedIndex = null;
               _rubPoints.clear();
               _clarity = 0.0;
             });
@@ -202,19 +167,18 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                             ),
                             SizedBox(height: 24.h),
 
-                            ...List.generate(
-                              quest.options?.length ?? 0,
-                              (index) => ReadingInferenceOption(
-                                index: index,
-                                text: quest.options![index],
-                                correct: quest.correctAnswer ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                selectedIndex:
-                                    _selectedIndex ?? _pendingSelectedIndex,
-                                isAnswered: _isAnswered,
-                                clarity: _clarity,
-                                onTap: () => _onChoiceTap(index),
+                            AnimatedOpacity(
+                              duration: const Duration(milliseconds: 300),
+                              opacity: _clarity >= 0.3 ? 1.0 : 0.3,
+                              child: AbsorbPointer(
+                                absorbing: _clarity < 0.3 || _isAnswered,
+                                child: ReadingSelfEvaluationCard(
+                                  correctAnswer: quest.correctAnswer ?? "",
+                                  explanation: quest.explanation,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                ),
                               ),
                             ),
 
@@ -231,14 +195,6 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                         ),
                       ),
                     ),
-                    if (_pendingSelectedIndex != null && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.options![_pendingSelectedIndex!],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest),
-                        onSkipped: () => _submitFinalAnswer(false, quest),
-                        allowSkip: true,
-                      ),
                   ],
                 ),
         );

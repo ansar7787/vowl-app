@@ -217,13 +217,8 @@ class LevelThemeHelper {
       bgTop = hsl.withLightness(0.15).withSaturation(0.6).toColor();
       bgBottom = isMidnight ? const Color(0xFF000000) : const Color(0xFF0F172A);
     } else {
-      if (normalized == 'reading') {
-        bgTop = const Color(0xFFFFFFFF);
-        bgBottom = const Color(0xFFF8FAFC);
-      } else {
-        bgTop = hsl.withLightness(0.95).toColor();
-        bgBottom = hsl.withLightness(0.85).toColor();
-      }
+      bgTop = hsl.withLightness(0.95).toColor();
+      bgBottom = hsl.withLightness(0.85).toColor();
     }
 
     final gameCategory = GameCategory.values.firstWhere(
@@ -292,13 +287,8 @@ class LevelThemeHelper {
       bgTop = primaryHsl.withLightness(0.12).withSaturation(0.5).toColor();
       bgBottom = isMidnight ? const Color(0xFF000000) : const Color(0xFF0F172A);
     } else {
-      if (categoryName.toLowerCase() == 'reading') {
-        bgTop = const Color(0xFFFFFFFF);
-        bgBottom = const Color(0xFFF8FAFC);
-      } else {
-        bgTop = primaryHsl.withLightness(0.92).toColor();
-        bgBottom = primaryHsl.withLightness(0.82).toColor();
-      }
+      bgTop = primaryHsl.withLightness(0.92).toColor();
+      bgBottom = primaryHsl.withLightness(0.82).toColor();
     }
 
     final accent = primaryHsl.withLightness(isDark ? 0.7 : 0.4).toColor();

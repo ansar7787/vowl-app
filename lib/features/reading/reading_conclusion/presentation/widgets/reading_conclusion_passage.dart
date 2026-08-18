@@ -6,25 +6,17 @@ class ReadingConclusionPassage extends StatelessWidget {
   final String passage;
   final Color color;
   final bool isDark;
-  final Function(Offset) onDragStart;
-  final Function(Offset) onDragUpdate;
 
   const ReadingConclusionPassage({
     super.key,
     required this.passage,
     required this.color,
     required this.isDark,
-    required this.onDragStart,
-    required this.onDragUpdate,
   });
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanStart: (details) => onDragStart(details.globalPosition),
-      onPanUpdate: (details) => onDragUpdate(details.globalPosition),
-      child:
-          Container(
+    return Container(
                 padding: EdgeInsets.all(24.r),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: isDark ? 0.05 : 0.08),
@@ -59,7 +51,6 @@ class ReadingConclusionPassage extends StatelessWidget {
                 ),
               )
               .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(begin: -4, end: 4, duration: 2.seconds),
-    );
+              .moveY(begin: -4, end: 4, duration: 2.seconds);
   }
 }

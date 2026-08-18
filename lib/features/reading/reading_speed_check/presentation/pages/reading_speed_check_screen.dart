@@ -6,7 +6,6 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -15,7 +14,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_instruction.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_pulse_zone.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
-import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_option.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
 
 class ReadingSpeedCheckScreen extends StatefulWidget {
@@ -34,13 +33,11 @@ class ReadingSpeedCheckScreen extends StatefulWidget {
 
 class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
 
   double _pulseScale = 1.0;
   double _clarityRadius = 0.0;
   int _timerValue = 12;
   Timer? _timer;
-  int? _selectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -97,29 +94,18 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     });
   }
 
-  void _onChoiceTap(int index, String selected, String correct) {
+  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
     if (_isAnswered || !_isRevealed) return;
-    setState(() => _selectedIndex = index);
 
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = isCorrect;
+    });
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -147,7 +133,6 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
               _isRevealed = false;
               _clarityRadius = 0.0;
             });
@@ -217,22 +202,12 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                             isDark: isDark,
                           ),
                           SizedBox(height: 32.h),
-                          ...List.generate(
-                            quest.options?.length ?? 0,
-                            (index) => ReadingSpeedOption(
-                              index: index,
-                              text: quest.options![index],
-                              correct: quest.correctAnswer ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              selectedIndex: _selectedIndex,
-                              isAnswered: _isAnswered,
-                              onTap: () => _onChoiceTap(
-                                index,
-                                quest.options![index],
-                                quest.correctAnswer ?? "",
-                              ),
-                            ),
+                          ReadingSelfEvaluationCard(
+                            correctAnswer: quest.correctAnswer ?? "",
+                            explanation: quest.explanation,
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                            onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                           ),
                         ],
 

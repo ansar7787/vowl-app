@@ -8,11 +8,9 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
-import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
-import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_highlightable_passage.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -35,8 +33,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
   bool _showConfetti = false;
 
   @override
@@ -47,43 +43,14 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     );
   }
 
-  void _onOptionTap(int index) {
-    if (_selectedIndex != null || _pendingSelectedIndex != null) return;
-    setState(() => _pendingSelectedIndex = index);
-  }
-
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
-    if (_pendingSelectedIndex == null) return;
-
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _selectedIndex = _pendingSelectedIndex;
-      });
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
-      return;
-    }
-
-    final selected = quest.options![_pendingSelectedIndex!];
-    final isCorrect =
-        selected.trim().toLowerCase() ==
-        (quest.correctAnswer ?? '').trim().toLowerCase();
-
+  void _submitSentenceAnswer(bool isCorrect, String selectedSentence) {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() {
-        _selectedIndex = _pendingSelectedIndex;
-      });
-      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() {
-        _selectedIndex = _pendingSelectedIndex;
-      });
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -103,10 +70,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
-          setState(() {
-            _selectedIndex = null;
-            _pendingSelectedIndex = null;
-          });
+          // Reset local state if needed
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
@@ -148,17 +112,8 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                       isDark: isDark,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
-                      selectedIndex: _selectedIndex ?? _pendingSelectedIndex,
-                      onOptionTap: _onOptionTap,
+                      onSentenceSelected: _submitSentenceAnswer,
                     ),
-                    if (_pendingSelectedIndex != null && !isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.options![_pendingSelectedIndex!],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest),
-                        onSkipped: () => _submitFinalAnswer(false, quest),
-                        allowSkip: true,
-                      ),
                   ],
                 ),
         );
@@ -185,8 +140,7 @@ class _QuestContent extends StatelessWidget {
   final bool isDark;
   final bool isAnswered;
   final bool? isCorrect;
-  final int? selectedIndex;
-  final void Function(int) onOptionTap;
+  final void Function(bool, String) onSentenceSelected;
 
   const _QuestContent({
     required this.quest,
@@ -194,14 +148,11 @@ class _QuestContent extends StatelessWidget {
     required this.isDark,
     required this.isAnswered,
     required this.isCorrect,
-    required this.selectedIndex,
-    required this.onOptionTap,
+    required this.onSentenceSelected,
   });
 
   @override
   Widget build(BuildContext context) {
-    final options = quest.options ?? const [];
-
     return Semantics(
       explicitChildNodes: true,
       child: Column(
@@ -213,31 +164,20 @@ class _QuestContent extends StatelessWidget {
             instruction: quest.instruction,
           ),
           SizedBox(height: 24.h),
-          ReadAndAnswerFloatingPassage(
-            text: quest.passage ?? '',
-            color: primaryColor,
-            isDark: isDark,
-          ),
-          SizedBox(height: 32.h),
           ReadAndAnswerAnchorPoint(
             question: quest.question ?? '',
             color: primaryColor,
             isDark: isDark,
           ),
           SizedBox(height: 32.h),
-          ...List.generate(options.length, (index) {
-            final optionText = options[index];
-            return ReadAndAnswerBuoyOption(
-              index: index,
-              text: optionText,
-              correct: quest.correctAnswer ?? '',
-              color: primaryColor,
-              isDark: isDark,
-              isAnswered: isAnswered,
-              selectedIndex: selectedIndex,
-              onTap: () => onOptionTap(index),
-            );
-          }),
+          ReadingHighlightablePassage(
+            passage: quest.passage ?? '',
+            correctAnswer: quest.correctAnswer ?? '',
+            primaryColor: primaryColor,
+            isDark: isDark,
+            isAnswered: isAnswered,
+            onSentenceSelected: onSentenceSelected,
+          ),
           if (isAnswered) ...[
             SizedBox(height: 24.h),
             ReadAndAnswerResult(

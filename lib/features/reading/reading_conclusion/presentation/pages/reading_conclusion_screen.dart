@@ -3,20 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
-import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_terminals.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_result.dart';
-import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_bridge_painter.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -33,13 +27,6 @@ class ReadingConclusionScreen extends StatefulWidget {
 }
 
 class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-
-  Offset? _dragStart;
-  Offset? _dragCurrent;
-  int? _selectedIndex;
-  int? _pendingSelectedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -54,92 +41,16 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     );
   }
 
-  void _onBridgeStart(Offset globalPosition) {
-    if (_isAnswered || _pendingSelectedIndex != null) return;
-    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
-    if (renderBox != null) {
-      final localPos = renderBox.globalToLocal(globalPosition);
-      setState(() {
-        _dragStart = localPos;
-        _dragCurrent = localPos;
-        _hapticService.selection();
-      });
-    }
-  }
-
-  void _onBridgeUpdate(Offset globalPosition) {
-    if (_isAnswered || _dragStart == null || _pendingSelectedIndex != null) {
-      return;
-    }
-    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
-    if (renderBox != null) {
-      setState(() {
-        _dragCurrent = renderBox.globalToLocal(globalPosition);
-      });
-    }
-  }
-
-  void _onBridgeEnd(int index, String selected, String correct) {
-    if (_isAnswered) return;
-    _submitAnswer(index, selected, correct);
-  }
-
-  void _submitAnswer(int index, String selected, String correct) {
-    if (_isAnswered || _pendingSelectedIndex != null) return;
+  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
     setState(() {
-      _pendingSelectedIndex = index;
-      _dragStart = null;
-      _dragCurrent = null;
+      _isAnswered = true;
+      _isCorrect = isCorrect;
     });
-  }
-
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
-    if (_pendingSelectedIndex == null) return;
-
-    if (!nailedSpeaking) {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _selectedIndex = _pendingSelectedIndex;
-      });
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
-      return;
-    }
-
-    final selected = quest.options![_pendingSelectedIndex!];
-    final correct = quest.correctAnswer ?? "";
-    bool isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
-    setState(() => _selectedIndex = _pendingSelectedIndex);
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-      });
-      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
-      Future.delayed(1.seconds, () {
-        if (mounted) {
-          setState(() {
-            _dragStart = null;
-            _dragCurrent = null;
-            _selectedIndex = null;
-            _pendingSelectedIndex = null;
-          });
-        }
-      });
     }
   }
 
@@ -161,10 +72,6 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedIndex = null;
-              _pendingSelectedIndex = null;
-              _dragStart = null;
-              _dragCurrent = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -221,29 +128,29 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                               passage: quest.passage ?? "",
                               color: theme.primaryColor,
                               isDark: isDark,
-                              onDragStart: _onBridgeStart,
-                              onDragUpdate: _onBridgeUpdate,
                             ),
                             SizedBox(height: 32.h),
 
-                            ReadingConclusionTerminals(
-                              options: quest.options ?? [],
-                              correct: quest.correctAnswer ?? "",
-                              color: theme.primaryColor,
+                            Text(
+                              quest.question?.toUpperCase() ??
+                                  "WHAT IS THE LOGICAL CONCLUSION?",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w900,
+                                color: theme.primaryColor,
+                                letterSpacing: 1.5,
+                              ),
+                            ),
+                            SizedBox(height: 24.h),
+
+                            ReadingSelfEvaluationCard(
+                              correctAnswer: quest.correctAnswer ?? "",
+                              explanation: quest.explanation,
+                              primaryColor: theme.primaryColor,
                               isDark: isDark,
-                              selectedIndex:
-                                  _selectedIndex ?? _pendingSelectedIndex,
-                              isAnswered: _isAnswered,
-                              onBridgeEnd: (idx, opt) => _onBridgeEnd(
-                                idx,
-                                opt,
-                                quest.correctAnswer ?? "",
-                              ),
-                              onSubmitTap: (idx, opt) => _submitAnswer(
-                                idx,
-                                opt,
-                                quest.correctAnswer ?? "",
-                              ),
+                              onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                             ),
 
                             if (_isAnswered) ...[
@@ -259,27 +166,6 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                         ),
                       ),
                     ),
-                    if (_dragStart != null &&
-                        _dragCurrent != null &&
-                        _pendingSelectedIndex == null)
-                      IgnorePointer(
-                        child: CustomPaint(
-                          painter: BridgePainter(
-                            start: _dragStart!,
-                            end: _dragCurrent!,
-                            color: theme.primaryColor,
-                          ),
-                          size: Size.infinite,
-                        ),
-                      ),
-                    if (_pendingSelectedIndex != null && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.options![_pendingSelectedIndex!],
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest),
-                        onSkipped: () => _submitFinalAnswer(false, quest),
-                        allowSkip: true,
-                      ),
                   ],
                 ),
         );

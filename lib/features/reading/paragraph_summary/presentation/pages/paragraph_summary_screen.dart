@@ -5,16 +5,14 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
-import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_option_rack.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
 
 class ParagraphSummaryScreen extends StatefulWidget {
   final int level;
@@ -31,15 +29,12 @@ class ParagraphSummaryScreen extends StatefulWidget {
 
 class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
 
   double _pinchWidth = 1.0;
   bool _isDistilled = false;
-  String? _selectedOption;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -74,42 +69,16 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
     }
   }
 
-  void _submitAnswer(String selected, String correct) {
-    if (_isAnswered) return;
-    final isCorrect =
-        selected.trim().toLowerCase() == correct.trim().toLowerCase();
-
+  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
     setState(() {
-      _selectedOption = selected;
+      _isAnswered = true;
+      _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      setState(() => _isFirstStagePassed = true);
+      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
-    }
-  }
-
-  void _submitVerbalEvaluation(bool nailedIt) {
-    if (_isAnswered && _isCorrect != null) return;
-
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
-
-    if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      context.read<ReadingBloc>().add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
 
@@ -131,9 +100,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedOption = null;
               _isDistilled = false;
-              _isFirstStagePassed = false;
               _pinchWidth = 1.0;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -200,7 +167,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                             SizedBox(height: 16.h),
                             Text(
                               _isDistilled
-                                  ? "DISTILLATION COMPLETE! SELECT THE CORE SUMMARY:"
+                                  ? "DISTILLATION COMPLETE! THINK OF THE CORE SUMMARY AND REVEAL:"
                                   : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -214,17 +181,12 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                             ),
                             if (_isDistilled) ...[
                               SizedBox(height: 24.h),
-                              ParagraphSummaryOptionRack(
-                                options: quest.options ?? [],
+                              ReadingSelfEvaluationCard(
                                 correctAnswer: quest.correctAnswer ?? "",
-                                color: theme.primaryColor,
+                                explanation: quest.explanation,
+                                primaryColor: theme.primaryColor,
                                 isDark: isDark,
-                                selectedOption: _selectedOption,
-                                isAnswered: _isAnswered,
-                                onTapOption: (opt) => _submitAnswer(
-                                  opt,
-                                  quest.correctAnswer ?? "",
-                                ),
+                                onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                               ),
                             ],
                             if (_isAnswered) ...[
@@ -240,14 +202,6 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                         ),
                       ),
                     ),
-                    if (_isFirstStagePassed &&
-                        (!_isAnswered || _isCorrect == null))
-                      TypeToConfirmOverlay(
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitVerbalEvaluation(true),
-                        onSkipped: () => _submitVerbalEvaluation(false),
-                      ),
                   ],
                 ),
         );

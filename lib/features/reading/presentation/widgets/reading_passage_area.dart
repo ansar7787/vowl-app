@@ -35,25 +35,38 @@ class ReadingPassageArea extends StatelessWidget {
         constraints: BoxConstraints(maxHeight: 200.h),
         decoration: BoxDecoration(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.05)
-              : Colors.white.withValues(alpha: 0.5),
+              ? Colors.black.withValues(alpha: 0.2)
+              : Colors.white.withValues(alpha: 0.8),
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(
-            color: primaryColor.withValues(alpha: 0.2),
+            color: isDark
+                ? Colors.white.withValues(alpha: 0.1)
+                : primaryColor.withValues(alpha: 0.15),
             width: 1.5,
           ),
+          boxShadow: [
+            BoxShadow(
+              color: primaryColor.withValues(alpha: 0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         child: Scrollbar(
           thumbVisibility: true,
+          radius: const Radius.circular(8),
+          thickness: 4.w,
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Text(
               passage,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w400,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.6,
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w500,
+                color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                height: 1.65,
+                letterSpacing: 0.2,
               ),
             ),
           ),
