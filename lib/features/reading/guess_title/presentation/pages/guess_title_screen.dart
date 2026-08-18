@@ -12,7 +12,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
 
 class GuessTitleScreen extends StatefulWidget {
   final int level;
@@ -162,6 +162,19 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                     ),
                                   ),
                                 ),
+                                if (!_isAnswered || _isCorrect == null) ...[
+                                  SizedBox(height: 24.h),
+                                  GuessTitleOptions(
+                                    options: quest.options ?? [],
+                                    correctAnswer: quest.correctAnswer ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isDark: isDark,
+                                    isAnswered: _isAnswered,
+                                    onOptionSelected: (isCorrect, selectedOption) {
+                                      _submitFinalAnswer(isCorrect);
+                                    },
+                                  ),
+                                ],
                                 if (_isAnswered) ...[
                                   SizedBox(height: 30.h),
                                   GuessTitleResult(
@@ -179,20 +192,12 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              SizedBox(height: 240.h), // Spacing for Jigsaw Wrapper
+                              SizedBox(height: 50.h),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    if (!_isAnswered || _isCorrect == null)
-                      DynamicJigsawWrapper(
-                        expectedText: quest.correctAnswer ?? "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                        allowSkip: true,
-                      ),
                   ],
                 ),
         );

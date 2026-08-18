@@ -13,7 +13,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_instruction.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_question_header.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_result.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
@@ -145,32 +145,15 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                   isDark: isDark,
                                 ),
                                 SizedBox(height: 32.h),
-                                Container(
-                                  width: double.infinity,
-                                  padding: EdgeInsets.all(24.r),
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? Colors.white.withValues(alpha: 0.05)
-                                        : Colors.black.withValues(alpha: 0.02),
-                                    borderRadius: BorderRadius.circular(20.r),
-                                    border: Border.all(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
-                                      ),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Text(
-                                    quest.passage ?? "",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 18.sp,
-                                      height: 1.6,
-                                      color: isDark
-                                          ? Colors.white70
-                                          : Colors.black87,
-                                    ),
-                                  ),
+                                FindWordMeaningInteractivePassage(
+                                  passage: quest.passage ?? "",
+                                  targetWord: quest.targetWord ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  isAnswered: _isAnswered,
+                                  onWordSelected: (isCorrect, word) {
+                                    _submitFinalAnswer(isCorrect);
+                                  },
                                 ),
                                 if (_isAnswered) ...[
                                   SizedBox(height: 30.h),
@@ -189,19 +172,12 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              SizedBox(height: 240.h), // space for anagram wrapper
+                              SizedBox(height: 50.h),
                             ],
                           ),
                         ),
                       ],
                     ),
-                    if (!_isAnswered || _isCorrect == null)
-                      DynamicAnagramWrapper(
-                        expectedText: quest.targetWord ?? "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onFailed: () => _submitFinalAnswer(false),
-                      ),
                   ],
                 ),
         );
