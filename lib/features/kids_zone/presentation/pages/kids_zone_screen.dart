@@ -163,7 +163,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                     ),
                   ),
 
-                  SliverToBoxAdapter(child: SizedBox(height: 40.h)),
+                  SliverToBoxAdapter(child: SizedBox(height: 140.h)),
                 ],
               ),
             ),
