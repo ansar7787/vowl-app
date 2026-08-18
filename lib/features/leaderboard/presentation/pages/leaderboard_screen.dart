@@ -160,6 +160,8 @@ class _LeaderboardContent extends StatelessWidget {
             ),
           ),
 
+          SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+
           // Podium (Top 3)
           SliverToBoxAdapter(
             child: Padding(

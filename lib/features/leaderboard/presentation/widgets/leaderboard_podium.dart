@@ -26,9 +26,7 @@ class LeaderboardPodium extends StatelessWidget {
         final maxPodiumHeight = (MediaQuery.of(context).size.height * 0.40)
             .clamp(220.0, 320.0);
 
-        return SizedBox(
-              height: maxPodiumHeight,
-              child: Row(
+        return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   // 2nd Place (left)
@@ -71,8 +69,7 @@ class LeaderboardPodium extends StatelessWidget {
                   else
                     const Expanded(child: SizedBox.shrink()),
                 ],
-              ),
-            )
+              )
             .animate()
             .fadeIn(duration: 600.ms, curve: Curves.easeOutCirc)
             .slideY(
