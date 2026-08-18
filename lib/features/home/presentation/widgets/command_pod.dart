@@ -364,16 +364,16 @@ class CommandPod extends StatelessWidget {
                   borderRadius: BorderRadius.circular(32.r),
                   gradient: const LinearGradient(
                     colors: [
-                      Color(0xFF6366F1),
-                      Color(0xFFA855F7),
-                      Color(0xFFEC4899),
+                      Color(0xFFFF3366), // Vibrant Pink
+                      Color(0xFFFF7733), // Bright Orange
+                      Color(0xFFFFB800), // Golden Yellow
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFA855F7).withValues(alpha: 0.3),
+                      color: const Color(0xFFFF7733).withValues(alpha: 0.3),
                       blurRadius: 30,
                       offset: const Offset(0, 15),
                     ),
@@ -452,8 +452,8 @@ class CommandPod extends StatelessWidget {
                                     child: AutoSizeText(
                                       context.tr(
                                         'home.early_learners',
-                                        fallback: 'Early Learners',
-                                      ),
+                                        fallback: 'EARLY EXPLORERS',
+                                      ).toUpperCase(),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Colors.white,
@@ -587,7 +587,7 @@ class CommandPod extends StatelessWidget {
 
                       // 4. The Buddy Icon (Grounded in Center)
                       Container(
-                            padding: EdgeInsets.all(18.r),
+                            padding: EdgeInsets.all(12.r),
                             decoration: BoxDecoration(
                               color: Colors.white.withValues(alpha: 0.15),
                               shape: BoxShape.circle,
@@ -605,7 +605,7 @@ class CommandPod extends StatelessWidget {
                             ),
                             child: Text(
                               "🧸",
-                              style: TextStyle(fontSize: 48.sp, height: 1.0),
+                              style: TextStyle(fontSize: 56.sp, height: 1.0),
                             ),
                           )
                           .animate(onPlay: (c) => c.repeat(reverse: true))
