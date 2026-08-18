@@ -208,8 +208,8 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             AutoSizeText(
                               context.tr(
                                 'home.daily_words_title',
-                                fallback: 'Daily Words',
-                              ),
+                                fallback: 'DAILY WORDS',
+                              ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white,
@@ -225,13 +225,13 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             AutoSizeText(
                               context.tr(
                                 'home.daily_words_subtitle',
-                                fallback: 'Expand your vocabulary every day',
-                              ),
+                                fallback: 'EXPAND YOUR VOCABULARY EVERY DAY',
+                              ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: Colors.white.withValues(alpha: 0.9),
+                                color: Colors.white.withValues(alpha: 0.95),
                                 fontSize: 11.sp,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w700,
                                 height: 1.2,
                               ),
                               maxLines: 2,

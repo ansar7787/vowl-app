@@ -364,16 +364,16 @@ class CommandPod extends StatelessWidget {
                   borderRadius: BorderRadius.circular(32.r),
                   gradient: const LinearGradient(
                     colors: [
-                      Color(0xFFFF3366), // Vibrant Pink
-                      Color(0xFFFF7733), // Bright Orange
-                      Color(0xFFFFB800), // Golden Yellow
+                      Color(0xFF06B6D4), // Vibrant Cyan
+                      Color(0xFF3B82F6), // Azure Blue
+                      Color(0xFF8B5CF6), // Royal Purple
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: const Color(0xFFFF7733).withValues(alpha: 0.3),
+                      color: const Color(0xFF3B82F6).withValues(alpha: 0.3),
                       blurRadius: 30,
                       offset: const Offset(0, 15),
                     ),
@@ -473,12 +473,12 @@ class CommandPod extends StatelessWidget {
                             AutoSizeText(
                               context.tr(
                                 'home.junior_adventure',
-                                fallback: 'Junior Adventure',
-                              ),
+                                fallback: 'JUNIOR ADVENTURE',
+                              ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Colors.white,
-                                fontSize: 24.sp, // Slightly larger
+                                fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: -0.5,
                                 height: 1.0,
@@ -492,13 +492,13 @@ class CommandPod extends StatelessWidget {
                               context.tr(
                                 'home.junior_adventure_subtitle',
                                 fallback:
-                                    '25 playful missions for young explorers',
-                              ),
+                                    '25 PLAYFUL MISSIONS FOR YOUNG EXPLORERS',
+                              ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                color: Colors.white.withValues(alpha: 0.9),
+                                color: Colors.white.withValues(alpha: 0.95),
                                 fontSize: 11.sp,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w700,
                                 height: 1.2,
                               ),
                               maxLines: 2,
