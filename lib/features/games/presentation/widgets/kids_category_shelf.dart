@@ -104,7 +104,7 @@ class _KidsGameEntryCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AutoSizeText(
-                      title,
+                      title.toUpperCase(),
                       maxLines: 2,
                       minFontSize: 12,
                       overflow: TextOverflow.ellipsis,
