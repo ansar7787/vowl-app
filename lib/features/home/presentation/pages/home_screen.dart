@@ -29,6 +29,7 @@ import 'package:vowl/features/home/presentation/widgets/home_section_header.dart
 import 'package:vowl/features/home/presentation/widgets/inline_notification_card.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_words_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/translation_home_card.dart';
+import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,6 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int? _globalRank;
   int? _kidsGlobalRank;
   bool _hasCheckedDailyChestThisSession = false;
+  final ValueNotifier<int> _carouselIndex = ValueNotifier(1);
+  final PageController _carouselController = PageController(viewportFraction: 0.88, initialPage: 1);
 
   @override
   void initState() {
@@ -56,6 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
         );
       }
     });
+  }
+
+  @override
+  void dispose() {
+    _carouselIndex.dispose();
+    _carouselController.dispose();
+    super.dispose();
   }
 
   Future<void> _fetchGlobalRank() async {
@@ -213,82 +223,98 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 2. GLOBAL PROGRESS + QUICK STATS
+                      // 2. STREAK
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 16.h),
+                              InlineNotificationCard(
+                                streak: user.currentStreak,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      // 3. HERO CAROUSEL (Daily Words & Junior Adventure)
+                      SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 24.h),
+                            SizedBox(
+                              height: 160.h,
+                              child: PageView(
+                                clipBehavior: Clip.none,
+                                controller: _carouselController,
+                                physics: const BouncingScrollPhysics(),
+                                onPageChanged: (idx) {
+                                  _carouselIndex.value = idx;
+                                },
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    child: CommandPod(
+                                      user: user,
+                                      mode: CommandPodMode.kidsOnly,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    child: DailyWordsHomeCard(isDark: isDark),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 8.w),
+                                    child: const VowlMascotCard(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 32.h),
+                            ValueListenableBuilder<int>(
+                              valueListenable: _carouselIndex,
+                              builder: (context, currentIndex, _) {
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: List.generate(3, (index) {
+                                    final isSelected = index == currentIndex;
+                                    return AnimatedContainer(
+                                      duration: const Duration(milliseconds: 300),
+                                      curve: Curves.easeOutCubic,
+                                      margin: EdgeInsets.symmetric(horizontal: 4.w),
+                                      height: 6.h,
+                                      width: isSelected ? 24.w : 6.w,
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? const Color(0xFF6366F1)
+                                            : (isDark ? Colors.white24 : Colors.black12),
+                                        borderRadius: BorderRadius.circular(4.r),
+                                      ),
+                                    );
+                                  }),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // 3. QUEST ARENA (Deep Work, Core Journey)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
                               SizedBox(height: 24.h),
-                              InlineNotificationCard(
-                                streak: user.currentStreak,
-                              ),
-                              SizedBox(height: 12.h),
-                              DailyWordsHomeCard(isDark: isDark),
-                              SizedBox(height: 14.h),
-                              TranslationHomeCard(isDark: isDark),
-                              SizedBox(height: 14.h),
-                              GlobalProgressCard(
-                                user: user,
-                                globalRank: _globalRank,
-                              ),
-                              SizedBox(height: 14.h),
-                              HomeQuickStats(user: user),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      // 3. JUNIOR ADVENTURE (Kids Zone)
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 25.h),
-                              HomeSectionHeader(
-                                title: context.tr(
-                                  'home.kids_zone_title',
-                                  fallback: 'Kids Zone',
-                                ),
-                                subtitle: context.tr(
-                                  'home.kids_zone_subtitle',
-                                  fallback: 'Safe & fun learning',
-                                ),
-                                localizedTitleKey: 'home.kids_zone_title',
-                                localizedSubtitleKey: 'home.kids_zone_subtitle',
-                                categoryColor: const Color(0xFFF43F5E),
-                              ),
-                              SizedBox(height: 18.h),
-                              CommandPod(
-                                user: user,
-                                mode: CommandPodMode.kidsOnly,
-                              ),
-                              SizedBox(height: 14.h),
-                              KidsGlobalProgressCard(
-                                user: user,
-                                globalRank: _kidsGlobalRank,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      // 4. QUEST ARENA (9-Step Journey)
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 30.h),
                               HomeSectionHeader(
                                 title: context.tr(
                                   'home.quest_arena_title',
-                                  fallback: 'Quest Arena',
+                                  fallback: 'Your Journey',
                                 ),
                                 subtitle: context.tr(
                                   'home.quest_arena_subtitle',
-                                  fallback: 'Test your skills',
+                                  fallback: 'Continue your adventure',
                                 ),
                                 localizedTitleKey: 'home.quest_arena_title',
                                 localizedSubtitleKey:
@@ -340,33 +366,56 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 2.h),
+                              SizedBox(height: 12.h),
                               BentoArena(user: user),
                             ],
                           ),
                         ),
                       ),
 
-                      // 5. VOWL PRIME & BADGES
+                      // 5. GLOBAL PROGRESS & INSIGHTS (Reflection & Status)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
+                              SizedBox(height: 24.h),
+                              GlobalProgressCard(
+                                user: user,
+                                globalRank: _globalRank,
+                              ),
+                              SizedBox(height: 12.h),
+                              KidsGlobalProgressCard(
+                                user: user,
+                                globalRank: _kidsGlobalRank,
+                              ),
+                              SizedBox(height: 12.h),
+                              HomeQuickStats(user: user),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      // 5. UTILITY & ELITE COMPANION (Tools & Deep Practice)
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 24.h),
                               HomeSectionHeader(
                                 title: context.tr(
-                                  'home.elite_companion_title',
-                                  fallback: 'Elite Companion',
+                                  'home.tools_and_practice_title',
+                                  fallback: 'Helpful Tools',
                                 ),
                                 subtitle: context.tr(
-                                  'home.elite_companion_subtitle',
-                                  fallback: 'Advanced practice',
+                                  'home.tools_and_practice_subtitle',
+                                  fallback: 'Translate and practice words',
                                 ),
-                                localizedTitleKey: 'home.elite_companion_title',
-                                localizedSubtitleKey:
-                                    'home.elite_companion_subtitle',
-                                categoryColor: const Color(0xFF10B981),
+                                categoryColor: const Color(0xFFA855F7), // Purple
                               ),
+                              SizedBox(height: 12.h),
+                              TranslationHomeCard(isDark: isDark),
                               SizedBox(height: 12.h),
                               CommandPod(
                                 user: user,
@@ -377,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 6. DISCOVERY HUB (Audio Deck)
+                      // 7. DISCOVERY HUB (Audio Deck)
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.discovery_hub_title',
@@ -385,7 +434,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         subtitle: context.tr(
                           'home.discovery_hub_subtitle',
-                          fallback: 'Explore new topics',
+                          fallback: 'Listen and learn new topics',
                         ),
                         categoryColor: const Color(0xFF3B82F6),
                       ),

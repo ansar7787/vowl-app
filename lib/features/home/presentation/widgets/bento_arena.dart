@@ -55,11 +55,12 @@ class BentoArena extends StatelessWidget {
               child: Column(
                 children: List.generate(types.length, (index) {
                   final isLeft = index % 2 == 0;
+                  final isLast = index == types.length - 1;
                   // Mirror the zig-zag so the journey still visually winds
                   // from the reading-start side in RTL locales.
                   final visualLeft = isRtl ? !isLeft : isLeft;
                   return Padding(
-                    padding: EdgeInsets.only(bottom: 40.h),
+                    padding: EdgeInsets.only(bottom: isLast ? 0 : 40.h),
                     child: Align(
                       alignment: visualLeft
                           ? Alignment.centerLeft

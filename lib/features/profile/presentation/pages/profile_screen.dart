@@ -16,6 +16,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
+import 'package:vowl/core/utils/ad_service.dart';
 
 // Decoupled sub-widgets
 import 'package:vowl/features/profile/presentation/widgets/profile_header.dart';
@@ -441,6 +442,68 @@ class _ProfileScreenState extends State<ProfileScreen> {
             onTap: () {
               di.sl<HapticService>().selection();
               context.push(AppRouter.photoVocabularyRoute);
+            },
+          ),
+        ),
+        SizedBox(height: 16.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: ProfileFeatureCard(
+            iconContent: Icon(
+              Icons.auto_stories_rounded,
+              color: Colors.white,
+              size: 24.r,
+            ),
+            color: const Color(0xFF3B82F6),
+            shadowColor: const Color(0xFF2563EB),
+            title: context.tr(
+              'home.daily_words_title',
+              fallback: 'Daily Words',
+            ),
+            subtitle: context.tr(
+              'home.daily_words_subtitle',
+              fallback: 'Expand your vocabulary every day.',
+            ),
+            onTap: () {
+              di.sl<HapticService>().selection();
+              context.push(AppRouter.dailyWordsRoute);
+            },
+          ),
+        ),
+        SizedBox(height: 16.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: ProfileFeatureCard(
+            iconContent: Icon(
+              Icons.translate_rounded,
+              color: Colors.white,
+              size: 24.r,
+            ),
+            color: const Color(0xFF10B981),
+            shadowColor: const Color(0xFF059669),
+            title: context.tr(
+              'home.translation_title',
+              fallback: 'Instant Translate',
+            ),
+            subtitle: context.tr(
+              'home.translation_subtitle',
+              fallback: 'Translate words & phrases offline for free.',
+            ),
+            onTap: () {
+              di.sl<HapticService>().selection();
+              final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+              if (isPremium) {
+                context.push(AppRouter.translateRoute);
+              } else {
+                di.sl<AdService>().showRewardedAd(
+                  context: context,
+                  isPremium: false,
+                  onUserEarnedReward: (_) {},
+                  onDismissed: () {
+                    context.push(AppRouter.translateRoute);
+                  },
+                );
+              }
             },
           ),
         ),

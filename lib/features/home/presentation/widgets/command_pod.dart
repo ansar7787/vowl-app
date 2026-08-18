@@ -10,7 +10,6 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
-import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
@@ -450,7 +449,7 @@ class CommandPod extends StatelessWidget {
                                   ),
                                   SizedBox(width: 4.w),
                                   Flexible(
-                                    child: Text(
+                                    child: AutoSizeText(
                                       context.tr(
                                         'home.early_learners',
                                         fallback: 'Early Learners',
@@ -463,6 +462,7 @@ class CommandPod extends StatelessWidget {
                                         letterSpacing: 1.5,
                                       ),
                                       maxLines: 1,
+                                      minFontSize: 6,
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
@@ -470,7 +470,7 @@ class CommandPod extends StatelessWidget {
                               ),
                             ),
                             SizedBox(height: 8.h),
-                            Text(
+                            AutoSizeText(
                               context.tr(
                                 'home.junior_adventure',
                                 fallback: 'Junior Adventure',
@@ -484,10 +484,11 @@ class CommandPod extends StatelessWidget {
                                 height: 1.0,
                               ),
                               maxLines: 1,
+                              minFontSize: 14,
                               overflow: TextOverflow.ellipsis,
                             ),
                             SizedBox(height: 4.h),
-                            Text(
+                            AutoSizeText(
                               context.tr(
                                 'home.junior_adventure_subtitle',
                                 fallback:
@@ -501,6 +502,7 @@ class CommandPod extends StatelessWidget {
                                 height: 1.2,
                               ),
                               maxLines: 2,
+                              minFontSize: 8,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],
@@ -632,10 +634,6 @@ class CommandPod extends StatelessWidget {
   Widget _buildBentoMasteryVault(BuildContext context) {
     return Column(
       children: [
-        const VowlMascotCard(),
-
-        SizedBox(height: 8.h),
-
         Row(
           children: [
             Expanded(

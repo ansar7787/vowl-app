@@ -46,6 +46,7 @@ class TranslationHomeCard extends StatelessWidget {
         padding: EdgeInsets.zero,
         borderColor: primaryAccent.withValues(alpha: 0.3),
         borderWidth: 1.5,
+        borderRadius: BorderRadius.circular(20.r),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -62,13 +63,13 @@ class TranslationHomeCard extends StatelessWidget {
                     ],
             ),
           ),
-          padding: EdgeInsets.all(20.r),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
           child: Row(
             children: [
               // Icon block
               Container(
-                width: 60.r,
-                height: 60.r,
+                width: 44.r,
+                height: 44.r,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -79,18 +80,18 @@ class TranslationHomeCard extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: primaryAccent.withValues(alpha: 0.3),
-                      blurRadius: 12,
-                      offset: const Offset(0, 4),
+                      blurRadius: 8,
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
                 child: Icon(
                   Icons.translate_rounded,
                   color: Colors.white,
-                  size: 28.r,
+                  size: 20.r,
                 ),
               ),
-              SizedBox(width: 16.w),
+              SizedBox(width: 14.w),
 
               // Text Content
               Expanded(
@@ -107,29 +108,31 @@ class TranslationHomeCard extends StatelessWidget {
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 18.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w900,
                               color: isDark
                                   ? Colors.white
                                   : const Color(0xFF0F172A),
                             ),
                             maxLines: 1,
+                            minFontSize: 8,
                           ),
                         ),
+                        SizedBox(width: 6.w),
                         Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 4.h,
+                            horizontal: 6.w,
+                            vertical: 3.h,
                           ),
                           decoration: BoxDecoration(
                             color: primaryAccent.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(12.r),
+                            borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
                             'OFFLINE',
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 10.sp,
+                              fontSize: 9.sp,
                               fontWeight: FontWeight.w800,
                               color: primaryAccent,
                             ),
@@ -137,7 +140,7 @@ class TranslationHomeCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 4.h),
+                    SizedBox(height: 2.h),
                     AutoSizeText(
                       context.tr(
                         'home.translation_subtitle',
@@ -145,16 +148,23 @@ class TranslationHomeCard extends StatelessWidget {
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 13.sp,
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark
                             ? Colors.white60
                             : const Color(0xFF64748B),
                       ),
                       maxLines: 2,
+                      minFontSize: 8,
                     ),
                   ],
                 ),
+              ),
+              SizedBox(width: 8.w),
+              Icon(
+                Icons.chevron_right_rounded,
+                color: primaryAccent.withValues(alpha: 0.5),
+                size: 24.r,
               ),
             ],
           ),

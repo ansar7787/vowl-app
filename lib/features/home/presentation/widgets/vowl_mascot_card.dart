@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/locale_service.dart';
@@ -45,22 +44,8 @@ class _MascotCardData {
 }
 
 class _VowlMascotCardState extends State<VowlMascotCard> {
-  bool _isPetting = false;
-
-  void _onPet() {
-    if (_isPetting) return;
-    setState(() => _isPetting = true);
-    Future.delayed(2.seconds, () {
-      if (mounted) setState(() => _isPetting = false);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final primaryColor = Theme.of(context).primaryColor;
-    final isRtl = Directionality.of(context) == TextDirection.rtl;
-
     // BUG FIX: this used to be a plain BlocBuilder, so this card's
     // continuously-repeating shimmer/pulse/float animations (built directly
     // into the widget tree via flutter_animate) restarted from frame zero
@@ -99,274 +84,240 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
           fallback: 'MAJESTIC GUIDANCE ACTIVE',
         );
 
-        return Container(
-          margin: EdgeInsets.symmetric(vertical: 12.h),
-          child: Semantics(
-            button: true,
-            label:
-                '${mascotName.toUpperCase()}, $sanctuaryLabel, $guidanceLabel',
-            child: ScaleButton(
-              onTap: () => context.push(AppRouter.vowlMascotRoute),
+        return Semantics(
+          button: true,
+          label: '${mascotName.toUpperCase()}, $sanctuaryLabel, $guidanceLabel',
+          child: ScaleButton(
+            onTap: () => context.push(AppRouter.vowlMascotRoute),
+            child: ExcludeSemantics(
               child: Stack(
+                clipBehavior: Clip.none,
+                alignment: Alignment.centerLeft,
                 children: [
-                  // 1. Layered Emerald Glow
-                  Positioned.fill(
-                    child:
-                        ExcludeSemantics(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(28.r),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: primaryColor.withValues(
-                                        alpha: 0.15,
-                                      ),
-                                      blurRadius: 24,
-                                      spreadRadius: -4,
-                                    ),
-                                  ],
-                                ),
+                  Container(
+                    constraints: BoxConstraints(minHeight: 160.h),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32.r),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color(0xFFF59E0B), // Premium Amber
+                          Color(0xFFD97706), // Deep Amber
+                          Color(0xFFFBBF24), // Bright Gold
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                          blurRadius: 30,
+                          offset: const Offset(0, 15),
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32.r),
+                      child: Stack(
+                        children: [
+                          // Decorative background circles
+                          PositionedDirectional(
+                            end: -30.w,
+                            bottom: -30.h,
+                            child: Container(
+                              width: 180.r,
+                              height: 180.r,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.white.withValues(alpha: 0.15),
                               ),
-                            )
-                            .animate(onPlay: (c) => c.repeat(reverse: true))
-                            .shimmer(
-                              duration: 3.seconds,
-                              color: primaryColor.withValues(alpha: 0.05),
-                            ),
-                  ),
-
-                  // Premium Floating Card Wrap
-                  GlassTile(
-                        borderRadius: BorderRadius.circular(28.r),
-                        padding: EdgeInsets.all(1.5.r),
-                        child: Container(
-                          padding: EdgeInsets.all(18.r),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(26.r),
-                            border: Border.all(
-                              color: primaryColor.withValues(alpha: 0.3),
-                              width: 1.2,
-                            ),
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                primaryColor.withValues(alpha: 0.1),
-                                Colors.transparent,
-                              ],
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              // 2. Mascot Emerald Core — also a "pet" affordance,
-                              // exposed as its own accessible action distinct
-                              // from the card's navigation action.
-                              Semantics(
-                                button: true,
-                                label: context.tr(
-                                  'vowl_mascot_card.pet_action',
-                                  fallback: 'Pet your mascot',
-                                ),
-                                child: Container(
-                                  width: 72.r,
-                                  height: 72.r,
+
+                          // Playful background icons
+                          PositionedDirectional(
+                            start: 20.w,
+                            top: 20.h,
+                            child: Icon(
+                              Icons.diamond_rounded,
+                              size: 24.r,
+                              color: Colors.white.withValues(alpha: 0.25),
+                            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                              begin: const Offset(1, 1),
+                              end: const Offset(1.3, 1.3),
+                              duration: 3.seconds,
+                            ),
+                          ),
+
+                          // Text Content (Moved to left side)
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                              24.w,
+                              16.h,
+                              130.w,
+                              16.h,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10.w,
+                                    vertical: 4.h,
+                                  ),
                                   decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    gradient: RadialGradient(
-                                      colors: [
-                                        primaryColor.withValues(alpha: 0.25),
-                                        Colors.transparent,
-                                      ],
+                                    color: Colors.white.withValues(alpha: 0.25),
+                                    borderRadius: BorderRadius.circular(12.r),
+                                    border: Border.all(
+                                      color: Colors.white.withValues(alpha: 0.4),
                                     ),
                                   ),
-                                  child: Center(
-                                    child: Stack(
-                                      alignment: Alignment.center,
-                                      children: [
-                                        // Enhanced Neural Bloom Pulse
-                                        ExcludeSemantics(
-                                          child:
-                                              Container(
-                                                    width: 58.r,
-                                                    height: 58.r,
-                                                    decoration: BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      border: Border.all(
-                                                        color: primaryColor
-                                                            .withValues(
-                                                              alpha: 0.6,
-                                                            ),
-                                                        width: 1.5,
-                                                      ),
-                                                    ),
-                                                  )
-                                                  .animate(
-                                                    onPlay: (c) => c.repeat(),
-                                                  )
-                                                  .scale(
-                                                    begin: const Offset(
-                                                      0.8,
-                                                      0.8,
-                                                    ),
-                                                    end: const Offset(1.4, 1.4),
-                                                    duration: 2.seconds,
-                                                    curve: Curves.easeOutExpo,
-                                                  )
-                                                  .fadeOut(duration: 2.seconds)
-                                                  .blur(
-                                                    begin: const Offset(0, 0),
-                                                    end: const Offset(6, 6),
-                                                  ),
-                                        ),
-
-                                        GestureDetector(
-                                          onTap: _onPet,
-                                          behavior: HitTestBehavior.opaque,
-                                          child: VowlMascot(
-                                            state: _isPetting
-                                                ? VowlMascotState.happy
-                                                : VowlMascotState.neutral,
-                                            size: 56.r,
-                                            accessoryId: equippedAccessory,
-                                            level: data.level,
-                                            useFloatingAnimation:
-                                                false, // Card already floats
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 20.w),
-
-                              // 3. Info (Elite Branding)
-                              Expanded(
-                                child: ExcludeSemantics(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Row(
-                                        children: [
-                                          Container(
-                                                width: 6,
-                                                height: 6,
-                                                decoration: BoxDecoration(
-                                                  color: primaryColor,
-                                                  shape: BoxShape.circle,
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                      color: primaryColor,
-                                                      blurRadius: 6,
-                                                    ),
-                                                  ],
-                                                ),
-                                              )
-                                              .animate(
-                                                onPlay: (c) => c.repeat(),
-                                              )
-                                              .fadeOut(duration: 1.seconds),
-                                          SizedBox(width: 8.w),
-                                          Flexible(
-                                            child: AutoSizeText(
-                                              sanctuaryLabel,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 8.5.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: primaryColor,
-                                                letterSpacing: 2.0,
-                                              ),
-                                              maxLines: 1,
-                                              minFontSize: 6,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                        ],
+                                      Icon(
+                                        Icons.auto_awesome_rounded,
+                                        size: 10.r,
+                                        color: Colors.white,
                                       ),
-                                      SizedBox(height: 6.h),
-                                      AutoSizeText(
-                                            mascotName.toUpperCase(),
-                                            style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 22.sp,
-                                              fontWeight: FontWeight.w900,
-                                              color: isDark
-                                                  ? Colors.white
-                                                  : const Color(0xFF0F172A),
-                                              letterSpacing: 0.2,
-                                            ),
-                                            maxLines: 1,
-                                            minFontSize: 12,
-                                            overflow: TextOverflow.ellipsis,
-                                          )
-                                          .animate()
-                                          .fadeIn(delay: 200.ms)
-                                          .slideX(begin: -0.1),
-                                      AutoSizeText(
-                                        guidanceLabel,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w700,
-                                          color: isDark
-                                              ? Colors.white38
-                                              : const Color(0xFF64748B),
-                                          letterSpacing: 1.5,
+                                      SizedBox(width: 4.w),
+                                      Flexible(
+                                        child: AutoSizeText(
+                                          sanctuaryLabel,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            color: Colors.white,
+                                            fontSize: 8.sp,
+                                            fontWeight: FontWeight.w900,
+                                            letterSpacing: 1.5,
+                                          ),
+                                          maxLines: 1,
+                                          minFontSize: 6,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
-                                        maxLines: 1,
-                                        minFontSize: 7,
-                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ],
                                   ),
                                 ),
-                              ),
-
-                              // 4. Elite Access Icon
-                              ExcludeSemantics(
-                                child:
-                                    Container(
-                                          padding: EdgeInsets.all(10.r),
-                                          decoration: BoxDecoration(
-                                            color: primaryColor.withValues(
-                                              alpha: 0.12,
-                                            ),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color: primaryColor.withValues(
-                                                alpha: 0.3,
-                                              ),
-                                            ),
-                                          ),
-                                          child: Icon(
-                                            isRtl
-                                                ? Icons
-                                                      .keyboard_double_arrow_left_rounded
-                                                : Icons
-                                                      .keyboard_double_arrow_right_rounded,
-                                            color: primaryColor,
-                                            size: 20.r,
-                                          ),
-                                        )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .shimmer(
-                                          delay: 1.seconds,
-                                          duration: 2.seconds,
-                                        ),
-                              ),
-                            ],
+                                SizedBox(height: 8.h),
+                                AutoSizeText(
+                                  mascotName.toUpperCase(),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white,
+                                    fontSize: 24.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: -0.5,
+                                    height: 1.0,
+                                  ),
+                                  maxLines: 1,
+                                  minFontSize: 14,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                SizedBox(height: 4.h),
+                                AutoSizeText(
+                                  guidanceLabel,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white.withValues(alpha: 0.95),
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.2,
+                                  ),
+                                  maxLines: 2,
+                                  minFontSize: 8,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .moveY(
-                        begin: 0,
-                        end: -6,
-                        duration: 3.seconds,
-                        curve: Curves.easeInOut,
+                        ],
                       ),
+                    ),
+                  ),
+
+                  // Mascot Area (Right Side)
+                  PositionedDirectional(
+                    end: 0,
+                    bottom: 0,
+                    top: 0,
+                    child: SizedBox(
+                      width: 140.w,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          // 1. Outer Soft Glow
+                          Container(
+                            width: 140.r,
+                            height: 140.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                colors: [
+                                  Colors.white.withValues(alpha: 0.2),
+                                  Colors.transparent,
+                                ],
+                              ),
+                            ),
+                          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                            begin: const Offset(0.8, 0.8),
+                            end: const Offset(1.2, 1.2),
+                            duration: 4.seconds,
+                          ),
+
+                          // 2. Secondary Interactive Ring
+                          Container(
+                            width: 100.r,
+                            height: 100.r,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.3),
+                                width: 1.5,
+                              ),
+                            ),
+                          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 10.seconds),
+
+                          // 3. The Mascot
+                          Container(
+                            padding: EdgeInsets.all(12.r),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.15),
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.white.withValues(alpha: 0.4),
+                                width: 2.r,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withValues(alpha: 0.1),
+                                  blurRadius: 25,
+                                  offset: const Offset(0, 12),
+                                ),
+                              ],
+                            ),
+                            child: VowlMascot(
+                              state: VowlMascotState.neutral,
+                              size: 56.r,
+                              accessoryId: equippedAccessory,
+                              level: data.level,
+                              useFloatingAnimation: false,
+                            ),
+                          ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
+                            begin: -6,
+                            end: 6,
+                            duration: 2.seconds,
+                            curve: Curves.easeInOut,
+                          ).scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(1.05, 1.05),
+                            duration: 2.seconds,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
