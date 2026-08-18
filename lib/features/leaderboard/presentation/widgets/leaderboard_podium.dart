@@ -113,7 +113,9 @@ class _PodiumSlot extends StatelessWidget {
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids ? user.kidsCoins : user.totalExp;
-    final scoreLabel = isKids ? 'Coins' : 'XP';
+    final scoreLabel = isKids
+        ? context.tr('leaderboard.coins', fallback: 'Coins')
+        : context.tr('leaderboard.xp', fallback: 'XP');
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Semantics(

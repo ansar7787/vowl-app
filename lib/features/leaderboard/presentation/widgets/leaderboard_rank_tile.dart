@@ -27,7 +27,9 @@ class LeaderboardRankTile extends StatelessWidget {
         ? user.kidsTotalLevelsCompleted
         : user.totalLevelsCompleted;
     final score = isKids ? user.kidsCoins : user.totalExp;
-    final scoreLabel = isKids ? 'Coins' : 'XP';
+    final scoreLabel = isKids
+        ? context.tr('leaderboard.coins', fallback: 'Coins')
+        : context.tr('leaderboard.xp', fallback: 'XP');
     final tierColor = rank <= 10
         ? const Color(0xFF3B82F6)
         : const Color(0xFF94A3B8);

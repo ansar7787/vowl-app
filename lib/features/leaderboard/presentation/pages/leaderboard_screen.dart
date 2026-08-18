@@ -508,7 +508,10 @@ class _LeaderboardToggle extends StatelessWidget {
                     ),
                     SizedBox(width: 5.w),
                     Text(
-                      'Global Ranks',
+                      context.tr(
+                        'leaderboard.global_ranks',
+                        fallback: 'Global Ranks',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w800,
@@ -559,7 +562,10 @@ class _LeaderboardToggle extends StatelessWidget {
                     ),
                     SizedBox(width: 5.w),
                     Text(
-                      'Kids Zone',
+                      context.tr(
+                        'leaderboard.kids_zone',
+                        fallback: 'Kids Zone',
+                      ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontWeight: FontWeight.w800,
