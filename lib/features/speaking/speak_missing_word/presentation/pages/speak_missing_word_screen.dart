@@ -296,183 +296,81 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 70.h : 100.h) +
-                          (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 100.h : 160.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 6
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 16.0)
-                          : 8.0;
-                      final double gapSentence = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapTelemetry = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(12.0, 30.0)
-                          : 12.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child:
-                                                  SpeakMissingWordInstruction(
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    isWordPlaced: _isWordPlaced,
-                                                    instruction:
-                                                        quest.instruction,
-                                                  ),
-                                            ),
-                                          )
-                                        : SpeakMissingWordInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            isWordPlaced: _isWordPlaced,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 90.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    SpeakMissingWordVortexSentence(
-                                                      text: _isWordPlaced
-                                                          ? completedSentence
-                                                          : initialBlankSentence,
-                                                      insertedWord:
-                                                          _isWordPlaced
-                                                          ? (_selectedWord ??
-                                                                "")
-                                                          : "",
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : SpeakMissingWordVortexSentence(
-                                            text: _isWordPlaced
-                                                ? completedSentence
-                                                : initialBlankSentence,
-                                            insertedWord: _isWordPlaced
-                                                ? (_selectedWord ?? "")
-                                                : "",
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                          ),
-                                    SizedBox(height: gapSentence),
-
-                                    if (!_isWordPlaced)
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 110.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width:
-                                                      constraints.maxWidth -
-                                                      16.w,
-                                                  child:
-                                                      SpeakMissingWordMagnetArena(
-                                                        dynamicOptions:
-                                                            _dynamicOptions,
-                                                        selectedWord:
-                                                            _selectedWord,
-                                                        pullForce: _pullForce,
-                                                        primaryColor:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
-                                                        vortexController:
-                                                            _vortexController,
-                                                        onPullStart:
-                                                            _onPullStart,
-                                                        onPullEnd: _onPullEnd,
-                                                      ),
-                                                ),
-                                              ),
-                                            )
-                                          : SpeakMissingWordMagnetArena(
-                                              dynamicOptions: _dynamicOptions,
-                                              selectedWord: _selectedWord,
-                                              pullForce: _pullForce,
-                                              primaryColor: theme.primaryColor,
-                                              isDark: isDark,
-                                              vortexController:
-                                                  _vortexController,
-                                              onPullStart: _onPullStart,
-                                              onPullEnd: _onPullEnd,
-                                            ),
-                                  ],
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SpeakMissingWordInstruction(
+                                primaryColor: theme.primaryColor,
+                                isWordPlaced: _isWordPlaced,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              SpeakMissingWordVortexSentence(
+                                text: _isWordPlaced
+                                    ? completedSentence
+                                    : initialBlankSentence,
+                                insertedWord: _isWordPlaced
+                                    ? (_selectedWord ?? "")
+                                    : "",
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                              ),
+                              SizedBox(height: 32.h),
+                              if (!_isWordPlaced)
+                                SpeakMissingWordMagnetArena(
+                                  dynamicOptions: _dynamicOptions,
+                                  selectedWord: _selectedWord,
+                                  pullForce: _pullForce,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  vortexController: _vortexController,
+                                  onPullStart: _onPullStart,
+                                  onPullEnd: _onPullEnd,
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTelemetry),
-                                    if (_isWordPlaced && !_isAnswered)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText: completedSentence,
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(
-                                              true,
-                                              missingWord,
-                                            ),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(
-                                              false,
-                                              missingWord,
-                                            ),
-                                      ),
-
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
-                            ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (_isWordPlaced && !_isAnswered)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: completedSentence,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(
+                                        true,
+                                        missingWord,
+                                      ),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(
+                                        false,
+                                        missingWord,
+                                      ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

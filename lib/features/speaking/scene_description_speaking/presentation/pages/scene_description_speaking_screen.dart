@@ -221,184 +221,77 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 80.h : 110.h) +
-                          (isCompact ? 100.h : 140.h) +
-                          (isCompact ? 100.h : 160.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 5
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 16.0)
-                          : 8.0;
-                      final double gapMap = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapPrompt = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                          : 10.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SceneDescriptionHeader(
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
-                                            ),
-                                          )
-                                        : SceneDescriptionHeader(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 120.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    SceneDescriptionScenicRadarMap(
-                                                      sceneTitle: _sceneTitle,
-                                                      inspectedHotspots:
-                                                          _inspectedHotspots,
-                                                      activeHotspot:
-                                                          _activeHotspot,
-                                                      hotspotLabels:
-                                                          _hotspotLabels,
-                                                      radarController:
-                                                          _radarController,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onHotspotTap:
-                                                          _onHotspotTap,
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : SceneDescriptionScenicRadarMap(
-                                            sceneTitle: _sceneTitle,
-                                            inspectedHotspots:
-                                                _inspectedHotspots,
-                                            activeHotspot: _activeHotspot,
-                                            hotspotLabels: _hotspotLabels,
-                                            radarController: _radarController,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onHotspotTap: _onHotspotTap,
-                                          ),
-                                    SizedBox(height: gapMap),
-
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 80.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child: AnimatedSwitcher(
-                                                  duration: const Duration(
-                                                    milliseconds: 300,
-                                                  ),
-                                                  child: _activeHotspot != -1
-                                                      ? SceneDescriptionActivePromptCard(
-                                                          activeHotspot:
-                                                              _activeHotspot,
-                                                          activePrompt:
-                                                              _hotspotPrompts[_activeHotspot],
-                                                          primaryColor: theme
-                                                              .primaryColor,
-                                                          isDark: isDark,
-                                                        )
-                                                      : SceneDescriptionExplorerGuideCard(
-                                                          isDark: isDark,
-                                                        ),
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : AnimatedSwitcher(
-                                            duration: const Duration(
-                                              milliseconds: 300,
-                                            ),
-                                            child: _activeHotspot != -1
-                                                ? SceneDescriptionActivePromptCard(
-                                                    activeHotspot:
-                                                        _activeHotspot,
-                                                    activePrompt:
-                                                        _hotspotPrompts[_activeHotspot],
-                                                    primaryColor:
-                                                        theme.primaryColor,
-                                                    isDark: isDark,
-                                                  )
-                                                : SceneDescriptionExplorerGuideCard(
-                                                    isDark: isDark,
-                                                  ),
-                                          ),
-                                    SizedBox(height: gapPrompt),
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (!_isAnswered && _activeHotspot != -1)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText:
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SceneDescriptionHeader(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              SceneDescriptionScenicRadarMap(
+                                sceneTitle: _sceneTitle,
+                                inspectedHotspots: _inspectedHotspots,
+                                activeHotspot: _activeHotspot,
+                                hotspotLabels: _hotspotLabels,
+                                radarController: _radarController,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onHotspotTap: _onHotspotTap,
+                              ),
+                              SizedBox(height: 32.h),
+                              AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 300),
+                                child: _activeHotspot != -1
+                                    ? SceneDescriptionActivePromptCard(
+                                        activeHotspot: _activeHotspot,
+                                        activePrompt:
                                             _hotspotPrompts[_activeHotspot],
                                         primaryColor: theme.primaryColor,
                                         isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
+                                      )
+                                    : SceneDescriptionExplorerGuideCard(
+                                        isDark: isDark,
                                       ),
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (!_isAnswered && _activeHotspot != -1)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: _hotspotPrompts[_activeHotspot],
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

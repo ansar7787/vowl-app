@@ -150,121 +150,60 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : LayoutBuilder(
-                    builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      final bool isCompact = maxHeight < 580;
-
-                      final double estimatedContentHeight =
-                          24.h +
-                          (isCompact ? 90.h : 120.h) +
-                          (isCompact ? 160.h : 220.h);
-                      final remainingHeight =
-                          maxHeight - estimatedContentHeight;
-
-                      final double gapUnit = remainingHeight > 0
-                          ? remainingHeight / 4
-                          : 0;
-                      final double gapTop = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(6.0, 16.0)
-                          : 6.0;
-                      final double gapInstruction = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(8.0, 16.0)
-                          : 8.0;
-                      final double gapCard = remainingHeight > 0
-                          ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                          : 10.0;
-                      final double gapBottom = remainingHeight > 0
-                          ? (gapUnit * 1).clamp(12.0, 40.0)
-                          : 12.0;
-
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: maxHeight),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 32.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: RepeatSentenceInstruction(
-                                                primaryColor:
-                                                    theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
-                                            ),
-                                          )
-                                        : RepeatSentenceInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width:
-                                                    constraints.maxWidth - 16.w,
-                                                child:
-                                                    RepeatSentenceAuditionCard(
-                                                      quest: quest,
-                                                      primaryColor:
-                                                          theme.primaryColor,
-                                                      isDark: isDark,
-                                                      onPlayTts: () =>
-                                                          _soundService.playTts(
-                                                            quest.textToSpeak ??
-                                                                "",
-                                                          ),
-                                                    ),
-                                              ),
-                                            ),
-                                          )
-                                        : RepeatSentenceAuditionCard(
-                                            quest: quest,
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            onPlayTts: () =>
-                                                _soundService.playTts(
-                                                  quest.textToSpeak ?? "",
-                                                ),
-                                          ),
-                                    SizedBox(height: gapCard),
-                                  ],
+                : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              RepeatSentenceInstruction(
+                                primaryColor: theme.primaryColor,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              RepeatSentenceAuditionCard(
+                                quest: quest,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onPlayTts: () => _soundService.playTts(
+                                  quest.textToSpeak ?? "",
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    if (!_isAnswered)
-                                      SpeakingSelfEvaluationControls(
-                                        expectedText: quest.textToSpeak ?? "",
-                                        primaryColor: theme.primaryColor,
-                                        isDark: isDark,
-                                        onConfirmed: () =>
-                                            _submitVerbalEvaluation(true),
-                                        onSkipped: () =>
-                                            _submitVerbalEvaluation(false),
-                                      ),
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      );
-                    },
+                      ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              if (!_isAnswered)
+                                SpeakingSelfEvaluationControls(
+                                  expectedText: quest.textToSpeak ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  onConfirmed: () =>
+                                      _submitVerbalEvaluation(true),
+                                  onSkipped: () =>
+                                      _submitVerbalEvaluation(false),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
           ),
         );

@@ -50,10 +50,10 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 1 | Repeat Sentence | Hears sentence → speaks it exactly | Pronunciation + fluency via shadowing | ✅ | ✅ `RepeatSentenceScreen` | ✅ | ⬜ |
-| 2 | Speak Missing Word | Sees sentence with blank → says the word | Active recall + context prediction | ✅ | ✅ `SpeakMissingWordScreen` | ✅ | ⬜ |
-| 3 | Situation Speaking | Given real situation → speaks response | Spontaneous speech under pressure | ✅ | ✅ `SituationSpeakingScreen` | ✅ | ⬜ |
-| 4 | Scene Description | Sees scene prompt → describes verbally | Descriptive vocabulary + fluency | ✅ | ✅ `SceneDescriptionScreen` | ✅ | ⬜ |
+| 1 | Repeat Sentence | Hears sentence → speaks it exactly | Pronunciation + fluency via shadowing | ✅ | ✅ `RepeatSentenceScreen` | ✅ | ✅ |
+| 2 | Speak Missing Word | Sees sentence with blank → says the word | Active recall + context prediction | ✅ | ✅ `SpeakMissingWordScreen` | ✅ | ✅ |
+| 3 | Situation Speaking | Given real situation → speaks response | Spontaneous speech under pressure | ✅ | ✅ `SituationSpeakingScreen` | ✅ | ✅ |
+| 4 | Scene Description | Sees scene prompt → describes verbally | Descriptive vocabulary + fluency | ✅ | ✅ `SceneDescriptionScreen` | ✅ | ✅ |
 | 5 | Yes/No Speaking | Hears question → says yes/no + reason | Quick response + justification skills | ✅ | ✅ `YesNoSpeakingScreen` | ✅ | ⬜ |
 | 6 | Speak Synonym | Sees word → says a synonym out loud | Vocabulary breadth via active production | ✅ | ✅ `SpeakSynonymScreen` | ✅ | ⬜ |
 | 7 | Dialogue Roleplay | Takes turns in conversation → speaks | Conversational flow + turn-taking | ✅ | ✅ `DialogueRoleplayScreen` | ✅ | ⬜ |
