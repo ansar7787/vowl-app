@@ -119,6 +119,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(32.r),
                       child: Stack(
+                        alignment: Alignment.centerLeft,
                         children: [
                           // Decorative background circles
                           PositionedDirectional(

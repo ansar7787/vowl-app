@@ -382,6 +382,7 @@ class CommandPod extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(32.r),
                   child: Stack(
+                    alignment: Alignment.centerLeft,
                     children: [
                       // Decorative background circles
                       PositionedDirectional(
@@ -473,7 +474,7 @@ class CommandPod extends StatelessWidget {
                             AutoSizeText(
                               context.tr(
                                 'home.junior_adventure',
-                                fallback: 'JUNIOR ADVENTURE',
+                                fallback: 'KIDS ZONE',
                               ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
