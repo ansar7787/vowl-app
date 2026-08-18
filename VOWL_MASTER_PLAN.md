@@ -113,7 +113,7 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 44 | Grammar Quest | Applies grammar rule → selects answer | General grammar awareness | ✅ | ✅ `GrammarQuestScreen` | ✅ | ⬜ |
+| 44 | Grammar Quest | Applies grammar rule → selects answer | General grammar awareness | ✅ | ✅ `GrammarQuestScreen` | ✅ | ✅ |
 | 45 | Sentence Correction | Spots error → selects correction | Error detection skills | ✅ | ✅ `SentenceCorrectionScreen` | ✅ | ⬜ |
 | 46 | Word Reorder | Drags words into correct order | Syntax structure mastery | ✅ | ✅ `WordReorderScreen` | ✅ | ⬜ |
 | 47 | Tense Mastery | Selects correct tense form | Verb tense system | ✅ | ✅ `TenseMasteryScreen` | ✅ | ⬜ |

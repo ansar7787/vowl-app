@@ -42,6 +42,10 @@ class TypeToConfirmOverlay extends StatefulWidget {
   /// Whether to show a "Skip" button. Defaults to true for accessibility.
   final bool allowSkip;
 
+  /// Whether to wrap the overlay in a Positioned widget (for Stack layouts).
+  /// Defaults to true for legacy support. Set to false for Sliver layouts.
+  final bool isPositioned;
+
   const TypeToConfirmOverlay({
     super.key,
     required this.expectedText,
@@ -53,6 +57,7 @@ class TypeToConfirmOverlay extends StatefulWidget {
     this.maxAttempts = 3,
     this.bonusXp = 5,
     this.allowSkip = true,
+    this.isPositioned = true,
   });
 
   @override
@@ -127,15 +132,21 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child: _buildPanel(isDark)
-          .animate()
-          .slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut)
-          .fadeIn(duration: 300.ms),
-    );
+    final content = _buildPanel(isDark)
+        .animate()
+        .slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut)
+        .fadeIn(duration: 300.ms);
+
+    if (widget.isPositioned) {
+      return Positioned(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        child: content,
+      );
+    }
+
+    return content;
   }
 
   Widget _buildPanel(bool isDark) {

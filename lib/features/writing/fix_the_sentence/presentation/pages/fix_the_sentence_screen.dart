@@ -157,6 +157,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           onHint: () =>

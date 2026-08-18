@@ -131,40 +131,56 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    Column(
-                      children: [
-                        SizedBox(height: 24.h),
-                        GrammarQuestInstruction(
-                          primaryColor: theme.primaryColor,
-                        ),
-                        SizedBox(height: 24.h),
-                        if (_isAnswered)
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 24.w),
-                            child: Text(
-                              targetText,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.bold,
-                                color: _isCorrect == true
-                                    ? Colors.green
-                                    : Colors.red,
-                              ),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 24.h),
+                            GrammarQuestInstruction(
+                              primaryColor: theme.primaryColor,
                             ),
-                          ),
-                      ],
-                    ),
-                    if (!_isAnswered && targetText.isNotEmpty)
-                      DynamicJigsawWrapper(
-                        expectedText: targetText,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitAnswer(true),
-                        onSkipped: () => _submitAnswer(false),
+                            SizedBox(height: 24.h),
+                            if (_isAnswered)
+                              Text(
+                                targetText,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 24.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: _isCorrect == true
+                                      ? Colors.green
+                                      : Colors.red,
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 0.w), // No padding for Jigsaw wrapper as it provides its own padding
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!_isAnswered && targetText.isNotEmpty)
+                              DynamicJigsawWrapper(
+                                expectedText: targetText,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitAnswer(true),
+                                onSkipped: () => _submitAnswer(false),
+                                isPositioned: false,
+                              ),
+                            SizedBox(height: _isAnswered ? 160.h : 60.h),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
         );

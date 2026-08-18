@@ -9,6 +9,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
   final VoidCallback onSkipped;
   final int? bonusCoins;
   final bool allowSkip;
+  final bool isPositioned;
 
   const DynamicJigsawWrapper({
     super.key,
@@ -18,6 +19,7 @@ class DynamicJigsawWrapper extends StatefulWidget {
     required this.onSkipped,
     this.bonusCoins = 5,
     this.allowSkip = true,
+    this.isPositioned = true,
   });
 
   @override
@@ -111,14 +113,9 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
     final errorColor = Colors.redAccent;
 
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child:
-          Material(
-                type: MaterialType.transparency,
-                child: Container(
+    final content = Material(
+      type: MaterialType.transparency,
+      child: Container(
                   padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                   decoration: BoxDecoration(
                     color: bgColor,
@@ -405,8 +402,18 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                 duration: 400.ms,
                 curve: Curves.easeOut,
               )
-              .fadeIn(duration: 300.ms),
-    );
+              .fadeIn(duration: 300.ms);
+
+    if (widget.isPositioned) {
+      return Positioned(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        child: content,
+      );
+    }
+
+    return content;
   }
 }
 
