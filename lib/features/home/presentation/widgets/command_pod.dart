@@ -492,8 +492,7 @@ class CommandPod extends StatelessWidget {
                             AutoSizeText(
                               context.tr(
                                 'home.junior_adventure_subtitle',
-                                fallback:
-                                    '25 PLAYFUL MISSIONS FOR YOUNG EXPLORERS',
+                                fallback: 'PLAYFUL MISSIONS',
                               ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',

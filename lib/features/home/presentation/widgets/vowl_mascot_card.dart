@@ -81,8 +81,8 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
         );
         final guidanceLabel = context.tr(
           'vowl_mascot_card.majestic_guidance_active',
-          fallback: 'MAJESTIC GUIDANCE ACTIVE',
-        );
+          fallback: 'MAJESTIC GUIDANCE',
+        ).toUpperCase();
 
         return Semantics(
           button: true,

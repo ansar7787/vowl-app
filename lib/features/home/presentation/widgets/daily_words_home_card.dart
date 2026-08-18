@@ -226,7 +226,7 @@ class _DailyWordsHomeCardState extends State<DailyWordsHomeCard> {
                             AutoSizeText(
                               context.tr(
                                 'home.daily_words_subtitle',
-                                fallback: 'EXPAND YOUR VOCABULARY EVERY DAY',
+                                fallback: 'WORD MASTERY',
                               ).toUpperCase(),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
