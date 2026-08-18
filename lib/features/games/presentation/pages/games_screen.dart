@@ -71,6 +71,7 @@ class GamesScreen extends StatelessWidget {
   /// FIX (HIGH-4): Extracted from build() to reduce nesting depth and keep
   /// GamesScreen well under the 300-line mandatory refactor threshold.
   List<Widget> _buildSections(BuildContext context, UserEntity user) => [
+    _KidsGameSection(user: user),
     _GameSection(
       titleKey: 'games.vocabulary.title',
       subtitleKey: 'games.vocabulary.subtitle',
@@ -125,7 +126,6 @@ class GamesScreen extends StatelessWidget {
       type: QuestType.eliteMastery,
       user: user,
     ),
-    _KidsGameSection(user: user),
   ];
 }
 

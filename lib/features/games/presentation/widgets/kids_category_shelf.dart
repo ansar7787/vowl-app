@@ -54,10 +54,8 @@ class _KidsGameEntryCard extends StatelessWidget {
     final displayColor = isDark
         ? color
         : HSLColor.fromColor(color).withLightness(0.4).toColor();
-    final title =
-        metadata.subtitle; // The descriptive phrase (e.g. "Letters & Phonics")
-    final subtitle =
-        metadata.fullTitle; // The core generic name (e.g. "Alphabet")
+    final title = metadata.gridTitle; // e.g. "ABC"
+    final subtitle = metadata.subtitle; // e.g. "Letters & Phonics"
     final icon = metadata.icon;
 
     return Semantics(
