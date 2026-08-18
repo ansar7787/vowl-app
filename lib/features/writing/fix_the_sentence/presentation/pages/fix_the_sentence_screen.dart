@@ -165,61 +165,72 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    SingleChildScrollView(
+                    CustomScrollView(
                       physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            FixTheSentenceInstruction(
-                              isWiped: _isWiped,
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 16.h),
+                                FixTheSentenceInstruction(
+                                  isWiped: _isWiped,
+                                  primaryColor: theme.primaryColor,
+                                  instruction: quest.instruction,
+                                ),
+                                SizedBox(height: 32.h),
+
+                                FixTheSentenceDigitalBlackboard(
+                                  fullText: quest.passage ?? "",
+                                  targetWord: quest.missingWord ?? "",
+                                  selectedReplacement:
+                                      _selectedOption ?? _pendingSelectedOption,
+                                  isWiped: _isWiped,
+                                  erasePoints: _erasePoints,
+                                  onErase: (pos) => _onErase(pos, isAnswered),
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                                SizedBox(height: 32.h),
+
+                                if (_isWiped && !isAnswered)
+                                  FixTheSentenceWipedAlert(
+                                    primaryColor: theme.primaryColor,
+                                  ),
+                                if (_isWiped && !isAnswered) SizedBox(height: 16.h),
+
+                                if (_isWiped)
+                                  FixTheSentenceCorrectionOptions(
+                                    options:
+                                        _shuffledOptions ?? quest.options ?? [],
+                                    correct: quest.correctAnswer ?? "",
+                                    color: theme.primaryColor,
+                                    isDark: isDark,
+                                    onSelect: (selected, correct) {
+                                      if (isAnswered ||
+                                          _pendingSelectedOption != null) {
+                                        return;
+                                      }
+                                      setState(
+                                        () => _pendingSelectedOption = selected,
+                                      );
+                                    },
+                                  ),
+                              ],
                             ),
-                            SizedBox(height: 32.h),
-
-                            FixTheSentenceDigitalBlackboard(
-                              fullText: quest.passage ?? "",
-                              targetWord: quest.missingWord ?? "",
-                              selectedReplacement:
-                                  _selectedOption ?? _pendingSelectedOption,
-                              isWiped: _isWiped,
-                              erasePoints: _erasePoints,
-                              onErase: (pos) => _onErase(pos, isAnswered),
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 32.h),
-
-                            if (_isWiped && !isAnswered)
-                              FixTheSentenceWipedAlert(
-                                primaryColor: theme.primaryColor,
-                              ),
-                            if (_isWiped && !isAnswered) SizedBox(height: 16.h),
-
-                            if (_isWiped)
-                              FixTheSentenceCorrectionOptions(
-                                options:
-                                    _shuffledOptions ?? quest.options ?? [],
-                                correct: quest.correctAnswer ?? "",
-                                color: theme.primaryColor,
-                                isDark: isDark,
-                                onSelect: (selected, correct) {
-                                  if (isAnswered ||
-                                      _pendingSelectedOption != null) {
-                                    return;
-                                  }
-                                  setState(
-                                    () => _pendingSelectedOption = selected,
-                                  );
-                                },
-                              ),
-
-                            SizedBox(height: 160.h),
-                          ],
+                          ),
                         ),
-                      ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 160.h), // Bottom padding for feedback card
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     if (_pendingSelectedOption != null && !isAnswered)
                       TypeToConfirmOverlay(

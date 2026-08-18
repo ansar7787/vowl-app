@@ -100,9 +100,9 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | 33 | Sentence Builder | Drags words → builds correct sentence | Word order + grammar structure | ✅ | ✅ `SentenceBuilderScreen` | ✅ | ✅ |
 | 34 | Complete Sentence | Types missing words into sentence | Grammar + vocabulary production | ✅ | ✅ `CompleteSentenceScreen` | ✅ | ✅ |
 | 35 | Describe Situation | Reads situation → writes description | Descriptive writing skills | ✅ | ✅ `DescribeSituationScreen` | ✅ | ✅ |
-| 36 | Fix The Sentence | Finds & types corrections | Error detection + correction | ✅ | ✅ `FixTheSentenceScreen` | ✅ | ⬜ |
-| 37 | Short Answer | Reads question → writes short answer | Concise response writing | ✅ | ✅ `ShortAnswerScreen` | ✅ | ⬜ |
-| 38 | Opinion Writing | Writes opinion paragraph with reasons | Argumentative writing | ✅ | ✅ `OpinionWritingScreen` | ✅ | ⬜ |
+| 36 | Fix The Sentence | Finds & types corrections | Error detection + correction | ✅ | ✅ `FixTheSentenceScreen` | ✅ | ✅ |
+| 37 | Short Answer | Reads question → writes short answer | Concise response writing | ✅ | ✅ `ShortAnswerScreen` | ✅ | ✅ |
+| 38 | Opinion Writing | Writes opinion paragraph with reasons | Argumentative writing | ✅ | ✅ `OpinionWritingScreen` | ✅ | ✅ |
 | 39 | Daily Journal | Writes daily journal entry | Personal narrative writing | ✅ | ✅ `DailyJournalScreen` | ✅ | ⬜ |
 | 40 | Summarize Story | Reads story → writes summary | Summary/synthesis skills | ✅ | ✅ `SummarizeStoryWritingScreen` | ✅ | ⬜ |
 | 41 | Writing Email | Writes professional email | Formal writing skills | ✅ | ✅ `WritingEmailScreen` | ✅ | ⬜ |

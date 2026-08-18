@@ -203,136 +203,152 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 16.h),
-                      ShortAnswerInstruction(
-                        primaryColor: theme.primaryColor,
-                        instruction: quest.instruction,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      ShortAnswerQuillPrompt(
-                        prompt: quest.prompt ?? "",
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      ShortAnswerBoosterTokens(
-                        keywords: targetKeywords,
-                        text: _answerController.text,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      ShortAnswerInkwell(
-                        controller: _answerController,
-                        isAnswered: isAnswered,
-                        wordCount: _wordCount,
-                        inkLevel: _inkLevel,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 36.h),
-
-                      if ((isCorrect == true || isFinalFailure) &&
-                          quest.sampleAnswer != null)
-                        Container(
-                          margin: EdgeInsets.only(bottom: 36.h),
-                          padding: EdgeInsets.all(16.r),
-                          decoration: BoxDecoration(
-                            color: theme.primaryColor.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: theme.primaryColor.withValues(alpha: 0.3),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ShortAnswerInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
                             ),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.lightbulb_rounded,
-                                    color: theme.primaryColor,
-                                    size: 18.r,
+                            SizedBox(height: 24.h),
+
+                            ShortAnswerQuillPrompt(
+                              prompt: quest.prompt ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            ShortAnswerBoosterTokens(
+                              keywords: targetKeywords,
+                              text: _answerController.text,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            ShortAnswerInkwell(
+                              controller: _answerController,
+                              isAnswered: isAnswered,
+                              wordCount: _wordCount,
+                              inkLevel: _inkLevel,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 36.h),
+
+                            if ((isCorrect == true || isFinalFailure) &&
+                                quest.sampleAnswer != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 36.h),
+                                padding: EdgeInsets.all(16.r),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: theme.primaryColor.withValues(alpha: 0.3),
                                   ),
-                                  SizedBox(width: 8.w),
-                                  Text(
-                                    "SAMPLE ANSWER",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: theme.primaryColor,
-                                      letterSpacing: 1.2,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.lightbulb_rounded,
+                                          color: theme.primaryColor,
+                                          size: 18.r,
+                                        ),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          "SAMPLE ANSWER",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 1.2,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(height: 8.h),
-                              Text(
-                                quest.sampleAnswer!,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                  height: 1.5,
+                                    SizedBox(height: 8.h),
+                                    Text(
+                                      quest.sampleAnswer!,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        color: isDark ? Colors.white : Colors.black87,
+                                        height: 1.5,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ],
-                          ),
+                          ],
                         ),
-
-                      if (!isAnswered && livesRemaining > 0)
-                        ScaleButton(
-                          onTap: () =>
-                              _submitAnswer(targetKeywords, isAnswered),
-                          child: Container(
-                            width: double.infinity,
-                            height: 60.h,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.r),
-                              color: _wordCount >= 10
-                                  ? theme.primaryColor
-                                  : Colors.grey,
-                              boxShadow: [
-                                if (_wordCount >= 10)
-                                  BoxShadow(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
-                                    ),
-                                    blurRadius: 15,
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!isAnswered && livesRemaining > 0)
+                              ScaleButton(
+                                onTap: () =>
+                                    _submitAnswer(targetKeywords, isAnswered),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    color: _wordCount >= 10
+                                        ? theme.primaryColor
+                                        : Colors.grey,
+                                    boxShadow: [
+                                      if (_wordCount >= 10)
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                        ),
+                                    ],
                                   ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                "SEAL WITH WAX",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 2,
+                                  child: Center(
+                                    child: Text(
+                                      "SEAL WITH WAX",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
+                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                          ],
                         ),
-
-                      SizedBox(height: 60.h),
-                    ],
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
         );
       },
