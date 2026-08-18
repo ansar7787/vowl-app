@@ -242,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SliverToBoxAdapter(
                         child: Column(
                           children: [
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 16.h),
                             SizedBox(
                               height: 190.h, // 160.h for card + 30.h for shadow
                               child: PageView(
@@ -271,7 +271,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ],
                               ),
                             ),
-                            SizedBox(height: 16.h), // Reduced from 32.h since we added 30.h to the bottom of the cards
                             ValueListenableBuilder<int>(
                               valueListenable: _carouselIndex,
                               builder: (context, currentIndex, _) {
