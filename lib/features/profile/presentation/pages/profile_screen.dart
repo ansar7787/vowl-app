@@ -157,20 +157,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             padding: EdgeInsets.symmetric(horizontal: 24.w),
                             child: ProfileFeatureCard(
                               iconContent: Icon(
-                                Icons.analytics_rounded,
+                                Icons.insights_rounded,
                                 color: Colors.white,
                                 size: 24.r,
                               ),
                               color: const Color(0xFF10B981), // Emerald
                               shadowColor: const Color(0xFF059669),
                               title: context.tr(
-                                'profile.progress_dashboard',
-                                fallback: 'Progress Dashboard',
+                                'profile.learning_report',
+                                fallback: 'Learning Report',
                               ),
                               subtitle: context.tr(
-                                'profile.progress_dashboard_subtitle',
+                                'profile.learning_report_subtitle',
                                 fallback:
-                                    'View streaks, radars, and weak areas.',
+                                    'Weekly XP, mastery overview & quick resume.',
                               ),
                               onTap: () {
                                 di.sl<HapticService>().selection();

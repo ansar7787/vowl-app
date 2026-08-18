@@ -179,13 +179,13 @@ class UserEntity {
   /// Current user level derived from total XP.
   int get level => (totalExp / UserGameConstants.kXpPerLevel).floor() + 1;
 
-  /// Total number of individual game levels completed across all categories.
+  /// Total number of individual game levels completed across all adult categories.
   int get totalLevelsCompleted {
     var count = 0;
     for (final levels in completedLevels.values) {
       count += levels.length;
     }
-    return count;
+    return count - kidsTotalLevelsCompleted;
   }
 
   /// Total number of kids game levels completed.
@@ -257,13 +257,12 @@ class UserEntity {
   }
 
   /// Returns the total number of levels cleared across all non-legacy subtypes
-  /// of [type] (i.e., sum of (unlockedLevel - 1) for each subtype).
+  /// of [type] (i.e., sum of completed levels arrays for each subtype).
   int getTotalCategoryLevelsCleared(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     var totalCleared = 0;
     for (final subtype in subtypes) {
-      final unlockedLevel = unlockedLevels[subtype.name] ?? 1;
-      if (unlockedLevel > 1) totalCleared += unlockedLevel - 1;
+      totalCleared += completedLevels[subtype.name]?.length ?? 0;
     }
     return totalCleared;
   }
