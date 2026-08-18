@@ -373,7 +373,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 5. GLOBAL PROGRESS & INSIGHTS (Reflection & Status)
+                      // 5. GLOBAL PROGRESS, STATS & UTILITY
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -391,36 +391,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               SizedBox(height: 12.h),
                               HomeQuickStats(user: user),
-                            ],
-                          ),
-                        ),
-                      ),
-
-                      // 5. UTILITY & ELITE COMPANION (Tools & Deep Practice)
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 24.h),
-                              HomeSectionHeader(
-                                title: context.tr(
-                                  'home.tools_and_practice_title',
-                                  fallback: 'Helpful Tools',
-                                ),
-                                subtitle: context.tr(
-                                  'home.tools_and_practice_subtitle',
-                                  fallback: 'Translate and practice words',
-                                ),
-                                categoryColor: const Color(0xFFA855F7), // Purple
-                              ),
-                              SizedBox(height: 12.h),
-                              TranslationHomeCard(isDark: isDark),
                               SizedBox(height: 12.h),
                               CommandPod(
                                 user: user,
                                 mode: CommandPodMode.vaultOnly,
                               ),
+                              SizedBox(height: 12.h),
+                              TranslationHomeCard(isDark: isDark),
                             ],
                           ),
                         ),
