@@ -346,7 +346,7 @@ class _SentenceBuilderBody extends StatelessWidget {
               children: [
                 SizedBox(height: 40.h),
                 if (!isAnswered) _SubmitButton(theme: theme, onTap: onSubmit),
-                SizedBox(height: 60.h),
+                SizedBox(height: isAnswered ? 160.h : 60.h),
               ],
             ),
           ),

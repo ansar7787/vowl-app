@@ -426,7 +426,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                                   ),
                                 ),
                               ),
-                            SizedBox(height: 60.h),
+                            SizedBox(height: isAnswered ? 160.h : 60.h),
                           ],
                         ),
                       ),
