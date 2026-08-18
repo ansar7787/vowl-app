@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch tonight versus tomorrow, and he versus she.",
             "explanation": "'He'd' can mean either 'he would' or 'he had' depending on context - here it's a promise about the future, reported secondhand. Report versus proposal is also worth catching precisely.",
@@ -22,7 +22,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch sent versus signed, and he versus she (as the one telling you).",
             "explanation": "This sentence reports someone else's claim while also expressing doubt about it, so track both layers: what was said, and how much you trust it. 'Sent' and 'signed' are different actions on a document too.",
@@ -39,7 +39,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L131_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch the exact day, and 'prolly' versus 'definitely'.",
             "explanation": "'Reckon' introduces someone else's guess, and 'prolly' inside that guess adds a second layer of uncertainty, so the whole sentence is really just a hopeful estimate, not a promise.",
@@ -56,7 +56,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch call versus text, and mum versus dad.",
             "explanation": "'She'd call' reports a promise made earlier, using the reduced 'she would'. The instruction that follows, keeping your phone on or charged, is a separate detail worth catching just as carefully.",
@@ -73,7 +73,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch party versus dinner, and 'prolly' versus 'definitely'.",
             "explanation": "'Reckons' introduces a casual prediction, and 'prolly' softens it even further into a light guess. He versus she is also worth confirming as the one making the prediction.",
@@ -90,7 +90,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L132_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch closer versus further, and he versus she.",
             "explanation": "'Movin'' drops its final 'g', the same casual pattern you saw with 'runnin''. 'Closer' and 'further' are opposites, so that word decides the whole direction of the news.",
@@ -107,7 +107,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch sale versus offer, and 'should' versus 'could'.",
             "explanation": "'Should' (weighing what's wise) and 'could' (weighing what's possible) frame this decision slightly differently, so listen for the exact modal. 'Sale' and 'offer' are near-synonyms too.",
@@ -124,7 +124,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch smaller versus bigger, and 'probably' versus 'definitely'.",
             "explanation": "'It'd' packs 'it would' into a light, quick sound inside someone else's reported advice. 'Smaller' and 'bigger' point in opposite directions, so that word is the whole recommendation.",
@@ -141,7 +141,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L133_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch late versus early, and 'em versus 'im.",
             "explanation": "This sentence stacks 'couldya', 'jus'', and the h-dropped 'em together, a genuinely dense casual request. 'Late' and 'early' are opposites too, so that word matters most.",
@@ -158,7 +158,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch tonight versus tomorrow, and whether it's a he or a she doing the telling.",
             "explanation": "This sentence reports a casual plan, softened by 'probably', so it's a likely choice rather than a firm decision. 'Order in' and 'cooking' are opposite approaches to dinner.",
@@ -175,7 +175,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch more versus less, and 'coulda' versus 'shoulda'.",
             "explanation": "'Coulda used less' (a mild opinion) and 'shoulda used less' (a firmer criticism) carry slightly different tones. 'More' and 'less' sugar are opposites too, so that word decides the whole comment.",
@@ -192,7 +192,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L134_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'to share' versus 'to start', and 'should' versus 'could'.",
             "explanation": "'Should' (seeking a real recommendation) and 'could' (just brainstorming options) frame this question slightly differently. 'To share' and 'to start' are also very different parts of a meal.",
@@ -209,7 +209,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch hotel versus hostel, and airport versus station.",
             "explanation": "This reported plan hinges entirely on the two locations mentioned, so both need your full attention. 'They'd' (they would/had) is now a familiar reduction, so let it guide you rather than confuse you.",
@@ -226,7 +226,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch earlier versus later, and 'shoulda' versus 'coulda'.",
             "explanation": "'Shoulda booked' expresses real regret about a choice already made, while 'coulda booked' just notes it was possible. 'Earlier' and 'later' are opposites too, deciding the whole direction of the regret.",
@@ -243,7 +243,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L135_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'best' versus 'fastest', and here versus there.",
             "explanation": "'Best' (overall quality) and 'fastest' (pure speed) suggest different priorities for the journey, so listen for the specific word. 'Here' and 'there' also change where the question is actually being asked from.",
@@ -260,7 +260,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch next versus this, and fix versus update.",
             "explanation": "'Fix'd' packs 'fix would' into a light sound, a reduction pattern that works the same way as 'she'd' or 'they'd'. He versus she is also worth confirming here.",
@@ -277,7 +277,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and 'a lot' versus 'a little'.",
             "explanation": "'Coulda lasted longer' (a simple observation) and 'shoulda lasted longer' (a real complaint about quality) carry different levels of frustration. 'A lot' and 'a little' also change how big the disappointment really is.",
@@ -294,7 +294,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L136_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch login versus loading, and we versus they.",
             "explanation": "'Oughta' (ought to) is another casual modal reduction, similar in feel to 'gotta' or 'hafta', suggesting a mild obligation. 'Login' and 'loading' are different tech problems too, so listen precisely.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch week versus month, and 'probably' versus 'definitely'.",
             "explanation": "'It'd' (it would) softens this into a likely outcome rather than a promise, especially paired with 'probably'. Doctor versus nurse, and the exact timeframe, are the real details to catch.",
@@ -328,7 +328,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'shoulda' versus 'coulda', and 'jumping back in' versus 'slowing back down'.",
             "explanation": "'Shoulda rested' expresses genuine concern about the choice made, more direct than 'coulda rested'. 'Jumping back in' and 'slowing back down' also describe opposite approaches to recovery.",
@@ -345,7 +345,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L137_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'em versus 'im, and tell versus ask.",
             "explanation": "'Oughta' carries a similar weight to 'should', a mild sense of obligation, layered here with the h-dropped 'em. 'Tell' and 'ask' are opposite directions of communication too.",
@@ -362,7 +362,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L138_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch next versus this term, and he versus she.",
             "explanation": "This sentence layers a reported plan, 'she'd probably', with the elided 'jus'' and 'nex'', a lot of natural reduction packed together. The exact timing is what really matters here.",
@@ -379,7 +379,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L138_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and he versus she.",
             "explanation": "'Coulda explained' (a mild observation) and 'shoulda explained' (a real criticism of the teaching) suggest different levels of frustration. He versus she is also worth confirming.",
@@ -396,7 +396,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L138_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'fair' versus 'good', and project versus work.",
             "explanation": "'Fair' (about equal treatment) and 'good' (about a general quality) are subtly different standards for the same decision. 'Project' and 'work' are near-synonyms too, so listen for the specific word.",
@@ -413,7 +413,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch next versus this year, and sequel versus reboot.",
             "explanation": "'Sequel'd' packs 'sequel would' into a light sound, the same contraction pattern working on a noun instead of a pronoun. He versus she is also worth confirming.",
@@ -430,7 +430,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and this versus that.",
             "explanation": "'Coulda been more satisfying' (a mild wish) and 'shoulda been more satisfying' (a firmer complaint) carry a slightly different tone. This versus that ending also matters, so listen closely.",
@@ -447,7 +447,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L139_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch tonight versus tomorrow, and 'heavy' versus 'serious'.",
             "explanation": "'Heavy' and 'serious' both describe intense content but aren't identical words, so listen for the specific one used. This sentence also gives you a genuine choice to track: light, or something more demanding.",
@@ -464,7 +464,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q1",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'off' versus 'tired', and he versus she.",
             "explanation": "This review question stacks a reported plan with 'jus'' and a vague feeling at the end, so hold the whole sentence together as you listen. 'Off' (something's not quite right) and 'tired' (simply sleepy) are subtly different complaints.",
@@ -481,7 +481,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q2",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Catch 'coulda' versus 'shoulda', and we versus they.",
             "explanation": "'Coulda handled it better' (a neutral reflection) and 'shoulda handled it better' (a real regret) frame the same situation quite differently. We versus they also changes who's actually being reflected on.",
@@ -498,7 +498,7 @@
         },
         {
             "id": "LIS_FASTSPEECHDECODER_L140_Q3",
-            "interactionType": "Rapid Decoder",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the exact spoken sentence.",
             "hint": "Pin down 'sooner' against 'later', and don't mix up 'woulda' with 'coulda'.",
             "explanation": "This closing question of the tier is the longest, most layered sentence yet, combining a hypothetical with four stacked reductions. If you caught all the details here, you're genuinely ready for the Advanced levels ahead.",

@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might someone accept a lower salary without negotiation?",
             "explanation": "Accepting without negotiating, despite a lower offer, typically signals that something other than salary mattered more - most likely securing the job itself. This could be desperation, extreme enthusiasm for the role, or prioritising other benefits. 'Without negotiating' suggests urgency to accept.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone who earns well keep an old car for twelve years?",
             "explanation": "Keeping a car for twelve years when you can afford a new one suggests the person doesn't prioritise material status symbols or is naturally frugal. 'Despite earning well' makes the inference explicit - it's not inability, it's choice. This is value-based inference: he values practicality over status.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L91_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might someone choose not to correct a name error?",
             "explanation": "Not correcting a name mispronunciation or error in a social setting is a common choice when the cost (potential awkwardness) outweighs the benefit. It's a social calculation: is it worth causing a moment of embarrassment to fix a minor error? Many people choose to let it go.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L92_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone regularly check their bank statements independently?",
             "explanation": "Double-checking bank statements suggests mild distrust of automatic financial recording - he wants to verify himself rather than just trust the bank's figures. This reflects either a past experience with errors or a general attitude of personal financial vigilance. It's a habit of verification.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L92_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does carefully reading ingredient lists signal?",
             "explanation": "Reading ingredient lists before buying = caring about what goes into food (or products). This is a health-conscious or allergen-aware behaviour. It's distinct from working in food - a professional wouldn't need to read labels for personal knowledge. It's a consumer awareness behaviour.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L92_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone seek a second medical opinion?",
             "explanation": "Seeking a second opinion is a rational, responsible health behaviour. It doesn't mean the first doctor was wrong - it means the patient wants confirmation before proceeding with treatment, especially for serious conditions. This is autonomy in healthcare - taking an active role in one's own health decisions.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L93_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'while... there are concerns' structure communicate?",
             "explanation": "'While the proposal has merits' = concession (acknowledging positives). 'Significant concerns about the cost' = the main problem. 'While' + concession + main point is a balanced structure. The cost concern is the primary issue despite the proposal's acknowledged merits.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L93_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'even if I agreed with X, Y is questionable' structure tell you about priorities?",
             "explanation": "'Even if I agreed with the conclusion' = hypothetically accepting it. 'The method is questionable' = the real objection. By conceding the conclusion hypothetically, the speaker makes clear their concern is specifically with how the conclusion was reached, not what it was.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L93_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'notwithstanding' communicate about the relationship between difficulties and results?",
             "explanation": "'Notwithstanding' = despite, in spite of. It introduces a concession (difficulties existed) before the main point (exceptional results). The emphasis is on achievement despite adversity - the results are more impressive because they came through difficulty. It's a praise structure.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L94_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'not a single detail overlooked' tell you about the word 'meticulous'?",
             "explanation": "'Not a single detail was overlooked' = every detail was attended to. This defines 'meticulous' through context: it means extremely careful and thorough, paying attention to every detail. Context definition is a key listening strategy for unknown vocabulary.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L94_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does being 'candid about challenges' suggest about how he communicated?",
             "explanation": "Being candid = speaking honestly and directly, without evasion. Acknowledging challenges candidly means not hiding or minimising problems. The opposite of candid would be diplomatic to the point of dishonesty or evasive. Here, candid = open, honest communication about difficulties.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L94_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the contrast between 'eloquent' and 'lacked substance'?",
             "explanation": "'Eloquent' = speaking beautifully and persuasively (style). 'Lacked substance' = insufficient content or depth (content). Together: impressive delivery, poor content. This is a common criticism: form without content - the presentation was excellent but the ideas were thin.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L95_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'hoping for more competitive' reveal about the speaker's view of the current offer?",
             "explanation": "'More competitive' = better than currently offered. 'Were hoping for' = politely expressing that the current offer doesn't meet expectations. This is negotiation language - signalling dissatisfaction with terms to prompt improvement without directly rejecting the offer.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L95_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would parties to a negotiation suggest 'pausing to reflect'?",
             "explanation": "Pausing and reflecting suggests something has stalled or become difficult. It's a diplomatic way of saying: we need time, something isn't working, or we need to reconsider. Smooth negotiations don't typically need a pause. This signals a need for recalibration.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L95_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'broadly aligned' with 'just the details' signal about progress?",
             "explanation": "'Broadly aligned' = generally in agreement on the main points. 'Just the details' = only specifics remain. Together: the major issues are resolved; fine-tuning remains. This is very close to agreement - the hard work is done. 'Just' minimises what remains.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What discourse structure does 'on the one hand / on the other' create?",
             "explanation": "'On the one hand / on the other hand' = a balancing structure, presenting two contrasting aspects of the same issue. The speaker is neither advocating nor rejecting - they're evaluating both sides. This is balanced discourse analysis, not persuasion.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does listing three simultaneous problems communicate?",
             "explanation": "Three problems simultaneously (budget, schedule, staff) paint a comprehensively problematic picture. 'To summarise' = condensing the key points. The project is in multiple crises at once, not just one difficulty. The accumulation of three problems creates a stronger overall impression of distress.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L96_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'first and foremost' signal about what follows?",
             "explanation": "'First and foremost' = above everything else, the top priority. It's an emphatic discourse marker that ranks what follows as the highest priority. Safety is explicitly identified as the primary concern - not budget or schedule. Understanding priority markers is key to following arguments.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L97_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the cultural meaning of standing when someone enters?",
             "explanation": "Standing when someone enters is a traditional gesture of respect - acknowledging their arrival and their status. It's associated with deference and politeness. The gesture communicates: 'I acknowledge you and show you respect.' This is a non-verbal social signal.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L97_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone send a handwritten note after a job interview?",
             "explanation": "A handwritten note (rather than email) signals extra effort and distinctiveness. It's a deliberate attempt to differentiate herself from other candidates. 'Handwritten' shows personal effort; 'thank-you' = gratitude. Together: a strategic impression management move.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L97_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone deliberately keep conversation light at a meal?",
             "explanation": "Keeping conversation 'light' = avoiding heavy, serious, or controversial topics. This is deliberate - he could have raised serious subjects but chose not to. The most likely reason: there's a difficult topic he wants to avoid, or he wants the meal to be pleasant rather than stressful.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L98_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does three years of investment followed by cancellation imply emotionally?",
             "explanation": "Three years of work on something = significant personal investment. Cancellation of that = loss of all that effort. 'Hit hard' explicitly states the emotional impact. The inference: she was deeply disappointed and possibly devastated by the loss of her work.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L98_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does warning someone something will fail - and being right - reveal?",
             "explanation": "He warned them = he tried to prevent the failure through early communication. 'As it turned out, he was right' = his prediction was accurate. He didn't cause the failure; he tried to stop it. This is a 'told you so' narrative structure, highlighting his foresight.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L98_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'initial resistance' followed by 'ended up enjoying' describe?",
             "explanation": "'Initial resistance' = didn't want it at first. 'Ended up enjoying' = the eventual outcome was positive. 'Despite' marks the reversal. This is a narrative arc: reluctance → exposure → changed opinion. It's a very common English storytelling structure for describing how views change.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L99_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does praising effort separately from result reveal about someone's values?",
             "explanation": "Praising effort independently shows he values the process, not just the product. This is a 'growth mindset' approach - recognising that hard work has intrinsic value even when results aren't perfect. This is a valuable management and teaching quality.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L99_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does consistent treatment of all customers regardless of spend reveal?",
             "explanation": "Treating all customers equally regardless of spending is a fairness principle - not showing preferential treatment based on money. This reveals professionalism, fairness, and commitment to equal service. It's a notable character quality because many people (consciously or not) treat high-spending customers better.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L99_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone read submissions that have no chance of selection?",
             "explanation": "Reading all submissions regardless of quality shows a commitment to fairness - every submission gets the same attention. It's time-consuming but principled. This reveals thoroughness and integrity: he won't dismiss something without proper engagement, even when the outcome seems clear.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'they didn't say no' communicate about the outcome?",
             "explanation": "'They didn't say no' = the best positive B can offer is the absence of a rejection. Not 'they loved it' or 'they said yes'. The minimally positive framing suggests the pitch didn't go well but wasn't a disaster. This is understated communication about a disappointing outcome.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How would you feel if you worked harder than everyone but received no recognition?",
             "explanation": "Working harder than others + receiving no recognition = frustration. The effort is visible to the speaker (who is observing) but invisible to those who matter. 'Nobody seems to have noticed' implies she expected or deserved acknowledgement. Inference from effort + lack of recognition = frustrated.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L100_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the symmetrical phrase 'says what he means / means what he says' describe?",
             "explanation": "'Says what he means' = doesn't hide or soften his views. 'Means what he says' = follows through on what he states. Together: he is honest and direct - no gap between words and intentions. This is a positive description of straightforward, trustworthy communication.",

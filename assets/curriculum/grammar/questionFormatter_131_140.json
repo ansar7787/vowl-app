@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 14,
-  "levels": "131-140",
-  "quests": [
-    {
-      "id": "qf_l131_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Is the pharmacy open on Sundays?",
-      "sentence": "Is the pharmacy open on Sundays?",
-      "options": [
-        "Do you know if the pharmacy is open on Sundays?",
-        "Do you know is the pharmacy open on Sundays?",
-        "Do you know the pharmacy if is open on Sundays?",
-        "Do you know that the pharmacy is open on Sundays?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you know if the pharmacy is open on Sundays?",
-      "hint": "Use 'if' to connect a yes/no question, and put the verb back in statement order.",
-      "explanation": "Embedded yes/no questions use 'if' or 'whether' as a connector, with statement word order: 'if the pharmacy is open'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
-    },
-    {
-      "id": "qf_l131_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does she speak French?",
-      "sentence": "Does she speak French?",
-      "options": [
-        "Do you know does she speak French?",
-        "Do you know she if speaks French?",
-        "Do you know if she speaks French?",
-        "Do you know that she speaks French?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know if she speaks French?",
-      "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
-      "explanation": "'If' introduces the embedded yes/no question, 'does' disappears, and the verb takes its normal form: 'she speaks'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
-    },
-    {
-      "id": "qf_l131_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Did he confirm the reservation?",
-      "sentence": "Did he confirm the reservation?",
-      "options": [
-        "Do you know did he confirm the reservation?",
-        "Do you know if he confirmed the reservation?",
-        "Do you know he if confirmed the reservation?",
-        "Do you know that he confirmed the reservation?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you know if he confirmed the reservation?",
-      "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "'If' connects the embedded yes/no question, 'did' disappears, and the verb carries the past tense: 'he confirmed'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
-    },
-    {
-      "id": "qf_l132_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has the package arrived yet?",
-      "sentence": "Has the package arrived yet?",
-      "options": [
-        "Could you find out whether has the package arrived yet?",
-        "Could you find out the package whether has arrived yet?",
-        "Could you find out that the package has arrived yet?",
-        "Could you find out whether the package has arrived yet?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could you find out whether the package has arrived yet?",
-      "hint": "Use 'whether', and move 'has' back after the subject.",
-      "explanation": "'Whether' introduces this embedded yes/no question, with statement word order: 'the package has arrived'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
-    },
-    {
-      "id": "qf_l132_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the meeting be rescheduled?",
-      "sentence": "Will the meeting be rescheduled?",
-      "options": [
-        "Could you find out whether will the meeting be rescheduled?",
-        "Could you find out whether the meeting will be rescheduled?",
-        "Could you find out the meeting whether will be rescheduled?",
-        "Could you find out that the meeting will be rescheduled?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you find out whether the meeting will be rescheduled?",
-      "hint": "Use 'whether', and move 'will' back after the subject.",
-      "explanation": "'Whether' connects the embedded question, and 'will the meeting' becomes 'the meeting will', as in a statement.",
-      "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
-    },
-    {
-      "id": "qf_l132_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Are the tickets still available?",
-      "sentence": "Are the tickets still available?",
-      "options": [
-        "Could you find out whether the tickets are still available?",
-        "Could you find out whether are the tickets still available?",
-        "Could you find out the tickets whether are still available?",
-        "Could you find out that the tickets are still available?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could you find out whether the tickets are still available?",
-      "hint": "Use 'whether', and move 'are' back after the subject.",
-      "explanation": "'Whether' introduces the embedded yes/no question, with statement word order: 'the tickets are still available'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
-    },
-    {
-      "id": "qf_l133_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does this store accept returns without a receipt?",
-      "sentence": "Does this store accept returns without a receipt?",
-      "options": [
-        "Do you happen to know does this store accept returns without a receipt?",
-        "Do you happen to know if this store accepts returns without a receipt?",
-        "Do you happen to know this store if accepts returns without a receipt?",
-        "Do you happen to know that this store accepts returns without a receipt?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you happen to know if this store accepts returns without a receipt?",
-      "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
-      "explanation": "'If' connects the embedded yes/no question, and 'does' disappears while the verb takes its normal form: 'this store accepts'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
-    },
-    {
-      "id": "qf_l133_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Was the contract signed before the deadline?",
-      "sentence": "Was the contract signed before the deadline?",
-      "options": [
-        "Do you happen to know if the contract was signed before the deadline?",
-        "Do you happen to know was the contract signed before the deadline?",
-        "Do you happen to know the contract if was signed before the deadline?",
-        "Do you happen to know that the contract was signed before the deadline?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you happen to know if the contract was signed before the deadline?",
-      "hint": "Use 'if', and move 'was' back after the subject.",
-      "explanation": "'If' introduces the embedded question, with statement word order: 'the contract was signed'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
-    },
-    {
-      "id": "qf_l133_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Can visitors park in the front lot?",
-      "sentence": "Can visitors park in the front lot?",
-      "options": [
-        "Do you happen to know can visitors park in the front lot?",
-        "Do you happen to know if visitors can park in the front lot?",
-        "Do you happen to know visitors if can park in the front lot?",
-        "Do you happen to know that visitors can park in the front lot?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you happen to know if visitors can park in the front lot?",
-      "hint": "Use 'if', and move 'can' back after the subject.",
-      "explanation": "'If' connects the embedded question, and 'can visitors' becomes 'visitors can', following statement word order.",
-      "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
-    },
-    {
-      "id": "qf_l134_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has the invoice been paid already?",
-      "sentence": "Has the invoice been paid already?",
-      "options": [
-        "Would you know whether has the invoice been paid already?",
-        "Would you know the invoice whether has been paid already?",
-        "Would you know whether the invoice has been paid already?",
-        "Would you know that the invoice has been paid already?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Would you know whether the invoice has been paid already?",
-      "hint": "Use 'whether', and move 'has' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the invoice has been paid'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
-    },
-    {
-      "id": "qf_l134_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Do they offer student discounts?",
-      "sentence": "Do they offer student discounts?",
-      "options": [
-        "Would you know whether do they offer student discounts?",
-        "Would you know whether they offer student discounts?",
-        "Would you know they whether offer student discounts?",
-        "Would you know that they offer student discounts?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Would you know whether they offer student discounts?",
-      "hint": "Use 'whether', drop 'do', and keep the verb in its base form.",
-      "explanation": "'Whether' connects the embedded question, 'do' disappears, and the verb stays in its base form: 'they offer'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
-    },
-    {
-      "id": "qf_l134_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Is the elevator working again?",
-      "sentence": "Is the elevator working again?",
-      "options": [
-        "Would you know whether the elevator is working again?",
-        "Would you know whether is the elevator working again?",
-        "Would you know the elevator whether is working again?",
-        "Would you know that the elevator is working again?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would you know whether the elevator is working again?",
-      "hint": "Use 'whether', and move 'is' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the elevator is working'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
-    },
-    {
-      "id": "qf_l135_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Did the committee approve the new budget?",
-      "sentence": "Did the committee approve the new budget?",
-      "options": [
-        "Can you tell me did the committee approve the new budget?",
-        "Can you tell me the committee if approved the new budget?",
-        "Can you tell me that the committee approved the new budget?",
-        "Can you tell me if the committee approved the new budget?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Can you tell me if the committee approved the new budget?",
-      "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "'If' introduces the embedded question, 'did' disappears, and the verb carries the past tense: 'the committee approved'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l135_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does the warranty cover water damage?",
-      "sentence": "Does the warranty cover water damage?",
-      "options": [
-        "Can you tell me does the warranty cover water damage?",
-        "Can you tell me the warranty if covers water damage?",
-        "Can you tell me if the warranty covers water damage?",
-        "Can you tell me that the warranty covers water damage?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you tell me if the warranty covers water damage?",
-      "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
-      "explanation": "'If' connects the embedded question, and 'does' disappears while the verb takes its normal form: 'the warranty covers'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l135_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the flight be delayed again?",
-      "sentence": "Will the flight be delayed again?",
-      "options": [
-        "Can you tell me will the flight be delayed again?",
-        "Can you tell me the flight if will be delayed again?",
-        "Can you tell me if the flight will be delayed again?",
-        "Can you tell me that the flight will be delayed again?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you tell me if the flight will be delayed again?",
-      "hint": "Use 'if', and move 'will' back after the subject.",
-      "explanation": "'If' introduces the embedded question, with statement word order: 'the flight will be delayed'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l136_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has she finished the report yet?",
-      "sentence": "Has she finished the report yet?",
-      "options": [
-        "Do you know has she finished the report yet?",
-        "Do you know she if has finished the report yet?",
-        "Do you know that she has finished the report yet?",
-        "Do you know if she has finished the report yet?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you know if she has finished the report yet?",
-      "hint": "Use 'if', and move 'has' back after the subject.",
-      "explanation": "'If' introduces the embedded question, with statement word order: 'she has finished'.",
-      "grammarRule": "Embedded Yes/No Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l136_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Have the results been posted online?",
-      "sentence": "Have the results been posted online?",
-      "options": [
-        "Could you check have the results been posted online?",
-        "Could you check the results if have been posted online?",
-        "Could you check if the results have been posted online?",
-        "Could you check that the results have been posted online?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could you check if the results have been posted online?",
-      "hint": "Use 'if', and move 'have' back after the subject.",
-      "explanation": "'If' connects the embedded question, with statement word order: 'the results have been posted'.",
-      "grammarRule": "Embedded Yes/No Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l136_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has the landlord fixed the heater?",
-      "sentence": "Has the landlord fixed the heater?",
-      "options": [
-        "Do you know has the landlord fixed the heater?",
-        "Do you know if the landlord has fixed the heater?",
-        "Do you know the landlord if has fixed the heater?",
-        "Do you know that the landlord has fixed the heater?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you know if the landlord has fixed the heater?",
-      "hint": "Use 'if', and move 'has' back after the subject.",
-      "explanation": "'If' introduces the embedded question, keeping statement word order: 'the landlord has fixed'.",
-      "grammarRule": "Embedded Yes/No Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l137_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Can the software handle large files?",
-      "sentence": "Can the software handle large files?",
-      "options": [
-        "Do you know can the software handle large files?",
-        "Do you know the software if can handle large files?",
-        "Do you know that the software can handle large files?",
-        "Do you know if the software can handle large files?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you know if the software can handle large files?",
-      "hint": "Use 'if', and move 'can' back after the subject.",
-      "explanation": "'If' introduces the embedded question, with statement word order: 'the software can handle'.",
-      "grammarRule": "Embedded Yes/No Questions: Modals"
-    },
-    {
-      "id": "qf_l137_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Should we bring our own laptops?",
-      "sentence": "Should we bring our own laptops?",
-      "options": [
-        "Could you find out should we bring our own laptops?",
-        "Could you find out we if should bring our own laptops?",
-        "Could you find out that we should bring our own laptops?",
-        "Could you find out if we should bring our own laptops?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could you find out if we should bring our own laptops?",
-      "hint": "Use 'if', and move 'should' back after the subject.",
-      "explanation": "'If' connects the embedded question, with statement word order: 'we should bring'.",
-      "grammarRule": "Embedded Yes/No Questions: Modals"
-    },
-    {
-      "id": "qf_l137_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the new policy affect part-time staff?",
-      "sentence": "Will the new policy affect part-time staff?",
-      "options": [
-        "Do you happen to know will the new policy affect part-time staff?",
-        "Do you happen to know the new policy if will affect part-time staff?",
-        "Do you happen to know if the new policy will affect part-time staff?",
-        "Do you happen to know that the new policy will affect part-time staff?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you happen to know if the new policy will affect part-time staff?",
-      "hint": "Use 'if', and move 'will' back after the subject.",
-      "explanation": "'If' introduces the embedded question, keeping statement word order: 'the new policy will affect'.",
-      "grammarRule": "Embedded Yes/No Questions: Modals"
-    },
-    {
-      "id": "qf_l138_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Is the contract legally binding?",
-      "sentence": "Is the contract legally binding?",
-      "options": [
-        "Can you confirm whether the contract is legally binding or not?",
-        "Can you confirm whether is the contract legally binding or not?",
-        "Can you confirm the contract whether is legally binding or not?",
-        "Can you confirm that the contract is legally binding or not?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can you confirm whether the contract is legally binding or not?",
-      "hint": "Use 'whether...or not', and move 'is' back after the subject.",
-      "explanation": "'Whether...or not' frames the embedded question, with statement word order: 'the contract is legally binding'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
-    },
-    {
-      "id": "qf_l138_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Did the transfer go through successfully?",
-      "sentence": "Did the transfer go through successfully?",
-      "options": [
-        "Can you confirm whether did the transfer go through successfully or not?",
-        "Can you confirm the transfer whether went through successfully or not?",
-        "Can you confirm that the transfer went through successfully or not?",
-        "Can you confirm whether the transfer went through successfully or not?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Can you confirm whether the transfer went through successfully or not?",
-      "hint": "Use 'whether...or not', drop 'did', and let the verb carry the past tense.",
-      "explanation": "'Whether...or not' connects the embedded question, 'did' disappears, and the verb carries the past tense: 'the transfer went through'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
-    },
-    {
-      "id": "qf_l138_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does this plan include international coverage?",
-      "sentence": "Does this plan include international coverage?",
-      "options": [
-        "Can you confirm whether does this plan include international coverage or not?",
-        "Can you confirm this plan whether includes international coverage or not?",
-        "Can you confirm whether this plan includes international coverage or not?",
-        "Can you confirm that this plan includes international coverage or not?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you confirm whether this plan includes international coverage or not?",
-      "hint": "Use 'whether...or not', drop 'does', and let the verb take its -s again.",
-      "explanation": "'Whether...or not' introduces the embedded question, and 'does' disappears while the verb takes its normal form: 'this plan includes'.",
-      "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
-    },
-    {
-      "id": "qf_l139_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Did the landlord raise the rent this year?",
-      "sentence": "Did the landlord raise the rent this year?",
-      "options": [
-        "Do you know did the landlord raise the rent this year?",
-        "Do you know the landlord if raised the rent this year?",
-        "Do you know if the landlord raised the rent this year?",
-        "Do you know that the landlord raised the rent this year?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know if the landlord raised the rent this year?",
-      "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "'If' introduces the embedded question, 'did' disappears, and the verb carries the past tense: 'the landlord raised'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
-    },
-    {
-      "id": "qf_l139_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Is the online form still accepting submissions?",
-      "sentence": "Is the online form still accepting submissions?",
-      "options": [
-        "Could you check whether the online form is still accepting submissions?",
-        "Could you check whether is the online form still accepting submissions?",
-        "Could you check the online form whether is still accepting submissions?",
-        "Could you check that the online form is still accepting submissions?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could you check whether the online form is still accepting submissions?",
-      "hint": "Use 'whether', and move 'is' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the online form is still accepting'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
-    },
-    {
-      "id": "qf_l139_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Have the new regulations taken effect yet?",
-      "sentence": "Have the new regulations taken effect yet?",
-      "options": [
-        "Do you know have the new regulations taken effect yet?",
-        "Do you know the new regulations if have taken effect yet?",
-        "Do you know that the new regulations have taken effect yet?",
-        "Do you know if the new regulations have taken effect yet?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you know if the new regulations have taken effect yet?",
-      "hint": "Use 'if', and move 'have' back after the subject.",
-      "explanation": "'If' connects the embedded question, with statement word order: 'the new regulations have taken effect'.",
-      "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
-    },
-    {
-      "id": "qf_l140_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the shipment get held at customs?",
-      "sentence": "Why did the shipment get held at customs?",
-      "options": [
-        "Do you have any idea why did the shipment get held at customs?",
-        "Do you have any idea why the shipment did get held at customs?",
-        "Do you have any idea why held the shipment got at customs?",
-        "Do you have any idea why the shipment got held at customs?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you have any idea why the shipment got held at customs?",
-      "hint": "No 'did' is needed here - the verb itself shows the past tense.",
-      "explanation": "Embedded questions drop 'did': 'why the shipment got held', with statement word order throughout.",
-      "grammarRule": "Embedded Questions: Final Mixed Review"
-    },
-    {
-      "id": "qf_l140_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does this ticket include parking?",
-      "sentence": "Does this ticket include parking?",
-      "options": [
-        "Could you confirm does this ticket include parking?",
-        "Could you confirm this ticket if includes parking?",
-        "Could you confirm that this ticket includes parking?",
-        "Could you confirm if this ticket includes parking?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could you confirm if this ticket includes parking?",
-      "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
-      "explanation": "'If' introduces the embedded question, and 'does' disappears while the verb takes its normal form: 'this ticket includes'.",
-      "grammarRule": "Embedded Questions: Final Mixed Review"
-    },
-    {
-      "id": "qf_l140_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much will the repairs cost in total?",
-      "sentence": "How much will the repairs cost in total?",
-      "options": [
-        "Do you know how much will the repairs cost in total?",
-        "Do you know how much the repairs cost will in total?",
-        "Do you know how much the repairs will cost in total?",
-        "Do you know how much will the repairs costs in total?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know how much the repairs will cost in total?",
-      "hint": "Move 'will' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'the repairs will cost', not 'will the repairs cost'.",
-      "grammarRule": "Embedded Questions: Final Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 14,
+    "levels": "131-140",
+    "quests": [
+        {
+            "id": "qf_l131_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Is the pharmacy open on Sundays?",
+            "sentence": "Is the pharmacy open on Sundays?",
+            "options": [
+                "Do you know if the pharmacy is open on Sundays?",
+                "Do you know is the pharmacy open on Sundays?",
+                "Do you know the pharmacy if is open on Sundays?",
+                "Do you know that the pharmacy is open on Sundays?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you know if the pharmacy is open on Sundays?",
+            "hint": "Use 'if' to connect a yes/no question, and put the verb back in statement order.",
+            "explanation": "Embedded yes/no questions use 'if' or 'whether' as a connector, with statement word order: 'if the pharmacy is open'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
+        },
+        {
+            "id": "qf_l131_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does she speak French?",
+            "sentence": "Does she speak French?",
+            "options": [
+                "Do you know does she speak French?",
+                "Do you know she if speaks French?",
+                "Do you know if she speaks French?",
+                "Do you know that she speaks French?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know if she speaks French?",
+            "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
+            "explanation": "'If' introduces the embedded yes/no question, 'does' disappears, and the verb takes its normal form: 'she speaks'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
+        },
+        {
+            "id": "qf_l131_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Did he confirm the reservation?",
+            "sentence": "Did he confirm the reservation?",
+            "options": [
+                "Do you know did he confirm the reservation?",
+                "Do you know if he confirmed the reservation?",
+                "Do you know he if confirmed the reservation?",
+                "Do you know that he confirmed the reservation?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you know if he confirmed the reservation?",
+            "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "'If' connects the embedded yes/no question, 'did' disappears, and the verb carries the past tense: 'he confirmed'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Know If...?'"
+        },
+        {
+            "id": "qf_l132_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has the package arrived yet?",
+            "sentence": "Has the package arrived yet?",
+            "options": [
+                "Could you find out whether has the package arrived yet?",
+                "Could you find out the package whether has arrived yet?",
+                "Could you find out that the package has arrived yet?",
+                "Could you find out whether the package has arrived yet?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could you find out whether the package has arrived yet?",
+            "hint": "Use 'whether', and move 'has' back after the subject.",
+            "explanation": "'Whether' introduces this embedded yes/no question, with statement word order: 'the package has arrived'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
+        },
+        {
+            "id": "qf_l132_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the meeting be rescheduled?",
+            "sentence": "Will the meeting be rescheduled?",
+            "options": [
+                "Could you find out whether will the meeting be rescheduled?",
+                "Could you find out whether the meeting will be rescheduled?",
+                "Could you find out the meeting whether will be rescheduled?",
+                "Could you find out that the meeting will be rescheduled?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you find out whether the meeting will be rescheduled?",
+            "hint": "Use 'whether', and move 'will' back after the subject.",
+            "explanation": "'Whether' connects the embedded question, and 'will the meeting' becomes 'the meeting will', as in a statement.",
+            "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
+        },
+        {
+            "id": "qf_l132_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Are the tickets still available?",
+            "sentence": "Are the tickets still available?",
+            "options": [
+                "Could you find out whether the tickets are still available?",
+                "Could you find out whether are the tickets still available?",
+                "Could you find out the tickets whether are still available?",
+                "Could you find out that the tickets are still available?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could you find out whether the tickets are still available?",
+            "hint": "Use 'whether', and move 'are' back after the subject.",
+            "explanation": "'Whether' introduces the embedded yes/no question, with statement word order: 'the tickets are still available'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Could You Find Out Whether...?'"
+        },
+        {
+            "id": "qf_l133_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does this store accept returns without a receipt?",
+            "sentence": "Does this store accept returns without a receipt?",
+            "options": [
+                "Do you happen to know does this store accept returns without a receipt?",
+                "Do you happen to know if this store accepts returns without a receipt?",
+                "Do you happen to know this store if accepts returns without a receipt?",
+                "Do you happen to know that this store accepts returns without a receipt?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you happen to know if this store accepts returns without a receipt?",
+            "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
+            "explanation": "'If' connects the embedded yes/no question, and 'does' disappears while the verb takes its normal form: 'this store accepts'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
+        },
+        {
+            "id": "qf_l133_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Was the contract signed before the deadline?",
+            "sentence": "Was the contract signed before the deadline?",
+            "options": [
+                "Do you happen to know if the contract was signed before the deadline?",
+                "Do you happen to know was the contract signed before the deadline?",
+                "Do you happen to know the contract if was signed before the deadline?",
+                "Do you happen to know that the contract was signed before the deadline?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you happen to know if the contract was signed before the deadline?",
+            "hint": "Use 'if', and move 'was' back after the subject.",
+            "explanation": "'If' introduces the embedded question, with statement word order: 'the contract was signed'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
+        },
+        {
+            "id": "qf_l133_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Can visitors park in the front lot?",
+            "sentence": "Can visitors park in the front lot?",
+            "options": [
+                "Do you happen to know can visitors park in the front lot?",
+                "Do you happen to know if visitors can park in the front lot?",
+                "Do you happen to know visitors if can park in the front lot?",
+                "Do you happen to know that visitors can park in the front lot?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you happen to know if visitors can park in the front lot?",
+            "hint": "Use 'if', and move 'can' back after the subject.",
+            "explanation": "'If' connects the embedded question, and 'can visitors' becomes 'visitors can', following statement word order.",
+            "grammarRule": "Embedded Yes/No Questions: 'Do You Happen To Know If...?'"
+        },
+        {
+            "id": "qf_l134_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has the invoice been paid already?",
+            "sentence": "Has the invoice been paid already?",
+            "options": [
+                "Would you know whether has the invoice been paid already?",
+                "Would you know the invoice whether has been paid already?",
+                "Would you know whether the invoice has been paid already?",
+                "Would you know that the invoice has been paid already?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Would you know whether the invoice has been paid already?",
+            "hint": "Use 'whether', and move 'has' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the invoice has been paid'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
+        },
+        {
+            "id": "qf_l134_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Do they offer student discounts?",
+            "sentence": "Do they offer student discounts?",
+            "options": [
+                "Would you know whether do they offer student discounts?",
+                "Would you know whether they offer student discounts?",
+                "Would you know they whether offer student discounts?",
+                "Would you know that they offer student discounts?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Would you know whether they offer student discounts?",
+            "hint": "Use 'whether', drop 'do', and keep the verb in its base form.",
+            "explanation": "'Whether' connects the embedded question, 'do' disappears, and the verb stays in its base form: 'they offer'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
+        },
+        {
+            "id": "qf_l134_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Is the elevator working again?",
+            "sentence": "Is the elevator working again?",
+            "options": [
+                "Would you know whether the elevator is working again?",
+                "Would you know whether is the elevator working again?",
+                "Would you know the elevator whether is working again?",
+                "Would you know that the elevator is working again?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would you know whether the elevator is working again?",
+            "hint": "Use 'whether', and move 'is' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the elevator is working'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Would You Know Whether...?'"
+        },
+        {
+            "id": "qf_l135_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Did the committee approve the new budget?",
+            "sentence": "Did the committee approve the new budget?",
+            "options": [
+                "Can you tell me did the committee approve the new budget?",
+                "Can you tell me the committee if approved the new budget?",
+                "Can you tell me that the committee approved the new budget?",
+                "Can you tell me if the committee approved the new budget?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can you tell me if the committee approved the new budget?",
+            "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "'If' introduces the embedded question, 'did' disappears, and the verb carries the past tense: 'the committee approved'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l135_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does the warranty cover water damage?",
+            "sentence": "Does the warranty cover water damage?",
+            "options": [
+                "Can you tell me does the warranty cover water damage?",
+                "Can you tell me the warranty if covers water damage?",
+                "Can you tell me if the warranty covers water damage?",
+                "Can you tell me that the warranty covers water damage?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you tell me if the warranty covers water damage?",
+            "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
+            "explanation": "'If' connects the embedded question, and 'does' disappears while the verb takes its normal form: 'the warranty covers'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l135_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the flight be delayed again?",
+            "sentence": "Will the flight be delayed again?",
+            "options": [
+                "Can you tell me will the flight be delayed again?",
+                "Can you tell me the flight if will be delayed again?",
+                "Can you tell me if the flight will be delayed again?",
+                "Can you tell me that the flight will be delayed again?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you tell me if the flight will be delayed again?",
+            "hint": "Use 'if', and move 'will' back after the subject.",
+            "explanation": "'If' introduces the embedded question, with statement word order: 'the flight will be delayed'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l136_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has she finished the report yet?",
+            "sentence": "Has she finished the report yet?",
+            "options": [
+                "Do you know has she finished the report yet?",
+                "Do you know she if has finished the report yet?",
+                "Do you know that she has finished the report yet?",
+                "Do you know if she has finished the report yet?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you know if she has finished the report yet?",
+            "hint": "Use 'if', and move 'has' back after the subject.",
+            "explanation": "'If' introduces the embedded question, with statement word order: 'she has finished'.",
+            "grammarRule": "Embedded Yes/No Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l136_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Have the results been posted online?",
+            "sentence": "Have the results been posted online?",
+            "options": [
+                "Could you check have the results been posted online?",
+                "Could you check the results if have been posted online?",
+                "Could you check if the results have been posted online?",
+                "Could you check that the results have been posted online?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could you check if the results have been posted online?",
+            "hint": "Use 'if', and move 'have' back after the subject.",
+            "explanation": "'If' connects the embedded question, with statement word order: 'the results have been posted'.",
+            "grammarRule": "Embedded Yes/No Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l136_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has the landlord fixed the heater?",
+            "sentence": "Has the landlord fixed the heater?",
+            "options": [
+                "Do you know has the landlord fixed the heater?",
+                "Do you know if the landlord has fixed the heater?",
+                "Do you know the landlord if has fixed the heater?",
+                "Do you know that the landlord has fixed the heater?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you know if the landlord has fixed the heater?",
+            "hint": "Use 'if', and move 'has' back after the subject.",
+            "explanation": "'If' introduces the embedded question, keeping statement word order: 'the landlord has fixed'.",
+            "grammarRule": "Embedded Yes/No Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l137_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Can the software handle large files?",
+            "sentence": "Can the software handle large files?",
+            "options": [
+                "Do you know can the software handle large files?",
+                "Do you know the software if can handle large files?",
+                "Do you know that the software can handle large files?",
+                "Do you know if the software can handle large files?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you know if the software can handle large files?",
+            "hint": "Use 'if', and move 'can' back after the subject.",
+            "explanation": "'If' introduces the embedded question, with statement word order: 'the software can handle'.",
+            "grammarRule": "Embedded Yes/No Questions: Modals"
+        },
+        {
+            "id": "qf_l137_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Should we bring our own laptops?",
+            "sentence": "Should we bring our own laptops?",
+            "options": [
+                "Could you find out should we bring our own laptops?",
+                "Could you find out we if should bring our own laptops?",
+                "Could you find out that we should bring our own laptops?",
+                "Could you find out if we should bring our own laptops?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could you find out if we should bring our own laptops?",
+            "hint": "Use 'if', and move 'should' back after the subject.",
+            "explanation": "'If' connects the embedded question, with statement word order: 'we should bring'.",
+            "grammarRule": "Embedded Yes/No Questions: Modals"
+        },
+        {
+            "id": "qf_l137_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the new policy affect part-time staff?",
+            "sentence": "Will the new policy affect part-time staff?",
+            "options": [
+                "Do you happen to know will the new policy affect part-time staff?",
+                "Do you happen to know the new policy if will affect part-time staff?",
+                "Do you happen to know if the new policy will affect part-time staff?",
+                "Do you happen to know that the new policy will affect part-time staff?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you happen to know if the new policy will affect part-time staff?",
+            "hint": "Use 'if', and move 'will' back after the subject.",
+            "explanation": "'If' introduces the embedded question, keeping statement word order: 'the new policy will affect'.",
+            "grammarRule": "Embedded Yes/No Questions: Modals"
+        },
+        {
+            "id": "qf_l138_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Is the contract legally binding?",
+            "sentence": "Is the contract legally binding?",
+            "options": [
+                "Can you confirm whether the contract is legally binding or not?",
+                "Can you confirm whether is the contract legally binding or not?",
+                "Can you confirm the contract whether is legally binding or not?",
+                "Can you confirm that the contract is legally binding or not?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can you confirm whether the contract is legally binding or not?",
+            "hint": "Use 'whether...or not', and move 'is' back after the subject.",
+            "explanation": "'Whether...or not' frames the embedded question, with statement word order: 'the contract is legally binding'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
+        },
+        {
+            "id": "qf_l138_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Did the transfer go through successfully?",
+            "sentence": "Did the transfer go through successfully?",
+            "options": [
+                "Can you confirm whether did the transfer go through successfully or not?",
+                "Can you confirm the transfer whether went through successfully or not?",
+                "Can you confirm that the transfer went through successfully or not?",
+                "Can you confirm whether the transfer went through successfully or not?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can you confirm whether the transfer went through successfully or not?",
+            "hint": "Use 'whether...or not', drop 'did', and let the verb carry the past tense.",
+            "explanation": "'Whether...or not' connects the embedded question, 'did' disappears, and the verb carries the past tense: 'the transfer went through'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
+        },
+        {
+            "id": "qf_l138_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does this plan include international coverage?",
+            "sentence": "Does this plan include international coverage?",
+            "options": [
+                "Can you confirm whether does this plan include international coverage or not?",
+                "Can you confirm this plan whether includes international coverage or not?",
+                "Can you confirm whether this plan includes international coverage or not?",
+                "Can you confirm that this plan includes international coverage or not?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you confirm whether this plan includes international coverage or not?",
+            "hint": "Use 'whether...or not', drop 'does', and let the verb take its -s again.",
+            "explanation": "'Whether...or not' introduces the embedded question, and 'does' disappears while the verb takes its normal form: 'this plan includes'.",
+            "grammarRule": "Embedded Yes/No Questions: 'Whether...Or Not'"
+        },
+        {
+            "id": "qf_l139_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Did the landlord raise the rent this year?",
+            "sentence": "Did the landlord raise the rent this year?",
+            "options": [
+                "Do you know did the landlord raise the rent this year?",
+                "Do you know the landlord if raised the rent this year?",
+                "Do you know if the landlord raised the rent this year?",
+                "Do you know that the landlord raised the rent this year?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know if the landlord raised the rent this year?",
+            "hint": "Use 'if', drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "'If' introduces the embedded question, 'did' disappears, and the verb carries the past tense: 'the landlord raised'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
+        },
+        {
+            "id": "qf_l139_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Is the online form still accepting submissions?",
+            "sentence": "Is the online form still accepting submissions?",
+            "options": [
+                "Could you check whether the online form is still accepting submissions?",
+                "Could you check whether is the online form still accepting submissions?",
+                "Could you check the online form whether is still accepting submissions?",
+                "Could you check that the online form is still accepting submissions?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could you check whether the online form is still accepting submissions?",
+            "hint": "Use 'whether', and move 'is' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the online form is still accepting'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
+        },
+        {
+            "id": "qf_l139_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Have the new regulations taken effect yet?",
+            "sentence": "Have the new regulations taken effect yet?",
+            "options": [
+                "Do you know have the new regulations taken effect yet?",
+                "Do you know the new regulations if have taken effect yet?",
+                "Do you know that the new regulations have taken effect yet?",
+                "Do you know if the new regulations have taken effect yet?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you know if the new regulations have taken effect yet?",
+            "hint": "Use 'if', and move 'have' back after the subject.",
+            "explanation": "'If' connects the embedded question, with statement word order: 'the new regulations have taken effect'.",
+            "grammarRule": "Embedded Yes/No Questions: Mixed Capstone Practice"
+        },
+        {
+            "id": "qf_l140_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the shipment get held at customs?",
+            "sentence": "Why did the shipment get held at customs?",
+            "options": [
+                "Do you have any idea why did the shipment get held at customs?",
+                "Do you have any idea why the shipment did get held at customs?",
+                "Do you have any idea why held the shipment got at customs?",
+                "Do you have any idea why the shipment got held at customs?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you have any idea why the shipment got held at customs?",
+            "hint": "No 'did' is needed here - the verb itself shows the past tense.",
+            "explanation": "Embedded questions drop 'did': 'why the shipment got held', with statement word order throughout.",
+            "grammarRule": "Embedded Questions: Final Mixed Review"
+        },
+        {
+            "id": "qf_l140_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does this ticket include parking?",
+            "sentence": "Does this ticket include parking?",
+            "options": [
+                "Could you confirm does this ticket include parking?",
+                "Could you confirm this ticket if includes parking?",
+                "Could you confirm that this ticket includes parking?",
+                "Could you confirm if this ticket includes parking?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could you confirm if this ticket includes parking?",
+            "hint": "Use 'if', drop 'does', and let the verb take its -s again.",
+            "explanation": "'If' introduces the embedded question, and 'does' disappears while the verb takes its normal form: 'this ticket includes'.",
+            "grammarRule": "Embedded Questions: Final Mixed Review"
+        },
+        {
+            "id": "qf_l140_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much will the repairs cost in total?",
+            "sentence": "How much will the repairs cost in total?",
+            "options": [
+                "Do you know how much will the repairs cost in total?",
+                "Do you know how much the repairs cost will in total?",
+                "Do you know how much the repairs will cost in total?",
+                "Do you know how much will the repairs costs in total?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know how much the repairs will cost in total?",
+            "hint": "Move 'will' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'the repairs will cost', not 'will the repairs cost'.",
+            "grammarRule": "Embedded Questions: Final Mixed Review"
+        }
+    ]
 }

@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "qf_l21_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Daniel takes the 8 o'clock train because it's faster.",
-      "sentence": "Daniel takes the 8 o'clock train because it's faster.",
-      "options": [
-        "Why does Daniel take the 8 o'clock train?",
-        "Why Daniel takes the 8 o'clock train?",
-        "Why is Daniel take the 8 o'clock train?",
-        "Why does Daniel takes the 8 o'clock train?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why does Daniel take the 8 o'clock train?",
-      "hint": "Use 'does' before the subject, and let the verb return to its base form.",
-      "explanation": "Present simple wh-questions need 'does' right after the question word for singular subjects; the main verb then loses its -s.",
-      "grammarRule": "Wh-Question Formation: Present Simple"
-    },
-    {
-      "id": "qf_l21_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The children walk to school because the weather is nice.",
-      "sentence": "The children walk to school because the weather is nice.",
-      "options": [
-        "Why the children walk to school?",
-        "Why does the children walk to school?",
-        "Why do the children walks to school?",
-        "Why do the children walk to school?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Why do the children walk to school?",
-      "hint": "'The children' is plural, so use 'do', and keep the verb in its base form.",
-      "explanation": "With plural subjects, present simple wh-questions use 'do'. The verb after it stays in its base form - 'walk', not 'walks'.",
-      "grammarRule": "Wh-Question Formation: Present Simple"
-    },
-    {
-      "id": "qf_l21_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She checks her email first thing every morning.",
-      "sentence": "She checks her email first thing every morning.",
-      "options": [
-        "What she checks first thing every morning?",
-        "What is she check first thing every morning?",
-        "What does she checks first thing every morning?",
-        "What does she check first thing every morning?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What does she check first thing every morning?",
-      "hint": "Move 'does' right after the question word, before the subject.",
-      "explanation": "The question word 'what' is followed by 'does' and then the subject; the verb 'check' loses its -s once 'does' is in place.",
-      "grammarRule": "Wh-Question Formation: Present Simple"
-    },
-    {
-      "id": "qf_l22_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He canceled the subscription because it was too expensive.",
-      "sentence": "He canceled the subscription because it was too expensive.",
-      "options": [
-        "Why did he cancel the subscription?",
-        "Why he canceled the subscription?",
-        "Why does he cancel the subscription?",
-        "Why did he canceled the subscription?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why did he cancel the subscription?",
-      "hint": "'Did' comes right after the question word, and the verb returns to its base form.",
-      "explanation": "Past simple wh-questions use 'did' for every subject, placed after the question word; the main verb then loses its past tense ending.",
-      "grammarRule": "Wh-Question Formation: Past Simple"
-    },
-    {
-      "id": "qf_l22_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They arrived late because of the traffic.",
-      "sentence": "They arrived late because of the traffic.",
-      "options": [
-        "Why did they arrive late?",
-        "Why they arrived late?",
-        "Why does they arrive late?",
-        "Why did they arrived late?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why did they arrive late?",
-      "hint": "Place 'did' after 'why' and before the subject, then use the base verb.",
-      "explanation": "'Did' goes right after the question word. The main verb 'arrive' returns to its base form instead of staying in the past tense.",
-      "grammarRule": "Wh-Question Formation: Past Simple"
-    },
-    {
-      "id": "qf_l22_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She met her business partner at a conference in Berlin.",
-      "sentence": "She met her business partner at a conference in Berlin.",
-      "options": [
-        "Where she met her business partner?",
-        "Where did she meet her business partner?",
-        "Where does she meet her business partner?",
-        "Where did she met her business partner?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Where did she meet her business partner?",
-      "hint": "Use 'did' after the question word, and let 'met' return to 'meet'.",
-      "explanation": "In past simple wh-questions, 'did' carries the past tense, so the main verb goes back to its base form, 'meet'.",
-      "grammarRule": "Wh-Question Formation: Past Simple"
-    },
-    {
-      "id": "qf_l23_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is repairing the roof because of the storm damage.",
-      "sentence": "He is repairing the roof because of the storm damage.",
-      "options": [
-        "Why he is repairing the roof?",
-        "Why is he repairing the roof?",
-        "Why does he repair the roof?",
-        "Why is he repair the roof?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why is he repairing the roof?",
-      "hint": "Move 'is' right after the question word, and keep the '-ing' form.",
-      "explanation": "In continuous wh-questions, the 'be' verb moves after the question word; the main verb keeps its '-ing' ending throughout.",
-      "grammarRule": "Wh-Question Formation: Present Continuous"
-    },
-    {
-      "id": "qf_l23_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The students are reviewing their notes for tomorrow's test.",
-      "sentence": "The students are reviewing their notes for tomorrow's test.",
-      "options": [
-        "What are the students reviewing?",
-        "What the students are reviewing?",
-        "What do the students review?",
-        "What are the students review?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What are the students reviewing?",
-      "hint": "Place 'are' after the question word and keep the verb in its '-ing' form.",
-      "explanation": "Present continuous wh-questions place 'are' right after the question word, and the main verb keeps its '-ing' form.",
-      "grammarRule": "Wh-Question Formation: Present Continuous"
-    },
-    {
-      "id": "qf_l23_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is waiting outside the theater for her friend.",
-      "sentence": "She is waiting outside the theater for her friend.",
-      "options": [
-        "Where is she waiting for her friend?",
-        "Where she is waiting for her friend?",
-        "Where does she wait for her friend?",
-        "Where is she wait for her friend?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Where is she waiting for her friend?",
-      "hint": "Move 'is' after the question word, and keep 'waiting' in its '-ing' form.",
-      "explanation": "The 'be' verb 'is' moves right after the question word, while the main verb 'waiting' keeps its '-ing' ending unchanged.",
-      "grammarRule": "Wh-Question Formation: Present Continuous"
-    },
-    {
-      "id": "qf_l24_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He was reading a mystery novel when the power went out.",
-      "sentence": "He was reading a mystery novel when the power went out.",
-      "options": [
-        "What he was reading when the power went out?",
-        "What was he reading when the power went out?",
-        "What did he read when the power went out?",
-        "What was he read when the power went out?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "What was he reading when the power went out?",
-      "hint": "Move 'was' after the question word, and keep 'reading' in its '-ing' form.",
-      "explanation": "Past continuous wh-questions place 'was/were' after the question word, and the main verb keeps its '-ing' ending.",
-      "grammarRule": "Wh-Question Formation: Past Continuous"
-    },
-    {
-      "id": "qf_l24_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They were arguing about the bill when the waiter came over.",
-      "sentence": "They were arguing about the bill when the waiter came over.",
-      "options": [
-        "Why they were arguing when the waiter came over?",
-        "Why were they arguing when the waiter came over?",
-        "Why did they argue when the waiter came over?",
-        "Why were they argue when the waiter came over?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why were they arguing when the waiter came over?",
-      "hint": "Place 'were' after the question word and keep the '-ing' ending on the verb.",
-      "explanation": "'Were' moves after the question word in past continuous questions, and the verb 'arguing' keeps its '-ing' form.",
-      "grammarRule": "Wh-Question Formation: Past Continuous"
-    },
-    {
-      "id": "qf_l24_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She was living in Madrid when she met her husband.",
-      "sentence": "She was living in Madrid when she met her husband.",
-      "options": [
-        "Where she was living when she met her husband?",
-        "Where did she live when she met her husband?",
-        "Where was she living when she met her husband?",
-        "Where was she live when she met her husband?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Where was she living when she met her husband?",
-      "hint": "Move 'was' after the question word, and keep 'living' unchanged.",
-      "explanation": "In past continuous wh-questions, 'was' moves after the question word, while the main verb keeps its '-ing' form.",
-      "grammarRule": "Wh-Question Formation: Past Continuous"
-    },
-    {
-      "id": "qf_l25_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has traveled to twelve countries so far.",
-      "sentence": "She has traveled to twelve countries so far.",
-      "options": [
-        "How many countries she has traveled to?",
-        "How many countries does she travel to?",
-        "How many countries has she travel to?",
-        "How many countries has she traveled to?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How many countries has she traveled to?",
-      "hint": "Move 'has' after the question phrase, and keep 'traveled' unchanged.",
-      "explanation": "Present perfect wh-questions place 'has/have' after the question word, and the past participle 'traveled' stays exactly the same.",
-      "grammarRule": "Wh-Question Formation: Present Perfect"
-    },
-    {
-      "id": "qf_l25_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They have lived in this neighborhood since 2015.",
-      "sentence": "They have lived in this neighborhood since 2015.",
-      "options": [
-        "How long have they lived in this neighborhood?",
-        "How long they have lived in this neighborhood?",
-        "How long do they live in this neighborhood?",
-        "How long have they live in this neighborhood?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How long have they lived in this neighborhood?",
-      "hint": "Place 'have' after the question word, and keep 'lived' unchanged.",
-      "explanation": "'Have' moves after the question phrase in present perfect questions, and the participle 'lived' remains unchanged.",
-      "grammarRule": "Wh-Question Formation: Present Perfect"
-    },
-    {
-      "id": "qf_l25_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has already finished three chapters of the book.",
-      "sentence": "He has already finished three chapters of the book.",
-      "options": [
-        "How many chapters he has already finished?",
-        "How many chapters does he already finish?",
-        "How many chapters has he already finish?",
-        "How many chapters has he already finished?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How many chapters has he already finished?",
-      "hint": "Move 'has' after the question phrase, and keep 'finished' unchanged.",
-      "explanation": "In present perfect wh-questions, 'has' moves after the question phrase, and the past participle stays the same, 'finished'.",
-      "grammarRule": "Wh-Question Formation: Present Perfect"
-    },
-    {
-      "id": "qf_l26_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She can finish the assignment by using online resources.",
-      "sentence": "She can finish the assignment by using online resources.",
-      "options": [
-        "How she can finish the assignment?",
-        "How does she can finish the assignment?",
-        "How can she finish the assignment?",
-        "How can she finishes the assignment?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How can she finish the assignment?",
-      "hint": "Move the modal 'can' after the question word - no extra 'do' needed.",
-      "explanation": "Modal wh-questions place the modal right after the question word, and the main verb stays in its base form throughout.",
-      "grammarRule": "Wh-Question Formation: Modals"
-    },
-    {
-      "id": "qf_l26_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They will announce the results next Friday.",
-      "sentence": "They will announce the results next Friday.",
-      "options": [
-        "When they will announce the results?",
-        "When do they will announce the results?",
-        "When will they announces the results?",
-        "When will they announce the results?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "When will they announce the results?",
-      "hint": "Move 'will' after the question word, and keep the verb in its base form.",
-      "explanation": "'Will' moves after the question word to form the question, and the main verb 'announce' never takes an -s.",
-      "grammarRule": "Wh-Question Formation: Modals"
-    },
-    {
-      "id": "qf_l26_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We should book the tickets before the prices increase.",
-      "sentence": "We should book the tickets before the prices increase.",
-      "options": [
-        "When we should book the tickets?",
-        "When do we should book the tickets?",
-        "When should we book the tickets?",
-        "When should we booking the tickets?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "When should we book the tickets?",
-      "hint": "Move 'should' after the question word, keeping the base verb form.",
-      "explanation": "Modal questions move the modal after the question word; the verb 'book' stays in its base form and never adds -ing or -s here.",
-      "grammarRule": "Wh-Question Formation: Modals"
-    },
-    {
-      "id": "qf_l27_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There are five hotels near the train station.",
-      "sentence": "There are five hotels near the train station.",
-      "options": [
-        "How many hotels there are near the train station?",
-        "How many hotels do there are near the train station?",
-        "How many hotels are there near the train station?",
-        "How many hotels is there near the train station?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How many hotels are there near the train station?",
-      "hint": "Move 'are' before 'there', right after the question phrase.",
-      "explanation": "In 'there is/are' questions, the verb moves before 'there': since 'hotels' is plural, 'are' is the correct form to use.",
-      "grammarRule": "Wh-Question Formation: There Is / There Are"
-    },
-    {
-      "id": "qf_l27_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There is a good restaurant on Main Street.",
-      "sentence": "There is a good restaurant on Main Street.",
-      "options": [
-        "Where there is a good restaurant?",
-        "Where is there a good restaurant?",
-        "Where does there is a good restaurant?",
-        "Where is a good restaurant there?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Where is there a good restaurant?",
-      "hint": "Move 'is' before 'there', right after the question word.",
-      "explanation": "'There is/are' questions move the verb before 'there'. Since the sentence describes one restaurant, 'is' is correct.",
-      "grammarRule": "Wh-Question Formation: There Is / There Are"
-    },
-    {
-      "id": "qf_l27_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There were several complaints about the noise last night.",
-      "sentence": "There were several complaints about the noise last night.",
-      "options": [
-        "How many complaints there were about the noise last night?",
-        "How many complaints were there about the noise last night?",
-        "How many complaints did there were about the noise last night?",
-        "How many complaints was there about the noise last night?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How many complaints were there about the noise last night?",
-      "hint": "Move 'were' before 'there', and keep it plural since 'complaints' is plural.",
-      "explanation": "In 'there is/are' questions, the verb moves before 'there'. Since 'complaints' is plural, 'were' is the correct past-tense form.",
-      "grammarRule": "Wh-Question Formation: There Is / There Are"
-    },
-    {
-      "id": "qf_l28_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new restaurant downtown has a cozy, rustic atmosphere.",
-      "sentence": "The new restaurant downtown has a cozy, rustic atmosphere.",
-      "options": [
-        "What is the new restaurant like?",
-        "What does the new restaurant like?",
-        "What the new restaurant is like?",
-        "How is the new restaurant like?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What is the new restaurant like?",
-      "hint": "'What...like' asks for a description - move 'is' right after 'what'.",
-      "explanation": "'What...like' is a fixed pattern used to ask for a description. The verb 'is' moves directly after 'what', before the subject.",
-      "grammarRule": "Wh-Question Formation: What...Like / What...For"
-    },
-    {
-      "id": "qf_l28_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She bought a label maker to organize her craft supplies.",
-      "sentence": "She bought a label maker to organize her craft supplies.",
-      "options": [
-        "What she bought the label maker for?",
-        "What does she buy the label maker for?",
-        "What did she bought the label maker for?",
-        "What did she buy the label maker for?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What did she buy the label maker for?",
-      "hint": "'What...for' asks about purpose - use 'did' after the question word.",
-      "explanation": "'What...for' asks about purpose. As in any past simple question, 'did' follows the question word, and the verb returns to 'buy'.",
-      "grammarRule": "Wh-Question Formation: What...Like / What...For"
-    },
-    {
-      "id": "qf_l28_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The hotel room felt small and a little outdated.",
-      "sentence": "The hotel room felt small and a little outdated.",
-      "options": [
-        "What did the hotel room like?",
-        "What the hotel room was like?",
-        "What was the hotel room like?",
-        "How was the hotel room like?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What was the hotel room like?",
-      "hint": "'What...like' asks for a description - move 'was' right after 'what'.",
-      "explanation": "The fixed pattern 'What...like' asks for a description. 'Was' moves directly after 'what' and before the subject.",
-      "grammarRule": "Wh-Question Formation: What...Like / What...For"
-    },
-    {
-      "id": "qf_l29_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The pharmacy delivers medication to elderly patients on request.",
-      "sentence": "The pharmacy delivers medication to elderly patients on request.",
-      "options": [
-        "Who does the pharmacy deliver medication to?",
-        "Who the pharmacy delivers medication to?",
-        "Who is the pharmacy deliver medication to?",
-        "Who does the pharmacy delivers medication to?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who does the pharmacy deliver medication to?",
-      "hint": "Use 'does' after the question word, and keep the verb in its base form.",
-      "explanation": "Present simple wh-questions place 'does' after the question word for singular subjects, and the verb 'deliver' loses its -s.",
-      "grammarRule": "Wh-Question Formation: Mixed Tenses"
-    },
-    {
-      "id": "qf_l29_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The technician was updating the software when the system crashed.",
-      "sentence": "The technician was updating the software when the system crashed.",
-      "options": [
-        "What the technician was doing when the system crashed?",
-        "What did the technician doing when the system crashed?",
-        "What was the technician do when the system crashed?",
-        "What was the technician doing when the system crashed?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What was the technician doing when the system crashed?",
-      "hint": "Move 'was' after the question word, and keep 'doing' in its '-ing' form.",
-      "explanation": "'What...doing' is a common way to ask about an activity in progress. 'Was' moves after the question word, and 'doing' keeps its '-ing' ending.",
-      "grammarRule": "Wh-Question Formation: Mixed Tenses"
-    },
-    {
-      "id": "qf_l29_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The company has opened three new branches this year.",
-      "sentence": "The company has opened three new branches this year.",
-      "options": [
-        "How many branches the company has opened this year?",
-        "How many branches has the company opened this year?",
-        "How many branches does the company open this year?",
-        "How many branches has the company open this year?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How many branches has the company opened this year?",
-      "hint": "Move 'has' after the question phrase, and keep 'opened' unchanged.",
-      "explanation": "In present perfect wh-questions, 'has' moves after the question phrase, and the participle 'opened' stays exactly the same.",
-      "grammarRule": "Wh-Question Formation: Mixed Tenses"
-    },
-    {
-      "id": "qf_l30_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She had saved eight thousand dollars by age twenty-two.",
-      "sentence": "She had saved eight thousand dollars by age twenty-two.",
-      "options": [
-        "How much money she had saved by age twenty-two?",
-        "How much money did she save by age twenty-two?",
-        "How much money had she save by age twenty-two?",
-        "How much money had she saved by age twenty-two?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How much money had she saved by age twenty-two?",
-      "hint": "Move 'had' after the question phrase, and keep 'saved' unchanged.",
-      "explanation": "Past perfect wh-questions place 'had' after the question phrase, and the participle 'saved' remains the same.",
-      "grammarRule": "Wh-Question Formation: Past Perfect"
-    },
-    {
-      "id": "qf_l30_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They had been married for ten years when their first child was born.",
-      "sentence": "They had been married for ten years when their first child was born.",
-      "options": [
-        "How long they had been married when their first child was born?",
-        "How long did they be married when their first child was born?",
-        "How long had they been married when their first child was born?",
-        "How long had they be married when their first child was born?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How long had they been married when their first child was born?",
-      "hint": "Move 'had' after the question phrase, and keep 'been married' unchanged.",
-      "explanation": "Past perfect wh-questions place 'had' after the question phrase. The rest of the verb phrase, 'been married', does not change.",
-      "grammarRule": "Wh-Question Formation: Past Perfect"
-    },
-    {
-      "id": "qf_l30_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He had visited the dentist twice before the pain finally stopped.",
-      "sentence": "He had visited the dentist twice before the pain finally stopped.",
-      "options": [
-        "How many times he had visited the dentist before the pain stopped?",
-        "How many times did he visit the dentist before the pain stopped?",
-        "How many times had he visited the dentist before the pain stopped?",
-        "How many times had he visit the dentist before the pain stopped?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How many times had he visited the dentist before the pain stopped?",
-      "hint": "Move 'had' after the question phrase, and keep 'visited' unchanged.",
-      "explanation": "As with all past perfect wh-questions, 'had' moves after the question phrase while the participle 'visited' stays the same.",
-      "grammarRule": "Wh-Question Formation: Past Perfect"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "qf_l21_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Daniel takes the 8 o'clock train because it's faster.",
+            "sentence": "Daniel takes the 8 o'clock train because it's faster.",
+            "options": [
+                "Why does Daniel take the 8 o'clock train?",
+                "Why Daniel takes the 8 o'clock train?",
+                "Why is Daniel take the 8 o'clock train?",
+                "Why does Daniel takes the 8 o'clock train?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why does Daniel take the 8 o'clock train?",
+            "hint": "Use 'does' before the subject, and let the verb return to its base form.",
+            "explanation": "Present simple wh-questions need 'does' right after the question word for singular subjects; the main verb then loses its -s.",
+            "grammarRule": "Wh-Question Formation: Present Simple"
+        },
+        {
+            "id": "qf_l21_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The children walk to school because the weather is nice.",
+            "sentence": "The children walk to school because the weather is nice.",
+            "options": [
+                "Why the children walk to school?",
+                "Why does the children walk to school?",
+                "Why do the children walks to school?",
+                "Why do the children walk to school?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Why do the children walk to school?",
+            "hint": "'The children' is plural, so use 'do', and keep the verb in its base form.",
+            "explanation": "With plural subjects, present simple wh-questions use 'do'. The verb after it stays in its base form - 'walk', not 'walks'.",
+            "grammarRule": "Wh-Question Formation: Present Simple"
+        },
+        {
+            "id": "qf_l21_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She checks her email first thing every morning.",
+            "sentence": "She checks her email first thing every morning.",
+            "options": [
+                "What she checks first thing every morning?",
+                "What is she check first thing every morning?",
+                "What does she checks first thing every morning?",
+                "What does she check first thing every morning?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What does she check first thing every morning?",
+            "hint": "Move 'does' right after the question word, before the subject.",
+            "explanation": "The question word 'what' is followed by 'does' and then the subject; the verb 'check' loses its -s once 'does' is in place.",
+            "grammarRule": "Wh-Question Formation: Present Simple"
+        },
+        {
+            "id": "qf_l22_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He canceled the subscription because it was too expensive.",
+            "sentence": "He canceled the subscription because it was too expensive.",
+            "options": [
+                "Why did he cancel the subscription?",
+                "Why he canceled the subscription?",
+                "Why does he cancel the subscription?",
+                "Why did he canceled the subscription?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why did he cancel the subscription?",
+            "hint": "'Did' comes right after the question word, and the verb returns to its base form.",
+            "explanation": "Past simple wh-questions use 'did' for every subject, placed after the question word; the main verb then loses its past tense ending.",
+            "grammarRule": "Wh-Question Formation: Past Simple"
+        },
+        {
+            "id": "qf_l22_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They arrived late because of the traffic.",
+            "sentence": "They arrived late because of the traffic.",
+            "options": [
+                "Why did they arrive late?",
+                "Why they arrived late?",
+                "Why does they arrive late?",
+                "Why did they arrived late?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why did they arrive late?",
+            "hint": "Place 'did' after 'why' and before the subject, then use the base verb.",
+            "explanation": "'Did' goes right after the question word. The main verb 'arrive' returns to its base form instead of staying in the past tense.",
+            "grammarRule": "Wh-Question Formation: Past Simple"
+        },
+        {
+            "id": "qf_l22_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She met her business partner at a conference in Berlin.",
+            "sentence": "She met her business partner at a conference in Berlin.",
+            "options": [
+                "Where she met her business partner?",
+                "Where did she meet her business partner?",
+                "Where does she meet her business partner?",
+                "Where did she met her business partner?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Where did she meet her business partner?",
+            "hint": "Use 'did' after the question word, and let 'met' return to 'meet'.",
+            "explanation": "In past simple wh-questions, 'did' carries the past tense, so the main verb goes back to its base form, 'meet'.",
+            "grammarRule": "Wh-Question Formation: Past Simple"
+        },
+        {
+            "id": "qf_l23_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is repairing the roof because of the storm damage.",
+            "sentence": "He is repairing the roof because of the storm damage.",
+            "options": [
+                "Why he is repairing the roof?",
+                "Why is he repairing the roof?",
+                "Why does he repair the roof?",
+                "Why is he repair the roof?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why is he repairing the roof?",
+            "hint": "Move 'is' right after the question word, and keep the '-ing' form.",
+            "explanation": "In continuous wh-questions, the 'be' verb moves after the question word; the main verb keeps its '-ing' ending throughout.",
+            "grammarRule": "Wh-Question Formation: Present Continuous"
+        },
+        {
+            "id": "qf_l23_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The students are reviewing their notes for tomorrow's test.",
+            "sentence": "The students are reviewing their notes for tomorrow's test.",
+            "options": [
+                "What are the students reviewing?",
+                "What the students are reviewing?",
+                "What do the students review?",
+                "What are the students review?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What are the students reviewing?",
+            "hint": "Place 'are' after the question word and keep the verb in its '-ing' form.",
+            "explanation": "Present continuous wh-questions place 'are' right after the question word, and the main verb keeps its '-ing' form.",
+            "grammarRule": "Wh-Question Formation: Present Continuous"
+        },
+        {
+            "id": "qf_l23_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is waiting outside the theater for her friend.",
+            "sentence": "She is waiting outside the theater for her friend.",
+            "options": [
+                "Where is she waiting for her friend?",
+                "Where she is waiting for her friend?",
+                "Where does she wait for her friend?",
+                "Where is she wait for her friend?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Where is she waiting for her friend?",
+            "hint": "Move 'is' after the question word, and keep 'waiting' in its '-ing' form.",
+            "explanation": "The 'be' verb 'is' moves right after the question word, while the main verb 'waiting' keeps its '-ing' ending unchanged.",
+            "grammarRule": "Wh-Question Formation: Present Continuous"
+        },
+        {
+            "id": "qf_l24_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He was reading a mystery novel when the power went out.",
+            "sentence": "He was reading a mystery novel when the power went out.",
+            "options": [
+                "What he was reading when the power went out?",
+                "What was he reading when the power went out?",
+                "What did he read when the power went out?",
+                "What was he read when the power went out?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "What was he reading when the power went out?",
+            "hint": "Move 'was' after the question word, and keep 'reading' in its '-ing' form.",
+            "explanation": "Past continuous wh-questions place 'was/were' after the question word, and the main verb keeps its '-ing' ending.",
+            "grammarRule": "Wh-Question Formation: Past Continuous"
+        },
+        {
+            "id": "qf_l24_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They were arguing about the bill when the waiter came over.",
+            "sentence": "They were arguing about the bill when the waiter came over.",
+            "options": [
+                "Why they were arguing when the waiter came over?",
+                "Why were they arguing when the waiter came over?",
+                "Why did they argue when the waiter came over?",
+                "Why were they argue when the waiter came over?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why were they arguing when the waiter came over?",
+            "hint": "Place 'were' after the question word and keep the '-ing' ending on the verb.",
+            "explanation": "'Were' moves after the question word in past continuous questions, and the verb 'arguing' keeps its '-ing' form.",
+            "grammarRule": "Wh-Question Formation: Past Continuous"
+        },
+        {
+            "id": "qf_l24_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She was living in Madrid when she met her husband.",
+            "sentence": "She was living in Madrid when she met her husband.",
+            "options": [
+                "Where she was living when she met her husband?",
+                "Where did she live when she met her husband?",
+                "Where was she living when she met her husband?",
+                "Where was she live when she met her husband?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Where was she living when she met her husband?",
+            "hint": "Move 'was' after the question word, and keep 'living' unchanged.",
+            "explanation": "In past continuous wh-questions, 'was' moves after the question word, while the main verb keeps its '-ing' form.",
+            "grammarRule": "Wh-Question Formation: Past Continuous"
+        },
+        {
+            "id": "qf_l25_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has traveled to twelve countries so far.",
+            "sentence": "She has traveled to twelve countries so far.",
+            "options": [
+                "How many countries she has traveled to?",
+                "How many countries does she travel to?",
+                "How many countries has she travel to?",
+                "How many countries has she traveled to?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How many countries has she traveled to?",
+            "hint": "Move 'has' after the question phrase, and keep 'traveled' unchanged.",
+            "explanation": "Present perfect wh-questions place 'has/have' after the question word, and the past participle 'traveled' stays exactly the same.",
+            "grammarRule": "Wh-Question Formation: Present Perfect"
+        },
+        {
+            "id": "qf_l25_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They have lived in this neighborhood since 2015.",
+            "sentence": "They have lived in this neighborhood since 2015.",
+            "options": [
+                "How long have they lived in this neighborhood?",
+                "How long they have lived in this neighborhood?",
+                "How long do they live in this neighborhood?",
+                "How long have they live in this neighborhood?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How long have they lived in this neighborhood?",
+            "hint": "Place 'have' after the question word, and keep 'lived' unchanged.",
+            "explanation": "'Have' moves after the question phrase in present perfect questions, and the participle 'lived' remains unchanged.",
+            "grammarRule": "Wh-Question Formation: Present Perfect"
+        },
+        {
+            "id": "qf_l25_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He has already finished three chapters of the book.",
+            "sentence": "He has already finished three chapters of the book.",
+            "options": [
+                "How many chapters he has already finished?",
+                "How many chapters does he already finish?",
+                "How many chapters has he already finish?",
+                "How many chapters has he already finished?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How many chapters has he already finished?",
+            "hint": "Move 'has' after the question phrase, and keep 'finished' unchanged.",
+            "explanation": "In present perfect wh-questions, 'has' moves after the question phrase, and the past participle stays the same, 'finished'.",
+            "grammarRule": "Wh-Question Formation: Present Perfect"
+        },
+        {
+            "id": "qf_l26_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She can finish the assignment by using online resources.",
+            "sentence": "She can finish the assignment by using online resources.",
+            "options": [
+                "How she can finish the assignment?",
+                "How does she can finish the assignment?",
+                "How can she finish the assignment?",
+                "How can she finishes the assignment?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How can she finish the assignment?",
+            "hint": "Move the modal 'can' after the question word - no extra 'do' needed.",
+            "explanation": "Modal wh-questions place the modal right after the question word, and the main verb stays in its base form throughout.",
+            "grammarRule": "Wh-Question Formation: Modals"
+        },
+        {
+            "id": "qf_l26_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They will announce the results next Friday.",
+            "sentence": "They will announce the results next Friday.",
+            "options": [
+                "When they will announce the results?",
+                "When do they will announce the results?",
+                "When will they announces the results?",
+                "When will they announce the results?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "When will they announce the results?",
+            "hint": "Move 'will' after the question word, and keep the verb in its base form.",
+            "explanation": "'Will' moves after the question word to form the question, and the main verb 'announce' never takes an -s.",
+            "grammarRule": "Wh-Question Formation: Modals"
+        },
+        {
+            "id": "qf_l26_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We should book the tickets before the prices increase.",
+            "sentence": "We should book the tickets before the prices increase.",
+            "options": [
+                "When we should book the tickets?",
+                "When do we should book the tickets?",
+                "When should we book the tickets?",
+                "When should we booking the tickets?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "When should we book the tickets?",
+            "hint": "Move 'should' after the question word, keeping the base verb form.",
+            "explanation": "Modal questions move the modal after the question word; the verb 'book' stays in its base form and never adds -ing or -s here.",
+            "grammarRule": "Wh-Question Formation: Modals"
+        },
+        {
+            "id": "qf_l27_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There are five hotels near the train station.",
+            "sentence": "There are five hotels near the train station.",
+            "options": [
+                "How many hotels there are near the train station?",
+                "How many hotels do there are near the train station?",
+                "How many hotels are there near the train station?",
+                "How many hotels is there near the train station?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How many hotels are there near the train station?",
+            "hint": "Move 'are' before 'there', right after the question phrase.",
+            "explanation": "In 'there is/are' questions, the verb moves before 'there': since 'hotels' is plural, 'are' is the correct form to use.",
+            "grammarRule": "Wh-Question Formation: There Is / There Are"
+        },
+        {
+            "id": "qf_l27_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There is a good restaurant on Main Street.",
+            "sentence": "There is a good restaurant on Main Street.",
+            "options": [
+                "Where there is a good restaurant?",
+                "Where is there a good restaurant?",
+                "Where does there is a good restaurant?",
+                "Where is a good restaurant there?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Where is there a good restaurant?",
+            "hint": "Move 'is' before 'there', right after the question word.",
+            "explanation": "'There is/are' questions move the verb before 'there'. Since the sentence describes one restaurant, 'is' is correct.",
+            "grammarRule": "Wh-Question Formation: There Is / There Are"
+        },
+        {
+            "id": "qf_l27_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There were several complaints about the noise last night.",
+            "sentence": "There were several complaints about the noise last night.",
+            "options": [
+                "How many complaints there were about the noise last night?",
+                "How many complaints were there about the noise last night?",
+                "How many complaints did there were about the noise last night?",
+                "How many complaints was there about the noise last night?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How many complaints were there about the noise last night?",
+            "hint": "Move 'were' before 'there', and keep it plural since 'complaints' is plural.",
+            "explanation": "In 'there is/are' questions, the verb moves before 'there'. Since 'complaints' is plural, 'were' is the correct past-tense form.",
+            "grammarRule": "Wh-Question Formation: There Is / There Are"
+        },
+        {
+            "id": "qf_l28_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new restaurant downtown has a cozy, rustic atmosphere.",
+            "sentence": "The new restaurant downtown has a cozy, rustic atmosphere.",
+            "options": [
+                "What is the new restaurant like?",
+                "What does the new restaurant like?",
+                "What the new restaurant is like?",
+                "How is the new restaurant like?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What is the new restaurant like?",
+            "hint": "'What...like' asks for a description - move 'is' right after 'what'.",
+            "explanation": "'What...like' is a fixed pattern used to ask for a description. The verb 'is' moves directly after 'what', before the subject.",
+            "grammarRule": "Wh-Question Formation: What...Like / What...For"
+        },
+        {
+            "id": "qf_l28_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She bought a label maker to organize her craft supplies.",
+            "sentence": "She bought a label maker to organize her craft supplies.",
+            "options": [
+                "What she bought the label maker for?",
+                "What does she buy the label maker for?",
+                "What did she bought the label maker for?",
+                "What did she buy the label maker for?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What did she buy the label maker for?",
+            "hint": "'What...for' asks about purpose - use 'did' after the question word.",
+            "explanation": "'What...for' asks about purpose. As in any past simple question, 'did' follows the question word, and the verb returns to 'buy'.",
+            "grammarRule": "Wh-Question Formation: What...Like / What...For"
+        },
+        {
+            "id": "qf_l28_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The hotel room felt small and a little outdated.",
+            "sentence": "The hotel room felt small and a little outdated.",
+            "options": [
+                "What did the hotel room like?",
+                "What the hotel room was like?",
+                "What was the hotel room like?",
+                "How was the hotel room like?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What was the hotel room like?",
+            "hint": "'What...like' asks for a description - move 'was' right after 'what'.",
+            "explanation": "The fixed pattern 'What...like' asks for a description. 'Was' moves directly after 'what' and before the subject.",
+            "grammarRule": "Wh-Question Formation: What...Like / What...For"
+        },
+        {
+            "id": "qf_l29_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The pharmacy delivers medication to elderly patients on request.",
+            "sentence": "The pharmacy delivers medication to elderly patients on request.",
+            "options": [
+                "Who does the pharmacy deliver medication to?",
+                "Who the pharmacy delivers medication to?",
+                "Who is the pharmacy deliver medication to?",
+                "Who does the pharmacy delivers medication to?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who does the pharmacy deliver medication to?",
+            "hint": "Use 'does' after the question word, and keep the verb in its base form.",
+            "explanation": "Present simple wh-questions place 'does' after the question word for singular subjects, and the verb 'deliver' loses its -s.",
+            "grammarRule": "Wh-Question Formation: Mixed Tenses"
+        },
+        {
+            "id": "qf_l29_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The technician was updating the software when the system crashed.",
+            "sentence": "The technician was updating the software when the system crashed.",
+            "options": [
+                "What the technician was doing when the system crashed?",
+                "What did the technician doing when the system crashed?",
+                "What was the technician do when the system crashed?",
+                "What was the technician doing when the system crashed?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What was the technician doing when the system crashed?",
+            "hint": "Move 'was' after the question word, and keep 'doing' in its '-ing' form.",
+            "explanation": "'What...doing' is a common way to ask about an activity in progress. 'Was' moves after the question word, and 'doing' keeps its '-ing' ending.",
+            "grammarRule": "Wh-Question Formation: Mixed Tenses"
+        },
+        {
+            "id": "qf_l29_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The company has opened three new branches this year.",
+            "sentence": "The company has opened three new branches this year.",
+            "options": [
+                "How many branches the company has opened this year?",
+                "How many branches has the company opened this year?",
+                "How many branches does the company open this year?",
+                "How many branches has the company open this year?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How many branches has the company opened this year?",
+            "hint": "Move 'has' after the question phrase, and keep 'opened' unchanged.",
+            "explanation": "In present perfect wh-questions, 'has' moves after the question phrase, and the participle 'opened' stays exactly the same.",
+            "grammarRule": "Wh-Question Formation: Mixed Tenses"
+        },
+        {
+            "id": "qf_l30_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She had saved eight thousand dollars by age twenty-two.",
+            "sentence": "She had saved eight thousand dollars by age twenty-two.",
+            "options": [
+                "How much money she had saved by age twenty-two?",
+                "How much money did she save by age twenty-two?",
+                "How much money had she save by age twenty-two?",
+                "How much money had she saved by age twenty-two?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How much money had she saved by age twenty-two?",
+            "hint": "Move 'had' after the question phrase, and keep 'saved' unchanged.",
+            "explanation": "Past perfect wh-questions place 'had' after the question phrase, and the participle 'saved' remains the same.",
+            "grammarRule": "Wh-Question Formation: Past Perfect"
+        },
+        {
+            "id": "qf_l30_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They had been married for ten years when their first child was born.",
+            "sentence": "They had been married for ten years when their first child was born.",
+            "options": [
+                "How long they had been married when their first child was born?",
+                "How long did they be married when their first child was born?",
+                "How long had they been married when their first child was born?",
+                "How long had they be married when their first child was born?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How long had they been married when their first child was born?",
+            "hint": "Move 'had' after the question phrase, and keep 'been married' unchanged.",
+            "explanation": "Past perfect wh-questions place 'had' after the question phrase. The rest of the verb phrase, 'been married', does not change.",
+            "grammarRule": "Wh-Question Formation: Past Perfect"
+        },
+        {
+            "id": "qf_l30_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He had visited the dentist twice before the pain finally stopped.",
+            "sentence": "He had visited the dentist twice before the pain finally stopped.",
+            "options": [
+                "How many times he had visited the dentist before the pain stopped?",
+                "How many times did he visit the dentist before the pain stopped?",
+                "How many times had he visited the dentist before the pain stopped?",
+                "How many times had he visit the dentist before the pain stopped?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How many times had he visited the dentist before the pain stopped?",
+            "hint": "Move 'had' after the question phrase, and keep 'visited' unchanged.",
+            "explanation": "As with all past perfect wh-questions, 'had' moves after the question phrase while the participle 'visited' stays the same.",
+            "grammarRule": "Wh-Question Formation: Past Perfect"
+        }
+    ]
 }

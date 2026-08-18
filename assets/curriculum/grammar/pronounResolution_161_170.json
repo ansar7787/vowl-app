@@ -1,577 +1,577 @@
 {
-  "gameType": "pronounResolution",
-  "batchIndex": 17,
-  "levels": "161-170",
-  "quests": [
-    {
-      "id": "pr_l161_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The team missed the deadline, which frustrated the client.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The team missed the deadline, which frustrated the client.",
-      "options": [
-        "The client",
-        "The team",
-        "missing the deadline"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "missing the deadline",
-      "hint": "What frustrated the client - a person, or the whole situation?",
-      "explanation": "'which' here refers to the entire situation of missing the deadline, not just one noun in the sentence.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l161_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "One should always proofread an email before sending it.\nWho or what does 'One' refer to?",
-      "targetWord": "One",
-      "sentence": "One should always proofread an email before sending it.",
-      "options": [
-        "an email",
-        "it",
-        "any person in general"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "any person in general",
-      "hint": "Who does 'one' stand for here - a specific person or people in general?",
-      "explanation": "'One' is a generic pronoun meaning 'people in general' or 'anyone,' not a specific person mentioned in the sentence.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l161_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The professor whom the students nominated for the teaching award had never won before.\nWho or what does 'whom' refer to?",
-      "targetWord": "whom",
-      "sentence": "The professor whom the students nominated for the teaching award had never won before.",
-      "options": [
-        "The students",
-        "The professor",
-        "award"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The professor",
-      "hint": "Who was nominated?",
-      "explanation": "'whom' is the object form referring to 'the professor,' the person nominated.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l162_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Prices rose sharply across the region, which surprised most economists.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "Prices rose sharply across the region, which surprised most economists.",
-      "options": [
-        "The region",
-        "economists",
-        "the sharp price rise"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "the sharp price rise",
-      "hint": "What caught economists off guard - a place, or an economic trend?",
-      "explanation": "'which' refers to the whole event of prices rising sharply, not just the region.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l162_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "One can usually tell when a deal seems too good to be true.\nWho or what does 'One' refer to?",
-      "targetWord": "One",
-      "sentence": "One can usually tell when a deal seems too good to be true.",
-      "options": [
-        "true",
-        "a deal",
-        "any person in general"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "any person in general",
-      "hint": "Who does 'one' stand for here?",
-      "explanation": "'One' is a generic pronoun meaning people in general, not one specific individual.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l162_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The negotiator, whose calm approach defused the standoff, was later promoted.\nWho or what does 'whose' refer to?",
-      "targetWord": "whose",
-      "sentence": "The negotiator, whose calm approach defused the standoff, was later promoted.",
-      "options": [
-        "The negotiator",
-        "approach",
-        "standoff"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The negotiator",
-      "hint": "Whose calm approach made the difference?",
-      "explanation": "'whose' refers to 'the negotiator,' showing the approach belongs to them.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l163_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The airline cancelled dozens of flights without warning, which stranded thousands of travelers.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The airline cancelled dozens of flights without warning, which stranded thousands of travelers.",
-      "options": [
-        "The airline",
-        "travelers",
-        "cancelling the flights without warning"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "cancelling the flights without warning",
-      "hint": "What stranded so many people - the airline itself, or its sudden decision?",
-      "explanation": "'which' refers to the whole event of cancelling flights without warning, the cause of the stranding.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l163_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "It's important to pace oneself during a long project.\nWho or what does 'oneself' refer to?",
-      "targetWord": "oneself",
-      "sentence": "It's important to pace oneself during a long project.",
-      "options": [
-        "important",
-        "any person in general",
-        "a project"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "any person in general",
-      "hint": "Who is being advised to pace their own effort?",
-      "explanation": "'oneself' is the reflexive form matching the generic 'one' - it refers to any person in general, not someone specific.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l163_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The board postponed the vote because it needed more time to review the contract.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The board postponed the vote because it needed more time to review the contract.",
-      "options": [
-        "contract",
-        "The vote",
-        "The board"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The board",
-      "hint": "Who needed more time - the board or the vote itself?",
-      "explanation": "'it' refers to the board - the reason for postponing is usually about the decision-maker needing more time.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l164_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The new law banned single-use plastics citywide, which pleased environmental groups.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The new law banned single-use plastics citywide, which pleased environmental groups.",
-      "options": [
-        "banning single-use plastics",
-        "groups",
-        "The city"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "banning single-use plastics",
-      "hint": "What pleased environmental groups - the city, or the new rule?",
-      "explanation": "'which' refers to the whole action of banning plastics, the thing environmental groups welcomed.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l164_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Losing one's temper rarely solves anything.\nWho or what does 'one's' refer to?",
-      "targetWord": "one's",
-      "sentence": "Losing one's temper rarely solves anything.",
-      "options": [
-        "any person's",
-        "temper",
-        "anything"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "any person's",
-      "hint": "Whose temper is being talked about - someone specific, or people in general?",
-      "explanation": "'one's' is a generic possessive meaning 'a person's' in general, not anyone specific.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l164_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The diplomat, whom both nations respected, helped negotiate the ceasefire.\nWho or what does 'whom' refer to?",
-      "targetWord": "whom",
-      "sentence": "The diplomat, whom both nations respected, helped negotiate the ceasefire.",
-      "options": [
-        "nations",
-        "ceasefire",
-        "The diplomat"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The diplomat",
-      "hint": "Who had the respect of both sides?",
-      "explanation": "'whom' is the object form referring to 'the diplomat,' the person both nations respected.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l165_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The factory failed three safety inspections in a row, which finally triggered a shutdown.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The factory failed three safety inspections in a row, which finally triggered a shutdown.",
-      "options": [
-        "failing three safety inspections",
-        "shutdown",
-        "The factory"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "failing three safety inspections",
-      "hint": "What led to the shutdown - the factory as a place, or its repeated failures?",
-      "explanation": "'which' refers to the whole pattern of failed inspections, the cause of the shutdown.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l165_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "One never really knows how a story will end until the final page.\nWho or what does 'One' refer to?",
-      "targetWord": "One",
-      "sentence": "One never really knows how a story will end until the final page.",
-      "options": [
-        "a story",
-        "page",
-        "any reader in general"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "any reader in general",
-      "hint": "Who is 'one' referring to - one particular reader or readers in general?",
-      "explanation": "'One' here is generic, meaning any reader in general, not a specific person.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l165_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The publisher rejected the manuscript because it needed substantial revisions.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The publisher rejected the manuscript because it needed substantial revisions.",
-      "options": [
-        "The publisher",
-        "revisions",
-        "the manuscript"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "the manuscript",
-      "hint": "What needed the work - the publisher or the manuscript?",
-      "explanation": "'it' refers to the manuscript - the reason for a rejection is usually a quality of the submitted work.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l166_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The bridge stayed closed for repairs far longer than planned, which cost the city millions in lost tourism.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The bridge stayed closed for repairs far longer than planned, which cost the city millions in lost tourism.",
-      "options": [
-        "the extended closure",
-        "tourism",
-        "The bridge"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "the extended closure",
-      "hint": "What cost the city money - the bridge, or how long it stayed closed?",
-      "explanation": "'which' refers to the whole situation of the closure dragging on, the cause of the financial loss.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l166_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "In a crisis, it helps to remind oneself to stay calm.\nWho or what does 'oneself' refer to?",
-      "targetWord": "oneself",
-      "sentence": "In a crisis, it helps to remind oneself to stay calm.",
-      "options": [
-        "calm",
-        "any person in general",
-        "a crisis"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "any person in general",
-      "hint": "Who is being reminded to stay calm - someone specific, or anyone in that situation?",
-      "explanation": "'oneself' matches the generic 'one' - it refers to any person in general, not someone specific.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l166_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The inventor, whose patent earned millions, remained remarkably humble.\nWho or what does 'whose' refer to?",
-      "targetWord": "whose",
-      "sentence": "The inventor, whose patent earned millions, remained remarkably humble.",
-      "options": [
-        "millions",
-        "The inventor",
-        "patent"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The inventor",
-      "hint": "Whose patent was so valuable?",
-      "explanation": "'whose' refers to 'the inventor,' showing the patent belongs to them.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l167_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The two companies could not agree on pricing, which ultimately ended the partnership.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The two companies could not agree on pricing, which ultimately ended the partnership.",
-      "options": [
-        "the disagreement over pricing",
-        "partnership",
-        "The companies"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "the disagreement over pricing",
-      "hint": "What ended the deal - the companies themselves, or their disagreement?",
-      "explanation": "'which' refers to the whole disagreement over pricing, the reason the partnership ended.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l167_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "One should read the instructions carefully before assembling the furniture.\nWho or what does 'One' refer to?",
-      "targetWord": "One",
-      "sentence": "One should read the instructions carefully before assembling the furniture.",
-      "options": [
-        "the instructions",
-        "any person in general",
-        "furniture"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "any person in general",
-      "hint": "Who should read the instructions - a specific customer or anyone assembling it?",
-      "explanation": "'One' is generic here, referring to anyone doing the assembly, not a specific customer.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l167_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The reviewer criticized the sequel because it lacked the originality of the first film.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The reviewer criticized the sequel because it lacked the originality of the first film.",
-      "options": [
-        "The reviewer",
-        "film",
-        "the sequel"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "the sequel",
-      "hint": "What was missing the spark - the reviewer's opinion or the sequel itself?",
-      "explanation": "'it' refers to the sequel - the reason for criticism is usually a shortcoming in the work itself.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l168_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The store ran out of the most popular toy weeks before the holidays, which frustrated parents everywhere.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The store ran out of the most popular toy weeks before the holidays, which frustrated parents everywhere.",
-      "options": [
-        "The store",
-        "running out of the toy early",
-        "parents"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "running out of the toy early",
-      "hint": "What frustrated parents - the store itself, or the shortage?",
-      "explanation": "'which' refers to the whole situation of running out early, the cause of the frustration.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l168_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Keeping one's word matters more in business than any contract.\nWho or what does 'one's' refer to?",
-      "targetWord": "one's",
-      "sentence": "Keeping one's word matters more in business than any contract.",
-      "options": [
-        "business",
-        "contract",
-        "any person's"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "any person's",
-      "hint": "Whose word is being discussed - a specific person's or anyone's in general?",
-      "explanation": "'one's' is a generic possessive meaning 'a person's' in general, not one particular individual.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l168_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The architect, whom the city commissioned for the new hall, unveiled the design today.\nWho or what does 'whom' refer to?",
-      "targetWord": "whom",
-      "sentence": "The architect, whom the city commissioned for the new hall, unveiled the design today.",
-      "options": [
-        "The architect",
-        "hall",
-        "The city"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The architect",
-      "hint": "Who got the commission?",
-      "explanation": "'whom' is the object form referring to 'the architect,' the person the city commissioned.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l169_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The airline quietly lowered its baggage weight limit, which caught many travelers off guard.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The airline quietly lowered its baggage weight limit, which caught many travelers off guard.",
-      "options": [
-        "lowering the weight limit",
-        "travelers",
-        "The airline"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "lowering the weight limit",
-      "hint": "What caught travelers off guard - the airline in general, or the specific change?",
-      "explanation": "'which' refers to the whole action of lowering the limit, the change that surprised travelers.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l169_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "One can learn a great deal simply by listening more than talking.\nWho or what does 'One' refer to?",
-      "targetWord": "One",
-      "sentence": "One can learn a great deal simply by listening more than talking.",
-      "options": [
-        "talking",
-        "any person in general",
-        "deal"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "any person in general",
-      "hint": "Who benefits from listening more - one particular person or anyone?",
-      "explanation": "'One' here is generic, meaning anyone, not a specific individual.",
-      "grammarRule": "Indefinite Pronouns"
-    },
-    {
-      "id": "pr_l169_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The critics praised the young director's debut because it took real creative risks.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The critics praised the young director's debut because it took real creative risks.",
-      "options": [
-        "risks",
-        "the debut",
-        "The critics"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "the debut",
-      "hint": "What took the risks - the critics' review or the film itself?",
-      "explanation": "'it' refers to the debut - the reason for praise is usually a quality of the work being reviewed.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l170_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The hospital switched to electronic records years late, which left staff struggling to catch up.\nWho or what does 'which' refer to?",
-      "targetWord": "which",
-      "sentence": "The hospital switched to electronic records years late, which left staff struggling to catch up.",
-      "options": [
-        "switching to electronic records so late",
-        "The hospital",
-        "staff"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "switching to electronic records so late",
-      "hint": "What left staff struggling - the hospital as an institution, or the late timing?",
-      "explanation": "'which' refers to the whole event of switching late, the cause of the struggle.",
-      "grammarRule": "Relative Pronouns"
-    },
-    {
-      "id": "pr_l170_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "It takes practice to teach oneself a new language as an adult.\nWho or what does 'oneself' refer to?",
-      "targetWord": "oneself",
-      "sentence": "It takes practice to teach oneself a new language as an adult.",
-      "options": [
-        "practice",
-        "any person in general",
-        "language"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "any person in general",
-      "hint": "Who is doing the teaching and the learning - the same generic person, or two different people?",
-      "explanation": "'oneself' matches 'to teach' with the generic subject - the same person is both teacher and learner.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l170_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The composer, whose final symphony was never finished, died before its premiere.\nWho or what does 'whose' refer to?",
-      "targetWord": "whose",
-      "sentence": "The composer, whose final symphony was never finished, died before its premiere.",
-      "options": [
-        "symphony",
-        "The composer",
-        "premiere"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The composer",
-      "hint": "Whose unfinished piece is being discussed?",
-      "explanation": "'whose' refers to 'the composer,' showing the symphony belongs to them.",
-      "grammarRule": "Relative Pronouns"
-    }
-  ]
+    "gameType": "pronounResolution",
+    "batchIndex": 17,
+    "levels": "161-170",
+    "quests": [
+        {
+            "id": "pr_l161_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The team missed the deadline, which frustrated the client.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The team missed the deadline, which frustrated the client.",
+            "options": [
+                "The client",
+                "The team",
+                "missing the deadline"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "missing the deadline",
+            "hint": "What frustrated the client - a person, or the whole situation?",
+            "explanation": "'which' here refers to the entire situation of missing the deadline, not just one noun in the sentence.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l161_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "One should always proofread an email before sending it.\nWho or what does 'One' refer to?",
+            "targetWord": "One",
+            "sentence": "One should always proofread an email before sending it.",
+            "options": [
+                "an email",
+                "it",
+                "any person in general"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "any person in general",
+            "hint": "Who does 'one' stand for here - a specific person or people in general?",
+            "explanation": "'One' is a generic pronoun meaning 'people in general' or 'anyone,' not a specific person mentioned in the sentence.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l161_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The professor whom the students nominated for the teaching award had never won before.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The professor whom the students nominated for the teaching award had never won before.",
+            "options": [
+                "The students",
+                "The professor",
+                "award"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The professor",
+            "hint": "Who was nominated?",
+            "explanation": "'whom' is the object form referring to 'the professor,' the person nominated.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l162_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Prices rose sharply across the region, which surprised most economists.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "Prices rose sharply across the region, which surprised most economists.",
+            "options": [
+                "The region",
+                "economists",
+                "the sharp price rise"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the sharp price rise",
+            "hint": "What caught economists off guard - a place, or an economic trend?",
+            "explanation": "'which' refers to the whole event of prices rising sharply, not just the region.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l162_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "One can usually tell when a deal seems too good to be true.\nWho or what does 'One' refer to?",
+            "targetWord": "One",
+            "sentence": "One can usually tell when a deal seems too good to be true.",
+            "options": [
+                "true",
+                "a deal",
+                "any person in general"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "any person in general",
+            "hint": "Who does 'one' stand for here?",
+            "explanation": "'One' is a generic pronoun meaning people in general, not one specific individual.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l162_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The negotiator, whose calm approach defused the standoff, was later promoted.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The negotiator, whose calm approach defused the standoff, was later promoted.",
+            "options": [
+                "The negotiator",
+                "approach",
+                "standoff"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The negotiator",
+            "hint": "Whose calm approach made the difference?",
+            "explanation": "'whose' refers to 'the negotiator,' showing the approach belongs to them.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l163_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The airline cancelled dozens of flights without warning, which stranded thousands of travelers.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The airline cancelled dozens of flights without warning, which stranded thousands of travelers.",
+            "options": [
+                "The airline",
+                "travelers",
+                "cancelling the flights without warning"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "cancelling the flights without warning",
+            "hint": "What stranded so many people - the airline itself, or its sudden decision?",
+            "explanation": "'which' refers to the whole event of cancelling flights without warning, the cause of the stranding.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l163_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "It's important to pace oneself during a long project.\nWho or what does 'oneself' refer to?",
+            "targetWord": "oneself",
+            "sentence": "It's important to pace oneself during a long project.",
+            "options": [
+                "important",
+                "any person in general",
+                "a project"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any person in general",
+            "hint": "Who is being advised to pace their own effort?",
+            "explanation": "'oneself' is the reflexive form matching the generic 'one' - it refers to any person in general, not someone specific.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l163_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The board postponed the vote because it needed more time to review the contract.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The board postponed the vote because it needed more time to review the contract.",
+            "options": [
+                "contract",
+                "The vote",
+                "The board"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The board",
+            "hint": "Who needed more time - the board or the vote itself?",
+            "explanation": "'it' refers to the board - the reason for postponing is usually about the decision-maker needing more time.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l164_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The new law banned single-use plastics citywide, which pleased environmental groups.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The new law banned single-use plastics citywide, which pleased environmental groups.",
+            "options": [
+                "banning single-use plastics",
+                "groups",
+                "The city"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "banning single-use plastics",
+            "hint": "What pleased environmental groups - the city, or the new rule?",
+            "explanation": "'which' refers to the whole action of banning plastics, the thing environmental groups welcomed.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l164_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Losing one's temper rarely solves anything.\nWho or what does 'one's' refer to?",
+            "targetWord": "one's",
+            "sentence": "Losing one's temper rarely solves anything.",
+            "options": [
+                "any person's",
+                "temper",
+                "anything"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "any person's",
+            "hint": "Whose temper is being talked about - someone specific, or people in general?",
+            "explanation": "'one's' is a generic possessive meaning 'a person's' in general, not anyone specific.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l164_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The diplomat, whom both nations respected, helped negotiate the ceasefire.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The diplomat, whom both nations respected, helped negotiate the ceasefire.",
+            "options": [
+                "nations",
+                "ceasefire",
+                "The diplomat"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The diplomat",
+            "hint": "Who had the respect of both sides?",
+            "explanation": "'whom' is the object form referring to 'the diplomat,' the person both nations respected.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l165_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The factory failed three safety inspections in a row, which finally triggered a shutdown.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The factory failed three safety inspections in a row, which finally triggered a shutdown.",
+            "options": [
+                "failing three safety inspections",
+                "shutdown",
+                "The factory"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "failing three safety inspections",
+            "hint": "What led to the shutdown - the factory as a place, or its repeated failures?",
+            "explanation": "'which' refers to the whole pattern of failed inspections, the cause of the shutdown.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l165_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "One never really knows how a story will end until the final page.\nWho or what does 'One' refer to?",
+            "targetWord": "One",
+            "sentence": "One never really knows how a story will end until the final page.",
+            "options": [
+                "a story",
+                "page",
+                "any reader in general"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "any reader in general",
+            "hint": "Who is 'one' referring to - one particular reader or readers in general?",
+            "explanation": "'One' here is generic, meaning any reader in general, not a specific person.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l165_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The publisher rejected the manuscript because it needed substantial revisions.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The publisher rejected the manuscript because it needed substantial revisions.",
+            "options": [
+                "The publisher",
+                "revisions",
+                "the manuscript"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the manuscript",
+            "hint": "What needed the work - the publisher or the manuscript?",
+            "explanation": "'it' refers to the manuscript - the reason for a rejection is usually a quality of the submitted work.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l166_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The bridge stayed closed for repairs far longer than planned, which cost the city millions in lost tourism.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The bridge stayed closed for repairs far longer than planned, which cost the city millions in lost tourism.",
+            "options": [
+                "the extended closure",
+                "tourism",
+                "The bridge"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the extended closure",
+            "hint": "What cost the city money - the bridge, or how long it stayed closed?",
+            "explanation": "'which' refers to the whole situation of the closure dragging on, the cause of the financial loss.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l166_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "In a crisis, it helps to remind oneself to stay calm.\nWho or what does 'oneself' refer to?",
+            "targetWord": "oneself",
+            "sentence": "In a crisis, it helps to remind oneself to stay calm.",
+            "options": [
+                "calm",
+                "any person in general",
+                "a crisis"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any person in general",
+            "hint": "Who is being reminded to stay calm - someone specific, or anyone in that situation?",
+            "explanation": "'oneself' matches the generic 'one' - it refers to any person in general, not someone specific.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l166_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The inventor, whose patent earned millions, remained remarkably humble.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The inventor, whose patent earned millions, remained remarkably humble.",
+            "options": [
+                "millions",
+                "The inventor",
+                "patent"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The inventor",
+            "hint": "Whose patent was so valuable?",
+            "explanation": "'whose' refers to 'the inventor,' showing the patent belongs to them.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l167_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The two companies could not agree on pricing, which ultimately ended the partnership.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The two companies could not agree on pricing, which ultimately ended the partnership.",
+            "options": [
+                "the disagreement over pricing",
+                "partnership",
+                "The companies"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "the disagreement over pricing",
+            "hint": "What ended the deal - the companies themselves, or their disagreement?",
+            "explanation": "'which' refers to the whole disagreement over pricing, the reason the partnership ended.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l167_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "One should read the instructions carefully before assembling the furniture.\nWho or what does 'One' refer to?",
+            "targetWord": "One",
+            "sentence": "One should read the instructions carefully before assembling the furniture.",
+            "options": [
+                "the instructions",
+                "any person in general",
+                "furniture"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any person in general",
+            "hint": "Who should read the instructions - a specific customer or anyone assembling it?",
+            "explanation": "'One' is generic here, referring to anyone doing the assembly, not a specific customer.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l167_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The reviewer criticized the sequel because it lacked the originality of the first film.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The reviewer criticized the sequel because it lacked the originality of the first film.",
+            "options": [
+                "The reviewer",
+                "film",
+                "the sequel"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "the sequel",
+            "hint": "What was missing the spark - the reviewer's opinion or the sequel itself?",
+            "explanation": "'it' refers to the sequel - the reason for criticism is usually a shortcoming in the work itself.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l168_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The store ran out of the most popular toy weeks before the holidays, which frustrated parents everywhere.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The store ran out of the most popular toy weeks before the holidays, which frustrated parents everywhere.",
+            "options": [
+                "The store",
+                "running out of the toy early",
+                "parents"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "running out of the toy early",
+            "hint": "What frustrated parents - the store itself, or the shortage?",
+            "explanation": "'which' refers to the whole situation of running out early, the cause of the frustration.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l168_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Keeping one's word matters more in business than any contract.\nWho or what does 'one's' refer to?",
+            "targetWord": "one's",
+            "sentence": "Keeping one's word matters more in business than any contract.",
+            "options": [
+                "business",
+                "contract",
+                "any person's"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "any person's",
+            "hint": "Whose word is being discussed - a specific person's or anyone's in general?",
+            "explanation": "'one's' is a generic possessive meaning 'a person's' in general, not one particular individual.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l168_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The architect, whom the city commissioned for the new hall, unveiled the design today.\nWho or what does 'whom' refer to?",
+            "targetWord": "whom",
+            "sentence": "The architect, whom the city commissioned for the new hall, unveiled the design today.",
+            "options": [
+                "The architect",
+                "hall",
+                "The city"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The architect",
+            "hint": "Who got the commission?",
+            "explanation": "'whom' is the object form referring to 'the architect,' the person the city commissioned.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l169_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The airline quietly lowered its baggage weight limit, which caught many travelers off guard.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The airline quietly lowered its baggage weight limit, which caught many travelers off guard.",
+            "options": [
+                "lowering the weight limit",
+                "travelers",
+                "The airline"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "lowering the weight limit",
+            "hint": "What caught travelers off guard - the airline in general, or the specific change?",
+            "explanation": "'which' refers to the whole action of lowering the limit, the change that surprised travelers.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l169_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "One can learn a great deal simply by listening more than talking.\nWho or what does 'One' refer to?",
+            "targetWord": "One",
+            "sentence": "One can learn a great deal simply by listening more than talking.",
+            "options": [
+                "talking",
+                "any person in general",
+                "deal"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any person in general",
+            "hint": "Who benefits from listening more - one particular person or anyone?",
+            "explanation": "'One' here is generic, meaning anyone, not a specific individual.",
+            "grammarRule": "Indefinite Pronouns"
+        },
+        {
+            "id": "pr_l169_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The critics praised the young director's debut because it took real creative risks.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The critics praised the young director's debut because it took real creative risks.",
+            "options": [
+                "risks",
+                "the debut",
+                "The critics"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "the debut",
+            "hint": "What took the risks - the critics' review or the film itself?",
+            "explanation": "'it' refers to the debut - the reason for praise is usually a quality of the work being reviewed.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l170_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The hospital switched to electronic records years late, which left staff struggling to catch up.\nWho or what does 'which' refer to?",
+            "targetWord": "which",
+            "sentence": "The hospital switched to electronic records years late, which left staff struggling to catch up.",
+            "options": [
+                "switching to electronic records so late",
+                "The hospital",
+                "staff"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "switching to electronic records so late",
+            "hint": "What left staff struggling - the hospital as an institution, or the late timing?",
+            "explanation": "'which' refers to the whole event of switching late, the cause of the struggle.",
+            "grammarRule": "Relative Pronouns"
+        },
+        {
+            "id": "pr_l170_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "It takes practice to teach oneself a new language as an adult.\nWho or what does 'oneself' refer to?",
+            "targetWord": "oneself",
+            "sentence": "It takes practice to teach oneself a new language as an adult.",
+            "options": [
+                "practice",
+                "any person in general",
+                "language"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "any person in general",
+            "hint": "Who is doing the teaching and the learning - the same generic person, or two different people?",
+            "explanation": "'oneself' matches 'to teach' with the generic subject - the same person is both teacher and learner.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l170_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The composer, whose final symphony was never finished, died before its premiere.\nWho or what does 'whose' refer to?",
+            "targetWord": "whose",
+            "sentence": "The composer, whose final symphony was never finished, died before its premiere.",
+            "options": [
+                "symphony",
+                "The composer",
+                "premiere"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The composer",
+            "hint": "Whose unfinished piece is being discussed?",
+            "explanation": "'whose' refers to 'the composer,' showing the symphony belongs to them.",
+            "grammarRule": "Relative Pronouns"
+        }
+    ]
 }

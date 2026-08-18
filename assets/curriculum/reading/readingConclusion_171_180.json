@@ -7,7 +7,7 @@
             "id": "RDG_READINGCONCLUSION_L171_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of virologists studying the evolutionary dynamics of a rapidly mutating respiratory virus found that strains exhibiting increased transmissibility, spreading more easily between hosts, showed a consistent tendency toward reduced severity of illness in infected individuals across multiple independent evolutionary lineages tracked over several years, a pattern consistent with a long-standing theoretical prediction in evolutionary biology that pathogens relying on a living, mobile host for transmission face selective pressure to avoid incapacitating that host too severely or too quickly; however, the researchers cautioned this general evolutionary tendency should not be mistaken for a guaranteed or inevitable outcome for any specific future variant, since severity and transmissibility are influenced by numerous interacting genetic factors that do not always trend in the same predictable direction, and a highly transmissible but also unusually severe variant remains entirely possible under the right combination of mutations.",
             "options": [
                 "The researchers concluded severe and highly transmissible variants are now biologically impossible.",
@@ -23,7 +23,7 @@
             "id": "RDG_READINGCONCLUSION_L171_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A labor economist studying the long-term wage effects of occupational licensing requirements, mandatory government-issued credentials required to legally practice certain professions, found that licensed practitioners in fields with genuinely rigorous, standardized licensing exams earned meaningfully higher average wages than practitioners in structurally similar but unlicensed occupations, even after controlling for education level and years of experience, a wage premium the economist attributed partly to licensing's function as a credible signal of minimum competence to consumers and partly to licensing's simultaneous effect of restricting the overall supply of practitioners able to legally enter the field; however, the economist noted these two explanations carry sharply different policy implications, since a signal-of-competence effect would suggest licensing genuinely benefits consumers through improved service quality, while a supply-restriction effect would suggest at least part of the wage premium comes at consumers' direct expense through reduced competition and higher prices, and disentangling how much of the observed wage premium reflects each distinct mechanism proved difficult with the available data.",
             "options": [
                 "The economist definitively proved the entire wage premium came from restricting supply alone.",
@@ -39,7 +39,7 @@
             "id": "RDG_READINGCONCLUSION_L171_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A financial researcher studying the long-term performance of actively managed mutual funds relative to low-cost passive index funds found that in any given single year, a meaningful minority of active fund managers did outperform their relevant benchmark index, sometimes substantially; however, when the researcher tracked which specific managers achieved this outperformance across multiple consecutive years rather than looking at any single year in isolation, the set of consistently outperforming managers shrank dramatically toward what would be statistically expected by chance alone if fund performance were essentially random from year to year, a finding that the researcher argued undermines the common practice of selecting active funds primarily based on strong recent performance, since a manager's strong single-year showing appears to carry little genuine predictive power for whether that same manager will continue outperforming in subsequent years.",
             "options": [
                 "The same set of managers reliably outperformed the benchmark across every year studied.",
@@ -55,7 +55,7 @@
             "id": "RDG_READINGCONCLUSION_L172_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A digital ethics researcher studying algorithmic content moderation on large social platforms found that automated systems trained to detect and remove hate speech achieved high accuracy rates when evaluated against the specific dialects, slang, and cultural references most heavily represented in the systems' original training data, typically drawn disproportionately from mainstream, widely documented forms of the platform's dominant language; however, accuracy dropped substantially, and false-positive removal rates for entirely benign content rose correspondingly, when the same systems were applied to minority dialects, reclaimed slurs used within specific community contexts, or culturally specific forms of humor and irony that the training data had captured only sparsely, resulting in a moderation system that, however well-intentioned, ended up disproportionately silencing the very communities whose distinctive linguistic patterns fell outside the mainstream data the system had originally been trained on.",
             "options": [
                 "The system performed equally well across all dialects, slang, and cultural contexts tested.",
@@ -71,7 +71,7 @@
             "id": "RDG_READINGCONCLUSION_L172_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A clinical researcher studying racial disparities in pain management found that patients from certain minority racial backgrounds were prescribed opioid pain medication at significantly lower rates than white patients presenting with clinically comparable levels of documented pain following similar surgical procedures, even after the analysis statistically controlled for insurance type, hospital system, and the specific procedure performed; however, the researcher was careful to note that this finding, while consistent with prior research on racial bias in pain assessment and treatment, does not by itself establish the specific mechanism driving the disparity, since it remains unclear from the available data whether the gap primarily reflects differences in how clinicians perceived or believed patients' reported pain levels, differing clinician assumptions about patients' risk of opioid misuse, or some combination of these and other unmeasured factors operating simultaneously within the clinical encounter.",
             "options": [
                 "The disparity in opioid prescribing is well-documented, but the specific underlying mechanism driving it remains unclear from the available data.",
@@ -87,7 +87,7 @@
             "id": "RDG_READINGCONCLUSION_L172_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A linguist studying the long-term trajectory of language endangerment found that indigenous languages with even a small number of fluent child speakers, meaning at least some children were still acquiring the language as a first language at home rather than learning it later as a secondary or classroom language, showed dramatically better long-term survival prospects over subsequent decades than languages with only elderly fluent speakers remaining, even when the second group had a considerably larger total number of fluent speakers at the time of the initial assessment, a finding that led the linguist to argue that raw speaker count, the metric most commonly cited in discussions of language endangerment, may be a considerably less reliable predictor of a language's actual survival than the presence or absence of intergenerational transmission occurring within families.",
             "options": [
                 "The presence of intergenerational transmission within families appears to be a more reliable predictor of a language's survival than raw speaker count.",
@@ -103,7 +103,7 @@
             "id": "RDG_READINGCONCLUSION_L173_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher evaluating a university's shift from letter grades to a simplified pass/fail system for introductory science courses, intended to reduce competitive pressure and encourage collaborative learning among first-year students, found that reported student stress levels did decrease as intended, and peer collaboration on coursework increased measurably based on both survey data and observed study-group participation; however, performance on a standardized subject-matter exam administered independently of the course grading system itself showed a modest but statistically significant decline compared to prior cohorts graded under the traditional letter system, leading the researcher to suggest that whatever role competitive grading pressure had previously played in stress and reduced collaboration, it may have also been providing some genuine, if uncomfortable, motivational function for mastering course material that the pass/fail system did not adequately replace.",
             "options": [
                 "The pass/fail system improved both student wellbeing and standardized exam performance.",
@@ -119,7 +119,7 @@
             "id": "RDG_READINGCONCLUSION_L173_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An environmental economist studying the effects of a plastic bag fee implemented at grocery stores found that the fee produced a substantial and immediate reduction in single-use plastic bag consumption at checkout; however, a follow-up analysis of household waste composition found that sales of small plastic garbage bags, previously often replaced in that role by repurposed shopping bags at no additional cost, increased by an amount that offset a meaningful portion of the fee's apparent plastic reduction, since many households had been reusing free shopping bags as bin liners and simply substituted a different, separately purchased plastic product once the free shopping bags became less available at checkout, according to a household waste audit conducted across several participating grocery chains.",
             "options": [
                 "The fee produced a genuine net reduction in total household plastic consumption with no offsetting substitution.",
@@ -135,7 +135,7 @@
             "id": "RDG_READINGCONCLUSION_L173_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A transportation researcher studying high-speed rail's effect on regional air travel found that on routes where a high-speed rail journey took under three hours, rail captured a majority market share from air travel within a few years of the rail line opening, a substitution effect strong enough that airlines on several such routes eventually discontinued short-haul flights entirely; however, on routes where the equivalent rail journey exceeded four hours, even with comparable overall door-to-door travel time once airport transit and security were factored in, air travel retained the majority of the market, suggesting travelers' preference for rail over air may depend on a specific, fairly narrow threshold of in-vehicle travel time rather than on total door-to-door travel time being roughly comparable between the two options.",
             "options": [
                 "Rail captured majority market share on every route regardless of journey length.",
@@ -151,7 +151,7 @@
             "id": "RDG_READINGCONCLUSION_L174_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A family researcher studying adult children who provide significant unpaid caregiving for aging parents while also raising their own children, a group sometimes described as the 'sandwich generation,' found that caregivers who maintained at least one entirely personal activity unrelated to either caregiving role, a hobby, friendship, or interest belonging solely to themselves, reported significantly lower burnout scores than caregivers whose time was allocated exclusively between parental caregiving and childrearing responsibilities with no protected personal time whatsoever; however, the researcher found this protective effect disappeared entirely among caregivers reporting fewer than three hours per week for this personal activity, suggesting a minimum meaningful threshold of protected time may be necessary before any benefit against burnout reliably emerges.",
             "options": [
                 "Any amount of personal time, however small, reliably protected against caregiver burnout.",
@@ -167,7 +167,7 @@
             "id": "RDG_READINGCONCLUSION_L174_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public health researcher evaluating community garden programs in low-income urban neighborhoods found that neighborhoods with an active community garden reported measurable increases in self-reported vegetable consumption and neighborly social interaction compared to demographically similar neighborhoods without one; however, when the researcher examined which specific residents were actually participating in garden activities, participation skewed heavily toward already relatively socially connected residents who had pre-existing ties to garden organizers, while more socially isolated residents, arguably the population with the most to potentially gain from increased social interaction, remained largely unengaged with the garden despite its physical proximity, suggesting the garden's measured neighborhood-level benefits may be concentrated among a subset of residents rather than being broadly distributed across the neighborhood as a whole.",
             "options": [
                 "Socially isolated residents were the primary participants in the garden's activities.",
@@ -183,7 +183,7 @@
             "id": "RDG_READINGCONCLUSION_L174_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports scientist studying talent identification in youth athletics found that coaches evaluating young athletes for elite development programs consistently rated athletes born earlier in the selection year's cutoff period more favorably than athletes born later in the same year, even when formal physical testing showed no meaningful difference in underlying athletic ability between the two groups, a well-documented phenomenon attributed to the older children's temporary physical maturity advantage during early adolescence being mistaken by evaluators for genuine long-term talent; however, longitudinal tracking found that by early adulthood, athletes originally selected partly due to this early maturity advantage showed no better ultimate career outcomes than a comparison group of similarly talented athletes who had been passed over at the youth level specifically because of their later birth date within the selection cutoff.",
             "options": [
                 "Athletes selected due to early maturity showed clearly superior career outcomes by adulthood.",
@@ -199,7 +199,7 @@
             "id": "RDG_READINGCONCLUSION_L175_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A workforce researcher studying the effects of transparent internal salary bands, where a company publicly discloses the minimum and maximum pay for every role without necessarily revealing individual employees' exact salaries, found that the practice reduced pay disparities between demographic groups performing comparable work within the same band; however, the researcher also found that the visible bands appeared to compress overall pay growth for the company's highest individual performers, since managers reported feeling more constrained about awarding pay increases that would push an individual salary noticeably above the publicly stated band maximum, even in cases the manager genuinely believed were merited by that employee's exceptional performance, suggesting transparency's equity benefits may come paired with a real, if less discussed, cost to individual performance-based pay flexibility.",
             "options": [
                 "Transparent salary bands reduced pay disparities with no effect on top performers' pay growth.",
@@ -215,7 +215,7 @@
             "id": "RDG_READINGCONCLUSION_L175_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of neuroscientists studying the long-term effects of bilingualism on cognitive aging found that lifelong bilingual individuals showed a later average age of onset for clinically diagnosed dementia symptoms compared to monolingual individuals with otherwise similar underlying levels of brain pathology observed post-mortem, suggesting bilingualism may build a form of cognitive reserve that allows the brain to compensate for underlying disease processes for longer before symptoms become clinically apparent; however, the researchers emphasized that this apparent protective effect describes a delay in symptom onset rather than a difference in the underlying disease process itself, meaning bilingualism appeared to help mask existing pathology for longer rather than actually preventing or slowing the biological progression of the disease within the brain.",
             "options": [
                 "Bilingualism was found to slow the underlying biological progression of the disease itself.",
@@ -231,7 +231,7 @@
             "id": "RDG_READINGCONCLUSION_L175_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A food industry analyst studying consumer response to 'ugly produce' subscription boxes, which deliver misshapen or blemished fruits and vegetables that would otherwise be rejected by traditional retailers for purely cosmetic reasons, at a discounted price, found that first-time subscribers reported high initial satisfaction driven substantially by the appealing environmental and anti-waste narrative associated with the service; however, subscriber retention data revealed that satisfaction, and subsequent renewal rates, correlated far more strongly with the actual practical usability of the produce received, whether items arrived in genuinely edible condition and could be used before spoiling, than with subscribers' stated environmental values, suggesting that while ethical narratives may be highly effective at initially attracting subscribers, practical product quality ultimately determines whether a subscription service can retain them over time.",
             "options": [
                 "While the environmental narrative attracts initial subscribers, practical product usability appears to be the stronger determinant of whether subscribers actually stay.",
@@ -247,7 +247,7 @@
             "id": "RDG_READINGCONCLUSION_L176_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of researchers studying the effectiveness of app-based mental health interventions, self-guided programs offering cognitive behavioral therapy techniques without direct human therapist involvement, found that users who completed a full structured program showed meaningful symptom improvement comparable to some forms of traditional in-person therapy for mild to moderate cases; however, completion rates for these self-guided programs were strikingly low, with the overwhelming majority of users abandoning the program well before completion, meaning the genuinely promising results found among completers may substantially overstate the intervention's likely real-world population-level impact, since most people who download such an app in practice never actually receive the full dose of treatment the encouraging completer-only results are based on.",
             "options": [
                 "The promising results found among program completers likely overstate the intervention's real-world impact, since most users abandon the program before receiving the full treatment those results are based on.",
@@ -263,7 +263,7 @@
             "id": "RDG_READINGCONCLUSION_L176_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A literary scholar studying reader response to novels featuring an unreliable narrator, a narrative technique where the story's teller is revealed to be deceptive, mistaken, or otherwise not fully trustworthy, found that readers who correctly identified the narrator's unreliability partway through the novel, before an explicit revelation, reported higher overall satisfaction with the reading experience than readers who either never identified it or only recognized it at the moment of explicit textual revelation; however, this satisfaction gap disappeared entirely for a specific subset of readers who described actively disliking puzzle-solving or ambiguity in fiction generally, for whom early recognition of the narrator's unreliability instead correlated with mild frustration rather than the satisfaction other readers reported experiencing throughout the rest of the novel.",
             "options": [
                 "Early recognition of the narrator's unreliability increased satisfaction for every type of reader without exception.",
@@ -279,7 +279,7 @@
             "id": "RDG_READINGCONCLUSION_L176_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public health researcher evaluating a workplace wellness initiative offering free on-site flu vaccinations found that overall vaccination rates among employees increased substantially compared to years when employees had to separately schedule an appointment at an outside pharmacy or clinic; however, a demographic breakdown revealed that the increase was concentrated almost entirely among salaried employees with predictable schedules who could easily step away during a work break, while hourly employees with less schedule flexibility, who had shown the lowest vaccination rates in previous years and represented the population the initiative was arguably most intended to help, saw only a marginal increase despite the vaccine now being physically available on-site.",
             "options": [
                 "Hourly employees showed the largest increase in vaccination rates under the new initiative.",
@@ -295,7 +295,7 @@
             "id": "RDG_READINGCONCLUSION_L177_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A consumer researcher studying financial literacy education programs found that programs teaching general budgeting principles in the abstract produced minimal measurable change in participants' actual subsequent financial behavior, while programs incorporating hands-on practice with participants' own real, current financial documents, actual bank statements, pay stubs, and bills, produced substantially larger and more durable behavioral changes over a one-year follow-up period, even though both program formats covered essentially identical conceptual content regarding budgeting principles; however, the researcher noted the hands-on format required considerably more individualized facilitator time per participant, raising practical questions about whether this more effective approach could be delivered cost-effectively at the larger scale needed to reach a meaningful share of the population that could benefit from financial literacy education.",
             "options": [
                 "Abstract budgeting instruction produced larger behavioral changes than hands-on practice.",
@@ -311,7 +311,7 @@
             "id": "RDG_READINGCONCLUSION_L177_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher studying the effects of eliminating homework for elementary school students in favor of unstructured after-school free time found that students in participating schools showed no significant difference in standardized test scores compared to students at similar schools that retained traditional homework policies; however, parent-reported family stress levels and children's self-reported enjoyment of school both improved measurably at the homework-free schools, leading the researcher to argue that even absent a demonstrated positive or negative effect on standardized academic measures, the policy's clear benefits for family wellbeing and student attitude toward school may represent a meaningful improvement in its own right, independent of any change, or lack thereof, in standardized test performance specifically.",
             "options": [
                 "Eliminating homework didn't measurably change test scores, but the researcher argues the resulting improvements in family stress and student enjoyment may be meaningful benefits in their own right.",
@@ -327,7 +327,7 @@
             "id": "RDG_READINGCONCLUSION_L177_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An environmental researcher studying the adoption of residential solar panels found that neighborhoods where several early-adopting households installed visible rooftop solar panels saw subsequent adoption rates among nearby neighbors significantly higher than in comparable neighborhoods without any early, visible adopters, a social contagion effect that held even after controlling for household income and each neighborhood's average sun exposure; however, the researcher found this neighbor-driven contagion effect was considerably weaker in renter-heavy neighborhoods, since renters, unlike homeowners, typically lack the authority to install permanent rooftop modifications regardless of how motivated they might become after observing a neighbor's installation, meaning the social influence clearly existed but was structurally prevented from translating into actual adoption for a substantial share of residents in those neighborhoods.",
             "options": [
                 "Social influence from visible neighboring installations appears to genuinely motivate adoption, but this effect is structurally blocked in renter-heavy neighborhoods where residents lack authority to install panels.",
@@ -343,7 +343,7 @@
             "id": "RDG_READINGCONCLUSION_L178_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A hospitality researcher studying guest reviews of hotels found that hotels which proactively responded to negative online reviews with a specific, detailed acknowledgment of the guest's particular complaint, rather than a generic apology template, saw measurably improved booking rates in the months following the response, even among prospective guests who had not personally experienced any service issue themselves; however, this booking improvement effect was significantly weaker for hotels with an already-low overall review rating below a certain threshold, suggesting that thoughtful complaint responses can meaningfully improve prospective guests' perception of a generally well-regarded hotel, but cannot fully compensate for an underlying pattern of consistently poor guest experiences reflected in an already low overall rating.",
             "options": [
                 "Thoughtful complaint responses improved bookings equally regardless of a hotel's overall rating.",
@@ -359,7 +359,7 @@
             "id": "RDG_READINGCONCLUSION_L178_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A family researcher studying households where one parent works a non-traditional overnight shift schedule found that children in these households showed no measurable difference in academic performance or emotional wellbeing compared to children in households with two conventionally-scheduled working parents, provided the family maintained a consistent, predictable routine around the overnight-shift parent's sleep and available family time; however, in households where the overnight-shift parent's schedule itself was inconsistent or unpredictable week to week, requiring the whole family to constantly readjust routines around shifting available time with that parent, children showed measurably worse outcomes on both measures, suggesting schedule predictability, rather than the overnight nature of the shift itself, may be the more critical factor for child wellbeing in these families.",
             "options": [
                 "Schedule predictability, rather than the overnight nature of a parent's shift itself, appears to be the more critical factor for children's wellbeing in these households.",
@@ -375,7 +375,7 @@
             "id": "RDG_READINGCONCLUSION_L178_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports scientist studying recovery patterns in ultra-endurance athletes found that athletes who incorporated short, ten-minute meditation sessions into their post-race recovery routine reported subjectively feeling more mentally recovered within the first week following a race than athletes who did not meditate; however, when the scientist measured objective physiological recovery markers, including resting heart rate variability and cortisol levels, meditating and non-meditating athletes showed statistically indistinguishable recovery trajectories over the same period, suggesting that while meditation may offer genuine value for athletes' subjective psychological experience of recovery, it does not appear to meaningfully accelerate the underlying physiological recovery processes that these particular biological markers were designed to capture.",
             "options": [
                 "Meditation measurably accelerated physiological recovery markers compared to non-meditating athletes.",
@@ -391,7 +391,7 @@
             "id": "RDG_READINGCONCLUSION_L179_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public administration researcher studying municipal 311 non-emergency service request systems found that cities which published real-time public dashboards showing the status and resolution time of every submitted request saw a measurable increase in overall request volume, more residents reporting issues like potholes or broken streetlights, but also saw improved resident satisfaction with how the city handled each individual request, even in cases where the underlying resolution time itself did not actually improve, suggesting that transparency about a process, even one whose fundamental speed remains unchanged, may itself meaningfully shape how residents perceive and experience that same underlying municipal process over time.",
             "options": [
                 "Satisfaction only improved in cases where resolution time itself also improved.",
@@ -407,7 +407,7 @@
             "id": "RDG_READINGCONCLUSION_L179_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of researchers evaluating an AI-powered resume screening tool designed to reduce human bias in hiring found that the tool did reduce certain forms of bias present in fully manual screening, such as bias correlated with an applicant's name suggesting a particular ethnicity; however, a detailed audit of the tool's underlying training data revealed it had learned to systematically favor resumes containing specific phrases and formatting conventions more common among graduates of a small number of elite universities, effectively replacing one form of bias tied to identity markers with a different, less immediately visible form of bias tied to educational pedigree, one arguably just as capable of unfairly disadvantaging qualified candidates who lacked access to those particular institutions.",
             "options": [
                 "The tool eliminated bias entirely with no new forms of bias introduced.",
@@ -423,7 +423,7 @@
             "id": "RDG_READINGCONCLUSION_L179_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of ecologists studying coral reef recovery after a major bleaching event found that reef sections designated as strict no-fishing marine protected areas recovered live coral cover significantly faster than unprotected sections experiencing comparable bleaching severity and similar water temperature exposure; however, when the ecologists examined which specific coral species drove this faster recovery, they found the protected areas' advantage was concentrated almost entirely in fast-growing branching coral species, while slower-growing but more structurally important massive coral species, which provide the reef's longer-term structural foundation, showed comparable recovery rates in both protected and unprotected areas regardless of fishing restrictions, complicating any simple narrative that protection alone straightforwardly accelerates full ecosystem recovery across every dimension of reef health.",
             "options": [
                 "Protected areas showed faster recovery across every single coral species without exception.",
@@ -439,7 +439,7 @@
             "id": "RDG_READINGCONCLUSION_L180_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A workplace researcher studying the long-term effects of mandatory diversity training programs found that a single, standalone training session produced measurable short-term shifts in participants' self-reported attitudes on a survey administered immediately afterward; however, when the researcher tracked actual workplace behavior, such as who employees chose to mentor or include in project teams, over the following year, these behavioral patterns showed no meaningful change from before the training, suggesting the training successfully shifted what participants were willing to say on a survey without producing any corresponding change in their actual day-to-day workplace decisions and behavior, a gap the researcher argued should temper enthusiasm for standalone training as a genuinely effective standalone intervention.",
             "options": [
                 "Actual workplace behavior changed substantially following the training, matching the shift in self-reported attitudes.",
@@ -455,7 +455,7 @@
             "id": "RDG_READINGCONCLUSION_L180_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A cultural critic reviewing the long-term reception of works initially dismissed as 'genre fiction' unworthy of serious literary consideration found that a disproportionate number of such works eventually entered university literature curricula and serious critical discussion decades after their initial dismissal, compared to the proportion of contemporaneously well-regarded 'literary fiction' from the same original period that achieved similar lasting critical attention; however, the critic cautioned this pattern likely reflects a form of survivorship bias rather than evidence that genre fiction was systematically underrated relative to literary fiction overall, since only the strongest examples of a large volume of genre fiction produced in any given period tend to be remembered and revisited at all, while weaker genre works are simply forgotten, a comparison quite different from evaluating literary fiction's typical quality against genre fiction's rare standout survivors specifically.",
             "options": [
                 "The critic concluded genre fiction was clearly and systematically underrated compared to literary fiction.",
@@ -471,7 +471,7 @@
             "id": "RDG_READINGCONCLUSION_L180_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "Since the Bellamy family began holding what they call a 'no-agenda' Saturday morning where no errands, sports practices, or scheduled activities are permitted before noon, they say the unstructured time initially felt uncomfortable and directionless for all four family members, who had grown accustomed to a fully scheduled week; however, after roughly two months of consistent practice, the family reports the mornings have become a genuinely anticipated fixture, with even their most activity-driven teenager admitting in a family discussion that having truly unstructured time had become harder to imagine giving up than any of the individually scheduled activities the family had previously debated cutting to make room for more open time.",
             "options": [
                 "The unstructured mornings appear to have grown from an uncomfortable adjustment into something the family, including its most activity-driven member, now values more than the scheduled activities they once considered protecting instead.",

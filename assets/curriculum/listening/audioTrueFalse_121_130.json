@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_AUDIOTRUEFALSE_L121_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice the nationality of the engineering team.",
             "explanation": "The audio says 'local engineers,' but the statement says 'foreign engineers.'",
             "textToSpeak": "The bridge was designed by a team of local engineers.",
@@ -17,7 +17,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L121_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for whether the tax goes up or down.",
             "explanation": "The audio says 'the tax will increase,' but the statement says 'the tax will decrease.'",
             "textToSpeak": "If the vote passes, the tax will increase next year.",
@@ -29,7 +29,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L121_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check how the trial is being judged despite mixed results.",
             "explanation": "The statement matches the audio: considered a success, exactly as stated.",
             "textToSpeak": "Although the results were mixed, the trial is considered a success.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L122_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice what happened before the policy was drafted.",
             "explanation": "The statement matches the audio: months of public debate, exactly as stated.",
             "textToSpeak": "The new policy was drafted after months of public debate.",
@@ -53,7 +53,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L122_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for what will actually happen to the festival.",
             "explanation": "The audio says 'will be canceled,' but the statement says 'will be postponed.'",
             "textToSpeak": "If the rain continues, the festival will be canceled.",
@@ -65,7 +65,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L122_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what has happened to the stock price.",
             "explanation": "The statement matches the audio: the stock price has risen.",
             "textToSpeak": "Since the merger was announced, the stock price has risen.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L123_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice the reason for the rejection.",
             "explanation": "The statement matches the audio: it lacked sufficient funding.",
             "textToSpeak": "The proposal was rejected because it lacked sufficient funding.",
@@ -89,7 +89,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L123_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for whether traffic got better or worse.",
             "explanation": "The audio says 'traffic worsened downtown,' but the statement says 'traffic improved downtown.'",
             "textToSpeak": "While the city expanded the subway, traffic worsened downtown.",
@@ -101,7 +101,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L123_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what's required for the premium features.",
             "explanation": "The statement matches the audio: a subscription is required.",
             "textToSpeak": "Although the app is free, premium features require a subscription.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L124_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice which applicant received the award.",
             "explanation": "The audio says 'the youngest applicant,' but the statement says 'the oldest applicant.'",
             "textToSpeak": "The award was given to the youngest applicant.",
@@ -125,7 +125,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L124_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what the factory will add if demand rises.",
             "explanation": "The statement matches the audio: a second shift, exactly as stated.",
             "textToSpeak": "If demand keeps rising, the factory will add a second shift.",
@@ -137,7 +137,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L124_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for what changed after the renovation.",
             "explanation": "The statement matches the audio: far more visitors, exactly as heard.",
             "textToSpeak": "Since the renovation, the library has attracted far more visitors.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L125_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice which students painted the mural.",
             "explanation": "The audio says 'students from the local college,' but the statement says 'students from the local high school.'",
             "textToSpeak": "The mural was painted by students from the local college.",
@@ -161,7 +161,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L125_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what the internship offers despite being unpaid.",
             "explanation": "The statement matches the audio: valuable experience, exactly as stated.",
             "textToSpeak": "Although the internship is unpaid, it offers valuable experience.",
@@ -173,7 +173,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L125_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for what happened while the budget was reviewed.",
             "explanation": "The statement matches the audio: the meeting ran long.",
             "textToSpeak": "While the committee reviewed the budget, the meeting ran long.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L126_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check how the pace of development is described.",
             "explanation": "The statement matches the audio: faster than anyone expected.",
             "textToSpeak": "The vaccine was developed faster than anyone expected.",
@@ -197,7 +197,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L126_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen closely for how many schools are involved.",
             "explanation": "The audio says 'three schools will merge,' but the statement says 'two schools will merge.'",
             "textToSpeak": "If the district approves the plan, three schools will merge.",
@@ -209,7 +209,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L126_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for whether complaints went up or down.",
             "explanation": "The audio says 'complaints have decreased sharply,' but the statement says 'complaints have increased sharply.'",
             "textToSpeak": "Since the policy changed, complaints have decreased sharply.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L127_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice the exact number of languages.",
             "explanation": "The audio says 'a dozen languages,' but the statement says 'six languages.'",
             "textToSpeak": "The novel was translated into a dozen languages.",
@@ -233,7 +233,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L127_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what happened to the passengers.",
             "explanation": "The statement matches the audio: several passengers were rebooked.",
             "textToSpeak": "Because the flight was overbooked, several passengers were rebooked.",
@@ -245,7 +245,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L127_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for whether attendance rose or fell.",
             "explanation": "The audio says 'attendance improved this season,' but the statement says 'attendance dropped this season.'",
             "textToSpeak": "Although ticket prices rose, attendance improved this season.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L128_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice exactly who signed the contract.",
             "explanation": "The audio says 'both company presidents,' but the statement says 'both company lawyers.'",
             "textToSpeak": "The contract was signed by both company presidents.",
@@ -269,7 +269,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L128_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check the timeframe given for this trend.",
             "explanation": "The statement matches the audio: by next decade, exactly as stated.",
             "textToSpeak": "If the trend continues, renewable energy will overtake coal by next decade.",
@@ -281,7 +281,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L128_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for what has improved since the new manager arrived.",
             "explanation": "The statement matches the audio: morale has noticeably improved.",
             "textToSpeak": "Since the new manager arrived, morale has noticeably improved.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L129_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check who was not consulted.",
             "explanation": "The statement matches the audio: the full board was not consulted.",
             "textToSpeak": "The decision was made without consulting the full board.",
@@ -305,7 +305,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L129_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice whether the site was working or not.",
             "explanation": "The audio says 'stayed offline for hours,' but the statement says 'stayed online for hours.'",
             "textToSpeak": "While the team debugged the issue, the site stayed offline for hours.",
@@ -317,7 +317,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L129_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check how most students perform in this course.",
             "explanation": "The statement matches the audio: most pass on their first attempt.",
             "textToSpeak": "Although the course is difficult, most students pass on their first attempt.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L130_Q1",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Notice what material the building is made from.",
             "explanation": "The statement matches the audio: entirely from recycled materials.",
             "textToSpeak": "The building was constructed entirely from recycled materials.",
@@ -341,7 +341,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L130_Q2",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Listen for what the plastic bags will be replaced with.",
             "explanation": "The audio says 'replaced with paper ones,' but the statement says 'replaced with cloth ones.'",
             "textToSpeak": "If the ban takes effect, plastic bags will be replaced with paper ones.",
@@ -353,7 +353,7 @@
         },
         {
             "id": "LIS_AUDIOTRUEFALSE_L130_Q3",
-            "interactionType": "Static Filter",
+            "interactionType": "trueFalse",
             "hint": "Check what has reopened since the outbreak ended.",
             "explanation": "The statement matches the audio: reopened for tourism.",
             "textToSpeak": "Since the outbreak was contained, the region has reopened for tourism.",

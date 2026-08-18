@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "qf_l71_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She went to the concert with her college roommate.",
-      "sentence": "She went to the concert with her college roommate.",
-      "options": [
-        "Who did she go to the concert?",
-        "Who she did go to the concert with?",
-        "Who did she went to the concert with?",
-        "Who did she go to the concert with?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Who did she go to the concert with?",
-      "hint": "Keep the preposition 'with' at the end of the question.",
-      "explanation": "In everyday English, the preposition stays at the end: 'Who did she go to the concert with?' Dropping 'with' changes the meaning.",
-      "grammarRule": "Prepositional Questions: With"
-    },
-    {
-      "id": "qf_l71_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He shared the news with his closest friend.",
-      "sentence": "He shared the news with his closest friend.",
-      "options": [
-        "Who did he share with the news?",
-        "Who did he share the news with?",
-        "Who he did share the news with?",
-        "Who did he shared the news with?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Who did he share the news with?",
-      "hint": "Keep 'with' at the very end of the question.",
-      "explanation": "The preposition 'with' stays at the end of the question: 'Who did he share the news with?' - this is the natural, everyday word order.",
-      "grammarRule": "Prepositional Questions: With"
-    },
-    {
-      "id": "qf_l71_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They traveled to Peru with a local guide.",
-      "sentence": "They traveled to Peru with a local guide.",
-      "options": [
-        "Who did they travel to Peru with?",
-        "Who did they travel with to Peru?",
-        "Who they did travel to Peru with?",
-        "Who did they traveled to Peru with?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who did they travel to Peru with?",
-      "hint": "The preposition 'with' belongs at the very end of the sentence.",
-      "explanation": "Natural English keeps 'with' at the end: 'Who did they travel to Peru with?' rather than placing it earlier in the sentence.",
-      "grammarRule": "Prepositional Questions: With"
-    },
-    {
-      "id": "qf_l72_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is looking for her missing house keys.",
-      "sentence": "She is looking for her missing house keys.",
-      "options": [
-        "What is she looking?",
-        "What she is looking for?",
-        "What is she looking for?",
-        "What is she look for?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What is she looking for?",
-      "hint": "Keep 'for' at the end - don't drop it or change the verb form.",
-      "explanation": "The phrasal verb 'look for' keeps 'for' at the end of the question: 'What is she looking for?'",
-      "grammarRule": "Prepositional Questions: For"
-    },
-    {
-      "id": "qf_l72_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He bought flowers for his grandmother's birthday.",
-      "sentence": "He bought flowers for his grandmother's birthday.",
-      "options": [
-        "Who did he buy flowers?",
-        "Who he did buy flowers for?",
-        "Who did he buy flowers for?",
-        "Who did he bought flowers for?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who did he buy flowers for?",
-      "hint": "Keep 'for' at the end of the question.",
-      "explanation": "The preposition 'for' stays at the end: 'Who did he buy flowers for?' Dropping it would remove the reason entirely.",
-      "grammarRule": "Prepositional Questions: For"
-    },
-    {
-      "id": "qf_l72_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The team is waiting for the final approval.",
-      "sentence": "The team is waiting for the final approval.",
-      "options": [
-        "What is the team waiting?",
-        "What the team is waiting for?",
-        "What is the team waiting for?",
-        "What is the team wait for?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What is the team waiting for?",
-      "hint": "'Wait for' keeps 'for' at the end of the question.",
-      "explanation": "The phrasal verb 'wait for' keeps its preposition at the end: 'What is the team waiting for?'",
-      "grammarRule": "Prepositional Questions: For"
-    },
-    {
-      "id": "qf_l73_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are talking about the merger.",
-      "sentence": "They are talking about the merger.",
-      "options": [
-        "What are they talking?",
-        "What they are talking about?",
-        "What are they talking about?",
-        "What are they talk about?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What are they talking about?",
-      "hint": "'Talk about' keeps 'about' at the end of the question.",
-      "explanation": "The phrasal verb 'talk about' keeps its preposition at the end: 'What are they talking about?'",
-      "grammarRule": "Prepositional Questions: About"
-    },
-    {
-      "id": "qf_l73_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is worried about her upcoming exam.",
-      "sentence": "She is worried about her upcoming exam.",
-      "options": [
-        "What is she worried?",
-        "What is she worried about?",
-        "What she is worried about?",
-        "What does she worried about?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "What is she worried about?",
-      "hint": "Keep 'about' at the end - don't drop it.",
-      "explanation": "'Worried about' keeps its preposition at the end of the question: 'What is she worried about?'",
-      "grammarRule": "Prepositional Questions: About"
-    },
-    {
-      "id": "qf_l73_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He wrote a letter about the housing project.",
-      "sentence": "He wrote a letter about the housing project.",
-      "options": [
-        "What did he write a letter about?",
-        "What did he write a letter?",
-        "What he did write a letter about?",
-        "What did he wrote a letter about?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What did he write a letter about?",
-      "hint": "Keep 'about' at the very end of the question.",
-      "explanation": "The preposition 'about' stays at the end: 'What did he write a letter about?'",
-      "grammarRule": "Prepositional Questions: About"
-    },
-    {
-      "id": "qf_l74_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This package came from an online store.",
-      "sentence": "This package came from an online store.",
-      "options": [
-        "Where did this package come?",
-        "Where this package did come from?",
-        "Where did this package came from?",
-        "Where did this package come from?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Where did this package come from?",
-      "hint": "Keep 'from' at the end of the question.",
-      "explanation": "The preposition 'from' stays at the end: 'Where did this package come from?' Dropping it removes the source entirely.",
-      "grammarRule": "Prepositional Questions: From"
-    },
-    {
-      "id": "qf_l74_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is originally from a small fishing village.",
-      "sentence": "He is originally from a small fishing village.",
-      "options": [
-        "Where is he from?",
-        "Where he is from?",
-        "Where does he from?",
-        "Where is he originally?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Where is he from?",
-      "hint": "Keep 'from' at the end, and simply move 'is' to the front.",
-      "explanation": "This is a 'be' question, so 'is' moves to the front, and 'from' stays at the end: 'Where is he from?'",
-      "grammarRule": "Prepositional Questions: From"
-    },
-    {
-      "id": "qf_l74_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She borrowed the recipe from her aunt.",
-      "sentence": "She borrowed the recipe from her aunt.",
-      "options": [
-        "Who did she borrow the recipe?",
-        "Who she did borrow the recipe from?",
-        "Who did she borrow the recipe from?",
-        "Who did she borrowed the recipe from?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who did she borrow the recipe from?",
-      "hint": "Keep 'from' at the very end of the question.",
-      "explanation": "The preposition 'from' belongs at the end: 'Who did she borrow the recipe from?'",
-      "grammarRule": "Prepositional Questions: From"
-    },
-    {
-      "id": "qf_l75_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is staring at the broken screen.",
-      "sentence": "He is staring at the broken screen.",
-      "options": [
-        "What is he staring?",
-        "What is he staring at?",
-        "What he is staring at?",
-        "What does he staring at?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "What is he staring at?",
-      "hint": "'Stare at' keeps 'at' at the end of the question.",
-      "explanation": "The phrasal verb 'stare at' keeps its preposition at the end: 'What is he staring at?'",
-      "grammarRule": "Prepositional Questions: At / To"
-    },
-    {
-      "id": "qf_l75_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is listening to a true crime podcast.",
-      "sentence": "She is listening to a true crime podcast.",
-      "options": [
-        "What is she listening?",
-        "What she is listening to?",
-        "What is she listening to?",
-        "What does she listening to?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What is she listening to?",
-      "hint": "'Listen to' keeps 'to' at the end of the question.",
-      "explanation": "The phrasal verb 'listen to' keeps its preposition at the end: 'What is she listening to?'",
-      "grammarRule": "Prepositional Questions: At / To"
-    },
-    {
-      "id": "qf_l75_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is applying to three different universities.",
-      "sentence": "He is applying to three different universities.",
-      "options": [
-        "How many universities is he applying to?",
-        "How many universities does he applying to?",
-        "How many universities he is applying to?",
-        "How many universities is he apply to?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How many universities is he applying to?",
-      "hint": "Keep 'to' at the end, and move 'is' after the question phrase.",
-      "explanation": "'Is' moves after the question phrase, and 'applying' keeps its '-ing' ending, with 'to' staying at the end.",
-      "grammarRule": "Prepositional Questions: At / To"
-    },
-    {
-      "id": "qf_l76_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been waiting for the doctor for over an hour.",
-      "sentence": "She has been waiting for the doctor for over an hour.",
-      "options": [
-        "How long does she has been waiting for the doctor?",
-        "How long has she been waiting for the doctor?",
-        "How long has she been wait for the doctor?",
-        "How long she has been waiting for the doctor?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How long has she been waiting for the doctor?",
-      "hint": "Move 'has' after the question phrase, keeping 'been waiting for' together.",
-      "explanation": "'Has' moves after the question phrase, and the phrase 'been waiting for' stays together as one unit.",
-      "grammarRule": "Prepositional Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l76_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has applied for a promotion twice this year.",
-      "sentence": "He has applied for a promotion twice this year.",
-      "options": [
-        "How many times has he applied for a promotion?",
-        "How many times does he has applied for a promotion?",
-        "How many times has he apply for a promotion?",
-        "How many times he has applied for a promotion?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How many times has he applied for a promotion?",
-      "hint": "Move 'has' after the question phrase, keeping 'applied for' together.",
-      "explanation": "'Has' moves after the question phrase, and 'applied for' stays together as the present perfect verb phrase.",
-      "grammarRule": "Prepositional Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l76_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They have been arguing about the budget for weeks.",
-      "sentence": "They have been arguing about the budget for weeks.",
-      "options": [
-        "What do they have been arguing about for weeks?",
-        "What have they been arguing about for weeks?",
-        "What have they been argue about for weeks?",
-        "What they have been arguing about for weeks?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "What have they been arguing about for weeks?",
-      "hint": "Move 'have' after 'what', keeping 'been arguing about' together.",
-      "explanation": "'Have' moves after the question word, and 'been arguing about' remains together as one unit.",
-      "grammarRule": "Prepositional Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l77_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The success of the project depends on good communication.",
-      "sentence": "The success of the project depends on good communication.",
-      "options": [
-        "What does the success of the project depend?",
-        "What the success of the project depends on?",
-        "What does the success of the project depends on?",
-        "What does the success of the project depend on?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What does the success of the project depend on?",
-      "hint": "'Depend on' keeps 'on' at the end of the question.",
-      "explanation": "The phrasal verb 'depend on' keeps its preposition at the end: 'What does the success of the project depend on?'",
-      "grammarRule": "Prepositional Questions: On / Into"
-    },
-    {
-      "id": "qf_l77_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is focusing on her final exams this month.",
-      "sentence": "She is focusing on her final exams this month.",
-      "options": [
-        "What is she focusing this month?",
-        "What she is focusing on this month?",
-        "What is she focusing on this month?",
-        "What does she focusing on this month?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What is she focusing on this month?",
-      "hint": "'Focus on' keeps 'on' at the end of the question.",
-      "explanation": "The phrasal verb 'focus on' keeps its preposition at the end: 'What is she focusing on this month?'",
-      "grammarRule": "Prepositional Questions: On / Into"
-    },
-    {
-      "id": "qf_l77_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The detective is looking into the missing money.",
-      "sentence": "The detective is looking into the missing money.",
-      "options": [
-        "What is the detective looking?",
-        "What the detective is looking into?",
-        "What is the detective looking into?",
-        "What does the detective looking into?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What is the detective looking into?",
-      "hint": "'Look into' keeps 'into' at the end of the question.",
-      "explanation": "The phrasal verb 'look into' keeps its preposition at the end: 'What is the detective looking into?'",
-      "grammarRule": "Prepositional Questions: On / Into"
-    },
-    {
-      "id": "qf_l78_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She apologized to her colleague for the mistake.",
-      "sentence": "She apologized to her colleague for the mistake.",
-      "options": [
-        "Who did she apologize to for the mistake?",
-        "Who did she apologize for the mistake?",
-        "Who she did apologize to for the mistake?",
-        "Who did she apologized to for the mistake?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who did she apologize to for the mistake?",
-      "hint": "Keep 'to' right before 'for the mistake', at the natural end point.",
-      "explanation": "The preposition 'to' stays attached to 'apologize', giving 'Who did she apologize to for the mistake?'",
-      "grammarRule": "Prepositional Questions: Past Tense Practice"
-    },
-    {
-      "id": "qf_l78_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He complained to the manager about the noise.",
-      "sentence": "He complained to the manager about the noise.",
-      "options": [
-        "Who did he complain about the noise?",
-        "Who he did complain to about the noise?",
-        "Who did he complained to about the noise?",
-        "Who did he complain to about the noise?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Who did he complain to about the noise?",
-      "hint": "Keep 'to' with 'complain', right before the rest of the sentence.",
-      "explanation": "The preposition 'to' stays with 'complain': 'Who did he complain to about the noise?'",
-      "grammarRule": "Prepositional Questions: Past Tense Practice"
-    },
-    {
-      "id": "qf_l78_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They voted for the new proposal at the meeting.",
-      "sentence": "They voted for the new proposal at the meeting.",
-      "options": [
-        "What did they vote at the meeting?",
-        "What they did vote for at the meeting?",
-        "What did they vote for at the meeting?",
-        "What did they voted for at the meeting?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "What did they vote for at the meeting?",
-      "hint": "Keep 'for' with 'vote', right before 'at the meeting'.",
-      "explanation": "The preposition 'for' stays with 'vote': 'What did they vote for at the meeting?'",
-      "grammarRule": "Prepositional Questions: Past Tense Practice"
-    },
-    {
-      "id": "qf_l79_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You can rely on your team during a crisis.",
-      "sentence": "You can rely on your team during a crisis.",
-      "options": [
-        "Who can you rely during a crisis?",
-        "Who you can rely on during a crisis?",
-        "Who can you relies on during a crisis?",
-        "Who can you rely on during a crisis?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Who can you rely on during a crisis?",
-      "hint": "Keep 'on' at the end, and move 'can' after the question word.",
-      "explanation": "'Can' moves after the question word, and 'rely on' keeps its preposition at the end: 'Who can you rely on during a crisis?'",
-      "grammarRule": "Prepositional Questions: Modals"
-    },
-    {
-      "id": "qf_l79_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She should talk to a specialist about the results.",
-      "sentence": "She should talk to a specialist about the results.",
-      "options": [
-        "Who should she talk about the results?",
-        "Who she should talk to about the results?",
-        "Who should she talk to about the results?",
-        "Who should she talks to about the results?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who should she talk to about the results?",
-      "hint": "Keep 'to' with 'talk', and move 'should' after the question word.",
-      "explanation": "'Should' moves after the question word, and 'talk to' keeps its preposition attached: 'Who should she talk to about the results?'",
-      "grammarRule": "Prepositional Questions: Modals"
-    },
-    {
-      "id": "qf_l79_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We will wait for the storm to pass.",
-      "sentence": "We will wait for the storm to pass.",
-      "options": [
-        "What will we wait for?",
-        "What will we wait?",
-        "What we will wait for?",
-        "What does we will wait for?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What will we wait for?",
-      "hint": "Keep 'for' at the end, and move 'will' after the question word.",
-      "explanation": "'Will' moves after the question word, and 'wait for' keeps its preposition at the end: 'What will we wait for?'",
-      "grammarRule": "Prepositional Questions: Modals"
-    },
-    {
-      "id": "qf_l80_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The whole town showed up for the charity event.",
-      "sentence": "The whole town showed up for the charity event.",
-      "options": [
-        "What did the whole town show up?",
-        "What did the whole town show up for?",
-        "What the whole town did show up for?",
-        "What did the whole town showed up for?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "What did the whole town show up for?",
-      "hint": "Keep 'for' at the very end of the question.",
-      "explanation": "The phrasal verb 'show up for' keeps its preposition at the end: 'What did the whole town show up for?'",
-      "grammarRule": "Prepositional Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l80_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been thinking about a career change for months.",
-      "sentence": "She has been thinking about a career change for months.",
-      "options": [
-        "What has she been thinking about for months?",
-        "What does she has been thinking about for months?",
-        "What has she been think about for months?",
-        "What she has been thinking about for months?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What has she been thinking about for months?",
-      "hint": "Move 'has' after 'what', keeping 'been thinking about' together.",
-      "explanation": "'Has' moves after the question word, and the phrase 'been thinking about' remains together as one unit.",
-      "grammarRule": "Prepositional Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l80_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is responsible for the entire marketing budget.",
-      "sentence": "He is responsible for the entire marketing budget.",
-      "options": [
-        "What is he responsible?",
-        "What he is responsible for?",
-        "What does he responsible for?",
-        "What is he responsible for?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What is he responsible for?",
-      "hint": "Keep 'for' at the end of the question, and simply move 'is' to the front.",
-      "explanation": "This is a 'be' question, so 'is' moves to the front, and 'responsible for' keeps its preposition at the end.",
-      "grammarRule": "Prepositional Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 8,
+    "levels": "71-80",
+    "quests": [
+        {
+            "id": "qf_l71_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She went to the concert with her college roommate.",
+            "sentence": "She went to the concert with her college roommate.",
+            "options": [
+                "Who did she go to the concert?",
+                "Who she did go to the concert with?",
+                "Who did she went to the concert with?",
+                "Who did she go to the concert with?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Who did she go to the concert with?",
+            "hint": "Keep the preposition 'with' at the end of the question.",
+            "explanation": "In everyday English, the preposition stays at the end: 'Who did she go to the concert with?' Dropping 'with' changes the meaning.",
+            "grammarRule": "Prepositional Questions: With"
+        },
+        {
+            "id": "qf_l71_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He shared the news with his closest friend.",
+            "sentence": "He shared the news with his closest friend.",
+            "options": [
+                "Who did he share with the news?",
+                "Who did he share the news with?",
+                "Who he did share the news with?",
+                "Who did he shared the news with?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Who did he share the news with?",
+            "hint": "Keep 'with' at the very end of the question.",
+            "explanation": "The preposition 'with' stays at the end of the question: 'Who did he share the news with?' - this is the natural, everyday word order.",
+            "grammarRule": "Prepositional Questions: With"
+        },
+        {
+            "id": "qf_l71_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They traveled to Peru with a local guide.",
+            "sentence": "They traveled to Peru with a local guide.",
+            "options": [
+                "Who did they travel to Peru with?",
+                "Who did they travel with to Peru?",
+                "Who they did travel to Peru with?",
+                "Who did they traveled to Peru with?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who did they travel to Peru with?",
+            "hint": "The preposition 'with' belongs at the very end of the sentence.",
+            "explanation": "Natural English keeps 'with' at the end: 'Who did they travel to Peru with?' rather than placing it earlier in the sentence.",
+            "grammarRule": "Prepositional Questions: With"
+        },
+        {
+            "id": "qf_l72_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is looking for her missing house keys.",
+            "sentence": "She is looking for her missing house keys.",
+            "options": [
+                "What is she looking?",
+                "What she is looking for?",
+                "What is she looking for?",
+                "What is she look for?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What is she looking for?",
+            "hint": "Keep 'for' at the end - don't drop it or change the verb form.",
+            "explanation": "The phrasal verb 'look for' keeps 'for' at the end of the question: 'What is she looking for?'",
+            "grammarRule": "Prepositional Questions: For"
+        },
+        {
+            "id": "qf_l72_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He bought flowers for his grandmother's birthday.",
+            "sentence": "He bought flowers for his grandmother's birthday.",
+            "options": [
+                "Who did he buy flowers?",
+                "Who he did buy flowers for?",
+                "Who did he buy flowers for?",
+                "Who did he bought flowers for?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who did he buy flowers for?",
+            "hint": "Keep 'for' at the end of the question.",
+            "explanation": "The preposition 'for' stays at the end: 'Who did he buy flowers for?' Dropping it would remove the reason entirely.",
+            "grammarRule": "Prepositional Questions: For"
+        },
+        {
+            "id": "qf_l72_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The team is waiting for the final approval.",
+            "sentence": "The team is waiting for the final approval.",
+            "options": [
+                "What is the team waiting?",
+                "What the team is waiting for?",
+                "What is the team waiting for?",
+                "What is the team wait for?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What is the team waiting for?",
+            "hint": "'Wait for' keeps 'for' at the end of the question.",
+            "explanation": "The phrasal verb 'wait for' keeps its preposition at the end: 'What is the team waiting for?'",
+            "grammarRule": "Prepositional Questions: For"
+        },
+        {
+            "id": "qf_l73_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They are talking about the merger.",
+            "sentence": "They are talking about the merger.",
+            "options": [
+                "What are they talking?",
+                "What they are talking about?",
+                "What are they talking about?",
+                "What are they talk about?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What are they talking about?",
+            "hint": "'Talk about' keeps 'about' at the end of the question.",
+            "explanation": "The phrasal verb 'talk about' keeps its preposition at the end: 'What are they talking about?'",
+            "grammarRule": "Prepositional Questions: About"
+        },
+        {
+            "id": "qf_l73_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is worried about her upcoming exam.",
+            "sentence": "She is worried about her upcoming exam.",
+            "options": [
+                "What is she worried?",
+                "What is she worried about?",
+                "What she is worried about?",
+                "What does she worried about?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "What is she worried about?",
+            "hint": "Keep 'about' at the end - don't drop it.",
+            "explanation": "'Worried about' keeps its preposition at the end of the question: 'What is she worried about?'",
+            "grammarRule": "Prepositional Questions: About"
+        },
+        {
+            "id": "qf_l73_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He wrote a letter about the housing project.",
+            "sentence": "He wrote a letter about the housing project.",
+            "options": [
+                "What did he write a letter about?",
+                "What did he write a letter?",
+                "What he did write a letter about?",
+                "What did he wrote a letter about?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What did he write a letter about?",
+            "hint": "Keep 'about' at the very end of the question.",
+            "explanation": "The preposition 'about' stays at the end: 'What did he write a letter about?'",
+            "grammarRule": "Prepositional Questions: About"
+        },
+        {
+            "id": "qf_l74_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This package came from an online store.",
+            "sentence": "This package came from an online store.",
+            "options": [
+                "Where did this package come?",
+                "Where this package did come from?",
+                "Where did this package came from?",
+                "Where did this package come from?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Where did this package come from?",
+            "hint": "Keep 'from' at the end of the question.",
+            "explanation": "The preposition 'from' stays at the end: 'Where did this package come from?' Dropping it removes the source entirely.",
+            "grammarRule": "Prepositional Questions: From"
+        },
+        {
+            "id": "qf_l74_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is originally from a small fishing village.",
+            "sentence": "He is originally from a small fishing village.",
+            "options": [
+                "Where is he from?",
+                "Where he is from?",
+                "Where does he from?",
+                "Where is he originally?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Where is he from?",
+            "hint": "Keep 'from' at the end, and simply move 'is' to the front.",
+            "explanation": "This is a 'be' question, so 'is' moves to the front, and 'from' stays at the end: 'Where is he from?'",
+            "grammarRule": "Prepositional Questions: From"
+        },
+        {
+            "id": "qf_l74_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She borrowed the recipe from her aunt.",
+            "sentence": "She borrowed the recipe from her aunt.",
+            "options": [
+                "Who did she borrow the recipe?",
+                "Who she did borrow the recipe from?",
+                "Who did she borrow the recipe from?",
+                "Who did she borrowed the recipe from?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who did she borrow the recipe from?",
+            "hint": "Keep 'from' at the very end of the question.",
+            "explanation": "The preposition 'from' belongs at the end: 'Who did she borrow the recipe from?'",
+            "grammarRule": "Prepositional Questions: From"
+        },
+        {
+            "id": "qf_l75_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is staring at the broken screen.",
+            "sentence": "He is staring at the broken screen.",
+            "options": [
+                "What is he staring?",
+                "What is he staring at?",
+                "What he is staring at?",
+                "What does he staring at?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "What is he staring at?",
+            "hint": "'Stare at' keeps 'at' at the end of the question.",
+            "explanation": "The phrasal verb 'stare at' keeps its preposition at the end: 'What is he staring at?'",
+            "grammarRule": "Prepositional Questions: At / To"
+        },
+        {
+            "id": "qf_l75_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is listening to a true crime podcast.",
+            "sentence": "She is listening to a true crime podcast.",
+            "options": [
+                "What is she listening?",
+                "What she is listening to?",
+                "What is she listening to?",
+                "What does she listening to?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What is she listening to?",
+            "hint": "'Listen to' keeps 'to' at the end of the question.",
+            "explanation": "The phrasal verb 'listen to' keeps its preposition at the end: 'What is she listening to?'",
+            "grammarRule": "Prepositional Questions: At / To"
+        },
+        {
+            "id": "qf_l75_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is applying to three different universities.",
+            "sentence": "He is applying to three different universities.",
+            "options": [
+                "How many universities is he applying to?",
+                "How many universities does he applying to?",
+                "How many universities he is applying to?",
+                "How many universities is he apply to?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How many universities is he applying to?",
+            "hint": "Keep 'to' at the end, and move 'is' after the question phrase.",
+            "explanation": "'Is' moves after the question phrase, and 'applying' keeps its '-ing' ending, with 'to' staying at the end.",
+            "grammarRule": "Prepositional Questions: At / To"
+        },
+        {
+            "id": "qf_l76_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has been waiting for the doctor for over an hour.",
+            "sentence": "She has been waiting for the doctor for over an hour.",
+            "options": [
+                "How long does she has been waiting for the doctor?",
+                "How long has she been waiting for the doctor?",
+                "How long has she been wait for the doctor?",
+                "How long she has been waiting for the doctor?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How long has she been waiting for the doctor?",
+            "hint": "Move 'has' after the question phrase, keeping 'been waiting for' together.",
+            "explanation": "'Has' moves after the question phrase, and the phrase 'been waiting for' stays together as one unit.",
+            "grammarRule": "Prepositional Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l76_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He has applied for a promotion twice this year.",
+            "sentence": "He has applied for a promotion twice this year.",
+            "options": [
+                "How many times has he applied for a promotion?",
+                "How many times does he has applied for a promotion?",
+                "How many times has he apply for a promotion?",
+                "How many times he has applied for a promotion?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How many times has he applied for a promotion?",
+            "hint": "Move 'has' after the question phrase, keeping 'applied for' together.",
+            "explanation": "'Has' moves after the question phrase, and 'applied for' stays together as the present perfect verb phrase.",
+            "grammarRule": "Prepositional Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l76_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They have been arguing about the budget for weeks.",
+            "sentence": "They have been arguing about the budget for weeks.",
+            "options": [
+                "What do they have been arguing about for weeks?",
+                "What have they been arguing about for weeks?",
+                "What have they been argue about for weeks?",
+                "What they have been arguing about for weeks?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "What have they been arguing about for weeks?",
+            "hint": "Move 'have' after 'what', keeping 'been arguing about' together.",
+            "explanation": "'Have' moves after the question word, and 'been arguing about' remains together as one unit.",
+            "grammarRule": "Prepositional Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l77_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The success of the project depends on good communication.",
+            "sentence": "The success of the project depends on good communication.",
+            "options": [
+                "What does the success of the project depend?",
+                "What the success of the project depends on?",
+                "What does the success of the project depends on?",
+                "What does the success of the project depend on?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What does the success of the project depend on?",
+            "hint": "'Depend on' keeps 'on' at the end of the question.",
+            "explanation": "The phrasal verb 'depend on' keeps its preposition at the end: 'What does the success of the project depend on?'",
+            "grammarRule": "Prepositional Questions: On / Into"
+        },
+        {
+            "id": "qf_l77_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is focusing on her final exams this month.",
+            "sentence": "She is focusing on her final exams this month.",
+            "options": [
+                "What is she focusing this month?",
+                "What she is focusing on this month?",
+                "What is she focusing on this month?",
+                "What does she focusing on this month?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What is she focusing on this month?",
+            "hint": "'Focus on' keeps 'on' at the end of the question.",
+            "explanation": "The phrasal verb 'focus on' keeps its preposition at the end: 'What is she focusing on this month?'",
+            "grammarRule": "Prepositional Questions: On / Into"
+        },
+        {
+            "id": "qf_l77_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The detective is looking into the missing money.",
+            "sentence": "The detective is looking into the missing money.",
+            "options": [
+                "What is the detective looking?",
+                "What the detective is looking into?",
+                "What is the detective looking into?",
+                "What does the detective looking into?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What is the detective looking into?",
+            "hint": "'Look into' keeps 'into' at the end of the question.",
+            "explanation": "The phrasal verb 'look into' keeps its preposition at the end: 'What is the detective looking into?'",
+            "grammarRule": "Prepositional Questions: On / Into"
+        },
+        {
+            "id": "qf_l78_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She apologized to her colleague for the mistake.",
+            "sentence": "She apologized to her colleague for the mistake.",
+            "options": [
+                "Who did she apologize to for the mistake?",
+                "Who did she apologize for the mistake?",
+                "Who she did apologize to for the mistake?",
+                "Who did she apologized to for the mistake?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who did she apologize to for the mistake?",
+            "hint": "Keep 'to' right before 'for the mistake', at the natural end point.",
+            "explanation": "The preposition 'to' stays attached to 'apologize', giving 'Who did she apologize to for the mistake?'",
+            "grammarRule": "Prepositional Questions: Past Tense Practice"
+        },
+        {
+            "id": "qf_l78_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He complained to the manager about the noise.",
+            "sentence": "He complained to the manager about the noise.",
+            "options": [
+                "Who did he complain about the noise?",
+                "Who he did complain to about the noise?",
+                "Who did he complained to about the noise?",
+                "Who did he complain to about the noise?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Who did he complain to about the noise?",
+            "hint": "Keep 'to' with 'complain', right before the rest of the sentence.",
+            "explanation": "The preposition 'to' stays with 'complain': 'Who did he complain to about the noise?'",
+            "grammarRule": "Prepositional Questions: Past Tense Practice"
+        },
+        {
+            "id": "qf_l78_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They voted for the new proposal at the meeting.",
+            "sentence": "They voted for the new proposal at the meeting.",
+            "options": [
+                "What did they vote at the meeting?",
+                "What they did vote for at the meeting?",
+                "What did they vote for at the meeting?",
+                "What did they voted for at the meeting?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "What did they vote for at the meeting?",
+            "hint": "Keep 'for' with 'vote', right before 'at the meeting'.",
+            "explanation": "The preposition 'for' stays with 'vote': 'What did they vote for at the meeting?'",
+            "grammarRule": "Prepositional Questions: Past Tense Practice"
+        },
+        {
+            "id": "qf_l79_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You can rely on your team during a crisis.",
+            "sentence": "You can rely on your team during a crisis.",
+            "options": [
+                "Who can you rely during a crisis?",
+                "Who you can rely on during a crisis?",
+                "Who can you relies on during a crisis?",
+                "Who can you rely on during a crisis?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Who can you rely on during a crisis?",
+            "hint": "Keep 'on' at the end, and move 'can' after the question word.",
+            "explanation": "'Can' moves after the question word, and 'rely on' keeps its preposition at the end: 'Who can you rely on during a crisis?'",
+            "grammarRule": "Prepositional Questions: Modals"
+        },
+        {
+            "id": "qf_l79_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She should talk to a specialist about the results.",
+            "sentence": "She should talk to a specialist about the results.",
+            "options": [
+                "Who should she talk about the results?",
+                "Who she should talk to about the results?",
+                "Who should she talk to about the results?",
+                "Who should she talks to about the results?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who should she talk to about the results?",
+            "hint": "Keep 'to' with 'talk', and move 'should' after the question word.",
+            "explanation": "'Should' moves after the question word, and 'talk to' keeps its preposition attached: 'Who should she talk to about the results?'",
+            "grammarRule": "Prepositional Questions: Modals"
+        },
+        {
+            "id": "qf_l79_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We will wait for the storm to pass.",
+            "sentence": "We will wait for the storm to pass.",
+            "options": [
+                "What will we wait for?",
+                "What will we wait?",
+                "What we will wait for?",
+                "What does we will wait for?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What will we wait for?",
+            "hint": "Keep 'for' at the end, and move 'will' after the question word.",
+            "explanation": "'Will' moves after the question word, and 'wait for' keeps its preposition at the end: 'What will we wait for?'",
+            "grammarRule": "Prepositional Questions: Modals"
+        },
+        {
+            "id": "qf_l80_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The whole town showed up for the charity event.",
+            "sentence": "The whole town showed up for the charity event.",
+            "options": [
+                "What did the whole town show up?",
+                "What did the whole town show up for?",
+                "What the whole town did show up for?",
+                "What did the whole town showed up for?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "What did the whole town show up for?",
+            "hint": "Keep 'for' at the very end of the question.",
+            "explanation": "The phrasal verb 'show up for' keeps its preposition at the end: 'What did the whole town show up for?'",
+            "grammarRule": "Prepositional Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l80_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has been thinking about a career change for months.",
+            "sentence": "She has been thinking about a career change for months.",
+            "options": [
+                "What has she been thinking about for months?",
+                "What does she has been thinking about for months?",
+                "What has she been think about for months?",
+                "What she has been thinking about for months?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What has she been thinking about for months?",
+            "hint": "Move 'has' after 'what', keeping 'been thinking about' together.",
+            "explanation": "'Has' moves after the question word, and the phrase 'been thinking about' remains together as one unit.",
+            "grammarRule": "Prepositional Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l80_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is responsible for the entire marketing budget.",
+            "sentence": "He is responsible for the entire marketing budget.",
+            "options": [
+                "What is he responsible?",
+                "What he is responsible for?",
+                "What does he responsible for?",
+                "What is he responsible for?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What is he responsible for?",
+            "hint": "Keep 'for' at the end of the question, and simply move 'is' to the front.",
+            "explanation": "This is a 'be' question, so 'is' moves to the front, and 'responsible for' keeps its preposition at the end.",
+            "grammarRule": "Prepositional Questions: Mixed Review"
+        }
+    ]
 }

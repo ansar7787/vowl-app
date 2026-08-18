@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone calls about an advertisement for a flat.",
             "explanation": "'Calling about the advertisement for the flat' = responding to a rental listing. The flat is being offered (advertisement), and the caller is interested. This is how potential tenants make initial contact with landlords or letting agencies.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the key phrase that reveals the purpose.",
             "explanation": "'Thank you for everything you did' = expressing gratitude. 'Just wanted to say' is a softening phrase before the main point. 'Everything you did' shows broad appreciation for past help. This is a social communication function: thanking someone.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L31_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the action word and the reason given.",
             "explanation": "'Cancel my appointment' = the action. 'For Thursday' = the specific appointment. 'Something's come up' is an idiom meaning an unexpected event has occurred that prevents the appointment. The speaker isn't rescheduling - they're cancelling.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for when during the speech the problem happened.",
             "explanation": "'Halfway through' = in the middle of the speech. 'Lost her notes' = couldn't find them. So she was partway through when this happened - not at the start, not at the end. 'Halfway through' is an important time adverb meaning at the 50% point.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'looks like a disaster zone' implies about the kitchen.",
             "explanation": "'Disaster zone' = a place in complete chaos and mess. 'All weekend cooking' explains why - intensive cooking creates mess. This is inference from effect to cause: messy kitchen = consequence of extensive cooking. The hyperbole 'disaster zone' emphasises the level of mess.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L32_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'had already started' tells you about the timing.",
             "explanation": "'Had already started' uses the past perfect, showing the film began BEFORE they arrived. So they arrived after the film started = they were late. 'By the time' + past perfect shows the sequence: film started → then they arrived.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for 'prefer' and the criticism of the new version.",
             "explanation": "'Prefer the original' = the original is better in their opinion. 'Too sweet' is a criticism of the new version. 'Too' + adjective = excessive, negative quality. Together: original preferred, new version criticised for being overly sweet.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the contrast and which candidate 'stood out'.",
             "explanation": "'Really stood out' = was noticeably better or more impressive. The 'but' creates a contrast: good (first) vs. really stood out (second). 'Stood out' = was more impressive than others. The second candidate made a stronger impression.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L33_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for both comparative adjectives - size and organisation.",
             "explanation": "Two comparisons: 'bigger' (positive - improved) and 'not as well organised' (negative - worse). Together: it grew in scale but lost quality of organisation. 'But' signals the contrast between the two comparisons.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the cause before 'so'.",
             "explanation": "'The car wouldn't start' = the problem. 'So she called a mechanic' = the solution/response. 'Wouldn't start' suggests a mechanical failure. 'So' links cause to effect. A mechanic fixes mechanical problems - appropriate response to a starting failure.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the consequence of not agreeing.",
             "explanation": "'Couldn't agree on where to go' = disagreement. 'Stayed home in the end' = the final outcome. 'In the end' signals the eventual resolution. When people can't agree on a plan, staying home is a common default. The inability to decide led to no action.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L34_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the response to the long queue.",
             "explanation": "'Came back later' = left and returned at a different time. He didn't wait (too long) or go elsewhere - he came back to the same place later. This inference about practical behaviour is common in everyday English contexts.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about the cause-and-effect relationship stated.",
             "explanation": "Sequence: wore sunscreen every day → skin looked great. This is a direct cause-and-effect statement. The daily use of sunscreen is presented as the reason for good skin. 'Every day' shows the consistency that produced the result.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the direct consequence of forgetting to set the alarm.",
             "explanation": "'Woke up two hours late' is the direct consequence of 'forgot to set his alarm'. Cause: no alarm set. Effect: overslept by two hours. 'Two hours late' is the quantity of oversleeping. The alarm would have woken him on time; without it, he slept longer.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L35_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the reason given after 'because of'.",
             "explanation": "'Because of a staff shortage' = not enough staff to operate the shop. 'Staff shortage' = fewer workers than required. 'Because of' introduces the cause. This is different from a planned closure (holiday) or structural closure (renovation).",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the reason after the dash.",
             "explanation": "'Too much going on' = too busy, too much activity. This is the speaker's stated reason. They like London as a city to visit ('great city') but find permanent residence overwhelming. 'Too much going on' is an informal expression for excessive activity or stimulation.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for 'used to' (past) and 'now' (present) to understand the change.",
             "explanation": "'Used to eat out' = past habit. 'Now prefers cooking at home' = present habit. The change is from eating out (frequent restaurants) to cooking at home (fewer restaurants). 'Used to' + infinitive describes a past habit that has changed.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L36_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "If today's was 'much more productive', what does that tell you about last week's?",
             "explanation": "If today's meeting was 'much more productive THAN last week's', last week's meeting was less productive by comparison. 'Much more... than' is a comparative structure - it directly implies the compared item was inferior. Inference from comparatives is an important listening skill.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L37_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for both the challenge and the final outcome.",
             "explanation": "'A bit of a struggle' = it was difficult. 'Finally got there' = eventually succeeded. 'But' signals the contrast: struggle → success. 'Finally' suggests it took time and effort. This is a positive outcome despite difficulty - a common narrative structure.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L37_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'went on and on' and 'nearly an hour' suggest about the listener's experience.",
             "explanation": "'Went on and on' = spoke repetitively and at excessive length. This phrase expresses frustration with someone who talks too much or repeats themselves. 'Nearly an hour' emphasises the length. Together, the speaker is signalling boredom or irritation.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L37_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Analyse the two halves of this sentence for meaning.",
             "explanation": "'Not exactly what I had in mind' = not what I wanted (partial dissatisfaction). 'It'll do' = it's acceptable/good enough (resigned acceptance). Together: they accept it despite it not being ideal. This is qualified acceptance - common in everyday English understatement.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L38_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Focus on the strong prohibition and its condition.",
             "explanation": "'Don't press... until I get back' = strong instruction to wait. 'Whatever you do' is an emphatic phrase that reinforces the importance of the prohibition. The condition is the person's return. This is a clear prioritisation of waiting over acting.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L38_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the deadline and the urgency marker.",
             "explanation": "'Really urgent' = very high priority. 'By noon today' = the deadline (not tomorrow, not this week - today by 12:00). 'By' + time = deadline. 'Really urgent' + specific tight deadline = high-pressure, time-sensitive situation.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L38_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the action advised and the reason given.",
             "explanation": "'Save your work regularly' = the advice. 'You don't want to lose it all' = the reason (negative consequence of not saving). 'Make sure' adds emphasis. This is practical computer/work advice about data safety - very common in professional and student contexts.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L39_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'most people had already left' implies about her timing.",
             "explanation": "'Had already left' (past perfect) = people left BEFORE she arrived. 'Most people' = the majority were gone. She arrived after the party was largely over. 'By the time' + past perfect is a common structure for showing a sequence: one thing happened, then another.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L39_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for 'had just' and 'when' to understand the timing.",
             "explanation": "'Had just sat down' = sat down very recently (moments before). 'When the phone rang' = simultaneous event. Together: he barely sat down and immediately the phone rang. 'Had just' + 'when' describes near-simultaneous events with the first barely completed.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L39_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the sequence of events.",
             "explanation": "Three events mentioned: homework, dinner, TV. 'Before dinner' tells us homework came first. 'Then watched TV' comes after dinner. Sequence: homework → dinner → TV. 'Before' and 'then' are sequencing words that organise the order of events.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Identify the register by the vocabulary and sentence structure.",
             "explanation": "'Your presence is requested' = very formal passive construction. 'Annual awards ceremony' = formal event. 'The fourteenth' = formal date reference. This is official/ceremonial language. Informal equivalents: 'We'd love you to come to our awards dinner.'",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Notice the vocabulary and contractions used.",
             "explanation": "'Come on then' = informal encouragement. 'Let's get a move on' = informal idiom meaning let's hurry. 'Before it gets dark' = casual time reference. Everything here is informal, encouraging language - the opposite of formal professional communication.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L40_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Identify the meaning of 'unsuccessful' and the formal delivery.",
             "explanation": "'Regret to inform you' = I'm sorry to tell you (formal expression of regret). 'Unsuccessful' = it failed/was rejected. This is a standard rejection formula used in job, university, or grant applications. The formal phrasing softens the negative message.",

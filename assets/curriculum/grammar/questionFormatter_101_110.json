@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 11,
-  "levels": "101-110",
-  "quests": [
-    {
-      "id": "qf_l101_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She works from home on Fridays.",
-      "sentence": "She works from home on Fridays.",
-      "options": [
-        "She works from home on Fridays, does she?",
-        "She works from home on Fridays, doesn't she?",
-        "She works from home on Fridays, isn't she?",
-        "She works from home on Fridays, doesn't it?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She works from home on Fridays, doesn't she?",
-      "hint": "The statement is positive, so the tag should be negative: 'doesn't she?'",
-      "explanation": "A positive statement takes a negative tag. Since the main verb is 'works' (present simple, singular), the tag uses 'doesn't she'.",
-      "grammarRule": "Tag Questions: Present Simple"
-    },
-    {
-      "id": "qf_l101_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Your parents don't live far from here.",
-      "sentence": "Your parents don't live far from here.",
-      "options": [
-        "Your parents don't live far from here, don't they?",
-        "Your parents don't live far from here, do they?",
-        "Your parents don't live far from here, do you?",
-        "Your parents don't live far from here, are they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Your parents don't live far from here, do they?",
-      "hint": "The statement is negative, so the tag should be positive: 'do they?'",
-      "explanation": "A negative statement takes a positive tag. Since the subject is 'your parents' (they), the tag is 'do they'.",
-      "grammarRule": "Tag Questions: Present Simple"
-    },
-    {
-      "id": "qf_l101_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The kids share a bedroom.",
-      "sentence": "The kids share a bedroom.",
-      "options": [
-        "The kids share a bedroom, do they?",
-        "The kids share a bedroom, aren't they?",
-        "The kids share a bedroom, don't they?",
-        "The kids share a bedroom, doesn't they?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The kids share a bedroom, don't they?",
-      "hint": "The statement is positive and plural, so the tag needs a negative plural form: 'don't they?'",
-      "explanation": "A positive statement takes a negative tag, and since 'the kids' is plural, the tag uses 'don't they'.",
-      "grammarRule": "Tag Questions: Present Simple"
-    },
-    {
-      "id": "qf_l102_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He finished the marathon in under four hours.",
-      "sentence": "He finished the marathon in under four hours.",
-      "options": [
-        "He finished the marathon in under four hours, did he?",
-        "He finished the marathon in under four hours, didn't he?",
-        "He finished the marathon in under four hours, wasn't he?",
-        "He finished the marathon in under four hours, hasn't he?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "He finished the marathon in under four hours, didn't he?",
-      "hint": "The statement is positive past tense, so use the negative tag 'didn't he?'",
-      "explanation": "A positive past-tense statement takes a negative tag with 'did': 'didn't he', matching the subject 'he'.",
-      "grammarRule": "Tag Questions: Past Simple"
-    },
-    {
-      "id": "qf_l102_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They didn't enjoy the long flight.",
-      "sentence": "They didn't enjoy the long flight.",
-      "options": [
-        "They didn't enjoy the long flight, didn't they?",
-        "They didn't enjoy the long flight, did they?",
-        "They didn't enjoy the long flight, do they?",
-        "They didn't enjoy the long flight, weren't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "They didn't enjoy the long flight, did they?",
-      "hint": "The statement is negative, so use the positive tag 'did they?'",
-      "explanation": "A negative past-tense statement takes a positive tag, 'did they', matching the subject and the past tense.",
-      "grammarRule": "Tag Questions: Past Simple"
-    },
-    {
-      "id": "qf_l102_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The store closed early yesterday.",
-      "sentence": "The store closed early yesterday.",
-      "options": [
-        "The store closed early yesterday, did it?",
-        "The store closed early yesterday, wasn't it?",
-        "The store closed early yesterday, didn't it?",
-        "The store closed early yesterday, hasn't it?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The store closed early yesterday, didn't it?",
-      "hint": "The statement is positive past tense, so use 'didn't it?'",
-      "explanation": "This positive past-tense statement takes the negative tag 'didn't it', matching the subject 'it' (the store).",
-      "grammarRule": "Tag Questions: Past Simple"
-    },
-    {
-      "id": "qf_l103_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The instructions are pretty confusing.",
-      "sentence": "The instructions are pretty confusing.",
-      "options": [
-        "The instructions are pretty confusing, don't they?",
-        "The instructions are pretty confusing, are they?",
-        "The instructions are pretty confusing, aren't they?",
-        "The instructions are pretty confusing, isn't they?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The instructions are pretty confusing, aren't they?",
-      "hint": "'Be' tags simply repeat 'be' in negative form: 'aren't they?'",
-      "explanation": "With 'be' verbs, the tag reuses 'be' rather than 'do'. Since the statement is positive and plural, the tag is 'aren't they'.",
-      "grammarRule": "Tag Questions: Verb 'To Be'"
-    },
-    {
-      "id": "qf_l103_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You weren't at the meeting yesterday.",
-      "sentence": "You weren't at the meeting yesterday.",
-      "options": [
-        "You weren't at the meeting yesterday, weren't you?",
-        "You weren't at the meeting yesterday, did you?",
-        "You weren't at the meeting yesterday, are you?",
-        "You weren't at the meeting yesterday, were you?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "You weren't at the meeting yesterday, were you?",
-      "hint": "The statement is negative, so use the positive tag 'were you?'",
-      "explanation": "A negative statement with 'be' takes a positive tag using 'be': 'were you', matching the past tense.",
-      "grammarRule": "Tag Questions: Verb 'To Be'"
-    },
-    {
-      "id": "qf_l103_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I am your first customer today.",
-      "sentence": "I am your first customer today.",
-      "options": [
-        "I am your first customer today, do I?",
-        "I am your first customer today, aren't I?",
-        "I am your first customer today, isn't I?",
-        "I am your first customer today, amn't I?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "I am your first customer today, aren't I?",
-      "hint": "'I am' takes the special tag 'aren't I?', not 'amn't I?'",
-      "explanation": "Although 'I' pairs with 'am' in statements, the standard tag question form is the irregular 'aren't I?'",
-      "grammarRule": "Tag Questions: Verb 'To Be'"
-    },
-    {
-      "id": "qf_l104_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You're listening to the new podcast episode.",
-      "sentence": "You're listening to the new podcast episode.",
-      "options": [
-        "You're listening to the new podcast episode, don't you?",
-        "You're listening to the new podcast episode, aren't you?",
-        "You're listening to the new podcast episode, are you?",
-        "You're listening to the new podcast episode, isn't you?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "You're listening to the new podcast episode, aren't you?",
-      "hint": "'Be' tags reuse 'be': the tag here is 'aren't you?'",
-      "explanation": "Since the statement uses 'are' (continuous tense), the tag reuses 'be' in its negative form: 'aren't you'.",
-      "grammarRule": "Tag Questions: Present Continuous"
-    },
-    {
-      "id": "qf_l104_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The baby isn't sleeping well tonight.",
-      "sentence": "The baby isn't sleeping well tonight.",
-      "options": [
-        "The baby isn't sleeping well tonight, isn't it?",
-        "The baby isn't sleeping well tonight, doesn't it?",
-        "The baby isn't sleeping well tonight, is she?",
-        "The baby isn't sleeping well tonight, is it?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "The baby isn't sleeping well tonight, is it?",
-      "hint": "The statement is negative, so use the positive tag 'is it?'",
-      "explanation": "A negative statement takes a positive tag. Since 'the baby' is referred to as 'it' here, the tag is 'is it'.",
-      "grammarRule": "Tag Questions: Present Continuous"
-    },
-    {
-      "id": "qf_l104_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We're making good progress on the renovation.",
-      "sentence": "We're making good progress on the renovation.",
-      "options": [
-        "We're making good progress on the renovation, don't we?",
-        "We're making good progress on the renovation, aren't we?",
-        "We're making good progress on the renovation, are we?",
-        "We're making good progress on the renovation, isn't we?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "We're making good progress on the renovation, aren't we?",
-      "hint": "The tag reuses 'be': 'aren't we?'",
-      "explanation": "Since the statement uses 'are' (present continuous), the tag reuses 'be' in its negative form, matching the subject 'we'.",
-      "grammarRule": "Tag Questions: Present Continuous"
-    },
-    {
-      "id": "qf_l105_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has already left for the airport.",
-      "sentence": "She has already left for the airport.",
-      "options": [
-        "She has already left for the airport, has she?",
-        "She has already left for the airport, hasn't she?",
-        "She has already left for the airport, didn't she?",
-        "She has already left for the airport, doesn't she?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She has already left for the airport, hasn't she?",
-      "hint": "The tag reuses 'has': 'hasn't she?'",
-      "explanation": "Present perfect tags reuse 'has/have'. Since the statement is positive, the tag is negative: 'hasn't she'.",
-      "grammarRule": "Tag Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l105_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You haven't tried the new café yet.",
-      "sentence": "You haven't tried the new café yet.",
-      "options": [
-        "You haven't tried the new café yet, haven't you?",
-        "You haven't tried the new café yet, have you?",
-        "You haven't tried the new café yet, did you?",
-        "You haven't tried the new café yet, do you?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "You haven't tried the new café yet, have you?",
-      "hint": "The statement is negative, so the tag should be positive: 'have you?'",
-      "explanation": "A negative present perfect statement takes a positive tag: 'have you', reusing the same auxiliary.",
-      "grammarRule": "Tag Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l105_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The committee has approved the new budget.",
-      "sentence": "The committee has approved the new budget.",
-      "options": [
-        "The committee has approved the new budget, has it?",
-        "The committee has approved the new budget, hasn't it?",
-        "The committee has approved the new budget, didn't it?",
-        "The committee has approved the new budget, haven't it?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The committee has approved the new budget, hasn't it?",
-      "hint": "The tag reuses 'has' in its negative form: 'hasn't it?'",
-      "explanation": "Since the statement uses 'has' and is positive, the tag is negative and reuses the same auxiliary: 'hasn't it'.",
-      "grammarRule": "Tag Questions: Present Perfect"
-    },
-    {
-      "id": "qf_l106_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You can fix this problem easily.",
-      "sentence": "You can fix this problem easily.",
-      "options": [
-        "You can fix this problem easily, can't you?",
-        "You can fix this problem easily, do you?",
-        "You can fix this problem easily, can you?",
-        "You can fix this problem easily, couldn't you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You can fix this problem easily, can't you?",
-      "hint": "The tag reuses the modal 'can' in its negative form.",
-      "explanation": "Modal tags reuse the same modal. Since the statement is positive, the tag is negative: 'can't you'.",
-      "grammarRule": "Tag Questions: Modals"
-    },
-    {
-      "id": "qf_l106_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They won't mind waiting a few extra minutes.",
-      "sentence": "They won't mind waiting a few extra minutes.",
-      "options": [
-        "They won't mind waiting a few extra minutes, won't they?",
-        "They won't mind waiting a few extra minutes, will they?",
-        "They won't mind waiting a few extra minutes, do they?",
-        "They won't mind waiting a few extra minutes, would they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "They won't mind waiting a few extra minutes, will they?",
-      "hint": "The statement is negative, so the tag should be positive: 'will they?'",
-      "explanation": "A negative statement with 'won't' takes a positive tag using the same modal: 'will they'.",
-      "grammarRule": "Tag Questions: Modals"
-    },
-    {
-      "id": "qf_l106_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We should leave a bit earlier next time.",
-      "sentence": "We should leave a bit earlier next time.",
-      "options": [
-        "We should leave a bit earlier next time, do we?",
-        "We should leave a bit earlier next time, should we?",
-        "We should leave a bit earlier next time, wouldn't we?",
-        "We should leave a bit earlier next time, shouldn't we?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "We should leave a bit earlier next time, shouldn't we?",
-      "hint": "The tag reuses the modal 'should' in its negative form.",
-      "explanation": "Since the statement is positive, the tag is negative and reuses the same modal: 'shouldn't we'.",
-      "grammarRule": "Tag Questions: Modals"
-    },
-    {
-      "id": "qf_l107_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Close the window before you leave.",
-      "sentence": "Close the window before you leave.",
-      "options": [
-        "Close the window before you leave, do you?",
-        "Close the window before you leave, won't you?",
-        "Close the window before you leave, don't you?",
-        "Close the window before you leave, will you?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Close the window before you leave, will you?",
-      "hint": "Commands typically take the tag 'will you?'",
-      "explanation": "Imperative sentences (commands/requests) commonly take the tag 'will you?', regardless of the missing subject.",
-      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
-    },
-    {
-      "id": "qf_l107_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Let's grab lunch after the meeting.",
-      "sentence": "Let's grab lunch after the meeting.",
-      "options": [
-        "Let's grab lunch after the meeting, will we?",
-        "Let's grab lunch after the meeting, shall we?",
-        "Let's grab lunch after the meeting, don't we?",
-        "Let's grab lunch after the meeting, shan't we?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Let's grab lunch after the meeting, shall we?",
-      "hint": "'Let's' suggestions always take the tag 'shall we?'",
-      "explanation": "Sentences starting with 'Let's' always take the fixed tag 'shall we?', regardless of the verb that follows.",
-      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
-    },
-    {
-      "id": "qf_l107_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Take a seat, please.",
-      "sentence": "Take a seat, please.",
-      "options": [
-        "Take a seat, please, do you?",
-        "Take a seat, please, will you?",
-        "Take a seat, please, won't you?",
-        "Take a seat, please, don't you?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Take a seat, please, will you?",
-      "hint": "Commands typically take the tag 'will you?'",
-      "explanation": "As with other commands, this imperative sentence takes the standard tag 'will you?'",
-      "grammarRule": "Tag Questions: Imperatives & 'Let's'"
-    },
-    {
-      "id": "qf_l108_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There isn't any milk left in the fridge.",
-      "sentence": "There isn't any milk left in the fridge.",
-      "options": [
-        "There isn't any milk left in the fridge, is there?",
-        "There isn't any milk left in the fridge, isn't there?",
-        "There isn't any milk left in the fridge, are there?",
-        "There isn't any milk left in the fridge, does it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "There isn't any milk left in the fridge, is there?",
-      "hint": "The statement is negative, so use the positive tag 'is there?'",
-      "explanation": "A negative 'there is' statement takes a positive tag: 'is there', keeping 'there' as the tag subject.",
-      "grammarRule": "Tag Questions: There Is / There Are"
-    },
-    {
-      "id": "qf_l108_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There are several typos in this document.",
-      "sentence": "There are several typos in this document.",
-      "options": [
-        "There are several typos in this document, aren't there?",
-        "There are several typos in this document, don't there?",
-        "There are several typos in this document, are there?",
-        "There are several typos in this document, isn't there?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "There are several typos in this document, aren't there?",
-      "hint": "The statement is positive and plural, so use 'aren't there?'",
-      "explanation": "A positive 'there are' statement (plural) takes the negative tag 'aren't there'.",
-      "grammarRule": "Tag Questions: There Is / There Are"
-    },
-    {
-      "id": "qf_l108_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There was a small problem with the order.",
-      "sentence": "There was a small problem with the order.",
-      "options": [
-        "There was a small problem with the order, was there?",
-        "There was a small problem with the order, wasn't it?",
-        "There was a small problem with the order, didn't there?",
-        "There was a small problem with the order, wasn't there?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "There was a small problem with the order, wasn't there?",
-      "hint": "The statement is positive, so use the negative tag 'wasn't there?'",
-      "explanation": "A positive 'there was' statement takes the negative tag 'wasn't there', keeping 'there' as the tag subject.",
-      "grammarRule": "Tag Questions: There Is / There Are"
-    },
-    {
-      "id": "qf_l109_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She never complains about her workload.",
-      "sentence": "She never complains about her workload.",
-      "options": [
-        "She never complains about her workload, doesn't she?",
-        "She never complains about her workload, does she?",
-        "She never complains about her workload, is she?",
-        "She never complains about her workload, did she?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She never complains about her workload, does she?",
-      "hint": "'Never' makes the statement negative in meaning, so use a positive tag.",
-      "explanation": "Words like 'never' act as negatives, so even though there's no 'not', the tag is still positive: 'does she'.",
-      "grammarRule": "Tag Questions: Negative Adverbs"
-    },
-    {
-      "id": "qf_l109_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They rarely eat out during the week.",
-      "sentence": "They rarely eat out during the week.",
-      "options": [
-        "They rarely eat out during the week, don't they?",
-        "They rarely eat out during the week, do they?",
-        "They rarely eat out during the week, are they?",
-        "They rarely eat out during the week, did they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "They rarely eat out during the week, do they?",
-      "hint": "'Rarely' functions as a negative, so the tag should be positive.",
-      "explanation": "'Rarely' has negative meaning, so the tag is positive, not negative: 'do they'.",
-      "grammarRule": "Tag Questions: Negative Adverbs"
-    },
-    {
-      "id": "qf_l109_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He hardly ever calls his old college friends.",
-      "sentence": "He hardly ever calls his old college friends.",
-      "options": [
-        "He hardly ever calls his old college friends, doesn't he?",
-        "He hardly ever calls his old college friends, is he?",
-        "He hardly ever calls his old college friends, does he?",
-        "He hardly ever calls his old college friends, did he?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "He hardly ever calls his old college friends, does he?",
-      "hint": "'Hardly ever' works like a negative, so the tag should be positive.",
-      "explanation": "'Hardly ever' carries negative meaning, so the statement needs a positive tag: 'does he'.",
-      "grammarRule": "Tag Questions: Negative Adverbs"
-    },
-    {
-      "id": "qf_l110_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You haven't seen this movie before.",
-      "sentence": "You haven't seen this movie before.",
-      "options": [
-        "You haven't seen this movie before, haven't you?",
-        "You haven't seen this movie before, did you?",
-        "You haven't seen this movie before, do you?",
-        "You haven't seen this movie before, have you?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "You haven't seen this movie before, have you?",
-      "hint": "The statement is negative, so use the positive tag 'have you?'",
-      "explanation": "A negative present perfect statement takes a positive tag, reusing the same auxiliary: 'have you'.",
-      "grammarRule": "Tag Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l110_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Let's take a short break.",
-      "sentence": "Let's take a short break.",
-      "options": [
-        "Let's take a short break, will we?",
-        "Let's take a short break, shall we?",
-        "Let's take a short break, don't we?",
-        "Let's take a short break, do we?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Let's take a short break, shall we?",
-      "hint": "'Let's' suggestions always take 'shall we?'",
-      "explanation": "As with all 'Let's' suggestions, the fixed tag 'shall we?' is used, regardless of the main verb.",
-      "grammarRule": "Tag Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l110_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There aren't enough chairs for everyone.",
-      "sentence": "There aren't enough chairs for everyone.",
-      "options": [
-        "There aren't enough chairs for everyone, are there?",
-        "There aren't enough chairs for everyone, aren't there?",
-        "There aren't enough chairs for everyone, is there?",
-        "There aren't enough chairs for everyone, don't there?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "There aren't enough chairs for everyone, are there?",
-      "hint": "The statement is negative, so use the positive tag 'are there?'",
-      "explanation": "A negative 'there are' statement takes a positive tag: 'are there', keeping 'there' as the tag subject.",
-      "grammarRule": "Tag Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "qf_l101_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She works from home on Fridays.",
+            "sentence": "She works from home on Fridays.",
+            "options": [
+                "She works from home on Fridays, does she?",
+                "She works from home on Fridays, doesn't she?",
+                "She works from home on Fridays, isn't she?",
+                "She works from home on Fridays, doesn't it?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She works from home on Fridays, doesn't she?",
+            "hint": "The statement is positive, so the tag should be negative: 'doesn't she?'",
+            "explanation": "A positive statement takes a negative tag. Since the main verb is 'works' (present simple, singular), the tag uses 'doesn't she'.",
+            "grammarRule": "Tag Questions: Present Simple"
+        },
+        {
+            "id": "qf_l101_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Your parents don't live far from here.",
+            "sentence": "Your parents don't live far from here.",
+            "options": [
+                "Your parents don't live far from here, don't they?",
+                "Your parents don't live far from here, do they?",
+                "Your parents don't live far from here, do you?",
+                "Your parents don't live far from here, are they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Your parents don't live far from here, do they?",
+            "hint": "The statement is negative, so the tag should be positive: 'do they?'",
+            "explanation": "A negative statement takes a positive tag. Since the subject is 'your parents' (they), the tag is 'do they'.",
+            "grammarRule": "Tag Questions: Present Simple"
+        },
+        {
+            "id": "qf_l101_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The kids share a bedroom.",
+            "sentence": "The kids share a bedroom.",
+            "options": [
+                "The kids share a bedroom, do they?",
+                "The kids share a bedroom, aren't they?",
+                "The kids share a bedroom, don't they?",
+                "The kids share a bedroom, doesn't they?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The kids share a bedroom, don't they?",
+            "hint": "The statement is positive and plural, so the tag needs a negative plural form: 'don't they?'",
+            "explanation": "A positive statement takes a negative tag, and since 'the kids' is plural, the tag uses 'don't they'.",
+            "grammarRule": "Tag Questions: Present Simple"
+        },
+        {
+            "id": "qf_l102_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He finished the marathon in under four hours.",
+            "sentence": "He finished the marathon in under four hours.",
+            "options": [
+                "He finished the marathon in under four hours, did he?",
+                "He finished the marathon in under four hours, didn't he?",
+                "He finished the marathon in under four hours, wasn't he?",
+                "He finished the marathon in under four hours, hasn't he?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "He finished the marathon in under four hours, didn't he?",
+            "hint": "The statement is positive past tense, so use the negative tag 'didn't he?'",
+            "explanation": "A positive past-tense statement takes a negative tag with 'did': 'didn't he', matching the subject 'he'.",
+            "grammarRule": "Tag Questions: Past Simple"
+        },
+        {
+            "id": "qf_l102_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They didn't enjoy the long flight.",
+            "sentence": "They didn't enjoy the long flight.",
+            "options": [
+                "They didn't enjoy the long flight, didn't they?",
+                "They didn't enjoy the long flight, did they?",
+                "They didn't enjoy the long flight, do they?",
+                "They didn't enjoy the long flight, weren't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They didn't enjoy the long flight, did they?",
+            "hint": "The statement is negative, so use the positive tag 'did they?'",
+            "explanation": "A negative past-tense statement takes a positive tag, 'did they', matching the subject and the past tense.",
+            "grammarRule": "Tag Questions: Past Simple"
+        },
+        {
+            "id": "qf_l102_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The store closed early yesterday.",
+            "sentence": "The store closed early yesterday.",
+            "options": [
+                "The store closed early yesterday, did it?",
+                "The store closed early yesterday, wasn't it?",
+                "The store closed early yesterday, didn't it?",
+                "The store closed early yesterday, hasn't it?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The store closed early yesterday, didn't it?",
+            "hint": "The statement is positive past tense, so use 'didn't it?'",
+            "explanation": "This positive past-tense statement takes the negative tag 'didn't it', matching the subject 'it' (the store).",
+            "grammarRule": "Tag Questions: Past Simple"
+        },
+        {
+            "id": "qf_l103_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The instructions are pretty confusing.",
+            "sentence": "The instructions are pretty confusing.",
+            "options": [
+                "The instructions are pretty confusing, don't they?",
+                "The instructions are pretty confusing, are they?",
+                "The instructions are pretty confusing, aren't they?",
+                "The instructions are pretty confusing, isn't they?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The instructions are pretty confusing, aren't they?",
+            "hint": "'Be' tags simply repeat 'be' in negative form: 'aren't they?'",
+            "explanation": "With 'be' verbs, the tag reuses 'be' rather than 'do'. Since the statement is positive and plural, the tag is 'aren't they'.",
+            "grammarRule": "Tag Questions: Verb 'To Be'"
+        },
+        {
+            "id": "qf_l103_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You weren't at the meeting yesterday.",
+            "sentence": "You weren't at the meeting yesterday.",
+            "options": [
+                "You weren't at the meeting yesterday, weren't you?",
+                "You weren't at the meeting yesterday, did you?",
+                "You weren't at the meeting yesterday, are you?",
+                "You weren't at the meeting yesterday, were you?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "You weren't at the meeting yesterday, were you?",
+            "hint": "The statement is negative, so use the positive tag 'were you?'",
+            "explanation": "A negative statement with 'be' takes a positive tag using 'be': 'were you', matching the past tense.",
+            "grammarRule": "Tag Questions: Verb 'To Be'"
+        },
+        {
+            "id": "qf_l103_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I am your first customer today.",
+            "sentence": "I am your first customer today.",
+            "options": [
+                "I am your first customer today, do I?",
+                "I am your first customer today, aren't I?",
+                "I am your first customer today, isn't I?",
+                "I am your first customer today, amn't I?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "I am your first customer today, aren't I?",
+            "hint": "'I am' takes the special tag 'aren't I?', not 'amn't I?'",
+            "explanation": "Although 'I' pairs with 'am' in statements, the standard tag question form is the irregular 'aren't I?'",
+            "grammarRule": "Tag Questions: Verb 'To Be'"
+        },
+        {
+            "id": "qf_l104_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You're listening to the new podcast episode.",
+            "sentence": "You're listening to the new podcast episode.",
+            "options": [
+                "You're listening to the new podcast episode, don't you?",
+                "You're listening to the new podcast episode, aren't you?",
+                "You're listening to the new podcast episode, are you?",
+                "You're listening to the new podcast episode, isn't you?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "You're listening to the new podcast episode, aren't you?",
+            "hint": "'Be' tags reuse 'be': the tag here is 'aren't you?'",
+            "explanation": "Since the statement uses 'are' (continuous tense), the tag reuses 'be' in its negative form: 'aren't you'.",
+            "grammarRule": "Tag Questions: Present Continuous"
+        },
+        {
+            "id": "qf_l104_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The baby isn't sleeping well tonight.",
+            "sentence": "The baby isn't sleeping well tonight.",
+            "options": [
+                "The baby isn't sleeping well tonight, isn't it?",
+                "The baby isn't sleeping well tonight, doesn't it?",
+                "The baby isn't sleeping well tonight, is she?",
+                "The baby isn't sleeping well tonight, is it?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "The baby isn't sleeping well tonight, is it?",
+            "hint": "The statement is negative, so use the positive tag 'is it?'",
+            "explanation": "A negative statement takes a positive tag. Since 'the baby' is referred to as 'it' here, the tag is 'is it'.",
+            "grammarRule": "Tag Questions: Present Continuous"
+        },
+        {
+            "id": "qf_l104_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We're making good progress on the renovation.",
+            "sentence": "We're making good progress on the renovation.",
+            "options": [
+                "We're making good progress on the renovation, don't we?",
+                "We're making good progress on the renovation, aren't we?",
+                "We're making good progress on the renovation, are we?",
+                "We're making good progress on the renovation, isn't we?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "We're making good progress on the renovation, aren't we?",
+            "hint": "The tag reuses 'be': 'aren't we?'",
+            "explanation": "Since the statement uses 'are' (present continuous), the tag reuses 'be' in its negative form, matching the subject 'we'.",
+            "grammarRule": "Tag Questions: Present Continuous"
+        },
+        {
+            "id": "qf_l105_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has already left for the airport.",
+            "sentence": "She has already left for the airport.",
+            "options": [
+                "She has already left for the airport, has she?",
+                "She has already left for the airport, hasn't she?",
+                "She has already left for the airport, didn't she?",
+                "She has already left for the airport, doesn't she?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She has already left for the airport, hasn't she?",
+            "hint": "The tag reuses 'has': 'hasn't she?'",
+            "explanation": "Present perfect tags reuse 'has/have'. Since the statement is positive, the tag is negative: 'hasn't she'.",
+            "grammarRule": "Tag Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l105_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You haven't tried the new café yet.",
+            "sentence": "You haven't tried the new café yet.",
+            "options": [
+                "You haven't tried the new café yet, haven't you?",
+                "You haven't tried the new café yet, have you?",
+                "You haven't tried the new café yet, did you?",
+                "You haven't tried the new café yet, do you?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "You haven't tried the new café yet, have you?",
+            "hint": "The statement is negative, so the tag should be positive: 'have you?'",
+            "explanation": "A negative present perfect statement takes a positive tag: 'have you', reusing the same auxiliary.",
+            "grammarRule": "Tag Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l105_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The committee has approved the new budget.",
+            "sentence": "The committee has approved the new budget.",
+            "options": [
+                "The committee has approved the new budget, has it?",
+                "The committee has approved the new budget, hasn't it?",
+                "The committee has approved the new budget, didn't it?",
+                "The committee has approved the new budget, haven't it?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The committee has approved the new budget, hasn't it?",
+            "hint": "The tag reuses 'has' in its negative form: 'hasn't it?'",
+            "explanation": "Since the statement uses 'has' and is positive, the tag is negative and reuses the same auxiliary: 'hasn't it'.",
+            "grammarRule": "Tag Questions: Present Perfect"
+        },
+        {
+            "id": "qf_l106_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You can fix this problem easily.",
+            "sentence": "You can fix this problem easily.",
+            "options": [
+                "You can fix this problem easily, can't you?",
+                "You can fix this problem easily, do you?",
+                "You can fix this problem easily, can you?",
+                "You can fix this problem easily, couldn't you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You can fix this problem easily, can't you?",
+            "hint": "The tag reuses the modal 'can' in its negative form.",
+            "explanation": "Modal tags reuse the same modal. Since the statement is positive, the tag is negative: 'can't you'.",
+            "grammarRule": "Tag Questions: Modals"
+        },
+        {
+            "id": "qf_l106_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They won't mind waiting a few extra minutes.",
+            "sentence": "They won't mind waiting a few extra minutes.",
+            "options": [
+                "They won't mind waiting a few extra minutes, won't they?",
+                "They won't mind waiting a few extra minutes, will they?",
+                "They won't mind waiting a few extra minutes, do they?",
+                "They won't mind waiting a few extra minutes, would they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They won't mind waiting a few extra minutes, will they?",
+            "hint": "The statement is negative, so the tag should be positive: 'will they?'",
+            "explanation": "A negative statement with 'won't' takes a positive tag using the same modal: 'will they'.",
+            "grammarRule": "Tag Questions: Modals"
+        },
+        {
+            "id": "qf_l106_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We should leave a bit earlier next time.",
+            "sentence": "We should leave a bit earlier next time.",
+            "options": [
+                "We should leave a bit earlier next time, do we?",
+                "We should leave a bit earlier next time, should we?",
+                "We should leave a bit earlier next time, wouldn't we?",
+                "We should leave a bit earlier next time, shouldn't we?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "We should leave a bit earlier next time, shouldn't we?",
+            "hint": "The tag reuses the modal 'should' in its negative form.",
+            "explanation": "Since the statement is positive, the tag is negative and reuses the same modal: 'shouldn't we'.",
+            "grammarRule": "Tag Questions: Modals"
+        },
+        {
+            "id": "qf_l107_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Close the window before you leave.",
+            "sentence": "Close the window before you leave.",
+            "options": [
+                "Close the window before you leave, do you?",
+                "Close the window before you leave, won't you?",
+                "Close the window before you leave, don't you?",
+                "Close the window before you leave, will you?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Close the window before you leave, will you?",
+            "hint": "Commands typically take the tag 'will you?'",
+            "explanation": "Imperative sentences (commands/requests) commonly take the tag 'will you?', regardless of the missing subject.",
+            "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+        },
+        {
+            "id": "qf_l107_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Let's grab lunch after the meeting.",
+            "sentence": "Let's grab lunch after the meeting.",
+            "options": [
+                "Let's grab lunch after the meeting, will we?",
+                "Let's grab lunch after the meeting, shall we?",
+                "Let's grab lunch after the meeting, don't we?",
+                "Let's grab lunch after the meeting, shan't we?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Let's grab lunch after the meeting, shall we?",
+            "hint": "'Let's' suggestions always take the tag 'shall we?'",
+            "explanation": "Sentences starting with 'Let's' always take the fixed tag 'shall we?', regardless of the verb that follows.",
+            "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+        },
+        {
+            "id": "qf_l107_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Take a seat, please.",
+            "sentence": "Take a seat, please.",
+            "options": [
+                "Take a seat, please, do you?",
+                "Take a seat, please, will you?",
+                "Take a seat, please, won't you?",
+                "Take a seat, please, don't you?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Take a seat, please, will you?",
+            "hint": "Commands typically take the tag 'will you?'",
+            "explanation": "As with other commands, this imperative sentence takes the standard tag 'will you?'",
+            "grammarRule": "Tag Questions: Imperatives & 'Let's'"
+        },
+        {
+            "id": "qf_l108_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There isn't any milk left in the fridge.",
+            "sentence": "There isn't any milk left in the fridge.",
+            "options": [
+                "There isn't any milk left in the fridge, is there?",
+                "There isn't any milk left in the fridge, isn't there?",
+                "There isn't any milk left in the fridge, are there?",
+                "There isn't any milk left in the fridge, does it?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "There isn't any milk left in the fridge, is there?",
+            "hint": "The statement is negative, so use the positive tag 'is there?'",
+            "explanation": "A negative 'there is' statement takes a positive tag: 'is there', keeping 'there' as the tag subject.",
+            "grammarRule": "Tag Questions: There Is / There Are"
+        },
+        {
+            "id": "qf_l108_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There are several typos in this document.",
+            "sentence": "There are several typos in this document.",
+            "options": [
+                "There are several typos in this document, aren't there?",
+                "There are several typos in this document, don't there?",
+                "There are several typos in this document, are there?",
+                "There are several typos in this document, isn't there?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "There are several typos in this document, aren't there?",
+            "hint": "The statement is positive and plural, so use 'aren't there?'",
+            "explanation": "A positive 'there are' statement (plural) takes the negative tag 'aren't there'.",
+            "grammarRule": "Tag Questions: There Is / There Are"
+        },
+        {
+            "id": "qf_l108_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There was a small problem with the order.",
+            "sentence": "There was a small problem with the order.",
+            "options": [
+                "There was a small problem with the order, was there?",
+                "There was a small problem with the order, wasn't it?",
+                "There was a small problem with the order, didn't there?",
+                "There was a small problem with the order, wasn't there?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "There was a small problem with the order, wasn't there?",
+            "hint": "The statement is positive, so use the negative tag 'wasn't there?'",
+            "explanation": "A positive 'there was' statement takes the negative tag 'wasn't there', keeping 'there' as the tag subject.",
+            "grammarRule": "Tag Questions: There Is / There Are"
+        },
+        {
+            "id": "qf_l109_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She never complains about her workload.",
+            "sentence": "She never complains about her workload.",
+            "options": [
+                "She never complains about her workload, doesn't she?",
+                "She never complains about her workload, does she?",
+                "She never complains about her workload, is she?",
+                "She never complains about her workload, did she?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She never complains about her workload, does she?",
+            "hint": "'Never' makes the statement negative in meaning, so use a positive tag.",
+            "explanation": "Words like 'never' act as negatives, so even though there's no 'not', the tag is still positive: 'does she'.",
+            "grammarRule": "Tag Questions: Negative Adverbs"
+        },
+        {
+            "id": "qf_l109_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They rarely eat out during the week.",
+            "sentence": "They rarely eat out during the week.",
+            "options": [
+                "They rarely eat out during the week, don't they?",
+                "They rarely eat out during the week, do they?",
+                "They rarely eat out during the week, are they?",
+                "They rarely eat out during the week, did they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "They rarely eat out during the week, do they?",
+            "hint": "'Rarely' functions as a negative, so the tag should be positive.",
+            "explanation": "'Rarely' has negative meaning, so the tag is positive, not negative: 'do they'.",
+            "grammarRule": "Tag Questions: Negative Adverbs"
+        },
+        {
+            "id": "qf_l109_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He hardly ever calls his old college friends.",
+            "sentence": "He hardly ever calls his old college friends.",
+            "options": [
+                "He hardly ever calls his old college friends, doesn't he?",
+                "He hardly ever calls his old college friends, is he?",
+                "He hardly ever calls his old college friends, does he?",
+                "He hardly ever calls his old college friends, did he?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "He hardly ever calls his old college friends, does he?",
+            "hint": "'Hardly ever' works like a negative, so the tag should be positive.",
+            "explanation": "'Hardly ever' carries negative meaning, so the statement needs a positive tag: 'does he'.",
+            "grammarRule": "Tag Questions: Negative Adverbs"
+        },
+        {
+            "id": "qf_l110_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You haven't seen this movie before.",
+            "sentence": "You haven't seen this movie before.",
+            "options": [
+                "You haven't seen this movie before, haven't you?",
+                "You haven't seen this movie before, did you?",
+                "You haven't seen this movie before, do you?",
+                "You haven't seen this movie before, have you?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "You haven't seen this movie before, have you?",
+            "hint": "The statement is negative, so use the positive tag 'have you?'",
+            "explanation": "A negative present perfect statement takes a positive tag, reusing the same auxiliary: 'have you'.",
+            "grammarRule": "Tag Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l110_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Let's take a short break.",
+            "sentence": "Let's take a short break.",
+            "options": [
+                "Let's take a short break, will we?",
+                "Let's take a short break, shall we?",
+                "Let's take a short break, don't we?",
+                "Let's take a short break, do we?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Let's take a short break, shall we?",
+            "hint": "'Let's' suggestions always take 'shall we?'",
+            "explanation": "As with all 'Let's' suggestions, the fixed tag 'shall we?' is used, regardless of the main verb.",
+            "grammarRule": "Tag Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l110_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There aren't enough chairs for everyone.",
+            "sentence": "There aren't enough chairs for everyone.",
+            "options": [
+                "There aren't enough chairs for everyone, are there?",
+                "There aren't enough chairs for everyone, aren't there?",
+                "There aren't enough chairs for everyone, is there?",
+                "There aren't enough chairs for everyone, don't there?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "There aren't enough chairs for everyone, are there?",
+            "hint": "The statement is negative, so use the positive tag 'are there?'",
+            "explanation": "A negative 'there are' statement takes a positive tag: 'are there', keeping 'there' as the tag subject.",
+            "grammarRule": "Tag Questions: Mixed Review"
+        }
+    ]
 }

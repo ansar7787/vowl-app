@@ -6,7 +6,7 @@
         {
             "id": "LIS_AMBIENTID_L101_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for steady quiet typing and a rephrased question.",
             "explanation": "A court reporter's steady typing and a repeatedly rephrased question are familiar sounds of a formal legal questioning session.",
             "textToSpeak": "A court reporter's keys click in a steady, quiet rhythm as a lawyer rephrases the same question a third different way.",
@@ -22,7 +22,7 @@
         {
             "id": "LIS_AMBIENTID_L101_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a single gavel tap and a rising room.",
             "explanation": "A single gavel tap and a room rising together are the clearest, most recognizable sounds of a formal trial beginning.",
             "textToSpeak": "A gavel taps once, calling the room to order, as everyone rises together at the sound of an official's announcement.",
@@ -38,7 +38,7 @@
         {
             "id": "LIS_AMBIENTID_L101_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a delayed translator's voice through a headset.",
             "explanation": "A translator's voice trailing just behind a speaker through a headset is the clearest sound of a multilingual meeting.",
             "textToSpeak": "A translator's voice comes through a headset a half-second behind the speaker, smoothing a sentence into another language.",
@@ -54,7 +54,7 @@
         {
             "id": "LIS_AMBIENTID_L102_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for polite clinking and a careful, measured greeting.",
             "explanation": "Polite clinking glasses and a careful, formal greeting between diplomats are classic sounds of an official reception.",
             "textToSpeak": "Glasses clink politely as two diplomats exchange formal greetings in careful, measured English before switching to their own language.",
@@ -70,7 +70,7 @@
         {
             "id": "LIS_AMBIENTID_L102_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a whining motor and an adjusted dial.",
             "explanation": "A whining motor being fine-tuned with a small adjustment is a classic sound of testing an early prototype.",
             "textToSpeak": "A small motor whines at increasing speed as an engineer notes a reading, then adjusts a single dial slightly.",
@@ -86,7 +86,7 @@
         {
             "id": "LIS_AMBIENTID_L102_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a flipped contract and a tense, quiet exchange.",
             "explanation": "Two teams reviewing a contract clause by clause and pausing on a disputed point are classic sounds of a high-stakes negotiation.",
             "textToSpeak": "Two teams sit across a long table as a lawyer flips through a thick contract, pausing on a clause that sparks a quiet, tense exchange.",
@@ -102,7 +102,7 @@
         {
             "id": "LIS_AMBIENTID_L103_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a clipped voice and a creeping radar dot.",
             "explanation": "A calm, clipped voice confirming a runway and a blinking radar dot are classic sounds of guiding aircraft safely.",
             "textToSpeak": "A calm, clipped voice repeats a runway number as a blinking dot creeps slowly across a wide radar screen.",
@@ -118,7 +118,7 @@
         {
             "id": "LIS_AMBIENTID_L103_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for scraping chairs and a long opening silence.",
             "explanation": "Chairs settling around a table followed by a long silence before anyone speaks reflects the weight of this kind of private discussion.",
             "textToSpeak": "Chairs scrape as twelve people settle around a table, and a long silence follows before someone finally speaks first.",
@@ -134,7 +134,7 @@
         {
             "id": "LIS_AMBIENTID_L103_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a crisp bell and raised hands in colored jackets.",
             "explanation": "A ringing bell and traders in colored jackets signaling with raised hands are classic, visible sounds of an open trading floor.",
             "textToSpeak": "A bell rings out crisply above a wall of screens as traders in colored jackets raise their hands, signaling orders across the floor.",
@@ -150,7 +150,7 @@
         {
             "id": "LIS_AMBIENTID_L104_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for unrolled paper and a redrawn sketch line.",
             "explanation": "An unrolled drawing and a redrawn sketch line are classic sounds of shaping an early design idea.",
             "textToSpeak": "A large sheet of paper is unrolled across a table as a pencil sketches a rough line, then is quickly erased and redrawn.",
@@ -166,7 +166,7 @@
         {
             "id": "LIS_AMBIENTID_L104_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for microphone feedback and a podium speaker.",
             "explanation": "Brief microphone feedback and a resident speaking at a podium are familiar sounds of local public meetings.",
             "textToSpeak": "A microphone squeals briefly with feedback as a resident steps up to a podium to speak during public comment.",
@@ -182,7 +182,7 @@
         {
             "id": "LIS_AMBIENTID_L104_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for shifting signal lights and a radioed confirmation.",
             "explanation": "Shifting signal lights on a board and a radioed confirmation are classic sounds of coordinating trains from a control room.",
             "textToSpeak": "A wall of small lights shifts from red to green as a dispatcher radios a driver to confirm the next signal is clear.",
@@ -198,7 +198,7 @@
         {
             "id": "LIS_AMBIENTID_L105_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for flickering screens, a shouted price, and an opening bell.",
             "explanation": "Flickering screens of shifting numbers, a shouted price, and a bell marking the market's open are signature sounds of a fast-paced trading floor.",
             "textToSpeak": "Dozens of monitors flicker with shifting numbers as a trader shouts a price into a headset, and a bell somewhere signals the market has opened.",
@@ -214,7 +214,7 @@
         {
             "id": "LIS_AMBIENTID_L105_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a called sonar contact and dim red light.",
             "explanation": "A called sonar contact and dimmed red lighting for a night watch are signature sounds of operating beneath the surface.",
             "textToSpeak": "A sonar operator calls out a faint contact softly as the room dims to a low red light for the night watch.",
@@ -230,7 +230,7 @@
         {
             "id": "LIS_AMBIENTID_L105_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a settling compass and a called heading.",
             "explanation": "A settling compass and a called-out heading are classic sounds of steering a ship on open water.",
             "textToSpeak": "A compass needle settles slowly as a captain calls out a new heading, and a wheel turns smoothly in response.",
@@ -246,7 +246,7 @@
         {
             "id": "LIS_AMBIENTID_L106_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for humming dials and a double-checked reading.",
             "explanation": "A humming wall of dials and a carefully double-checked reading are classic sounds of monitoring a large power facility.",
             "textToSpeak": "A wall of dials and gauges hums steadily as an operator logs a reading, then double-checks it against yesterday's numbers.",
@@ -262,7 +262,7 @@
         {
             "id": "LIS_AMBIENTID_L106_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for roaring cooling fans and scanned blinking lights.",
             "explanation": "Roaring cooling fans and rows of blinking lights being scanned are the unmistakable sounds of a large server room.",
             "textToSpeak": "Rows of cooling fans roar in a steady wall of white noise as a technician walks a narrow aisle, scanning blinking lights.",
@@ -278,7 +278,7 @@
         {
             "id": "LIS_AMBIENTID_L106_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a released balloon and beeping instruments.",
             "explanation": "A released weather balloon and beeping instruments recording data are classic sounds of gathering atmospheric readings.",
             "textToSpeak": "A weather balloon is released with a soft whoosh as instruments beep, recording temperature and pressure as it climbs.",
@@ -294,7 +294,7 @@
         {
             "id": "LIS_AMBIENTID_L107_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for whirring servos and a tested movement.",
             "explanation": "Whirring servos moving into position as code is tested are the clearest sounds of building and debugging a robot.",
             "textToSpeak": "Small servos whir and click into new positions as a line of code is tested, one careful movement at a time.",
@@ -310,7 +310,7 @@
         {
             "id": "LIS_AMBIENTID_L107_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for scrolling logs and a flagged spike.",
             "explanation": "Scrolling logs on a wall of monitors and a flagged suspicious spike are signature sounds of monitoring for digital threats.",
             "textToSpeak": "A wall of monitors glows with scrolling logs as an analyst leans forward suddenly, flagging a suspicious spike in activity.",
@@ -326,7 +326,7 @@
         {
             "id": "LIS_AMBIENTID_L107_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a ringing phone and a traced reroute.",
             "explanation": "A ringing phone and a finger tracing a rerouted path on a map reflect the quick decisions made in this control room.",
             "textToSpeak": "A phone rings twice as a dispatcher traces a finger along a route map, working out how to reroute a delayed service.",
@@ -342,7 +342,7 @@
         {
             "id": "LIS_AMBIENTID_L108_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a passed calculator and an unspoken figure.",
             "explanation": "A silently passed calculator recalculating a sensitive figure reflects the careful tension of negotiating a major deal.",
             "textToSpeak": "A calculator is passed silently down the table as someone recalculates a figure that no one seems willing to say out loud.",
@@ -358,7 +358,7 @@
         {
             "id": "LIS_AMBIENTID_L108_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a raised hand and an uneven vote.",
             "explanation": "An early raised-hand vote with an uneven result is a familiar moment in private group decision-making like this.",
             "textToSpeak": "A hand is raised for an early vote, followed by a quiet, uneven show of hands around the table.",
@@ -374,7 +374,7 @@
         {
             "id": "LIS_AMBIENTID_L108_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a sweeping radar beep and a traced chart.",
             "explanation": "A sweeping radar beep and a finger tracing a route on a chart are familiar sounds of plotting a course.",
             "textToSpeak": "Radar sweeps with a steady, quiet beep as someone checks a chart, tracing a route with one careful finger.",
@@ -390,7 +390,7 @@
         {
             "id": "LIS_AMBIENTID_L109_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a turned model and a debated angle.",
             "explanation": "A turned scale model and a debate about an angle are familiar sounds of refining a building design.",
             "textToSpeak": "A scale model is turned slowly on a table as two designers debate the angle of a proposed rooftop.",
@@ -406,7 +406,7 @@
         {
             "id": "LIS_AMBIENTID_L109_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a scrolling ticker and sudden applause.",
             "explanation": "A scrolling ticker and applause marking a first trading day are familiar ceremonial sounds of this kind of venue.",
             "textToSpeak": "A ticker scrolls endlessly overhead as a sudden wave of applause breaks out, marking a company's first day of public trading.",
@@ -422,7 +422,7 @@
         {
             "id": "LIS_AMBIENTID_L109_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a slow roll call and short replies.",
             "explanation": "A slow roll call answered with short replies is a classic formal opening of a public government meeting.",
             "textToSpeak": "A roll call is read slowly through a list of names as each member responds with a simple, brief reply.",
@@ -438,7 +438,7 @@
         {
             "id": "LIS_AMBIENTID_L110_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for spinning gauges and a quiet printed reading.",
             "explanation": "Spinning wind gauges and a quietly printed reading are familiar sounds of preparing a daily weather forecast.",
             "textToSpeak": "Wind gauges spin rapidly outside as a printer inside quietly produces the latest reading for the morning forecast.",
@@ -454,7 +454,7 @@
         {
             "id": "LIS_AMBIENTID_L110_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for rapid typing, a soft alarm, and a quick briefing.",
             "explanation": "Rapid typing, a soft alarm, and a quick briefing on a possible breach are classic sounds of responding to a security incident.",
             "textToSpeak": "Keys click rapidly as an alarm chimes softly, and a low voice quickly briefs the team on a possible breach.",
@@ -470,7 +470,7 @@
         {
             "id": "LIS_AMBIENTID_L110_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a cold rush of air and a sealed door.",
             "explanation": "A rush of cold air and a heavy sealed door are classic sounds of entering a climate-controlled server facility.",
             "textToSpeak": "A cold gust of air rushes past as a heavy door seals shut behind a technician carrying a replacement drive.",

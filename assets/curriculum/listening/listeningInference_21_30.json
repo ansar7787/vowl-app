@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'turn down' means and why they want it.",
             "explanation": "'Turn that down' = reduce the volume. 'A bit' = slightly. The reason is 'trying to concentrate', which is difficult with loud noise. This is an indirect request: the speaker asks about the noise but wants quiet to focus.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for what has been used up.",
             "explanation": "'Used the last of it' = finished the supply. 'It' refers to coffee, which was mentioned in the question 'Have we got any more coffee?' The speaker is checking if more coffee is available because the current supply is gone.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L21_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the specific time phrase used.",
             "explanation": "'First thing Monday morning' is an idiom meaning the very beginning of Monday (early morning, before other tasks). 'On my desk' specifies where it should be. This is a deadline instruction combining day and time-of-day.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where you ask 'Is this seat taken?'",
             "explanation": "'Is this seat taken?' = is someone sitting here? This question is typically asked on public transport, in cinemas, or other places where seats are limited. You wouldn't typically ask this in a library (silence) or hotel lobby (seats aren't assigned).",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where someone asks about a table and reservations.",
             "explanation": "'Table for two' = a table for two people to eat at. 'Do you have a reservation?' = have you booked in advance? Both questions together strongly suggest a restaurant. Hotels ask about bookings, not tables for dining parties.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L22_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where you 'try on' clothes and there are changing rooms.",
             "explanation": "'Try it on' = put on a piece of clothing to see if it fits. 'Changing rooms' are cubicles in clothing shops for trying on clothes. This combination of vocabulary - trying on, changing rooms - clearly indicates a clothing shop/boutique.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone takes aspirin and lies down.",
             "explanation": "Taking aspirin suggests pain (headache, fever). Lying down after taking medicine suggests he wasn't feeling well. This is inference: two actions together (medicine + lying down) suggest illness. A healthy person wouldn't typically take aspirin and rest.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why you look in the fridge before shopping.",
             "explanation": "The sequence is: check fridge → write shopping list. The logical reason is to see what food is already there and what is needed. If you know what's in the fridge, you can write an accurate shopping list. This is logical cause-and-effect inference.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L23_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone carries an umbrella when it's not raining.",
             "explanation": "Taking an umbrella when it's not raining suggests anticipation of future rain. 'Even though it wasn't raining' sets up the contrast that requires inference - he was prepared for rain despite clear skies. This is forward-planning behaviour.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what happens after you pack a suitcase.",
             "explanation": "Packing a suitcase is a preparation for travel. The next logical step is to travel - go somewhere. 'Just finished packing' uses the present perfect to show a very recently completed action. The suitcase suggests a departure is imminent.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what you do when you can't decide from a menu.",
             "explanation": "Reading the menu three times without deciding suggests he's overwhelmed. Asking the waiter is the most natural next step - waiters know the menu well and can recommend dishes. This is an inference about social behaviour in a restaurant.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L24_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what running shoes and leg stretches prepare you for.",
             "explanation": "Running shoes + leg stretching = preparation for running. These are actions that directly precede a run. 'About to' = on the verge of starting. The combination of equipment (shoes) and preparation (stretching) makes the inference very clear.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the type of seat the speaker always chooses.",
             "explanation": "'Always choose the aisle seat' - stated explicitly. 'Hate feeling trapped' is the reason - a window or middle seat feels enclosed. The aisle seat allows easy access to the corridor. The speaker's preference and reason are both given.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what skipping dessert and having herbal tea suggests.",
             "explanation": "Skipping dessert = choosing not to eat more. Herbal tea = a light, often low-calorie drink. Together, these suggest she's either full or watching what she eats, and doesn't want anything more. Inference from what she didn't choose is as important as what she did.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L25_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the positive preference ('books a villa') and the contrast ('never a hotel').",
             "explanation": "'Books a villa with a pool' = his preference. 'Never a hotel' = explicitly rejected alternative. 'Always/never' are strong frequency words that make preferences clear. A villa with a pool suggests he values space, privacy, and amenities.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what shaking hands typically indicate.",
             "explanation": "Shaking hands is a physical symptom of nervousness or anxiety. Opening exam results is a high-stakes moment. The combination strongly suggests anxiety. Physical symptoms of emotion are valuable clues: shaking = nervous, smiling = happy, frowning = unhappy.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what slamming a door typically communicates.",
             "explanation": "Slamming a door = a forceful, aggressive action typically caused by anger or frustration. In social contexts, door-slamming is culturally understood as a sign of anger. 'On his way out' suggests he was leaving after an argument or upsetting event.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L26_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what these behaviours together suggest.",
             "explanation": "Silence + pushing food around = lack of appetite and emotional distance. These two behaviours together suggest she's preoccupied or unwell, not simply disliking the food (which might cause her to say something) or being excited (which would show energy).",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone comments on tiredness and asks about sleep.",
             "explanation": "Saying 'you look tired' + asking about sleep directly implies the person needs more sleep. The speaker is making an observation (tired appearance) and an implicit suggestion (sleep more). This is indirect advice through observation.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "'It wouldn't hurt to call first' - what action is being suggested?",
             "explanation": "'It wouldn't hurt to' = a gentle, indirect recommendation. 'Call her first' = phone before going. 'Make sure she's in' = verify she's at home. This is advice to check before going - to avoid wasted journeys. The phrasing is polite and non-directive.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L27_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for what action is advised in the conditional.",
             "explanation": "'If I were you, I'd...' is a classic advice structure (second conditional for advice). 'Get it fixed' = arrange a repair. 'Before it gets worse' = urgency - act now, not later. The speaker implies the problem will worsen without action.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Notice the sarcastic tone - does 'fantastic' match the situation?",
             "explanation": "This is sarcasm - 'fantastic' in a complaining tone about something unwanted. 'Another Monday morning meeting' implies there have been many already (repetition = annoyance). When spoken with a sigh or flat tone, 'fantastic' means the opposite of its literal meaning.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen to what 'only' ironically suggests about frequency.",
             "explanation": "'Only the third time this week' - used ironically. 'Only' normally minimises, but here it's sarcastic: being late three times in one week is clearly excessive. The emphasis is on the repetition of lateness, not on it being a small number.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L28_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the hesitation and understated evaluation.",
             "explanation": "'I suppose', 'all right', and 'nothing special' together signal mediocrity. 'All right' = passable but not good. 'Nothing special' = not impressive. 'I suppose' adds hesitation. The speaker is damning with faint praise - technically positive but actually lukewarm.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what 'I'll think about it' typically signals in English.",
             "explanation": "'I'll think about it' is often a polite way of declining without saying 'no' directly. It avoids confrontation while signalling reluctance. In English social norms, a definite 'yes' is stated directly; 'I'll think about it' usually means the answer is leaning towards no.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Notice the pause before 'interesting' - what does that signal?",
             "explanation": "The hesitation (signalled by '...') before 'interesting' indicates the speaker is choosing the word carefully. 'Interesting' used with hesitation is often a polite understatement for something unusual, confusing, or disappointing. A genuinely positive reaction would use 'excellent', 'brilliant', or 'impressive'.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L29_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Analyse the qualified praise in this statement.",
             "explanation": "'Not bad' = acceptable, not great. 'For a first attempt' acknowledges the newness and sets lower expectations. Together: it's a positive-ish assessment given the circumstances, but implicitly suggests improvement is expected. This is a classic backhanded or qualified compliment.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about who gives this type of instruction in real life.",
             "explanation": "Telling someone to tidy their room and setting a curfew (be back by nine) are typical parental instructions to a child. A boss wouldn't tell an employee to tidy their room. A teacher wouldn't set a curfew. This is classic domestic, authoritative parenting language.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Who has the power to give someone a pay rise?",
             "explanation": "Only someone in authority (a manager, employer) can give someone a pay rise. 'We've decided' = a management decision. 'Starting next month' = it will take effect. This is workplace communication from an employer to an employee.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L30_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about when you ask for 'the bill' and from whom.",
             "explanation": "'The bill' = the payment receipt for food and drinks at a restaurant. You ask for the bill from a waiter or waitress at the end of a meal. 'When you have a moment' is polite phrasing showing the speaker doesn't want to interrupt. This is classic restaurant end-of-meal language.",

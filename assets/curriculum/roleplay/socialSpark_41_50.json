@@ -1,582 +1,582 @@
 {
-  "gameType": "socialSpark",
-  "batchIndex": 5,
-  "levels": "41-50",
-  "quests": [
-    {
-      "instruction": "Arrange the words to offer to help with something.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "some",
-        "you",
-        "that",
-        "like",
-        "?",
-        "help",
-        "with",
-        "Would"
-      ],
-      "correctAnswer": "Would you like some help with that ?",
-      "hint": "Once you place 'Would' first, the other 7 words should start falling into place.",
-      "explanation": "'Would you like' is a polite, gentle way to offer help without being pushy.",
-      "id": "ss_l41_q1"
-    },
-    {
-      "instruction": "Order the words to say you'd love to visit.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "visit",
-        "to",
-        "sometime",
-        ".",
-        "love",
-        "soon",
-        "I'd",
-        "them"
-      ],
-      "correctAnswer": "I'd love to visit them sometime soon .",
-      "hint": "This 8-word sentence begins with 'I'd'.",
-      "explanation": "'I'd love to' expresses enthusiasm, stronger than a plain 'I want to'.",
-      "id": "ss_l41_q2"
-    },
-    {
-      "instruction": "Put the words in order to say you'd rather order online.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        ".",
-        "I'd",
-        "online",
-        "rather",
-        "order",
-        "just",
-        "this"
-      ],
-      "correctAnswer": "I'd rather just order this online .",
-      "hint": "The second word is 'rather', right after 'I'd'.",
-      "explanation": "'Just' here means 'simply', making the preference sound more casual.",
-      "id": "ss_l41_q3"
-    },
-    {
-      "instruction": "Arrange the words to suggest eating outside.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "instead",
-        "we",
-        "outside",
-        "Maybe",
-        "sit",
-        "could",
-        "."
-      ],
-      "correctAnswer": "Maybe we could sit outside instead .",
-      "hint": "The sentence ends with 'instead', right before the period.",
-      "explanation": "'Instead' shows this is an alternative to a plan already mentioned.",
-      "id": "ss_l42_q1"
-    },
-    {
-      "instruction": "Order the words to say you don't understand a topic.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "this",
-        "don't",
-        "understand",
-        ".",
-        "yet",
-        "topic",
-        "really",
-        "I"
-      ],
-      "correctAnswer": "I don't really understand this topic yet .",
-      "hint": "This sentence has 8 words -- spot 'I' and 'yet' first, then fill in the middle.",
-      "explanation": "'Yet' shows understanding hasn't happened, but might happen later.",
-      "id": "ss_l42_q2"
-    },
-    {
-      "instruction": "Put the words in order to ask what someone thinks about an idea.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "think",
-        "What",
-        "do",
-        "this",
-        "you",
-        "?",
-        "idea",
-        "about"
-      ],
-      "correctAnswer": "What do you think about this idea ?",
-      "hint": "The first word is 'What', out of 8 words total.",
-      "explanation": "This everyday question invites feedback before moving forward with a plan.",
-      "id": "ss_l42_q3"
-    },
-    {
-      "instruction": "Arrange the words to ask what someone would rather do on a trip.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "rather",
-        "?",
-        ",",
-        "trip",
-        "would",
-        "you",
-        "do",
-        "What",
-        "exactly",
-        "on",
-        "this"
-      ],
-      "correctAnswer": "What would you rather do on this trip , exactly ?",
-      "hint": "This one's 11 words long, ending in 'exactly' -- read the meaning first, then decide what comes first.",
-      "explanation": "'Exactly' at the end invites a specific, thoughtful answer rather than a quick guess.",
-      "id": "ss_l43_q1"
-    },
-    {
-      "instruction": "Order the words to ask which show someone would recommend.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "show",
-        "?",
-        "Which",
-        "would",
-        "first",
-        "you",
-        "watching",
-        "recommend"
-      ],
-      "correctAnswer": "Which show would you recommend watching first ?",
-      "hint": "Start with 'Which'.",
-      "explanation": "'Recommend' is followed by the '-ing' form of the verb, not 'to watch'.",
-      "id": "ss_l43_q2"
-    },
-    {
-      "instruction": "Put the words in order to say you think you need more sleep.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "need",
-        "more",
-        "sleep",
-        ".",
-        "I",
-        "I",
-        "really",
-        "think"
-      ],
-      "correctAnswer": "I think I really need more sleep .",
-      "hint": "This is a 8-word statement ending in 'sleep' -- find the subject first, then the verb.",
-      "explanation": "'Really' adds emphasis to how strongly you feel the need.",
-      "id": "ss_l43_q3"
-    },
-    {
-      "instruction": "Arrange the words to suggest trying a new hobby together.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "we",
-        "try",
-        "Maybe",
-        "should",
-        "together",
-        "pottery",
-        "sometime",
-        "."
-      ],
-      "correctAnswer": "Maybe we should try pottery together sometime .",
-      "hint": "Look at how it starts -- 'Maybe' comes first.",
-      "explanation": "'Sometime' leaves the exact timing open, which fits a casual suggestion.",
-      "id": "ss_l44_q1"
-    },
-    {
-      "instruction": "Order the words to ask for a small favor.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "favor",
-        "you",
-        "me",
-        "do",
-        "a",
-        "?",
-        "small",
-        "Could"
-      ],
-      "correctAnswer": "Could you do me a small favor ?",
-      "hint": "Work backward: 'favor' is the last word before the question mark.",
-      "explanation": "'Could you' softens a request, making it sound more polite than 'Can you'.",
-      "id": "ss_l44_q2"
-    },
-    {
-      "instruction": "Put the words in order to ask if someone wants to come along.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "like",
-        "along",
-        "too",
-        "you",
-        "Would",
-        "?",
-        "come",
-        "to"
-      ],
-      "correctAnswer": "Would you like to come along too ?",
-      "hint": "There are 8 words in total -- start by placing 'Would' first.",
-      "explanation": "'Come along' means to join others who are already going somewhere.",
-      "id": "ss_l44_q3"
-    },
-    {
-      "instruction": "Arrange the words to ask if you can exchange an item.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "size",
-        "different",
-        "a",
-        "?",
-        "Could",
-        "I",
-        "for",
-        "this",
-        "exchange"
-      ],
-      "correctAnswer": "Could I exchange this for a different size ?",
-      "hint": "This 9-word sentence begins with 'Could'.",
-      "explanation": "'Could I' is a polite way to ask for permission to do something.",
-      "id": "ss_l45_q1"
-    },
-    {
-      "instruction": "Order the words to say a dish looks amazing.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "that",
-        "think",
-        "I",
-        "amazing",
-        ".",
-        "looks",
-        "dish"
-      ],
-      "correctAnswer": "I think that dish looks amazing .",
-      "hint": "Once you place 'I' first, the other 6 words should start falling into place.",
-      "explanation": "'Looks' plus an adjective describes an impression based on appearance.",
-      "id": "ss_l45_q2"
-    },
-    {
-      "instruction": "Put the words in order to ask what someone thought of a lecture.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "lecture",
-        "What",
-        "did",
-        "you",
-        "think",
-        "that",
-        "?",
-        "of"
-      ],
-      "correctAnswer": "What did you think of that lecture ?",
-      "hint": "This sentence has 8 words -- spot 'What' and 'lecture' first, then fill in the middle.",
-      "explanation": "'What did you think of' asks for an opinion about something already finished.",
-      "id": "ss_l45_q3"
-    },
-    {
-      "instruction": "Arrange the words to offer to cover someone's shift.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        ".",
-        "could",
-        "shift",
-        "needed",
-        "if",
-        "I",
-        "cover",
-        "your"
-      ],
-      "correctAnswer": "I could cover your shift if needed .",
-      "hint": "The sentence ends with 'needed', right before the period.",
-      "explanation": "'Could' offers a possibility politely, without fully committing yet.",
-      "id": "ss_l46_q1"
-    },
-    {
-      "instruction": "Order the words to offer to plan an itinerary.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "I",
-        "the",
-        "want",
-        "if",
-        "itinerary",
-        ".",
-        "plan",
-        "could",
-        "you"
-      ],
-      "correctAnswer": "I could plan the itinerary if you want .",
-      "hint": "This one's 9 words long, ending in 'want' -- read the meaning first, then decide what comes first.",
-      "explanation": "'If you want' makes the offer feel optional, not forced.",
-      "id": "ss_l46_q2"
-    },
-    {
-      "instruction": "Put the words in order to say you don't really trust social media.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "much",
-        "media",
-        "I",
-        "social",
-        "really",
-        ".",
-        "don't",
-        "trust"
-      ],
-      "correctAnswer": "I don't really trust social media much .",
-      "hint": "Start with 'I'.",
-      "explanation": "'Much' at the end softens the strength of the negative opinion.",
-      "id": "ss_l46_q3"
-    },
-    {
-      "instruction": "Arrange the words to suggest going to bed earlier.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "we",
-        "earlier",
-        "bed",
-        "Maybe",
-        "should",
-        "go",
-        "to",
-        "."
-      ],
-      "correctAnswer": "Maybe we should go to bed earlier .",
-      "hint": "Look at how it starts -- 'Maybe' comes first.",
-      "explanation": "'Earlier' compares this bedtime to your usual one.",
-      "id": "ss_l47_q1"
-    },
-    {
-      "instruction": "Order the words to say you think a book is fascinating.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "book",
-        "sounds",
-        "really",
-        ".",
-        "think",
-        "I",
-        "that",
-        "fascinating"
-      ],
-      "correctAnswer": "I think that book sounds really fascinating .",
-      "hint": "This is a 8-word statement ending in 'fascinating' -- find the subject first, then the verb.",
-      "explanation": "'Sounds' is used here because the opinion is based on hearing about the book, not reading it yet.",
-      "id": "ss_l47_q2"
-    },
-    {
-      "instruction": "Put the words in order to say you'd prefer to stay in.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "in",
-        ".",
-        "I'd",
-        ",",
-        "stay",
-        "tonight",
-        "rather",
-        "actually"
-      ],
-      "correctAnswer": "I'd rather stay in tonight , actually .",
-      "hint": "The first word is 'I'd', out of 8 words total.",
-      "explanation": "'I'd rather' (I would rather) expresses a preference between two options.",
-      "id": "ss_l47_q3"
-    },
-    {
-      "instruction": "Arrange the words to say your parents are doing well.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "doing",
-        "my",
-        "well",
-        "are",
-        ".",
-        "parents",
-        "think",
-        "I"
-      ],
-      "correctAnswer": "I think my parents are doing well .",
-      "hint": "The second word is 'think', right after 'I'.",
-      "explanation": "'I think' softens a statement, making it sound like a personal opinion.",
-      "id": "ss_l48_q1"
-    },
-    {
-      "instruction": "Order the words to say a store doesn't have your size.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        ".",
-        "don't",
-        "have",
-        "size",
-        "I",
-        "think",
-        "my",
-        "they"
-      ],
-      "correctAnswer": "I don't think they have my size .",
-      "hint": "Work backward: 'size' is the last word before the period.",
-      "explanation": "'I don't think' softens the negative statement, sounding less blunt.",
-      "id": "ss_l48_q2"
-    },
-    {
-      "instruction": "Put the words in order to ask if a table by the window is available.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "we",
-        "Could",
-        "table",
-        "the",
-        "window",
-        "?",
-        "get",
-        "possibly",
-        "a",
-        "by"
-      ],
-      "correctAnswer": "Could we possibly get a table by the window ?",
-      "hint": "There are 10 words in total -- start by placing 'Could' first.",
-      "explanation": "'Possibly' adds extra politeness to a request that might be hard to grant.",
-      "id": "ss_l48_q3"
-    },
-    {
-      "instruction": "Arrange the words to offer to help someone study.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "some",
-        "help",
-        "tonight",
-        "?",
-        "Would",
-        "studying",
-        "like",
-        "you"
-      ],
-      "correctAnswer": "Would you like some help studying tonight ?",
-      "hint": "Once you place 'Would' first, the other 7 words should start falling into place.",
-      "explanation": "'Help' is followed by the '-ing' form when naming the activity.",
-      "id": "ss_l49_q1"
-    },
-    {
-      "instruction": "Order the words to ask to reschedule a meeting.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "move",
-        "meeting",
-        "the",
-        "to",
-        "we",
-        "Friday",
-        "Could",
-        "?"
-      ],
-      "correctAnswer": "Could we move the meeting to Friday ?",
-      "hint": "This one's 8 words long, ending in 'Friday' -- read the meaning first, then decide what comes first.",
-      "explanation": "'Move' here means to change the time or date of an event.",
-      "id": "ss_l49_q2"
-    },
-    {
-      "instruction": "Put the words in order to say you'd love to see the mountains.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "someday",
-        "love",
-        "see",
-        "the",
-        "to",
-        "I'd",
-        ".",
-        "mountains"
-      ],
-      "correctAnswer": "I'd love to see the mountains someday .",
-      "hint": "This sentence has 8 words -- spot 'I'd' and 'someday' first, then fill in the middle.",
-      "explanation": "'Someday' expresses a future wish with no fixed date.",
-      "id": "ss_l49_q3"
-    },
-    {
-      "instruction": "Arrange the words to suggest switching to a different phone.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "Maybe",
-        "switch",
-        "should",
-        ".",
-        "you",
-        "to",
-        "newer",
-        "phone",
-        "a"
-      ],
-      "correctAnswer": "Maybe you should switch to a newer phone .",
-      "hint": "Start with 'Maybe'.",
-      "explanation": "'Switch to' is the natural phrase for changing from one device to another.",
-      "id": "ss_l50_q1"
-    },
-    {
-      "instruction": "Order the words to say you don't feel like cooking tonight.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "I",
-        ".",
-        "really",
-        "don't",
-        "like",
-        "feel",
-        "cooking",
-        "tonight"
-      ],
-      "correctAnswer": "I don't really feel like cooking tonight .",
-      "hint": "Look at how it starts -- 'I' comes first.",
-      "explanation": "'Feel like' plus '-ing' is a common way to describe what you're in the mood to do.",
-      "id": "ss_l50_q2"
-    },
-    {
-      "instruction": "Put the words in order to ask what someone prefers doing on weekends.",
-      "subtype": "socialSpark",
-      "interactionType": "reorder",
-      "shuffledWords": [
-        "?",
-        "you",
-        "do",
-        "doing",
-        "weekends",
-        "prefer",
-        "on",
-        "What"
-      ],
-      "correctAnswer": "What do you prefer doing on weekends ?",
-      "hint": "This 8-word sentence begins with 'What'.",
-      "explanation": "'Prefer doing' uses the '-ing' form to talk about a general habit or preference.",
-      "id": "ss_l50_q3"
-    }
-  ]
+    "gameType": "socialSpark",
+    "batchIndex": 5,
+    "levels": "41-50",
+    "quests": [
+        {
+            "instruction": "Arrange the words to offer to help with something.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "some",
+                "you",
+                "that",
+                "like",
+                "?",
+                "help",
+                "with",
+                "Would"
+            ],
+            "correctAnswer": "Would you like some help with that ?",
+            "hint": "Once you place 'Would' first, the other 7 words should start falling into place.",
+            "explanation": "'Would you like' is a polite, gentle way to offer help without being pushy.",
+            "id": "ss_l41_q1"
+        },
+        {
+            "instruction": "Order the words to say you'd love to visit.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "visit",
+                "to",
+                "sometime",
+                ".",
+                "love",
+                "soon",
+                "I'd",
+                "them"
+            ],
+            "correctAnswer": "I'd love to visit them sometime soon .",
+            "hint": "This 8-word sentence begins with 'I'd'.",
+            "explanation": "'I'd love to' expresses enthusiasm, stronger than a plain 'I want to'.",
+            "id": "ss_l41_q2"
+        },
+        {
+            "instruction": "Put the words in order to say you'd rather order online.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                ".",
+                "I'd",
+                "online",
+                "rather",
+                "order",
+                "just",
+                "this"
+            ],
+            "correctAnswer": "I'd rather just order this online .",
+            "hint": "The second word is 'rather', right after 'I'd'.",
+            "explanation": "'Just' here means 'simply', making the preference sound more casual.",
+            "id": "ss_l41_q3"
+        },
+        {
+            "instruction": "Arrange the words to suggest eating outside.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "instead",
+                "we",
+                "outside",
+                "Maybe",
+                "sit",
+                "could",
+                "."
+            ],
+            "correctAnswer": "Maybe we could sit outside instead .",
+            "hint": "The sentence ends with 'instead', right before the period.",
+            "explanation": "'Instead' shows this is an alternative to a plan already mentioned.",
+            "id": "ss_l42_q1"
+        },
+        {
+            "instruction": "Order the words to say you don't understand a topic.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "this",
+                "don't",
+                "understand",
+                ".",
+                "yet",
+                "topic",
+                "really",
+                "I"
+            ],
+            "correctAnswer": "I don't really understand this topic yet .",
+            "hint": "This sentence has 8 words -- spot 'I' and 'yet' first, then fill in the middle.",
+            "explanation": "'Yet' shows understanding hasn't happened, but might happen later.",
+            "id": "ss_l42_q2"
+        },
+        {
+            "instruction": "Put the words in order to ask what someone thinks about an idea.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "think",
+                "What",
+                "do",
+                "this",
+                "you",
+                "?",
+                "idea",
+                "about"
+            ],
+            "correctAnswer": "What do you think about this idea ?",
+            "hint": "The first word is 'What', out of 8 words total.",
+            "explanation": "This everyday question invites feedback before moving forward with a plan.",
+            "id": "ss_l42_q3"
+        },
+        {
+            "instruction": "Arrange the words to ask what someone would rather do on a trip.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "rather",
+                "?",
+                ",",
+                "trip",
+                "would",
+                "you",
+                "do",
+                "What",
+                "exactly",
+                "on",
+                "this"
+            ],
+            "correctAnswer": "What would you rather do on this trip , exactly ?",
+            "hint": "This one's 11 words long, ending in 'exactly' -- read the meaning first, then decide what comes first.",
+            "explanation": "'Exactly' at the end invites a specific, thoughtful answer rather than a quick guess.",
+            "id": "ss_l43_q1"
+        },
+        {
+            "instruction": "Order the words to ask which show someone would recommend.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "show",
+                "?",
+                "Which",
+                "would",
+                "first",
+                "you",
+                "watching",
+                "recommend"
+            ],
+            "correctAnswer": "Which show would you recommend watching first ?",
+            "hint": "Start with 'Which'.",
+            "explanation": "'Recommend' is followed by the '-ing' form of the verb, not 'to watch'.",
+            "id": "ss_l43_q2"
+        },
+        {
+            "instruction": "Put the words in order to say you think you need more sleep.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "need",
+                "more",
+                "sleep",
+                ".",
+                "I",
+                "I",
+                "really",
+                "think"
+            ],
+            "correctAnswer": "I think I really need more sleep .",
+            "hint": "This is a 8-word statement ending in 'sleep' -- find the subject first, then the verb.",
+            "explanation": "'Really' adds emphasis to how strongly you feel the need.",
+            "id": "ss_l43_q3"
+        },
+        {
+            "instruction": "Arrange the words to suggest trying a new hobby together.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "we",
+                "try",
+                "Maybe",
+                "should",
+                "together",
+                "pottery",
+                "sometime",
+                "."
+            ],
+            "correctAnswer": "Maybe we should try pottery together sometime .",
+            "hint": "Look at how it starts -- 'Maybe' comes first.",
+            "explanation": "'Sometime' leaves the exact timing open, which fits a casual suggestion.",
+            "id": "ss_l44_q1"
+        },
+        {
+            "instruction": "Order the words to ask for a small favor.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "favor",
+                "you",
+                "me",
+                "do",
+                "a",
+                "?",
+                "small",
+                "Could"
+            ],
+            "correctAnswer": "Could you do me a small favor ?",
+            "hint": "Work backward: 'favor' is the last word before the question mark.",
+            "explanation": "'Could you' softens a request, making it sound more polite than 'Can you'.",
+            "id": "ss_l44_q2"
+        },
+        {
+            "instruction": "Put the words in order to ask if someone wants to come along.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "like",
+                "along",
+                "too",
+                "you",
+                "Would",
+                "?",
+                "come",
+                "to"
+            ],
+            "correctAnswer": "Would you like to come along too ?",
+            "hint": "There are 8 words in total -- start by placing 'Would' first.",
+            "explanation": "'Come along' means to join others who are already going somewhere.",
+            "id": "ss_l44_q3"
+        },
+        {
+            "instruction": "Arrange the words to ask if you can exchange an item.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "size",
+                "different",
+                "a",
+                "?",
+                "Could",
+                "I",
+                "for",
+                "this",
+                "exchange"
+            ],
+            "correctAnswer": "Could I exchange this for a different size ?",
+            "hint": "This 9-word sentence begins with 'Could'.",
+            "explanation": "'Could I' is a polite way to ask for permission to do something.",
+            "id": "ss_l45_q1"
+        },
+        {
+            "instruction": "Order the words to say a dish looks amazing.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "that",
+                "think",
+                "I",
+                "amazing",
+                ".",
+                "looks",
+                "dish"
+            ],
+            "correctAnswer": "I think that dish looks amazing .",
+            "hint": "Once you place 'I' first, the other 6 words should start falling into place.",
+            "explanation": "'Looks' plus an adjective describes an impression based on appearance.",
+            "id": "ss_l45_q2"
+        },
+        {
+            "instruction": "Put the words in order to ask what someone thought of a lecture.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "lecture",
+                "What",
+                "did",
+                "you",
+                "think",
+                "that",
+                "?",
+                "of"
+            ],
+            "correctAnswer": "What did you think of that lecture ?",
+            "hint": "This sentence has 8 words -- spot 'What' and 'lecture' first, then fill in the middle.",
+            "explanation": "'What did you think of' asks for an opinion about something already finished.",
+            "id": "ss_l45_q3"
+        },
+        {
+            "instruction": "Arrange the words to offer to cover someone's shift.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                ".",
+                "could",
+                "shift",
+                "needed",
+                "if",
+                "I",
+                "cover",
+                "your"
+            ],
+            "correctAnswer": "I could cover your shift if needed .",
+            "hint": "The sentence ends with 'needed', right before the period.",
+            "explanation": "'Could' offers a possibility politely, without fully committing yet.",
+            "id": "ss_l46_q1"
+        },
+        {
+            "instruction": "Order the words to offer to plan an itinerary.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "I",
+                "the",
+                "want",
+                "if",
+                "itinerary",
+                ".",
+                "plan",
+                "could",
+                "you"
+            ],
+            "correctAnswer": "I could plan the itinerary if you want .",
+            "hint": "This one's 9 words long, ending in 'want' -- read the meaning first, then decide what comes first.",
+            "explanation": "'If you want' makes the offer feel optional, not forced.",
+            "id": "ss_l46_q2"
+        },
+        {
+            "instruction": "Put the words in order to say you don't really trust social media.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "much",
+                "media",
+                "I",
+                "social",
+                "really",
+                ".",
+                "don't",
+                "trust"
+            ],
+            "correctAnswer": "I don't really trust social media much .",
+            "hint": "Start with 'I'.",
+            "explanation": "'Much' at the end softens the strength of the negative opinion.",
+            "id": "ss_l46_q3"
+        },
+        {
+            "instruction": "Arrange the words to suggest going to bed earlier.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "we",
+                "earlier",
+                "bed",
+                "Maybe",
+                "should",
+                "go",
+                "to",
+                "."
+            ],
+            "correctAnswer": "Maybe we should go to bed earlier .",
+            "hint": "Look at how it starts -- 'Maybe' comes first.",
+            "explanation": "'Earlier' compares this bedtime to your usual one.",
+            "id": "ss_l47_q1"
+        },
+        {
+            "instruction": "Order the words to say you think a book is fascinating.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "book",
+                "sounds",
+                "really",
+                ".",
+                "think",
+                "I",
+                "that",
+                "fascinating"
+            ],
+            "correctAnswer": "I think that book sounds really fascinating .",
+            "hint": "This is a 8-word statement ending in 'fascinating' -- find the subject first, then the verb.",
+            "explanation": "'Sounds' is used here because the opinion is based on hearing about the book, not reading it yet.",
+            "id": "ss_l47_q2"
+        },
+        {
+            "instruction": "Put the words in order to say you'd prefer to stay in.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "in",
+                ".",
+                "I'd",
+                ",",
+                "stay",
+                "tonight",
+                "rather",
+                "actually"
+            ],
+            "correctAnswer": "I'd rather stay in tonight , actually .",
+            "hint": "The first word is 'I'd', out of 8 words total.",
+            "explanation": "'I'd rather' (I would rather) expresses a preference between two options.",
+            "id": "ss_l47_q3"
+        },
+        {
+            "instruction": "Arrange the words to say your parents are doing well.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "doing",
+                "my",
+                "well",
+                "are",
+                ".",
+                "parents",
+                "think",
+                "I"
+            ],
+            "correctAnswer": "I think my parents are doing well .",
+            "hint": "The second word is 'think', right after 'I'.",
+            "explanation": "'I think' softens a statement, making it sound like a personal opinion.",
+            "id": "ss_l48_q1"
+        },
+        {
+            "instruction": "Order the words to say a store doesn't have your size.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                ".",
+                "don't",
+                "have",
+                "size",
+                "I",
+                "think",
+                "my",
+                "they"
+            ],
+            "correctAnswer": "I don't think they have my size .",
+            "hint": "Work backward: 'size' is the last word before the period.",
+            "explanation": "'I don't think' softens the negative statement, sounding less blunt.",
+            "id": "ss_l48_q2"
+        },
+        {
+            "instruction": "Put the words in order to ask if a table by the window is available.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "we",
+                "Could",
+                "table",
+                "the",
+                "window",
+                "?",
+                "get",
+                "possibly",
+                "a",
+                "by"
+            ],
+            "correctAnswer": "Could we possibly get a table by the window ?",
+            "hint": "There are 10 words in total -- start by placing 'Could' first.",
+            "explanation": "'Possibly' adds extra politeness to a request that might be hard to grant.",
+            "id": "ss_l48_q3"
+        },
+        {
+            "instruction": "Arrange the words to offer to help someone study.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "some",
+                "help",
+                "tonight",
+                "?",
+                "Would",
+                "studying",
+                "like",
+                "you"
+            ],
+            "correctAnswer": "Would you like some help studying tonight ?",
+            "hint": "Once you place 'Would' first, the other 7 words should start falling into place.",
+            "explanation": "'Help' is followed by the '-ing' form when naming the activity.",
+            "id": "ss_l49_q1"
+        },
+        {
+            "instruction": "Order the words to ask to reschedule a meeting.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "move",
+                "meeting",
+                "the",
+                "to",
+                "we",
+                "Friday",
+                "Could",
+                "?"
+            ],
+            "correctAnswer": "Could we move the meeting to Friday ?",
+            "hint": "This one's 8 words long, ending in 'Friday' -- read the meaning first, then decide what comes first.",
+            "explanation": "'Move' here means to change the time or date of an event.",
+            "id": "ss_l49_q2"
+        },
+        {
+            "instruction": "Put the words in order to say you'd love to see the mountains.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "someday",
+                "love",
+                "see",
+                "the",
+                "to",
+                "I'd",
+                ".",
+                "mountains"
+            ],
+            "correctAnswer": "I'd love to see the mountains someday .",
+            "hint": "This sentence has 8 words -- spot 'I'd' and 'someday' first, then fill in the middle.",
+            "explanation": "'Someday' expresses a future wish with no fixed date.",
+            "id": "ss_l49_q3"
+        },
+        {
+            "instruction": "Arrange the words to suggest switching to a different phone.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "Maybe",
+                "switch",
+                "should",
+                ".",
+                "you",
+                "to",
+                "newer",
+                "phone",
+                "a"
+            ],
+            "correctAnswer": "Maybe you should switch to a newer phone .",
+            "hint": "Start with 'Maybe'.",
+            "explanation": "'Switch to' is the natural phrase for changing from one device to another.",
+            "id": "ss_l50_q1"
+        },
+        {
+            "instruction": "Order the words to say you don't feel like cooking tonight.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "I",
+                ".",
+                "really",
+                "don't",
+                "like",
+                "feel",
+                "cooking",
+                "tonight"
+            ],
+            "correctAnswer": "I don't really feel like cooking tonight .",
+            "hint": "Look at how it starts -- 'I' comes first.",
+            "explanation": "'Feel like' plus '-ing' is a common way to describe what you're in the mood to do.",
+            "id": "ss_l50_q2"
+        },
+        {
+            "instruction": "Put the words in order to ask what someone prefers doing on weekends.",
+            "subtype": "socialSpark",
+            "interactionType": "dialogue",
+            "shuffledWords": [
+                "?",
+                "you",
+                "do",
+                "doing",
+                "weekends",
+                "prefer",
+                "on",
+                "What"
+            ],
+            "correctAnswer": "What do you prefer doing on weekends ?",
+            "hint": "This 8-word sentence begins with 'What'.",
+            "explanation": "'Prefer doing' uses the '-ing' form to talk about a general habit or preference.",
+            "id": "ss_l50_q3"
+        }
+    ]
 }

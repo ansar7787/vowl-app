@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 15,
-  "levels": "141-150",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A sudden, unforecast snowstorm has stranded over two hundred drivers overnight on a rural highway. Input code!",
-      "correctAnswer": "SEND SNOWPLOWS ALONG THE ROUTE",
-      "hint": "Say what heavy equipment needs to clear a path first.",
-      "explanation": "Snowplows must clear a path before any rescue vehicle can reach the stranded drivers at all.",
-      "id": "eh_l141_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Drivers near the front of the queue are running low on fuel to keep their heaters running. Input code!",
-      "correctAnswer": "DELIVER FUEL AND BLANKETS",
-      "hint": "Say the two supplies drivers need most right now.",
-      "explanation": "Fuel keeps heaters running while blankets add warmth, together preventing hypothermia until the road can be cleared.",
-      "id": "eh_l141_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The road is cleared and all two hundred drivers have safely continued their journeys. Input code!",
-      "correctAnswer": "STAND DOWN THE RESPONSE",
-      "hint": "Say what happens to the emergency operation now.",
-      "explanation": "Standing the response down once every driver is confirmed safe closes out a long overnight operation.",
-      "id": "eh_l141_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Construction workers have unearthed an unexploded World War Two bomb on a city building site. Input code!",
-      "correctAnswer": "EVACUATE A HALF-MILE RADIUS",
-      "hint": "Say the size of the safety zone needed around it.",
-      "explanation": "A half-mile radius gives enough distance to protect residents if the specialist team needs to detonate it safely.",
-      "id": "eh_l142_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The bomb disposal team needs the exact area kept completely clear while they work. Input code!",
-      "correctAnswer": "MAINTAIN A STRICT CORDON",
-      "hint": "Say what boundary must be enforced around the site.",
-      "explanation": "A strict cordon stops anyone from re-entering the area while specialists carefully assess and disarm the device.",
-      "id": "eh_l142_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The device has been safely removed and transported for controlled disposal elsewhere. Input code!",
-      "correctAnswer": "LIFT THE EVACUATION ZONE",
-      "hint": "Say what can happen once the bomb is safely removed.",
-      "explanation": "Lifting the zone once the device is fully gone lets thousands of residents return home the same day.",
-      "id": "eh_l142_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A gas explosion has damaged three adjoining buildings on a city block, with reports of people trapped. Input code!",
-      "correctAnswer": "SEND MULTIPLE RESCUE TEAMS",
-      "hint": "Say what's needed given three separate buildings are affected.",
-      "explanation": "Sending a team to each affected building means search efforts happen everywhere at once, not one building at a time.",
-      "id": "eh_l143_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Gas is still leaking somewhere in the block, and crews cannot locate the exact source. Input code!",
-      "correctAnswer": "SHUT OFF THE BLOCK'S SUPPLY",
-      "hint": "Say the wider action needed until the exact source is found.",
-      "explanation": "Cutting supply to the whole block removes the risk of a second explosion while the leak is traced.",
-      "id": "eh_l143_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "All residents have been accounted for and the gas supply has been safely isolated. Input code!",
-      "correctAnswer": "BEGIN THE STRUCTURAL ASSESSMENT",
-      "hint": "Say what process should start on the damaged buildings.",
-      "explanation": "An assessment tells engineers which buildings are safe to re-enter and which need further work.",
-      "id": "eh_l143_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large religious festival with an estimated three hundred thousand attendees reports dangerous crowd density near the main shrine. Input code!",
-      "correctAnswer": "IMPLEMENT ONE-WAY CROWD FLOW",
-      "hint": "Say the crowd management technique that prevents people colliding.",
-      "explanation": "A one-way flow stops people moving in opposite directions from colliding, which is what usually causes a crowd crush.",
-      "id": "eh_l144_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Several attendees have fainted in the heat and dense crowd near the shrine entrance. Input code!",
-      "correctAnswer": "OPEN A FIRST AID TENT",
-      "hint": "Say what facility should be set up nearby.",
-      "explanation": "A dedicated tent nearby means affected attendees can be treated quickly without being carried far through the crowd.",
-      "id": "eh_l144_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Crowd density has eased as the peak arrival period passes into the evening. Input code!",
-      "correctAnswer": "RETURN TO NORMAL MONITORING",
-      "hint": "Say what level of oversight is now appropriate.",
-      "explanation": "Returning to normal monitoring once the peak has passed frees extra staff while still watching for any change.",
-      "id": "eh_l144_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A wildfire burning across dry hill country has split into three separate fronts threatening two rural towns. Input code!",
-      "correctAnswer": "ASSIGN CREWS TO EACH FRONT",
-      "hint": "Say how firefighting resources should be divided.",
-      "explanation": "Dividing crews across all three fronts prevents any single one from growing unchecked while the others are fought.",
-      "id": "eh_l145_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "One front is advancing faster than expected toward the smaller of the two towns. Input code!",
-      "correctAnswer": "EVACUATE THE SMALLER TOWN",
-      "hint": "Say which town needs to leave first, and why.",
-      "explanation": "Evacuating the town facing the faster-moving front first gives residents there the most possible time to leave safely.",
-      "id": "eh_l145_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Overnight rain has slowed all three fronts, and firefighters report the fire is now contained. Input code!",
-      "correctAnswer": "DOWNGRADE TO A WATCH",
-      "hint": "Say what level of alert now fits the improved conditions.",
-      "explanation": "Downgrading to a watch reflects the real, improved risk while still keeping residents alert to any change.",
-      "id": "eh_l145_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A ferry with two hundred passengers reports taking on water after striking a submerged object. Input code!",
-      "correctAnswer": "SEND THE COAST GUARD IMMEDIATELY",
-      "hint": "Ask for the service that responds to emergencies at sea.",
-      "explanation": "The coast guard can reach a taking-on-water vessel fastest and coordinate a full passenger rescue if needed.",
-      "id": "eh_l146_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The captain reports pumps are managing the water and the ferry can reach port under its own power. Input code!",
-      "correctAnswer": "ESCORT THE FERRY TO PORT",
-      "hint": "Say what support vessels should provide during the journey.",
-      "explanation": "An escort stays close in case the situation worsens, while letting the ferry make its own way to safety.",
-      "id": "eh_l146_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The ferry has docked safely and engineers confirm the hull damage was minor. Input code!",
-      "correctAnswer": "CONFIRM ALL PASSENGERS SAFE",
-      "hint": "Say what should be confirmed to close out the call.",
-      "explanation": "A final passenger count confirms the incident is fully resolved before crews stand down.",
-      "id": "eh_l146_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "An elderly man with dementia has been missing from his care home for six hours as temperatures drop overnight. Input code!",
-      "correctAnswer": "COORDINATE A COMMUNITY SEARCH",
-      "hint": "Say what kind of wide search should now begin.",
-      "explanation": "A coordinated search brings in enough people to cover the wide area he may have wandered into in six hours.",
-      "id": "eh_l147_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Search teams need to know his last known direction to focus their efforts efficiently. Input code!",
-      "correctAnswer": "REVIEW NEARBY SECURITY FOOTAGE",
-      "hint": "Say what evidence can help narrow down the search area.",
-      "explanation": "Footage from nearby cameras can show which direction he walked, letting the search focus where it matters most.",
-      "id": "eh_l147_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "He is found safe and warm at a bus shelter a mile from the care home. Input code!",
-      "correctAnswer": "SEND AN AMBULANCE FOR CHECKS",
-      "hint": "Say what should happen even though he appears unharmed.",
-      "explanation": "A check-up confirms he wasn't affected by the cold overnight, even though he appears fine on the surface.",
-      "id": "eh_l147_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A barge has struck the support pillar of a major highway bridge, and engineers fear structural damage. Input code!",
-      "correctAnswer": "CLOSE THE BRIDGE IMMEDIATELY",
-      "hint": "Say what must happen to the bridge right away.",
-      "explanation": "Closing the bridge immediately protects every driver on it until the true extent of the damage is known.",
-      "id": "eh_l148_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Thousands of commuters now need an alternative route while the bridge remains closed. Input code!",
-      "correctAnswer": "OPEN AN ALTERNATE ROUTE",
-      "hint": "Say what should be provided for stranded commuters.",
-      "explanation": "A clearly signed alternate route keeps traffic moving through the city while the main bridge is assessed.",
-      "id": "eh_l148_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers complete a full assessment and confirm the pillar can safely support traffic again. Input code!",
-      "correctAnswer": "REOPEN THE BRIDGE",
-      "hint": "Say what can happen once the bridge is confirmed safe.",
-      "explanation": "Reopening only after full engineering confirmation ensures commuters return to a bridge that's genuinely sound.",
-      "id": "eh_l148_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A severe flu outbreak has filled every hospital in the region to capacity within the same week. Input code!",
-      "correctAnswer": "ACTIVATE THE REGIONAL SURGE PLAN",
-      "hint": "Say the pre-prepared plan hospitals use for exactly this.",
-      "explanation": "A surge plan coordinates beds, staff, and supplies across every hospital in the region at once, rather than each acting alone.",
-      "id": "eh_l149_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "One smaller hospital has more spare capacity than the others and can take extra patients. Input code!",
-      "correctAnswer": "REDIRECT PATIENTS TO IT",
-      "hint": "Say what should happen given the spare capacity found.",
-      "explanation": "Redirecting patients to the hospital with spare capacity balances the load across the whole region fairly.",
-      "id": "eh_l149_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "New flu cases have started to fall and all regional hospitals report manageable numbers again. Input code!",
-      "correctAnswer": "STAND DOWN THE SURGE PLAN",
-      "hint": "Say what should happen to the emergency plan now.",
-      "explanation": "Standing the plan down once numbers are manageable returns hospitals to their normal way of working.",
-      "id": "eh_l149_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A temporary stage at an outdoor festival has partially collapsed under high winds during a performance. Input code!",
-      "correctAnswer": "CLEAR THE AREA IMMEDIATELY",
-      "hint": "Say what should happen to people near the stage.",
-      "explanation": "Clearing the area protects both performers and crowd from any further part of the structure coming down.",
-      "id": "eh_l150_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Structural engineers need to check whether the rest of the scaffolding is safe before anyone approaches. Input code!",
-      "correctAnswer": "SEND A STRUCTURAL ENGINEER",
-      "hint": "Ask for the specialist trained to judge this.",
-      "explanation": "Only a structural engineer can properly judge whether the remaining scaffolding is safe to work near.",
-      "id": "eh_l150_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Two crew members with minor injuries have been treated, and no one else was hurt. Input code!",
-      "correctAnswer": "CALL FOR FIRST AID STAFF",
-      "hint": "Ask for staff trained to treat minor injuries.",
-      "explanation": "On-site first aid staff can treat minor injuries quickly without needing a full ambulance response.",
-      "id": "eh_l150_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 15,
+    "levels": "141-150",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A sudden, unforecast snowstorm has stranded over two hundred drivers overnight on a rural highway. Input code!",
+            "correctAnswer": "SEND SNOWPLOWS ALONG THE ROUTE",
+            "hint": "Say what heavy equipment needs to clear a path first.",
+            "explanation": "Snowplows must clear a path before any rescue vehicle can reach the stranded drivers at all.",
+            "id": "eh_l141_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Drivers near the front of the queue are running low on fuel to keep their heaters running. Input code!",
+            "correctAnswer": "DELIVER FUEL AND BLANKETS",
+            "hint": "Say the two supplies drivers need most right now.",
+            "explanation": "Fuel keeps heaters running while blankets add warmth, together preventing hypothermia until the road can be cleared.",
+            "id": "eh_l141_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The road is cleared and all two hundred drivers have safely continued their journeys. Input code!",
+            "correctAnswer": "STAND DOWN THE RESPONSE",
+            "hint": "Say what happens to the emergency operation now.",
+            "explanation": "Standing the response down once every driver is confirmed safe closes out a long overnight operation.",
+            "id": "eh_l141_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Construction workers have unearthed an unexploded World War Two bomb on a city building site. Input code!",
+            "correctAnswer": "EVACUATE A HALF-MILE RADIUS",
+            "hint": "Say the size of the safety zone needed around it.",
+            "explanation": "A half-mile radius gives enough distance to protect residents if the specialist team needs to detonate it safely.",
+            "id": "eh_l142_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The bomb disposal team needs the exact area kept completely clear while they work. Input code!",
+            "correctAnswer": "MAINTAIN A STRICT CORDON",
+            "hint": "Say what boundary must be enforced around the site.",
+            "explanation": "A strict cordon stops anyone from re-entering the area while specialists carefully assess and disarm the device.",
+            "id": "eh_l142_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The device has been safely removed and transported for controlled disposal elsewhere. Input code!",
+            "correctAnswer": "LIFT THE EVACUATION ZONE",
+            "hint": "Say what can happen once the bomb is safely removed.",
+            "explanation": "Lifting the zone once the device is fully gone lets thousands of residents return home the same day.",
+            "id": "eh_l142_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A gas explosion has damaged three adjoining buildings on a city block, with reports of people trapped. Input code!",
+            "correctAnswer": "SEND MULTIPLE RESCUE TEAMS",
+            "hint": "Say what's needed given three separate buildings are affected.",
+            "explanation": "Sending a team to each affected building means search efforts happen everywhere at once, not one building at a time.",
+            "id": "eh_l143_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Gas is still leaking somewhere in the block, and crews cannot locate the exact source. Input code!",
+            "correctAnswer": "SHUT OFF THE BLOCK'S SUPPLY",
+            "hint": "Say the wider action needed until the exact source is found.",
+            "explanation": "Cutting supply to the whole block removes the risk of a second explosion while the leak is traced.",
+            "id": "eh_l143_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "All residents have been accounted for and the gas supply has been safely isolated. Input code!",
+            "correctAnswer": "BEGIN THE STRUCTURAL ASSESSMENT",
+            "hint": "Say what process should start on the damaged buildings.",
+            "explanation": "An assessment tells engineers which buildings are safe to re-enter and which need further work.",
+            "id": "eh_l143_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large religious festival with an estimated three hundred thousand attendees reports dangerous crowd density near the main shrine. Input code!",
+            "correctAnswer": "IMPLEMENT ONE-WAY CROWD FLOW",
+            "hint": "Say the crowd management technique that prevents people colliding.",
+            "explanation": "A one-way flow stops people moving in opposite directions from colliding, which is what usually causes a crowd crush.",
+            "id": "eh_l144_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Several attendees have fainted in the heat and dense crowd near the shrine entrance. Input code!",
+            "correctAnswer": "OPEN A FIRST AID TENT",
+            "hint": "Say what facility should be set up nearby.",
+            "explanation": "A dedicated tent nearby means affected attendees can be treated quickly without being carried far through the crowd.",
+            "id": "eh_l144_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Crowd density has eased as the peak arrival period passes into the evening. Input code!",
+            "correctAnswer": "RETURN TO NORMAL MONITORING",
+            "hint": "Say what level of oversight is now appropriate.",
+            "explanation": "Returning to normal monitoring once the peak has passed frees extra staff while still watching for any change.",
+            "id": "eh_l144_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A wildfire burning across dry hill country has split into three separate fronts threatening two rural towns. Input code!",
+            "correctAnswer": "ASSIGN CREWS TO EACH FRONT",
+            "hint": "Say how firefighting resources should be divided.",
+            "explanation": "Dividing crews across all three fronts prevents any single one from growing unchecked while the others are fought.",
+            "id": "eh_l145_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "One front is advancing faster than expected toward the smaller of the two towns. Input code!",
+            "correctAnswer": "EVACUATE THE SMALLER TOWN",
+            "hint": "Say which town needs to leave first, and why.",
+            "explanation": "Evacuating the town facing the faster-moving front first gives residents there the most possible time to leave safely.",
+            "id": "eh_l145_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Overnight rain has slowed all three fronts, and firefighters report the fire is now contained. Input code!",
+            "correctAnswer": "DOWNGRADE TO A WATCH",
+            "hint": "Say what level of alert now fits the improved conditions.",
+            "explanation": "Downgrading to a watch reflects the real, improved risk while still keeping residents alert to any change.",
+            "id": "eh_l145_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A ferry with two hundred passengers reports taking on water after striking a submerged object. Input code!",
+            "correctAnswer": "SEND THE COAST GUARD IMMEDIATELY",
+            "hint": "Ask for the service that responds to emergencies at sea.",
+            "explanation": "The coast guard can reach a taking-on-water vessel fastest and coordinate a full passenger rescue if needed.",
+            "id": "eh_l146_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The captain reports pumps are managing the water and the ferry can reach port under its own power. Input code!",
+            "correctAnswer": "ESCORT THE FERRY TO PORT",
+            "hint": "Say what support vessels should provide during the journey.",
+            "explanation": "An escort stays close in case the situation worsens, while letting the ferry make its own way to safety.",
+            "id": "eh_l146_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The ferry has docked safely and engineers confirm the hull damage was minor. Input code!",
+            "correctAnswer": "CONFIRM ALL PASSENGERS SAFE",
+            "hint": "Say what should be confirmed to close out the call.",
+            "explanation": "A final passenger count confirms the incident is fully resolved before crews stand down.",
+            "id": "eh_l146_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "An elderly man with dementia has been missing from his care home for six hours as temperatures drop overnight. Input code!",
+            "correctAnswer": "COORDINATE A COMMUNITY SEARCH",
+            "hint": "Say what kind of wide search should now begin.",
+            "explanation": "A coordinated search brings in enough people to cover the wide area he may have wandered into in six hours.",
+            "id": "eh_l147_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Search teams need to know his last known direction to focus their efforts efficiently. Input code!",
+            "correctAnswer": "REVIEW NEARBY SECURITY FOOTAGE",
+            "hint": "Say what evidence can help narrow down the search area.",
+            "explanation": "Footage from nearby cameras can show which direction he walked, letting the search focus where it matters most.",
+            "id": "eh_l147_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "He is found safe and warm at a bus shelter a mile from the care home. Input code!",
+            "correctAnswer": "SEND AN AMBULANCE FOR CHECKS",
+            "hint": "Say what should happen even though he appears unharmed.",
+            "explanation": "A check-up confirms he wasn't affected by the cold overnight, even though he appears fine on the surface.",
+            "id": "eh_l147_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A barge has struck the support pillar of a major highway bridge, and engineers fear structural damage. Input code!",
+            "correctAnswer": "CLOSE THE BRIDGE IMMEDIATELY",
+            "hint": "Say what must happen to the bridge right away.",
+            "explanation": "Closing the bridge immediately protects every driver on it until the true extent of the damage is known.",
+            "id": "eh_l148_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Thousands of commuters now need an alternative route while the bridge remains closed. Input code!",
+            "correctAnswer": "OPEN AN ALTERNATE ROUTE",
+            "hint": "Say what should be provided for stranded commuters.",
+            "explanation": "A clearly signed alternate route keeps traffic moving through the city while the main bridge is assessed.",
+            "id": "eh_l148_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers complete a full assessment and confirm the pillar can safely support traffic again. Input code!",
+            "correctAnswer": "REOPEN THE BRIDGE",
+            "hint": "Say what can happen once the bridge is confirmed safe.",
+            "explanation": "Reopening only after full engineering confirmation ensures commuters return to a bridge that's genuinely sound.",
+            "id": "eh_l148_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A severe flu outbreak has filled every hospital in the region to capacity within the same week. Input code!",
+            "correctAnswer": "ACTIVATE THE REGIONAL SURGE PLAN",
+            "hint": "Say the pre-prepared plan hospitals use for exactly this.",
+            "explanation": "A surge plan coordinates beds, staff, and supplies across every hospital in the region at once, rather than each acting alone.",
+            "id": "eh_l149_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "One smaller hospital has more spare capacity than the others and can take extra patients. Input code!",
+            "correctAnswer": "REDIRECT PATIENTS TO IT",
+            "hint": "Say what should happen given the spare capacity found.",
+            "explanation": "Redirecting patients to the hospital with spare capacity balances the load across the whole region fairly.",
+            "id": "eh_l149_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "New flu cases have started to fall and all regional hospitals report manageable numbers again. Input code!",
+            "correctAnswer": "STAND DOWN THE SURGE PLAN",
+            "hint": "Say what should happen to the emergency plan now.",
+            "explanation": "Standing the plan down once numbers are manageable returns hospitals to their normal way of working.",
+            "id": "eh_l149_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A temporary stage at an outdoor festival has partially collapsed under high winds during a performance. Input code!",
+            "correctAnswer": "CLEAR THE AREA IMMEDIATELY",
+            "hint": "Say what should happen to people near the stage.",
+            "explanation": "Clearing the area protects both performers and crowd from any further part of the structure coming down.",
+            "id": "eh_l150_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Structural engineers need to check whether the rest of the scaffolding is safe before anyone approaches. Input code!",
+            "correctAnswer": "SEND A STRUCTURAL ENGINEER",
+            "hint": "Ask for the specialist trained to judge this.",
+            "explanation": "Only a structural engineer can properly judge whether the remaining scaffolding is safe to work near.",
+            "id": "eh_l150_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Two crew members with minor injuries have been treated, and no one else was hurt. Input code!",
+            "correctAnswer": "CALL FOR FIRST AID STAFF",
+            "hint": "Ask for staff trained to treat minor injuries.",
+            "explanation": "On-site first aid staff can treat minor injuries quickly without needing a full ambulance response.",
+            "id": "eh_l150_q3"
+        }
+    ]
 }

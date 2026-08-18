@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 17,
-  "levels": "161-170",
-  "quests": [
-    {
-      "id": "qf_l161_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why was the shipment delayed at customs?",
-      "sentence": "Why was the shipment delayed at customs?",
-      "options": [
-        "I was wondering if you could tell me why was the shipment delayed at customs?",
-        "I was wondering if you could tell me why the shipment was delayed at customs?",
-        "I was wondering if you could tell me why the shipment delayed was at customs?",
-        "I was wondering if you could tell me that why the shipment was delayed at customs?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "I was wondering if you could tell me why the shipment was delayed at customs?",
-      "hint": "Keep statement word order inside the embedded clause: 'the shipment was delayed'.",
-      "explanation": "Even in this longer, more formal frame, the embedded clause keeps statement word order: 'why the shipment was delayed', not 'why was the shipment'.",
-      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
-    },
-    {
-      "id": "qf_l161_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much will the renovation ultimately cost?",
-      "sentence": "How much will the renovation ultimately cost?",
-      "options": [
-        "I was wondering if you could tell me how much will the renovation ultimately cost?",
-        "I was wondering if you could tell me how much the renovation cost will ultimately?",
-        "I was wondering if you could tell me that how much the renovation will ultimately cost?",
-        "I was wondering if you could tell me how much the renovation will ultimately cost?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "I was wondering if you could tell me how much the renovation will ultimately cost?",
-      "hint": "Move 'will' back after the subject, keeping statement word order.",
-      "explanation": "The embedded clause uses statement word order: 'the renovation will ultimately cost', not 'will the renovation cost'.",
-      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
-    },
-    {
-      "id": "qf_l161_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Who will be representing the company at the conference?",
-      "sentence": "Who will be representing the company at the conference?",
-      "options": [
-        "I was wondering if you could tell me who's will be representing the company at the conference?",
-        "I was wondering if you could tell me who will be representing the company at the conference?",
-        "I was wondering if you could tell me will who be representing the company at the conference?",
-        "I was wondering if you could tell me who will representing be the company at the conference?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "I was wondering if you could tell me who will be representing the company at the conference?",
-      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who will be representing'.",
-      "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
-    },
-    {
-      "id": "qf_l162_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why has the delivery been delayed so many times?",
-      "sentence": "Why has the delivery been delayed so many times?",
-      "options": [
-        "Might I ask why the delivery has been delayed so many times?",
-        "Might I ask why has the delivery been delayed so many times?",
-        "Might I ask why the delivery been has delayed so many times?",
-        "Might I ask that why the delivery has been delayed so many times?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Might I ask why the delivery has been delayed so many times?",
-      "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
-      "explanation": "This formal embedded question keeps statement word order: 'the delivery has been delayed', not 'has the delivery been'.",
-      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
-    },
-    {
-      "id": "qf_l162_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What time does the board meeting officially begin?",
-      "sentence": "What time does the board meeting officially begin?",
-      "options": [
-        "Might I ask what time does the board meeting officially begin?",
-        "Might I ask what time the board meeting officially begin?",
-        "Might I ask that what time does the board meeting officially begin?",
-        "Might I ask what time the board meeting officially begins?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Might I ask what time the board meeting officially begins?",
-      "hint": "No 'does' is needed - the verb shows agreement with -s by itself.",
-      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'the meeting officially begins'.",
-      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
-    },
-    {
-      "id": "qf_l162_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How were these figures originally calculated?",
-      "sentence": "How were these figures originally calculated?",
-      "options": [
-        "Might I ask how were these figures originally calculated?",
-        "Might I ask how these figures originally were calculated?",
-        "Might I ask how these figures were originally calculated?",
-        "Might I ask that how were these figures originally calculated?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Might I ask how these figures were originally calculated?",
-      "hint": "Move 'were' back after the subject, keeping 'calculated' unchanged.",
-      "explanation": "The embedded clause uses statement word order: 'these figures were calculated', not 'were these figures calculated'.",
-      "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
-    },
-    {
-      "id": "qf_l163_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "When will the final decision be announced?",
-      "sentence": "When will the final decision be announced?",
-      "options": [
-        "Would it be possible to find out when will the final decision be announced?",
-        "Would it be possible to find out when the final decision be will announced?",
-        "Would it be possible to find out that when the final decision will be announced?",
-        "Would it be possible to find out when the final decision will be announced?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would it be possible to find out when the final decision will be announced?",
-      "hint": "Move 'will' back after the subject, keeping 'be announced' together.",
-      "explanation": "The embedded clause keeps statement word order: 'the decision will be announced', not 'will the decision be'.",
-      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
-    },
-    {
-      "id": "qf_l163_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the board reject the initial proposal?",
-      "sentence": "Why did the board reject the initial proposal?",
-      "options": [
-        "Would it be possible to find out why did the board reject the initial proposal?",
-        "Would it be possible to find out why the board did reject the initial proposal?",
-        "Would it be possible to find out that why the board rejected the initial proposal?",
-        "Would it be possible to find out why the board rejected the initial proposal?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would it be possible to find out why the board rejected the initial proposal?",
-      "hint": "'Did' disappears in the embedded clause, so the verb shows the past tense on its own.",
-      "explanation": "Embedded questions drop 'did': 'why the board rejected', with statement word order throughout.",
-      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
-    },
-    {
-      "id": "qf_l163_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much revenue has the new product generated?",
-      "sentence": "How much revenue has the new product generated?",
-      "options": [
-        "Would it be possible to find out how much revenue the new product has generated?",
-        "Would it be possible to find out how much revenue has the new product generated?",
-        "Would it be possible to find out how much revenue the new product generated has?",
-        "Would it be possible to find out that how much revenue has the new product generated?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would it be possible to find out how much revenue the new product has generated?",
-      "hint": "Move 'has' back after the subject, keeping 'generated' unchanged.",
-      "explanation": "The embedded clause uses statement word order: 'the product has generated', not 'has the product generated'.",
-      "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
-    },
-    {
-      "id": "qf_l164_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the meeting end early even though the agenda wasn't finished?",
-      "sentence": "Why did the meeting end early even though the agenda wasn't finished?",
-      "options": [
-        "Do you have any idea why did the meeting end early even though the agenda wasn't finished?",
-        "Do you have any idea why the meeting did end early even though the agenda wasn't finished?",
-        "Do you have any idea that why the meeting ended early even though the agenda wasn't finished?",
-        "Do you have any idea why the meeting ended early even though the agenda wasn't finished?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you have any idea why the meeting ended early even though the agenda wasn't finished?",
-      "hint": "Drop 'did', and let the verb carry the past tense - the 'even though' clause stays attached at the end.",
-      "explanation": "Embedded questions drop 'did': 'why the meeting ended early', while the subordinate clause 'even though...' stays attached exactly as before.",
-      "grammarRule": "Multi-Clause Embedded Questions"
-    },
-    {
-      "id": "qf_l164_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What should we do if the flight gets canceled?",
-      "sentence": "What should we do if the flight gets canceled?",
-      "options": [
-        "Could you advise me what should we do if the flight gets canceled?",
-        "Could you advise me what we do should if the flight gets canceled?",
-        "Could you advise me what we should do if the flight gets canceled?",
-        "Could you advise me that what should we do if the flight gets canceled?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could you advise me what we should do if the flight gets canceled?",
-      "hint": "Move 'should' back after the subject - the 'if' clause stays attached at the end.",
-      "explanation": "Embedded questions use statement word order: 'we should do', while 'if the flight gets canceled' stays attached exactly as before.",
-      "grammarRule": "Multi-Clause Embedded Questions"
-    },
-    {
-      "id": "qf_l164_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How did the team recover after losing their star player?",
-      "sentence": "How did the team recover after losing their star player?",
-      "options": [
-        "Do you know how did the team recover after losing their star player?",
-        "Do you know how the team did recover after losing their star player?",
-        "Do you know how the team recovered after losing their star player?",
-        "Do you know that how the team recovered after losing their star player?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know how the team recovered after losing their star player?",
-      "hint": "Drop 'did', and let the verb carry the past tense - the 'after' phrase stays attached at the end.",
-      "explanation": "Embedded questions drop 'did': 'how the team recovered', while 'after losing their star player' stays attached exactly as before.",
-      "grammarRule": "Multi-Clause Embedded Questions"
-    },
-    {
-      "id": "qf_l165_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why hasn't the vendor responded even though we sent three emails?",
-      "sentence": "Why hasn't the vendor responded even though we sent three emails?",
-      "options": [
-        "Can you explain why hasn't the vendor responded even though we sent three emails?",
-        "Can you explain why the vendor hasn't responded even though we sent three emails?",
-        "Can you explain why the vendor responded hasn't even though we sent three emails?",
-        "Can you explain that why the vendor hasn't responded even though we sent three emails?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Can you explain why the vendor hasn't responded even though we sent three emails?",
-      "hint": "Move 'hasn't' back after the subject, keeping the 'even though' clause attached.",
-      "explanation": "The embedded clause keeps statement word order: 'the vendor hasn't responded', while 'even though we sent three emails' stays attached at the end.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
-    },
-    {
-      "id": "qf_l165_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What happened after the power went out during the presentation?",
-      "sentence": "What happened after the power went out during the presentation?",
-      "options": [
-        "Do you know what did happen after the power went out during the presentation?",
-        "Do you know what happened did after the power went out during the presentation?",
-        "Do you know what happened after the power went out during the presentation?",
-        "Do you know that what happened after the power went out during the presentation?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know what happened after the power went out during the presentation?",
-      "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what happened', with the 'after' clause unchanged.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
-    },
-    {
-      "id": "qf_l165_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much does the repair cost including labor and parts?",
-      "sentence": "How much does the repair cost including labor and parts?",
-      "options": [
-        "Could you tell me how much does the repair cost including labor and parts?",
-        "Could you tell me how much the repair cost does including labor and parts?",
-        "Could you tell me how much the repair costs including labor and parts?",
-        "Could you tell me that how much does the repair cost including labor and parts?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could you tell me how much the repair costs including labor and parts?",
-      "hint": "Drop 'does', and let the verb take its -s again - the 'including' phrase stays attached.",
-      "explanation": "Embedded questions drop 'does': 'the repair costs', while 'including labor and parts' remains attached exactly as before.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
-    },
-    {
-      "id": "qf_l166_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Which department handles international shipping requests?",
-      "sentence": "Which department handles international shipping requests?",
-      "options": [
-        "Do you know offhand which department does handle international shipping requests?",
-        "Do you know offhand which department handle international shipping requests?",
-        "Do you know offhand that which department handles international shipping requests?",
-        "Do you know offhand which department handles international shipping requests?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you know offhand which department handles international shipping requests?",
-      "hint": "Since 'which department' is the subject here, the word order doesn't change.",
-      "explanation": "Because 'which department' is already the subject, the embedded form keeps the same word order: 'which department handles'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Frames"
-    },
-    {
-      "id": "qf_l166_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why does this clause override the earlier agreement?",
-      "sentence": "Why does this clause override the earlier agreement?",
-      "options": [
-        "Could you possibly clarify why does this clause override the earlier agreement?",
-        "Could you possibly clarify why this clause overrides the earlier agreement?",
-        "Could you possibly clarify why this clause override the earlier agreement?",
-        "Could you possibly clarify that why this clause overrides the earlier agreement?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you possibly clarify why this clause overrides the earlier agreement?",
-      "hint": "Take out 'does' inside the clause, and let the verb take its -s again.",
-      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this clause overrides'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Frames"
-    },
-    {
-      "id": "qf_l166_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How long has this regulation been in effect?",
-      "sentence": "How long has this regulation been in effect?",
-      "options": [
-        "Could you possibly clarify how long this regulation has been in effect?",
-        "Could you possibly clarify how long has this regulation been in effect?",
-        "Could you possibly clarify how long this regulation been has in effect?",
-        "Could you possibly clarify that how long has this regulation been in effect?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could you possibly clarify how long this regulation has been in effect?",
-      "hint": "Move 'has' back after the subject, keeping 'been in effect' together.",
-      "explanation": "The embedded clause uses statement word order: 'this regulation has been in effect', not 'has this regulation been'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Frames"
-    },
-    {
-      "id": "qf_l167_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has the shareholder vote been finalized?",
-      "sentence": "Has the shareholder vote been finalized?",
-      "options": [
-        "Could you confirm whether has the shareholder vote been finalized?",
-        "Could you confirm whether the shareholder vote has been finalized?",
-        "Could you confirm the shareholder vote whether has been finalized?",
-        "Could you confirm that has the shareholder vote been finalized?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you confirm whether the shareholder vote has been finalized?",
-      "hint": "Use 'whether', and move 'has' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the vote has been finalized'.",
-      "grammarRule": "Formal Embedded Yes/No Questions"
-    },
-    {
-      "id": "qf_l167_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Does this clause apply retroactively?",
-      "sentence": "Does this clause apply retroactively?",
-      "options": [
-        "Might I ask whether does this clause apply retroactively?",
-        "Might I ask this clause whether applies retroactively?",
-        "Might I ask that does this clause apply retroactively?",
-        "Might I ask whether this clause applies retroactively?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Might I ask whether this clause applies retroactively?",
-      "hint": "Use 'whether', drop 'does', and let the verb take its -s again.",
-      "explanation": "'Whether' connects the embedded question, and 'does' disappears while the verb takes its normal form: 'this clause applies'.",
-      "grammarRule": "Formal Embedded Yes/No Questions"
-    },
-    {
-      "id": "qf_l167_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the merger require regulatory approval?",
-      "sentence": "Will the merger require regulatory approval?",
-      "options": [
-        "Would it be possible to find out whether will the merger require regulatory approval?",
-        "Would it be possible to find out the merger whether will require regulatory approval?",
-        "Would it be possible to find out that will the merger require regulatory approval?",
-        "Would it be possible to find out whether the merger will require regulatory approval?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would it be possible to find out whether the merger will require regulatory approval?",
-      "hint": "Use 'whether', and move 'will' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the merger will require'.",
-      "grammarRule": "Formal Embedded Yes/No Questions"
-    },
-    {
-      "id": "qf_l168_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the negotiations collapse right before the deadline?",
-      "sentence": "Why did the negotiations collapse right before the deadline?",
-      "options": [
-        "Do you have any idea why did the negotiations collapse right before the deadline?",
-        "Do you have any idea why the negotiations did collapse right before the deadline?",
-        "Do you have any idea why the negotiations collapsed right before the deadline?",
-        "Do you have any idea that why the negotiations collapsed right before the deadline?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you have any idea why the negotiations collapsed right before the deadline?",
-      "hint": "Drop 'did', and let the verb carry the past tense - the 'before' phrase stays attached.",
-      "explanation": "Embedded questions drop 'did': 'why the negotiations collapsed', while 'right before the deadline' remains attached exactly as before.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
-    },
-    {
-      "id": "qf_l168_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What will happen to the staff if the merger goes through?",
-      "sentence": "What will happen to the staff if the merger goes through?",
-      "options": [
-        "Could you tell me what happen will to the staff if the merger goes through?",
-        "Could you tell me what does will happen to the staff if the merger goes through?",
-        "Could you tell me that what will happen to the staff if the merger goes through?",
-        "Could you tell me what will happen to the staff if the merger goes through?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could you tell me what will happen to the staff if the merger goes through?",
-      "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what will happen', with the 'if' clause unchanged.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
-    },
-    {
-      "id": "qf_l168_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much has the company invested since the expansion began?",
-      "sentence": "How much has the company invested since the expansion began?",
-      "options": [
-        "Do you know how much the company has invested since the expansion began?",
-        "Do you know how much has the company invested since the expansion began?",
-        "Do you know how much the company invested has since the expansion began?",
-        "Do you know that how much has the company invested since the expansion began?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you know how much the company has invested since the expansion began?",
-      "hint": "Move 'has' back after the subject, keeping 'invested' unchanged - the 'since' clause stays attached.",
-      "explanation": "The embedded clause uses statement word order: 'the company has invested', while 'since the expansion began' remains attached at the end.",
-      "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
-    },
-    {
-      "id": "qf_l169_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why was the shipment rerouted without any explanation?",
-      "sentence": "Why was the shipment rerouted without any explanation?",
-      "options": [
-        "Might I ask why was the shipment rerouted without any explanation?",
-        "Might I ask why the shipment rerouted was without any explanation?",
-        "Might I ask why the shipment was rerouted without any explanation?",
-        "Might I ask that why the shipment was rerouted without any explanation?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Might I ask why the shipment was rerouted without any explanation?",
-      "hint": "Move 'was' back after the subject, keeping 'rerouted' unchanged.",
-      "explanation": "The embedded clause keeps statement word order: 'the shipment was rerouted', not 'was the shipment rerouted'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l169_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Has the audit uncovered any discrepancies so far?",
-      "sentence": "Has the audit uncovered any discrepancies so far?",
-      "options": [
-        "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
-        "Would it be possible to find out whether has the audit uncovered any discrepancies so far?",
-        "Would it be possible to find out the audit whether has uncovered any discrepancies so far?",
-        "Would it be possible to find out that has the audit uncovered any discrepancies so far?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
-      "hint": "Use 'whether', and move 'has' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the audit has uncovered'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l169_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Who authorized this unusual change in procedure?",
-      "sentence": "Who authorized this unusual change in procedure?",
-      "options": [
-        "Do you happen to know who authorized this unusual change in procedure?",
-        "Do you happen to know who did authorize this unusual change in procedure?",
-        "Do you happen to know who authorize did this unusual change in procedure?",
-        "Do you happen to know that who authorized this unusual change in procedure?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you happen to know who authorized this unusual change in procedure?",
-      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'who' is already the subject, the embedded form keeps the same word order: 'who authorized'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l170_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the client cancel the contract so abruptly?",
-      "sentence": "Why did the client cancel the contract so abruptly?",
-      "options": [
-        "Could you possibly clarify why the client canceled the contract so abruptly?",
-        "Could you possibly clarify why did the client cancel the contract so abruptly?",
-        "Could you possibly clarify why the client did cancel the contract so abruptly?",
-        "Could you possibly clarify that why the client canceled the contract so abruptly?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could you possibly clarify why the client canceled the contract so abruptly?",
-      "hint": "Remove 'did' entirely, letting the main verb carry the past tense on its own.",
-      "explanation": "Embedded questions drop 'did': 'why the client canceled', with statement word order throughout.",
-      "grammarRule": "Formal Embedded Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l170_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the updated policy apply to existing customers?",
-      "sentence": "Will the updated policy apply to existing customers?",
-      "options": [
-        "Do you know whether will the updated policy apply to existing customers?",
-        "Do you know whether the updated policy will apply to existing customers?",
-        "Do you know the updated policy whether will apply to existing customers?",
-        "Do you know that will the updated policy apply to existing customers?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you know whether the updated policy will apply to existing customers?",
-      "hint": "Use 'whether', and move 'will' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the policy will apply'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l170_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much progress has the team made since the last review?",
-      "sentence": "How much progress has the team made since the last review?",
-      "options": [
-        "I was wondering if you could tell me how much progress the team has made since the last review?",
-        "I was wondering if you could tell me how much progress has the team made since the last review?",
-        "I was wondering if you could tell me how much progress the team made has since the last review?",
-        "I was wondering if you could tell me that how much progress has the team made since the last review?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "I was wondering if you could tell me how much progress the team has made since the last review?",
-      "hint": "Move 'has' back after the subject, keeping 'made' unchanged.",
-      "explanation": "The embedded clause uses statement word order: 'the team has made', not 'has the team made'.",
-      "grammarRule": "Formal Embedded Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 17,
+    "levels": "161-170",
+    "quests": [
+        {
+            "id": "qf_l161_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why was the shipment delayed at customs?",
+            "sentence": "Why was the shipment delayed at customs?",
+            "options": [
+                "I was wondering if you could tell me why was the shipment delayed at customs?",
+                "I was wondering if you could tell me why the shipment was delayed at customs?",
+                "I was wondering if you could tell me why the shipment delayed was at customs?",
+                "I was wondering if you could tell me that why the shipment was delayed at customs?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "I was wondering if you could tell me why the shipment was delayed at customs?",
+            "hint": "Keep statement word order inside the embedded clause: 'the shipment was delayed'.",
+            "explanation": "Even in this longer, more formal frame, the embedded clause keeps statement word order: 'why the shipment was delayed', not 'why was the shipment'.",
+            "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+        },
+        {
+            "id": "qf_l161_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much will the renovation ultimately cost?",
+            "sentence": "How much will the renovation ultimately cost?",
+            "options": [
+                "I was wondering if you could tell me how much will the renovation ultimately cost?",
+                "I was wondering if you could tell me how much the renovation cost will ultimately?",
+                "I was wondering if you could tell me that how much the renovation will ultimately cost?",
+                "I was wondering if you could tell me how much the renovation will ultimately cost?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "I was wondering if you could tell me how much the renovation will ultimately cost?",
+            "hint": "Move 'will' back after the subject, keeping statement word order.",
+            "explanation": "The embedded clause uses statement word order: 'the renovation will ultimately cost', not 'will the renovation cost'.",
+            "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+        },
+        {
+            "id": "qf_l161_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Who will be representing the company at the conference?",
+            "sentence": "Who will be representing the company at the conference?",
+            "options": [
+                "I was wondering if you could tell me who's will be representing the company at the conference?",
+                "I was wondering if you could tell me who will be representing the company at the conference?",
+                "I was wondering if you could tell me will who be representing the company at the conference?",
+                "I was wondering if you could tell me who will representing be the company at the conference?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "I was wondering if you could tell me who will be representing the company at the conference?",
+            "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who will be representing'.",
+            "grammarRule": "Formal Embedded Questions: 'I Was Wondering If You Could Tell Me...'"
+        },
+        {
+            "id": "qf_l162_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why has the delivery been delayed so many times?",
+            "sentence": "Why has the delivery been delayed so many times?",
+            "options": [
+                "Might I ask why the delivery has been delayed so many times?",
+                "Might I ask why has the delivery been delayed so many times?",
+                "Might I ask why the delivery been has delayed so many times?",
+                "Might I ask that why the delivery has been delayed so many times?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Might I ask why the delivery has been delayed so many times?",
+            "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
+            "explanation": "This formal embedded question keeps statement word order: 'the delivery has been delayed', not 'has the delivery been'.",
+            "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+        },
+        {
+            "id": "qf_l162_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What time does the board meeting officially begin?",
+            "sentence": "What time does the board meeting officially begin?",
+            "options": [
+                "Might I ask what time does the board meeting officially begin?",
+                "Might I ask what time the board meeting officially begin?",
+                "Might I ask that what time does the board meeting officially begin?",
+                "Might I ask what time the board meeting officially begins?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Might I ask what time the board meeting officially begins?",
+            "hint": "No 'does' is needed - the verb shows agreement with -s by itself.",
+            "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'the meeting officially begins'.",
+            "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+        },
+        {
+            "id": "qf_l162_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How were these figures originally calculated?",
+            "sentence": "How were these figures originally calculated?",
+            "options": [
+                "Might I ask how were these figures originally calculated?",
+                "Might I ask how these figures originally were calculated?",
+                "Might I ask how these figures were originally calculated?",
+                "Might I ask that how were these figures originally calculated?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Might I ask how these figures were originally calculated?",
+            "hint": "Move 'were' back after the subject, keeping 'calculated' unchanged.",
+            "explanation": "The embedded clause uses statement word order: 'these figures were calculated', not 'were these figures calculated'.",
+            "grammarRule": "Formal Embedded Questions: 'Might I Ask...?'"
+        },
+        {
+            "id": "qf_l163_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "When will the final decision be announced?",
+            "sentence": "When will the final decision be announced?",
+            "options": [
+                "Would it be possible to find out when will the final decision be announced?",
+                "Would it be possible to find out when the final decision be will announced?",
+                "Would it be possible to find out that when the final decision will be announced?",
+                "Would it be possible to find out when the final decision will be announced?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would it be possible to find out when the final decision will be announced?",
+            "hint": "Move 'will' back after the subject, keeping 'be announced' together.",
+            "explanation": "The embedded clause keeps statement word order: 'the decision will be announced', not 'will the decision be'.",
+            "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+        },
+        {
+            "id": "qf_l163_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the board reject the initial proposal?",
+            "sentence": "Why did the board reject the initial proposal?",
+            "options": [
+                "Would it be possible to find out why did the board reject the initial proposal?",
+                "Would it be possible to find out why the board did reject the initial proposal?",
+                "Would it be possible to find out that why the board rejected the initial proposal?",
+                "Would it be possible to find out why the board rejected the initial proposal?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would it be possible to find out why the board rejected the initial proposal?",
+            "hint": "'Did' disappears in the embedded clause, so the verb shows the past tense on its own.",
+            "explanation": "Embedded questions drop 'did': 'why the board rejected', with statement word order throughout.",
+            "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+        },
+        {
+            "id": "qf_l163_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much revenue has the new product generated?",
+            "sentence": "How much revenue has the new product generated?",
+            "options": [
+                "Would it be possible to find out how much revenue the new product has generated?",
+                "Would it be possible to find out how much revenue has the new product generated?",
+                "Would it be possible to find out how much revenue the new product generated has?",
+                "Would it be possible to find out that how much revenue has the new product generated?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would it be possible to find out how much revenue the new product has generated?",
+            "hint": "Move 'has' back after the subject, keeping 'generated' unchanged.",
+            "explanation": "The embedded clause uses statement word order: 'the product has generated', not 'has the product generated'.",
+            "grammarRule": "Formal Embedded Questions: 'Would It Be Possible To Find Out...?'"
+        },
+        {
+            "id": "qf_l164_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the meeting end early even though the agenda wasn't finished?",
+            "sentence": "Why did the meeting end early even though the agenda wasn't finished?",
+            "options": [
+                "Do you have any idea why did the meeting end early even though the agenda wasn't finished?",
+                "Do you have any idea why the meeting did end early even though the agenda wasn't finished?",
+                "Do you have any idea that why the meeting ended early even though the agenda wasn't finished?",
+                "Do you have any idea why the meeting ended early even though the agenda wasn't finished?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you have any idea why the meeting ended early even though the agenda wasn't finished?",
+            "hint": "Drop 'did', and let the verb carry the past tense - the 'even though' clause stays attached at the end.",
+            "explanation": "Embedded questions drop 'did': 'why the meeting ended early', while the subordinate clause 'even though...' stays attached exactly as before.",
+            "grammarRule": "Multi-Clause Embedded Questions"
+        },
+        {
+            "id": "qf_l164_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What should we do if the flight gets canceled?",
+            "sentence": "What should we do if the flight gets canceled?",
+            "options": [
+                "Could you advise me what should we do if the flight gets canceled?",
+                "Could you advise me what we do should if the flight gets canceled?",
+                "Could you advise me what we should do if the flight gets canceled?",
+                "Could you advise me that what should we do if the flight gets canceled?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could you advise me what we should do if the flight gets canceled?",
+            "hint": "Move 'should' back after the subject - the 'if' clause stays attached at the end.",
+            "explanation": "Embedded questions use statement word order: 'we should do', while 'if the flight gets canceled' stays attached exactly as before.",
+            "grammarRule": "Multi-Clause Embedded Questions"
+        },
+        {
+            "id": "qf_l164_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How did the team recover after losing their star player?",
+            "sentence": "How did the team recover after losing their star player?",
+            "options": [
+                "Do you know how did the team recover after losing their star player?",
+                "Do you know how the team did recover after losing their star player?",
+                "Do you know how the team recovered after losing their star player?",
+                "Do you know that how the team recovered after losing their star player?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know how the team recovered after losing their star player?",
+            "hint": "Drop 'did', and let the verb carry the past tense - the 'after' phrase stays attached at the end.",
+            "explanation": "Embedded questions drop 'did': 'how the team recovered', while 'after losing their star player' stays attached exactly as before.",
+            "grammarRule": "Multi-Clause Embedded Questions"
+        },
+        {
+            "id": "qf_l165_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why hasn't the vendor responded even though we sent three emails?",
+            "sentence": "Why hasn't the vendor responded even though we sent three emails?",
+            "options": [
+                "Can you explain why hasn't the vendor responded even though we sent three emails?",
+                "Can you explain why the vendor hasn't responded even though we sent three emails?",
+                "Can you explain why the vendor responded hasn't even though we sent three emails?",
+                "Can you explain that why the vendor hasn't responded even though we sent three emails?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Can you explain why the vendor hasn't responded even though we sent three emails?",
+            "hint": "Move 'hasn't' back after the subject, keeping the 'even though' clause attached.",
+            "explanation": "The embedded clause keeps statement word order: 'the vendor hasn't responded', while 'even though we sent three emails' stays attached at the end.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+        },
+        {
+            "id": "qf_l165_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What happened after the power went out during the presentation?",
+            "sentence": "What happened after the power went out during the presentation?",
+            "options": [
+                "Do you know what did happen after the power went out during the presentation?",
+                "Do you know what happened did after the power went out during the presentation?",
+                "Do you know what happened after the power went out during the presentation?",
+                "Do you know that what happened after the power went out during the presentation?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know what happened after the power went out during the presentation?",
+            "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what happened', with the 'after' clause unchanged.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+        },
+        {
+            "id": "qf_l165_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much does the repair cost including labor and parts?",
+            "sentence": "How much does the repair cost including labor and parts?",
+            "options": [
+                "Could you tell me how much does the repair cost including labor and parts?",
+                "Could you tell me how much the repair cost does including labor and parts?",
+                "Could you tell me how much the repair costs including labor and parts?",
+                "Could you tell me that how much does the repair cost including labor and parts?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could you tell me how much the repair costs including labor and parts?",
+            "hint": "Drop 'does', and let the verb take its -s again - the 'including' phrase stays attached.",
+            "explanation": "Embedded questions drop 'does': 'the repair costs', while 'including labor and parts' remains attached exactly as before.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reason Clauses"
+        },
+        {
+            "id": "qf_l166_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Which department handles international shipping requests?",
+            "sentence": "Which department handles international shipping requests?",
+            "options": [
+                "Do you know offhand which department does handle international shipping requests?",
+                "Do you know offhand which department handle international shipping requests?",
+                "Do you know offhand that which department handles international shipping requests?",
+                "Do you know offhand which department handles international shipping requests?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you know offhand which department handles international shipping requests?",
+            "hint": "Since 'which department' is the subject here, the word order doesn't change.",
+            "explanation": "Because 'which department' is already the subject, the embedded form keeps the same word order: 'which department handles'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Frames"
+        },
+        {
+            "id": "qf_l166_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why does this clause override the earlier agreement?",
+            "sentence": "Why does this clause override the earlier agreement?",
+            "options": [
+                "Could you possibly clarify why does this clause override the earlier agreement?",
+                "Could you possibly clarify why this clause overrides the earlier agreement?",
+                "Could you possibly clarify why this clause override the earlier agreement?",
+                "Could you possibly clarify that why this clause overrides the earlier agreement?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you possibly clarify why this clause overrides the earlier agreement?",
+            "hint": "Take out 'does' inside the clause, and let the verb take its -s again.",
+            "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this clause overrides'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Frames"
+        },
+        {
+            "id": "qf_l166_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How long has this regulation been in effect?",
+            "sentence": "How long has this regulation been in effect?",
+            "options": [
+                "Could you possibly clarify how long this regulation has been in effect?",
+                "Could you possibly clarify how long has this regulation been in effect?",
+                "Could you possibly clarify how long this regulation been has in effect?",
+                "Could you possibly clarify that how long has this regulation been in effect?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could you possibly clarify how long this regulation has been in effect?",
+            "hint": "Move 'has' back after the subject, keeping 'been in effect' together.",
+            "explanation": "The embedded clause uses statement word order: 'this regulation has been in effect', not 'has this regulation been'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Frames"
+        },
+        {
+            "id": "qf_l167_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has the shareholder vote been finalized?",
+            "sentence": "Has the shareholder vote been finalized?",
+            "options": [
+                "Could you confirm whether has the shareholder vote been finalized?",
+                "Could you confirm whether the shareholder vote has been finalized?",
+                "Could you confirm the shareholder vote whether has been finalized?",
+                "Could you confirm that has the shareholder vote been finalized?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you confirm whether the shareholder vote has been finalized?",
+            "hint": "Use 'whether', and move 'has' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the vote has been finalized'.",
+            "grammarRule": "Formal Embedded Yes/No Questions"
+        },
+        {
+            "id": "qf_l167_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Does this clause apply retroactively?",
+            "sentence": "Does this clause apply retroactively?",
+            "options": [
+                "Might I ask whether does this clause apply retroactively?",
+                "Might I ask this clause whether applies retroactively?",
+                "Might I ask that does this clause apply retroactively?",
+                "Might I ask whether this clause applies retroactively?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Might I ask whether this clause applies retroactively?",
+            "hint": "Use 'whether', drop 'does', and let the verb take its -s again.",
+            "explanation": "'Whether' connects the embedded question, and 'does' disappears while the verb takes its normal form: 'this clause applies'.",
+            "grammarRule": "Formal Embedded Yes/No Questions"
+        },
+        {
+            "id": "qf_l167_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the merger require regulatory approval?",
+            "sentence": "Will the merger require regulatory approval?",
+            "options": [
+                "Would it be possible to find out whether will the merger require regulatory approval?",
+                "Would it be possible to find out the merger whether will require regulatory approval?",
+                "Would it be possible to find out that will the merger require regulatory approval?",
+                "Would it be possible to find out whether the merger will require regulatory approval?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would it be possible to find out whether the merger will require regulatory approval?",
+            "hint": "Use 'whether', and move 'will' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the merger will require'.",
+            "grammarRule": "Formal Embedded Yes/No Questions"
+        },
+        {
+            "id": "qf_l168_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the negotiations collapse right before the deadline?",
+            "sentence": "Why did the negotiations collapse right before the deadline?",
+            "options": [
+                "Do you have any idea why did the negotiations collapse right before the deadline?",
+                "Do you have any idea why the negotiations did collapse right before the deadline?",
+                "Do you have any idea why the negotiations collapsed right before the deadline?",
+                "Do you have any idea that why the negotiations collapsed right before the deadline?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you have any idea why the negotiations collapsed right before the deadline?",
+            "hint": "Drop 'did', and let the verb carry the past tense - the 'before' phrase stays attached.",
+            "explanation": "Embedded questions drop 'did': 'why the negotiations collapsed', while 'right before the deadline' remains attached exactly as before.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+        },
+        {
+            "id": "qf_l168_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What will happen to the staff if the merger goes through?",
+            "sentence": "What will happen to the staff if the merger goes through?",
+            "options": [
+                "Could you tell me what happen will to the staff if the merger goes through?",
+                "Could you tell me what does will happen to the staff if the merger goes through?",
+                "Could you tell me that what will happen to the staff if the merger goes through?",
+                "Could you tell me what will happen to the staff if the merger goes through?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could you tell me what will happen to the staff if the merger goes through?",
+            "hint": "Since 'what' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'what' is already the subject, the embedded form keeps the same word order: 'what will happen', with the 'if' clause unchanged.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+        },
+        {
+            "id": "qf_l168_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much has the company invested since the expansion began?",
+            "sentence": "How much has the company invested since the expansion began?",
+            "options": [
+                "Do you know how much the company has invested since the expansion began?",
+                "Do you know how much has the company invested since the expansion began?",
+                "Do you know how much the company invested has since the expansion began?",
+                "Do you know that how much has the company invested since the expansion began?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you know how much the company has invested since the expansion began?",
+            "hint": "Move 'has' back after the subject, keeping 'invested' unchanged - the 'since' clause stays attached.",
+            "explanation": "The embedded clause uses statement word order: 'the company has invested', while 'since the expansion began' remains attached at the end.",
+            "grammarRule": "Multi-Clause Embedded Questions: Reinforcement"
+        },
+        {
+            "id": "qf_l169_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why was the shipment rerouted without any explanation?",
+            "sentence": "Why was the shipment rerouted without any explanation?",
+            "options": [
+                "Might I ask why was the shipment rerouted without any explanation?",
+                "Might I ask why the shipment rerouted was without any explanation?",
+                "Might I ask why the shipment was rerouted without any explanation?",
+                "Might I ask that why the shipment was rerouted without any explanation?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Might I ask why the shipment was rerouted without any explanation?",
+            "hint": "Move 'was' back after the subject, keeping 'rerouted' unchanged.",
+            "explanation": "The embedded clause keeps statement word order: 'the shipment was rerouted', not 'was the shipment rerouted'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l169_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Has the audit uncovered any discrepancies so far?",
+            "sentence": "Has the audit uncovered any discrepancies so far?",
+            "options": [
+                "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
+                "Would it be possible to find out whether has the audit uncovered any discrepancies so far?",
+                "Would it be possible to find out the audit whether has uncovered any discrepancies so far?",
+                "Would it be possible to find out that has the audit uncovered any discrepancies so far?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would it be possible to find out whether the audit has uncovered any discrepancies so far?",
+            "hint": "Use 'whether', and move 'has' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the audit has uncovered'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l169_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Who authorized this unusual change in procedure?",
+            "sentence": "Who authorized this unusual change in procedure?",
+            "options": [
+                "Do you happen to know who authorized this unusual change in procedure?",
+                "Do you happen to know who did authorize this unusual change in procedure?",
+                "Do you happen to know who authorize did this unusual change in procedure?",
+                "Do you happen to know that who authorized this unusual change in procedure?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you happen to know who authorized this unusual change in procedure?",
+            "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'who' is already the subject, the embedded form keeps the same word order: 'who authorized'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l170_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the client cancel the contract so abruptly?",
+            "sentence": "Why did the client cancel the contract so abruptly?",
+            "options": [
+                "Could you possibly clarify why the client canceled the contract so abruptly?",
+                "Could you possibly clarify why did the client cancel the contract so abruptly?",
+                "Could you possibly clarify why the client did cancel the contract so abruptly?",
+                "Could you possibly clarify that why the client canceled the contract so abruptly?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could you possibly clarify why the client canceled the contract so abruptly?",
+            "hint": "Remove 'did' entirely, letting the main verb carry the past tense on its own.",
+            "explanation": "Embedded questions drop 'did': 'why the client canceled', with statement word order throughout.",
+            "grammarRule": "Formal Embedded Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l170_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the updated policy apply to existing customers?",
+            "sentence": "Will the updated policy apply to existing customers?",
+            "options": [
+                "Do you know whether will the updated policy apply to existing customers?",
+                "Do you know whether the updated policy will apply to existing customers?",
+                "Do you know the updated policy whether will apply to existing customers?",
+                "Do you know that will the updated policy apply to existing customers?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you know whether the updated policy will apply to existing customers?",
+            "hint": "Use 'whether', and move 'will' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, keeping statement word order: 'the policy will apply'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l170_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much progress has the team made since the last review?",
+            "sentence": "How much progress has the team made since the last review?",
+            "options": [
+                "I was wondering if you could tell me how much progress the team has made since the last review?",
+                "I was wondering if you could tell me how much progress has the team made since the last review?",
+                "I was wondering if you could tell me how much progress the team made has since the last review?",
+                "I was wondering if you could tell me that how much progress has the team made since the last review?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "I was wondering if you could tell me how much progress the team has made since the last review?",
+            "hint": "Move 'has' back after the subject, keeping 'made' unchanged.",
+            "explanation": "The embedded clause uses statement word order: 'the team has made', not 'has the team made'.",
+            "grammarRule": "Formal Embedded Questions: Mixed Review"
+        }
+    ]
 }

@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L191_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How does precision → authority → reduced scrutiny form a self-reinforcing circle?",
             "explanation": "Precision creates an impression of expertise (authority). Authority makes people less likely to question (scrutiny reduced). Reduced scrutiny means the precision doesn't need to be genuinely deep. The appearance of exactness generates trust that removes the examination that would test the exactness. It's a self-protective rhetorical loop.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L191_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is a structurally misleading comparison?",
             "explanation": "A misleading comparison selects elements that are superficially similar while ignoring crucial differences in structure or context. The flattery = it makes the subject look good. The structural misleading = the comparison doesn't hold when examined carefully, because the two things being compared differ in ways that matter more than their similarities.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L191_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why diplomats have coded phrases for describing difficult meetings.",
             "explanation": "In diplomatic language, 'frank and open' is a well-known euphemism: it lets officials acknowledge a difficult, disagreement-filled meeting happened without publicly admitting the talks were tense or unproductive.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L192_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the gap between the report's language and its data?",
             "explanation": "The report uses 'progress' (positive framing) while its own data (which presumably it can't change) shows options have narrowed (negative). This is a contradiction internal to the document itself: the interpretation (progress) and the evidence (narrowing) don't align. The speaker reads the data against the report's own narrative.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L192_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what happens when a stated policy and the actual culture point in different directions.",
             "explanation": "A perk that sounds generous on paper can be effectively meaningless if the workplace culture quietly discourages anyone from using it — the real policy is the unspoken one, not the written one.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L192_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What problem arises when key terms are contested but assumed to be shared?",
             "explanation": "If participants use the same words but mean different things, the debate is illusory - they appear to argue about the same thing but are actually arguing about different things. Terms like 'freedom', 'justice', 'democracy' are contested in this way. Without acknowledging the contestation, the debate produces heat without light.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L193_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the difference between describing and prescribing reality?",
             "explanation": "Descriptive = tells how things are. Prescriptive = tells how things should be, or naturalises certain orders. Myths that appear to describe ('this is how things are') actually prescribe ('this is how things must be') - they make the contingent seem necessary. Identifying this reveals myth's ideological function.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L193_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How do metaphors limit as well as enable inquiry?",
             "explanation": "A metaphor brings certain associations with it and excludes others. 'Debate as battle' frames it as won or lost, excludes collaborative or exploratory framings. 'Mind as computer' enables questions about processing and storage, excludes questions about embodiment and emotion. Every metaphor illuminates something and obscures something else.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L193_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might a quiet once-said thing be more influential than loud repetition?",
             "explanation": "Loud repetition can create resistance, fatigue, or cynicism. Something said quietly, once, can slip past defences precisely because it doesn't trigger resistance. It's absorbed rather than rejected. There's also the power of the implicit: what's said once, without insistence, can seem self-evident rather than pushed. The mode of communication shapes reception.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L194_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the distinction between individual and systemic explanations for bad outcomes?",
             "explanation": "Individual explanation: bad people in a system cause problems; fix the people. Systemic explanation: the system creates incentives and pressures that produce bad outcomes even from normally-behaving people; fix the system. The claim: even good people behaving normally within a badly designed system will produce bad outcomes. Systemic change is what's needed.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L194_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might incentives override values?",
             "explanation": "Values are ideals; incentives are material realities (money, survival, advancement). Under conditions of genuine choice, many people maintain their values. Under sustained pressure from misaligned incentives, stated values are gradually compromised. The observation: system design (incentives) often determines behaviour more reliably than moral commitment.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L194_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the most significant claim in 'dysfunction as designed function'?",
             "explanation": "Calling it 'dysfunction' assumes it wasn't supposed to work this way. But if the outcomes are what the system consistently produces, they may be features, not bugs - produced by design or predictably by the design's incentive structure. This forces asking: who benefits from the 'dysfunction'? The 'failure' is a failure only from some perspectives.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L195_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why an important clause would be placed somewhere it's unlikely to be read.",
             "explanation": "Technically including a clause while burying it in a footnote lets a company say it was disclosed, while making it far less likely that the other party will actually notice or rely on it.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L195_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does citation as agreement rather than quality suggest?",
             "explanation": "If scholars are cited because they're easy to agree with (accessible, confirming, popular) rather than because they're most rigorous or challenging, citation counts are measuring something other than intellectual contribution. The observation: citation economies can reward agreement over challenge, accessibility over depth.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L195_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what happens after you've 'listened' to two sides that fundamentally can't both get what they want.",
             "explanation": "'Listening to all sides' sounds fair and inclusive, but when the sides want mutually exclusive outcomes, listening alone can't produce a resolution — eventually, a choice still has to be made.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L196_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why do solutions in complex systems generate new problems?",
             "explanation": "Complex systems have many interconnected variables. Changing one element changes relationships throughout the system, producing unintended consequences. Solutions that work for one problem may introduce new imbalances or create unexpected dependencies. This is why complex problems resist simple solutions - they're systemic, not isolated.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L196_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the distinction between practical and fundamental impossibility of prediction?",
             "explanation": "Practical impossibility = we can't predict because our tools or data aren't good enough (fixable in principle). Fundamental impossibility = the system's nature itself prevents accurate prediction - not a limitation of our tools but of the phenomenon (chaos, emergence, genuine indeterminism). More computing power doesn't solve fundamental unpredictability.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L196_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the risk of excessive simplification?",
             "explanation": "Simplification is necessary for communication, but there's a threshold beyond which the simplified version stops being a version of the original and becomes something else. At that point, the explanation is accurate about the simplified model but misleading about the reality. The model has lost fidelity to the thing it purports to represent.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why is 'restore order' a political claim?",
             "explanation": "'Order' implies the current state is disordered - a judgment. 'Restore' implies there was a better prior state - another judgment. Who defines order? Whose order? Claiming to restore it frames the status quo (or a desired state) as natural order being disrupted. The phrase looks descriptive but embeds political evaluation.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How does calling something inevitable remove it from politics?",
             "explanation": "If something is described as inevitable ('there is no alternative', 'this had to happen'), it appears as a fact rather than a choice. This removes it from democratic debate - you can't choose or contest what's inevitable. 'Inevitability' is often used to naturalise political choices, making contestable decisions appear as forces of nature.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L197_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what corporate language often means when it pairs 'restructuring' with a growth-focused phrase.",
             "explanation": "'Right-sizing for future growth' is a well-worn corporate euphemism, and in the context of 'restructuring', it typically describes reducing staff — softer language for what is usually a round of layoffs.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How do social and institutional priorities shape what knowledge is produced?",
             "explanation": "Research requires funding, institutions, questions, and cultural permission. What gets funded, what questions are considered legitimate, what results are publishable - these are all social decisions that shape what knowledge is produced. Knowledge is therefore not neutral but reflects the priorities of those who fund and govern knowledge production.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why is the interpreter of evidence as important as the evidence itself?",
             "explanation": "Evidence doesn't speak for itself - it requires interpretation, which involves: choice of framework, what counts as relevant, how to weigh competing factors, what background knowledge to bring. Different interpreters of the same evidence can reach different conclusions. Who does the interpreting - their interests, frameworks, assumptions - shapes what the evidence 'shows'.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L198_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why a single mismatch, on the one detail that matters most, would stand out.",
             "explanation": "When almost everything lines up except the one detail that would actually change the outcome, that detail deserves the closest scrutiny — a near-perfect match with one telling exception is rarely just coincidence.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the significance of the gap between unconditional demand and limited capacity?",
             "explanation": "Ethics demands the impossible: perfect justice, absolute care, complete responsibility. We are finite and fallible. This gap isn't resolvable - it's constitutive of ethical life. The unconditional demand keeps us striving; our incapacity means we always fall short. This is not a failure but the structure of ethical existence.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the epistemological value of recognising your own incomplete understanding?",
             "explanation": "Knowing what you don't know = a form of meta-knowledge. Recognising incompleteness requires knowing enough to map the gap. Socratic 'knowing that I know nothing' is more sophisticated than confident ignorance. The recognition of incompleteness prevents false closure and keeps inquiry open - it's epistemically more advanced than the illusion of completeness.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L199_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might open, resistant questions be more valuable than answered ones?",
             "explanation": "Questions that remain open force continued engagement: they demand ongoing thought, resist comfortable closure, prevent intellectual stagnation. Answered questions close the inquiry. Open questions that 'resist premature resolution' keep us honest - they prevent us from mistaking our current understanding for final truth. They're generative, not merely unanswered.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might question-asking be more important than answer-mastery?",
             "explanation": "Answers are contextual and temporary - what's the right answer now may not be later. But the ability to ask good questions - to identify what matters, to frame inquiry productively, to locate the right problem - is transferable, durable, and fundamental. Learning to ask better questions is meta-learning: it improves all future learning.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why is unlearning wrong questions harder than learning right answers?",
             "explanation": "Wrong questions feel like the right questions - they're embedded in frameworks that feel natural. Unlearning requires recognising that your framing is the problem, not just your answers. This demands meta-cognitive awareness and a willingness to discard existing conceptual structures. Unlearning is more threatening to identity and competence than learning new content.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L200_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the epistemological experience described here?",
             "explanation": "Expertise reveals the depth and complexity of a field - showing how much more there is that isn't yet known or understood. The novice sees a simple surface; the expert sees an intricate, unresolved, and expanding landscape. True learning expands not just what you know but your awareness of the vast unknown. Wisdom includes knowing the limits of knowledge.",

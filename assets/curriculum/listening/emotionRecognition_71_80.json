@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_EMOTIONRECOGNITION_L71_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A failure landing just outside a guarantee period tends to build a strong reaction.",
             "explanation": "A product failing just after its warranty ends, with no help offered, is a fair cause of anger.",
@@ -22,7 +22,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L71_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Instructions that seem to contradict themselves leave you unsure how to proceed.",
             "explanation": "Instructions that seem to repeat a step by mistake leave you unsure what to actually do — that's confusion.",
@@ -39,7 +39,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L71_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A long, silent hug as the only response to news says a lot about how someone feels.",
             "explanation": "A long, silent hug as a response to news expresses a happiness deeper than words.",
@@ -56,7 +56,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L72_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Watching strangers move into a home full of family memories points to a specific, quiet feeling.",
             "explanation": "Watching strangers move into a family home sold without any discussion is a real cause of sadness.",
@@ -73,7 +73,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L72_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Someone stepping in immediately, without being asked twice, points to a warm, specific feeling.",
             "explanation": "A colleague helping out instantly, without hesitation, in a moment of need is a clear cause of gratitude.",
@@ -90,7 +90,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L72_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Familiar surroundings that still feel new point to a feeling overriding your comfort.",
             "explanation": "Feeling like a first-timer despite familiar surroundings is nervousness overriding the comfort of routine.",
@@ -107,7 +107,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L73_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Being unable to focus on anything else before a big decision points to a strong, positive feeling.",
             "explanation": "Being unable to think of anything else while a personal dream is being decided is a clear excitement.",
@@ -124,7 +124,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L73_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Being woken every twenty minutes, all night, points to a physical and mental state.",
             "explanation": "Being woken repeatedly all night by the same beeping is a very ordinary cause of tiredness.",
@@ -141,7 +141,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L73_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Stating plainly why you were chosen, after two decades of experience, points to a settled mindset.",
             "explanation": "Being brought in for your expertise, and saying so plainly, is a clear expression of confidence.",
@@ -158,7 +158,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L74_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small daily habit suddenly breaking, from someone you check on, points to a specific, uneasy feeling.",
             "explanation": "A reliable daily habit suddenly stopping, from someone you care about, is a natural cause of worry.",
@@ -175,7 +175,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L74_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Realizing there's no record of a private moment with someone points to a quiet, specific feeling.",
             "explanation": "Realizing you have no private photo with someone who mattered is a quiet cause of sadness.",
@@ -192,7 +192,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L74_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A big gap between a claim and everyone's actual experience draws out a particular kind of interest.",
             "explanation": "A surprising gap between a claim and everyone's real experience is exactly the kind of thing that sparks curiosity.",
@@ -209,7 +209,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L75_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A morning that produces food, flowers, and new friends all at once points to a particular feeling.",
             "explanation": "A spontaneous, fruitful morning meeting new people reflects an open, happy state of mind.",
@@ -226,7 +226,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L75_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Counting the seconds of someone else's important moment shows concern for them, not for yourself.",
             "explanation": "Counting the seconds of someone else's interview, out of concern for them, is a clear sign of worry.",
@@ -243,7 +243,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L75_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Preparing multiple tabs well ahead of an on-sale time points to a strong, positive anticipation.",
             "explanation": "Camping out with several tabs open before tickets go on sale is a clear sign of excitement.",
@@ -260,7 +260,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L76_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A skill you've always managed suddenly failing you points to a state of physical or mental depletion.",
             "explanation": "A familiar task suddenly becoming too much is a common sign that tiredness has caught up with you.",
@@ -277,7 +277,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L76_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small, reliable daily habit breaking for the first time in years points to a specific, uneasy feeling.",
             "explanation": "A years-long daily habit breaking without warning is a natural, common cause of worry.",
@@ -294,7 +294,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L76_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Not knowing whether something worked or not leaves you in a specific, uncertain state.",
             "explanation": "Not being sure whether a payment actually went through is an everyday, relatable kind of confusion.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L77_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small, repeating technology glitch that keeps undoing your fix brings a familiar, mild irritation.",
             "explanation": "A small setting undoing itself again and again is a very relatable, everyday form of annoyance.",
@@ -328,7 +328,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L77_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Months of thorough testing followed by a flat statement of certainty points to a steady mindset.",
             "explanation": "Months of careful testing followed by a categorical claim of readiness is a clear expression of confidence.",
@@ -345,7 +345,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L77_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "An involuntary scream loud enough to alarm a neighbor points to overwhelming, positive news.",
             "explanation": "An early call producing an involuntary scream is a sign of extremely exciting news.",
@@ -362,7 +362,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L78_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Finishing a move can turn from relief into something heavier once the distance sinks in.",
             "explanation": "Realizing how far from home you now live, once the boxes are finally unpacked, can bring on sadness.",
@@ -379,7 +379,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L78_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Discovering something decades old that was somehow always there points to a strong reaction.",
             "explanation": "Finding a decades-old note you never knew existed is a small, genuine cause of surprise.",
@@ -396,7 +396,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L78_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A dry throat and restlessness right before a review point to a familiar physical state.",
             "explanation": "A dry throat and restlessness before a performance review are classic physical signs of nervousness.",
@@ -413,7 +413,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L79_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "An evening that naturally stretches on with no plan to end it points to a relaxed, positive feeling.",
             "explanation": "An unplanned evening that stretches on naturally, just from good conversation, is a simple happiness.",
@@ -430,7 +430,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L79_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "An old piece of encouragement mattering more than you knew points to a warm, humbled feeling.",
             "explanation": "Learning that something you once said mattered deeply to someone, years later, is a quiet cause of gratitude.",
@@ -447,7 +447,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L79_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Being stuck with the exact same short clip for hours points to one familiar reaction.",
             "explanation": "Watching the same short video on a loop for hours is a plain, relatable cause of boredom.",
@@ -464,7 +464,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L80_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A stranger going out of their way to return something, with kindness attached, points to a warm feeling.",
             "explanation": "A stranger returning a lost wallet fully intact, with a kind note, is a clear cause of gratitude.",
@@ -481,7 +481,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L80_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Being ruled out within hours, before being properly considered, tends to build a strong reaction.",
             "explanation": "Being bypassed within hours of applying, without real consideration, is a fair cause of anger.",
@@ -498,7 +498,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L80_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "An unplanned discovery turning into a new favorite spot points to a light, pleasant feeling.",
             "explanation": "Stumbling onto a new favorite place by chance is a small, simple source of happiness.",

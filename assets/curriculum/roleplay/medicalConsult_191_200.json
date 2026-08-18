@@ -6,7 +6,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"My mood has stayed low for weeks now, and an underlying worry seems to sit under everything I do, leaving me pretty exhausted by the end of most days.\"",
             "symptoms": [
                 "Insomnia",
@@ -22,7 +22,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"My focus has really slipped these past few weeks, and my mood has dipped right along with it, with falling asleep becoming genuinely difficult most nights.\"",
             "symptoms": [
                 "Brain Fog",
@@ -38,7 +38,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My heart seems to race for no clear reason some days, and an underlying worry has been hard to shake, with falling asleep becoming a real struggle.\"",
             "symptoms": [
                 "Racing Heartbeat",
@@ -54,7 +54,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My heart flutters unexpectedly some days, and I've felt more tired than usual throughout, with an underlying worry sitting under most of it.\"",
             "symptoms": [
                 "Heart Palpitations",
@@ -70,7 +70,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the symptoms, and the patient says: \"I've had this metallic taste lingering for days now, and my appetite has dropped off since it started, with a queasy feeling that comes and goes.\"",
             "symptoms": [
                 "Metallic Taste",
@@ -86,7 +86,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The patient tells the nurse: \"Swallowing has felt genuinely difficult for a week now, and there's this constant lump-like feeling in my throat, keeping me up some nights worrying about it.\"",
             "symptoms": [
                 "Sore Throat",
@@ -102,7 +102,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"My voice has sounded rough for nearly a week, and my throat still feels sore underneath it, leaving me pretty tired from how much effort talking takes now.\"",
             "symptoms": [
                 "Hoarse Voice",
@@ -118,7 +118,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had a painful little bump on my eyelid for a few days now, and that eye keeps watering because of it, leaving me pretty tired from the discomfort.\"",
             "symptoms": [
                 "Stye",
@@ -134,7 +134,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My vision has blurred on and off for a couple of weeks now, and a dull headache tends to follow soon after, leaving me pretty drained by evening.\"",
             "symptoms": [
                 "Blurred Vision",
@@ -150,7 +150,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My fingertips have gone numb on and off for a couple of weeks now, and my grip has felt noticeably weaker as a result, keeping me up some nights from the discomfort.\"",
             "symptoms": [
                 "Wrist Pain",
@@ -166,7 +166,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the symptoms, and the patient says: \"My hands and feet have stayed cold for weeks regardless of the weather, and my fingers have felt stiff most mornings, leaving me pretty tired throughout.\"",
             "symptoms": [
                 "Cold Hands and Feet",
@@ -182,7 +182,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The patient tells the nurse: \"I've been sweating far more than usual for a couple of weeks now, and I've felt worn out throughout, with falling asleep becoming genuinely difficult from the discomfort.\"",
             "symptoms": [
                 "Chills",
@@ -198,7 +198,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've needed the bathroom far more often than usual these past couple of weeks, and I've felt thirstier than normal throughout, leaving me pretty worn out from it all.\"",
             "symptoms": [
                 "Frequent Urination",
@@ -214,7 +214,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"My whole body has ached for a couple of days now, and a low fever has come with it, leaving me pretty exhausted through the whole thing.\"",
             "symptoms": [
                 "Body Aches",
@@ -230,7 +230,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've felt unusually cold for a couple of days now, and I've been worn out the whole time, with a dull ache settling into most of my joints.\"",
             "symptoms": [
                 "Fever",
@@ -246,7 +246,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My muscles have felt sore all over for days now, and my strength hasn't felt right since, with falling asleep becoming genuinely difficult from the discomfort.\"",
             "symptoms": [
                 "Muscle Soreness",
@@ -262,7 +262,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the symptoms, and the patient says: \"My calf seizes up suddenly some nights, and my legs have had this restless urge to move whenever I try to settle down, keeping sleep out of reach most nights.\"",
             "symptoms": [
                 "Cramp",
@@ -278,7 +278,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The patient tells the nurse: \"My neck has felt tight for weeks now, and a band-like headache tends to follow most afternoons, leaving me pretty worn out by the end of each day.\"",
             "symptoms": [
                 "Neck Pain",
@@ -294,7 +294,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"My back tooth has ached for over a week now, and I've noticed a smell to my breath that brushing doesn't fix, keeping me up some nights from the discomfort.\"",
             "symptoms": [
                 "Toothache",
@@ -310,7 +310,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I can't stop sneezing since the pollen count spiked, and my eyes have been intensely itchy right along with it, leaving me pretty worn out by midday.\"",
             "symptoms": [
                 "Sneezing",
@@ -326,7 +326,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My eyes have watered constantly for days now, and there's a heavy pressure building across my cheeks, leaving me pretty drained by the end of it.\"",
             "symptoms": [
                 "Watery Eyes",
@@ -342,7 +342,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My voice disappeared completely two days ago, and my throat still feels raw underneath it, leaving me pretty worn out from how much it's taken to communicate at all.\"",
             "symptoms": [
                 "Cough",
@@ -358,7 +358,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the symptoms, and the patient says: \"My grandmother fainted briefly this morning, and she's felt dizzy off and on since, looking noticeably pale the whole time.\"",
             "symptoms": [
                 "Fainting",
@@ -374,7 +374,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The patient tells the nurse: \"I've felt weak through my whole body for a couple of weeks now, and I've looked noticeably pale throughout, leaving me pretty worn out even doing very little.\"",
             "symptoms": [
                 "Weakness",
@@ -390,7 +390,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"The skin on my arm has been peeling since my sunburn healed, and it's itched more each day since, leaving me pretty worn out from the constant discomfort at night.\"",
             "symptoms": [
                 "Skin Peeling",
@@ -406,7 +406,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"My lip puffed up not long after dinner last night, and a cluster of raised welts spread across both forearms, leaving me feeling drained for the rest of the evening.\"",
             "symptoms": [
                 "Itching",
@@ -422,7 +422,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"The skin on my heels has been so dry it's started cracking, and it's itched constantly since, leaving me pretty worn out from the discomfort at night.\"",
             "symptoms": [
                 "Cracked Skin",
@@ -438,7 +438,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"There's been a strange loss of feeling in both hands this month, and lifting anything heavier than a mug has grown surprisingly hard, plus most nights it takes ages to finally drift off.\"",
             "symptoms": [
                 "Pins and Needles",
@@ -454,7 +454,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the symptoms, and the patient says: \"My fingertips have tingled on and off for weeks now, and my hands and feet have stayed cold regardless of the weather, keeping sleep out of reach some nights.\"",
             "symptoms": [
                 "Pins and Needles",
@@ -470,7 +470,7 @@
         {
             "instruction": "Select the three symptoms that match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The patient tells the nurse: \"My ankles have looked visibly puffy by the end of most days this month, and I've felt worn out the whole time, with falling asleep becoming genuinely difficult most nights.\"",
             "symptoms": [
                 "Swollen Ankles",

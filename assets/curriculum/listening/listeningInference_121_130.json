@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the subject of 'attributed'? What quality is being credited?",
             "explanation": "'Attributed success to' = identified as the cause of success. 'Primarily' = mainly. 'Willingness to adapt' = adaptability. She is saying adaptability was the main driver of success, not individual work or tools. Identifying what someone attributes success to requires precise listening.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do 'acknowledges improvements' and 'highlights areas requiring attention' together convey?",
             "explanation": "Two balanced elements: improvements (positive) + areas needing attention (gap). 'While' links them as simultaneous truths. Together: a mixed picture - some progress, some remaining challenges. This is balanced assessment language, avoiding both pure praise and pure criticism.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L121_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the adverb 'graciously' tell you about how he responded?",
             "explanation": "'Graciously' = with grace - politely, without complaint, without defensiveness. 'Accepted graciously' = took the criticism well, without bitterness. This is a positive description of emotional maturity in receiving feedback. The opposite would be: defensively, resentfully, angrily.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L122_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What rhetorical move does 'of course, one could argue... but' make?",
             "explanation": "Acknowledging the opposing view ('of course one could argue') then redirecting ('but let's look at evidence') is a rhetorical move that concedes the existence of the other view while steering away from it. The speaker isn't abandoning their position - they're using evidence to overcome the objection.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L122_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'perhaps' + a rhetorical question accomplish?",
             "explanation": "'Some might say idealistic' = acknowledging the criticism. 'Perhaps' = slight concession. 'But without ideals, where would we be?' = a rhetorical question defending idealism. The structure: acknowledge → slight concede → defend. The rhetorical question implies: ideals are necessary, so the criticism misses the point.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L122_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'now let's consider the facts' signal after hearing the opposing view?",
             "explanation": "After presenting the opposition ('we've heard the arguments against'), the speaker shifts to facts ('what the facts actually say'). This is a classic rhetorical structure: present opposing views → then turn to evidence to counter them. 'Actually' subtly implies the facts contradict the arguments just presented.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L123_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the distinction between correlation and causation?",
             "explanation": "Correlation = two things occurring together or moving together. Causation = one thing causing the other. Correlation doesn't prove causation - they might both be caused by a third factor. This is a fundamental research and critical thinking principle: don't assume A causes B just because A and B are linked.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L123_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the distinction between statistical significance and effect size?",
             "explanation": "Statistical significance = the result is real, not due to chance. Effect size = how large or important the difference is in practice. A result can be statistically real but practically tiny. Example: a drug that works but only slightly. Large studies can find statistically significant but trivially small effects.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L123_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'replication' mean in research, and why is it important?",
             "explanation": "'Replication' = repeating the study to see if the same results occur. 'Robust' = reliable, consistent across studies. One study finding something is preliminary; multiple studies finding the same thing = robust. Science relies on replication to filter out false positives and confirm real effects.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L124_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What hidden assumption is built into this question?",
             "explanation": "'When did you stop' presupposes you DID stop - it assumes the stopping happened. If you hadn't stopped, the question would be unanswerable. This is a 'loaded question' - it contains an assumed fact. Recognising built-in assumptions is essential for critical listening.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L124_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'even' add to a statement about experienced members?",
             "explanation": "'Even' = this is surprising, or this applies despite expectations. 'Even the most experienced found it difficult' = those expected to cope best still struggled. The implication: if they struggled, those with less experience found it even harder. 'Even' sets up a scale with the experienced end being the surprising case.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L124_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the adverb 'still' add to the verb 'believes'?",
             "explanation": "'Still' = continuing despite something - despite time passing, setbacks, or others giving up. 'Still believes' = her belief persists against the odds. The word 'still' implies there's a reason she might NOT believe anymore (setbacks, opposition), making her persistence notable.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L125_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Count the hedges in this request - what do they signal?",
             "explanation": "Multiple hedges: 'was wondering' (past tense softens), 'if' (conditional), 'might' (possibility), 'possibly' (even more tentative), 'a moment' (minimises the time ask). This is maximum politeness through extreme hedging - the speaker feels they have significantly less power or status than the recipient.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L125_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does maximum hedging before a request reveal about the requester's position?",
             "explanation": "'If it's not too much trouble' = apologising for asking. 'Could you' = polite request. 'Perhaps' = even more tentative. Together: extreme deference. This level of hedging suggests the speaker feels they're asking a favour from someone with more power - making the request feel like an imposition.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L125_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does choosing to ask rather than tell in a position of authority signal?",
             "explanation": "A manager could give orders but chose to ask - this is voluntary restraint of authority. Asking rather than telling shows respect for team members' autonomy and agency. This is collaborative leadership: using authority sparingly and preferring dialogue to direction. It reflects a specific management philosophy.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L126_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would two people actively avoid each other at an event?",
             "explanation": "Active avoidance at an event (where people generally socialise) strongly suggests interpersonal tension or conflict. If they just had different schedules, they'd still encounter each other by chance. Deliberate avoidance implies choosing not to interact - following some negative event or relationship breakdown.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L126_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone choose words very carefully when raising mistakes?",
             "explanation": "Careful word choice = tactfulness. Raising 'past mistakes' is potentially hurtful or defensive-triggering. Choosing carefully = trying to deliver difficult feedback without causing unnecessary hurt. This shows consideration for his emotional response and awareness that the topic is sensitive.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L126_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does silence instead of expected applause communicate?",
             "explanation": "Expected applause that doesn't come = the reaction fell below expectations. Silence after an announcement (especially where applause was expected) signals displeasure, shock, or disappointment. The contrast ('rather than the expected applause') makes the disappointment explicit.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L127_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the idiom 'nip in the bud' mean?",
             "explanation": "'Nip in the bud' = stop something at the earliest stage, before it develops further. It's a horticultural metaphor: removing a bud (early growth) to prevent the plant from flowering. Applied to problems: stop it early while it's small, before it grows into something harder to manage.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L127_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'treading water' mean as a business metaphor?",
             "explanation": "'Treading water' = keeping afloat by constant effort but going nowhere (like treading water in a swimming pool - you stay in place). Applied to business: the company is surviving (not drowning) but not advancing. There's no growth - just enough effort to maintain current position.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L127_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the metaphor 'double-edged sword' mean?",
             "explanation": "'Double-edged sword' = something with both benefits and drawbacks - the same qualities that make it useful also make it dangerous or problematic. Like a sword with two sharp edges: both can cut. Applied here: the project's positive aspects come with simultaneous negative aspects.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L128_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'in many respects' add to a claim about significance?",
             "explanation": "'In many respects' = in various ways, but not necessarily in all ways. It qualifies the claim - significant in some dimensions but the speaker isn't claiming it's significant in every possible way. This is careful, precise language that avoids overstating the case.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L128_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'under certain conditions' add to a claim about effectiveness?",
             "explanation": "'Under certain conditions' = only when specific circumstances are in place. This qualifies the effectiveness claim: it's not universally or always effective - context matters. This is important: the method isn't being dismissed or universally endorsed; it's context-dependent.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L128_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'some evidence to suggest' communicate about certainty level?",
             "explanation": "'Some' = limited, not extensive. 'To suggest' = points towards but doesn't prove. Together: very low certainty - there are indications but not proof. This is the most tentative form of positive evidence claim. Compare: 'the evidence shows' (more certain) vs. 'some evidence suggests' (very tentative).",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the discourse marker 'that said' communicate?",
             "explanation": "'That said' = despite what I just said, or acknowledging what came before while introducing a contrasting or additional point. Here: problems were described, then 'that said, I remain optimistic' = despite those problems, optimism persists. It's a pivot from negative to positive while retaining both.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'all things considered' mean as a discourse opener?",
             "explanation": "'All things considered' = after weighing all relevant factors together. It signals a holistic evaluation: not cherry-picking positives or negatives but assessing the whole picture. The conclusion: 'better than expected' is a measured positive assessment that accounts for all factors.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L129_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'be that as it may' communicate about the response to an objection?",
             "explanation": "'Be that as it may' = even if that is true, it doesn't change things. It acknowledges an objection (concession) while maintaining the position (non-concession on the main point). The decision stands regardless. This is a firm maintenance of position while appearing to acknowledge the other side.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do 'appears that' and 'though further testing is needed' together communicate?",
             "explanation": "'Appears that' = tentative observation. 'Though further testing is needed' = the claim isn't final. Together: a carefully hedged positive finding - something seems to be happening, but it's not confirmed yet. This is responsible academic communication: sharing a finding while being honest about its limitations.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'contested in the literature' mean?",
             "explanation": "'Contested' = disputed, argued over, not agreed upon. 'In the literature' = among published academic work. Together: researchers who have published on this topic disagree about how to interpret the findings. 'Remains contested' = this disagreement continues, hasn't been resolved.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L130_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'could potentially offer' express about the probability?",
             "explanation": "Triple hedging: 'could' (possibility), 'potentially' (possibility again), 'offer' (not 'guarantee'). This stacks uncertainty markers to convey: maybe, under the right circumstances, there might be advantages. It's extremely cautious positive language - open to the possibility without committing to it.",

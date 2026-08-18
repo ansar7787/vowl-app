@@ -7,7 +7,7 @@
             "id": "RDG_READANDANSWER_L101_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Quantum Computing Basics] Unlike classical computers, which process information as a series of definite ones and zeros, quantum computers exploit a property called superposition, allowing a quantum bit, or qubit, to represent multiple states simultaneously until it is measured. This characteristic theoretically enables quantum machines to evaluate an enormous number of possibilities in parallel, making them particularly promising for certain problems, such as simulating molecular interactions in drug development, that would take a classical supercomputer an impractical amount of time to solve. Despite this promise, current quantum computers remain highly experimental, requiring extreme cooling and remaining prone to errors that researchers are still working to overcome before the technology becomes broadly practical.",
             "question": "For what kind of problem does the passage say quantum computers show particular promise?",
             "options": [
@@ -25,7 +25,7 @@
             "id": "RDG_READANDANSWER_L101_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Antibiotic Resistance] When bacteria are repeatedly exposed to antibiotics, the small fraction that happen to carry a random genetic mutation offering some resistance are more likely to survive and reproduce, gradually making the drug less effective against future infections. This process, known as antibiotic resistance, has accelerated in recent decades partly due to overprescription and the widespread use of antibiotics in livestock farming. Public health officials warn that without more careful use of existing antibiotics and continued investment in developing new ones, common infections that are currently easily treatable could once again become dangerous.",
             "question": "What do public health officials warn could happen without changes to antibiotic use?",
             "options": [
@@ -43,7 +43,7 @@
             "id": "RDG_READANDANSWER_L101_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Four-Day Week: An Economic Angle] Beyond employee wellbeing, some economists argue that a shorter work week could address a subtler economic problem: in many white-collar jobs, work tends to expand to fill the time available, meaning a portion of a standard forty-hour week is often spent on low-value tasks rather than genuinely productive work. Proponents suggest that compressing the same responsibilities into four focused days can force organizations to eliminate unnecessary meetings and redundant processes, potentially maintaining output while using employee time more efficiently overall.",
             "question": "What subtler problem do some economists say a shorter week could address?",
             "options": [
@@ -61,7 +61,7 @@
             "id": "RDG_READANDANSWER_L102_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Space Tourism] As private companies compete to make suborbital and orbital flights available to paying passengers, space tourism has moved from a distant concept to an active, if extremely expensive, industry, with tickets currently costing hundreds of thousands of dollars for just a few minutes of weightlessness. Critics argue that the significant carbon emissions produced by rocket launches sit uneasily alongside the industry's marketing, which often emphasizes a renewed appreciation for Earth's fragility that many astronauts report experiencing after seeing the planet from space.",
             "question": "What tension do critics point to regarding the space tourism industry's marketing?",
             "options": [
@@ -79,7 +79,7 @@
             "id": "RDG_READANDANSWER_L102_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Carbon Capture Technology] Carbon capture technology aims to remove carbon dioxide directly from the air or from industrial emissions before it enters the atmosphere, storing it underground or repurposing it for industrial use. While pilot projects have demonstrated the technology works at a small scale, critics note that current capture facilities remove only a tiny fraction of global emissions and warn that heavy investment in carbon capture could inadvertently reduce pressure to cut emissions at their source in the first place.",
             "question": "What concern do critics raise about heavy investment in carbon capture?",
             "options": [
@@ -97,7 +97,7 @@
             "id": "RDG_READANDANSWER_L102_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Metacognition: Learning How to Learn] Educational researchers increasingly emphasize metacognition, or a student's awareness of their own thinking and learning processes, as a skill that can be explicitly taught rather than something students either possess naturally or lack. A student who has learned to recognize when they are merely re-reading a passage without genuinely understanding it, for instance, can shift to a more effective study strategy, such as summarizing the material in their own words or testing themselves without notes.",
             "question": "What example does the passage give of applying metacognitive awareness?",
             "options": [
@@ -115,7 +115,7 @@
             "id": "RDG_READANDANSWER_L103_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Growth of Esports] What began as small local gaming tournaments has grown into a global esports industry, with major competitions now filling arenas and streaming to millions of viewers online, complete with professional teams, coaches, and sponsorship deals comparable to those in traditional sports. Universities in several countries have begun offering esports scholarships, a development that would have seemed implausible to most people only fifteen years earlier, reflecting how quickly perceptions of competitive gaming as a legitimate pursuit have shifted.",
             "question": "What development does the passage highlight as reflecting a shift in perceptions of esports?",
             "options": [
@@ -133,7 +133,7 @@
             "id": "RDG_READANDANSWER_L103_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Participatory Democracy Platforms] Several city governments have launched digital platforms that allow residents to propose and vote on local policy ideas between formal elections, aiming to create more continuous civic engagement than the traditional model of voting once every few years. Early adopters report that while participation rates remain modest relative to the total population, the residents who do engage tend to be more diverse in age and background than those who typically attend in-person town hall meetings, which advocates see as a meaningful, if partial, improvement in representation.",
             "question": "What have advocates found encouraging about who participates on these platforms?",
             "options": [
@@ -151,7 +151,7 @@
             "id": "RDG_READANDANSWER_L103_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Chosen Family Concept] The term 'chosen family' describes close, family-like bonds formed intentionally between people who are not related by blood or marriage, often built through years of mutual support during significant life events. While the concept has long been especially meaningful within LGBTQ+ communities, where biological family relationships have not always been supportive, its use has broadened in recent years to describe close friendships more generally, particularly among people who live far from their biological relatives.",
             "question": "How has the use of the term 'chosen family' changed in recent years, according to the passage?",
             "options": [
@@ -169,7 +169,7 @@
             "id": "RDG_READANDANSWER_L104_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Lab-Grown Seafood] Companies developing lab-grown seafood cultivate animal cells in nutrient-rich tanks to produce fish tissue without requiring the animal to be caught or farmed conventionally, a process its developers argue could relieve pressure on overfished wild populations. The technology faces a steeper challenge with seafood than with lab-grown beef or chicken, however, since replicating the delicate texture of foods like flaky fish or tender shrimp has proven more technically difficult than replicating denser meat products.",
             "question": "Why does lab-grown seafood face a steeper challenge than lab-grown beef?",
             "options": [
@@ -187,7 +187,7 @@
             "id": "RDG_READANDANSWER_L104_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Memory Consolidation During Sleep] Neuroscientists studying memory have found that the brain does not simply store new information as it is learned but continues to process and strengthen those memories during sleep, particularly during certain stages associated with vivid dreaming. This finding has practical implications for studying: students who sleep shortly after learning new material tend to retain it better than those who stay awake for many additional hours, suggesting that pulling an all-nighter immediately after cramming may undermine the very retention a student is hoping to achieve.",
             "question": "What practical implication does the passage draw from this research?",
             "options": [
@@ -205,7 +205,7 @@
             "id": "RDG_READANDANSWER_L104_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Oral History Projects] Local historical societies increasingly prioritize recording oral history interviews with older community members, capturing firsthand accounts of events and daily life that were never formally documented in official records. Historians involved in these projects note that oral histories often reveal details official records omit entirely, such as how a community actually experienced a factory closing, rather than simply the economic statistics a government report might contain.",
             "question": "What do oral histories often reveal that official records might not, according to the passage?",
             "options": [
@@ -223,7 +223,7 @@
             "id": "RDG_READANDANSWER_L105_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Subscription Fatigue] As more services shift from one-time purchases to recurring subscriptions, from software to streaming to even car features, consumers increasingly report a phenomenon researchers call 'subscription fatigue,' a growing reluctance to add new recurring charges regardless of a service's individual value. Surveys suggest this fatigue is prompting some consumers to actively cancel underused subscriptions rather than simply losing track of them, a shift that has forced several companies to redesign pricing models around simpler, one-time payment options in response.",
             "question": "How are some companies responding to subscription fatigue, according to the passage?",
             "options": [
@@ -241,7 +241,7 @@
             "id": "RDG_READANDANSWER_L105_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Imposter Syndrome] Imposter syndrome refers to the persistent feeling that one's accomplishments are due to luck rather than genuine ability, often accompanied by an underlying fear of eventually being exposed as a fraud despite consistent evidence of competence. Psychologists note that the phenomenon appears across a wide range of successful individuals, and rather than being a sign of low ability, it is sometimes more common among high achievers who hold themselves to particularly demanding, occasionally unrealistic, personal standards.",
             "question": "What do psychologists note about who experiences imposter syndrome most, according to the passage?",
             "options": [
@@ -259,7 +259,7 @@
             "id": "RDG_READANDANSWER_L105_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[15-Minute Cities] Urban planners promoting the '15-minute city' concept envision neighborhoods designed so that residents can reach most daily needs, including work, groceries, healthcare, and schools, within a fifteen-minute walk or bike ride, reducing dependence on cars for routine errands. While supporters point to potential benefits for both traffic congestion and community connection, the concept has also become an unexpected target of online misinformation, with some conspiracy theories falsely claiming the idea is intended to restrict residents' movement rather than simply improve local access to daily services.",
             "question": "What misinformation has the 15-minute city concept unexpectedly become a target of?",
             "options": [
@@ -277,7 +277,7 @@
             "id": "RDG_READANDANSWER_L106_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Algorithmic Content Moderation] Social media platforms rely heavily on automated systems to flag content that may violate community guidelines, a necessity given the sheer volume of posts uploaded every minute, far beyond what human moderators alone could realistically review. However, these systems frequently struggle with context and nuance, sometimes flagging legitimate educational or news content about sensitive topics while occasionally missing more subtly harmful material that does not match the specific patterns the system was trained to detect.",
             "question": "What weakness do automated moderation systems frequently show, according to the passage?",
             "options": [
@@ -295,7 +295,7 @@
             "id": "RDG_READANDANSWER_L106_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Behavioral Nudges in Public Policy] Governments increasingly use small changes in how choices are presented, known as behavioral nudges, to encourage socially beneficial outcomes without restricting anyone's options outright. Changing a retirement savings program from opt-in to opt-out, for example, dramatically increases participation simply by making saving the default choice rather than requiring an active decision, while still allowing anyone who prefers not to participate to easily withdraw.",
             "question": "How does changing a program from opt-in to opt-out affect participation, according to the passage?",
             "options": [
@@ -313,7 +313,7 @@
             "id": "RDG_READANDANSWER_L106_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Restorative Justice Programs] Rather than focusing solely on punishment, restorative justice programs bring together the person who caused harm, the person affected, and sometimes community members, to discuss the impact of an offense and agree on a way to make amends. Advocates argue this approach can address underlying causes of harmful behavior more effectively than punishment alone, though the method is generally reserved for less severe offenses and always requires voluntary participation from everyone involved, including the person who was harmed.",
             "question": "What is required from everyone involved in a restorative justice process, according to the passage?",
             "options": [
@@ -331,7 +331,7 @@
             "id": "RDG_READANDANSWER_L107_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at the Psychology of Nostalgia] For much of the twentieth century, nostalgia was viewed by psychologists mainly as an unhealthy avoidance of the present, but more recent research has substantially revised this view, finding that nostalgic reflection can actually boost mood, strengthen a sense of social connection, and even increase motivation toward future goals when experienced in moderation. Researchers now distinguish this healthy form of reflection from a more problematic pattern in which someone uses nostalgia primarily to avoid engaging with present difficulties altogether.",
             "question": "How has psychologists' view of nostalgia changed, according to the passage?",
             "options": [
@@ -349,7 +349,7 @@
             "id": "RDG_READANDANSWER_L107_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Water-Efficient Landscaping] As droughts become more frequent in certain regions, some municipalities now offer rebates to homeowners who replace traditional grass lawns with drought-tolerant native plants, a practice sometimes called xeriscaping. Beyond reducing water consumption, proponents note that native plant landscaping typically requires far less maintenance, since these plants have evolved to thrive in local soil and rainfall conditions without the fertilizer and frequent mowing a conventional lawn demands.",
             "question": "What additional benefit of xeriscaping do proponents note, beyond reduced water use?",
             "options": [
@@ -367,7 +367,7 @@
             "id": "RDG_READANDANSWER_L107_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Corporate Skip-Level Meetings] To counter the tendency for concerns to become diluted as they pass up multiple layers of management, some companies have introduced 'skip-level' meetings, where employees meet directly with their manager's manager without their immediate supervisor present. Executives who conduct these meetings regularly report learning about operational issues far earlier than they would through the standard chain of communication, though the practice requires careful handling to avoid undermining the authority of managers in between.",
             "question": "What do executives report gaining from skip-level meetings, according to the passage?",
             "options": [
@@ -385,7 +385,7 @@
             "id": "RDG_READANDANSWER_L108_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Precision Agriculture] Precision agriculture uses sensors, satellite imagery, and data analysis to help farmers apply water, fertilizer, and pesticides only where and when a field actually needs them, rather than treating an entire field uniformly regardless of variation in soil quality or moisture. Early adopters report meaningful reductions in both resource costs and environmental runoff, though the significant upfront investment in sensors and software has so far limited widespread adoption mainly to larger commercial farming operations.",
             "question": "What has limited widespread adoption of precision agriculture, according to the passage?",
             "options": [
@@ -403,7 +403,7 @@
             "id": "RDG_READANDANSWER_L108_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at the Rise of Micro-Credentials] As the pace of technological change accelerates, many professionals now pursue short, focused 'micro-credentials' in specific skills, such as a particular software platform or data analysis technique, rather than pursuing another full degree to stay current in their field. Employers in fast-moving industries increasingly recognize these credentials as valid evidence of updated expertise, particularly when combined with an established track record, though some more traditional fields still weigh a micro-credential far less heavily than a formal degree.",
             "question": "How do some more traditional fields regard micro-credentials, according to the passage?",
             "options": [
@@ -421,7 +421,7 @@
             "id": "RDG_READANDANSWER_L108_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Slow Journalism] In contrast to the rapid pace of breaking news coverage, 'slow journalism' outlets deliberately take weeks or months to investigate a story fully before publishing, prioritizing depth and accuracy over being first to report. Proponents argue this approach produces more thoroughly verified reporting and reduces the spread of early, later-corrected misinformation, though critics note that the slower pace means these outlets rarely break major news themselves, relying instead on providing deeper context after a story has already emerged elsewhere.",
             "question": "What limitation do critics note about slow journalism, according to the passage?",
             "options": [
@@ -439,7 +439,7 @@
             "id": "RDG_READANDANSWER_L109_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Adaptive Reuse of Shipping Containers] Architects have increasingly repurposed used shipping containers into affordable housing units, offices, and pop-up retail spaces, drawn by the containers' structural strength, standardized dimensions, and comparatively low material cost relative to conventional construction. Critics of the trend note that converting a container into a genuinely comfortable living space still requires substantial modification for insulation and ventilation, meaning the final cost savings compared to traditional building methods are often smaller than initial estimates suggest.",
             "question": "What do critics note about the actual cost savings of container housing?",
             "options": [
@@ -457,7 +457,7 @@
             "id": "RDG_READANDANSWER_L109_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Cognitive Load in User Interface Design] User interface designers increasingly apply the concept of cognitive load, the amount of mental effort required to process information, when deciding how much content to place on a single screen. An interface cluttered with too many simultaneous options, even useful ones, can overwhelm users and lead to more errors or abandoned tasks, which is why many modern applications favor a simplified sequence of small decisions over presenting every possible choice at once.",
             "question": "Why do many modern applications favor a sequence of small decisions?",
             "options": [
@@ -475,7 +475,7 @@
             "id": "RDG_READANDANSWER_L109_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Community Currency Systems] Some towns have experimented with local currencies that can only be spent at participating local businesses, aiming to keep money circulating within the community rather than flowing out to large national chains. Economists studying these systems find mixed results: while the currencies do appear to modestly boost sales at small local businesses, the added complexity of tracking a second currency has discouraged some potential participating merchants from joining the program at all.",
             "question": "What has discouraged some merchants from joining local currency programs?",
             "options": [
@@ -493,7 +493,7 @@
             "id": "RDG_READANDANSWER_L110_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at the Attention Economy] Media researchers use the term 'attention economy' to describe a system in which human attention itself, rather than any physical good, functions as the primary scarce resource that companies compete to capture and hold, often through design choices specifically intended to maximize the time a user spends engaged with a platform. Critics argue that when a company's core business model depends on maximizing engagement, its incentives may not always align with what is genuinely beneficial for the user's wellbeing or actual goals.",
             "question": "What tension do critics highlight regarding the attention economy?",
             "options": [
@@ -511,7 +511,7 @@
             "id": "RDG_READANDANSWER_L110_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Passive Voice in Scientific Writing] For decades, scientific journals favored a passive, impersonal writing style, producing sentences like 'the sample was heated' rather than 'we heated the sample,' partly out of a belief that removing the researcher from the sentence conveyed greater objectivity. In recent years, however, a growing number of style guides have begun encouraging active voice and first-person pronouns instead, arguing that clearer, more direct writing does not actually compromise scientific rigor and often makes research substantially easier for readers, including non-specialists, to follow.",
             "question": "Why do newer style guides encourage active voice in scientific writing?",
             "options": [
@@ -529,7 +529,7 @@
             "id": "RDG_READANDANSWER_L110_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[A Look at Intergenerational Mentorship Circles] Some community centers now organize mentorship circles that deliberately mix several generations rather than pairing just one mentor with one mentee, allowing a college student, a mid-career professional, and a retiree to all learn from one another within the same small group. Organizers report that this structure often surfaces insights a traditional single-mentor pairing would miss entirely, since each participant brings a genuinely different, generationally shaped perspective to a shared discussion topic.",
             "question": "What do organizers report about the mixed-generation group structure?",
             "options": [

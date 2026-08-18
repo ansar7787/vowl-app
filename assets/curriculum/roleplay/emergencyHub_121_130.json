@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 13,
-  "levels": "121-130",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Days of heavy rain have caused a river to flood three towns along its route, cutting off one completely. Input code!",
-      "correctAnswer": "AIRLIFT SUPPLIES TO CUT-OFF TOWN",
-      "hint": "Say how help can reach a town the roads can't.",
-      "explanation": "An airlift is the only way to reach a town with every road route blocked by floodwater.",
-      "id": "eh_l121_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The other two towns still have road access but are running low on sandbags. Input code!",
-      "correctAnswer": "DELIVER SANDBAGS BY TRUCK",
-      "hint": "Say how supplies should reach towns still reachable by road.",
-      "explanation": "Trucks can reach these towns directly, so resources should go by the fastest available route.",
-      "id": "eh_l121_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Floodwaters have started to recede in all three towns after two days. Input code!",
-      "correctAnswer": "BEGIN THE CLEAN-UP OPERATION",
-      "hint": "Say what phase of the response should now start.",
-      "explanation": "Starting clean-up as water recedes helps residents get back into their homes as quickly as it's safe to.",
-      "id": "eh_l121_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "An earthquake has caused a three-story apartment building to partially collapse with residents still trapped inside. Input code!",
-      "correctAnswer": "SEND URBAN SEARCH TEAMS",
-      "hint": "Ask for the specialist team trained for building collapses.",
-      "explanation": "Urban search and rescue teams are specifically trained to search collapsed structures safely for survivors.",
-      "id": "eh_l122_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Rescuers can hear tapping from beneath a section of fallen concrete on the second floor. Input code!",
-      "correctAnswer": "USE LISTENING EQUIPMENT NOW",
-      "hint": "Say what specialist tool can help pinpoint the sound.",
-      "explanation": "Listening equipment helps rescuers locate a survivor precisely before deciding how to safely reach them.",
-      "id": "eh_l122_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A woman has been found alive and rescuers are carefully clearing debris around her. Input code!",
-      "correctAnswer": "STABILIZE THE SURROUNDING DEBRIS",
-      "hint": "Say what must happen to the rubble before she is moved.",
-      "explanation": "Stabilizing the debris first prevents a second collapse while rescuers work to free her safely.",
-      "id": "eh_l122_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A freight train carrying industrial chemicals has derailed on the edge of a small town. Input code!",
-      "correctAnswer": "EVACUATE THE NEAREST STREETS",
-      "hint": "Say which residents should move first, given the danger.",
-      "explanation": "Evacuating the closest streets first protects the residents most at risk from any chemical leak or fire.",
-      "id": "eh_l123_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A hazmat team needs to identify exactly which chemicals are inside the derailed cars. Input code!",
-      "correctAnswer": "CHECK THE CARGO MANIFEST",
-      "hint": "Say what document tells crews what's actually inside.",
-      "explanation": "The cargo manifest lists exactly what each car is carrying, letting the hazmat team plan safely.",
-      "id": "eh_l123_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The chemicals are confirmed non-toxic and crews begin the clean-up with standard precautions. Input code!",
-      "correctAnswer": "LIFT THE EVACUATION ORDER",
-      "hint": "Say what can happen now the chemicals are confirmed safe.",
-      "explanation": "Lifting the order once the danger is ruled out lets residents return home without unnecessary delay.",
-      "id": "eh_l123_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A wildfire burning for two days has grown to threaten the edge of a small mountain town. Input code!",
-      "correctAnswer": "ISSUE A MANDATORY EVACUATION",
-      "hint": "Say the strength of order needed at this stage.",
-      "explanation": "A mandatory order, rather than a suggestion, makes clear that leaving is not optional given the danger.",
-      "id": "eh_l124_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Some residents are refusing to leave their homes despite the mandatory order. Input code!",
-      "correctAnswer": "SEND OFFICERS DOOR TO DOOR",
-      "hint": "Say what direct action can persuade reluctant residents.",
-      "explanation": "A face-to-face visit from officers is often what finally convinces reluctant residents that the danger is real.",
-      "id": "eh_l124_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The wind has shifted, and firefighters confirm the town is no longer directly threatened. Input code!",
-      "correctAnswer": "DOWNGRADE TO A WARNING",
-      "hint": "Say what the evacuation order should become instead.",
-      "explanation": "Downgrading to a warning lets residents return while keeping them alert in case conditions change again.",
-      "id": "eh_l124_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A regional airport reports an incoming flight with a suspected landing gear fault and forty passengers aboard. Input code!",
-      "correctAnswer": "PREPARE THE RUNWAY FOAM",
-      "hint": "Say what safety measure should be laid down for landing.",
-      "explanation": "Foam on the runway reduces the risk of fire if the aircraft's gear fails on touchdown.",
-      "id": "eh_l125_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Emergency crews position themselves along the runway before the aircraft's final approach. Input code!",
-      "correctAnswer": "POSITION ALL RESPONSE VEHICLES",
-      "hint": "Say what should be ready before the plane lands.",
-      "explanation": "Having every vehicle in position beforehand means crews can respond within seconds if anything goes wrong.",
-      "id": "eh_l125_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The aircraft has landed safely and all passengers are disembarking normally via the stairs. Input code!",
-      "correctAnswer": "STAND DOWN THE RESPONSE",
-      "hint": "Say what happens to the emergency crews now.",
-      "explanation": "Standing crews down once the landing is confirmed safe frees them for the airport's next call.",
-      "id": "eh_l125_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A regional blood bank reports a critical shortage after a series of serious road accidents overnight. Input code!",
-      "correctAnswer": "ISSUE AN URGENT APPEAL",
-      "hint": "Say what public request should go out immediately.",
-      "explanation": "An urgent public appeal can bring in enough donors within hours to restock a critically low supply.",
-      "id": "eh_l126_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Donors are arriving faster than the small clinic can process them safely. Input code!",
-      "correctAnswer": "OPEN A SECOND DONATION SITE",
-      "hint": "Say what should be added to handle the extra donors.",
-      "explanation": "A second site spreads the donors across two locations, letting staff process everyone safely and without long waits.",
-      "id": "eh_l126_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Both sites confirm the blood shortage has been fully resolved by evening. Input code!",
-      "correctAnswer": "THANK DONORS AND CLOSE SITES",
-      "hint": "Say the two things that should happen now the need is met.",
-      "explanation": "Thanking donors publicly and closing the extra sites brings a clear, positive end to the appeal.",
-      "id": "eh_l126_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A coastal town is bracing for a storm surge expected to overtop the sea wall within hours. Input code!",
-      "correctAnswer": "EVACUATE THE LOW-LYING STREETS",
-      "hint": "Say which part of town is most at risk.",
-      "explanation": "Streets closest to sea level are at greatest risk once the wall is overtopped, so they must leave first.",
-      "id": "eh_l127_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The town hall has been set up to shelter residents who cannot stay with family. Input code!",
-      "correctAnswer": "OPEN THE TOWN HALL SHELTER",
-      "hint": "Say what public building should now be made available.",
-      "explanation": "Opening a formal shelter gives residents without other options a safe, warm place to wait out the storm.",
-      "id": "eh_l127_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The storm has passed out to sea without the surge reaching the predicted height. Input code!",
-      "correctAnswer": "ALLOW RESIDENTS BACK HOME",
-      "hint": "Say what can happen now the danger has passed.",
-      "explanation": "Allowing residents home once the danger is confirmed over ends the disruption as soon as it's genuinely safe.",
-      "id": "eh_l127_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A chemical tanker has overturned on a rural highway, and the driver reports a slow leak. Input code!",
-      "correctAnswer": "CALL OUT THE HAZMAT TEAM",
-      "hint": "Name the specialist team trained for this material risk.",
-      "explanation": "A hazmat team can safely assess and contain the leak without exposing themselves or the driver to more risk.",
-      "id": "eh_l128_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The hazmat team confirms the leaking chemical is flammable and needs a wide safety zone. Input code!",
-      "correctAnswer": "ESTABLISH A SAFETY PERIMETER",
-      "hint": "Say what boundary should be set up around the tanker.",
-      "explanation": "A clear perimeter keeps bystanders and other vehicles a safe distance from a flammable spill.",
-      "id": "eh_l128_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The leak has been fully contained and the tanker is ready to be righted and towed. Input code!",
-      "correctAnswer": "CLEAR THE HIGHWAY SAFELY",
-      "hint": "Say what final step reopens the road.",
-      "explanation": "Clearing the highway only after the leak is fully contained avoids any risk to the recovery crew.",
-      "id": "eh_l128_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large factory explosion has injured several workers and started a fire in the loading bay. Input code!",
-      "correctAnswer": "SEND MULTIPLE FIRE ENGINES",
-      "hint": "Say what's needed given the scale of the explosion.",
-      "explanation": "An explosion of this size needs several engines to fight the fire while others help with the injured.",
-      "id": "eh_l129_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Paramedics need to sort several injured workers by how serious their injuries are. Input code!",
-      "correctAnswer": "BEGIN CASUALTY TRIAGE",
-      "hint": "Say the standard process for sorting multiple patients.",
-      "explanation": "Triage lets paramedics treat the most seriously hurt workers first, giving everyone the best chance of recovery.",
-      "id": "eh_l129_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "All injured workers have been treated and the factory fire is fully extinguished. Input code!",
-      "correctAnswer": "BEGIN THE SAFETY INVESTIGATION",
-      "hint": "Say what process should start once everyone is safe.",
-      "explanation": "An investigation afterward finds exactly what caused the explosion, helping prevent it from happening again.",
-      "id": "eh_l129_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A district power substation has failed, cutting electricity to a hospital, two care homes, and a school. Input code!",
-      "correctAnswer": "PRIORITIZE THE HOSPITAL FIRST",
-      "hint": "Say which building's power matters most, and why.",
-      "explanation": "The hospital's life-support equipment makes it the highest priority for power restoration among the affected buildings.",
-      "id": "eh_l130_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers can restore full power within the hour but need a temporary fix for the care homes now. Input code!",
-      "correctAnswer": "SEND PORTABLE GENERATORS",
-      "hint": "Say what temporary equipment can bridge the gap.",
-      "explanation": "Portable generators keep vulnerable care home residents safe and warm until the main power is restored.",
-      "id": "eh_l130_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers confirm the substation is repaired and full power is restored to all four buildings. Input code!",
-      "correctAnswer": "COLLECT THE GENERATORS",
-      "hint": "Say what should happen to the temporary equipment now.",
-      "explanation": "Collecting the generators once real power returns frees them for the next emergency that may need them.",
-      "id": "eh_l130_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 13,
+    "levels": "121-130",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Days of heavy rain have caused a river to flood three towns along its route, cutting off one completely. Input code!",
+            "correctAnswer": "AIRLIFT SUPPLIES TO CUT-OFF TOWN",
+            "hint": "Say how help can reach a town the roads can't.",
+            "explanation": "An airlift is the only way to reach a town with every road route blocked by floodwater.",
+            "id": "eh_l121_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The other two towns still have road access but are running low on sandbags. Input code!",
+            "correctAnswer": "DELIVER SANDBAGS BY TRUCK",
+            "hint": "Say how supplies should reach towns still reachable by road.",
+            "explanation": "Trucks can reach these towns directly, so resources should go by the fastest available route.",
+            "id": "eh_l121_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Floodwaters have started to recede in all three towns after two days. Input code!",
+            "correctAnswer": "BEGIN THE CLEAN-UP OPERATION",
+            "hint": "Say what phase of the response should now start.",
+            "explanation": "Starting clean-up as water recedes helps residents get back into their homes as quickly as it's safe to.",
+            "id": "eh_l121_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "An earthquake has caused a three-story apartment building to partially collapse with residents still trapped inside. Input code!",
+            "correctAnswer": "SEND URBAN SEARCH TEAMS",
+            "hint": "Ask for the specialist team trained for building collapses.",
+            "explanation": "Urban search and rescue teams are specifically trained to search collapsed structures safely for survivors.",
+            "id": "eh_l122_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Rescuers can hear tapping from beneath a section of fallen concrete on the second floor. Input code!",
+            "correctAnswer": "USE LISTENING EQUIPMENT NOW",
+            "hint": "Say what specialist tool can help pinpoint the sound.",
+            "explanation": "Listening equipment helps rescuers locate a survivor precisely before deciding how to safely reach them.",
+            "id": "eh_l122_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A woman has been found alive and rescuers are carefully clearing debris around her. Input code!",
+            "correctAnswer": "STABILIZE THE SURROUNDING DEBRIS",
+            "hint": "Say what must happen to the rubble before she is moved.",
+            "explanation": "Stabilizing the debris first prevents a second collapse while rescuers work to free her safely.",
+            "id": "eh_l122_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A freight train carrying industrial chemicals has derailed on the edge of a small town. Input code!",
+            "correctAnswer": "EVACUATE THE NEAREST STREETS",
+            "hint": "Say which residents should move first, given the danger.",
+            "explanation": "Evacuating the closest streets first protects the residents most at risk from any chemical leak or fire.",
+            "id": "eh_l123_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A hazmat team needs to identify exactly which chemicals are inside the derailed cars. Input code!",
+            "correctAnswer": "CHECK THE CARGO MANIFEST",
+            "hint": "Say what document tells crews what's actually inside.",
+            "explanation": "The cargo manifest lists exactly what each car is carrying, letting the hazmat team plan safely.",
+            "id": "eh_l123_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The chemicals are confirmed non-toxic and crews begin the clean-up with standard precautions. Input code!",
+            "correctAnswer": "LIFT THE EVACUATION ORDER",
+            "hint": "Say what can happen now the chemicals are confirmed safe.",
+            "explanation": "Lifting the order once the danger is ruled out lets residents return home without unnecessary delay.",
+            "id": "eh_l123_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A wildfire burning for two days has grown to threaten the edge of a small mountain town. Input code!",
+            "correctAnswer": "ISSUE A MANDATORY EVACUATION",
+            "hint": "Say the strength of order needed at this stage.",
+            "explanation": "A mandatory order, rather than a suggestion, makes clear that leaving is not optional given the danger.",
+            "id": "eh_l124_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Some residents are refusing to leave their homes despite the mandatory order. Input code!",
+            "correctAnswer": "SEND OFFICERS DOOR TO DOOR",
+            "hint": "Say what direct action can persuade reluctant residents.",
+            "explanation": "A face-to-face visit from officers is often what finally convinces reluctant residents that the danger is real.",
+            "id": "eh_l124_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The wind has shifted, and firefighters confirm the town is no longer directly threatened. Input code!",
+            "correctAnswer": "DOWNGRADE TO A WARNING",
+            "hint": "Say what the evacuation order should become instead.",
+            "explanation": "Downgrading to a warning lets residents return while keeping them alert in case conditions change again.",
+            "id": "eh_l124_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A regional airport reports an incoming flight with a suspected landing gear fault and forty passengers aboard. Input code!",
+            "correctAnswer": "PREPARE THE RUNWAY FOAM",
+            "hint": "Say what safety measure should be laid down for landing.",
+            "explanation": "Foam on the runway reduces the risk of fire if the aircraft's gear fails on touchdown.",
+            "id": "eh_l125_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Emergency crews position themselves along the runway before the aircraft's final approach. Input code!",
+            "correctAnswer": "POSITION ALL RESPONSE VEHICLES",
+            "hint": "Say what should be ready before the plane lands.",
+            "explanation": "Having every vehicle in position beforehand means crews can respond within seconds if anything goes wrong.",
+            "id": "eh_l125_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The aircraft has landed safely and all passengers are disembarking normally via the stairs. Input code!",
+            "correctAnswer": "STAND DOWN THE RESPONSE",
+            "hint": "Say what happens to the emergency crews now.",
+            "explanation": "Standing crews down once the landing is confirmed safe frees them for the airport's next call.",
+            "id": "eh_l125_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A regional blood bank reports a critical shortage after a series of serious road accidents overnight. Input code!",
+            "correctAnswer": "ISSUE AN URGENT APPEAL",
+            "hint": "Say what public request should go out immediately.",
+            "explanation": "An urgent public appeal can bring in enough donors within hours to restock a critically low supply.",
+            "id": "eh_l126_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Donors are arriving faster than the small clinic can process them safely. Input code!",
+            "correctAnswer": "OPEN A SECOND DONATION SITE",
+            "hint": "Say what should be added to handle the extra donors.",
+            "explanation": "A second site spreads the donors across two locations, letting staff process everyone safely and without long waits.",
+            "id": "eh_l126_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Both sites confirm the blood shortage has been fully resolved by evening. Input code!",
+            "correctAnswer": "THANK DONORS AND CLOSE SITES",
+            "hint": "Say the two things that should happen now the need is met.",
+            "explanation": "Thanking donors publicly and closing the extra sites brings a clear, positive end to the appeal.",
+            "id": "eh_l126_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A coastal town is bracing for a storm surge expected to overtop the sea wall within hours. Input code!",
+            "correctAnswer": "EVACUATE THE LOW-LYING STREETS",
+            "hint": "Say which part of town is most at risk.",
+            "explanation": "Streets closest to sea level are at greatest risk once the wall is overtopped, so they must leave first.",
+            "id": "eh_l127_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The town hall has been set up to shelter residents who cannot stay with family. Input code!",
+            "correctAnswer": "OPEN THE TOWN HALL SHELTER",
+            "hint": "Say what public building should now be made available.",
+            "explanation": "Opening a formal shelter gives residents without other options a safe, warm place to wait out the storm.",
+            "id": "eh_l127_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The storm has passed out to sea without the surge reaching the predicted height. Input code!",
+            "correctAnswer": "ALLOW RESIDENTS BACK HOME",
+            "hint": "Say what can happen now the danger has passed.",
+            "explanation": "Allowing residents home once the danger is confirmed over ends the disruption as soon as it's genuinely safe.",
+            "id": "eh_l127_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A chemical tanker has overturned on a rural highway, and the driver reports a slow leak. Input code!",
+            "correctAnswer": "CALL OUT THE HAZMAT TEAM",
+            "hint": "Name the specialist team trained for this material risk.",
+            "explanation": "A hazmat team can safely assess and contain the leak without exposing themselves or the driver to more risk.",
+            "id": "eh_l128_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The hazmat team confirms the leaking chemical is flammable and needs a wide safety zone. Input code!",
+            "correctAnswer": "ESTABLISH A SAFETY PERIMETER",
+            "hint": "Say what boundary should be set up around the tanker.",
+            "explanation": "A clear perimeter keeps bystanders and other vehicles a safe distance from a flammable spill.",
+            "id": "eh_l128_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The leak has been fully contained and the tanker is ready to be righted and towed. Input code!",
+            "correctAnswer": "CLEAR THE HIGHWAY SAFELY",
+            "hint": "Say what final step reopens the road.",
+            "explanation": "Clearing the highway only after the leak is fully contained avoids any risk to the recovery crew.",
+            "id": "eh_l128_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large factory explosion has injured several workers and started a fire in the loading bay. Input code!",
+            "correctAnswer": "SEND MULTIPLE FIRE ENGINES",
+            "hint": "Say what's needed given the scale of the explosion.",
+            "explanation": "An explosion of this size needs several engines to fight the fire while others help with the injured.",
+            "id": "eh_l129_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Paramedics need to sort several injured workers by how serious their injuries are. Input code!",
+            "correctAnswer": "BEGIN CASUALTY TRIAGE",
+            "hint": "Say the standard process for sorting multiple patients.",
+            "explanation": "Triage lets paramedics treat the most seriously hurt workers first, giving everyone the best chance of recovery.",
+            "id": "eh_l129_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "All injured workers have been treated and the factory fire is fully extinguished. Input code!",
+            "correctAnswer": "BEGIN THE SAFETY INVESTIGATION",
+            "hint": "Say what process should start once everyone is safe.",
+            "explanation": "An investigation afterward finds exactly what caused the explosion, helping prevent it from happening again.",
+            "id": "eh_l129_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A district power substation has failed, cutting electricity to a hospital, two care homes, and a school. Input code!",
+            "correctAnswer": "PRIORITIZE THE HOSPITAL FIRST",
+            "hint": "Say which building's power matters most, and why.",
+            "explanation": "The hospital's life-support equipment makes it the highest priority for power restoration among the affected buildings.",
+            "id": "eh_l130_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers can restore full power within the hour but need a temporary fix for the care homes now. Input code!",
+            "correctAnswer": "SEND PORTABLE GENERATORS",
+            "hint": "Say what temporary equipment can bridge the gap.",
+            "explanation": "Portable generators keep vulnerable care home residents safe and warm until the main power is restored.",
+            "id": "eh_l130_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers confirm the substation is repaired and full power is restored to all four buildings. Input code!",
+            "correctAnswer": "COLLECT THE GENERATORS",
+            "hint": "Say what should happen to the temporary equipment now.",
+            "explanation": "Collecting the generators once real power returns frees them for the next emergency that may need them.",
+            "id": "eh_l130_q3"
+        }
+    ]
 }

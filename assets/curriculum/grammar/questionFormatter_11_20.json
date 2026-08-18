@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "qf_l11_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Her passport is in the top drawer.",
-      "sentence": "Her passport is in the top drawer.",
-      "options": [
-        "Where is her passport?",
-        "What is her passport?",
-        "When is her passport?",
-        "Who is her passport?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Where is her passport?",
-      "hint": "'In the top drawer' names a location.",
-      "explanation": "'Where' asks about place, and 'in the top drawer' tells us exactly that - so 'Where' is the question word we need.",
-      "grammarRule": "Question Word Choice: Where"
-    },
-    {
-      "id": "qf_l11_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The nearest pharmacy is next to the bakery.",
-      "sentence": "The nearest pharmacy is next to the bakery.",
-      "options": [
-        "What is the nearest pharmacy?",
-        "How is the nearest pharmacy?",
-        "Why is the nearest pharmacy?",
-        "Where is the nearest pharmacy?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Where is the nearest pharmacy?",
-      "hint": "'Next to the bakery' tells us the location.",
-      "explanation": "Because 'next to the bakery' describes a place, the correct question word is 'Where'.",
-      "grammarRule": "Question Word Choice: Where"
-    },
-    {
-      "id": "qf_l11_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The manager is waiting in the lobby.",
-      "sentence": "The manager is waiting in the lobby.",
-      "options": [
-        "What is the manager waiting?",
-        "Where is the manager waiting?",
-        "Who is the manager waiting?",
-        "When is the manager waiting?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Where is the manager waiting?",
-      "hint": "'In the lobby' answers the question 'where'.",
-      "explanation": "'In the lobby' is a place, which is exactly what 'Where' asks about.",
-      "grammarRule": "Question Word Choice: Where"
-    },
-    {
-      "id": "qf_l12_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The conference begins on Monday morning.",
-      "sentence": "The conference begins on Monday morning.",
-      "options": [
-        "Where does the conference begin?",
-        "Why does the conference begin?",
-        "When does the conference begin?",
-        "Who does the conference begin?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "When does the conference begin?",
-      "hint": "'On Monday morning' tells you the time.",
-      "explanation": "'On Monday morning' answers a time question, so 'When' is the correct word here.",
-      "grammarRule": "Question Word Choice: When"
-    },
-    {
-      "id": "qf_l12_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The bakery closes at seven in the evening.",
-      "sentence": "The bakery closes at seven in the evening.",
-      "options": [
-        "Where does the bakery close?",
-        "What does the bakery close?",
-        "How does the bakery close?",
-        "When does the bakery close?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "When does the bakery close?",
-      "hint": "Look at 'at seven in the evening' - that's a time.",
-      "explanation": "'At seven in the evening' gives a specific time, which matches the question word 'When'.",
-      "grammarRule": "Question Word Choice: When"
-    },
-    {
-      "id": "qf_l12_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Grandma was born in 1958.",
-      "sentence": "Grandma was born in 1958.",
-      "options": [
-        "When was Grandma born?",
-        "Where was Grandma born?",
-        "Why was Grandma born?",
-        "How was Grandma born?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "When was Grandma born?",
-      "hint": "'In 1958' points to a year, so think 'When'.",
-      "explanation": "A year like 1958 answers a time question, so 'When' is correct rather than a word asking about place or reason.",
-      "grammarRule": "Question Word Choice: When"
-    },
-    {
-      "id": "qf_l13_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He canceled the trip because of the storm.",
-      "sentence": "He canceled the trip because of the storm.",
-      "options": [
-        "When did he cancel the trip?",
-        "Where did he cancel the trip?",
-        "Who did he cancel the trip?",
-        "Why did he cancel the trip?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Why did he cancel the trip?",
-      "hint": "'Because of the storm' gives a reason.",
-      "explanation": "'Because of the storm' explains a reason, and 'Why' is the question word that asks for a reason.",
-      "grammarRule": "Question Word Choice: Why"
-    },
-    {
-      "id": "qf_l13_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She skipped breakfast since she woke up late.",
-      "sentence": "She skipped breakfast since she woke up late.",
-      "options": [
-        "Why did she skip breakfast?",
-        "When did she skip breakfast?",
-        "How did she skip breakfast?",
-        "Who did she skip breakfast?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why did she skip breakfast?",
-      "hint": "'Since she woke up late' explains a reason.",
-      "explanation": "The clause 'since she woke up late' gives a cause, which is exactly what 'Why' questions ask about.",
-      "grammarRule": "Question Word Choice: Why"
-    },
-    {
-      "id": "qf_l13_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They postponed the picnic due to the forecast.",
-      "sentence": "They postponed the picnic due to the forecast.",
-      "options": [
-        "When did they postpone the picnic?",
-        "Where did they postpone the picnic?",
-        "What did they postpone the picnic?",
-        "Why did they postpone the picnic?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Why did they postpone the picnic?",
-      "hint": "'Due to the forecast' tells you the reason for the change.",
-      "explanation": "'Due to the forecast' is a reason, so the sentence calls for 'Why', not a question word about time or place.",
-      "grammarRule": "Question Word Choice: Why"
-    },
-    {
-      "id": "qf_l14_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He repaired the fence using spare wood.",
-      "sentence": "He repaired the fence using spare wood.",
-      "options": [
-        "How did he repair the fence?",
-        "Why did he repair the fence?",
-        "When did he repair the fence?",
-        "Where did he repair the fence?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How did he repair the fence?",
-      "hint": "'Using spare wood' explains the method.",
-      "explanation": "'Using spare wood' describes the method used, and 'How' is the word that asks about a method.",
-      "grammarRule": "Question Word Choice: How (Manner)"
-    },
-    {
-      "id": "qf_l14_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She calmed the baby by singing softly.",
-      "sentence": "She calmed the baby by singing softly.",
-      "options": [
-        "How did she calm the baby?",
-        "Why did she calm the baby?",
-        "When did she calm the baby?",
-        "Who did she calm the baby?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How did she calm the baby?",
-      "hint": "'By singing softly' describes the way something was done.",
-      "explanation": "'By singing softly' tells us the manner of the action, which matches the question word 'How'.",
-      "grammarRule": "Question Word Choice: How (Manner)"
-    },
-    {
-      "id": "qf_l14_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They solved the puzzle through trial and error.",
-      "sentence": "They solved the puzzle through trial and error.",
-      "options": [
-        "Why did they solve the puzzle?",
-        "How did they solve the puzzle?",
-        "Where did they solve the puzzle?",
-        "What did they solve the puzzle?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How did they solve the puzzle?",
-      "hint": "'Through trial and error' explains the method.",
-      "explanation": "'Through trial and error' names a method, so 'How' is the correct question word rather than one asking about reason or place.",
-      "grammarRule": "Question Word Choice: How (Manner)"
-    },
-    {
-      "id": "qf_l15_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She ordered a plate of grilled vegetables.",
-      "sentence": "She ordered a plate of grilled vegetables.",
-      "options": [
-        "Who did she order?",
-        "Why did she order?",
-        "Where did she order?",
-        "What did she order?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What did she order?",
-      "hint": "'A plate of grilled vegetables' names a thing.",
-      "explanation": "Since 'a plate of grilled vegetables' names a thing, the question word 'What' is the right choice.",
-      "grammarRule": "Question Word Choice: What"
-    },
-    {
-      "id": "qf_l15_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He fixed the leaking pipe under the sink.",
-      "sentence": "He fixed the leaking pipe under the sink.",
-      "options": [
-        "Where did he fix?",
-        "How did he fix?",
-        "Why did he fix?",
-        "What did he fix?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What did he fix?",
-      "hint": "'The leaking pipe' is the thing being talked about.",
-      "explanation": "'The leaking pipe' is a thing, and questions about things start with 'What'.",
-      "grammarRule": "Question Word Choice: What"
-    },
-    {
-      "id": "qf_l15_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are planning a surprise party.",
-      "sentence": "They are planning a surprise party.",
-      "options": [
-        "Who are they planning?",
-        "When are they planning?",
-        "Why are they planning?",
-        "What are they planning?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What are they planning?",
-      "hint": "'A surprise party' is the thing being planned.",
-      "explanation": "'A surprise party' names a thing, so 'What' correctly asks about it.",
-      "grammarRule": "Question Word Choice: What"
-    },
-    {
-      "id": "qf_l16_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is meeting her cousin at the airport.",
-      "sentence": "She is meeting her cousin at the airport.",
-      "options": [
-        "Who is she meeting at the airport?",
-        "What is she meeting at the airport?",
-        "When is she meeting at the airport?",
-        "Where is she meeting at the airport?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who is she meeting at the airport?",
-      "hint": "'Her cousin' is the person she's meeting.",
-      "explanation": "'Her cousin' is a person and is the object of the sentence, so the question asks 'Who' she is meeting.",
-      "grammarRule": "Question Word Choice: Who"
-    },
-    {
-      "id": "qf_l16_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is calling his brother about the trip.",
-      "sentence": "He is calling his brother about the trip.",
-      "options": [
-        "What is he calling about the trip?",
-        "Why is he calling about the trip?",
-        "Who is he calling about the trip?",
-        "When is he calling about the trip?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who is he calling about the trip?",
-      "hint": "'His brother' is the person being called.",
-      "explanation": "'His brother' names a person, and since it's the object of the sentence, we ask 'Who' rather than 'What' or 'Why'.",
-      "grammarRule": "Question Word Choice: Who"
-    },
-    {
-      "id": "qf_l16_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They invited their neighbors to the barbecue.",
-      "sentence": "They invited their neighbors to the barbecue.",
-      "options": [
-        "What did they invite to the barbecue?",
-        "When did they invite to the barbecue?",
-        "Who did they invite to the barbecue?",
-        "Where did they invite to the barbecue?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who did they invite to the barbecue?",
-      "hint": "'Their neighbors' is who was invited.",
-      "explanation": "'Their neighbors' refers to the people who received the invitation, so 'Who' is correct, not 'What' or 'When'.",
-      "grammarRule": "Question Word Choice: Who"
-    },
-    {
-      "id": "qf_l17_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This scarf costs twenty-five dollars.",
-      "sentence": "This scarf costs twenty-five dollars.",
-      "options": [
-        "How many does this scarf cost?",
-        "What does this scarf cost?",
-        "Why does this scarf cost?",
-        "How much does this scarf cost?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How much does this scarf cost?",
-      "hint": "Money is uncountable, so use 'How much', not 'How many'.",
-      "explanation": "Prices are treated as an uncountable amount, so 'How much' is correct - 'How many' is only for countable nouns.",
-      "grammarRule": "Question Word Choice: How Much / How Many"
-    },
-    {
-      "id": "qf_l17_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The bakery sold thirty loaves this morning.",
-      "sentence": "The bakery sold thirty loaves this morning.",
-      "options": [
-        "How much loaves did the bakery sell?",
-        "How many loaves did the bakery sell?",
-        "What loaves did the bakery sell?",
-        "When loaves did the bakery sell?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How many loaves did the bakery sell?",
-      "hint": "'Loaves' can be counted one by one, so use 'How many'.",
-      "explanation": "Because 'loaves' is a countable noun, the question needs 'How many', not 'How much'.",
-      "grammarRule": "Question Word Choice: How Much / How Many"
-    },
-    {
-      "id": "qf_l17_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The suitcase weighs eighteen kilograms.",
-      "sentence": "The suitcase weighs eighteen kilograms.",
-      "options": [
-        "How many does the suitcase weigh?",
-        "How much does the suitcase weigh?",
-        "What does the suitcase weigh?",
-        "How far does the suitcase weigh?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How much does the suitcase weigh?",
-      "hint": "Weight is measured, not counted, so 'How much' fits here.",
-      "explanation": "Weight is an uncountable measurement, so 'How much' is the right choice rather than 'How many' or 'How far'.",
-      "grammarRule": "Question Word Choice: How Much / How Many"
-    },
-    {
-      "id": "qf_l18_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The flight to Tokyo takes eleven hours.",
-      "sentence": "The flight to Tokyo takes eleven hours.",
-      "options": [
-        "How far does the flight to Tokyo take?",
-        "How long does the flight to Tokyo take?",
-        "How often does the flight to Tokyo take?",
-        "When does the flight to Tokyo take?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How long does the flight to Tokyo take?",
-      "hint": "'Eleven hours' measures duration, so think 'How long'.",
-      "explanation": "'Eleven hours' expresses duration, which is exactly what 'How long' asks about.",
-      "grammarRule": "Question Word Choice: How Long / How Far / How Often"
-    },
-    {
-      "id": "qf_l18_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The campsite is about six miles from here.",
-      "sentence": "The campsite is about six miles from here.",
-      "options": [
-        "How long is the campsite from here?",
-        "How far is the campsite from here?",
-        "How often is the campsite from here?",
-        "Where is the campsite from here?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How far is the campsite from here?",
-      "hint": "'Six miles' measures distance, so think 'How far'.",
-      "explanation": "'Six miles' is a distance, so the sentence needs 'How far' rather than a word asking about time or frequency.",
-      "grammarRule": "Question Word Choice: How Long / How Far / How Often"
-    },
-    {
-      "id": "qf_l18_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She visits her parents twice a month.",
-      "sentence": "She visits her parents twice a month.",
-      "options": [
-        "How often does she visit her parents?",
-        "How long does she visit her parents?",
-        "How far does she visit her parents?",
-        "When does she visit her parents?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How often does she visit her parents?",
-      "hint": "'Twice a month' tells you how frequently something happens.",
-      "explanation": "'Twice a month' describes frequency, so 'How often' is the correct question word here.",
-      "grammarRule": "Question Word Choice: How Long / How Far / How Often"
-    },
-    {
-      "id": "qf_l19_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The pharmacy opens at eight thirty.",
-      "sentence": "The pharmacy opens at eight thirty.",
-      "options": [
-        "When does the pharmacy open?",
-        "How does the pharmacy open?",
-        "Where does the pharmacy open?",
-        "What time does the pharmacy open?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What time does the pharmacy open?",
-      "hint": "'Eight thirty' is an exact clock time, so 'What time' fits best.",
-      "explanation": "Since 'eight thirty' names a precise clock time, 'What time' is more exact here than the more general 'When'.",
-      "grammarRule": "Question Word Choice: What Time / Whose"
-    },
-    {
-      "id": "qf_l19_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The last train departs at eleven fifteen.",
-      "sentence": "The last train departs at eleven fifteen.",
-      "options": [
-        "When does the last train depart?",
-        "Where does the last train depart?",
-        "Why does the last train depart?",
-        "What time does the last train depart?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What time does the last train depart?",
-      "hint": "'Eleven fifteen' is a precise time on the clock.",
-      "explanation": "'Eleven fifteen' is an exact clock time, which calls for 'What time' rather than the broader 'When'.",
-      "grammarRule": "Question Word Choice: What Time / Whose"
-    },
-    {
-      "id": "qf_l19_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "That silver laptop belongs to my roommate.",
-      "sentence": "That silver laptop belongs to my roommate.",
-      "options": [
-        "Who laptop is that?",
-        "Which laptop is that?",
-        "Whose laptop is that?",
-        "What laptop is that?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Whose laptop is that?",
-      "hint": "'Belongs to my roommate' tells you about ownership, so think 'Whose'.",
-      "explanation": "'Belongs to my roommate' expresses ownership, and 'Whose' is the question word used to ask who owns something.",
-      "grammarRule": "Question Word Choice: What Time / Whose"
-    },
-    {
-      "id": "qf_l20_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The librarian is organizing the books by genre.",
-      "sentence": "The librarian is organizing the books by genre.",
-      "options": [
-        "Why is the librarian organizing the books?",
-        "Where is the librarian organizing the books?",
-        "What is the librarian organizing the books?",
-        "How is the librarian organizing the books?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How is the librarian organizing the books?",
-      "hint": "'By genre' explains the method used.",
-      "explanation": "'By genre' describes the method being used, so 'How' correctly asks about the way the books are organized.",
-      "grammarRule": "Question Word Choice: Mixed Review"
-    },
-    {
-      "id": "qf_l20_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He missed the meeting because his flight was delayed.",
-      "sentence": "He missed the meeting because his flight was delayed.",
-      "options": [
-        "When did he miss the meeting?",
-        "Why did he miss the meeting?",
-        "How did he miss the meeting?",
-        "Who did he miss the meeting?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why did he miss the meeting?",
-      "hint": "'Because his flight was delayed' explains the reason.",
-      "explanation": "'Because his flight was delayed' gives a reason, so 'Why' is correct, not a word asking about time or manner.",
-      "grammarRule": "Question Word Choice: Mixed Review"
-    },
-    {
-      "id": "qf_l20_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new stadium holds sixty thousand fans.",
-      "sentence": "The new stadium holds sixty thousand fans.",
-      "options": [
-        "How much fans does the new stadium hold?",
-        "What fans does the new stadium hold?",
-        "Where fans does the new stadium hold?",
-        "How many fans does the new stadium hold?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How many fans does the new stadium hold?",
-      "hint": "'Fans' can be counted, so use 'How many'.",
-      "explanation": "Since 'fans' is a countable noun, 'How many' is correct rather than 'How much', which is reserved for uncountable amounts.",
-      "grammarRule": "Question Word Choice: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 2,
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "qf_l11_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Her passport is in the top drawer.",
+            "sentence": "Her passport is in the top drawer.",
+            "options": [
+                "Where is her passport?",
+                "What is her passport?",
+                "When is her passport?",
+                "Who is her passport?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Where is her passport?",
+            "hint": "'In the top drawer' names a location.",
+            "explanation": "'Where' asks about place, and 'in the top drawer' tells us exactly that - so 'Where' is the question word we need.",
+            "grammarRule": "Question Word Choice: Where"
+        },
+        {
+            "id": "qf_l11_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The nearest pharmacy is next to the bakery.",
+            "sentence": "The nearest pharmacy is next to the bakery.",
+            "options": [
+                "What is the nearest pharmacy?",
+                "How is the nearest pharmacy?",
+                "Why is the nearest pharmacy?",
+                "Where is the nearest pharmacy?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Where is the nearest pharmacy?",
+            "hint": "'Next to the bakery' tells us the location.",
+            "explanation": "Because 'next to the bakery' describes a place, the correct question word is 'Where'.",
+            "grammarRule": "Question Word Choice: Where"
+        },
+        {
+            "id": "qf_l11_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The manager is waiting in the lobby.",
+            "sentence": "The manager is waiting in the lobby.",
+            "options": [
+                "What is the manager waiting?",
+                "Where is the manager waiting?",
+                "Who is the manager waiting?",
+                "When is the manager waiting?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Where is the manager waiting?",
+            "hint": "'In the lobby' answers the question 'where'.",
+            "explanation": "'In the lobby' is a place, which is exactly what 'Where' asks about.",
+            "grammarRule": "Question Word Choice: Where"
+        },
+        {
+            "id": "qf_l12_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The conference begins on Monday morning.",
+            "sentence": "The conference begins on Monday morning.",
+            "options": [
+                "Where does the conference begin?",
+                "Why does the conference begin?",
+                "When does the conference begin?",
+                "Who does the conference begin?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "When does the conference begin?",
+            "hint": "'On Monday morning' tells you the time.",
+            "explanation": "'On Monday morning' answers a time question, so 'When' is the correct word here.",
+            "grammarRule": "Question Word Choice: When"
+        },
+        {
+            "id": "qf_l12_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The bakery closes at seven in the evening.",
+            "sentence": "The bakery closes at seven in the evening.",
+            "options": [
+                "Where does the bakery close?",
+                "What does the bakery close?",
+                "How does the bakery close?",
+                "When does the bakery close?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "When does the bakery close?",
+            "hint": "Look at 'at seven in the evening' - that's a time.",
+            "explanation": "'At seven in the evening' gives a specific time, which matches the question word 'When'.",
+            "grammarRule": "Question Word Choice: When"
+        },
+        {
+            "id": "qf_l12_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Grandma was born in 1958.",
+            "sentence": "Grandma was born in 1958.",
+            "options": [
+                "When was Grandma born?",
+                "Where was Grandma born?",
+                "Why was Grandma born?",
+                "How was Grandma born?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "When was Grandma born?",
+            "hint": "'In 1958' points to a year, so think 'When'.",
+            "explanation": "A year like 1958 answers a time question, so 'When' is correct rather than a word asking about place or reason.",
+            "grammarRule": "Question Word Choice: When"
+        },
+        {
+            "id": "qf_l13_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He canceled the trip because of the storm.",
+            "sentence": "He canceled the trip because of the storm.",
+            "options": [
+                "When did he cancel the trip?",
+                "Where did he cancel the trip?",
+                "Who did he cancel the trip?",
+                "Why did he cancel the trip?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Why did he cancel the trip?",
+            "hint": "'Because of the storm' gives a reason.",
+            "explanation": "'Because of the storm' explains a reason, and 'Why' is the question word that asks for a reason.",
+            "grammarRule": "Question Word Choice: Why"
+        },
+        {
+            "id": "qf_l13_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She skipped breakfast since she woke up late.",
+            "sentence": "She skipped breakfast since she woke up late.",
+            "options": [
+                "Why did she skip breakfast?",
+                "When did she skip breakfast?",
+                "How did she skip breakfast?",
+                "Who did she skip breakfast?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why did she skip breakfast?",
+            "hint": "'Since she woke up late' explains a reason.",
+            "explanation": "The clause 'since she woke up late' gives a cause, which is exactly what 'Why' questions ask about.",
+            "grammarRule": "Question Word Choice: Why"
+        },
+        {
+            "id": "qf_l13_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They postponed the picnic due to the forecast.",
+            "sentence": "They postponed the picnic due to the forecast.",
+            "options": [
+                "When did they postpone the picnic?",
+                "Where did they postpone the picnic?",
+                "What did they postpone the picnic?",
+                "Why did they postpone the picnic?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Why did they postpone the picnic?",
+            "hint": "'Due to the forecast' tells you the reason for the change.",
+            "explanation": "'Due to the forecast' is a reason, so the sentence calls for 'Why', not a question word about time or place.",
+            "grammarRule": "Question Word Choice: Why"
+        },
+        {
+            "id": "qf_l14_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He repaired the fence using spare wood.",
+            "sentence": "He repaired the fence using spare wood.",
+            "options": [
+                "How did he repair the fence?",
+                "Why did he repair the fence?",
+                "When did he repair the fence?",
+                "Where did he repair the fence?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How did he repair the fence?",
+            "hint": "'Using spare wood' explains the method.",
+            "explanation": "'Using spare wood' describes the method used, and 'How' is the word that asks about a method.",
+            "grammarRule": "Question Word Choice: How (Manner)"
+        },
+        {
+            "id": "qf_l14_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She calmed the baby by singing softly.",
+            "sentence": "She calmed the baby by singing softly.",
+            "options": [
+                "How did she calm the baby?",
+                "Why did she calm the baby?",
+                "When did she calm the baby?",
+                "Who did she calm the baby?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How did she calm the baby?",
+            "hint": "'By singing softly' describes the way something was done.",
+            "explanation": "'By singing softly' tells us the manner of the action, which matches the question word 'How'.",
+            "grammarRule": "Question Word Choice: How (Manner)"
+        },
+        {
+            "id": "qf_l14_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They solved the puzzle through trial and error.",
+            "sentence": "They solved the puzzle through trial and error.",
+            "options": [
+                "Why did they solve the puzzle?",
+                "How did they solve the puzzle?",
+                "Where did they solve the puzzle?",
+                "What did they solve the puzzle?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How did they solve the puzzle?",
+            "hint": "'Through trial and error' explains the method.",
+            "explanation": "'Through trial and error' names a method, so 'How' is the correct question word rather than one asking about reason or place.",
+            "grammarRule": "Question Word Choice: How (Manner)"
+        },
+        {
+            "id": "qf_l15_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She ordered a plate of grilled vegetables.",
+            "sentence": "She ordered a plate of grilled vegetables.",
+            "options": [
+                "Who did she order?",
+                "Why did she order?",
+                "Where did she order?",
+                "What did she order?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What did she order?",
+            "hint": "'A plate of grilled vegetables' names a thing.",
+            "explanation": "Since 'a plate of grilled vegetables' names a thing, the question word 'What' is the right choice.",
+            "grammarRule": "Question Word Choice: What"
+        },
+        {
+            "id": "qf_l15_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He fixed the leaking pipe under the sink.",
+            "sentence": "He fixed the leaking pipe under the sink.",
+            "options": [
+                "Where did he fix?",
+                "How did he fix?",
+                "Why did he fix?",
+                "What did he fix?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What did he fix?",
+            "hint": "'The leaking pipe' is the thing being talked about.",
+            "explanation": "'The leaking pipe' is a thing, and questions about things start with 'What'.",
+            "grammarRule": "Question Word Choice: What"
+        },
+        {
+            "id": "qf_l15_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They are planning a surprise party.",
+            "sentence": "They are planning a surprise party.",
+            "options": [
+                "Who are they planning?",
+                "When are they planning?",
+                "Why are they planning?",
+                "What are they planning?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What are they planning?",
+            "hint": "'A surprise party' is the thing being planned.",
+            "explanation": "'A surprise party' names a thing, so 'What' correctly asks about it.",
+            "grammarRule": "Question Word Choice: What"
+        },
+        {
+            "id": "qf_l16_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is meeting her cousin at the airport.",
+            "sentence": "She is meeting her cousin at the airport.",
+            "options": [
+                "Who is she meeting at the airport?",
+                "What is she meeting at the airport?",
+                "When is she meeting at the airport?",
+                "Where is she meeting at the airport?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who is she meeting at the airport?",
+            "hint": "'Her cousin' is the person she's meeting.",
+            "explanation": "'Her cousin' is a person and is the object of the sentence, so the question asks 'Who' she is meeting.",
+            "grammarRule": "Question Word Choice: Who"
+        },
+        {
+            "id": "qf_l16_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is calling his brother about the trip.",
+            "sentence": "He is calling his brother about the trip.",
+            "options": [
+                "What is he calling about the trip?",
+                "Why is he calling about the trip?",
+                "Who is he calling about the trip?",
+                "When is he calling about the trip?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who is he calling about the trip?",
+            "hint": "'His brother' is the person being called.",
+            "explanation": "'His brother' names a person, and since it's the object of the sentence, we ask 'Who' rather than 'What' or 'Why'.",
+            "grammarRule": "Question Word Choice: Who"
+        },
+        {
+            "id": "qf_l16_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They invited their neighbors to the barbecue.",
+            "sentence": "They invited their neighbors to the barbecue.",
+            "options": [
+                "What did they invite to the barbecue?",
+                "When did they invite to the barbecue?",
+                "Who did they invite to the barbecue?",
+                "Where did they invite to the barbecue?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who did they invite to the barbecue?",
+            "hint": "'Their neighbors' is who was invited.",
+            "explanation": "'Their neighbors' refers to the people who received the invitation, so 'Who' is correct, not 'What' or 'When'.",
+            "grammarRule": "Question Word Choice: Who"
+        },
+        {
+            "id": "qf_l17_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This scarf costs twenty-five dollars.",
+            "sentence": "This scarf costs twenty-five dollars.",
+            "options": [
+                "How many does this scarf cost?",
+                "What does this scarf cost?",
+                "Why does this scarf cost?",
+                "How much does this scarf cost?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How much does this scarf cost?",
+            "hint": "Money is uncountable, so use 'How much', not 'How many'.",
+            "explanation": "Prices are treated as an uncountable amount, so 'How much' is correct - 'How many' is only for countable nouns.",
+            "grammarRule": "Question Word Choice: How Much / How Many"
+        },
+        {
+            "id": "qf_l17_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The bakery sold thirty loaves this morning.",
+            "sentence": "The bakery sold thirty loaves this morning.",
+            "options": [
+                "How much loaves did the bakery sell?",
+                "How many loaves did the bakery sell?",
+                "What loaves did the bakery sell?",
+                "When loaves did the bakery sell?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How many loaves did the bakery sell?",
+            "hint": "'Loaves' can be counted one by one, so use 'How many'.",
+            "explanation": "Because 'loaves' is a countable noun, the question needs 'How many', not 'How much'.",
+            "grammarRule": "Question Word Choice: How Much / How Many"
+        },
+        {
+            "id": "qf_l17_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The suitcase weighs eighteen kilograms.",
+            "sentence": "The suitcase weighs eighteen kilograms.",
+            "options": [
+                "How many does the suitcase weigh?",
+                "How much does the suitcase weigh?",
+                "What does the suitcase weigh?",
+                "How far does the suitcase weigh?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How much does the suitcase weigh?",
+            "hint": "Weight is measured, not counted, so 'How much' fits here.",
+            "explanation": "Weight is an uncountable measurement, so 'How much' is the right choice rather than 'How many' or 'How far'.",
+            "grammarRule": "Question Word Choice: How Much / How Many"
+        },
+        {
+            "id": "qf_l18_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The flight to Tokyo takes eleven hours.",
+            "sentence": "The flight to Tokyo takes eleven hours.",
+            "options": [
+                "How far does the flight to Tokyo take?",
+                "How long does the flight to Tokyo take?",
+                "How often does the flight to Tokyo take?",
+                "When does the flight to Tokyo take?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How long does the flight to Tokyo take?",
+            "hint": "'Eleven hours' measures duration, so think 'How long'.",
+            "explanation": "'Eleven hours' expresses duration, which is exactly what 'How long' asks about.",
+            "grammarRule": "Question Word Choice: How Long / How Far / How Often"
+        },
+        {
+            "id": "qf_l18_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The campsite is about six miles from here.",
+            "sentence": "The campsite is about six miles from here.",
+            "options": [
+                "How long is the campsite from here?",
+                "How far is the campsite from here?",
+                "How often is the campsite from here?",
+                "Where is the campsite from here?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How far is the campsite from here?",
+            "hint": "'Six miles' measures distance, so think 'How far'.",
+            "explanation": "'Six miles' is a distance, so the sentence needs 'How far' rather than a word asking about time or frequency.",
+            "grammarRule": "Question Word Choice: How Long / How Far / How Often"
+        },
+        {
+            "id": "qf_l18_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She visits her parents twice a month.",
+            "sentence": "She visits her parents twice a month.",
+            "options": [
+                "How often does she visit her parents?",
+                "How long does she visit her parents?",
+                "How far does she visit her parents?",
+                "When does she visit her parents?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How often does she visit her parents?",
+            "hint": "'Twice a month' tells you how frequently something happens.",
+            "explanation": "'Twice a month' describes frequency, so 'How often' is the correct question word here.",
+            "grammarRule": "Question Word Choice: How Long / How Far / How Often"
+        },
+        {
+            "id": "qf_l19_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The pharmacy opens at eight thirty.",
+            "sentence": "The pharmacy opens at eight thirty.",
+            "options": [
+                "When does the pharmacy open?",
+                "How does the pharmacy open?",
+                "Where does the pharmacy open?",
+                "What time does the pharmacy open?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What time does the pharmacy open?",
+            "hint": "'Eight thirty' is an exact clock time, so 'What time' fits best.",
+            "explanation": "Since 'eight thirty' names a precise clock time, 'What time' is more exact here than the more general 'When'.",
+            "grammarRule": "Question Word Choice: What Time / Whose"
+        },
+        {
+            "id": "qf_l19_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The last train departs at eleven fifteen.",
+            "sentence": "The last train departs at eleven fifteen.",
+            "options": [
+                "When does the last train depart?",
+                "Where does the last train depart?",
+                "Why does the last train depart?",
+                "What time does the last train depart?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What time does the last train depart?",
+            "hint": "'Eleven fifteen' is a precise time on the clock.",
+            "explanation": "'Eleven fifteen' is an exact clock time, which calls for 'What time' rather than the broader 'When'.",
+            "grammarRule": "Question Word Choice: What Time / Whose"
+        },
+        {
+            "id": "qf_l19_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "That silver laptop belongs to my roommate.",
+            "sentence": "That silver laptop belongs to my roommate.",
+            "options": [
+                "Who laptop is that?",
+                "Which laptop is that?",
+                "Whose laptop is that?",
+                "What laptop is that?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Whose laptop is that?",
+            "hint": "'Belongs to my roommate' tells you about ownership, so think 'Whose'.",
+            "explanation": "'Belongs to my roommate' expresses ownership, and 'Whose' is the question word used to ask who owns something.",
+            "grammarRule": "Question Word Choice: What Time / Whose"
+        },
+        {
+            "id": "qf_l20_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The librarian is organizing the books by genre.",
+            "sentence": "The librarian is organizing the books by genre.",
+            "options": [
+                "Why is the librarian organizing the books?",
+                "Where is the librarian organizing the books?",
+                "What is the librarian organizing the books?",
+                "How is the librarian organizing the books?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How is the librarian organizing the books?",
+            "hint": "'By genre' explains the method used.",
+            "explanation": "'By genre' describes the method being used, so 'How' correctly asks about the way the books are organized.",
+            "grammarRule": "Question Word Choice: Mixed Review"
+        },
+        {
+            "id": "qf_l20_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He missed the meeting because his flight was delayed.",
+            "sentence": "He missed the meeting because his flight was delayed.",
+            "options": [
+                "When did he miss the meeting?",
+                "Why did he miss the meeting?",
+                "How did he miss the meeting?",
+                "Who did he miss the meeting?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why did he miss the meeting?",
+            "hint": "'Because his flight was delayed' explains the reason.",
+            "explanation": "'Because his flight was delayed' gives a reason, so 'Why' is correct, not a word asking about time or manner.",
+            "grammarRule": "Question Word Choice: Mixed Review"
+        },
+        {
+            "id": "qf_l20_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new stadium holds sixty thousand fans.",
+            "sentence": "The new stadium holds sixty thousand fans.",
+            "options": [
+                "How much fans does the new stadium hold?",
+                "What fans does the new stadium hold?",
+                "Where fans does the new stadium hold?",
+                "How many fans does the new stadium hold?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How many fans does the new stadium hold?",
+            "hint": "'Fans' can be counted, so use 'How many'.",
+            "explanation": "Since 'fans' is a countable noun, 'How many' is correct rather than 'How much', which is reserved for uncountable amounts.",
+            "grammarRule": "Question Word Choice: Mixed Review"
+        }
+    ]
 }

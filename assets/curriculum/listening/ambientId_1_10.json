@@ -6,7 +6,7 @@
         {
             "id": "LIS_AMBIENTID_L1_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for beeping scanners and a squeaky cart wheel.",
             "explanation": "Beeping scanners and squeaky cart wheels are everyday sounds of checking out at a supermarket.",
             "textToSpeak": "A cash register beeps steadily as items slide across the scanner and a shopping cart wheel squeaks.",
@@ -22,7 +22,7 @@
         {
             "id": "LIS_AMBIENTID_L1_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a delay announcement and rolling suitcases.",
             "explanation": "Announcements about delays and rattling suitcase wheels are common sounds inside a busy station.",
             "textToSpeak": "A loudspeaker announces a delayed train while suitcase wheels rattle across the tiled floor.",
@@ -38,7 +38,7 @@
         {
             "id": "LIS_AMBIENTID_L1_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for turning pages and quiet whispering.",
             "explanation": "Soft page turns and whispering are typical sounds of a quiet place full of books.",
             "textToSpeak": "Pages turn softly and a librarian stamps a due date while everyone speaks in whispers.",
@@ -54,7 +54,7 @@
         {
             "id": "LIS_AMBIENTID_L2_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a name being called and turning pages.",
             "explanation": "A staff member calling a patient's name is a familiar sound in a clinic waiting room.",
             "textToSpeak": "A nurse calls out a patient's name softly while pages of a magazine turn in the waiting area.",
@@ -70,7 +70,7 @@
         {
             "id": "LIS_AMBIENTID_L2_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a boarding announcement and rolling suitcases.",
             "explanation": "Boarding announcements and rolling suitcases are classic sounds of a busy terminal.",
             "textToSpeak": "A voice announces a boarding call while suitcase wheels roll quickly across the terminal floor.",
@@ -86,7 +86,7 @@
         {
             "id": "LIS_AMBIENTID_L2_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for cooking sounds like boiling water and chopping.",
             "explanation": "Clattering pots, boiling water, and chopping are common noises from cooking a meal in a kitchen.",
             "textToSpeak": "Pots and pans clatter on the stove while water boils and someone chops vegetables on a wooden board.",
@@ -102,7 +102,7 @@
         {
             "id": "LIS_AMBIENTID_L3_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for laughing children and creaking swings.",
             "explanation": "Laughing children, creaking swings, and a bouncing ball are typical sounds of kids playing outside.",
             "textToSpeak": "Children laugh and shout as the swings creak back and forth and a ball bounces on the pavement.",
@@ -118,7 +118,7 @@
         {
             "id": "LIS_AMBIENTID_L3_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for group singing and candles being blown out.",
             "explanation": "Group singing followed by blowing out candles is the classic sound of a celebration.",
             "textToSpeak": "Everyone sings loudly together as candles flicker on a cake before someone blows them out.",
@@ -134,7 +134,7 @@
         {
             "id": "LIS_AMBIENTID_L3_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for clinking plates and a sizzling pan.",
             "explanation": "Clinking plates and sizzling pans are common sounds of a busy kitchen and dining area.",
             "textToSpeak": "Plates clink together as a waiter takes an order and a pan sizzles loudly in the open kitchen.",
@@ -150,7 +150,7 @@
         {
             "id": "LIS_AMBIENTID_L4_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a roaring animal and excited children.",
             "explanation": "A roaring lion and excited children are classic sounds near the big cat enclosure at a zoo.",
             "textToSpeak": "A lion roars deeply in the distance while excited children point and shout near the enclosure.",
@@ -166,7 +166,7 @@
         {
             "id": "LIS_AMBIENTID_L4_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a crowing rooster and clucking hens.",
             "explanation": "A crowing rooster and clucking chickens are the clearest signature sounds of this place at dawn.",
             "textToSpeak": "A rooster crows loudly at dawn while chickens cluck and scratch at the ground nearby.",
@@ -182,7 +182,7 @@
         {
             "id": "LIS_AMBIENTID_L4_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for hissing doors and coins in a fare box.",
             "explanation": "Hissing doors and coins dropping into a fare box are sounds you hear when boarding a city bus.",
             "textToSpeak": "The bus doors hiss open, coins clink into the fare box, and the engine hums as it pulls away.",
@@ -198,7 +198,7 @@
         {
             "id": "LIS_AMBIENTID_L5_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for clanging weights and a humming machine.",
             "explanation": "Clanging weights and a humming treadmill are typical sounds of people working out.",
             "textToSpeak": "Weights clang onto the rack while a treadmill hums steadily and someone breathes heavily nearby.",
@@ -214,7 +214,7 @@
         {
             "id": "LIS_AMBIENTID_L5_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for crashing waves and crying seagulls.",
             "explanation": "Crashing waves and seagulls are the clearest signature sounds of a beach.",
             "textToSpeak": "Waves crash onto the shore again and again while seagulls cry out overhead.",
@@ -230,7 +230,7 @@
         {
             "id": "LIS_AMBIENTID_L5_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a whistle and splashing water.",
             "explanation": "A whistle followed by splashing is a familiar sound at a busy pool.",
             "textToSpeak": "A whistle blows sharply while children splash and kick loudly across the water.",
@@ -246,7 +246,7 @@
         {
             "id": "LIS_AMBIENTID_L6_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a barking dog and footsteps on gravel.",
             "explanation": "A barking dog and joggers on a gravel path are common sounds of an afternoon in the park.",
             "textToSpeak": "A dog barks happily as it chases a ball, and joggers' footsteps pass along the gravel path.",
@@ -262,7 +262,7 @@
         {
             "id": "LIS_AMBIENTID_L6_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for snipping scissors and a buzzing dryer.",
             "explanation": "Snipping scissors and a buzzing hair dryer are classic sounds of getting a haircut.",
             "textToSpeak": "Scissors snip quickly near the ear while a hair dryer buzzes at the next chair.",
@@ -278,7 +278,7 @@
         {
             "id": "LIS_AMBIENTID_L6_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a timer ding and dusting flour.",
             "explanation": "A dinging oven timer and fresh bread are classic signs of a working bakery.",
             "textToSpeak": "An oven timer dings as warm bread comes out and flour dusts softly onto the counter.",
@@ -294,7 +294,7 @@
         {
             "id": "LIS_AMBIENTID_L7_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for pencils writing and a teacher at the board.",
             "explanation": "Scratching pencils and a teacher writing on the board are everyday sounds of a classroom lesson.",
             "textToSpeak": "Pencils scratch across paper while a teacher writes on the whiteboard and chairs squeak on the floor.",
@@ -310,7 +310,7 @@
         {
             "id": "LIS_AMBIENTID_L7_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for crunching popcorn and swelling music.",
             "explanation": "Crunching popcorn and dramatic music are classic sounds of watching a film on a big screen.",
             "textToSpeak": "Popcorn crunches loudly in the dark while dramatic music swells from the huge screen.",
@@ -326,7 +326,7 @@
         {
             "id": "LIS_AMBIENTID_L7_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for screeching animals and a guide speaking.",
             "explanation": "Screeching monkeys and a guide's voice are common sounds during a tour of the animal park.",
             "textToSpeak": "Monkeys screech and swing through branches while a guide explains facts through a microphone.",
@@ -342,7 +342,7 @@
         {
             "id": "LIS_AMBIENTID_L8_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a beeping monitor and squeaking wheels.",
             "explanation": "A beeping monitor and squeaking stretcher wheels are common sounds near a hospital ward.",
             "textToSpeak": "A heart monitor beeps steadily nearby while the wheels of a stretcher squeak down the hallway.",
@@ -358,7 +358,7 @@
         {
             "id": "LIS_AMBIENTID_L8_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a scanning barcode and a rolling cart.",
             "explanation": "A scanning barcode and a rolling cart of books are common sounds when returning books.",
             "textToSpeak": "A librarian scans a barcode quietly while a cart of returned books rolls between the shelves.",
@@ -374,7 +374,7 @@
         {
             "id": "LIS_AMBIENTID_L8_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a blender and a fridge door opening.",
             "explanation": "A whirring blender and an opening fridge door are everyday sounds of preparing food at home.",
             "textToSpeak": "A blender whirs loudly, then stops, and the fridge door opens with a soft click before closing again.",
@@ -390,7 +390,7 @@
         {
             "id": "LIS_AMBIENTID_L9_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for quacking ducks and flapping wings.",
             "explanation": "Quacking ducks near a pond are a familiar sound in a park that has water features.",
             "textToSpeak": "Children feed the ducks by the pond as their wings flap and they quack loudly for bread.",
@@ -406,7 +406,7 @@
         {
             "id": "LIS_AMBIENTID_L9_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a slurping straw and a surprised audience.",
             "explanation": "An audience gasping together is a familiar sound during an exciting moment on screen.",
             "textToSpeak": "A soda straw slurps quietly while the audience gasps together at a surprising scene.",
@@ -422,7 +422,7 @@
         {
             "id": "LIS_AMBIENTID_L9_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for students answering questions and pages turning.",
             "explanation": "Students answering questions and flipping textbook pages are typical sounds during a classroom lesson.",
             "textToSpeak": "Children raise their hands and call out answers while pages of textbooks flip one after another.",
@@ -438,7 +438,7 @@
         {
             "id": "LIS_AMBIENTID_L10_Q1",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for a whirring mixer and a rolling pin.",
             "explanation": "A whirring mixer and a rolling pin are common sounds of pastries being made.",
             "textToSpeak": "A mixer whirs steadily as sugar is measured and a rolling pin flattens dough on the table.",
@@ -454,7 +454,7 @@
         {
             "id": "LIS_AMBIENTID_L10_Q2",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for playing children and a bouncing ball.",
             "explanation": "Children playing with a ball near the shore is a classic scene at the beach.",
             "textToSpeak": "Children build sandcastles and laugh while a ball bounces past sunbathers resting on towels.",
@@ -470,7 +470,7 @@
         {
             "id": "LIS_AMBIENTID_L10_Q3",
             "instruction": "Listen to the description and identify the location.",
-            "interactionType": "Echo Locator",
+            "interactionType": "choice",
             "hint": "Listen for running feet and children counting.",
             "explanation": "Squeaking sneakers and children counting aloud are common sounds during outdoor games at a playground.",
             "textToSpeak": "Sneakers squeak on the pavement while kids count loudly during a game of hide and seek.",

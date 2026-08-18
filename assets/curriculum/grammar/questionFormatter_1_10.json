@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "qf_l1_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Maria works at a hospital downtown.",
-      "sentence": "Maria works at a hospital downtown.",
-      "options": [
-        "Does Maria work at a hospital downtown?",
-        "Does Maria works at a hospital downtown?",
-        "Is Maria work at a hospital downtown?",
-        "Maria works at a hospital downtown?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does Maria work at a hospital downtown?",
-      "hint": "The subject is one person, Maria, so the question needs 'Does' before the base verb.",
-      "explanation": "Singular subjects like Maria use 'Does' in the present simple. Once 'Does' is added, the verb drops its -s and appears as 'work'.",
-      "grammarRule": "Present Simple Questions (Singular Subjects)"
-    },
-    {
-      "id": "qf_l1_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new intern arrives at nine every day.",
-      "sentence": "The new intern arrives at nine every day.",
-      "options": [
-        "Does the new intern arrives at nine every day?",
-        "Do the new intern arrive at nine every day?",
-        "The new intern arrives at nine every day?",
-        "Does the new intern arrive at nine every day?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Does the new intern arrive at nine every day?",
-      "hint": "'The new intern' is singular, so pair it with 'Does' and the base form of the verb.",
-      "explanation": "'The new intern' is a singular subject, so 'Does' is correct. The main verb then loses its -s: 'arrive', not 'arrives'.",
-      "grammarRule": "Present Simple Questions (Singular Subjects)"
-    },
-    {
-      "id": "qf_l1_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He takes the early bus to the office.",
-      "sentence": "He takes the early bus to the office.",
-      "options": [
-        "Does he takes the early bus to the office?",
-        "Does he take the early bus to the office?",
-        "Do he take the early bus to the office?",
-        "He takes the early bus to the office?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Does he take the early bus to the office?",
-      "hint": "'He' needs 'Does', and the verb loses its -s once the auxiliary is there.",
-      "explanation": "'He' is a singular subject, so 'Does' is the right auxiliary, and the main verb returns to its base form, 'take'.",
-      "grammarRule": "Present Simple Questions (Singular Subjects)"
-    },
-    {
-      "id": "qf_l2_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "My cousins visit us every summer.",
-      "sentence": "My cousins visit us every summer.",
-      "options": [
-        "Does my cousins visit us every summer?",
-        "Do my cousins visits us every summer?",
-        "Do my cousins visit us every summer?",
-        "My cousins visit us every summer?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do my cousins visit us every summer?",
-      "hint": "'My cousins' is plural, so it needs 'Do', not 'Does'.",
-      "explanation": "Plural subjects like 'my cousins' pair with 'Do', and the main verb keeps its plain form, 'visit'.",
-      "grammarRule": "Present Simple Questions (Plural Subjects)"
-    },
-    {
-      "id": "qf_l2_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You leave your keys on the kitchen table.",
-      "sentence": "You leave your keys on the kitchen table.",
-      "options": [
-        "Do you leave your keys on the kitchen table?",
-        "Does you leave your keys on the kitchen table?",
-        "Do you leaves your keys on the kitchen table?",
-        "You leave your keys on the kitchen table?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you leave your keys on the kitchen table?",
-      "hint": "'You' always takes 'Do' in the present simple, never 'Does'.",
-      "explanation": "The pronoun 'you' always pairs with 'Do'. The verb keeps its plain form, 'leave', throughout the question.",
-      "grammarRule": "Present Simple Questions (Plural Subjects)"
-    },
-    {
-      "id": "qf_l2_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We recycle our plastic bottles every week.",
-      "sentence": "We recycle our plastic bottles every week.",
-      "options": [
-        "Do we recycle our plastic bottles every week?",
-        "Does we recycle our plastic bottles every week?",
-        "Do we recycles our plastic bottles every week?",
-        "We recycle our plastic bottles every week?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do we recycle our plastic bottles every week?",
-      "hint": "'We' pairs with 'Do', and the verb stays in its base form.",
-      "explanation": "'We' takes 'Do' in the present simple, and the main verb 'recycle' stays exactly as it is - no -s is added.",
-      "grammarRule": "Present Simple Questions (Plural Subjects)"
-    },
-    {
-      "id": "qf_l3_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She finished the report before lunch.",
-      "sentence": "She finished the report before lunch.",
-      "options": [
-        "Did she finish the report before lunch?",
-        "Did she finished the report before lunch?",
-        "Does she finish the report before lunch?",
-        "She finished the report before lunch?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did she finish the report before lunch?",
-      "hint": "Past simple questions always use 'Did' - and the verb goes back to its base form.",
-      "explanation": "'Did' works for every subject in the past simple. Once it appears, the main verb loses its past ending: 'finish', not 'finished'.",
-      "grammarRule": "Past Simple Questions"
-    },
-    {
-      "id": "qf_l3_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They moved to a new apartment last month.",
-      "sentence": "They moved to a new apartment last month.",
-      "options": [
-        "Did they moved to a new apartment last month?",
-        "Did they move to a new apartment last month?",
-        "Were they move to a new apartment last month?",
-        "They moved to a new apartment last month?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Did they move to a new apartment last month?",
-      "hint": "The verb should return to its base form, 'move', once 'Did' is added.",
-      "explanation": "After 'Did', the main verb drops its past tense ending. That's why 'moved' becomes 'move' in the question.",
-      "grammarRule": "Past Simple Questions"
-    },
-    {
-      "id": "qf_l3_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I forgot my umbrella at the café.",
-      "sentence": "I forgot my umbrella at the café.",
-      "options": [
-        "Did I forgot my umbrella at the café?",
-        "Have I forget my umbrella at the café?",
-        "Did I forget my umbrella at the café?",
-        "I forgot my umbrella at the café?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Did I forget my umbrella at the café?",
-      "hint": "Even an irregular verb like 'forgot' returns to its base form after 'Did'.",
-      "explanation": "Irregular verbs follow the same rule as regular ones: after 'Did', they return to the base form, so 'forgot' becomes 'forget'.",
-      "grammarRule": "Past Simple Questions"
-    },
-    {
-      "id": "qf_l4_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The store is open until midnight.",
-      "sentence": "The store is open until midnight.",
-      "options": [
-        "Does the store open until midnight?",
-        "Is the store opens until midnight?",
-        "Is the store open until midnight?",
-        "The store is open until midnight?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Is the store open until midnight?",
-      "hint": "With the verb 'to be', you don't need 'do' or 'does' - just move 'is' to the front.",
-      "explanation": "Sentences built on 'be' (is/am/are) form questions by moving 'be' to the front. No extra auxiliary like 'does' is needed.",
-      "grammarRule": "Verb 'To Be' Questions (Present)"
-    },
-    {
-      "id": "qf_l4_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Your parents are proud of you.",
-      "sentence": "Your parents are proud of you.",
-      "options": [
-        "Are your parents proud of you?",
-        "Do your parents are proud of you?",
-        "Is your parents proud of you?",
-        "Your parents are proud of you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are your parents proud of you?",
-      "hint": "'Parents' is plural, so use 'Are', and simply move it before the subject.",
-      "explanation": "Plural subjects need 'are'. To form the question, 'are' simply moves to the beginning - no other auxiliary is required.",
-      "grammarRule": "Verb 'To Be' Questions (Present)"
-    },
-    {
-      "id": "qf_l4_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I am late for my appointment.",
-      "sentence": "I am late for my appointment.",
-      "options": [
-        "Are I late for my appointment?",
-        "Do I am late for my appointment?",
-        "I am late for my appointment?",
-        "Am I late for my appointment?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Am I late for my appointment?",
-      "hint": "The subject 'I' always pairs with 'am', even in questions.",
-      "explanation": "'I' always takes 'am', in statements and in questions alike. The question simply places 'am' before 'I'.",
-      "grammarRule": "Verb 'To Be' Questions (Present)"
-    },
-    {
-      "id": "qf_l5_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The keys were on the counter.",
-      "sentence": "The keys were on the counter.",
-      "options": [
-        "Were the keys on the counter?",
-        "Was the keys on the counter?",
-        "Did the keys were on the counter?",
-        "The keys were on the counter?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Were the keys on the counter?",
-      "hint": "'Keys' is plural, so the question needs 'Were', moved to the front.",
-      "explanation": "Plural subjects take 'were'. As with all 'be' questions, 'were' simply moves to the start instead of adding another auxiliary.",
-      "grammarRule": "Verb 'To Be' Questions (Past)"
-    },
-    {
-      "id": "qf_l5_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He was nervous before the interview.",
-      "sentence": "He was nervous before the interview.",
-      "options": [
-        "Were he nervous before the interview?",
-        "Did he was nervous before the interview?",
-        "Was he nervous before the interview?",
-        "He was nervous before the interview?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Was he nervous before the interview?",
-      "hint": "'He' pairs with 'was', so just move 'was' before 'he'.",
-      "explanation": "Singular subjects like 'he' take 'was'. The question is formed simply by moving 'was' in front of the subject.",
-      "grammarRule": "Verb 'To Be' Questions (Past)"
-    },
-    {
-      "id": "qf_l5_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The children were asleep by nine.",
-      "sentence": "The children were asleep by nine.",
-      "options": [
-        "Were the children asleep by nine?",
-        "Was the children asleep by nine?",
-        "Are the children were asleep by nine?",
-        "The children were asleep by nine?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Were the children asleep by nine?",
-      "hint": "'The children' is plural, so use 'Were' at the start of the question.",
-      "explanation": "'The children' is a plural subject, so 'were' is correct. It moves to the beginning to form the question - nothing else changes.",
-      "grammarRule": "Verb 'To Be' Questions (Past)"
-    },
-    {
-      "id": "qf_l6_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She can speak three languages.",
-      "sentence": "She can speak three languages.",
-      "options": [
-        "Does she can speak three languages?",
-        "Can she speak three languages?",
-        "Can she speaks three languages?",
-        "She can speak three languages?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Can she speak three languages?",
-      "hint": "Modals like 'can' move to the front of the question on their own - no extra 'do' needed.",
-      "explanation": "Modal verbs such as 'can' form questions by moving to the start of the sentence. They never combine with 'do' or 'does'.",
-      "grammarRule": "Modal Questions (Present)"
-    },
-    {
-      "id": "qf_l6_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They will arrive before dinner.",
-      "sentence": "They will arrive before dinner.",
-      "options": [
-        "Do they will arrive before dinner?",
-        "Will they arrives before dinner?",
-        "They will arrive before dinner?",
-        "Will they arrive before dinner?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Will they arrive before dinner?",
-      "hint": "Move 'will' to the beginning of the sentence to form the question.",
-      "explanation": "'Will' moves to the front to create the question, and the main verb after it always stays in its base form, 'arrive'.",
-      "grammarRule": "Modal Questions (Present)"
-    },
-    {
-      "id": "qf_l6_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We must leave by six o'clock.",
-      "sentence": "We must leave by six o'clock.",
-      "options": [
-        "Do we must leave by six o'clock?",
-        "Must we leaving by six o'clock?",
-        "Must we leave by six o'clock?",
-        "We must leave by six o'clock?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Must we leave by six o'clock?",
-      "hint": "'Must' behaves like other modals - it simply moves to the start.",
-      "explanation": "Like all modal verbs, 'must' moves to the front of the sentence to form a question, and the main verb stays in its base form.",
-      "grammarRule": "Modal Questions (Present)"
-    },
-    {
-      "id": "qf_l7_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is cooking dinner right now.",
-      "sentence": "She is cooking dinner right now.",
-      "options": [
-        "Does she is cooking dinner right now?",
-        "Is she cook dinner right now?",
-        "She is cooking dinner right now?",
-        "Is she cooking dinner right now?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Is she cooking dinner right now?",
-      "hint": "With continuous tenses, move the 'be' verb to the front and keep the '-ing' form.",
-      "explanation": "In the present continuous, only 'is/am/are' moves to the front. The '-ing' form of the verb never changes.",
-      "grammarRule": "Present Continuous Questions"
-    },
-    {
-      "id": "qf_l7_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The kids are playing in the garden.",
-      "sentence": "The kids are playing in the garden.",
-      "options": [
-        "Are the kids playing in the garden?",
-        "Do the kids are playing in the garden?",
-        "Are the kids play in the garden?",
-        "The kids are playing in the garden?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are the kids playing in the garden?",
-      "hint": "'Kids' is plural, so use 'Are', and keep 'playing' exactly as it is.",
-      "explanation": "Plural subjects take 'are'. Moving 'are' to the front is the only change needed - the '-ing' form stays put.",
-      "grammarRule": "Present Continuous Questions"
-    },
-    {
-      "id": "qf_l7_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I am waiting for the bus.",
-      "sentence": "I am waiting for the bus.",
-      "options": [
-        "Do I am waiting for the bus?",
-        "Am I wait for the bus?",
-        "Am I waiting for the bus?",
-        "I am waiting for the bus?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Am I waiting for the bus?",
-      "hint": "'I' pairs with 'am' - move it to the start and keep 'waiting' unchanged.",
-      "explanation": "'I' always takes 'am'. The question is formed by moving 'am' forward, while 'waiting' keeps its '-ing' ending.",
-      "grammarRule": "Present Continuous Questions"
-    },
-    {
-      "id": "qf_l8_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He was driving to work when it started to rain.",
-      "sentence": "He was driving to work when it started to rain.",
-      "options": [
-        "Did he was driving to work when it started to rain?",
-        "Was he drive to work when it started to rain?",
-        "Was he driving to work when it started to rain?",
-        "He was driving to work when it started to rain?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Was he driving to work when it started to rain?",
-      "hint": "'He' takes 'was' - move it forward and keep 'driving' unchanged.",
-      "explanation": "Singular subjects like 'he' pair with 'was' in the past continuous. Moving 'was' to the front is enough; 'driving' stays the same.",
-      "grammarRule": "Past Continuous Questions"
-    },
-    {
-      "id": "qf_l8_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They were watching a movie at eight.",
-      "sentence": "They were watching a movie at eight.",
-      "options": [
-        "Did they were watching a movie at eight?",
-        "Were they watching a movie at eight?",
-        "Were they watch a movie at eight?",
-        "They were watching a movie at eight?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Were they watching a movie at eight?",
-      "hint": "'They' takes 'were' in the past continuous - move it to the start.",
-      "explanation": "'They' pairs with 'were'. The question moves 'were' forward, and 'watching' keeps its '-ing' form.",
-      "grammarRule": "Past Continuous Questions"
-    },
-    {
-      "id": "qf_l8_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was studying for my exam all night.",
-      "sentence": "I was studying for my exam all night.",
-      "options": [
-        "Did I was studying for my exam all night?",
-        "Was I study for my exam all night?",
-        "I was studying for my exam all night?",
-        "Was I studying for my exam all night?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Was I studying for my exam all night?",
-      "hint": "'I' takes 'was' in the past continuous, not 'were'.",
-      "explanation": "With 'I', the past continuous uses 'was'. Moving it to the front forms the question, and 'studying' stays unchanged.",
-      "grammarRule": "Past Continuous Questions"
-    },
-    {
-      "id": "qf_l9_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has finished her homework.",
-      "sentence": "She has finished her homework.",
-      "options": [
-        "Has she finished her homework?",
-        "Does she has finished her homework?",
-        "Has she finish her homework?",
-        "She has finished her homework?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has she finished her homework?",
-      "hint": "'She' pairs with 'has' - move it to the front and keep 'finished' unchanged.",
-      "explanation": "Singular subjects like 'she' take 'has' in the present perfect. The past participle 'finished' never changes when forming the question.",
-      "grammarRule": "Present Perfect Questions"
-    },
-    {
-      "id": "qf_l9_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We have visited that museum twice.",
-      "sentence": "We have visited that museum twice.",
-      "options": [
-        "Have we visited that museum twice?",
-        "Do we have visited that museum twice?",
-        "Have we visit that museum twice?",
-        "We have visited that museum twice?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have we visited that museum twice?",
-      "hint": "'We' pairs with 'have' - move it forward and keep 'visited' unchanged.",
-      "explanation": "'We' takes 'have' in the present perfect. Moving 'have' to the start forms the question; the participle 'visited' stays the same.",
-      "grammarRule": "Present Perfect Questions"
-    },
-    {
-      "id": "qf_l9_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has lost his passport.",
-      "sentence": "He has lost his passport.",
-      "options": [
-        "Does he has lost his passport?",
-        "Has he lost his passport?",
-        "Has he loses his passport?",
-        "He has lost his passport?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Has he lost his passport?",
-      "hint": "'He' takes 'has' - move it to the start and keep 'lost' unchanged.",
-      "explanation": "'He' pairs with 'has' in the present perfect, and the participle 'lost' stays exactly as it is once the question is formed.",
-      "grammarRule": "Present Perfect Questions"
-    },
-    {
-      "id": "qf_l10_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They had left before we arrived.",
-      "sentence": "They had left before we arrived.",
-      "options": [
-        "Did they had left before we arrived?",
-        "Had they leave before we arrived?",
-        "They had left before we arrived?",
-        "Had they left before we arrived?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Had they left before we arrived?",
-      "hint": "Past perfect questions move 'had' to the front, no matter the subject.",
-      "explanation": "'Had' works for every subject in the past perfect. It moves to the start of the sentence, and the participle 'left' stays unchanged.",
-      "grammarRule": "Past Perfect Questions"
-    },
-    {
-      "id": "qf_l10_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She had never seen snow before that winter.",
-      "sentence": "She had never seen snow before that winter.",
-      "options": [
-        "Had she never seen snow before that winter?",
-        "Did she had never seen snow before that winter?",
-        "Had she never seeing snow before that winter?",
-        "She had never seen snow before that winter?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Had she never seen snow before that winter?",
-      "hint": "Move 'had' to the front and keep the past participle 'seen' unchanged.",
-      "explanation": "'Had' moves to the start of the question for every subject, while the participle 'seen' does not change at all.",
-      "grammarRule": "Past Perfect Questions"
-    },
-    {
-      "id": "qf_l10_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The train had already departed by the time we got there.",
-      "sentence": "The train had already departed by the time we got there.",
-      "options": [
-        "Did the train had already departed by the time we got there?",
-        "Had the train already depart by the time we got there?",
-        "The train had already departed by the time we got there?",
-        "Had the train already departed by the time we got there?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Had the train already departed by the time we got there?",
-      "hint": "'Had' moves to the start; the participle 'departed' stays exactly the same.",
-      "explanation": "As with all past perfect questions, 'had' moves to the front while the past participle, 'departed', remains unchanged.",
-      "grammarRule": "Past Perfect Questions"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "qf_l1_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Maria works at a hospital downtown.",
+            "sentence": "Maria works at a hospital downtown.",
+            "options": [
+                "Does Maria work at a hospital downtown?",
+                "Does Maria works at a hospital downtown?",
+                "Is Maria work at a hospital downtown?",
+                "Maria works at a hospital downtown?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Does Maria work at a hospital downtown?",
+            "hint": "The subject is one person, Maria, so the question needs 'Does' before the base verb.",
+            "explanation": "Singular subjects like Maria use 'Does' in the present simple. Once 'Does' is added, the verb drops its -s and appears as 'work'.",
+            "grammarRule": "Present Simple Questions (Singular Subjects)"
+        },
+        {
+            "id": "qf_l1_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new intern arrives at nine every day.",
+            "sentence": "The new intern arrives at nine every day.",
+            "options": [
+                "Does the new intern arrives at nine every day?",
+                "Do the new intern arrive at nine every day?",
+                "The new intern arrives at nine every day?",
+                "Does the new intern arrive at nine every day?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Does the new intern arrive at nine every day?",
+            "hint": "'The new intern' is singular, so pair it with 'Does' and the base form of the verb.",
+            "explanation": "'The new intern' is a singular subject, so 'Does' is correct. The main verb then loses its -s: 'arrive', not 'arrives'.",
+            "grammarRule": "Present Simple Questions (Singular Subjects)"
+        },
+        {
+            "id": "qf_l1_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He takes the early bus to the office.",
+            "sentence": "He takes the early bus to the office.",
+            "options": [
+                "Does he takes the early bus to the office?",
+                "Does he take the early bus to the office?",
+                "Do he take the early bus to the office?",
+                "He takes the early bus to the office?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Does he take the early bus to the office?",
+            "hint": "'He' needs 'Does', and the verb loses its -s once the auxiliary is there.",
+            "explanation": "'He' is a singular subject, so 'Does' is the right auxiliary, and the main verb returns to its base form, 'take'.",
+            "grammarRule": "Present Simple Questions (Singular Subjects)"
+        },
+        {
+            "id": "qf_l2_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "My cousins visit us every summer.",
+            "sentence": "My cousins visit us every summer.",
+            "options": [
+                "Does my cousins visit us every summer?",
+                "Do my cousins visits us every summer?",
+                "Do my cousins visit us every summer?",
+                "My cousins visit us every summer?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do my cousins visit us every summer?",
+            "hint": "'My cousins' is plural, so it needs 'Do', not 'Does'.",
+            "explanation": "Plural subjects like 'my cousins' pair with 'Do', and the main verb keeps its plain form, 'visit'.",
+            "grammarRule": "Present Simple Questions (Plural Subjects)"
+        },
+        {
+            "id": "qf_l2_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You leave your keys on the kitchen table.",
+            "sentence": "You leave your keys on the kitchen table.",
+            "options": [
+                "Do you leave your keys on the kitchen table?",
+                "Does you leave your keys on the kitchen table?",
+                "Do you leaves your keys on the kitchen table?",
+                "You leave your keys on the kitchen table?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you leave your keys on the kitchen table?",
+            "hint": "'You' always takes 'Do' in the present simple, never 'Does'.",
+            "explanation": "The pronoun 'you' always pairs with 'Do'. The verb keeps its plain form, 'leave', throughout the question.",
+            "grammarRule": "Present Simple Questions (Plural Subjects)"
+        },
+        {
+            "id": "qf_l2_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We recycle our plastic bottles every week.",
+            "sentence": "We recycle our plastic bottles every week.",
+            "options": [
+                "Do we recycle our plastic bottles every week?",
+                "Does we recycle our plastic bottles every week?",
+                "Do we recycles our plastic bottles every week?",
+                "We recycle our plastic bottles every week?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do we recycle our plastic bottles every week?",
+            "hint": "'We' pairs with 'Do', and the verb stays in its base form.",
+            "explanation": "'We' takes 'Do' in the present simple, and the main verb 'recycle' stays exactly as it is - no -s is added.",
+            "grammarRule": "Present Simple Questions (Plural Subjects)"
+        },
+        {
+            "id": "qf_l3_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She finished the report before lunch.",
+            "sentence": "She finished the report before lunch.",
+            "options": [
+                "Did she finish the report before lunch?",
+                "Did she finished the report before lunch?",
+                "Does she finish the report before lunch?",
+                "She finished the report before lunch?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Did she finish the report before lunch?",
+            "hint": "Past simple questions always use 'Did' - and the verb goes back to its base form.",
+            "explanation": "'Did' works for every subject in the past simple. Once it appears, the main verb loses its past ending: 'finish', not 'finished'.",
+            "grammarRule": "Past Simple Questions"
+        },
+        {
+            "id": "qf_l3_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They moved to a new apartment last month.",
+            "sentence": "They moved to a new apartment last month.",
+            "options": [
+                "Did they moved to a new apartment last month?",
+                "Did they move to a new apartment last month?",
+                "Were they move to a new apartment last month?",
+                "They moved to a new apartment last month?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Did they move to a new apartment last month?",
+            "hint": "The verb should return to its base form, 'move', once 'Did' is added.",
+            "explanation": "After 'Did', the main verb drops its past tense ending. That's why 'moved' becomes 'move' in the question.",
+            "grammarRule": "Past Simple Questions"
+        },
+        {
+            "id": "qf_l3_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I forgot my umbrella at the café.",
+            "sentence": "I forgot my umbrella at the café.",
+            "options": [
+                "Did I forgot my umbrella at the café?",
+                "Have I forget my umbrella at the café?",
+                "Did I forget my umbrella at the café?",
+                "I forgot my umbrella at the café?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Did I forget my umbrella at the café?",
+            "hint": "Even an irregular verb like 'forgot' returns to its base form after 'Did'.",
+            "explanation": "Irregular verbs follow the same rule as regular ones: after 'Did', they return to the base form, so 'forgot' becomes 'forget'.",
+            "grammarRule": "Past Simple Questions"
+        },
+        {
+            "id": "qf_l4_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The store is open until midnight.",
+            "sentence": "The store is open until midnight.",
+            "options": [
+                "Does the store open until midnight?",
+                "Is the store opens until midnight?",
+                "Is the store open until midnight?",
+                "The store is open until midnight?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Is the store open until midnight?",
+            "hint": "With the verb 'to be', you don't need 'do' or 'does' - just move 'is' to the front.",
+            "explanation": "Sentences built on 'be' (is/am/are) form questions by moving 'be' to the front. No extra auxiliary like 'does' is needed.",
+            "grammarRule": "Verb 'To Be' Questions (Present)"
+        },
+        {
+            "id": "qf_l4_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Your parents are proud of you.",
+            "sentence": "Your parents are proud of you.",
+            "options": [
+                "Are your parents proud of you?",
+                "Do your parents are proud of you?",
+                "Is your parents proud of you?",
+                "Your parents are proud of you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are your parents proud of you?",
+            "hint": "'Parents' is plural, so use 'Are', and simply move it before the subject.",
+            "explanation": "Plural subjects need 'are'. To form the question, 'are' simply moves to the beginning - no other auxiliary is required.",
+            "grammarRule": "Verb 'To Be' Questions (Present)"
+        },
+        {
+            "id": "qf_l4_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I am late for my appointment.",
+            "sentence": "I am late for my appointment.",
+            "options": [
+                "Are I late for my appointment?",
+                "Do I am late for my appointment?",
+                "I am late for my appointment?",
+                "Am I late for my appointment?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Am I late for my appointment?",
+            "hint": "The subject 'I' always pairs with 'am', even in questions.",
+            "explanation": "'I' always takes 'am', in statements and in questions alike. The question simply places 'am' before 'I'.",
+            "grammarRule": "Verb 'To Be' Questions (Present)"
+        },
+        {
+            "id": "qf_l5_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The keys were on the counter.",
+            "sentence": "The keys were on the counter.",
+            "options": [
+                "Were the keys on the counter?",
+                "Was the keys on the counter?",
+                "Did the keys were on the counter?",
+                "The keys were on the counter?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Were the keys on the counter?",
+            "hint": "'Keys' is plural, so the question needs 'Were', moved to the front.",
+            "explanation": "Plural subjects take 'were'. As with all 'be' questions, 'were' simply moves to the start instead of adding another auxiliary.",
+            "grammarRule": "Verb 'To Be' Questions (Past)"
+        },
+        {
+            "id": "qf_l5_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He was nervous before the interview.",
+            "sentence": "He was nervous before the interview.",
+            "options": [
+                "Were he nervous before the interview?",
+                "Did he was nervous before the interview?",
+                "Was he nervous before the interview?",
+                "He was nervous before the interview?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Was he nervous before the interview?",
+            "hint": "'He' pairs with 'was', so just move 'was' before 'he'.",
+            "explanation": "Singular subjects like 'he' take 'was'. The question is formed simply by moving 'was' in front of the subject.",
+            "grammarRule": "Verb 'To Be' Questions (Past)"
+        },
+        {
+            "id": "qf_l5_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The children were asleep by nine.",
+            "sentence": "The children were asleep by nine.",
+            "options": [
+                "Were the children asleep by nine?",
+                "Was the children asleep by nine?",
+                "Are the children were asleep by nine?",
+                "The children were asleep by nine?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Were the children asleep by nine?",
+            "hint": "'The children' is plural, so use 'Were' at the start of the question.",
+            "explanation": "'The children' is a plural subject, so 'were' is correct. It moves to the beginning to form the question - nothing else changes.",
+            "grammarRule": "Verb 'To Be' Questions (Past)"
+        },
+        {
+            "id": "qf_l6_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She can speak three languages.",
+            "sentence": "She can speak three languages.",
+            "options": [
+                "Does she can speak three languages?",
+                "Can she speak three languages?",
+                "Can she speaks three languages?",
+                "She can speak three languages?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Can she speak three languages?",
+            "hint": "Modals like 'can' move to the front of the question on their own - no extra 'do' needed.",
+            "explanation": "Modal verbs such as 'can' form questions by moving to the start of the sentence. They never combine with 'do' or 'does'.",
+            "grammarRule": "Modal Questions (Present)"
+        },
+        {
+            "id": "qf_l6_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They will arrive before dinner.",
+            "sentence": "They will arrive before dinner.",
+            "options": [
+                "Do they will arrive before dinner?",
+                "Will they arrives before dinner?",
+                "They will arrive before dinner?",
+                "Will they arrive before dinner?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Will they arrive before dinner?",
+            "hint": "Move 'will' to the beginning of the sentence to form the question.",
+            "explanation": "'Will' moves to the front to create the question, and the main verb after it always stays in its base form, 'arrive'.",
+            "grammarRule": "Modal Questions (Present)"
+        },
+        {
+            "id": "qf_l6_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We must leave by six o'clock.",
+            "sentence": "We must leave by six o'clock.",
+            "options": [
+                "Do we must leave by six o'clock?",
+                "Must we leaving by six o'clock?",
+                "Must we leave by six o'clock?",
+                "We must leave by six o'clock?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Must we leave by six o'clock?",
+            "hint": "'Must' behaves like other modals - it simply moves to the start.",
+            "explanation": "Like all modal verbs, 'must' moves to the front of the sentence to form a question, and the main verb stays in its base form.",
+            "grammarRule": "Modal Questions (Present)"
+        },
+        {
+            "id": "qf_l7_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She is cooking dinner right now.",
+            "sentence": "She is cooking dinner right now.",
+            "options": [
+                "Does she is cooking dinner right now?",
+                "Is she cook dinner right now?",
+                "She is cooking dinner right now?",
+                "Is she cooking dinner right now?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Is she cooking dinner right now?",
+            "hint": "With continuous tenses, move the 'be' verb to the front and keep the '-ing' form.",
+            "explanation": "In the present continuous, only 'is/am/are' moves to the front. The '-ing' form of the verb never changes.",
+            "grammarRule": "Present Continuous Questions"
+        },
+        {
+            "id": "qf_l7_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The kids are playing in the garden.",
+            "sentence": "The kids are playing in the garden.",
+            "options": [
+                "Are the kids playing in the garden?",
+                "Do the kids are playing in the garden?",
+                "Are the kids play in the garden?",
+                "The kids are playing in the garden?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are the kids playing in the garden?",
+            "hint": "'Kids' is plural, so use 'Are', and keep 'playing' exactly as it is.",
+            "explanation": "Plural subjects take 'are'. Moving 'are' to the front is the only change needed - the '-ing' form stays put.",
+            "grammarRule": "Present Continuous Questions"
+        },
+        {
+            "id": "qf_l7_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I am waiting for the bus.",
+            "sentence": "I am waiting for the bus.",
+            "options": [
+                "Do I am waiting for the bus?",
+                "Am I wait for the bus?",
+                "Am I waiting for the bus?",
+                "I am waiting for the bus?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Am I waiting for the bus?",
+            "hint": "'I' pairs with 'am' - move it to the start and keep 'waiting' unchanged.",
+            "explanation": "'I' always takes 'am'. The question is formed by moving 'am' forward, while 'waiting' keeps its '-ing' ending.",
+            "grammarRule": "Present Continuous Questions"
+        },
+        {
+            "id": "qf_l8_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He was driving to work when it started to rain.",
+            "sentence": "He was driving to work when it started to rain.",
+            "options": [
+                "Did he was driving to work when it started to rain?",
+                "Was he drive to work when it started to rain?",
+                "Was he driving to work when it started to rain?",
+                "He was driving to work when it started to rain?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Was he driving to work when it started to rain?",
+            "hint": "'He' takes 'was' - move it forward and keep 'driving' unchanged.",
+            "explanation": "Singular subjects like 'he' pair with 'was' in the past continuous. Moving 'was' to the front is enough; 'driving' stays the same.",
+            "grammarRule": "Past Continuous Questions"
+        },
+        {
+            "id": "qf_l8_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They were watching a movie at eight.",
+            "sentence": "They were watching a movie at eight.",
+            "options": [
+                "Did they were watching a movie at eight?",
+                "Were they watching a movie at eight?",
+                "Were they watch a movie at eight?",
+                "They were watching a movie at eight?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Were they watching a movie at eight?",
+            "hint": "'They' takes 'were' in the past continuous - move it to the start.",
+            "explanation": "'They' pairs with 'were'. The question moves 'were' forward, and 'watching' keeps its '-ing' form.",
+            "grammarRule": "Past Continuous Questions"
+        },
+        {
+            "id": "qf_l8_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was studying for my exam all night.",
+            "sentence": "I was studying for my exam all night.",
+            "options": [
+                "Did I was studying for my exam all night?",
+                "Was I study for my exam all night?",
+                "I was studying for my exam all night?",
+                "Was I studying for my exam all night?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Was I studying for my exam all night?",
+            "hint": "'I' takes 'was' in the past continuous, not 'were'.",
+            "explanation": "With 'I', the past continuous uses 'was'. Moving it to the front forms the question, and 'studying' stays unchanged.",
+            "grammarRule": "Past Continuous Questions"
+        },
+        {
+            "id": "qf_l9_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has finished her homework.",
+            "sentence": "She has finished her homework.",
+            "options": [
+                "Has she finished her homework?",
+                "Does she has finished her homework?",
+                "Has she finish her homework?",
+                "She has finished her homework?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Has she finished her homework?",
+            "hint": "'She' pairs with 'has' - move it to the front and keep 'finished' unchanged.",
+            "explanation": "Singular subjects like 'she' take 'has' in the present perfect. The past participle 'finished' never changes when forming the question.",
+            "grammarRule": "Present Perfect Questions"
+        },
+        {
+            "id": "qf_l9_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We have visited that museum twice.",
+            "sentence": "We have visited that museum twice.",
+            "options": [
+                "Have we visited that museum twice?",
+                "Do we have visited that museum twice?",
+                "Have we visit that museum twice?",
+                "We have visited that museum twice?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have we visited that museum twice?",
+            "hint": "'We' pairs with 'have' - move it forward and keep 'visited' unchanged.",
+            "explanation": "'We' takes 'have' in the present perfect. Moving 'have' to the start forms the question; the participle 'visited' stays the same.",
+            "grammarRule": "Present Perfect Questions"
+        },
+        {
+            "id": "qf_l9_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He has lost his passport.",
+            "sentence": "He has lost his passport.",
+            "options": [
+                "Does he has lost his passport?",
+                "Has he lost his passport?",
+                "Has he loses his passport?",
+                "He has lost his passport?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Has he lost his passport?",
+            "hint": "'He' takes 'has' - move it to the start and keep 'lost' unchanged.",
+            "explanation": "'He' pairs with 'has' in the present perfect, and the participle 'lost' stays exactly as it is once the question is formed.",
+            "grammarRule": "Present Perfect Questions"
+        },
+        {
+            "id": "qf_l10_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They had left before we arrived.",
+            "sentence": "They had left before we arrived.",
+            "options": [
+                "Did they had left before we arrived?",
+                "Had they leave before we arrived?",
+                "They had left before we arrived?",
+                "Had they left before we arrived?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Had they left before we arrived?",
+            "hint": "Past perfect questions move 'had' to the front, no matter the subject.",
+            "explanation": "'Had' works for every subject in the past perfect. It moves to the start of the sentence, and the participle 'left' stays unchanged.",
+            "grammarRule": "Past Perfect Questions"
+        },
+        {
+            "id": "qf_l10_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She had never seen snow before that winter.",
+            "sentence": "She had never seen snow before that winter.",
+            "options": [
+                "Had she never seen snow before that winter?",
+                "Did she had never seen snow before that winter?",
+                "Had she never seeing snow before that winter?",
+                "She had never seen snow before that winter?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Had she never seen snow before that winter?",
+            "hint": "Move 'had' to the front and keep the past participle 'seen' unchanged.",
+            "explanation": "'Had' moves to the start of the question for every subject, while the participle 'seen' does not change at all.",
+            "grammarRule": "Past Perfect Questions"
+        },
+        {
+            "id": "qf_l10_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The train had already departed by the time we got there.",
+            "sentence": "The train had already departed by the time we got there.",
+            "options": [
+                "Did the train had already departed by the time we got there?",
+                "Had the train already depart by the time we got there?",
+                "The train had already departed by the time we got there?",
+                "Had the train already departed by the time we got there?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Had the train already departed by the time we got there?",
+            "hint": "'Had' moves to the start; the participle 'departed' stays exactly the same.",
+            "explanation": "As with all past perfect questions, 'had' moves to the front while the past participle, 'departed', remains unchanged.",
+            "grammarRule": "Past Perfect Questions"
+        }
+    ]
 }

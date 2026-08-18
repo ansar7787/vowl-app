@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A man has collapsed on the sidewalk and is not moving. Input medical code!",
-      "correctAnswer": "SEND AN AMBULANCE",
-      "hint": "Name the vehicle that carries paramedics.",
-      "explanation": "An ambulance brings trained paramedics who can check him and start treatment right away.",
-      "id": "eh_l1_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Thick smoke is pouring from a neighbor's kitchen window. Input fire code!",
-      "correctAnswer": "CALL THE FIRE BRIGADE",
-      "hint": "Name the service that puts out fires.",
-      "explanation": "The fire brigade has the equipment and training needed to put out a house fire safely.",
-      "id": "eh_l1_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Two men are breaking into a parked car outside the shop. Input police code!",
-      "correctAnswer": "SEND THE POLICE",
-      "hint": "Name the service that responds to crime.",
-      "explanation": "Police officers are trained to respond to a crime in progress and keep bystanders safe.",
-      "id": "eh_l1_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A child is choking on a piece of food at dinner. Input medical code!",
-      "correctAnswer": "CALL AN AMBULANCE NOW",
-      "hint": "Ask for help urgently, using the word 'now'.",
-      "explanation": "Paramedics are trained to clear a blocked airway and can arrive within minutes.",
-      "id": "eh_l2_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Someone is trying to force open the back door of a house. Input police code!",
-      "correctAnswer": "SEND A PATROL CAR",
-      "hint": "Ask for a police vehicle already on the road.",
-      "explanation": "A break-in in progress needs police to arrive quickly and safely stop the intruder.",
-      "id": "eh_l2_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A small fire has started in an office wastebasket. Input fire code!",
-      "correctAnswer": "SEND A FIRE ENGINE",
-      "hint": "Name the vehicle firefighters arrive in.",
-      "explanation": "A fire engine carries firefighters and equipment that can put out even a small fire before it spreads.",
-      "id": "eh_l2_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A woman is having a severe allergic reaction and her face is swelling. Input medical code!",
-      "correctAnswer": "REQUEST MEDICAL HELP",
-      "hint": "Ask plainly for someone trained to treat them.",
-      "explanation": "A severe allergic reaction can become dangerous fast, so trained medical help must be sent immediately.",
-      "id": "eh_l3_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A strong smell of gas is coming from a kitchen stove. Input safety code!",
-      "correctAnswer": "EVACUATE THE HOUSE",
-      "hint": "Get everyone out before anything else.",
-      "explanation": "Getting everyone outside first removes the risk of an explosion or breathing in the gas.",
-      "id": "eh_l3_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A student has fainted in the school hallway. Input medical code!",
-      "correctAnswer": "CALL FOR PARAMEDICS",
-      "hint": "Ask for the medical team by name.",
-      "explanation": "An ambulance crew can check why she fainted and treat her safely on the scene.",
-      "id": "eh_l3_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A driver has hit a lamp post and looks hurt. Input medical code!",
-      "correctAnswer": "SEND PARAMEDICS NOW",
-      "hint": "Ask for the medical team, and add urgency.",
-      "explanation": "Adding 'now' tells the operator this cannot wait, so help is sent at top priority.",
-      "id": "eh_l4_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Flames are visible on the stove in a family kitchen. Input fire code!",
-      "correctAnswer": "SEND THE FIRE CREW",
-      "hint": "Ask for the team that puts out fires.",
-      "explanation": "A trained fire crew can put out a stove fire safely without it spreading further.",
-      "id": "eh_l4_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A man's wallet has just been snatched on the street. Input police code!",
-      "correctAnswer": "ALERT THE POLICE",
-      "hint": "Let the police know what you're seeing.",
-      "explanation": "Reporting a theft right away gives police the best chance of catching the person nearby.",
-      "id": "eh_l4_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A worker has fallen from a short ladder and can't stand up. Input medical code!",
-      "correctAnswer": "SEND MEDICAL ASSISTANCE",
-      "hint": "Ask plainly for trained help to be sent.",
-      "explanation": "A fall can cause injuries that aren't visible, so trained paramedics should check him quickly.",
-      "id": "eh_l5_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Someone is shouting for help from inside a locked, smoke-filled room. Input fire code!",
-      "correctAnswer": "ALERT THE FIRE STATION",
-      "hint": "Let the local fire team know right away.",
-      "explanation": "The fire station can send a crew equipped to enter safely and reach the person.",
-      "id": "eh_l5_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A shoplifter is running out of a store with stolen goods. Input police code!",
-      "correctAnswer": "DISPATCH THE POLICE",
-      "hint": "Send the service that handles this kind of incident.",
-      "explanation": "A dispatched unit can follow up quickly while the direction the person ran is still known.",
-      "id": "eh_l5_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A toddler has swallowed a small button battery. Input medical code!",
-      "correctAnswer": "REQUEST AN AMBULANCE",
-      "hint": "Formally ask for the ambulance to be sent.",
-      "explanation": "Swallowed batteries can cause serious internal harm quickly, so a trip to hospital by ambulance is safest.",
-      "id": "eh_l6_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Sparks are coming from an electrical socket in a bedroom. Input fire code!",
-      "correctAnswer": "CALL THE FIRE DEPARTMENT",
-      "hint": "Name the department responsible for fire risks.",
-      "explanation": "Firefighters can check for hidden wiring damage and put out any resulting fire safely.",
-      "id": "eh_l6_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A masked person is seen climbing through a neighbor's window. Input police code!",
-      "correctAnswer": "DISPATCH A POLICE UNIT",
-      "hint": "Send an official police vehicle to the scene.",
-      "explanation": "A masked person entering through a window is a strong sign of a break-in, so police must be alerted fast.",
-      "id": "eh_l6_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "An elderly man has fallen at home and cannot get up. Input medical code!",
-      "correctAnswer": "GET AN AMBULANCE HERE",
-      "hint": "Ask for the vehicle that carries paramedics to come.",
-      "explanation": "A fall in an older adult may cause a fracture, so trained medical help should check him.",
-      "id": "eh_l7_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A bin fire outside a restaurant is spreading toward the wall. Input fire code!",
-      "correctAnswer": "SEND FIRE ENGINES NOW",
-      "hint": "Ask for the vehicles firefighters arrive in, urgently.",
-      "explanation": "Acting quickly stops a small outdoor fire from spreading and damaging the building.",
-      "id": "eh_l7_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A woman reports her purse was grabbed by a passing cyclist. Input police code!",
-      "correctAnswer": "CALL THE POLICE NOW",
-      "hint": "Ask for the police, and stress the urgency.",
-      "explanation": "A nearby patrol car can respond fastest and may still catch sight of the cyclist.",
-      "id": "eh_l7_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A boy has a deep cut on his leg from broken glass. Input medical code!",
-      "correctAnswer": "DISPATCH MEDICAL HELP",
-      "hint": "Send help trained to treat injuries.",
-      "explanation": "A deep cut can bleed heavily, so trained medical help should reach him quickly.",
-      "id": "eh_l8_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A candle has set the curtains alight in a living room. Input fire code!",
-      "correctAnswer": "DISPATCH THE FIRE BRIGADE",
-      "hint": "Send the official service trained to fight fires.",
-      "explanation": "Curtain fires spread fast, so the fire brigade must be called the moment it's spotted.",
-      "id": "eh_l8_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A man is seen forcing open a car door in a parking lot. Input police code!",
-      "correctAnswer": "SEND OFFICERS NOW",
-      "hint": "Ask for police, and stress the urgency.",
-      "explanation": "A car break-in in progress needs a quick police response before the suspect leaves the area.",
-      "id": "eh_l8_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A woman is struggling to breathe during an asthma attack. Input medical code!",
-      "correctAnswer": "SEND MEDICS TO THE SCENE",
-      "hint": "Say who needs to reach the patient quickly.",
-      "explanation": "Paramedics carry oxygen and medicine that can ease breathing within minutes of arriving.",
-      "id": "eh_l9_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A small kitchen fire has spread to a nearby towel. Input fire code!",
-      "correctAnswer": "GET FIREFIGHTERS THERE FAST",
-      "hint": "Say who's needed, and stress the urgency.",
-      "explanation": "Even a small spreading fire needs a properly equipped crew to make sure it's fully out.",
-      "id": "eh_l9_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A child is reported missing from the playground. Input police code!",
-      "correctAnswer": "GET POLICE TO THE SCENE",
-      "hint": "Say who's needed, and where.",
-      "explanation": "Police can begin a search immediately, and every early minute matters when a child is missing.",
-      "id": "eh_l9_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A man is clutching his chest and says he feels crushing pain. Input medical code!",
-      "correctAnswer": "CALL FOR AN AMBULANCE",
-      "hint": "Ask for the vehicle that can treat him on the way to hospital.",
-      "explanation": "Chest pain like this can be a heart attack, so an ambulance must be sent immediately.",
-      "id": "eh_l10_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Flames are climbing the outside wall of a garden shed. Input fire code!",
-      "correctAnswer": "CALL FIREFIGHTERS NOW",
-      "hint": "Name who should respond, and add urgency.",
-      "explanation": "A shed fire can spread to a house quickly, so the fire station needs to know at once.",
-      "id": "eh_l10_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A driver reports someone following her closely and acting aggressively. Input police code!",
-      "correctAnswer": "CALL FOR POLICE BACKUP",
-      "hint": "Ask for the extra support officers need.",
-      "explanation": "A dispatched unit can reach her quickly and make sure she gets home safely.",
-      "id": "eh_l10_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A man has collapsed on the sidewalk and is not moving. Input medical code!",
+            "correctAnswer": "SEND AN AMBULANCE",
+            "hint": "Name the vehicle that carries paramedics.",
+            "explanation": "An ambulance brings trained paramedics who can check him and start treatment right away.",
+            "id": "eh_l1_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Thick smoke is pouring from a neighbor's kitchen window. Input fire code!",
+            "correctAnswer": "CALL THE FIRE BRIGADE",
+            "hint": "Name the service that puts out fires.",
+            "explanation": "The fire brigade has the equipment and training needed to put out a house fire safely.",
+            "id": "eh_l1_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Two men are breaking into a parked car outside the shop. Input police code!",
+            "correctAnswer": "SEND THE POLICE",
+            "hint": "Name the service that responds to crime.",
+            "explanation": "Police officers are trained to respond to a crime in progress and keep bystanders safe.",
+            "id": "eh_l1_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A child is choking on a piece of food at dinner. Input medical code!",
+            "correctAnswer": "CALL AN AMBULANCE NOW",
+            "hint": "Ask for help urgently, using the word 'now'.",
+            "explanation": "Paramedics are trained to clear a blocked airway and can arrive within minutes.",
+            "id": "eh_l2_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Someone is trying to force open the back door of a house. Input police code!",
+            "correctAnswer": "SEND A PATROL CAR",
+            "hint": "Ask for a police vehicle already on the road.",
+            "explanation": "A break-in in progress needs police to arrive quickly and safely stop the intruder.",
+            "id": "eh_l2_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A small fire has started in an office wastebasket. Input fire code!",
+            "correctAnswer": "SEND A FIRE ENGINE",
+            "hint": "Name the vehicle firefighters arrive in.",
+            "explanation": "A fire engine carries firefighters and equipment that can put out even a small fire before it spreads.",
+            "id": "eh_l2_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A woman is having a severe allergic reaction and her face is swelling. Input medical code!",
+            "correctAnswer": "REQUEST MEDICAL HELP",
+            "hint": "Ask plainly for someone trained to treat them.",
+            "explanation": "A severe allergic reaction can become dangerous fast, so trained medical help must be sent immediately.",
+            "id": "eh_l3_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A strong smell of gas is coming from a kitchen stove. Input safety code!",
+            "correctAnswer": "EVACUATE THE HOUSE",
+            "hint": "Get everyone out before anything else.",
+            "explanation": "Getting everyone outside first removes the risk of an explosion or breathing in the gas.",
+            "id": "eh_l3_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A student has fainted in the school hallway. Input medical code!",
+            "correctAnswer": "CALL FOR PARAMEDICS",
+            "hint": "Ask for the medical team by name.",
+            "explanation": "An ambulance crew can check why she fainted and treat her safely on the scene.",
+            "id": "eh_l3_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A driver has hit a lamp post and looks hurt. Input medical code!",
+            "correctAnswer": "SEND PARAMEDICS NOW",
+            "hint": "Ask for the medical team, and add urgency.",
+            "explanation": "Adding 'now' tells the operator this cannot wait, so help is sent at top priority.",
+            "id": "eh_l4_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Flames are visible on the stove in a family kitchen. Input fire code!",
+            "correctAnswer": "SEND THE FIRE CREW",
+            "hint": "Ask for the team that puts out fires.",
+            "explanation": "A trained fire crew can put out a stove fire safely without it spreading further.",
+            "id": "eh_l4_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A man's wallet has just been snatched on the street. Input police code!",
+            "correctAnswer": "ALERT THE POLICE",
+            "hint": "Let the police know what you're seeing.",
+            "explanation": "Reporting a theft right away gives police the best chance of catching the person nearby.",
+            "id": "eh_l4_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A worker has fallen from a short ladder and can't stand up. Input medical code!",
+            "correctAnswer": "SEND MEDICAL ASSISTANCE",
+            "hint": "Ask plainly for trained help to be sent.",
+            "explanation": "A fall can cause injuries that aren't visible, so trained paramedics should check him quickly.",
+            "id": "eh_l5_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Someone is shouting for help from inside a locked, smoke-filled room. Input fire code!",
+            "correctAnswer": "ALERT THE FIRE STATION",
+            "hint": "Let the local fire team know right away.",
+            "explanation": "The fire station can send a crew equipped to enter safely and reach the person.",
+            "id": "eh_l5_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A shoplifter is running out of a store with stolen goods. Input police code!",
+            "correctAnswer": "DISPATCH THE POLICE",
+            "hint": "Send the service that handles this kind of incident.",
+            "explanation": "A dispatched unit can follow up quickly while the direction the person ran is still known.",
+            "id": "eh_l5_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A toddler has swallowed a small button battery. Input medical code!",
+            "correctAnswer": "REQUEST AN AMBULANCE",
+            "hint": "Formally ask for the ambulance to be sent.",
+            "explanation": "Swallowed batteries can cause serious internal harm quickly, so a trip to hospital by ambulance is safest.",
+            "id": "eh_l6_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Sparks are coming from an electrical socket in a bedroom. Input fire code!",
+            "correctAnswer": "CALL THE FIRE DEPARTMENT",
+            "hint": "Name the department responsible for fire risks.",
+            "explanation": "Firefighters can check for hidden wiring damage and put out any resulting fire safely.",
+            "id": "eh_l6_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A masked person is seen climbing through a neighbor's window. Input police code!",
+            "correctAnswer": "DISPATCH A POLICE UNIT",
+            "hint": "Send an official police vehicle to the scene.",
+            "explanation": "A masked person entering through a window is a strong sign of a break-in, so police must be alerted fast.",
+            "id": "eh_l6_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "An elderly man has fallen at home and cannot get up. Input medical code!",
+            "correctAnswer": "GET AN AMBULANCE HERE",
+            "hint": "Ask for the vehicle that carries paramedics to come.",
+            "explanation": "A fall in an older adult may cause a fracture, so trained medical help should check him.",
+            "id": "eh_l7_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A bin fire outside a restaurant is spreading toward the wall. Input fire code!",
+            "correctAnswer": "SEND FIRE ENGINES NOW",
+            "hint": "Ask for the vehicles firefighters arrive in, urgently.",
+            "explanation": "Acting quickly stops a small outdoor fire from spreading and damaging the building.",
+            "id": "eh_l7_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A woman reports her purse was grabbed by a passing cyclist. Input police code!",
+            "correctAnswer": "CALL THE POLICE NOW",
+            "hint": "Ask for the police, and stress the urgency.",
+            "explanation": "A nearby patrol car can respond fastest and may still catch sight of the cyclist.",
+            "id": "eh_l7_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A boy has a deep cut on his leg from broken glass. Input medical code!",
+            "correctAnswer": "DISPATCH MEDICAL HELP",
+            "hint": "Send help trained to treat injuries.",
+            "explanation": "A deep cut can bleed heavily, so trained medical help should reach him quickly.",
+            "id": "eh_l8_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A candle has set the curtains alight in a living room. Input fire code!",
+            "correctAnswer": "DISPATCH THE FIRE BRIGADE",
+            "hint": "Send the official service trained to fight fires.",
+            "explanation": "Curtain fires spread fast, so the fire brigade must be called the moment it's spotted.",
+            "id": "eh_l8_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A man is seen forcing open a car door in a parking lot. Input police code!",
+            "correctAnswer": "SEND OFFICERS NOW",
+            "hint": "Ask for police, and stress the urgency.",
+            "explanation": "A car break-in in progress needs a quick police response before the suspect leaves the area.",
+            "id": "eh_l8_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A woman is struggling to breathe during an asthma attack. Input medical code!",
+            "correctAnswer": "SEND MEDICS TO THE SCENE",
+            "hint": "Say who needs to reach the patient quickly.",
+            "explanation": "Paramedics carry oxygen and medicine that can ease breathing within minutes of arriving.",
+            "id": "eh_l9_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A small kitchen fire has spread to a nearby towel. Input fire code!",
+            "correctAnswer": "GET FIREFIGHTERS THERE FAST",
+            "hint": "Say who's needed, and stress the urgency.",
+            "explanation": "Even a small spreading fire needs a properly equipped crew to make sure it's fully out.",
+            "id": "eh_l9_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A child is reported missing from the playground. Input police code!",
+            "correctAnswer": "GET POLICE TO THE SCENE",
+            "hint": "Say who's needed, and where.",
+            "explanation": "Police can begin a search immediately, and every early minute matters when a child is missing.",
+            "id": "eh_l9_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A man is clutching his chest and says he feels crushing pain. Input medical code!",
+            "correctAnswer": "CALL FOR AN AMBULANCE",
+            "hint": "Ask for the vehicle that can treat him on the way to hospital.",
+            "explanation": "Chest pain like this can be a heart attack, so an ambulance must be sent immediately.",
+            "id": "eh_l10_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Flames are climbing the outside wall of a garden shed. Input fire code!",
+            "correctAnswer": "CALL FIREFIGHTERS NOW",
+            "hint": "Name who should respond, and add urgency.",
+            "explanation": "A shed fire can spread to a house quickly, so the fire station needs to know at once.",
+            "id": "eh_l10_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A driver reports someone following her closely and acting aggressively. Input police code!",
+            "correctAnswer": "CALL FOR POLICE BACKUP",
+            "hint": "Ask for the extra support officers need.",
+            "explanation": "A dispatched unit can reach her quickly and make sure she gets home safely.",
+            "id": "eh_l10_q3"
+        }
+    ]
 }

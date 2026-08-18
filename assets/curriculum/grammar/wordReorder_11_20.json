@@ -1,825 +1,825 @@
 {
-  "gameType": "wordReorder",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "wr_l11_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Our neighbor drives a small red truck.",
-      "shuffledWords": [
-        "truck",
-        "small",
-        "a",
-        "red",
-        "drives",
-        "neighbor",
-        "Our"
-      ],
-      "correctOrder": [
-        6,
-        5,
-        4,
-        2,
-        1,
-        3,
-        0
-      ],
-      "hint": "Subject first, then the verb, then the object with its describing words.",
-      "explanation": "Our neighbor (subject) drives (verb) a small red truck (object), following standard Subject-Verb-Object order.",
-      "grammarRule": "Simple Present (SVO)"
-    },
-    {
-      "id": "wr_l11_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The baker bakes fresh bread daily.",
-      "shuffledWords": [
-        "The",
-        "daily",
-        "bread",
-        "baker",
-        "bakes",
-        "fresh"
-      ],
-      "correctOrder": [
-        0,
-        3,
-        4,
-        5,
-        2,
-        1
-      ],
-      "hint": "Place the frequency word 'daily' at the very end.",
-      "explanation": "The baker (subject) bakes (verb) fresh bread (object), with daily added at the end to show frequency.",
-      "grammarRule": "Simple Present (SVO)"
-    },
-    {
-      "id": "wr_l11_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The nurse helps sick patients every day.",
-      "shuffledWords": [
-        "nurse",
-        "day",
-        "sick",
-        "every",
-        "The",
-        "helps",
-        "patients"
-      ],
-      "correctOrder": [
-        4,
-        0,
-        5,
-        2,
-        6,
-        3,
-        1
-      ],
-      "hint": "Keep the subject and verb together, then add the object, then the frequency phrase.",
-      "explanation": "The nurse (subject) helps (verb) sick patients (object), followed by every day to show how often.",
-      "grammarRule": "Simple Present (SVO)"
-    },
-    {
-      "id": "wr_l12_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "There are two books on the shelf.",
-      "shuffledWords": [
-        "two",
-        "on",
-        "shelf",
-        "the",
-        "books",
-        "are",
-        "There"
-      ],
-      "correctOrder": [
-        6,
-        5,
-        0,
-        4,
-        1,
-        3,
-        2
-      ],
-      "hint": "Start with 'There are' before the plural noun, then add the location.",
-      "explanation": "There are introduces the existence of something, followed by the plural noun books and its location.",
-      "grammarRule": "There is / There are"
-    },
-    {
-      "id": "wr_l12_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "There is a spider on the wall.",
-      "shuffledWords": [
-        "wall",
-        "spider",
-        "There",
-        "the",
-        "is",
-        "a",
-        "on"
-      ],
-      "correctOrder": [
-        2,
-        4,
-        5,
-        1,
-        6,
-        3,
-        0
-      ],
-      "hint": "Use 'There is' before a singular noun, then the location.",
-      "explanation": "There is introduces one thing, a spider, followed by its location on the wall.",
-      "grammarRule": "There is / There are"
-    },
-    {
-      "id": "wr_l12_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "There are many students in the library.",
-      "shuffledWords": [
-        "many",
-        "in",
-        "There",
-        "the",
-        "library",
-        "are",
-        "students"
-      ],
-      "correctOrder": [
-        2,
-        5,
-        0,
-        6,
-        1,
-        3,
-        4
-      ],
-      "hint": "'There are' goes first with plural nouns, followed by quantity and location.",
-      "explanation": "There are begins the sentence, followed by many students and the location in the library.",
-      "grammarRule": "There is / There are"
-    },
-    {
-      "id": "wr_l13_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Her brother lost his new wallet.",
-      "shuffledWords": [
-        "brother",
-        "lost",
-        "Her",
-        "wallet",
-        "his",
-        "new"
-      ],
-      "correctOrder": [
-        2,
-        0,
-        1,
-        4,
-        5,
-        3
-      ],
-      "hint": "Possessive words like 'her' and 'his' come right before the noun they describe.",
-      "explanation": "Her describes brother, and his describes wallet, each placed directly before its noun.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "wr_l13_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Their parents sold their old house.",
-      "shuffledWords": [
-        "old",
-        "parents",
-        "their",
-        "house",
-        "sold",
-        "Their"
-      ],
-      "correctOrder": [
-        5,
-        1,
-        4,
-        2,
-        0,
-        3
-      ],
-      "hint": "The possessive word 'their' goes before each noun it belongs to.",
-      "explanation": "Their appears before parents and again before old house, showing ownership in both places.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "wr_l13_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "My cousin painted her bedroom yellow.",
-      "shuffledWords": [
-        "her",
-        "painted",
-        "bedroom",
-        "My",
-        "yellow",
-        "cousin"
-      ],
-      "correctOrder": [
-        3,
-        5,
-        1,
-        0,
-        2,
-        4
-      ],
-      "hint": "Possessives go directly before the noun, and color words often come at the end.",
-      "explanation": "My describes cousin, her describes bedroom, and yellow describes the new color at the end.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "wr_l14_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The manager explained the plan clearly.",
-      "shuffledWords": [
-        "clearly",
-        "plan",
-        "the",
-        "explained",
-        "The",
-        "manager"
-      ],
-      "correctOrder": [
-        4,
-        5,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "The manner adverb 'clearly' goes at the end, after the object.",
-      "explanation": "Clearly describes how the manager explained, so it follows the object the plan.",
-      "grammarRule": "Adverb Placement (Manner)"
-    },
-    {
-      "id": "wr_l14_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The workers finished the project quickly.",
-      "shuffledWords": [
-        "workers",
-        "finished",
-        "The",
-        "quickly",
-        "project",
-        "the"
-      ],
-      "correctOrder": [
-        2,
-        0,
-        1,
-        5,
-        4,
-        3
-      ],
-      "hint": "Place the manner adverb after the object, at the end of the sentence.",
-      "explanation": "Quickly tells us how the workers finished, positioned after the object the project.",
-      "grammarRule": "Adverb Placement (Manner)"
-    },
-    {
-      "id": "wr_l14_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She organized the files carefully yesterday.",
-      "shuffledWords": [
-        "files",
-        "carefully",
-        "She",
-        "organized",
-        "yesterday",
-        "the"
-      ],
-      "correctOrder": [
-        2,
-        3,
-        5,
-        0,
-        1,
-        4
-      ],
-      "hint": "The manner adverb comes right after the object, before the time word.",
-      "explanation": "Carefully shows how she organized the files, and yesterday tells us when, in that order.",
-      "grammarRule": "Adverb Placement (Manner)"
-    },
-    {
-      "id": "wr_l15_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The plane landed at the airport.",
-      "shuffledWords": [
-        "plane",
-        "airport",
-        "the",
-        "at",
-        "The",
-        "landed"
-      ],
-      "correctOrder": [
-        4,
-        0,
-        5,
-        3,
-        2,
-        1
-      ],
-      "hint": "The place phrase comes right after the verb.",
-      "explanation": "At the airport tells us where the plane landed, placed after the verb.",
-      "grammarRule": "Prepositional Phrases (Place)"
-    },
-    {
-      "id": "wr_l15_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Our train arrived at the station.",
-      "shuffledWords": [
-        "train",
-        "arrived",
-        "the",
-        "Our",
-        "at",
-        "station"
-      ],
-      "correctOrder": [
-        3,
-        0,
-        1,
-        4,
-        2,
-        5
-      ],
-      "hint": "Put the location phrase directly after the verb arrived.",
-      "explanation": "At the station shows the place, coming right after the verb arrived.",
-      "grammarRule": "Prepositional Phrases (Place)"
-    },
-    {
-      "id": "wr_l15_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "We stayed in a cozy cabin.",
-      "shuffledWords": [
-        "cabin",
-        "in",
-        "We",
-        "stayed",
-        "cozy",
-        "a"
-      ],
-      "correctOrder": [
-        2,
-        3,
-        1,
-        5,
-        4,
-        0
-      ],
-      "hint": "The place phrase follows the verb, with the adjective before the noun.",
-      "explanation": "In a cozy cabin tells us where we stayed, with cozy describing cabin.",
-      "grammarRule": "Prepositional Phrases (Place)"
-    },
-    {
-      "id": "wr_l16_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "He washed the dishes and cleaned the counter.",
-      "shuffledWords": [
-        "counter",
-        "He",
-        "and",
-        "the",
-        "the",
-        "washed",
-        "dishes",
-        "cleaned"
-      ],
-      "correctOrder": [
-        1,
-        5,
-        3,
-        6,
-        2,
-        7,
-        4,
-        0
-      ],
-      "hint": "The word 'and' connects two actions done by the same subject.",
-      "explanation": "And joins two verb phrases, washed the dishes and cleaned the counter, done by the same subject he.",
-      "grammarRule": "Coordinating Conjunctions (and/but)"
-    },
-    {
-      "id": "wr_l16_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She wanted pizza but ordered a salad.",
-      "shuffledWords": [
-        "pizza",
-        "She",
-        "wanted",
-        "salad",
-        "but",
-        "ordered",
-        "a"
-      ],
-      "correctOrder": [
-        1,
-        2,
-        0,
-        4,
-        5,
-        6,
-        3
-      ],
-      "hint": "'But' shows a contrast between two actions by the same subject.",
-      "explanation": "But connects two contrasting ideas: what she wanted and what she actually ordered.",
-      "grammarRule": "Coordinating Conjunctions (and/but)"
-    },
-    {
-      "id": "wr_l16_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "They practiced hard and won the match.",
-      "shuffledWords": [
-        "hard",
-        "the",
-        "practiced",
-        "match",
-        "They",
-        "and",
-        "won"
-      ],
-      "correctOrder": [
-        4,
-        2,
-        0,
-        5,
-        6,
-        1,
-        3
-      ],
-      "hint": "'And' links two actions in the order they happened.",
-      "explanation": "And joins practiced hard and won the match, two actions performed by the same subject.",
-      "grammarRule": "Coordinating Conjunctions (and/but)"
-    },
-    {
-      "id": "wr_l17_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "We visited an old castle last summer.",
-      "shuffledWords": [
-        "castle",
-        "an",
-        "last",
-        "We",
-        "summer",
-        "old",
-        "visited"
-      ],
-      "correctOrder": [
-        3,
-        6,
-        1,
-        5,
-        0,
-        2,
-        4
-      ],
-      "hint": "Subject, past verb, object, then the time expression at the end.",
-      "explanation": "We (subject) visited (past verb) an old castle (object), with last summer showing when.",
-      "grammarRule": "Simple Past (SVO)"
-    },
-    {
-      "id": "wr_l17_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The band played their new song loudly.",
-      "shuffledWords": [
-        "loudly",
-        "played",
-        "song",
-        "The",
-        "their",
-        "new",
-        "band"
-      ],
-      "correctOrder": [
-        3,
-        6,
-        1,
-        4,
-        5,
-        2,
-        0
-      ],
-      "hint": "Keep subject and verb together, then the object, then the manner adverb.",
-      "explanation": "The band (subject) played (verb) their new song (object), with loudly describing how.",
-      "grammarRule": "Simple Past (SVO)"
-    },
-    {
-      "id": "wr_l17_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "I watched an exciting soccer game yesterday.",
-      "shuffledWords": [
-        "an",
-        "game",
-        "yesterday",
-        "watched",
-        "I",
-        "exciting",
-        "soccer"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        0,
-        5,
-        6,
-        1,
-        2
-      ],
-      "hint": "Place the adjective before the noun, and the time word at the end.",
-      "explanation": "Exciting describes soccer game, and yesterday tells us when I watched it.",
-      "grammarRule": "Simple Past (SVO)"
-    },
-    {
-      "id": "wr_l18_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She bought a shiny new laptop.",
-      "shuffledWords": [
-        "bought",
-        "shiny",
-        "a",
-        "new",
-        "laptop",
-        "She"
-      ],
-      "correctOrder": [
-        5,
-        0,
-        2,
-        1,
-        3,
-        4
-      ],
-      "hint": "Describing words about appearance usually come before words about age, like 'new'.",
-      "explanation": "Shiny (appearance) comes before new (age), and both are placed before the noun laptop.",
-      "grammarRule": "Adjective-Noun Order"
-    },
-    {
-      "id": "wr_l18_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "He owns a sleek black smartphone.",
-      "shuffledWords": [
-        "a",
-        "smartphone",
-        "owns",
-        "black",
-        "sleek",
-        "He"
-      ],
-      "correctOrder": [
-        5,
-        2,
-        0,
-        4,
-        3,
-        1
-      ],
-      "hint": "Shape or style words come before color words, then the noun.",
-      "explanation": "Sleek describes style, black is the color, and both come before the noun smartphone.",
-      "grammarRule": "Adjective-Noun Order"
-    },
-    {
-      "id": "wr_l18_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "I found a tiny silver coin.",
-      "shuffledWords": [
-        "found",
-        "I",
-        "coin",
-        "silver",
-        "tiny",
-        "a"
-      ],
-      "correctOrder": [
-        1,
-        0,
-        5,
-        4,
-        3,
-        2
-      ],
-      "hint": "Size words like 'tiny' come before color or material words like 'silver'.",
-      "explanation": "Tiny (size) comes before silver (color), and both come before the noun coin.",
-      "grammarRule": "Adjective-Noun Order"
-    },
-    {
-      "id": "wr_l19_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She takes medicine after every meal.",
-      "shuffledWords": [
-        "medicine",
-        "after",
-        "meal",
-        "takes",
-        "every",
-        "She"
-      ],
-      "correctOrder": [
-        5,
-        3,
-        0,
-        1,
-        4,
-        2
-      ],
-      "hint": "The time phrase 'after every meal' comes at the end.",
-      "explanation": "After every meal tells us when she takes medicine, following the object medicine.",
-      "grammarRule": "Prepositional Phrases (Time & Place)"
-    },
-    {
-      "id": "wr_l19_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "He exercises at the gym daily.",
-      "shuffledWords": [
-        "gym",
-        "exercises",
-        "the",
-        "He",
-        "daily",
-        "at"
-      ],
-      "correctOrder": [
-        3,
-        1,
-        5,
-        2,
-        0,
-        4
-      ],
-      "hint": "Place the location phrase before the frequency word at the end.",
-      "explanation": "At the gym shows the place, and daily shows how often, in that order.",
-      "grammarRule": "Prepositional Phrases (Time & Place)"
-    },
-    {
-      "id": "wr_l19_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "We rested in the park after lunch.",
-      "shuffledWords": [
-        "park",
-        "after",
-        "rested",
-        "in",
-        "lunch",
-        "the",
-        "We"
-      ],
-      "correctOrder": [
-        6,
-        2,
-        3,
-        5,
-        0,
-        1,
-        4
-      ],
-      "hint": "The place phrase comes before the time phrase at the end.",
-      "explanation": "In the park tells us where, and after lunch tells us when, both following the verb rested.",
-      "grammarRule": "Prepositional Phrases (Time & Place)"
-    },
-    {
-      "id": "wr_l20_q1",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The excited children ran quickly toward the playground.",
-      "shuffledWords": [
-        "playground",
-        "children",
-        "excited",
-        "the",
-        "ran",
-        "The",
-        "quickly",
-        "toward"
-      ],
-      "correctOrder": [
-        5,
-        2,
-        1,
-        4,
-        6,
-        7,
-        3,
-        0
-      ],
-      "hint": "Combine the adjective and subject, then the verb, the manner adverb, and the place.",
-      "explanation": "This review sentence links an adjective, subject, verb, manner adverb, and place phrase in standard order.",
-      "grammarRule": "Basic Sentence Structure (Review)"
-    },
-    {
-      "id": "wr_l20_q2",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Our whole family enjoyed the delicious dinner together.",
-      "shuffledWords": [
-        "dinner",
-        "family",
-        "together",
-        "delicious",
-        "Our",
-        "enjoyed",
-        "whole",
-        "the"
-      ],
-      "correctOrder": [
-        4,
-        6,
-        1,
-        5,
-        7,
-        3,
-        0,
-        2
-      ],
-      "hint": "Keep the subject and its describing words together before the verb.",
-      "explanation": "This sentence reviews Subject-Verb-Object order along with an adjective (delicious) and a closing adverb (together).",
-      "grammarRule": "Basic Sentence Structure (Review)"
-    },
-    {
-      "id": "wr_l20_q3",
-      "instruction": "REORDER WORDS",
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The young athlete trained hard every single day.",
-      "shuffledWords": [
-        "every",
-        "athlete",
-        "hard",
-        "The",
-        "day",
-        "young",
-        "trained",
-        "single"
-      ],
-      "correctOrder": [
-        3,
-        5,
-        1,
-        6,
-        2,
-        0,
-        7,
-        4
-      ],
-      "hint": "Subject with adjective, then verb, then manner word, then the frequency phrase.",
-      "explanation": "This checkpoint sentence combines an adjective, past-tense verb, manner adverb, and frequency phrase in natural order.",
-      "grammarRule": "Basic Sentence Structure (Review)"
-    }
-  ]
+    "gameType": "wordReorder",
+    "batchIndex": 2,
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "wr_l11_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "Our neighbor drives a small red truck.",
+            "shuffledWords": [
+                "truck",
+                "small",
+                "a",
+                "red",
+                "drives",
+                "neighbor",
+                "Our"
+            ],
+            "correctOrder": [
+                6,
+                5,
+                4,
+                2,
+                1,
+                3,
+                0
+            ],
+            "hint": "Subject first, then the verb, then the object with its describing words.",
+            "explanation": "Our neighbor (subject) drives (verb) a small red truck (object), following standard Subject-Verb-Object order.",
+            "grammarRule": "Simple Present (SVO)"
+        },
+        {
+            "id": "wr_l11_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The baker bakes fresh bread daily.",
+            "shuffledWords": [
+                "The",
+                "daily",
+                "bread",
+                "baker",
+                "bakes",
+                "fresh"
+            ],
+            "correctOrder": [
+                0,
+                3,
+                4,
+                5,
+                2,
+                1
+            ],
+            "hint": "Place the frequency word 'daily' at the very end.",
+            "explanation": "The baker (subject) bakes (verb) fresh bread (object), with daily added at the end to show frequency.",
+            "grammarRule": "Simple Present (SVO)"
+        },
+        {
+            "id": "wr_l11_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The nurse helps sick patients every day.",
+            "shuffledWords": [
+                "nurse",
+                "day",
+                "sick",
+                "every",
+                "The",
+                "helps",
+                "patients"
+            ],
+            "correctOrder": [
+                4,
+                0,
+                5,
+                2,
+                6,
+                3,
+                1
+            ],
+            "hint": "Keep the subject and verb together, then add the object, then the frequency phrase.",
+            "explanation": "The nurse (subject) helps (verb) sick patients (object), followed by every day to show how often.",
+            "grammarRule": "Simple Present (SVO)"
+        },
+        {
+            "id": "wr_l12_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "There are two books on the shelf.",
+            "shuffledWords": [
+                "two",
+                "on",
+                "shelf",
+                "the",
+                "books",
+                "are",
+                "There"
+            ],
+            "correctOrder": [
+                6,
+                5,
+                0,
+                4,
+                1,
+                3,
+                2
+            ],
+            "hint": "Start with 'There are' before the plural noun, then add the location.",
+            "explanation": "There are introduces the existence of something, followed by the plural noun books and its location.",
+            "grammarRule": "There is / There are"
+        },
+        {
+            "id": "wr_l12_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "There is a spider on the wall.",
+            "shuffledWords": [
+                "wall",
+                "spider",
+                "There",
+                "the",
+                "is",
+                "a",
+                "on"
+            ],
+            "correctOrder": [
+                2,
+                4,
+                5,
+                1,
+                6,
+                3,
+                0
+            ],
+            "hint": "Use 'There is' before a singular noun, then the location.",
+            "explanation": "There is introduces one thing, a spider, followed by its location on the wall.",
+            "grammarRule": "There is / There are"
+        },
+        {
+            "id": "wr_l12_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "There are many students in the library.",
+            "shuffledWords": [
+                "many",
+                "in",
+                "There",
+                "the",
+                "library",
+                "are",
+                "students"
+            ],
+            "correctOrder": [
+                2,
+                5,
+                0,
+                6,
+                1,
+                3,
+                4
+            ],
+            "hint": "'There are' goes first with plural nouns, followed by quantity and location.",
+            "explanation": "There are begins the sentence, followed by many students and the location in the library.",
+            "grammarRule": "There is / There are"
+        },
+        {
+            "id": "wr_l13_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "Her brother lost his new wallet.",
+            "shuffledWords": [
+                "brother",
+                "lost",
+                "Her",
+                "wallet",
+                "his",
+                "new"
+            ],
+            "correctOrder": [
+                2,
+                0,
+                1,
+                4,
+                5,
+                3
+            ],
+            "hint": "Possessive words like 'her' and 'his' come right before the noun they describe.",
+            "explanation": "Her describes brother, and his describes wallet, each placed directly before its noun.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "wr_l13_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "Their parents sold their old house.",
+            "shuffledWords": [
+                "old",
+                "parents",
+                "their",
+                "house",
+                "sold",
+                "Their"
+            ],
+            "correctOrder": [
+                5,
+                1,
+                4,
+                2,
+                0,
+                3
+            ],
+            "hint": "The possessive word 'their' goes before each noun it belongs to.",
+            "explanation": "Their appears before parents and again before old house, showing ownership in both places.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "wr_l13_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "My cousin painted her bedroom yellow.",
+            "shuffledWords": [
+                "her",
+                "painted",
+                "bedroom",
+                "My",
+                "yellow",
+                "cousin"
+            ],
+            "correctOrder": [
+                3,
+                5,
+                1,
+                0,
+                2,
+                4
+            ],
+            "hint": "Possessives go directly before the noun, and color words often come at the end.",
+            "explanation": "My describes cousin, her describes bedroom, and yellow describes the new color at the end.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "wr_l14_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The manager explained the plan clearly.",
+            "shuffledWords": [
+                "clearly",
+                "plan",
+                "the",
+                "explained",
+                "The",
+                "manager"
+            ],
+            "correctOrder": [
+                4,
+                5,
+                3,
+                2,
+                1,
+                0
+            ],
+            "hint": "The manner adverb 'clearly' goes at the end, after the object.",
+            "explanation": "Clearly describes how the manager explained, so it follows the object the plan.",
+            "grammarRule": "Adverb Placement (Manner)"
+        },
+        {
+            "id": "wr_l14_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The workers finished the project quickly.",
+            "shuffledWords": [
+                "workers",
+                "finished",
+                "The",
+                "quickly",
+                "project",
+                "the"
+            ],
+            "correctOrder": [
+                2,
+                0,
+                1,
+                5,
+                4,
+                3
+            ],
+            "hint": "Place the manner adverb after the object, at the end of the sentence.",
+            "explanation": "Quickly tells us how the workers finished, positioned after the object the project.",
+            "grammarRule": "Adverb Placement (Manner)"
+        },
+        {
+            "id": "wr_l14_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "She organized the files carefully yesterday.",
+            "shuffledWords": [
+                "files",
+                "carefully",
+                "She",
+                "organized",
+                "yesterday",
+                "the"
+            ],
+            "correctOrder": [
+                2,
+                3,
+                5,
+                0,
+                1,
+                4
+            ],
+            "hint": "The manner adverb comes right after the object, before the time word.",
+            "explanation": "Carefully shows how she organized the files, and yesterday tells us when, in that order.",
+            "grammarRule": "Adverb Placement (Manner)"
+        },
+        {
+            "id": "wr_l15_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The plane landed at the airport.",
+            "shuffledWords": [
+                "plane",
+                "airport",
+                "the",
+                "at",
+                "The",
+                "landed"
+            ],
+            "correctOrder": [
+                4,
+                0,
+                5,
+                3,
+                2,
+                1
+            ],
+            "hint": "The place phrase comes right after the verb.",
+            "explanation": "At the airport tells us where the plane landed, placed after the verb.",
+            "grammarRule": "Prepositional Phrases (Place)"
+        },
+        {
+            "id": "wr_l15_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "Our train arrived at the station.",
+            "shuffledWords": [
+                "train",
+                "arrived",
+                "the",
+                "Our",
+                "at",
+                "station"
+            ],
+            "correctOrder": [
+                3,
+                0,
+                1,
+                4,
+                2,
+                5
+            ],
+            "hint": "Put the location phrase directly after the verb arrived.",
+            "explanation": "At the station shows the place, coming right after the verb arrived.",
+            "grammarRule": "Prepositional Phrases (Place)"
+        },
+        {
+            "id": "wr_l15_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "We stayed in a cozy cabin.",
+            "shuffledWords": [
+                "cabin",
+                "in",
+                "We",
+                "stayed",
+                "cozy",
+                "a"
+            ],
+            "correctOrder": [
+                2,
+                3,
+                1,
+                5,
+                4,
+                0
+            ],
+            "hint": "The place phrase follows the verb, with the adjective before the noun.",
+            "explanation": "In a cozy cabin tells us where we stayed, with cozy describing cabin.",
+            "grammarRule": "Prepositional Phrases (Place)"
+        },
+        {
+            "id": "wr_l16_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "He washed the dishes and cleaned the counter.",
+            "shuffledWords": [
+                "counter",
+                "He",
+                "and",
+                "the",
+                "the",
+                "washed",
+                "dishes",
+                "cleaned"
+            ],
+            "correctOrder": [
+                1,
+                5,
+                3,
+                6,
+                2,
+                7,
+                4,
+                0
+            ],
+            "hint": "The word 'and' connects two actions done by the same subject.",
+            "explanation": "And joins two verb phrases, washed the dishes and cleaned the counter, done by the same subject he.",
+            "grammarRule": "Coordinating Conjunctions (and/but)"
+        },
+        {
+            "id": "wr_l16_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "She wanted pizza but ordered a salad.",
+            "shuffledWords": [
+                "pizza",
+                "She",
+                "wanted",
+                "salad",
+                "but",
+                "ordered",
+                "a"
+            ],
+            "correctOrder": [
+                1,
+                2,
+                0,
+                4,
+                5,
+                6,
+                3
+            ],
+            "hint": "'But' shows a contrast between two actions by the same subject.",
+            "explanation": "But connects two contrasting ideas: what she wanted and what she actually ordered.",
+            "grammarRule": "Coordinating Conjunctions (and/but)"
+        },
+        {
+            "id": "wr_l16_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "They practiced hard and won the match.",
+            "shuffledWords": [
+                "hard",
+                "the",
+                "practiced",
+                "match",
+                "They",
+                "and",
+                "won"
+            ],
+            "correctOrder": [
+                4,
+                2,
+                0,
+                5,
+                6,
+                1,
+                3
+            ],
+            "hint": "'And' links two actions in the order they happened.",
+            "explanation": "And joins practiced hard and won the match, two actions performed by the same subject.",
+            "grammarRule": "Coordinating Conjunctions (and/but)"
+        },
+        {
+            "id": "wr_l17_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "We visited an old castle last summer.",
+            "shuffledWords": [
+                "castle",
+                "an",
+                "last",
+                "We",
+                "summer",
+                "old",
+                "visited"
+            ],
+            "correctOrder": [
+                3,
+                6,
+                1,
+                5,
+                0,
+                2,
+                4
+            ],
+            "hint": "Subject, past verb, object, then the time expression at the end.",
+            "explanation": "We (subject) visited (past verb) an old castle (object), with last summer showing when.",
+            "grammarRule": "Simple Past (SVO)"
+        },
+        {
+            "id": "wr_l17_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The band played their new song loudly.",
+            "shuffledWords": [
+                "loudly",
+                "played",
+                "song",
+                "The",
+                "their",
+                "new",
+                "band"
+            ],
+            "correctOrder": [
+                3,
+                6,
+                1,
+                4,
+                5,
+                2,
+                0
+            ],
+            "hint": "Keep subject and verb together, then the object, then the manner adverb.",
+            "explanation": "The band (subject) played (verb) their new song (object), with loudly describing how.",
+            "grammarRule": "Simple Past (SVO)"
+        },
+        {
+            "id": "wr_l17_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "I watched an exciting soccer game yesterday.",
+            "shuffledWords": [
+                "an",
+                "game",
+                "yesterday",
+                "watched",
+                "I",
+                "exciting",
+                "soccer"
+            ],
+            "correctOrder": [
+                4,
+                3,
+                0,
+                5,
+                6,
+                1,
+                2
+            ],
+            "hint": "Place the adjective before the noun, and the time word at the end.",
+            "explanation": "Exciting describes soccer game, and yesterday tells us when I watched it.",
+            "grammarRule": "Simple Past (SVO)"
+        },
+        {
+            "id": "wr_l18_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "She bought a shiny new laptop.",
+            "shuffledWords": [
+                "bought",
+                "shiny",
+                "a",
+                "new",
+                "laptop",
+                "She"
+            ],
+            "correctOrder": [
+                5,
+                0,
+                2,
+                1,
+                3,
+                4
+            ],
+            "hint": "Describing words about appearance usually come before words about age, like 'new'.",
+            "explanation": "Shiny (appearance) comes before new (age), and both are placed before the noun laptop.",
+            "grammarRule": "Adjective-Noun Order"
+        },
+        {
+            "id": "wr_l18_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "He owns a sleek black smartphone.",
+            "shuffledWords": [
+                "a",
+                "smartphone",
+                "owns",
+                "black",
+                "sleek",
+                "He"
+            ],
+            "correctOrder": [
+                5,
+                2,
+                0,
+                4,
+                3,
+                1
+            ],
+            "hint": "Shape or style words come before color words, then the noun.",
+            "explanation": "Sleek describes style, black is the color, and both come before the noun smartphone.",
+            "grammarRule": "Adjective-Noun Order"
+        },
+        {
+            "id": "wr_l18_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "I found a tiny silver coin.",
+            "shuffledWords": [
+                "found",
+                "I",
+                "coin",
+                "silver",
+                "tiny",
+                "a"
+            ],
+            "correctOrder": [
+                1,
+                0,
+                5,
+                4,
+                3,
+                2
+            ],
+            "hint": "Size words like 'tiny' come before color or material words like 'silver'.",
+            "explanation": "Tiny (size) comes before silver (color), and both come before the noun coin.",
+            "grammarRule": "Adjective-Noun Order"
+        },
+        {
+            "id": "wr_l19_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "She takes medicine after every meal.",
+            "shuffledWords": [
+                "medicine",
+                "after",
+                "meal",
+                "takes",
+                "every",
+                "She"
+            ],
+            "correctOrder": [
+                5,
+                3,
+                0,
+                1,
+                4,
+                2
+            ],
+            "hint": "The time phrase 'after every meal' comes at the end.",
+            "explanation": "After every meal tells us when she takes medicine, following the object medicine.",
+            "grammarRule": "Prepositional Phrases (Time & Place)"
+        },
+        {
+            "id": "wr_l19_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "He exercises at the gym daily.",
+            "shuffledWords": [
+                "gym",
+                "exercises",
+                "the",
+                "He",
+                "daily",
+                "at"
+            ],
+            "correctOrder": [
+                3,
+                1,
+                5,
+                2,
+                0,
+                4
+            ],
+            "hint": "Place the location phrase before the frequency word at the end.",
+            "explanation": "At the gym shows the place, and daily shows how often, in that order.",
+            "grammarRule": "Prepositional Phrases (Time & Place)"
+        },
+        {
+            "id": "wr_l19_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "We rested in the park after lunch.",
+            "shuffledWords": [
+                "park",
+                "after",
+                "rested",
+                "in",
+                "lunch",
+                "the",
+                "We"
+            ],
+            "correctOrder": [
+                6,
+                2,
+                3,
+                5,
+                0,
+                1,
+                4
+            ],
+            "hint": "The place phrase comes before the time phrase at the end.",
+            "explanation": "In the park tells us where, and after lunch tells us when, both following the verb rested.",
+            "grammarRule": "Prepositional Phrases (Time & Place)"
+        },
+        {
+            "id": "wr_l20_q1",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The excited children ran quickly toward the playground.",
+            "shuffledWords": [
+                "playground",
+                "children",
+                "excited",
+                "the",
+                "ran",
+                "The",
+                "quickly",
+                "toward"
+            ],
+            "correctOrder": [
+                5,
+                2,
+                1,
+                4,
+                6,
+                7,
+                3,
+                0
+            ],
+            "hint": "Combine the adjective and subject, then the verb, the manner adverb, and the place.",
+            "explanation": "This review sentence links an adjective, subject, verb, manner adverb, and place phrase in standard order.",
+            "grammarRule": "Basic Sentence Structure (Review)"
+        },
+        {
+            "id": "wr_l20_q2",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "Our whole family enjoyed the delicious dinner together.",
+            "shuffledWords": [
+                "dinner",
+                "family",
+                "together",
+                "delicious",
+                "Our",
+                "enjoyed",
+                "whole",
+                "the"
+            ],
+            "correctOrder": [
+                4,
+                6,
+                1,
+                5,
+                7,
+                3,
+                0,
+                2
+            ],
+            "hint": "Keep the subject and its describing words together before the verb.",
+            "explanation": "This sentence reviews Subject-Verb-Object order along with an adjective (delicious) and a closing adverb (together).",
+            "grammarRule": "Basic Sentence Structure (Review)"
+        },
+        {
+            "id": "wr_l20_q3",
+            "instruction": "REORDER WORDS",
+            "subtype": "wordReorder",
+            "interactionType": "reorder",
+            "sentence": "The young athlete trained hard every single day.",
+            "shuffledWords": [
+                "every",
+                "athlete",
+                "hard",
+                "The",
+                "day",
+                "young",
+                "trained",
+                "single"
+            ],
+            "correctOrder": [
+                3,
+                5,
+                1,
+                6,
+                2,
+                0,
+                7,
+                4
+            ],
+            "hint": "Subject with adjective, then verb, then manner word, then the frequency phrase.",
+            "explanation": "This checkpoint sentence combines an adjective, past-tense verb, manner adverb, and frequency phrase in natural order.",
+            "grammarRule": "Basic Sentence Structure (Review)"
+        }
+    ]
 }

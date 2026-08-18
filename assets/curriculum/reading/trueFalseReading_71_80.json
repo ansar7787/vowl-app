@@ -1,457 +1,457 @@
 {
-  "gameType": "trueFalseReading",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "RDG_TRUEFALSEREADING_L71_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Given that the restaurant sources its seafood locally each morning, the menu changes daily depending on what the fishing boats bring in. Regular customers have come to expect a surprise rather than a fixed selection.",
-      "question": "The restaurant offers the exact same seafood menu every day.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how often the seafood menu actually changes.",
-      "explanation": "The passage says the menu changes daily, so the same menu every day is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L71_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "While cloud storage has become the standard for most companies, Farid's small business still keeps physical backups of critical files, a practice he considers an extra safeguard rather than a replacement. He updates the physical backup every Friday.",
-      "question": "Farid's business relies solely on cloud storage with no physical backups.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether Farid's business keeps any physical backups.",
-      "explanation": "The passage says he keeps physical backups too, so relying solely on cloud storage is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L71_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Minor colds are common in winter, but this year's flu season has been notably more severe, prompting many clinics to extend their hours to accommodate the surge in patients.",
-      "question": "This year's flu season has been more severe than usual.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how this year's flu season compares to normal.",
-      "explanation": "The passage confirms it has been notably more severe, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L72_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "While most theaters in the city require advance booking for weekend shows, one independent cinema still sells tickets only at the door, a policy the owner insists keeps the experience feeling more spontaneous.",
-      "question": "The independent cinema sells tickets only at the door.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how the independent cinema sells its tickets.",
-      "explanation": "The passage confirms tickets are sold only at the door, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L72_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Most caterpillars transform into moths or butterflies within a few weeks, yet certain species remain in the cocoon stage for several years before finally emerging as adults. Scientists are still studying what triggers this extended delay.",
-      "question": "All caterpillars complete their transformation within a few weeks.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether every caterpillar species transforms at the same speed.",
-      "explanation": "The passage says certain species take years, so all completing it within weeks is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L72_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "While the community center's pottery class has always been popular, this term's waiting list has grown so long that organizers are considering adding a second weekly session. No final decision has been made yet.",
-      "question": "Organizers have already confirmed a second weekly pottery session.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether a final decision has actually been made.",
-      "explanation": "The passage says no final decision has been made yet, so confirming it is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L73_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Even though he had never cooked a full meal before moving out on his own, Callum taught himself using online videos and now prepares dinner for himself most nights. His roommate, on the other hand, still relies mostly on takeout.",
-      "question": "Callum's roommate mostly relies on takeout.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how the roommate usually gets dinner.",
-      "explanation": "The passage confirms the roommate relies mostly on takeout, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L73_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The university's writing center now requires students to book appointments online rather than walking in, a change introduced after tutors were repeatedly overwhelmed during exam weeks. Students report that the new system has shortened their average wait time considerably.",
-      "question": "Students can still walk in without booking an appointment.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether walk-ins are still allowed at the writing center.",
-      "explanation": "The passage says booking online is now required, so walking in freely is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L73_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite being the newest member of the sales team, Hugo outperformed every other representative during his first full quarter, a fact that surprised even his manager. He credits his background in customer service for the unexpected success.",
-      "question": "Hugo was the top performer on the sales team in his first full quarter.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how Hugo's performance compared to the rest of the team.",
-      "explanation": "The passage confirms he outperformed everyone else, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L74_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since the new high-speed rail line opened, the journey between the two cities has been cut from five hours to just under two. Ticket demand has grown so quickly that additional trains were added within the first six months.",
-      "question": "The train journey between the two cities now takes just under two hours.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the new travel time between the two cities.",
-      "explanation": "The passage states the journey is now just under two hours, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L74_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite initially resisting the idea, Omar's parents eventually agreed to move into a smaller home closer to his family after he explained how much easier it would make visits. They have lived there for six months now and say they have no regrets.",
-      "question": "Omar's parents regret moving to the smaller home.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how Omar's parents feel about the move now.",
-      "explanation": "The passage says they have no regrets, so regretting the move is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L74_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Layla had planned to spend only fifty dollars at the market, but she ended up spending nearly double that amount after finding several handmade items she had not planned to buy. She said she has no regrets about the extra spending.",
-      "question": "Layla spent close to one hundred dollars at the market.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check roughly how much Layla ended up spending.",
-      "explanation": "The passage says she spent nearly double fifty dollars, so close to one hundred is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L75_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite claiming to dislike vegetables as a child, Hassan now grows his own tomatoes and peppers on his balcony and uses them in nearly every meal he cooks. His mother jokes that she barely recognizes his eating habits these days.",
-      "question": "Hassan grows his own tomatoes and peppers.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check what Hassan grows on his balcony.",
-      "explanation": "The passage confirms he grows tomatoes and peppers, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L75_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Even though it was released years ago, the budget laptop model remains popular among students mainly because of its low price and surprisingly long battery life. Retailers have struggled to keep it in stock during the back-to-school season.",
-      "question": "The budget laptop model is popular partly due to its long battery life.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the reasons given for the laptop's popularity.",
-      "explanation": "The passage lists long battery life as one of the reasons, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L75_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite feeling anxious about the appointment, Tomas finally scheduled the dental checkup he had postponed for nearly two years. The dentist found no serious issues, much to his relief.",
-      "question": "Tomas had postponed his dental checkup for nearly two years.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how long Tomas had put off the appointment.",
-      "explanation": "The passage confirms nearly two years, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L76_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite selling out within minutes online, a small number of tickets for the festival were reserved for in-person purchase the day of the event. Fans who missed the online sale lined up outside hours before the box office opened.",
-      "question": "No tickets were made available for in-person purchase.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether any tickets were kept for in-person sale.",
-      "explanation": "The passage says some tickets were reserved for in-person purchase, so none available is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L76_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Small as they are, hummingbirds can travel hundreds of miles during migration without stopping, relying on fat reserves built up before the journey begins. Some species cross entire bodies of water in a single non-stop flight.",
-      "question": "Hummingbirds build up fat reserves before migrating.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check what hummingbirds rely on during migration.",
-      "explanation": "The passage confirms they build up fat reserves beforehand, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L76_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite limited funding, volunteers managed to restore the neighborhood's oldest playground entirely through donated materials and weekend labor. The renovated playground reopened to the public last Saturday.",
-      "question": "The renovated playground reopened last Saturday.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check when the playground reopened.",
-      "explanation": "The passage confirms it reopened last Saturday, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L77_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Having struggled to wake up early for years, Freya finally solved the problem by placing her alarm clock across the room instead of beside her bed. Getting out of bed to turn it off, she says, is enough to keep her from falling back asleep.",
-      "question": "Freya placed her alarm clock across the room.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check where Freya now keeps her alarm clock.",
-      "explanation": "The passage confirms she placed it across the room, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L77_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because the certification exam is only offered twice a year, Soraya has been studying for nearly eight months to make sure she is fully prepared for the next test date. She reviews practice questions for at least an hour every evening.",
-      "question": "The certification exam is offered four times a year.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how often the certification exam is actually offered.",
-      "explanation": "The passage says it is offered twice a year, not four times, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L77_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The office lease was not renewed, so the entire company relocated to a smaller building across town, resulting in fewer private offices and more shared workspaces. Employees were given a two-week notice before the move took place.",
-      "question": "Employees were given a month's notice before the move.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how much notice employees actually received.",
-      "explanation": "The passage says they received two weeks' notice, not a month, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L78_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Despite arriving at the airport nearly three hours early, Devon still had to rush to make his connecting flight because of an unexpected gate change. He made it just as boarding was closing.",
-      "question": "Devon missed his connecting flight entirely.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether Devon actually made it onto the flight.",
-      "explanation": "The passage says he made it just as boarding closed, so missing it entirely is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L78_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because raising three children on a single income has been challenging, Elena's family has adopted a strict monthly budget that both she and her husband review together every week. So far, the system has helped them avoid unexpected debt.",
-      "question": "Elena and her husband review their budget together every week.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how often Elena and her husband review the budget.",
-      "explanation": "The passage confirms they review it together every week, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L78_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since the store began accepting returns by mail, customers no longer need to travel back to a physical location to exchange an item. The change has reportedly reduced complaints about the return process by a wide margin.",
-      "question": "The store now accepts returns by mail.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the store's new return option.",
-      "explanation": "The passage confirms returns by mail are now accepted, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L79_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since switching to a plant-based diet six months ago, Nadia has had to learn entirely new ways of preparing meals she once made with meat as the main ingredient. She says the adjustment period was harder than she expected.",
-      "question": "Nadia found the adjustment to a plant-based diet easier than expected.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how Nadia describes the adjustment period.",
-      "explanation": "The passage says it was harder than expected, so easier than expected is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L79_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Her phone's storage kept filling up, so Wren finally moved most of her old photos to an external hard drive instead of paying for additional cloud storage. She admits she should have done this months earlier.",
-      "question": "Wren moved her old photos to an external hard drive.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how Wren solved her phone storage problem.",
-      "explanation": "The passage confirms she moved the photos to an external hard drive, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L79_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since he began tracking his meals in an app, Owen has become more aware of how much sugar he consumes without realizing it. He has since cut his daily sugar intake by roughly a third.",
-      "question": "Owen has increased his daily sugar intake since using the app.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check what happened to Owen's sugar intake after using the app.",
-      "explanation": "The passage says he cut his intake by roughly a third, so an increase is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L80_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since discovering a local trivia night at a nearby pub, Hana and her coworkers have attended nearly every week for the past two months. Their team has placed in the top three on several occasions.",
-      "question": "Hana's trivia team has never placed in the top three.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how the team has performed over the past two months.",
-      "explanation": "The passage says they placed in the top three on several occasions, so never is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L80_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Coral reefs are highly sensitive to changes in water temperature, so even a slight increase over several weeks can cause widespread bleaching across an entire reef system. Recovery, when it happens at all, can take many years.",
-      "question": "Coral reefs are unaffected by changes in water temperature.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how sensitive coral reefs are to temperature change.",
-      "explanation": "The passage says reefs are highly sensitive to temperature, so unaffected is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L80_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since the town's only grocery store closed last year, residents have relied on a weekly mobile market that visits the main square every Thursday. Some residents have asked the town to consider a more permanent solution.",
-      "question": "The town's only grocery store closed last year.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check when the town's grocery store closed.",
-      "explanation": "The passage confirms it closed last year, so this statement is true."
-    }
-  ]
+    "gameType": "trueFalseReading",
+    "batchIndex": 8,
+    "levels": "71-80",
+    "quests": [
+        {
+            "id": "RDG_TRUEFALSEREADING_L71_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Given that the restaurant sources its seafood locally each morning, the menu changes daily depending on what the fishing boats bring in. Regular customers have come to expect a surprise rather than a fixed selection.",
+            "question": "The restaurant offers the exact same seafood menu every day.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how often the seafood menu actually changes.",
+            "explanation": "The passage says the menu changes daily, so the same menu every day is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L71_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "While cloud storage has become the standard for most companies, Farid's small business still keeps physical backups of critical files, a practice he considers an extra safeguard rather than a replacement. He updates the physical backup every Friday.",
+            "question": "Farid's business relies solely on cloud storage with no physical backups.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether Farid's business keeps any physical backups.",
+            "explanation": "The passage says he keeps physical backups too, so relying solely on cloud storage is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L71_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Minor colds are common in winter, but this year's flu season has been notably more severe, prompting many clinics to extend their hours to accommodate the surge in patients.",
+            "question": "This year's flu season has been more severe than usual.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how this year's flu season compares to normal.",
+            "explanation": "The passage confirms it has been notably more severe, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L72_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "While most theaters in the city require advance booking for weekend shows, one independent cinema still sells tickets only at the door, a policy the owner insists keeps the experience feeling more spontaneous.",
+            "question": "The independent cinema sells tickets only at the door.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how the independent cinema sells its tickets.",
+            "explanation": "The passage confirms tickets are sold only at the door, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L72_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Most caterpillars transform into moths or butterflies within a few weeks, yet certain species remain in the cocoon stage for several years before finally emerging as adults. Scientists are still studying what triggers this extended delay.",
+            "question": "All caterpillars complete their transformation within a few weeks.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether every caterpillar species transforms at the same speed.",
+            "explanation": "The passage says certain species take years, so all completing it within weeks is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L72_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "While the community center's pottery class has always been popular, this term's waiting list has grown so long that organizers are considering adding a second weekly session. No final decision has been made yet.",
+            "question": "Organizers have already confirmed a second weekly pottery session.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether a final decision has actually been made.",
+            "explanation": "The passage says no final decision has been made yet, so confirming it is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L73_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Even though he had never cooked a full meal before moving out on his own, Callum taught himself using online videos and now prepares dinner for himself most nights. His roommate, on the other hand, still relies mostly on takeout.",
+            "question": "Callum's roommate mostly relies on takeout.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how the roommate usually gets dinner.",
+            "explanation": "The passage confirms the roommate relies mostly on takeout, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L73_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The university's writing center now requires students to book appointments online rather than walking in, a change introduced after tutors were repeatedly overwhelmed during exam weeks. Students report that the new system has shortened their average wait time considerably.",
+            "question": "Students can still walk in without booking an appointment.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether walk-ins are still allowed at the writing center.",
+            "explanation": "The passage says booking online is now required, so walking in freely is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L73_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite being the newest member of the sales team, Hugo outperformed every other representative during his first full quarter, a fact that surprised even his manager. He credits his background in customer service for the unexpected success.",
+            "question": "Hugo was the top performer on the sales team in his first full quarter.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how Hugo's performance compared to the rest of the team.",
+            "explanation": "The passage confirms he outperformed everyone else, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L74_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since the new high-speed rail line opened, the journey between the two cities has been cut from five hours to just under two. Ticket demand has grown so quickly that additional trains were added within the first six months.",
+            "question": "The train journey between the two cities now takes just under two hours.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the new travel time between the two cities.",
+            "explanation": "The passage states the journey is now just under two hours, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L74_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite initially resisting the idea, Omar's parents eventually agreed to move into a smaller home closer to his family after he explained how much easier it would make visits. They have lived there for six months now and say they have no regrets.",
+            "question": "Omar's parents regret moving to the smaller home.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how Omar's parents feel about the move now.",
+            "explanation": "The passage says they have no regrets, so regretting the move is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L74_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Layla had planned to spend only fifty dollars at the market, but she ended up spending nearly double that amount after finding several handmade items she had not planned to buy. She said she has no regrets about the extra spending.",
+            "question": "Layla spent close to one hundred dollars at the market.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check roughly how much Layla ended up spending.",
+            "explanation": "The passage says she spent nearly double fifty dollars, so close to one hundred is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L75_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite claiming to dislike vegetables as a child, Hassan now grows his own tomatoes and peppers on his balcony and uses them in nearly every meal he cooks. His mother jokes that she barely recognizes his eating habits these days.",
+            "question": "Hassan grows his own tomatoes and peppers.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check what Hassan grows on his balcony.",
+            "explanation": "The passage confirms he grows tomatoes and peppers, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L75_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Even though it was released years ago, the budget laptop model remains popular among students mainly because of its low price and surprisingly long battery life. Retailers have struggled to keep it in stock during the back-to-school season.",
+            "question": "The budget laptop model is popular partly due to its long battery life.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the reasons given for the laptop's popularity.",
+            "explanation": "The passage lists long battery life as one of the reasons, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L75_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite feeling anxious about the appointment, Tomas finally scheduled the dental checkup he had postponed for nearly two years. The dentist found no serious issues, much to his relief.",
+            "question": "Tomas had postponed his dental checkup for nearly two years.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how long Tomas had put off the appointment.",
+            "explanation": "The passage confirms nearly two years, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L76_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite selling out within minutes online, a small number of tickets for the festival were reserved for in-person purchase the day of the event. Fans who missed the online sale lined up outside hours before the box office opened.",
+            "question": "No tickets were made available for in-person purchase.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether any tickets were kept for in-person sale.",
+            "explanation": "The passage says some tickets were reserved for in-person purchase, so none available is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L76_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Small as they are, hummingbirds can travel hundreds of miles during migration without stopping, relying on fat reserves built up before the journey begins. Some species cross entire bodies of water in a single non-stop flight.",
+            "question": "Hummingbirds build up fat reserves before migrating.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check what hummingbirds rely on during migration.",
+            "explanation": "The passage confirms they build up fat reserves beforehand, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L76_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite limited funding, volunteers managed to restore the neighborhood's oldest playground entirely through donated materials and weekend labor. The renovated playground reopened to the public last Saturday.",
+            "question": "The renovated playground reopened last Saturday.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check when the playground reopened.",
+            "explanation": "The passage confirms it reopened last Saturday, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L77_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Having struggled to wake up early for years, Freya finally solved the problem by placing her alarm clock across the room instead of beside her bed. Getting out of bed to turn it off, she says, is enough to keep her from falling back asleep.",
+            "question": "Freya placed her alarm clock across the room.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check where Freya now keeps her alarm clock.",
+            "explanation": "The passage confirms she placed it across the room, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L77_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because the certification exam is only offered twice a year, Soraya has been studying for nearly eight months to make sure she is fully prepared for the next test date. She reviews practice questions for at least an hour every evening.",
+            "question": "The certification exam is offered four times a year.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how often the certification exam is actually offered.",
+            "explanation": "The passage says it is offered twice a year, not four times, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L77_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The office lease was not renewed, so the entire company relocated to a smaller building across town, resulting in fewer private offices and more shared workspaces. Employees were given a two-week notice before the move took place.",
+            "question": "Employees were given a month's notice before the move.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how much notice employees actually received.",
+            "explanation": "The passage says they received two weeks' notice, not a month, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L78_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Despite arriving at the airport nearly three hours early, Devon still had to rush to make his connecting flight because of an unexpected gate change. He made it just as boarding was closing.",
+            "question": "Devon missed his connecting flight entirely.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether Devon actually made it onto the flight.",
+            "explanation": "The passage says he made it just as boarding closed, so missing it entirely is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L78_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because raising three children on a single income has been challenging, Elena's family has adopted a strict monthly budget that both she and her husband review together every week. So far, the system has helped them avoid unexpected debt.",
+            "question": "Elena and her husband review their budget together every week.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how often Elena and her husband review the budget.",
+            "explanation": "The passage confirms they review it together every week, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L78_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since the store began accepting returns by mail, customers no longer need to travel back to a physical location to exchange an item. The change has reportedly reduced complaints about the return process by a wide margin.",
+            "question": "The store now accepts returns by mail.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the store's new return option.",
+            "explanation": "The passage confirms returns by mail are now accepted, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L79_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since switching to a plant-based diet six months ago, Nadia has had to learn entirely new ways of preparing meals she once made with meat as the main ingredient. She says the adjustment period was harder than she expected.",
+            "question": "Nadia found the adjustment to a plant-based diet easier than expected.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how Nadia describes the adjustment period.",
+            "explanation": "The passage says it was harder than expected, so easier than expected is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L79_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Her phone's storage kept filling up, so Wren finally moved most of her old photos to an external hard drive instead of paying for additional cloud storage. She admits she should have done this months earlier.",
+            "question": "Wren moved her old photos to an external hard drive.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how Wren solved her phone storage problem.",
+            "explanation": "The passage confirms she moved the photos to an external hard drive, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L79_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since he began tracking his meals in an app, Owen has become more aware of how much sugar he consumes without realizing it. He has since cut his daily sugar intake by roughly a third.",
+            "question": "Owen has increased his daily sugar intake since using the app.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check what happened to Owen's sugar intake after using the app.",
+            "explanation": "The passage says he cut his intake by roughly a third, so an increase is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L80_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since discovering a local trivia night at a nearby pub, Hana and her coworkers have attended nearly every week for the past two months. Their team has placed in the top three on several occasions.",
+            "question": "Hana's trivia team has never placed in the top three.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how the team has performed over the past two months.",
+            "explanation": "The passage says they placed in the top three on several occasions, so never is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L80_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Coral reefs are highly sensitive to changes in water temperature, so even a slight increase over several weeks can cause widespread bleaching across an entire reef system. Recovery, when it happens at all, can take many years.",
+            "question": "Coral reefs are unaffected by changes in water temperature.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how sensitive coral reefs are to temperature change.",
+            "explanation": "The passage says reefs are highly sensitive to temperature, so unaffected is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L80_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since the town's only grocery store closed last year, residents have relied on a weekly mobile market that visits the main square every Thursday. Some residents have asked the town to consider a more permanent solution.",
+            "question": "The town's only grocery store closed last year.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check when the town's grocery store closed.",
+            "explanation": "The passage confirms it closed last year, so this statement is true."
+        }
+    ]
 }

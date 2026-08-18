@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_EMOTIONRECOGNITION_L61_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Think about what it means to clear out someone's room and keep only three objects.",
             "explanation": "Reducing a person's whole study to three kept objects is a quiet, private sign of grief.",
@@ -22,7 +22,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L61_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Rereading your own name three times before believing it points to a strong, positive feeling.",
             "explanation": "Rereading your own name to confirm a win is a joyful, almost disbelieving excitement.",
@@ -39,7 +39,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L61_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Is there any personal feeling in this sentence, or only information?",
             "explanation": "A plain statement of opening hours, with no personal feeling attached, is a clear example of a neutral tone.",
@@ -56,7 +56,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L62_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "An anonymous act of kindness that you can't repay directly leaves a specific, warm feeling.",
             "explanation": "A kind stranger's gesture you can't even thank in person is a simple, direct cause of gratitude.",
@@ -73,7 +73,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L62_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A big moment feeling different from how you pictured it points to a familiar unease.",
             "explanation": "Reality not matching a hundred mental rehearsals is a common cause of nervousness.",
@@ -90,7 +90,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L62_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small technical problem repeating at the worst possible moment brings a light but real irritation.",
             "explanation": "A connection dropping at exactly the wrong moment, more than once, is a very relatable form of annoyance.",
@@ -107,7 +107,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L63_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Going silent after one bite, then asking to learn the recipe, tells you a lot about the reaction.",
             "explanation": "Going quiet, then asking to be taught how to cook something, is a high compliment that shows real happiness.",
@@ -124,7 +124,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L63_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A promise to stay close that quietly never happened points to a gentle, familiar feeling.",
             "explanation": "Watching a close friendship fade after a promise to keep it up is a quiet, common form of sadness.",
@@ -141,7 +141,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L63_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Words that stop making sense after several rereads point to a physical and mental state.",
             "explanation": "Rereading the same lines without absorbing anything is a common sign of mental tiredness.",
@@ -158,7 +158,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L64_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Learning a major fact about someone after twenty conversations tends to bring a strong reaction.",
             "explanation": "Discovering an important fact about someone only after many conversations is a natural cause of surprise.",
@@ -175,7 +175,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L64_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A sudden break in someone's usual habit tends to bring on a specific, uneasy feeling.",
             "explanation": "A loved one suddenly going quiet, against their usual habits, is a natural cause of worry.",
@@ -192,7 +192,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L64_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Feeling your own heartbeat as a performance is about to begin points to a familiar physical sign.",
             "explanation": "Feeling your heartbeat in your ears as the lights go up is a physical sign of nervousness.",
@@ -209,7 +209,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L65_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small thing feeling enormous because of what it means to you points to a particular feeling.",
             "explanation": "A small plot of land feeling like 'everything' because of its personal meaning is a clear sign of happiness.",
@@ -226,7 +226,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L65_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small, exact, repeating disturbance tends to bring a familiar, low-level irritation.",
             "explanation": "The same disruptive habit repeating every single morning, without exception, is a classic source of annoyance.",
@@ -243,7 +243,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L65_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A repeated small theft, plus denying it happened, tends to build a stronger reaction than the act alone.",
             "explanation": "Being lied to repeatedly about something as small as labeled food is a common, relatable cause of anger.",
@@ -260,7 +260,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L66_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Returning somewhere and finding even its small, sensory details have changed points to a quiet feeling.",
             "explanation": "Finding that even the small, remembered details of a place have vanished reflects a gentle sadness.",
@@ -277,7 +277,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L66_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Repeated, unexplained delays during something already a little tense tend to build a specific unease.",
             "explanation": "An unexplained delay repeating for the third time, mid-flight, is a natural cause of worry.",
@@ -294,7 +294,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L66_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Forty minutes of staring at something important without opening it points to a familiar unease.",
             "explanation": "Being unable to open an important email for forty minutes is a classic sign of nervous anticipation.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L67_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A big promise replaced by something this unexpected tends to deflate the mood into one particular feeling.",
             "explanation": "Expecting something meaningful and getting interpretive dance instead is a cause of restless boredom.",
@@ -328,7 +328,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L67_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "'Finally going to happen' after three years of waiting points to a strong, positive feeling.",
             "explanation": "An approved project after three years of proposals is a cause of genuine, long-awaited excitement.",
@@ -345,7 +345,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L67_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A string of small, easy wins in one day points to a light, contented feeling.",
             "explanation": "A day when small things fall into place without effort is a quiet, contented kind of happiness.",
@@ -362,7 +362,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L68_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A physical symptom behaving differently than it normally would points to a specific, uneasy feeling.",
             "explanation": "A symptom that doesn't respond the way it usually does is a natural, common cause of worry.",
@@ -379,7 +379,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L68_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A parent who used to engage fully now asking nothing at all points to a quiet, specific feeling.",
             "explanation": "A once-engaged parent slowly asking less and less is a gentle but real cause of sadness.",
@@ -396,7 +396,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L68_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Being thanked for loyalty while getting less for more money tends to build a strong reaction.",
             "explanation": "Paying more for less, then being thanked for it, is a common and fair cause of anger.",
@@ -413,7 +413,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L69_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Practical help from a whole group of people, freely given, points to a warm, specific feeling.",
             "explanation": "A community rallying to help during a hard time is a clear, heartfelt cause of gratitude.",
@@ -430,7 +430,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L69_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Visibly shaking hands right before an important moment point to a familiar physical sign.",
             "explanation": "Visibly shaking hands before walking through a door is a strong, physical sign of nervousness.",
@@ -447,7 +447,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L69_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Assuming good news must be a mistake tends to point to one particular reaction.",
             "explanation": "Assuming unexpectedly good news must be a mistake is a natural reaction of surprise.",
@@ -464,7 +464,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L70_Q1",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A whole street coming together to share one long table points to a warm, shared feeling.",
             "explanation": "A neighborhood joining tables in the middle of the road for a shared celebration is a picture of collective happiness.",
@@ -481,7 +481,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L70_Q2",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "A small, repeating technical hold-up with no end in sight brings a familiar, mild irritation.",
             "explanation": "A machine repeatedly asking for help that never arrives is a very ordinary source of annoyance.",
@@ -498,7 +498,7 @@
         },
         {
             "id": "LIS_EMOTIONRECOGNITION_L70_Q3",
-            "interactionType": "Tone Analyzer",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and select the matching emotion.",
             "hint": "Keeping a way to reach someone but never using it points to a quiet, complicated feeling.",
             "explanation": "Holding onto a contact you never actually use is a quiet, private sign of sadness about a friendship that faded.",

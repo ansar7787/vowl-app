@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 10,
-  "levels": "91-100",
-  "quests": [
-    {
-      "id": "qf_l91_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This oak tree is believed to be over three hundred years old.",
-      "sentence": "This oak tree is believed to be over three hundred years old.",
-      "options": [
-        "How old does this oak tree?",
-        "How old this oak tree is?",
-        "How old is this oak tree old?",
-        "How old is this oak tree?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How old is this oak tree?",
-      "hint": "'How old' asks about age - simply move 'is' to the front.",
-      "explanation": "'How old' is a fixed question phrase for age. Since the sentence uses 'be', 'is' moves to the front - no 'does' is needed.",
-      "grammarRule": "Degree Questions: How Old / How Tall"
-    },
-    {
-      "id": "qf_l91_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Their new apartment building is twenty-two stories tall.",
-      "sentence": "Their new apartment building is twenty-two stories tall.",
-      "options": [
-        "How tall is their new apartment building?",
-        "How tall does their new apartment building?",
-        "How tall their new apartment building is?",
-        "How tall is their new apartment building tall?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How tall is their new apartment building?",
-      "hint": "'How tall' asks about height - move 'is' to the front.",
-      "explanation": "'How tall' asks about height. As with other 'be' questions, 'is' simply moves to the front of the sentence.",
-      "grammarRule": "Degree Questions: How Old / How Tall"
-    },
-    {
-      "id": "qf_l91_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "My grandfather turned ninety last spring.",
-      "sentence": "My grandfather turned ninety last spring.",
-      "options": [
-        "How old does my grandfather?",
-        "How old my grandfather is?",
-        "How old is my grandfather?",
-        "How old turned my grandfather?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How old is my grandfather?",
-      "hint": "Rephrase with 'be': 'How old is...' rather than repeating 'turned'.",
-      "explanation": "Age questions use the fixed pattern 'How old is...?' rather than the verb from the original sentence.",
-      "grammarRule": "Degree Questions: How Old / How Tall"
-    },
-    {
-      "id": "qf_l92_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The canyon is over a mile deep in some sections.",
-      "sentence": "The canyon is over a mile deep in some sections.",
-      "options": [
-        "How deep does the canyon?",
-        "How deep the canyon is?",
-        "How deep is the canyon deep?",
-        "How deep is the canyon?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How deep is the canyon?",
-      "hint": "'How deep' asks about depth - move 'is' to the front.",
-      "explanation": "'How deep' is the fixed phrase for asking about depth, and 'is' simply moves to the front of the sentence.",
-      "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
-    },
-    {
-      "id": "qf_l92_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The river is about forty meters wide at this point.",
-      "sentence": "The river is about forty meters wide at this point.",
-      "options": [
-        "How wide does the river at this point?",
-        "How wide the river is at this point?",
-        "How wide is the river wide at this point?",
-        "How wide is the river at this point?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How wide is the river at this point?",
-      "hint": "'How wide' asks about width - move 'is' to the front.",
-      "explanation": "'How wide' asks about width. Since this is a 'be' sentence, 'is' moves to the front, with no extra auxiliary.",
-      "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
-    },
-    {
-      "id": "qf_l92_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The nearest gas station is about two miles from here.",
-      "sentence": "The nearest gas station is about two miles from here.",
-      "options": [
-        "How far does the nearest gas station from here?",
-        "How far the nearest gas station is from here?",
-        "How far is the nearest gas station far from here?",
-        "How far is the nearest gas station from here?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How far is the nearest gas station from here?",
-      "hint": "'How far' asks about distance - move 'is' to the front.",
-      "explanation": "'How far' is the standard way to ask about distance, formed simply by moving 'is' to the front of the sentence.",
-      "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
-    },
-    {
-      "id": "qf_l93_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This parcel weighs about four kilograms.",
-      "sentence": "This parcel weighs about four kilograms.",
-      "options": [
-        "How heavy is this parcel?",
-        "How heavy does this parcel weigh?",
-        "How heavy this parcel is?",
-        "How much heavy is this parcel?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How heavy is this parcel?",
-      "hint": "'How heavy' asks about weight - move 'is' to the front.",
-      "explanation": "'How heavy' asks about weight using the verb 'be'; 'is' moves to the front, and no separate verb like 'weigh' is needed.",
-      "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
-    },
-    {
-      "id": "qf_l93_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Their backyard is enormous.",
-      "sentence": "Their backyard is enormous.",
-      "options": [
-        "How big is their backyard?",
-        "How big does their backyard?",
-        "How big their backyard is?",
-        "How big is their backyard big?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How big is their backyard?",
-      "hint": "'How big' asks about size - move 'is' to the front.",
-      "explanation": "'How big' asks about size. As with other 'be' questions, 'is' moves to the front, and nothing else is added.",
-      "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
-    },
-    {
-      "id": "qf_l93_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The antique vase is worth about three thousand dollars.",
-      "sentence": "The antique vase is worth about three thousand dollars.",
-      "options": [
-        "How much does the antique vase worth?",
-        "How much the antique vase is worth?",
-        "How much is the antique vase worth?",
-        "How much is the antique vase worthy?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How much is the antique vase worth?",
-      "hint": "'How much...worth' asks about value - move 'is' to the front.",
-      "explanation": "'How much...worth' is a fixed pattern for asking about value; 'is' moves to the front, and 'worth' stays in place.",
-      "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
-    },
-    {
-      "id": "qf_l94_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The technician can arrive within the hour.",
-      "sentence": "The technician can arrive within the hour.",
-      "options": [
-        "How soon does the technician can arrive?",
-        "How soon can the technician arrive?",
-        "How soon the technician can arrive?",
-        "How soon can the technician arrives?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How soon can the technician arrive?",
-      "hint": "Move the modal 'can' after 'how soon'.",
-      "explanation": "'How soon' asks about timing, and the modal 'can' moves right after it, with the verb staying in its base form.",
-      "grammarRule": "Degree Questions: How Soon / How Quickly"
-    },
-    {
-      "id": "qf_l94_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The team resolved the outage within twenty minutes.",
-      "sentence": "The team resolved the outage within twenty minutes.",
-      "options": [
-        "How quickly the team resolved the outage?",
-        "How quickly does the team resolve the outage?",
-        "How quickly did the team resolved the outage?",
-        "How quickly did the team resolve the outage?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How quickly did the team resolve the outage?",
-      "hint": "Use 'did' after 'how quickly', and let the verb return to its base form.",
-      "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'resolve', instead of the past tense.",
-      "grammarRule": "Degree Questions: How Soon / How Quickly"
-    },
-    {
-      "id": "qf_l94_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "New employees usually complete the training within a week.",
-      "sentence": "New employees usually complete the training within a week.",
-      "options": [
-        "How soon does new employees complete the training?",
-        "How soon new employees complete the training?",
-        "How soon do new employees completes the training?",
-        "How soon do new employees complete the training?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How soon do new employees complete the training?",
-      "hint": "'New employees' is plural, so use 'do' after 'how soon'.",
-      "explanation": "Plural subjects take 'do' after the question phrase, and the verb 'complete' stays in its base form.",
-      "grammarRule": "Degree Questions: How Soon / How Quickly"
-    },
-    {
-      "id": "qf_l95_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She speaks Japanese fluently after years of practice.",
-      "sentence": "She speaks Japanese fluently after years of practice.",
-      "options": [
-        "How well she speaks Japanese?",
-        "How well is she speak Japanese?",
-        "How well does she speak Japanese?",
-        "How well does she speaks Japanese?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How well does she speak Japanese?",
-      "hint": "Move 'does' after 'how well', and use the base verb.",
-      "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'speak', instead of keeping the -s.",
-      "grammarRule": "Degree Questions: How Well / How Badly"
-    },
-    {
-      "id": "qf_l95_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The roof was damaged badly in the hailstorm.",
-      "sentence": "The roof was damaged badly in the hailstorm.",
-      "options": [
-        "How badly did the roof damaged in the hailstorm?",
-        "How badly was the roof damaged in the hailstorm?",
-        "How badly the roof was damaged in the hailstorm?",
-        "How badly was the roof damage in the hailstorm?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How badly was the roof damaged in the hailstorm?",
-      "hint": "This is passive, so move 'was' after the question phrase and keep 'damaged' unchanged.",
-      "explanation": "Since this is a passive sentence, 'was' moves after the question phrase, and the participle 'damaged' stays exactly the same.",
-      "grammarRule": "Degree Questions: How Well / How Badly"
-    },
-    {
-      "id": "qf_l95_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new intern performed impressively during her first project.",
-      "sentence": "The new intern performed impressively during her first project.",
-      "options": [
-        "How well the new intern performed during her first project?",
-        "How well did the new intern perform during her first project?",
-        "How well does the new intern perform during her first project?",
-        "How well did the new intern performed during her first project?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How well did the new intern perform during her first project?",
-      "hint": "Use 'did' after 'how well', and let the verb return to its base form.",
-      "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'perform', rather than staying in the past tense.",
-      "grammarRule": "Degree Questions: How Well / How Badly"
-    },
-    {
-      "id": "qf_l96_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This crossword puzzle seems fairly difficult today.",
-      "sentence": "This crossword puzzle seems fairly difficult today.",
-      "options": [
-        "How difficult this crossword puzzle seems today?",
-        "How difficult is this crossword puzzle seem today?",
-        "How difficult does this crossword puzzle seem today?",
-        "How difficult does this crossword puzzle seems today?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How difficult does this crossword puzzle seem today?",
-      "hint": "Move 'does' after the question phrase, and use the base verb 'seem'.",
-      "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'seem', instead of keeping the -s.",
-      "grammarRule": "Degree Questions: How Difficult / How Likely"
-    },
-    {
-      "id": "qf_l96_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It seems fairly likely that the flight will be delayed.",
-      "sentence": "It seems fairly likely that the flight will be delayed.",
-      "options": [
-        "How likely does it that the flight will be delayed?",
-        "How likely is it that the flight will be delayed?",
-        "How likely it is that the flight will be delayed?",
-        "How likely is that the flight will be delayed it?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How likely is it that the flight will be delayed?",
-      "hint": "This uses 'be', so move 'is' after the question phrase.",
-      "explanation": "Since the sentence is built on 'seems'/'is', the question moves 'is' after the question phrase, before 'it'.",
-      "grammarRule": "Degree Questions: How Difficult / How Likely"
-    },
-    {
-      "id": "qf_l96_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The final exam was extremely difficult this semester.",
-      "sentence": "The final exam was extremely difficult this semester.",
-      "options": [
-        "How difficult did the final exam this semester?",
-        "How difficult the final exam was this semester?",
-        "How difficult was the final exam difficult this semester?",
-        "How difficult was the final exam this semester?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How difficult was the final exam this semester?",
-      "hint": "Move 'was' after the question phrase - no 'did' is needed with 'be'.",
-      "explanation": "Since this is a 'be' sentence, 'was' moves after the question phrase; no additional auxiliary like 'did' is used.",
-      "grammarRule": "Degree Questions: How Difficult / How Likely"
-    },
-    {
-      "id": "qf_l97_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Parking downtown is fairly expensive these days.",
-      "sentence": "Parking downtown is fairly expensive these days.",
-      "options": [
-        "How expensive does parking downtown these days?",
-        "How expensive parking downtown is these days?",
-        "How expensive is parking downtown expensive these days?",
-        "How expensive is parking downtown these days?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How expensive is parking downtown these days?",
-      "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
-      "explanation": "Since the sentence uses 'be', 'is' moves after the question phrase; no separate auxiliary like 'does' is added.",
-      "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
-    },
-    {
-      "id": "qf_l97_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The beach gets extremely crowded on holiday weekends.",
-      "sentence": "The beach gets extremely crowded on holiday weekends.",
-      "options": [
-        "How crowded the beach gets on holiday weekends?",
-        "How crowded is the beach get on holiday weekends?",
-        "How crowded does the beach get on holiday weekends?",
-        "How crowded does the beach gets on holiday weekends?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How crowded does the beach get on holiday weekends?",
-      "hint": "Move 'does' after the question phrase, and use the base verb 'get'.",
-      "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'get', instead of keeping the -s.",
-      "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
-    },
-    {
-      "id": "qf_l97_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This particular allergy is fairly common among children.",
-      "sentence": "This particular allergy is fairly common among children.",
-      "options": [
-        "How common does this particular allergy among children?",
-        "How common this particular allergy is among children?",
-        "How common is this particular allergy among children?",
-        "How common is this particular allergy common among children?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How common is this particular allergy among children?",
-      "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
-      "explanation": "Since this is a 'be' sentence, 'is' moves after the question phrase, and no additional auxiliary is required.",
-      "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
-    },
-    {
-      "id": "qf_l98_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new bridge should be strong enough to hold heavy trucks.",
-      "sentence": "The new bridge should be strong enough to hold heavy trucks.",
-      "options": [
-        "How strong should the new bridge be?",
-        "How strong does the new bridge should be?",
-        "How strong the new bridge should be?",
-        "How strong should the new bridge is?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How strong should the new bridge be?",
-      "hint": "Move 'should' after the question phrase, keeping 'be' in its base form.",
-      "explanation": "'Should' moves after the question phrase, and the verb 'be' stays in its base form throughout the question.",
-      "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
-    },
-    {
-      "id": "qf_l98_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The negotiations have grown increasingly tense over the past week.",
-      "sentence": "The negotiations have grown increasingly tense over the past week.",
-      "options": [
-        "How tense do the negotiations have grown over the past week?",
-        "How tense have the negotiations grow over the past week?",
-        "How tense have the negotiations grown over the past week?",
-        "How tense the negotiations have grown over the past week?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How tense have the negotiations grown over the past week?",
-      "hint": "Move 'have' after the question phrase, keeping 'grown' unchanged.",
-      "explanation": "'Have' moves after the question phrase, and the past participle 'grown' stays exactly the same.",
-      "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
-    },
-    {
-      "id": "qf_l98_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The instructions were surprisingly easy to follow.",
-      "sentence": "The instructions were surprisingly easy to follow.",
-      "options": [
-        "How easy did the instructions to follow?",
-        "How easy the instructions were to follow?",
-        "How easy were the instructions to follow?",
-        "How easy was the instructions to follow?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How easy were the instructions to follow?",
-      "hint": "'Instructions' is plural, so use 'were', moved after the question phrase.",
-      "explanation": "Since 'instructions' is plural, the question uses 'were', which moves after the question phrase - no other auxiliary is needed.",
-      "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
-    },
-    {
-      "id": "qf_l99_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The negotiations proceeded remarkably smoothly, given the circumstances.",
-      "sentence": "The negotiations proceeded remarkably smoothly, given the circumstances.",
-      "options": [
-        "How smoothly the negotiations proceeded?",
-        "How smoothly did the negotiations proceed?",
-        "How smoothly does the negotiations proceed?",
-        "How smoothly did the negotiations proceeded?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How smoothly did the negotiations proceed?",
-      "hint": "Use 'did' after the question phrase, and let the verb return to its base form.",
-      "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'proceed', instead of the past tense.",
-      "grammarRule": "Degree Questions: Manner Adverbs"
-    },
-    {
-      "id": "qf_l99_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The two companies have been competing fiercely for market share.",
-      "sentence": "The two companies have been competing fiercely for market share.",
-      "options": [
-        "How fiercely do the two companies have been competing for market share?",
-        "How fiercely have the two companies been compete for market share?",
-        "How fiercely the two companies have been competing for market share?",
-        "How fiercely have the two companies been competing for market share?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How fiercely have the two companies been competing for market share?",
-      "hint": "Move 'have' after the question phrase, keeping 'been competing' together.",
-      "explanation": "'Have' moves after the question phrase, and 'been competing' remains together as the present perfect continuous verb phrase.",
-      "grammarRule": "Degree Questions: Manner Adverbs"
-    },
-    {
-      "id": "qf_l99_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He handled the difficult customer surprisingly calmly.",
-      "sentence": "He handled the difficult customer surprisingly calmly.",
-      "options": [
-        "How calmly he handled the difficult customer?",
-        "How calmly did he handle the difficult customer?",
-        "How calmly does he handle the difficult customer?",
-        "How calmly did he handled the difficult customer?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How calmly did he handle the difficult customer?",
-      "hint": "Use 'did' after the question phrase, and let the verb return to its base form.",
-      "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'handle', instead of the past tense.",
-      "grammarRule": "Degree Questions: Manner Adverbs"
-    },
-    {
-      "id": "qf_l100_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This antique clock is believed to be over one hundred and fifty years old.",
-      "sentence": "This antique clock is believed to be over one hundred and fifty years old.",
-      "options": [
-        "How old does this antique clock believed to be?",
-        "How old this antique clock is believed to be?",
-        "How old is this antique clock believe to be?",
-        "How old is this antique clock believed to be?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "How old is this antique clock believed to be?",
-      "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
-      "explanation": "Since the sentence is built on 'be', 'is' moves after the question phrase, and 'believed' stays unchanged.",
-      "grammarRule": "Degree Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l100_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The bakery's cinnamon rolls sell out incredibly quickly on weekends.",
-      "sentence": "The bakery's cinnamon rolls sell out incredibly quickly on weekends.",
-      "options": [
-        "How quickly does the bakery's cinnamon rolls sell out on weekends?",
-        "How quickly do the bakery's cinnamon rolls sell out on weekends?",
-        "How quickly the bakery's cinnamon rolls sell out on weekends?",
-        "How quickly do the bakery's cinnamon rolls sells out on weekends?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How quickly do the bakery's cinnamon rolls sell out on weekends?",
-      "hint": "'Cinnamon rolls' is plural, so use 'do', moved after the question phrase.",
-      "explanation": "Since 'cinnamon rolls' is plural, the question uses 'do', which moves after the question phrase, keeping the base verb 'sell out'.",
-      "grammarRule": "Degree Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l100_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The mountain trail has become increasingly popular with hikers this year.",
-      "sentence": "The mountain trail has become increasingly popular with hikers this year.",
-      "options": [
-        "How popular does the mountain trail has become with hikers this year?",
-        "How popular has the mountain trail became with hikers this year?",
-        "How popular has the mountain trail become with hikers this year?",
-        "How popular the mountain trail has become with hikers this year?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How popular has the mountain trail become with hikers this year?",
-      "hint": "Move 'has' after the question phrase, keeping 'become' unchanged.",
-      "explanation": "'Has' moves after the question phrase, and the past participle 'become' stays exactly the same.",
-      "grammarRule": "Degree Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 10,
+    "levels": "91-100",
+    "quests": [
+        {
+            "id": "qf_l91_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This oak tree is believed to be over three hundred years old.",
+            "sentence": "This oak tree is believed to be over three hundred years old.",
+            "options": [
+                "How old does this oak tree?",
+                "How old this oak tree is?",
+                "How old is this oak tree old?",
+                "How old is this oak tree?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How old is this oak tree?",
+            "hint": "'How old' asks about age - simply move 'is' to the front.",
+            "explanation": "'How old' is a fixed question phrase for age. Since the sentence uses 'be', 'is' moves to the front - no 'does' is needed.",
+            "grammarRule": "Degree Questions: How Old / How Tall"
+        },
+        {
+            "id": "qf_l91_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Their new apartment building is twenty-two stories tall.",
+            "sentence": "Their new apartment building is twenty-two stories tall.",
+            "options": [
+                "How tall is their new apartment building?",
+                "How tall does their new apartment building?",
+                "How tall their new apartment building is?",
+                "How tall is their new apartment building tall?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How tall is their new apartment building?",
+            "hint": "'How tall' asks about height - move 'is' to the front.",
+            "explanation": "'How tall' asks about height. As with other 'be' questions, 'is' simply moves to the front of the sentence.",
+            "grammarRule": "Degree Questions: How Old / How Tall"
+        },
+        {
+            "id": "qf_l91_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "My grandfather turned ninety last spring.",
+            "sentence": "My grandfather turned ninety last spring.",
+            "options": [
+                "How old does my grandfather?",
+                "How old my grandfather is?",
+                "How old is my grandfather?",
+                "How old turned my grandfather?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How old is my grandfather?",
+            "hint": "Rephrase with 'be': 'How old is...' rather than repeating 'turned'.",
+            "explanation": "Age questions use the fixed pattern 'How old is...?' rather than the verb from the original sentence.",
+            "grammarRule": "Degree Questions: How Old / How Tall"
+        },
+        {
+            "id": "qf_l92_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The canyon is over a mile deep in some sections.",
+            "sentence": "The canyon is over a mile deep in some sections.",
+            "options": [
+                "How deep does the canyon?",
+                "How deep the canyon is?",
+                "How deep is the canyon deep?",
+                "How deep is the canyon?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How deep is the canyon?",
+            "hint": "'How deep' asks about depth - move 'is' to the front.",
+            "explanation": "'How deep' is the fixed phrase for asking about depth, and 'is' simply moves to the front of the sentence.",
+            "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
+        },
+        {
+            "id": "qf_l92_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The river is about forty meters wide at this point.",
+            "sentence": "The river is about forty meters wide at this point.",
+            "options": [
+                "How wide does the river at this point?",
+                "How wide the river is at this point?",
+                "How wide is the river wide at this point?",
+                "How wide is the river at this point?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How wide is the river at this point?",
+            "hint": "'How wide' asks about width - move 'is' to the front.",
+            "explanation": "'How wide' asks about width. Since this is a 'be' sentence, 'is' moves to the front, with no extra auxiliary.",
+            "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
+        },
+        {
+            "id": "qf_l92_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The nearest gas station is about two miles from here.",
+            "sentence": "The nearest gas station is about two miles from here.",
+            "options": [
+                "How far does the nearest gas station from here?",
+                "How far the nearest gas station is from here?",
+                "How far is the nearest gas station far from here?",
+                "How far is the nearest gas station from here?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How far is the nearest gas station from here?",
+            "hint": "'How far' asks about distance - move 'is' to the front.",
+            "explanation": "'How far' is the standard way to ask about distance, formed simply by moving 'is' to the front of the sentence.",
+            "grammarRule": "Degree Questions: How Far / How Deep / How Wide"
+        },
+        {
+            "id": "qf_l93_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This parcel weighs about four kilograms.",
+            "sentence": "This parcel weighs about four kilograms.",
+            "options": [
+                "How heavy is this parcel?",
+                "How heavy does this parcel weigh?",
+                "How heavy this parcel is?",
+                "How much heavy is this parcel?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How heavy is this parcel?",
+            "hint": "'How heavy' asks about weight - move 'is' to the front.",
+            "explanation": "'How heavy' asks about weight using the verb 'be'; 'is' moves to the front, and no separate verb like 'weigh' is needed.",
+            "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
+        },
+        {
+            "id": "qf_l93_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Their backyard is enormous.",
+            "sentence": "Their backyard is enormous.",
+            "options": [
+                "How big is their backyard?",
+                "How big does their backyard?",
+                "How big their backyard is?",
+                "How big is their backyard big?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How big is their backyard?",
+            "hint": "'How big' asks about size - move 'is' to the front.",
+            "explanation": "'How big' asks about size. As with other 'be' questions, 'is' moves to the front, and nothing else is added.",
+            "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
+        },
+        {
+            "id": "qf_l93_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The antique vase is worth about three thousand dollars.",
+            "sentence": "The antique vase is worth about three thousand dollars.",
+            "options": [
+                "How much does the antique vase worth?",
+                "How much the antique vase is worth?",
+                "How much is the antique vase worth?",
+                "How much is the antique vase worthy?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How much is the antique vase worth?",
+            "hint": "'How much...worth' asks about value - move 'is' to the front.",
+            "explanation": "'How much...worth' is a fixed pattern for asking about value; 'is' moves to the front, and 'worth' stays in place.",
+            "grammarRule": "Degree Questions: How Heavy / How Big / How Much"
+        },
+        {
+            "id": "qf_l94_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The technician can arrive within the hour.",
+            "sentence": "The technician can arrive within the hour.",
+            "options": [
+                "How soon does the technician can arrive?",
+                "How soon can the technician arrive?",
+                "How soon the technician can arrive?",
+                "How soon can the technician arrives?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How soon can the technician arrive?",
+            "hint": "Move the modal 'can' after 'how soon'.",
+            "explanation": "'How soon' asks about timing, and the modal 'can' moves right after it, with the verb staying in its base form.",
+            "grammarRule": "Degree Questions: How Soon / How Quickly"
+        },
+        {
+            "id": "qf_l94_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The team resolved the outage within twenty minutes.",
+            "sentence": "The team resolved the outage within twenty minutes.",
+            "options": [
+                "How quickly the team resolved the outage?",
+                "How quickly does the team resolve the outage?",
+                "How quickly did the team resolved the outage?",
+                "How quickly did the team resolve the outage?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How quickly did the team resolve the outage?",
+            "hint": "Use 'did' after 'how quickly', and let the verb return to its base form.",
+            "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'resolve', instead of the past tense.",
+            "grammarRule": "Degree Questions: How Soon / How Quickly"
+        },
+        {
+            "id": "qf_l94_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "New employees usually complete the training within a week.",
+            "sentence": "New employees usually complete the training within a week.",
+            "options": [
+                "How soon does new employees complete the training?",
+                "How soon new employees complete the training?",
+                "How soon do new employees completes the training?",
+                "How soon do new employees complete the training?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How soon do new employees complete the training?",
+            "hint": "'New employees' is plural, so use 'do' after 'how soon'.",
+            "explanation": "Plural subjects take 'do' after the question phrase, and the verb 'complete' stays in its base form.",
+            "grammarRule": "Degree Questions: How Soon / How Quickly"
+        },
+        {
+            "id": "qf_l95_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She speaks Japanese fluently after years of practice.",
+            "sentence": "She speaks Japanese fluently after years of practice.",
+            "options": [
+                "How well she speaks Japanese?",
+                "How well is she speak Japanese?",
+                "How well does she speak Japanese?",
+                "How well does she speaks Japanese?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How well does she speak Japanese?",
+            "hint": "Move 'does' after 'how well', and use the base verb.",
+            "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'speak', instead of keeping the -s.",
+            "grammarRule": "Degree Questions: How Well / How Badly"
+        },
+        {
+            "id": "qf_l95_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The roof was damaged badly in the hailstorm.",
+            "sentence": "The roof was damaged badly in the hailstorm.",
+            "options": [
+                "How badly did the roof damaged in the hailstorm?",
+                "How badly was the roof damaged in the hailstorm?",
+                "How badly the roof was damaged in the hailstorm?",
+                "How badly was the roof damage in the hailstorm?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How badly was the roof damaged in the hailstorm?",
+            "hint": "This is passive, so move 'was' after the question phrase and keep 'damaged' unchanged.",
+            "explanation": "Since this is a passive sentence, 'was' moves after the question phrase, and the participle 'damaged' stays exactly the same.",
+            "grammarRule": "Degree Questions: How Well / How Badly"
+        },
+        {
+            "id": "qf_l95_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new intern performed impressively during her first project.",
+            "sentence": "The new intern performed impressively during her first project.",
+            "options": [
+                "How well the new intern performed during her first project?",
+                "How well did the new intern perform during her first project?",
+                "How well does the new intern perform during her first project?",
+                "How well did the new intern performed during her first project?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How well did the new intern perform during her first project?",
+            "hint": "Use 'did' after 'how well', and let the verb return to its base form.",
+            "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'perform', rather than staying in the past tense.",
+            "grammarRule": "Degree Questions: How Well / How Badly"
+        },
+        {
+            "id": "qf_l96_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This crossword puzzle seems fairly difficult today.",
+            "sentence": "This crossword puzzle seems fairly difficult today.",
+            "options": [
+                "How difficult this crossword puzzle seems today?",
+                "How difficult is this crossword puzzle seem today?",
+                "How difficult does this crossword puzzle seem today?",
+                "How difficult does this crossword puzzle seems today?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How difficult does this crossword puzzle seem today?",
+            "hint": "Move 'does' after the question phrase, and use the base verb 'seem'.",
+            "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'seem', instead of keeping the -s.",
+            "grammarRule": "Degree Questions: How Difficult / How Likely"
+        },
+        {
+            "id": "qf_l96_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It seems fairly likely that the flight will be delayed.",
+            "sentence": "It seems fairly likely that the flight will be delayed.",
+            "options": [
+                "How likely does it that the flight will be delayed?",
+                "How likely is it that the flight will be delayed?",
+                "How likely it is that the flight will be delayed?",
+                "How likely is that the flight will be delayed it?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How likely is it that the flight will be delayed?",
+            "hint": "This uses 'be', so move 'is' after the question phrase.",
+            "explanation": "Since the sentence is built on 'seems'/'is', the question moves 'is' after the question phrase, before 'it'.",
+            "grammarRule": "Degree Questions: How Difficult / How Likely"
+        },
+        {
+            "id": "qf_l96_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The final exam was extremely difficult this semester.",
+            "sentence": "The final exam was extremely difficult this semester.",
+            "options": [
+                "How difficult did the final exam this semester?",
+                "How difficult the final exam was this semester?",
+                "How difficult was the final exam difficult this semester?",
+                "How difficult was the final exam this semester?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How difficult was the final exam this semester?",
+            "hint": "Move 'was' after the question phrase - no 'did' is needed with 'be'.",
+            "explanation": "Since this is a 'be' sentence, 'was' moves after the question phrase; no additional auxiliary like 'did' is used.",
+            "grammarRule": "Degree Questions: How Difficult / How Likely"
+        },
+        {
+            "id": "qf_l97_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Parking downtown is fairly expensive these days.",
+            "sentence": "Parking downtown is fairly expensive these days.",
+            "options": [
+                "How expensive does parking downtown these days?",
+                "How expensive parking downtown is these days?",
+                "How expensive is parking downtown expensive these days?",
+                "How expensive is parking downtown these days?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How expensive is parking downtown these days?",
+            "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
+            "explanation": "Since the sentence uses 'be', 'is' moves after the question phrase; no separate auxiliary like 'does' is added.",
+            "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
+        },
+        {
+            "id": "qf_l97_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The beach gets extremely crowded on holiday weekends.",
+            "sentence": "The beach gets extremely crowded on holiday weekends.",
+            "options": [
+                "How crowded the beach gets on holiday weekends?",
+                "How crowded is the beach get on holiday weekends?",
+                "How crowded does the beach get on holiday weekends?",
+                "How crowded does the beach gets on holiday weekends?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How crowded does the beach get on holiday weekends?",
+            "hint": "Move 'does' after the question phrase, and use the base verb 'get'.",
+            "explanation": "'Does' moves after the question phrase, and the verb returns to its base form, 'get', instead of keeping the -s.",
+            "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
+        },
+        {
+            "id": "qf_l97_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This particular allergy is fairly common among children.",
+            "sentence": "This particular allergy is fairly common among children.",
+            "options": [
+                "How common does this particular allergy among children?",
+                "How common this particular allergy is among children?",
+                "How common is this particular allergy among children?",
+                "How common is this particular allergy common among children?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How common is this particular allergy among children?",
+            "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
+            "explanation": "Since this is a 'be' sentence, 'is' moves after the question phrase, and no additional auxiliary is required.",
+            "grammarRule": "Degree Questions: How Expensive / How Crowded / How Common"
+        },
+        {
+            "id": "qf_l98_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new bridge should be strong enough to hold heavy trucks.",
+            "sentence": "The new bridge should be strong enough to hold heavy trucks.",
+            "options": [
+                "How strong should the new bridge be?",
+                "How strong does the new bridge should be?",
+                "How strong the new bridge should be?",
+                "How strong should the new bridge is?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How strong should the new bridge be?",
+            "hint": "Move 'should' after the question phrase, keeping 'be' in its base form.",
+            "explanation": "'Should' moves after the question phrase, and the verb 'be' stays in its base form throughout the question.",
+            "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
+        },
+        {
+            "id": "qf_l98_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The negotiations have grown increasingly tense over the past week.",
+            "sentence": "The negotiations have grown increasingly tense over the past week.",
+            "options": [
+                "How tense do the negotiations have grown over the past week?",
+                "How tense have the negotiations grow over the past week?",
+                "How tense have the negotiations grown over the past week?",
+                "How tense the negotiations have grown over the past week?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How tense have the negotiations grown over the past week?",
+            "hint": "Move 'have' after the question phrase, keeping 'grown' unchanged.",
+            "explanation": "'Have' moves after the question phrase, and the past participle 'grown' stays exactly the same.",
+            "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
+        },
+        {
+            "id": "qf_l98_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The instructions were surprisingly easy to follow.",
+            "sentence": "The instructions were surprisingly easy to follow.",
+            "options": [
+                "How easy did the instructions to follow?",
+                "How easy the instructions were to follow?",
+                "How easy were the instructions to follow?",
+                "How easy was the instructions to follow?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How easy were the instructions to follow?",
+            "hint": "'Instructions' is plural, so use 'were', moved after the question phrase.",
+            "explanation": "Since 'instructions' is plural, the question uses 'were', which moves after the question phrase - no other auxiliary is needed.",
+            "grammarRule": "Degree Questions: Mixed with Modals & Perfect Tenses"
+        },
+        {
+            "id": "qf_l99_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The negotiations proceeded remarkably smoothly, given the circumstances.",
+            "sentence": "The negotiations proceeded remarkably smoothly, given the circumstances.",
+            "options": [
+                "How smoothly the negotiations proceeded?",
+                "How smoothly did the negotiations proceed?",
+                "How smoothly does the negotiations proceed?",
+                "How smoothly did the negotiations proceeded?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How smoothly did the negotiations proceed?",
+            "hint": "Use 'did' after the question phrase, and let the verb return to its base form.",
+            "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'proceed', instead of the past tense.",
+            "grammarRule": "Degree Questions: Manner Adverbs"
+        },
+        {
+            "id": "qf_l99_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The two companies have been competing fiercely for market share.",
+            "sentence": "The two companies have been competing fiercely for market share.",
+            "options": [
+                "How fiercely do the two companies have been competing for market share?",
+                "How fiercely have the two companies been compete for market share?",
+                "How fiercely the two companies have been competing for market share?",
+                "How fiercely have the two companies been competing for market share?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How fiercely have the two companies been competing for market share?",
+            "hint": "Move 'have' after the question phrase, keeping 'been competing' together.",
+            "explanation": "'Have' moves after the question phrase, and 'been competing' remains together as the present perfect continuous verb phrase.",
+            "grammarRule": "Degree Questions: Manner Adverbs"
+        },
+        {
+            "id": "qf_l99_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He handled the difficult customer surprisingly calmly.",
+            "sentence": "He handled the difficult customer surprisingly calmly.",
+            "options": [
+                "How calmly he handled the difficult customer?",
+                "How calmly did he handle the difficult customer?",
+                "How calmly does he handle the difficult customer?",
+                "How calmly did he handled the difficult customer?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How calmly did he handle the difficult customer?",
+            "hint": "Use 'did' after the question phrase, and let the verb return to its base form.",
+            "explanation": "'Did' moves after the question phrase, and the main verb returns to its base form, 'handle', instead of the past tense.",
+            "grammarRule": "Degree Questions: Manner Adverbs"
+        },
+        {
+            "id": "qf_l100_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This antique clock is believed to be over one hundred and fifty years old.",
+            "sentence": "This antique clock is believed to be over one hundred and fifty years old.",
+            "options": [
+                "How old does this antique clock believed to be?",
+                "How old this antique clock is believed to be?",
+                "How old is this antique clock believe to be?",
+                "How old is this antique clock believed to be?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "How old is this antique clock believed to be?",
+            "hint": "Move 'is' after the question phrase - no 'does' needed with 'be'.",
+            "explanation": "Since the sentence is built on 'be', 'is' moves after the question phrase, and 'believed' stays unchanged.",
+            "grammarRule": "Degree Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l100_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The bakery's cinnamon rolls sell out incredibly quickly on weekends.",
+            "sentence": "The bakery's cinnamon rolls sell out incredibly quickly on weekends.",
+            "options": [
+                "How quickly does the bakery's cinnamon rolls sell out on weekends?",
+                "How quickly do the bakery's cinnamon rolls sell out on weekends?",
+                "How quickly the bakery's cinnamon rolls sell out on weekends?",
+                "How quickly do the bakery's cinnamon rolls sells out on weekends?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How quickly do the bakery's cinnamon rolls sell out on weekends?",
+            "hint": "'Cinnamon rolls' is plural, so use 'do', moved after the question phrase.",
+            "explanation": "Since 'cinnamon rolls' is plural, the question uses 'do', which moves after the question phrase, keeping the base verb 'sell out'.",
+            "grammarRule": "Degree Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l100_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The mountain trail has become increasingly popular with hikers this year.",
+            "sentence": "The mountain trail has become increasingly popular with hikers this year.",
+            "options": [
+                "How popular does the mountain trail has become with hikers this year?",
+                "How popular has the mountain trail became with hikers this year?",
+                "How popular has the mountain trail become with hikers this year?",
+                "How popular the mountain trail has become with hikers this year?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How popular has the mountain trail become with hikers this year?",
+            "hint": "Move 'has' after the question phrase, keeping 'become' unchanged.",
+            "explanation": "'Has' moves after the question phrase, and the past participle 'become' stays exactly the same.",
+            "grammarRule": "Degree Questions: Mixed Review"
+        }
+    ]
 }

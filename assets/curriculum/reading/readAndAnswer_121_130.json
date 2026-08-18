@@ -7,7 +7,7 @@
             "id": "RDG_READANDANSWER_L121_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Network Effects in Technology Markets] A product exhibits network effects when its value to any individual user increases as more people adopt it, a dynamic that helps explain why a handful of dominant platforms tend to emerge in categories such as social media or ride-sharing, even when competitors offer comparable or occasionally superior features. This dynamic creates a significant structural advantage for early market leaders, since a new entrant must not only build a better product but somehow convince a critical mass of users to abandon a network where their existing friends, colleagues, or business contacts are already established, a coordination problem that has proven remarkably difficult to overcome even for well-funded challengers with genuinely innovative offerings.",
             "question": "What structural advantage do network effects give to early market leaders?",
             "options": [
@@ -25,7 +25,7 @@
             "id": "RDG_READANDANSWER_L121_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Epigenetics] While an organism's DNA sequence remains largely fixed throughout its lifetime, epigenetics examines how environmental factors, such as diet, stress, or exposure to certain chemicals, can alter which genes are actively expressed without changing the underlying genetic code itself, functioning somewhat like a dimmer switch that turns certain genes up or down rather than rewriting the instructions entirely. Some of these epigenetic changes have been shown to persist across multiple generations in certain organisms, a finding that has complicated the traditional assumption that only DNA sequence itself, and not the pattern of gene expression, can be meaningfully inherited by offspring.",
             "question": "How does the passage describe the way epigenetic changes affect genes?",
             "options": [
@@ -43,7 +43,7 @@
             "id": "RDG_READANDANSWER_L121_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Invasive Species Management] Efforts to control invasive species, organisms introduced to an ecosystem where they have no natural predators, often reveal the limits of straightforward intervention: removing an invasive plant, for instance, can sometimes worsen an ecosystem's condition in the short term if the plant had inadvertently begun providing habitat or erosion control that native species had not yet reclaimed. Ecologists increasingly advocate for phased removal strategies paired with active native species restoration, arguing that eliminating an invasive species without simultaneously supporting its native replacement can leave an ecological gap that a different, sometimes equally problematic, invasive organism quickly fills instead.",
             "question": "Why do ecologists advocate for phased removal paired with native restoration?",
             "options": [
@@ -61,7 +61,7 @@
             "id": "RDG_READANDANSWER_L122_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Edge Computing] As internet-connected devices multiply, from factory sensors to smart home appliances, the traditional model of sending all data to a distant, centralized cloud server for processing has begun to strain under sheer volume and the delay inherent in that round trip, particularly for applications like autonomous vehicles that require split-second decisions. Edge computing addresses this by processing data closer to where it is actually generated, on or near the device itself, reducing the delay a request would otherwise face traveling to a distant server and back, though this approach requires distributing computing power across many smaller locations rather than concentrating it in a few large data centers.",
             "question": "Why does edge computing particularly benefit applications like autonomous vehicles?",
             "options": [
@@ -79,7 +79,7 @@
             "id": "RDG_READANDANSWER_L122_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Cognitive Dissonance] Cognitive dissonance describes the psychological discomfort that arises when a person holds two contradictory beliefs simultaneously, or when their actions conflict with their stated values, a tension the mind is strongly motivated to resolve, often by adjusting a belief rather than the more difficult task of changing behavior. A smoker aware of serious health risks, for example, might resolve this discomfort not by quitting but by downplaying the statistical risk or emphasizing a distant relative who smoked for decades without apparent harm, illustrating how the resolution of dissonance does not necessarily favor the most rational or evidence-based outcome.",
             "question": "What does the smoker example illustrate about resolving cognitive dissonance?",
             "options": [
@@ -97,7 +97,7 @@
             "id": "RDG_READANDANSWER_L122_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Spaced Repetition] Cognitive research on memory consistently shows that information reviewed multiple times at gradually increasing intervals, a technique known as spaced repetition, produces significantly stronger long-term retention than reviewing the same material repeatedly within a single concentrated study session, a common but comparatively ineffective strategy often called cramming. The apparent inefficiency of spacing out review, since it can feel like information is being partially forgotten between sessions, is in fact central to why the technique works: the mild effort required to retrieve a partially faded memory appears to strengthen that memory more than reviewing it while still fresh and easily accessible.",
             "question": "Why does the mild effort of retrieving a partially faded memory help retention?",
             "options": [
@@ -115,7 +115,7 @@
             "id": "RDG_READANDANSWER_L123_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Untranslatable Words and Cultural Concepts] Linguists caution against the popular but often oversimplified claim that certain words are entirely 'untranslatable,' since most concepts can eventually be explained in another language given enough words and context, even if no single equivalent term exists. What such words more accurately reveal is which concepts a culture has found useful enough to compress into a single, efficient term, reflecting cultural priorities and everyday concerns rather than describing an idea genuinely inexpressible to speakers of other languages.",
             "question": "What do so-called 'untranslatable' words more accurately reveal, according to linguists?",
             "options": [
@@ -133,7 +133,7 @@
             "id": "RDG_READANDANSWER_L123_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Gut Microbiome Research] The human gut hosts trillions of microorganisms collectively known as the gut microbiome, and emerging research suggests this microbial community may influence far more than digestion alone, with some studies pointing to a connection between microbiome composition and mood regulation, immune function, and even response to certain medications. Researchers caution, however, that much of this research remains correlational rather than clearly causal, meaning that while a particular microbiome pattern is often observed alongside a particular health outcome, scientists have not always established which factor is actually driving the other, or whether some third, unmeasured factor might explain both.",
             "question": "What caution do researchers give about gut microbiome research, according to the passage?",
             "options": [
@@ -151,7 +151,7 @@
             "id": "RDG_READANDANSWER_L123_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Transit-Oriented Development] Transit-oriented development refers to an urban planning approach that concentrates housing, retail, and office space within comfortable walking distance of a public transit station, aiming to reduce car dependency by making it genuinely convenient for residents to live without one. Critics of past implementations note that simply building dense housing near a train station does not automatically produce the intended reduction in car ownership if the transit service itself remains infrequent or unreliable, suggesting that successful transit-oriented development depends as much on transit quality as on the density of nearby development itself.",
             "question": "What do critics say is necessary, beyond density, for transit-oriented development to succeed?",
             "options": [
@@ -169,7 +169,7 @@
             "id": "RDG_READANDANSWER_L124_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Organizational Silos] Within large organizations, 'silos' describe a pattern in which departments operate with limited communication or collaboration across boundaries, each optimizing for its own goals in ways that can inadvertently work against the organization's broader objectives, such as a sales team promising a delivery timeline that the operations team was never consulted about and cannot actually meet. Management consultants often attribute the persistence of silos not to any individual's poor judgment but to organizational incentive structures that reward departments for their own narrow performance metrics rather than for outcomes that require cross-departmental cooperation to achieve.",
             "question": "What do management consultants often attribute the persistence of silos to?",
             "options": [
@@ -187,7 +187,7 @@
             "id": "RDG_READANDANSWER_L124_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Bystander Effect] Social psychologists have documented a counterintuitive phenomenon known as the bystander effect, in which an individual is actually less likely to offer help in an emergency situation as the number of other witnesses present increases, rather than more likely, as common intuition might suggest. Researchers attribute this largely to a diffusion of responsibility, in which each individual bystander assumes that someone else in the group will act, or already has, a psychological process that can occur even among people who genuinely intend to help if they believed themselves to be the only witness present.",
             "question": "How does the bystander effect contradict common intuition, according to the passage?",
             "options": [
@@ -205,7 +205,7 @@
             "id": "RDG_READANDANSWER_L124_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Passive Solar Building Design] Passive solar design orients a building and selects its materials specifically to capture, store, and distribute the sun's heat during colder months while minimizing unwanted heat gain during warmer ones, all without relying on any mechanical or electrical heating and cooling systems. A south-facing wall of thermal mass material, such as dense stone or concrete, might absorb heat throughout a winter day and gradually release it overnight, while carefully calculated roof overhangs block the higher summer sun from directly entering the same windows that welcome the lower winter sun.",
             "question": "What role does the roof overhang play in passive solar design, according to the passage?",
             "options": [
@@ -223,7 +223,7 @@
             "id": "RDG_READANDANSWER_L125_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Paradox of Choice in Consumer Behavior] Behavioral economists studying consumer decision-making have identified what is sometimes called the paradox of choice: while a certain degree of variety is generally perceived as desirable and even necessary for a sense of autonomy, choice sets beyond a certain threshold tend to produce diminishing, and eventually negative, returns on consumer satisfaction, as the cognitive burden of comparing numerous similar options begins to outweigh the benefit of finding a more precisely suited match. This finding has practical implications for retailers, some of whom have found that deliberately curating a smaller, well-chosen selection can increase both sales and reported customer satisfaction compared to offering the widest possible range.",
             "question": "What practical implication has this research had for some retailers, according to the passage?",
             "options": [
@@ -241,7 +241,7 @@
             "id": "RDG_READANDANSWER_L125_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Permafrost Thaw and Methane Release] Vast areas of permanently frozen ground in Arctic regions, known as permafrost, contain organic material that has remained frozen, and therefore largely undecomposed, for thousands of years, effectively locking away carbon that would otherwise have been released into the atmosphere long ago. As rising temperatures cause permafrost to thaw more extensively, microorganisms begin breaking down this newly accessible organic material, releasing greenhouse gases, including methane, in a process that concerns climate scientists precisely because it represents a feedback loop: warming causes thawing, thawing releases greenhouse gases, and those gases contribute to further warming.",
             "question": "Why does permafrost thaw concern climate scientists specifically, according to the passage?",
             "options": [
@@ -259,7 +259,7 @@
             "id": "RDG_READANDANSWER_L125_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Halo Effect in Perception] The halo effect describes a cognitive bias in which an initial positive impression of a person or product in one specific area unconsciously influences perceptions of entirely unrelated qualities, such as when a physically attractive job candidate is also rated by interviewers, without clear justification, as more competent or trustworthy than an equally qualified but less conventionally attractive candidate. Marketers have long exploited this bias deliberately, understanding that a product perceived favorably in one dimension, such as sleek packaging design, will often be assumed by consumers to be superior in unrelated dimensions, such as ingredient quality, that a customer has not actually evaluated directly.",
             "question": "How do marketers exploit the halo effect, according to the passage?",
             "options": [
@@ -277,7 +277,7 @@
             "id": "RDG_READANDANSWER_L126_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Survivorship Bias] Survivorship bias occurs when conclusions are drawn from a group that has already been filtered by some selection process, without accounting for the larger, often unseen, population that did not survive that same process, a pattern famously illustrated by military analysts who initially proposed reinforcing the areas of returning aircraft that showed the most bullet damage, before a statistician pointed out that the planes being analyzed had, by definition, survived being hit in those exact locations, meaning the truly vulnerable areas were more likely those with no damage recorded at all, since planes hit there had failed to return.",
             "question": "What did the statistician point out about the returning aircraft, according to the passage?",
             "options": [
@@ -295,7 +295,7 @@
             "id": "RDG_READANDANSWER_L126_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Biomimicry in Engineering] Biomimicry involves studying structures and processes that have evolved in nature over millions of years and adapting those solutions to solve human engineering challenges, based on the premise that evolutionary pressure has already extensively tested and refined many highly efficient designs. The rigid yet lightweight structure of a bird's bones, for example, has directly informed the design of certain aircraft components, while the specific texture of shark skin, which reduces drag by subtly disrupting the flow of water across its surface, has inspired swimsuit and even ship hull coatings intended to reduce friction.",
             "question": "What premise underlies the practice of biomimicry, according to the passage?",
             "options": [
@@ -313,7 +313,7 @@
             "id": "RDG_READANDANSWER_L126_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Cultural Differences in Negotiation Styles] Cross-cultural business researchers have documented significant variation in negotiation norms across different cultural contexts, noting that what one culture interprets as a sign of respectful patience and relationship-building, such as extended small talk before discussing business terms, another culture might interpret as evasiveness or a lack of seriousness about reaching a deal efficiently. Consultants who advise international businesses argue that misreading these differences as personal character traits, rather than recognizing them as culturally learned communication patterns, is a common and often costly source of failed international business negotiations.",
             "question": "What do consultants identify as a common source of failed negotiations, according to the passage?",
             "options": [
@@ -331,7 +331,7 @@
             "id": "RDG_READANDANSWER_L127_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Framing Effect in Decision-Making] The framing effect demonstrates that the same objective information can lead to substantially different decisions depending purely on how that information is presented, independent of any actual change in the underlying facts, such as patients responding more favorably to a medical procedure described as having a 'ninety percent survival rate' than to the mathematically identical description of a 'ten percent mortality rate,' despite both statements conveying exactly the same statistical reality. This finding has significant implications for fields ranging from public health messaging to financial disclosures, where the specific framing chosen, even when technically accurate, can meaningfully shape how information is ultimately received and acted upon.",
             "question": "What does the medical procedure example illustrate about the framing effect?",
             "options": [
@@ -349,7 +349,7 @@
             "id": "RDG_READANDANSWER_L127_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Keystone Species in Ecosystems] A keystone species is an organism whose influence on its ecosystem is disproportionately large relative to its actual population size, meaning its removal can trigger a cascade of changes throughout the food web that would not occur with the loss of a more ecologically redundant species. Sea otters serve as a frequently cited example: by preying on sea urchins, otters indirectly protect kelp forests from being overgrazed, since without otters to control urchin populations, urchins can multiply unchecked and consume kelp forests down to bare rock, eliminating a habitat that supports a vast range of other marine life.",
             "question": "Why are sea otters considered a keystone species, according to the passage?",
             "options": [
@@ -367,7 +367,7 @@
             "id": "RDG_READANDANSWER_L127_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Anchoring Bias in Pricing] Anchoring bias describes the tendency for an initial piece of information, even one known to be arbitrary or irrelevant, to disproportionately influence subsequent judgments and decisions, a pattern retailers frequently exploit by displaying a high 'original' price crossed out next to a lower 'sale' price, since the crossed-out figure, regardless of whether it reflects a price the item was ever genuinely sold at, subtly anchors a shopper's perception of what constitutes a fair price for that particular item. Researchers have found this effect persists even among shoppers who consciously recognize the tactic and believe themselves immune to its influence.",
             "question": "What have researchers found about shoppers who recognize the anchoring tactic?",
             "options": [
@@ -385,7 +385,7 @@
             "id": "RDG_READANDANSWER_L128_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Tragedy of the Commons] The tragedy of the commons describes a situation in which individuals acting independently in their own rational self-interest deplete a shared, limited resource, even when doing so is clearly against the long-term collective interest of the entire group, since each individual bears only a fraction of the cost of their own overuse while capturing the full benefit for themselves, whereas the cost of restraint would be borne entirely by that individual while the benefit would be shared collectively. Economists note that the tragedy is not inevitable, however, pointing to numerous historical examples of communities successfully managing shared resources through locally developed rules and social enforcement, without requiring either full privatization or centralized government control.",
             "question": "What do economists note about the tragedy of the commons, according to the passage?",
             "options": [
@@ -403,7 +403,7 @@
             "id": "RDG_READANDANSWER_L128_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Confirmation Bias in Research] Confirmation bias refers to the tendency to search for, interpret, and recall information in ways that support a belief one already holds, while giving disproportionately less weight to evidence that would challenge that same belief, a pattern that can subtly affect even trained researchers if they are not deliberately guarding against it. Scientific methodology attempts to counteract this tendency through practices such as pre-registering a study's hypothesis before data collection begins and actively seeking out disconfirming evidence, procedural safeguards designed specifically to prevent a researcher's existing expectations from unconsciously shaping which results are emphasized or reported.",
             "question": "Why do researchers pre-register a hypothesis before collecting data, according to the passage?",
             "options": [
@@ -421,7 +421,7 @@
             "id": "RDG_READANDANSWER_L128_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Urban Microclimates and Building Design] Densely built urban environments create microclimates that can differ measurably from surrounding suburban or rural areas, with narrow streets flanked by tall buildings sometimes creating wind tunnel effects that intensify gusts at street level, while other configurations of the same buildings can instead block airflow entirely, trapping heat and pollutants close to the ground. Urban planners increasingly use computer modeling during the design phase specifically to predict these airflow patterns before construction begins, since retrofitting a poorly ventilated urban canyon after buildings are already in place is far more difficult and costly than adjusting a design on paper.",
             "question": "Why do planners use computer modeling before construction begins, according to the passage?",
             "options": [
@@ -439,7 +439,7 @@
             "id": "RDG_READANDANSWER_L129_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Availability Heuristic] The availability heuristic describes a mental shortcut in which people estimate the likelihood or frequency of an event based on how easily relevant examples come to mind, rather than on actual statistical data, a pattern that helps explain why vivid, heavily reported events, such as plane crashes, are frequently judged to be far more common than they statistically are, while less dramatic but considerably more frequent risks, such as routine car accidents, tend to be systematically underestimated precisely because they rarely generate the same intensity of media coverage or emotional impact.",
             "question": "Why are plane crashes often judged to be more common than they statistically are?",
             "options": [
@@ -457,7 +457,7 @@
             "id": "RDG_READANDANSWER_L129_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Thermal Mass and Passive Cooling] Traditional architecture in many hot, arid regions has long relied on thick walls made of dense materials like adobe or stone, which absorb heat slowly throughout the day and release it gradually overnight, a property known as thermal mass that helps moderate indoor temperature swings without any mechanical cooling system. Modern builders in similar climates increasingly borrow this centuries-old principle, sometimes combining high-thermal-mass materials with contemporary insulation techniques to reduce a building's reliance on energy-intensive air conditioning, particularly in regions where electricity costs or grid reliability make constant mechanical cooling impractical.",
             "question": "What does thermal mass help traditional buildings achieve, according to the passage?",
             "options": [
@@ -475,7 +475,7 @@
             "id": "RDG_READANDANSWER_L129_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Bandwagon Effect in Public Opinion] The bandwagon effect describes the tendency for individuals to adopt a particular belief or behavior primarily because they perceive that many other people already hold it, a dynamic that can create self-reinforcing momentum independent of the belief's actual merit, since the visible popularity of a position can itself become perceived as evidence supporting that position. Researchers studying public opinion polling have noted particular concern about this dynamic in the context of published poll results, since voters exposed to polling data showing one candidate meaningfully ahead may become more likely to support that same candidate, a feedback loop that can potentially distort the very outcome the polling was originally intended merely to measure.",
             "question": "What concern have researchers noted about published poll results, according to the passage?",
             "options": [
@@ -493,7 +493,7 @@
             "id": "RDG_READANDANSWER_L130_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Precautionary Principle in Policy] The precautionary principle holds that when an action carries a plausible risk of significant or irreversible harm, the burden of proof should fall on demonstrating that the action is safe, rather than requiring critics to first prove definitive harm before any restriction is considered, a standard frequently invoked in debates over new chemicals, genetically modified organisms, or emerging technologies where long-term consequences remain genuinely uncertain. Critics of the principle argue that applied too broadly, it could indefinitely stall beneficial innovations simply because absolute certainty about safety is, in practice, rarely achievable for any new technology, however promising.",
             "question": "What concern do critics raise about the precautionary principle, according to the passage?",
             "options": [
@@ -511,7 +511,7 @@
             "id": "RDG_READANDANSWER_L130_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Selection Bias in Online Reviews] Online review platforms are susceptible to a form of selection bias in which customers with either extremely positive or extremely negative experiences are disproportionately more likely to leave a review compared to the larger, often silent, majority who had a moderately satisfactory experience, meaning the visible distribution of ratings may not accurately reflect the typical customer experience at all. This dynamic helps explain why a product or service can maintain a strong overall reputation and consistent repeat business despite an online review section that appears, at a glance, unusually polarized between glowing praise and harsh criticism.",
             "question": "What does the passage say the visible distribution of online ratings may not accurately reflect?",
             "options": [
@@ -529,7 +529,7 @@
             "id": "RDG_READANDANSWER_L130_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Redundancy in Engineering Safety Systems] Critical infrastructure systems, from aircraft to nuclear power plants, are typically designed with deliberate redundancy, meaning multiple independent systems capable of performing the same essential function, so that the failure of any single component does not result in catastrophic failure of the entire system. Engineers specifically aim for these backup systems to fail independently of one another wherever possible, recognizing that redundancy provides little genuine protection if a single shared cause, such as a design flaw common to all versions of a component, could simultaneously disable every redundant system at once.",
             "question": "Why do engineers aim for backup systems to fail independently of each other?",
             "options": [

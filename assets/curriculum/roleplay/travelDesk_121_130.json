@@ -1,667 +1,667 @@
 {
-  "gameType": "travelDesk",
-  "batchIndex": 13,
-  "levels": "121-130",
-  "quests": [
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I was hoping you could point me toward somewhere to get a formal document authenticated for a visa application.",
-      "itinerary": [
-        "Neighborhood Notary Office",
-        "Neighborhood Print Shop",
-        "Neighborhood Passport Photo Shop",
-        "Neighborhood City Hall"
-      ],
-      "options": [
-        "Notary Office",
-        "Print Shop",
-        "Passport Photo Shop",
-        "City Hall"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Narrow it down by asking where, specifically, people go to get a formal document authenticated for a visa application.",
-      "explanation": "This matches because Notary Office is the standard place to get a formal document authenticated for a visa application.",
-      "id": "td_l121_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I really need to arrange overnight childcare on short notice before tonight, if that's possible.",
-      "itinerary": [
-        "Family Relative's Home",
-        "Family Babysitting Agency",
-        "Family Kids' Club",
-        "Family Playroom"
-      ],
-      "options": [
-        "Relative's Home",
-        "Babysitting Agency",
-        "Kids' Club",
-        "Playroom"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to arrange overnight childcare on short notice.",
-      "explanation": "Babysitting Agency is the best fit — it exists specifically to help people arrange overnight childcare on short notice.",
-      "id": "td_l121_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm not familiar with the area — where might I go to track down a specific out-of-production item?",
-      "itinerary": [
-        "Marketplace Flea Market",
-        "Marketplace Handicraft Market",
-        "Marketplace Ceramics Shop",
-        "Marketplace Antique Shop"
-      ],
-      "options": [
-        "Flea Market",
-        "Handicraft Market",
-        "Ceramics Shop",
-        "Antique Shop"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Some options belong to the same general category, but only one is the exact place to track down a specific out-of-production item.",
-      "explanation": "Of the four options, only Antique Shop is designed to let someone track down a specific out-of-production item.",
-      "id": "td_l121_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "If you don't mind my asking, where's a reliable place to find the specific spice this region is famous for?",
-      "itinerary": [
-        "Gourmet Spice Market",
-        "Gourmet Seafood Market",
-        "Gourmet Food Hall",
-        "Gourmet Deli"
-      ],
-      "options": [
-        "Spice Market",
-        "Seafood Market",
-        "Food Hall",
-        "Deli"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Rule out the options that don't fit someone trying to find the specific spice this region is famous for.",
-      "explanation": "Spice Market is the answer, because everything in the request points to needing to find the specific spice this region is famous for.",
-      "id": "td_l122_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would it be possible to find out where I could verify a family record from decades ago?",
-      "itinerary": [
-        "Scholars' Heritage Records Center",
-        "Scholars' Local History Center",
-        "Scholars' Ethnographic Museum",
-        "Scholars' Rare Book Shop"
-      ],
-      "options": [
-        "Heritage Records Center",
-        "Local History Center",
-        "Ethnographic Museum",
-        "Rare Book Shop"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Picture exactly where a traveler would go to verify a family record from decades ago.",
-      "explanation": "Heritage Records Center is correct — the other options sound similar but won't actually let you verify a family record from decades ago.",
-      "id": "td_l122_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've heard this city is known for it — where could I get a highly technical document translated accurately?",
-      "itinerary": [
-        "Corporate Business Center",
-        "Corporate Courier Office",
-        "Corporate Client Meeting Lounge",
-        "Corporate Interpreter Service Desk"
-      ],
-      "options": [
-        "Business Center",
-        "Courier Office",
-        "Client Meeting Lounge",
-        "Interpreter Service Desk"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Match the purpose, not just the wording — where does someone actually go to get a highly technical document translated accurately?",
-      "explanation": "The best match is Interpreter Service Desk; it's the one option truly built around helping people get a highly technical document translated accurately.",
-      "id": "td_l122_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I was hoping you could point me toward somewhere to resolve a discrepancy at passport control.",
-      "itinerary": [
-        "Wanderer's Border Checkpoint",
-        "Wanderer's Embassy",
-        "Wanderer's Visa Office",
-        "Wanderer's Customs Office"
-      ],
-      "options": [
-        "Border Checkpoint",
-        "Embassy",
-        "Visa Office",
-        "Customs Office"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The other three options sound plausible, but only one is made for this: to resolve a discrepancy at passport control.",
-      "explanation": "Right — Border Checkpoint is where this kind of request always leads, since you need to resolve a discrepancy at passport control.",
-      "id": "td_l123_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I really need to find a technician who can recover deleted photos before tonight, if that's possible.",
-      "itinerary": [
-        "Digital Gadget Store",
-        "Digital Repair Shop",
-        "Digital IT Help Desk",
-        "Digital Tech Support Center"
-      ],
-      "options": [
-        "Gadget Store",
-        "Repair Shop",
-        "IT Help Desk",
-        "Tech Support Center"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone find a technician who can recover deleted photos.",
-      "explanation": "Repair Shop makes sense here because that's precisely where people go to find a technician who can recover deleted photos.",
-      "id": "td_l123_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm not familiar with the area — where might I go to get a specialist's opinion on a nagging shoulder injury?",
-      "itinerary": [
-        "Wellness Physiotherapy Center",
-        "Wellness Sports Medicine Clinic",
-        "Wellness Urgent Care Center",
-        "Wellness Rehabilitation Center"
-      ],
-      "options": [
-        "Physiotherapy Center",
-        "Sports Medicine Clinic",
-        "Urgent Care Center",
-        "Rehabilitation Center"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a specialist's opinion on a nagging shoulder injury.",
-      "explanation": "Sports Medicine Clinic is correct because that's exactly where travelers go to get a specialist's opinion on a nagging shoulder injury.",
-      "id": "td_l123_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "If you don't mind my asking, where's a reliable place to find tonight's underground jazz session?",
-      "itinerary": [
-        "Spotlight Jazz Club",
-        "Spotlight Comedy Club",
-        "Spotlight Concert Hall",
-        "Spotlight Karaoke Bar"
-      ],
-      "options": [
-        "Jazz Club",
-        "Comedy Club",
-        "Concert Hall",
-        "Karaoke Bar"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Narrow it down by asking where, specifically, people go to find tonight's underground jazz session.",
-      "explanation": "This matches because Jazz Club is the standard place to find tonight's underground jazz session.",
-      "id": "td_l124_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would it be possible to find out where I could track down a passport that went missing yesterday?",
-      "itinerary": [
-        "Neighborhood City Hall",
-        "Neighborhood Notary Office",
-        "Neighborhood Community Center",
-        "Neighborhood Lost-and-Found Office"
-      ],
-      "options": [
-        "City Hall",
-        "Notary Office",
-        "Community Center",
-        "Lost-and-Found Office"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to track down a passport that went missing yesterday.",
-      "explanation": "Lost-and-Found Office is the best fit — it exists specifically to help people track down a passport that went missing yesterday.",
-      "id": "td_l124_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've heard this city is known for it — where could I find a quiet spot for the baby to nap between activities?",
-      "itinerary": [
-        "Family Kids' Club",
-        "Family Playroom",
-        "Family Splash Pad",
-        "Family Stroller Rental Counter"
-      ],
-      "options": [
-        "Kids' Club",
-        "Playroom",
-        "Splash Pad",
-        "Stroller Rental Counter"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Some options belong to the same general category, but only one is the exact place to find a quiet spot for the baby to nap between activities.",
-      "explanation": "The clearest match is Playroom, since that's exactly its purpose: to find a quiet spot for the baby to nap between activities.",
-      "id": "td_l124_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I was hoping you could point me toward somewhere to negotiate a fair price on something handmade.",
-      "itinerary": [
-        "Marketplace Flea Market",
-        "Marketplace Handicraft Market",
-        "Marketplace Night Market",
-        "Marketplace Craft Store"
-      ],
-      "options": [
-        "Flea Market",
-        "Handicraft Market",
-        "Night Market",
-        "Craft Store"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Think about which kind of place specializes in helping people negotiate a fair price on something handmade.",
-      "explanation": "Handicraft Market is the answer, because everything in the request points to needing to negotiate a fair price on something handmade.",
-      "id": "td_l125_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I really need to track down a very particular vintage of local wine before tonight, if that's possible.",
-      "itinerary": [
-        "Gourmet Brewery",
-        "Gourmet Vineyard Tour",
-        "Gourmet Rooftop Restaurant",
-        "Gourmet Wine Cellar"
-      ],
-      "options": [
-        "Brewery",
-        "Vineyard Tour",
-        "Rooftop Restaurant",
-        "Wine Cellar"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Look past any similar-sounding options — only one place truly lets you track down a very particular vintage of local wine.",
-      "explanation": "Wine Cellar is correct — the other options sound similar but won't actually let you track down a very particular vintage of local wine.",
-      "id": "td_l125_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm not familiar with the area — where might I go to find a first edition that's nearly impossible to source?",
-      "itinerary": [
-        "Scholars' Public Library",
-        "Scholars' Rare Book Shop",
-        "Scholars' Local History Center",
-        "Scholars' Heritage Records Center"
-      ],
-      "options": [
-        "Public Library",
-        "Rare Book Shop",
-        "Local History Center",
-        "Heritage Records Center"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "One of these four exists specifically to help people find a first edition that's nearly impossible to source — look for it.",
-      "explanation": "The best match is Rare Book Shop; it's the one option truly built around helping people find a first edition that's nearly impossible to source.",
-      "id": "td_l125_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "If you don't mind my asking, where's a reliable place to secure a private room for a sensitive negotiation?",
-      "itinerary": [
-        "Corporate Client Meeting Lounge",
-        "Corporate Private Office Suite",
-        "Corporate Boardroom",
-        "Corporate Breakout Room"
-      ],
-      "options": [
-        "Client Meeting Lounge",
-        "Private Office Suite",
-        "Boardroom",
-        "Breakout Room"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "The other three options sound plausible, but only one is made for this: to secure a private room for a sensitive negotiation.",
-      "explanation": "Right — Boardroom is where this kind of request always leads, since you need to secure a private room for a sensitive negotiation.",
-      "id": "td_l126_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would it be possible to find out where I could get an emergency travel document issued?",
-      "itinerary": [
-        "Wanderer's Visa Office",
-        "Wanderer's Embassy",
-        "Wanderer's Border Checkpoint",
-        "Wanderer's Customs Office"
-      ],
-      "options": [
-        "Visa Office",
-        "Embassy",
-        "Border Checkpoint",
-        "Customs Office"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone get an emergency travel document issued.",
-      "explanation": "Travelers head to the Embassy whenever they need to get an emergency travel document issued.",
-      "id": "td_l126_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've heard this city is known for it — where could I source a very specific replacement camera part?",
-      "itinerary": [
-        "Digital Photo Printing Kiosk",
-        "Digital Gadget Store",
-        "Digital Camera Rental Shop",
-        "Digital Drone Rental Counter"
-      ],
-      "options": [
-        "Photo Printing Kiosk",
-        "Gadget Store",
-        "Camera Rental Shop",
-        "Drone Rental Counter"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to source a very specific replacement camera part.",
-      "explanation": "When someone needs to source a very specific replacement camera part, Camera Rental Shop is the natural choice.",
-      "id": "td_l126_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I was hoping you could point me toward somewhere to find out exactly what triggered a sudden allergic reaction.",
-      "itinerary": [
-        "Wellness Allergy Clinic",
-        "Wellness Hospital",
-        "Wellness Emergency Room",
-        "Wellness Urgent Care Center"
-      ],
-      "options": [
-        "Allergy Clinic",
-        "Hospital",
-        "Emergency Room",
-        "Urgent Care Center"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Narrow it down by asking where, specifically, people go to find out exactly what triggered a sudden allergic reaction.",
-      "explanation": "Since the traveler wants to find out exactly what triggered a sudden allergic reaction, Allergy Clinic is the logical destination.",
-      "id": "td_l127_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I really need to get last-minute tickets to a sold-out play before tonight, if that's possible.",
-      "itinerary": [
-        "Spotlight Theater",
-        "Spotlight Concert Hall",
-        "Spotlight Comedy Club",
-        "Spotlight Cinema"
-      ],
-      "options": [
-        "Theater",
-        "Concert Hall",
-        "Comedy Club",
-        "Cinema"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to get last-minute tickets to a sold-out play.",
-      "explanation": "Theater makes sense here because that's precisely where people go to get last-minute tickets to a sold-out play.",
-      "id": "td_l127_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm not familiar with the area — where might I go to get a fresh set of passport photos for a renewal?",
-      "itinerary": [
-        "Neighborhood Print Shop",
-        "Neighborhood Notary Office",
-        "Neighborhood Newsstand",
-        "Neighborhood Passport Photo Shop"
-      ],
-      "options": [
-        "Print Shop",
-        "Notary Office",
-        "Newsstand",
-        "Passport Photo Shop"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Some options belong to the same general category, but only one is the exact place to get a fresh set of passport photos for a renewal.",
-      "explanation": "The request points directly to the Passport Photo Shop, since that's where you'd get a fresh set of passport photos for a renewal.",
-      "id": "td_l127_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "If you don't mind my asking, where's a reliable place to track down spare formula after the shops closed?",
-      "itinerary": [
-        "Family Kids' Club",
-        "Family Baby Supplies Store",
-        "Family Pediatric Clinic",
-        "Family Playroom"
-      ],
-      "options": [
-        "Kids' Club",
-        "Baby Supplies Store",
-        "Pediatric Clinic",
-        "Playroom"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The right answer is the place whose main job is to help people track down spare formula after the shops closed.",
-      "explanation": "Baby Supplies Store is the answer, because everything in the request points to needing to track down spare formula after the shops closed.",
-      "id": "td_l128_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would it be possible to find out where I could find a very specific replacement zipper for luggage?",
-      "itinerary": [
-        "Marketplace Craft Store",
-        "Marketplace Discount Store",
-        "Marketplace Electronics Store",
-        "Marketplace Luggage Shop"
-      ],
-      "options": [
-        "Craft Store",
-        "Discount Store",
-        "Electronics Store",
-        "Luggage Shop"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Ask yourself which of the four options is built for one specific purpose: to find a very specific replacement zipper for luggage.",
-      "explanation": "Luggage Shop is correct — the other options sound similar but won't actually let you find a very specific replacement zipper for luggage.",
-      "id": "td_l128_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've heard this city is known for it — where could I find the supplier behind the chef's daily catch?",
-      "itinerary": [
-        "Gourmet Deli",
-        "Gourmet Butcher Shop",
-        "Gourmet Seafood Market",
-        "Gourmet Sushi Bar"
-      ],
-      "options": [
-        "Deli",
-        "Butcher Shop",
-        "Seafood Market",
-        "Sushi Bar"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Not all four fit. Focus on the one place designed to let someone find the supplier behind the chef's daily catch.",
-      "explanation": "The best match is Seafood Market; it's the one option truly built around helping people find the supplier behind the chef's daily catch.",
-      "id": "td_l128_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I was hoping you could point me toward somewhere to understand the significance of a specific local custom.",
-      "itinerary": [
-        "Scholars' Heritage Records Center",
-        "Scholars' Ethnographic Museum",
-        "Scholars' Local History Center",
-        "Scholars' Cultural Center"
-      ],
-      "options": [
-        "Heritage Records Center",
-        "Ethnographic Museum",
-        "Local History Center",
-        "Cultural Center"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The other three options sound plausible, but only one is made for this: to understand the significance of a specific local custom.",
-      "explanation": "Right — Ethnographic Museum is where this kind of request always leads, since you need to understand the significance of a specific local custom.",
-      "id": "td_l129_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I really need to get same-day printing for a revised proposal before tonight, if that's possible.",
-      "itinerary": [
-        "Corporate Corporate Reception Desk",
-        "Corporate Printing & Copy Shop",
-        "Corporate Business Center",
-        "Corporate Courier Office"
-      ],
-      "options": [
-        "Corporate Reception Desk",
-        "Printing & Copy Shop",
-        "Business Center",
-        "Courier Office"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone get same-day printing for a revised proposal.",
-      "explanation": "Printing & Copy Shop exists specifically for this — it's the place to get same-day printing for a revised proposal.",
-      "id": "td_l129_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm not familiar with the area — where might I go to figure out which platform a connecting train leaves from?",
-      "itinerary": [
-        "Wanderer's Transfer Desk",
-        "Wanderer's Metro Station",
-        "Wanderer's Train Station",
-        "Wanderer's Boarding Gate"
-      ],
-      "options": [
-        "Transfer Desk",
-        "Metro Station",
-        "Train Station",
-        "Boarding Gate"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to figure out which platform a connecting train leaves from.",
-      "explanation": "Of the four options, only Transfer Desk is designed to let someone figure out which platform a connecting train leaves from.",
-      "id": "td_l129_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "If you don't mind my asking, where's a reliable place to track down an adapter for an unusual plug type?",
-      "itinerary": [
-        "Digital Data Top-Up Counter",
-        "Digital Repair Shop",
-        "Digital SIM Card Kiosk",
-        "Digital Gadget Store"
-      ],
-      "options": [
-        "Data Top-Up Counter",
-        "Repair Shop",
-        "SIM Card Kiosk",
-        "Gadget Store"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Narrow it down by asking where, specifically, people go to track down an adapter for an unusual plug type.",
-      "explanation": "Gadget Store fits perfectly here, as it's set up for people who need to track down an adapter for an unusual plug type.",
-      "id": "td_l130_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would it be possible to find out where I could get a second round of physiotherapy before a big hike?",
-      "itinerary": [
-        "Wellness Sports Medicine Clinic",
-        "Wellness Massage Therapy Center",
-        "Wellness Physiotherapy Center",
-        "Wellness Rehabilitation Center"
-      ],
-      "options": [
-        "Sports Medicine Clinic",
-        "Massage Therapy Center",
-        "Physiotherapy Center",
-        "Rehabilitation Center"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to get a second round of physiotherapy before a big hike.",
-      "explanation": "The clearest match is Physiotherapy Center, since that's exactly its purpose: to get a second round of physiotherapy before a big hike.",
-      "id": "td_l130_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've heard this city is known for it — where could I track down the late-night comedy set?",
-      "itinerary": [
-        "Spotlight Karaoke Bar",
-        "Spotlight Jazz Club",
-        "Spotlight Theater",
-        "Spotlight Comedy Club"
-      ],
-      "options": [
-        "Karaoke Bar",
-        "Jazz Club",
-        "Theater",
-        "Comedy Club"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Some options belong to the same general category, but only one is the exact place to track down the late-night comedy set.",
-      "explanation": "Comedy Club makes sense here because that's precisely where people go to track down the late-night comedy set.",
-      "id": "td_l130_q3"
-    }
-  ]
+    "gameType": "travelDesk",
+    "batchIndex": 13,
+    "levels": "121-130",
+    "quests": [
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I was hoping you could point me toward somewhere to get a formal document authenticated for a visa application.",
+            "itinerary": [
+                "Neighborhood Notary Office",
+                "Neighborhood Print Shop",
+                "Neighborhood Passport Photo Shop",
+                "Neighborhood City Hall"
+            ],
+            "options": [
+                "Notary Office",
+                "Print Shop",
+                "Passport Photo Shop",
+                "City Hall"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Narrow it down by asking where, specifically, people go to get a formal document authenticated for a visa application.",
+            "explanation": "This matches because Notary Office is the standard place to get a formal document authenticated for a visa application.",
+            "id": "td_l121_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I really need to arrange overnight childcare on short notice before tonight, if that's possible.",
+            "itinerary": [
+                "Family Relative's Home",
+                "Family Babysitting Agency",
+                "Family Kids' Club",
+                "Family Playroom"
+            ],
+            "options": [
+                "Relative's Home",
+                "Babysitting Agency",
+                "Kids' Club",
+                "Playroom"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to arrange overnight childcare on short notice.",
+            "explanation": "Babysitting Agency is the best fit — it exists specifically to help people arrange overnight childcare on short notice.",
+            "id": "td_l121_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm not familiar with the area — where might I go to track down a specific out-of-production item?",
+            "itinerary": [
+                "Marketplace Flea Market",
+                "Marketplace Handicraft Market",
+                "Marketplace Ceramics Shop",
+                "Marketplace Antique Shop"
+            ],
+            "options": [
+                "Flea Market",
+                "Handicraft Market",
+                "Ceramics Shop",
+                "Antique Shop"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Some options belong to the same general category, but only one is the exact place to track down a specific out-of-production item.",
+            "explanation": "Of the four options, only Antique Shop is designed to let someone track down a specific out-of-production item.",
+            "id": "td_l121_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "If you don't mind my asking, where's a reliable place to find the specific spice this region is famous for?",
+            "itinerary": [
+                "Gourmet Spice Market",
+                "Gourmet Seafood Market",
+                "Gourmet Food Hall",
+                "Gourmet Deli"
+            ],
+            "options": [
+                "Spice Market",
+                "Seafood Market",
+                "Food Hall",
+                "Deli"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Rule out the options that don't fit someone trying to find the specific spice this region is famous for.",
+            "explanation": "Spice Market is the answer, because everything in the request points to needing to find the specific spice this region is famous for.",
+            "id": "td_l122_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would it be possible to find out where I could verify a family record from decades ago?",
+            "itinerary": [
+                "Scholars' Heritage Records Center",
+                "Scholars' Local History Center",
+                "Scholars' Ethnographic Museum",
+                "Scholars' Rare Book Shop"
+            ],
+            "options": [
+                "Heritage Records Center",
+                "Local History Center",
+                "Ethnographic Museum",
+                "Rare Book Shop"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Picture exactly where a traveler would go to verify a family record from decades ago.",
+            "explanation": "Heritage Records Center is correct — the other options sound similar but won't actually let you verify a family record from decades ago.",
+            "id": "td_l122_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've heard this city is known for it — where could I get a highly technical document translated accurately?",
+            "itinerary": [
+                "Corporate Business Center",
+                "Corporate Courier Office",
+                "Corporate Client Meeting Lounge",
+                "Corporate Interpreter Service Desk"
+            ],
+            "options": [
+                "Business Center",
+                "Courier Office",
+                "Client Meeting Lounge",
+                "Interpreter Service Desk"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Match the purpose, not just the wording — where does someone actually go to get a highly technical document translated accurately?",
+            "explanation": "The best match is Interpreter Service Desk; it's the one option truly built around helping people get a highly technical document translated accurately.",
+            "id": "td_l122_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I was hoping you could point me toward somewhere to resolve a discrepancy at passport control.",
+            "itinerary": [
+                "Wanderer's Border Checkpoint",
+                "Wanderer's Embassy",
+                "Wanderer's Visa Office",
+                "Wanderer's Customs Office"
+            ],
+            "options": [
+                "Border Checkpoint",
+                "Embassy",
+                "Visa Office",
+                "Customs Office"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The other three options sound plausible, but only one is made for this: to resolve a discrepancy at passport control.",
+            "explanation": "Right — Border Checkpoint is where this kind of request always leads, since you need to resolve a discrepancy at passport control.",
+            "id": "td_l123_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I really need to find a technician who can recover deleted photos before tonight, if that's possible.",
+            "itinerary": [
+                "Digital Gadget Store",
+                "Digital Repair Shop",
+                "Digital IT Help Desk",
+                "Digital Tech Support Center"
+            ],
+            "options": [
+                "Gadget Store",
+                "Repair Shop",
+                "IT Help Desk",
+                "Tech Support Center"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone find a technician who can recover deleted photos.",
+            "explanation": "Repair Shop makes sense here because that's precisely where people go to find a technician who can recover deleted photos.",
+            "id": "td_l123_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm not familiar with the area — where might I go to get a specialist's opinion on a nagging shoulder injury?",
+            "itinerary": [
+                "Wellness Physiotherapy Center",
+                "Wellness Sports Medicine Clinic",
+                "Wellness Urgent Care Center",
+                "Wellness Rehabilitation Center"
+            ],
+            "options": [
+                "Physiotherapy Center",
+                "Sports Medicine Clinic",
+                "Urgent Care Center",
+                "Rehabilitation Center"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a specialist's opinion on a nagging shoulder injury.",
+            "explanation": "Sports Medicine Clinic is correct because that's exactly where travelers go to get a specialist's opinion on a nagging shoulder injury.",
+            "id": "td_l123_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "If you don't mind my asking, where's a reliable place to find tonight's underground jazz session?",
+            "itinerary": [
+                "Spotlight Jazz Club",
+                "Spotlight Comedy Club",
+                "Spotlight Concert Hall",
+                "Spotlight Karaoke Bar"
+            ],
+            "options": [
+                "Jazz Club",
+                "Comedy Club",
+                "Concert Hall",
+                "Karaoke Bar"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Narrow it down by asking where, specifically, people go to find tonight's underground jazz session.",
+            "explanation": "This matches because Jazz Club is the standard place to find tonight's underground jazz session.",
+            "id": "td_l124_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would it be possible to find out where I could track down a passport that went missing yesterday?",
+            "itinerary": [
+                "Neighborhood City Hall",
+                "Neighborhood Notary Office",
+                "Neighborhood Community Center",
+                "Neighborhood Lost-and-Found Office"
+            ],
+            "options": [
+                "City Hall",
+                "Notary Office",
+                "Community Center",
+                "Lost-and-Found Office"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to track down a passport that went missing yesterday.",
+            "explanation": "Lost-and-Found Office is the best fit — it exists specifically to help people track down a passport that went missing yesterday.",
+            "id": "td_l124_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've heard this city is known for it — where could I find a quiet spot for the baby to nap between activities?",
+            "itinerary": [
+                "Family Kids' Club",
+                "Family Playroom",
+                "Family Splash Pad",
+                "Family Stroller Rental Counter"
+            ],
+            "options": [
+                "Kids' Club",
+                "Playroom",
+                "Splash Pad",
+                "Stroller Rental Counter"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Some options belong to the same general category, but only one is the exact place to find a quiet spot for the baby to nap between activities.",
+            "explanation": "The clearest match is Playroom, since that's exactly its purpose: to find a quiet spot for the baby to nap between activities.",
+            "id": "td_l124_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I was hoping you could point me toward somewhere to negotiate a fair price on something handmade.",
+            "itinerary": [
+                "Marketplace Flea Market",
+                "Marketplace Handicraft Market",
+                "Marketplace Night Market",
+                "Marketplace Craft Store"
+            ],
+            "options": [
+                "Flea Market",
+                "Handicraft Market",
+                "Night Market",
+                "Craft Store"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Think about which kind of place specializes in helping people negotiate a fair price on something handmade.",
+            "explanation": "Handicraft Market is the answer, because everything in the request points to needing to negotiate a fair price on something handmade.",
+            "id": "td_l125_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I really need to track down a very particular vintage of local wine before tonight, if that's possible.",
+            "itinerary": [
+                "Gourmet Brewery",
+                "Gourmet Vineyard Tour",
+                "Gourmet Rooftop Restaurant",
+                "Gourmet Wine Cellar"
+            ],
+            "options": [
+                "Brewery",
+                "Vineyard Tour",
+                "Rooftop Restaurant",
+                "Wine Cellar"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Look past any similar-sounding options — only one place truly lets you track down a very particular vintage of local wine.",
+            "explanation": "Wine Cellar is correct — the other options sound similar but won't actually let you track down a very particular vintage of local wine.",
+            "id": "td_l125_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm not familiar with the area — where might I go to find a first edition that's nearly impossible to source?",
+            "itinerary": [
+                "Scholars' Public Library",
+                "Scholars' Rare Book Shop",
+                "Scholars' Local History Center",
+                "Scholars' Heritage Records Center"
+            ],
+            "options": [
+                "Public Library",
+                "Rare Book Shop",
+                "Local History Center",
+                "Heritage Records Center"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "One of these four exists specifically to help people find a first edition that's nearly impossible to source — look for it.",
+            "explanation": "The best match is Rare Book Shop; it's the one option truly built around helping people find a first edition that's nearly impossible to source.",
+            "id": "td_l125_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "If you don't mind my asking, where's a reliable place to secure a private room for a sensitive negotiation?",
+            "itinerary": [
+                "Corporate Client Meeting Lounge",
+                "Corporate Private Office Suite",
+                "Corporate Boardroom",
+                "Corporate Breakout Room"
+            ],
+            "options": [
+                "Client Meeting Lounge",
+                "Private Office Suite",
+                "Boardroom",
+                "Breakout Room"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "The other three options sound plausible, but only one is made for this: to secure a private room for a sensitive negotiation.",
+            "explanation": "Right — Boardroom is where this kind of request always leads, since you need to secure a private room for a sensitive negotiation.",
+            "id": "td_l126_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would it be possible to find out where I could get an emergency travel document issued?",
+            "itinerary": [
+                "Wanderer's Visa Office",
+                "Wanderer's Embassy",
+                "Wanderer's Border Checkpoint",
+                "Wanderer's Customs Office"
+            ],
+            "options": [
+                "Visa Office",
+                "Embassy",
+                "Border Checkpoint",
+                "Customs Office"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone get an emergency travel document issued.",
+            "explanation": "Travelers head to the Embassy whenever they need to get an emergency travel document issued.",
+            "id": "td_l126_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've heard this city is known for it — where could I source a very specific replacement camera part?",
+            "itinerary": [
+                "Digital Photo Printing Kiosk",
+                "Digital Gadget Store",
+                "Digital Camera Rental Shop",
+                "Digital Drone Rental Counter"
+            ],
+            "options": [
+                "Photo Printing Kiosk",
+                "Gadget Store",
+                "Camera Rental Shop",
+                "Drone Rental Counter"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to source a very specific replacement camera part.",
+            "explanation": "When someone needs to source a very specific replacement camera part, Camera Rental Shop is the natural choice.",
+            "id": "td_l126_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I was hoping you could point me toward somewhere to find out exactly what triggered a sudden allergic reaction.",
+            "itinerary": [
+                "Wellness Allergy Clinic",
+                "Wellness Hospital",
+                "Wellness Emergency Room",
+                "Wellness Urgent Care Center"
+            ],
+            "options": [
+                "Allergy Clinic",
+                "Hospital",
+                "Emergency Room",
+                "Urgent Care Center"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Narrow it down by asking where, specifically, people go to find out exactly what triggered a sudden allergic reaction.",
+            "explanation": "Since the traveler wants to find out exactly what triggered a sudden allergic reaction, Allergy Clinic is the logical destination.",
+            "id": "td_l127_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I really need to get last-minute tickets to a sold-out play before tonight, if that's possible.",
+            "itinerary": [
+                "Spotlight Theater",
+                "Spotlight Concert Hall",
+                "Spotlight Comedy Club",
+                "Spotlight Cinema"
+            ],
+            "options": [
+                "Theater",
+                "Concert Hall",
+                "Comedy Club",
+                "Cinema"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to get last-minute tickets to a sold-out play.",
+            "explanation": "Theater makes sense here because that's precisely where people go to get last-minute tickets to a sold-out play.",
+            "id": "td_l127_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm not familiar with the area — where might I go to get a fresh set of passport photos for a renewal?",
+            "itinerary": [
+                "Neighborhood Print Shop",
+                "Neighborhood Notary Office",
+                "Neighborhood Newsstand",
+                "Neighborhood Passport Photo Shop"
+            ],
+            "options": [
+                "Print Shop",
+                "Notary Office",
+                "Newsstand",
+                "Passport Photo Shop"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Some options belong to the same general category, but only one is the exact place to get a fresh set of passport photos for a renewal.",
+            "explanation": "The request points directly to the Passport Photo Shop, since that's where you'd get a fresh set of passport photos for a renewal.",
+            "id": "td_l127_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "If you don't mind my asking, where's a reliable place to track down spare formula after the shops closed?",
+            "itinerary": [
+                "Family Kids' Club",
+                "Family Baby Supplies Store",
+                "Family Pediatric Clinic",
+                "Family Playroom"
+            ],
+            "options": [
+                "Kids' Club",
+                "Baby Supplies Store",
+                "Pediatric Clinic",
+                "Playroom"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "The right answer is the place whose main job is to help people track down spare formula after the shops closed.",
+            "explanation": "Baby Supplies Store is the answer, because everything in the request points to needing to track down spare formula after the shops closed.",
+            "id": "td_l128_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would it be possible to find out where I could find a very specific replacement zipper for luggage?",
+            "itinerary": [
+                "Marketplace Craft Store",
+                "Marketplace Discount Store",
+                "Marketplace Electronics Store",
+                "Marketplace Luggage Shop"
+            ],
+            "options": [
+                "Craft Store",
+                "Discount Store",
+                "Electronics Store",
+                "Luggage Shop"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Ask yourself which of the four options is built for one specific purpose: to find a very specific replacement zipper for luggage.",
+            "explanation": "Luggage Shop is correct — the other options sound similar but won't actually let you find a very specific replacement zipper for luggage.",
+            "id": "td_l128_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've heard this city is known for it — where could I find the supplier behind the chef's daily catch?",
+            "itinerary": [
+                "Gourmet Deli",
+                "Gourmet Butcher Shop",
+                "Gourmet Seafood Market",
+                "Gourmet Sushi Bar"
+            ],
+            "options": [
+                "Deli",
+                "Butcher Shop",
+                "Seafood Market",
+                "Sushi Bar"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Not all four fit. Focus on the one place designed to let someone find the supplier behind the chef's daily catch.",
+            "explanation": "The best match is Seafood Market; it's the one option truly built around helping people find the supplier behind the chef's daily catch.",
+            "id": "td_l128_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I was hoping you could point me toward somewhere to understand the significance of a specific local custom.",
+            "itinerary": [
+                "Scholars' Heritage Records Center",
+                "Scholars' Ethnographic Museum",
+                "Scholars' Local History Center",
+                "Scholars' Cultural Center"
+            ],
+            "options": [
+                "Heritage Records Center",
+                "Ethnographic Museum",
+                "Local History Center",
+                "Cultural Center"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "The other three options sound plausible, but only one is made for this: to understand the significance of a specific local custom.",
+            "explanation": "Right — Ethnographic Museum is where this kind of request always leads, since you need to understand the significance of a specific local custom.",
+            "id": "td_l129_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I really need to get same-day printing for a revised proposal before tonight, if that's possible.",
+            "itinerary": [
+                "Corporate Corporate Reception Desk",
+                "Corporate Printing & Copy Shop",
+                "Corporate Business Center",
+                "Corporate Courier Office"
+            ],
+            "options": [
+                "Corporate Reception Desk",
+                "Printing & Copy Shop",
+                "Business Center",
+                "Courier Office"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone get same-day printing for a revised proposal.",
+            "explanation": "Printing & Copy Shop exists specifically for this — it's the place to get same-day printing for a revised proposal.",
+            "id": "td_l129_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm not familiar with the area — where might I go to figure out which platform a connecting train leaves from?",
+            "itinerary": [
+                "Wanderer's Transfer Desk",
+                "Wanderer's Metro Station",
+                "Wanderer's Train Station",
+                "Wanderer's Boarding Gate"
+            ],
+            "options": [
+                "Transfer Desk",
+                "Metro Station",
+                "Train Station",
+                "Boarding Gate"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to figure out which platform a connecting train leaves from.",
+            "explanation": "Of the four options, only Transfer Desk is designed to let someone figure out which platform a connecting train leaves from.",
+            "id": "td_l129_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "If you don't mind my asking, where's a reliable place to track down an adapter for an unusual plug type?",
+            "itinerary": [
+                "Digital Data Top-Up Counter",
+                "Digital Repair Shop",
+                "Digital SIM Card Kiosk",
+                "Digital Gadget Store"
+            ],
+            "options": [
+                "Data Top-Up Counter",
+                "Repair Shop",
+                "SIM Card Kiosk",
+                "Gadget Store"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Narrow it down by asking where, specifically, people go to track down an adapter for an unusual plug type.",
+            "explanation": "Gadget Store fits perfectly here, as it's set up for people who need to track down an adapter for an unusual plug type.",
+            "id": "td_l130_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would it be possible to find out where I could get a second round of physiotherapy before a big hike?",
+            "itinerary": [
+                "Wellness Sports Medicine Clinic",
+                "Wellness Massage Therapy Center",
+                "Wellness Physiotherapy Center",
+                "Wellness Rehabilitation Center"
+            ],
+            "options": [
+                "Sports Medicine Clinic",
+                "Massage Therapy Center",
+                "Physiotherapy Center",
+                "Rehabilitation Center"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to get a second round of physiotherapy before a big hike.",
+            "explanation": "The clearest match is Physiotherapy Center, since that's exactly its purpose: to get a second round of physiotherapy before a big hike.",
+            "id": "td_l130_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've heard this city is known for it — where could I track down the late-night comedy set?",
+            "itinerary": [
+                "Spotlight Karaoke Bar",
+                "Spotlight Jazz Club",
+                "Spotlight Theater",
+                "Spotlight Comedy Club"
+            ],
+            "options": [
+                "Karaoke Bar",
+                "Jazz Club",
+                "Theater",
+                "Comedy Club"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Some options belong to the same general category, but only one is the exact place to track down the late-night comedy set.",
+            "explanation": "Comedy Club makes sense here because that's precisely where people go to track down the late-night comedy set.",
+            "id": "td_l130_q3"
+        }
+    ]
 }

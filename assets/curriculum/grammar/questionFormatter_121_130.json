@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 13,
-  "levels": "121-130",
-  "quests": [
-    {
-      "id": "qf_l121_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where is the nearest pharmacy?",
-      "sentence": "Where is the nearest pharmacy?",
-      "options": [
-        "Could you tell me where is the nearest pharmacy?",
-        "Could you tell me where the nearest pharmacy?",
-        "Could you tell me the nearest pharmacy where is?",
-        "Could you tell me where the nearest pharmacy is?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could you tell me where the nearest pharmacy is?",
-      "hint": "Inside the embedded question, word order goes back to statement order: 'where it is', not 'where is it'.",
-      "explanation": "In embedded questions, the inverted word order disappears. It becomes 'where the nearest pharmacy is', just like a statement.",
-      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
-    },
-    {
-      "id": "qf_l121_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where did she put the keys?",
-      "sentence": "Where did she put the keys?",
-      "options": [
-        "Could you tell me where did she put the keys?",
-        "Could you tell me where she did put the keys?",
-        "Could you tell me where she put the keys?",
-        "Could you tell me where put she the keys?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could you tell me where she put the keys?",
-      "hint": "Drop 'did' inside the embedded clause, and let the verb carry the past tense.",
-      "explanation": "Embedded questions drop 'did' and place the verb directly in the past tense: 'where she put the keys', not 'where did she put'.",
-      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
-    },
-    {
-      "id": "qf_l121_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where does the manager usually park?",
-      "sentence": "Where does the manager usually park?",
-      "options": [
-        "Could you tell me where does the manager usually park?",
-        "Could you tell me where the manager usually park?",
-        "Could you tell me where the manager usually parks?",
-        "Could you tell me where does the manager usually parks?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could you tell me where the manager usually parks?",
-      "hint": "Drop 'does' inside the embedded clause, and let the verb take its -s again.",
-      "explanation": "Embedded questions drop 'does' and the verb returns to agreeing with the subject directly: 'the manager usually parks'.",
-      "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
-    },
-    {
-      "id": "qf_l122_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What time does the train leave?",
-      "sentence": "What time does the train leave?",
-      "options": [
-        "Do you know what time does the train leave?",
-        "Do you know what time the train leave?",
-        "Do you know what time the train leaves?",
-        "Do you know what time leaves the train?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know what time the train leaves?",
-      "hint": "Drop 'does' inside the clause, and let the verb take its -s.",
-      "explanation": "Inside an embedded question, 'does' disappears and the verb takes its normal present-tense form: 'the train leaves'.",
-      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
-    },
-    {
-      "id": "qf_l122_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What did he say during the interview?",
-      "sentence": "What did he say during the interview?",
-      "options": [
-        "Do you know what did he say during the interview?",
-        "Do you know what he said during the interview?",
-        "Do you know what he did say during the interview?",
-        "Do you know what said he during the interview?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you know what he said during the interview?",
-      "hint": "Drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "Embedded questions drop 'did', and the verb itself carries the past tense: 'what he said', not 'what did he say'.",
-      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
-    },
-    {
-      "id": "qf_l122_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What does this word mean?",
-      "sentence": "What does this word mean?",
-      "options": [
-        "Do you know what does this word mean?",
-        "Do you know what this word means?",
-        "Do you know what this word mean?",
-        "Do you know what means this word?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you know what this word means?",
-      "hint": "Drop 'does', and let the verb take its -s again.",
-      "explanation": "Inside the embedded question, 'does' disappears, and the verb agrees directly with the subject: 'this word means'.",
-      "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
-    },
-    {
-      "id": "qf_l123_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the flight get delayed?",
-      "sentence": "Why did the flight get delayed?",
-      "options": [
-        "Can you explain why did the flight get delayed?",
-        "Can you explain why the flight did get delayed?",
-        "Can you explain why the flight got delayed?",
-        "Can you explain why got the flight delayed?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you explain why the flight got delayed?",
-      "hint": "Drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "Embedded questions use statement word order: 'why the flight got delayed', with no 'did' inside the clause.",
-      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
-    },
-    {
-      "id": "qf_l123_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How does this machine work?",
-      "sentence": "How does this machine work?",
-      "options": [
-        "Can you explain how does this machine work?",
-        "Can you explain how this machine work?",
-        "Can you explain how works this machine?",
-        "Can you explain how this machine works?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Can you explain how this machine works?",
-      "hint": "Drop 'does', and let the verb take its -s again.",
-      "explanation": "'Can you explain...?' takes statement word order in the embedded clause: 'how this machine works', without 'does'.",
-      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
-    },
-    {
-      "id": "qf_l123_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why is the printer not working?",
-      "sentence": "Why is the printer not working?",
-      "options": [
-        "Can you explain why is the printer not working?",
-        "Can you explain why not is the printer working?",
-        "Can you explain why the printer is not working?",
-        "Can you explain why the printer not is working?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you explain why the printer is not working?",
-      "hint": "Move 'is' back after the subject, as in a normal statement.",
-      "explanation": "Even with 'be', embedded questions use statement word order: 'the printer is not working', not 'is the printer'.",
-      "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
-    },
-    {
-      "id": "qf_l124_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Who did she invite to the party?",
-      "sentence": "Who did she invite to the party?",
-      "options": [
-        "Do you have any idea who did she invite to the party?",
-        "Do you have any idea who she did invite to the party?",
-        "Do you have any idea who invited she to the party?",
-        "Do you have any idea who she invited to the party?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you have any idea who she invited to the party?",
-      "hint": "Take out 'did' - the verb carries the past tense by itself in the embedded clause.",
-      "explanation": "Embedded questions drop 'did': 'who she invited to the party', with statement word order throughout.",
-      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
-    },
-    {
-      "id": "qf_l124_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much does this repair usually cost?",
-      "sentence": "How much does this repair usually cost?",
-      "options": [
-        "Do you have any idea how much this repair usually costs?",
-        "Do you have any idea how much does this repair usually cost?",
-        "Do you have any idea how much this repair usually cost?",
-        "Do you have any idea how much cost this repair usually?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you have any idea how much this repair usually costs?",
-      "hint": "Remove 'does' - the verb regains its -s ending on its own.",
-      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this repair usually costs'.",
-      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
-    },
-    {
-      "id": "qf_l124_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Who is responsible for the mistake?",
-      "sentence": "Who is responsible for the mistake?",
-      "options": [
-        "Do you have any idea who's responsible is for the mistake?",
-        "Do you have any idea who is responsible for the mistake?",
-        "Do you have any idea who responsible is for the mistake?",
-        "Do you have any idea is who responsible for the mistake?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Do you have any idea who is responsible for the mistake?",
-      "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who is responsible'.",
-      "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
-    },
-    {
-      "id": "qf_l125_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "When does the next bus arrive?",
-      "sentence": "When does the next bus arrive?",
-      "options": [
-        "Could you tell me when does the next bus arrive?",
-        "Could you tell me when the next bus arrives?",
-        "Could you tell me when the next bus arrive?",
-        "Could you tell me when arrives the next bus?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you tell me when the next bus arrives?",
-      "hint": "Drop 'does', and let the verb take its -s again.",
-      "explanation": "Embedded questions drop 'does', and the verb takes its normal present-tense form: 'the next bus arrives'.",
-      "grammarRule": "Embedded Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l125_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How long will the delay last?",
-      "sentence": "How long will the delay last?",
-      "options": [
-        "Do you know how long the delay will last?",
-        "Do you know how long will the delay last?",
-        "Do you know how long the delay last will?",
-        "Do you know how long the delay will lasts?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you know how long the delay will last?",
-      "hint": "Move 'will' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'the delay will last', not 'will the delay last'.",
-      "grammarRule": "Embedded Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l125_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where can I find the nearest exit?",
-      "sentence": "Where can I find the nearest exit?",
-      "options": [
-        "Can you tell me where can I find the nearest exit?",
-        "Can you tell me where I find can the nearest exit?",
-        "Can you tell me where I can find the nearest exit?",
-        "Can you tell me where can find I the nearest exit?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can you tell me where I can find the nearest exit?",
-      "hint": "Move 'can' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'I can find', not 'can I find'.",
-      "grammarRule": "Embedded Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l126_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How much has the price increased this year?",
-      "sentence": "How much has the price increased this year?",
-      "options": [
-        "Have you found out how much the price has increased this year?",
-        "Have you found out how much has the price increased this year?",
-        "Have you found out how much the price increased this year has?",
-        "Have you found out how much the price have increased this year?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have you found out how much the price has increased this year?",
-      "hint": "Move 'has' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions keep statement word order: 'the price has increased', not 'has the price increased'.",
-      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
-    },
-    {
-      "id": "qf_l126_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why has the shipment been delayed?",
-      "sentence": "Why has the shipment been delayed?",
-      "options": [
-        "Have you found out why has the shipment been delayed?",
-        "Have you found out why the shipment been has delayed?",
-        "Have you found out why the shipment has been delayed?",
-        "Have you found out why has the shipment be delayed?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Have you found out why the shipment has been delayed?",
-      "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
-      "explanation": "Embedded questions use statement word order: 'the shipment has been delayed', not 'has the shipment been delayed'.",
-      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
-    },
-    {
-      "id": "qf_l126_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What has changed since the last meeting?",
-      "sentence": "What has changed since the last meeting?",
-      "options": [
-        "Have you found out what has changed since the last meeting?",
-        "Have you found out what changed has since the last meeting?",
-        "Have you found out what has change since the last meeting?",
-        "Have you found out has what changed since the last meeting?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have you found out what has changed since the last meeting?",
-      "hint": "Since 'what' is the subject here, the word order stays the same.",
-      "explanation": "Because 'what' is already the subject of the original question, the embedded form keeps the same word order: 'what has changed'.",
-      "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
-    },
-    {
-      "id": "qf_l127_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where should I sign this form?",
-      "sentence": "Where should I sign this form?",
-      "options": [
-        "Would you mind telling me where should I sign this form?",
-        "Would you mind telling me where I sign should this form?",
-        "Would you mind telling me where should sign I this form?",
-        "Would you mind telling me where I should sign this form?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would you mind telling me where I should sign this form?",
-      "hint": "Move 'should' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'I should sign', not 'should I sign'.",
-      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
-    },
-    {
-      "id": "qf_l127_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What can we do to fix this issue?",
-      "sentence": "What can we do to fix this issue?",
-      "options": [
-        "Would you mind telling me what can we do to fix this issue?",
-        "Would you mind telling me what we do can to fix this issue?",
-        "Would you mind telling me what we can do to fix this issue?",
-        "Would you mind telling me what can do we to fix this issue?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Would you mind telling me what we can do to fix this issue?",
-      "hint": "Move 'can' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'we can do', not 'can we do'.",
-      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
-    },
-    {
-      "id": "qf_l127_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How do I reset my password?",
-      "sentence": "How do I reset my password?",
-      "options": [
-        "Would you mind telling me how I reset my password?",
-        "Would you mind telling me how do I reset my password?",
-        "Would you mind telling me how I do reset my password?",
-        "Would you mind telling me how reset I my password?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would you mind telling me how I reset my password?",
-      "hint": "Drop 'do', and let the verb stay in its base form since 'I' doesn't take -s anyway.",
-      "explanation": "Embedded questions drop 'do': 'how I reset my password', with statement word order throughout.",
-      "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
-    },
-    {
-      "id": "qf_l128_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why did the company change its policy?",
-      "sentence": "Why did the company change its policy?",
-      "options": [
-        "Do you happen to know why did the company change its policy?",
-        "Do you happen to know why the company did change its policy?",
-        "Do you happen to know why changed the company its policy?",
-        "Do you happen to know why the company changed its policy?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you happen to know why the company changed its policy?",
-      "hint": "Drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "Embedded questions drop 'did': 'why the company changed its policy', with statement word order throughout.",
-      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
-    },
-    {
-      "id": "qf_l128_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What does this symbol represent?",
-      "sentence": "What does this symbol represent?",
-      "options": [
-        "Do you happen to know what does this symbol represent?",
-        "Do you happen to know what this symbol represent?",
-        "Do you happen to know what this symbol represents?",
-        "Do you happen to know what represents this symbol?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you happen to know what this symbol represents?",
-      "hint": "Drop 'does', and let the verb take its -s again.",
-      "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this symbol represents'.",
-      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
-    },
-    {
-      "id": "qf_l128_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "When will the renovations be finished?",
-      "sentence": "When will the renovations be finished?",
-      "options": [
-        "Do you happen to know when the renovations will be finished?",
-        "Do you happen to know when will the renovations be finished?",
-        "Do you happen to know when the renovations be will finished?",
-        "Do you happen to know when will the renovations finished be?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you happen to know when the renovations will be finished?",
-      "hint": "Move 'will' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'the renovations will be finished', not 'will the renovations be'.",
-      "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
-    },
-    {
-      "id": "qf_l129_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What time do the shops close on Sundays?",
-      "sentence": "What time do the shops close on Sundays?",
-      "options": [
-        "Could you tell me what time do the shops close on Sundays?",
-        "Could you tell me what time the shops close on Sundays?",
-        "Could you tell me what time the shops close do on Sundays?",
-        "Could you tell me what time do the shops closes on Sundays?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you tell me what time the shops close on Sundays?",
-      "hint": "Drop 'do', and let the verb take its normal plural form.",
-      "explanation": "Embedded questions drop 'do': 'the shops close', with statement word order and no auxiliary.",
-      "grammarRule": "Embedded Questions: Reinforcement Practice"
-    },
-    {
-      "id": "qf_l129_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Where were you living before you moved here?",
-      "sentence": "Where were you living before you moved here?",
-      "options": [
-        "Can you tell me where were you living before you moved here?",
-        "Can you tell me where you living were before you moved here?",
-        "Can you tell me where you were live before you moved here?",
-        "Can you tell me where you were living before you moved here?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Can you tell me where you were living before you moved here?",
-      "hint": "Move 'were' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'you were living', not 'were you living'.",
-      "grammarRule": "Embedded Questions: Reinforcement Practice"
-    },
-    {
-      "id": "qf_l129_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How many people applied for the position?",
-      "sentence": "How many people applied for the position?",
-      "options": [
-        "Do you know how many people applied for the position?",
-        "Do you know how many people did apply for the position?",
-        "Do you know how many people apply did for the position?",
-        "Do you know how many applied people for the position?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you know how many people applied for the position?",
-      "hint": "Since 'how many people' is the subject here, the word order doesn't change at all.",
-      "explanation": "Because 'how many people' is already the subject of the original question, the embedded form keeps the same word order: 'people applied'.",
-      "grammarRule": "Embedded Questions: Reinforcement Practice"
-    },
-    {
-      "id": "qf_l130_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why does the app keep crashing?",
-      "sentence": "Why does the app keep crashing?",
-      "options": [
-        "Do you know why does the app keep crashing?",
-        "Do you know why the app keep crashing?",
-        "Do you know why the app keeps crashing?",
-        "Do you know why crashing the app keeps?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know why the app keeps crashing?",
-      "hint": "'Does' disappears here, so the verb takes back its -s.",
-      "explanation": "Embedded questions drop 'does', and the verb agrees directly with the subject: 'the app keeps crashing'.",
-      "grammarRule": "Embedded Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l130_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What should we bring to the potluck?",
-      "sentence": "What should we bring to the potluck?",
-      "options": [
-        "Could you tell me what should we bring to the potluck?",
-        "Could you tell me what we should bring to the potluck?",
-        "Could you tell me what we bring should to the potluck?",
-        "Could you tell me what should bring we to the potluck?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could you tell me what we should bring to the potluck?",
-      "hint": "Move 'should' back after the subject, as in a normal statement.",
-      "explanation": "Embedded questions use statement word order: 'we should bring', not 'should we bring'.",
-      "grammarRule": "Embedded Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l130_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How did they solve the shipping delay?",
-      "sentence": "How did they solve the shipping delay?",
-      "options": [
-        "Do you have any idea how did they solve the shipping delay?",
-        "Do you have any idea how they did solve the shipping delay?",
-        "Do you have any idea how solved they the shipping delay?",
-        "Do you have any idea how they solved the shipping delay?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you have any idea how they solved the shipping delay?",
-      "hint": "Drop 'did', and let the verb carry the past tense directly.",
-      "explanation": "Embedded questions drop 'did': 'how they solved the shipping delay', with statement word order throughout.",
-      "grammarRule": "Embedded Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 13,
+    "levels": "121-130",
+    "quests": [
+        {
+            "id": "qf_l121_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where is the nearest pharmacy?",
+            "sentence": "Where is the nearest pharmacy?",
+            "options": [
+                "Could you tell me where is the nearest pharmacy?",
+                "Could you tell me where the nearest pharmacy?",
+                "Could you tell me the nearest pharmacy where is?",
+                "Could you tell me where the nearest pharmacy is?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could you tell me where the nearest pharmacy is?",
+            "hint": "Inside the embedded question, word order goes back to statement order: 'where it is', not 'where is it'.",
+            "explanation": "In embedded questions, the inverted word order disappears. It becomes 'where the nearest pharmacy is', just like a statement.",
+            "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+        },
+        {
+            "id": "qf_l121_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where did she put the keys?",
+            "sentence": "Where did she put the keys?",
+            "options": [
+                "Could you tell me where did she put the keys?",
+                "Could you tell me where she did put the keys?",
+                "Could you tell me where she put the keys?",
+                "Could you tell me where put she the keys?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could you tell me where she put the keys?",
+            "hint": "Drop 'did' inside the embedded clause, and let the verb carry the past tense.",
+            "explanation": "Embedded questions drop 'did' and place the verb directly in the past tense: 'where she put the keys', not 'where did she put'.",
+            "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+        },
+        {
+            "id": "qf_l121_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where does the manager usually park?",
+            "sentence": "Where does the manager usually park?",
+            "options": [
+                "Could you tell me where does the manager usually park?",
+                "Could you tell me where the manager usually park?",
+                "Could you tell me where the manager usually parks?",
+                "Could you tell me where does the manager usually parks?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could you tell me where the manager usually parks?",
+            "hint": "Drop 'does' inside the embedded clause, and let the verb take its -s again.",
+            "explanation": "Embedded questions drop 'does' and the verb returns to agreeing with the subject directly: 'the manager usually parks'.",
+            "grammarRule": "Embedded Questions: 'Could You Tell Me...?' (Where)"
+        },
+        {
+            "id": "qf_l122_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What time does the train leave?",
+            "sentence": "What time does the train leave?",
+            "options": [
+                "Do you know what time does the train leave?",
+                "Do you know what time the train leave?",
+                "Do you know what time the train leaves?",
+                "Do you know what time leaves the train?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know what time the train leaves?",
+            "hint": "Drop 'does' inside the clause, and let the verb take its -s.",
+            "explanation": "Inside an embedded question, 'does' disappears and the verb takes its normal present-tense form: 'the train leaves'.",
+            "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+        },
+        {
+            "id": "qf_l122_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What did he say during the interview?",
+            "sentence": "What did he say during the interview?",
+            "options": [
+                "Do you know what did he say during the interview?",
+                "Do you know what he said during the interview?",
+                "Do you know what he did say during the interview?",
+                "Do you know what said he during the interview?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you know what he said during the interview?",
+            "hint": "Drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "Embedded questions drop 'did', and the verb itself carries the past tense: 'what he said', not 'what did he say'.",
+            "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+        },
+        {
+            "id": "qf_l122_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What does this word mean?",
+            "sentence": "What does this word mean?",
+            "options": [
+                "Do you know what does this word mean?",
+                "Do you know what this word means?",
+                "Do you know what this word mean?",
+                "Do you know what means this word?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you know what this word means?",
+            "hint": "Drop 'does', and let the verb take its -s again.",
+            "explanation": "Inside the embedded question, 'does' disappears, and the verb agrees directly with the subject: 'this word means'.",
+            "grammarRule": "Embedded Questions: 'Do You Know...?' (What)"
+        },
+        {
+            "id": "qf_l123_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the flight get delayed?",
+            "sentence": "Why did the flight get delayed?",
+            "options": [
+                "Can you explain why did the flight get delayed?",
+                "Can you explain why the flight did get delayed?",
+                "Can you explain why the flight got delayed?",
+                "Can you explain why got the flight delayed?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you explain why the flight got delayed?",
+            "hint": "Drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "Embedded questions use statement word order: 'why the flight got delayed', with no 'did' inside the clause.",
+            "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+        },
+        {
+            "id": "qf_l123_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How does this machine work?",
+            "sentence": "How does this machine work?",
+            "options": [
+                "Can you explain how does this machine work?",
+                "Can you explain how this machine work?",
+                "Can you explain how works this machine?",
+                "Can you explain how this machine works?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can you explain how this machine works?",
+            "hint": "Drop 'does', and let the verb take its -s again.",
+            "explanation": "'Can you explain...?' takes statement word order in the embedded clause: 'how this machine works', without 'does'.",
+            "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+        },
+        {
+            "id": "qf_l123_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why is the printer not working?",
+            "sentence": "Why is the printer not working?",
+            "options": [
+                "Can you explain why is the printer not working?",
+                "Can you explain why not is the printer working?",
+                "Can you explain why the printer is not working?",
+                "Can you explain why the printer not is working?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you explain why the printer is not working?",
+            "hint": "Move 'is' back after the subject, as in a normal statement.",
+            "explanation": "Even with 'be', embedded questions use statement word order: 'the printer is not working', not 'is the printer'.",
+            "grammarRule": "Embedded Questions: 'Can You Explain...?' (Why / How)"
+        },
+        {
+            "id": "qf_l124_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Who did she invite to the party?",
+            "sentence": "Who did she invite to the party?",
+            "options": [
+                "Do you have any idea who did she invite to the party?",
+                "Do you have any idea who she did invite to the party?",
+                "Do you have any idea who invited she to the party?",
+                "Do you have any idea who she invited to the party?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you have any idea who she invited to the party?",
+            "hint": "Take out 'did' - the verb carries the past tense by itself in the embedded clause.",
+            "explanation": "Embedded questions drop 'did': 'who she invited to the party', with statement word order throughout.",
+            "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+        },
+        {
+            "id": "qf_l124_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much does this repair usually cost?",
+            "sentence": "How much does this repair usually cost?",
+            "options": [
+                "Do you have any idea how much this repair usually costs?",
+                "Do you have any idea how much does this repair usually cost?",
+                "Do you have any idea how much this repair usually cost?",
+                "Do you have any idea how much cost this repair usually?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you have any idea how much this repair usually costs?",
+            "hint": "Remove 'does' - the verb regains its -s ending on its own.",
+            "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this repair usually costs'.",
+            "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+        },
+        {
+            "id": "qf_l124_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Who is responsible for the mistake?",
+            "sentence": "Who is responsible for the mistake?",
+            "options": [
+                "Do you have any idea who's responsible is for the mistake?",
+                "Do you have any idea who is responsible for the mistake?",
+                "Do you have any idea who responsible is for the mistake?",
+                "Do you have any idea is who responsible for the mistake?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Do you have any idea who is responsible for the mistake?",
+            "hint": "Since 'who' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'who' is already the subject of the original question, embedding it keeps the exact same word order: 'who is responsible'.",
+            "grammarRule": "Embedded Questions: 'Do You Have Any Idea...?' (Who / How Much)"
+        },
+        {
+            "id": "qf_l125_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "When does the next bus arrive?",
+            "sentence": "When does the next bus arrive?",
+            "options": [
+                "Could you tell me when does the next bus arrive?",
+                "Could you tell me when the next bus arrives?",
+                "Could you tell me when the next bus arrive?",
+                "Could you tell me when arrives the next bus?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you tell me when the next bus arrives?",
+            "hint": "Drop 'does', and let the verb take its -s again.",
+            "explanation": "Embedded questions drop 'does', and the verb takes its normal present-tense form: 'the next bus arrives'.",
+            "grammarRule": "Embedded Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l125_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How long will the delay last?",
+            "sentence": "How long will the delay last?",
+            "options": [
+                "Do you know how long the delay will last?",
+                "Do you know how long will the delay last?",
+                "Do you know how long the delay last will?",
+                "Do you know how long the delay will lasts?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you know how long the delay will last?",
+            "hint": "Move 'will' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'the delay will last', not 'will the delay last'.",
+            "grammarRule": "Embedded Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l125_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where can I find the nearest exit?",
+            "sentence": "Where can I find the nearest exit?",
+            "options": [
+                "Can you tell me where can I find the nearest exit?",
+                "Can you tell me where I find can the nearest exit?",
+                "Can you tell me where I can find the nearest exit?",
+                "Can you tell me where can find I the nearest exit?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can you tell me where I can find the nearest exit?",
+            "hint": "Move 'can' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'I can find', not 'can I find'.",
+            "grammarRule": "Embedded Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l126_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How much has the price increased this year?",
+            "sentence": "How much has the price increased this year?",
+            "options": [
+                "Have you found out how much the price has increased this year?",
+                "Have you found out how much has the price increased this year?",
+                "Have you found out how much the price increased this year has?",
+                "Have you found out how much the price have increased this year?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have you found out how much the price has increased this year?",
+            "hint": "Move 'has' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions keep statement word order: 'the price has increased', not 'has the price increased'.",
+            "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+        },
+        {
+            "id": "qf_l126_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why has the shipment been delayed?",
+            "sentence": "Why has the shipment been delayed?",
+            "options": [
+                "Have you found out why has the shipment been delayed?",
+                "Have you found out why the shipment been has delayed?",
+                "Have you found out why the shipment has been delayed?",
+                "Have you found out why has the shipment be delayed?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Have you found out why the shipment has been delayed?",
+            "hint": "Move 'has' back after the subject, keeping 'been delayed' together.",
+            "explanation": "Embedded questions use statement word order: 'the shipment has been delayed', not 'has the shipment been delayed'.",
+            "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+        },
+        {
+            "id": "qf_l126_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What has changed since the last meeting?",
+            "sentence": "What has changed since the last meeting?",
+            "options": [
+                "Have you found out what has changed since the last meeting?",
+                "Have you found out what changed has since the last meeting?",
+                "Have you found out what has change since the last meeting?",
+                "Have you found out has what changed since the last meeting?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have you found out what has changed since the last meeting?",
+            "hint": "Since 'what' is the subject here, the word order stays the same.",
+            "explanation": "Because 'what' is already the subject of the original question, the embedded form keeps the same word order: 'what has changed'.",
+            "grammarRule": "Embedded Questions: 'Have You Found Out...?' (Perfect Tenses)"
+        },
+        {
+            "id": "qf_l127_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where should I sign this form?",
+            "sentence": "Where should I sign this form?",
+            "options": [
+                "Would you mind telling me where should I sign this form?",
+                "Would you mind telling me where I sign should this form?",
+                "Would you mind telling me where should sign I this form?",
+                "Would you mind telling me where I should sign this form?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would you mind telling me where I should sign this form?",
+            "hint": "Move 'should' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'I should sign', not 'should I sign'.",
+            "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+        },
+        {
+            "id": "qf_l127_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What can we do to fix this issue?",
+            "sentence": "What can we do to fix this issue?",
+            "options": [
+                "Would you mind telling me what can we do to fix this issue?",
+                "Would you mind telling me what we do can to fix this issue?",
+                "Would you mind telling me what we can do to fix this issue?",
+                "Would you mind telling me what can do we to fix this issue?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Would you mind telling me what we can do to fix this issue?",
+            "hint": "Move 'can' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'we can do', not 'can we do'.",
+            "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+        },
+        {
+            "id": "qf_l127_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How do I reset my password?",
+            "sentence": "How do I reset my password?",
+            "options": [
+                "Would you mind telling me how I reset my password?",
+                "Would you mind telling me how do I reset my password?",
+                "Would you mind telling me how I do reset my password?",
+                "Would you mind telling me how reset I my password?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would you mind telling me how I reset my password?",
+            "hint": "Drop 'do', and let the verb stay in its base form since 'I' doesn't take -s anyway.",
+            "explanation": "Embedded questions drop 'do': 'how I reset my password', with statement word order throughout.",
+            "grammarRule": "Embedded Questions: 'Would You Mind Telling Me...?'"
+        },
+        {
+            "id": "qf_l128_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why did the company change its policy?",
+            "sentence": "Why did the company change its policy?",
+            "options": [
+                "Do you happen to know why did the company change its policy?",
+                "Do you happen to know why the company did change its policy?",
+                "Do you happen to know why changed the company its policy?",
+                "Do you happen to know why the company changed its policy?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you happen to know why the company changed its policy?",
+            "hint": "Drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "Embedded questions drop 'did': 'why the company changed its policy', with statement word order throughout.",
+            "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+        },
+        {
+            "id": "qf_l128_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What does this symbol represent?",
+            "sentence": "What does this symbol represent?",
+            "options": [
+                "Do you happen to know what does this symbol represent?",
+                "Do you happen to know what this symbol represent?",
+                "Do you happen to know what this symbol represents?",
+                "Do you happen to know what represents this symbol?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you happen to know what this symbol represents?",
+            "hint": "Drop 'does', and let the verb take its -s again.",
+            "explanation": "Inside the embedded clause, 'does' disappears, and the verb agrees directly with the subject: 'this symbol represents'.",
+            "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+        },
+        {
+            "id": "qf_l128_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "When will the renovations be finished?",
+            "sentence": "When will the renovations be finished?",
+            "options": [
+                "Do you happen to know when the renovations will be finished?",
+                "Do you happen to know when will the renovations be finished?",
+                "Do you happen to know when the renovations be will finished?",
+                "Do you happen to know when will the renovations finished be?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you happen to know when the renovations will be finished?",
+            "hint": "Move 'will' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'the renovations will be finished', not 'will the renovations be'.",
+            "grammarRule": "Embedded Questions: 'Do You Happen To Know...?'"
+        },
+        {
+            "id": "qf_l129_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What time do the shops close on Sundays?",
+            "sentence": "What time do the shops close on Sundays?",
+            "options": [
+                "Could you tell me what time do the shops close on Sundays?",
+                "Could you tell me what time the shops close on Sundays?",
+                "Could you tell me what time the shops close do on Sundays?",
+                "Could you tell me what time do the shops closes on Sundays?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you tell me what time the shops close on Sundays?",
+            "hint": "Drop 'do', and let the verb take its normal plural form.",
+            "explanation": "Embedded questions drop 'do': 'the shops close', with statement word order and no auxiliary.",
+            "grammarRule": "Embedded Questions: Reinforcement Practice"
+        },
+        {
+            "id": "qf_l129_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Where were you living before you moved here?",
+            "sentence": "Where were you living before you moved here?",
+            "options": [
+                "Can you tell me where were you living before you moved here?",
+                "Can you tell me where you living were before you moved here?",
+                "Can you tell me where you were live before you moved here?",
+                "Can you tell me where you were living before you moved here?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Can you tell me where you were living before you moved here?",
+            "hint": "Move 'were' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'you were living', not 'were you living'.",
+            "grammarRule": "Embedded Questions: Reinforcement Practice"
+        },
+        {
+            "id": "qf_l129_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How many people applied for the position?",
+            "sentence": "How many people applied for the position?",
+            "options": [
+                "Do you know how many people applied for the position?",
+                "Do you know how many people did apply for the position?",
+                "Do you know how many people apply did for the position?",
+                "Do you know how many applied people for the position?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you know how many people applied for the position?",
+            "hint": "Since 'how many people' is the subject here, the word order doesn't change at all.",
+            "explanation": "Because 'how many people' is already the subject of the original question, the embedded form keeps the same word order: 'people applied'.",
+            "grammarRule": "Embedded Questions: Reinforcement Practice"
+        },
+        {
+            "id": "qf_l130_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why does the app keep crashing?",
+            "sentence": "Why does the app keep crashing?",
+            "options": [
+                "Do you know why does the app keep crashing?",
+                "Do you know why the app keep crashing?",
+                "Do you know why the app keeps crashing?",
+                "Do you know why crashing the app keeps?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know why the app keeps crashing?",
+            "hint": "'Does' disappears here, so the verb takes back its -s.",
+            "explanation": "Embedded questions drop 'does', and the verb agrees directly with the subject: 'the app keeps crashing'.",
+            "grammarRule": "Embedded Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l130_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What should we bring to the potluck?",
+            "sentence": "What should we bring to the potluck?",
+            "options": [
+                "Could you tell me what should we bring to the potluck?",
+                "Could you tell me what we should bring to the potluck?",
+                "Could you tell me what we bring should to the potluck?",
+                "Could you tell me what should bring we to the potluck?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could you tell me what we should bring to the potluck?",
+            "hint": "Move 'should' back after the subject, as in a normal statement.",
+            "explanation": "Embedded questions use statement word order: 'we should bring', not 'should we bring'.",
+            "grammarRule": "Embedded Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l130_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How did they solve the shipping delay?",
+            "sentence": "How did they solve the shipping delay?",
+            "options": [
+                "Do you have any idea how did they solve the shipping delay?",
+                "Do you have any idea how they did solve the shipping delay?",
+                "Do you have any idea how solved they the shipping delay?",
+                "Do you have any idea how they solved the shipping delay?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you have any idea how they solved the shipping delay?",
+            "hint": "Drop 'did', and let the verb carry the past tense directly.",
+            "explanation": "Embedded questions drop 'did': 'how they solved the shipping delay', with statement word order throughout.",
+            "grammarRule": "Embedded Questions: Mixed Review"
+        }
+    ]
 }

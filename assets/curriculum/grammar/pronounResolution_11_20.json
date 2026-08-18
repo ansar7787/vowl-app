@@ -1,577 +1,577 @@
 {
-  "gameType": "pronounResolution",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "pr_l11_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The singer thanked her fans after the concert.\nWho or what does 'her' refer to?",
-      "targetWord": "her",
-      "sentence": "The singer thanked her fans after the concert.",
-      "options": [
-        "concert",
-        "The fans",
-        "The singer"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The singer",
-      "hint": "Who has fans to thank?",
-      "explanation": "'her' refers to the singer, the performer with fans.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l11_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The band played a new song and recorded it.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The band played a new song and recorded it.",
-      "options": [
-        "The song",
-        "played",
-        "The band"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The song",
-      "hint": "What got recorded?",
-      "explanation": "'it' stands for the song, the thing just played.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l11_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The museum changed its exhibit for the summer.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The museum changed its exhibit for the summer.",
-      "options": [
-        "The exhibit",
-        "The museum",
-        "summer"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The museum",
-      "hint": "Whose exhibit changed?",
-      "explanation": "'its' shows the exhibit belongs to the museum.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l12_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The airline announced a delay and confirmed it by email.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The airline announced a delay and confirmed it by email.",
-      "options": [
-        "The delay",
-        "The airline",
-        "announced"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The delay",
-      "hint": "What did the airline confirm?",
-      "explanation": "'it' refers to the delay, the thing just announced.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l12_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The tourists packed their suitcases the night before.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The tourists packed their suitcases the night before.",
-      "options": [
-        "The suitcases",
-        "night",
-        "The tourists"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The tourists",
-      "hint": "Whose suitcases were packed?",
-      "explanation": "'their' agrees with 'the tourists,' a plural group.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l12_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The pilot checked the engine and restarted it.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The pilot checked the engine and restarted it.",
-      "options": [
-        "The engine",
-        "checked",
-        "The pilot"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The engine",
-      "hint": "What did the pilot restart?",
-      "explanation": "'it' stands for the engine, the machine being checked.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l13_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The library extended its hours for exam week.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The library extended its hours for exam week.",
-      "options": [
-        "The hours",
-        "The library",
-        "week"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The library",
-      "hint": "Whose hours changed?",
-      "explanation": "'its' shows the hours belong to the library.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l13_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The volunteers cleaned the park and left it spotless.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The volunteers cleaned the park and left it spotless.",
-      "options": [
-        "cleaned",
-        "The park",
-        "The volunteers"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The park",
-      "hint": "What was left spotless?",
-      "explanation": "'it' refers to the park, the place being cleaned.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l13_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The city painted the crosswalks and repaints them yearly.\nWho or what does 'them' refer to?",
-      "targetWord": "them",
-      "sentence": "The city painted the crosswalks and repaints them yearly.",
-      "options": [
-        "The crosswalks",
-        "painted",
-        "The city"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The crosswalks",
-      "hint": "What gets repainted every year?",
-      "explanation": "'them' stands for the crosswalks, the plural markings.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l14_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Mom folded the laundry and put it away.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "Mom folded the laundry and put it away.",
-      "options": [
-        "Mom",
-        "folded",
-        "The laundry"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The laundry",
-      "hint": "What did Mom put away?",
-      "explanation": "'it' refers to the laundry, the thing just folded.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l14_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The twins shared their toys with the new kid.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The twins shared their toys with the new kid.",
-      "options": [
-        "The twins",
-        "kid",
-        "The toys"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The twins",
-      "hint": "Whose toys were shared?",
-      "explanation": "'their' agrees with 'the twins,' a plural pair.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l14_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Grandma told her story to the whole family.\nWho or what does 'her' refer to?",
-      "targetWord": "her",
-      "sentence": "Grandma told her story to the whole family.",
-      "options": [
-        "Grandma",
-        "The story",
-        "family"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Grandma",
-      "hint": "Whose story was told?",
-      "explanation": "'her' refers to Grandma, the storyteller.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l15_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The teacher collected the essays and read them that night.\nWho or what does 'them' refer to?",
-      "targetWord": "them",
-      "sentence": "The teacher collected the essays and read them that night.",
-      "options": [
-        "collected",
-        "The teacher",
-        "The essays"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The essays",
-      "hint": "What did the teacher read?",
-      "explanation": "'them' stands for the essays, the plural papers collected.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l15_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The students raised their hands to answer.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The students raised their hands to answer.",
-      "options": [
-        "answer",
-        "The students",
-        "The hands"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The students",
-      "hint": "Whose hands went up?",
-      "explanation": "'their' agrees with 'the students,' a plural group.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l15_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The classroom lost its power during the storm.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The classroom lost its power during the storm.",
-      "options": [
-        "The power",
-        "storm",
-        "The classroom"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The classroom",
-      "hint": "Whose power went out?",
-      "explanation": "'its' shows the power belongs to the classroom.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l16_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The clerk wrapped the gift and handed it to Mia.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The clerk wrapped the gift and handed it to Mia.",
-      "options": [
-        "wrapped",
-        "The gift",
-        "The clerk"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The gift",
-      "hint": "What got wrapped?",
-      "explanation": "'it' refers to the gift, the item being handed over.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l16_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The shop extended its return policy for the holidays.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The shop extended its return policy for the holidays.",
-      "options": [
-        "The shop",
-        "holidays",
-        "The policy"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The shop",
-      "hint": "Whose policy changed?",
-      "explanation": "'its' shows the policy belongs to the shop.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l16_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The customer picked the jacket and tried it on.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The customer picked the jacket and tried it on.",
-      "options": [
-        "The jacket",
-        "picked",
-        "The customer"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The jacket",
-      "hint": "What did the customer try on?",
-      "explanation": "'it' stands for the jacket, the item being tested.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l17_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The coach praised the players and thanked them.\nWho or what does 'them' refer to?",
-      "targetWord": "them",
-      "sentence": "The coach praised the players and thanked them.",
-      "options": [
-        "praised",
-        "The players",
-        "The coach"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The players",
-      "hint": "Who got thanked?",
-      "explanation": "'them' refers to the players, the plural group being thanked.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l17_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The swimmer improved her time this season.\nWho or what does 'her' refer to?",
-      "targetWord": "her",
-      "sentence": "The swimmer improved her time this season.",
-      "options": [
-        "The swimmer",
-        "season",
-        "The time"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The swimmer",
-      "hint": "Whose time got better?",
-      "explanation": "'her' refers to the swimmer, the athlete improving.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l17_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The team celebrated their win at the diner.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The team celebrated their win at the diner.",
-      "options": [
-        "The team",
-        "The win",
-        "diner"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The team",
-      "hint": "Whose win was celebrated?",
-      "explanation": "'their' agrees with 'the team,' treated here as a group.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l18_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The house lost its heating during the cold snap.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The house lost its heating during the cold snap.",
-      "options": [
-        "The heating",
-        "snap",
-        "The house"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The house",
-      "hint": "Whose heating stopped?",
-      "explanation": "'its' shows the heating belongs to the house.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l18_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Dad mowed the lawn and raked it afterward.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "Dad mowed the lawn and raked it afterward.",
-      "options": [
-        "The lawn",
-        "mowed",
-        "Dad"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The lawn",
-      "hint": "What got raked?",
-      "explanation": "'it' refers to the lawn, the area just mowed.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l18_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The neighbors painted their fence over the weekend.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The neighbors painted their fence over the weekend.",
-      "options": [
-        "The neighbors",
-        "The fence",
-        "weekend"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The neighbors",
-      "hint": "Whose fence got painted?",
-      "explanation": "'their' agrees with 'the neighbors,' a plural group.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l19_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The farmer picked the apples and sold them at market.\nWho or what does 'them' refer to?",
-      "targetWord": "them",
-      "sentence": "The farmer picked the apples and sold them at market.",
-      "options": [
-        "The apples",
-        "picked",
-        "The farmer"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The apples",
-      "hint": "What got sold?",
-      "explanation": "'them' stands for the apples, the plural fruit picked.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l19_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The bakery cooled the bread before slicing it.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The bakery cooled the bread before slicing it.",
-      "options": [
-        "The bakery",
-        "cooled",
-        "The bread"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The bread",
-      "hint": "What got sliced?",
-      "explanation": "'it' refers to the bread, the item just cooled.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l19_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The chef plated the dessert and garnished it.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The chef plated the dessert and garnished it.",
-      "options": [
-        "The chef",
-        "The dessert",
-        "plated"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The dessert",
-      "hint": "What got the finishing touch?",
-      "explanation": "'it' stands for the dessert, the dish being garnished.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l20_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Leo finished his homework early and went outside.\nWho or what does 'his' refer to?",
-      "targetWord": "his",
-      "sentence": "Leo finished his homework early and went outside.",
-      "options": [
-        "Leo",
-        "outside",
-        "The homework"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Leo",
-      "hint": "Whose homework got finished?",
-      "explanation": "'his' refers back to Leo, the one doing the homework.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l20_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The gardeners watered the plants and trimmed them.\nWho or what does 'them' refer to?",
-      "targetWord": "them",
-      "sentence": "The gardeners watered the plants and trimmed them.",
-      "options": [
-        "The plants",
-        "watered",
-        "The gardeners"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The plants",
-      "hint": "What got trimmed?",
-      "explanation": "'them' stands for the plants, the things being cared for.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l20_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The city library moved its collection to a new building.\nWho or what does 'its' refer to?",
-      "targetWord": "its",
-      "sentence": "The city library moved its collection to a new building.",
-      "options": [
-        "The city library",
-        "building",
-        "The collection"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The city library",
-      "hint": "Whose collection moved?",
-      "explanation": "'its' shows the collection belongs to the library.",
-      "grammarRule": "Possessive Adjectives"
-    }
-  ]
+    "gameType": "pronounResolution",
+    "batchIndex": 2,
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "pr_l11_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The singer thanked her fans after the concert.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "The singer thanked her fans after the concert.",
+            "options": [
+                "concert",
+                "The fans",
+                "The singer"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The singer",
+            "hint": "Who has fans to thank?",
+            "explanation": "'her' refers to the singer, the performer with fans.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l11_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The band played a new song and recorded it.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The band played a new song and recorded it.",
+            "options": [
+                "The song",
+                "played",
+                "The band"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The song",
+            "hint": "What got recorded?",
+            "explanation": "'it' stands for the song, the thing just played.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l11_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The museum changed its exhibit for the summer.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The museum changed its exhibit for the summer.",
+            "options": [
+                "The exhibit",
+                "The museum",
+                "summer"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The museum",
+            "hint": "Whose exhibit changed?",
+            "explanation": "'its' shows the exhibit belongs to the museum.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l12_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The airline announced a delay and confirmed it by email.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The airline announced a delay and confirmed it by email.",
+            "options": [
+                "The delay",
+                "The airline",
+                "announced"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The delay",
+            "hint": "What did the airline confirm?",
+            "explanation": "'it' refers to the delay, the thing just announced.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l12_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The tourists packed their suitcases the night before.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The tourists packed their suitcases the night before.",
+            "options": [
+                "The suitcases",
+                "night",
+                "The tourists"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The tourists",
+            "hint": "Whose suitcases were packed?",
+            "explanation": "'their' agrees with 'the tourists,' a plural group.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l12_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The pilot checked the engine and restarted it.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The pilot checked the engine and restarted it.",
+            "options": [
+                "The engine",
+                "checked",
+                "The pilot"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The engine",
+            "hint": "What did the pilot restart?",
+            "explanation": "'it' stands for the engine, the machine being checked.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l13_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The library extended its hours for exam week.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The library extended its hours for exam week.",
+            "options": [
+                "The hours",
+                "The library",
+                "week"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The library",
+            "hint": "Whose hours changed?",
+            "explanation": "'its' shows the hours belong to the library.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l13_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The volunteers cleaned the park and left it spotless.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The volunteers cleaned the park and left it spotless.",
+            "options": [
+                "cleaned",
+                "The park",
+                "The volunteers"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The park",
+            "hint": "What was left spotless?",
+            "explanation": "'it' refers to the park, the place being cleaned.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l13_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The city painted the crosswalks and repaints them yearly.\nWho or what does 'them' refer to?",
+            "targetWord": "them",
+            "sentence": "The city painted the crosswalks and repaints them yearly.",
+            "options": [
+                "The crosswalks",
+                "painted",
+                "The city"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The crosswalks",
+            "hint": "What gets repainted every year?",
+            "explanation": "'them' stands for the crosswalks, the plural markings.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l14_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Mom folded the laundry and put it away.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "Mom folded the laundry and put it away.",
+            "options": [
+                "Mom",
+                "folded",
+                "The laundry"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The laundry",
+            "hint": "What did Mom put away?",
+            "explanation": "'it' refers to the laundry, the thing just folded.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l14_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The twins shared their toys with the new kid.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The twins shared their toys with the new kid.",
+            "options": [
+                "The twins",
+                "kid",
+                "The toys"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The twins",
+            "hint": "Whose toys were shared?",
+            "explanation": "'their' agrees with 'the twins,' a plural pair.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l14_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Grandma told her story to the whole family.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "Grandma told her story to the whole family.",
+            "options": [
+                "Grandma",
+                "The story",
+                "family"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Grandma",
+            "hint": "Whose story was told?",
+            "explanation": "'her' refers to Grandma, the storyteller.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l15_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The teacher collected the essays and read them that night.\nWho or what does 'them' refer to?",
+            "targetWord": "them",
+            "sentence": "The teacher collected the essays and read them that night.",
+            "options": [
+                "collected",
+                "The teacher",
+                "The essays"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The essays",
+            "hint": "What did the teacher read?",
+            "explanation": "'them' stands for the essays, the plural papers collected.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l15_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The students raised their hands to answer.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The students raised their hands to answer.",
+            "options": [
+                "answer",
+                "The students",
+                "The hands"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The students",
+            "hint": "Whose hands went up?",
+            "explanation": "'their' agrees with 'the students,' a plural group.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l15_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The classroom lost its power during the storm.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The classroom lost its power during the storm.",
+            "options": [
+                "The power",
+                "storm",
+                "The classroom"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The classroom",
+            "hint": "Whose power went out?",
+            "explanation": "'its' shows the power belongs to the classroom.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l16_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The clerk wrapped the gift and handed it to Mia.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The clerk wrapped the gift and handed it to Mia.",
+            "options": [
+                "wrapped",
+                "The gift",
+                "The clerk"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The gift",
+            "hint": "What got wrapped?",
+            "explanation": "'it' refers to the gift, the item being handed over.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l16_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The shop extended its return policy for the holidays.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The shop extended its return policy for the holidays.",
+            "options": [
+                "The shop",
+                "holidays",
+                "The policy"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The shop",
+            "hint": "Whose policy changed?",
+            "explanation": "'its' shows the policy belongs to the shop.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l16_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The customer picked the jacket and tried it on.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The customer picked the jacket and tried it on.",
+            "options": [
+                "The jacket",
+                "picked",
+                "The customer"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The jacket",
+            "hint": "What did the customer try on?",
+            "explanation": "'it' stands for the jacket, the item being tested.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l17_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The coach praised the players and thanked them.\nWho or what does 'them' refer to?",
+            "targetWord": "them",
+            "sentence": "The coach praised the players and thanked them.",
+            "options": [
+                "praised",
+                "The players",
+                "The coach"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The players",
+            "hint": "Who got thanked?",
+            "explanation": "'them' refers to the players, the plural group being thanked.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l17_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The swimmer improved her time this season.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "The swimmer improved her time this season.",
+            "options": [
+                "The swimmer",
+                "season",
+                "The time"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The swimmer",
+            "hint": "Whose time got better?",
+            "explanation": "'her' refers to the swimmer, the athlete improving.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l17_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The team celebrated their win at the diner.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The team celebrated their win at the diner.",
+            "options": [
+                "The team",
+                "The win",
+                "diner"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The team",
+            "hint": "Whose win was celebrated?",
+            "explanation": "'their' agrees with 'the team,' treated here as a group.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l18_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The house lost its heating during the cold snap.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The house lost its heating during the cold snap.",
+            "options": [
+                "The heating",
+                "snap",
+                "The house"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The house",
+            "hint": "Whose heating stopped?",
+            "explanation": "'its' shows the heating belongs to the house.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l18_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Dad mowed the lawn and raked it afterward.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "Dad mowed the lawn and raked it afterward.",
+            "options": [
+                "The lawn",
+                "mowed",
+                "Dad"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The lawn",
+            "hint": "What got raked?",
+            "explanation": "'it' refers to the lawn, the area just mowed.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l18_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The neighbors painted their fence over the weekend.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The neighbors painted their fence over the weekend.",
+            "options": [
+                "The neighbors",
+                "The fence",
+                "weekend"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The neighbors",
+            "hint": "Whose fence got painted?",
+            "explanation": "'their' agrees with 'the neighbors,' a plural group.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l19_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The farmer picked the apples and sold them at market.\nWho or what does 'them' refer to?",
+            "targetWord": "them",
+            "sentence": "The farmer picked the apples and sold them at market.",
+            "options": [
+                "The apples",
+                "picked",
+                "The farmer"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The apples",
+            "hint": "What got sold?",
+            "explanation": "'them' stands for the apples, the plural fruit picked.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l19_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The bakery cooled the bread before slicing it.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The bakery cooled the bread before slicing it.",
+            "options": [
+                "The bakery",
+                "cooled",
+                "The bread"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The bread",
+            "hint": "What got sliced?",
+            "explanation": "'it' refers to the bread, the item just cooled.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l19_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The chef plated the dessert and garnished it.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The chef plated the dessert and garnished it.",
+            "options": [
+                "The chef",
+                "The dessert",
+                "plated"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The dessert",
+            "hint": "What got the finishing touch?",
+            "explanation": "'it' stands for the dessert, the dish being garnished.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l20_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Leo finished his homework early and went outside.\nWho or what does 'his' refer to?",
+            "targetWord": "his",
+            "sentence": "Leo finished his homework early and went outside.",
+            "options": [
+                "Leo",
+                "outside",
+                "The homework"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Leo",
+            "hint": "Whose homework got finished?",
+            "explanation": "'his' refers back to Leo, the one doing the homework.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l20_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The gardeners watered the plants and trimmed them.\nWho or what does 'them' refer to?",
+            "targetWord": "them",
+            "sentence": "The gardeners watered the plants and trimmed them.",
+            "options": [
+                "The plants",
+                "watered",
+                "The gardeners"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The plants",
+            "hint": "What got trimmed?",
+            "explanation": "'them' stands for the plants, the things being cared for.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l20_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The city library moved its collection to a new building.\nWho or what does 'its' refer to?",
+            "targetWord": "its",
+            "sentence": "The city library moved its collection to a new building.",
+            "options": [
+                "The city library",
+                "building",
+                "The collection"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The city library",
+            "hint": "Whose collection moved?",
+            "explanation": "'its' shows the collection belongs to the library.",
+            "grammarRule": "Possessive Adjectives"
+        }
+    ]
 }

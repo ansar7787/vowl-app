@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L111_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'the emphasis told a different story' signal?",
             "explanation": "The 'emphasis' on 'so kind' was exaggerated - indicating sarcasm. When someone places heavy or ironic stress on an adjective, it can communicate the opposite. 'The emphasis told a different story' explicitly signals that her true feeling contradicted her words. Meta-commentary on tone.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L111_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the motivation for always correcting privately rather than publicly?",
             "explanation": "Correcting privately = protecting the person's dignity. Public correction = humiliation. The deliberate choice of private over public shows consideration for how correction feels to the receiver. This reveals emotional intelligence and respect for others' dignity - a leadership and interpersonal quality.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L111_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why is the number of meetings relevant to the recommendation's credibility?",
             "explanation": "A 'glowing' (extremely positive) recommendation requires knowing the person or work well. One meeting provides very limited basis for such strong praise. The concern: the recommendation may be superficial or generous beyond what's merited by limited experience. It raises questions about the recommendation's foundation.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L112_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What effect does a shift from formal to conversational register typically have?",
             "explanation": "Starting formal establishes authority; becoming conversational creates warmth and engagement. The gradual shift doesn't alienate either audience type - it moves from professional respect to personal connection. This is a skilled rhetorical technique: building credibility then building rapport.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L112_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does switching from formal to first-name address signal socially?",
             "explanation": "Switching to first names signals a relationship shift - from formal/professional (surnames) to more personal (first names). The timing (once the deal was agreed) shows the business formality has concluded and a warmer relationship is now appropriate. Names are social markers of relationship distance.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L112_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What happens when you use specialist language with a non-specialist audience?",
             "explanation": "Using jargon (technical specialist language) with an audience unfamiliar with it = communication breakdown. 'Looked blank' = showed no comprehension. Good communication requires calibrating language to the audience's level. This is a classic register mismatch failure.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L113_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'not the one we were expecting' tell you about the outcome?",
             "explanation": "'Not the one we were expecting' = the results differed from predictions. 'Interesting' = noteworthy (positively framed). 'Though' = concession. Together: the data is worth noting but contradicted expectations. This is research communication language for unexpected findings.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L113_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'good reasons why it hasn't been adopted' imply about the approach?",
             "explanation": "If there are 'good reasons' for non-adoption, those reasons are drawbacks, limitations, or problems with the approach. The phrasing implies: don't be surprised it's not widely used - there are valid explanations for that. This is hedged critical evaluation of a method.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L113_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'admirable' (positive) plus 'falls short' (negative) create?",
             "explanation": "'Admirable' = the enthusiasm is praised. 'Even if' + 'falls short' = qualified criticism. Together: his drive is real and commendable, but the results don't always match the effort. This is a measured assessment - recognising effort while honestly noting outcome gaps.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L114_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What happens to conclusions when their underlying data is unreliable?",
             "explanation": "If data is unreliable, conclusions based on that data are also unreliable. The study's findings can't be trusted because they rest on flawed evidence. This is epistemological: the quality of conclusions depends entirely on the quality of the data they're derived from.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L114_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'proved right about everything' mean for the whistleblower's credibility?",
             "explanation": "'Proved right' = vindicated. Their claims, made at personal risk, turned out to be accurate. Vindication means the criticisms directed at them (troublemaker, disloyal) were wrong, and the authorities who dismissed their claims were wrong. This is a 'time proved them right' narrative.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L114_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does a contradiction between findings and company statements reveal?",
             "explanation": "If findings contradict company statements, either the findings are wrong or the company was wrong (or misleading) in what it stated publicly. The inference: the company's public claims were inaccurate - whether knowingly or not. This is a significant credibility and accountability issue.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L115_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'pick your battles' advise?",
             "explanation": "'Pick your battles' = decide which conflicts are worth engaging with and let less important ones go. It's strategic advice: not everything is worth fighting about - choose where to spend your energy. Trying to win every argument exhausts you and damages relationships.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L115_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'throw in at the deep end' mean?",
             "explanation": "'Throw in at the deep end' = give someone a challenging task with little preparation or support. The metaphor: throwing a non-swimmer into the deep part of a pool. They must sink or swim. It describes a trial-by-fire approach to learning or introduction to a new role.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L115_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'turn the tables' mean idiomatically?",
             "explanation": "'Turn the tables' = reverse a situation so that the party who was disadvantaged now has the advantage. It implies a power reversal - what was going against her is now in her favour. This is a competitive or adversarial context where positions are reversed.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L116_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would a speaker acknowledge future disagreement before making a point?",
             "explanation": "Acknowledging that some will disagree = a pre-emptive move before a potentially controversial statement. It signals: what follows may be challenging. It's a rhetorical strategy that prepares the audience and signals the speaker's awareness of the complexity or controversy of what follows.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L116_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'come back to it' promise about the point?",
             "explanation": "'Come back to it' = address it later (deferral, not dismissal). 'That's a valid point' = acknowledging its merit. Together: the speaker accepts the point is worth discussing but isn't dealing with it now - they'll return to it. This is time management in spoken discourse.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L116_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'before I get into details / let me give background' tell you about the speech structure?",
             "explanation": "'Before I get into the details' = the details come later. 'Background' = context, setup. So next comes: background/context. Then: details. This signals a top-down structure: general context → specific details. Understanding how speakers signal structure helps listeners follow complex information.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L117_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the meaning of 'must' in obligation contexts?",
             "explanation": "'Must' = strong obligation. There is no choice - submission by Friday is required. This is different from 'should' (recommendation) or 'could' (option). 'Must' imposes a non-negotiable requirement. Missing the deadline = failing to comply with an obligation.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L117_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'should probably' signal compared to just 'should'?",
             "explanation": "'Should' = recommendation. 'Probably' hedges it further - making it even softer. 'Should probably' = a gentle, non-authoritative suggestion. The double hedging ('should' + 'probably') creates distance between the speaker and the advice - polite, non-imposing suggestion.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L117_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'might have' express about the certainty level?",
             "explanation": "'Might have' = past possibility (epistemic modality). 'Might have left' = it's possible they left, but not certain. This is speculation about a past or current state. 'Might' (possibility) vs. 'must' (near-certainty) vs. 'definitely' (certainty) - recognising modal verbs is essential for understanding expressed certainty.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L118_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the discourse marker 'frankly' communicate?",
             "explanation": "'Frankly' = I'm going to be honest/blunt, even if it's uncomfortable. It signals a departure from diplomatic hedging toward direct opinion. 'Frankly' + negative assessment = the speaker is expressing a genuine critical view without softening it. It can feel abrupt but is valued for honesty.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L118_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What nuance does 'technically speaking' add to a compliance statement?",
             "explanation": "'Technically speaking' = narrowly within the rules, possibly by the letter but not the spirit. It introduces a caveat: yes, he complied with the strict definition, but there may be an ethical or moral dimension that the rules don't cover. 'Technically' separates legal compliance from ethical approval.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L118_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'to be perfectly honest' combined with 'my doubts' communicate?",
             "explanation": "'To be perfectly honest' = I'm going to tell you my real view (dropping diplomatic hedging). 'I have my doubts' = I'm not convinced. Together: sincere expression of uncertainty. 'My doubts' = specific reservations, not vague unease. This is candid doubt-expression.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L119_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do deposit + twelve-month agreement + first month payment together indicate?",
             "explanation": "These three actions together = property rental. 'Deposit' = security deposit (held against damage). 'Twelve-month agreement' = standard tenancy duration. 'First month upfront' = advance rent payment. All three are standard parts of renting an apartment or house.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L119_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'several rounds' and 'doctors were satisfied' tell you about the context?",
             "explanation": "'Doctors' clearly places this in a medical context. 'Several rounds' + doctors' satisfaction = a treatment requiring multiple sessions before reaching the desired outcome. This most strongly suggests medical treatment - possibly chemotherapy, radiation, or a course of medication evaluated across multiple sessions.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L119_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'rehearsed their lines' suggest about the activity?",
             "explanation": "'Rehearsed their lines' = practised scripted spoken parts, which is specific to performance: theatre, film, or TV. 'Lines' = scripted dialogue. 'In their sleep' = perfectly memorised. This is performance vocabulary: actors rehearse lines; presenters practise; lecturers prepare - only actors have 'lines'.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L120_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'acknowledges that further work would be beneficial' communicate?",
             "explanation": "'Acknowledges' = formally recognises. 'Further work would be beneficial' = more should be done. This is formal committee language for recommending more research/effort without making it compulsory. 'Would be beneficial' is hedged - a recommendation, not a command.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L120_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'open question' mean in academic/professional discourse?",
             "explanation": "'Open question' = unresolved, still being debated or investigated. 'Remains' = still open despite any investigation so far. Together: the question of sustainability hasn't been answered yet. This is honest acknowledgement of uncertainty - typical in research and policy language.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L120_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'premature' tell you about the timing of conclusions?",
             "explanation": "'Premature' = too early, before sufficient evidence or analysis is complete. 'Draw conclusions' = reach judgments about what the data means. Warning: not enough evidence exists yet to conclude anything. This is standard research caution - don't interpret before you have enough to interpret from.",

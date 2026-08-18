@@ -6,7 +6,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this recurring pressure in my chest that comes and goes with no clear pattern, and I get winded doing things that used to be easy.\"",
             "symptoms": [
                 "Chest Pain",
@@ -22,7 +22,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks the patient to describe their pain, and the patient says: \"It's a burning sensation that starts in my chest and creeps up into my throat, worse when I lie down after eating, and I've also had a hoarse voice most mornings.\"",
             "symptoms": [
                 "Heartburn",
@@ -38,7 +38,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"My knees have been catching and locking up when I try to straighten them fully, and there's a grinding feeling too, and my lower back has been sore from compensating,\" the patient tells the doctor.",
             "symptoms": [
                 "Knee Pain",
@@ -54,7 +54,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've been getting these waves of heat that spread up from my chest to my face, several times a day, and they leave me drenched.\"",
             "symptoms": [
                 "Hot Flashes",
@@ -70,7 +70,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My concentration has really slipped at work, and I've also had trouble falling asleep even when I'm exhausted.\"",
             "symptoms": [
                 "Fatigue",
@@ -86,7 +86,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"My hands have felt a bit weaker than usual these past few days, and I've had some stiffness in my fingers in the morning,\" the patient tells the doctor.",
             "symptoms": [
                 "Numbness",
@@ -102,7 +102,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this nagging cough that's worse at night, and it's been keeping me from getting a full night's sleep.\"",
             "symptoms": [
                 "Cough",
@@ -118,7 +118,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about recent changes, and the patient says: \"My skin has been noticeably drier than usual, especially on my shins, and I've felt the cold more than everyone else in my house.\"",
             "symptoms": [
                 "Cracked Skin",
@@ -134,7 +134,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had some on-and-off swelling in my ankles by the end of the day, and I've also had some mild back pain from being on my feet all day,\" the patient tells the doctor.",
             "symptoms": [
                 "Swollen Ankles",
@@ -150,7 +150,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this gnawing discomfort in my stomach a few hours after meals, and antacids don't seem to help much anymore, and I've also felt bloated most of the day.\"",
             "symptoms": [
                 "Heartburn",
@@ -166,7 +166,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My hearing seems fine day to day, but I've started asking people to repeat themselves in noisy rooms specifically, and I've also had this faint ringing that comes and goes.\"",
             "symptoms": [
                 "Hearing Loss",
@@ -182,7 +182,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had this persistent itch on my lower legs that's worse at night, with no visible rash that I can see, and I've also had some trouble sleeping because of it.\"",
             "symptoms": [
                 "Rash",
@@ -198,7 +198,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this deep ache in both hips that's worse first thing in the morning, easing somewhat as the day goes on, and I've also noticed some stiffness in my hands.\"",
             "symptoms": [
                 "Hip Pain",
@@ -214,7 +214,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about sleep, and the patient says: \"I fall asleep fine, but I wake up multiple times a night and can't always tell why, and I've been dragging through my afternoons as a result.\"",
             "symptoms": [
                 "Brain Fog",
@@ -230,7 +230,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this odd sensation like my heart pauses for a beat before racing to catch up, a few times a day, and I've felt a bit more anxious than usual because of it,\" the patient tells the doctor.",
             "symptoms": [
                 "Heart Palpitations",
@@ -246,7 +246,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this crawling sensation in my legs that only happens in the evening, making it hard to sit still through a movie, and I've also had trouble falling asleep because of it.\"",
             "symptoms": [
                 "Cramp",
@@ -262,7 +262,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My voice has been noticeably different for a couple of weeks now, rougher than my normal cold-related hoarseness, and I've also had a mild, persistent cough.\"",
             "symptoms": [
                 "Hoarse Voice",
@@ -278,7 +278,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had these brief spells where the room tilts and I have to grab something to steady myself, lasting maybe thirty seconds, and afterward I usually feel a bit nauseous.\"",
             "symptoms": [
                 "Dizziness",
@@ -294,7 +294,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this constant low hum of anxiety that I can't quite place, along with a racing mind at bedtime that keeps me up.\"",
             "symptoms": [
                 "Anxiety",
@@ -310,7 +310,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks about the cough, and the patient says: \"It's dry, comes in fits, and gets worse when I laugh or lie down flat, and my throat feels raw afterward from all the coughing.\"",
             "symptoms": [
                 "Wheezing",
@@ -326,7 +326,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this puffiness around my eyes every morning that fades by midday, and I've also felt unusually thirsty,\" the patient tells the doctor.",
             "symptoms": [
                 "Puffy Eyes",
@@ -342,7 +342,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this tender lump under my jaw that's been there about a week, and I've felt run down the whole time.\"",
             "symptoms": [
                 "Jaw Pain",
@@ -358,7 +358,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"My fingers turn white then blue in the cold, then bright red as they warm back up, which is new for me, and I've also noticed some mild stiffness in those same fingers.\"",
             "symptoms": [
                 "Numbness",
@@ -374,7 +374,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had this dull throb in one temple that shows up most afternoons, and everyday sounds have started to feel too loud.\"",
             "symptoms": [
                 "Migraine",
@@ -390,7 +390,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this persistent soreness at the back of my throat that's not quite pain, more like irritation, and I've been clearing my throat all day.\"",
             "symptoms": [
                 "Hoarse Voice",
@@ -406,7 +406,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The doctor asks how long the swelling has lasted, and the patient says: \"About five days now, and it's spread from my ankle up toward my shin a little, and I've had some mild discomfort when I walk on it.\"",
             "symptoms": [
                 "Swelling",
@@ -422,7 +422,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had these episodes of feeling suddenly overheated and sweaty, then chilled a few minutes later, several times a day,\" the patient tells the doctor.",
             "symptoms": [
                 "Hot Flashes",
@@ -438,7 +438,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent dryness in my eyes that artificial tears barely touch anymore, and my vision blurs by late afternoon.\"",
             "symptoms": [
                 "Itchy Eyes",
@@ -454,7 +454,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've noticed distinct patches of hair thinning on my scalp, not just general shedding, over the past couple of months, and I've also felt more fatigued than usual during this time.\"",
             "symptoms": [
                 "Hair Loss",
@@ -470,7 +470,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had this ache deep in my ear that gets worse when I yawn or chew, along with some fullness on that same side.\"",
             "symptoms": [
                 "Jaw Pain",

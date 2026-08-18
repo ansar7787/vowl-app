@@ -1,547 +1,547 @@
 {
-  "gameType": "skimmingScanning",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "RDG_SKIMMINGSCANNING_L21_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Every afternoon, Noah reads for thirty minutes before dinner.",
-      "targetItem": "thirty",
-      "options": [
-        "afternoon",
-        "dinner",
-        "twenty",
-        "thirty"
-      ],
-      "correctAnswer": "thirty",
-      "hint": "Find the number of minutes Noah reads.",
-      "explanation": "The passage says Noah reads for thirty minutes, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L21_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Tellingly, the new writing course meets twice a week after work.",
-      "targetItem": "twice",
-      "options": [
-        "work",
-        "twice",
-        "once",
-        "course"
-      ],
-      "correctAnswer": "twice",
-      "hint": "Find how often the writing course meets each week.",
-      "explanation": "The passage says the course meets twice a week.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L21_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The new intern finished the report a full day early.",
-      "targetItem": "early",
-      "options": [
-        "intern",
-        "early",
-        "report",
-        "late"
-      ],
-      "correctAnswer": "early",
-      "hint": "Find the word describing when the intern finished.",
-      "explanation": "The passage says the intern finished a day early, so 'early' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L22_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The overnight bus to the coast departs at midnight.",
-      "targetItem": "midnight",
-      "options": [
-        "sunset",
-        "overnight",
-        "coast",
-        "midnight"
-      ],
-      "correctAnswer": "midnight",
-      "hint": "Find the exact time the bus departs.",
-      "explanation": "The passage says the bus departs at midnight, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L22_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Her older brother taught her how to ride a bike.",
-      "targetItem": "brother",
-      "options": [
-        "cousin",
-        "older",
-        "brother",
-        "bike"
-      ],
-      "correctAnswer": "brother",
-      "hint": "Find who taught her to ride a bike.",
-      "explanation": "The passage says her older brother taught her, so 'brother' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L22_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The clearance sale ends this Sunday at the mall.",
-      "targetItem": "clearance",
-      "options": [
-        "Sunday",
-        "clearance",
-        "seasonal",
-        "mall"
-      ],
-      "correctAnswer": "clearance",
-      "hint": "Find the type of sale ending this Sunday.",
-      "explanation": "The passage says the clearance sale ends Sunday, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L23_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The new café serves pastries only until eleven.",
-      "targetItem": "pastries",
-      "options": [
-        "pastries",
-        "sandwiches",
-        "café",
-        "eleven"
-      ],
-      "correctAnswer": "pastries",
-      "hint": "Find what the café serves until eleven.",
-      "explanation": "The passage says the café serves pastries, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L23_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Her fitness tracker syncs automatically with her phone.",
-      "targetItem": "syncs",
-      "options": [
-        "syncs",
-        "connects",
-        "phone",
-        "tracker"
-      ],
-      "correctAnswer": "syncs",
-      "hint": "Find the word describing how the tracker works with her phone.",
-      "explanation": "The passage says the tracker syncs automatically, so 'syncs' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L23_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The pharmacy now delivers prescriptions within two hours.",
-      "targetItem": "pharmacy",
-      "options": [
-        "clinic",
-        "delivers",
-        "hours",
-        "pharmacy"
-      ],
-      "correctAnswer": "pharmacy",
-      "hint": "Find what now delivers prescriptions quickly.",
-      "explanation": "The passage says the pharmacy delivers prescriptions, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L24_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The comedian's new special premieres this Friday.",
-      "targetItem": "comedian",
-      "options": [
-        "special",
-        "Friday",
-        "actor",
-        "comedian"
-      ],
-      "correctAnswer": "comedian",
-      "hint": "Find whose new special is premiering.",
-      "explanation": "The passage says the comedian's special premieres, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L24_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Wild rabbits are common along the forest trail.",
-      "targetItem": "rabbits",
-      "options": [
-        "trail",
-        "foxes",
-        "forest",
-        "rabbits"
-      ],
-      "correctAnswer": "rabbits",
-      "hint": "Find which animal is common on the trail.",
-      "explanation": "The passage says wild rabbits are common there, so 'rabbits' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L24_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The neighborhood added bike lanes on Main Street.",
-      "targetItem": "bike",
-      "options": [
-        "neighborhood",
-        "Street",
-        "bus",
-        "bike"
-      ],
-      "correctAnswer": "bike",
-      "hint": "Find what kind of lanes were added to Main Street.",
-      "explanation": "The passage says bike lanes were added, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L25_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Layla always double-checks the stove before she leaves the house.",
-      "targetItem": "stove",
-      "options": [
-        "stove",
-        "leaves",
-        "oven",
-        "checks"
-      ],
-      "correctAnswer": "stove",
-      "hint": "Find what Layla checks before leaving.",
-      "explanation": "The passage says she double-checks the stove, so 'stove' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L25_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Every student received a printed copy of the syllabus today.",
-      "targetItem": "syllabus",
-      "options": [
-        "syllabus",
-        "today",
-        "printed",
-        "schedule"
-      ],
-      "correctAnswer": "syllabus",
-      "hint": "Find what was printed and given to every student.",
-      "explanation": "The passage says students received the syllabus, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L25_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Everyone on the team was invited to the client dinner.",
-      "targetItem": "client",
-      "options": [
-        "dinner",
-        "invited",
-        "client",
-        "staff"
-      ],
-      "correctAnswer": "client",
-      "hint": "Find whose dinner the team was invited to.",
-      "explanation": "The passage says it was the client dinner, so 'client' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L26_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Her passport was renewed just before the long trip.",
-      "targetItem": "renewed",
-      "options": [
-        "expired",
-        "passport",
-        "renewed",
-        "trip"
-      ],
-      "correctAnswer": "renewed",
-      "hint": "Find what happened to her passport before the trip.",
-      "explanation": "The passage says her passport was renewed, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L26_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The whole family gathers at grandpa's house every August.",
-      "targetItem": "August",
-      "options": [
-        "July",
-        "August",
-        "house",
-        "family"
-      ],
-      "correctAnswer": "August",
-      "hint": "Find the month the family gathers at grandpa's house.",
-      "explanation": "The passage says they gather every August, so 'August' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L26_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "He compared three different brands before choosing a blender.",
-      "targetItem": "three",
-      "options": [
-        "brands",
-        "two",
-        "three",
-        "blender"
-      ],
-      "correctAnswer": "three",
-      "hint": "Find how many brands he compared.",
-      "explanation": "The passage says he compared three brands, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L27_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "She substituted honey for sugar in the recipe.",
-      "targetItem": "honey",
-      "options": [
-        "sugar",
-        "honey",
-        "recipe",
-        "syrup"
-      ],
-      "correctAnswer": "honey",
-      "hint": "Find what she used instead of sugar.",
-      "explanation": "The passage says she substituted honey, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L27_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The update fixed a bug in the messaging app.",
-      "targetItem": "bug",
-      "options": [
-        "app",
-        "update",
-        "bug",
-        "glitch"
-      ],
-      "correctAnswer": "bug",
-      "hint": "Find what the update fixed in the app.",
-      "explanation": "The passage says the update fixed a bug, so 'bug' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L27_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "He switched to decaf coffee to sleep better.",
-      "targetItem": "decaf",
-      "options": [
-        "herbal",
-        "decaf",
-        "sleep",
-        "coffee"
-      ],
-      "correctAnswer": "decaf",
-      "hint": "Find the type of coffee he switched to.",
-      "explanation": "The passage says he switched to decaf coffee, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L28_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Tickets for the outdoor film night are free.",
-      "targetItem": "film",
-      "options": [
-        "outdoor",
-        "film",
-        "concert",
-        "free"
-      ],
-      "correctAnswer": "film",
-      "hint": "Find what kind of night has free tickets.",
-      "explanation": "The passage says it is a film night, so 'film' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L28_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The tide comes in fully by early evening.",
-      "targetItem": "tide",
-      "options": [
-        "wave",
-        "tide",
-        "early",
-        "evening"
-      ],
-      "correctAnswer": "tide",
-      "hint": "Find what comes in fully by evening.",
-      "explanation": "The passage says the tide comes in, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L28_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Local artists will display work at the town fair.",
-      "targetItem": "artists",
-      "options": [
-        "artists",
-        "display",
-        "fair",
-        "students"
-      ],
-      "correctAnswer": "artists",
-      "hint": "Find who will display work at the fair.",
-      "explanation": "The passage says local artists will display work, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L29_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Marco jogs along the river path three mornings a week.",
-      "targetItem": "river",
-      "options": [
-        "mornings",
-        "forest",
-        "jogs",
-        "river"
-      ],
-      "correctAnswer": "river",
-      "hint": "Find where Marco jogs three mornings a week.",
-      "explanation": "The passage says he jogs along the river path, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L29_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Strikingly, the professor extended the deadline for the final essay.",
-      "targetItem": "deadline",
-      "options": [
-        "professor",
-        "schedule",
-        "essay",
-        "deadline"
-      ],
-      "correctAnswer": "deadline",
-      "hint": "Find what the professor extended.",
-      "explanation": "The passage says the professor extended the deadline, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L29_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The warehouse hired six workers for the busy season.",
-      "targetItem": "six",
-      "options": [
-        "season",
-        "six",
-        "four",
-        "warehouse"
-      ],
-      "correctAnswer": "six",
-      "hint": "Find how many workers the warehouse hired.",
-      "explanation": "The passage says the warehouse hired six workers, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L30_Q1",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The small hotel near the harbor was fully booked.",
-      "targetItem": "harbor",
-      "options": [
-        "airport",
-        "hotel",
-        "booked",
-        "harbor"
-      ],
-      "correctAnswer": "harbor",
-      "hint": "Find what the small hotel was located near.",
-      "explanation": "The passage says the hotel is near the harbor, so that is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L30_Q2",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "Their baby daughter said her first word yesterday.",
-      "targetItem": "daughter",
-      "options": [
-        "daughter",
-        "yesterday",
-        "first",
-        "son"
-      ],
-      "correctAnswer": "daughter",
-      "hint": "Find who said her first word yesterday.",
-      "explanation": "The passage says their baby daughter said it, so 'daughter' is correct.",
-      "timeLimit": 20
-    },
-    {
-      "id": "RDG_SKIMMINGSCANNING_L30_Q3",
-      "instruction": "Scan the text to find and select the target word.",
-      "subtype": "skimmingScanning",
-      "interactionType": "Highlight Race",
-      "passage": "The cashier gave her the wrong change by mistake.",
-      "targetItem": "cashier",
-      "options": [
-        "manager",
-        "cashier",
-        "mistake",
-        "wrong"
-      ],
-      "correctAnswer": "cashier",
-      "hint": "Find who gave her the wrong change.",
-      "explanation": "The passage says the cashier made the mistake, so that is correct.",
-      "timeLimit": 20
-    }
-  ]
+    "gameType": "skimmingScanning",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "RDG_SKIMMINGSCANNING_L21_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Every afternoon, Noah reads for thirty minutes before dinner.",
+            "targetItem": "thirty",
+            "options": [
+                "afternoon",
+                "dinner",
+                "twenty",
+                "thirty"
+            ],
+            "correctAnswer": "thirty",
+            "hint": "Find the number of minutes Noah reads.",
+            "explanation": "The passage says Noah reads for thirty minutes, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L21_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Tellingly, the new writing course meets twice a week after work.",
+            "targetItem": "twice",
+            "options": [
+                "work",
+                "twice",
+                "once",
+                "course"
+            ],
+            "correctAnswer": "twice",
+            "hint": "Find how often the writing course meets each week.",
+            "explanation": "The passage says the course meets twice a week.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L21_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The new intern finished the report a full day early.",
+            "targetItem": "early",
+            "options": [
+                "intern",
+                "early",
+                "report",
+                "late"
+            ],
+            "correctAnswer": "early",
+            "hint": "Find the word describing when the intern finished.",
+            "explanation": "The passage says the intern finished a day early, so 'early' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L22_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The overnight bus to the coast departs at midnight.",
+            "targetItem": "midnight",
+            "options": [
+                "sunset",
+                "overnight",
+                "coast",
+                "midnight"
+            ],
+            "correctAnswer": "midnight",
+            "hint": "Find the exact time the bus departs.",
+            "explanation": "The passage says the bus departs at midnight, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L22_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Her older brother taught her how to ride a bike.",
+            "targetItem": "brother",
+            "options": [
+                "cousin",
+                "older",
+                "brother",
+                "bike"
+            ],
+            "correctAnswer": "brother",
+            "hint": "Find who taught her to ride a bike.",
+            "explanation": "The passage says her older brother taught her, so 'brother' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L22_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The clearance sale ends this Sunday at the mall.",
+            "targetItem": "clearance",
+            "options": [
+                "Sunday",
+                "clearance",
+                "seasonal",
+                "mall"
+            ],
+            "correctAnswer": "clearance",
+            "hint": "Find the type of sale ending this Sunday.",
+            "explanation": "The passage says the clearance sale ends Sunday, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L23_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The new café serves pastries only until eleven.",
+            "targetItem": "pastries",
+            "options": [
+                "pastries",
+                "sandwiches",
+                "café",
+                "eleven"
+            ],
+            "correctAnswer": "pastries",
+            "hint": "Find what the café serves until eleven.",
+            "explanation": "The passage says the café serves pastries, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L23_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Her fitness tracker syncs automatically with her phone.",
+            "targetItem": "syncs",
+            "options": [
+                "syncs",
+                "connects",
+                "phone",
+                "tracker"
+            ],
+            "correctAnswer": "syncs",
+            "hint": "Find the word describing how the tracker works with her phone.",
+            "explanation": "The passage says the tracker syncs automatically, so 'syncs' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L23_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The pharmacy now delivers prescriptions within two hours.",
+            "targetItem": "pharmacy",
+            "options": [
+                "clinic",
+                "delivers",
+                "hours",
+                "pharmacy"
+            ],
+            "correctAnswer": "pharmacy",
+            "hint": "Find what now delivers prescriptions quickly.",
+            "explanation": "The passage says the pharmacy delivers prescriptions, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L24_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The comedian's new special premieres this Friday.",
+            "targetItem": "comedian",
+            "options": [
+                "special",
+                "Friday",
+                "actor",
+                "comedian"
+            ],
+            "correctAnswer": "comedian",
+            "hint": "Find whose new special is premiering.",
+            "explanation": "The passage says the comedian's special premieres, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L24_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Wild rabbits are common along the forest trail.",
+            "targetItem": "rabbits",
+            "options": [
+                "trail",
+                "foxes",
+                "forest",
+                "rabbits"
+            ],
+            "correctAnswer": "rabbits",
+            "hint": "Find which animal is common on the trail.",
+            "explanation": "The passage says wild rabbits are common there, so 'rabbits' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L24_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The neighborhood added bike lanes on Main Street.",
+            "targetItem": "bike",
+            "options": [
+                "neighborhood",
+                "Street",
+                "bus",
+                "bike"
+            ],
+            "correctAnswer": "bike",
+            "hint": "Find what kind of lanes were added to Main Street.",
+            "explanation": "The passage says bike lanes were added, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L25_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Layla always double-checks the stove before she leaves the house.",
+            "targetItem": "stove",
+            "options": [
+                "stove",
+                "leaves",
+                "oven",
+                "checks"
+            ],
+            "correctAnswer": "stove",
+            "hint": "Find what Layla checks before leaving.",
+            "explanation": "The passage says she double-checks the stove, so 'stove' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L25_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Every student received a printed copy of the syllabus today.",
+            "targetItem": "syllabus",
+            "options": [
+                "syllabus",
+                "today",
+                "printed",
+                "schedule"
+            ],
+            "correctAnswer": "syllabus",
+            "hint": "Find what was printed and given to every student.",
+            "explanation": "The passage says students received the syllabus, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L25_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Everyone on the team was invited to the client dinner.",
+            "targetItem": "client",
+            "options": [
+                "dinner",
+                "invited",
+                "client",
+                "staff"
+            ],
+            "correctAnswer": "client",
+            "hint": "Find whose dinner the team was invited to.",
+            "explanation": "The passage says it was the client dinner, so 'client' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L26_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Her passport was renewed just before the long trip.",
+            "targetItem": "renewed",
+            "options": [
+                "expired",
+                "passport",
+                "renewed",
+                "trip"
+            ],
+            "correctAnswer": "renewed",
+            "hint": "Find what happened to her passport before the trip.",
+            "explanation": "The passage says her passport was renewed, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L26_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The whole family gathers at grandpa's house every August.",
+            "targetItem": "August",
+            "options": [
+                "July",
+                "August",
+                "house",
+                "family"
+            ],
+            "correctAnswer": "August",
+            "hint": "Find the month the family gathers at grandpa's house.",
+            "explanation": "The passage says they gather every August, so 'August' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L26_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "He compared three different brands before choosing a blender.",
+            "targetItem": "three",
+            "options": [
+                "brands",
+                "two",
+                "three",
+                "blender"
+            ],
+            "correctAnswer": "three",
+            "hint": "Find how many brands he compared.",
+            "explanation": "The passage says he compared three brands, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L27_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "She substituted honey for sugar in the recipe.",
+            "targetItem": "honey",
+            "options": [
+                "sugar",
+                "honey",
+                "recipe",
+                "syrup"
+            ],
+            "correctAnswer": "honey",
+            "hint": "Find what she used instead of sugar.",
+            "explanation": "The passage says she substituted honey, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L27_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The update fixed a bug in the messaging app.",
+            "targetItem": "bug",
+            "options": [
+                "app",
+                "update",
+                "bug",
+                "glitch"
+            ],
+            "correctAnswer": "bug",
+            "hint": "Find what the update fixed in the app.",
+            "explanation": "The passage says the update fixed a bug, so 'bug' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L27_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "He switched to decaf coffee to sleep better.",
+            "targetItem": "decaf",
+            "options": [
+                "herbal",
+                "decaf",
+                "sleep",
+                "coffee"
+            ],
+            "correctAnswer": "decaf",
+            "hint": "Find the type of coffee he switched to.",
+            "explanation": "The passage says he switched to decaf coffee, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L28_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Tickets for the outdoor film night are free.",
+            "targetItem": "film",
+            "options": [
+                "outdoor",
+                "film",
+                "concert",
+                "free"
+            ],
+            "correctAnswer": "film",
+            "hint": "Find what kind of night has free tickets.",
+            "explanation": "The passage says it is a film night, so 'film' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L28_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The tide comes in fully by early evening.",
+            "targetItem": "tide",
+            "options": [
+                "wave",
+                "tide",
+                "early",
+                "evening"
+            ],
+            "correctAnswer": "tide",
+            "hint": "Find what comes in fully by evening.",
+            "explanation": "The passage says the tide comes in, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L28_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Local artists will display work at the town fair.",
+            "targetItem": "artists",
+            "options": [
+                "artists",
+                "display",
+                "fair",
+                "students"
+            ],
+            "correctAnswer": "artists",
+            "hint": "Find who will display work at the fair.",
+            "explanation": "The passage says local artists will display work, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L29_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Marco jogs along the river path three mornings a week.",
+            "targetItem": "river",
+            "options": [
+                "mornings",
+                "forest",
+                "jogs",
+                "river"
+            ],
+            "correctAnswer": "river",
+            "hint": "Find where Marco jogs three mornings a week.",
+            "explanation": "The passage says he jogs along the river path, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L29_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Strikingly, the professor extended the deadline for the final essay.",
+            "targetItem": "deadline",
+            "options": [
+                "professor",
+                "schedule",
+                "essay",
+                "deadline"
+            ],
+            "correctAnswer": "deadline",
+            "hint": "Find what the professor extended.",
+            "explanation": "The passage says the professor extended the deadline, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L29_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The warehouse hired six workers for the busy season.",
+            "targetItem": "six",
+            "options": [
+                "season",
+                "six",
+                "four",
+                "warehouse"
+            ],
+            "correctAnswer": "six",
+            "hint": "Find how many workers the warehouse hired.",
+            "explanation": "The passage says the warehouse hired six workers, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L30_Q1",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The small hotel near the harbor was fully booked.",
+            "targetItem": "harbor",
+            "options": [
+                "airport",
+                "hotel",
+                "booked",
+                "harbor"
+            ],
+            "correctAnswer": "harbor",
+            "hint": "Find what the small hotel was located near.",
+            "explanation": "The passage says the hotel is near the harbor, so that is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L30_Q2",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "Their baby daughter said her first word yesterday.",
+            "targetItem": "daughter",
+            "options": [
+                "daughter",
+                "yesterday",
+                "first",
+                "son"
+            ],
+            "correctAnswer": "daughter",
+            "hint": "Find who said her first word yesterday.",
+            "explanation": "The passage says their baby daughter said it, so 'daughter' is correct.",
+            "timeLimit": 20
+        },
+        {
+            "id": "RDG_SKIMMINGSCANNING_L30_Q3",
+            "instruction": "Scan the text to find and select the target word.",
+            "subtype": "skimmingScanning",
+            "interactionType": "search",
+            "passage": "The cashier gave her the wrong change by mistake.",
+            "targetItem": "cashier",
+            "options": [
+                "manager",
+                "cashier",
+                "mistake",
+                "wrong"
+            ],
+            "correctAnswer": "cashier",
+            "hint": "Find who gave her the wrong change.",
+            "explanation": "The passage says the cashier made the mistake, so that is correct.",
+            "timeLimit": 20
+        }
+    ]
 }

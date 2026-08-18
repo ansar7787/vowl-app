@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 20,
-  "levels": "191-200",
-  "quests": [
-    {
-      "id": "qf_l191_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The new proposal has already been rejected twice.",
-      "sentence": "The new proposal has already been rejected twice.",
-      "options": [
-        "The new proposal has already been rejected twice, has it?",
-        "The new proposal has already been rejected twice, hasn't it?",
-        "The new proposal has already been rejected twice, doesn't it?",
-        "The new proposal has already been rejected twice, isn't it?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The new proposal has already been rejected twice, hasn't it?",
-      "hint": "The tag reuses 'has' in its negative form, since this is a passive present perfect statement.",
-      "explanation": "This combines the passive with the present perfect: since the statement is positive, the tag reuses 'has' in its negative form: 'hasn't it'.",
-      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
-    },
-    {
-      "id": "qf_l191_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "These particular symptoms haven't been fully explained by doctors.",
-      "sentence": "These particular symptoms haven't been fully explained by doctors.",
-      "options": [
-        "These particular symptoms haven't been fully explained by doctors, haven't they?",
-        "These particular symptoms haven't been fully explained by doctors, don't they?",
-        "These particular symptoms haven't been fully explained by doctors, aren't they?",
-        "These particular symptoms haven't been fully explained by doctors, have they?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "These particular symptoms haven't been fully explained by doctors, have they?",
-      "hint": "The statement is negative, so use the positive tag 'have they?'",
-      "explanation": "A negative passive present perfect statement takes a positive tag: 'have they', reusing the same auxiliary.",
-      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
-    },
-    {
-      "id": "qf_l191_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The final numbers should have been double-checked before publishing.",
-      "sentence": "The final numbers should have been double-checked before publishing.",
-      "options": [
-        "The final numbers should have been double-checked before publishing, shouldn't they?",
-        "The final numbers should have been double-checked before publishing, should they?",
-        "The final numbers should have been double-checked before publishing, hadn't they?",
-        "The final numbers should have been double-checked before publishing, weren't they?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The final numbers should have been double-checked before publishing, shouldn't they?",
-      "hint": "The tag reuses the modal 'should' in its negative form.",
-      "explanation": "With modal perfect passive statements, the tag reuses the modal itself. Since positive, the tag is negative: 'shouldn't they'.",
-      "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
-    },
-    {
-      "id": "qf_l192_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Could the missing shipment have been rerouted to a different warehouse?",
-      "sentence": "Could the missing shipment have been rerouted to a different warehouse?",
-      "options": [
-        "Do you have any idea whether could the missing shipment have been rerouted to a different warehouse?",
-        "Do you have any idea the missing shipment whether could have been rerouted to a different warehouse?",
-        "Do you have any idea that could the missing shipment have been rerouted to a different warehouse?",
-        "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?",
-      "hint": "Use 'whether', and move 'could' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the shipment could have been rerouted'.",
-      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
-    },
-    {
-      "id": "qf_l192_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why must the results have been miscalculated somewhere in the process?",
-      "sentence": "Why must the results have been miscalculated somewhere in the process?",
-      "options": [
-        "Can you explain why the results must have been miscalculated somewhere in the process?",
-        "Can you explain why must the results have been miscalculated somewhere in the process?",
-        "Can you explain why the results have must been miscalculated somewhere in the process?",
-        "Can you explain that why the results must have been miscalculated somewhere in the process?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can you explain why the results must have been miscalculated somewhere in the process?",
-      "hint": "Move 'must' back after the subject, keeping 'have been miscalculated' together.",
-      "explanation": "The embedded clause keeps statement word order: 'the results must have been miscalculated', not 'must the results have been'.",
-      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
-    },
-    {
-      "id": "qf_l192_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "What could have triggered such a significant delay in production?",
-      "sentence": "What could have triggered such a significant delay in production?",
-      "options": [
-        "Do you know what could have trigger such a significant delay in production?",
-        "Do you know what have could triggered such a significant delay in production?",
-        "Do you know what could have triggered such a significant delay in production?",
-        "Do you know that what could have triggered such a significant delay in production?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Do you know what could have triggered such a significant delay in production?",
-      "hint": "Since 'what' is the subject here, simply keep 'could have triggered' together.",
-      "explanation": "Because 'what' replaces the subject, the word order stays the same: 'what could have triggered'.",
-      "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
-    },
-    {
-      "id": "qf_l193_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
-      "sentence": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
-      "options": [
-        "Wouldn't the inspector have flagged this problem earlier?",
-        "The inspector wouldn't have flagged this problem earlier?",
-        "Won't the inspector have flagged this problem earlier?",
-        "Wouldn't the inspector have flag this problem earlier?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Wouldn't the inspector have flagged this problem earlier?",
-      "hint": "Move 'wouldn't' to the front, keeping 'have flagged' together.",
-      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have flagged' stays together.",
-      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l193_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was confident the team would have caught this error during testing.",
-      "sentence": "I was confident the team would have caught this error during testing.",
-      "options": [
-        "The team wouldn't have caught this error during testing?",
-        "Wouldn't the team have caught this error during testing?",
-        "Won't the team have caught this error during testing?",
-        "Wouldn't the team have catch this error during testing?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Wouldn't the team have caught this error during testing?",
-      "hint": "Move 'wouldn't' to the front, keeping 'have caught' together.",
-      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have caught' stays together.",
-      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l193_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed someone should have informed the client about the change by now.",
-      "sentence": "I assumed someone should have informed the client about the change by now.",
-      "options": [
-        "Someone shouldn't have informed the client about the change by now?",
-        "Mustn't someone have informed the client about the change by now?",
-        "Shouldn't someone have informed the client about the change by now?",
-        "Shouldn't someone have inform the client about the change by now?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Shouldn't someone have informed the client about the change by now?",
-      "hint": "Move 'shouldn't' to the front, keeping 'have informed' together.",
-      "explanation": "'Shouldn't have' questions an expectation about the past. It moves to the front, and 'have informed' stays together.",
-      "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l194_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Someone has been leaving anonymous notes on employees' desks all week.",
-      "sentence": "Someone has been leaving anonymous notes on employees' desks all week.",
-      "options": [
-        "Who has been leave anonymous notes on employees' desks all week?",
-        "Who does have been leaving anonymous notes on employees' desks all week?",
-        "Who has been leaving anonymous notes on employees' desks all week?",
-        "Who did been leaving anonymous notes on employees' desks all week?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Who has been leaving anonymous notes on employees' desks all week?",
-      "hint": "Since 'who' is the subject here, no extra auxiliary is added - keep 'has been leaving' as is.",
-      "explanation": "Because 'who' replaces the subject, the verb phrase stays exactly as it is: 'has been leaving', with no extra auxiliary.",
-      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
-    },
-    {
-      "id": "qf_l194_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Something has been draining the car battery overnight.",
-      "sentence": "Something has been draining the car battery overnight.",
-      "options": [
-        "What has been drain the car battery overnight?",
-        "What does have been draining the car battery overnight?",
-        "What did been draining the car battery overnight?",
-        "What has been draining the car battery overnight?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What has been draining the car battery overnight?",
-      "hint": "Since 'what' is the subject here, no extra auxiliary is added.",
-      "explanation": "Because 'what' replaces the subject, the verb phrase 'has been draining' stays exactly as it is, with no extra auxiliary.",
-      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
-    },
-    {
-      "id": "qf_l194_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "A rival company has been poaching our best engineers for months.",
-      "sentence": "A rival company has been poaching our best engineers for months.",
-      "options": [
-        "Who has been poaching our best engineers for months?",
-        "Who does have been poaching our best engineers for months?",
-        "Who has been poach our best engineers for months?",
-        "Who did been poaching our best engineers for months?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who has been poaching our best engineers for months?",
-      "hint": "Since 'who' is the subject here, no extra auxiliary is added.",
-      "explanation": "Because 'who' replaces the subject 'a rival company', the verb phrase 'has been poaching' stays exactly as it is.",
-      "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
-    },
-    {
-      "id": "qf_l195_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The entire archive has apparently vanished, and IT can't explain how.",
-      "sentence": "The entire archive has apparently vanished, and IT can't explain how.",
-      "options": [
-        "How on earth the entire archive has vanished?",
-        "How has on earth the entire archive vanished?",
-        "How on earth has the entire archive vanished?",
-        "How on earth has the entire archive vanish?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How on earth has the entire archive vanished?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion, and 'has' carries the perfect tense.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'has the archive vanished'.",
-      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
-    },
-    {
-      "id": "qf_l195_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Every document in the folder has been renamed, and nobody knows why.",
-      "sentence": "Every document in the folder has been renamed, and nobody knows why.",
-      "options": [
-        "Why on earth every document in the folder has been renamed?",
-        "Why on earth has every document in the folder been renamed?",
-        "Why has on earth every document in the folder been renamed?",
-        "Why on earth has every document in the folder being renamed?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why on earth has every document in the folder been renamed?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question keeps normal inversion: 'has every document been renamed'.",
-      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
-    },
-    {
-      "id": "qf_l195_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This tiny startup has outperformed every major competitor this year.",
-      "sentence": "This tiny startup has outperformed every major competitor this year.",
-      "options": [
-        "How on earth this tiny startup has outperformed every major competitor this year?",
-        "How on earth has this tiny startup outperformed every major competitor this year?",
-        "How has on earth this tiny startup outperformed every major competitor this year?",
-        "How on earth has this tiny startup outperform every major competitor this year?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How on earth has this tiny startup outperformed every major competitor this year?",
-      "hint": "'On earth' attaches immediately after the question word, then normal inversion continues.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'has this startup outperformed'.",
-      "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
-    },
-    {
-      "id": "qf_l196_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The whole team must have been counting on that contract to hit their targets.",
-      "sentence": "The whole team must have been counting on that contract to hit their targets.",
-      "options": [
-        "What must the whole team have been counting on to hit their targets?",
-        "What must have the whole team been counting on to hit their targets?",
-        "What the whole team must have been counting on to hit their targets?",
-        "What must the whole team have being counting on to hit their targets?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What must the whole team have been counting on to hit their targets?",
-      "hint": "Keep 'have been counting on' together, moving 'must' right after the subject.",
-      "explanation": "'Must' moves right after the subject, and 'have been counting on' stays together, with the preposition 'on' kept at the end.",
-      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l196_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She could have been waiting for a callback for hours before giving up.",
-      "sentence": "She could have been waiting for a callback for hours before giving up.",
-      "options": [
-        "What could she have been waiting for before giving up?",
-        "What could have she been waiting for before giving up?",
-        "What she could have been waiting for before giving up?",
-        "What could she have being waiting for before giving up?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "What could she have been waiting for before giving up?",
-      "hint": "Keep 'have been waiting for' together, moving 'could' right after the question word.",
-      "explanation": "'Could' moves after the question word, and 'have been waiting for' stays together, with 'for' kept at the end.",
-      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l196_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The board should have consulted with several outside experts before the merger.",
-      "sentence": "The board should have consulted with several outside experts before the merger.",
-      "options": [
-        "Who should the board have consulted with before the merger?",
-        "Who should have the board consulted with before the merger?",
-        "Who the board should have consulted with before the merger?",
-        "Who should the board have consult with before the merger?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who should the board have consulted with before the merger?",
-      "hint": "Keep 'have consulted with' together, moving 'should' right after the question word.",
-      "explanation": "'Should' moves after the question word, and 'have consulted with' stays together, with 'with' kept at the end.",
-      "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
-    },
-    {
-      "id": "qf_l197_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There couldn't have been a simpler explanation for the whole mess.",
-      "sentence": "There couldn't have been a simpler explanation for the whole mess.",
-      "options": [
-        "There couldn't have been a simpler explanation for the whole mess, couldn't there?",
-        "There couldn't have been a simpler explanation for the whole mess, was there?",
-        "There couldn't have been a simpler explanation for the whole mess, could there?",
-        "There couldn't have been a simpler explanation for the whole mess, hadn't there?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "There couldn't have been a simpler explanation for the whole mess, could there?",
-      "hint": "The statement is negative, so use the positive tag 'could there?'",
-      "explanation": "A negative modal perfect statement with 'there' takes a positive tag using the same modal: 'could there'.",
-      "grammarRule": "Final Mastery: Tag & Complex Statements"
-    },
-    {
-      "id": "qf_l197_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Neither of the witnesses could have seen the accident clearly from that angle.",
-      "sentence": "Neither of the witnesses could have seen the accident clearly from that angle.",
-      "options": [
-        "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
-        "Neither of the witnesses could have seen the accident clearly from that angle, couldn't they?",
-        "Neither of the witnesses could have seen the accident clearly from that angle, did they?",
-        "Neither of the witnesses could have seen the accident clearly from that angle, has he?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
-      "hint": "'Neither' has negative meaning, so use a positive tag with the neutral pronoun 'they'.",
-      "explanation": "'Neither' is negative in meaning, so the tag is positive, and it takes the neutral pronoun: 'could they'.",
-      "grammarRule": "Final Mastery: Tag & Complex Statements"
-    },
-    {
-      "id": "qf_l197_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This particular clause shouldn't have been included without legal review.",
-      "sentence": "This particular clause shouldn't have been included without legal review.",
-      "options": [
-        "This particular clause shouldn't have been included without legal review, should it?",
-        "This particular clause shouldn't have been included without legal review, shouldn't it?",
-        "This particular clause shouldn't have been included without legal review, hadn't it?",
-        "This particular clause shouldn't have been included without legal review, wasn't it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "This particular clause shouldn't have been included without legal review, should it?",
-      "hint": "The statement is negative, so use the positive tag 'should it?'",
-      "explanation": "A negative modal perfect passive statement takes a positive tag using the same modal: 'should it'.",
-      "grammarRule": "Final Mastery: Tag & Complex Statements"
-    },
-    {
-      "id": "qf_l198_q1",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Should the funds have been reallocated before the fiscal year ended?",
-      "sentence": "Should the funds have been reallocated before the fiscal year ended?",
-      "options": [
-        "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
-        "Would it be possible to find out whether should the funds have been reallocated before the fiscal year ended?",
-        "Would it be possible to find out the funds whether should have been reallocated before the fiscal year ended?",
-        "Would it be possible to find out that should the funds have been reallocated before the fiscal year ended?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
-      "hint": "Use 'whether', and move 'should' back after the subject.",
-      "explanation": "'Whether' introduces the embedded question, with statement word order: 'the funds should have been reallocated'.",
-      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l198_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "How many complaints must have been filed before the company responded?",
-      "sentence": "How many complaints must have been filed before the company responded?",
-      "options": [
-        "Do you have any idea how many complaints must have been filed before the company responded?",
-        "Do you have any idea how many complaints must have been file before the company responded?",
-        "Do you have any idea how many complaints have must been filed before the company responded?",
-        "Do you have any idea that how many complaints must have been filed before the company responded?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do you have any idea how many complaints must have been filed before the company responded?",
-      "hint": "Keep 'must have been filed' together, right after the question phrase.",
-      "explanation": "The embedded question keeps the fixed order 'must have been filed' together, right after the question phrase, unchanged.",
-      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l198_q3",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Why should the samples have been retested before publication?",
-      "sentence": "Why should the samples have been retested before publication?",
-      "options": [
-        "Might I ask why should the samples have been retested before publication?",
-        "Might I ask why the samples should have been retested before publication?",
-        "Might I ask why the samples have should been retested before publication?",
-        "Might I ask that why the samples should have been retested before publication?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Might I ask why the samples should have been retested before publication?",
-      "hint": "Move 'should' back after the subject, keeping 'have been retested' together.",
-      "explanation": "The embedded clause keeps statement word order: 'the samples should have been retested', not 'should the samples have been'.",
-      "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l199_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's inexcusable that this data wasn't backed up before the system crash.",
-      "sentence": "It's inexcusable that this data wasn't backed up before the system crash.",
-      "options": [
-        "It isn't inexcusable that this data wasn't backed up before the system crash?",
-        "Doesn't it inexcusable that this data wasn't backed up before the system crash?",
-        "Isn't it inexcusable that this data wasn't backed up before the system crash?",
-        "Isn't inexcusable it that this data wasn't backed up before the system crash?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Isn't it inexcusable that this data wasn't backed up before the system crash?",
-      "hint": "Slide 'isn't' to the front of the sentence, right ahead of 'it'.",
-      "explanation": "'Isn't' moves to the very front, right before 'it', framing this as a rhetorical negative question.",
-      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l199_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think the warning signs should have been taken more seriously from the start.",
-      "sentence": "I think the warning signs should have been taken more seriously from the start.",
-      "options": [
-        "You wouldn't say the warning signs should have been taken more seriously from the start?",
-        "Doesn't you say the warning signs should have been taken more seriously from the start?",
-        "Wouldn't you say the warning signs should have been taken more seriously from the start?",
-        "Wouldn't you say the warning signs should have being taken more seriously from the start?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Wouldn't you say the warning signs should have been taken more seriously from the start?",
-      "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged, and 'have been taken' stays together.",
-      "explanation": "'Wouldn't' moves to the front, 'you say' stays in normal order, and 'should have been taken' remains fixed in that exact sequence.",
-      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l199_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This entire situation could have been avoided with one honest conversation.",
-      "sentence": "This entire situation could have been avoided with one honest conversation.",
-      "options": [
-        "How on earth this entire situation could have been avoided?",
-        "How could on earth this entire situation have been avoided?",
-        "How on earth could this entire situation have been avoided?",
-        "How on earth could this entire situation have being avoided?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How on earth could this entire situation have been avoided?",
-      "hint": "'On earth' slots in right after the question word, and 'have been avoided' stays together after 'could'.",
-      "explanation": "'On earth' adds emphasis after the question word, and 'could...have been avoided' keeps its fixed internal order.",
-      "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
-    },
-    {
-      "id": "qf_l200_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
-      "sentence": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
-      "options": [
-        "The manuscript wouldn't have been reviewed by at least three editors before publication?",
-        "Won't the manuscript have been reviewed by at least three editors before publication?",
-        "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
-        "Wouldn't the manuscript have being reviewed by at least three editors before publication?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
-      "hint": "Move 'wouldn't' to the front, keeping 'have been reviewed' together.",
-      "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have been reviewed' stays together in its fixed order.",
-      "grammarRule": "Final Mastery: Ultimate Mixed Review"
-    },
-    {
-      "id": "qf_l200_q2",
-      "instruction": "Turn this into a polite indirect question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Will the final agreement have been signed by both sides before the summit begins?",
-      "sentence": "Will the final agreement have been signed by both sides before the summit begins?",
-      "options": [
-        "Do you know if will the final agreement have been signed by both sides before the summit begins?",
-        "Do you know the final agreement if will have been signed by both sides before the summit begins?",
-        "Do you know that will the final agreement have been signed by both sides before the summit begins?",
-        "Do you know if the final agreement will have been signed by both sides before the summit begins?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do you know if the final agreement will have been signed by both sides before the summit begins?",
-      "hint": "Use 'if', and move 'will' back after the subject, keeping 'have been signed' together.",
-      "explanation": "'If' introduces the embedded question, keeping statement word order throughout: 'the agreement will have been signed'.",
-      "grammarRule": "Final Mastery: Ultimate Mixed Review"
-    },
-    {
-      "id": "qf_l200_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This remarkable discovery couldn't have come at a better time for the whole research team.",
-      "sentence": "This remarkable discovery couldn't have come at a better time for the whole research team.",
-      "options": [
-        "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
-        "This remarkable discovery couldn't have come at a better time for the whole research team, couldn't it?",
-        "This remarkable discovery couldn't have come at a better time for the whole research team, did it?",
-        "This remarkable discovery couldn't have come at a better time for the whole research team, hasn't it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
-      "hint": "The statement is negative, so use the positive tag 'could it?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could it' - a fitting final flourish for this mastery journey.",
-      "grammarRule": "Final Mastery: Ultimate Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 20,
+    "levels": "191-200",
+    "quests": [
+        {
+            "id": "qf_l191_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The new proposal has already been rejected twice.",
+            "sentence": "The new proposal has already been rejected twice.",
+            "options": [
+                "The new proposal has already been rejected twice, has it?",
+                "The new proposal has already been rejected twice, hasn't it?",
+                "The new proposal has already been rejected twice, doesn't it?",
+                "The new proposal has already been rejected twice, isn't it?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The new proposal has already been rejected twice, hasn't it?",
+            "hint": "The tag reuses 'has' in its negative form, since this is a passive present perfect statement.",
+            "explanation": "This combines the passive with the present perfect: since the statement is positive, the tag reuses 'has' in its negative form: 'hasn't it'.",
+            "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+        },
+        {
+            "id": "qf_l191_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "These particular symptoms haven't been fully explained by doctors.",
+            "sentence": "These particular symptoms haven't been fully explained by doctors.",
+            "options": [
+                "These particular symptoms haven't been fully explained by doctors, haven't they?",
+                "These particular symptoms haven't been fully explained by doctors, don't they?",
+                "These particular symptoms haven't been fully explained by doctors, aren't they?",
+                "These particular symptoms haven't been fully explained by doctors, have they?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "These particular symptoms haven't been fully explained by doctors, have they?",
+            "hint": "The statement is negative, so use the positive tag 'have they?'",
+            "explanation": "A negative passive present perfect statement takes a positive tag: 'have they', reusing the same auxiliary.",
+            "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+        },
+        {
+            "id": "qf_l191_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The final numbers should have been double-checked before publishing.",
+            "sentence": "The final numbers should have been double-checked before publishing.",
+            "options": [
+                "The final numbers should have been double-checked before publishing, shouldn't they?",
+                "The final numbers should have been double-checked before publishing, should they?",
+                "The final numbers should have been double-checked before publishing, hadn't they?",
+                "The final numbers should have been double-checked before publishing, weren't they?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The final numbers should have been double-checked before publishing, shouldn't they?",
+            "hint": "The tag reuses the modal 'should' in its negative form.",
+            "explanation": "With modal perfect passive statements, the tag reuses the modal itself. Since positive, the tag is negative: 'shouldn't they'.",
+            "grammarRule": "Final Mastery: Tag, Passive & Perfect Questions"
+        },
+        {
+            "id": "qf_l192_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Could the missing shipment have been rerouted to a different warehouse?",
+            "sentence": "Could the missing shipment have been rerouted to a different warehouse?",
+            "options": [
+                "Do you have any idea whether could the missing shipment have been rerouted to a different warehouse?",
+                "Do you have any idea the missing shipment whether could have been rerouted to a different warehouse?",
+                "Do you have any idea that could the missing shipment have been rerouted to a different warehouse?",
+                "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you have any idea whether the missing shipment could have been rerouted to a different warehouse?",
+            "hint": "Use 'whether', and move 'could' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the shipment could have been rerouted'.",
+            "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+        },
+        {
+            "id": "qf_l192_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why must the results have been miscalculated somewhere in the process?",
+            "sentence": "Why must the results have been miscalculated somewhere in the process?",
+            "options": [
+                "Can you explain why the results must have been miscalculated somewhere in the process?",
+                "Can you explain why must the results have been miscalculated somewhere in the process?",
+                "Can you explain why the results have must been miscalculated somewhere in the process?",
+                "Can you explain that why the results must have been miscalculated somewhere in the process?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can you explain why the results must have been miscalculated somewhere in the process?",
+            "hint": "Move 'must' back after the subject, keeping 'have been miscalculated' together.",
+            "explanation": "The embedded clause keeps statement word order: 'the results must have been miscalculated', not 'must the results have been'.",
+            "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+        },
+        {
+            "id": "qf_l192_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "What could have triggered such a significant delay in production?",
+            "sentence": "What could have triggered such a significant delay in production?",
+            "options": [
+                "Do you know what could have trigger such a significant delay in production?",
+                "Do you know what have could triggered such a significant delay in production?",
+                "Do you know what could have triggered such a significant delay in production?",
+                "Do you know that what could have triggered such a significant delay in production?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Do you know what could have triggered such a significant delay in production?",
+            "hint": "Since 'what' is the subject here, simply keep 'could have triggered' together.",
+            "explanation": "Because 'what' replaces the subject, the word order stays the same: 'what could have triggered'.",
+            "grammarRule": "Final Mastery: Embedded, Modal Perfect & Passive Questions"
+        },
+        {
+            "id": "qf_l193_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
+            "sentence": "I was sure the inspector would have flagged this problem earlier, given how obvious it seems now.",
+            "options": [
+                "Wouldn't the inspector have flagged this problem earlier?",
+                "The inspector wouldn't have flagged this problem earlier?",
+                "Won't the inspector have flagged this problem earlier?",
+                "Wouldn't the inspector have flag this problem earlier?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Wouldn't the inspector have flagged this problem earlier?",
+            "hint": "Move 'wouldn't' to the front, keeping 'have flagged' together.",
+            "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have flagged' stays together.",
+            "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l193_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was confident the team would have caught this error during testing.",
+            "sentence": "I was confident the team would have caught this error during testing.",
+            "options": [
+                "The team wouldn't have caught this error during testing?",
+                "Wouldn't the team have caught this error during testing?",
+                "Won't the team have caught this error during testing?",
+                "Wouldn't the team have catch this error during testing?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Wouldn't the team have caught this error during testing?",
+            "hint": "Move 'wouldn't' to the front, keeping 'have caught' together.",
+            "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have caught' stays together.",
+            "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l193_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed someone should have informed the client about the change by now.",
+            "sentence": "I assumed someone should have informed the client about the change by now.",
+            "options": [
+                "Someone shouldn't have informed the client about the change by now?",
+                "Mustn't someone have informed the client about the change by now?",
+                "Shouldn't someone have informed the client about the change by now?",
+                "Shouldn't someone have inform the client about the change by now?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Shouldn't someone have informed the client about the change by now?",
+            "hint": "Move 'shouldn't' to the front, keeping 'have informed' together.",
+            "explanation": "'Shouldn't have' questions an expectation about the past. It moves to the front, and 'have informed' stays together.",
+            "grammarRule": "Final Mastery: Negative & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l194_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Someone has been leaving anonymous notes on employees' desks all week.",
+            "sentence": "Someone has been leaving anonymous notes on employees' desks all week.",
+            "options": [
+                "Who has been leave anonymous notes on employees' desks all week?",
+                "Who does have been leaving anonymous notes on employees' desks all week?",
+                "Who has been leaving anonymous notes on employees' desks all week?",
+                "Who did been leaving anonymous notes on employees' desks all week?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Who has been leaving anonymous notes on employees' desks all week?",
+            "hint": "Since 'who' is the subject here, no extra auxiliary is added - keep 'has been leaving' as is.",
+            "explanation": "Because 'who' replaces the subject, the verb phrase stays exactly as it is: 'has been leaving', with no extra auxiliary.",
+            "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+        },
+        {
+            "id": "qf_l194_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Something has been draining the car battery overnight.",
+            "sentence": "Something has been draining the car battery overnight.",
+            "options": [
+                "What has been drain the car battery overnight?",
+                "What does have been draining the car battery overnight?",
+                "What did been draining the car battery overnight?",
+                "What has been draining the car battery overnight?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What has been draining the car battery overnight?",
+            "hint": "Since 'what' is the subject here, no extra auxiliary is added.",
+            "explanation": "Because 'what' replaces the subject, the verb phrase 'has been draining' stays exactly as it is, with no extra auxiliary.",
+            "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+        },
+        {
+            "id": "qf_l194_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "A rival company has been poaching our best engineers for months.",
+            "sentence": "A rival company has been poaching our best engineers for months.",
+            "options": [
+                "Who has been poaching our best engineers for months?",
+                "Who does have been poaching our best engineers for months?",
+                "Who has been poach our best engineers for months?",
+                "Who did been poaching our best engineers for months?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who has been poaching our best engineers for months?",
+            "hint": "Since 'who' is the subject here, no extra auxiliary is added.",
+            "explanation": "Because 'who' replaces the subject 'a rival company', the verb phrase 'has been poaching' stays exactly as it is.",
+            "grammarRule": "Final Mastery: Subject Questions & Perfect Continuous"
+        },
+        {
+            "id": "qf_l195_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The entire archive has apparently vanished, and IT can't explain how.",
+            "sentence": "The entire archive has apparently vanished, and IT can't explain how.",
+            "options": [
+                "How on earth the entire archive has vanished?",
+                "How has on earth the entire archive vanished?",
+                "How on earth has the entire archive vanished?",
+                "How on earth has the entire archive vanish?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How on earth has the entire archive vanished?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion, and 'has' carries the perfect tense.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'has the archive vanished'.",
+            "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+        },
+        {
+            "id": "qf_l195_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Every document in the folder has been renamed, and nobody knows why.",
+            "sentence": "Every document in the folder has been renamed, and nobody knows why.",
+            "options": [
+                "Why on earth every document in the folder has been renamed?",
+                "Why on earth has every document in the folder been renamed?",
+                "Why has on earth every document in the folder been renamed?",
+                "Why on earth has every document in the folder being renamed?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why on earth has every document in the folder been renamed?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest of the question keeps normal inversion: 'has every document been renamed'.",
+            "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+        },
+        {
+            "id": "qf_l195_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This tiny startup has outperformed every major competitor this year.",
+            "sentence": "This tiny startup has outperformed every major competitor this year.",
+            "options": [
+                "How on earth this tiny startup has outperformed every major competitor this year?",
+                "How on earth has this tiny startup outperformed every major competitor this year?",
+                "How has on earth this tiny startup outperformed every major competitor this year?",
+                "How on earth has this tiny startup outperform every major competitor this year?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How on earth has this tiny startup outperformed every major competitor this year?",
+            "hint": "'On earth' attaches immediately after the question word, then normal inversion continues.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'has this startup outperformed'.",
+            "grammarRule": "Final Mastery: Emphatic & Perfect Questions"
+        },
+        {
+            "id": "qf_l196_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The whole team must have been counting on that contract to hit their targets.",
+            "sentence": "The whole team must have been counting on that contract to hit their targets.",
+            "options": [
+                "What must the whole team have been counting on to hit their targets?",
+                "What must have the whole team been counting on to hit their targets?",
+                "What the whole team must have been counting on to hit their targets?",
+                "What must the whole team have being counting on to hit their targets?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What must the whole team have been counting on to hit their targets?",
+            "hint": "Keep 'have been counting on' together, moving 'must' right after the subject.",
+            "explanation": "'Must' moves right after the subject, and 'have been counting on' stays together, with the preposition 'on' kept at the end.",
+            "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l196_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She could have been waiting for a callback for hours before giving up.",
+            "sentence": "She could have been waiting for a callback for hours before giving up.",
+            "options": [
+                "What could she have been waiting for before giving up?",
+                "What could have she been waiting for before giving up?",
+                "What she could have been waiting for before giving up?",
+                "What could she have being waiting for before giving up?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "What could she have been waiting for before giving up?",
+            "hint": "Keep 'have been waiting for' together, moving 'could' right after the question word.",
+            "explanation": "'Could' moves after the question word, and 'have been waiting for' stays together, with 'for' kept at the end.",
+            "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l196_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The board should have consulted with several outside experts before the merger.",
+            "sentence": "The board should have consulted with several outside experts before the merger.",
+            "options": [
+                "Who should the board have consulted with before the merger?",
+                "Who should have the board consulted with before the merger?",
+                "Who the board should have consulted with before the merger?",
+                "Who should the board have consult with before the merger?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who should the board have consulted with before the merger?",
+            "hint": "Keep 'have consulted with' together, moving 'should' right after the question word.",
+            "explanation": "'Should' moves after the question word, and 'have consulted with' stays together, with 'with' kept at the end.",
+            "grammarRule": "Final Mastery: Prepositional & Modal Perfect Questions"
+        },
+        {
+            "id": "qf_l197_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There couldn't have been a simpler explanation for the whole mess.",
+            "sentence": "There couldn't have been a simpler explanation for the whole mess.",
+            "options": [
+                "There couldn't have been a simpler explanation for the whole mess, couldn't there?",
+                "There couldn't have been a simpler explanation for the whole mess, was there?",
+                "There couldn't have been a simpler explanation for the whole mess, could there?",
+                "There couldn't have been a simpler explanation for the whole mess, hadn't there?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "There couldn't have been a simpler explanation for the whole mess, could there?",
+            "hint": "The statement is negative, so use the positive tag 'could there?'",
+            "explanation": "A negative modal perfect statement with 'there' takes a positive tag using the same modal: 'could there'.",
+            "grammarRule": "Final Mastery: Tag & Complex Statements"
+        },
+        {
+            "id": "qf_l197_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Neither of the witnesses could have seen the accident clearly from that angle.",
+            "sentence": "Neither of the witnesses could have seen the accident clearly from that angle.",
+            "options": [
+                "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
+                "Neither of the witnesses could have seen the accident clearly from that angle, couldn't they?",
+                "Neither of the witnesses could have seen the accident clearly from that angle, did they?",
+                "Neither of the witnesses could have seen the accident clearly from that angle, has he?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Neither of the witnesses could have seen the accident clearly from that angle, could they?",
+            "hint": "'Neither' has negative meaning, so use a positive tag with the neutral pronoun 'they'.",
+            "explanation": "'Neither' is negative in meaning, so the tag is positive, and it takes the neutral pronoun: 'could they'.",
+            "grammarRule": "Final Mastery: Tag & Complex Statements"
+        },
+        {
+            "id": "qf_l197_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This particular clause shouldn't have been included without legal review.",
+            "sentence": "This particular clause shouldn't have been included without legal review.",
+            "options": [
+                "This particular clause shouldn't have been included without legal review, should it?",
+                "This particular clause shouldn't have been included without legal review, shouldn't it?",
+                "This particular clause shouldn't have been included without legal review, hadn't it?",
+                "This particular clause shouldn't have been included without legal review, wasn't it?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "This particular clause shouldn't have been included without legal review, should it?",
+            "hint": "The statement is negative, so use the positive tag 'should it?'",
+            "explanation": "A negative modal perfect passive statement takes a positive tag using the same modal: 'should it'.",
+            "grammarRule": "Final Mastery: Tag & Complex Statements"
+        },
+        {
+            "id": "qf_l198_q1",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Should the funds have been reallocated before the fiscal year ended?",
+            "sentence": "Should the funds have been reallocated before the fiscal year ended?",
+            "options": [
+                "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
+                "Would it be possible to find out whether should the funds have been reallocated before the fiscal year ended?",
+                "Would it be possible to find out the funds whether should have been reallocated before the fiscal year ended?",
+                "Would it be possible to find out that should the funds have been reallocated before the fiscal year ended?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would it be possible to find out whether the funds should have been reallocated before the fiscal year ended?",
+            "hint": "Use 'whether', and move 'should' back after the subject.",
+            "explanation": "'Whether' introduces the embedded question, with statement word order: 'the funds should have been reallocated'.",
+            "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l198_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "How many complaints must have been filed before the company responded?",
+            "sentence": "How many complaints must have been filed before the company responded?",
+            "options": [
+                "Do you have any idea how many complaints must have been filed before the company responded?",
+                "Do you have any idea how many complaints must have been file before the company responded?",
+                "Do you have any idea how many complaints have must been filed before the company responded?",
+                "Do you have any idea that how many complaints must have been filed before the company responded?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do you have any idea how many complaints must have been filed before the company responded?",
+            "hint": "Keep 'must have been filed' together, right after the question phrase.",
+            "explanation": "The embedded question keeps the fixed order 'must have been filed' together, right after the question phrase, unchanged.",
+            "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l198_q3",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Why should the samples have been retested before publication?",
+            "sentence": "Why should the samples have been retested before publication?",
+            "options": [
+                "Might I ask why should the samples have been retested before publication?",
+                "Might I ask why the samples should have been retested before publication?",
+                "Might I ask why the samples have should been retested before publication?",
+                "Might I ask that why the samples should have been retested before publication?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Might I ask why the samples should have been retested before publication?",
+            "hint": "Move 'should' back after the subject, keeping 'have been retested' together.",
+            "explanation": "The embedded clause keeps statement word order: 'the samples should have been retested', not 'should the samples have been'.",
+            "grammarRule": "Final Mastery: Formal Embedded & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l199_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's inexcusable that this data wasn't backed up before the system crash.",
+            "sentence": "It's inexcusable that this data wasn't backed up before the system crash.",
+            "options": [
+                "It isn't inexcusable that this data wasn't backed up before the system crash?",
+                "Doesn't it inexcusable that this data wasn't backed up before the system crash?",
+                "Isn't it inexcusable that this data wasn't backed up before the system crash?",
+                "Isn't inexcusable it that this data wasn't backed up before the system crash?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Isn't it inexcusable that this data wasn't backed up before the system crash?",
+            "hint": "Slide 'isn't' to the front of the sentence, right ahead of 'it'.",
+            "explanation": "'Isn't' moves to the very front, right before 'it', framing this as a rhetorical negative question.",
+            "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l199_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think the warning signs should have been taken more seriously from the start.",
+            "sentence": "I think the warning signs should have been taken more seriously from the start.",
+            "options": [
+                "You wouldn't say the warning signs should have been taken more seriously from the start?",
+                "Doesn't you say the warning signs should have been taken more seriously from the start?",
+                "Wouldn't you say the warning signs should have been taken more seriously from the start?",
+                "Wouldn't you say the warning signs should have being taken more seriously from the start?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Wouldn't you say the warning signs should have been taken more seriously from the start?",
+            "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged, and 'have been taken' stays together.",
+            "explanation": "'Wouldn't' moves to the front, 'you say' stays in normal order, and 'should have been taken' remains fixed in that exact sequence.",
+            "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l199_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This entire situation could have been avoided with one honest conversation.",
+            "sentence": "This entire situation could have been avoided with one honest conversation.",
+            "options": [
+                "How on earth this entire situation could have been avoided?",
+                "How could on earth this entire situation have been avoided?",
+                "How on earth could this entire situation have been avoided?",
+                "How on earth could this entire situation have being avoided?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How on earth could this entire situation have been avoided?",
+            "hint": "'On earth' slots in right after the question word, and 'have been avoided' stays together after 'could'.",
+            "explanation": "'On earth' adds emphasis after the question word, and 'could...have been avoided' keeps its fixed internal order.",
+            "grammarRule": "Final Mastery: Rhetorical & Complex Auxiliary Questions"
+        },
+        {
+            "id": "qf_l200_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
+            "sentence": "I was absolutely certain the manuscript would have been reviewed by at least three editors before publication.",
+            "options": [
+                "The manuscript wouldn't have been reviewed by at least three editors before publication?",
+                "Won't the manuscript have been reviewed by at least three editors before publication?",
+                "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
+                "Wouldn't the manuscript have being reviewed by at least three editors before publication?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Wouldn't the manuscript have been reviewed by at least three editors before publication?",
+            "hint": "Move 'wouldn't' to the front, keeping 'have been reviewed' together.",
+            "explanation": "'Wouldn't have' questions an assumption about the past. It moves to the front, and 'have been reviewed' stays together in its fixed order.",
+            "grammarRule": "Final Mastery: Ultimate Mixed Review"
+        },
+        {
+            "id": "qf_l200_q2",
+            "instruction": "Turn this into a polite indirect question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Will the final agreement have been signed by both sides before the summit begins?",
+            "sentence": "Will the final agreement have been signed by both sides before the summit begins?",
+            "options": [
+                "Do you know if will the final agreement have been signed by both sides before the summit begins?",
+                "Do you know the final agreement if will have been signed by both sides before the summit begins?",
+                "Do you know that will the final agreement have been signed by both sides before the summit begins?",
+                "Do you know if the final agreement will have been signed by both sides before the summit begins?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do you know if the final agreement will have been signed by both sides before the summit begins?",
+            "hint": "Use 'if', and move 'will' back after the subject, keeping 'have been signed' together.",
+            "explanation": "'If' introduces the embedded question, keeping statement word order throughout: 'the agreement will have been signed'.",
+            "grammarRule": "Final Mastery: Ultimate Mixed Review"
+        },
+        {
+            "id": "qf_l200_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This remarkable discovery couldn't have come at a better time for the whole research team.",
+            "sentence": "This remarkable discovery couldn't have come at a better time for the whole research team.",
+            "options": [
+                "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
+                "This remarkable discovery couldn't have come at a better time for the whole research team, couldn't it?",
+                "This remarkable discovery couldn't have come at a better time for the whole research team, did it?",
+                "This remarkable discovery couldn't have come at a better time for the whole research team, hasn't it?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "This remarkable discovery couldn't have come at a better time for the whole research team, could it?",
+            "hint": "The statement is negative, so use the positive tag 'could it?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could it' - a fitting final flourish for this mastery journey.",
+            "grammarRule": "Final Mastery: Ultimate Mixed Review"
+        }
+    ]
 }

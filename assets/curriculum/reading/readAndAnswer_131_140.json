@@ -7,7 +7,7 @@
             "id": "RDG_READANDANSWER_L131_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Federated Learning and Privacy] Traditional machine learning systems typically require collecting large amounts of user data onto a central server where a model can be trained on the combined dataset, an approach that raises significant privacy concerns when the data involves sensitive personal information such as private messages or medical records. Federated learning offers an alternative: instead of sending raw data to a central location, the model itself is sent to each individual device, trained briefly on that device's local data, and only the resulting adjustments, rather than the underlying data itself, are sent back and combined, allowing a shared model to improve without any single party ever gaining direct access to another user's raw personal information.",
             "question": "What is sent back to a central location under federated learning, according to the passage?",
             "options": [
@@ -25,7 +25,7 @@
             "id": "RDG_READANDANSWER_L131_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Zeigarnik Effect] The Zeigarnik effect, named after the psychologist who first documented it, describes the tendency for unfinished or interrupted tasks to remain more vividly present in memory than tasks that have already been completed, an effect the researcher first noticed after observing that waiters seemed to recall complex, unpaid orders in remarkable detail, only to quickly forget those same details entirely once the bill had been settled and the table cleared. Modern productivity techniques sometimes deliberately exploit this effect, encouraging a person to stop mid-task at a natural point of momentum, on the theory that the resulting mental tension will make it easier to resume the work later rather than requiring the difficult task of building motivation entirely from scratch.",
             "question": "What observation about waiters first led to the discovery of the Zeigarnik effect?",
             "options": [
@@ -43,7 +43,7 @@
             "id": "RDG_READANDANSWER_L131_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Ocean Acidification] As the ocean absorbs a significant portion of the carbon dioxide released into the atmosphere by human activity, a chemical reaction gradually lowers the water's pH, a process known as ocean acidification that is occurring at a pace many marine scientists consider unprecedented in recent geological history. This shift poses a particular threat to organisms such as coral and certain shellfish that rely on calcium carbonate to build their shells or skeletons, since more acidic water makes it measurably harder for these organisms to extract the minerals needed for that process, and in sufficiently acidic conditions, existing shells can even begin to dissolve.",
             "question": "Why does ocean acidification particularly threaten coral and certain shellfish?",
             "options": [
@@ -61,7 +61,7 @@
             "id": "RDG_READANDANSWER_L132_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Testing Effect] Cognitive research has consistently found that actively retrieving information from memory through practice testing produces stronger long-term retention than an equivalent amount of time spent simply re-reading the same material, a finding known as the testing effect that runs counter to how many students intuitively choose to study. Despite this well-established evidence, surveys of student study habits repeatedly find that re-reading remains one of the most commonly used strategies, likely because the fluency of recognizing familiar material while re-reading creates a subjective feeling of mastery that does not necessarily correspond to how well that information will actually be recalled later, under exam conditions, without the material in front of them.",
             "question": "Why might students continue to prefer re-reading despite the testing effect evidence?",
             "options": [
@@ -79,7 +79,7 @@
             "id": "RDG_READANDANSWER_L132_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Calendar Systems Across Cultures] While the Gregorian calendar has become the de facto international standard for business and diplomacy, numerous other calendar systems, including lunar, lunisolar, and solar calendars tied to specific agricultural or religious cycles, remain in active use for cultural and religious observances around the world, meaning many communities routinely track time using more than one calendar system simultaneously depending on the context. This coexistence occasionally requires deliberate reconciliation, such as when a lunar calendar's shorter year gradually drifts relative to the solar seasons, prompting some traditions to periodically insert an extra month to keep religious festivals aligned with their intended season.",
             "question": "Why do some traditions periodically insert an extra month into their calendar?",
             "options": [
@@ -97,7 +97,7 @@
             "id": "RDG_READANDANSWER_L132_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Chronobiology and Medication Timing] Chronobiology, the study of how biological processes fluctuate according to the body's internal clock, has revealed that the effectiveness and side effects of certain medications can vary meaningfully depending on the time of day they are administered, since factors such as hormone levels, body temperature, and enzyme activity all follow predictable daily rhythms. Some hospitals have begun incorporating this research into treatment protocols, timing the administration of specific medications, particularly certain chemotherapy drugs, to align with periods when healthy cells are less vulnerable and target cells are more vulnerable, potentially improving treatment effectiveness while reducing unwanted side effects.",
             "question": "Why have some hospitals begun timing certain medication administration carefully?",
             "options": [
@@ -115,7 +115,7 @@
             "id": "RDG_READANDANSWER_L133_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Golden Handcuffs in Compensation] Companies sometimes structure executive or key employee compensation to include benefits, such as stock options that only fully vest after several years of continued employment, a practice sometimes referred to as 'golden handcuffs' because it financially discourages an employee from leaving even if they might otherwise be inclined to pursue a different opportunity. Critics of the practice argue that while it may successfully reduce turnover in the short term, retaining employees primarily through financial disincentives rather than genuine engagement or satisfaction can eventually produce a workforce that remains in place while being only nominally committed to the organization's actual goals.",
             "question": "What concern do critics raise about golden handcuffs, according to the passage?",
             "options": [
@@ -133,7 +133,7 @@
             "id": "RDG_READANDANSWER_L133_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Induced Demand in Traffic Planning] Transportation researchers have repeatedly observed a counterintuitive pattern known as induced demand, in which expanding a highway to relieve congestion often results in traffic levels returning to a similarly congested state within a few years, as the added capacity encourages more people to drive, drive longer distances, or shift their commute onto the now more convenient route. This finding has led some cities to reconsider highway expansion as a long-term congestion solution, investing instead in public transit alternatives that can move a comparable number of people using considerably less physical roadway space per traveler.",
             "question": "Why does highway expansion often fail to relieve congestion long-term, according to the passage?",
             "options": [
@@ -151,7 +151,7 @@
             "id": "RDG_READANDANSWER_L133_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[CRISPR Gene Editing Basics] CRISPR gene editing technology allows scientists to make precise, targeted changes to an organism's DNA by using a guide molecule to direct a cutting enzyme to a specific genetic location, where the cell's own repair mechanisms can then be directed to either disable a gene or insert a new genetic sequence in its place. While the technology holds significant promise for treating genetic diseases by correcting a harmful mutation directly at its source, researchers continue to study the risk of unintended edits occurring at unrelated locations in the genome, a concern that remains central to ongoing safety evaluations before the technology becomes more widely used in human medical treatment.",
             "question": "What ongoing concern does the passage mention regarding CRISPR technology?",
             "options": [
@@ -169,7 +169,7 @@
             "id": "RDG_READANDANSWER_L134_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Underestimating Compound Interest] Behavioral economists have found that most people significantly underestimate the long-term effect of compound interest, a cognitive tendency sometimes called exponential growth bias, in which the human mind tends to intuitively estimate growth as roughly linear even when explicitly told that a process is compounding. This bias has real financial consequences: someone who underestimates how quickly a retirement account can grow may be more likely to delay saving, believing they can easily make up the difference later, while someone who underestimates how quickly compounding debt can grow may take on a loan without fully grasping how significantly the total repayment amount will exceed the amount originally borrowed.",
             "question": "What is exponential growth bias, according to the passage?",
             "options": [
@@ -187,7 +187,7 @@
             "id": "RDG_READANDANSWER_L134_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Weak Ties in Job Searching] A well-known study on job searching found that people were considerably more likely to hear about their new job through a casual acquaintance, someone they saw only occasionally, than through a close friend or family member, a finding that gave rise to the concept of the 'strength of weak ties.' Researchers explain this seemingly counterintuitive result by noting that close friends tend to move in the same social and professional circles as the job seeker, meaning they are likely to already know about the same opportunities, whereas acquaintances, precisely because they occupy a different social world, are more likely to have access to genuinely new information.",
             "question": "Why are weak ties more likely to provide new job information, according to the passage?",
             "options": [
@@ -205,7 +205,7 @@
             "id": "RDG_READANDANSWER_L134_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Net Neutrality Debate] Net neutrality refers to the principle that internet service providers should treat all data traveling across their networks equally, without charging different rates or deliberately slowing certain content based on its source, destination, or type. Proponents argue the principle is essential for maintaining a level playing field online, preventing large, well-funded companies from effectively paying for faster access to consumers while smaller competitors are relegated to slower service, while opponents argue that allowing providers some flexibility in managing network traffic could enable investment in improved infrastructure that benefits all users, including through pricing models tailored to genuinely different levels of network usage.",
             "question": "What do proponents of net neutrality argue is at risk without the principle?",
             "options": [
@@ -223,7 +223,7 @@
             "id": "RDG_READANDANSWER_L135_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Endowment Effect] The endowment effect describes a well-documented bias in which people tend to assign a higher value to an item simply because they own it, compared to the value they would assign to the identical item if they did not yet own it, a discrepancy that persists even when the item was acquired only moments earlier and holds no sentimental or practical significance beyond its market value. In controlled experiments, participants given a mug and later asked to sell it typically demand a price notably higher than the price a separate group of participants, given the option to buy the same mug, is willing to pay, despite both groups evaluating an identical, ordinary object.",
             "question": "What does the mug experiment demonstrate about the endowment effect?",
             "options": [
@@ -241,7 +241,7 @@
             "id": "RDG_READANDANSWER_L135_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Ballast Water and Invasive Species] Large cargo ships take on seawater, known as ballast water, to maintain stability while carrying a partial cargo load, then discharge that same water, often in an entirely different ocean region, once they take on cargo at their next port. This process has inadvertently become one of the primary pathways for transporting invasive marine species around the globe, since organisms such as larvae, small fish, and microorganisms present in the original water are carried along and released into a new, often ecologically vulnerable, environment where they may have no natural predators to keep their population in check.",
             "question": "Why has ballast water become a major pathway for invasive species, according to the passage?",
             "options": [
@@ -259,7 +259,7 @@
             "id": "RDG_READANDANSWER_L135_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Overjustification Effect] The overjustification effect describes a phenomenon in which offering an external reward for an activity a person already found intrinsically enjoyable can, somewhat counterintuitively, reduce their internal motivation to continue that same activity once the external reward is removed. In a frequently cited study, children who were rewarded for drawing, an activity many had previously engaged in purely for enjoyment, later spent measurably less time drawing during free play than children who received no reward at all, suggesting the external reward had subtly shifted their own internal perception of why they engaged in the activity in the first place.",
             "question": "What did the children's drawing study suggest, according to the passage?",
             "options": [
@@ -277,7 +277,7 @@
             "id": "RDG_READANDANSWER_L136_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Pygmalion Effect in Education] The Pygmalion effect describes a phenomenon in which higher expectations placed on a person, such as a student, can lead to genuinely improved performance, partly because those elevated expectations subtly shape the way a teacher interacts with that student, offering more encouragement, more challenging material, and more patience with mistakes. In a well-known study, teachers told that a randomly selected group of ordinary students had tested as unusually promising later rated those same students as showing greater intellectual growth over the school year, despite no actual difference in the students' initial ability, suggesting the teachers' behavior, shaped by their expectation, had a genuine measurable effect on outcomes.",
             "question": "What did the well-known study about teacher expectations find?",
             "options": [
@@ -295,7 +295,7 @@
             "id": "RDG_READANDANSWER_L136_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Allelopathy in Plant Competition] Certain plant species practice a competitive strategy known as allelopathy, releasing chemical compounds into the surrounding soil that inhibit the germination or growth of nearby competing plant species, effectively reducing competition for limited resources such as water, sunlight, and soil nutrients without any direct physical contact between the plants involved. Black walnut trees are a frequently cited example, releasing a compound that can stunt or even kill many nearby plant species, a characteristic that gardeners must specifically account for when deciding what, if anything, can be safely planted within a black walnut tree's root zone.",
             "question": "Why must gardeners account for black walnut trees when planning nearby plantings?",
             "options": [
@@ -313,7 +313,7 @@
             "id": "RDG_READANDANSWER_L136_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Peltzman Effect and Risk Compensation] The Peltzman effect, named after the economist who proposed it, suggests that safety improvements, such as mandatory seatbelts, can sometimes lead individuals to unconsciously engage in riskier behavior than they otherwise would, since the perceived reduction in personal danger partially offsets the safety benefit the improvement was originally intended to provide. While the overall safety benefit of measures like seatbelts remains well-documented and substantial despite this effect, researchers studying risk compensation caution that safety interventions should still be evaluated for how they might influence behavior, rather than assuming a safety feature's full theoretical benefit will be realized in practice exactly as designed.",
             "question": "What caution do researchers studying risk compensation raise, according to the passage?",
             "options": [
@@ -331,7 +331,7 @@
             "id": "RDG_READANDANSWER_L137_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Matthew Effect in Science Funding] Sociologists studying scientific careers have documented a pattern known as the Matthew effect, in which already prominent researchers tend to receive disproportionately more funding, recognition, and opportunities for collaboration than equally capable but less established researchers, creating a compounding advantage that has little to do with the actual quality of a specific research proposal under review. Critics argue this dynamic can cause promising research directions from early-career or less-connected scientists to be systematically overlooked, not necessarily because the ideas themselves are weaker, but simply because the researcher proposing them lacks the existing reputation that reviewers, whether consciously or not, tend to weigh heavily.",
             "question": "What do critics argue can result from the Matthew effect, according to the passage?",
             "options": [
@@ -349,7 +349,7 @@
             "id": "RDG_READANDANSWER_L137_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Allometric Scaling in Biology] Allometric scaling describes the mathematical relationship between an organism's size and various aspects of its biology, such as metabolic rate, that do not simply scale in direct proportion to body mass; a larger animal, for instance, does not require proportionally as much energy per unit of body weight as a smaller one, meaning an elephant's metabolism, measured per kilogram of body weight, runs considerably slower than a mouse's. This relationship helps explain why very small mammals, such as shrews, must eat almost continuously throughout the day simply to sustain their proportionally much higher metabolic demands relative to their tiny body size.",
             "question": "Why must very small mammals like shrews eat almost continuously, according to the passage?",
             "options": [
@@ -367,7 +367,7 @@
             "id": "RDG_READANDANSWER_L137_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Just-World Hypothesis] The just-world hypothesis describes a cognitive bias in which people tend to assume that the world is fundamentally fair, leading them to unconsciously believe that individuals generally get what they deserve, whether good or bad, a belief that can comfortingly reinforce a sense of control and predictability but can also lead to unfairly blaming victims of misfortune for their own circumstances, even when a victim bears no responsibility whatsoever for what happened to them. Psychologists suggest this bias persists partly because acknowledging that genuinely bad things can happen to entirely blameless people is a more unsettling and less comforting alternative belief to hold.",
             "question": "Why do psychologists suggest the just-world bias persists, according to the passage?",
             "options": [
@@ -385,7 +385,7 @@
             "id": "RDG_READANDANSWER_L138_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Ship of Theseus and Identity] The philosophical thought experiment known as the Ship of Theseus asks whether an object that has had all of its original component parts gradually replaced over time, one plank at a time, remains fundamentally the same object it was at the start, a question that extends well beyond ships into practical modern debates, such as whether a company that has replaced its entire staff, leadership, and even core product line over several decades remains meaningfully the 'same' company it was at its founding, or a human body whose cells are almost entirely replaced over a period of years.",
             "question": "What modern debates does the passage say the Ship of Theseus question extends to?",
             "options": [
@@ -403,7 +403,7 @@
             "id": "RDG_READANDANSWER_L138_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Convergent Evolution] Convergent evolution describes the process by which unrelated species, evolving independently and often on entirely different continents, develop remarkably similar physical traits or behaviors in response to facing similar environmental pressures, rather than because of any shared recent ancestry. The streamlined, fin-like limbs found in both dolphins, which are mammals, and sharks, which are fish, illustrate this clearly: despite having a common ancestor that lived hundreds of millions of years before either group existed, both independently evolved a strikingly similar body shape simply because that shape proves highly efficient for moving through water.",
             "question": "Why do dolphins and sharks share a similar body shape, according to the passage?",
             "options": [
@@ -421,7 +421,7 @@
             "id": "RDG_READANDANSWER_L138_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Diderot Effect in Consumer Spending] The Diderot effect, named after an essay by the philosopher describing how acquiring a single elegant new item made his entire existing set of possessions suddenly feel shabby and mismatched by comparison, describes a pattern in which one new purchase can trigger a cascade of further purchases intended to restore a sense of overall consistency, even though the original possessions had seemed perfectly satisfactory just before the initial purchase was made. Marketers have been noted to sometimes deliberately design product lines to visually complement one another, subtly encouraging this exact cascading purchase pattern among consumers who buy one item from a coordinated collection.",
             "question": "What does the philosopher's original essay describe, according to the passage?",
             "options": [
@@ -439,7 +439,7 @@
             "id": "RDG_READANDANSWER_L139_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Regulatory Capture in Public Policy] Regulatory capture describes a phenomenon in which a government agency created to oversee and regulate a particular industry in the public interest gradually comes to act primarily in the interest of that same industry instead, often because the agency depends on industry expertise to understand a complex field or because agency staff anticipate future employment within the very industry they currently regulate. Political scientists note the phenomenon rarely results from outright corruption but more often develops gradually through repeated, ordinary interactions in which regulators come to see the industry's perspective as simply the most informed and reasonable view available, having spent far more time engaging with industry representatives than with the general public the agency ostensibly serves.",
             "question": "How does regulatory capture typically develop, according to the passage?",
             "options": [
@@ -457,7 +457,7 @@
             "id": "RDG_READANDANSWER_L139_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Mycorrhizal Networks in Forests] Beneath the visible forest floor, thread-like fungal structures called mycorrhizae form extensive underground networks that connect the root systems of many different trees, facilitating a two-way exchange in which the fungus receives sugars produced by a tree's photosynthesis while providing that same tree with water and soil nutrients it would otherwise struggle to absorb on its own. Researchers have found that these networks can also allow trees to share resources with each other, including cases where an older, more established tree appears to preferentially direct additional nutrients toward a younger, struggling seedling connected to the same fungal network, a discovery that has meaningfully complicated the traditional view of trees as purely independent, individually competing organisms.",
             "question": "What discovery has complicated the traditional view of trees as purely independent?",
             "options": [
@@ -475,7 +475,7 @@
             "id": "RDG_READANDANSWER_L139_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Illusion of Explanatory Depth] Psychologists have documented a bias called the illusion of explanatory depth, in which people confidently believe they understand how a common everyday object, such as a bicycle or a zipper, actually works in mechanical detail, right up until they are asked to produce a genuinely step-by-step written or drawn explanation, at which point the gaps in their actual understanding typically become immediately and often surprisingly apparent, even to the person themselves. Researchers suggest this illusion persists partly because recognizing an object and using it successfully in daily life requires far less detailed mechanical knowledge than people implicitly assume it does, allowing a shallow, functional familiarity to masquerade as genuine mechanistic understanding until specifically tested.",
             "question": "When do the gaps in a person's understanding typically become apparent, according to the passage?",
             "options": [
@@ -493,7 +493,7 @@
             "id": "RDG_READANDANSWER_L140_Q1",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Path Dependence in Technology Standards] Path dependence describes how early decisions, even ones made somewhat arbitrarily or for reasons no longer relevant, can lock a system into a particular trajectory that becomes progressively more difficult to change over time, since the accumulated cost of switching eventually outweighs the marginal benefit any single alternative might offer. The continued dominance of the QWERTY keyboard layout is a frequently cited example: despite decades of research suggesting that alternative layouts might allow for modestly faster typing for some users, the enormous number of people already trained on QWERTY, along with the entrenched manufacturing infrastructure built around it, has made switching costs prohibitively high relative to the relatively modest efficiency gains an alternative might provide.",
             "question": "Why has QWERTY remained dominant despite potentially faster alternatives, according to the passage?",
             "options": [
@@ -511,7 +511,7 @@
             "id": "RDG_READANDANSWER_L140_Q2",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[The Hedonic Treadmill] The hedonic treadmill, also known as hedonic adaptation, describes the well-documented psychological tendency for people to return to a relatively stable baseline level of happiness following both positive and negative life events, even ones as significant as winning a substantial lottery prize or experiencing a serious injury, once the initial emotional intensity of the event has gradually faded over time. This finding has led some researchers to suggest that pursuing frequent, smaller sources of novelty and engagement may contribute more reliably to sustained wellbeing than pursuing a single, major life change, since a major change's emotional impact, however initially powerful, tends to fade back toward a person's individual baseline over a surprisingly consistent timeframe.",
             "question": "What do some researchers suggest based on the hedonic treadmill finding?",
             "options": [
@@ -529,7 +529,7 @@
             "id": "RDG_READANDANSWER_L140_Q3",
             "instruction": "Read the passage and select the correct answer.",
             "subtype": "readAndAnswer",
-            "interactionType": "Text Diver",
+            "interactionType": "choice",
             "passage": "[Cultural Transmission and the Ratchet Effect] Anthropologists studying the differences between human and animal cultural learning have proposed that a key distinguishing feature of human cultural transmission is what researchers call the ratchet effect, in which an innovation, once achieved by one individual or generation, is reliably transmitted to and preserved by the next generation, allowing subsequent improvements to build cumulatively on that preserved foundation rather than each generation having to rediscover the same innovation independently from scratch. While some animal species demonstrate limited cultural transmission of specific behaviors, researchers note that these behaviors rarely accumulate additional refinements across many successive generations in the same sustained way human technologies and practices characteristically do.",
             "question": "What distinguishes the human 'ratchet effect' from animal cultural transmission, according to the passage?",
             "options": [

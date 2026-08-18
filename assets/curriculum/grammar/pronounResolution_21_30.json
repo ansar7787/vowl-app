@@ -1,577 +1,577 @@
 {
-  "gameType": "pronounResolution",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "pr_l21_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "David asked Mia if she could cover his shift.\nWho or what does 'she' refer to?",
-      "targetWord": "she",
-      "sentence": "David asked Mia if she could cover his shift.",
-      "options": [
-        "The shift",
-        "Mia",
-        "David"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Mia",
-      "hint": "Which person is female?",
-      "explanation": "'she' must refer to a female person - that's Mia, not David.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l21_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The manager warned the interns that they needed more training.\nWho or what does 'they' refer to?",
-      "targetWord": "they",
-      "sentence": "The manager warned the interns that they needed more training.",
-      "options": [
-        "The training",
-        "The interns",
-        "The manager"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The interns",
-      "hint": "Who needs more training - one person or several?",
-      "explanation": "'they' is plural, matching 'the interns,' not the single manager.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l21_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Liam thanked Noor because she helped him move.\nWho or what does 'him' refer to?",
-      "targetWord": "him",
-      "sentence": "Liam thanked Noor because she helped him move.",
-      "options": [
-        "Liam",
-        "Noor",
-        "move"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Liam",
-      "hint": "Who got the help - the helper or the one who thanked?",
-      "explanation": "'him' refers to Liam, the person being thanked and helped, not Noor who did the helping.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l22_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The waiter greeted the couple and refilled their water glasses.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The waiter greeted the couple and refilled their water glasses.",
-      "options": [
-        "The waiter",
-        "The glasses",
-        "The couple"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The couple",
-      "hint": "Whose water glasses got refilled - one person's or two?",
-      "explanation": "'their' matches 'the couple,' a pair of two people, not the single waiter.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l22_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The professor emailed the graduate students because they missed the deadline.\nWho or what does 'they' refer to?",
-      "targetWord": "they",
-      "sentence": "The professor emailed the graduate students because they missed the deadline.",
-      "options": [
-        "The graduate students",
-        "The deadline",
-        "The professor"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The graduate students",
-      "hint": "Who missed the deadline - the professor or the students?",
-      "explanation": "'they' is plural, agreeing with 'the graduate students,' not the single professor.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l22_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Ravi called Dev and gave him directions.\nWho or what does 'him' refer to?",
-      "targetWord": "him",
-      "sentence": "Ravi called Dev and gave him directions.",
-      "options": [
-        "Dev",
-        "The directions",
-        "Ravi"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Dev",
-      "hint": "Who received the directions?",
-      "explanation": "'him' refers to Dev, the person being called, not Ravi who made the call.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l23_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The girls finished their project a day early.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The girls finished their project a day early.",
-      "options": [
-        "The project",
-        "The girls",
-        "The day"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The girls",
-      "hint": "Whose project was it - one person's or several?",
-      "explanation": "'their' is plural, matching 'the girls,' the group who worked on it.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l23_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Omar reminded Layla that she still owed him money.\nWho or what does 'him' refer to?",
-      "targetWord": "him",
-      "sentence": "Omar reminded Layla that she still owed him money.",
-      "options": [
-        "Omar",
-        "Layla",
-        "The money"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Omar",
-      "hint": "Who is owed the money?",
-      "explanation": "'him' refers to Omar, the person Layla owes - not Layla herself.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l23_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The boys practiced every day, and their coach noticed the improvement.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The boys practiced every day, and their coach noticed the improvement.",
-      "options": [
-        "The improvement",
-        "The boys",
-        "The coach"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The boys",
-      "hint": "Whose coach is it - the boys' or someone else's?",
-      "explanation": "'their' is plural, matching 'the boys,' the team being coached.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l24_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The nurse spoke to the elderly man because he seemed confused.\nWho or what does 'he' refer to?",
-      "targetWord": "he",
-      "sentence": "The nurse spoke to the elderly man because he seemed confused.",
-      "options": [
-        "confused",
-        "The elderly man",
-        "The nurse"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The elderly man",
-      "hint": "Who was confused - the nurse or the patient?",
-      "explanation": "'he' refers to the elderly man, matching the male pronoun, not the nurse.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l24_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The employees asked their supervisor for feedback.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The employees asked their supervisor for feedback.",
-      "options": [
-        "The employees",
-        "The feedback",
-        "The supervisor"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The employees",
-      "hint": "Whose supervisor - one person's or a group's?",
-      "explanation": "'their' is plural, matching 'the employees,' not the single supervisor.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l24_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Dad hugged Sofia because she hadn't visited in months.\nWho or what does 'she' refer to?",
-      "targetWord": "she",
-      "sentence": "Dad hugged Sofia because she hadn't visited in months.",
-      "options": [
-        "Sofia",
-        "The months",
-        "Dad"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Sofia",
-      "hint": "Who hadn't visited - Dad or Sofia?",
-      "explanation": "'she' is female, matching Sofia, not Dad.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l25_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The customers complained because their orders arrived late.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The customers complained because their orders arrived late.",
-      "options": [
-        "The customers",
-        "late",
-        "The orders"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The customers",
-      "hint": "Whose orders were late?",
-      "explanation": "'their' is plural, matching 'the customers,' the people who ordered.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l25_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Ms. Chen helped the boy find books because he seemed lost.\nWho or what does 'he' refer to?",
-      "targetWord": "he",
-      "sentence": "Ms. Chen helped the boy find books because he seemed lost.",
-      "options": [
-        "Ms. Chen",
-        "The books",
-        "The boy"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The boy",
-      "hint": "Who seemed lost - Ms. Chen or the boy?",
-      "explanation": "'he' is male, matching 'the boy,' not Ms. Chen.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l25_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The sisters planned their trip for months.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The sisters planned their trip for months.",
-      "options": [
-        "The trip",
-        "The sisters",
-        "The months"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The sisters",
-      "hint": "Whose trip was it - one person's or several?",
-      "explanation": "'their' is plural, matching 'the sisters.'",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l26_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The chef told the servers that they should restock the ice.\nWho or what does 'they' refer to?",
-      "targetWord": "they",
-      "sentence": "The chef told the servers that they should restock the ice.",
-      "options": [
-        "The ice",
-        "The servers",
-        "The chef"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The servers",
-      "hint": "Who needs to restock - one chef or several servers?",
-      "explanation": "'they' is plural, matching 'the servers,' not the single chef.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l26_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Jamal borrowed Priya's charger and returned it the next day.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "Jamal borrowed Priya's charger and returned it the next day.",
-      "options": [
-        "Priya",
-        "The charger",
-        "Jamal"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The charger",
-      "hint": "What got returned?",
-      "explanation": "'it' refers to the charger, the object being borrowed and returned - not either person.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l26_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The passengers boarded the train before it departed.\nWho or what does 'it' refer to?",
-      "targetWord": "it",
-      "sentence": "The passengers boarded the train before it departed.",
-      "options": [
-        "The passengers",
-        "The train",
-        "boarded"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The train",
-      "hint": "What departed?",
-      "explanation": "'it' refers to the train, not the passengers.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l27_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The architects finished their blueprint and showed it to the clients.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The architects finished their blueprint and showed it to the clients.",
-      "options": [
-        "The clients",
-        "The architects",
-        "The blueprint"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The architects",
-      "hint": "Whose blueprint got finished - the architects' or the clients'?",
-      "explanation": "'their' matches 'the architects,' the team who created the blueprint.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l27_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The twins forgot their umbrellas at school.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The twins forgot their umbrellas at school.",
-      "options": [
-        "The school",
-        "The twins",
-        "The umbrellas"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The twins",
-      "hint": "Whose umbrellas got left behind?",
-      "explanation": "'their' is plural, matching 'the twins.'",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l27_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Mr. Patel praised Elena because she exceeded her sales target.\nWho or what does 'she' refer to?",
-      "targetWord": "she",
-      "sentence": "Mr. Patel praised Elena because she exceeded her sales target.",
-      "options": [
-        "The target",
-        "Mr. Patel",
-        "Elena"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Elena",
-      "hint": "Who exceeded the sales target - Mr. Patel or Elena?",
-      "explanation": "'she' is female, matching Elena, not Mr. Patel.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l28_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The children opened their presents on Sunday morning.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The children opened their presents on Sunday morning.",
-      "options": [
-        "The children",
-        "The presents",
-        "The morning"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The children",
-      "hint": "Whose presents got opened?",
-      "explanation": "'their' is plural, matching 'the children.'",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l28_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Hassan left Noor a voicemail and asked her to call back.\nWho or what does 'her' refer to?",
-      "targetWord": "her",
-      "sentence": "Hassan left Noor a voicemail and asked her to call back.",
-      "options": [
-        "The voicemail",
-        "Hassan",
-        "Noor"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Noor",
-      "hint": "Who should call back?",
-      "explanation": "'her' refers to Noor, the person being asked to call back.",
-      "grammarRule": "Object Pronouns"
-    },
-    {
-      "id": "pr_l28_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The scientists published their findings in a major journal.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The scientists published their findings in a major journal.",
-      "options": [
-        "The findings",
-        "The scientists",
-        "The journal"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The scientists",
-      "hint": "Whose findings were published?",
-      "explanation": "'their' is plural, matching 'the scientists.'",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l29_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The tailor measured Diego and adjusted his jacket.\nWho or what does 'his' refer to?",
-      "targetWord": "his",
-      "sentence": "The tailor measured Diego and adjusted his jacket.",
-      "options": [
-        "The jacket",
-        "The tailor",
-        "Diego"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Diego",
-      "hint": "Whose jacket needed adjusting?",
-      "explanation": "'his' refers to Diego, the customer being measured.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l29_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The committee reviewed the proposals before they voted.\nWho or what does 'they' refer to?",
-      "targetWord": "they",
-      "sentence": "The committee reviewed the proposals before they voted.",
-      "options": [
-        "The proposals",
-        "voted",
-        "The committee"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The committee",
-      "hint": "What can vote - people or documents?",
-      "explanation": "'they' refers to 'the committee,' the people who vote - proposals can't vote themselves.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l29_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The bride thanked her parents during the toast.\nWho or what does 'her' refer to?",
-      "targetWord": "her",
-      "sentence": "The bride thanked her parents during the toast.",
-      "options": [
-        "The parents",
-        "The bride",
-        "The toast"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The bride",
-      "hint": "Whose parents were thanked?",
-      "explanation": "'her' refers to the bride, matching the female pronoun.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l30_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The passengers were annoyed because their flight was delayed.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The passengers were annoyed because their flight was delayed.",
-      "options": [
-        "The flight",
-        "The passengers",
-        "delayed"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The passengers",
-      "hint": "Whose flight was late?",
-      "explanation": "'their' is plural, matching 'the passengers.'",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l30_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Carlos apologized to Mei because he had missed the meeting.\nWho or what does 'he' refer to?",
-      "targetWord": "he",
-      "sentence": "Carlos apologized to Mei because he had missed the meeting.",
-      "options": [
-        "The meeting",
-        "Mei",
-        "Carlos"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Carlos",
-      "hint": "Who missed the meeting - Carlos or Mei?",
-      "explanation": "'he' is male, matching Carlos, not Mei.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l30_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The dancers rehearsed their routine every evening.\nWho or what does 'their' refer to?",
-      "targetWord": "their",
-      "sentence": "The dancers rehearsed their routine every evening.",
-      "options": [
-        "The dancers",
-        "The evening",
-        "The routine"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The dancers",
-      "hint": "Whose routine was practiced?",
-      "explanation": "'their' is plural, matching 'the dancers.'",
-      "grammarRule": "Possessive Adjectives"
-    }
-  ]
+    "gameType": "pronounResolution",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "pr_l21_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "David asked Mia if she could cover his shift.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "David asked Mia if she could cover his shift.",
+            "options": [
+                "The shift",
+                "Mia",
+                "David"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Mia",
+            "hint": "Which person is female?",
+            "explanation": "'she' must refer to a female person - that's Mia, not David.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l21_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The manager warned the interns that they needed more training.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "The manager warned the interns that they needed more training.",
+            "options": [
+                "The training",
+                "The interns",
+                "The manager"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The interns",
+            "hint": "Who needs more training - one person or several?",
+            "explanation": "'they' is plural, matching 'the interns,' not the single manager.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l21_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Liam thanked Noor because she helped him move.\nWho or what does 'him' refer to?",
+            "targetWord": "him",
+            "sentence": "Liam thanked Noor because she helped him move.",
+            "options": [
+                "Liam",
+                "Noor",
+                "move"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Liam",
+            "hint": "Who got the help - the helper or the one who thanked?",
+            "explanation": "'him' refers to Liam, the person being thanked and helped, not Noor who did the helping.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l22_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The waiter greeted the couple and refilled their water glasses.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The waiter greeted the couple and refilled their water glasses.",
+            "options": [
+                "The waiter",
+                "The glasses",
+                "The couple"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The couple",
+            "hint": "Whose water glasses got refilled - one person's or two?",
+            "explanation": "'their' matches 'the couple,' a pair of two people, not the single waiter.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l22_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The professor emailed the graduate students because they missed the deadline.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "The professor emailed the graduate students because they missed the deadline.",
+            "options": [
+                "The graduate students",
+                "The deadline",
+                "The professor"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The graduate students",
+            "hint": "Who missed the deadline - the professor or the students?",
+            "explanation": "'they' is plural, agreeing with 'the graduate students,' not the single professor.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l22_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Ravi called Dev and gave him directions.\nWho or what does 'him' refer to?",
+            "targetWord": "him",
+            "sentence": "Ravi called Dev and gave him directions.",
+            "options": [
+                "Dev",
+                "The directions",
+                "Ravi"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Dev",
+            "hint": "Who received the directions?",
+            "explanation": "'him' refers to Dev, the person being called, not Ravi who made the call.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l23_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The girls finished their project a day early.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The girls finished their project a day early.",
+            "options": [
+                "The project",
+                "The girls",
+                "The day"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The girls",
+            "hint": "Whose project was it - one person's or several?",
+            "explanation": "'their' is plural, matching 'the girls,' the group who worked on it.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l23_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Omar reminded Layla that she still owed him money.\nWho or what does 'him' refer to?",
+            "targetWord": "him",
+            "sentence": "Omar reminded Layla that she still owed him money.",
+            "options": [
+                "Omar",
+                "Layla",
+                "The money"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Omar",
+            "hint": "Who is owed the money?",
+            "explanation": "'him' refers to Omar, the person Layla owes - not Layla herself.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l23_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The boys practiced every day, and their coach noticed the improvement.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The boys practiced every day, and their coach noticed the improvement.",
+            "options": [
+                "The improvement",
+                "The boys",
+                "The coach"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The boys",
+            "hint": "Whose coach is it - the boys' or someone else's?",
+            "explanation": "'their' is plural, matching 'the boys,' the team being coached.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l24_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The nurse spoke to the elderly man because he seemed confused.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "The nurse spoke to the elderly man because he seemed confused.",
+            "options": [
+                "confused",
+                "The elderly man",
+                "The nurse"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The elderly man",
+            "hint": "Who was confused - the nurse or the patient?",
+            "explanation": "'he' refers to the elderly man, matching the male pronoun, not the nurse.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l24_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The employees asked their supervisor for feedback.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The employees asked their supervisor for feedback.",
+            "options": [
+                "The employees",
+                "The feedback",
+                "The supervisor"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The employees",
+            "hint": "Whose supervisor - one person's or a group's?",
+            "explanation": "'their' is plural, matching 'the employees,' not the single supervisor.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l24_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Dad hugged Sofia because she hadn't visited in months.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Dad hugged Sofia because she hadn't visited in months.",
+            "options": [
+                "Sofia",
+                "The months",
+                "Dad"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Sofia",
+            "hint": "Who hadn't visited - Dad or Sofia?",
+            "explanation": "'she' is female, matching Sofia, not Dad.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l25_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The customers complained because their orders arrived late.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The customers complained because their orders arrived late.",
+            "options": [
+                "The customers",
+                "late",
+                "The orders"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The customers",
+            "hint": "Whose orders were late?",
+            "explanation": "'their' is plural, matching 'the customers,' the people who ordered.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l25_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Ms. Chen helped the boy find books because he seemed lost.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Ms. Chen helped the boy find books because he seemed lost.",
+            "options": [
+                "Ms. Chen",
+                "The books",
+                "The boy"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The boy",
+            "hint": "Who seemed lost - Ms. Chen or the boy?",
+            "explanation": "'he' is male, matching 'the boy,' not Ms. Chen.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l25_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The sisters planned their trip for months.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The sisters planned their trip for months.",
+            "options": [
+                "The trip",
+                "The sisters",
+                "The months"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The sisters",
+            "hint": "Whose trip was it - one person's or several?",
+            "explanation": "'their' is plural, matching 'the sisters.'",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l26_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The chef told the servers that they should restock the ice.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "The chef told the servers that they should restock the ice.",
+            "options": [
+                "The ice",
+                "The servers",
+                "The chef"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The servers",
+            "hint": "Who needs to restock - one chef or several servers?",
+            "explanation": "'they' is plural, matching 'the servers,' not the single chef.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l26_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Jamal borrowed Priya's charger and returned it the next day.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "Jamal borrowed Priya's charger and returned it the next day.",
+            "options": [
+                "Priya",
+                "The charger",
+                "Jamal"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The charger",
+            "hint": "What got returned?",
+            "explanation": "'it' refers to the charger, the object being borrowed and returned - not either person.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l26_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The passengers boarded the train before it departed.\nWho or what does 'it' refer to?",
+            "targetWord": "it",
+            "sentence": "The passengers boarded the train before it departed.",
+            "options": [
+                "The passengers",
+                "The train",
+                "boarded"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The train",
+            "hint": "What departed?",
+            "explanation": "'it' refers to the train, not the passengers.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l27_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The architects finished their blueprint and showed it to the clients.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The architects finished their blueprint and showed it to the clients.",
+            "options": [
+                "The clients",
+                "The architects",
+                "The blueprint"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The architects",
+            "hint": "Whose blueprint got finished - the architects' or the clients'?",
+            "explanation": "'their' matches 'the architects,' the team who created the blueprint.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l27_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The twins forgot their umbrellas at school.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The twins forgot their umbrellas at school.",
+            "options": [
+                "The school",
+                "The twins",
+                "The umbrellas"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The twins",
+            "hint": "Whose umbrellas got left behind?",
+            "explanation": "'their' is plural, matching 'the twins.'",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l27_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Mr. Patel praised Elena because she exceeded her sales target.\nWho or what does 'she' refer to?",
+            "targetWord": "she",
+            "sentence": "Mr. Patel praised Elena because she exceeded her sales target.",
+            "options": [
+                "The target",
+                "Mr. Patel",
+                "Elena"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Elena",
+            "hint": "Who exceeded the sales target - Mr. Patel or Elena?",
+            "explanation": "'she' is female, matching Elena, not Mr. Patel.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l28_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The children opened their presents on Sunday morning.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The children opened their presents on Sunday morning.",
+            "options": [
+                "The children",
+                "The presents",
+                "The morning"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The children",
+            "hint": "Whose presents got opened?",
+            "explanation": "'their' is plural, matching 'the children.'",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l28_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Hassan left Noor a voicemail and asked her to call back.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "Hassan left Noor a voicemail and asked her to call back.",
+            "options": [
+                "The voicemail",
+                "Hassan",
+                "Noor"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noor",
+            "hint": "Who should call back?",
+            "explanation": "'her' refers to Noor, the person being asked to call back.",
+            "grammarRule": "Object Pronouns"
+        },
+        {
+            "id": "pr_l28_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The scientists published their findings in a major journal.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The scientists published their findings in a major journal.",
+            "options": [
+                "The findings",
+                "The scientists",
+                "The journal"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The scientists",
+            "hint": "Whose findings were published?",
+            "explanation": "'their' is plural, matching 'the scientists.'",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l29_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The tailor measured Diego and adjusted his jacket.\nWho or what does 'his' refer to?",
+            "targetWord": "his",
+            "sentence": "The tailor measured Diego and adjusted his jacket.",
+            "options": [
+                "The jacket",
+                "The tailor",
+                "Diego"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Diego",
+            "hint": "Whose jacket needed adjusting?",
+            "explanation": "'his' refers to Diego, the customer being measured.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l29_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The committee reviewed the proposals before they voted.\nWho or what does 'they' refer to?",
+            "targetWord": "they",
+            "sentence": "The committee reviewed the proposals before they voted.",
+            "options": [
+                "The proposals",
+                "voted",
+                "The committee"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The committee",
+            "hint": "What can vote - people or documents?",
+            "explanation": "'they' refers to 'the committee,' the people who vote - proposals can't vote themselves.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l29_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The bride thanked her parents during the toast.\nWho or what does 'her' refer to?",
+            "targetWord": "her",
+            "sentence": "The bride thanked her parents during the toast.",
+            "options": [
+                "The parents",
+                "The bride",
+                "The toast"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The bride",
+            "hint": "Whose parents were thanked?",
+            "explanation": "'her' refers to the bride, matching the female pronoun.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l30_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The passengers were annoyed because their flight was delayed.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The passengers were annoyed because their flight was delayed.",
+            "options": [
+                "The flight",
+                "The passengers",
+                "delayed"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The passengers",
+            "hint": "Whose flight was late?",
+            "explanation": "'their' is plural, matching 'the passengers.'",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l30_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Carlos apologized to Mei because he had missed the meeting.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "Carlos apologized to Mei because he had missed the meeting.",
+            "options": [
+                "The meeting",
+                "Mei",
+                "Carlos"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Carlos",
+            "hint": "Who missed the meeting - Carlos or Mei?",
+            "explanation": "'he' is male, matching Carlos, not Mei.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l30_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The dancers rehearsed their routine every evening.\nWho or what does 'their' refer to?",
+            "targetWord": "their",
+            "sentence": "The dancers rehearsed their routine every evening.",
+            "options": [
+                "The dancers",
+                "The evening",
+                "The routine"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The dancers",
+            "hint": "Whose routine was practiced?",
+            "explanation": "'their' is plural, matching 'the dancers.'",
+            "grammarRule": "Possessive Adjectives"
+        }
+    ]
 }

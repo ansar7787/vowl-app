@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Track what 'not again', 'just fix it last week', and 'apparently not' together tell you.",
             "explanation": "'Not again' = it has happened before. 'Didn't they just fix it?' = a repair was made very recently. 'Apparently not' = the repair clearly didn't work. Inference: the system was repaired last week but has failed again. This is a pattern of recurring technical failure.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'like a different person' after leaving the job imply?",
             "explanation": "'Like a different person' since leaving = she changed significantly. The change is positive ('looks really well'). The implication: the job was causing unhappiness or stress that showed in her appearance/demeanour. Leaving removed that cause and she improved noticeably.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L81_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone suggest waiting until after a presentation to mention a delay?",
             "explanation": "Timing is strategic: mentioning bad news (delay) before a presentation could undermine it. Waiting until after protects the presentation's impact. A agrees ('Good point'). This is practical communication management - choosing the optimal moment for difficult information.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'I'd love to, but' structure communicate?",
             "explanation": "'I'd love to' = expresses desire (positive opening). 'But I've already committed' = explains impossibility. This is the classic polite decline structure: positive statement + but + reason. The 'I'd love to' softens the refusal. This is an indirect 'no' - common in social English.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "In professional settings, what does 'explore it further' often signal?",
             "explanation": "'Explore it further' is non-committal - it doesn't promise action. 'Definitely' sounds positive but often accompanies vague language in corporate contexts. 'Interesting idea' + 'explore further' without a specific next step is often corporate politeness for deprioritising a suggestion.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L82_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'I think I'll manage' communicate about accepting help?",
             "explanation": "'I think I'll manage' = I can handle it myself. 'But' signals rejection of the offer. 'Appreciate the offer' softens the refusal with gratitude. Together: a polite rejection of offered help while maintaining social harmony. 'Manage' = cope without assistance.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would both the person AND others avoid a topic?",
             "explanation": "Both the person avoiding a topic and others tiptoeing around it suggests the topic carries emotional weight for her. The collective silence is protective - people sense she doesn't want to discuss it. This is a social dynamic of protecting someone from a difficult subject.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would a new employee volunteer for everything?",
             "explanation": "Volunteering for everything as a new employee signals eagerness to prove oneself, gain experience, and make a positive impression. It's impression management - showing enthusiasm and reliability to establish a reputation quickly. This is common career-building behaviour.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L83_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the combination of reading AND taking notes on negative reviews suggest?",
             "explanation": "Reading criticism carefully + taking notes = treating feedback as useful information, not as a personal attack. This is a growth mindset approach - extracting learning from negative feedback. Taking notes shows she intends to act on the information, not just react emotionally.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone specifically request the original over a summary?",
             "explanation": "Asking for the original contract rather than a summary suggests he wants to see the precise wording, not an interpretation. Summaries can omit or simplify. He's being thorough - wanting direct access to the source document. This suggests caution, detail-orientation, or distrust of summaries.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does asking for clarification before agreeing reveal about decision-making style?",
             "explanation": "Asking clarifying questions before committing shows she understands what she's agreeing to before she agrees. This is careful, deliberate decision-making - not impulsive. 'Before agreeing to anything' emphasises she won't commit without full information.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L84_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone suddenly change their arrival habits?",
             "explanation": "A sudden change in behaviour - specifically becoming earlier rather than gradually - often follows feedback or a specific incident. 'Started arriving ten minutes early' suggests a behaviour change prompted by external feedback (perhaps being told he was consistently late). This is a corrective response.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why might a group agree unanimously and immediately with a manager?",
             "explanation": "Unanimous agreement without debate in a hierarchical context often signals power imbalance - people may fear disagreeing with a manager. Genuine agreement through discussion looks different; silence without pushback can indicate suppression of dissent rather than actual consensus.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would a senior person specifically name junior colleagues in an acceptance speech?",
             "explanation": "Naming junior colleagues specifically by name shows recognition of their contribution when he didn't have to - acceptances could easily credit 'the team' anonymously. This is genuine acknowledgement of others' work. It signals modesty, generosity, and appreciation.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L85_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does proactively ensuring everyone is introduced reveal?",
             "explanation": "Proactively facilitating introductions shows social awareness and consideration for others' comfort. She's making sure nobody feels excluded or awkward through not knowing people. This is the behaviour of a thoughtful host - prioritising others' social experience over her own.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does a small sample size mean for research conclusions?",
             "explanation": "A small sample = fewer participants/data points. The more limited the sample, the less confident you can be that findings apply beyond that specific group. This is a key research methods concept: small samples limit generalisability (external validity). It doesn't make the findings wrong, just limited in scope.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do inconsistent results across multiple studies indicate?",
             "explanation": "Inconsistent results = different studies found different things. This means no clear, reliable conclusion has emerged. The field is unresolved - different conditions, methods, or populations may produce different results. This signals ongoing uncertainty or complexity in the area.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L86_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is a conflict of interest in research funding?",
             "explanation": "When a company funds research on its own product, there's a financial incentive for positive results. This creates a potential conflict of interest - the funder may consciously or unconsciously influence the study design, interpretation, or reporting. Independent research is generally considered more credible.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does a long pause before answering typically signal?",
             "explanation": "A long pause = processing time. This suggests the question requires thought - possibly because it's difficult, sensitive, or the answer is uncertain. Immediate answers suggest easy/automatic responses; pauses suggest complexity, care, or hesitation.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What level of commitment does 'We'll see' express?",
             "explanation": "'We'll see' = I'm not committing either way - the outcome is undecided. It's non-committal. In social contexts, it's often used as a gentle way of not promising something. It leaves the door open without saying yes or no. The smile might make it feel positive, but no commitment is made.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L87_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone specifically wait until others had left?",
             "explanation": "Waiting for privacy to raise an issue suggests he wanted a one-to-one conversation - not a public one. The issue may be sensitive, personal, or about someone specific. Choosing privacy is deliberate and strategic: he wanted to avoid audience or public discussion.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What level of certainty does 'a possibility... depending on circumstances' express?",
             "explanation": "'A possibility' = not certain, not impossible. 'Could be' = conditional future. 'Depending on circumstances' = contingent on conditions. Together: it might happen if conditions allow - neither a promise nor a refusal. This is careful, hedged language managing expectations.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'exploring options' tell you about the decision-making process?",
             "explanation": "'Exploring options' = still investigating possibilities, no decision made. 'At this stage' = right now, with the implication that it may change. This is very early-stage language - they're looking, not deciding. Companies use this to avoid commitment while keeping options open.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L88_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the purpose of 'results may vary' in advertising or product information?",
             "explanation": "'Results may vary' is a disclaimer that the outcome shown or described is not guaranteed for all users. What works for one person may not work for another. It's legal protection against specific claims while acknowledging variability in outcomes.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the normal social consequence of disappearing without telling anyone?",
             "explanation": "Leaving without informing anyone is likely to cause worry, especially if he's expected somewhere. People who were waiting or expecting him will not know where he is or when he'll return. The absence of information causes concern - a natural social consequence of unexplained departure.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What's the logical response to a misdirected email discovered immediately?",
             "explanation": "Realising immediately that an email was misdirected creates urgency: contact either the wrong recipient (to explain/retract) or the right one (to send correctly), or both. Sending a follow-up correction or apology is the most professional and immediate response - damage control.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L89_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What happens when you miss a grant submission deadline?",
             "explanation": "Grant deadlines are typically firm - missing them means the application is not considered in that funding round. 'Final submission deadline' emphasises finality. Unlike some academic deadlines, funding deadlines rarely allow late submissions. The consequence: no funding in this cycle.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do all three details together suggest about her new way of life?",
             "explanation": "Three changes: city → village (location), grows food (self-sufficiency), keeps chickens (rural practice), rarely uses phone (disconnecting from digital life). Together, these paint a picture of intentional simplification - choosing a slower, more self-sufficient rural life over an urban, connected one.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the combination of study, sacrifice, and financial planning suggest?",
             "explanation": "Three simultaneous changes (learning, reducing social spending, budgeting) that all involve sacrifice and focus suggest a deliberate plan - he's investing time and money into something important. This is purposeful self-improvement behaviour: studying for a better qualification, career, or goal.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L90_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does losing two of three supermarkets over a decade suggest?",
             "explanation": "Two closures out of three in ten years indicates retail decline - shops closing because they're not profitable. The remaining one has changed hands, which can also signal difficulty. Together, these suggest a struggling local economy or reduced customer base. This is inference about economic context from specific data points.",

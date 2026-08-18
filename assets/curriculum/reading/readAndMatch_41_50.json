@@ -1,667 +1,667 @@
 {
-  "gameType": "readAndMatch",
-  "batchIndex": 5,
-  "levels": "41-50",
-  "quests": [
-    {
-      "id": "RDG_READANDMATCH_L41_Q1",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
+    "gameType": "readAndMatch",
+    "batchIndex": 5,
+    "levels": "41-50",
+    "quests": [
         {
-          "key": "[L41-Q1-0] Procrastinate",
-          "value": "To delay doing something that should be done."
+            "id": "RDG_READANDMATCH_L41_Q1",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L41-Q1-0] Procrastinate",
+                    "value": "To delay doing something that should be done."
+                },
+                {
+                    "key": "[L41-Q1-1] Prioritize",
+                    "value": "To decide which tasks are most important and do them first."
+                },
+                {
+                    "key": "[L41-Q1-2] Multitask",
+                    "value": "To do more than one task at the same time."
+                }
+            ],
+            "hint": "Picture three very different ways people handle a long to-do list.",
+            "explanation": "Prioritize means deciding what matters most and tackling it first, while procrastinate is almost the opposite — putting things off instead of starting them. Multitask takes a different approach again, juggling several tasks side by side instead of handling them in order."
         },
         {
-          "key": "[L41-Q1-1] Prioritize",
-          "value": "To decide which tasks are most important and do them first."
+            "id": "RDG_READANDMATCH_L41_Q2",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L41-Q2-0] Out of Stock",
+                    "value": "Describing an item that a store has temporarily sold all of."
+                },
+                {
+                    "key": "[L41-Q2-1] Pre-order",
+                    "value": "To order a product before it becomes officially available."
+                },
+                {
+                    "key": "[L41-Q2-2] Backorder",
+                    "value": "An order for an item that will be sent once it becomes available again."
+                }
+            ],
+            "hint": "These words describe three situations you might run into while shopping online.",
+            "explanation": "Out of stock means a store has nothing left to sell right now, and a backorder is often the result — an order that waits until more arrive. Pre-order works differently from both; it happens before a product is even available, not after it runs out."
         },
         {
-          "key": "[L41-Q1-2] Multitask",
-          "value": "To do more than one task at the same time."
+            "id": "RDG_READANDMATCH_L41_Q3",
+            "instruction": "Match each word with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L41-Q3-0] Empathy",
+                    "value": "The ability to understand and share another person's feelings."
+                },
+                {
+                    "key": "[L41-Q3-1] Sympathy",
+                    "value": "Feelings of sorrow or pity for someone else's situation."
+                },
+                {
+                    "key": "[L41-Q3-2] Compassion",
+                    "value": "A strong feeling of wanting to help someone who is suffering."
+                }
+            ],
+            "hint": "Each word describes a caring response to someone else's pain, with a slightly different depth.",
+            "explanation": "Sympathy means feeling sorry for someone's situation from the outside, while empathy goes a step further — actually understanding and sharing what they feel. Compassion adds one more layer on top of both: a strong pull to actually help, not just feel for them."
+        },
+        {
+            "id": "RDG_READANDMATCH_L42_Q1",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L42-Q1-0] Substitute Teacher",
+                    "value": "A teacher who temporarily replaces the usual teacher."
+                },
+                {
+                    "key": "[L42-Q1-1] Extracurricular",
+                    "value": "Describing an activity done outside of regular school classes."
+                },
+                {
+                    "key": "[L42-Q1-2] Detention",
+                    "value": "A punishment in which a student must stay at school after hours."
+                }
+            ],
+            "hint": "Picture a school day that isn't quite going as usual.",
+            "explanation": "A substitute teacher fills in when the regular teacher is away, and extracurricular describes anything happening outside normal classes, like a club or sport. Detention is unrelated to either — it's a punishment that keeps a student at school after hours."
+        },
+        {
+            "id": "RDG_READANDMATCH_L42_Q2",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L42-Q2-0] Severance Package",
+                    "value": "Money and benefits given to an employee when they lose their job."
+                },
+                {
+                    "key": "[L42-Q2-1] Freelancer",
+                    "value": "A person who works independently for different clients, not for one employer."
+                },
+                {
+                    "key": "[L42-Q2-2] Onboarding",
+                    "value": "The process of helping a new employee settle into a job."
+                }
+            ],
+            "hint": "These words relate to three very different moments in someone's working life.",
+            "explanation": "Onboarding happens at the very start of a job, helping a new employee settle in. A severance package appears at the opposite end, when someone loses a job. Freelancer stands apart from both — it describes someone who never has just one employer to begin with."
+        },
+        {
+            "id": "RDG_READANDMATCH_L42_Q3",
+            "instruction": "Match each word with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L42-Q3-0] Withdraw",
+                    "value": "To take money out of a bank account."
+                },
+                {
+                    "key": "[L42-Q3-1] Overdraft",
+                    "value": "A situation where you spend more money than is in your account."
+                },
+                {
+                    "key": "[L42-Q3-2] Statement",
+                    "value": "A document showing all the transactions in an account over a period."
+                }
+            ],
+            "hint": "Picture checking your bank account after spending more than planned.",
+            "explanation": "To withdraw is simply to take money out of an account. An overdraft happens when you withdraw more than you actually have, and a statement is the document that later shows every transaction, including that mistake."
+        },
+        {
+            "id": "RDG_READANDMATCH_L43_Q1",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L43-Q1-0] Renovation",
+                    "value": "The process of repairing and improving a building."
+                },
+                {
+                    "key": "[L43-Q1-1] Landlord",
+                    "value": "A person who owns property and rents it to others."
+                },
+                {
+                    "key": "[L43-Q1-2] Tenant",
+                    "value": "A person who pays to live in a property owned by someone else."
+                }
+            ],
+            "hint": "Two of these words are people, and one is a project.",
+            "explanation": "A landlord owns a property and rents it out, while a tenant is the person who pays to live there. Renovation is unrelated to either role directly — it's simply the work of repairing or improving the building itself."
+        },
+        {
+            "id": "RDG_READANDMATCH_L43_Q2",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L43-Q2-0] Turbulence",
+                    "value": "Sudden, rough movement of an aircraft caused by unstable air."
+                },
+                {
+                    "key": "[L43-Q2-1] Aisle Seat",
+                    "value": "A seat next to the walkway on a plane or train."
+                },
+                {
+                    "key": "[L43-Q2-2] Connecting Flight",
+                    "value": "A second flight a passenger takes to reach their final destination."
+                }
+            ],
+            "hint": "Picture a long plane journey, from where you sit to what you feel along the way.",
+            "explanation": "An aisle seat is about where you sit, and a connecting flight is about how your journey is structured, often through more than one flight. Turbulence is completely different from both — it's the rough, unstable movement you might feel once you're already in the air."
+        },
+        {
+            "id": "RDG_READANDMATCH_L43_Q3",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L43-Q3-0] Resentment",
+                    "value": "A bitter feeling caused by being treated unfairly."
+                },
+                {
+                    "key": "[L43-Q3-1] Reconcile",
+                    "value": "To become friendly again after a disagreement."
+                },
+                {
+                    "key": "[L43-Q3-2] Hold a Grudge",
+                    "value": "To continue feeling angry about something for a long time."
+                }
+            ],
+            "hint": "Picture two friends after a serious argument — some of these help, one doesn't.",
+            "explanation": "Resentment and hold a grudge are closely linked, both describing lingering anger about being treated unfairly. Reconcile moves in the opposite direction from both — it's the process of making peace and becoming friendly again."
+        },
+        {
+            "id": "RDG_READANDMATCH_L44_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L44-Q1-0] Take Attendance",
+                    "value": "To check and record which students are present in class."
+                },
+                {
+                    "key": "[L44-Q1-1] Submit an Assignment",
+                    "value": "To hand in completed school work to a teacher."
+                },
+                {
+                    "key": "[L44-Q1-2] Make Up an Exam",
+                    "value": "To take a test at a later time after missing the original one."
+                }
+            ],
+            "hint": "Picture three separate tasks that happen in and around a classroom.",
+            "explanation": "Taking attendance is something a teacher does, checking who's present, while submitting an assignment is something a student does, handing in finished work. Making up an exam is different from both — it only happens after a student has missed the original test."
+        },
+        {
+            "id": "RDG_READANDMATCH_L44_Q2",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L44-Q2-0] Layoff",
+                    "value": "The act of an employer ending an employee's job, often due to lack of work."
+                },
+                {
+                    "key": "[L44-Q2-1] Promote",
+                    "value": "To move an employee to a higher position."
+                },
+                {
+                    "key": "[L44-Q2-2] Demote",
+                    "value": "To move an employee to a lower position."
+                }
+            ],
+            "hint": "One word ends a job, and the other two move someone up or down within it.",
+            "explanation": "Promote and demote are opposites, moving an employee to a higher or lower position. Layoff is a very different outcome from either — it means the job ends completely, usually because there isn't enough work to justify it."
+        },
+        {
+            "id": "RDG_READANDMATCH_L44_Q3",
+            "instruction": "Match each word with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L44-Q3-0] Allergic",
+                    "value": "Having a harmful reaction to a particular food or substance."
+                },
+                {
+                    "key": "[L44-Q3-1] Intolerant",
+                    "value": "Unable to properly digest a particular type of food."
+                },
+                {
+                    "key": "[L44-Q3-2] Vegetarian",
+                    "value": "A person who does not eat meat or fish."
+                }
+            ],
+            "hint": "Picture reading a restaurant menu and explaining what you can't or won't eat.",
+            "explanation": "Allergic describes a reaction the body can't safely handle, while intolerant is milder — the body simply struggles to digest something properly. Vegetarian is a personal choice rather than a physical reaction; it means choosing not to eat meat or fish at all."
+        },
+        {
+            "id": "RDG_READANDMATCH_L45_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L45-Q1-0] Browse",
+                    "value": "To look through items casually, without a specific plan to buy."
+                },
+                {
+                    "key": "[L45-Q1-1] Compare Prices",
+                    "value": "To check the cost of similar items in different stores."
+                },
+                {
+                    "key": "[L45-Q1-2] Add to Cart",
+                    "value": "To select an item to buy while shopping online."
+                }
+            ],
+            "hint": "These words follow the natural steps of shopping online, from looking to buying.",
+            "explanation": "You browse first, looking around without any firm plan to buy. Comparing prices comes next, once something catches your eye, and adding to cart is the final step — actually selecting an item to purchase."
+        },
+        {
+            "id": "RDG_READANDMATCH_L45_Q2",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L45-Q2-0] Diagnose",
+                    "value": "To identify what illness a patient has after examining them."
+                },
+                {
+                    "key": "[L45-Q2-1] Prescribe",
+                    "value": "To officially recommend a medicine or treatment for a patient."
+                },
+                {
+                    "key": "[L45-Q2-2] Refer",
+                    "value": "To send a patient to see a different doctor or specialist."
+                }
+            ],
+            "hint": "Picture a doctor's visit, from figuring out the problem to deciding what happens next.",
+            "explanation": "A doctor diagnoses first, identifying what's wrong, and then often prescribes medicine to treat it. Refer is a different kind of next step — sending the patient to see a different doctor instead of treating them directly."
+        },
+        {
+            "id": "RDG_READANDMATCH_L45_Q3",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L45-Q3-0] Plot Twist",
+                    "value": "An unexpected change in the direction of a story."
+                },
+                {
+                    "key": "[L45-Q3-1] Cliffhanger",
+                    "value": "An exciting, unresolved ending that makes you want to know what happens next."
+                },
+                {
+                    "key": "[L45-Q3-2] Spoiler",
+                    "value": "Information that reveals an important part of a story before someone experiences it."
+                }
+            ],
+            "hint": "Each word relates to surprise or suspense in a story — or to ruining it.",
+            "explanation": "A plot twist is an unexpected turn within the story itself, while a cliffhanger is a specific kind of twist placed right at the end, left unresolved. A spoiler works completely differently — it ruins the surprise by revealing what happens before you get there yourself."
+        },
+        {
+            "id": "RDG_READANDMATCH_L46_Q1",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L46-Q1-0] Stand Out",
+                    "value": "To be noticeably different or better than others."
+                },
+                {
+                    "key": "[L46-Q1-1] Catch Up",
+                    "value": "To reach the same level as others after falling behind."
+                },
+                {
+                    "key": "[L46-Q1-2] Fall Behind",
+                    "value": "To make less progress than others and become delayed."
+                }
+            ],
+            "hint": "Picture a race — some of these describe your position compared to others.",
+            "explanation": "Fall behind and catch up are opposite directions along the same race — one describes losing ground, the other recovering it. Stand out isn't about position at all; it simply means being noticeably different or better than everyone else."
+        },
+        {
+            "id": "RDG_READANDMATCH_L46_Q2",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L46-Q2-0] Cut Costs",
+                    "value": "To reduce the amount of money spent on something."
+                },
+                {
+                    "key": "[L46-Q2-1] Break Even",
+                    "value": "To earn exactly enough money to cover costs, with no profit or loss."
+                },
+                {
+                    "key": "[L46-Q2-2] Run a Deficit",
+                    "value": "To spend more money than is earned over a period of time."
+                }
+            ],
+            "hint": "Each phrase describes a different outcome for a company's finances.",
+            "explanation": "Break even means a business earns exactly enough to cover its costs, with nothing left over either way. Running a deficit is worse than that — spending more than is earned — while cutting costs is the action a company might take to avoid exactly that outcome."
+        },
+        {
+            "id": "RDG_READANDMATCH_L46_Q3",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L46-Q3-0] Get Along",
+                    "value": "To have a friendly relationship with someone."
+                },
+                {
+                    "key": "[L46-Q3-1] Fall Out",
+                    "value": "To stop being friends with someone, usually after an argument."
+                },
+                {
+                    "key": "[L46-Q3-2] Make Up",
+                    "value": "To become friendly again after an argument."
+                }
+            ],
+            "hint": "Picture a friendship through good times, a fight, and finally peace again.",
+            "explanation": "Get along describes a friendship going smoothly, while fall out describes the opposite — a friendship breaking down after an argument. Make up completes the story, describing the moment two people become friendly again."
+        },
+        {
+            "id": "RDG_READANDMATCH_L47_Q1",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L47-Q1-0] Hand In",
+                    "value": "To give a completed piece of work to a teacher."
+                },
+                {
+                    "key": "[L47-Q1-1] Look Up",
+                    "value": "To search for information, such as in a book or online."
+                },
+                {
+                    "key": "[L47-Q1-2] Figure Out",
+                    "value": "To understand or solve something after thinking about it."
+                }
+            ],
+            "hint": "These phrases describe three separate steps in doing schoolwork.",
+            "explanation": "You might look up information first, searching for it in a book or online, and figure out how to use it through your own thinking. Hand in comes last of all — the moment the finished work is actually given to a teacher."
+        },
+        {
+            "id": "RDG_READANDMATCH_L47_Q2",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L47-Q2-0] Set Off",
+                    "value": "To begin a journey."
+                },
+                {
+                    "key": "[L47-Q2-1] Check In",
+                    "value": "To register your arrival at a hotel or airport."
+                },
+                {
+                    "key": "[L47-Q2-2] Head Back",
+                    "value": "To start traveling toward home or a starting point."
+                }
+            ],
+            "hint": "Picture a trip in three stages: leaving, arriving, and eventually returning.",
+            "explanation": "Set off marks the very start of a journey, and check in happens once you've arrived somewhere, like a hotel or airport. Head back reverses the direction completely — it's the moment you start traveling home again."
+        },
+        {
+            "id": "RDG_READANDMATCH_L47_Q3",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L47-Q3-0] Take After",
+                    "value": "To resemble an older family member in appearance or character."
+                },
+                {
+                    "key": "[L47-Q3-1] Look Up To",
+                    "value": "To admire and respect someone, often as a role model."
+                },
+                {
+                    "key": "[L47-Q3-2] Grow Apart",
+                    "value": "To gradually become less close to someone over time."
+                }
+            ],
+            "hint": "Each phrase describes a different kind of connection to someone in your life.",
+            "explanation": "Take after describes a resemblance, often to an older relative, while look up to describes admiration instead, often for a role model. Grow apart moves in the opposite direction from closeness — it describes a relationship slowly fading over time."
+        },
+        {
+            "id": "RDG_READANDMATCH_L48_Q1",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L48-Q1-0] Run Out Of",
+                    "value": "To have no more of something left."
+                },
+                {
+                    "key": "[L48-Q1-1] Stock Up On",
+                    "value": "To buy a large amount of something for future use."
+                },
+                {
+                    "key": "[L48-Q1-2] Sell Out",
+                    "value": "To sell all available items of a product."
+                }
+            ],
+            "hint": "Picture a store's shelves at three very different moments.",
+            "explanation": "Stock up on means buying a lot of something in advance, while run out of is the opposite problem — having none left at all. Sell out is close to running out, but it describes the store's side of the story: every single item has been purchased by customers."
+        },
+        {
+            "id": "RDG_READANDMATCH_L48_Q2",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L48-Q2-0] Come Down With",
+                    "value": "To begin to suffer from an illness."
+                },
+                {
+                    "key": "[L48-Q2-1] Get Over",
+                    "value": "To recover fully from an illness or difficult experience."
+                },
+                {
+                    "key": "[L48-Q2-2] Pass Out",
+                    "value": "To suddenly become unconscious."
+                }
+            ],
+            "hint": "Picture the start of an illness, its end, and a sudden medical emergency.",
+            "explanation": "Come down with marks the beginning of an illness, and get over marks its end, once you've fully recovered. Pass out is a separate, sudden event — suddenly losing consciousness, which isn't really a stage of illness at all."
+        },
+        {
+            "id": "RDG_READANDMATCH_L48_Q3",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L48-Q3-0] Bring Up",
+                    "value": "To introduce a topic into a conversation."
+                },
+                {
+                    "key": "[L48-Q3-1] Point Out",
+                    "value": "To draw attention to a particular fact or detail."
+                },
+                {
+                    "key": "[L48-Q3-2] Speak Up",
+                    "value": "To talk loudly enough to be heard, or to express an opinion."
+                }
+            ],
+            "hint": "Each phrase describes a different way of contributing to a conversation.",
+            "explanation": "Bring up means introducing a brand new topic into the conversation, while point out means drawing attention to one specific detail within it. Speak up takes a different angle from both — it's about volume and confidence, making sure your voice is actually heard."
+        },
+        {
+            "id": "RDG_READANDMATCH_L49_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L49-Q1-0] Drop Out",
+                    "value": "To leave school or a course before finishing it."
+                },
+                {
+                    "key": "[L49-Q1-1] Graduate",
+                    "value": "To successfully complete a course of study."
+                },
+                {
+                    "key": "[L49-Q1-2] Major In",
+                    "value": "To choose a particular subject as your main area of study."
+                }
+            ],
+            "hint": "Picture three different paths through a college education.",
+            "explanation": "Graduate and drop out are opposite outcomes of the same course of study — one finishes it successfully, the other leaves before the end. Major in happens earlier than either outcome; it's simply choosing which subject to focus on in the first place."
+        },
+        {
+            "id": "RDG_READANDMATCH_L49_Q2",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L49-Q2-0] Take Over",
+                    "value": "To gain control of a company or task from someone else."
+                },
+                {
+                    "key": "[L49-Q2-1] Step Down",
+                    "value": "To leave an important position, often voluntarily."
+                },
+                {
+                    "key": "[L49-Q2-2] Burn Out",
+                    "value": "To become exhausted from working too hard for too long."
+                }
+            ],
+            "hint": "Picture a leadership role changing hands, and the toll that role can take.",
+            "explanation": "Take over means gaining control of something, often from someone else, while step down is the reverse — voluntarily leaving that same kind of position. Burn out is different from both; it's not about the position at all, but about becoming exhausted from working too hard."
+        },
+        {
+            "id": "RDG_READANDMATCH_L49_Q3",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L49-Q3-0] Eat Out",
+                    "value": "To have a meal at a restaurant instead of at home."
+                },
+                {
+                    "key": "[L49-Q3-1] Pick Up",
+                    "value": "To buy or collect food, often to take away."
+                },
+                {
+                    "key": "[L49-Q3-2] Dish Out",
+                    "value": "To serve food onto plates."
+                }
+            ],
+            "hint": "Each phrase describes a different way of getting a meal.",
+            "explanation": "Eat out means having a full meal at a restaurant, while pick up usually means collecting food to take elsewhere. Dish out is different from both — it's the act of serving food onto plates, often at home."
+        },
+        {
+            "id": "RDG_READANDMATCH_L50_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L50-Q1-0] Look Forward To",
+                    "value": "To feel happy and excited about something that will happen."
+                },
+                {
+                    "key": "[L50-Q1-1] Put Off",
+                    "value": "To delay doing something until a later time."
+                },
+                {
+                    "key": "[L50-Q1-2] Get Around To",
+                    "value": "To finally find time to do something after a delay."
+                }
+            ],
+            "hint": "Picture three different attitudes toward something on your to-do list.",
+            "explanation": "Look forward to describes real excitement about something coming up, while put off describes the opposite feeling — delaying it instead. Get around to sits somewhere in between; it means finally doing the thing you'd been putting off."
+        },
+        {
+            "id": "RDG_READANDMATCH_L50_Q2",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L50-Q2-0] Touch Down",
+                    "value": "When an aircraft lands on the ground."
+                },
+                {
+                    "key": "[L50-Q2-1] Take Off",
+                    "value": "When an aircraft leaves the ground and begins flying."
+                },
+                {
+                    "key": "[L50-Q2-2] Check Out",
+                    "value": "To leave a hotel after paying the bill."
+                }
+            ],
+            "hint": "Two of these describe a plane in flight, and one describes leaving a hotel.",
+            "explanation": "Take off and touch down are opposite moments of a flight — one is leaving the ground, the other is landing back on it. Check out has nothing to do with flying at all; it simply means leaving a hotel after settling the bill."
+        },
+        {
+            "id": "RDG_READANDMATCH_L50_Q3",
+            "instruction": "Match each phrasal verb with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L50-Q3-0] Calm Down",
+                    "value": "To become less angry, upset, or excited."
+                },
+                {
+                    "key": "[L50-Q3-1] Cheer Up",
+                    "value": "To become happier, or to help someone feel happier."
+                },
+                {
+                    "key": "[L50-Q3-2] Open Up",
+                    "value": "To start sharing your feelings or thoughts honestly."
+                }
+            ],
+            "hint": "Each phrase describes helping someone move toward a better emotional state.",
+            "explanation": "Calm down helps with anger or excitement, easing someone back to a steady state, while cheer up helps with sadness, lifting someone's mood instead. Open up moves in a different direction from both — it's about honesty, encouraging someone to finally share their feelings."
         }
-      ],
-      "hint": "Picture three very different ways people handle a long to-do list.",
-      "explanation": "Prioritize means deciding what matters most and tackling it first, while procrastinate is almost the opposite — putting things off instead of starting them. Multitask takes a different approach again, juggling several tasks side by side instead of handling them in order."
-    },
-    {
-      "id": "RDG_READANDMATCH_L41_Q2",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L41-Q2-0] Out of Stock",
-          "value": "Describing an item that a store has temporarily sold all of."
-        },
-        {
-          "key": "[L41-Q2-1] Pre-order",
-          "value": "To order a product before it becomes officially available."
-        },
-        {
-          "key": "[L41-Q2-2] Backorder",
-          "value": "An order for an item that will be sent once it becomes available again."
-        }
-      ],
-      "hint": "These words describe three situations you might run into while shopping online.",
-      "explanation": "Out of stock means a store has nothing left to sell right now, and a backorder is often the result — an order that waits until more arrive. Pre-order works differently from both; it happens before a product is even available, not after it runs out."
-    },
-    {
-      "id": "RDG_READANDMATCH_L41_Q3",
-      "instruction": "Match each word with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L41-Q3-0] Empathy",
-          "value": "The ability to understand and share another person's feelings."
-        },
-        {
-          "key": "[L41-Q3-1] Sympathy",
-          "value": "Feelings of sorrow or pity for someone else's situation."
-        },
-        {
-          "key": "[L41-Q3-2] Compassion",
-          "value": "A strong feeling of wanting to help someone who is suffering."
-        }
-      ],
-      "hint": "Each word describes a caring response to someone else's pain, with a slightly different depth.",
-      "explanation": "Sympathy means feeling sorry for someone's situation from the outside, while empathy goes a step further — actually understanding and sharing what they feel. Compassion adds one more layer on top of both: a strong pull to actually help, not just feel for them."
-    },
-    {
-      "id": "RDG_READANDMATCH_L42_Q1",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L42-Q1-0] Substitute Teacher",
-          "value": "A teacher who temporarily replaces the usual teacher."
-        },
-        {
-          "key": "[L42-Q1-1] Extracurricular",
-          "value": "Describing an activity done outside of regular school classes."
-        },
-        {
-          "key": "[L42-Q1-2] Detention",
-          "value": "A punishment in which a student must stay at school after hours."
-        }
-      ],
-      "hint": "Picture a school day that isn't quite going as usual.",
-      "explanation": "A substitute teacher fills in when the regular teacher is away, and extracurricular describes anything happening outside normal classes, like a club or sport. Detention is unrelated to either — it's a punishment that keeps a student at school after hours."
-    },
-    {
-      "id": "RDG_READANDMATCH_L42_Q2",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L42-Q2-0] Severance Package",
-          "value": "Money and benefits given to an employee when they lose their job."
-        },
-        {
-          "key": "[L42-Q2-1] Freelancer",
-          "value": "A person who works independently for different clients, not for one employer."
-        },
-        {
-          "key": "[L42-Q2-2] Onboarding",
-          "value": "The process of helping a new employee settle into a job."
-        }
-      ],
-      "hint": "These words relate to three very different moments in someone's working life.",
-      "explanation": "Onboarding happens at the very start of a job, helping a new employee settle in. A severance package appears at the opposite end, when someone loses a job. Freelancer stands apart from both — it describes someone who never has just one employer to begin with."
-    },
-    {
-      "id": "RDG_READANDMATCH_L42_Q3",
-      "instruction": "Match each word with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L42-Q3-0] Withdraw",
-          "value": "To take money out of a bank account."
-        },
-        {
-          "key": "[L42-Q3-1] Overdraft",
-          "value": "A situation where you spend more money than is in your account."
-        },
-        {
-          "key": "[L42-Q3-2] Statement",
-          "value": "A document showing all the transactions in an account over a period."
-        }
-      ],
-      "hint": "Picture checking your bank account after spending more than planned.",
-      "explanation": "To withdraw is simply to take money out of an account. An overdraft happens when you withdraw more than you actually have, and a statement is the document that later shows every transaction, including that mistake."
-    },
-    {
-      "id": "RDG_READANDMATCH_L43_Q1",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L43-Q1-0] Renovation",
-          "value": "The process of repairing and improving a building."
-        },
-        {
-          "key": "[L43-Q1-1] Landlord",
-          "value": "A person who owns property and rents it to others."
-        },
-        {
-          "key": "[L43-Q1-2] Tenant",
-          "value": "A person who pays to live in a property owned by someone else."
-        }
-      ],
-      "hint": "Two of these words are people, and one is a project.",
-      "explanation": "A landlord owns a property and rents it out, while a tenant is the person who pays to live there. Renovation is unrelated to either role directly — it's simply the work of repairing or improving the building itself."
-    },
-    {
-      "id": "RDG_READANDMATCH_L43_Q2",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L43-Q2-0] Turbulence",
-          "value": "Sudden, rough movement of an aircraft caused by unstable air."
-        },
-        {
-          "key": "[L43-Q2-1] Aisle Seat",
-          "value": "A seat next to the walkway on a plane or train."
-        },
-        {
-          "key": "[L43-Q2-2] Connecting Flight",
-          "value": "A second flight a passenger takes to reach their final destination."
-        }
-      ],
-      "hint": "Picture a long plane journey, from where you sit to what you feel along the way.",
-      "explanation": "An aisle seat is about where you sit, and a connecting flight is about how your journey is structured, often through more than one flight. Turbulence is completely different from both — it's the rough, unstable movement you might feel once you're already in the air."
-    },
-    {
-      "id": "RDG_READANDMATCH_L43_Q3",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L43-Q3-0] Resentment",
-          "value": "A bitter feeling caused by being treated unfairly."
-        },
-        {
-          "key": "[L43-Q3-1] Reconcile",
-          "value": "To become friendly again after a disagreement."
-        },
-        {
-          "key": "[L43-Q3-2] Hold a Grudge",
-          "value": "To continue feeling angry about something for a long time."
-        }
-      ],
-      "hint": "Picture two friends after a serious argument — some of these help, one doesn't.",
-      "explanation": "Resentment and hold a grudge are closely linked, both describing lingering anger about being treated unfairly. Reconcile moves in the opposite direction from both — it's the process of making peace and becoming friendly again."
-    },
-    {
-      "id": "RDG_READANDMATCH_L44_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L44-Q1-0] Take Attendance",
-          "value": "To check and record which students are present in class."
-        },
-        {
-          "key": "[L44-Q1-1] Submit an Assignment",
-          "value": "To hand in completed school work to a teacher."
-        },
-        {
-          "key": "[L44-Q1-2] Make Up an Exam",
-          "value": "To take a test at a later time after missing the original one."
-        }
-      ],
-      "hint": "Picture three separate tasks that happen in and around a classroom.",
-      "explanation": "Taking attendance is something a teacher does, checking who's present, while submitting an assignment is something a student does, handing in finished work. Making up an exam is different from both — it only happens after a student has missed the original test."
-    },
-    {
-      "id": "RDG_READANDMATCH_L44_Q2",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L44-Q2-0] Layoff",
-          "value": "The act of an employer ending an employee's job, often due to lack of work."
-        },
-        {
-          "key": "[L44-Q2-1] Promote",
-          "value": "To move an employee to a higher position."
-        },
-        {
-          "key": "[L44-Q2-2] Demote",
-          "value": "To move an employee to a lower position."
-        }
-      ],
-      "hint": "One word ends a job, and the other two move someone up or down within it.",
-      "explanation": "Promote and demote are opposites, moving an employee to a higher or lower position. Layoff is a very different outcome from either — it means the job ends completely, usually because there isn't enough work to justify it."
-    },
-    {
-      "id": "RDG_READANDMATCH_L44_Q3",
-      "instruction": "Match each word with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L44-Q3-0] Allergic",
-          "value": "Having a harmful reaction to a particular food or substance."
-        },
-        {
-          "key": "[L44-Q3-1] Intolerant",
-          "value": "Unable to properly digest a particular type of food."
-        },
-        {
-          "key": "[L44-Q3-2] Vegetarian",
-          "value": "A person who does not eat meat or fish."
-        }
-      ],
-      "hint": "Picture reading a restaurant menu and explaining what you can't or won't eat.",
-      "explanation": "Allergic describes a reaction the body can't safely handle, while intolerant is milder — the body simply struggles to digest something properly. Vegetarian is a personal choice rather than a physical reaction; it means choosing not to eat meat or fish at all."
-    },
-    {
-      "id": "RDG_READANDMATCH_L45_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L45-Q1-0] Browse",
-          "value": "To look through items casually, without a specific plan to buy."
-        },
-        {
-          "key": "[L45-Q1-1] Compare Prices",
-          "value": "To check the cost of similar items in different stores."
-        },
-        {
-          "key": "[L45-Q1-2] Add to Cart",
-          "value": "To select an item to buy while shopping online."
-        }
-      ],
-      "hint": "These words follow the natural steps of shopping online, from looking to buying.",
-      "explanation": "You browse first, looking around without any firm plan to buy. Comparing prices comes next, once something catches your eye, and adding to cart is the final step — actually selecting an item to purchase."
-    },
-    {
-      "id": "RDG_READANDMATCH_L45_Q2",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L45-Q2-0] Diagnose",
-          "value": "To identify what illness a patient has after examining them."
-        },
-        {
-          "key": "[L45-Q2-1] Prescribe",
-          "value": "To officially recommend a medicine or treatment for a patient."
-        },
-        {
-          "key": "[L45-Q2-2] Refer",
-          "value": "To send a patient to see a different doctor or specialist."
-        }
-      ],
-      "hint": "Picture a doctor's visit, from figuring out the problem to deciding what happens next.",
-      "explanation": "A doctor diagnoses first, identifying what's wrong, and then often prescribes medicine to treat it. Refer is a different kind of next step — sending the patient to see a different doctor instead of treating them directly."
-    },
-    {
-      "id": "RDG_READANDMATCH_L45_Q3",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L45-Q3-0] Plot Twist",
-          "value": "An unexpected change in the direction of a story."
-        },
-        {
-          "key": "[L45-Q3-1] Cliffhanger",
-          "value": "An exciting, unresolved ending that makes you want to know what happens next."
-        },
-        {
-          "key": "[L45-Q3-2] Spoiler",
-          "value": "Information that reveals an important part of a story before someone experiences it."
-        }
-      ],
-      "hint": "Each word relates to surprise or suspense in a story — or to ruining it.",
-      "explanation": "A plot twist is an unexpected turn within the story itself, while a cliffhanger is a specific kind of twist placed right at the end, left unresolved. A spoiler works completely differently — it ruins the surprise by revealing what happens before you get there yourself."
-    },
-    {
-      "id": "RDG_READANDMATCH_L46_Q1",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L46-Q1-0] Stand Out",
-          "value": "To be noticeably different or better than others."
-        },
-        {
-          "key": "[L46-Q1-1] Catch Up",
-          "value": "To reach the same level as others after falling behind."
-        },
-        {
-          "key": "[L46-Q1-2] Fall Behind",
-          "value": "To make less progress than others and become delayed."
-        }
-      ],
-      "hint": "Picture a race — some of these describe your position compared to others.",
-      "explanation": "Fall behind and catch up are opposite directions along the same race — one describes losing ground, the other recovering it. Stand out isn't about position at all; it simply means being noticeably different or better than everyone else."
-    },
-    {
-      "id": "RDG_READANDMATCH_L46_Q2",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L46-Q2-0] Cut Costs",
-          "value": "To reduce the amount of money spent on something."
-        },
-        {
-          "key": "[L46-Q2-1] Break Even",
-          "value": "To earn exactly enough money to cover costs, with no profit or loss."
-        },
-        {
-          "key": "[L46-Q2-2] Run a Deficit",
-          "value": "To spend more money than is earned over a period of time."
-        }
-      ],
-      "hint": "Each phrase describes a different outcome for a company's finances.",
-      "explanation": "Break even means a business earns exactly enough to cover its costs, with nothing left over either way. Running a deficit is worse than that — spending more than is earned — while cutting costs is the action a company might take to avoid exactly that outcome."
-    },
-    {
-      "id": "RDG_READANDMATCH_L46_Q3",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L46-Q3-0] Get Along",
-          "value": "To have a friendly relationship with someone."
-        },
-        {
-          "key": "[L46-Q3-1] Fall Out",
-          "value": "To stop being friends with someone, usually after an argument."
-        },
-        {
-          "key": "[L46-Q3-2] Make Up",
-          "value": "To become friendly again after an argument."
-        }
-      ],
-      "hint": "Picture a friendship through good times, a fight, and finally peace again.",
-      "explanation": "Get along describes a friendship going smoothly, while fall out describes the opposite — a friendship breaking down after an argument. Make up completes the story, describing the moment two people become friendly again."
-    },
-    {
-      "id": "RDG_READANDMATCH_L47_Q1",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L47-Q1-0] Hand In",
-          "value": "To give a completed piece of work to a teacher."
-        },
-        {
-          "key": "[L47-Q1-1] Look Up",
-          "value": "To search for information, such as in a book or online."
-        },
-        {
-          "key": "[L47-Q1-2] Figure Out",
-          "value": "To understand or solve something after thinking about it."
-        }
-      ],
-      "hint": "These phrases describe three separate steps in doing schoolwork.",
-      "explanation": "You might look up information first, searching for it in a book or online, and figure out how to use it through your own thinking. Hand in comes last of all — the moment the finished work is actually given to a teacher."
-    },
-    {
-      "id": "RDG_READANDMATCH_L47_Q2",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L47-Q2-0] Set Off",
-          "value": "To begin a journey."
-        },
-        {
-          "key": "[L47-Q2-1] Check In",
-          "value": "To register your arrival at a hotel or airport."
-        },
-        {
-          "key": "[L47-Q2-2] Head Back",
-          "value": "To start traveling toward home or a starting point."
-        }
-      ],
-      "hint": "Picture a trip in three stages: leaving, arriving, and eventually returning.",
-      "explanation": "Set off marks the very start of a journey, and check in happens once you've arrived somewhere, like a hotel or airport. Head back reverses the direction completely — it's the moment you start traveling home again."
-    },
-    {
-      "id": "RDG_READANDMATCH_L47_Q3",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L47-Q3-0] Take After",
-          "value": "To resemble an older family member in appearance or character."
-        },
-        {
-          "key": "[L47-Q3-1] Look Up To",
-          "value": "To admire and respect someone, often as a role model."
-        },
-        {
-          "key": "[L47-Q3-2] Grow Apart",
-          "value": "To gradually become less close to someone over time."
-        }
-      ],
-      "hint": "Each phrase describes a different kind of connection to someone in your life.",
-      "explanation": "Take after describes a resemblance, often to an older relative, while look up to describes admiration instead, often for a role model. Grow apart moves in the opposite direction from closeness — it describes a relationship slowly fading over time."
-    },
-    {
-      "id": "RDG_READANDMATCH_L48_Q1",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L48-Q1-0] Run Out Of",
-          "value": "To have no more of something left."
-        },
-        {
-          "key": "[L48-Q1-1] Stock Up On",
-          "value": "To buy a large amount of something for future use."
-        },
-        {
-          "key": "[L48-Q1-2] Sell Out",
-          "value": "To sell all available items of a product."
-        }
-      ],
-      "hint": "Picture a store's shelves at three very different moments.",
-      "explanation": "Stock up on means buying a lot of something in advance, while run out of is the opposite problem — having none left at all. Sell out is close to running out, but it describes the store's side of the story: every single item has been purchased by customers."
-    },
-    {
-      "id": "RDG_READANDMATCH_L48_Q2",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L48-Q2-0] Come Down With",
-          "value": "To begin to suffer from an illness."
-        },
-        {
-          "key": "[L48-Q2-1] Get Over",
-          "value": "To recover fully from an illness or difficult experience."
-        },
-        {
-          "key": "[L48-Q2-2] Pass Out",
-          "value": "To suddenly become unconscious."
-        }
-      ],
-      "hint": "Picture the start of an illness, its end, and a sudden medical emergency.",
-      "explanation": "Come down with marks the beginning of an illness, and get over marks its end, once you've fully recovered. Pass out is a separate, sudden event — suddenly losing consciousness, which isn't really a stage of illness at all."
-    },
-    {
-      "id": "RDG_READANDMATCH_L48_Q3",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L48-Q3-0] Bring Up",
-          "value": "To introduce a topic into a conversation."
-        },
-        {
-          "key": "[L48-Q3-1] Point Out",
-          "value": "To draw attention to a particular fact or detail."
-        },
-        {
-          "key": "[L48-Q3-2] Speak Up",
-          "value": "To talk loudly enough to be heard, or to express an opinion."
-        }
-      ],
-      "hint": "Each phrase describes a different way of contributing to a conversation.",
-      "explanation": "Bring up means introducing a brand new topic into the conversation, while point out means drawing attention to one specific detail within it. Speak up takes a different angle from both — it's about volume and confidence, making sure your voice is actually heard."
-    },
-    {
-      "id": "RDG_READANDMATCH_L49_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L49-Q1-0] Drop Out",
-          "value": "To leave school or a course before finishing it."
-        },
-        {
-          "key": "[L49-Q1-1] Graduate",
-          "value": "To successfully complete a course of study."
-        },
-        {
-          "key": "[L49-Q1-2] Major In",
-          "value": "To choose a particular subject as your main area of study."
-        }
-      ],
-      "hint": "Picture three different paths through a college education.",
-      "explanation": "Graduate and drop out are opposite outcomes of the same course of study — one finishes it successfully, the other leaves before the end. Major in happens earlier than either outcome; it's simply choosing which subject to focus on in the first place."
-    },
-    {
-      "id": "RDG_READANDMATCH_L49_Q2",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L49-Q2-0] Take Over",
-          "value": "To gain control of a company or task from someone else."
-        },
-        {
-          "key": "[L49-Q2-1] Step Down",
-          "value": "To leave an important position, often voluntarily."
-        },
-        {
-          "key": "[L49-Q2-2] Burn Out",
-          "value": "To become exhausted from working too hard for too long."
-        }
-      ],
-      "hint": "Picture a leadership role changing hands, and the toll that role can take.",
-      "explanation": "Take over means gaining control of something, often from someone else, while step down is the reverse — voluntarily leaving that same kind of position. Burn out is different from both; it's not about the position at all, but about becoming exhausted from working too hard."
-    },
-    {
-      "id": "RDG_READANDMATCH_L49_Q3",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L49-Q3-0] Eat Out",
-          "value": "To have a meal at a restaurant instead of at home."
-        },
-        {
-          "key": "[L49-Q3-1] Pick Up",
-          "value": "To buy or collect food, often to take away."
-        },
-        {
-          "key": "[L49-Q3-2] Dish Out",
-          "value": "To serve food onto plates."
-        }
-      ],
-      "hint": "Each phrase describes a different way of getting a meal.",
-      "explanation": "Eat out means having a full meal at a restaurant, while pick up usually means collecting food to take elsewhere. Dish out is different from both — it's the act of serving food onto plates, often at home."
-    },
-    {
-      "id": "RDG_READANDMATCH_L50_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L50-Q1-0] Look Forward To",
-          "value": "To feel happy and excited about something that will happen."
-        },
-        {
-          "key": "[L50-Q1-1] Put Off",
-          "value": "To delay doing something until a later time."
-        },
-        {
-          "key": "[L50-Q1-2] Get Around To",
-          "value": "To finally find time to do something after a delay."
-        }
-      ],
-      "hint": "Picture three different attitudes toward something on your to-do list.",
-      "explanation": "Look forward to describes real excitement about something coming up, while put off describes the opposite feeling — delaying it instead. Get around to sits somewhere in between; it means finally doing the thing you'd been putting off."
-    },
-    {
-      "id": "RDG_READANDMATCH_L50_Q2",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L50-Q2-0] Touch Down",
-          "value": "When an aircraft lands on the ground."
-        },
-        {
-          "key": "[L50-Q2-1] Take Off",
-          "value": "When an aircraft leaves the ground and begins flying."
-        },
-        {
-          "key": "[L50-Q2-2] Check Out",
-          "value": "To leave a hotel after paying the bill."
-        }
-      ],
-      "hint": "Two of these describe a plane in flight, and one describes leaving a hotel.",
-      "explanation": "Take off and touch down are opposite moments of a flight — one is leaving the ground, the other is landing back on it. Check out has nothing to do with flying at all; it simply means leaving a hotel after settling the bill."
-    },
-    {
-      "id": "RDG_READANDMATCH_L50_Q3",
-      "instruction": "Match each phrasal verb with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L50-Q3-0] Calm Down",
-          "value": "To become less angry, upset, or excited."
-        },
-        {
-          "key": "[L50-Q3-1] Cheer Up",
-          "value": "To become happier, or to help someone feel happier."
-        },
-        {
-          "key": "[L50-Q3-2] Open Up",
-          "value": "To start sharing your feelings or thoughts honestly."
-        }
-      ],
-      "hint": "Each phrase describes helping someone move toward a better emotional state.",
-      "explanation": "Calm down helps with anger or excitement, easing someone back to a steady state, while cheer up helps with sadness, lifting someone's mood instead. Open up moves in a different direction from both — it's about honesty, encouraging someone to finally share their feelings."
-    }
-  ]
+    ]
 }

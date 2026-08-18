@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 7,
-  "levels": "61-70",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A fire has broken out on the third floor of a busy apartment building at night. Input fire code!",
-      "correctAnswer": "SEND MULTIPLE FIRE ENGINES",
-      "hint": "Say what's needed given the size of the building.",
-      "explanation": "An apartment fire at night needs several engines to fight the fire and check every floor for residents.",
-      "id": "eh_l61_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Residents on the upper floors cannot get past the smoke-filled stairwell. Input rescue code!",
-      "correctAnswer": "SEND UP THE LADDER",
-      "hint": "Say what equipment can reach them from outside.",
-      "explanation": "A ladder truck can reach trapped residents through a window when the stairwell itself is unsafe.",
-      "id": "eh_l61_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "All residents are now accounted for and the fire is fully under control. Input code!",
-      "correctAnswer": "STAND DOWN THE CREWS",
-      "hint": "Say what happens to the crews once the danger has passed.",
-      "explanation": "Standing crews down once everyone is safe frees them to respond to the next call.",
-      "id": "eh_l61_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A five-car pileup has happened on a foggy motorway with several people trapped. Input code!",
-      "correctAnswer": "SEND MULTIPLE AMBULANCES",
-      "hint": "Say what's needed given more than one person is hurt.",
-      "explanation": "Several vehicles involved usually means several injured people, so more than one ambulance should be sent.",
-      "id": "eh_l62_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Traffic is still moving toward the crash site in the thick fog. Input safety code!",
-      "correctAnswer": "CLOSE THE MOTORWAY NOW",
-      "hint": "Say what must happen to stop more vehicles arriving.",
-      "explanation": "Closing the road prevents a second crash from other drivers who can't see the first one in time.",
-      "id": "eh_l62_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "One driver is trapped in a crushed car and cannot be freed by hand. Input rescue code!",
-      "correctAnswer": "SEND CUTTING EQUIPMENT",
-      "hint": "Say what tool is needed to free him.",
-      "explanation": "Specialist cutting equipment can open a crushed car safely without hurting the driver further.",
-      "id": "eh_l62_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Heavy rainfall for two days has caused a river to burst its banks near a housing estate. Input code!",
-      "correctAnswer": "EVACUATE THE ESTATE",
-      "hint": "Say what should happen to the residents there.",
-      "explanation": "Getting residents out ahead of rising water is far safer than waiting until the flood arrives.",
-      "id": "eh_l63_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Several elderly residents refuse to leave their flooding ground-floor homes. Input rescue code!",
-      "correctAnswer": "SEND A BOAT TEAM",
-      "hint": "Say what's needed to reach homes surrounded by water.",
-      "explanation": "A boat team can reach and safely persuade or carry out residents once water blocks the roads.",
-      "id": "eh_l63_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The floodwater has now fully receded and engineers confirm the homes are structurally safe. Input code!",
-      "correctAnswer": "ALLOW RESIDENTS BACK",
-      "hint": "Say what can happen now the area is safe.",
-      "explanation": "Residents can return home safely only once engineers confirm there's no lasting structural damage.",
-      "id": "eh_l63_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A gas leak has been confirmed under a street, affecting six connected homes. Input code!",
-      "correctAnswer": "EVACUATE ALL SIX HOMES",
-      "hint": "Say exactly how many homes must be cleared.",
-      "explanation": "Naming the exact number of homes ensures every affected household is checked and evacuated, not just some.",
-      "id": "eh_l64_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers have located the source of the leak beneath the road surface. Input code!",
-      "correctAnswer": "SHUT OFF THE MAIN",
-      "hint": "Say what must be closed at the source.",
-      "explanation": "Shutting off the gas main stops more gas from reaching the leak while it is repaired.",
-      "id": "eh_l64_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Gas levels inside the homes have returned to a safe reading after venting. Input code!",
-      "correctAnswer": "ALLOW RESIDENTS BACK",
-      "hint": "Say what can happen now the area is safe.",
-      "explanation": "Residents can only return once readings confirm the gas has fully cleared from every home.",
-      "id": "eh_l64_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A school reports a stranger repeatedly trying to enter through a side gate during lessons. Input code!",
-      "correctAnswer": "BEGIN A LOCKDOWN NOW",
-      "hint": "Say the standard school safety procedure to start.",
-      "explanation": "A lockdown keeps children safely inside classrooms while staff and police check who the stranger is.",
-      "id": "eh_l65_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Teachers confirm all classroom doors are locked and children are away from windows. Input code!",
-      "correctAnswer": "CONFIRM LOCKDOWN COMPLETE",
-      "hint": "Say what should be confirmed back to the school.",
-      "explanation": "Confirming the lockdown is complete lets the school office know every classroom is properly secured.",
-      "id": "eh_l65_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Police identify the stranger as a parent who forgot their visitor pass. Input code!",
-      "correctAnswer": "END THE LOCKDOWN",
-      "hint": "Say what can now be lifted, given the good news.",
-      "explanation": "Ending the lockdown once the situation is fully explained lets lessons return to normal quickly.",
-      "id": "eh_l65_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A small ferry's engine has caught fire mid-crossing with forty passengers aboard. Input fire code!",
-      "correctAnswer": "SEND THE COAST GUARD",
-      "hint": "Ask for the service that responds to emergencies at sea.",
-      "explanation": "The coast guard has vessels and training suited to reaching a burning boat and its passengers safely.",
-      "id": "eh_l66_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Passengers are being moved to the open deck away from the smoke below. Input code!",
-      "correctAnswer": "ISSUE LIFE JACKETS NOW",
-      "hint": "Say what safety equipment should be given out.",
-      "explanation": "Life jackets are the first safety step for any passenger vessel emergency, even before evacuation begins.",
-      "id": "eh_l66_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The fire is out and the ferry can now be towed safely to shore. Input code!",
-      "correctAnswer": "TOW THE FERRY IN",
-      "hint": "Say what should happen to the disabled ferry.",
-      "explanation": "Towing the ferry to shore gets everyone safely back on land once the immediate fire risk is over.",
-      "id": "eh_l66_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A conveyor belt has jammed with a worker's sleeve caught inside a food factory. Input code!",
-      "correctAnswer": "HIT THE EMERGENCY STOP",
-      "hint": "Say the fastest way to stop the machine.",
-      "explanation": "The emergency stop halts the belt instantly, which is far faster than switching it off normally.",
-      "id": "eh_l67_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The worker's arm is free but he has a deep cut from the machine. Input medical code!",
-      "correctAnswer": "SEND MEDICAL ASSISTANCE",
-      "hint": "Ask plainly for trained help to be sent.",
-      "explanation": "A machinery injury like this needs paramedics to assess and treat the wound properly.",
-      "id": "eh_l67_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Managers need to know if the same machine has caused injuries before. Input code!",
-      "correctAnswer": "CHECK THE SAFETY LOG",
-      "hint": "Say what record should be reviewed.",
-      "explanation": "Checking past incident records helps managers decide if the machine needs repair before it's used again.",
-      "id": "eh_l67_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A severe thunderstorm warning has been issued for an outdoor music festival with ten thousand fans. Input code!",
-      "correctAnswer": "PAUSE THE MAIN STAGE",
-      "hint": "Say what should stop before the storm arrives.",
-      "explanation": "Pausing the show gives staff time to move the crowd to shelter before lightning becomes a real risk.",
-      "id": "eh_l68_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Festival staff are directing fans toward the covered car park for shelter. Input code!",
-      "correctAnswer": "OPEN THE CAR PARK",
-      "hint": "Say what needs to be made available to the crowd.",
-      "explanation": "Opening the covered car park gives thousands of fans a safe, dry place to wait out the storm.",
-      "id": "eh_l68_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The storm has passed and organizers confirm the festival grounds are safe again. Input code!",
-      "correctAnswer": "RESUME THE MAIN STAGE",
-      "hint": "Say what can start again once it's safe.",
-      "explanation": "Resuming only after a safety check keeps fans from returning to a stage area that isn't fully checked.",
-      "id": "eh_l68_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A hillside search is underway for a hiker who missed his check-in time by six hours. Input code!",
-      "correctAnswer": "SEND A SEARCH TEAM",
-      "hint": "Ask for the team trained to look for him.",
-      "explanation": "A trained search team can cover ground systematically and knows how to read trail signs he may have left.",
-      "id": "eh_l69_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The search team has found his backpack near a stream but no sign of him. Input code!",
-      "correctAnswer": "SEARCH ALONG THE STREAM",
-      "hint": "Say where the search should now focus.",
-      "explanation": "Following the stream from where the backpack was found is the most likely direction he may have gone.",
-      "id": "eh_l69_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The hiker is found safe nearby with a sprained ankle that slowed him down. Input code!",
-      "correctAnswer": "SEND A STRETCHER TEAM",
-      "hint": "Say what's needed to bring him down safely.",
-      "explanation": "A stretcher team can carry him off the hillside without him having to walk on the injured ankle.",
-      "id": "eh_l69_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A driver has crashed into a utility pole, knocking out power to a whole neighborhood. Input code!",
-      "correctAnswer": "REQUEST AN AMBULANCE",
-      "hint": "Formally ask for the ambulance to be sent.",
-      "explanation": "Checking on the driver's injuries comes first, since the crash itself may have hurt him badly.",
-      "id": "eh_l70_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Live wires from the fallen pole are hanging low across the road. Input safety code!",
-      "correctAnswer": "CLOSE OFF THE ROAD",
-      "hint": "Say what should be done to protect drivers and walkers.",
-      "explanation": "Closing the road keeps anyone from touching or driving near a wire that may still be live.",
-      "id": "eh_l70_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The power company confirms the wire has been made safe and disconnected. Input code!",
-      "correctAnswer": "REOPEN THE ROAD",
-      "hint": "Say what can happen once the wire is confirmed safe.",
-      "explanation": "Reopening the road only after official confirmation avoids any risk from a wire that only looks safe.",
-      "id": "eh_l70_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 7,
+    "levels": "61-70",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A fire has broken out on the third floor of a busy apartment building at night. Input fire code!",
+            "correctAnswer": "SEND MULTIPLE FIRE ENGINES",
+            "hint": "Say what's needed given the size of the building.",
+            "explanation": "An apartment fire at night needs several engines to fight the fire and check every floor for residents.",
+            "id": "eh_l61_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Residents on the upper floors cannot get past the smoke-filled stairwell. Input rescue code!",
+            "correctAnswer": "SEND UP THE LADDER",
+            "hint": "Say what equipment can reach them from outside.",
+            "explanation": "A ladder truck can reach trapped residents through a window when the stairwell itself is unsafe.",
+            "id": "eh_l61_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "All residents are now accounted for and the fire is fully under control. Input code!",
+            "correctAnswer": "STAND DOWN THE CREWS",
+            "hint": "Say what happens to the crews once the danger has passed.",
+            "explanation": "Standing crews down once everyone is safe frees them to respond to the next call.",
+            "id": "eh_l61_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A five-car pileup has happened on a foggy motorway with several people trapped. Input code!",
+            "correctAnswer": "SEND MULTIPLE AMBULANCES",
+            "hint": "Say what's needed given more than one person is hurt.",
+            "explanation": "Several vehicles involved usually means several injured people, so more than one ambulance should be sent.",
+            "id": "eh_l62_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Traffic is still moving toward the crash site in the thick fog. Input safety code!",
+            "correctAnswer": "CLOSE THE MOTORWAY NOW",
+            "hint": "Say what must happen to stop more vehicles arriving.",
+            "explanation": "Closing the road prevents a second crash from other drivers who can't see the first one in time.",
+            "id": "eh_l62_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "One driver is trapped in a crushed car and cannot be freed by hand. Input rescue code!",
+            "correctAnswer": "SEND CUTTING EQUIPMENT",
+            "hint": "Say what tool is needed to free him.",
+            "explanation": "Specialist cutting equipment can open a crushed car safely without hurting the driver further.",
+            "id": "eh_l62_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Heavy rainfall for two days has caused a river to burst its banks near a housing estate. Input code!",
+            "correctAnswer": "EVACUATE THE ESTATE",
+            "hint": "Say what should happen to the residents there.",
+            "explanation": "Getting residents out ahead of rising water is far safer than waiting until the flood arrives.",
+            "id": "eh_l63_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Several elderly residents refuse to leave their flooding ground-floor homes. Input rescue code!",
+            "correctAnswer": "SEND A BOAT TEAM",
+            "hint": "Say what's needed to reach homes surrounded by water.",
+            "explanation": "A boat team can reach and safely persuade or carry out residents once water blocks the roads.",
+            "id": "eh_l63_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The floodwater has now fully receded and engineers confirm the homes are structurally safe. Input code!",
+            "correctAnswer": "ALLOW RESIDENTS BACK",
+            "hint": "Say what can happen now the area is safe.",
+            "explanation": "Residents can return home safely only once engineers confirm there's no lasting structural damage.",
+            "id": "eh_l63_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A gas leak has been confirmed under a street, affecting six connected homes. Input code!",
+            "correctAnswer": "EVACUATE ALL SIX HOMES",
+            "hint": "Say exactly how many homes must be cleared.",
+            "explanation": "Naming the exact number of homes ensures every affected household is checked and evacuated, not just some.",
+            "id": "eh_l64_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers have located the source of the leak beneath the road surface. Input code!",
+            "correctAnswer": "SHUT OFF THE MAIN",
+            "hint": "Say what must be closed at the source.",
+            "explanation": "Shutting off the gas main stops more gas from reaching the leak while it is repaired.",
+            "id": "eh_l64_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Gas levels inside the homes have returned to a safe reading after venting. Input code!",
+            "correctAnswer": "ALLOW RESIDENTS BACK",
+            "hint": "Say what can happen now the area is safe.",
+            "explanation": "Residents can only return once readings confirm the gas has fully cleared from every home.",
+            "id": "eh_l64_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A school reports a stranger repeatedly trying to enter through a side gate during lessons. Input code!",
+            "correctAnswer": "BEGIN A LOCKDOWN NOW",
+            "hint": "Say the standard school safety procedure to start.",
+            "explanation": "A lockdown keeps children safely inside classrooms while staff and police check who the stranger is.",
+            "id": "eh_l65_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Teachers confirm all classroom doors are locked and children are away from windows. Input code!",
+            "correctAnswer": "CONFIRM LOCKDOWN COMPLETE",
+            "hint": "Say what should be confirmed back to the school.",
+            "explanation": "Confirming the lockdown is complete lets the school office know every classroom is properly secured.",
+            "id": "eh_l65_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Police identify the stranger as a parent who forgot their visitor pass. Input code!",
+            "correctAnswer": "END THE LOCKDOWN",
+            "hint": "Say what can now be lifted, given the good news.",
+            "explanation": "Ending the lockdown once the situation is fully explained lets lessons return to normal quickly.",
+            "id": "eh_l65_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A small ferry's engine has caught fire mid-crossing with forty passengers aboard. Input fire code!",
+            "correctAnswer": "SEND THE COAST GUARD",
+            "hint": "Ask for the service that responds to emergencies at sea.",
+            "explanation": "The coast guard has vessels and training suited to reaching a burning boat and its passengers safely.",
+            "id": "eh_l66_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Passengers are being moved to the open deck away from the smoke below. Input code!",
+            "correctAnswer": "ISSUE LIFE JACKETS NOW",
+            "hint": "Say what safety equipment should be given out.",
+            "explanation": "Life jackets are the first safety step for any passenger vessel emergency, even before evacuation begins.",
+            "id": "eh_l66_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The fire is out and the ferry can now be towed safely to shore. Input code!",
+            "correctAnswer": "TOW THE FERRY IN",
+            "hint": "Say what should happen to the disabled ferry.",
+            "explanation": "Towing the ferry to shore gets everyone safely back on land once the immediate fire risk is over.",
+            "id": "eh_l66_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A conveyor belt has jammed with a worker's sleeve caught inside a food factory. Input code!",
+            "correctAnswer": "HIT THE EMERGENCY STOP",
+            "hint": "Say the fastest way to stop the machine.",
+            "explanation": "The emergency stop halts the belt instantly, which is far faster than switching it off normally.",
+            "id": "eh_l67_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The worker's arm is free but he has a deep cut from the machine. Input medical code!",
+            "correctAnswer": "SEND MEDICAL ASSISTANCE",
+            "hint": "Ask plainly for trained help to be sent.",
+            "explanation": "A machinery injury like this needs paramedics to assess and treat the wound properly.",
+            "id": "eh_l67_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Managers need to know if the same machine has caused injuries before. Input code!",
+            "correctAnswer": "CHECK THE SAFETY LOG",
+            "hint": "Say what record should be reviewed.",
+            "explanation": "Checking past incident records helps managers decide if the machine needs repair before it's used again.",
+            "id": "eh_l67_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A severe thunderstorm warning has been issued for an outdoor music festival with ten thousand fans. Input code!",
+            "correctAnswer": "PAUSE THE MAIN STAGE",
+            "hint": "Say what should stop before the storm arrives.",
+            "explanation": "Pausing the show gives staff time to move the crowd to shelter before lightning becomes a real risk.",
+            "id": "eh_l68_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Festival staff are directing fans toward the covered car park for shelter. Input code!",
+            "correctAnswer": "OPEN THE CAR PARK",
+            "hint": "Say what needs to be made available to the crowd.",
+            "explanation": "Opening the covered car park gives thousands of fans a safe, dry place to wait out the storm.",
+            "id": "eh_l68_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The storm has passed and organizers confirm the festival grounds are safe again. Input code!",
+            "correctAnswer": "RESUME THE MAIN STAGE",
+            "hint": "Say what can start again once it's safe.",
+            "explanation": "Resuming only after a safety check keeps fans from returning to a stage area that isn't fully checked.",
+            "id": "eh_l68_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A hillside search is underway for a hiker who missed his check-in time by six hours. Input code!",
+            "correctAnswer": "SEND A SEARCH TEAM",
+            "hint": "Ask for the team trained to look for him.",
+            "explanation": "A trained search team can cover ground systematically and knows how to read trail signs he may have left.",
+            "id": "eh_l69_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The search team has found his backpack near a stream but no sign of him. Input code!",
+            "correctAnswer": "SEARCH ALONG THE STREAM",
+            "hint": "Say where the search should now focus.",
+            "explanation": "Following the stream from where the backpack was found is the most likely direction he may have gone.",
+            "id": "eh_l69_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The hiker is found safe nearby with a sprained ankle that slowed him down. Input code!",
+            "correctAnswer": "SEND A STRETCHER TEAM",
+            "hint": "Say what's needed to bring him down safely.",
+            "explanation": "A stretcher team can carry him off the hillside without him having to walk on the injured ankle.",
+            "id": "eh_l69_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A driver has crashed into a utility pole, knocking out power to a whole neighborhood. Input code!",
+            "correctAnswer": "REQUEST AN AMBULANCE",
+            "hint": "Formally ask for the ambulance to be sent.",
+            "explanation": "Checking on the driver's injuries comes first, since the crash itself may have hurt him badly.",
+            "id": "eh_l70_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Live wires from the fallen pole are hanging low across the road. Input safety code!",
+            "correctAnswer": "CLOSE OFF THE ROAD",
+            "hint": "Say what should be done to protect drivers and walkers.",
+            "explanation": "Closing the road keeps anyone from touching or driving near a wire that may still be live.",
+            "id": "eh_l70_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The power company confirms the wire has been made safe and disconnected. Input code!",
+            "correctAnswer": "REOPEN THE ROAD",
+            "hint": "Say what can happen once the wire is confirmed safe.",
+            "explanation": "Reopening the road only after official confirmation avoids any risk from a wire that only looks safe.",
+            "id": "eh_l70_q3"
+        }
+    ]
 }

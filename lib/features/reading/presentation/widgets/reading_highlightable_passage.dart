@@ -104,14 +104,16 @@ class _ReadingHighlightablePassageState
             children: [
               Icon(Icons.touch_app_rounded, color: widget.primaryColor, size: 24.sp),
               SizedBox(width: 8.w),
-              Text(
-                'TAP THE SENTENCE THAT CONTAINS THE ANSWER',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  color: widget.primaryColor,
-                  letterSpacing: 1.5,
+              Expanded(
+                child: Text(
+                  'TAP THE SENTENCE THAT CONTAINS THE ANSWER',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 10.sp,
+                    fontWeight: FontWeight.w800,
+                    color: widget.primaryColor,
+                    letterSpacing: 1.5,
+                  ),
                 ),
               ),
             ],

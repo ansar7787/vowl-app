@@ -6,7 +6,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"There's a tenderness that flares up on my right side every so often, and my stomach has felt properly bloated by most evenings this week.\"",
             "symptoms": [
                 "Side Pain",
@@ -22,7 +22,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent stiffness through my hands each morning that's started lasting well over an hour before it eases, and I've noticed some visible puffiness in my knuckles most days now.\"",
             "symptoms": [
                 "Joint Stiffness",
@@ -38,7 +38,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've had this persistent low hum of worry that's been hard to shake for the past few weeks, and I've noticed I'm more forgetful than I used to be, misplacing things constantly.\"",
             "symptoms": [
                 "Low Mood",
@@ -54,7 +54,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My scalp has felt intensely itchy for nearly two weeks now, and I've noticed a fair bit more hair coming out when I shower.\"",
             "symptoms": [
                 "Scalp Itching",
@@ -70,7 +70,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The nurse's intake note reads: \"Patient, referred by their GP for specialist review, describes six months of intermittent joint pain affecting multiple joints symmetrically, with associated fatigue and no reported fever.\"",
             "symptoms": [
                 "Joint Stiffness",
@@ -86,7 +86,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this recurring tightness in my throat that seems to come on specifically when I'm presenting at work, and I've noticed my voice shakes a little during those moments,\" the patient tells the doctor.",
             "symptoms": [
                 "Hoarse Voice",
@@ -102,7 +102,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"My whole body has felt sore and worn out since the weekend hike, and my sleep has been genuinely poor because of how uncomfortable I am.\"",
             "symptoms": [
                 "Muscle Soreness",
@@ -118,7 +118,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent dry cough that's lingered for nearly six weeks now, well past my last cold, and I've started noticing I'm more breathless during my regular swim sessions.\"",
             "symptoms": [
                 "Wheezing",
@@ -134,7 +134,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've had this persistent sensation of pins and needles in both feet that's become more noticeable over the past several months, and I've also had some difficulty with balance on uneven ground.\"",
             "symptoms": [
                 "Pins and Needles",
@@ -150,7 +150,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had this recurring low-grade fever that seems to spike in the evenings specifically, and I've noticed some night sweats that leave my sheets damp.\"",
             "symptoms": [
                 "Chills",
@@ -166,7 +166,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The nurse's intake note reads: \"Patient reports a three-month history of unintentional changes in bowel habits, alternating between loose stools and constipation, without reported blood or significant pain.\"",
             "symptoms": [
                 "Diarrhea",
@@ -182,7 +182,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this persistent soreness across both shoulders that seems worse after longer days, and I've noticed I'm clenching my jaw without realizing it, according to my partner,\" the patient tells the doctor.",
             "symptoms": [
                 "Neck Pain",
@@ -198,7 +198,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this persistent feeling of my heart racing for no clear reason, several times a week now, and I've also noticed I'm more anxious in general lately.\"",
             "symptoms": [
                 "Racing Heartbeat",
@@ -214,7 +214,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent tenderness in my lower abdomen that's been present for about ten days now, along with a noticeable decrease in my appetite.\"",
             "symptoms": [
                 "Bloating",
@@ -230,7 +230,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've had this persistent ringing that's become a near-constant presence, and I've noticed I'm avoiding social situations because following conversations in groups has become exhausting.\"",
             "symptoms": [
                 "Ear Fullness",
@@ -246,7 +246,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"I've had this persistent soreness in my wrist that's worsened despite wearing a brace at night, and I've noticed the numbness in my fingers is now waking me up.\"",
             "symptoms": [
                 "Wrist Pain",
@@ -262,7 +262,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The nurse's intake note reads: \"Patient reports four weeks of persistent low mood with associated sleep disturbance, describing both difficulty falling asleep and early morning waking.\"",
             "symptoms": [
                 "Low Mood",
@@ -278,7 +278,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this dull, nagging ache across my lower back most of the day, and I've noticed I'm more short-tempered than usual because of how tired the discomfort makes me,\" the patient tells the doctor.",
             "symptoms": [
                 "Cramp",
@@ -294,7 +294,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this persistent discomfort behind my breastbone most evenings that rises into my throat, and I've also noticed I'm more fatigued than usual, possibly from the disrupted sleep.\"",
             "symptoms": [
                 "Heartburn",
@@ -310,7 +310,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent soreness in both knees that's made my usual hiking difficult this season, and I've noticed a grinding sensation that wasn't there a year ago.\"",
             "symptoms": [
                 "Swelling",
@@ -326,7 +326,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've had this persistent itching across my scalp that's worse after washing, and I've noticed a few new red bumps appearing near my hairline.\"",
             "symptoms": [
                 "Scalp Itching",
@@ -342,7 +342,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"My Achilles has felt sore and tight after my usual training runs lately, and I've noticed a sudden, sharp cramp in my calf most nights since.\"",
             "symptoms": [
                 "Muscle Soreness",
@@ -358,7 +358,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The nurse's intake note reads: \"Patient reports two weeks of persistent nausea and reduced appetite, denies any recent changes in medication.\"",
             "symptoms": [
                 "Nausea",
@@ -374,7 +374,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this persistent low-grade headache that's present most days now, and I've noticed I'm gritting my teeth during the day without meaning to, which my dentist mentioned last visit,\" the patient tells the doctor.",
             "symptoms": [
                 "Headache",
@@ -390,7 +390,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "Patient says: \"I've had this persistent soreness in my lower back that's become a near-daily presence, and I've also had some stiffness that takes longer to ease each morning.\"",
             "symptoms": [
                 "Muscle Soreness",
@@ -406,7 +406,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "At the clinic, the patient says: \"I've had this persistent itching across my torso that's worse at night, and I've noticed some faint red lines where I've been scratching in my sleep.\"",
             "symptoms": [
                 "Dry Skin",
@@ -422,7 +422,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "During the check-up, the patient explains: \"I've had this persistent lightheadedness that's become more frequent over the past month, and I've noticed my heart flutters noticeably right beforehand.\"",
             "symptoms": [
                 "Vertigo",
@@ -438,7 +438,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "In the exam room, the patient says: \"The side of my thumbnail has gone red and it's tender whenever I press on it, and I've noticed a small bruise on the same finger from where I caught it in a drawer.\"",
             "symptoms": [
                 "Ingrown Nail",
@@ -454,7 +454,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "The nurse's intake note reads: \"Patient, reviewed for ongoing management, reports stable but persistent fatigue over several months, with intermittent low mood.\"",
             "symptoms": [
                 "Fatigue",
@@ -470,7 +470,7 @@
         {
             "instruction": "Select the two symptoms that best match what the patient describes.",
             "subtype": "medicalConsult",
-            "interactionType": "mapping",
+            "interactionType": "dialogue",
             "prompt": "\"I've had this persistent congestion that's lingered well past my cold, along with a heavy feeling across my cheeks that's worse when I bend forward,\" the patient tells the doctor.",
             "symptoms": [
                 "Stuffy Nose",

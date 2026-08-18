@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "qf_l111_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She wants to leave the meeting a few minutes early.",
-      "sentence": "She wants to leave the meeting a few minutes early.",
-      "options": [
-        "May she leave the meeting a few minutes early?",
-        "Does she may leave the meeting a few minutes early?",
-        "May she leaves the meeting a few minutes early?",
-        "She wants to leave the meeting a few minutes early?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "May she leave the meeting a few minutes early?",
-      "hint": "'May' moves to the front on its own to ask for permission.",
-      "explanation": "'May' is a modal used to ask permission. It moves to the front of the question, and the main verb stays in its base form.",
-      "grammarRule": "Modal Questions: Permission"
-    },
-    {
-      "id": "qf_l111_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He would like to borrow your charger for a moment.",
-      "sentence": "He would like to borrow your charger for a moment.",
-      "options": [
-        "Does he could borrow your charger for a moment?",
-        "Could he borrows your charger for a moment?",
-        "He would like to borrow your charger for a moment?",
-        "Could he borrow your charger for a moment?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Could he borrow your charger for a moment?",
-      "hint": "'Could' is a polite way to ask permission - move it to the front.",
-      "explanation": "'Could' is used here to politely ask permission. It moves to the front, and the verb 'borrow' stays in its base form.",
-      "grammarRule": "Modal Questions: Permission"
-    },
-    {
-      "id": "qf_l111_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I want to ask you something personal.",
-      "sentence": "I want to ask you something personal.",
-      "options": [
-        "Do I can ask you something personal?",
-        "Can I asks you something personal?",
-        "Can I ask you something personal?",
-        "I want to ask you something personal?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Can I ask you something personal?",
-      "hint": "'Can' moves to the front to ask for permission.",
-      "explanation": "'Can' moves to the front of the sentence to form this permission question, and the verb 'ask' stays in its base form.",
-      "grammarRule": "Modal Questions: Permission"
-    },
-    {
-      "id": "qf_l112_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Visitors need to show identification at the front desk.",
-      "sentence": "Visitors need to show identification at the front desk.",
-      "options": [
-        "Have visitors to show identification at the front desk?",
-        "Do visitors has to show identification at the front desk?",
-        "Visitors need to show identification at the front desk?",
-        "Do visitors have to show identification at the front desk?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do visitors have to show identification at the front desk?",
-      "hint": "'Have to' behaves like a regular verb, so use 'do/does' to form the question.",
-      "explanation": "Unlike true modals, 'have to' needs 'do/does' to form a question. Since 'visitors' is plural, 'do' is correct.",
-      "grammarRule": "Modal Questions: Obligation (Have To)"
-    },
-    {
-      "id": "qf_l112_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She must renew her license before the end of the month.",
-      "sentence": "She must renew her license before the end of the month.",
-      "options": [
-        "Must she renew her license before the end of the month?",
-        "Does she must renew her license before the end of the month?",
-        "Must she renews her license before the end of the month?",
-        "She must renew her license before the end of the month?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Must she renew her license before the end of the month?",
-      "hint": "'Must' moves to the front on its own, like other modals.",
-      "explanation": "'Must' is a true modal, so it moves to the front without 'do/does', and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Obligation (Have To)"
-    },
-    {
-      "id": "qf_l112_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Employees have to complete the training by Friday.",
-      "sentence": "Employees have to complete the training by Friday.",
-      "options": [
-        "Do employees have to complete the training by Friday?",
-        "Have employees to complete the training by Friday?",
-        "Does employees have to complete the training by Friday?",
-        "Employees have to complete the training by Friday?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do employees have to complete the training by Friday?",
-      "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
-      "explanation": "Since 'employees' is plural, the question uses 'do' before 'have to' - 'have to' is not a true modal.",
-      "grammarRule": "Modal Questions: Obligation (Have To)"
-    },
-    {
-      "id": "qf_l113_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I'm thinking we could start the presentation now.",
-      "sentence": "I'm thinking we could start the presentation now.",
-      "options": [
-        "Do we shall start the presentation now?",
-        "Shall we starts the presentation now?",
-        "I'm thinking we could start the presentation now?",
-        "Shall we start the presentation now?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Shall we start the presentation now?",
-      "hint": "'Shall we...?' is a common way to suggest doing something together.",
-      "explanation": "'Shall we...?' is a standard pattern for suggestions. 'Shall' moves to the front, and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Suggestions"
-    },
-    {
-      "id": "qf_l113_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think he ought to see a doctor about that cough.",
-      "sentence": "I think he ought to see a doctor about that cough.",
-      "options": [
-        "Does he should see a doctor about that cough?",
-        "Should he see a doctor about that cough?",
-        "Should he sees a doctor about that cough?",
-        "I think he ought to see a doctor about that cough?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Should he see a doctor about that cough?",
-      "hint": "'Should' moves to the front, just like other modals.",
-      "explanation": "'Should' moves to the front to form the question, and the verb 'see' stays in its base form.",
-      "grammarRule": "Modal Questions: Suggestions"
-    },
-    {
-      "id": "qf_l113_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Maybe I could open a window to let some air in.",
-      "sentence": "Maybe I could open a window to let some air in.",
-      "options": [
-        "Shall I open a window to let some air in?",
-        "Do I shall open a window to let some air in?",
-        "Shall I opens a window to let some air in?",
-        "Maybe I could open a window to let some air in?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Shall I open a window to let some air in?",
-      "hint": "'Shall I...?' is the standard way to offer to do something.",
-      "explanation": "'Shall I...?' is used to offer or suggest an action. 'Shall' moves to the front, and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Suggestions"
-    },
-    {
-      "id": "qf_l114_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's possible that this old key opens the garden shed.",
-      "sentence": "It's possible that this old key opens the garden shed.",
-      "options": [
-        "Does this old key could open the garden shed?",
-        "Could this old key open the garden shed?",
-        "Could this old key opens the garden shed?",
-        "It's possible that this old key opens the garden shed?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could this old key open the garden shed?",
-      "hint": "'Could' expresses possibility here - move it to the front.",
-      "explanation": "'Could' expresses a present possibility. It moves to the front of the question, and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Present Deduction"
-    },
-    {
-      "id": "qf_l114_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It seems very likely that he already knows about the surprise.",
-      "sentence": "It seems very likely that he already knows about the surprise.",
-      "options": [
-        "Does he must already know about the surprise?",
-        "Must he already knows about the surprise?",
-        "Must he already know about the surprise?",
-        "It seems very likely that he already knows about the surprise?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Must he already know about the surprise?",
-      "hint": "'Must' expresses strong certainty here - move it to the front.",
-      "explanation": "'Must' expresses near-certainty in this context. It moves to the front, and the verb 'know' stays in its base form.",
-      "grammarRule": "Modal Questions: Present Deduction"
-    },
-    {
-      "id": "qf_l114_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Perhaps this strange noise means the engine needs repairs.",
-      "sentence": "Perhaps this strange noise means the engine needs repairs.",
-      "options": [
-        "Might this strange noise mean the engine needs repairs?",
-        "Does this strange noise might mean the engine needs repairs?",
-        "Might this strange noise means the engine needs repairs?",
-        "Perhaps this strange noise means the engine needs repairs?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Might this strange noise mean the engine needs repairs?",
-      "hint": "'Might' expresses a weaker possibility here - move it to the front.",
-      "explanation": "'Might' expresses a tentative possibility. It moves to the front of the question, and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Present Deduction"
-    },
-    {
-      "id": "qf_l115_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I imagine you would prefer tea over coffee.",
-      "sentence": "I imagine you would prefer tea over coffee.",
-      "options": [
-        "Do you would prefer tea over coffee?",
-        "Would you prefers tea over coffee?",
-        "I imagine you would prefer tea over coffee?",
-        "Would you prefer tea over coffee?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would you prefer tea over coffee?",
-      "hint": "'Would' moves to the front on its own, like other modals.",
-      "explanation": "'Would' moves to the front to ask about a preference, and the main verb stays in its base form, 'prefer'.",
-      "grammarRule": "Modal Questions: Willingness & Offers"
-    },
-    {
-      "id": "qf_l115_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Perhaps you would be willing to help carry these boxes.",
-      "sentence": "Perhaps you would be willing to help carry these boxes.",
-      "options": [
-        "Do you would be willing to help carry these boxes?",
-        "Would you being willing to help carry these boxes?",
-        "Perhaps you would be willing to help carry these boxes?",
-        "Would you be willing to help carry these boxes?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Would you be willing to help carry these boxes?",
-      "hint": "Move 'would' to the front, keeping 'be' in its base form.",
-      "explanation": "'Would' moves to the front, and the verb 'be' stays in its base form throughout the question.",
-      "grammarRule": "Modal Questions: Willingness & Offers"
-    },
-    {
-      "id": "qf_l115_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I wonder if they would consider a later deadline.",
-      "sentence": "I wonder if they would consider a later deadline.",
-      "options": [
-        "Do they would consider a later deadline?",
-        "Would they considers a later deadline?",
-        "Would they consider a later deadline?",
-        "I wonder if they would consider a later deadline?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Would they consider a later deadline?",
-      "hint": "Move 'would' to the front, keeping the base verb form.",
-      "explanation": "'Would' moves to the front of the question, and the main verb, 'consider', stays in its base form.",
-      "grammarRule": "Modal Questions: Willingness & Offers"
-    },
-    {
-      "id": "qf_l116_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She wonders how she can improve her writing skills.",
-      "sentence": "She wonders how she can improve her writing skills.",
-      "options": [
-        "How can she improve her writing skills?",
-        "How does she can improve her writing skills?",
-        "How can she improves her writing skills?",
-        "How she can improve her writing skills?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "How can she improve her writing skills?",
-      "hint": "Move 'can' after the question word, keeping the base verb.",
-      "explanation": "'Can' moves after the question word, and the main verb 'improve' stays in its base form throughout the question.",
-      "grammarRule": "Modal Wh-Questions: Permission & Ability"
-    },
-    {
-      "id": "qf_l116_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He isn't sure why he must submit the form twice.",
-      "sentence": "He isn't sure why he must submit the form twice.",
-      "options": [
-        "Why does he must submit the form twice?",
-        "Why must he submit the form twice?",
-        "Why must he submits the form twice?",
-        "Why he must submit the form twice?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why must he submit the form twice?",
-      "hint": "Move 'must' after the question word, keeping the base verb.",
-      "explanation": "'Must' moves after the question word, and the verb 'submit' stays in its base form, as with all modal questions.",
-      "grammarRule": "Modal Wh-Questions: Permission & Ability"
-    },
-    {
-      "id": "qf_l116_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They're not sure where they should park during the festival.",
-      "sentence": "They're not sure where they should park during the festival.",
-      "options": [
-        "Where do they should park during the festival?",
-        "Where should they park during the festival?",
-        "Where should they parks during the festival?",
-        "Where they should park during the festival?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Where should they park during the festival?",
-      "hint": "Move 'should' after the question word, keeping the base verb.",
-      "explanation": "'Should' moves after the question word, and the verb 'park' stays in its base form, following the standard modal pattern.",
-      "grammarRule": "Modal Wh-Questions: Permission & Ability"
-    },
-    {
-      "id": "qf_l117_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Guests are allowed to bring pets to this hotel.",
-      "sentence": "Guests are allowed to bring pets to this hotel.",
-      "options": [
-        "Are guests allowed to bring pets to this hotel?",
-        "Do guests allowed to bring pets to this hotel?",
-        "Are guests allow to bring pets to this hotel?",
-        "Guests are allowed to bring pets to this hotel?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are guests allowed to bring pets to this hotel?",
-      "hint": "'Allowed to' uses 'be', so simply move 'are' to the front.",
-      "explanation": "'Allowed to' is built on the verb 'be', so the question moves 'are' to the front - no 'do' is needed.",
-      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
-    },
-    {
-      "id": "qf_l117_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Employees are supposed to badge in before nine.",
-      "sentence": "Employees are supposed to badge in before nine.",
-      "options": [
-        "Do employees supposed to badge in before nine?",
-        "Are employees supposed to badge in before nine?",
-        "Are employees suppose to badge in before nine?",
-        "Employees are supposed to badge in before nine?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Are employees supposed to badge in before nine?",
-      "hint": "'Supposed to' uses 'be', so move 'are' to the front.",
-      "explanation": "Since 'supposed to' is built on 'be', the question moves 'are' to the front rather than adding 'do'.",
-      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
-    },
-    {
-      "id": "qf_l117_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Students are permitted to use calculators during the exam.",
-      "sentence": "Students are permitted to use calculators during the exam.",
-      "options": [
-        "Do students permitted to use calculators during the exam?",
-        "Are students permitted to use calculators during the exam?",
-        "Are students permit to use calculators during the exam?",
-        "Students are permitted to use calculators during the exam?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Are students permitted to use calculators during the exam?",
-      "hint": "'Permitted to' uses 'be', so move 'are' to the front.",
-      "explanation": "'Permitted to' is a 'be' structure, so the question moves 'are' to the front, and 'permitted' stays unchanged.",
-      "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
-    },
-    {
-      "id": "qf_l118_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I imagine you would rather walk than take the bus.",
-      "sentence": "I imagine you would rather walk than take the bus.",
-      "options": [
-        "Do you would rather walk than take the bus?",
-        "Would you rather walk than take the bus?",
-        "Would you rather walks than take the bus?",
-        "I imagine you would rather walk than take the bus?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Would you rather walk than take the bus?",
-      "hint": "'Would rather' moves 'would' to the front, keeping 'rather walk' unchanged.",
-      "explanation": "'Would' moves to the front of the question, and 'rather walk' stays exactly the same, following the standard modal pattern.",
-      "grammarRule": "Modal Questions: 'Would Rather'"
-    },
-    {
-      "id": "qf_l118_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She would rather eat at home tonight.",
-      "sentence": "She would rather eat at home tonight.",
-      "options": [
-        "Would she rather eat at home tonight?",
-        "Does she would rather eat at home tonight?",
-        "Would she rather eats at home tonight?",
-        "She would rather eat at home tonight?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would she rather eat at home tonight?",
-      "hint": "Move 'would' to the front, keeping 'rather eat' unchanged.",
-      "explanation": "'Would' moves to the front, and 'rather eat' remains unchanged, as with all modal question formations.",
-      "grammarRule": "Modal Questions: 'Would Rather'"
-    },
-    {
-      "id": "qf_l118_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They would rather postpone the trip until summer.",
-      "sentence": "They would rather postpone the trip until summer.",
-      "options": [
-        "Do they would rather postpone the trip until summer?",
-        "Would they rather postpones the trip until summer?",
-        "Would they rather postpone the trip until summer?",
-        "They would rather postpone the trip until summer?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Would they rather postpone the trip until summer?",
-      "hint": "Move 'would' to the front, keeping the rest of the phrase unchanged.",
-      "explanation": "'Would' moves to the front of the question, and 'rather postpone' stays exactly as it was in the statement.",
-      "grammarRule": "Modal Questions: 'Would Rather'"
-    },
-    {
-      "id": "qf_l119_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I wonder whether I might borrow your notes from yesterday's class.",
-      "sentence": "I wonder whether I might borrow your notes from yesterday's class.",
-      "options": [
-        "Do I might borrow your notes from yesterday's class?",
-        "Might I borrows your notes from yesterday's class?",
-        "Might I borrow your notes from yesterday's class?",
-        "I wonder whether I might borrow your notes from yesterday's class?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Might I borrow your notes from yesterday's class?",
-      "hint": "'Might' moves to the front on its own, like other modals.",
-      "explanation": "'Might' moves to the front to politely ask permission, and the verb 'borrow' stays in its base form.",
-      "grammarRule": "Modal Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l119_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Tenants are required to give thirty days' notice before moving out.",
-      "sentence": "Tenants are required to give thirty days' notice before moving out.",
-      "options": [
-        "Do tenants required to give thirty days' notice before moving out?",
-        "Are tenants require to give thirty days' notice before moving out?",
-        "Tenants are required to give thirty days' notice before moving out?",
-        "Are tenants required to give thirty days' notice before moving out?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Are tenants required to give thirty days' notice before moving out?",
-      "hint": "'Required to' uses 'be', so move 'are' to the front.",
-      "explanation": "'Required to' is built on 'be', so the question moves 'are' to the front rather than adding 'do'.",
-      "grammarRule": "Modal Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l119_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's very possible that this recipe needs more salt.",
-      "sentence": "It's very possible that this recipe needs more salt.",
-      "options": [
-        "Does this recipe could need more salt?",
-        "Could this recipe needs more salt?",
-        "Could this recipe need more salt?",
-        "It's very possible that this recipe needs more salt?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Could this recipe need more salt?",
-      "hint": "'Could' expresses possibility here - move it to the front.",
-      "explanation": "'Could' expresses a present possibility, moving to the front of the question while the verb 'need' stays in its base form.",
-      "grammarRule": "Modal Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l120_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I'd like to ask whether I may reschedule my appointment.",
-      "sentence": "I'd like to ask whether I may reschedule my appointment.",
-      "options": [
-        "May I reschedule my appointment?",
-        "Do I may reschedule my appointment?",
-        "May I reschedules my appointment?",
-        "I'd like to ask whether I may reschedule my appointment?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "May I reschedule my appointment?",
-      "hint": "'May' moves to the front on its own to ask for permission.",
-      "explanation": "'May' is used to ask permission, moving to the front of the question while the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l120_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Contractors have to submit a safety report every month.",
-      "sentence": "Contractors have to submit a safety report every month.",
-      "options": [
-        "Have contractors to submit a safety report every month?",
-        "Does contractors have to submit a safety report every month?",
-        "Contractors have to submit a safety report every month?",
-        "Do contractors have to submit a safety report every month?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Do contractors have to submit a safety report every month?",
-      "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
-      "explanation": "Since 'contractors' is plural, 'do' is used before 'have to' - 'have to' behaves like a regular verb, not a true modal.",
-      "grammarRule": "Modal Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l120_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I suspect this quiet hum might mean the fridge needs servicing.",
-      "sentence": "I suspect this quiet hum might mean the fridge needs servicing.",
-      "options": [
-        "Might this quiet hum mean the fridge needs servicing?",
-        "Does this quiet hum might mean the fridge needs servicing?",
-        "Might this quiet hum means the fridge needs servicing?",
-        "I suspect this quiet hum might mean the fridge needs servicing?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Might this quiet hum mean the fridge needs servicing?",
-      "hint": "'Might' expresses a tentative possibility - move it to the front.",
-      "explanation": "'Might' moves to the front of the question to express a tentative possibility, and the verb stays in its base form.",
-      "grammarRule": "Modal Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "qf_l111_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She wants to leave the meeting a few minutes early.",
+            "sentence": "She wants to leave the meeting a few minutes early.",
+            "options": [
+                "May she leave the meeting a few minutes early?",
+                "Does she may leave the meeting a few minutes early?",
+                "May she leaves the meeting a few minutes early?",
+                "She wants to leave the meeting a few minutes early?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "May she leave the meeting a few minutes early?",
+            "hint": "'May' moves to the front on its own to ask for permission.",
+            "explanation": "'May' is a modal used to ask permission. It moves to the front of the question, and the main verb stays in its base form.",
+            "grammarRule": "Modal Questions: Permission"
+        },
+        {
+            "id": "qf_l111_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He would like to borrow your charger for a moment.",
+            "sentence": "He would like to borrow your charger for a moment.",
+            "options": [
+                "Does he could borrow your charger for a moment?",
+                "Could he borrows your charger for a moment?",
+                "He would like to borrow your charger for a moment?",
+                "Could he borrow your charger for a moment?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Could he borrow your charger for a moment?",
+            "hint": "'Could' is a polite way to ask permission - move it to the front.",
+            "explanation": "'Could' is used here to politely ask permission. It moves to the front, and the verb 'borrow' stays in its base form.",
+            "grammarRule": "Modal Questions: Permission"
+        },
+        {
+            "id": "qf_l111_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I want to ask you something personal.",
+            "sentence": "I want to ask you something personal.",
+            "options": [
+                "Do I can ask you something personal?",
+                "Can I asks you something personal?",
+                "Can I ask you something personal?",
+                "I want to ask you something personal?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Can I ask you something personal?",
+            "hint": "'Can' moves to the front to ask for permission.",
+            "explanation": "'Can' moves to the front of the sentence to form this permission question, and the verb 'ask' stays in its base form.",
+            "grammarRule": "Modal Questions: Permission"
+        },
+        {
+            "id": "qf_l112_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Visitors need to show identification at the front desk.",
+            "sentence": "Visitors need to show identification at the front desk.",
+            "options": [
+                "Have visitors to show identification at the front desk?",
+                "Do visitors has to show identification at the front desk?",
+                "Visitors need to show identification at the front desk?",
+                "Do visitors have to show identification at the front desk?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do visitors have to show identification at the front desk?",
+            "hint": "'Have to' behaves like a regular verb, so use 'do/does' to form the question.",
+            "explanation": "Unlike true modals, 'have to' needs 'do/does' to form a question. Since 'visitors' is plural, 'do' is correct.",
+            "grammarRule": "Modal Questions: Obligation (Have To)"
+        },
+        {
+            "id": "qf_l112_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She must renew her license before the end of the month.",
+            "sentence": "She must renew her license before the end of the month.",
+            "options": [
+                "Must she renew her license before the end of the month?",
+                "Does she must renew her license before the end of the month?",
+                "Must she renews her license before the end of the month?",
+                "She must renew her license before the end of the month?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Must she renew her license before the end of the month?",
+            "hint": "'Must' moves to the front on its own, like other modals.",
+            "explanation": "'Must' is a true modal, so it moves to the front without 'do/does', and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Obligation (Have To)"
+        },
+        {
+            "id": "qf_l112_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Employees have to complete the training by Friday.",
+            "sentence": "Employees have to complete the training by Friday.",
+            "options": [
+                "Do employees have to complete the training by Friday?",
+                "Have employees to complete the training by Friday?",
+                "Does employees have to complete the training by Friday?",
+                "Employees have to complete the training by Friday?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do employees have to complete the training by Friday?",
+            "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
+            "explanation": "Since 'employees' is plural, the question uses 'do' before 'have to' - 'have to' is not a true modal.",
+            "grammarRule": "Modal Questions: Obligation (Have To)"
+        },
+        {
+            "id": "qf_l113_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I'm thinking we could start the presentation now.",
+            "sentence": "I'm thinking we could start the presentation now.",
+            "options": [
+                "Do we shall start the presentation now?",
+                "Shall we starts the presentation now?",
+                "I'm thinking we could start the presentation now?",
+                "Shall we start the presentation now?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Shall we start the presentation now?",
+            "hint": "'Shall we...?' is a common way to suggest doing something together.",
+            "explanation": "'Shall we...?' is a standard pattern for suggestions. 'Shall' moves to the front, and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Suggestions"
+        },
+        {
+            "id": "qf_l113_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think he ought to see a doctor about that cough.",
+            "sentence": "I think he ought to see a doctor about that cough.",
+            "options": [
+                "Does he should see a doctor about that cough?",
+                "Should he see a doctor about that cough?",
+                "Should he sees a doctor about that cough?",
+                "I think he ought to see a doctor about that cough?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Should he see a doctor about that cough?",
+            "hint": "'Should' moves to the front, just like other modals.",
+            "explanation": "'Should' moves to the front to form the question, and the verb 'see' stays in its base form.",
+            "grammarRule": "Modal Questions: Suggestions"
+        },
+        {
+            "id": "qf_l113_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Maybe I could open a window to let some air in.",
+            "sentence": "Maybe I could open a window to let some air in.",
+            "options": [
+                "Shall I open a window to let some air in?",
+                "Do I shall open a window to let some air in?",
+                "Shall I opens a window to let some air in?",
+                "Maybe I could open a window to let some air in?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Shall I open a window to let some air in?",
+            "hint": "'Shall I...?' is the standard way to offer to do something.",
+            "explanation": "'Shall I...?' is used to offer or suggest an action. 'Shall' moves to the front, and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Suggestions"
+        },
+        {
+            "id": "qf_l114_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's possible that this old key opens the garden shed.",
+            "sentence": "It's possible that this old key opens the garden shed.",
+            "options": [
+                "Does this old key could open the garden shed?",
+                "Could this old key open the garden shed?",
+                "Could this old key opens the garden shed?",
+                "It's possible that this old key opens the garden shed?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could this old key open the garden shed?",
+            "hint": "'Could' expresses possibility here - move it to the front.",
+            "explanation": "'Could' expresses a present possibility. It moves to the front of the question, and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Present Deduction"
+        },
+        {
+            "id": "qf_l114_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It seems very likely that he already knows about the surprise.",
+            "sentence": "It seems very likely that he already knows about the surprise.",
+            "options": [
+                "Does he must already know about the surprise?",
+                "Must he already knows about the surprise?",
+                "Must he already know about the surprise?",
+                "It seems very likely that he already knows about the surprise?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Must he already know about the surprise?",
+            "hint": "'Must' expresses strong certainty here - move it to the front.",
+            "explanation": "'Must' expresses near-certainty in this context. It moves to the front, and the verb 'know' stays in its base form.",
+            "grammarRule": "Modal Questions: Present Deduction"
+        },
+        {
+            "id": "qf_l114_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Perhaps this strange noise means the engine needs repairs.",
+            "sentence": "Perhaps this strange noise means the engine needs repairs.",
+            "options": [
+                "Might this strange noise mean the engine needs repairs?",
+                "Does this strange noise might mean the engine needs repairs?",
+                "Might this strange noise means the engine needs repairs?",
+                "Perhaps this strange noise means the engine needs repairs?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Might this strange noise mean the engine needs repairs?",
+            "hint": "'Might' expresses a weaker possibility here - move it to the front.",
+            "explanation": "'Might' expresses a tentative possibility. It moves to the front of the question, and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Present Deduction"
+        },
+        {
+            "id": "qf_l115_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I imagine you would prefer tea over coffee.",
+            "sentence": "I imagine you would prefer tea over coffee.",
+            "options": [
+                "Do you would prefer tea over coffee?",
+                "Would you prefers tea over coffee?",
+                "I imagine you would prefer tea over coffee?",
+                "Would you prefer tea over coffee?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would you prefer tea over coffee?",
+            "hint": "'Would' moves to the front on its own, like other modals.",
+            "explanation": "'Would' moves to the front to ask about a preference, and the main verb stays in its base form, 'prefer'.",
+            "grammarRule": "Modal Questions: Willingness & Offers"
+        },
+        {
+            "id": "qf_l115_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Perhaps you would be willing to help carry these boxes.",
+            "sentence": "Perhaps you would be willing to help carry these boxes.",
+            "options": [
+                "Do you would be willing to help carry these boxes?",
+                "Would you being willing to help carry these boxes?",
+                "Perhaps you would be willing to help carry these boxes?",
+                "Would you be willing to help carry these boxes?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Would you be willing to help carry these boxes?",
+            "hint": "Move 'would' to the front, keeping 'be' in its base form.",
+            "explanation": "'Would' moves to the front, and the verb 'be' stays in its base form throughout the question.",
+            "grammarRule": "Modal Questions: Willingness & Offers"
+        },
+        {
+            "id": "qf_l115_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I wonder if they would consider a later deadline.",
+            "sentence": "I wonder if they would consider a later deadline.",
+            "options": [
+                "Do they would consider a later deadline?",
+                "Would they considers a later deadline?",
+                "Would they consider a later deadline?",
+                "I wonder if they would consider a later deadline?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Would they consider a later deadline?",
+            "hint": "Move 'would' to the front, keeping the base verb form.",
+            "explanation": "'Would' moves to the front of the question, and the main verb, 'consider', stays in its base form.",
+            "grammarRule": "Modal Questions: Willingness & Offers"
+        },
+        {
+            "id": "qf_l116_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She wonders how she can improve her writing skills.",
+            "sentence": "She wonders how she can improve her writing skills.",
+            "options": [
+                "How can she improve her writing skills?",
+                "How does she can improve her writing skills?",
+                "How can she improves her writing skills?",
+                "How she can improve her writing skills?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "How can she improve her writing skills?",
+            "hint": "Move 'can' after the question word, keeping the base verb.",
+            "explanation": "'Can' moves after the question word, and the main verb 'improve' stays in its base form throughout the question.",
+            "grammarRule": "Modal Wh-Questions: Permission & Ability"
+        },
+        {
+            "id": "qf_l116_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He isn't sure why he must submit the form twice.",
+            "sentence": "He isn't sure why he must submit the form twice.",
+            "options": [
+                "Why does he must submit the form twice?",
+                "Why must he submit the form twice?",
+                "Why must he submits the form twice?",
+                "Why he must submit the form twice?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why must he submit the form twice?",
+            "hint": "Move 'must' after the question word, keeping the base verb.",
+            "explanation": "'Must' moves after the question word, and the verb 'submit' stays in its base form, as with all modal questions.",
+            "grammarRule": "Modal Wh-Questions: Permission & Ability"
+        },
+        {
+            "id": "qf_l116_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They're not sure where they should park during the festival.",
+            "sentence": "They're not sure where they should park during the festival.",
+            "options": [
+                "Where do they should park during the festival?",
+                "Where should they park during the festival?",
+                "Where should they parks during the festival?",
+                "Where they should park during the festival?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Where should they park during the festival?",
+            "hint": "Move 'should' after the question word, keeping the base verb.",
+            "explanation": "'Should' moves after the question word, and the verb 'park' stays in its base form, following the standard modal pattern.",
+            "grammarRule": "Modal Wh-Questions: Permission & Ability"
+        },
+        {
+            "id": "qf_l117_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Guests are allowed to bring pets to this hotel.",
+            "sentence": "Guests are allowed to bring pets to this hotel.",
+            "options": [
+                "Are guests allowed to bring pets to this hotel?",
+                "Do guests allowed to bring pets to this hotel?",
+                "Are guests allow to bring pets to this hotel?",
+                "Guests are allowed to bring pets to this hotel?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are guests allowed to bring pets to this hotel?",
+            "hint": "'Allowed to' uses 'be', so simply move 'are' to the front.",
+            "explanation": "'Allowed to' is built on the verb 'be', so the question moves 'are' to the front - no 'do' is needed.",
+            "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+        },
+        {
+            "id": "qf_l117_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Employees are supposed to badge in before nine.",
+            "sentence": "Employees are supposed to badge in before nine.",
+            "options": [
+                "Do employees supposed to badge in before nine?",
+                "Are employees supposed to badge in before nine?",
+                "Are employees suppose to badge in before nine?",
+                "Employees are supposed to badge in before nine?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Are employees supposed to badge in before nine?",
+            "hint": "'Supposed to' uses 'be', so move 'are' to the front.",
+            "explanation": "Since 'supposed to' is built on 'be', the question moves 'are' to the front rather than adding 'do'.",
+            "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+        },
+        {
+            "id": "qf_l117_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Students are permitted to use calculators during the exam.",
+            "sentence": "Students are permitted to use calculators during the exam.",
+            "options": [
+                "Do students permitted to use calculators during the exam?",
+                "Are students permitted to use calculators during the exam?",
+                "Are students permit to use calculators during the exam?",
+                "Students are permitted to use calculators during the exam?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Are students permitted to use calculators during the exam?",
+            "hint": "'Permitted to' uses 'be', so move 'are' to the front.",
+            "explanation": "'Permitted to' is a 'be' structure, so the question moves 'are' to the front, and 'permitted' stays unchanged.",
+            "grammarRule": "Modal Questions: Rules & Permission (Be + Adjective + To)"
+        },
+        {
+            "id": "qf_l118_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I imagine you would rather walk than take the bus.",
+            "sentence": "I imagine you would rather walk than take the bus.",
+            "options": [
+                "Do you would rather walk than take the bus?",
+                "Would you rather walk than take the bus?",
+                "Would you rather walks than take the bus?",
+                "I imagine you would rather walk than take the bus?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Would you rather walk than take the bus?",
+            "hint": "'Would rather' moves 'would' to the front, keeping 'rather walk' unchanged.",
+            "explanation": "'Would' moves to the front of the question, and 'rather walk' stays exactly the same, following the standard modal pattern.",
+            "grammarRule": "Modal Questions: 'Would Rather'"
+        },
+        {
+            "id": "qf_l118_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She would rather eat at home tonight.",
+            "sentence": "She would rather eat at home tonight.",
+            "options": [
+                "Would she rather eat at home tonight?",
+                "Does she would rather eat at home tonight?",
+                "Would she rather eats at home tonight?",
+                "She would rather eat at home tonight?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would she rather eat at home tonight?",
+            "hint": "Move 'would' to the front, keeping 'rather eat' unchanged.",
+            "explanation": "'Would' moves to the front, and 'rather eat' remains unchanged, as with all modal question formations.",
+            "grammarRule": "Modal Questions: 'Would Rather'"
+        },
+        {
+            "id": "qf_l118_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They would rather postpone the trip until summer.",
+            "sentence": "They would rather postpone the trip until summer.",
+            "options": [
+                "Do they would rather postpone the trip until summer?",
+                "Would they rather postpones the trip until summer?",
+                "Would they rather postpone the trip until summer?",
+                "They would rather postpone the trip until summer?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Would they rather postpone the trip until summer?",
+            "hint": "Move 'would' to the front, keeping the rest of the phrase unchanged.",
+            "explanation": "'Would' moves to the front of the question, and 'rather postpone' stays exactly as it was in the statement.",
+            "grammarRule": "Modal Questions: 'Would Rather'"
+        },
+        {
+            "id": "qf_l119_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I wonder whether I might borrow your notes from yesterday's class.",
+            "sentence": "I wonder whether I might borrow your notes from yesterday's class.",
+            "options": [
+                "Do I might borrow your notes from yesterday's class?",
+                "Might I borrows your notes from yesterday's class?",
+                "Might I borrow your notes from yesterday's class?",
+                "I wonder whether I might borrow your notes from yesterday's class?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Might I borrow your notes from yesterday's class?",
+            "hint": "'Might' moves to the front on its own, like other modals.",
+            "explanation": "'Might' moves to the front to politely ask permission, and the verb 'borrow' stays in its base form.",
+            "grammarRule": "Modal Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l119_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Tenants are required to give thirty days' notice before moving out.",
+            "sentence": "Tenants are required to give thirty days' notice before moving out.",
+            "options": [
+                "Do tenants required to give thirty days' notice before moving out?",
+                "Are tenants require to give thirty days' notice before moving out?",
+                "Tenants are required to give thirty days' notice before moving out?",
+                "Are tenants required to give thirty days' notice before moving out?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Are tenants required to give thirty days' notice before moving out?",
+            "hint": "'Required to' uses 'be', so move 'are' to the front.",
+            "explanation": "'Required to' is built on 'be', so the question moves 'are' to the front rather than adding 'do'.",
+            "grammarRule": "Modal Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l119_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's very possible that this recipe needs more salt.",
+            "sentence": "It's very possible that this recipe needs more salt.",
+            "options": [
+                "Does this recipe could need more salt?",
+                "Could this recipe needs more salt?",
+                "Could this recipe need more salt?",
+                "It's very possible that this recipe needs more salt?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Could this recipe need more salt?",
+            "hint": "'Could' expresses possibility here - move it to the front.",
+            "explanation": "'Could' expresses a present possibility, moving to the front of the question while the verb 'need' stays in its base form.",
+            "grammarRule": "Modal Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l120_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I'd like to ask whether I may reschedule my appointment.",
+            "sentence": "I'd like to ask whether I may reschedule my appointment.",
+            "options": [
+                "May I reschedule my appointment?",
+                "Do I may reschedule my appointment?",
+                "May I reschedules my appointment?",
+                "I'd like to ask whether I may reschedule my appointment?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "May I reschedule my appointment?",
+            "hint": "'May' moves to the front on its own to ask for permission.",
+            "explanation": "'May' is used to ask permission, moving to the front of the question while the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l120_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Contractors have to submit a safety report every month.",
+            "sentence": "Contractors have to submit a safety report every month.",
+            "options": [
+                "Have contractors to submit a safety report every month?",
+                "Does contractors have to submit a safety report every month?",
+                "Contractors have to submit a safety report every month?",
+                "Do contractors have to submit a safety report every month?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Do contractors have to submit a safety report every month?",
+            "hint": "'Have to' needs 'do/does' to form a question, unlike true modals.",
+            "explanation": "Since 'contractors' is plural, 'do' is used before 'have to' - 'have to' behaves like a regular verb, not a true modal.",
+            "grammarRule": "Modal Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l120_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I suspect this quiet hum might mean the fridge needs servicing.",
+            "sentence": "I suspect this quiet hum might mean the fridge needs servicing.",
+            "options": [
+                "Might this quiet hum mean the fridge needs servicing?",
+                "Does this quiet hum might mean the fridge needs servicing?",
+                "Might this quiet hum means the fridge needs servicing?",
+                "I suspect this quiet hum might mean the fridge needs servicing?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Might this quiet hum mean the fridge needs servicing?",
+            "hint": "'Might' expresses a tentative possibility - move it to the front.",
+            "explanation": "'Might' moves to the front of the question to express a tentative possibility, and the verb stays in its base form.",
+            "grammarRule": "Modal Questions: Mixed Review"
+        }
+    ]
 }

@@ -1,577 +1,577 @@
 {
-  "gameType": "pronounResolution",
-  "batchIndex": 5,
-  "levels": "41-50",
-  "quests": [
-    {
-      "id": "pr_l41_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The manager blamed herself for the missed deadline.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "The manager blamed herself for the missed deadline.",
-      "options": [
-        "The manager",
-        "The deadline",
-        "blamed"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The manager",
-      "hint": "Who does the blame point back to - the manager or something else?",
-      "explanation": "'herself' loops back to the subject, 'the manager' - she blames no one else.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l41_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Diego cut himself while slicing vegetables.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "Diego cut himself while slicing vegetables.",
-      "options": [
-        "The vegetables",
-        "slicing",
-        "Diego"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Diego",
-      "hint": "Who got cut?",
-      "explanation": "'himself' shows Diego is both the one holding the knife and the one who got hurt.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l41_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The washing machine shut itself off after the cycle finished.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "The washing machine shut itself off after the cycle finished.",
-      "options": [
-        "finished",
-        "The cycle",
-        "The washing machine"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The washing machine",
-      "hint": "What turned off - on its own?",
-      "explanation": "'itself' shows the washing machine turned off automatically, with no outside cause.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l42_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Priya taught herself to play the guitar.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "Priya taught herself to play the guitar.",
-      "options": [
-        "Priya",
-        "taught",
-        "The guitar"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Priya",
-      "hint": "Who was both the teacher and the student?",
-      "explanation": "'herself' shows Priya learned without another teacher - she is both parts of the action.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l42_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The children behaved themselves during the long car ride.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "The children behaved themselves during the long car ride.",
-      "options": [
-        "behaved",
-        "The ride",
-        "The children"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The children",
-      "hint": "Whose behavior is being described?",
-      "explanation": "'themselves' loops back to 'the children,' the ones being well-behaved.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l42_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The cat groomed itself in the sunny window.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "The cat groomed itself in the sunny window.",
-      "options": [
-        "The window",
-        "The cat",
-        "groomed"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The cat",
-      "hint": "Who was being cleaned - the cat or something else?",
-      "explanation": "'itself' shows the cat cleaned its own fur.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l43_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Tariq introduced himself to the new coworkers.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "Tariq introduced himself to the new coworkers.",
-      "options": [
-        "introduced",
-        "The coworkers",
-        "Tariq"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Tariq",
-      "hint": "Who was being introduced?",
-      "explanation": "'himself' shows Tariq introduced his own name, not someone else's.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l43_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Tariq introduced his coworkers to the new client.\nWho or what does 'his' refer to?",
-      "targetWord": "his",
-      "sentence": "Tariq introduced his coworkers to the new client.",
-      "options": [
-        "Tariq",
-        "The coworkers",
-        "The client"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Tariq",
-      "hint": "Whose coworkers were introduced?",
-      "explanation": "'his' shows the coworkers belong to Tariq - a simple possessive, not a reflexive action.",
-      "grammarRule": "Possessive Adjectives"
-    },
-    {
-      "id": "pr_l43_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Driven to succeed, the engineer pushed himself to finish the design early.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "Driven to succeed, the engineer pushed himself to finish the design early.",
-      "options": [
-        "The design",
-        "The engineer",
-        "pushed"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The engineer",
-      "hint": "Who felt the pressure to finish?",
-      "explanation": "'himself' shows the engineer motivated his own effort - no one else is involved.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l44_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "On their first day, the new hires familiarized themselves with the office layout.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "On their first day, the new hires familiarized themselves with the office layout.",
-      "options": [
-        "familiarized",
-        "The new hires",
-        "The layout"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The new hires",
-      "hint": "Who got to know the office?",
-      "explanation": "'themselves' loops back to 'the new hires,' the ones learning the layout.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l44_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The toddler looked at herself in the mirror and giggled.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "The toddler looked at herself in the mirror and giggled.",
-      "options": [
-        "The mirror",
-        "giggled",
-        "The toddler"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The toddler",
-      "hint": "Who was reflected in the mirror?",
-      "explanation": "'herself' shows the toddler was looking at her own reflection.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l44_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "For the food drive, the volunteers had to organize themselves into three teams.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "For the food drive, the volunteers had to organize themselves into three teams.",
-      "options": [
-        "The volunteers",
-        "The teams",
-        "organize"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The volunteers",
-      "hint": "Who arranged the groups?",
-      "explanation": "'themselves' loops back to 'the volunteers,' who did the organizing on their own.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l45_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The old printer has finally jammed itself beyond repair.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "The old printer has finally jammed itself beyond repair.",
-      "options": [
-        "jammed",
-        "The old printer",
-        "The repair"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The old printer",
-      "hint": "What broke down on its own?",
-      "explanation": "'itself' shows the printer jammed without anyone forcing it.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l45_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Amara pushed herself through the last mile of the marathon.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "Amara pushed herself through the last mile of the marathon.",
-      "options": [
-        "pushed",
-        "Amara",
-        "The marathon"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Amara",
-      "hint": "Who found the extra motivation?",
-      "explanation": "'herself' shows Amara motivated her own effort during the run.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l45_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Before submitting anything, the interns should remind themselves to save their work often.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "Before submitting anything, the interns should remind themselves to save their work often.",
-      "options": [
-        "remind",
-        "The interns",
-        "The work"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The interns",
-      "hint": "Who needed the reminder?",
-      "explanation": "'themselves' loops back to 'the interns,' giving themselves the reminder.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l46_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The professor corrected himself mid-lecture after a small error.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "The professor corrected himself mid-lecture after a small error.",
-      "options": [
-        "The lecture",
-        "corrected",
-        "The professor"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The professor",
-      "hint": "Who fixed the mistake - the professor or someone else?",
-      "explanation": "'himself' shows the professor caught and fixed his own error.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l46_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The babysitter watched the children playing by themselves in the yard.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "The babysitter watched the children playing by themselves in the yard.",
-      "options": [
-        "The yard",
-        "The children",
-        "The babysitter"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The children",
-      "hint": "Who was playing without help?",
-      "explanation": "'themselves' loops back to 'the children,' playing without adult involvement.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l46_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Every two hours, the oven automatically turns itself off.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "Every two hours, the oven automatically turns itself off.",
-      "options": [
-        "The oven",
-        "The hours",
-        "turns"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The oven",
-      "hint": "What shuts off on its own?",
-      "explanation": "'itself' shows the oven has an automatic shutoff, with no one switching it off.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l47_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Before the operation, the surgeon scrubbed herself thoroughly.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "Before the operation, the surgeon scrubbed herself thoroughly.",
-      "options": [
-        "scrubbed",
-        "The operation",
-        "The surgeon"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The surgeon",
-      "hint": "Who was getting ready - the patient or the surgeon?",
-      "explanation": "'herself' shows the surgeon cleaned her own hands, not someone else's.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l47_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "After the successful merger, the board members congratulated themselves.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "After the successful merger, the board members congratulated themselves.",
-      "options": [
-        "congratulated",
-        "The merger",
-        "The board members"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The board members",
-      "hint": "Who gave the congratulations, and who received them?",
-      "explanation": "'themselves' shows the board members praised their own achievement.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l47_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Jumping over the fence, the dog hurt itself.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "Jumping over the fence, the dog hurt itself.",
-      "options": [
-        "jumping",
-        "The dog",
-        "The fence"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The dog",
-      "hint": "Who got hurt?",
-      "explanation": "'itself' shows the dog injured its own leg while jumping.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l48_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Layla challenged herself to read fifty books this year.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "Layla challenged herself to read fifty books this year.",
-      "options": [
-        "challenged",
-        "Layla",
-        "The books"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Layla",
-      "hint": "Who set the goal, and who has to meet it?",
-      "explanation": "'herself' shows Layla set her own personal challenge.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l48_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "To meet the tight quarterly deadline, the employees had to push themselves.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "To meet the tight quarterly deadline, the employees had to push themselves.",
-      "options": [
-        "push",
-        "The employees",
-        "The deadline"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The employees",
-      "hint": "Who found the extra effort?",
-      "explanation": "'themselves' loops back to 'the employees,' motivating their own work.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l48_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The robot recalibrated itself after the software update.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "The robot recalibrated itself after the software update.",
-      "options": [
-        "The robot",
-        "The update",
-        "recalibrated"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The robot",
-      "hint": "What adjusted on its own?",
-      "explanation": "'itself' shows the robot fixed its own settings automatically.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l49_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The coach blamed himself for the team's narrow loss.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "The coach blamed himself for the team's narrow loss.",
-      "options": [
-        "The team",
-        "blamed",
-        "The coach"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The coach",
-      "hint": "Who accepted responsibility?",
-      "explanation": "'himself' shows the coach blamed his own decisions, not the players.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l49_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The coach blamed the players for the team's narrow loss, though he later apologized.\nWho or what does 'he' refer to?",
-      "targetWord": "he",
-      "sentence": "The coach blamed the players for the team's narrow loss, though he later apologized.",
-      "options": [
-        "The coach",
-        "apologized",
-        "The players"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The coach",
-      "hint": "Who later felt regret and apologized?",
-      "explanation": "'he' refers to 'the coach,' the only singular person mentioned in the sentence.",
-      "grammarRule": "Subject Pronouns"
-    },
-    {
-      "id": "pr_l49_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Known for honest work, the mechanic prides himself on getting every detail right.\nWho or what does 'himself' refer to?",
-      "targetWord": "himself",
-      "sentence": "Known for honest work, the mechanic prides himself on getting every detail right.",
-      "options": [
-        "The work",
-        "prides",
-        "The mechanic"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The mechanic",
-      "hint": "Who feels proud of the work?",
-      "explanation": "'himself' shows the mechanic takes personal pride in his own work.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l50_q1",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Wandering through the old part of the city, the tourists found themselves completely lost.\nWho or what does 'themselves' refer to?",
-      "targetWord": "themselves",
-      "sentence": "Wandering through the old part of the city, the tourists found themselves completely lost.",
-      "options": [
-        "found",
-        "The city",
-        "The tourists"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The tourists",
-      "hint": "Who got lost?",
-      "explanation": "'themselves' loops back to 'the tourists,' who lost their own way.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l50_q2",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Before entering the lab, the chemist protected herself with gloves and goggles.\nWho or what does 'herself' refer to?",
-      "targetWord": "herself",
-      "sentence": "Before entering the lab, the chemist protected herself with gloves and goggles.",
-      "options": [
-        "The chemist",
-        "The lab",
-        "protected"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The chemist",
-      "hint": "Who wore the safety gear?",
-      "explanation": "'herself' shows the chemist protected her own body from the chemicals.",
-      "grammarRule": "Reflexive Pronouns"
-    },
-    {
-      "id": "pr_l50_q3",
-      "instruction": "Resolve the pronoun.",
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "During a power outage, the generator switches itself on automatically.\nWho or what does 'itself' refer to?",
-      "targetWord": "itself",
-      "sentence": "During a power outage, the generator switches itself on automatically.",
-      "options": [
-        "The generator",
-        "The outage",
-        "switches"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The generator",
-      "hint": "What turns on automatically?",
-      "explanation": "'itself' shows the generator activates on its own, without anyone flipping a switch.",
-      "grammarRule": "Reflexive Pronouns"
-    }
-  ]
+    "gameType": "pronounResolution",
+    "batchIndex": 5,
+    "levels": "41-50",
+    "quests": [
+        {
+            "id": "pr_l41_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The manager blamed herself for the missed deadline.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "The manager blamed herself for the missed deadline.",
+            "options": [
+                "The manager",
+                "The deadline",
+                "blamed"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The manager",
+            "hint": "Who does the blame point back to - the manager or something else?",
+            "explanation": "'herself' loops back to the subject, 'the manager' - she blames no one else.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l41_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Diego cut himself while slicing vegetables.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "Diego cut himself while slicing vegetables.",
+            "options": [
+                "The vegetables",
+                "slicing",
+                "Diego"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Diego",
+            "hint": "Who got cut?",
+            "explanation": "'himself' shows Diego is both the one holding the knife and the one who got hurt.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l41_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The washing machine shut itself off after the cycle finished.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "The washing machine shut itself off after the cycle finished.",
+            "options": [
+                "finished",
+                "The cycle",
+                "The washing machine"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The washing machine",
+            "hint": "What turned off - on its own?",
+            "explanation": "'itself' shows the washing machine turned off automatically, with no outside cause.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l42_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Priya taught herself to play the guitar.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "Priya taught herself to play the guitar.",
+            "options": [
+                "Priya",
+                "taught",
+                "The guitar"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Priya",
+            "hint": "Who was both the teacher and the student?",
+            "explanation": "'herself' shows Priya learned without another teacher - she is both parts of the action.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l42_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The children behaved themselves during the long car ride.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "The children behaved themselves during the long car ride.",
+            "options": [
+                "behaved",
+                "The ride",
+                "The children"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The children",
+            "hint": "Whose behavior is being described?",
+            "explanation": "'themselves' loops back to 'the children,' the ones being well-behaved.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l42_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The cat groomed itself in the sunny window.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "The cat groomed itself in the sunny window.",
+            "options": [
+                "The window",
+                "The cat",
+                "groomed"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The cat",
+            "hint": "Who was being cleaned - the cat or something else?",
+            "explanation": "'itself' shows the cat cleaned its own fur.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l43_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Tariq introduced himself to the new coworkers.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "Tariq introduced himself to the new coworkers.",
+            "options": [
+                "introduced",
+                "The coworkers",
+                "Tariq"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Tariq",
+            "hint": "Who was being introduced?",
+            "explanation": "'himself' shows Tariq introduced his own name, not someone else's.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l43_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Tariq introduced his coworkers to the new client.\nWho or what does 'his' refer to?",
+            "targetWord": "his",
+            "sentence": "Tariq introduced his coworkers to the new client.",
+            "options": [
+                "Tariq",
+                "The coworkers",
+                "The client"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Tariq",
+            "hint": "Whose coworkers were introduced?",
+            "explanation": "'his' shows the coworkers belong to Tariq - a simple possessive, not a reflexive action.",
+            "grammarRule": "Possessive Adjectives"
+        },
+        {
+            "id": "pr_l43_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Driven to succeed, the engineer pushed himself to finish the design early.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "Driven to succeed, the engineer pushed himself to finish the design early.",
+            "options": [
+                "The design",
+                "The engineer",
+                "pushed"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The engineer",
+            "hint": "Who felt the pressure to finish?",
+            "explanation": "'himself' shows the engineer motivated his own effort - no one else is involved.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l44_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "On their first day, the new hires familiarized themselves with the office layout.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "On their first day, the new hires familiarized themselves with the office layout.",
+            "options": [
+                "familiarized",
+                "The new hires",
+                "The layout"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The new hires",
+            "hint": "Who got to know the office?",
+            "explanation": "'themselves' loops back to 'the new hires,' the ones learning the layout.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l44_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The toddler looked at herself in the mirror and giggled.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "The toddler looked at herself in the mirror and giggled.",
+            "options": [
+                "The mirror",
+                "giggled",
+                "The toddler"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The toddler",
+            "hint": "Who was reflected in the mirror?",
+            "explanation": "'herself' shows the toddler was looking at her own reflection.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l44_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "For the food drive, the volunteers had to organize themselves into three teams.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "For the food drive, the volunteers had to organize themselves into three teams.",
+            "options": [
+                "The volunteers",
+                "The teams",
+                "organize"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The volunteers",
+            "hint": "Who arranged the groups?",
+            "explanation": "'themselves' loops back to 'the volunteers,' who did the organizing on their own.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l45_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The old printer has finally jammed itself beyond repair.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "The old printer has finally jammed itself beyond repair.",
+            "options": [
+                "jammed",
+                "The old printer",
+                "The repair"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The old printer",
+            "hint": "What broke down on its own?",
+            "explanation": "'itself' shows the printer jammed without anyone forcing it.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l45_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Amara pushed herself through the last mile of the marathon.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "Amara pushed herself through the last mile of the marathon.",
+            "options": [
+                "pushed",
+                "Amara",
+                "The marathon"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Amara",
+            "hint": "Who found the extra motivation?",
+            "explanation": "'herself' shows Amara motivated her own effort during the run.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l45_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Before submitting anything, the interns should remind themselves to save their work often.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "Before submitting anything, the interns should remind themselves to save their work often.",
+            "options": [
+                "remind",
+                "The interns",
+                "The work"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The interns",
+            "hint": "Who needed the reminder?",
+            "explanation": "'themselves' loops back to 'the interns,' giving themselves the reminder.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l46_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The professor corrected himself mid-lecture after a small error.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "The professor corrected himself mid-lecture after a small error.",
+            "options": [
+                "The lecture",
+                "corrected",
+                "The professor"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The professor",
+            "hint": "Who fixed the mistake - the professor or someone else?",
+            "explanation": "'himself' shows the professor caught and fixed his own error.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l46_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The babysitter watched the children playing by themselves in the yard.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "The babysitter watched the children playing by themselves in the yard.",
+            "options": [
+                "The yard",
+                "The children",
+                "The babysitter"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The children",
+            "hint": "Who was playing without help?",
+            "explanation": "'themselves' loops back to 'the children,' playing without adult involvement.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l46_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Every two hours, the oven automatically turns itself off.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "Every two hours, the oven automatically turns itself off.",
+            "options": [
+                "The oven",
+                "The hours",
+                "turns"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The oven",
+            "hint": "What shuts off on its own?",
+            "explanation": "'itself' shows the oven has an automatic shutoff, with no one switching it off.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l47_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Before the operation, the surgeon scrubbed herself thoroughly.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "Before the operation, the surgeon scrubbed herself thoroughly.",
+            "options": [
+                "scrubbed",
+                "The operation",
+                "The surgeon"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The surgeon",
+            "hint": "Who was getting ready - the patient or the surgeon?",
+            "explanation": "'herself' shows the surgeon cleaned her own hands, not someone else's.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l47_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "After the successful merger, the board members congratulated themselves.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "After the successful merger, the board members congratulated themselves.",
+            "options": [
+                "congratulated",
+                "The merger",
+                "The board members"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The board members",
+            "hint": "Who gave the congratulations, and who received them?",
+            "explanation": "'themselves' shows the board members praised their own achievement.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l47_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Jumping over the fence, the dog hurt itself.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "Jumping over the fence, the dog hurt itself.",
+            "options": [
+                "jumping",
+                "The dog",
+                "The fence"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The dog",
+            "hint": "Who got hurt?",
+            "explanation": "'itself' shows the dog injured its own leg while jumping.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l48_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Layla challenged herself to read fifty books this year.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "Layla challenged herself to read fifty books this year.",
+            "options": [
+                "challenged",
+                "Layla",
+                "The books"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Layla",
+            "hint": "Who set the goal, and who has to meet it?",
+            "explanation": "'herself' shows Layla set her own personal challenge.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l48_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "To meet the tight quarterly deadline, the employees had to push themselves.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "To meet the tight quarterly deadline, the employees had to push themselves.",
+            "options": [
+                "push",
+                "The employees",
+                "The deadline"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The employees",
+            "hint": "Who found the extra effort?",
+            "explanation": "'themselves' loops back to 'the employees,' motivating their own work.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l48_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The robot recalibrated itself after the software update.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "The robot recalibrated itself after the software update.",
+            "options": [
+                "The robot",
+                "The update",
+                "recalibrated"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The robot",
+            "hint": "What adjusted on its own?",
+            "explanation": "'itself' shows the robot fixed its own settings automatically.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l49_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The coach blamed himself for the team's narrow loss.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "The coach blamed himself for the team's narrow loss.",
+            "options": [
+                "The team",
+                "blamed",
+                "The coach"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The coach",
+            "hint": "Who accepted responsibility?",
+            "explanation": "'himself' shows the coach blamed his own decisions, not the players.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l49_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "The coach blamed the players for the team's narrow loss, though he later apologized.\nWho or what does 'he' refer to?",
+            "targetWord": "he",
+            "sentence": "The coach blamed the players for the team's narrow loss, though he later apologized.",
+            "options": [
+                "The coach",
+                "apologized",
+                "The players"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The coach",
+            "hint": "Who later felt regret and apologized?",
+            "explanation": "'he' refers to 'the coach,' the only singular person mentioned in the sentence.",
+            "grammarRule": "Subject Pronouns"
+        },
+        {
+            "id": "pr_l49_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Known for honest work, the mechanic prides himself on getting every detail right.\nWho or what does 'himself' refer to?",
+            "targetWord": "himself",
+            "sentence": "Known for honest work, the mechanic prides himself on getting every detail right.",
+            "options": [
+                "The work",
+                "prides",
+                "The mechanic"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The mechanic",
+            "hint": "Who feels proud of the work?",
+            "explanation": "'himself' shows the mechanic takes personal pride in his own work.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l50_q1",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Wandering through the old part of the city, the tourists found themselves completely lost.\nWho or what does 'themselves' refer to?",
+            "targetWord": "themselves",
+            "sentence": "Wandering through the old part of the city, the tourists found themselves completely lost.",
+            "options": [
+                "found",
+                "The city",
+                "The tourists"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The tourists",
+            "hint": "Who got lost?",
+            "explanation": "'themselves' loops back to 'the tourists,' who lost their own way.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l50_q2",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "Before entering the lab, the chemist protected herself with gloves and goggles.\nWho or what does 'herself' refer to?",
+            "targetWord": "herself",
+            "sentence": "Before entering the lab, the chemist protected herself with gloves and goggles.",
+            "options": [
+                "The chemist",
+                "The lab",
+                "protected"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The chemist",
+            "hint": "Who wore the safety gear?",
+            "explanation": "'herself' shows the chemist protected her own body from the chemicals.",
+            "grammarRule": "Reflexive Pronouns"
+        },
+        {
+            "id": "pr_l50_q3",
+            "instruction": "Resolve the pronoun.",
+            "subtype": "pronounResolution",
+            "interactionType": "choice",
+            "question": "During a power outage, the generator switches itself on automatically.\nWho or what does 'itself' refer to?",
+            "targetWord": "itself",
+            "sentence": "During a power outage, the generator switches itself on automatically.",
+            "options": [
+                "The generator",
+                "The outage",
+                "switches"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "The generator",
+            "hint": "What turns on automatically?",
+            "explanation": "'itself' shows the generator activates on its own, without anyone flipping a switch.",
+            "grammarRule": "Reflexive Pronouns"
+        }
+    ]
 }

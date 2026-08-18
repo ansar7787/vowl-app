@@ -7,7 +7,7 @@
             "id": "RDG_READINGCONCLUSION_L151_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of paleoclimatologists reconstructing historical drought patterns from tree-ring data spanning eight centuries found that the most severe drought period in the reconstructed record, occurring several centuries before modern industrial record-keeping began, was of comparable or even greater severity and duration than any drought experienced within the era of direct meteorological measurement, a finding the team argued should temper claims that current drought conditions are unprecedented in an absolute historical sense, even as the researchers emphasized that today's droughts are unfolding within a very different context of far higher regional water demand, extensive groundwater depletion, and a much larger population dependent on increasingly strained water systems than existed during any historical drought captured in the tree-ring record.",
             "options": [
                 "While historical droughts may have matched or exceeded today's in raw severity, the researchers stress today's droughts occur in a context of far greater water demand and strain.",
@@ -23,7 +23,7 @@
             "id": "RDG_READINGCONCLUSION_L151_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A labor market researcher analyzing the long-term career trajectories of workers who experienced a significant layoff during a major economic downturn found that workers who accepted a lower-paying position within their same industry within six months of job loss ultimately achieved higher lifetime earnings than workers who held out for a longer period searching for a comparable-salary position, even accounting for the initial pay cut absorbed by the first group, a pattern the researcher attributed to the first group avoiding the resume gap and skill atrophy that tended to compound the longer displaced workers remained out of the workforce entirely, ultimately outweighing the short-term financial sacrifice of accepting a lower salary sooner.",
             "options": [
                 "Holding out for a comparable-salary position led to higher lifetime earnings.",
@@ -39,7 +39,7 @@
             "id": "RDG_READINGCONCLUSION_L151_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An art historian studying the reception of a once-controversial painting style found that critical opinion had shifted dramatically over the roughly seventy years since the style's introduction, moving from near-universal dismissal by contemporary critics, who characterized the work as amateurish and lacking technical skill, to widespread critical acclaim by the following generation of critics, who instead praised the same technical choices as deliberate and innovative departures from convention, a reversal the historian suggested illustrates how critical judgments of technical skill are not purely objective assessments but are shaped substantially by the prevailing artistic conventions and expectations of the era in which the judgment is being made.",
             "options": [
                 "The historian concluded that judgments of technical skill are entirely objective and unaffected by era.",
@@ -55,7 +55,7 @@
             "id": "RDG_READINGCONCLUSION_L152_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of computer security researchers studying the long-term effectiveness of mandatory security awareness training found that employee susceptibility to simulated phishing attempts dropped sharply in the weeks immediately following each annual training session but gradually crept back upward over the following months, approaching pre-training susceptibility levels by roughly the tenth month, a decay pattern that led the researchers to argue that the standard model of infrequent, large-block annual training sessions may be fundamentally less effective at producing durable behavioral change than a model of smaller, more frequent training touchpoints distributed more evenly throughout the year, even if the total cumulative training time remained identical under both approaches.",
             "options": [
                 "Annual training's benefits appear to decay significantly over time, leading researchers to favor smaller, more frequent training touchpoints over a single large annual session.",
@@ -71,7 +71,7 @@
             "id": "RDG_READINGCONCLUSION_L152_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A health economist evaluating a state's expansion of telehealth coverage for mental health services found that overall utilization of mental health services increased substantially following the expansion, but a closer geographic analysis revealed that the increase was concentrated almost entirely in areas that already had reasonable access to in-person mental health providers, while historically underserved rural areas, the population telehealth expansion was specifically intended to help, saw only marginal increases in utilization, a gap the economist attributed to persistent barriers such as unreliable rural broadband access that telehealth coverage alone, without complementary infrastructure investment, could not fully overcome on its own, according to utilization data analyzed across every county in the state.",
             "options": [
                 "Underserved rural areas saw the largest increase in mental health service utilization.",
@@ -87,7 +87,7 @@
             "id": "RDG_READINGCONCLUSION_L152_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A behavioral economist studying charitable giving patterns found that donors who were offered a matching gift, in which a third party pledged to match their donation dollar-for-dollar, gave larger initial donations than donors offered no match, but longitudinal tracking of the same donors over the following three years revealed that matched donors were also somewhat less likely to continue giving to the same organization in subsequent years without a match being offered again, suggesting that matching gifts may be effective at maximizing a single donation's size while potentially undermining the kind of intrinsic motivation that sustains long-term, unprompted giving relationships with an organization.",
             "options": [
                 "Matching gifts increased both initial donations and long-term giving without further matches.",
@@ -103,7 +103,7 @@
             "id": "RDG_READINGCONCLUSION_L153_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher evaluating a statewide initiative that provided free graphing calculators to students in low-income school districts, intended to close a resource gap with wealthier districts where such devices were already common, found that standardized math scores in the participating districts did not improve significantly relative to comparison districts that did not receive the calculators, a null result the researcher attributed not to the devices themselves being unhelpful, but to insufficient accompanying teacher training on how to meaningfully integrate the calculators into instruction, since many teachers reported in surveys that they had received the devices with little to no guidance on adjusting their existing lesson plans to make effective use of them.",
             "options": [
                 "The researcher concluded the calculators themselves were fundamentally unhelpful for learning math.",
@@ -119,7 +119,7 @@
             "id": "RDG_READINGCONCLUSION_L153_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An environmental engineer studying green roof installations across a large city found that while green roofs reliably reduced building energy costs and stormwater runoff regardless of building height, their effect on reducing surrounding neighborhood air temperature, a benefit often cited in promotional materials, was measurable only for buildings under roughly six stories, since taller buildings' green roofs were simply too far removed from street level, where most human activity and heat exposure actually occurs, to meaningfully influence the temperature people on the ground actually experienced, even though the roofs themselves still provided their full building-level energy and stormwater benefits regardless of height.",
             "options": [
                 "Green roofs provided identical neighborhood cooling benefits regardless of building height.",
@@ -135,7 +135,7 @@
             "id": "RDG_READINGCONCLUSION_L153_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A tourism economist studying the long-term regional economic effects of hosting a major international sporting event found that host cities experienced a genuine short-term boost in tourism-related revenue during the event itself, but a comprehensive ten-year follow-up analysis found no statistically significant long-term increase in annual tourism visits compared to each city's pre-event trajectory, contradicting a commonly cited justification for public investment in hosting such events, that they generate a lasting 'global exposure' effect that meaningfully elevates a host city's status as an ongoing tourist destination well beyond the weeks the event itself was actually taking place.",
             "options": [
                 "The ten-year analysis confirmed a significant lasting increase in tourism from hosting the event.",
@@ -151,7 +151,7 @@
             "id": "RDG_READINGCONCLUSION_L154_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A developmental psychologist studying sibling relationships in early childhood found that children who were given explicit language for naming their emotions, such as being taught to say 'I feel frustrated' rather than simply crying or hitting when upset, showed measurably fewer physical conflicts with siblings over shared toys and space, but this effect was significant only in households where parents also consistently modeled using the same emotional vocabulary themselves during their own visible moments of frustration, with little measurable benefit observed in households where children learned the vocabulary in isolation without any accompanying parental modeling of the same language.",
             "options": [
                 "Teaching children emotional vocabulary appears to reduce sibling conflict mainly when parents also model that vocabulary themselves, not when taught in isolation.",
@@ -167,7 +167,7 @@
             "id": "RDG_READINGCONCLUSION_L154_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A municipal researcher evaluating a pilot program that replaced traditional parking meters with a phone-based payment app across a downtown business district found that the app increased payment compliance and reduced the city's meter maintenance costs substantially, but a survey of downtown business owners revealed that elderly customers without smartphones, or without comfort using payment apps, reported avoiding the district more often after the change, even though the city had retained a small number of traditional coin-based meters specifically to accommodate this group, suggesting the mere availability of an alternative option was insufficient to fully offset the district's shift toward an app-centric parking experience.",
             "options": [
                 "Retaining some traditional meters was not enough to fully prevent elderly customers from avoiding the district after the shift toward app-based parking.",
@@ -183,7 +183,7 @@
             "id": "RDG_READINGCONCLUSION_L154_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports psychologist studying pre-competition routines among elite gymnasts found that gymnasts who followed a highly specific, unvarying physical warm-up sequence before every competition reported lower pre-competition anxiety than gymnasts whose warm-up varied depending on the venue or circumstances, but when the psychologist examined actual competition scores, the two groups performed statistically identically, suggesting that while a rigid routine may offer genuine psychological comfort, it does not appear to translate into any measurable competitive advantage once gymnasts actually begin performing, at least within the specific population and competition level studied by the psychologist.",
             "options": [
                 "The rigid routine improved both anxiety levels and competition scores.",
@@ -199,7 +199,7 @@
             "id": "RDG_READINGCONCLUSION_L155_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A management researcher studying the rollout of a new performance review system that replaced annual ratings with continuous, informal feedback delivered throughout the year found that employee-reported clarity about performance expectations increased significantly under the new system, but managers reported the new system required substantially more of their weekly time investment than the old annual process had, a cost some managers described in interviews as unsustainable given their existing workload, prompting the researcher to note that the system's apparent success from an employee perspective may not be sustainable at scale without either reducing managers' other responsibilities or providing additional dedicated time for the ongoing feedback the new system requires.",
             "options": [
                 "The new system required less time investment from managers than the old process.",
@@ -215,7 +215,7 @@
             "id": "RDG_READINGCONCLUSION_L155_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of soil microbiologists studying the effects of a widely used agricultural fungicide on soil health found that while the fungicide effectively suppressed the specific crop-damaging fungus it was designed to target, it also produced a measurable, unintended reduction in populations of several beneficial soil fungi responsible for helping plant roots absorb nutrients, and this collateral reduction appeared to persist in treated soil for considerably longer, sometimes multiple growing seasons, than the fungicide's active suppression of the originally targeted pathogen, raising questions among the researchers about the treatment's true net long-term effect on overall soil and crop health beyond its narrow, short-term pest-control benefit.",
             "options": [
                 "The fungicide appears to cause longer-lasting harm to beneficial soil fungi than the duration of its intended benefit against the target pathogen, raising questions about its net long-term effect.",
@@ -231,7 +231,7 @@
             "id": "RDG_READINGCONCLUSION_L155_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A food policy researcher studying the effects of a soda tax implemented in one city found that while overall soda purchases within city limits declined as intended following the tax's introduction, sales data from grocery stores located just outside the city boundary, but still within a short driving distance for many residents, increased by a nearly offsetting amount over the same period, suggesting that a meaningful share of the tax's apparent effect on consumption reflected residents simply shifting where they purchased soda rather than genuinely reducing how much soda they ultimately consumed overall, according to a regional analysis comparing sales data inside and outside the taxed boundary.",
             "options": [
                 "Soda purchases outside the city boundary also declined during the same period.",
@@ -247,7 +247,7 @@
             "id": "RDG_READINGCONCLUSION_L156_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A user experience researcher studying voice assistant adoption among older adults found that while initial onboarding sessions led by a human technician in the older adult's own home produced high rates of continued regular use six months later, the same onboarding content delivered remotely via video call, despite covering identical material and taking a comparable amount of time, produced substantially lower continued-use rates, suggesting that for this particular population, the physical presence of another person during initial setup may matter as much as the actual informational content being conveyed during that session.",
             "options": [
                 "For older adults, the physical presence of a technician during onboarding appears to matter as much as the informational content itself for encouraging continued use.",
@@ -263,7 +263,7 @@
             "id": "RDG_READINGCONCLUSION_L156_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sociolinguist studying the evolution of a regional dialect over three generations within the same family lineage found that while the grandparents' generation spoke the dialect as their primary everyday language and the grandchildren's generation used it only occasionally in specific family contexts, the grandchildren nonetheless demonstrated a more explicit, conscious knowledge of the dialect's grammatical rules than either of the two older generations, who had acquired the dialect implicitly through immersion and could use it fluently without being able to clearly articulate its underlying grammatical structure when directly asked to explain the reasoning behind a particular construction they used instinctively and correctly.",
             "options": [
                 "The grandparents' generation demonstrated the most explicit grammatical knowledge of the dialect.",
@@ -279,7 +279,7 @@
             "id": "RDG_READINGCONCLUSION_L156_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A clinical researcher studying patient adherence to a multi-drug regimen for a chronic condition found that patients who used a single combination pill containing all required medications adhered to their regimen significantly more consistently than patients prescribed the identical medications as separate individual pills, even though both regimens required an identical number of total pills taken per day and were covered by insurance at comparable out-of-pocket cost, suggesting that the cognitive and logistical simplicity of managing fewer distinct prescription bottles, rather than the total pill count itself, may be the more important factor driving adherence.",
             "options": [
                 "Total pill count was the primary factor determining medication adherence.",
@@ -295,7 +295,7 @@
             "id": "RDG_READINGCONCLUSION_L157_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An economist studying the effects of automatic annual rent increases tied to a fixed formula, as opposed to landlord-discretionary increases negotiated individually each year, found that tenants under the formula-based system reported significantly less housing-related stress in surveys, even in years when the formula-based increase was numerically larger than the median discretionary increase in comparable buildings that year, suggesting that predictability itself, the ability to anticipate and plan for a known increase well in advance, may matter more to tenants' sense of housing security than the actual magnitude of the increase they end up paying each year.",
             "options": [
                 "The magnitude of the rent increase was the only factor affecting tenant stress levels.",
@@ -311,7 +311,7 @@
             "id": "RDG_READINGCONCLUSION_L157_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher studying the long-term effects of grade retention, holding a struggling student back to repeat a grade, found that retained students showed academic improvement relative to their own prior performance in the immediate year following retention, but when compared not to their own past performance but to a matched group of similarly struggling students who were instead promoted alongside their original age cohort and given additional targeted support services, the retained students showed no significant long-term academic advantage by high school, while reporting substantially higher rates of subsequent disengagement from school and eventual dropout.",
             "options": [
                 "Retained students showed a clear, lasting academic advantage over students given additional support instead.",
@@ -327,7 +327,7 @@
             "id": "RDG_READINGCONCLUSION_L157_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A conservation biologist studying reforestation efforts in a degraded tropical region found that plots reforested using a diverse mix of native species selected to mimic the original forest's structure required substantially more upfront cost and management expertise than plots reforested with a single fast-growing commercial timber species, but the native-species plots achieved measurably higher long-term carbon sequestration and supported substantially greater biodiversity recovery within twenty years, leading the biologist to argue that upfront cost comparisons alone, commonly used to justify cheaper single-species reforestation in policy discussions, dramatically understate the native approach's true long-term value once ecological outcomes are properly factored into the comparison.",
             "options": [
                 "Single-species reforestation achieved higher long-term carbon sequestration and biodiversity recovery.",
@@ -343,7 +343,7 @@
             "id": "RDG_READINGCONCLUSION_L158_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A regional tourism board studying the effects of a new direct international flight route found that while total visitor numbers from the newly connected country increased substantially in the two years following the route's launch, average visitor spending per trip declined somewhat over the same period, a pattern the board's analysts attributed to the route attracting a broader range of travelers, including more budget-conscious visitors who previously found the destination inaccessible without a connecting flight, rather than the destination itself becoming less appealing to the kind of higher-spending visitor the route had originally been marketed toward attracting in the first place.",
             "options": [
                 "The destination became measurably less appealing to higher-spending visitors after the route launched.",
@@ -359,7 +359,7 @@
             "id": "RDG_READINGCONCLUSION_L158_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A family researcher studying households that adopted a rule against discussing work-related stress at the dinner table, in an effort to protect family time, found that while dinner-table conversation quality did improve for most surveyed families under the new rule, roughly a fifth of families later abandoned the rule entirely, reporting that suppressing work stress at dinner simply displaced those conversations to later in the evening, often after children had gone to bed, which some parents felt reduced opportunities for children to witness healthy modeling of how adults process and discuss workplace difficulties.",
             "options": [
                 "For most families the rule improved dinner conversation, but some found it simply displaced stress discussions to a time children no longer witnessed.",
@@ -375,7 +375,7 @@
             "id": "RDG_READINGCONCLUSION_L158_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports economist studying attendance patterns at minor league baseball games found that promotional giveaway nights, such as free bobblehead figurines, reliably boosted single-game attendance substantially above a team's seasonal average, but season-long attendance totals for teams that scheduled many giveaway nights were not meaningfully higher than totals for teams that scheduled few, since fans attracted primarily by a specific promotion tended to attend that single game and no others, rather than being converted into more frequent attendees who would return for non-promotional games throughout the remainder of the season.",
             "options": [
                 "Giveaway promotions appear to boost single-game attendance without meaningfully increasing a team's total season attendance, since promotion-driven fans rarely return for other games.",
@@ -391,7 +391,7 @@
             "id": "RDG_READINGCONCLUSION_L159_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public administration researcher studying participatory governance found that neighborhood councils granted genuine binding authority over a portion of local spending decisions saw substantially higher and more sustained resident participation over a five-year period than neighborhood councils that were purely advisory, offering only non-binding recommendations to city officials who retained full final authority, suggesting that residents' willingness to invest ongoing time and effort in civic participation may depend heavily on whether their involvement carries genuine decision-making weight rather than serving a primarily symbolic or consultative function within the broader governance structure.",
             "options": [
                 "Purely advisory councils saw higher sustained participation than councils with binding authority.",
@@ -407,7 +407,7 @@
             "id": "RDG_READINGCONCLUSION_L159_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of computer scientists studying the energy efficiency of different data center cooling strategies found that while liquid immersion cooling, submerging servers directly in a specialized non-conductive fluid, achieved the lowest overall energy consumption per unit of computing power among all methods tested, its adoption across the industry remained limited primarily due to compatibility concerns with existing server hardware designed around traditional air cooling, meaning that realizing the technology's full efficiency potential at scale would likely require a broader, more costly hardware redesign across the industry rather than a simple retrofit of existing data center infrastructure already in operation.",
             "options": [
                 "Liquid immersion cooling could be easily adopted through a simple retrofit of existing hardware.",
@@ -423,7 +423,7 @@
             "id": "RDG_READINGCONCLUSION_L159_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of geologists studying a series of moderate earthquakes along a previously little-monitored fault line found that the earthquakes' timing correlated closely with seasonal fluctuations in regional groundwater extraction for agricultural irrigation, with a disproportionate share of events occurring during the driest months when extraction rates peaked, leading the team to hypothesize that human-driven groundwater depletion may be altering stress conditions along the fault enough to influence the timing, though not necessarily the ultimate occurrence, of earthquakes that may have happened eventually regardless of any groundwater extraction taking place in the region.",
             "options": [
                 "The team concluded groundwater extraction is the sole cause of these earthquakes occurring at all.",
@@ -439,7 +439,7 @@
             "id": "RDG_READINGCONCLUSION_L160_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A workplace researcher studying the adoption of four-day workweek pilots across multiple industries found that the practice produced the most consistent positive outcomes, in both employee wellbeing and maintained productivity, at companies that had already established strong existing processes for measuring output by results rather than hours logged, while companies that shifted to a four-day week without first developing such results-oriented measurement systems saw far more inconsistent outcomes, with some experiencing genuine productivity declines that the researcher attributed not to the shortened week itself but to the absence of a clear existing framework for evaluating whether work was actually getting done.",
             "options": [
                 "The shortened week itself was the primary cause of productivity declines wherever they occurred.",
@@ -455,7 +455,7 @@
             "id": "RDG_READINGCONCLUSION_L160_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A theater historian studying the long-term critical reputation of experimental plays that broke sharply from the conventions of their time found that such plays were disproportionately likely to be revived and reevaluated favorably decades later compared to commercially successful but conventionally structured plays from the same original era, a pattern the historian suggested reflects how conventional plays, having already fully satisfied the expectations and tastes of their own moment, offer later audiences comparatively little that feels newly discoverable, whereas boundary-pushing plays, often misunderstood or under-appreciated in their own time, may only become fully legible and appreciated once audiences' expectations have shifted enough to catch up with what the play was originally attempting.",
             "options": [
                 "Conventionally structured plays were more likely to be favorably reevaluated decades later.",
@@ -471,7 +471,7 @@
             "id": "RDG_READINGCONCLUSION_L160_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "Since the Reyes family began requiring every household member, parents included, to place their phone in a shared basket by the front door immediately upon arriving home each evening, they say weeknight family time has become noticeably more engaged, though they also observed an unexpected side effect: their youngest child began asking considerably more questions about ordinary household tasks, like how the dishwasher worked or why the mail arrived at a certain time, questions the parents suspect had simply gone unasked before, not for lack of curiosity, but because the child had rarely had their parents' undistracted attention available at the moments such questions naturally arose.",
             "options": [
                 "The youngest child asked fewer questions after the new phone rule began.",

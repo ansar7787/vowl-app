@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'in a meeting until three' tell you about when the manager is available?",
             "explanation": "'Until three' = the meeting ends at three. Until then, the manager is unavailable. 'In a meeting' = currently occupied. The inference: you cannot see the manager before 3 PM. 'Until' marks the endpoint of unavailability.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone sets multiple alarms.",
             "explanation": "Setting three alarms suggests she can't risk oversleeping - she has something important requiring an early, reliable wake-up time. One alarm would do for an ordinary day; three alarms signals a critical morning commitment.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L41_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what ordering all three courses implies about appetite.",
             "explanation": "Ordering all three courses - starter (appetiser), main (entrée), dessert - represents a full, substantial restaurant meal. This implies significant hunger or appetite. Someone not hungry would typically skip the starter or dessert.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why someone comments on warmth indoors.",
             "explanation": "Commenting on indoor warmth is typically an indirect request for action - open a window, turn down the heating, or turn on a fan. It's not a sincere question about whether others agree; it's a socially softened request. Indirect requests are very common in British English.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why does someone draw attention to a full bin?",
             "explanation": "Drawing attention to a full bin is an indirect way of requesting that someone empties it. Direct requests ('please empty the bin') can seem rude; indirect observations ('the bin is full') achieve the same goal more politely. This is a common pattern in shared living or working spaces.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L42_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would someone draw attention to unwashed dishes?",
             "explanation": "Pointing out that dishes have been sitting there for a long time is an indirect way of saying they need washing. The length of time ('since this morning') adds urgency and mild reproach. It's a passive observation with an implicit request.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what physical reaction going pale suggests.",
             "explanation": "Going pale = losing colour from your face - a physical sign of shock or alarm. Looking at a bill and going pale means the amount was unexpectedly high. This is a physiological response to a shocking stimulus: shock → facial pallor.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why reading the same paragraph multiple times might be necessary.",
             "explanation": "Re-reading the same paragraph repeatedly suggests difficulty concentrating - the information isn't being absorbed. If he were enjoying it, he'd move forward; if studying, he'd take notes. Re-reading suggests distraction or an inability to take in the content.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L43_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Is there one clear reason, or could this be ambiguous?",
             "explanation": "Silence between people can mean many things: they argued (tension), they're comfortable together (contentment), they're tired, or they're processing something. Unlike crying or laughing, silence is ambiguous. Recognising when a situation has multiple plausible explanations is an important inference skill.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for who claims to have organised it.",
             "explanation": "'I organised it' - the first person singular 'I' in B's statement. B is the organiser. The question from A ('are you coming?') shows A didn't know B was involved. This is a common conversational revelation of hidden information.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the word that reveals the relationship.",
             "explanation": "'Mum' (British English for 'Mum') = mother. A calls B 'Mum' directly, immediately revealing the relationship. B's response ('you said you'd be back by six') is a typical parental reproach. Together: child arriving home late, mother noting the broken promise.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L44_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for B's exclamation to understand the occasion.",
             "explanation": "B says 'our anniversary!' - revealing the reason for the booking. 'Anniversary' typically refers to a wedding anniversary. 'Oh lovely' shows B is pleased and perhaps surprised. B's reaction reveals what A hasn't explicitly stated.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "This is a common English idiom - what does crossing a bridge represent?",
             "explanation": "'Cross that bridge when you come to it' = deal with a problem only when it actually becomes a problem, not in advance. The 'bridge' represents a future obstacle. It's practical wisdom: don't worry about hypothetical problems - wait to see if they actually arise.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'bite the bullet' mean?",
             "explanation": "'Bite the bullet' = endure something painful or unpleasant with courage. Making the appointment was something he'd been avoiding (perhaps a difficult medical or professional appointment). 'Finally' confirms he'd been delaying. He forced himself to act despite reluctance.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L45_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'let sleeping dogs lie' mean?",
             "explanation": "'Let sleeping dogs lie' = leave an old problem alone rather than bringing it up again and causing new trouble. The idiom suggests that disturbing a settled situation (sleeping dog) is likely to cause problems (angry dog waking up). It's advice to leave the past alone.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why people make pros-and-cons lists.",
             "explanation": "A pros-and-cons list is a decision-making tool - listing advantages (pros) and disadvantages (cons) to help choose between options. 'Before making her decision' confirms the purpose: the list is a structured way to think through choices.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why performers take deep breaths before going on stage.",
             "explanation": "Deep breathing before performing is a calming technique. 'Going on stage' = a performance context where nerves are common. Deep breaths slow the heart rate and reduce anxiety. The context (stage performance) + the action (deep breaths) = calming nerves.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L46_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about why you reread something before sending.",
             "explanation": "Rereading before sending is a quality-check habit - looking for errors, unclear wording, or missing information. 'Before sending' = a final review stage. This is a common professional behaviour: reviewing your own writing to ensure accuracy and clarity.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for the comparison and which receives stronger praise.",
             "explanation": "'Wasn't bad' = lukewarm praise for the film. 'Much better' = strong positive comparison for the book. 'But' signals the contrast. The speaker prefers the book significantly. 'Much better' is a stronger comparative - not just 'better' but 'much' better.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'you wouldn't know it now' imply about his current personality?",
             "explanation": "'You wouldn't know it now' = you can't tell he was shy by looking at him today. The contrast is: past (very shy) vs. present (apparently not shy at all). He has transformed - the shyness has gone. 'Used to be' describes a past state that no longer applies.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L47_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Listen for 'while' introducing a contrast between what was good and what wasn't.",
             "explanation": "'While... well structured' = the structure was good (concession). 'Content was hard to follow' = the main problem. 'While' introduces a positive concession before the negative. The structure (how it was organised) was fine; the content itself (what was said) was the issue.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where nurses work and explain dosages.",
             "explanation": "A nurse who explains dosage (the amount of medicine to take) works in a medical setting. 'Dosage' is a medical/pharmaceutical term. Nurses are found in hospitals, clinics, or GP surgeries. The vocabulary - nurse + dosage - locates the scene in a healthcare environment.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where there's a screen at the front and people speak quietly.",
             "explanation": "Lowering the voice + a screen at the front of the room suggests either a cinema (watching a film) or a lecture hall (a presentation). The combination of quiet (lowered voice) and a shared visual screen narrows the context significantly.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L48_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about where you check in luggage and find duty-free shops.",
             "explanation": "'Checked in her luggage' = submitted bags for transport. 'Duty-free shop' = a shop selling goods without import tax, found exclusively in airports. Both pieces of vocabulary together make the location unmistakably an airport.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what consistent early arrival tells you about someone's character.",
             "explanation": "Consistently arriving early (not just on time, but 15 minutes early) indicates a habit of punctuality and good organisation. It requires advance planning, good time management, and reliability. This is a character trait, not an accidental behaviour.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does regular charitable giving tell you about someone?",
             "explanation": "Regular, substantial charitable giving indicates generosity - prioritising others' needs over personal wealth accumulation. It's a choice, not an obligation. The inference is about character (generous) based on behaviour (monthly donations), not about income level.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L49_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Think about what reading terms and conditions reveals about decision-making style.",
             "explanation": "Reading terms and conditions (usually long and detailed) before agreeing shows careful, thorough decision-making. It's not the same as general suspicion - it's due diligence. This suggests a methodical character who protects themselves through information.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What would you normally expect after twelve hours of work?",
             "explanation": "'Despite' introduces a surprising contrast: twelve hours of work → normally = exhaustion. 'Didn't feel tired' contradicts the expected outcome. 'Despite' + surprising result is a key signal of unexpected contrast. The surprise is the absence of tiredness, not the work itself.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'not exactly the world's greatest' imply?",
             "explanation": "'Not exactly' softens a critical statement. 'The world's greatest cook' is a hyperbolic positive that, when negated, becomes mild criticism. Together: he's not a good cook, expressed diplomatically with understatement. British understatement often works this way.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L50_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'plucked up the courage' tell you about the action?",
             "explanation": "'Pluck up the courage' = gather enough bravery to do something difficult or anxiety-inducing. 'Finally' suggests it took a long time - she'd been putting it off. Together: she'd been avoiding a conversation she found intimidating and eventually forced herself to do it.",

@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A ferry terminal reports smoke coming from beneath a docked passenger ferry's engine room. Input code!",
-      "correctAnswer": "EVACUATE THE FERRY NOW",
-      "hint": "Say what should happen to passengers right away.",
-      "explanation": "Evacuating immediately gets passengers off before smoke has a chance to turn into an open fire.",
-      "id": "eh_l111_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Firefighters need to know whether the fire is in the fuel system or the electrics. Input code!",
-      "correctAnswer": "SEND A MARINE FIRE UNIT",
-      "hint": "Ask for the specialist crew trained for boat fires.",
-      "explanation": "A marine fire unit has training specific to fuel and electrical fires on board a vessel.",
-      "id": "eh_l111_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The fire is out and engineers confirm the ferry's hull was not damaged. Input code!",
-      "correctAnswer": "TOW THE FERRY TO DOCK",
-      "hint": "Say what should happen to the disabled ferry.",
-      "explanation": "Towing it fully to dock lets engineers complete repairs without the ferry drifting or blocking the channel.",
-      "id": "eh_l111_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large retail warehouse fire has firefighters worried about the roof's stability after twenty minutes. Input code!",
-      "correctAnswer": "PULL CREWS OUT NOW",
-      "hint": "Say the safety priority given the roof risk.",
-      "explanation": "Pulling crews out before a roof collapse is standard practice once the risk becomes too great to fight from inside.",
-      "id": "eh_l112_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "With crews outside, commanders decide to fight the fire from a safer distance instead. Input code!",
-      "correctAnswer": "SWITCH TO EXTERIOR ATTACK",
-      "hint": "Say the change in tactics needed for safety.",
-      "explanation": "Fighting the fire from outside the building keeps firefighters safe while still bringing the blaze under control.",
-      "id": "eh_l112_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The roof has fully collapsed but no firefighters were inside when it happened. Input code!",
-      "correctAnswer": "CONFIRM ALL CREWS SAFE",
-      "hint": "Say what must be checked immediately after a collapse.",
-      "explanation": "An immediate headcount confirms the decision to pull crews out earlier kept everyone safe.",
-      "id": "eh_l112_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A school bus has broken down on a busy road during the morning school run. Input code!",
-      "correctAnswer": "SEND A REPLACEMENT BUS",
-      "hint": "Say what's needed to continue the children's journey safely.",
-      "explanation": "A replacement bus lets the children continue their journey without waiting on the roadside near traffic.",
-      "id": "eh_l113_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Until the replacement arrives, the children need to wait somewhere safer than the roadside. Input code!",
-      "correctAnswer": "MOVE CHILDREN BEHIND BARRIER",
-      "hint": "Say where the children should wait instead.",
-      "explanation": "Moving behind a barrier keeps the children well clear of passing traffic while they wait.",
-      "id": "eh_l113_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The replacement bus has arrived and all children are safely aboard and on their way. Input code!",
-      "correctAnswer": "NOTIFY ALL PARENTS NOW",
-      "hint": "Say who should be told the situation is resolved.",
-      "explanation": "Notifying parents promptly reassures them and explains why the bus may arrive a little later than usual.",
-      "id": "eh_l113_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large public swimming pool reports a possible chemical imbalance causing swimmers to cough and gag. Input code!",
-      "correctAnswer": "CLEAR THE POOL NOW",
-      "hint": "Say what should happen to swimmers right away.",
-      "explanation": "Clearing the pool immediately stops more people breathing in whatever is causing the reaction.",
-      "id": "eh_l114_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Staff confirm chlorine gas built up after two cleaning chemicals were mixed by mistake. Input code!",
-      "correctAnswer": "VENTILATE THE POOL HALL",
-      "hint": "Say what must be done to clear the air.",
-      "explanation": "Ventilating the hall lets the gas disperse safely before anyone is allowed back inside.",
-      "id": "eh_l114_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Air quality readings inside the pool hall are now confirmed safe by testing staff. Input code!",
-      "correctAnswer": "REOPEN THE POOL",
-      "hint": "Say what can happen once the air is confirmed safe.",
-      "explanation": "Reopening only once readings are confirmed avoids sending swimmers back into air that still isn't fully safe.",
-      "id": "eh_l114_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A ski resort reports rising avalanche risk after heavy overnight snowfall on a popular run. Input code!",
-      "correctAnswer": "CLOSE THE UPPER SLOPES",
-      "hint": "Say which part of the mountain must shut.",
-      "explanation": "Closing the higher slopes keeps skiers away from the exact area where the risk is greatest.",
-      "id": "eh_l115_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Ski patrol wants to trigger a controlled release before the slope becomes even more unstable. Input code!",
-      "correctAnswer": "CONDUCT A CONTROLLED RELEASE",
-      "hint": "Say the professional technique used to manage this risk.",
-      "explanation": "A controlled release lets patrol trigger a small, safe avalanche on their own terms, before a larger one happens by accident.",
-      "id": "eh_l115_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The controlled release is complete and patrol confirms the slope is now stable. Input code!",
-      "correctAnswer": "REOPEN THE UPPER SLOPES",
-      "hint": "Say what can happen once the slope is confirmed stable.",
-      "explanation": "Reopening the slopes once confirmed stable lets skiing safely resume for the rest of the day.",
-      "id": "eh_l115_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large office building's water tank has burst, flooding the top three floors. Input code!",
-      "correctAnswer": "SHUT OFF THE SUPPLY",
-      "hint": "Say what must be stopped at the source.",
-      "explanation": "Shutting off the water supply stops the flooding from spreading to lower floors while repairs are made.",
-      "id": "eh_l116_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Water has begun dripping through ceiling tiles onto desks two floors below. Input code!",
-      "correctAnswer": "MOVE STAFF FROM THAT AREA",
-      "hint": "Say what should happen to workers directly below the leak.",
-      "explanation": "Moving staff away protects them from a ceiling that could sag or collapse under the weight of water.",
-      "id": "eh_l116_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Repairs are complete and an inspector confirms the affected floors are safe to use again. Input code!",
-      "correctAnswer": "ALLOW STAFF BACK IN",
-      "hint": "Say what can happen once the floors are confirmed safe.",
-      "explanation": "Letting staff back in only after inspection avoids anyone returning to a still-damp, unsafe ceiling area.",
-      "id": "eh_l116_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large delivery truck has jackknifed on a highway on-ramp, spilling its cargo of furniture. Input code!",
-      "correctAnswer": "CLOSE THE ON-RAMP NOW",
-      "hint": "Say exactly which part of the road must close.",
-      "explanation": "Closing just the on-ramp, rather than the whole highway, keeps traffic moving while still protecting the scene.",
-      "id": "eh_l117_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The driver is trapped in the cab and cannot open his door to climb out. Input code!",
-      "correctAnswer": "SEND CUTTING EQUIPMENT",
-      "hint": "Say what tool is needed to free him.",
-      "explanation": "Specialist cutting equipment can open the cab safely without pulling on a door that's jammed shut.",
-      "id": "eh_l117_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The driver has been freed with only minor injuries and the ramp is being cleared. Input code!",
-      "correctAnswer": "REQUEST MEDICAL HELP",
-      "hint": "Ask plainly for someone trained to treat them.",
-      "explanation": "Even minor injuries after being trapped in a cab should be properly checked by paramedics.",
-      "id": "eh_l117_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large indoor food court's grease trap has caught fire, filling the mall with smoke. Input code!",
-      "correctAnswer": "EVACUATE THE FOOD COURT",
-      "hint": "Say what should happen to that section right away.",
-      "explanation": "Evacuating just the food court first gets people clear quickly while other mall areas remain calmer.",
-      "id": "eh_l118_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Smoke is now spreading toward the mall's main shopping level through open walkways. Input code!",
-      "correctAnswer": "EVACUATE THE MAIN LEVEL",
-      "hint": "Say what wider area now needs to be cleared too.",
-      "explanation": "Extending the evacuation as smoke spreads keeps shoppers ahead of the danger instead of reacting too late.",
-      "id": "eh_l118_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The fire is fully out and air quality readings across the mall are back to normal. Input code!",
-      "correctAnswer": "REOPEN THE MALL",
-      "hint": "Say what can happen once the mall is confirmed safe.",
-      "explanation": "Reopening only once readings are normal ensures shoppers and staff return to genuinely clean air.",
-      "id": "eh_l118_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large public library reports a burst pipe is flooding the rare books archive. Input code!",
-      "correctAnswer": "SHUT OFF THE SUPPLY",
-      "hint": "Say what must be stopped at the source.",
-      "explanation": "Shutting off the water first stops any more damage to the irreplaceable archive materials.",
-      "id": "eh_l119_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Staff need to move the most valuable books away from the rising water quickly. Input code!",
-      "correctAnswer": "RELOCATE THE RARE BOOKS",
-      "hint": "Say what needs to be moved, and to where implied.",
-      "explanation": "Relocating the books to higher, dry shelving is the fastest way to prevent permanent water damage.",
-      "id": "eh_l119_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The leak is fixed and conservation staff confirm the rescued books were undamaged. Input code!",
-      "correctAnswer": "RETURN BOOKS TO ARCHIVE",
-      "hint": "Say what final step completes the rescue.",
-      "explanation": "Returning the books once the room is dry and repaired completes the process safely.",
-      "id": "eh_l119_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large multi-story car park's ground floor has flooded suddenly after a burst water main outside. Input code!",
-      "correctAnswer": "EVACUATE THE GROUND FLOOR",
-      "hint": "Say what should happen to that level right away.",
-      "explanation": "Evacuating the ground floor first protects anyone near the rising water while the main is shut off.",
-      "id": "eh_l120_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Several cars are now partly submerged and their owners are searching for them anxiously nearby. Input code!",
-      "correctAnswer": "KEEP OWNERS AWAY SAFELY",
-      "hint": "Say what should be done with worried car owners.",
-      "explanation": "Keeping owners at a safe distance protects them from moving water while crews assess the flooded level.",
-      "id": "eh_l120_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The water main is fixed and the ground floor has been fully pumped dry. Input code!",
-      "correctAnswer": "INSPECT BEFORE REOPENING",
-      "hint": "Say what must happen before any cars are allowed back.",
-      "explanation": "An inspection confirms the floor's structure and electrics are safe before drivers are allowed to collect their cars.",
-      "id": "eh_l120_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A ferry terminal reports smoke coming from beneath a docked passenger ferry's engine room. Input code!",
+            "correctAnswer": "EVACUATE THE FERRY NOW",
+            "hint": "Say what should happen to passengers right away.",
+            "explanation": "Evacuating immediately gets passengers off before smoke has a chance to turn into an open fire.",
+            "id": "eh_l111_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Firefighters need to know whether the fire is in the fuel system or the electrics. Input code!",
+            "correctAnswer": "SEND A MARINE FIRE UNIT",
+            "hint": "Ask for the specialist crew trained for boat fires.",
+            "explanation": "A marine fire unit has training specific to fuel and electrical fires on board a vessel.",
+            "id": "eh_l111_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The fire is out and engineers confirm the ferry's hull was not damaged. Input code!",
+            "correctAnswer": "TOW THE FERRY TO DOCK",
+            "hint": "Say what should happen to the disabled ferry.",
+            "explanation": "Towing it fully to dock lets engineers complete repairs without the ferry drifting or blocking the channel.",
+            "id": "eh_l111_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large retail warehouse fire has firefighters worried about the roof's stability after twenty minutes. Input code!",
+            "correctAnswer": "PULL CREWS OUT NOW",
+            "hint": "Say the safety priority given the roof risk.",
+            "explanation": "Pulling crews out before a roof collapse is standard practice once the risk becomes too great to fight from inside.",
+            "id": "eh_l112_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "With crews outside, commanders decide to fight the fire from a safer distance instead. Input code!",
+            "correctAnswer": "SWITCH TO EXTERIOR ATTACK",
+            "hint": "Say the change in tactics needed for safety.",
+            "explanation": "Fighting the fire from outside the building keeps firefighters safe while still bringing the blaze under control.",
+            "id": "eh_l112_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The roof has fully collapsed but no firefighters were inside when it happened. Input code!",
+            "correctAnswer": "CONFIRM ALL CREWS SAFE",
+            "hint": "Say what must be checked immediately after a collapse.",
+            "explanation": "An immediate headcount confirms the decision to pull crews out earlier kept everyone safe.",
+            "id": "eh_l112_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A school bus has broken down on a busy road during the morning school run. Input code!",
+            "correctAnswer": "SEND A REPLACEMENT BUS",
+            "hint": "Say what's needed to continue the children's journey safely.",
+            "explanation": "A replacement bus lets the children continue their journey without waiting on the roadside near traffic.",
+            "id": "eh_l113_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Until the replacement arrives, the children need to wait somewhere safer than the roadside. Input code!",
+            "correctAnswer": "MOVE CHILDREN BEHIND BARRIER",
+            "hint": "Say where the children should wait instead.",
+            "explanation": "Moving behind a barrier keeps the children well clear of passing traffic while they wait.",
+            "id": "eh_l113_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The replacement bus has arrived and all children are safely aboard and on their way. Input code!",
+            "correctAnswer": "NOTIFY ALL PARENTS NOW",
+            "hint": "Say who should be told the situation is resolved.",
+            "explanation": "Notifying parents promptly reassures them and explains why the bus may arrive a little later than usual.",
+            "id": "eh_l113_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large public swimming pool reports a possible chemical imbalance causing swimmers to cough and gag. Input code!",
+            "correctAnswer": "CLEAR THE POOL NOW",
+            "hint": "Say what should happen to swimmers right away.",
+            "explanation": "Clearing the pool immediately stops more people breathing in whatever is causing the reaction.",
+            "id": "eh_l114_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Staff confirm chlorine gas built up after two cleaning chemicals were mixed by mistake. Input code!",
+            "correctAnswer": "VENTILATE THE POOL HALL",
+            "hint": "Say what must be done to clear the air.",
+            "explanation": "Ventilating the hall lets the gas disperse safely before anyone is allowed back inside.",
+            "id": "eh_l114_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Air quality readings inside the pool hall are now confirmed safe by testing staff. Input code!",
+            "correctAnswer": "REOPEN THE POOL",
+            "hint": "Say what can happen once the air is confirmed safe.",
+            "explanation": "Reopening only once readings are confirmed avoids sending swimmers back into air that still isn't fully safe.",
+            "id": "eh_l114_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A ski resort reports rising avalanche risk after heavy overnight snowfall on a popular run. Input code!",
+            "correctAnswer": "CLOSE THE UPPER SLOPES",
+            "hint": "Say which part of the mountain must shut.",
+            "explanation": "Closing the higher slopes keeps skiers away from the exact area where the risk is greatest.",
+            "id": "eh_l115_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Ski patrol wants to trigger a controlled release before the slope becomes even more unstable. Input code!",
+            "correctAnswer": "CONDUCT A CONTROLLED RELEASE",
+            "hint": "Say the professional technique used to manage this risk.",
+            "explanation": "A controlled release lets patrol trigger a small, safe avalanche on their own terms, before a larger one happens by accident.",
+            "id": "eh_l115_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The controlled release is complete and patrol confirms the slope is now stable. Input code!",
+            "correctAnswer": "REOPEN THE UPPER SLOPES",
+            "hint": "Say what can happen once the slope is confirmed stable.",
+            "explanation": "Reopening the slopes once confirmed stable lets skiing safely resume for the rest of the day.",
+            "id": "eh_l115_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large office building's water tank has burst, flooding the top three floors. Input code!",
+            "correctAnswer": "SHUT OFF THE SUPPLY",
+            "hint": "Say what must be stopped at the source.",
+            "explanation": "Shutting off the water supply stops the flooding from spreading to lower floors while repairs are made.",
+            "id": "eh_l116_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Water has begun dripping through ceiling tiles onto desks two floors below. Input code!",
+            "correctAnswer": "MOVE STAFF FROM THAT AREA",
+            "hint": "Say what should happen to workers directly below the leak.",
+            "explanation": "Moving staff away protects them from a ceiling that could sag or collapse under the weight of water.",
+            "id": "eh_l116_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Repairs are complete and an inspector confirms the affected floors are safe to use again. Input code!",
+            "correctAnswer": "ALLOW STAFF BACK IN",
+            "hint": "Say what can happen once the floors are confirmed safe.",
+            "explanation": "Letting staff back in only after inspection avoids anyone returning to a still-damp, unsafe ceiling area.",
+            "id": "eh_l116_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large delivery truck has jackknifed on a highway on-ramp, spilling its cargo of furniture. Input code!",
+            "correctAnswer": "CLOSE THE ON-RAMP NOW",
+            "hint": "Say exactly which part of the road must close.",
+            "explanation": "Closing just the on-ramp, rather than the whole highway, keeps traffic moving while still protecting the scene.",
+            "id": "eh_l117_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The driver is trapped in the cab and cannot open his door to climb out. Input code!",
+            "correctAnswer": "SEND CUTTING EQUIPMENT",
+            "hint": "Say what tool is needed to free him.",
+            "explanation": "Specialist cutting equipment can open the cab safely without pulling on a door that's jammed shut.",
+            "id": "eh_l117_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The driver has been freed with only minor injuries and the ramp is being cleared. Input code!",
+            "correctAnswer": "REQUEST MEDICAL HELP",
+            "hint": "Ask plainly for someone trained to treat them.",
+            "explanation": "Even minor injuries after being trapped in a cab should be properly checked by paramedics.",
+            "id": "eh_l117_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large indoor food court's grease trap has caught fire, filling the mall with smoke. Input code!",
+            "correctAnswer": "EVACUATE THE FOOD COURT",
+            "hint": "Say what should happen to that section right away.",
+            "explanation": "Evacuating just the food court first gets people clear quickly while other mall areas remain calmer.",
+            "id": "eh_l118_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Smoke is now spreading toward the mall's main shopping level through open walkways. Input code!",
+            "correctAnswer": "EVACUATE THE MAIN LEVEL",
+            "hint": "Say what wider area now needs to be cleared too.",
+            "explanation": "Extending the evacuation as smoke spreads keeps shoppers ahead of the danger instead of reacting too late.",
+            "id": "eh_l118_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The fire is fully out and air quality readings across the mall are back to normal. Input code!",
+            "correctAnswer": "REOPEN THE MALL",
+            "hint": "Say what can happen once the mall is confirmed safe.",
+            "explanation": "Reopening only once readings are normal ensures shoppers and staff return to genuinely clean air.",
+            "id": "eh_l118_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large public library reports a burst pipe is flooding the rare books archive. Input code!",
+            "correctAnswer": "SHUT OFF THE SUPPLY",
+            "hint": "Say what must be stopped at the source.",
+            "explanation": "Shutting off the water first stops any more damage to the irreplaceable archive materials.",
+            "id": "eh_l119_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Staff need to move the most valuable books away from the rising water quickly. Input code!",
+            "correctAnswer": "RELOCATE THE RARE BOOKS",
+            "hint": "Say what needs to be moved, and to where implied.",
+            "explanation": "Relocating the books to higher, dry shelving is the fastest way to prevent permanent water damage.",
+            "id": "eh_l119_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The leak is fixed and conservation staff confirm the rescued books were undamaged. Input code!",
+            "correctAnswer": "RETURN BOOKS TO ARCHIVE",
+            "hint": "Say what final step completes the rescue.",
+            "explanation": "Returning the books once the room is dry and repaired completes the process safely.",
+            "id": "eh_l119_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large multi-story car park's ground floor has flooded suddenly after a burst water main outside. Input code!",
+            "correctAnswer": "EVACUATE THE GROUND FLOOR",
+            "hint": "Say what should happen to that level right away.",
+            "explanation": "Evacuating the ground floor first protects anyone near the rising water while the main is shut off.",
+            "id": "eh_l120_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Several cars are now partly submerged and their owners are searching for them anxiously nearby. Input code!",
+            "correctAnswer": "KEEP OWNERS AWAY SAFELY",
+            "hint": "Say what should be done with worried car owners.",
+            "explanation": "Keeping owners at a safe distance protects them from moving water while crews assess the flooded level.",
+            "id": "eh_l120_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The water main is fixed and the ground floor has been fully pumped dry. Input code!",
+            "correctAnswer": "INSPECT BEFORE REOPENING",
+            "hint": "Say what must happen before any cars are allowed back.",
+            "explanation": "An inspection confirms the floor's structure and electrics are safe before drivers are allowed to collect their cars.",
+            "id": "eh_l120_q3"
+        }
+    ]
 }

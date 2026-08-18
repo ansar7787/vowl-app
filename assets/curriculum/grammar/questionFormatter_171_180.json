@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 18,
-  "levels": "171-180",
-  "quests": [
-    {
-      "id": "qf_l171_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He canceled the entire event without any warning, and nobody understands why.",
-      "sentence": "He canceled the entire event without any warning, and nobody understands why.",
-      "options": [
-        "Why on earth he did cancel the entire event without any warning?",
-        "Why on earth did he cancel the entire event without any warning?",
-        "Why did on earth he cancel the entire event without any warning?",
-        "Why on earth did he canceled the entire event without any warning?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why on earth did he cancel the entire event without any warning?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
-      "explanation": "'On earth' adds emphasis right after the question word. The rest of the question still follows normal inversion: 'did he cancel'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
-    },
-    {
-      "id": "qf_l171_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is building some strange contraption in the garage, and no one knows what it's for.",
-      "sentence": "He is building some strange contraption in the garage, and no one knows what it's for.",
-      "options": [
-        "What on earth he is building in the garage?",
-        "What is on earth he building in the garage?",
-        "What on earth is he build in the garage?",
-        "What on earth is he building in the garage?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "What on earth is he building in the garage?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
-      "explanation": "'On earth' adds emphasis right after the question word, while the rest keeps normal inversion: 'is he building'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
-    },
-    {
-      "id": "qf_l171_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The printer keeps jamming every single time, and it's driving the whole office crazy.",
-      "sentence": "The printer keeps jamming every single time, and it's driving the whole office crazy.",
-      "options": [
-        "Why on earth the printer does keep jamming every single time?",
-        "Why does on earth the printer keep jamming every single time?",
-        "Why on earth does the printer keeps jamming every single time?",
-        "Why on earth does the printer keep jamming every single time?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Why on earth does the printer keep jamming every single time?",
-      "hint": "'On earth' fits right after the question word, ahead of the usual inversion.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows the usual pattern: 'does the printer keep'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
-    },
-    {
-      "id": "qf_l172_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Somehow, the two of them found this tiny, hidden restaurant in a city of ten million people.",
-      "sentence": "Somehow, the two of them found this tiny, hidden restaurant in a city of ten million people.",
-      "options": [
-        "How on earth they did find this tiny, hidden restaurant?",
-        "How on earth did they find this tiny, hidden restaurant?",
-        "How did on earth they find this tiny, hidden restaurant?",
-        "How on earth did they found this tiny, hidden restaurant?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How on earth did they find this tiny, hidden restaurant?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'did they find'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
-    },
-    {
-      "id": "qf_l172_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Somebody rearranged the entire office overnight, and no one has any idea who.",
-      "sentence": "Somebody rearranged the entire office overnight, and no one has any idea who.",
-      "options": [
-        "Who on earth did rearrange the entire office overnight?",
-        "Who on earth rearranged the entire office overnight?",
-        "On earth who rearranged the entire office overnight?",
-        "Who on earth did rearranged the entire office overnight?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Who on earth rearranged the entire office overnight?",
-      "hint": "Since 'who' is the subject here, no 'did' is needed - keep the verb in its past form.",
-      "explanation": "Because 'who' replaces the subject here, no auxiliary is added. 'On earth' fits right after 'who': 'Who on earth rearranged'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
-    },
-    {
-      "id": "qf_l172_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This mysterious package showed up with no name and no return address, and everyone's asking who sent it.",
-      "sentence": "This mysterious package showed up with no name and no return address, and everyone's asking who sent it.",
-      "options": [
-        "Who on earth sent this mysterious package?",
-        "Who on earth did send this mysterious package?",
-        "On earth who sent this mysterious package?",
-        "Who on earth did sent this mysterious package?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Who on earth sent this mysterious package?",
-      "hint": "Since 'who' is the subject here, no 'did' is needed.",
-      "explanation": "'Who' replaces the subject, so no auxiliary is added, and 'on earth' fits right after it: 'Who on earth sent'.",
-      "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
-    },
-    {
-      "id": "qf_l173_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The invoice total doesn't match anything we ordered, and accounting is baffled.",
-      "sentence": "The invoice total doesn't match anything we ordered, and accounting is baffled.",
-      "options": [
-        "How on earth the invoice total did get so wrong?",
-        "How did on earth the invoice total get so wrong?",
-        "How on earth did the invoice total get so wrong?",
-        "How on earth did the invoice total got so wrong?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "How on earth did the invoice total get so wrong?",
-      "hint": "'On earth' slots in right after the question word, before the normal inversion.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'did the invoice total get'.",
-      "grammarRule": "Emphatic Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l173_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Every single light in the building turned on at 3 a.m., and security has no idea why.",
-      "sentence": "Every single light in the building turned on at 3 a.m., and security has no idea why.",
-      "options": [
-        "Why on earth every light did turn on at 3 a.m.?",
-        "Why on earth did every light turn on at 3 a.m.?",
-        "Why did on earth every light turn on at 3 a.m.?",
-        "Why on earth did every light turned on at 3 a.m.?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why on earth did every light turn on at 3 a.m.?",
-      "hint": "Place 'on earth' directly after the question word, before inverting as usual.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'did every light turn on'.",
-      "grammarRule": "Emphatic Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l173_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Someone left every window in the building wide open overnight.",
-      "sentence": "Someone left every window in the building wide open overnight.",
-      "options": [
-        "Who on earth did leave every window wide open overnight?",
-        "Who on earth left every window wide open overnight?",
-        "On earth who left every window wide open overnight?",
-        "Who on earth did left every window wide open overnight?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Who on earth left every window wide open overnight?",
-      "hint": "Since 'who' is the subject here, no 'did' is needed.",
-      "explanation": "'Who' replaces the subject, so no extra auxiliary is added: 'Who on earth left', with 'on earth' fitting right after 'who'.",
-      "grammarRule": "Emphatic Questions: Mixed Practice"
-    },
-    {
-      "id": "qf_l174_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's obvious that this plan needs more funding, yet nobody wants to discuss the budget.",
-      "sentence": "It's obvious that this plan needs more funding, yet nobody wants to discuss the budget.",
-      "options": [
-        "It isn't obvious that this plan needs more funding?",
-        "Doesn't it obvious that this plan needs more funding?",
-        "Isn't it obvious that this plan needs more funding?",
-        "Isn't obvious it that this plan needs more funding?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Isn't it obvious that this plan needs more funding?",
-      "hint": "Move 'isn't' to the front, right before 'it'.",
-      "explanation": "'Isn't' moves to the front of the sentence, right before 'it', to form this rhetorical negative question.",
-      "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
-    },
-    {
-      "id": "qf_l174_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It seems strange that no one questioned the numbers earlier.",
-      "sentence": "It seems strange that no one questioned the numbers earlier.",
-      "options": [
-        "It isn't strange that no one questioned the numbers earlier?",
-        "Doesn't it strange that no one questioned the numbers earlier?",
-        "Isn't it strange that no one questioned the numbers earlier?",
-        "Isn't strange it that no one questioned the numbers earlier?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Isn't it strange that no one questioned the numbers earlier?",
-      "hint": "Move 'isn't' to the front, right before 'it'.",
-      "explanation": "'Isn't' moves to the front, right before 'it', forming a rhetorical question that expects agreement.",
-      "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
-    },
-    {
-      "id": "qf_l174_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's clear that the client is unhappy with the delay.",
-      "sentence": "It's clear that the client is unhappy with the delay.",
-      "options": [
-        "It isn't clear that the client is unhappy with the delay?",
-        "Isn't it clear that the client is unhappy with the delay?",
-        "Doesn't it clear that the client is unhappy with the delay?",
-        "Isn't clear it that the client is unhappy with the delay?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Isn't it clear that the client is unhappy with the delay?",
-      "hint": "Bring 'isn't' to the front of the sentence, directly before 'it'.",
-      "explanation": "'Isn't' moves to the front of the sentence, right before 'it', creating this rhetorical negative question.",
-      "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
-    },
-    {
-      "id": "qf_l175_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think this new design is a huge improvement over the last one.",
-      "sentence": "I think this new design is a huge improvement over the last one.",
-      "options": [
-        "You wouldn't say this new design is a huge improvement?",
-        "Wouldn't you say this new design is a huge improvement?",
-        "Doesn't you say this new design is a huge improvement?",
-        "Wouldn't you saying this new design is a huge improvement?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Wouldn't you say this new design is a huge improvement?",
-      "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged.",
-      "explanation": "'Wouldn't' moves to the front of this rhetorical question, and 'you say' stays in its normal statement order.",
-      "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
-    },
-    {
-      "id": "qf_l175_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I believe the team handled that crisis remarkably well.",
-      "sentence": "I believe the team handled that crisis remarkably well.",
-      "options": [
-        "You wouldn't agree the team handled that crisis remarkably well?",
-        "Doesn't you agree the team handled that crisis remarkably well?",
-        "Wouldn't you agreeing the team handled that crisis remarkably well?",
-        "Wouldn't you agree the team handled that crisis remarkably well?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Wouldn't you agree the team handled that crisis remarkably well?",
-      "hint": "'Wouldn't' moves to the front, keeping 'you agree' unchanged.",
-      "explanation": "'Wouldn't' moves to the front of the question, and 'you agree' remains in normal statement word order.",
-      "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
-    },
-    {
-      "id": "qf_l175_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think it's time we updated the whole system.",
-      "sentence": "I think it's time we updated the whole system.",
-      "options": [
-        "You wouldn't say it's time we updated the whole system?",
-        "Doesn't you say it's time we updated the whole system?",
-        "Wouldn't you says it's time we updated the whole system?",
-        "Wouldn't you say it's time we updated the whole system?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Wouldn't you say it's time we updated the whole system?",
-      "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged.",
-      "explanation": "'Wouldn't' moves to the front, and 'you say' keeps its normal statement word order throughout the question.",
-      "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
-    },
-    {
-      "id": "qf_l176_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's remarkable how quickly the new hire learned the whole system.",
-      "sentence": "It's remarkable how quickly the new hire learned the whole system.",
-      "options": [
-        "It isn't remarkable how quickly the new hire learned the whole system?",
-        "Isn't it remarkable how quickly the new hire learned the whole system?",
-        "Doesn't it remarkable how quickly the new hire learned the whole system?",
-        "Isn't remarkable it how quickly the new hire learned the whole system?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Isn't it remarkable how quickly the new hire learned the whole system?",
-      "hint": "Move 'isn't' to the front, right before 'it'.",
-      "explanation": "'Isn't' moves to the front, right before 'it', expressing agreement the speaker already expects.",
-      "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l176_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think we should have addressed this concern much sooner.",
-      "sentence": "I think we should have addressed this concern much sooner.",
-      "options": [
-        "Wouldn't you agree we should have addressed this concern much sooner?",
-        "You wouldn't agree we should have addressed this concern much sooner?",
-        "Doesn't you agree we should have addressed this concern much sooner?",
-        "Wouldn't you agreeing we should have addressed this concern much sooner?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Wouldn't you agree we should have addressed this concern much sooner?",
-      "hint": "'Wouldn't' moves to the front, keeping 'you agree' unchanged.",
-      "explanation": "'Wouldn't' moves to the front, and 'you agree' stays in normal statement word order, followed by the rest of the clause unchanged.",
-      "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l176_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's a shame that the festival got canceled this year.",
-      "sentence": "It's a shame that the festival got canceled this year.",
-      "options": [
-        "It isn't a shame that the festival got canceled this year?",
-        "Isn't it a shame that the festival got canceled this year?",
-        "Doesn't it a shame that the festival got canceled this year?",
-        "Isn't a shame it that the festival got canceled this year?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Isn't it a shame that the festival got canceled this year?",
-      "hint": "'Isn't' shifts to the very start, just ahead of 'it'.",
-      "explanation": "'Isn't' moves to the front, right before 'it', to form this rhetorical negative question.",
-      "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l177_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The applications should have been reviewed by now.",
-      "sentence": "The applications should have been reviewed by now.",
-      "options": [
-        "Should the applications have being reviewed by now?",
-        "Have the applications should been reviewed by now?",
-        "Should the applications have been reviewed by now?",
-        "Should the applications been have reviewed by now?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Should the applications have been reviewed by now?",
-      "hint": "Move only 'should' to the front - keep 'have been reviewed' together and in order.",
-      "explanation": "Only the modal 'should' moves to the front. The rest of the chain stays in its fixed order: 'have been reviewed'.",
-      "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
-    },
-    {
-      "id": "qf_l177_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The funds could have been transferred to the wrong account.",
-      "sentence": "The funds could have been transferred to the wrong account.",
-      "options": [
-        "Could the funds have being transferred to the wrong account?",
-        "Could the funds have been transferred to the wrong account?",
-        "Have the funds could been transferred to the wrong account?",
-        "Could the funds been have transferred to the wrong account?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Could the funds have been transferred to the wrong account?",
-      "hint": "Move only 'could' to the front - keep 'have been transferred' together and in order.",
-      "explanation": "Only the modal 'could' moves to the front, while 'have been transferred' stays fixed in that exact order.",
-      "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
-    },
-    {
-      "id": "qf_l177_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This issue must have been noticed earlier by someone.",
-      "sentence": "This issue must have been noticed earlier by someone.",
-      "options": [
-        "Must this issue have being noticed earlier by someone?",
-        "Must this issue have been noticed earlier by someone?",
-        "Have this issue must been noticed earlier by someone?",
-        "Must this issue been have noticed earlier by someone?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Must this issue have been noticed earlier by someone?",
-      "hint": "Move only 'must' to the front - keep 'have been noticed' together and in order.",
-      "explanation": "Only the modal 'must' moves to the front, and 'have been noticed' remains fixed in that exact order.",
-      "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
-    },
-    {
-      "id": "qf_l178_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the packages had already been delivered by this point.",
-      "sentence": "I assumed the packages had already been delivered by this point.",
-      "options": [
-        "The packages hadn't already been delivered by this point?",
-        "Haven't the packages already been delivered by this point?",
-        "Hadn't the packages already being delivered by this point?",
-        "Hadn't the packages already been delivered by this point?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Hadn't the packages already been delivered by this point?",
-      "hint": "Move 'hadn't' to the front, keeping 'been delivered' together.",
-      "explanation": "'Hadn't' moves to the front, and 'been delivered' stays together in the same fixed order.",
-      "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
-    },
-    {
-      "id": "qf_l178_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was sure the results would have been announced by the end of the week.",
-      "sentence": "I was sure the results would have been announced by the end of the week.",
-      "options": [
-        "The results wouldn't have been announced by the end of the week?",
-        "Won't the results have been announced by the end of the week?",
-        "Wouldn't the results have being announced by the end of the week?",
-        "Wouldn't the results have been announced by the end of the week?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Wouldn't the results have been announced by the end of the week?",
-      "hint": "Move 'wouldn't' to the front, keeping 'have been announced' together.",
-      "explanation": "'Wouldn't' moves to the front, and 'have been announced' remains together in the same fixed order.",
-      "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
-    },
-    {
-      "id": "qf_l178_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought the equipment shouldn't have been left outside overnight.",
-      "sentence": "I thought the equipment shouldn't have been left outside overnight.",
-      "options": [
-        "The equipment shouldn't have been left outside overnight?",
-        "Mustn't the equipment have been left outside overnight?",
-        "Shouldn't the equipment have been left outside overnight?",
-        "Shouldn't the equipment have being left outside overnight?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Shouldn't the equipment have been left outside overnight?",
-      "hint": "Move 'shouldn't' to the front, keeping 'have been left' together.",
-      "explanation": "'Shouldn't' moves to the front, and 'have been left' stays together, keeping the same fixed order.",
-      "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
-    },
-    {
-      "id": "qf_l179_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The evidence must have been reviewed by several specialists.",
-      "sentence": "The evidence must have been reviewed by several specialists.",
-      "options": [
-        "How many specialists must have the evidence been reviewed by?",
-        "How many specialists must the evidence have been reviewed by?",
-        "How many specialists the evidence must have been reviewed by?",
-        "How many specialists must the evidence have being reviewed by?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How many specialists must the evidence have been reviewed by?",
-      "hint": "Keep 'have been reviewed' together, moving 'must' right after the subject.",
-      "explanation": "'Must' moves right after the subject, and 'have been reviewed' stays together in its fixed order, with 'by' at the end.",
-      "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l179_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The contract should have been signed by both parties for weeks now.",
-      "sentence": "The contract should have been signed by both parties for weeks now.",
-      "options": [
-        "Why should the contract have been signed by both parties for weeks now?",
-        "Why should have the contract been signed by both parties for weeks now?",
-        "Why the contract should have been signed by both parties for weeks now?",
-        "Why should the contract have being signed by both parties for weeks now?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why should the contract have been signed by both parties for weeks now?",
-      "hint": "Keep 'have been signed' together, moving 'should' right after the question word.",
-      "explanation": "'Should' moves after the question word, and 'have been signed' remains together in its fixed order.",
-      "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l179_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This mistake could have been avoided with better planning.",
-      "sentence": "This mistake could have been avoided with better planning.",
-      "options": [
-        "How could have this mistake been avoided?",
-        "How could this mistake have been avoided?",
-        "How this mistake could have been avoided?",
-        "How could this mistake have being avoided?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "How could this mistake have been avoided?",
-      "hint": "Keep 'have been avoided' together, moving 'could' right after the question word.",
-      "explanation": "'Could' moves after the question word, and 'have been avoided' stays together in its fixed order.",
-      "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l180_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The company is discontinuing its best-selling product, and nobody can understand the decision.",
-      "sentence": "The company is discontinuing its best-selling product, and nobody can understand the decision.",
-      "options": [
-        "Why on earth would the company discontinue its best-selling product?",
-        "Why on earth the company would discontinue its best-selling product?",
-        "Why would on earth the company discontinue its best-selling product?",
-        "Why on earth would the company discontinuing its best-selling product?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Why on earth would the company discontinue its best-selling product?",
-      "hint": "'On earth' is inserted right after the question word, and the normal inversion follows.",
-      "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'would the company discontinue'.",
-      "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
-    },
-    {
-      "id": "qf_l180_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It's surprising that the results came back so quickly this time.",
-      "sentence": "It's surprising that the results came back so quickly this time.",
-      "options": [
-        "It isn't surprising that the results came back so quickly this time?",
-        "Doesn't it surprising that the results came back so quickly this time?",
-        "Isn't surprising it that the results came back so quickly this time?",
-        "Isn't it surprising that the results came back so quickly this time?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Isn't it surprising that the results came back so quickly this time?",
-      "hint": "Place 'isn't' at the beginning, right before the word 'it'.",
-      "explanation": "'Isn't' moves to the front, right before 'it', forming this rhetorical negative question.",
-      "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
-    },
-    {
-      "id": "qf_l180_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The refund should have been processed within five business days.",
-      "sentence": "The refund should have been processed within five business days.",
-      "options": [
-        "Should the refund have being processed within five business days?",
-        "Have the refund should been processed within five business days?",
-        "Should the refund have been processed within five business days?",
-        "Should the refund been have processed within five business days?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Should the refund have been processed within five business days?",
-      "hint": "Move only 'should' to the front - keep 'have been processed' together and in order.",
-      "explanation": "Only the modal 'should' moves to the front, while 'have been processed' stays together in its fixed order.",
-      "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 18,
+    "levels": "171-180",
+    "quests": [
+        {
+            "id": "qf_l171_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He canceled the entire event without any warning, and nobody understands why.",
+            "sentence": "He canceled the entire event without any warning, and nobody understands why.",
+            "options": [
+                "Why on earth he did cancel the entire event without any warning?",
+                "Why on earth did he cancel the entire event without any warning?",
+                "Why did on earth he cancel the entire event without any warning?",
+                "Why on earth did he canceled the entire event without any warning?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why on earth did he cancel the entire event without any warning?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+            "explanation": "'On earth' adds emphasis right after the question word. The rest of the question still follows normal inversion: 'did he cancel'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
+        },
+        {
+            "id": "qf_l171_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He is building some strange contraption in the garage, and no one knows what it's for.",
+            "sentence": "He is building some strange contraption in the garage, and no one knows what it's for.",
+            "options": [
+                "What on earth he is building in the garage?",
+                "What is on earth he building in the garage?",
+                "What on earth is he build in the garage?",
+                "What on earth is he building in the garage?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "What on earth is he building in the garage?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+            "explanation": "'On earth' adds emphasis right after the question word, while the rest keeps normal inversion: 'is he building'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
+        },
+        {
+            "id": "qf_l171_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The printer keeps jamming every single time, and it's driving the whole office crazy.",
+            "sentence": "The printer keeps jamming every single time, and it's driving the whole office crazy.",
+            "options": [
+                "Why on earth the printer does keep jamming every single time?",
+                "Why does on earth the printer keep jamming every single time?",
+                "Why on earth does the printer keeps jamming every single time?",
+                "Why on earth does the printer keep jamming every single time?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Why on earth does the printer keep jamming every single time?",
+            "hint": "'On earth' fits right after the question word, ahead of the usual inversion.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows the usual pattern: 'does the printer keep'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (What / Why)"
+        },
+        {
+            "id": "qf_l172_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Somehow, the two of them found this tiny, hidden restaurant in a city of ten million people.",
+            "sentence": "Somehow, the two of them found this tiny, hidden restaurant in a city of ten million people.",
+            "options": [
+                "How on earth they did find this tiny, hidden restaurant?",
+                "How on earth did they find this tiny, hidden restaurant?",
+                "How did on earth they find this tiny, hidden restaurant?",
+                "How on earth did they found this tiny, hidden restaurant?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How on earth did they find this tiny, hidden restaurant?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'did they find'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
+        },
+        {
+            "id": "qf_l172_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Somebody rearranged the entire office overnight, and no one has any idea who.",
+            "sentence": "Somebody rearranged the entire office overnight, and no one has any idea who.",
+            "options": [
+                "Who on earth did rearrange the entire office overnight?",
+                "Who on earth rearranged the entire office overnight?",
+                "On earth who rearranged the entire office overnight?",
+                "Who on earth did rearranged the entire office overnight?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Who on earth rearranged the entire office overnight?",
+            "hint": "Since 'who' is the subject here, no 'did' is needed - keep the verb in its past form.",
+            "explanation": "Because 'who' replaces the subject here, no auxiliary is added. 'On earth' fits right after 'who': 'Who on earth rearranged'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
+        },
+        {
+            "id": "qf_l172_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This mysterious package showed up with no name and no return address, and everyone's asking who sent it.",
+            "sentence": "This mysterious package showed up with no name and no return address, and everyone's asking who sent it.",
+            "options": [
+                "Who on earth sent this mysterious package?",
+                "Who on earth did send this mysterious package?",
+                "On earth who sent this mysterious package?",
+                "Who on earth did sent this mysterious package?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Who on earth sent this mysterious package?",
+            "hint": "Since 'who' is the subject here, no 'did' is needed.",
+            "explanation": "'Who' replaces the subject, so no auxiliary is added, and 'on earth' fits right after it: 'Who on earth sent'.",
+            "grammarRule": "Emphatic Questions: 'On Earth' (How / Who)"
+        },
+        {
+            "id": "qf_l173_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The invoice total doesn't match anything we ordered, and accounting is baffled.",
+            "sentence": "The invoice total doesn't match anything we ordered, and accounting is baffled.",
+            "options": [
+                "How on earth the invoice total did get so wrong?",
+                "How did on earth the invoice total get so wrong?",
+                "How on earth did the invoice total get so wrong?",
+                "How on earth did the invoice total got so wrong?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "How on earth did the invoice total get so wrong?",
+            "hint": "'On earth' slots in right after the question word, before the normal inversion.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest of the question follows normal inversion: 'did the invoice total get'.",
+            "grammarRule": "Emphatic Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l173_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Every single light in the building turned on at 3 a.m., and security has no idea why.",
+            "sentence": "Every single light in the building turned on at 3 a.m., and security has no idea why.",
+            "options": [
+                "Why on earth every light did turn on at 3 a.m.?",
+                "Why on earth did every light turn on at 3 a.m.?",
+                "Why did on earth every light turn on at 3 a.m.?",
+                "Why on earth did every light turned on at 3 a.m.?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why on earth did every light turn on at 3 a.m.?",
+            "hint": "Place 'on earth' directly after the question word, before inverting as usual.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'did every light turn on'.",
+            "grammarRule": "Emphatic Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l173_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Someone left every window in the building wide open overnight.",
+            "sentence": "Someone left every window in the building wide open overnight.",
+            "options": [
+                "Who on earth did leave every window wide open overnight?",
+                "Who on earth left every window wide open overnight?",
+                "On earth who left every window wide open overnight?",
+                "Who on earth did left every window wide open overnight?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Who on earth left every window wide open overnight?",
+            "hint": "Since 'who' is the subject here, no 'did' is needed.",
+            "explanation": "'Who' replaces the subject, so no extra auxiliary is added: 'Who on earth left', with 'on earth' fitting right after 'who'.",
+            "grammarRule": "Emphatic Questions: Mixed Practice"
+        },
+        {
+            "id": "qf_l174_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's obvious that this plan needs more funding, yet nobody wants to discuss the budget.",
+            "sentence": "It's obvious that this plan needs more funding, yet nobody wants to discuss the budget.",
+            "options": [
+                "It isn't obvious that this plan needs more funding?",
+                "Doesn't it obvious that this plan needs more funding?",
+                "Isn't it obvious that this plan needs more funding?",
+                "Isn't obvious it that this plan needs more funding?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Isn't it obvious that this plan needs more funding?",
+            "hint": "Move 'isn't' to the front, right before 'it'.",
+            "explanation": "'Isn't' moves to the front of the sentence, right before 'it', to form this rhetorical negative question.",
+            "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
+        },
+        {
+            "id": "qf_l174_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It seems strange that no one questioned the numbers earlier.",
+            "sentence": "It seems strange that no one questioned the numbers earlier.",
+            "options": [
+                "It isn't strange that no one questioned the numbers earlier?",
+                "Doesn't it strange that no one questioned the numbers earlier?",
+                "Isn't it strange that no one questioned the numbers earlier?",
+                "Isn't strange it that no one questioned the numbers earlier?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Isn't it strange that no one questioned the numbers earlier?",
+            "hint": "Move 'isn't' to the front, right before 'it'.",
+            "explanation": "'Isn't' moves to the front, right before 'it', forming a rhetorical question that expects agreement.",
+            "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
+        },
+        {
+            "id": "qf_l174_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's clear that the client is unhappy with the delay.",
+            "sentence": "It's clear that the client is unhappy with the delay.",
+            "options": [
+                "It isn't clear that the client is unhappy with the delay?",
+                "Isn't it clear that the client is unhappy with the delay?",
+                "Doesn't it clear that the client is unhappy with the delay?",
+                "Isn't clear it that the client is unhappy with the delay?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Isn't it clear that the client is unhappy with the delay?",
+            "hint": "Bring 'isn't' to the front of the sentence, directly before 'it'.",
+            "explanation": "'Isn't' moves to the front of the sentence, right before 'it', creating this rhetorical negative question.",
+            "grammarRule": "Rhetorical Negative Questions: 'Isn't It...That'"
+        },
+        {
+            "id": "qf_l175_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think this new design is a huge improvement over the last one.",
+            "sentence": "I think this new design is a huge improvement over the last one.",
+            "options": [
+                "You wouldn't say this new design is a huge improvement?",
+                "Wouldn't you say this new design is a huge improvement?",
+                "Doesn't you say this new design is a huge improvement?",
+                "Wouldn't you saying this new design is a huge improvement?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Wouldn't you say this new design is a huge improvement?",
+            "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged.",
+            "explanation": "'Wouldn't' moves to the front of this rhetorical question, and 'you say' stays in its normal statement order.",
+            "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
+        },
+        {
+            "id": "qf_l175_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I believe the team handled that crisis remarkably well.",
+            "sentence": "I believe the team handled that crisis remarkably well.",
+            "options": [
+                "You wouldn't agree the team handled that crisis remarkably well?",
+                "Doesn't you agree the team handled that crisis remarkably well?",
+                "Wouldn't you agreeing the team handled that crisis remarkably well?",
+                "Wouldn't you agree the team handled that crisis remarkably well?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Wouldn't you agree the team handled that crisis remarkably well?",
+            "hint": "'Wouldn't' moves to the front, keeping 'you agree' unchanged.",
+            "explanation": "'Wouldn't' moves to the front of the question, and 'you agree' remains in normal statement word order.",
+            "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
+        },
+        {
+            "id": "qf_l175_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think it's time we updated the whole system.",
+            "sentence": "I think it's time we updated the whole system.",
+            "options": [
+                "You wouldn't say it's time we updated the whole system?",
+                "Doesn't you say it's time we updated the whole system?",
+                "Wouldn't you says it's time we updated the whole system?",
+                "Wouldn't you say it's time we updated the whole system?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Wouldn't you say it's time we updated the whole system?",
+            "hint": "'Wouldn't' moves to the front, keeping 'you say' unchanged.",
+            "explanation": "'Wouldn't' moves to the front, and 'you say' keeps its normal statement word order throughout the question.",
+            "grammarRule": "Rhetorical Negative Questions: 'Wouldn't You Say/Agree'"
+        },
+        {
+            "id": "qf_l176_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's remarkable how quickly the new hire learned the whole system.",
+            "sentence": "It's remarkable how quickly the new hire learned the whole system.",
+            "options": [
+                "It isn't remarkable how quickly the new hire learned the whole system?",
+                "Isn't it remarkable how quickly the new hire learned the whole system?",
+                "Doesn't it remarkable how quickly the new hire learned the whole system?",
+                "Isn't remarkable it how quickly the new hire learned the whole system?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Isn't it remarkable how quickly the new hire learned the whole system?",
+            "hint": "Move 'isn't' to the front, right before 'it'.",
+            "explanation": "'Isn't' moves to the front, right before 'it', expressing agreement the speaker already expects.",
+            "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l176_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think we should have addressed this concern much sooner.",
+            "sentence": "I think we should have addressed this concern much sooner.",
+            "options": [
+                "Wouldn't you agree we should have addressed this concern much sooner?",
+                "You wouldn't agree we should have addressed this concern much sooner?",
+                "Doesn't you agree we should have addressed this concern much sooner?",
+                "Wouldn't you agreeing we should have addressed this concern much sooner?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Wouldn't you agree we should have addressed this concern much sooner?",
+            "hint": "'Wouldn't' moves to the front, keeping 'you agree' unchanged.",
+            "explanation": "'Wouldn't' moves to the front, and 'you agree' stays in normal statement word order, followed by the rest of the clause unchanged.",
+            "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l176_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's a shame that the festival got canceled this year.",
+            "sentence": "It's a shame that the festival got canceled this year.",
+            "options": [
+                "It isn't a shame that the festival got canceled this year?",
+                "Isn't it a shame that the festival got canceled this year?",
+                "Doesn't it a shame that the festival got canceled this year?",
+                "Isn't a shame it that the festival got canceled this year?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Isn't it a shame that the festival got canceled this year?",
+            "hint": "'Isn't' shifts to the very start, just ahead of 'it'.",
+            "explanation": "'Isn't' moves to the front, right before 'it', to form this rhetorical negative question.",
+            "grammarRule": "Rhetorical Negative Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l177_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The applications should have been reviewed by now.",
+            "sentence": "The applications should have been reviewed by now.",
+            "options": [
+                "Should the applications have being reviewed by now?",
+                "Have the applications should been reviewed by now?",
+                "Should the applications have been reviewed by now?",
+                "Should the applications been have reviewed by now?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Should the applications have been reviewed by now?",
+            "hint": "Move only 'should' to the front - keep 'have been reviewed' together and in order.",
+            "explanation": "Only the modal 'should' moves to the front. The rest of the chain stays in its fixed order: 'have been reviewed'.",
+            "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
+        },
+        {
+            "id": "qf_l177_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The funds could have been transferred to the wrong account.",
+            "sentence": "The funds could have been transferred to the wrong account.",
+            "options": [
+                "Could the funds have being transferred to the wrong account?",
+                "Could the funds have been transferred to the wrong account?",
+                "Have the funds could been transferred to the wrong account?",
+                "Could the funds been have transferred to the wrong account?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Could the funds have been transferred to the wrong account?",
+            "hint": "Move only 'could' to the front - keep 'have been transferred' together and in order.",
+            "explanation": "Only the modal 'could' moves to the front, while 'have been transferred' stays fixed in that exact order.",
+            "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
+        },
+        {
+            "id": "qf_l177_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This issue must have been noticed earlier by someone.",
+            "sentence": "This issue must have been noticed earlier by someone.",
+            "options": [
+                "Must this issue have being noticed earlier by someone?",
+                "Must this issue have been noticed earlier by someone?",
+                "Have this issue must been noticed earlier by someone?",
+                "Must this issue been have noticed earlier by someone?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Must this issue have been noticed earlier by someone?",
+            "hint": "Move only 'must' to the front - keep 'have been noticed' together and in order.",
+            "explanation": "Only the modal 'must' moves to the front, and 'have been noticed' remains fixed in that exact order.",
+            "grammarRule": "Complex Auxiliary Questions: Modal + Perfect + Passive"
+        },
+        {
+            "id": "qf_l178_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the packages had already been delivered by this point.",
+            "sentence": "I assumed the packages had already been delivered by this point.",
+            "options": [
+                "The packages hadn't already been delivered by this point?",
+                "Haven't the packages already been delivered by this point?",
+                "Hadn't the packages already being delivered by this point?",
+                "Hadn't the packages already been delivered by this point?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Hadn't the packages already been delivered by this point?",
+            "hint": "Move 'hadn't' to the front, keeping 'been delivered' together.",
+            "explanation": "'Hadn't' moves to the front, and 'been delivered' stays together in the same fixed order.",
+            "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
+        },
+        {
+            "id": "qf_l178_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was sure the results would have been announced by the end of the week.",
+            "sentence": "I was sure the results would have been announced by the end of the week.",
+            "options": [
+                "The results wouldn't have been announced by the end of the week?",
+                "Won't the results have been announced by the end of the week?",
+                "Wouldn't the results have being announced by the end of the week?",
+                "Wouldn't the results have been announced by the end of the week?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Wouldn't the results have been announced by the end of the week?",
+            "hint": "Move 'wouldn't' to the front, keeping 'have been announced' together.",
+            "explanation": "'Wouldn't' moves to the front, and 'have been announced' remains together in the same fixed order.",
+            "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
+        },
+        {
+            "id": "qf_l178_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought the equipment shouldn't have been left outside overnight.",
+            "sentence": "I thought the equipment shouldn't have been left outside overnight.",
+            "options": [
+                "The equipment shouldn't have been left outside overnight?",
+                "Mustn't the equipment have been left outside overnight?",
+                "Shouldn't the equipment have been left outside overnight?",
+                "Shouldn't the equipment have being left outside overnight?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Shouldn't the equipment have been left outside overnight?",
+            "hint": "Move 'shouldn't' to the front, keeping 'have been left' together.",
+            "explanation": "'Shouldn't' moves to the front, and 'have been left' stays together, keeping the same fixed order.",
+            "grammarRule": "Complex Auxiliary Questions: Negative + Perfect + Passive"
+        },
+        {
+            "id": "qf_l179_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The evidence must have been reviewed by several specialists.",
+            "sentence": "The evidence must have been reviewed by several specialists.",
+            "options": [
+                "How many specialists must have the evidence been reviewed by?",
+                "How many specialists must the evidence have been reviewed by?",
+                "How many specialists the evidence must have been reviewed by?",
+                "How many specialists must the evidence have being reviewed by?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How many specialists must the evidence have been reviewed by?",
+            "hint": "Keep 'have been reviewed' together, moving 'must' right after the subject.",
+            "explanation": "'Must' moves right after the subject, and 'have been reviewed' stays together in its fixed order, with 'by' at the end.",
+            "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l179_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The contract should have been signed by both parties for weeks now.",
+            "sentence": "The contract should have been signed by both parties for weeks now.",
+            "options": [
+                "Why should the contract have been signed by both parties for weeks now?",
+                "Why should have the contract been signed by both parties for weeks now?",
+                "Why the contract should have been signed by both parties for weeks now?",
+                "Why should the contract have being signed by both parties for weeks now?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why should the contract have been signed by both parties for weeks now?",
+            "hint": "Keep 'have been signed' together, moving 'should' right after the question word.",
+            "explanation": "'Should' moves after the question word, and 'have been signed' remains together in its fixed order.",
+            "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l179_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This mistake could have been avoided with better planning.",
+            "sentence": "This mistake could have been avoided with better planning.",
+            "options": [
+                "How could have this mistake been avoided?",
+                "How could this mistake have been avoided?",
+                "How this mistake could have been avoided?",
+                "How could this mistake have being avoided?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "How could this mistake have been avoided?",
+            "hint": "Keep 'have been avoided' together, moving 'could' right after the question word.",
+            "explanation": "'Could' moves after the question word, and 'have been avoided' stays together in its fixed order.",
+            "grammarRule": "Complex Auxiliary Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l180_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The company is discontinuing its best-selling product, and nobody can understand the decision.",
+            "sentence": "The company is discontinuing its best-selling product, and nobody can understand the decision.",
+            "options": [
+                "Why on earth would the company discontinue its best-selling product?",
+                "Why on earth the company would discontinue its best-selling product?",
+                "Why would on earth the company discontinue its best-selling product?",
+                "Why on earth would the company discontinuing its best-selling product?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Why on earth would the company discontinue its best-selling product?",
+            "hint": "'On earth' is inserted right after the question word, and the normal inversion follows.",
+            "explanation": "'On earth' adds emphasis after the question word, and the rest keeps normal inversion: 'would the company discontinue'.",
+            "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
+        },
+        {
+            "id": "qf_l180_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It's surprising that the results came back so quickly this time.",
+            "sentence": "It's surprising that the results came back so quickly this time.",
+            "options": [
+                "It isn't surprising that the results came back so quickly this time?",
+                "Doesn't it surprising that the results came back so quickly this time?",
+                "Isn't surprising it that the results came back so quickly this time?",
+                "Isn't it surprising that the results came back so quickly this time?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Isn't it surprising that the results came back so quickly this time?",
+            "hint": "Place 'isn't' at the beginning, right before the word 'it'.",
+            "explanation": "'Isn't' moves to the front, right before 'it', forming this rhetorical negative question.",
+            "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
+        },
+        {
+            "id": "qf_l180_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The refund should have been processed within five business days.",
+            "sentence": "The refund should have been processed within five business days.",
+            "options": [
+                "Should the refund have being processed within five business days?",
+                "Have the refund should been processed within five business days?",
+                "Should the refund have been processed within five business days?",
+                "Should the refund been have processed within five business days?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Should the refund have been processed within five business days?",
+            "hint": "Move only 'should' to the front - keep 'have been processed' together and in order.",
+            "explanation": "Only the modal 'should' moves to the front, while 'have been processed' stays together in its fixed order.",
+            "grammarRule": "Band Review: Formal, Emphatic & Complex Questions"
+        }
+    ]
 }

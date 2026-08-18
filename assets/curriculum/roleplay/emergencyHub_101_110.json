@@ -1,307 +1,307 @@
 {
-  "gameType": "emergencyHub",
-  "batchIndex": 11,
-  "levels": "101-110",
-  "quests": [
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A fire has broken out on the eighth floor of a twenty-story office tower during working hours. Input code!",
-      "correctAnswer": "DECLARE A HIGH-RISE FIRE",
-      "hint": "Say the specific type of fire alert that raises resources.",
-      "explanation": "Declaring it a high-rise fire brings the extra ladder trucks and crews such tall buildings require.",
-      "id": "eh_l101_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Some staff above the eighth floor are unsure whether to use the stairs or wait. Input code!",
-      "correctAnswer": "DIRECT THEM DOWN STAIRS",
-      "hint": "Say the clear instruction they need right now.",
-      "explanation": "Clear direction to the stairs stops confusion and prevents anyone from waiting for a lift that isn't safe to use.",
-      "id": "eh_l101_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Firefighters confirm the blaze is contained to one floor and fully under control. Input code!",
-      "correctAnswer": "ALLOW STAGED RE-ENTRY",
-      "hint": "Say how people should be let back in, floor by floor.",
-      "explanation": "A staged return floor by floor avoids overcrowding the lobby and lets crews confirm each area is safe first.",
-      "id": "eh_l101_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A multi-vehicle crash on a city bypass has left fuel leaking across two lanes. Input code!",
-      "correctAnswer": "CLOSE BOTH LANES NOW",
-      "hint": "Say exactly how much of the road must shut.",
-      "explanation": "Closing both lanes, not just one, keeps drivers away from fuel that could ignite from a single spark.",
-      "id": "eh_l102_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Crews need to stop the leaking fuel from reaching a nearby storm drain. Input code!",
-      "correctAnswer": "CONTAIN THE FUEL SPILL",
-      "hint": "Say the action needed to stop it spreading further.",
-      "explanation": "Containing the spill prevents fuel from entering the drainage system and causing wider environmental harm.",
-      "id": "eh_l102_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The spill is contained and paramedics confirm all drivers have only minor injuries. Input code!",
-      "correctAnswer": "REOPEN ONE LANE FIRST",
-      "hint": "Say how the road should reopen, one step at a time.",
-      "explanation": "Reopening gradually lets traffic flow again while crews finish clearing the second lane safely.",
-      "id": "eh_l102_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A city hospital's emergency department is at full capacity after a multi-car pileup on the ring road. Input code!",
-      "correctAnswer": "DIVERT NEW PATIENTS ELSEWHERE",
-      "hint": "Say what should happen to patients not yet arrived.",
-      "explanation": "Diverting new arrivals to another hospital ensures everyone gets timely care instead of waiting in an overloaded department.",
-      "id": "eh_l103_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Off-duty nurses and doctors are asked to come in and help manage the surge. Input code!",
-      "correctAnswer": "CALL IN EXTRA STAFF",
-      "hint": "Say what additional resource the hospital needs.",
-      "explanation": "Extra staff let the department safely treat more patients at once during the busiest hours.",
-      "id": "eh_l103_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The surge has eased and the department is back to its normal patient flow. Input code!",
-      "correctAnswer": "RESUME NORMAL INTAKE",
-      "hint": "Say what can return to how it was before.",
-      "explanation": "Resuming normal intake means new patients no longer need to be sent to another hospital.",
-      "id": "eh_l103_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A city-wide storm has brought down dozens of trees, blocking several main roads at once. Input code!",
-      "correctAnswer": "PRIORITIZE HOSPITAL ACCESS ROUTES",
-      "hint": "Say which roads should be cleared first, and why.",
-      "explanation": "Clearing routes to hospitals first ensures ambulances can keep reaching patients while other roads wait their turn.",
-      "id": "eh_l104_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Crews have limited chainsaws and need to decide which blocked road to clear next. Input code!",
-      "correctAnswer": "SEND CREWS TO SCHOOLS FIRST",
-      "hint": "Say which type of route matters most after hospitals.",
-      "explanation": "Clearing routes near schools next helps parents reach children and buses get through safely.",
-      "id": "eh_l104_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "All main roads are now clear and the storm has fully passed the city. Input code!",
-      "correctAnswer": "STAND DOWN STORM RESPONSE",
-      "hint": "Say what can happen now the emergency has ended.",
-      "explanation": "Standing the response down once roads are clear frees crews to return to normal duties.",
-      "id": "eh_l104_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large apartment complex has lost heating in freezing temperatures, and several residents are elderly. Input code!",
-      "correctAnswer": "CHECK ON ELDERLY RESIDENTS",
-      "hint": "Say which residents need checking on first.",
-      "explanation": "Checking on elderly residents first protects those most at risk from cold-related illness while repairs are made.",
-      "id": "eh_l105_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers confirm the building's heating system needs a part that won't arrive until tomorrow. Input code!",
-      "correctAnswer": "PROVIDE EMERGENCY HEATERS NOW",
-      "hint": "Say what temporary equipment residents need immediately.",
-      "explanation": "Temporary heaters keep residents safe overnight while they wait for the proper repair the next day.",
-      "id": "eh_l105_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The replacement part has arrived and engineers confirm the heating system is fully working again. Input code!",
-      "correctAnswer": "COLLECT THE EMERGENCY HEATERS",
-      "hint": "Say what should happen to the temporary equipment now.",
-      "explanation": "Collecting the heaters once real heating is restored frees them for the next building that may need them.",
-      "id": "eh_l105_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A city marathon has runners collapsing from heat exhaustion at three separate points along the route. Input code!",
-      "correctAnswer": "SEND MEDICAL TEAMS TO EACH",
-      "hint": "Say how medical help should be spread across the route.",
-      "explanation": "Sending a team to each point means runners at every location get help without waiting for one team to travel between them.",
-      "id": "eh_l106_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Organizers need to warn remaining runners about the rising midday heat before more collapse. Input code!",
-      "correctAnswer": "ANNOUNCE A HEAT WARNING",
-      "hint": "Say what should be broadcast to runners still on the course.",
-      "explanation": "A clear warning lets runners still on the course slow down or seek water before they're also affected.",
-      "id": "eh_l106_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Organizers decide the safest choice is to shorten the race for everyone still running. Input code!",
-      "correctAnswer": "REDIRECT RUNNERS TO FINISH",
-      "hint": "Say what route change should be announced.",
-      "explanation": "Redirecting to a shorter finish protects the remaining runners without needing to cancel the event entirely.",
-      "id": "eh_l106_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A large concert venue reports its main power supply has failed during a sold-out evening show. Input code!",
-      "correctAnswer": "SWITCH TO BACKUP POWER",
-      "hint": "Say what secondary supply should activate.",
-      "explanation": "Backup power keeps emergency lighting and exit signs working so the crowd can leave safely if needed.",
-      "id": "eh_l107_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Backup power only covers emergency lighting, not the sound system needed to update the crowd. Input code!",
-      "correctAnswer": "USE HANDHELD MEGAPHONES",
-      "hint": "Say what simple equipment staff can use instead.",
-      "explanation": "Megaphones let staff give clear instructions to the crowd even without the main sound system working.",
-      "id": "eh_l107_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Engineers restore full power and confirm every system in the venue is working normally. Input code!",
-      "correctAnswer": "RESUME THE SHOW SAFELY",
-      "hint": "Say what can now happen once everything is confirmed working.",
-      "explanation": "Resuming only after full confirmation means the crowd doesn't face another sudden power failure mid-show.",
-      "id": "eh_l107_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A shipping container has fallen from a crane at the docks, blocking the only access road. Input code!",
-      "correctAnswer": "SEND HEAVY LIFTING EQUIPMENT",
-      "hint": "Say what's needed to move something this large.",
-      "explanation": "Only heavy lifting equipment can safely move a fallen shipping container without further risk to workers nearby.",
-      "id": "eh_l108_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Dock workers report the container may contain hazardous chemicals based on its shipping label. Input code!",
-      "correctAnswer": "SEND A HAZMAT TEAM",
-      "hint": "Ask for the specialist team trained for dangerous materials.",
-      "explanation": "A hazmat team can safely check the container's contents before anyone else works near it.",
-      "id": "eh_l108_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The hazmat team confirms the container holds only packaged machine parts, nothing dangerous. Input code!",
-      "correctAnswer": "CLEAR THE ACCESS ROAD",
-      "hint": "Say what should happen once the container is confirmed safe.",
-      "explanation": "Clearing the road can now proceed safely, since the contents pose no chemical risk to workers.",
-      "id": "eh_l108_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A residential tower's only working elevator has trapped six people between floors during a fire drill. Input code!",
-      "correctAnswer": "SEND ELEVATOR RESCUE TEAM",
-      "hint": "Ask for the specialist team trained for this.",
-      "explanation": "A specialist elevator rescue team knows how to safely open the doors without the car suddenly moving.",
-      "id": "eh_l109_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Building management confirms this was a real fault, not part of the planned drill. Input code!",
-      "correctAnswer": "TAKE THE ELEVATOR OFFLINE",
-      "hint": "Say what should happen to the elevator once repaired.",
-      "explanation": "Taking it offline until fully repaired prevents the same fault from trapping anyone else.",
-      "id": "eh_l109_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "All six people have been safely freed and are being checked for any injuries. Input code!",
-      "correctAnswer": "SEND FIRST AID STAFF",
-      "hint": "Say what team can treat minor injuries on site.",
-      "explanation": "First aid staff can calmly check everyone after a frightening experience, even if no one appears hurt.",
-      "id": "eh_l109_q3"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "A city-center protest has grown larger than expected and is blocking a main intersection. Input code!",
-      "correctAnswer": "REROUTE TRAFFIC AROUND IT",
-      "hint": "Say what should happen to traffic near the crowd.",
-      "explanation": "Rerouting traffic keeps drivers and the crowd apart, reducing the risk of anyone being hurt near vehicles.",
-      "id": "eh_l110_q1"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "Organizers confirm the gathering is peaceful, and officers are asked to maintain a calm presence. Input code!",
-      "correctAnswer": "MAINTAIN A LIGHT PRESENCE",
-      "hint": "Say the tone officers should keep while monitoring.",
-      "explanation": "A light, visible presence keeps the peaceful gathering safe without creating unnecessary tension.",
-      "id": "eh_l110_q2"
-    },
-    {
-      "instruction": "Dispatch the response unit immediately!",
-      "subtype": "emergencyHub",
-      "interactionType": "typing",
-      "dispatcherQuestion": "The crowd has dispersed peacefully by early evening as planned. Input code!",
-      "correctAnswer": "REOPEN THE INTERSECTION",
-      "hint": "Say what can happen once the crowd has left.",
-      "explanation": "Reopening the intersection once the crowd is gone lets normal traffic flow return to the area.",
-      "id": "eh_l110_q3"
-    }
-  ]
+    "gameType": "emergencyHub",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A fire has broken out on the eighth floor of a twenty-story office tower during working hours. Input code!",
+            "correctAnswer": "DECLARE A HIGH-RISE FIRE",
+            "hint": "Say the specific type of fire alert that raises resources.",
+            "explanation": "Declaring it a high-rise fire brings the extra ladder trucks and crews such tall buildings require.",
+            "id": "eh_l101_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Some staff above the eighth floor are unsure whether to use the stairs or wait. Input code!",
+            "correctAnswer": "DIRECT THEM DOWN STAIRS",
+            "hint": "Say the clear instruction they need right now.",
+            "explanation": "Clear direction to the stairs stops confusion and prevents anyone from waiting for a lift that isn't safe to use.",
+            "id": "eh_l101_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Firefighters confirm the blaze is contained to one floor and fully under control. Input code!",
+            "correctAnswer": "ALLOW STAGED RE-ENTRY",
+            "hint": "Say how people should be let back in, floor by floor.",
+            "explanation": "A staged return floor by floor avoids overcrowding the lobby and lets crews confirm each area is safe first.",
+            "id": "eh_l101_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A multi-vehicle crash on a city bypass has left fuel leaking across two lanes. Input code!",
+            "correctAnswer": "CLOSE BOTH LANES NOW",
+            "hint": "Say exactly how much of the road must shut.",
+            "explanation": "Closing both lanes, not just one, keeps drivers away from fuel that could ignite from a single spark.",
+            "id": "eh_l102_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Crews need to stop the leaking fuel from reaching a nearby storm drain. Input code!",
+            "correctAnswer": "CONTAIN THE FUEL SPILL",
+            "hint": "Say the action needed to stop it spreading further.",
+            "explanation": "Containing the spill prevents fuel from entering the drainage system and causing wider environmental harm.",
+            "id": "eh_l102_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The spill is contained and paramedics confirm all drivers have only minor injuries. Input code!",
+            "correctAnswer": "REOPEN ONE LANE FIRST",
+            "hint": "Say how the road should reopen, one step at a time.",
+            "explanation": "Reopening gradually lets traffic flow again while crews finish clearing the second lane safely.",
+            "id": "eh_l102_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A city hospital's emergency department is at full capacity after a multi-car pileup on the ring road. Input code!",
+            "correctAnswer": "DIVERT NEW PATIENTS ELSEWHERE",
+            "hint": "Say what should happen to patients not yet arrived.",
+            "explanation": "Diverting new arrivals to another hospital ensures everyone gets timely care instead of waiting in an overloaded department.",
+            "id": "eh_l103_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Off-duty nurses and doctors are asked to come in and help manage the surge. Input code!",
+            "correctAnswer": "CALL IN EXTRA STAFF",
+            "hint": "Say what additional resource the hospital needs.",
+            "explanation": "Extra staff let the department safely treat more patients at once during the busiest hours.",
+            "id": "eh_l103_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The surge has eased and the department is back to its normal patient flow. Input code!",
+            "correctAnswer": "RESUME NORMAL INTAKE",
+            "hint": "Say what can return to how it was before.",
+            "explanation": "Resuming normal intake means new patients no longer need to be sent to another hospital.",
+            "id": "eh_l103_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A city-wide storm has brought down dozens of trees, blocking several main roads at once. Input code!",
+            "correctAnswer": "PRIORITIZE HOSPITAL ACCESS ROUTES",
+            "hint": "Say which roads should be cleared first, and why.",
+            "explanation": "Clearing routes to hospitals first ensures ambulances can keep reaching patients while other roads wait their turn.",
+            "id": "eh_l104_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Crews have limited chainsaws and need to decide which blocked road to clear next. Input code!",
+            "correctAnswer": "SEND CREWS TO SCHOOLS FIRST",
+            "hint": "Say which type of route matters most after hospitals.",
+            "explanation": "Clearing routes near schools next helps parents reach children and buses get through safely.",
+            "id": "eh_l104_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "All main roads are now clear and the storm has fully passed the city. Input code!",
+            "correctAnswer": "STAND DOWN STORM RESPONSE",
+            "hint": "Say what can happen now the emergency has ended.",
+            "explanation": "Standing the response down once roads are clear frees crews to return to normal duties.",
+            "id": "eh_l104_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large apartment complex has lost heating in freezing temperatures, and several residents are elderly. Input code!",
+            "correctAnswer": "CHECK ON ELDERLY RESIDENTS",
+            "hint": "Say which residents need checking on first.",
+            "explanation": "Checking on elderly residents first protects those most at risk from cold-related illness while repairs are made.",
+            "id": "eh_l105_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers confirm the building's heating system needs a part that won't arrive until tomorrow. Input code!",
+            "correctAnswer": "PROVIDE EMERGENCY HEATERS NOW",
+            "hint": "Say what temporary equipment residents need immediately.",
+            "explanation": "Temporary heaters keep residents safe overnight while they wait for the proper repair the next day.",
+            "id": "eh_l105_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The replacement part has arrived and engineers confirm the heating system is fully working again. Input code!",
+            "correctAnswer": "COLLECT THE EMERGENCY HEATERS",
+            "hint": "Say what should happen to the temporary equipment now.",
+            "explanation": "Collecting the heaters once real heating is restored frees them for the next building that may need them.",
+            "id": "eh_l105_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A city marathon has runners collapsing from heat exhaustion at three separate points along the route. Input code!",
+            "correctAnswer": "SEND MEDICAL TEAMS TO EACH",
+            "hint": "Say how medical help should be spread across the route.",
+            "explanation": "Sending a team to each point means runners at every location get help without waiting for one team to travel between them.",
+            "id": "eh_l106_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Organizers need to warn remaining runners about the rising midday heat before more collapse. Input code!",
+            "correctAnswer": "ANNOUNCE A HEAT WARNING",
+            "hint": "Say what should be broadcast to runners still on the course.",
+            "explanation": "A clear warning lets runners still on the course slow down or seek water before they're also affected.",
+            "id": "eh_l106_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Organizers decide the safest choice is to shorten the race for everyone still running. Input code!",
+            "correctAnswer": "REDIRECT RUNNERS TO FINISH",
+            "hint": "Say what route change should be announced.",
+            "explanation": "Redirecting to a shorter finish protects the remaining runners without needing to cancel the event entirely.",
+            "id": "eh_l106_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A large concert venue reports its main power supply has failed during a sold-out evening show. Input code!",
+            "correctAnswer": "SWITCH TO BACKUP POWER",
+            "hint": "Say what secondary supply should activate.",
+            "explanation": "Backup power keeps emergency lighting and exit signs working so the crowd can leave safely if needed.",
+            "id": "eh_l107_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Backup power only covers emergency lighting, not the sound system needed to update the crowd. Input code!",
+            "correctAnswer": "USE HANDHELD MEGAPHONES",
+            "hint": "Say what simple equipment staff can use instead.",
+            "explanation": "Megaphones let staff give clear instructions to the crowd even without the main sound system working.",
+            "id": "eh_l107_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Engineers restore full power and confirm every system in the venue is working normally. Input code!",
+            "correctAnswer": "RESUME THE SHOW SAFELY",
+            "hint": "Say what can now happen once everything is confirmed working.",
+            "explanation": "Resuming only after full confirmation means the crowd doesn't face another sudden power failure mid-show.",
+            "id": "eh_l107_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A shipping container has fallen from a crane at the docks, blocking the only access road. Input code!",
+            "correctAnswer": "SEND HEAVY LIFTING EQUIPMENT",
+            "hint": "Say what's needed to move something this large.",
+            "explanation": "Only heavy lifting equipment can safely move a fallen shipping container without further risk to workers nearby.",
+            "id": "eh_l108_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Dock workers report the container may contain hazardous chemicals based on its shipping label. Input code!",
+            "correctAnswer": "SEND A HAZMAT TEAM",
+            "hint": "Ask for the specialist team trained for dangerous materials.",
+            "explanation": "A hazmat team can safely check the container's contents before anyone else works near it.",
+            "id": "eh_l108_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The hazmat team confirms the container holds only packaged machine parts, nothing dangerous. Input code!",
+            "correctAnswer": "CLEAR THE ACCESS ROAD",
+            "hint": "Say what should happen once the container is confirmed safe.",
+            "explanation": "Clearing the road can now proceed safely, since the contents pose no chemical risk to workers.",
+            "id": "eh_l108_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A residential tower's only working elevator has trapped six people between floors during a fire drill. Input code!",
+            "correctAnswer": "SEND ELEVATOR RESCUE TEAM",
+            "hint": "Ask for the specialist team trained for this.",
+            "explanation": "A specialist elevator rescue team knows how to safely open the doors without the car suddenly moving.",
+            "id": "eh_l109_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Building management confirms this was a real fault, not part of the planned drill. Input code!",
+            "correctAnswer": "TAKE THE ELEVATOR OFFLINE",
+            "hint": "Say what should happen to the elevator once repaired.",
+            "explanation": "Taking it offline until fully repaired prevents the same fault from trapping anyone else.",
+            "id": "eh_l109_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "All six people have been safely freed and are being checked for any injuries. Input code!",
+            "correctAnswer": "SEND FIRST AID STAFF",
+            "hint": "Say what team can treat minor injuries on site.",
+            "explanation": "First aid staff can calmly check everyone after a frightening experience, even if no one appears hurt.",
+            "id": "eh_l109_q3"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "A city-center protest has grown larger than expected and is blocking a main intersection. Input code!",
+            "correctAnswer": "REROUTE TRAFFIC AROUND IT",
+            "hint": "Say what should happen to traffic near the crowd.",
+            "explanation": "Rerouting traffic keeps drivers and the crowd apart, reducing the risk of anyone being hurt near vehicles.",
+            "id": "eh_l110_q1"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "Organizers confirm the gathering is peaceful, and officers are asked to maintain a calm presence. Input code!",
+            "correctAnswer": "MAINTAIN A LIGHT PRESENCE",
+            "hint": "Say the tone officers should keep while monitoring.",
+            "explanation": "A light, visible presence keeps the peaceful gathering safe without creating unnecessary tension.",
+            "id": "eh_l110_q2"
+        },
+        {
+            "instruction": "Dispatch the response unit immediately!",
+            "subtype": "emergencyHub",
+            "interactionType": "dialogue",
+            "dispatcherQuestion": "The crowd has dispersed peacefully by early evening as planned. Input code!",
+            "correctAnswer": "REOPEN THE INTERSECTION",
+            "hint": "Say what can happen once the crowd has left.",
+            "explanation": "Reopening the intersection once the crowd is gone lets normal traffic flow return to the area.",
+            "id": "eh_l110_q3"
+        }
+    ]
 }

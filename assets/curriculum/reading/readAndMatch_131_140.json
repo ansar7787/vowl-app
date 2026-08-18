@@ -1,787 +1,787 @@
 {
-  "gameType": "readAndMatch",
-  "batchIndex": 14,
-  "levels": "131-140",
-  "quests": [
-    {
-      "id": "RDG_READANDMATCH_L131_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
+    "gameType": "readAndMatch",
+    "batchIndex": 14,
+    "levels": "131-140",
+    "quests": [
         {
-          "key": "[L131-Q1-0] Mortgage Broker",
-          "value": "An intermediary who arranges loans between borrowers and lenders."
+            "id": "RDG_READANDMATCH_L131_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L131-Q1-0] Mortgage Broker",
+                    "value": "An intermediary who arranges loans between borrowers and lenders."
+                },
+                {
+                    "key": "[L131-Q1-1] Stamp Duty",
+                    "value": "A government tax paid when purchasing property above a certain price."
+                },
+                {
+                    "key": "[L131-Q1-2] Freehold",
+                    "value": "Ownership of a property and the land it stands on outright."
+                },
+                {
+                    "key": "[L131-Q1-3] Leasehold",
+                    "value": "Ownership of a property for a set number of years, with the land owned by another."
+                }
+            ],
+            "hint": "These phrases all tie back to the legal and financial side of buying property.",
+            "explanation": "A mortgage broker helps arrange the loan, and stamp duty is a tax paid once the purchase goes through. Freehold and leasehold describe two different types of ownership, one permanent, the other for a limited number of years."
         },
         {
-          "key": "[L131-Q1-1] Stamp Duty",
-          "value": "A government tax paid when purchasing property above a certain price."
+            "id": "RDG_READANDMATCH_L131_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L131-Q2-0] Biometric Data",
+                    "value": "Unique physical characteristics such as fingerprints used for identification."
+                },
+                {
+                    "key": "[L131-Q2-1] Online Tracking",
+                    "value": "The practice of monitoring a person's activity across websites and apps."
+                },
+                {
+                    "key": "[L131-Q2-2] Right to Be Forgotten",
+                    "value": "The legal right to request removal of personal data from online records."
+                },
+                {
+                    "key": "[L131-Q2-3] Terms and Conditions",
+                    "value": "The rules a user agrees to when using an online service or app."
+                }
+            ],
+            "hint": "Each of these phrases points to your personal information and privacy online.",
+            "explanation": "Biometric data identifies you through physical traits, and online tracking follows your activity in a very different way, across websites and apps. Terms and conditions are the rules you agree to before any of this happens, and right to be forgotten is different from the other three — a legal option to have your data removed after the fact."
         },
         {
-          "key": "[L131-Q1-2] Freehold",
-          "value": "Ownership of a property and the land it stands on outright."
+            "id": "RDG_READANDMATCH_L131_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L131-Q3-0] Public Health Campaign",
+                    "value": "An organized effort to inform and encourage the public toward healthier choices."
+                },
+                {
+                    "key": "[L131-Q3-1] Preventive Screening",
+                    "value": "Regular medical tests done to detect a disease before symptoms appear."
+                },
+                {
+                    "key": "[L131-Q3-2] Health Disparity",
+                    "value": "Unfair differences in health outcomes between different groups of people."
+                },
+                {
+                    "key": "[L131-Q3-3] Access to Healthcare",
+                    "value": "The ability of people to obtain needed medical services."
+                }
+            ],
+            "hint": "Each phrase relates to how a society tries to keep its people healthy.",
+            "explanation": "A public health campaign spreads awareness widely, and preventive screening catches problems early on an individual level. Health disparity describes unfair gaps in outcomes between groups, and access to healthcare is different from the other three — the basic ability to get care at all, which often explains why those disparities exist."
         },
         {
-          "key": "[L131-Q1-3] Leasehold",
-          "value": "Ownership of a property for a set number of years, with the land owned by another."
+            "id": "RDG_READANDMATCH_L132_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L132-Q1-0] Attrition",
+                    "value": "The gradual reduction of staff or customers over time without active replacement."
+                },
+                {
+                    "key": "[L132-Q1-1] Golden Handcuffs",
+                    "value": "Financial incentives that tie high-performing employees to a company."
+                },
+                {
+                    "key": "[L132-Q1-2] Skills Gap",
+                    "value": "A mismatch between the abilities employers need and the abilities workers actually have."
+                },
+                {
+                    "key": "[L132-Q1-3] Retain Talent",
+                    "value": "To keep skilled and valued employees from leaving an organization."
+                }
+            ],
+            "hint": "Each phrase ties back to a company trying to keep its best employees.",
+            "explanation": "Golden handcuffs are financial incentives designed specifically to retain talent, while attrition describes what happens without any such effort — staff gradually leaving and not being replaced. Skills gap is a different problem entirely, a mismatch between what employees can do and what the company actually needs."
+        },
+        {
+            "id": "RDG_READANDMATCH_L132_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L132-Q2-0] Global Supply Chain",
+                    "value": "The worldwide network involved in producing and delivering a product to consumers."
+                },
+                {
+                    "key": "[L132-Q2-1] Import Tariff",
+                    "value": "A tax placed on goods brought into a country from abroad."
+                },
+                {
+                    "key": "[L132-Q2-2] Trade Deficit",
+                    "value": "When a country imports more than it exports."
+                },
+                {
+                    "key": "[L132-Q2-3] Free Trade Agreement",
+                    "value": "A treaty between countries that reduces barriers to trade between them."
+                }
+            ],
+            "hint": "Every one of these phrases connects to how goods and money move between countries.",
+            "explanation": "A global supply chain moves products across many countries, and an import tariff can make crossing those borders more expensive. A free trade agreement works the opposite way, removing barriers like that, and trade deficit is different from the other three — a measurement of the imbalance between what a country buys and sells abroad."
+        },
+        {
+            "id": "RDG_READANDMATCH_L132_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L132-Q3-0] Gastronomic Tourism",
+                    "value": "Travel motivated by the desire to experience local food and drink culture."
+                },
+                {
+                    "key": "[L132-Q3-1] UNESCO World Heritage",
+                    "value": "A site recognized by UNESCO for its outstanding universal cultural value."
+                },
+                {
+                    "key": "[L132-Q3-2] Overtourism",
+                    "value": "The negative impact of too many tourists on a destination's environment and culture."
+                },
+                {
+                    "key": "[L132-Q3-3] Tourist Trap",
+                    "value": "A place that exploits tourists through overpriced goods or inauthentic experiences."
+                }
+            ],
+            "hint": "Notice how each phrase connects to why people travel, and the problems that popularity can cause.",
+            "explanation": "Gastronomic tourism draws visitors for the food, and a UNESCO World Heritage site draws them for cultural significance instead. Overtourism is the strain either kind of popularity can cause on a destination, and tourist trap is different from the other three — a place designed to exploit visitors rather than genuinely welcome them."
+        },
+        {
+            "id": "RDG_READANDMATCH_L133_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L133-Q1-0] Psychological Safety",
+                    "value": "A shared belief that team members will not be punished for speaking up or taking risks."
+                },
+                {
+                    "key": "[L133-Q1-1] Cognitive Load",
+                    "value": "The total amount of mental effort being used in working memory at a given time."
+                },
+                {
+                    "key": "[L133-Q1-2] Feedback Loop",
+                    "value": "A process where outputs of a system are returned as inputs to influence future behavior."
+                },
+                {
+                    "key": "[L133-Q1-3] Deliberate Practice",
+                    "value": "Highly structured practice with specific goals to improve a skill over time."
+                }
+            ],
+            "hint": "These phrases all tie back to how people learn and perform well as part of a team.",
+            "explanation": "Psychological safety lets people take risks without fear of punishment, which supports honest feedback loops within a team. Cognitive load describes how much mental effort a task demands, and deliberate practice is different from the other three — a structured, individual method for improving a specific skill over time."
+        },
+        {
+            "id": "RDG_READANDMATCH_L133_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L133-Q2-0] Stress Management",
+                    "value": "Techniques and habits used to control and reduce the effects of stress."
+                },
+                {
+                    "key": "[L133-Q2-1] Sleep Hygiene",
+                    "value": "Habits and practices that support consistent, good-quality sleep."
+                },
+                {
+                    "key": "[L133-Q2-2] Preventable Illness",
+                    "value": "A disease or condition that can be avoided through lifestyle choices or medical care."
+                },
+                {
+                    "key": "[L133-Q2-3] Genetic Predisposition",
+                    "value": "An inherited tendency that makes a person more likely to develop a condition."
+                }
+            ],
+            "hint": "Each of these phrases points to habits and factors that shape long-term health.",
+            "explanation": "Stress management and sleep hygiene are both habits within your control, one calming the mind, the other supporting rest. Genetic predisposition is different from both — a tendency inherited rather than chosen, and preventable illness is different again, a health problem that habits like these can actually help avoid."
+        },
+        {
+            "id": "RDG_READANDMATCH_L133_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L133-Q3-0] Spin-Off Company",
+                    "value": "A new business created from an existing company by separating part of its activities."
+                },
+                {
+                    "key": "[L133-Q3-1] Strategic Acquisition",
+                    "value": "Buying another company to gain access to its capabilities or market position."
+                },
+                {
+                    "key": "[L133-Q3-2] Joint Venture",
+                    "value": "A business arrangement where two or more parties create a new entity together."
+                },
+                {
+                    "key": "[L133-Q3-3] Hostile Takeover",
+                    "value": "An acquisition of a company against the wishes of its board of directors."
+                }
+            ],
+            "hint": "Each phrase relates to a different way one company can grow or connect with another.",
+            "explanation": "A spin-off company separates from an existing business, while a strategic acquisition works in the opposite direction, buying another company outright. Joint venture combines two companies into something new together, and hostile takeover is different from the other three — an acquisition forced through against the target company's wishes."
+        },
+        {
+            "id": "RDG_READANDMATCH_L134_Q1",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L134-Q1-0] Transient",
+                    "value": "Not permanent; lasting only a short time."
+                },
+                {
+                    "key": "[L134-Q1-1] Sanctuary",
+                    "value": "A place of refuge or safety."
+                },
+                {
+                    "key": "[L134-Q1-2] Expedition",
+                    "value": "An organized journey undertaken for a specific purpose, often scientific or exploratory."
+                },
+                {
+                    "key": "[L134-Q1-3] Uncharted Territory",
+                    "value": "A situation or place that is unknown or has not been explored before."
+                }
+            ],
+            "hint": "Each word or phrase relates to travel, safety, or the unknown.",
+            "explanation": "Transient describes something that doesn't last, while sanctuary describes the opposite feeling, a lasting sense of safety. An expedition is a purposeful journey into the unknown, and uncharted territory is different from the other three — the actual unknown place itself, not the journey or the shelter."
+        },
+        {
+            "id": "RDG_READANDMATCH_L134_Q2",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L134-Q2-0] Grandparent Rights",
+                    "value": "Legal recognition of grandparents' ability to maintain contact with grandchildren."
+                },
+                {
+                    "key": "[L134-Q2-1] Parental Responsibility",
+                    "value": "The legal duties and rights a parent has toward their child."
+                },
+                {
+                    "key": "[L134-Q2-2] Neglect",
+                    "value": "Failing to provide adequate care and attention to a child's basic needs."
+                },
+                {
+                    "key": "[L134-Q2-3] Child Protection Order",
+                    "value": "A legal order issued to safeguard a child believed to be at risk."
+                }
+            ],
+            "hint": "Each phrase ties back to the legal side of caring for a child.",
+            "explanation": "Parental responsibility outlines what a parent must legally provide, and neglect describes a serious failure to meet it. A child protection order steps in when that failure becomes dangerous, and grandparent rights is different from the other three — it's about a different relative's legal connection to the child, not a parent's duty or its failure."
+        },
+        {
+            "id": "RDG_READANDMATCH_L134_Q3",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L134-Q3-0] Haggling Culture",
+                    "value": "A social norm in certain markets where bargaining over prices is expected."
+                },
+                {
+                    "key": "[L134-Q3-1] Premium Outlet",
+                    "value": "A retail store selling high-end brands at reduced prices."
+                },
+                {
+                    "key": "[L134-Q3-2] Consumer Advocacy",
+                    "value": "The practice of protecting and promoting the rights and interests of buyers."
+                },
+                {
+                    "key": "[L134-Q3-3] Greenwashing",
+                    "value": "False or misleading claims made by companies about environmental friendliness."
+                }
+            ],
+            "hint": "Every one of these phrases connects to the relationship between shoppers and the businesses selling to them.",
+            "explanation": "Haggling culture and premium outlet both relate to price, though in very different ways, one through negotiation, the other through markdowns on luxury goods. Consumer advocacy actively protects buyers' interests, and greenwashing is different from the other three — a deceptive practice that consumer advocacy actually exists to expose."
+        },
+        {
+            "id": "RDG_READANDMATCH_L135_Q1",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L135-Q1-0] Sleep Debt",
+                    "value": "The cumulative effect of not getting enough sleep over multiple nights."
+                },
+                {
+                    "key": "[L135-Q1-1] Digital Wellbeing",
+                    "value": "A mindful, healthy relationship with technology and screen time."
+                },
+                {
+                    "key": "[L135-Q1-2] Mindful Breathing",
+                    "value": "A relaxation technique that involves focusing attention on the breath."
+                },
+                {
+                    "key": "[L135-Q1-3] Screen Fatigue",
+                    "value": "Mental and visual tiredness caused by spending too much time looking at screens."
+                }
+            ],
+            "hint": "Notice how each phrase connects to protecting your energy and focus in a screen-filled world.",
+            "explanation": "Sleep debt builds up when rest is repeatedly cut short, and screen fatigue is a related but separate strain, tiredness from too much time looking at devices. Digital wellbeing is the broader goal of managing all of it sensibly, and mindful breathing is different from the other three — a specific technique used to reset and relax, not a problem to manage."
+        },
+        {
+            "id": "RDG_READANDMATCH_L135_Q2",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L135-Q2-0] Cutting-Edge",
+                    "value": "At the forefront of technological or scientific development; the newest and most advanced."
+                },
+                {
+                    "key": "[L135-Q2-1] Emerging Technology",
+                    "value": "New technology that is still developing but expected to become significant."
+                },
+                {
+                    "key": "[L135-Q2-2] Innovation Hub",
+                    "value": "A place, often a city or district, known for producing new ideas and technology."
+                },
+                {
+                    "key": "[L135-Q2-3] Tech-Driven",
+                    "value": "Relying heavily on technology to achieve a goal or solve a problem."
+                }
+            ],
+            "hint": "Each word or phrase relates to being at the forefront of new technology.",
+            "explanation": "Cutting-edge describes technology right at the front of what's possible, and emerging technology describes what's on its way to becoming exactly that. Innovation hub is a place where progress like this tends to cluster, and tech-driven is different from the other three — it describes an approach or strategy, not the technology or the place itself."
+        },
+        {
+            "id": "RDG_READANDMATCH_L135_Q3",
+            "instruction": "Match each word with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L135-Q3-0] Systemic Racism",
+                    "value": "Racism embedded in social institutions and policies rather than just individual actions."
+                },
+                {
+                    "key": "[L135-Q3-1] Gender Pay Gap",
+                    "value": "The average difference in earnings between men and women in the workplace."
+                },
+                {
+                    "key": "[L135-Q3-2] Allyship",
+                    "value": "Active support and advocacy for members of a marginalized group."
+                },
+                {
+                    "key": "[L135-Q3-3] Unconscious Discrimination",
+                    "value": "Unfair treatment of a person that isn't deliberate or consciously intended."
+                }
+            ],
+            "hint": "These phrases all tie back to fairness and inequality in modern society.",
+            "explanation": "Systemic racism and gender pay gap both describe unfair patterns built into institutions, one about race, the other about income. Unconscious discrimination can quietly reinforce either pattern without anyone intending it, and allyship is different from the other three — an active, deliberate choice to support people facing exactly these kinds of unfairness."
+        },
+        {
+            "id": "RDG_READANDMATCH_L136_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L136-Q1-0] Multi-Purpose Room",
+                    "value": "A room designed to be used for more than one function or activity."
+                },
+                {
+                    "key": "[L136-Q1-1] Ergonomic Assessment",
+                    "value": "An evaluation of how well a workspace supports the physical wellbeing of its users."
+                },
+                {
+                    "key": "[L136-Q1-2] Live-Work Space",
+                    "value": "A building or unit designed to serve both as a home and a workspace."
+                },
+                {
+                    "key": "[L136-Q1-3] Soundproofing",
+                    "value": "Materials or techniques used to prevent sound from passing through walls or floors."
+                }
+            ],
+            "hint": "Each of these phrases points to designing a home that works well for how you actually live.",
+            "explanation": "A multi-purpose room adapts to different needs, and a live-work space takes that flexibility even further, combining home and office entirely. Soundproofing helps keep the peace in a space like that, and ergonomic assessment is different from the other three — an evaluation of comfort and health, not a type of space or material."
+        },
+        {
+            "id": "RDG_READANDMATCH_L136_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L136-Q2-0] Infographic",
+                    "value": "A visual representation of information or data designed for quick understanding."
+                },
+                {
+                    "key": "[L136-Q2-1] Viral Marketing",
+                    "value": "A strategy that relies on audiences sharing content widely to spread awareness."
+                },
+                {
+                    "key": "[L136-Q2-2] A/B Testing",
+                    "value": "Comparing two versions of something to see which performs better."
+                },
+                {
+                    "key": "[L136-Q2-3] Conversion Rate",
+                    "value": "The percentage of visitors to a site who complete a desired action."
+                }
+            ],
+            "hint": "Each phrase relates to how a company tries to get attention and results online.",
+            "explanation": "An infographic presents information visually to grab attention, and viral marketing hopes that attention spreads on its own. A/B testing compares two versions to see what actually works best, and conversion rate is different from the other three — the actual number that shows whether any of it succeeded."
+        },
+        {
+            "id": "RDG_READANDMATCH_L136_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L136-Q3-0] Corporate Ladder",
+                    "value": "The hierarchical structure of career advancement within an organization."
+                },
+                {
+                    "key": "[L136-Q3-1] Glass Ceiling",
+                    "value": "An invisible barrier that prevents certain groups from reaching the highest positions."
+                },
+                {
+                    "key": "[L136-Q3-2] Mentorship Program",
+                    "value": "A structured initiative pairing experienced and newer employees for development."
+                },
+                {
+                    "key": "[L136-Q3-3] Internal Promotion",
+                    "value": "Filling a vacancy by appointing someone already working in the organization."
+                }
+            ],
+            "hint": "Each phrase ties back to how, or whether, someone can rise within a company.",
+            "explanation": "The corporate ladder describes the path upward within an organization, and internal promotion is one concrete step along it. A mentorship program can help someone climb that ladder with guidance, and glass ceiling is different from the other three — an invisible barrier that can stop the climb altogether, regardless of ability."
+        },
+        {
+            "id": "RDG_READANDMATCH_L137_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L137-Q1-0] Op-Ed",
+                    "value": "An opinion article in a newspaper, written by someone not on the editorial staff."
+                },
+                {
+                    "key": "[L137-Q1-1] Investigative Journalism",
+                    "value": "In-depth reporting that uncovers hidden facts, often on issues of public importance."
+                },
+                {
+                    "key": "[L137-Q1-2] Fact-Checking",
+                    "value": "The process of verifying the accuracy of claims made in reporting or public statements."
+                },
+                {
+                    "key": "[L137-Q1-3] Primary Source",
+                    "value": "An original document or firsthand account, as opposed to a summary or interpretation."
+                }
+            ],
+            "hint": "Every one of these phrases connects to how trustworthy a piece of writing or reporting really is.",
+            "explanation": "An op-ed openly shares one person's opinion, while investigative journalism aims for something different, uncovering hidden facts through careful reporting. Fact-checking verifies whether claims like these actually hold up, and primary source is different from the other three — the original material itself, not a form of writing or a way of checking it."
+        },
+        {
+            "id": "RDG_READANDMATCH_L137_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L137-Q2-0] Teleworking",
+                    "value": "Performing work duties from a remote location, often using digital communication."
+                },
+                {
+                    "key": "[L137-Q2-1] Job Sharing",
+                    "value": "When two or more people share the responsibilities of one full-time position."
+                },
+                {
+                    "key": "[L137-Q2-2] Secondment",
+                    "value": "A temporary assignment of an employee to a different role or organization."
+                },
+                {
+                    "key": "[L137-Q2-3] People Management",
+                    "value": "The skill of overseeing, motivating, and developing a team of employees."
+                }
+            ],
+            "hint": "Notice how each phrase connects to a different, flexible way modern work can be structured.",
+            "explanation": "Teleworking lets someone work from anywhere, and job sharing splits one role between two people instead. Secondment moves someone temporarily into a different role or organization, and people management is different from the other three — the skill of overseeing a team, not a way of arranging the work itself."
+        },
+        {
+            "id": "RDG_READANDMATCH_L137_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L137-Q3-0] Cultural Exchange",
+                    "value": "The sharing of ideas, traditions, and customs between different cultures."
+                },
+                {
+                    "key": "[L137-Q3-1] Diplomatic Incident",
+                    "value": "An event that causes tension between two countries' governments."
+                },
+                {
+                    "key": "[L137-Q3-2] Soft Power",
+                    "value": "Influence gained through cultural and economic means rather than military force."
+                },
+                {
+                    "key": "[L137-Q3-3] Non-Governmental Organization",
+                    "value": "A non-profit group operating independently of government, often for social causes."
+                }
+            ],
+            "hint": "These phrases all tie back to how nations and organizations connect across borders.",
+            "explanation": "Cultural exchange builds goodwill between countries, and soft power is the broader influence that goodwill like this can create. A diplomatic incident can damage that same goodwill instead, and non-governmental organization is different from the other three — an independent group working across borders, not a government action at all."
+        },
+        {
+            "id": "RDG_READANDMATCH_L138_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L138-Q1-0] Surrogate Decision-Making",
+                    "value": "Making choices on behalf of someone unable to make their own decisions."
+                },
+                {
+                    "key": "[L138-Q1-1] Advance Directive",
+                    "value": "A legal document stating medical wishes in case a person cannot communicate."
+                },
+                {
+                    "key": "[L138-Q1-2] Medical Ethics Committee",
+                    "value": "A body that reviews ethical issues in medical care and research."
+                },
+                {
+                    "key": "[L138-Q1-3] Autonomy in Healthcare",
+                    "value": "The right of patients to make their own informed medical decisions."
+                }
+            ],
+            "hint": "Each of these phrases points to who makes medical decisions, and how those choices are protected.",
+            "explanation": "Autonomy in healthcare is a patient's right to decide for themselves, and an advance directive protects that right even if they later can't communicate. Surrogate decision-making steps in when neither is possible, someone else deciding on the patient's behalf, and medical ethics committee is different from the other three — the group that reviews difficult cases like these when they arise."
+        },
+        {
+            "id": "RDG_READANDMATCH_L138_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L138-Q2-0] Conspicuous Consumption",
+                    "value": "Buying expensive things to display wealth and status."
+                },
+                {
+                    "key": "[L138-Q2-1] Status Symbol",
+                    "value": "An item that signals a person's wealth or social position."
+                },
+                {
+                    "key": "[L138-Q2-2] Keeping Up Appearances",
+                    "value": "Trying to maintain a certain image or lifestyle to impress others."
+                },
+                {
+                    "key": "[L138-Q2-3] Price Anchoring",
+                    "value": "Setting a high reference price to make a lower price seem more attractive."
+                }
+            ],
+            "hint": "Each phrase relates to buying things to impress, or to be impressed by.",
+            "explanation": "Conspicuous consumption is spending specifically to display wealth, often through a clear status symbol. Keeping up appearances describes the pressure that can drive that spending, comparing yourself to others, and price anchoring is different from the other three — a pricing trick used by sellers, not a habit or motivation on the buyer's side."
+        },
+        {
+            "id": "RDG_READANDMATCH_L138_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L138-Q3-0] Long-Form Journalism",
+                    "value": "In-depth reporting that explores a topic in detail over extended length."
+                },
+                {
+                    "key": "[L138-Q3-1] Paywalled Content",
+                    "value": "Online articles or media that require payment or subscription to access."
+                },
+                {
+                    "key": "[L138-Q3-2] Press Freedom",
+                    "value": "The right of journalists to publish information without government restriction."
+                },
+                {
+                    "key": "[L138-Q3-3] Media Bias",
+                    "value": "The tendency of news sources to present information in a way that favors a viewpoint."
+                }
+            ],
+            "hint": "Each phrase ties back to how news is written, accessed, or trusted.",
+            "explanation": "Long-form journalism takes time and space to explore a topic properly, and paywalled content is often exactly this kind of in-depth reporting, available only to paying readers. Press freedom protects the ability to publish it in the first place, and media bias is different from the other three — a slant in how information is presented, regardless of length, access, or freedom."
+        },
+        {
+            "id": "RDG_READANDMATCH_L139_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L139-Q1-0] Passive Investment",
+                    "value": "An investment strategy that tracks a market index rather than actively selecting stocks."
+                },
+                {
+                    "key": "[L139-Q1-1] Portfolio Rebalancing",
+                    "value": "Adjusting the mix of investments to maintain a desired level of risk."
+                },
+                {
+                    "key": "[L139-Q1-2] Hedge Fund",
+                    "value": "An investment fund using advanced strategies to generate high returns."
+                },
+                {
+                    "key": "[L139-Q1-3] Yield",
+                    "value": "The income generated by an investment, expressed as a percentage of its value."
+                }
+            ],
+            "hint": "Every one of these phrases connects to a different strategy or measure in personal investing.",
+            "explanation": "Passive investment simply tracks the market rather than picking stocks, and portfolio rebalancing keeps that mix of investments in the right proportion over time. Hedge fund takes a far more active, aggressive approach, and yield is different from the other three — a measurement of income earned, not a strategy at all."
+        },
+        {
+            "id": "RDG_READANDMATCH_L139_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L139-Q2-0] Social Anxiety",
+                    "value": "Intense fear or discomfort in social situations, often involving fear of judgment."
+                },
+                {
+                    "key": "[L139-Q2-1] Exposure Therapy",
+                    "value": "A psychological treatment that gradually exposes a patient to their fear."
+                },
+                {
+                    "key": "[L139-Q2-2] Panic Attack",
+                    "value": "A sudden episode of intense fear that triggers severe physical reactions."
+                },
+                {
+                    "key": "[L139-Q2-3] Coping Mechanism",
+                    "value": "A strategy used to manage stress, anxiety, or difficult emotions."
+                }
+            ],
+            "hint": "Notice how each phrase connects to fear, and the different ways people manage it.",
+            "explanation": "Social anxiety can bring on a panic attack in situations that feel overwhelming, and exposure therapy is one structured way of treating a fear like it, gradually. Coping mechanism is different from the other three — a broader strategy anyone might use to manage difficult feelings, not a specific condition or treatment."
+        },
+        {
+            "id": "RDG_READANDMATCH_L139_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L139-Q3-0] Regulatory Framework",
+                    "value": "A system of rules and guidelines that govern a specific industry or activity."
+                },
+                {
+                    "key": "[L139-Q3-1] Whistleblower Protection",
+                    "value": "Laws that protect employees who report illegal activity from retaliation."
+                },
+                {
+                    "key": "[L139-Q3-2] Consumer Protection Agency",
+                    "value": "A government body responsible for enforcing laws that protect buyers."
+                },
+                {
+                    "key": "[L139-Q3-3] Antitrust Law",
+                    "value": "Legislation designed to prevent monopolies and promote fair competition."
+                }
+            ],
+            "hint": "These phrases all tie back to how a fair marketplace is enforced and protected.",
+            "explanation": "A regulatory framework sets the overall rules for an industry, and antitrust law is one important part of it, preventing unfair monopolies. Consumer protection agency enforces rules like these on behalf of buyers, and whistleblower protection is different from the other three — legal safety for the individuals who report when any of these rules get broken."
+        },
+        {
+            "id": "RDG_READANDMATCH_L140_Q1",
+            "instruction": "Match each expression with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L140-Q1-0] Resilient Infrastructure",
+                    "value": "Systems designed to withstand and recover quickly from major disruptions."
+                },
+                {
+                    "key": "[L140-Q1-1] Pandemic Preparedness",
+                    "value": "A nation's or organization's readiness to respond to a widespread disease outbreak."
+                },
+                {
+                    "key": "[L140-Q1-2] Public Health Surveillance",
+                    "value": "The ongoing monitoring of disease patterns in a population."
+                },
+                {
+                    "key": "[L140-Q1-3] Herd Immunity",
+                    "value": "When a population is protected from disease because enough people are immune."
+                }
+            ],
+            "hint": "Each of these phrases points to how a society prepares for and survives a major health crisis.",
+            "explanation": "Public health surveillance monitors disease patterns continuously, feeding into pandemic preparedness, a society's overall readiness to respond. Resilient infrastructure helps essential systems keep functioning during that kind of crisis, and herd immunity is different from the other three — a biological outcome, not a form of planning or monitoring."
+        },
+        {
+            "id": "RDG_READANDMATCH_L140_Q2",
+            "instruction": "Match each term with its correct meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L140-Q2-0] Machine Translation",
+                    "value": "The automatic conversion of text from one language to another by a computer."
+                },
+                {
+                    "key": "[L140-Q2-1] Chatbot",
+                    "value": "A computer program designed to simulate conversation with human users."
+                },
+                {
+                    "key": "[L140-Q2-2] Predictive Text",
+                    "value": "Technology that suggests words or phrases as a person types."
+                },
+                {
+                    "key": "[L140-Q2-3] Tech Literacy",
+                    "value": "The ability to effectively use and understand digital technology."
+                }
+            ],
+            "hint": "Each phrase relates to artificial intelligence tools you've likely already used yourself.",
+            "explanation": "Machine translation converts language automatically, and a chatbot uses similar technology to hold a conversation instead. Predictive text guesses your next word as you type, and tech literacy is different from the other three — the human skill of understanding and using tools like these well, not a tool itself."
+        },
+        {
+            "id": "RDG_READANDMATCH_L140_Q3",
+            "instruction": "Match each phrase with its meaning.",
+            "subtype": "readAndMatch",
+            "interactionType": "match",
+            "pairs": [
+                {
+                    "key": "[L140-Q3-0] Diplomatic Protocol",
+                    "value": "The rules and customs governing official behavior between governments."
+                },
+                {
+                    "key": "[L140-Q3-1] Peacekeeping Mission",
+                    "value": "A military or civilian operation aimed at maintaining peace in a conflict zone."
+                },
+                {
+                    "key": "[L140-Q3-2] Trade Embargo",
+                    "value": "An official ban on trade with a particular country."
+                },
+                {
+                    "key": "[L140-Q3-3] Asylum Seeker",
+                    "value": "A person who has left their home country and seeks international protection."
+                }
+            ],
+            "hint": "Each phrase ties back to how nations manage conflict, or its human consequences.",
+            "explanation": "Diplomatic protocol governs official behavior between governments, and a trade embargo is one tool they might use when relations break down. A peacekeeping mission responds to actual conflict directly, and asylum seeker is different from the other three — a person affected by conflict, not a policy or mission designed to manage it."
         }
-      ],
-      "hint": "These phrases all tie back to the legal and financial side of buying property.",
-      "explanation": "A mortgage broker helps arrange the loan, and stamp duty is a tax paid once the purchase goes through. Freehold and leasehold describe two different types of ownership, one permanent, the other for a limited number of years."
-    },
-    {
-      "id": "RDG_READANDMATCH_L131_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L131-Q2-0] Biometric Data",
-          "value": "Unique physical characteristics such as fingerprints used for identification."
-        },
-        {
-          "key": "[L131-Q2-1] Online Tracking",
-          "value": "The practice of monitoring a person's activity across websites and apps."
-        },
-        {
-          "key": "[L131-Q2-2] Right to Be Forgotten",
-          "value": "The legal right to request removal of personal data from online records."
-        },
-        {
-          "key": "[L131-Q2-3] Terms and Conditions",
-          "value": "The rules a user agrees to when using an online service or app."
-        }
-      ],
-      "hint": "Each of these phrases points to your personal information and privacy online.",
-      "explanation": "Biometric data identifies you through physical traits, and online tracking follows your activity in a very different way, across websites and apps. Terms and conditions are the rules you agree to before any of this happens, and right to be forgotten is different from the other three — a legal option to have your data removed after the fact."
-    },
-    {
-      "id": "RDG_READANDMATCH_L131_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L131-Q3-0] Public Health Campaign",
-          "value": "An organized effort to inform and encourage the public toward healthier choices."
-        },
-        {
-          "key": "[L131-Q3-1] Preventive Screening",
-          "value": "Regular medical tests done to detect a disease before symptoms appear."
-        },
-        {
-          "key": "[L131-Q3-2] Health Disparity",
-          "value": "Unfair differences in health outcomes between different groups of people."
-        },
-        {
-          "key": "[L131-Q3-3] Access to Healthcare",
-          "value": "The ability of people to obtain needed medical services."
-        }
-      ],
-      "hint": "Each phrase relates to how a society tries to keep its people healthy.",
-      "explanation": "A public health campaign spreads awareness widely, and preventive screening catches problems early on an individual level. Health disparity describes unfair gaps in outcomes between groups, and access to healthcare is different from the other three — the basic ability to get care at all, which often explains why those disparities exist."
-    },
-    {
-      "id": "RDG_READANDMATCH_L132_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L132-Q1-0] Attrition",
-          "value": "The gradual reduction of staff or customers over time without active replacement."
-        },
-        {
-          "key": "[L132-Q1-1] Golden Handcuffs",
-          "value": "Financial incentives that tie high-performing employees to a company."
-        },
-        {
-          "key": "[L132-Q1-2] Skills Gap",
-          "value": "A mismatch between the abilities employers need and the abilities workers actually have."
-        },
-        {
-          "key": "[L132-Q1-3] Retain Talent",
-          "value": "To keep skilled and valued employees from leaving an organization."
-        }
-      ],
-      "hint": "Each phrase ties back to a company trying to keep its best employees.",
-      "explanation": "Golden handcuffs are financial incentives designed specifically to retain talent, while attrition describes what happens without any such effort — staff gradually leaving and not being replaced. Skills gap is a different problem entirely, a mismatch between what employees can do and what the company actually needs."
-    },
-    {
-      "id": "RDG_READANDMATCH_L132_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L132-Q2-0] Global Supply Chain",
-          "value": "The worldwide network involved in producing and delivering a product to consumers."
-        },
-        {
-          "key": "[L132-Q2-1] Import Tariff",
-          "value": "A tax placed on goods brought into a country from abroad."
-        },
-        {
-          "key": "[L132-Q2-2] Trade Deficit",
-          "value": "When a country imports more than it exports."
-        },
-        {
-          "key": "[L132-Q2-3] Free Trade Agreement",
-          "value": "A treaty between countries that reduces barriers to trade between them."
-        }
-      ],
-      "hint": "Every one of these phrases connects to how goods and money move between countries.",
-      "explanation": "A global supply chain moves products across many countries, and an import tariff can make crossing those borders more expensive. A free trade agreement works the opposite way, removing barriers like that, and trade deficit is different from the other three — a measurement of the imbalance between what a country buys and sells abroad."
-    },
-    {
-      "id": "RDG_READANDMATCH_L132_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L132-Q3-0] Gastronomic Tourism",
-          "value": "Travel motivated by the desire to experience local food and drink culture."
-        },
-        {
-          "key": "[L132-Q3-1] UNESCO World Heritage",
-          "value": "A site recognized by UNESCO for its outstanding universal cultural value."
-        },
-        {
-          "key": "[L132-Q3-2] Overtourism",
-          "value": "The negative impact of too many tourists on a destination's environment and culture."
-        },
-        {
-          "key": "[L132-Q3-3] Tourist Trap",
-          "value": "A place that exploits tourists through overpriced goods or inauthentic experiences."
-        }
-      ],
-      "hint": "Notice how each phrase connects to why people travel, and the problems that popularity can cause.",
-      "explanation": "Gastronomic tourism draws visitors for the food, and a UNESCO World Heritage site draws them for cultural significance instead. Overtourism is the strain either kind of popularity can cause on a destination, and tourist trap is different from the other three — a place designed to exploit visitors rather than genuinely welcome them."
-    },
-    {
-      "id": "RDG_READANDMATCH_L133_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L133-Q1-0] Psychological Safety",
-          "value": "A shared belief that team members will not be punished for speaking up or taking risks."
-        },
-        {
-          "key": "[L133-Q1-1] Cognitive Load",
-          "value": "The total amount of mental effort being used in working memory at a given time."
-        },
-        {
-          "key": "[L133-Q1-2] Feedback Loop",
-          "value": "A process where outputs of a system are returned as inputs to influence future behavior."
-        },
-        {
-          "key": "[L133-Q1-3] Deliberate Practice",
-          "value": "Highly structured practice with specific goals to improve a skill over time."
-        }
-      ],
-      "hint": "These phrases all tie back to how people learn and perform well as part of a team.",
-      "explanation": "Psychological safety lets people take risks without fear of punishment, which supports honest feedback loops within a team. Cognitive load describes how much mental effort a task demands, and deliberate practice is different from the other three — a structured, individual method for improving a specific skill over time."
-    },
-    {
-      "id": "RDG_READANDMATCH_L133_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L133-Q2-0] Stress Management",
-          "value": "Techniques and habits used to control and reduce the effects of stress."
-        },
-        {
-          "key": "[L133-Q2-1] Sleep Hygiene",
-          "value": "Habits and practices that support consistent, good-quality sleep."
-        },
-        {
-          "key": "[L133-Q2-2] Preventable Illness",
-          "value": "A disease or condition that can be avoided through lifestyle choices or medical care."
-        },
-        {
-          "key": "[L133-Q2-3] Genetic Predisposition",
-          "value": "An inherited tendency that makes a person more likely to develop a condition."
-        }
-      ],
-      "hint": "Each of these phrases points to habits and factors that shape long-term health.",
-      "explanation": "Stress management and sleep hygiene are both habits within your control, one calming the mind, the other supporting rest. Genetic predisposition is different from both — a tendency inherited rather than chosen, and preventable illness is different again, a health problem that habits like these can actually help avoid."
-    },
-    {
-      "id": "RDG_READANDMATCH_L133_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L133-Q3-0] Spin-Off Company",
-          "value": "A new business created from an existing company by separating part of its activities."
-        },
-        {
-          "key": "[L133-Q3-1] Strategic Acquisition",
-          "value": "Buying another company to gain access to its capabilities or market position."
-        },
-        {
-          "key": "[L133-Q3-2] Joint Venture",
-          "value": "A business arrangement where two or more parties create a new entity together."
-        },
-        {
-          "key": "[L133-Q3-3] Hostile Takeover",
-          "value": "An acquisition of a company against the wishes of its board of directors."
-        }
-      ],
-      "hint": "Each phrase relates to a different way one company can grow or connect with another.",
-      "explanation": "A spin-off company separates from an existing business, while a strategic acquisition works in the opposite direction, buying another company outright. Joint venture combines two companies into something new together, and hostile takeover is different from the other three — an acquisition forced through against the target company's wishes."
-    },
-    {
-      "id": "RDG_READANDMATCH_L134_Q1",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L134-Q1-0] Transient",
-          "value": "Not permanent; lasting only a short time."
-        },
-        {
-          "key": "[L134-Q1-1] Sanctuary",
-          "value": "A place of refuge or safety."
-        },
-        {
-          "key": "[L134-Q1-2] Expedition",
-          "value": "An organized journey undertaken for a specific purpose, often scientific or exploratory."
-        },
-        {
-          "key": "[L134-Q1-3] Uncharted Territory",
-          "value": "A situation or place that is unknown or has not been explored before."
-        }
-      ],
-      "hint": "Each word or phrase relates to travel, safety, or the unknown.",
-      "explanation": "Transient describes something that doesn't last, while sanctuary describes the opposite feeling, a lasting sense of safety. An expedition is a purposeful journey into the unknown, and uncharted territory is different from the other three — the actual unknown place itself, not the journey or the shelter."
-    },
-    {
-      "id": "RDG_READANDMATCH_L134_Q2",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L134-Q2-0] Grandparent Rights",
-          "value": "Legal recognition of grandparents' ability to maintain contact with grandchildren."
-        },
-        {
-          "key": "[L134-Q2-1] Parental Responsibility",
-          "value": "The legal duties and rights a parent has toward their child."
-        },
-        {
-          "key": "[L134-Q2-2] Neglect",
-          "value": "Failing to provide adequate care and attention to a child's basic needs."
-        },
-        {
-          "key": "[L134-Q2-3] Child Protection Order",
-          "value": "A legal order issued to safeguard a child believed to be at risk."
-        }
-      ],
-      "hint": "Each phrase ties back to the legal side of caring for a child.",
-      "explanation": "Parental responsibility outlines what a parent must legally provide, and neglect describes a serious failure to meet it. A child protection order steps in when that failure becomes dangerous, and grandparent rights is different from the other three — it's about a different relative's legal connection to the child, not a parent's duty or its failure."
-    },
-    {
-      "id": "RDG_READANDMATCH_L134_Q3",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L134-Q3-0] Haggling Culture",
-          "value": "A social norm in certain markets where bargaining over prices is expected."
-        },
-        {
-          "key": "[L134-Q3-1] Premium Outlet",
-          "value": "A retail store selling high-end brands at reduced prices."
-        },
-        {
-          "key": "[L134-Q3-2] Consumer Advocacy",
-          "value": "The practice of protecting and promoting the rights and interests of buyers."
-        },
-        {
-          "key": "[L134-Q3-3] Greenwashing",
-          "value": "False or misleading claims made by companies about environmental friendliness."
-        }
-      ],
-      "hint": "Every one of these phrases connects to the relationship between shoppers and the businesses selling to them.",
-      "explanation": "Haggling culture and premium outlet both relate to price, though in very different ways, one through negotiation, the other through markdowns on luxury goods. Consumer advocacy actively protects buyers' interests, and greenwashing is different from the other three — a deceptive practice that consumer advocacy actually exists to expose."
-    },
-    {
-      "id": "RDG_READANDMATCH_L135_Q1",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L135-Q1-0] Sleep Debt",
-          "value": "The cumulative effect of not getting enough sleep over multiple nights."
-        },
-        {
-          "key": "[L135-Q1-1] Digital Wellbeing",
-          "value": "A mindful, healthy relationship with technology and screen time."
-        },
-        {
-          "key": "[L135-Q1-2] Mindful Breathing",
-          "value": "A relaxation technique that involves focusing attention on the breath."
-        },
-        {
-          "key": "[L135-Q1-3] Screen Fatigue",
-          "value": "Mental and visual tiredness caused by spending too much time looking at screens."
-        }
-      ],
-      "hint": "Notice how each phrase connects to protecting your energy and focus in a screen-filled world.",
-      "explanation": "Sleep debt builds up when rest is repeatedly cut short, and screen fatigue is a related but separate strain, tiredness from too much time looking at devices. Digital wellbeing is the broader goal of managing all of it sensibly, and mindful breathing is different from the other three — a specific technique used to reset and relax, not a problem to manage."
-    },
-    {
-      "id": "RDG_READANDMATCH_L135_Q2",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L135-Q2-0] Cutting-Edge",
-          "value": "At the forefront of technological or scientific development; the newest and most advanced."
-        },
-        {
-          "key": "[L135-Q2-1] Emerging Technology",
-          "value": "New technology that is still developing but expected to become significant."
-        },
-        {
-          "key": "[L135-Q2-2] Innovation Hub",
-          "value": "A place, often a city or district, known for producing new ideas and technology."
-        },
-        {
-          "key": "[L135-Q2-3] Tech-Driven",
-          "value": "Relying heavily on technology to achieve a goal or solve a problem."
-        }
-      ],
-      "hint": "Each word or phrase relates to being at the forefront of new technology.",
-      "explanation": "Cutting-edge describes technology right at the front of what's possible, and emerging technology describes what's on its way to becoming exactly that. Innovation hub is a place where progress like this tends to cluster, and tech-driven is different from the other three — it describes an approach or strategy, not the technology or the place itself."
-    },
-    {
-      "id": "RDG_READANDMATCH_L135_Q3",
-      "instruction": "Match each word with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L135-Q3-0] Systemic Racism",
-          "value": "Racism embedded in social institutions and policies rather than just individual actions."
-        },
-        {
-          "key": "[L135-Q3-1] Gender Pay Gap",
-          "value": "The average difference in earnings between men and women in the workplace."
-        },
-        {
-          "key": "[L135-Q3-2] Allyship",
-          "value": "Active support and advocacy for members of a marginalized group."
-        },
-        {
-          "key": "[L135-Q3-3] Unconscious Discrimination",
-          "value": "Unfair treatment of a person that isn't deliberate or consciously intended."
-        }
-      ],
-      "hint": "These phrases all tie back to fairness and inequality in modern society.",
-      "explanation": "Systemic racism and gender pay gap both describe unfair patterns built into institutions, one about race, the other about income. Unconscious discrimination can quietly reinforce either pattern without anyone intending it, and allyship is different from the other three — an active, deliberate choice to support people facing exactly these kinds of unfairness."
-    },
-    {
-      "id": "RDG_READANDMATCH_L136_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L136-Q1-0] Multi-Purpose Room",
-          "value": "A room designed to be used for more than one function or activity."
-        },
-        {
-          "key": "[L136-Q1-1] Ergonomic Assessment",
-          "value": "An evaluation of how well a workspace supports the physical wellbeing of its users."
-        },
-        {
-          "key": "[L136-Q1-2] Live-Work Space",
-          "value": "A building or unit designed to serve both as a home and a workspace."
-        },
-        {
-          "key": "[L136-Q1-3] Soundproofing",
-          "value": "Materials or techniques used to prevent sound from passing through walls or floors."
-        }
-      ],
-      "hint": "Each of these phrases points to designing a home that works well for how you actually live.",
-      "explanation": "A multi-purpose room adapts to different needs, and a live-work space takes that flexibility even further, combining home and office entirely. Soundproofing helps keep the peace in a space like that, and ergonomic assessment is different from the other three — an evaluation of comfort and health, not a type of space or material."
-    },
-    {
-      "id": "RDG_READANDMATCH_L136_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L136-Q2-0] Infographic",
-          "value": "A visual representation of information or data designed for quick understanding."
-        },
-        {
-          "key": "[L136-Q2-1] Viral Marketing",
-          "value": "A strategy that relies on audiences sharing content widely to spread awareness."
-        },
-        {
-          "key": "[L136-Q2-2] A/B Testing",
-          "value": "Comparing two versions of something to see which performs better."
-        },
-        {
-          "key": "[L136-Q2-3] Conversion Rate",
-          "value": "The percentage of visitors to a site who complete a desired action."
-        }
-      ],
-      "hint": "Each phrase relates to how a company tries to get attention and results online.",
-      "explanation": "An infographic presents information visually to grab attention, and viral marketing hopes that attention spreads on its own. A/B testing compares two versions to see what actually works best, and conversion rate is different from the other three — the actual number that shows whether any of it succeeded."
-    },
-    {
-      "id": "RDG_READANDMATCH_L136_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L136-Q3-0] Corporate Ladder",
-          "value": "The hierarchical structure of career advancement within an organization."
-        },
-        {
-          "key": "[L136-Q3-1] Glass Ceiling",
-          "value": "An invisible barrier that prevents certain groups from reaching the highest positions."
-        },
-        {
-          "key": "[L136-Q3-2] Mentorship Program",
-          "value": "A structured initiative pairing experienced and newer employees for development."
-        },
-        {
-          "key": "[L136-Q3-3] Internal Promotion",
-          "value": "Filling a vacancy by appointing someone already working in the organization."
-        }
-      ],
-      "hint": "Each phrase ties back to how, or whether, someone can rise within a company.",
-      "explanation": "The corporate ladder describes the path upward within an organization, and internal promotion is one concrete step along it. A mentorship program can help someone climb that ladder with guidance, and glass ceiling is different from the other three — an invisible barrier that can stop the climb altogether, regardless of ability."
-    },
-    {
-      "id": "RDG_READANDMATCH_L137_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L137-Q1-0] Op-Ed",
-          "value": "An opinion article in a newspaper, written by someone not on the editorial staff."
-        },
-        {
-          "key": "[L137-Q1-1] Investigative Journalism",
-          "value": "In-depth reporting that uncovers hidden facts, often on issues of public importance."
-        },
-        {
-          "key": "[L137-Q1-2] Fact-Checking",
-          "value": "The process of verifying the accuracy of claims made in reporting or public statements."
-        },
-        {
-          "key": "[L137-Q1-3] Primary Source",
-          "value": "An original document or firsthand account, as opposed to a summary or interpretation."
-        }
-      ],
-      "hint": "Every one of these phrases connects to how trustworthy a piece of writing or reporting really is.",
-      "explanation": "An op-ed openly shares one person's opinion, while investigative journalism aims for something different, uncovering hidden facts through careful reporting. Fact-checking verifies whether claims like these actually hold up, and primary source is different from the other three — the original material itself, not a form of writing or a way of checking it."
-    },
-    {
-      "id": "RDG_READANDMATCH_L137_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L137-Q2-0] Teleworking",
-          "value": "Performing work duties from a remote location, often using digital communication."
-        },
-        {
-          "key": "[L137-Q2-1] Job Sharing",
-          "value": "When two or more people share the responsibilities of one full-time position."
-        },
-        {
-          "key": "[L137-Q2-2] Secondment",
-          "value": "A temporary assignment of an employee to a different role or organization."
-        },
-        {
-          "key": "[L137-Q2-3] People Management",
-          "value": "The skill of overseeing, motivating, and developing a team of employees."
-        }
-      ],
-      "hint": "Notice how each phrase connects to a different, flexible way modern work can be structured.",
-      "explanation": "Teleworking lets someone work from anywhere, and job sharing splits one role between two people instead. Secondment moves someone temporarily into a different role or organization, and people management is different from the other three — the skill of overseeing a team, not a way of arranging the work itself."
-    },
-    {
-      "id": "RDG_READANDMATCH_L137_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L137-Q3-0] Cultural Exchange",
-          "value": "The sharing of ideas, traditions, and customs between different cultures."
-        },
-        {
-          "key": "[L137-Q3-1] Diplomatic Incident",
-          "value": "An event that causes tension between two countries' governments."
-        },
-        {
-          "key": "[L137-Q3-2] Soft Power",
-          "value": "Influence gained through cultural and economic means rather than military force."
-        },
-        {
-          "key": "[L137-Q3-3] Non-Governmental Organization",
-          "value": "A non-profit group operating independently of government, often for social causes."
-        }
-      ],
-      "hint": "These phrases all tie back to how nations and organizations connect across borders.",
-      "explanation": "Cultural exchange builds goodwill between countries, and soft power is the broader influence that goodwill like this can create. A diplomatic incident can damage that same goodwill instead, and non-governmental organization is different from the other three — an independent group working across borders, not a government action at all."
-    },
-    {
-      "id": "RDG_READANDMATCH_L138_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L138-Q1-0] Surrogate Decision-Making",
-          "value": "Making choices on behalf of someone unable to make their own decisions."
-        },
-        {
-          "key": "[L138-Q1-1] Advance Directive",
-          "value": "A legal document stating medical wishes in case a person cannot communicate."
-        },
-        {
-          "key": "[L138-Q1-2] Medical Ethics Committee",
-          "value": "A body that reviews ethical issues in medical care and research."
-        },
-        {
-          "key": "[L138-Q1-3] Autonomy in Healthcare",
-          "value": "The right of patients to make their own informed medical decisions."
-        }
-      ],
-      "hint": "Each of these phrases points to who makes medical decisions, and how those choices are protected.",
-      "explanation": "Autonomy in healthcare is a patient's right to decide for themselves, and an advance directive protects that right even if they later can't communicate. Surrogate decision-making steps in when neither is possible, someone else deciding on the patient's behalf, and medical ethics committee is different from the other three — the group that reviews difficult cases like these when they arise."
-    },
-    {
-      "id": "RDG_READANDMATCH_L138_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L138-Q2-0] Conspicuous Consumption",
-          "value": "Buying expensive things to display wealth and status."
-        },
-        {
-          "key": "[L138-Q2-1] Status Symbol",
-          "value": "An item that signals a person's wealth or social position."
-        },
-        {
-          "key": "[L138-Q2-2] Keeping Up Appearances",
-          "value": "Trying to maintain a certain image or lifestyle to impress others."
-        },
-        {
-          "key": "[L138-Q2-3] Price Anchoring",
-          "value": "Setting a high reference price to make a lower price seem more attractive."
-        }
-      ],
-      "hint": "Each phrase relates to buying things to impress, or to be impressed by.",
-      "explanation": "Conspicuous consumption is spending specifically to display wealth, often through a clear status symbol. Keeping up appearances describes the pressure that can drive that spending, comparing yourself to others, and price anchoring is different from the other three — a pricing trick used by sellers, not a habit or motivation on the buyer's side."
-    },
-    {
-      "id": "RDG_READANDMATCH_L138_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L138-Q3-0] Long-Form Journalism",
-          "value": "In-depth reporting that explores a topic in detail over extended length."
-        },
-        {
-          "key": "[L138-Q3-1] Paywalled Content",
-          "value": "Online articles or media that require payment or subscription to access."
-        },
-        {
-          "key": "[L138-Q3-2] Press Freedom",
-          "value": "The right of journalists to publish information without government restriction."
-        },
-        {
-          "key": "[L138-Q3-3] Media Bias",
-          "value": "The tendency of news sources to present information in a way that favors a viewpoint."
-        }
-      ],
-      "hint": "Each phrase ties back to how news is written, accessed, or trusted.",
-      "explanation": "Long-form journalism takes time and space to explore a topic properly, and paywalled content is often exactly this kind of in-depth reporting, available only to paying readers. Press freedom protects the ability to publish it in the first place, and media bias is different from the other three — a slant in how information is presented, regardless of length, access, or freedom."
-    },
-    {
-      "id": "RDG_READANDMATCH_L139_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L139-Q1-0] Passive Investment",
-          "value": "An investment strategy that tracks a market index rather than actively selecting stocks."
-        },
-        {
-          "key": "[L139-Q1-1] Portfolio Rebalancing",
-          "value": "Adjusting the mix of investments to maintain a desired level of risk."
-        },
-        {
-          "key": "[L139-Q1-2] Hedge Fund",
-          "value": "An investment fund using advanced strategies to generate high returns."
-        },
-        {
-          "key": "[L139-Q1-3] Yield",
-          "value": "The income generated by an investment, expressed as a percentage of its value."
-        }
-      ],
-      "hint": "Every one of these phrases connects to a different strategy or measure in personal investing.",
-      "explanation": "Passive investment simply tracks the market rather than picking stocks, and portfolio rebalancing keeps that mix of investments in the right proportion over time. Hedge fund takes a far more active, aggressive approach, and yield is different from the other three — a measurement of income earned, not a strategy at all."
-    },
-    {
-      "id": "RDG_READANDMATCH_L139_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L139-Q2-0] Social Anxiety",
-          "value": "Intense fear or discomfort in social situations, often involving fear of judgment."
-        },
-        {
-          "key": "[L139-Q2-1] Exposure Therapy",
-          "value": "A psychological treatment that gradually exposes a patient to their fear."
-        },
-        {
-          "key": "[L139-Q2-2] Panic Attack",
-          "value": "A sudden episode of intense fear that triggers severe physical reactions."
-        },
-        {
-          "key": "[L139-Q2-3] Coping Mechanism",
-          "value": "A strategy used to manage stress, anxiety, or difficult emotions."
-        }
-      ],
-      "hint": "Notice how each phrase connects to fear, and the different ways people manage it.",
-      "explanation": "Social anxiety can bring on a panic attack in situations that feel overwhelming, and exposure therapy is one structured way of treating a fear like it, gradually. Coping mechanism is different from the other three — a broader strategy anyone might use to manage difficult feelings, not a specific condition or treatment."
-    },
-    {
-      "id": "RDG_READANDMATCH_L139_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L139-Q3-0] Regulatory Framework",
-          "value": "A system of rules and guidelines that govern a specific industry or activity."
-        },
-        {
-          "key": "[L139-Q3-1] Whistleblower Protection",
-          "value": "Laws that protect employees who report illegal activity from retaliation."
-        },
-        {
-          "key": "[L139-Q3-2] Consumer Protection Agency",
-          "value": "A government body responsible for enforcing laws that protect buyers."
-        },
-        {
-          "key": "[L139-Q3-3] Antitrust Law",
-          "value": "Legislation designed to prevent monopolies and promote fair competition."
-        }
-      ],
-      "hint": "These phrases all tie back to how a fair marketplace is enforced and protected.",
-      "explanation": "A regulatory framework sets the overall rules for an industry, and antitrust law is one important part of it, preventing unfair monopolies. Consumer protection agency enforces rules like these on behalf of buyers, and whistleblower protection is different from the other three — legal safety for the individuals who report when any of these rules get broken."
-    },
-    {
-      "id": "RDG_READANDMATCH_L140_Q1",
-      "instruction": "Match each expression with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L140-Q1-0] Resilient Infrastructure",
-          "value": "Systems designed to withstand and recover quickly from major disruptions."
-        },
-        {
-          "key": "[L140-Q1-1] Pandemic Preparedness",
-          "value": "A nation's or organization's readiness to respond to a widespread disease outbreak."
-        },
-        {
-          "key": "[L140-Q1-2] Public Health Surveillance",
-          "value": "The ongoing monitoring of disease patterns in a population."
-        },
-        {
-          "key": "[L140-Q1-3] Herd Immunity",
-          "value": "When a population is protected from disease because enough people are immune."
-        }
-      ],
-      "hint": "Each of these phrases points to how a society prepares for and survives a major health crisis.",
-      "explanation": "Public health surveillance monitors disease patterns continuously, feeding into pandemic preparedness, a society's overall readiness to respond. Resilient infrastructure helps essential systems keep functioning during that kind of crisis, and herd immunity is different from the other three — a biological outcome, not a form of planning or monitoring."
-    },
-    {
-      "id": "RDG_READANDMATCH_L140_Q2",
-      "instruction": "Match each term with its correct meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L140-Q2-0] Machine Translation",
-          "value": "The automatic conversion of text from one language to another by a computer."
-        },
-        {
-          "key": "[L140-Q2-1] Chatbot",
-          "value": "A computer program designed to simulate conversation with human users."
-        },
-        {
-          "key": "[L140-Q2-2] Predictive Text",
-          "value": "Technology that suggests words or phrases as a person types."
-        },
-        {
-          "key": "[L140-Q2-3] Tech Literacy",
-          "value": "The ability to effectively use and understand digital technology."
-        }
-      ],
-      "hint": "Each phrase relates to artificial intelligence tools you've likely already used yourself.",
-      "explanation": "Machine translation converts language automatically, and a chatbot uses similar technology to hold a conversation instead. Predictive text guesses your next word as you type, and tech literacy is different from the other three — the human skill of understanding and using tools like these well, not a tool itself."
-    },
-    {
-      "id": "RDG_READANDMATCH_L140_Q3",
-      "instruction": "Match each phrase with its meaning.",
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L140-Q3-0] Diplomatic Protocol",
-          "value": "The rules and customs governing official behavior between governments."
-        },
-        {
-          "key": "[L140-Q3-1] Peacekeeping Mission",
-          "value": "A military or civilian operation aimed at maintaining peace in a conflict zone."
-        },
-        {
-          "key": "[L140-Q3-2] Trade Embargo",
-          "value": "An official ban on trade with a particular country."
-        },
-        {
-          "key": "[L140-Q3-3] Asylum Seeker",
-          "value": "A person who has left their home country and seeks international protection."
-        }
-      ],
-      "hint": "Each phrase ties back to how nations manage conflict, or its human consequences.",
-      "explanation": "Diplomatic protocol governs official behavior between governments, and a trade embargo is one tool they might use when relations break down. A peacekeeping mission responds to actual conflict directly, and asylum seeker is different from the other three — a person affected by conflict, not a policy or mission designed to manage it."
-    }
-  ]
+    ]
 }

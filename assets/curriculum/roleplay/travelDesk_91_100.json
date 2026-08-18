@@ -1,667 +1,667 @@
 {
-  "gameType": "travelDesk",
-  "batchIndex": 10,
-  "levels": "91-100",
-  "quests": [
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "This might sound like an odd question, but where would I go to get locked out of a room sorted out?",
-      "itinerary": [
-        "Neighborhood Key Shop",
-        "Neighborhood Notary Office",
-        "Neighborhood Locksmith",
-        "Neighborhood Tailor Shop"
-      ],
-      "options": [
-        "Key Shop",
-        "Notary Office",
-        "Locksmith",
-        "Tailor Shop"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Narrow it down by asking where, specifically, people go to get locked out of a room sorted out.",
-      "explanation": "Locksmith fits perfectly here, as it's set up for people who need to get locked out of a room sorted out.",
-      "id": "td_l91_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm trying to squeeze in time to keep the toddler entertained for an hour before dinner.",
-      "itinerary": [
-        "Family Trampoline Park",
-        "Family Playroom",
-        "Family Babysitting Agency",
-        "Family Kids' Club"
-      ],
-      "options": [
-        "Trampoline Park",
-        "Playroom",
-        "Babysitting Agency",
-        "Kids' Club"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to keep the toddler entertained for an hour.",
-      "explanation": "Travelers head to the Kids' Club whenever they need to keep the toddler entertained for an hour.",
-      "id": "td_l91_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Someone recommended I find a rare vintage item while I'm here — where would that be?",
-      "itinerary": [
-        "Marketplace Flea Market",
-        "Marketplace Ceramics Shop",
-        "Marketplace Antique Shop",
-        "Marketplace Handicraft Market"
-      ],
-      "options": [
-        "Flea Market",
-        "Ceramics Shop",
-        "Antique Shop",
-        "Handicraft Market"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Some options belong to the same general category, but only one is the exact place to find a rare vintage item.",
-      "explanation": "This matches because Antique Shop is the standard place to find a rare vintage item.",
-      "id": "td_l91_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've got some free time and thought I'd find good coffee beans to bring home.",
-      "itinerary": [
-        "Gourmet Coffee Roastery",
-        "Gourmet Cafe",
-        "Gourmet Tea House",
-        "Gourmet Spice Market"
-      ],
-      "options": [
-        "Coffee Roastery",
-        "Cafe",
-        "Tea House",
-        "Spice Market"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Ask yourself which of the four options is built for one specific purpose: to find good coffee beans to bring home.",
-      "explanation": "The clearest match is Coffee Roastery, since that's exactly its purpose: to find good coffee beans to bring home.",
-      "id": "td_l92_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I don't suppose there's somewhere around here to try writing in the local script?",
-      "itinerary": [
-        "Scholars' Pottery Workshop",
-        "Scholars' Textile Weaving Workshop",
-        "Scholars' Traditional Music Workshop",
-        "Scholars' Calligraphy Workshop"
-      ],
-      "options": [
-        "Pottery Workshop",
-        "Textile Weaving Workshop",
-        "Traditional Music Workshop",
-        "Calligraphy Workshop"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Picture exactly where a traveler would go to try writing in the local script.",
-      "explanation": "Calligraphy Workshop is the best fit — it exists specifically to help people try writing in the local script.",
-      "id": "td_l92_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would you know a good place where I could catch up on emails before a flight?",
-      "itinerary": [
-        "Corporate Coworking Space",
-        "Corporate Airport Business Lounge",
-        "Corporate Business Center",
-        "Corporate Executive Lounge"
-      ],
-      "options": [
-        "Coworking Space",
-        "Airport Business Lounge",
-        "Business Center",
-        "Executive Lounge"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Focus on the verb in the request: the traveler needs to catch up on emails before a flight.",
-      "explanation": "Airport Business Lounge makes sense here because that's precisely where people go to catch up on emails before a flight.",
-      "id": "td_l92_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "This might sound like an odd question, but where would I go to hail a cab quickly with heavy bags?",
-      "itinerary": [
-        "Wanderer's Car Rental Office",
-        "Wanderer's Metro Station",
-        "Wanderer's Bus Terminal",
-        "Wanderer's Taxi Stand"
-      ],
-      "options": [
-        "Car Rental Office",
-        "Metro Station",
-        "Bus Terminal",
-        "Taxi Stand"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "The other three options sound plausible, but only one is made for this: to hail a cab quickly with heavy bags.",
-      "explanation": "Of the four options, only Taxi Stand is designed to let someone hail a cab quickly with heavy bags.",
-      "id": "td_l93_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm trying to squeeze in time to try the latest virtual reality game before dinner.",
-      "itinerary": [
-        "Digital Tech Expo Hall",
-        "Digital Gaming Lounge",
-        "Digital Media Streaming Lounge",
-        "Digital VR Experience Center"
-      ],
-      "options": [
-        "Tech Expo Hall",
-        "Gaming Lounge",
-        "Media Streaming Lounge",
-        "VR Experience Center"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone try the latest virtual reality game.",
-      "explanation": "The request points directly to the VR Experience Center, since that's where you'd try the latest virtual reality game.",
-      "id": "td_l93_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Someone recommended I get a sunglasses prescription checked while I'm here — where would that be?",
-      "itinerary": [
-        "Wellness Eye Clinic",
-        "Wellness Hearing Clinic",
-        "Wellness Radiology Center",
-        "Wellness Hospital"
-      ],
-      "options": [
-        "Eye Clinic",
-        "Hearing Clinic",
-        "Radiology Center",
-        "Hospital"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a sunglasses prescription checked.",
-      "explanation": "When someone needs to get a sunglasses prescription checked, Eye Clinic is the natural choice.",
-      "id": "td_l93_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've got some free time and thought I'd catch a full weekend music lineup.",
-      "itinerary": [
-        "Spotlight Drive-In Theater",
-        "Spotlight Concert Hall",
-        "Spotlight Music Festival Grounds",
-        "Spotlight Jazz Club"
-      ],
-      "options": [
-        "Drive-In Theater",
-        "Concert Hall",
-        "Music Festival Grounds",
-        "Jazz Club"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Narrow it down by asking where, specifically, people go to catch a full weekend music lineup.",
-      "explanation": "Music Festival Grounds fits perfectly here, as it's set up for people who need to catch a full weekend music lineup.",
-      "id": "td_l94_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I don't suppose there's somewhere around here to get a stubborn stain out of a jacket?",
-      "itinerary": [
-        "Neighborhood Laundromat",
-        "Neighborhood Hair Salon",
-        "Neighborhood Dry Cleaner",
-        "Neighborhood Tailor Shop"
-      ],
-      "options": [
-        "Laundromat",
-        "Hair Salon",
-        "Dry Cleaner",
-        "Tailor Shop"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to get a stubborn stain out of a jacket.",
-      "explanation": "Since the traveler wants to get a stubborn stain out of a jacket, Dry Cleaner is the logical destination.",
-      "id": "td_l94_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would you know a good place where I could borrow some baby gear for the week?",
-      "itinerary": [
-        "Family Kids' Club",
-        "Family Stroller Rental Counter",
-        "Family Baby Supplies Store",
-        "Family Playroom"
-      ],
-      "options": [
-        "Kids' Club",
-        "Stroller Rental Counter",
-        "Baby Supplies Store",
-        "Playroom"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Some options belong to the same general category, but only one is the exact place to borrow some baby gear for the week.",
-      "explanation": "Baby Supplies Store is correct because that's exactly where travelers go to borrow some baby gear for the week.",
-      "id": "td_l94_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "This might sound like an odd question, but where would I go to buy a scarf made from local silk?",
-      "itinerary": [
-        "Marketplace Leather Goods Shop",
-        "Marketplace Perfume Shop",
-        "Marketplace Boutique",
-        "Marketplace Textile Shop"
-      ],
-      "options": [
-        "Leather Goods Shop",
-        "Perfume Shop",
-        "Boutique",
-        "Textile Shop"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Ask yourself which of the four options is built for one specific purpose: to buy a scarf made from local silk.",
-      "explanation": "The clearest match is Textile Shop, since that's exactly its purpose: to buy a scarf made from local silk.",
-      "id": "td_l95_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm trying to squeeze in time to spend an afternoon tasting local wines before dinner.",
-      "itinerary": [
-        "Gourmet Vineyard Tour",
-        "Gourmet Wine Cellar",
-        "Gourmet Rooftop Restaurant",
-        "Gourmet Brewery"
-      ],
-      "options": [
-        "Vineyard Tour",
-        "Wine Cellar",
-        "Rooftop Restaurant",
-        "Brewery"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about which kind of place specializes in helping people spend an afternoon tasting local wines.",
-      "explanation": "Vineyard Tour exists specifically for this — it's the place to spend an afternoon tasting local wines.",
-      "id": "td_l95_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Someone recommended I see the night sky through a real telescope while I'm here — where would that be?",
-      "itinerary": [
-        "Scholars' Science Museum",
-        "Scholars' Natural History Museum",
-        "Scholars' Observatory",
-        "Scholars' Botanical Garden"
-      ],
-      "options": [
-        "Science Museum",
-        "Natural History Museum",
-        "Observatory",
-        "Botanical Garden"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Picture exactly where a traveler would go to see the night sky through a real telescope.",
-      "explanation": "This matches because Observatory is the standard place to see the night sky through a real telescope.",
-      "id": "td_l95_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've got some free time and thought I'd register for the morning keynote session.",
-      "itinerary": [
-        "Corporate Registration Desk",
-        "Corporate Seminar Hall",
-        "Corporate Trade Show Hall",
-        "Corporate Convention Center"
-      ],
-      "options": [
-        "Registration Desk",
-        "Seminar Hall",
-        "Trade Show Hall",
-        "Convention Center"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The other three options sound plausible, but only one is made for this: to register for the morning keynote session.",
-      "explanation": "Registration Desk makes sense here because that's precisely where people go to register for the morning keynote session.",
-      "id": "td_l96_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I don't suppose there's somewhere around here to pick up a city guide and free map?",
-      "itinerary": [
-        "Wanderer's Embassy",
-        "Wanderer's Travel Agency",
-        "Wanderer's Tourist Information Center",
-        "Wanderer's Tour Agency"
-      ],
-      "options": [
-        "Embassy",
-        "Travel Agency",
-        "Tourist Information Center",
-        "Tour Agency"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone pick up a city guide and free map.",
-      "explanation": "Tourist Information Center is the best fit — it exists specifically to help people pick up a city guide and free map.",
-      "id": "td_l96_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would you know a good place where I could get a keepsake figurine printed of the skyline?",
-      "itinerary": [
-        "Digital 3D Printing Studio",
-        "Digital Gadget Store",
-        "Digital Drone Rental Counter",
-        "Digital Photo Printing Kiosk"
-      ],
-      "options": [
-        "3D Printing Studio",
-        "Gadget Store",
-        "Drone Rental Counter",
-        "Photo Printing Kiosk"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a keepsake figurine printed of the skyline.",
-      "explanation": "Travelers head to the 3D Printing Studio whenever they need to get a keepsake figurine printed of the skyline.",
-      "id": "td_l96_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "This might sound like an odd question, but where would I go to try a traditional wellness treatment?",
-      "itinerary": [
-        "Wellness Wellness Spa",
-        "Wellness Acupuncture Clinic",
-        "Wellness Wellness Retreat",
-        "Wellness Massage Therapy Center"
-      ],
-      "options": [
-        "Wellness Spa",
-        "Acupuncture Clinic",
-        "Wellness Retreat",
-        "Massage Therapy Center"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Narrow it down by asking where, specifically, people go to try a traditional wellness treatment.",
-      "explanation": "Acupuncture Clinic fits perfectly here, as it's set up for people who need to try a traditional wellness treatment.",
-      "id": "td_l97_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm trying to squeeze in time to try a few of the big rides before dinner.",
-      "itinerary": [
-        "Spotlight Water Park",
-        "Spotlight Wildlife Safari Park",
-        "Spotlight Amusement Park",
-        "Spotlight Arcade"
-      ],
-      "options": [
-        "Water Park",
-        "Wildlife Safari Park",
-        "Amusement Park",
-        "Arcade"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to try a few of the big rides.",
-      "explanation": "Of the four options, only Amusement Park is designed to let someone try a few of the big rides.",
-      "id": "td_l97_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Someone recommended I ask about registering as a new resident while I'm here — where would that be?",
-      "itinerary": [
-        "Neighborhood City Hall",
-        "Neighborhood Community Center",
-        "Neighborhood Lost-and-Found Office",
-        "Neighborhood Notary Office"
-      ],
-      "options": [
-        "City Hall",
-        "Community Center",
-        "Lost-and-Found Office",
-        "Notary Office"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Some options belong to the same general category, but only one is the exact place to ask about registering as a new resident.",
-      "explanation": "City Hall is correct because that's exactly where travelers go to ask about registering as a new resident.",
-      "id": "td_l97_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've got some free time and thought I'd let the little ones burn off some energy.",
-      "itinerary": [
-        "Family Playground",
-        "Family Trampoline Park",
-        "Family Splash Pad",
-        "Family Puppet Show Theater"
-      ],
-      "options": [
-        "Playground",
-        "Trampoline Park",
-        "Splash Pad",
-        "Puppet Show Theater"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Look past any similar-sounding options — only one place truly lets you let the little ones burn off some energy.",
-      "explanation": "The request points directly to the Trampoline Park, since that's where you'd let the little ones burn off some energy.",
-      "id": "td_l98_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I don't suppose there's somewhere around here to pick up small gifts for coworkers back home?",
-      "itinerary": [
-        "Marketplace Gift Shop",
-        "Marketplace Handicraft Market",
-        "Marketplace Flower Shop",
-        "Marketplace Craft Store"
-      ],
-      "options": [
-        "Gift Shop",
-        "Handicraft Market",
-        "Flower Shop",
-        "Craft Store"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The right answer is the place whose main job is to help people pick up small gifts for coworkers back home.",
-      "explanation": "The clearest match is Gift Shop, since that's exactly its purpose: to pick up small gifts for coworkers back home.",
-      "id": "td_l98_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would you know a good place where I could try a proper multi-course tasting menu?",
-      "itinerary": [
-        "Gourmet Food Hall",
-        "Gourmet Rooftop Restaurant",
-        "Gourmet Buffet Hall",
-        "Gourmet Restaurant"
-      ],
-      "options": [
-        "Food Hall",
-        "Rooftop Restaurant",
-        "Buffet Hall",
-        "Restaurant"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Read the request closely: the key detail is that this person needs to try a proper multi-course tasting menu.",
-      "explanation": "This matches because Restaurant is the standard place to try a proper multi-course tasting menu.",
-      "id": "td_l98_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "This might sound like an odd question, but where would I go to visit the botanical gardens before it closes?",
-      "itinerary": [
-        "Scholars' Botanical Garden",
-        "Scholars' Art Museum",
-        "Scholars' Sculpture Garden",
-        "Scholars' History Museum"
-      ],
-      "options": [
-        "Botanical Garden",
-        "Art Museum",
-        "Sculpture Garden",
-        "History Museum"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The other three options sound plausible, but only one is made for this: to visit the botanical gardens before it closes.",
-      "explanation": "Since the traveler wants to visit the botanical gardens before it closes, Botanical Garden is the logical destination.",
-      "id": "td_l99_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I'm trying to squeeze in time to walk the floor of the industry expo before dinner.",
-      "itinerary": [
-        "Corporate Convention Center",
-        "Corporate Trade Show Hall",
-        "Corporate Seminar Hall",
-        "Corporate Exhibition Booth"
-      ],
-      "options": [
-        "Convention Center",
-        "Trade Show Hall",
-        "Seminar Hall",
-        "Exhibition Booth"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone walk the floor of the industry expo.",
-      "explanation": "Trade Show Hall is the best fit — it exists specifically to help people walk the floor of the industry expo.",
-      "id": "td_l99_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Someone recommended I book a multi-day guided trip while I'm here — where would that be?",
-      "itinerary": [
-        "Wanderer's Tour Agency",
-        "Wanderer's Car Rental Office",
-        "Wanderer's Tourist Information Center",
-        "Wanderer's Travel Agency"
-      ],
-      "options": [
-        "Tour Agency",
-        "Car Rental Office",
-        "Tourist Information Center",
-        "Travel Agency"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Consider the precise nature of the request, not just its general category, to work out where to book a multi-day guided trip.",
-      "explanation": "Travel Agency exists specifically for this — it's the place to book a multi-day guided trip.",
-      "id": "td_l99_q3"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I've got some free time and thought I'd get some better photos of the coastline from above.",
-      "itinerary": [
-        "Digital Camera Rental Shop",
-        "Digital Drone Rental Counter",
-        "Digital 3D Printing Studio",
-        "Digital Tech Expo Hall"
-      ],
-      "options": [
-        "Camera Rental Shop",
-        "Drone Rental Counter",
-        "3D Printing Studio",
-        "Tech Expo Hall"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Narrow it down by asking where, specifically, people go to get some better photos of the coastline from above.",
-      "explanation": "When someone needs to get some better photos of the coastline from above, Drone Rental Counter is the natural choice.",
-      "id": "td_l100_q1"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "I don't suppose there's somewhere around here to finally get some real rest this week?",
-      "itinerary": [
-        "Wellness Acupuncture Clinic",
-        "Wellness Wellness Spa",
-        "Wellness Wellness Retreat",
-        "Wellness Massage Therapy Center"
-      ],
-      "options": [
-        "Acupuncture Clinic",
-        "Wellness Spa",
-        "Wellness Retreat",
-        "Massage Therapy Center"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Trust the specific wording of the request when deciding where someone would go to finally get some real rest this week.",
-      "explanation": "Travelers head to the Wellness Retreat whenever they need to finally get some real rest this week.",
-      "id": "td_l100_q2"
-    },
-    {
-      "instruction": "Match the destination to the traveler's request.",
-      "subtype": "travelDesk",
-      "interactionType": "match",
-      "prompt": "Would you know a good place where I could see some contemporary local art?",
-      "itinerary": [
-        "Spotlight Comedy Club",
-        "Spotlight Theater",
-        "Spotlight Art Gallery",
-        "Spotlight Cinema"
-      ],
-      "options": [
-        "Comedy Club",
-        "Theater",
-        "Art Gallery",
-        "Cinema"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Some options belong to the same general category, but only one is the exact place to see some contemporary local art.",
-      "explanation": "Art Gallery makes sense here because that's precisely where people go to see some contemporary local art.",
-      "id": "td_l100_q3"
-    }
-  ]
+    "gameType": "travelDesk",
+    "batchIndex": 10,
+    "levels": "91-100",
+    "quests": [
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "This might sound like an odd question, but where would I go to get locked out of a room sorted out?",
+            "itinerary": [
+                "Neighborhood Key Shop",
+                "Neighborhood Notary Office",
+                "Neighborhood Locksmith",
+                "Neighborhood Tailor Shop"
+            ],
+            "options": [
+                "Key Shop",
+                "Notary Office",
+                "Locksmith",
+                "Tailor Shop"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Narrow it down by asking where, specifically, people go to get locked out of a room sorted out.",
+            "explanation": "Locksmith fits perfectly here, as it's set up for people who need to get locked out of a room sorted out.",
+            "id": "td_l91_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm trying to squeeze in time to keep the toddler entertained for an hour before dinner.",
+            "itinerary": [
+                "Family Trampoline Park",
+                "Family Playroom",
+                "Family Babysitting Agency",
+                "Family Kids' Club"
+            ],
+            "options": [
+                "Trampoline Park",
+                "Playroom",
+                "Babysitting Agency",
+                "Kids' Club"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to keep the toddler entertained for an hour.",
+            "explanation": "Travelers head to the Kids' Club whenever they need to keep the toddler entertained for an hour.",
+            "id": "td_l91_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Someone recommended I find a rare vintage item while I'm here — where would that be?",
+            "itinerary": [
+                "Marketplace Flea Market",
+                "Marketplace Ceramics Shop",
+                "Marketplace Antique Shop",
+                "Marketplace Handicraft Market"
+            ],
+            "options": [
+                "Flea Market",
+                "Ceramics Shop",
+                "Antique Shop",
+                "Handicraft Market"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Some options belong to the same general category, but only one is the exact place to find a rare vintage item.",
+            "explanation": "This matches because Antique Shop is the standard place to find a rare vintage item.",
+            "id": "td_l91_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've got some free time and thought I'd find good coffee beans to bring home.",
+            "itinerary": [
+                "Gourmet Coffee Roastery",
+                "Gourmet Cafe",
+                "Gourmet Tea House",
+                "Gourmet Spice Market"
+            ],
+            "options": [
+                "Coffee Roastery",
+                "Cafe",
+                "Tea House",
+                "Spice Market"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Ask yourself which of the four options is built for one specific purpose: to find good coffee beans to bring home.",
+            "explanation": "The clearest match is Coffee Roastery, since that's exactly its purpose: to find good coffee beans to bring home.",
+            "id": "td_l92_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I don't suppose there's somewhere around here to try writing in the local script?",
+            "itinerary": [
+                "Scholars' Pottery Workshop",
+                "Scholars' Textile Weaving Workshop",
+                "Scholars' Traditional Music Workshop",
+                "Scholars' Calligraphy Workshop"
+            ],
+            "options": [
+                "Pottery Workshop",
+                "Textile Weaving Workshop",
+                "Traditional Music Workshop",
+                "Calligraphy Workshop"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Picture exactly where a traveler would go to try writing in the local script.",
+            "explanation": "Calligraphy Workshop is the best fit — it exists specifically to help people try writing in the local script.",
+            "id": "td_l92_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would you know a good place where I could catch up on emails before a flight?",
+            "itinerary": [
+                "Corporate Coworking Space",
+                "Corporate Airport Business Lounge",
+                "Corporate Business Center",
+                "Corporate Executive Lounge"
+            ],
+            "options": [
+                "Coworking Space",
+                "Airport Business Lounge",
+                "Business Center",
+                "Executive Lounge"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Focus on the verb in the request: the traveler needs to catch up on emails before a flight.",
+            "explanation": "Airport Business Lounge makes sense here because that's precisely where people go to catch up on emails before a flight.",
+            "id": "td_l92_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "This might sound like an odd question, but where would I go to hail a cab quickly with heavy bags?",
+            "itinerary": [
+                "Wanderer's Car Rental Office",
+                "Wanderer's Metro Station",
+                "Wanderer's Bus Terminal",
+                "Wanderer's Taxi Stand"
+            ],
+            "options": [
+                "Car Rental Office",
+                "Metro Station",
+                "Bus Terminal",
+                "Taxi Stand"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "The other three options sound plausible, but only one is made for this: to hail a cab quickly with heavy bags.",
+            "explanation": "Of the four options, only Taxi Stand is designed to let someone hail a cab quickly with heavy bags.",
+            "id": "td_l93_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm trying to squeeze in time to try the latest virtual reality game before dinner.",
+            "itinerary": [
+                "Digital Tech Expo Hall",
+                "Digital Gaming Lounge",
+                "Digital Media Streaming Lounge",
+                "Digital VR Experience Center"
+            ],
+            "options": [
+                "Tech Expo Hall",
+                "Gaming Lounge",
+                "Media Streaming Lounge",
+                "VR Experience Center"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone try the latest virtual reality game.",
+            "explanation": "The request points directly to the VR Experience Center, since that's where you'd try the latest virtual reality game.",
+            "id": "td_l93_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Someone recommended I get a sunglasses prescription checked while I'm here — where would that be?",
+            "itinerary": [
+                "Wellness Eye Clinic",
+                "Wellness Hearing Clinic",
+                "Wellness Radiology Center",
+                "Wellness Hospital"
+            ],
+            "options": [
+                "Eye Clinic",
+                "Hearing Clinic",
+                "Radiology Center",
+                "Hospital"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a sunglasses prescription checked.",
+            "explanation": "When someone needs to get a sunglasses prescription checked, Eye Clinic is the natural choice.",
+            "id": "td_l93_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've got some free time and thought I'd catch a full weekend music lineup.",
+            "itinerary": [
+                "Spotlight Drive-In Theater",
+                "Spotlight Concert Hall",
+                "Spotlight Music Festival Grounds",
+                "Spotlight Jazz Club"
+            ],
+            "options": [
+                "Drive-In Theater",
+                "Concert Hall",
+                "Music Festival Grounds",
+                "Jazz Club"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Narrow it down by asking where, specifically, people go to catch a full weekend music lineup.",
+            "explanation": "Music Festival Grounds fits perfectly here, as it's set up for people who need to catch a full weekend music lineup.",
+            "id": "td_l94_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I don't suppose there's somewhere around here to get a stubborn stain out of a jacket?",
+            "itinerary": [
+                "Neighborhood Laundromat",
+                "Neighborhood Hair Salon",
+                "Neighborhood Dry Cleaner",
+                "Neighborhood Tailor Shop"
+            ],
+            "options": [
+                "Laundromat",
+                "Hair Salon",
+                "Dry Cleaner",
+                "Tailor Shop"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to get a stubborn stain out of a jacket.",
+            "explanation": "Since the traveler wants to get a stubborn stain out of a jacket, Dry Cleaner is the logical destination.",
+            "id": "td_l94_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would you know a good place where I could borrow some baby gear for the week?",
+            "itinerary": [
+                "Family Kids' Club",
+                "Family Stroller Rental Counter",
+                "Family Baby Supplies Store",
+                "Family Playroom"
+            ],
+            "options": [
+                "Kids' Club",
+                "Stroller Rental Counter",
+                "Baby Supplies Store",
+                "Playroom"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Some options belong to the same general category, but only one is the exact place to borrow some baby gear for the week.",
+            "explanation": "Baby Supplies Store is correct because that's exactly where travelers go to borrow some baby gear for the week.",
+            "id": "td_l94_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "This might sound like an odd question, but where would I go to buy a scarf made from local silk?",
+            "itinerary": [
+                "Marketplace Leather Goods Shop",
+                "Marketplace Perfume Shop",
+                "Marketplace Boutique",
+                "Marketplace Textile Shop"
+            ],
+            "options": [
+                "Leather Goods Shop",
+                "Perfume Shop",
+                "Boutique",
+                "Textile Shop"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Ask yourself which of the four options is built for one specific purpose: to buy a scarf made from local silk.",
+            "explanation": "The clearest match is Textile Shop, since that's exactly its purpose: to buy a scarf made from local silk.",
+            "id": "td_l95_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm trying to squeeze in time to spend an afternoon tasting local wines before dinner.",
+            "itinerary": [
+                "Gourmet Vineyard Tour",
+                "Gourmet Wine Cellar",
+                "Gourmet Rooftop Restaurant",
+                "Gourmet Brewery"
+            ],
+            "options": [
+                "Vineyard Tour",
+                "Wine Cellar",
+                "Rooftop Restaurant",
+                "Brewery"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Think about which kind of place specializes in helping people spend an afternoon tasting local wines.",
+            "explanation": "Vineyard Tour exists specifically for this — it's the place to spend an afternoon tasting local wines.",
+            "id": "td_l95_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Someone recommended I see the night sky through a real telescope while I'm here — where would that be?",
+            "itinerary": [
+                "Scholars' Science Museum",
+                "Scholars' Natural History Museum",
+                "Scholars' Observatory",
+                "Scholars' Botanical Garden"
+            ],
+            "options": [
+                "Science Museum",
+                "Natural History Museum",
+                "Observatory",
+                "Botanical Garden"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Picture exactly where a traveler would go to see the night sky through a real telescope.",
+            "explanation": "This matches because Observatory is the standard place to see the night sky through a real telescope.",
+            "id": "td_l95_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've got some free time and thought I'd register for the morning keynote session.",
+            "itinerary": [
+                "Corporate Registration Desk",
+                "Corporate Seminar Hall",
+                "Corporate Trade Show Hall",
+                "Corporate Convention Center"
+            ],
+            "options": [
+                "Registration Desk",
+                "Seminar Hall",
+                "Trade Show Hall",
+                "Convention Center"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The other three options sound plausible, but only one is made for this: to register for the morning keynote session.",
+            "explanation": "Registration Desk makes sense here because that's precisely where people go to register for the morning keynote session.",
+            "id": "td_l96_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I don't suppose there's somewhere around here to pick up a city guide and free map?",
+            "itinerary": [
+                "Wanderer's Embassy",
+                "Wanderer's Travel Agency",
+                "Wanderer's Tourist Information Center",
+                "Wanderer's Tour Agency"
+            ],
+            "options": [
+                "Embassy",
+                "Travel Agency",
+                "Tourist Information Center",
+                "Tour Agency"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone pick up a city guide and free map.",
+            "explanation": "Tourist Information Center is the best fit — it exists specifically to help people pick up a city guide and free map.",
+            "id": "td_l96_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would you know a good place where I could get a keepsake figurine printed of the skyline?",
+            "itinerary": [
+                "Digital 3D Printing Studio",
+                "Digital Gadget Store",
+                "Digital Drone Rental Counter",
+                "Digital Photo Printing Kiosk"
+            ],
+            "options": [
+                "3D Printing Studio",
+                "Gadget Store",
+                "Drone Rental Counter",
+                "Photo Printing Kiosk"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to get a keepsake figurine printed of the skyline.",
+            "explanation": "Travelers head to the 3D Printing Studio whenever they need to get a keepsake figurine printed of the skyline.",
+            "id": "td_l96_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "This might sound like an odd question, but where would I go to try a traditional wellness treatment?",
+            "itinerary": [
+                "Wellness Wellness Spa",
+                "Wellness Acupuncture Clinic",
+                "Wellness Wellness Retreat",
+                "Wellness Massage Therapy Center"
+            ],
+            "options": [
+                "Wellness Spa",
+                "Acupuncture Clinic",
+                "Wellness Retreat",
+                "Massage Therapy Center"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Narrow it down by asking where, specifically, people go to try a traditional wellness treatment.",
+            "explanation": "Acupuncture Clinic fits perfectly here, as it's set up for people who need to try a traditional wellness treatment.",
+            "id": "td_l97_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm trying to squeeze in time to try a few of the big rides before dinner.",
+            "itinerary": [
+                "Spotlight Water Park",
+                "Spotlight Wildlife Safari Park",
+                "Spotlight Amusement Park",
+                "Spotlight Arcade"
+            ],
+            "options": [
+                "Water Park",
+                "Wildlife Safari Park",
+                "Amusement Park",
+                "Arcade"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to try a few of the big rides.",
+            "explanation": "Of the four options, only Amusement Park is designed to let someone try a few of the big rides.",
+            "id": "td_l97_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Someone recommended I ask about registering as a new resident while I'm here — where would that be?",
+            "itinerary": [
+                "Neighborhood City Hall",
+                "Neighborhood Community Center",
+                "Neighborhood Lost-and-Found Office",
+                "Neighborhood Notary Office"
+            ],
+            "options": [
+                "City Hall",
+                "Community Center",
+                "Lost-and-Found Office",
+                "Notary Office"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "Some options belong to the same general category, but only one is the exact place to ask about registering as a new resident.",
+            "explanation": "City Hall is correct because that's exactly where travelers go to ask about registering as a new resident.",
+            "id": "td_l97_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've got some free time and thought I'd let the little ones burn off some energy.",
+            "itinerary": [
+                "Family Playground",
+                "Family Trampoline Park",
+                "Family Splash Pad",
+                "Family Puppet Show Theater"
+            ],
+            "options": [
+                "Playground",
+                "Trampoline Park",
+                "Splash Pad",
+                "Puppet Show Theater"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Look past any similar-sounding options — only one place truly lets you let the little ones burn off some energy.",
+            "explanation": "The request points directly to the Trampoline Park, since that's where you'd let the little ones burn off some energy.",
+            "id": "td_l98_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I don't suppose there's somewhere around here to pick up small gifts for coworkers back home?",
+            "itinerary": [
+                "Marketplace Gift Shop",
+                "Marketplace Handicraft Market",
+                "Marketplace Flower Shop",
+                "Marketplace Craft Store"
+            ],
+            "options": [
+                "Gift Shop",
+                "Handicraft Market",
+                "Flower Shop",
+                "Craft Store"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The right answer is the place whose main job is to help people pick up small gifts for coworkers back home.",
+            "explanation": "The clearest match is Gift Shop, since that's exactly its purpose: to pick up small gifts for coworkers back home.",
+            "id": "td_l98_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would you know a good place where I could try a proper multi-course tasting menu?",
+            "itinerary": [
+                "Gourmet Food Hall",
+                "Gourmet Rooftop Restaurant",
+                "Gourmet Buffet Hall",
+                "Gourmet Restaurant"
+            ],
+            "options": [
+                "Food Hall",
+                "Rooftop Restaurant",
+                "Buffet Hall",
+                "Restaurant"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Read the request closely: the key detail is that this person needs to try a proper multi-course tasting menu.",
+            "explanation": "This matches because Restaurant is the standard place to try a proper multi-course tasting menu.",
+            "id": "td_l98_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "This might sound like an odd question, but where would I go to visit the botanical gardens before it closes?",
+            "itinerary": [
+                "Scholars' Botanical Garden",
+                "Scholars' Art Museum",
+                "Scholars' Sculpture Garden",
+                "Scholars' History Museum"
+            ],
+            "options": [
+                "Botanical Garden",
+                "Art Museum",
+                "Sculpture Garden",
+                "History Museum"
+            ],
+            "correctAnswerIndex": 0,
+            "hint": "The other three options sound plausible, but only one is made for this: to visit the botanical gardens before it closes.",
+            "explanation": "Since the traveler wants to visit the botanical gardens before it closes, Botanical Garden is the logical destination.",
+            "id": "td_l99_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I'm trying to squeeze in time to walk the floor of the industry expo before dinner.",
+            "itinerary": [
+                "Corporate Convention Center",
+                "Corporate Trade Show Hall",
+                "Corporate Seminar Hall",
+                "Corporate Exhibition Booth"
+            ],
+            "options": [
+                "Convention Center",
+                "Trade Show Hall",
+                "Seminar Hall",
+                "Exhibition Booth"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Watch for choices that sound related but serve a slightly different purpose than helping someone walk the floor of the industry expo.",
+            "explanation": "Trade Show Hall is the best fit — it exists specifically to help people walk the floor of the industry expo.",
+            "id": "td_l99_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Someone recommended I book a multi-day guided trip while I'm here — where would that be?",
+            "itinerary": [
+                "Wanderer's Tour Agency",
+                "Wanderer's Car Rental Office",
+                "Wanderer's Tourist Information Center",
+                "Wanderer's Travel Agency"
+            ],
+            "options": [
+                "Tour Agency",
+                "Car Rental Office",
+                "Tourist Information Center",
+                "Travel Agency"
+            ],
+            "correctAnswerIndex": 3,
+            "hint": "Consider the precise nature of the request, not just its general category, to work out where to book a multi-day guided trip.",
+            "explanation": "Travel Agency exists specifically for this — it's the place to book a multi-day guided trip.",
+            "id": "td_l99_q3"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I've got some free time and thought I'd get some better photos of the coastline from above.",
+            "itinerary": [
+                "Digital Camera Rental Shop",
+                "Digital Drone Rental Counter",
+                "Digital 3D Printing Studio",
+                "Digital Tech Expo Hall"
+            ],
+            "options": [
+                "Camera Rental Shop",
+                "Drone Rental Counter",
+                "3D Printing Studio",
+                "Tech Expo Hall"
+            ],
+            "correctAnswerIndex": 1,
+            "hint": "Narrow it down by asking where, specifically, people go to get some better photos of the coastline from above.",
+            "explanation": "When someone needs to get some better photos of the coastline from above, Drone Rental Counter is the natural choice.",
+            "id": "td_l100_q1"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "I don't suppose there's somewhere around here to finally get some real rest this week?",
+            "itinerary": [
+                "Wellness Acupuncture Clinic",
+                "Wellness Wellness Spa",
+                "Wellness Wellness Retreat",
+                "Wellness Massage Therapy Center"
+            ],
+            "options": [
+                "Acupuncture Clinic",
+                "Wellness Spa",
+                "Wellness Retreat",
+                "Massage Therapy Center"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Trust the specific wording of the request when deciding where someone would go to finally get some real rest this week.",
+            "explanation": "Travelers head to the Wellness Retreat whenever they need to finally get some real rest this week.",
+            "id": "td_l100_q2"
+        },
+        {
+            "instruction": "Match the destination to the traveler's request.",
+            "subtype": "travelDesk",
+            "interactionType": "dialogue",
+            "prompt": "Would you know a good place where I could see some contemporary local art?",
+            "itinerary": [
+                "Spotlight Comedy Club",
+                "Spotlight Theater",
+                "Spotlight Art Gallery",
+                "Spotlight Cinema"
+            ],
+            "options": [
+                "Comedy Club",
+                "Theater",
+                "Art Gallery",
+                "Cinema"
+            ],
+            "correctAnswerIndex": 2,
+            "hint": "Some options belong to the same general category, but only one is the exact place to see some contemporary local art.",
+            "explanation": "Art Gallery makes sense here because that's precisely where people go to see some contemporary local art.",
+            "id": "td_l100_q3"
+        }
+    ]
 }

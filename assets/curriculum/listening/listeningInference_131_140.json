@@ -5,7 +5,7 @@
     "quests": [
         {
             "id": "LIS_LISTENINGINFERENCE_L131_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'too thorough for our purposes' add to the praise of thoroughness?",
             "explanation": "'Thorough' = praise. 'Perhaps too thorough for our purposes' = the thoroughness exceeds what was needed in this context. This is a nuanced evaluation: the quality (thoroughness) is real, but it was applied in excess for the specific need. It's implicit criticism through praise taken too far.",
@@ -23,7 +23,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L131_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'as anyone who has worked with him knows' imply about his strong opinions?",
             "explanation": "The aside 'as anyone who has worked with him knows' signals this is well-known - not a private observation but a shared experience. Strong opinions + well-known quality = he's persistently opinionated, which can challenge collaboration. It's an indirect acknowledgement of a difficult trait without direct criticism.",
@@ -41,7 +41,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L131_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'bold in concept / less so in execution' contrast?",
             "explanation": "'Bold in concept' = ambitious, daring idea (positive). 'Less so in execution' = the implementation didn't live up to the ambition (negative qualification). This is a classic praise-with-reservation structure: the vision was strong, the delivery was underwhelming. 'Less so' is an understated comparative.",
@@ -59,7 +59,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L132_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the 'while... describes it as' structure show about the two groups?",
             "explanation": "Two identical changes, two opposite interpretations: management (efficiency gain) vs. employees (burden increase). 'While' creates the contrast. Neither view is stated as correct - both are presented as valid perspectives. This is a key insight: the same event can be genuinely experienced differently by different stakeholders.",
@@ -77,7 +77,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L132_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the parallel structure 'critics call X / supporters call Y' reveal?",
             "explanation": "The same quality (the same action or decision) is described as 'reckless' (negative) by critics and 'bold' (positive) by supporters. Same reality, diametrically opposed framings. This is a powerful demonstration that language choices carry evaluative weight - perspective shapes description.",
@@ -95,7 +95,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L132_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What do 'some', 'others', and 'most' together tell us about the response distribution?",
             "explanation": "Three groups: some (welcome it - minority positive), others (suspicious - minority negative), most (ignore it - majority indifferent). The majority response is indifference ('ignored by most'). This is a characterisation of a reform that hasn't captured widespread interest or enthusiasm despite provoking some reactions at the margins.",
@@ -113,7 +113,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L133_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'while acknowledging' plus 'ultimately decided to proceed' create?",
             "explanation": "'While acknowledging the risks' = they knew the risks (no ignorance). 'Ultimately decided to proceed' = despite knowing them, they went ahead. This is a conscious risk-acceptance decision - they weighed risk against benefit and chose to continue. The word 'ultimately' suggests deliberation before decision.",
@@ -131,7 +131,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L133_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'even granting' plus a contrasting outcome communicate?",
             "explanation": "'Even granting' = hypothetically accepting the best possible interpretation. 'The outcome was damaging' = the result was bad regardless. The structure: even if we accept the kindest interpretation, the outcome was still bad. This is an argument that consequences matter regardless of intent.",
@@ -149,7 +149,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L133_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'admittedly' plus 'but benefits far outweigh' communicate?",
             "explanation": "'Admittedly' = conceding a point honestly. 'Far outweigh' = the benefits are significantly greater than the costs. Together: the speaker acknowledges the negatives (intellectual honesty) but maintains that the positives dominate. This is a transparent, honest case for something despite known downsides.",
@@ -167,7 +167,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'had the warning been heeded' (third conditional) imply about what actually happened?",
             "explanation": "Third conditional (had + past perfect + would have) describes an unreal past. 'Had it been heeded' = implies it WASN'T heeded. 'Might have been avoided' = the crisis happened. Together: the warning wasn't followed, which likely contributed to the crisis. This is hypothetical retrospection about what could have prevented something.",
@@ -185,7 +185,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What type of statement is 'should this trend continue'?",
             "explanation": "'Should this trend continue' = if this trend continues. 'Should' here is a formal conditional. 'We can expect significant consequences' = the predicted result of the condition. This is contingent prediction: outcome X follows if condition Y persists. It's a warning about a possible future.",
@@ -203,7 +203,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L134_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'without X, Y would have happened' communicate about X's role?",
             "explanation": "Counterfactual: without X (support team intervention) → failure. Therefore: the support team's intervention caused success (or prevented failure). 'Almost certainly' = very high confidence in the counterfactual. The support team was pivotal - without them, the outcome would have been negative.",
@@ -221,7 +221,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L135_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'have a point - but only up to a point' communicate?",
             "explanation": "'Have a point' = their objection has some validity. 'But only up to a point' = the validity is limited. Together: partial concession without full agreement. The speaker acknowledges the opposition has something valid to say but that the objection only goes so far. This is a sophisticated balanced position.",
@@ -239,7 +239,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L135_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'from their perspective, given what they knew at the time' acknowledge?",
             "explanation": "This is contextual sympathy: the decision is judged within its information context, not with hindsight. 'From their perspective' = not claiming it was right, just that it seemed right to them. 'Given what they knew' = information was limited. This is a fair, non-judgmental historical analysis.",
@@ -257,7 +257,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L135_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does sympathising with a dilemma but not endorsing the solution separate?",
             "explanation": "Two distinct positions: (1) understanding/sympathising with the difficulty faced (empathy). (2) Not endorsing what was chosen as the solution (critical evaluation). You can understand why someone found a situation hard without approving of how they handled it. This separates emotional sympathy from moral endorsement.",
@@ -275,7 +275,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why would an author explicitly state what their paper does NOT examine?",
             "explanation": "Explicitly stating what is NOT covered = defining scope limitations. Authors do this to manage reader expectations and to defend against accusations of incompleteness. By stating it explicitly, the author signals awareness of the gap while making clear it's a deliberate choice, not an oversight.",
@@ -293,7 +293,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'not the place for a full discussion, but worth noting' signal?",
             "explanation": "This phrase introduces a brief, parenthetical point. 'Not the place for a full discussion' = no depth here. 'Worth noting' = but this point is important enough to mention briefly. The listener should expect: a concise observation, not a thorough treatment. This is discourse scope management.",
@@ -311,7 +311,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L136_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What is the function of 'I shall return to this point later'?",
             "explanation": "'Shall return to' = forward reference - signalling that this topic will come back. It tells the listener: (1) this point matters enough to revisit, (2) it won't be fully treated here, (3) pay attention when it comes up again. This is textual/speech navigation - helping listeners track the structure.",
@@ -329,7 +329,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L137_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'I'm sure you know what you're doing, but' communicate?",
             "explanation": "'I'm sure you know' = apparent expression of confidence (but undermined by 'but'). 'Just be careful' = the real message. The 'but' negates or qualifies what came before. Together: I'm not fully confident (despite saying so) and I'm worried enough to warn you. This is indirect concern disguised as confidence.",
@@ -347,7 +347,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L137_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What experience is the speaker drawing on to make this observation?",
             "explanation": "'Things have a way of' = they tend to, by experience. 'Getting complicated when money's involved' = financial stakes increase complexity and conflict. This is a general warning based on observed pattern: introduce money into relationships or decisions and complications often follow. It's implicit advice to be cautious.",
@@ -365,7 +365,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L137_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'tread carefully' mean idiomatically?",
             "explanation": "'Tread carefully' = proceed with great caution, avoid making wrong moves. 'If I were in your position' = hypothetical empathy - the speaker is imagining themselves in your situation. Together: I think your situation requires extreme care - be very cautious. This is an implicit warning about the difficulty or risk of the situation.",
@@ -383,7 +383,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L138_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why does independence from financial ties matter for credibility?",
             "explanation": "Independence = no financial incentive to produce favourable findings. Conflicts of interest (financial ties) can consciously or unconsciously bias research. An independent body has no such incentive - their conclusions are more likely to reflect the evidence than any financial pressure. Independence increases credibility.",
@@ -401,7 +401,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L138_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "How does a track record of inaccuracy affect a current prediction's credibility?",
             "explanation": "If a source was previously inaccurate, their current prediction should be treated with caution - their track record undermines their credibility. Past performance is relevant to assessing future reliability. This is an inference about source credibility from historical accuracy.",
@@ -419,7 +419,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L138_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "Why is the absence of sources significant despite an authoritative delivery?",
             "explanation": "Authority of delivery ≠ accuracy of content. Without cited sources, there's no way to verify the claims - we must take his word. A careful listener distinguishes between persuasive presentation style and substantive evidence. Absence of sources doesn't mean he's wrong, but it does limit verifiability.",
@@ -437,7 +437,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L139_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does the idiom 'tight-lipped' mean?",
             "explanation": "'Tight-lipped' = saying very little, not revealing information. The image: lips pressed tightly closed (not talking). Applied to a spokesperson: they gave minimal information, possibly declining to discuss certain things. This is often used in news reports when officials won't comment.",
@@ -455,7 +455,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L139_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'measured tones' describe about her speech delivery?",
             "explanation": "'Measured' = carefully controlled, not excessive or reactive. 'Measured tones' = a calm, controlled, thoughtful delivery - choosing words carefully, not raising voice. This is the opposite of emotional or reactive speech. It suggests professionalism and composure when discussing difficult topics.",
@@ -473,7 +473,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L139_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'guarded' mean when describing how someone responds?",
             "explanation": "'Guarded' = careful, cautious, revealing limited information. Unlike 'open' or 'transparent', being guarded means protecting information - choosing words to avoid disclosing more than intended. He spoke but was strategic and limited in what he revealed. It's between complete silence and full openness.",
@@ -491,7 +491,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L140_Q1",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does pouring everything into something then finding what follows difficult imply?",
             "explanation": "Total investment in a role creates deep emotional attachment. When that role ends, the void is significant - there's nothing left having given everything. 'Perhaps explains' = the investment in the past explains the difficulty of the transition. Full commitment can make endings harder to process.",
@@ -509,7 +509,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L140_Q2",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'mellowed' mean as a personality descriptor?",
             "explanation": "'Mellowed' = become less intense, less harsh, more relaxed and gentle with age or experience. 'Considerably' = significantly. 'Since his early days' = the change happened over time in the industry. Early = intense/harsh; now = mellow/softer. This is a positive character development description.",
@@ -527,7 +527,7 @@
         },
         {
             "id": "LIS_LISTENINGINFERENCE_L140_Q3",
-            "interactionType": "Inference Engine",
+            "interactionType": "choice",
             "instruction": "Listen to the audio and answer the question.",
             "hint": "What does 'even when fairness cost her politically' add to being scrupulously fair?",
             "explanation": "'Scrupulously fair' = meticulously, uncompromisingly fair. 'Even when it cost her politically' = fairness came at personal/political cost. Together: she maintained her standard of fairness even when it was disadvantageous to do so. This shows integrity over self-interest - a notably strong moral commitment.",

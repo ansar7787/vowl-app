@@ -1,667 +1,667 @@
 {
-  "gameType": "sentenceOrderReading",
-  "batchIndex": 11,
-  "levels": "101-110",
-  "quests": [
-    {
-      "id": "RDG_SENTENCEORDERREADING_L101_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Cross-department projects that once took months began moving considerably faster.",
-        "Executives eventually approved a plan to reorganize teams around shared goals rather than separate functions.",
-        "Within a year, the reorganization was cited as a major factor in the company's improved performance.",
-        "Poor communication between departments had been quietly undermining the company's efficiency for years.",
-        "Employees needed several months to adapt to their unfamiliar new reporting structures."
-      ],
-      "correctOrder": [
-        3,
-        1,
-        4,
-        0,
-        2
-      ],
-      "hint": "An underlying problem is usually identified before leadership approves a structural change to address it.",
-      "explanation": "This paragraph develops a business case in logical order: the hidden problem, the structural decision, an adjustment period, the resulting benefit, and its broader recognition."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L101_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Some of these cells remain in the body long after the initial response fades.",
-        "If the real pathogen appears later, the immune system can respond far more quickly than before.",
-        "Specialized cells then create antibodies designed specifically to fight that pathogen.",
-        "A vaccine introduces a weakened or harmless piece of a pathogen into the body.",
-        "The immune system recognizes this piece as foreign and mounts a defensive response."
-      ],
-      "correctOrder": [
-        3,
-        4,
-        2,
-        0,
-        1
-      ],
-      "hint": "Look at how each sentence explains what happens right after the process described just before it.",
-      "explanation": "This paragraph explains a biological process step by step, where each stage in the immune response depends directly on the one before it."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L101_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Local business owners initially worried that reduced car access would hurt their sales.",
-        "Foot traffic and outdoor dining actually increased once the zone opened.",
-        "Traffic congestion and pollution had made the city center increasingly unpleasant for residents.",
-        "Many of the same business owners later became some of the plan's strongest supporters.",
-        "Planners proposed converting several central streets into a pedestrian-only zone."
-      ],
-      "correctOrder": [
-        2,
-        4,
-        0,
-        1,
-        3
-      ],
-      "hint": "An initial worry usually has to exist before it can later be proven wrong by real results.",
-      "explanation": "This paragraph follows an urban policy from problem to unexpected success: the original issue, the proposal, early resistance, the actual outcome, and the resulting shift in opinion."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L102_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "These systems initially struggled to distinguish between genuine interest and accidental clicks.",
-        "Engineers refined the algorithms using more detailed patterns of viewer behavior over time.",
-        "Streaming platforms began using algorithms to recommend content based on viewing history.",
-        "Some critics, however, warned that such systems could narrow rather than broaden viewers' tastes.",
-        "Recommendations gradually became noticeably more accurate for most users."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        1,
-        4,
-        3
-      ],
-      "hint": "A technical limitation usually has to be described before engineers can be shown fixing it.",
-      "explanation": "This paragraph traces a technology's development alongside its trade-offs: the original goal, an early flaw, refinement, improved accuracy, and a lingering concern raised by critics."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L102_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "That volunteer experience gradually revealed a genuine passion he hadn't expected to find.",
-        "Within two years, he had transitioned into a full-time role leading education programs.",
-        "After a decade in finance, Otieno began to feel disconnected from his daily work.",
-        "He eventually completed a certification program in nonprofit management.",
-        "He spent evenings volunteering for a local nonprofit focused on education."
-      ],
-      "correctOrder": [
-        2,
-        4,
-        0,
-        3,
-        1
-      ],
-      "hint": "An unexpected discovery usually comes before someone commits to formal retraining based on it.",
-      "explanation": "This paragraph follows a career transition unfolding gradually: dissatisfaction, an unrelated activity, an unexpected discovery, formal preparation, and the eventual career change."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L102_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Their published findings drew significant public and media attention.",
-        "A compromise version of the law ultimately passed with a longer transition period for businesses.",
-        "Lawmakers responded by proposing restrictions on single-use plastic packaging.",
-        "Marine researchers documented rising amounts of microplastic in coastal waters.",
-        "Manufacturers pushed back, citing concerns about production costs."
-      ],
-      "correctOrder": [
-        3,
-        0,
-        2,
-        4,
-        1
-      ],
-      "hint": "Evidence usually has to be published and gain attention before lawmakers respond with proposed action.",
-      "explanation": "This paragraph follows an environmental issue moving through public and political stages: the finding, attention it received, a policy response, pushback, and the eventual compromise."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L103_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Nutrition experts noticed the claim circulating and grew concerned about its reach.",
-        "The corrected information spread more slowly than the original claim had.",
-        "Several published a clearly written article explaining the actual scientific evidence.",
-        "Even so, surveys later showed public misunderstanding of the topic had measurably declined.",
-        "A misleading claim about a common food ingredient spread rapidly across social media."
-      ],
-      "correctOrder": [
-        4,
-        0,
-        2,
-        1,
-        3
-      ],
-      "hint": "A false claim usually has to spread first before experts are prompted to respond with correction.",
-      "explanation": "This paragraph follows misinformation being addressed: the claim, expert concern, the correction published, its slower spread, and the eventual improvement in public understanding."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L103_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Employees across the company's five offices rarely knew what other teams were working on.",
-        "The first issue received lukewarm engagement, with few employees reading past the headlines.",
-        "A communications manager proposed a monthly internal newsletter to share updates.",
-        "Readership climbed steadily, and the newsletter became a genuine source of company pride.",
-        "She began including short interviews and behind-the-scenes photos from different teams."
-      ],
-      "correctOrder": [
-        0,
-        2,
-        1,
-        4,
-        3
-      ],
-      "hint": "A first attempt at something new is often unpolished before specific improvements make it succeed.",
-      "explanation": "This paragraph follows an internal communication tool improving through iteration: the gap, the proposal, a weak launch, a creative fix, and the eventual success."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L103_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Health officials studied the barriers preventing people from seeking treatment.",
-        "Clinics extended their hours into evenings and weekends in response.",
-        "They discovered that inconvenient clinic hours were a major obstacle for working families.",
-        "Treatment rates in the region rose significantly within eighteen months.",
-        "Rates of a preventable illness had remained stubbornly high in one region for years."
-      ],
-      "correctOrder": [
-        4,
-        0,
-        2,
-        1,
-        3
-      ],
-      "hint": "Researching the actual barriers usually happens before officials can design an effective solution.",
-      "explanation": "This paragraph follows a public-health improvement built on evidence: the persistent problem, research into its cause, the discovery, the practical fix, and the measurable result."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L104_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Teachers required additional training to coordinate effectively with local businesses.",
-        "Employers increasingly reported that graduates lacked practical, hands-on skills.",
-        "A school district piloted a curriculum that combined academic study with workplace internships.",
-        "The district expanded the program to every high school within three years.",
-        "Students in the pilot program reported feeling far more prepared for future careers."
-      ],
-      "correctOrder": [
-        1,
-        2,
-        0,
-        4,
-        3
-      ],
-      "hint": "A gap reported by employers usually has to exist before an education system responds with reform.",
-      "explanation": "This paragraph follows an education reform from motivation to expansion: the reported gap, the pilot program, the necessary training, positive results, and the wider rollout."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L104_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "She learned that punctuality and formal greetings mattered more than she had expected.",
-        "During her first meetings, she still misjudged how directly to disagree with colleagues.",
-        "Before relocating for a two-year assignment, Julieta researched local business customs carefully.",
-        "By her final months there, she navigated meetings with genuine cultural fluency.",
-        "A local mentor gently explained the more indirect communication style typically preferred."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        1,
-        4,
-        3
-      ],
-      "hint": "A misjudgment usually happens before someone receives specific guidance correcting it.",
-      "explanation": "This paragraph follows cultural adaptation through real experience: preparation, initial learning, a misstep, corrective guidance, and eventual fluency."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L104_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Waiting even a decade to start investing can mean giving up a large share of that growth.",
-        "A small amount invested in one's twenties can grow substantially by retirement age.",
-        "Financial advisors often use this principle to encourage people to start saving as early as possible.",
-        "This happens because returns earned each year begin generating their own additional returns.",
-        "Many young savers underestimate how significantly time affects investment growth."
-      ],
-      "correctOrder": [
-        4,
-        1,
-        3,
-        0,
-        2
-      ],
-      "hint": "This paragraph explains a general concept, then works through the mechanism and its practical consequence.",
-      "explanation": "This paragraph builds an explanation logically: the general point, an example, the underlying mechanism, its consequence if delayed, and how professionals use this insight."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L105_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Leadership surveyed employees and found strong support for remaining fully remote.",
-        "A growing startup faced a choice between requiring office attendance or embracing fully remote work.",
-        "Some new hires initially struggled without the informal mentorship of an office environment.",
-        "The company invested heavily in asynchronous communication tools and clear documentation.",
-        "The company later introduced structured onboarding buddies to address exactly that gap."
-      ],
-      "correctOrder": [
-        1,
-        0,
-        3,
-        2,
-        4
-      ],
-      "hint": "A survey result usually has to be gathered before leadership commits to a major structural decision.",
-      "explanation": "This paragraph follows an organizational choice and its consequences: the decision point, the survey, the investment made, an emerging problem, and the targeted fix."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L105_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "This is why doctors caution against using antibiotics for infections they cannot actually treat.",
-        "Antibiotics work by killing bacteria or preventing them from reproducing.",
-        "Occasionally, a small number of bacteria survive treatment due to natural genetic variation.",
-        "Over time, repeated exposure to antibiotics can make resistant bacteria increasingly common.",
-        "These surviving bacteria can reproduce, passing on whatever trait helped them resist the drug."
-      ],
-      "correctOrder": [
-        1,
-        2,
-        4,
-        3,
-        0
-      ],
-      "hint": "Each sentence in this explanation builds on the biological outcome of the one before it.",
-      "explanation": "This paragraph explains a scientific process causally: how antibiotics work, an exception, its consequence, its accumulation over time, and the practical warning that follows."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L105_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Some shop owners worried that removing parking spaces would hurt their businesses.",
-        "A proposal to add protected bike lanes downtown divided residents into strongly opposing camps.",
-        "Sales data from the trial showed no meaningful drop, and the lanes were made permanent.",
-        "The city agreed to a one-year trial period with data collected throughout.",
-        "Cyclists argued the lanes were essential for both safety and reduced traffic."
-      ],
-      "correctOrder": [
-        1,
-        4,
-        0,
-        3,
-        2
-      ],
-      "hint": "Two opposing arguments are usually laid out before a compromise, like a trial period, is proposed.",
-      "explanation": "This paragraph follows a local policy dispute resolved with evidence: the proposal, one side's argument, the other side's concern, a compromise trial, and the data-based resolution."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L106_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Employee trust in the promotion process improved significantly according to internal surveys.",
-        "HR introduced a transparent framework linking promotions to specific, measurable achievements.",
-        "The framework was eventually adopted across every department in the company.",
-        "Some senior managers initially resisted losing their previous discretion over decisions.",
-        "Employees had long complained that promotions seemed to depend more on visibility than actual results."
-      ],
-      "correctOrder": [
-        4,
-        1,
-        3,
-        0,
-        2
-      ],
-      "hint": "A complaint about fairness usually has to exist before a new, more transparent system is introduced.",
-      "explanation": "This paragraph follows an organizational fairness reform: the complaint, the new framework, resistance from some managers, improved trust, and company-wide adoption."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L106_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Many parents still find those guidelines difficult to follow amid daily routines.",
-        "Early studies produced mixed and sometimes contradictory results.",
-        "Researchers began studying how increased screen time affected children's attention spans.",
-        "Later research with larger sample sizes identified more consistent, moderate effects.",
-        "Pediatric associations used these findings to issue updated screen-time guidelines."
-      ],
-      "correctOrder": [
-        2,
-        1,
-        3,
-        4,
-        0
-      ],
-      "hint": "Contradictory early findings usually have to appear before better, more consistent research replaces them.",
-      "explanation": "This paragraph follows scientific understanding developing over time: initial study, mixed results, improved research, official guidance, and the practical challenge that remains."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L106_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Construction disrupted daily life for residents throughout an entire summer season.",
-        "A small coastal town saw tourist numbers triple over just five years.",
-        "The improved infrastructure ultimately allowed the town to handle visitors comfortably again.",
-        "The town council approved funding to expand roads, water systems, and public transit.",
-        "Local infrastructure, designed for a much smaller population, began showing serious strain."
-      ],
-      "correctOrder": [
-        1,
-        4,
-        3,
-        0,
-        2
-      ],
-      "hint": "Strain on existing systems usually has to become visible before officials approve funding to fix it.",
-      "explanation": "This paragraph follows infrastructure adapting to unexpected growth: the surge, the resulting strain, the funded response, temporary disruption, and eventual relief."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L107_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "They launched a loyalty program offering points redeemable for future discounts.",
-        "A retail chain noticed that most of its revenue came from a small group of repeat customers.",
-        "Enrollment was disappointing until the company simplified the sign-up process to a single tap.",
-        "The company credited the program with a measurable rise in overall annual revenue.",
-        "Enrolled customers began visiting noticeably more often than before."
-      ],
-      "correctOrder": [
-        1,
-        0,
-        2,
-        4,
-        3
-      ],
-      "hint": "A discovery about existing customers usually comes before a company designs a program around it.",
-      "explanation": "This paragraph follows a business strategy refined through iteration: the insight, the initial program, a barrier discovered, the fix, and the measurable business result."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L107_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Average reported sleep duration among staff increased within just a few weeks.",
-        "Productivity metrics improved alongside the change, supporting the researchers' original findings.",
-        "Researchers tracked employees' sleep patterns alongside their daily work output.",
-        "Employees who consistently slept less than six hours showed measurably slower reaction times.",
-        "Their employer piloted a policy discouraging late-night emails to encourage better rest."
-      ],
-      "correctOrder": [
-        2,
-        3,
-        4,
-        0,
-        1
-      ],
-      "hint": "A pattern usually has to be observed through research before a company designs a policy around it.",
-      "explanation": "This paragraph follows workplace research leading to real change: the study, the finding, the policy response, the behavior change, and the confirming result."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L107_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Teachers reported the new system required significantly more time to grade fairly.",
-        "Students in the pilot showed more engagement with material beyond simple memorization.",
-        "The district is now weighing whether the benefits justify the added workload district-wide.",
-        "Critics have long argued that standardized tests fail to capture a student's full range of abilities.",
-        "One school district piloted a broader evaluation system including projects and presentations."
-      ],
-      "correctOrder": [
-        3,
-        4,
-        0,
-        1,
-        2
-      ],
-      "hint": "A critique usually exists before a school district experiments with an alternative approach.",
-      "explanation": "This paragraph follows an ongoing education debate through a real experiment: the critique, the pilot, its practical cost, an observed benefit, and the open question that remains."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L108_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Lenders use this number to judge the risk of approving a new loan.",
-        "A strong score can eventually qualify a borrower for significantly lower interest rates.",
-        "Consistently paying bills on time gradually raises the score instead.",
-        "Late payments and high credit card balances can lower the score noticeably.",
-        "A credit score summarizes how reliably a person has repaid borrowed money in the past."
-      ],
-      "correctOrder": [
-        4,
-        0,
-        3,
-        2,
-        1
-      ],
-      "hint": "This explanation moves from what the number represents to what actually changes it.",
-      "explanation": "This paragraph explains a financial concept logically: its definition and purpose, what lowers it, what raises it, and the practical benefit of a strong score."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L108_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "A few residents initially questioned whether public funds should support the project.",
-        "The city partnered with local artists to paint large, sanctioned murals throughout the area.",
-        "A stretch of underpasses in the city had become associated with graffiti and neglect.",
-        "Several other neighborhoods soon requested similar mural projects of their own.",
-        "Foot traffic through the once-avoided underpasses increased noticeably after completion."
-      ],
-      "correctOrder": [
-        2,
-        1,
-        0,
-        4,
-        3
-      ],
-      "hint": "A neglected area usually has to be described before a specific plan to improve it is introduced.",
-      "explanation": "This paragraph follows a public-art project's impact: the problem, the initiative, initial skepticism, the positive result, and its influence on other neighborhoods."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L108_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Appointment wait times for specialist care dropped significantly across the region.",
-        "Some older patients needed help from family members to navigate the new technology.",
-        "Residents in rural areas often traveled hours to see a specialist doctor.",
-        "Health officials are now studying whether the model could work for even more remote communities.",
-        "A regional hospital began offering consultations through secure video calls."
-      ],
-      "correctOrder": [
-        2,
-        4,
-        1,
-        0,
-        3
-      ],
-      "hint": "A problem with distance usually has to be described before a technological solution is introduced to address it.",
-      "explanation": "This paragraph follows a healthcare innovation's rollout: the original barrier, the new service, an adoption challenge, the measurable improvement, and future consideration."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L109_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "A trusted colleague encouraged her to keep a simple log of her accomplishments.",
-        "She began speaking up more confidently during high-level strategy meetings.",
-        "Her manager later cited that new confidence as a key reason for her next promotion.",
-        "Despite years of strong performance reviews, Delia privately doubted she deserved her senior role.",
-        "Reading back through months of entries revealed a pattern she had been ignoring."
-      ],
-      "correctOrder": [
-        3,
-        0,
-        4,
-        1,
-        2
-      ],
-      "hint": "Evidence usually has to be gathered and reviewed before it can change how someone sees themselves.",
-      "explanation": "This paragraph follows a gradual shift in self-perception: the doubt, a practical suggestion, a revealing pattern, changed behavior, and the professional result that followed."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L109_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "A conservation group began a long-term reforestation project on the exposed slopes.",
-        "The first seedlings struggled in the poor, eroded soil during the initial planting season.",
-        "Twenty years later, the mountainside supports a stable, self-sustaining forest again.",
-        "Decades of logging had left a mountainside dangerously prone to erosion and landslides.",
-        "Volunteers amended the soil and adjusted which native species they planted."
-      ],
-      "correctOrder": [
-        3,
-        0,
-        1,
-        4,
-        2
-      ],
-      "hint": "An initial failure with the poor soil usually has to be identified before volunteers adjust their approach.",
-      "explanation": "This paragraph follows an environmental restoration across decades: the original damage, the response, an early setback, the adjustment, and the long-term success."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L109_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Reporters spent weeks cross-checking the claim against public records and independent sources.",
-        "One key detail in the original tip turned out to be inaccurate upon closer examination.",
-        "A newsroom received an unverified but potentially significant tip about a local official.",
-        "Readers later praised the outlet for its careful, methodical approach to the story.",
-        "The published story was revised to reflect only what could be fully verified."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        1,
-        4,
-        3
-      ],
-      "hint": "Verification work usually happens before a story is actually published, not after.",
-      "explanation": "This paragraph follows responsible journalism in practice: the tip, the verification process, a correction along the way, the careful publication, and the resulting trust earned."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L110_Q1",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "A sudden factory closure abroad left production lines idle for several weeks.",
-        "Executives decided to establish relationships with two additional suppliers in different regions.",
-        "The company weathered a similar disruption the following year with barely any delay.",
-        "A manufacturer relied on a single overseas supplier for a critical component.",
-        "The transition required renegotiating contracts and testing new quality standards."
-      ],
-      "correctOrder": [
-        3,
-        0,
-        1,
-        4,
-        2
-      ],
-      "hint": "A disruption usually has to expose a weakness before a company changes its long-term strategy.",
-      "explanation": "This paragraph follows a business building resilience after a crisis: the vulnerability, the disruption, the strategic decision, the transition work, and the payoff during a later crisis."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L110_Q2",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "Vaccination programs aim to reach a high enough immunity threshold to achieve this effect.",
-        "Some individuals who cannot be vaccinated for medical reasons still benefit from this protection.",
-        "Public health officials therefore track vaccination rates closely across entire communities.",
-        "When enough individuals in a population become immune to a disease, its spread slows considerably.",
-        "This occurs because an infected person has fewer opportunities to encounter someone susceptible."
-      ],
-      "correctOrder": [
-        3,
-        4,
-        0,
-        1,
-        2
-      ],
-      "hint": "This paragraph explains a general effect, then works through why it happens and who benefits.",
-      "explanation": "This paragraph builds a public-health concept step by step: the effect, the mechanism behind it, how programs use it, an important consequence, and why officials monitor it."
-    },
-    {
-      "id": "RDG_SENTENCEORDERREADING_L110_Q3",
-      "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
-      "subtype": "sentenceOrderReading",
-      "interactionType": "Block Stack",
-      "shuffledSentences": [
-        "He grew visibly impatient until a local advisor explained the value placed on trust before business.",
-        "The eventual agreement proved stronger and more durable than any of his previous overseas deals.",
-        "His counterparts instead spent the first two meetings simply building a personal relationship.",
-        "He adjusted his approach, allowing more time for informal conversation in later meetings.",
-        "Assigned to lead negotiations in a new overseas market, Tobias expected talks to move quickly."
-      ],
-      "correctOrder": [
-        4,
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "An outside expectation usually has to clash with reality before someone receives guidance and adjusts.",
-      "explanation": "This paragraph follows a professional adapting to unfamiliar norms: the expectation, the unexpected reality, impatience, informed adjustment, and the ultimately stronger result."
-    }
-  ]
+    "gameType": "sentenceOrderReading",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "RDG_SENTENCEORDERREADING_L101_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Cross-department projects that once took months began moving considerably faster.",
+                "Executives eventually approved a plan to reorganize teams around shared goals rather than separate functions.",
+                "Within a year, the reorganization was cited as a major factor in the company's improved performance.",
+                "Poor communication between departments had been quietly undermining the company's efficiency for years.",
+                "Employees needed several months to adapt to their unfamiliar new reporting structures."
+            ],
+            "correctOrder": [
+                3,
+                1,
+                4,
+                0,
+                2
+            ],
+            "hint": "An underlying problem is usually identified before leadership approves a structural change to address it.",
+            "explanation": "This paragraph develops a business case in logical order: the hidden problem, the structural decision, an adjustment period, the resulting benefit, and its broader recognition."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L101_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Some of these cells remain in the body long after the initial response fades.",
+                "If the real pathogen appears later, the immune system can respond far more quickly than before.",
+                "Specialized cells then create antibodies designed specifically to fight that pathogen.",
+                "A vaccine introduces a weakened or harmless piece of a pathogen into the body.",
+                "The immune system recognizes this piece as foreign and mounts a defensive response."
+            ],
+            "correctOrder": [
+                3,
+                4,
+                2,
+                0,
+                1
+            ],
+            "hint": "Look at how each sentence explains what happens right after the process described just before it.",
+            "explanation": "This paragraph explains a biological process step by step, where each stage in the immune response depends directly on the one before it."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L101_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Local business owners initially worried that reduced car access would hurt their sales.",
+                "Foot traffic and outdoor dining actually increased once the zone opened.",
+                "Traffic congestion and pollution had made the city center increasingly unpleasant for residents.",
+                "Many of the same business owners later became some of the plan's strongest supporters.",
+                "Planners proposed converting several central streets into a pedestrian-only zone."
+            ],
+            "correctOrder": [
+                2,
+                4,
+                0,
+                1,
+                3
+            ],
+            "hint": "An initial worry usually has to exist before it can later be proven wrong by real results.",
+            "explanation": "This paragraph follows an urban policy from problem to unexpected success: the original issue, the proposal, early resistance, the actual outcome, and the resulting shift in opinion."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L102_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "These systems initially struggled to distinguish between genuine interest and accidental clicks.",
+                "Engineers refined the algorithms using more detailed patterns of viewer behavior over time.",
+                "Streaming platforms began using algorithms to recommend content based on viewing history.",
+                "Some critics, however, warned that such systems could narrow rather than broaden viewers' tastes.",
+                "Recommendations gradually became noticeably more accurate for most users."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                1,
+                4,
+                3
+            ],
+            "hint": "A technical limitation usually has to be described before engineers can be shown fixing it.",
+            "explanation": "This paragraph traces a technology's development alongside its trade-offs: the original goal, an early flaw, refinement, improved accuracy, and a lingering concern raised by critics."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L102_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "That volunteer experience gradually revealed a genuine passion he hadn't expected to find.",
+                "Within two years, he had transitioned into a full-time role leading education programs.",
+                "After a decade in finance, Otieno began to feel disconnected from his daily work.",
+                "He eventually completed a certification program in nonprofit management.",
+                "He spent evenings volunteering for a local nonprofit focused on education."
+            ],
+            "correctOrder": [
+                2,
+                4,
+                0,
+                3,
+                1
+            ],
+            "hint": "An unexpected discovery usually comes before someone commits to formal retraining based on it.",
+            "explanation": "This paragraph follows a career transition unfolding gradually: dissatisfaction, an unrelated activity, an unexpected discovery, formal preparation, and the eventual career change."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L102_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Their published findings drew significant public and media attention.",
+                "A compromise version of the law ultimately passed with a longer transition period for businesses.",
+                "Lawmakers responded by proposing restrictions on single-use plastic packaging.",
+                "Marine researchers documented rising amounts of microplastic in coastal waters.",
+                "Manufacturers pushed back, citing concerns about production costs."
+            ],
+            "correctOrder": [
+                3,
+                0,
+                2,
+                4,
+                1
+            ],
+            "hint": "Evidence usually has to be published and gain attention before lawmakers respond with proposed action.",
+            "explanation": "This paragraph follows an environmental issue moving through public and political stages: the finding, attention it received, a policy response, pushback, and the eventual compromise."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L103_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Nutrition experts noticed the claim circulating and grew concerned about its reach.",
+                "The corrected information spread more slowly than the original claim had.",
+                "Several published a clearly written article explaining the actual scientific evidence.",
+                "Even so, surveys later showed public misunderstanding of the topic had measurably declined.",
+                "A misleading claim about a common food ingredient spread rapidly across social media."
+            ],
+            "correctOrder": [
+                4,
+                0,
+                2,
+                1,
+                3
+            ],
+            "hint": "A false claim usually has to spread first before experts are prompted to respond with correction.",
+            "explanation": "This paragraph follows misinformation being addressed: the claim, expert concern, the correction published, its slower spread, and the eventual improvement in public understanding."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L103_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Employees across the company's five offices rarely knew what other teams were working on.",
+                "The first issue received lukewarm engagement, with few employees reading past the headlines.",
+                "A communications manager proposed a monthly internal newsletter to share updates.",
+                "Readership climbed steadily, and the newsletter became a genuine source of company pride.",
+                "She began including short interviews and behind-the-scenes photos from different teams."
+            ],
+            "correctOrder": [
+                0,
+                2,
+                1,
+                4,
+                3
+            ],
+            "hint": "A first attempt at something new is often unpolished before specific improvements make it succeed.",
+            "explanation": "This paragraph follows an internal communication tool improving through iteration: the gap, the proposal, a weak launch, a creative fix, and the eventual success."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L103_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Health officials studied the barriers preventing people from seeking treatment.",
+                "Clinics extended their hours into evenings and weekends in response.",
+                "They discovered that inconvenient clinic hours were a major obstacle for working families.",
+                "Treatment rates in the region rose significantly within eighteen months.",
+                "Rates of a preventable illness had remained stubbornly high in one region for years."
+            ],
+            "correctOrder": [
+                4,
+                0,
+                2,
+                1,
+                3
+            ],
+            "hint": "Researching the actual barriers usually happens before officials can design an effective solution.",
+            "explanation": "This paragraph follows a public-health improvement built on evidence: the persistent problem, research into its cause, the discovery, the practical fix, and the measurable result."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L104_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Teachers required additional training to coordinate effectively with local businesses.",
+                "Employers increasingly reported that graduates lacked practical, hands-on skills.",
+                "A school district piloted a curriculum that combined academic study with workplace internships.",
+                "The district expanded the program to every high school within three years.",
+                "Students in the pilot program reported feeling far more prepared for future careers."
+            ],
+            "correctOrder": [
+                1,
+                2,
+                0,
+                4,
+                3
+            ],
+            "hint": "A gap reported by employers usually has to exist before an education system responds with reform.",
+            "explanation": "This paragraph follows an education reform from motivation to expansion: the reported gap, the pilot program, the necessary training, positive results, and the wider rollout."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L104_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "She learned that punctuality and formal greetings mattered more than she had expected.",
+                "During her first meetings, she still misjudged how directly to disagree with colleagues.",
+                "Before relocating for a two-year assignment, Julieta researched local business customs carefully.",
+                "By her final months there, she navigated meetings with genuine cultural fluency.",
+                "A local mentor gently explained the more indirect communication style typically preferred."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                1,
+                4,
+                3
+            ],
+            "hint": "A misjudgment usually happens before someone receives specific guidance correcting it.",
+            "explanation": "This paragraph follows cultural adaptation through real experience: preparation, initial learning, a misstep, corrective guidance, and eventual fluency."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L104_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Waiting even a decade to start investing can mean giving up a large share of that growth.",
+                "A small amount invested in one's twenties can grow substantially by retirement age.",
+                "Financial advisors often use this principle to encourage people to start saving as early as possible.",
+                "This happens because returns earned each year begin generating their own additional returns.",
+                "Many young savers underestimate how significantly time affects investment growth."
+            ],
+            "correctOrder": [
+                4,
+                1,
+                3,
+                0,
+                2
+            ],
+            "hint": "This paragraph explains a general concept, then works through the mechanism and its practical consequence.",
+            "explanation": "This paragraph builds an explanation logically: the general point, an example, the underlying mechanism, its consequence if delayed, and how professionals use this insight."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L105_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Leadership surveyed employees and found strong support for remaining fully remote.",
+                "A growing startup faced a choice between requiring office attendance or embracing fully remote work.",
+                "Some new hires initially struggled without the informal mentorship of an office environment.",
+                "The company invested heavily in asynchronous communication tools and clear documentation.",
+                "The company later introduced structured onboarding buddies to address exactly that gap."
+            ],
+            "correctOrder": [
+                1,
+                0,
+                3,
+                2,
+                4
+            ],
+            "hint": "A survey result usually has to be gathered before leadership commits to a major structural decision.",
+            "explanation": "This paragraph follows an organizational choice and its consequences: the decision point, the survey, the investment made, an emerging problem, and the targeted fix."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L105_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "This is why doctors caution against using antibiotics for infections they cannot actually treat.",
+                "Antibiotics work by killing bacteria or preventing them from reproducing.",
+                "Occasionally, a small number of bacteria survive treatment due to natural genetic variation.",
+                "Over time, repeated exposure to antibiotics can make resistant bacteria increasingly common.",
+                "These surviving bacteria can reproduce, passing on whatever trait helped them resist the drug."
+            ],
+            "correctOrder": [
+                1,
+                2,
+                4,
+                3,
+                0
+            ],
+            "hint": "Each sentence in this explanation builds on the biological outcome of the one before it.",
+            "explanation": "This paragraph explains a scientific process causally: how antibiotics work, an exception, its consequence, its accumulation over time, and the practical warning that follows."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L105_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Some shop owners worried that removing parking spaces would hurt their businesses.",
+                "A proposal to add protected bike lanes downtown divided residents into strongly opposing camps.",
+                "Sales data from the trial showed no meaningful drop, and the lanes were made permanent.",
+                "The city agreed to a one-year trial period with data collected throughout.",
+                "Cyclists argued the lanes were essential for both safety and reduced traffic."
+            ],
+            "correctOrder": [
+                1,
+                4,
+                0,
+                3,
+                2
+            ],
+            "hint": "Two opposing arguments are usually laid out before a compromise, like a trial period, is proposed.",
+            "explanation": "This paragraph follows a local policy dispute resolved with evidence: the proposal, one side's argument, the other side's concern, a compromise trial, and the data-based resolution."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L106_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Employee trust in the promotion process improved significantly according to internal surveys.",
+                "HR introduced a transparent framework linking promotions to specific, measurable achievements.",
+                "The framework was eventually adopted across every department in the company.",
+                "Some senior managers initially resisted losing their previous discretion over decisions.",
+                "Employees had long complained that promotions seemed to depend more on visibility than actual results."
+            ],
+            "correctOrder": [
+                4,
+                1,
+                3,
+                0,
+                2
+            ],
+            "hint": "A complaint about fairness usually has to exist before a new, more transparent system is introduced.",
+            "explanation": "This paragraph follows an organizational fairness reform: the complaint, the new framework, resistance from some managers, improved trust, and company-wide adoption."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L106_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Many parents still find those guidelines difficult to follow amid daily routines.",
+                "Early studies produced mixed and sometimes contradictory results.",
+                "Researchers began studying how increased screen time affected children's attention spans.",
+                "Later research with larger sample sizes identified more consistent, moderate effects.",
+                "Pediatric associations used these findings to issue updated screen-time guidelines."
+            ],
+            "correctOrder": [
+                2,
+                1,
+                3,
+                4,
+                0
+            ],
+            "hint": "Contradictory early findings usually have to appear before better, more consistent research replaces them.",
+            "explanation": "This paragraph follows scientific understanding developing over time: initial study, mixed results, improved research, official guidance, and the practical challenge that remains."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L106_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Construction disrupted daily life for residents throughout an entire summer season.",
+                "A small coastal town saw tourist numbers triple over just five years.",
+                "The improved infrastructure ultimately allowed the town to handle visitors comfortably again.",
+                "The town council approved funding to expand roads, water systems, and public transit.",
+                "Local infrastructure, designed for a much smaller population, began showing serious strain."
+            ],
+            "correctOrder": [
+                1,
+                4,
+                3,
+                0,
+                2
+            ],
+            "hint": "Strain on existing systems usually has to become visible before officials approve funding to fix it.",
+            "explanation": "This paragraph follows infrastructure adapting to unexpected growth: the surge, the resulting strain, the funded response, temporary disruption, and eventual relief."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L107_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "They launched a loyalty program offering points redeemable for future discounts.",
+                "A retail chain noticed that most of its revenue came from a small group of repeat customers.",
+                "Enrollment was disappointing until the company simplified the sign-up process to a single tap.",
+                "The company credited the program with a measurable rise in overall annual revenue.",
+                "Enrolled customers began visiting noticeably more often than before."
+            ],
+            "correctOrder": [
+                1,
+                0,
+                2,
+                4,
+                3
+            ],
+            "hint": "A discovery about existing customers usually comes before a company designs a program around it.",
+            "explanation": "This paragraph follows a business strategy refined through iteration: the insight, the initial program, a barrier discovered, the fix, and the measurable business result."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L107_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Average reported sleep duration among staff increased within just a few weeks.",
+                "Productivity metrics improved alongside the change, supporting the researchers' original findings.",
+                "Researchers tracked employees' sleep patterns alongside their daily work output.",
+                "Employees who consistently slept less than six hours showed measurably slower reaction times.",
+                "Their employer piloted a policy discouraging late-night emails to encourage better rest."
+            ],
+            "correctOrder": [
+                2,
+                3,
+                4,
+                0,
+                1
+            ],
+            "hint": "A pattern usually has to be observed through research before a company designs a policy around it.",
+            "explanation": "This paragraph follows workplace research leading to real change: the study, the finding, the policy response, the behavior change, and the confirming result."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L107_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Teachers reported the new system required significantly more time to grade fairly.",
+                "Students in the pilot showed more engagement with material beyond simple memorization.",
+                "The district is now weighing whether the benefits justify the added workload district-wide.",
+                "Critics have long argued that standardized tests fail to capture a student's full range of abilities.",
+                "One school district piloted a broader evaluation system including projects and presentations."
+            ],
+            "correctOrder": [
+                3,
+                4,
+                0,
+                1,
+                2
+            ],
+            "hint": "A critique usually exists before a school district experiments with an alternative approach.",
+            "explanation": "This paragraph follows an ongoing education debate through a real experiment: the critique, the pilot, its practical cost, an observed benefit, and the open question that remains."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L108_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Lenders use this number to judge the risk of approving a new loan.",
+                "A strong score can eventually qualify a borrower for significantly lower interest rates.",
+                "Consistently paying bills on time gradually raises the score instead.",
+                "Late payments and high credit card balances can lower the score noticeably.",
+                "A credit score summarizes how reliably a person has repaid borrowed money in the past."
+            ],
+            "correctOrder": [
+                4,
+                0,
+                3,
+                2,
+                1
+            ],
+            "hint": "This explanation moves from what the number represents to what actually changes it.",
+            "explanation": "This paragraph explains a financial concept logically: its definition and purpose, what lowers it, what raises it, and the practical benefit of a strong score."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L108_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "A few residents initially questioned whether public funds should support the project.",
+                "The city partnered with local artists to paint large, sanctioned murals throughout the area.",
+                "A stretch of underpasses in the city had become associated with graffiti and neglect.",
+                "Several other neighborhoods soon requested similar mural projects of their own.",
+                "Foot traffic through the once-avoided underpasses increased noticeably after completion."
+            ],
+            "correctOrder": [
+                2,
+                1,
+                0,
+                4,
+                3
+            ],
+            "hint": "A neglected area usually has to be described before a specific plan to improve it is introduced.",
+            "explanation": "This paragraph follows a public-art project's impact: the problem, the initiative, initial skepticism, the positive result, and its influence on other neighborhoods."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L108_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Appointment wait times for specialist care dropped significantly across the region.",
+                "Some older patients needed help from family members to navigate the new technology.",
+                "Residents in rural areas often traveled hours to see a specialist doctor.",
+                "Health officials are now studying whether the model could work for even more remote communities.",
+                "A regional hospital began offering consultations through secure video calls."
+            ],
+            "correctOrder": [
+                2,
+                4,
+                1,
+                0,
+                3
+            ],
+            "hint": "A problem with distance usually has to be described before a technological solution is introduced to address it.",
+            "explanation": "This paragraph follows a healthcare innovation's rollout: the original barrier, the new service, an adoption challenge, the measurable improvement, and future consideration."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L109_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "A trusted colleague encouraged her to keep a simple log of her accomplishments.",
+                "She began speaking up more confidently during high-level strategy meetings.",
+                "Her manager later cited that new confidence as a key reason for her next promotion.",
+                "Despite years of strong performance reviews, Delia privately doubted she deserved her senior role.",
+                "Reading back through months of entries revealed a pattern she had been ignoring."
+            ],
+            "correctOrder": [
+                3,
+                0,
+                4,
+                1,
+                2
+            ],
+            "hint": "Evidence usually has to be gathered and reviewed before it can change how someone sees themselves.",
+            "explanation": "This paragraph follows a gradual shift in self-perception: the doubt, a practical suggestion, a revealing pattern, changed behavior, and the professional result that followed."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L109_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "A conservation group began a long-term reforestation project on the exposed slopes.",
+                "The first seedlings struggled in the poor, eroded soil during the initial planting season.",
+                "Twenty years later, the mountainside supports a stable, self-sustaining forest again.",
+                "Decades of logging had left a mountainside dangerously prone to erosion and landslides.",
+                "Volunteers amended the soil and adjusted which native species they planted."
+            ],
+            "correctOrder": [
+                3,
+                0,
+                1,
+                4,
+                2
+            ],
+            "hint": "An initial failure with the poor soil usually has to be identified before volunteers adjust their approach.",
+            "explanation": "This paragraph follows an environmental restoration across decades: the original damage, the response, an early setback, the adjustment, and the long-term success."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L109_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Reporters spent weeks cross-checking the claim against public records and independent sources.",
+                "One key detail in the original tip turned out to be inaccurate upon closer examination.",
+                "A newsroom received an unverified but potentially significant tip about a local official.",
+                "Readers later praised the outlet for its careful, methodical approach to the story.",
+                "The published story was revised to reflect only what could be fully verified."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                1,
+                4,
+                3
+            ],
+            "hint": "Verification work usually happens before a story is actually published, not after.",
+            "explanation": "This paragraph follows responsible journalism in practice: the tip, the verification process, a correction along the way, the careful publication, and the resulting trust earned."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L110_Q1",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "A sudden factory closure abroad left production lines idle for several weeks.",
+                "Executives decided to establish relationships with two additional suppliers in different regions.",
+                "The company weathered a similar disruption the following year with barely any delay.",
+                "A manufacturer relied on a single overseas supplier for a critical component.",
+                "The transition required renegotiating contracts and testing new quality standards."
+            ],
+            "correctOrder": [
+                3,
+                0,
+                1,
+                4,
+                2
+            ],
+            "hint": "A disruption usually has to expose a weakness before a company changes its long-term strategy.",
+            "explanation": "This paragraph follows a business building resilience after a crisis: the vulnerability, the disruption, the strategic decision, the transition work, and the payoff during a later crisis."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L110_Q2",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "Vaccination programs aim to reach a high enough immunity threshold to achieve this effect.",
+                "Some individuals who cannot be vaccinated for medical reasons still benefit from this protection.",
+                "Public health officials therefore track vaccination rates closely across entire communities.",
+                "When enough individuals in a population become immune to a disease, its spread slows considerably.",
+                "This occurs because an infected person has fewer opportunities to encounter someone susceptible."
+            ],
+            "correctOrder": [
+                3,
+                4,
+                0,
+                1,
+                2
+            ],
+            "hint": "This paragraph explains a general effect, then works through why it happens and who benefits.",
+            "explanation": "This paragraph builds a public-health concept step by step: the effect, the mechanism behind it, how programs use it, an important consequence, and why officials monitor it."
+        },
+        {
+            "id": "RDG_SENTENCEORDERREADING_L110_Q3",
+            "instruction": "Arrange the sentences in the correct order to form a logical paragraph.",
+            "subtype": "sentenceOrderReading",
+            "interactionType": "reorder",
+            "shuffledSentences": [
+                "He grew visibly impatient until a local advisor explained the value placed on trust before business.",
+                "The eventual agreement proved stronger and more durable than any of his previous overseas deals.",
+                "His counterparts instead spent the first two meetings simply building a personal relationship.",
+                "He adjusted his approach, allowing more time for informal conversation in later meetings.",
+                "Assigned to lead negotiations in a new overseas market, Tobias expected talks to move quickly."
+            ],
+            "correctOrder": [
+                4,
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "An outside expectation usually has to clash with reality before someone receives guidance and adjusts.",
+            "explanation": "This paragraph follows a professional adapting to unfamiliar norms: the expectation, the unexpected reality, impatience, informed adjustment, and the ultimately stronger result."
+        }
+    ]
 }

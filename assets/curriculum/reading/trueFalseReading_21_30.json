@@ -1,457 +1,457 @@
 {
-  "gameType": "trueFalseReading",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Noah usually checks the weather before he leaves home. This morning he forgot to check it and got caught in the rain.",
-      "question": "Noah got caught in the rain this morning.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what happened to Noah this morning.",
-      "explanation": "The passage says he got caught in the rain, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Sara signed up for a weekend pottery class after seeing an advertisement online. The class meets for three hours every Sunday.",
-      "question": "Sara's pottery class meets on Saturdays.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check which day the pottery class meets.",
-      "explanation": "The passage says the class meets on Sunday, not Saturday, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Renata was promoted to team leader after two years at the company. Her new role includes training new employees.",
-      "question": "Renata's new role includes training new employees.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what her new role involves.",
-      "explanation": "The passage states her role includes training new employees, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because flight prices were lower on weekdays, Aiden booked his ticket for a Tuesday instead of a Saturday. The flight includes one short stop.",
-      "question": "Aiden's flight is completely non-stop.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether the flight has any stops.",
-      "explanation": "The passage says the flight includes one short stop, so calling it non-stop is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since his sister moved abroad, Malik calls her every weekend using a video app. They usually talk for about an hour.",
-      "question": "Malik and his sister talk for about an hour each time.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at how long their calls usually last.",
-      "explanation": "The passage says they usually talk for about an hour, so this matches."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Naomi compared prices at three different stores before buying a washing machine. She eventually chose the one with the longest warranty.",
-      "question": "Naomi chose the washing machine with the shortest warranty.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check which warranty length Naomi actually chose.",
-      "explanation": "The passage says she chose the longest warranty, not the shortest, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Since discovering a recipe online, Yolanda has made the same vegetable soup every week. She adds a different spice each time for variety.",
-      "question": "Yolanda changes the spice in her soup each week.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what changes each time she cooks the soup.",
-      "explanation": "The passage says she adds a different spice each time, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "After her old laptop stopped charging, Priti bought a new one with a longer battery life. She says it now lasts almost ten hours on a full charge.",
-      "question": "Priti's new laptop lasts almost ten hours on a charge.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the battery life mentioned for the new laptop.",
-      "explanation": "The passage states it lasts almost ten hours, so the statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because he had been feeling tired lately, Simon decided to see a doctor for a check-up. The doctor suggested he get more sleep each night.",
-      "question": "The doctor suggested Simon get more sleep.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at the doctor's suggestion in the second sentence.",
-      "explanation": "The passage confirms the doctor suggested more sleep, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Instead of going to the cinema, Leon and his friends decided to have a movie night at home. They took turns choosing which films to watch.",
-      "question": "Leon and his friends went to the cinema.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check where Leon and his friends actually watched the films.",
-      "explanation": "The passage says they stayed home instead of going to the cinema, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Unlike most birds, penguins cannot fly, but they are excellent swimmers. Their wings have evolved into flippers that help them move quickly through water.",
-      "question": "Penguins can fly but cannot swim well.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Compare what the passage says about flying and swimming.",
-      "explanation": "The passage says penguins cannot fly but swim well, so this statement reverses the facts and is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The city council recently added new bike lanes along the main road to improve safety. Local cyclists have reported feeling safer since the change.",
-      "question": "The city added new bike lanes along the main road.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what the city council added.",
-      "explanation": "The passage confirms new bike lanes were added, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Every evening, Layla writes a short note about her day in a small notebook. She has kept this habit for almost two years.",
-      "question": "Layla has kept this habit for about two years.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how long Layla has kept the habit.",
-      "explanation": "The passage says almost two years, so the statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because he wants to change careers, Felix is studying for a certificate in project management. He studies for an hour after dinner each night.",
-      "question": "Felix studies after dinner.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at when Felix studies each night.",
-      "explanation": "The passage says he studies after dinner, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Instead of commuting to the office, Samuel now works remotely three days a week. He still goes to the office on Mondays and Fridays.",
-      "question": "Samuel works from home every day of the week.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how many days Samuel actually works remotely.",
-      "explanation": "The passage says he works remotely three days, not every day, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The tour guide asked everyone to meet at the hotel lobby by 7 a.m. Two travelers arrived a few minutes late and missed the bus.",
-      "question": "All travelers arrived on time for the bus.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check whether every traveler made it on time.",
-      "explanation": "The passage says two travelers arrived late, so not all of them were on time."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Although Petra and her brother argue sometimes, they always help each other during difficult times. Last month, he helped her move into a new home.",
-      "question": "Petra's brother refused to help her move.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what Petra's brother actually did last month.",
-      "explanation": "The passage says he helped her move, so refusing to help is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Instead of buying a new winter coat, Theo decided to repair his old one at a tailor's shop. The repair cost much less than a new coat.",
-      "question": "Theo bought a brand new winter coat.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check what Theo chose to do with his old coat.",
-      "explanation": "The passage says he repaired his old coat instead of buying a new one, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Kenji prefers grilling vegetables instead of frying them because it uses less oil. His family has noticed the difference in taste.",
-      "question": "Kenji prefers frying his vegetables.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check which cooking method Kenji actually prefers.",
-      "explanation": "The passage says he prefers grilling, not frying, so this statement is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Instead of carrying a separate camera, Lucas now uses his phone for all his photography. He recently upgraded to a phone with a better camera.",
-      "question": "Lucas still uses a separate camera for photography.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what Lucas uses instead of a separate camera.",
-      "explanation": "The passage says he now uses his phone instead of a separate camera, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Although Julia dislikes vegetables, she has started adding them to her smoothies to eat more of them. She says she barely notices the taste now.",
-      "question": "Julia refuses to eat any vegetables at all.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how Julia has started eating more vegetables.",
-      "explanation": "The passage says she now eats them in smoothies, so refusing them completely is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because tickets sell out quickly, Amira bought her concert tickets almost two months in advance. The concert is now only a week away.",
-      "question": "Amira bought her tickets far in advance.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at when Amira bought her tickets.",
-      "explanation": "The passage says she bought them two months in advance, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Although deserts appear lifeless, many animals survive there by staying underground during the hottest hours of the day. They come out mostly at night to search for food.",
-      "question": "Many desert animals are active mainly at night.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check when desert animals come out to search for food.",
-      "explanation": "The passage says they come out mostly at night, so this statement is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Because the old community pool needed repairs, it will remain closed for the rest of the summer. The city has apologized for the inconvenience.",
-      "question": "The community pool will reopen later this summer.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how long the pool will stay closed.",
-      "explanation": "The passage says it will remain closed for the rest of the summer, so reopening this summer is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Marco prefers to exercise early in the morning because the gym is less crowded then. He rarely goes to the gym after work.",
-      "question": "Marco often goes to the gym after work.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how often Marco goes to the gym after work.",
-      "explanation": "The passage says he rarely goes after work, so this statement is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Amara's language exchange partner helps her practice speaking twice a week. In return, Amara helps her partner practice Spanish.",
-      "question": "Amara helps her partner practice French.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check which language Amara actually helps her partner practice.",
-      "explanation": "The passage says she helps with Spanish, not French, so this is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The marketing team finished their project a week early this month. Their manager gave them an extra day off as a reward.",
-      "question": "The team received an extra day off.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at what the manager gave the team.",
-      "explanation": "The passage confirms they received an extra day off, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q1",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Camille rented a small car for her trip along the coast. She plans to stop at three different towns before reaching the final city.",
-      "question": "Camille plans to stop at three towns during her trip.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Count how many towns Camille plans to visit.",
-      "explanation": "The passage says she plans to stop at three towns, so this is true."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q2",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "Every year, Hiro's extended family gathers at his grandparents' house for a big dinner. This year, over twenty relatives are expected to attend.",
-      "question": "Fewer than ten relatives are expected this year.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the number of relatives expected this year.",
-      "explanation": "The passage says over twenty relatives are expected, so fewer than ten is false."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q3",
-      "instruction": "Read the passage and determine if the statement is true or false.",
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "The store was offering a discount on all shoes over the weekend. Ingrid bought two pairs because the sale would not last long.",
-      "question": "Ingrid bought two pairs of shoes during the sale.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check how many pairs of shoes Ingrid bought.",
-      "explanation": "The passage says she bought two pairs, so this statement is true."
-    }
-  ]
+    "gameType": "trueFalseReading",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Noah usually checks the weather before he leaves home. This morning he forgot to check it and got caught in the rain.",
+            "question": "Noah got caught in the rain this morning.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what happened to Noah this morning.",
+            "explanation": "The passage says he got caught in the rain, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Sara signed up for a weekend pottery class after seeing an advertisement online. The class meets for three hours every Sunday.",
+            "question": "Sara's pottery class meets on Saturdays.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check which day the pottery class meets.",
+            "explanation": "The passage says the class meets on Sunday, not Saturday, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Renata was promoted to team leader after two years at the company. Her new role includes training new employees.",
+            "question": "Renata's new role includes training new employees.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what her new role involves.",
+            "explanation": "The passage states her role includes training new employees, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because flight prices were lower on weekdays, Aiden booked his ticket for a Tuesday instead of a Saturday. The flight includes one short stop.",
+            "question": "Aiden's flight is completely non-stop.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether the flight has any stops.",
+            "explanation": "The passage says the flight includes one short stop, so calling it non-stop is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since his sister moved abroad, Malik calls her every weekend using a video app. They usually talk for about an hour.",
+            "question": "Malik and his sister talk for about an hour each time.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at how long their calls usually last.",
+            "explanation": "The passage says they usually talk for about an hour, so this matches."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Naomi compared prices at three different stores before buying a washing machine. She eventually chose the one with the longest warranty.",
+            "question": "Naomi chose the washing machine with the shortest warranty.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check which warranty length Naomi actually chose.",
+            "explanation": "The passage says she chose the longest warranty, not the shortest, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Since discovering a recipe online, Yolanda has made the same vegetable soup every week. She adds a different spice each time for variety.",
+            "question": "Yolanda changes the spice in her soup each week.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what changes each time she cooks the soup.",
+            "explanation": "The passage says she adds a different spice each time, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "After her old laptop stopped charging, Priti bought a new one with a longer battery life. She says it now lasts almost ten hours on a full charge.",
+            "question": "Priti's new laptop lasts almost ten hours on a charge.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the battery life mentioned for the new laptop.",
+            "explanation": "The passage states it lasts almost ten hours, so the statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because he had been feeling tired lately, Simon decided to see a doctor for a check-up. The doctor suggested he get more sleep each night.",
+            "question": "The doctor suggested Simon get more sleep.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at the doctor's suggestion in the second sentence.",
+            "explanation": "The passage confirms the doctor suggested more sleep, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Instead of going to the cinema, Leon and his friends decided to have a movie night at home. They took turns choosing which films to watch.",
+            "question": "Leon and his friends went to the cinema.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check where Leon and his friends actually watched the films.",
+            "explanation": "The passage says they stayed home instead of going to the cinema, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Unlike most birds, penguins cannot fly, but they are excellent swimmers. Their wings have evolved into flippers that help them move quickly through water.",
+            "question": "Penguins can fly but cannot swim well.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Compare what the passage says about flying and swimming.",
+            "explanation": "The passage says penguins cannot fly but swim well, so this statement reverses the facts and is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The city council recently added new bike lanes along the main road to improve safety. Local cyclists have reported feeling safer since the change.",
+            "question": "The city added new bike lanes along the main road.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what the city council added.",
+            "explanation": "The passage confirms new bike lanes were added, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Every evening, Layla writes a short note about her day in a small notebook. She has kept this habit for almost two years.",
+            "question": "Layla has kept this habit for about two years.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how long Layla has kept the habit.",
+            "explanation": "The passage says almost two years, so the statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because he wants to change careers, Felix is studying for a certificate in project management. He studies for an hour after dinner each night.",
+            "question": "Felix studies after dinner.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at when Felix studies each night.",
+            "explanation": "The passage says he studies after dinner, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Instead of commuting to the office, Samuel now works remotely three days a week. He still goes to the office on Mondays and Fridays.",
+            "question": "Samuel works from home every day of the week.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how many days Samuel actually works remotely.",
+            "explanation": "The passage says he works remotely three days, not every day, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The tour guide asked everyone to meet at the hotel lobby by 7 a.m. Two travelers arrived a few minutes late and missed the bus.",
+            "question": "All travelers arrived on time for the bus.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check whether every traveler made it on time.",
+            "explanation": "The passage says two travelers arrived late, so not all of them were on time."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Although Petra and her brother argue sometimes, they always help each other during difficult times. Last month, he helped her move into a new home.",
+            "question": "Petra's brother refused to help her move.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what Petra's brother actually did last month.",
+            "explanation": "The passage says he helped her move, so refusing to help is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Instead of buying a new winter coat, Theo decided to repair his old one at a tailor's shop. The repair cost much less than a new coat.",
+            "question": "Theo bought a brand new winter coat.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check what Theo chose to do with his old coat.",
+            "explanation": "The passage says he repaired his old coat instead of buying a new one, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Kenji prefers grilling vegetables instead of frying them because it uses less oil. His family has noticed the difference in taste.",
+            "question": "Kenji prefers frying his vegetables.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check which cooking method Kenji actually prefers.",
+            "explanation": "The passage says he prefers grilling, not frying, so this statement is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Instead of carrying a separate camera, Lucas now uses his phone for all his photography. He recently upgraded to a phone with a better camera.",
+            "question": "Lucas still uses a separate camera for photography.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what Lucas uses instead of a separate camera.",
+            "explanation": "The passage says he now uses his phone instead of a separate camera, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Although Julia dislikes vegetables, she has started adding them to her smoothies to eat more of them. She says she barely notices the taste now.",
+            "question": "Julia refuses to eat any vegetables at all.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how Julia has started eating more vegetables.",
+            "explanation": "The passage says she now eats them in smoothies, so refusing them completely is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because tickets sell out quickly, Amira bought her concert tickets almost two months in advance. The concert is now only a week away.",
+            "question": "Amira bought her tickets far in advance.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at when Amira bought her tickets.",
+            "explanation": "The passage says she bought them two months in advance, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Although deserts appear lifeless, many animals survive there by staying underground during the hottest hours of the day. They come out mostly at night to search for food.",
+            "question": "Many desert animals are active mainly at night.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check when desert animals come out to search for food.",
+            "explanation": "The passage says they come out mostly at night, so this statement is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Because the old community pool needed repairs, it will remain closed for the rest of the summer. The city has apologized for the inconvenience.",
+            "question": "The community pool will reopen later this summer.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how long the pool will stay closed.",
+            "explanation": "The passage says it will remain closed for the rest of the summer, so reopening this summer is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Marco prefers to exercise early in the morning because the gym is less crowded then. He rarely goes to the gym after work.",
+            "question": "Marco often goes to the gym after work.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how often Marco goes to the gym after work.",
+            "explanation": "The passage says he rarely goes after work, so this statement is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Amara's language exchange partner helps her practice speaking twice a week. In return, Amara helps her partner practice Spanish.",
+            "question": "Amara helps her partner practice French.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check which language Amara actually helps her partner practice.",
+            "explanation": "The passage says she helps with Spanish, not French, so this is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The marketing team finished their project a week early this month. Their manager gave them an extra day off as a reward.",
+            "question": "The team received an extra day off.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at what the manager gave the team.",
+            "explanation": "The passage confirms they received an extra day off, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q1",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Camille rented a small car for her trip along the coast. She plans to stop at three different towns before reaching the final city.",
+            "question": "Camille plans to stop at three towns during her trip.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Count how many towns Camille plans to visit.",
+            "explanation": "The passage says she plans to stop at three towns, so this is true."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q2",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "Every year, Hiro's extended family gathers at his grandparents' house for a big dinner. This year, over twenty relatives are expected to attend.",
+            "question": "Fewer than ten relatives are expected this year.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the number of relatives expected this year.",
+            "explanation": "The passage says over twenty relatives are expected, so fewer than ten is false."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q3",
+            "instruction": "Read the passage and determine if the statement is true or false.",
+            "subtype": "trueFalseReading",
+            "interactionType": "trueFalse",
+            "passage": "The store was offering a discount on all shoes over the weekend. Ingrid bought two pairs because the sale would not last long.",
+            "question": "Ingrid bought two pairs of shoes during the sale.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check how many pairs of shoes Ingrid bought.",
+            "explanation": "The passage says she bought two pairs, so this statement is true."
+        }
+    ]
 }

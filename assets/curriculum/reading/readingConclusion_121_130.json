@@ -7,7 +7,7 @@
             "id": "RDG_READINGCONCLUSION_L121_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of neuroscientists studying sleep patterns among shift workers found a strong correlation between irregular sleep schedules and reduced performance on tests of working memory administered after several months of rotating shifts, but the researchers were careful to note that correlation alone could not establish that irregular sleep was the direct cause of the memory decline, since shift workers in the study also reported higher average stress levels and poorer overall diet quality, both of which independently affect memory performance in other research.",
             "options": [
                 "The researchers proved that irregular sleep directly and solely causes memory decline.",
@@ -23,7 +23,7 @@
             "id": "RDG_READINGCONCLUSION_L121_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An organizational psychologist analyzing employee engagement survey results across dozens of companies found that companies where senior leadership regularly and visibly used their own vacation days showed higher average engagement scores among all employees than companies where leadership rarely took visible time off, even after the analysis statistically controlled for company size, industry sector, and average compensation levels, suggesting that leadership behavior around rest may set a cultural tone that extends well beyond formal vacation policy itself.",
             "options": [
                 "Leadership's own visible use of vacation time appears linked to higher engagement, independent of company size, industry, or pay.",
@@ -39,7 +39,7 @@
             "id": "RDG_READINGCONCLUSION_L121_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A cultural historian studying the revival of interest in a nearly forgotten regional folk music tradition found that the resurgence correlated closely with the tradition's adoption by several prominent contemporary musicians who incorporated its distinctive instrumentation into otherwise modern compositions, though the historian noted it remains genuinely unclear whether these musicians caused the broader revival by exposing new audiences to the tradition, or whether they themselves were simply early adopters riding a wave of renewed interest that was already quietly building among younger listeners.",
             "options": [
                 "The historian confirmed the musicians single-handedly caused the entire revival.",
@@ -55,7 +55,7 @@
             "id": "RDG_READINGCONCLUSION_L122_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team evaluating a machine-learning tool designed to flag potentially fraudulent insurance claims for human review found that the tool's flagging accuracy was substantially higher for claims involving well-represented claim types in its original training data, such as common auto accidents, than for rarer claim types, such as claims involving unusual medical equipment, a gap the team attributed to the tool having encountered far fewer examples of the rarer categories during its initial training process before deployment.",
             "options": [
                 "The tool's accuracy appears to depend heavily on how well-represented a claim type was in its original training data.",
@@ -71,7 +71,7 @@
             "id": "RDG_READINGCONCLUSION_L122_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A hospital quality-improvement team studying patient falls found that units where nurses used a standardized verbal handoff checklist during shift changes, explicitly including a mention of each patient's individual fall risk level, reported fewer patient falls than units using an informal, conversational handoff style, even though both types of units had access to the exact same electronic fall-risk scoring system embedded in the hospital's patient records used identically across every unit, according to incident reports reviewed over a full year.",
             "options": [
                 "Having the fall-risk system available was sufficient on its own to prevent falls.",
@@ -87,7 +87,7 @@
             "id": "RDG_READINGCONCLUSION_L122_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A university researcher studying study habits among undergraduates found that students who explained course material aloud to an imaginary student, a technique sometimes called the 'teaching method' of studying, performed better on subsequent exams than students who reviewed the same material through repeated silent reading, even though both groups reported spending an identical amount of total study time on the material, a finding consistent with earlier research on how actively generating explanations strengthens memory more than passive review.",
             "options": [
                 "Silent reading was more effective than explaining material aloud.",
@@ -103,7 +103,7 @@
             "id": "RDG_READINGCONCLUSION_L123_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An environmental economist studying carbon offset programs found that offset projects involving newly planted forests showed highly variable actual carbon capture compared to their advertised estimates, with some projects capturing far less carbon than claimed due to factors like tree mortality and wildfire risk, while offset projects involving the protection of existing, already-mature forests from logging showed capture amounts much closer to their original estimates, since preventing the loss of established carbon storage proved more predictable than projecting the growth of new trees.",
             "options": [
                 "New-forest projects showed more predictable results than forest-protection projects.",
@@ -119,7 +119,7 @@
             "id": "RDG_READINGCONCLUSION_L123_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A behavioral finance researcher studying investor decision-making found that investors who were shown a graph of a stock's performance over the past ten years, rather than just the past year, were less likely to sell during a short-term market downturn, a pattern the researcher attributed to the longer timeframe helping investors mentally place a temporary dip within a broader context of long-term growth, rather than reacting to the dip as though it represented the stock's entire trajectory going forward.",
             "options": [
                 "Seeing a longer timeframe made investors more likely to sell during downturns.",
@@ -135,7 +135,7 @@
             "id": "RDG_READINGCONCLUSION_L123_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A regional tourism authority comparing visitor satisfaction across several historic walking tour companies found that tours capped at a maximum of eight participants received significantly higher satisfaction ratings than tours allowing up to twenty participants, but when the authority examined pricing, the smaller tours also charged substantially more per person, raising the question of whether smaller group size itself improved the experience or whether the higher price simply attracted a different type of visitor with different expectations from the very start.",
             "options": [
                 "The authority confirmed that group size alone explained the entire satisfaction difference.",
@@ -151,7 +151,7 @@
             "id": "RDG_READINGCONCLUSION_L124_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A family researcher studying households with multiple children found that birth order effects on personality traits, long assumed by many parents to be strong and consistent, showed only weak and inconsistent correlations once the researcher's statistical model accounted for family size, spacing between siblings' ages, and each family's overall socioeconomic circumstances, suggesting that many commonly cited birth-order personality patterns may be better explained by these other family characteristics than by birth order itself as an independent factor.",
             "options": [
                 "The study confirmed strong, consistent birth-order personality effects across all families.",
@@ -167,7 +167,7 @@
             "id": "RDG_READINGCONCLUSION_L124_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports analytics firm studying professional basketball found a strong correlation between a team's average distance traveled for away games during a season and its overall injury rate, but when the firm's analysts broke the data down further, they found the correlation was driven almost entirely by teams with unusually compressed schedules requiring back-to-back games in different cities, rather than by long travel distances on their own when adequate rest days were built into the season's overall schedule.",
             "options": [
                 "Travel distance alone, regardless of schedule, fully explained the injury correlation.",
@@ -183,7 +183,7 @@
             "id": "RDG_READINGCONCLUSION_L124_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sociologist studying civic participation across several mid-sized cities found that cities with a higher density of small, independently owned local businesses, such as neighborhood cafes and bookstores, showed higher rates of resident participation in local civic meetings than cities dominated by large chain retailers, even after the sociologist statistically accounted for differences in median income, population density, and overall city size across all the cities included in the multi-year comparison.",
             "options": [
                 "A greater presence of local independent businesses appears linked to higher civic participation, beyond what income, density, or city size would explain.",
@@ -199,7 +199,7 @@
             "id": "RDG_READINGCONCLUSION_L125_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A human resources consultant analyzing exit interview data across several industries found that employees who left voluntarily for a new job with only a modest salary increase, under ten percent, cited 'lack of growth opportunity' as their primary reason for leaving far more often than employees who left for a substantially larger salary increase, suggesting that among employees taking a smaller pay bump specifically, career development concerns may have mattered more than compensation as the underlying motivator for their departure.",
             "options": [
                 "Compensation was the primary motivator for every employee who left, regardless of raise size.",
@@ -215,7 +215,7 @@
             "id": "RDG_READINGCONCLUSION_L125_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of climate researchers studying glacial retreat found that while average annual temperature increases correlated with the rate of ice loss across most of the glaciers studied, a small number of glaciers actually showed increased ice mass over the same period, a pattern the researchers linked to increased snowfall in those specific high-altitude locations, illustrating that a single regional climate trend can produce different, even opposite, local outcomes depending on additional local factors like precipitation patterns and elevation.",
             "options": [
                 "The same broad climate trend can produce opposite outcomes at different glaciers depending on additional local factors like snowfall.",
@@ -231,7 +231,7 @@
             "id": "RDG_READINGCONCLUSION_L125_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A food policy researcher studying school lunch programs found that schools which involved students directly in taste-testing and voting on new menu items before those items were formally added to the rotation saw substantially higher consumption rates of those specific items once introduced, compared to similar new items introduced without any prior student input, even when the nutritional content of the competing items was held essentially constant, according to plate-waste measurements collected across a dozen participating school cafeterias.",
             "options": [
                 "Student involvement in menu selection reduced consumption of new items.",
@@ -247,7 +247,7 @@
             "id": "RDG_READINGCONCLUSION_L126_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A digital privacy researcher studying app permission requests found that users granted significantly more permissions, including access to contacts and location data, to apps that explained in plain language during the request why a specific permission was needed, compared to apps that simply displayed the generic system permission dialog without any accompanying explanation, even when the underlying permission being requested was functionally identical between the two types of apps compared in the researcher's controlled study of app installations.",
             "options": [
                 "Explanations reduced how often users granted permissions.",
@@ -263,7 +263,7 @@
             "id": "RDG_READINGCONCLUSION_L126_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An ethnomusicologist studying the global spread of a traditional percussion style found that the style's adoption by musicians outside its region of origin correlated strongly with the availability of freely accessible online tutorial videos demonstrating the technique, but correlated only weakly with the number of in-person workshops held internationally by traveling master musicians, a pattern the researcher suggested reflects how accessible digital resources can now reach far more aspiring musicians than limited in-person opportunities ever realistically could.",
             "options": [
                 "In-person workshops were more closely linked to the style's spread than online tutorials.",
@@ -279,7 +279,7 @@
             "id": "RDG_READINGCONCLUSION_L126_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public health team studying flu vaccination rates found that community pharmacies offering walk-in vaccination with no appointment necessary saw substantially higher vaccination rates among working-age adults than pharmacies requiring an appointment scheduled at least a day in advance, but this gap narrowed considerably among adults over sixty-five, a group more likely to already have a regular, planned pharmacy visit built into their weekly routine regardless of any appointment requirement, according to vaccination records compared across pharmacy types.",
             "options": [
                 "Walk-in availability appears to matter more for working-age adults than for older adults with more established pharmacy routines.",
@@ -295,7 +295,7 @@
             "id": "RDG_READINGCONCLUSION_L127_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher studying college dropout rates found that students who met with an academic advisor at least once during their first six weeks of college had substantially lower first-year dropout rates than students who did not meet with an advisor during that window, but the researcher cautioned that students who proactively sought out an advisor meeting may have already been more academically engaged or better connected to campus resources in general, making it difficult to isolate the meeting's specific individual effect from these other factors.",
             "options": [
                 "The researcher proved the advisor meeting alone caused the lower dropout rates.",
@@ -311,7 +311,7 @@
             "id": "RDG_READINGCONCLUSION_L127_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An urban planner studying pedestrian safety found that intersections redesigned with raised crosswalks, which force vehicles to physically slow down as they cross, showed a much larger reduction in vehicle speed and pedestrian collisions than intersections that received only additional warning signage without any physical change to the roadway, suggesting that physical design changes may influence driver behavior more reliably than signage alone, which drivers can more easily overlook or grow accustomed to over repeated exposure.",
             "options": [
                 "Signage alone was more effective than physical design changes.",
@@ -327,7 +327,7 @@
             "id": "RDG_READINGCONCLUSION_L127_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A financial regulator studying complaints against payday lenders found that states requiring lenders to display the total repayment amount, rather than just the interest rate, in large print on loan documents saw a measurable decrease in the average loan amount borrowed per customer, though the regulator noted total borrowing across the entire state did not decrease proportionally, since the number of individual loans taken out per customer actually rose slightly during the same period the disclosure rule was in effect.",
             "options": [
                 "Total statewide borrowing decreased proportionally along with individual loan amounts.",
@@ -343,7 +343,7 @@
             "id": "RDG_READINGCONCLUSION_L128_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A regional tourism board studying visitor return rates found that first-time visitors who interacted with a local resident during their trip, whether through a homestay, a guided tour led by a local guide, or even a substantial conversation with a shop owner, were significantly more likely to report intending to return within two years than visitors whose entire trip was mediated through hotels, chain restaurants, and organized group tours with no meaningful direct interaction with anyone from the local community, according to a follow-up survey conducted one year later.",
             "options": [
                 "Visitors with no local interaction were more likely to intend to return.",
@@ -359,7 +359,7 @@
             "id": "RDG_READINGCONCLUSION_L128_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher studying communication patterns in long-married couples found that couples married more than twenty-five years who still regularly asked each other open-ended questions about their day, rather than relying mainly on brief factual updates, reported higher relationship satisfaction than couples who had shifted toward more transactional daily communication, though the researcher noted this pattern could reflect either that curious communication sustains satisfaction or that already-satisfied couples simply remain more naturally curious about each other over time.",
             "options": [
                 "It's unclear whether curious communication causes higher satisfaction or whether already-satisfied couples are simply more naturally curious.",
@@ -375,7 +375,7 @@
             "id": "RDG_READINGCONCLUSION_L128_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports medicine team studying return-to-play protocols after concussion found that athletes who passed a series of graduated exertion tests before returning to full contact practice had substantially lower rates of repeat concussion within the same season than athletes cleared to return based primarily on the disappearance of self-reported symptoms alone, even though both groups had been formally cleared by a physician before returning to any level of practice activity at all.",
             "options": [
                 "Relying on symptom disappearance alone was more effective at preventing repeat concussions.",
@@ -391,7 +391,7 @@
             "id": "RDG_READINGCONCLUSION_L129_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A city auditor reviewing the effectiveness of a small business grant program found that grant recipients who were also required to complete a follow-up business plan review six months after receiving funds showed substantially higher business survival rates three years later than recipients who received identical grant funding with no follow-up requirement, suggesting that accountability and continued guidance after funding may matter as much as the initial capital itself for a small business's long-term survival prospects.",
             "options": [
                 "Follow-up guidance and accountability after funding appear to matter as much as the initial grant money itself for business survival.",
@@ -407,7 +407,7 @@
             "id": "RDG_READINGCONCLUSION_L129_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A workplace researcher studying the effects of open salary transparency policies, where all employee salaries are made visible to everyone within the company, found that transparency was associated with a narrowing of the gender pay gap within participating companies over a three-year period, but was also associated with a measurable, though modest, increase in employees reporting they felt more comparison-driven anxiety about their own compensation relative to their colleagues' publicly visible pay, according to before-and-after internal surveys.",
             "options": [
                 "Salary transparency appears to have narrowed the pay gap while also introducing some new comparison-related anxiety for employees.",
@@ -423,7 +423,7 @@
             "id": "RDG_READINGCONCLUSION_L129_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of entomologists studying pollinator decline found that while pesticide exposure correlated with reduced bee colony health across most of the farms studied, a subset of farms using the same pesticides but maintaining wide, unsprayed buffer zones of wildflowers around their fields showed bee colony health comparable to farms using no pesticides at all, suggesting that buffer zones may substantially offset pesticide-related harm even when pesticide use itself continues largely unchanged across the farm's main growing area.",
             "options": [
                 "Buffer zones had no measurable effect on bee colony health near pesticide use.",
@@ -439,7 +439,7 @@
             "id": "RDG_READINGCONCLUSION_L130_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher studying social media use among teenagers found that total time spent on social media platforms correlated only weakly with measures of teen anxiety and depression, but the specific type of engagement correlated much more strongly, with passive scrolling through others' content associated with worse mental health outcomes than active engagement, such as messaging friends directly or posting original content, even at similar total usage durations, according to survey and app-usage data collected over an academic year.",
             "options": [
                 "Total time spent was the strongest predictor of mental health outcomes.",
@@ -455,7 +455,7 @@
             "id": "RDG_READINGCONCLUSION_L130_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A folklorist studying the transmission of oral storytelling traditions across generations within immigrant communities found that grandchildren were significantly more likely to retain detailed knowledge of family stories when those stories had been told repeatedly during shared activities, such as cooking a traditional recipe together, rather than told as standalone narration with no accompanying activity, suggesting that pairing a story with a hands-on shared experience may strengthen how deeply it becomes embedded in a listener's memory over time.",
             "options": [
                 "Stories told as standalone narration were remembered better than those paired with activities.",
@@ -471,7 +471,7 @@
             "id": "RDG_READINGCONCLUSION_L130_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "Since the Okonkwo family began designating one kitchen drawer exclusively for items that needed to leave the house, library books, dry cleaning, forms to mail, they say they forget these outgoing items far less often than before, when such items were scattered across various surfaces throughout the house, though they noted the system requires everyone to actually use the drawer consistently, since the one week their teenage son stopped using it, several of his own items went missing again.",
             "options": [
                 "The drawer system worked well even during the week it went unused.",

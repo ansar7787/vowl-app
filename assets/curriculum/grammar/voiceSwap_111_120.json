@@ -1,547 +1,547 @@
 {
-  "gameType": "voiceSwap",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "vs_l111_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The large corporation proudly announced record profits during the annual shareholder meeting.",
-      "sentence": "The large corporation proudly announced record profits during the annual shareholder meeting.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Which noun is responsible for making this announcement?",
-      "explanation": "This is active voice: the corporation (the doer) performed the action announced directly on record profits. In passive, this would flip to: Record profits were proudly announced during the annual shareholder meeting.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l111_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
-      "sentence": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who performs the action planted? Look right before the verb.",
-      "explanation": "This is active voice: volunteers (the doer) performed the action planted directly on over a thousand trees. In passive, this would flip to: Over a thousand trees were planted along the riverbank last weekend.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l111_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
-      "sentence": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for was plus a past participle (rejected). No agent is named, but the subject still receives the action.",
-      "explanation": "This is passive voice: the pipeline (receiver) was rejected, but the sentence does not name who rejected it. In active, this would flip to: Regulators ultimately rejected the controversial proposed pipeline after months of public protest.",
-      "grammarRule": "Agentless Passive"
-    },
-    {
-      "id": "vs_l112_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was officially announced that the flight would depart from a different gate.",
-      "sentence": "It was officially announced that the flight would depart from a different gate.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Notice it opens the sentence as a placeholder subject, not the airline itself.",
-      "explanation": "This is passive voice: it functions as a placeholder subject, with was announced plus that reporting the statement impersonally. In active, this would flip to: The airline officially announced that the flight would depart from a different gate.",
-      "grammarRule": "Reported Statement Passive"
-    },
-    {
-      "id": "vs_l112_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was reported that tourism had declined sharply throughout the past year.",
-      "sentence": "It was reported that tourism had declined sharply throughout the past year.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "This sentence opens with a placeholder it rather than a real subject performing the reporting.",
-      "explanation": "This is passive voice: it functions as a placeholder subject, with was reported plus that reporting the finding impersonally. In active, this would flip to: Analysts reported that tourism had declined sharply throughout the past year.",
-      "grammarRule": "Reported Statement Passive"
-    },
-    {
-      "id": "vs_l112_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The tour guide explained that the ancient ruins predated the entire empire.",
-      "sentence": "The tour guide explained that the ancient ruins predated the entire empire.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who is doing the explaining? Check right before the verb.",
-      "explanation": "This is active voice: the guide (the doer) performed the action explained directly, introducing the reported clause. In passive, this would flip to: It was explained by the tour guide that the ancient ruins predated the entire empire.",
-      "grammarRule": "Reported Statement Active"
-    },
-    {
-      "id": "vs_l113_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The talented firm would attract better talent if it offered flexible work schedules.",
-      "sentence": "The talented firm would attract better talent if it offered flexible work schedules.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before would attract.",
-      "explanation": "This is active voice: the firm (the doer) would perform the action attract directly on better talent. In passive, this would flip to: Better talent would be attracted if the firm offered flexible work schedules.",
-      "grammarRule": "Second Conditional Active"
-    },
-    {
-      "id": "vs_l113_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "He would eventually complete the marathon if his old injury healed in time.",
-      "sentence": "He would eventually complete the marathon if his old injury healed in time.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who performs the action would complete? Look right before the verb.",
-      "explanation": "This is active voice: he (the doer) would perform the action complete directly on the marathon. In passive, this would flip to: The marathon would eventually be completed if his old injury healed in time.",
-      "grammarRule": "Second Conditional Active"
-    },
-    {
-      "id": "vs_l113_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
-      "sentence": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for would be plus a past participle (blocked). The subject receives the action here.",
-      "explanation": "This is passive voice: the merger (receiver) would be blocked, but no specific blocker is named. In active, this would flip to: Regulators would block the corporate merger if they found serious antitrust concerns.",
-      "grammarRule": "Second Conditional Passive"
-    },
-    {
-      "id": "vs_l114_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The community center was fully renovated using generous donations from local families.",
-      "sentence": "The community center was fully renovated using generous donations from local families.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for was plus a past participle (renovated). No agent is named, but the subject still receives the action.",
-      "explanation": "This is passive voice: the community center (receiver) was renovated, but the renovator is not named directly. In active, this would flip to: Volunteers fully renovated the community center using generous donations from local families.",
-      "grammarRule": "Agentless Passive"
-    },
-    {
-      "id": "vs_l114_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
-      "sentence": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The overlook did not close itself. No one performing the closing is mentioned here.",
-      "explanation": "This is passive voice: the overlook (receiver) was closed, but the closer is not named directly. In active, this would flip to: Park rangers closed the scenic mountain overlook indefinitely due to unstable rock formations.",
-      "grammarRule": "Agentless Passive"
-    },
-    {
-      "id": "vs_l114_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The city council will officially finalize the new bus routes by next spring.",
-      "sentence": "The city council will officially finalize the new bus routes by next spring.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before will finalize.",
-      "explanation": "This is active voice: the council (the doer) will perform the action finalize directly on the new bus routes. In passive, this would flip to: The new bus routes will officially be finalized by the city council by next spring.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l115_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "Leading economists warned that inflation would continue rising steadily through next year.",
-      "sentence": "Leading economists warned that inflation would continue rising steadily through next year.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before warned.",
-      "explanation": "This is active voice: economists (the doer) performed the action warned directly, introducing the reported clause. In passive, this would flip to: It was warned by leading economists that inflation would continue rising steadily through next year.",
-      "grammarRule": "Reported Statement Active"
-    },
-    {
-      "id": "vs_l115_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The company CEO admitted that they had seriously underestimated the production costs.",
-      "sentence": "The company CEO admitted that they had seriously underestimated the production costs.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who performs the action admitted? Look right before the verb.",
-      "explanation": "This is active voice: the CEO (the doer) performed the action admitted directly, introducing the reported clause. In passive, this would flip to: It was admitted by the company CEO that they had seriously underestimated the production costs.",
-      "grammarRule": "Reported Statement Active"
-    },
-    {
-      "id": "vs_l115_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was publicly claimed that the factory had violated environmental protection laws.",
-      "sentence": "It was publicly claimed that the factory had violated environmental protection laws.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for it was plus a past participle (claimed) plus that, an impersonal passive pattern.",
-      "explanation": "This is passive voice: it functions as a placeholder subject, with was claimed plus that reporting the accusation impersonally. In active, this would flip to: Environmental groups publicly claimed that the factory had violated environmental protection laws.",
-      "grammarRule": "Reported Statement Passive"
-    },
-    {
-      "id": "vs_l116_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The regional airline would offer more routes if passenger demand increased quite steadily.",
-      "sentence": "The regional airline would offer more routes if passenger demand increased quite steadily.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before would offer.",
-      "explanation": "This is active voice: the airline (the doer) would perform the action offer directly on more routes. In passive, this would flip to: More routes would be offered if passenger demand increased quite steadily.",
-      "grammarRule": "Second Conditional Active"
-    },
-    {
-      "id": "vs_l116_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The entire proposal would be rejected if the final budget exceeded expectations.",
-      "sentence": "The entire proposal would be rejected if the final budget exceeded expectations.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for would be plus a past participle (rejected). The subject receives the action here.",
-      "explanation": "This is passive voice: the proposal (receiver) would be rejected, but no specific rejector is named. In active, this would flip to: The board would reject the entire proposal if the final budget exceeded expectations.",
-      "grammarRule": "Second Conditional Passive"
-    },
-    {
-      "id": "vs_l116_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The entire trip would be postponed if the distant volcano continued erupting violently.",
-      "sentence": "The entire trip would be postponed if the distant volcano continued erupting violently.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for would be plus a past participle (postponed). The subject receives the action here.",
-      "explanation": "This is passive voice: the trip (receiver) would be postponed, but no specific organizer is named. In active, this would flip to: Organizers would postpone the entire trip if the distant volcano continued erupting violently.",
-      "grammarRule": "Second Conditional Passive"
-    },
-    {
-      "id": "vs_l117_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
-      "sentence": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before unveiled.",
-      "explanation": "This is active voice: the startup (the doer) performed the action unveiled directly on a new product. In passive, this would flip to: A groundbreaking new product was unveiled at the annual conference.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l117_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
-      "sentence": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who performs the action organized? Look right before the verb.",
-      "explanation": "This is active voice: neighbors (the doer) performed the action organized directly on a petition. In passive, this would flip to: A petition against the proposed downtown apartment complex was organized by concerned neighbors.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l117_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
-      "sentence": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for was plus a past participle (transformed). No agent is named, but the subject still receives the action.",
-      "explanation": "This is passive voice: the warehouse (receiver) was transformed, but the transformer is not named directly. In active, this would flip to: Developers gradually transformed the long abandoned warehouse into affordable housing units downtown.",
-      "grammarRule": "Agentless Passive"
-    },
-    {
-      "id": "vs_l118_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was formally stated that the airline would fully compensate all affected passengers.",
-      "sentence": "It was formally stated that the airline would fully compensate all affected passengers.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for it was plus a past participle (stated) plus that, an impersonal passive pattern.",
-      "explanation": "This is passive voice: it functions as a placeholder subject, with was stated plus that reporting the promise impersonally. In active, this would flip to: The airline formally stated that it would fully compensate all affected passengers.",
-      "grammarRule": "Reported Statement Passive"
-    },
-    {
-      "id": "vs_l118_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
-      "sentence": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for it was plus a past participle (argued) plus that, an impersonal passive pattern.",
-      "explanation": "This is passive voice: it functions as a placeholder subject, with was argued plus that reporting the opinion impersonally. In active, this would flip to: Critics strongly argued that stricter regulations would unfairly harm small businesses.",
-      "grammarRule": "Reported Statement Passive"
-    },
-    {
-      "id": "vs_l118_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
-      "sentence": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Which noun is actively making this confirmation?",
-      "explanation": "This is active voice: scientists (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by climate scientists that the glacier had retreated significantly since nineteen ninety.",
-      "grammarRule": "Reported Statement Active"
-    },
-    {
-      "id": "vs_l119_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The federal agency launched a thorough investigation into the suspicious trading activity.",
-      "sentence": "The federal agency launched a thorough investigation into the suspicious trading activity.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Which noun is the one launching the investigation?",
-      "explanation": "This is active voice: the agency (the doer) performed the action launched directly on an investigation. In passive, this would flip to: A thorough investigation into the suspicious trading activity was launched by the federal agency.",
-      "grammarRule": "Agentless Passive Active"
-    },
-    {
-      "id": "vs_l119_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The signed contract would be voided if either side seriously breached the terms.",
-      "sentence": "The signed contract would be voided if either side seriously breached the terms.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for would be plus a past participle (voided). The subject receives the action here.",
-      "explanation": "This is passive voice: the contract (receiver) would be voided, but no specific voider is emphasized. In active, this would flip to: Either side would void the signed contract if they seriously breached the terms.",
-      "grammarRule": "Second Conditional Passive"
-    },
-    {
-      "id": "vs_l119_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "Government reporters confirmed that the minister would formally resign by this Friday.",
-      "sentence": "Government reporters confirmed that the minister would formally resign by this Friday.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Who performs the action confirmed? Look right before the verb.",
-      "explanation": "This is active voice: reporters (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by government reporters that the minister would formally resign by this Friday.",
-      "grammarRule": "Reported Statement Active"
-    },
-    {
-      "id": "vs_l120_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The historic downtown theater was fully restored through a massive fundraising campaign.",
-      "sentence": "The historic downtown theater was fully restored through a massive fundraising campaign.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Look for was plus a past participle (restored). No agent is named, but the subject still receives the action.",
-      "explanation": "This milestone checkpoint reviews passive voice: the theater (receiver) was restored, but no specific restorer is named. In active, this would flip to: A massive fundraising campaign fully restored the historic downtown theater.",
-      "grammarRule": "Active/Passive Voice"
-    },
-    {
-      "id": "vs_l120_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "It was officially announced that the annual festival would be cancelled this year.",
-      "sentence": "It was officially announced that the annual festival would be cancelled this year.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "This sentence begins with it, a placeholder, rather than the organizers themselves.",
-      "explanation": "This milestone checkpoint reviews passive voice: it functions as a placeholder subject, with was announced plus that reporting the decision impersonally. In active, this would flip to: Organizers officially announced that the annual festival would be cancelled this year.",
-      "grammarRule": "Active/Passive Voice"
-    },
-    {
-      "id": "vs_l120_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The determined team would win the championship if they trained much harder this season.",
-      "sentence": "The determined team would win the championship if they trained much harder this season.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Find the doer right before would win, then decide the voice.",
-      "explanation": "This milestone checkpoint reviews active voice: the team (the doer) would perform the action win directly on the championship. In passive, this would flip to: The championship would be won by the determined team if they trained much harder this season.",
-      "grammarRule": "Active/Passive Voice"
-    }
-  ]
+    "gameType": "voiceSwap",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "vs_l111_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The large corporation proudly announced record profits during the annual shareholder meeting.",
+            "sentence": "The large corporation proudly announced record profits during the annual shareholder meeting.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Which noun is responsible for making this announcement?",
+            "explanation": "This is active voice: the corporation (the doer) performed the action announced directly on record profits. In passive, this would flip to: Record profits were proudly announced during the annual shareholder meeting.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l111_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
+            "sentence": "Dedicated volunteers planted over a thousand trees along the riverbank last weekend.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who performs the action planted? Look right before the verb.",
+            "explanation": "This is active voice: volunteers (the doer) performed the action planted directly on over a thousand trees. In passive, this would flip to: Over a thousand trees were planted along the riverbank last weekend.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l111_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
+            "sentence": "The controversial proposed pipeline was ultimately rejected after months of public protest.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for was plus a past participle (rejected). No agent is named, but the subject still receives the action.",
+            "explanation": "This is passive voice: the pipeline (receiver) was rejected, but the sentence does not name who rejected it. In active, this would flip to: Regulators ultimately rejected the controversial proposed pipeline after months of public protest.",
+            "grammarRule": "Agentless Passive"
+        },
+        {
+            "id": "vs_l112_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was officially announced that the flight would depart from a different gate.",
+            "sentence": "It was officially announced that the flight would depart from a different gate.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Notice it opens the sentence as a placeholder subject, not the airline itself.",
+            "explanation": "This is passive voice: it functions as a placeholder subject, with was announced plus that reporting the statement impersonally. In active, this would flip to: The airline officially announced that the flight would depart from a different gate.",
+            "grammarRule": "Reported Statement Passive"
+        },
+        {
+            "id": "vs_l112_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was reported that tourism had declined sharply throughout the past year.",
+            "sentence": "It was reported that tourism had declined sharply throughout the past year.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "This sentence opens with a placeholder it rather than a real subject performing the reporting.",
+            "explanation": "This is passive voice: it functions as a placeholder subject, with was reported plus that reporting the finding impersonally. In active, this would flip to: Analysts reported that tourism had declined sharply throughout the past year.",
+            "grammarRule": "Reported Statement Passive"
+        },
+        {
+            "id": "vs_l112_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The tour guide explained that the ancient ruins predated the entire empire.",
+            "sentence": "The tour guide explained that the ancient ruins predated the entire empire.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who is doing the explaining? Check right before the verb.",
+            "explanation": "This is active voice: the guide (the doer) performed the action explained directly, introducing the reported clause. In passive, this would flip to: It was explained by the tour guide that the ancient ruins predated the entire empire.",
+            "grammarRule": "Reported Statement Active"
+        },
+        {
+            "id": "vs_l113_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The talented firm would attract better talent if it offered flexible work schedules.",
+            "sentence": "The talented firm would attract better talent if it offered flexible work schedules.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before would attract.",
+            "explanation": "This is active voice: the firm (the doer) would perform the action attract directly on better talent. In passive, this would flip to: Better talent would be attracted if the firm offered flexible work schedules.",
+            "grammarRule": "Second Conditional Active"
+        },
+        {
+            "id": "vs_l113_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "He would eventually complete the marathon if his old injury healed in time.",
+            "sentence": "He would eventually complete the marathon if his old injury healed in time.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who performs the action would complete? Look right before the verb.",
+            "explanation": "This is active voice: he (the doer) would perform the action complete directly on the marathon. In passive, this would flip to: The marathon would eventually be completed if his old injury healed in time.",
+            "grammarRule": "Second Conditional Active"
+        },
+        {
+            "id": "vs_l113_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
+            "sentence": "The corporate merger would be blocked if regulators found serious antitrust concerns.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for would be plus a past participle (blocked). The subject receives the action here.",
+            "explanation": "This is passive voice: the merger (receiver) would be blocked, but no specific blocker is named. In active, this would flip to: Regulators would block the corporate merger if they found serious antitrust concerns.",
+            "grammarRule": "Second Conditional Passive"
+        },
+        {
+            "id": "vs_l114_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The community center was fully renovated using generous donations from local families.",
+            "sentence": "The community center was fully renovated using generous donations from local families.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for was plus a past participle (renovated). No agent is named, but the subject still receives the action.",
+            "explanation": "This is passive voice: the community center (receiver) was renovated, but the renovator is not named directly. In active, this would flip to: Volunteers fully renovated the community center using generous donations from local families.",
+            "grammarRule": "Agentless Passive"
+        },
+        {
+            "id": "vs_l114_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
+            "sentence": "The scenic mountain overlook was closed indefinitely due to unstable rock formations.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The overlook did not close itself. No one performing the closing is mentioned here.",
+            "explanation": "This is passive voice: the overlook (receiver) was closed, but the closer is not named directly. In active, this would flip to: Park rangers closed the scenic mountain overlook indefinitely due to unstable rock formations.",
+            "grammarRule": "Agentless Passive"
+        },
+        {
+            "id": "vs_l114_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The city council will officially finalize the new bus routes by next spring.",
+            "sentence": "The city council will officially finalize the new bus routes by next spring.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before will finalize.",
+            "explanation": "This is active voice: the council (the doer) will perform the action finalize directly on the new bus routes. In passive, this would flip to: The new bus routes will officially be finalized by the city council by next spring.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l115_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Leading economists warned that inflation would continue rising steadily through next year.",
+            "sentence": "Leading economists warned that inflation would continue rising steadily through next year.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before warned.",
+            "explanation": "This is active voice: economists (the doer) performed the action warned directly, introducing the reported clause. In passive, this would flip to: It was warned by leading economists that inflation would continue rising steadily through next year.",
+            "grammarRule": "Reported Statement Active"
+        },
+        {
+            "id": "vs_l115_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The company CEO admitted that they had seriously underestimated the production costs.",
+            "sentence": "The company CEO admitted that they had seriously underestimated the production costs.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who performs the action admitted? Look right before the verb.",
+            "explanation": "This is active voice: the CEO (the doer) performed the action admitted directly, introducing the reported clause. In passive, this would flip to: It was admitted by the company CEO that they had seriously underestimated the production costs.",
+            "grammarRule": "Reported Statement Active"
+        },
+        {
+            "id": "vs_l115_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was publicly claimed that the factory had violated environmental protection laws.",
+            "sentence": "It was publicly claimed that the factory had violated environmental protection laws.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for it was plus a past participle (claimed) plus that, an impersonal passive pattern.",
+            "explanation": "This is passive voice: it functions as a placeholder subject, with was claimed plus that reporting the accusation impersonally. In active, this would flip to: Environmental groups publicly claimed that the factory had violated environmental protection laws.",
+            "grammarRule": "Reported Statement Passive"
+        },
+        {
+            "id": "vs_l116_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The regional airline would offer more routes if passenger demand increased quite steadily.",
+            "sentence": "The regional airline would offer more routes if passenger demand increased quite steadily.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before would offer.",
+            "explanation": "This is active voice: the airline (the doer) would perform the action offer directly on more routes. In passive, this would flip to: More routes would be offered if passenger demand increased quite steadily.",
+            "grammarRule": "Second Conditional Active"
+        },
+        {
+            "id": "vs_l116_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The entire proposal would be rejected if the final budget exceeded expectations.",
+            "sentence": "The entire proposal would be rejected if the final budget exceeded expectations.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for would be plus a past participle (rejected). The subject receives the action here.",
+            "explanation": "This is passive voice: the proposal (receiver) would be rejected, but no specific rejector is named. In active, this would flip to: The board would reject the entire proposal if the final budget exceeded expectations.",
+            "grammarRule": "Second Conditional Passive"
+        },
+        {
+            "id": "vs_l116_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The entire trip would be postponed if the distant volcano continued erupting violently.",
+            "sentence": "The entire trip would be postponed if the distant volcano continued erupting violently.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for would be plus a past participle (postponed). The subject receives the action here.",
+            "explanation": "This is passive voice: the trip (receiver) would be postponed, but no specific organizer is named. In active, this would flip to: Organizers would postpone the entire trip if the distant volcano continued erupting violently.",
+            "grammarRule": "Second Conditional Passive"
+        },
+        {
+            "id": "vs_l117_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
+            "sentence": "The ambitious startup unveiled a groundbreaking new product at the annual conference.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before unveiled.",
+            "explanation": "This is active voice: the startup (the doer) performed the action unveiled directly on a new product. In passive, this would flip to: A groundbreaking new product was unveiled at the annual conference.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l117_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
+            "sentence": "Concerned neighbors organized a petition against the proposed downtown apartment complex.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who performs the action organized? Look right before the verb.",
+            "explanation": "This is active voice: neighbors (the doer) performed the action organized directly on a petition. In passive, this would flip to: A petition against the proposed downtown apartment complex was organized by concerned neighbors.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l117_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
+            "sentence": "The long abandoned warehouse was gradually transformed into affordable housing units downtown.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for was plus a past participle (transformed). No agent is named, but the subject still receives the action.",
+            "explanation": "This is passive voice: the warehouse (receiver) was transformed, but the transformer is not named directly. In active, this would flip to: Developers gradually transformed the long abandoned warehouse into affordable housing units downtown.",
+            "grammarRule": "Agentless Passive"
+        },
+        {
+            "id": "vs_l118_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was formally stated that the airline would fully compensate all affected passengers.",
+            "sentence": "It was formally stated that the airline would fully compensate all affected passengers.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for it was plus a past participle (stated) plus that, an impersonal passive pattern.",
+            "explanation": "This is passive voice: it functions as a placeholder subject, with was stated plus that reporting the promise impersonally. In active, this would flip to: The airline formally stated that it would fully compensate all affected passengers.",
+            "grammarRule": "Reported Statement Passive"
+        },
+        {
+            "id": "vs_l118_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
+            "sentence": "It was strongly argued that stricter regulations would unfairly harm small businesses.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for it was plus a past participle (argued) plus that, an impersonal passive pattern.",
+            "explanation": "This is passive voice: it functions as a placeholder subject, with was argued plus that reporting the opinion impersonally. In active, this would flip to: Critics strongly argued that stricter regulations would unfairly harm small businesses.",
+            "grammarRule": "Reported Statement Passive"
+        },
+        {
+            "id": "vs_l118_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
+            "sentence": "Climate scientists confirmed that the glacier had retreated significantly since nineteen ninety.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Which noun is actively making this confirmation?",
+            "explanation": "This is active voice: scientists (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by climate scientists that the glacier had retreated significantly since nineteen ninety.",
+            "grammarRule": "Reported Statement Active"
+        },
+        {
+            "id": "vs_l119_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The federal agency launched a thorough investigation into the suspicious trading activity.",
+            "sentence": "The federal agency launched a thorough investigation into the suspicious trading activity.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Which noun is the one launching the investigation?",
+            "explanation": "This is active voice: the agency (the doer) performed the action launched directly on an investigation. In passive, this would flip to: A thorough investigation into the suspicious trading activity was launched by the federal agency.",
+            "grammarRule": "Agentless Passive Active"
+        },
+        {
+            "id": "vs_l119_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The signed contract would be voided if either side seriously breached the terms.",
+            "sentence": "The signed contract would be voided if either side seriously breached the terms.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for would be plus a past participle (voided). The subject receives the action here.",
+            "explanation": "This is passive voice: the contract (receiver) would be voided, but no specific voider is emphasized. In active, this would flip to: Either side would void the signed contract if they seriously breached the terms.",
+            "grammarRule": "Second Conditional Passive"
+        },
+        {
+            "id": "vs_l119_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "Government reporters confirmed that the minister would formally resign by this Friday.",
+            "sentence": "Government reporters confirmed that the minister would formally resign by this Friday.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Who performs the action confirmed? Look right before the verb.",
+            "explanation": "This is active voice: reporters (the doer) performed the action confirmed directly, introducing the reported clause. In passive, this would flip to: It was confirmed by government reporters that the minister would formally resign by this Friday.",
+            "grammarRule": "Reported Statement Active"
+        },
+        {
+            "id": "vs_l120_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The historic downtown theater was fully restored through a massive fundraising campaign.",
+            "sentence": "The historic downtown theater was fully restored through a massive fundraising campaign.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Look for was plus a past participle (restored). No agent is named, but the subject still receives the action.",
+            "explanation": "This milestone checkpoint reviews passive voice: the theater (receiver) was restored, but no specific restorer is named. In active, this would flip to: A massive fundraising campaign fully restored the historic downtown theater.",
+            "grammarRule": "Active/Passive Voice"
+        },
+        {
+            "id": "vs_l120_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "It was officially announced that the annual festival would be cancelled this year.",
+            "sentence": "It was officially announced that the annual festival would be cancelled this year.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "This sentence begins with it, a placeholder, rather than the organizers themselves.",
+            "explanation": "This milestone checkpoint reviews passive voice: it functions as a placeholder subject, with was announced plus that reporting the decision impersonally. In active, this would flip to: Organizers officially announced that the annual festival would be cancelled this year.",
+            "grammarRule": "Active/Passive Voice"
+        },
+        {
+            "id": "vs_l120_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "subtype": "voiceSwap",
+            "interactionType": "choice",
+            "question": "The determined team would win the championship if they trained much harder this season.",
+            "sentence": "The determined team would win the championship if they trained much harder this season.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Find the doer right before would win, then decide the voice.",
+            "explanation": "This milestone checkpoint reviews active voice: the team (the doer) would perform the action win directly on the championship. In passive, this would flip to: The championship would be won by the determined team if they trained much harder this season.",
+            "grammarRule": "Active/Passive Voice"
+        }
+    ]
 }

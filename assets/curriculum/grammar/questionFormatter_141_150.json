@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 15,
-  "levels": "141-150",
-  "quests": [
-    {
-      "id": "qf_l141_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been working here since 2019.",
-      "sentence": "She has been working here since 2019.",
-      "options": [
-        "She has been working here since 2019, has she?",
-        "She has been working here since 2019, hasn't it?",
-        "She has been working here since 2019, doesn't she?",
-        "She has been working here since 2019, hasn't she?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "She has been working here since 2019, hasn't she?",
-      "hint": "The tag reuses 'has' in its negative form: 'hasn't she?'",
-      "explanation": "Present perfect continuous tags reuse 'has/have'. Since the statement is positive, the tag is negative: 'hasn't she'.",
-      "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
-    },
-    {
-      "id": "qf_l141_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They haven't been sleeping well lately.",
-      "sentence": "They haven't been sleeping well lately.",
-      "options": [
-        "They haven't been sleeping well lately, haven't they?",
-        "They haven't been sleeping well lately, did they?",
-        "They haven't been sleeping well lately, do they?",
-        "They haven't been sleeping well lately, have they?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "They haven't been sleeping well lately, have they?",
-      "hint": "The statement is negative, so use the positive tag 'have they?'",
-      "explanation": "A negative present perfect continuous statement takes a positive tag: 'have they', reusing the same auxiliary.",
-      "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
-    },
-    {
-      "id": "qf_l141_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He's been studying really hard this semester.",
-      "sentence": "He's been studying really hard this semester.",
-      "options": [
-        "He's been studying really hard this semester, has he?",
-        "He's been studying really hard this semester, isn't he?",
-        "He's been studying really hard this semester, doesn't he?",
-        "He's been studying really hard this semester, hasn't he?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "He's been studying really hard this semester, hasn't he?",
-      "hint": "The tag reuses 'has' in its negative form.",
-      "explanation": "Since the statement uses 'has been' and is positive, the tag is negative and reuses 'has': 'hasn't he'.",
-      "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
-    },
-    {
-      "id": "qf_l142_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You should have called before coming over.",
-      "sentence": "You should have called before coming over.",
-      "options": [
-        "You should have called before coming over, should you?",
-        "You should have called before coming over, hadn't you?",
-        "You should have called before coming over, didn't you?",
-        "You should have called before coming over, shouldn't you?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "You should have called before coming over, shouldn't you?",
-      "hint": "The tag reuses the modal 'should' in its negative form.",
-      "explanation": "With modal perfect statements, the tag reuses the modal itself, not 'have'. Since positive, the tag is negative: 'shouldn't you'.",
-      "grammarRule": "Advanced Tag Questions: Modal Perfect"
-    },
-    {
-      "id": "qf_l142_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They couldn't have known about the schedule change.",
-      "sentence": "They couldn't have known about the schedule change.",
-      "options": [
-        "They couldn't have known about the schedule change, could they?",
-        "They couldn't have known about the schedule change, couldn't they?",
-        "They couldn't have known about the schedule change, did they?",
-        "They couldn't have known about the schedule change, hadn't they?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "They couldn't have known about the schedule change, could they?",
-      "hint": "The statement is negative, so use the positive tag 'could they?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could they'.",
-      "grammarRule": "Advanced Tag Questions: Modal Perfect"
-    },
-    {
-      "id": "qf_l142_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She must have forgotten about our appointment.",
-      "sentence": "She must have forgotten about our appointment.",
-      "options": [
-        "She must have forgotten about our appointment, must she?",
-        "She must have forgotten about our appointment, mustn't she?",
-        "She must have forgotten about our appointment, hadn't she?",
-        "She must have forgotten about our appointment, didn't she?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She must have forgotten about our appointment, mustn't she?",
-      "hint": "The tag reuses the modal 'must' in its negative form.",
-      "explanation": "The tag for a modal perfect statement reuses the same modal. Since this is positive, the tag is negative: 'mustn't she'.",
-      "grammarRule": "Advanced Tag Questions: Modal Perfect"
-    },
-    {
-      "id": "qf_l143_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Neither of the applicants passed the test.",
-      "sentence": "Neither of the applicants passed the test.",
-      "options": [
-        "Neither of the applicants passed the test, did they?",
-        "Neither of the applicants passed the test, didn't they?",
-        "Neither of the applicants passed the test, weren't they?",
-        "Neither of the applicants passed the test, has they?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Neither of the applicants passed the test, did they?",
-      "hint": "'Neither' has a negative meaning, so the tag should be positive.",
-      "explanation": "'Neither' carries negative meaning even without 'not', so the tag question stays positive: 'did they'.",
-      "grammarRule": "Advanced Tag Questions: Compound Subjects"
-    },
-    {
-      "id": "qf_l143_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Both of the reports contain the same error.",
-      "sentence": "Both of the reports contain the same error.",
-      "options": [
-        "Both of the reports contain the same error, do they?",
-        "Both of the reports contain the same error, don't they?",
-        "Both of the reports contain the same error, doesn't it?",
-        "Both of the reports contain the same error, aren't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Both of the reports contain the same error, don't they?",
-      "hint": "The statement is positive and plural, so use 'don't they?'",
-      "explanation": "'Both of the reports' is treated as plural, so this positive statement takes the negative tag 'don't they'.",
-      "grammarRule": "Advanced Tag Questions: Compound Subjects"
-    },
-    {
-      "id": "qf_l143_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Each of the students needs a laptop.",
-      "sentence": "Each of the students needs a laptop.",
-      "options": [
-        "Each of the students needs a laptop, doesn't he?",
-        "Each of the students needs a laptop, don't they?",
-        "Each of the students needs a laptop, does he?",
-        "Each of the students needs a laptop, aren't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Each of the students needs a laptop, don't they?",
-      "hint": "Even though 'each' takes a singular verb, the tag commonly uses 'they' as a neutral pronoun.",
-      "explanation": "'Each' takes a singular verb ('needs'), but the tag pronoun is commonly the neutral 'they': 'don't they?'",
-      "grammarRule": "Advanced Tag Questions: Compound Subjects"
-    },
-    {
-      "id": "qf_l144_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I suppose you're not from around here.",
-      "sentence": "I suppose you're not from around here.",
-      "options": [
-        "I suppose you're not from around here, are you?",
-        "I suppose you're not from around here, aren't you?",
-        "I suppose you're not from around here, do you?",
-        "I suppose you're not from around here, don't you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "I suppose you're not from around here, are you?",
-      "hint": "Focus on the embedded clause 'you're not from here' - it's negative, so use a positive tag.",
-      "explanation": "The tag agrees with the embedded clause, not 'I suppose'. Since 'you're not from here' is negative, the tag is positive: 'are you'.",
-      "grammarRule": "Advanced Tag Questions: Embedded Clauses"
-    },
-    {
-      "id": "qf_l144_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I guess he hasn't called back yet.",
-      "sentence": "I guess he hasn't called back yet.",
-      "options": [
-        "I guess he hasn't called back yet, hasn't he?",
-        "I guess he hasn't called back yet, has he?",
-        "I guess he hasn't called back yet, don't I?",
-        "I guess he hasn't called back yet, doesn't he?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "I guess he hasn't called back yet, has he?",
-      "hint": "The tag agrees with the embedded clause 'he hasn't called back', which is negative.",
-      "explanation": "Since the embedded clause is negative ('hasn't called back'), the tag is positive: 'has he', matching that clause, not 'I guess'.",
-      "grammarRule": "Advanced Tag Questions: Embedded Clauses"
-    },
-    {
-      "id": "qf_l144_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I believe she's already left for the day.",
-      "sentence": "I believe she's already left for the day.",
-      "options": [
-        "I believe she's already left for the day, hasn't she?",
-        "I believe she's already left for the day, isn't she?",
-        "I believe she's already left for the day, doesn't she?",
-        "I believe she's already left for the day, hasn't I?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "I believe she's already left for the day, hasn't she?",
-      "hint": "The tag agrees with 'she's already left', not 'I believe'.",
-      "explanation": "The tag matches the embedded clause 'she's already left' (present perfect, positive), so the tag is negative: 'hasn't she'.",
-      "grammarRule": "Advanced Tag Questions: Embedded Clauses"
-    },
-    {
-      "id": "qf_l145_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The building was designed by a local architect.",
-      "sentence": "The building was designed by a local architect.",
-      "options": [
-        "The building was designed by a local architect, was it?",
-        "The building was designed by a local architect, didn't it?",
-        "The building was designed by a local architect, wasn't he?",
-        "The building was designed by a local architect, wasn't it?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "The building was designed by a local architect, wasn't it?",
-      "hint": "The tag reuses 'was' in its negative form.",
-      "explanation": "Passive tags reuse the 'be' verb from the statement. Since this is positive, the tag is negative: 'wasn't it'.",
-      "grammarRule": "Advanced Tag Questions: Passive Voice"
-    },
-    {
-      "id": "qf_l145_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The proposals haven't been reviewed yet.",
-      "sentence": "The proposals haven't been reviewed yet.",
-      "options": [
-        "The proposals haven't been reviewed yet, haven't they?",
-        "The proposals haven't been reviewed yet, don't they?",
-        "The proposals haven't been reviewed yet, have they?",
-        "The proposals haven't been reviewed yet, has they?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The proposals haven't been reviewed yet, have they?",
-      "hint": "The statement is negative, so use the positive tag 'have they?'",
-      "explanation": "A negative passive present perfect statement takes a positive tag: 'have they', reusing the same auxiliary.",
-      "grammarRule": "Advanced Tag Questions: Passive Voice"
-    },
-    {
-      "id": "qf_l145_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The samples are being tested in the lab.",
-      "sentence": "The samples are being tested in the lab.",
-      "options": [
-        "The samples are being tested in the lab, don't they?",
-        "The samples are being tested in the lab, aren't they?",
-        "The samples are being tested in the lab, are they?",
-        "The samples are being tested in the lab, isn't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The samples are being tested in the lab, aren't they?",
-      "hint": "The tag reuses 'are' in its negative form.",
-      "explanation": "Passive continuous tags reuse 'be'. Since the statement is positive and plural, the tag is negative: 'aren't they'.",
-      "grammarRule": "Advanced Tag Questions: Passive Voice"
-    },
-    {
-      "id": "qf_l146_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You used to live in Chicago.",
-      "sentence": "You used to live in Chicago.",
-      "options": [
-        "You used to live in Chicago, didn't you?",
-        "You used to live in Chicago, usedn't you?",
-        "You used to live in Chicago, weren't you?",
-        "You used to live in Chicago, don't you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You used to live in Chicago, didn't you?",
-      "hint": "'Used to' takes 'did' in tags, just like other simple past verbs.",
-      "explanation": "'Used to' behaves like a regular past verb in tags, using 'did': 'didn't you', not a special form.",
-      "grammarRule": "Advanced Tag Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l146_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This town didn't use to have so much traffic.",
-      "sentence": "This town didn't use to have so much traffic.",
-      "options": [
-        "This town didn't use to have so much traffic, didn't it?",
-        "This town didn't use to have so much traffic, wasn't it?",
-        "This town didn't use to have so much traffic, did it?",
-        "This town didn't use to have so much traffic, hadn't it?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "This town didn't use to have so much traffic, did it?",
-      "hint": "The statement is negative, so use the positive tag 'did it?'",
-      "explanation": "A negative 'didn't use to' statement takes the positive tag 'did it', just like other past simple negatives.",
-      "grammarRule": "Advanced Tag Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l146_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Your grandparents used to run a small bakery.",
-      "sentence": "Your grandparents used to run a small bakery.",
-      "options": [
-        "Your grandparents used to run a small bakery, usedn't they?",
-        "Your grandparents used to run a small bakery, didn't they?",
-        "Your grandparents used to run a small bakery, weren't they?",
-        "Your grandparents used to run a small bakery, don't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Your grandparents used to run a small bakery, didn't they?",
-      "hint": "'Used to' takes 'did' in the tag, matching the plural subject.",
-      "explanation": "'Used to' uses 'did' in the tag question, just like a regular past verb: 'didn't they'.",
-      "grammarRule": "Advanced Tag Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l147_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You wouldn't mind waiting a few more minutes.",
-      "sentence": "You wouldn't mind waiting a few more minutes.",
-      "options": [
-        "You wouldn't mind waiting a few more minutes, would you?",
-        "You wouldn't mind waiting a few more minutes, wouldn't you?",
-        "You wouldn't mind waiting a few more minutes, do you?",
-        "You wouldn't mind waiting a few more minutes, didn't you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You wouldn't mind waiting a few more minutes, would you?",
-      "hint": "The statement is negative, so use the positive tag 'would you?'",
-      "explanation": "A negative modal statement takes a positive tag using the same modal: 'would you'.",
-      "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
-    },
-    {
-      "id": "qf_l147_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We shouldn't have left the windows open.",
-      "sentence": "We shouldn't have left the windows open.",
-      "options": [
-        "We shouldn't have left the windows open, should we?",
-        "We shouldn't have left the windows open, shouldn't we?",
-        "We shouldn't have left the windows open, hadn't we?",
-        "We shouldn't have left the windows open, didn't we?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "We shouldn't have left the windows open, should we?",
-      "hint": "The statement is negative, so use the positive tag 'should we?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'should we'.",
-      "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
-    },
-    {
-      "id": "qf_l147_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He can't have finished the project already.",
-      "sentence": "He can't have finished the project already.",
-      "options": [
-        "He can't have finished the project already, can't he?",
-        "He can't have finished the project already, hasn't he?",
-        "He can't have finished the project already, didn't he?",
-        "He can't have finished the project already, can he?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "He can't have finished the project already, can he?",
-      "hint": "The statement is negative, so use the positive tag 'can he?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'can he'.",
-      "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
-    },
-    {
-      "id": "qf_l148_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There should be enough seats for everyone.",
-      "sentence": "There should be enough seats for everyone.",
-      "options": [
-        "There should be enough seats for everyone, shouldn't there?",
-        "There should be enough seats for everyone, should there?",
-        "There should be enough seats for everyone, shouldn't it?",
-        "There should be enough seats for everyone, isn't there?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "There should be enough seats for everyone, shouldn't there?",
-      "hint": "The tag reuses the modal 'should' and keeps 'there' as the subject.",
-      "explanation": "'There' stays as the tag subject, and the modal 'should' is reused in its negative form: 'shouldn't there'.",
-      "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
-    },
-    {
-      "id": "qf_l148_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There hasn't been any progress on the project.",
-      "sentence": "There hasn't been any progress on the project.",
-      "options": [
-        "There hasn't been any progress on the project, hasn't there?",
-        "There hasn't been any progress on the project, isn't there?",
-        "There hasn't been any progress on the project, has there?",
-        "There hasn't been any progress on the project, doesn't there?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "There hasn't been any progress on the project, has there?",
-      "hint": "The statement is negative, so use the positive tag 'has there?'",
-      "explanation": "A negative 'there has been' statement takes a positive tag: 'has there', keeping 'there' as the tag subject.",
-      "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
-    },
-    {
-      "id": "qf_l148_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There must be a reason for the delay.",
-      "sentence": "There must be a reason for the delay.",
-      "options": [
-        "There must be a reason for the delay, must there?",
-        "There must be a reason for the delay, mustn't it?",
-        "There must be a reason for the delay, mustn't there?",
-        "There must be a reason for the delay, isn't there?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "There must be a reason for the delay, mustn't there?",
-      "hint": "The tag reuses the modal 'must' and keeps 'there' as the subject.",
-      "explanation": "'There' remains the tag subject, and 'must' is reused in its negative form: 'mustn't there'.",
-      "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
-    },
-    {
-      "id": "qf_l149_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The engineers have been testing the prototype for several weeks now.",
-      "sentence": "The engineers have been testing the prototype for several weeks now.",
-      "options": [
-        "The engineers have been testing the prototype for several weeks now, have they?",
-        "The engineers have been testing the prototype for several weeks now, haven't they?",
-        "The engineers have been testing the prototype for several weeks now, haven't it?",
-        "The engineers have been testing the prototype for several weeks now, don't they?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The engineers have been testing the prototype for several weeks now, haven't they?",
-      "hint": "The tag reuses 'have' in its negative form.",
-      "explanation": "Present perfect continuous tags reuse 'have/has'. Since the statement is positive, the tag is negative: 'haven't they'.",
-      "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l149_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The negotiations couldn't have gone any worse.",
-      "sentence": "The negotiations couldn't have gone any worse.",
-      "options": [
-        "The negotiations couldn't have gone any worse, couldn't they?",
-        "The negotiations couldn't have gone any worse, did they?",
-        "The negotiations couldn't have gone any worse, haven't they?",
-        "The negotiations couldn't have gone any worse, could they?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "The negotiations couldn't have gone any worse, could they?",
-      "hint": "The statement is negative, so use the positive tag 'could they?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could they'.",
-      "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l149_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This particular model hasn't been recalled by the manufacturer.",
-      "sentence": "This particular model hasn't been recalled by the manufacturer.",
-      "options": [
-        "This particular model hasn't been recalled by the manufacturer, hasn't it?",
-        "This particular model hasn't been recalled by the manufacturer, isn't it?",
-        "This particular model hasn't been recalled by the manufacturer, doesn't it?",
-        "This particular model hasn't been recalled by the manufacturer, has it?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "This particular model hasn't been recalled by the manufacturer, has it?",
-      "hint": "The statement is negative, so use the positive tag 'has it?'",
-      "explanation": "A negative passive present perfect statement takes a positive tag: 'has it', reusing the same auxiliary.",
-      "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
-    },
-    {
-      "id": "qf_l150_q1",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She shouldn't have signed the contract without reading it.",
-      "sentence": "She shouldn't have signed the contract without reading it.",
-      "options": [
-        "She shouldn't have signed the contract without reading it, shouldn't she?",
-        "She shouldn't have signed the contract without reading it, hadn't she?",
-        "She shouldn't have signed the contract without reading it, didn't she?",
-        "She shouldn't have signed the contract without reading it, should she?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "She shouldn't have signed the contract without reading it, should she?",
-      "hint": "The statement is negative, so use the positive tag 'should she?'",
-      "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'should she'.",
-      "grammarRule": "Advanced Tag Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l150_q2",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "There couldn't have been a better outcome.",
-      "sentence": "There couldn't have been a better outcome.",
-      "options": [
-        "There couldn't have been a better outcome, couldn't there?",
-        "There couldn't have been a better outcome, was there?",
-        "There couldn't have been a better outcome, hadn't there?",
-        "There couldn't have been a better outcome, could there?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "There couldn't have been a better outcome, could there?",
-      "hint": "The statement is negative, so use the positive tag 'could there?'",
-      "explanation": "A negative modal perfect statement with 'there' takes a positive tag using the same modal: 'could there'.",
-      "grammarRule": "Advanced Tag Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l150_q3",
-      "instruction": "Complete the tag question correctly.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "Neither of the two candidates has responded yet.",
-      "sentence": "Neither of the two candidates has responded yet.",
-      "options": [
-        "Neither of the two candidates has responded yet, have they?",
-        "Neither of the two candidates has responded yet, haven't they?",
-        "Neither of the two candidates has responded yet, hasn't he?",
-        "Neither of the two candidates has responded yet, has he?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Neither of the two candidates has responded yet, have they?",
-      "hint": "'Neither' has negative meaning, so use a positive tag with the neutral pronoun 'they'.",
-      "explanation": "'Neither' is negative in meaning, so the tag is positive, and modern usage takes the neutral pronoun: 'have they'.",
-      "grammarRule": "Advanced Tag Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 15,
+    "levels": "141-150",
+    "quests": [
+        {
+            "id": "qf_l141_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She has been working here since 2019.",
+            "sentence": "She has been working here since 2019.",
+            "options": [
+                "She has been working here since 2019, has she?",
+                "She has been working here since 2019, hasn't it?",
+                "She has been working here since 2019, doesn't she?",
+                "She has been working here since 2019, hasn't she?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "She has been working here since 2019, hasn't she?",
+            "hint": "The tag reuses 'has' in its negative form: 'hasn't she?'",
+            "explanation": "Present perfect continuous tags reuse 'has/have'. Since the statement is positive, the tag is negative: 'hasn't she'.",
+            "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
+        },
+        {
+            "id": "qf_l141_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They haven't been sleeping well lately.",
+            "sentence": "They haven't been sleeping well lately.",
+            "options": [
+                "They haven't been sleeping well lately, haven't they?",
+                "They haven't been sleeping well lately, did they?",
+                "They haven't been sleeping well lately, do they?",
+                "They haven't been sleeping well lately, have they?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "They haven't been sleeping well lately, have they?",
+            "hint": "The statement is negative, so use the positive tag 'have they?'",
+            "explanation": "A negative present perfect continuous statement takes a positive tag: 'have they', reusing the same auxiliary.",
+            "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
+        },
+        {
+            "id": "qf_l141_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He's been studying really hard this semester.",
+            "sentence": "He's been studying really hard this semester.",
+            "options": [
+                "He's been studying really hard this semester, has he?",
+                "He's been studying really hard this semester, isn't he?",
+                "He's been studying really hard this semester, doesn't he?",
+                "He's been studying really hard this semester, hasn't he?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "He's been studying really hard this semester, hasn't he?",
+            "hint": "The tag reuses 'has' in its negative form.",
+            "explanation": "Since the statement uses 'has been' and is positive, the tag is negative and reuses 'has': 'hasn't he'.",
+            "grammarRule": "Advanced Tag Questions: Present Perfect Continuous"
+        },
+        {
+            "id": "qf_l142_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You should have called before coming over.",
+            "sentence": "You should have called before coming over.",
+            "options": [
+                "You should have called before coming over, should you?",
+                "You should have called before coming over, hadn't you?",
+                "You should have called before coming over, didn't you?",
+                "You should have called before coming over, shouldn't you?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "You should have called before coming over, shouldn't you?",
+            "hint": "The tag reuses the modal 'should' in its negative form.",
+            "explanation": "With modal perfect statements, the tag reuses the modal itself, not 'have'. Since positive, the tag is negative: 'shouldn't you'.",
+            "grammarRule": "Advanced Tag Questions: Modal Perfect"
+        },
+        {
+            "id": "qf_l142_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "They couldn't have known about the schedule change.",
+            "sentence": "They couldn't have known about the schedule change.",
+            "options": [
+                "They couldn't have known about the schedule change, could they?",
+                "They couldn't have known about the schedule change, couldn't they?",
+                "They couldn't have known about the schedule change, did they?",
+                "They couldn't have known about the schedule change, hadn't they?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "They couldn't have known about the schedule change, could they?",
+            "hint": "The statement is negative, so use the positive tag 'could they?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could they'.",
+            "grammarRule": "Advanced Tag Questions: Modal Perfect"
+        },
+        {
+            "id": "qf_l142_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She must have forgotten about our appointment.",
+            "sentence": "She must have forgotten about our appointment.",
+            "options": [
+                "She must have forgotten about our appointment, must she?",
+                "She must have forgotten about our appointment, mustn't she?",
+                "She must have forgotten about our appointment, hadn't she?",
+                "She must have forgotten about our appointment, didn't she?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "She must have forgotten about our appointment, mustn't she?",
+            "hint": "The tag reuses the modal 'must' in its negative form.",
+            "explanation": "The tag for a modal perfect statement reuses the same modal. Since this is positive, the tag is negative: 'mustn't she'.",
+            "grammarRule": "Advanced Tag Questions: Modal Perfect"
+        },
+        {
+            "id": "qf_l143_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Neither of the applicants passed the test.",
+            "sentence": "Neither of the applicants passed the test.",
+            "options": [
+                "Neither of the applicants passed the test, did they?",
+                "Neither of the applicants passed the test, didn't they?",
+                "Neither of the applicants passed the test, weren't they?",
+                "Neither of the applicants passed the test, has they?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Neither of the applicants passed the test, did they?",
+            "hint": "'Neither' has a negative meaning, so the tag should be positive.",
+            "explanation": "'Neither' carries negative meaning even without 'not', so the tag question stays positive: 'did they'.",
+            "grammarRule": "Advanced Tag Questions: Compound Subjects"
+        },
+        {
+            "id": "qf_l143_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Both of the reports contain the same error.",
+            "sentence": "Both of the reports contain the same error.",
+            "options": [
+                "Both of the reports contain the same error, do they?",
+                "Both of the reports contain the same error, don't they?",
+                "Both of the reports contain the same error, doesn't it?",
+                "Both of the reports contain the same error, aren't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Both of the reports contain the same error, don't they?",
+            "hint": "The statement is positive and plural, so use 'don't they?'",
+            "explanation": "'Both of the reports' is treated as plural, so this positive statement takes the negative tag 'don't they'.",
+            "grammarRule": "Advanced Tag Questions: Compound Subjects"
+        },
+        {
+            "id": "qf_l143_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Each of the students needs a laptop.",
+            "sentence": "Each of the students needs a laptop.",
+            "options": [
+                "Each of the students needs a laptop, doesn't he?",
+                "Each of the students needs a laptop, don't they?",
+                "Each of the students needs a laptop, does he?",
+                "Each of the students needs a laptop, aren't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Each of the students needs a laptop, don't they?",
+            "hint": "Even though 'each' takes a singular verb, the tag commonly uses 'they' as a neutral pronoun.",
+            "explanation": "'Each' takes a singular verb ('needs'), but the tag pronoun is commonly the neutral 'they': 'don't they?'",
+            "grammarRule": "Advanced Tag Questions: Compound Subjects"
+        },
+        {
+            "id": "qf_l144_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I suppose you're not from around here.",
+            "sentence": "I suppose you're not from around here.",
+            "options": [
+                "I suppose you're not from around here, are you?",
+                "I suppose you're not from around here, aren't you?",
+                "I suppose you're not from around here, do you?",
+                "I suppose you're not from around here, don't you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "I suppose you're not from around here, are you?",
+            "hint": "Focus on the embedded clause 'you're not from here' - it's negative, so use a positive tag.",
+            "explanation": "The tag agrees with the embedded clause, not 'I suppose'. Since 'you're not from here' is negative, the tag is positive: 'are you'.",
+            "grammarRule": "Advanced Tag Questions: Embedded Clauses"
+        },
+        {
+            "id": "qf_l144_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I guess he hasn't called back yet.",
+            "sentence": "I guess he hasn't called back yet.",
+            "options": [
+                "I guess he hasn't called back yet, hasn't he?",
+                "I guess he hasn't called back yet, has he?",
+                "I guess he hasn't called back yet, don't I?",
+                "I guess he hasn't called back yet, doesn't he?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "I guess he hasn't called back yet, has he?",
+            "hint": "The tag agrees with the embedded clause 'he hasn't called back', which is negative.",
+            "explanation": "Since the embedded clause is negative ('hasn't called back'), the tag is positive: 'has he', matching that clause, not 'I guess'.",
+            "grammarRule": "Advanced Tag Questions: Embedded Clauses"
+        },
+        {
+            "id": "qf_l144_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I believe she's already left for the day.",
+            "sentence": "I believe she's already left for the day.",
+            "options": [
+                "I believe she's already left for the day, hasn't she?",
+                "I believe she's already left for the day, isn't she?",
+                "I believe she's already left for the day, doesn't she?",
+                "I believe she's already left for the day, hasn't I?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "I believe she's already left for the day, hasn't she?",
+            "hint": "The tag agrees with 'she's already left', not 'I believe'.",
+            "explanation": "The tag matches the embedded clause 'she's already left' (present perfect, positive), so the tag is negative: 'hasn't she'.",
+            "grammarRule": "Advanced Tag Questions: Embedded Clauses"
+        },
+        {
+            "id": "qf_l145_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The building was designed by a local architect.",
+            "sentence": "The building was designed by a local architect.",
+            "options": [
+                "The building was designed by a local architect, was it?",
+                "The building was designed by a local architect, didn't it?",
+                "The building was designed by a local architect, wasn't he?",
+                "The building was designed by a local architect, wasn't it?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "The building was designed by a local architect, wasn't it?",
+            "hint": "The tag reuses 'was' in its negative form.",
+            "explanation": "Passive tags reuse the 'be' verb from the statement. Since this is positive, the tag is negative: 'wasn't it'.",
+            "grammarRule": "Advanced Tag Questions: Passive Voice"
+        },
+        {
+            "id": "qf_l145_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The proposals haven't been reviewed yet.",
+            "sentence": "The proposals haven't been reviewed yet.",
+            "options": [
+                "The proposals haven't been reviewed yet, haven't they?",
+                "The proposals haven't been reviewed yet, don't they?",
+                "The proposals haven't been reviewed yet, have they?",
+                "The proposals haven't been reviewed yet, has they?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "The proposals haven't been reviewed yet, have they?",
+            "hint": "The statement is negative, so use the positive tag 'have they?'",
+            "explanation": "A negative passive present perfect statement takes a positive tag: 'have they', reusing the same auxiliary.",
+            "grammarRule": "Advanced Tag Questions: Passive Voice"
+        },
+        {
+            "id": "qf_l145_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The samples are being tested in the lab.",
+            "sentence": "The samples are being tested in the lab.",
+            "options": [
+                "The samples are being tested in the lab, don't they?",
+                "The samples are being tested in the lab, aren't they?",
+                "The samples are being tested in the lab, are they?",
+                "The samples are being tested in the lab, isn't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The samples are being tested in the lab, aren't they?",
+            "hint": "The tag reuses 'are' in its negative form.",
+            "explanation": "Passive continuous tags reuse 'be'. Since the statement is positive and plural, the tag is negative: 'aren't they'.",
+            "grammarRule": "Advanced Tag Questions: Passive Voice"
+        },
+        {
+            "id": "qf_l146_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You used to live in Chicago.",
+            "sentence": "You used to live in Chicago.",
+            "options": [
+                "You used to live in Chicago, didn't you?",
+                "You used to live in Chicago, usedn't you?",
+                "You used to live in Chicago, weren't you?",
+                "You used to live in Chicago, don't you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You used to live in Chicago, didn't you?",
+            "hint": "'Used to' takes 'did' in tags, just like other simple past verbs.",
+            "explanation": "'Used to' behaves like a regular past verb in tags, using 'did': 'didn't you', not a special form.",
+            "grammarRule": "Advanced Tag Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l146_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This town didn't use to have so much traffic.",
+            "sentence": "This town didn't use to have so much traffic.",
+            "options": [
+                "This town didn't use to have so much traffic, didn't it?",
+                "This town didn't use to have so much traffic, wasn't it?",
+                "This town didn't use to have so much traffic, did it?",
+                "This town didn't use to have so much traffic, hadn't it?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "This town didn't use to have so much traffic, did it?",
+            "hint": "The statement is negative, so use the positive tag 'did it?'",
+            "explanation": "A negative 'didn't use to' statement takes the positive tag 'did it', just like other past simple negatives.",
+            "grammarRule": "Advanced Tag Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l146_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Your grandparents used to run a small bakery.",
+            "sentence": "Your grandparents used to run a small bakery.",
+            "options": [
+                "Your grandparents used to run a small bakery, usedn't they?",
+                "Your grandparents used to run a small bakery, didn't they?",
+                "Your grandparents used to run a small bakery, weren't they?",
+                "Your grandparents used to run a small bakery, don't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Your grandparents used to run a small bakery, didn't they?",
+            "hint": "'Used to' takes 'did' in the tag, matching the plural subject.",
+            "explanation": "'Used to' uses 'did' in the tag question, just like a regular past verb: 'didn't they'.",
+            "grammarRule": "Advanced Tag Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l147_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You wouldn't mind waiting a few more minutes.",
+            "sentence": "You wouldn't mind waiting a few more minutes.",
+            "options": [
+                "You wouldn't mind waiting a few more minutes, would you?",
+                "You wouldn't mind waiting a few more minutes, wouldn't you?",
+                "You wouldn't mind waiting a few more minutes, do you?",
+                "You wouldn't mind waiting a few more minutes, didn't you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You wouldn't mind waiting a few more minutes, would you?",
+            "hint": "The statement is negative, so use the positive tag 'would you?'",
+            "explanation": "A negative modal statement takes a positive tag using the same modal: 'would you'.",
+            "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
+        },
+        {
+            "id": "qf_l147_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "We shouldn't have left the windows open.",
+            "sentence": "We shouldn't have left the windows open.",
+            "options": [
+                "We shouldn't have left the windows open, should we?",
+                "We shouldn't have left the windows open, shouldn't we?",
+                "We shouldn't have left the windows open, hadn't we?",
+                "We shouldn't have left the windows open, didn't we?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "We shouldn't have left the windows open, should we?",
+            "hint": "The statement is negative, so use the positive tag 'should we?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'should we'.",
+            "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
+        },
+        {
+            "id": "qf_l147_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "He can't have finished the project already.",
+            "sentence": "He can't have finished the project already.",
+            "options": [
+                "He can't have finished the project already, can't he?",
+                "He can't have finished the project already, hasn't he?",
+                "He can't have finished the project already, didn't he?",
+                "He can't have finished the project already, can he?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "He can't have finished the project already, can he?",
+            "hint": "The statement is negative, so use the positive tag 'can he?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'can he'.",
+            "grammarRule": "Advanced Tag Questions: Complex Modal Negatives"
+        },
+        {
+            "id": "qf_l148_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There should be enough seats for everyone.",
+            "sentence": "There should be enough seats for everyone.",
+            "options": [
+                "There should be enough seats for everyone, shouldn't there?",
+                "There should be enough seats for everyone, should there?",
+                "There should be enough seats for everyone, shouldn't it?",
+                "There should be enough seats for everyone, isn't there?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "There should be enough seats for everyone, shouldn't there?",
+            "hint": "The tag reuses the modal 'should' and keeps 'there' as the subject.",
+            "explanation": "'There' stays as the tag subject, and the modal 'should' is reused in its negative form: 'shouldn't there'.",
+            "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
+        },
+        {
+            "id": "qf_l148_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There hasn't been any progress on the project.",
+            "sentence": "There hasn't been any progress on the project.",
+            "options": [
+                "There hasn't been any progress on the project, hasn't there?",
+                "There hasn't been any progress on the project, isn't there?",
+                "There hasn't been any progress on the project, has there?",
+                "There hasn't been any progress on the project, doesn't there?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "There hasn't been any progress on the project, has there?",
+            "hint": "The statement is negative, so use the positive tag 'has there?'",
+            "explanation": "A negative 'there has been' statement takes a positive tag: 'has there', keeping 'there' as the tag subject.",
+            "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
+        },
+        {
+            "id": "qf_l148_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There must be a reason for the delay.",
+            "sentence": "There must be a reason for the delay.",
+            "options": [
+                "There must be a reason for the delay, must there?",
+                "There must be a reason for the delay, mustn't it?",
+                "There must be a reason for the delay, mustn't there?",
+                "There must be a reason for the delay, isn't there?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "There must be a reason for the delay, mustn't there?",
+            "hint": "The tag reuses the modal 'must' and keeps 'there' as the subject.",
+            "explanation": "'There' remains the tag subject, and 'must' is reused in its negative form: 'mustn't there'.",
+            "grammarRule": "Advanced Tag Questions: 'There' with Modals & Perfect"
+        },
+        {
+            "id": "qf_l149_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The engineers have been testing the prototype for several weeks now.",
+            "sentence": "The engineers have been testing the prototype for several weeks now.",
+            "options": [
+                "The engineers have been testing the prototype for several weeks now, have they?",
+                "The engineers have been testing the prototype for several weeks now, haven't they?",
+                "The engineers have been testing the prototype for several weeks now, haven't it?",
+                "The engineers have been testing the prototype for several weeks now, don't they?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "The engineers have been testing the prototype for several weeks now, haven't they?",
+            "hint": "The tag reuses 'have' in its negative form.",
+            "explanation": "Present perfect continuous tags reuse 'have/has'. Since the statement is positive, the tag is negative: 'haven't they'.",
+            "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l149_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The negotiations couldn't have gone any worse.",
+            "sentence": "The negotiations couldn't have gone any worse.",
+            "options": [
+                "The negotiations couldn't have gone any worse, couldn't they?",
+                "The negotiations couldn't have gone any worse, did they?",
+                "The negotiations couldn't have gone any worse, haven't they?",
+                "The negotiations couldn't have gone any worse, could they?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "The negotiations couldn't have gone any worse, could they?",
+            "hint": "The statement is negative, so use the positive tag 'could they?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'could they'.",
+            "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l149_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This particular model hasn't been recalled by the manufacturer.",
+            "sentence": "This particular model hasn't been recalled by the manufacturer.",
+            "options": [
+                "This particular model hasn't been recalled by the manufacturer, hasn't it?",
+                "This particular model hasn't been recalled by the manufacturer, isn't it?",
+                "This particular model hasn't been recalled by the manufacturer, doesn't it?",
+                "This particular model hasn't been recalled by the manufacturer, has it?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "This particular model hasn't been recalled by the manufacturer, has it?",
+            "hint": "The statement is negative, so use the positive tag 'has it?'",
+            "explanation": "A negative passive present perfect statement takes a positive tag: 'has it', reusing the same auxiliary.",
+            "grammarRule": "Advanced Tag Questions: Mixed Reinforcement"
+        },
+        {
+            "id": "qf_l150_q1",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "She shouldn't have signed the contract without reading it.",
+            "sentence": "She shouldn't have signed the contract without reading it.",
+            "options": [
+                "She shouldn't have signed the contract without reading it, shouldn't she?",
+                "She shouldn't have signed the contract without reading it, hadn't she?",
+                "She shouldn't have signed the contract without reading it, didn't she?",
+                "She shouldn't have signed the contract without reading it, should she?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "She shouldn't have signed the contract without reading it, should she?",
+            "hint": "The statement is negative, so use the positive tag 'should she?'",
+            "explanation": "A negative modal perfect statement takes a positive tag using the same modal: 'should she'.",
+            "grammarRule": "Advanced Tag Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l150_q2",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "There couldn't have been a better outcome.",
+            "sentence": "There couldn't have been a better outcome.",
+            "options": [
+                "There couldn't have been a better outcome, couldn't there?",
+                "There couldn't have been a better outcome, was there?",
+                "There couldn't have been a better outcome, hadn't there?",
+                "There couldn't have been a better outcome, could there?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "There couldn't have been a better outcome, could there?",
+            "hint": "The statement is negative, so use the positive tag 'could there?'",
+            "explanation": "A negative modal perfect statement with 'there' takes a positive tag using the same modal: 'could there'.",
+            "grammarRule": "Advanced Tag Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l150_q3",
+            "instruction": "Complete the tag question correctly.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "Neither of the two candidates has responded yet.",
+            "sentence": "Neither of the two candidates has responded yet.",
+            "options": [
+                "Neither of the two candidates has responded yet, have they?",
+                "Neither of the two candidates has responded yet, haven't they?",
+                "Neither of the two candidates has responded yet, hasn't he?",
+                "Neither of the two candidates has responded yet, has he?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Neither of the two candidates has responded yet, have they?",
+            "hint": "'Neither' has negative meaning, so use a positive tag with the neutral pronoun 'they'.",
+            "explanation": "'Neither' is negative in meaning, so the tag is positive, and modern usage takes the neutral pronoun: 'have they'.",
+            "grammarRule": "Advanced Tag Questions: Mixed Review"
+        }
+    ]
 }

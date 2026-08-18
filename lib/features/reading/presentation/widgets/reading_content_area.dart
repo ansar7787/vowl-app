@@ -65,43 +65,41 @@ class ReadingContentArea extends StatelessWidget {
   Widget build(BuildContext context) {
     final reduceMotion = MediaQuery.disableAnimationsOf(context);
 
-    return Expanded(
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          // Question content — dimmed while feedback card is visible.
-          AnimatedOpacity(
-            duration: reduceMotion
-                ? Duration.zero
-                : const Duration(milliseconds: 400),
-            opacity: isAnswered ? 0.6 : 1.0,
-            // AbsorbPointer blocks taps but preserves semantic tree so
-            // screen readers can still read the question.
-            child: AbsorbPointer(
-              absorbing: isAnswered,
-              child: _buildChildContent(context),
-            ),
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        // Question content — dimmed while feedback card is visible.
+        AnimatedOpacity(
+          duration: reduceMotion
+              ? Duration.zero
+              : const Duration(milliseconds: 400),
+          opacity: isAnswered ? 0.6 : 1.0,
+          // AbsorbPointer blocks taps but preserves semantic tree so
+          // screen readers can still read the question.
+          child: AbsorbPointer(
+            absorbing: isAnswered,
+            child: _buildChildContent(context),
           ),
+        ),
 
-          // Peeking mascot — isolated repaint boundary so its looping
-          // animation never invalidates the question content layer.
-          Positioned(
-            top: -20.h,
-            right: 20.w,
-            child: RepaintBoundary(
-              child: ReadingPeekingMascot(
-                lives: lives,
-                isCorrect: isCorrect,
-                isAnswered: isAnswered,
-                isGameComplete: isGameComplete,
-                isGameOver: isGameOver,
-                mascotId: mascotId,
-                mascotName: mascotName,
-              ),
+        // Peeking mascot — isolated repaint boundary so its looping
+        // animation never invalidates the question content layer.
+        Positioned(
+          top: -20.h,
+          right: 20.w,
+          child: RepaintBoundary(
+            child: ReadingPeekingMascot(
+              lives: lives,
+              isCorrect: isCorrect,
+              isAnswered: isAnswered,
+              isGameComplete: isGameComplete,
+              isGameOver: isGameOver,
+              mascotId: mascotId,
+              mascotName: mascotName,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

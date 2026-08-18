@@ -7,7 +7,7 @@
             "id": "RDG_READINGCONCLUSION_L61_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An analysis of performance reviews at a large corporation found that employees who used the company's optional mentorship program were promoted at nearly twice the rate of those who did not. However, further examination revealed that employees who sought out mentors also tended to be the same employees who volunteered for extra projects and sought feedback proactively, traits that may independently predict promotion regardless of mentorship.",
             "options": [
                 "The mentorship program's link to promotions may be explained by the type of employee who seeks it out, not just the mentorship itself.",
@@ -23,7 +23,7 @@
             "id": "RDG_READINGCONCLUSION_L61_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A public health department comparing counties with different vaccination outreach strategies during a single flu season found that counties using door-to-door community health workers achieved higher vaccination rates among elderly residents than counties relying solely on mailed information, even in counties where the mail-based outreach campaign had a considerably larger printed materials budget to work with.",
             "options": [
                 "Mailed information was more effective than in-person outreach in every county studied.",
@@ -39,7 +39,7 @@
             "id": "RDG_READINGCONCLUSION_L61_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A cloud storage company tracked customer churn for a full year after introducing a feature that automatically compressed large files to save space. Customers who used the compression feature churned at a lower rate than customers who did not, but the company also found that the customers who adopted the feature had, on average, been using the service for a longer time before the feature launched.",
             "options": [
                 "The compression feature is proven to be the only reason for lower churn.",
@@ -55,7 +55,7 @@
             "id": "RDG_READINGCONCLUSION_L62_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "Researchers comparing two similar coastal towns of roughly equal size and population found that the town which had restored its natural sand dunes over the previous decade experienced significantly less property damage during a major storm than the neighboring town, which had replaced its dunes decades earlier with a paved seaside promenade offering no natural buffer against high water.",
             "options": [
                 "The paved promenade provided better storm protection than the restored dunes.",
@@ -71,7 +71,7 @@
             "id": "RDG_READINGCONCLUSION_L62_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A university admissions office removed the requirement for standardized test scores from its application process during a pilot program lasting three admissions cycles, allowing applicants to submit them optionally instead. Analysts later found that first-year GPA among students who chose not to submit scores was, on average, statistically indistinguishable from the GPA of students who did submit scores.",
             "options": [
                 "Students who submitted scores performed dramatically better academically.",
@@ -87,7 +87,7 @@
             "id": "RDG_READINGCONCLUSION_L62_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A tourism board that had marketed a mountain destination primarily toward serious hikers for more than a decade noticed, after reviewing several years of visitor surveys and hotel booking data, that a growing share of visitors were arriving specifically for the region's food scene, a trend the original marketing materials, aimed squarely at outdoor enthusiasts, barely mentioned at all.",
             "options": [
                 "Visitor interests exactly matched what the marketing materials had always emphasized.",
@@ -103,7 +103,7 @@
             "id": "RDG_READINGCONCLUSION_L63_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A long-term study of adult siblings who grew up sharing household chores equally, without gendered task assignments, found that these siblings reported more balanced divisions of household labor in their own adult households decades later, compared to siblings raised in homes where chores such as cooking and lawn care were assigned strictly along traditional gender lines throughout childhood.",
             "options": [
                 "Gendered chore assignments in childhood led to more balanced adult households.",
@@ -119,7 +119,7 @@
             "id": "RDG_READINGCONCLUSION_L63_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An analysis of household budgets conducted by a consumer research group found that families who tracked every expense in a written or digital log for at least three consecutive months reduced discretionary spending by an average of fifteen percent during that period, even without setting any specific spending limits or savings goals beforehand.",
             "options": [
                 "Tracking expenses had no effect on spending unless combined with strict limits.",
@@ -135,7 +135,7 @@
             "id": "RDG_READINGCONCLUSION_L63_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A neighborhood association reviewing two years of local crime statistics compared streets with working streetlights installed at every corner to nearby streets with several broken or missing lights that had gone unrepaired for months. Streets with full lighting reported fewer nighttime property crimes, but daytime crime rates were statistically similar across both types of streets.",
             "options": [
                 "Streetlighting was linked to lower crime rates at all times of day.",
@@ -151,7 +151,7 @@
             "id": "RDG_READINGCONCLUSION_L64_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A sports scientist studying recovery methods among competitive distance runners found that athletes who used a combination of light stretching and short walks the day after an intense competition reported less muscle soreness than athletes who rested completely, though both groups showed similar recovery in terms of measurable strength two days later.",
             "options": [
                 "Complete rest reduced soreness more effectively than light activity.",
@@ -167,7 +167,7 @@
             "id": "RDG_READINGCONCLUSION_L64_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A restaurant group running a blind side-by-side test at two of its locations tested whether describing dishes with specific, sensory language, such as naming the farm a vegetable came from or the exact cooking method used, affected how customers rated the same dishes compared to simple, generic menu descriptions. Dishes with detailed descriptions received notably higher taste ratings, even though the food served was identical in both cases.",
             "options": [
                 "Menu descriptions had no effect on how customers rated the food.",
@@ -183,7 +183,7 @@
             "id": "RDG_READINGCONCLUSION_L64_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A city's historical society digitized thousands of old photographs from its archive and posted them online with a simple tagging system that let visitors add names or locations they recognized. Within a year, volunteers had identified people or places in over sixty percent of photos that had previously been listed as unknown for decades, far exceeding the staff's own expectations for the project.",
             "options": [
                 "The tagging system failed to identify any additional information.",
@@ -199,7 +199,7 @@
             "id": "RDG_READINGCONCLUSION_L65_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A hospital IT department rolled out a new electronic records system that required extra clicks to complete routine tasks compared to the old system it replaced. In the months following the rollout, nurses reported spending more time on documentation, and a survey found that overtime hours related specifically to charting had increased noticeably across nearly every unit in the hospital.",
             "options": [
                 "The new records system reduced the time nurses spent on documentation.",
@@ -215,7 +215,7 @@
             "id": "RDG_READINGCONCLUSION_L65_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A physical therapist tracked two groups of patients recovering from the same type of knee surgery over a six-month period: one group began gentle movement exercises within twenty-four hours of surgery, while the other waited the traditional seventy-two hours before starting. The early-movement group regained a comparable range of motion in about two-thirds the time.",
             "options": [
                 "Waiting seventy-two hours led to faster recovery of range of motion.",
@@ -231,7 +231,7 @@
             "id": "RDG_READINGCONCLUSION_L65_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An electronics retailer running a controlled pricing and display experiment across several store locations noticed that products displayed with a visible 'only 3 left in stock' label sold out faster than identical products without any stock indicator, even in stores where the actual inventory levels behind the scenes were comparable between the two types of product displays.",
             "options": [
                 "Displaying low-stock warnings appears to accelerate how quickly products sell.",
@@ -247,7 +247,7 @@
             "id": "RDG_READINGCONCLUSION_L66_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A mid-sized law firm that switched from billing clients by the hour to billing a single flat project fee for routine cases found that the average number of hours attorneys spent on similar cases dropped by nearly twenty percent over the following year, without any measurable change in case outcomes or client satisfaction scores.",
             "options": [
                 "Case outcomes for clients worsened significantly after the billing change.",
@@ -263,7 +263,7 @@
             "id": "RDG_READINGCONCLUSION_L66_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A utility company that began sending residential customers a monthly comparison of their electricity use against similar-sized homes in their neighborhood found, over the program's first full year, that the households receiving the highest-usage comparisons reduced their consumption more than households that were already near or below the neighborhood average to begin with.",
             "options": [
                 "Households already using less electricity reduced their usage the most.",
@@ -279,7 +279,7 @@
             "id": "RDG_READINGCONCLUSION_L66_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A district piloted a program giving struggling readers in second grade daily one-on-one sessions with a certified reading specialist for twelve consecutive weeks during the school year. When retested, participating students had closed roughly half the gap between their initial reading level and their grade's expected level, though few reached full grade-level reading by the end of the pilot.",
             "options": [
                 "The program completely closed the reading gap for every participating student.",
@@ -295,7 +295,7 @@
             "id": "RDG_READINGCONCLUSION_L67_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A researcher interviewing dozens of adult children who had cared for aging parents over the previous five years found that those who had openly discussed care preferences and financial plans with their parents years in advance reported significantly less family conflict during the actual caregiving period than those who had never discussed these topics beforehand.",
             "options": [
                 "Families who discussed plans in advance reported more conflict during caregiving.",
@@ -311,7 +311,7 @@
             "id": "RDG_READINGCONCLUSION_L67_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A travel insurance company reviewing three years of claims data found that customers who purchased a policy within twenty-four hours of booking their trip filed claims at a noticeably lower rate than customers who purchased a policy closer to their departure date, even though the coverage terms and premium prices were identical for both groups of travelers.",
             "options": [
                 "When a policy is purchased may be associated with how often a claim is later filed.",
@@ -327,7 +327,7 @@
             "id": "RDG_READINGCONCLUSION_L67_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A well-established film festival that had always scheduled its most anticipated premieres in the evening experimented with moving several premieres to mid-morning slots one year as a way to ease scheduling conflicts between competing screenings. Contrary to organizers' expectations of poor attendance, the morning screenings sold out just as quickly as evening ones, and post-screening discussions ran noticeably longer.",
             "options": [
                 "Morning screenings sold far fewer tickets than organizers expected.",
@@ -343,7 +343,7 @@
             "id": "RDG_READINGCONCLUSION_L68_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A city comparing two low-income neighborhoods with similar demographics found that the one which received a new community health clinic reported a decline in emergency room visits for non-urgent conditions over the following two years, while the neighborhood without a new clinic saw its emergency room visits for the same conditions remain essentially steady over that same period.",
             "options": [
                 "The new clinic appears to have reduced non-urgent emergency room visits in its neighborhood.",
@@ -359,7 +359,7 @@
             "id": "RDG_READINGCONCLUSION_L68_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "An analysis of first-time homebuyers across several states found that those who completed a mandatory financial counseling session before closing on their loan were less likely to fall behind on mortgage payments during the first two years of homeownership than buyers in a comparable income bracket who were not required to attend any counseling at all.",
             "options": [
                 "Financial counseling had no bearing on mortgage payment behavior.",
@@ -375,7 +375,7 @@
             "id": "RDG_READINGCONCLUSION_L68_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A youth baseball league that introduced a rule limiting how many pitches a young pitcher could throw in a single game, based on the player's age, saw a substantial decline in elbow and shoulder injury reports among pitchers over the following three seasons, compared to the three seasons immediately before the rule was formally adopted by the league.",
             "options": [
                 "The pitch-count rule appears connected to a decline in pitcher injuries.",
@@ -391,7 +391,7 @@
             "id": "RDG_READINGCONCLUSION_L69_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A regional supermarket chain that began placing small, handwritten recipe cards near several less-popular vegetables, showing simple and quick ways to prepare them, found that sales of those specific vegetables rose noticeably while sales of more popular vegetables displayed without any recipe cards stayed essentially flat over the same three-month period.",
             "options": [
                 "Sales of popular vegetables rose the most after the recipe cards appeared.",
@@ -407,7 +407,7 @@
             "id": "RDG_READINGCONCLUSION_L69_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A team of app developers analyzing several months of onboarding data found that users who completed account setup using a single sign-on option, linking an existing email or social media account, were retained at a noticeably higher rate after ninety days than users who created a brand-new username and password specifically for the app.",
             "options": [
                 "Creating a new username and password led to better retention.",
@@ -423,7 +423,7 @@
             "id": "RDG_READINGCONCLUSION_L69_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A small independent publishing house that had rejected a debut manuscript twice over the course of a year found that after the same manuscript won a small regional writing award under a different title, sales of the eventually published novel exceeded the publisher's most optimistic internal projections by a wide margin within its first month on shelves.",
             "options": [
                 "The novel's eventual success suggests the publisher's original assessment of the manuscript may have been mistaken.",
@@ -439,7 +439,7 @@
             "id": "RDG_READINGCONCLUSION_L70_Q1",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A workplace study comparing employees who ate lunch away from their desks, in a separate break room or outdoors, to employees who routinely ate at their desks while continuing to work, found that the away-from-desk group reported higher afternoon productivity scores despite spending the same total number of hours working each day.",
             "options": [
                 "Taking lunch away from the desk appears linked to higher afternoon productivity.",
@@ -455,7 +455,7 @@
             "id": "RDG_READINGCONCLUSION_L70_Q2",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "A regional staffing agency tracked job candidates over an eighteen-month period and found that those who were given specific, detailed feedback after an unsuccessful interview were more likely to reapply to the same company for a future position within the following year than candidates who received only a short, generic rejection notice.",
             "options": [
                 "Detailed rejection feedback appears to encourage candidates to reapply in the future.",
@@ -471,7 +471,7 @@
             "id": "RDG_READINGCONCLUSION_L70_Q3",
             "instruction": "Read the passage and select the correct conclusion.",
             "subtype": "readingConclusion",
-            "interactionType": "Logic Bridge",
+            "interactionType": "choice",
             "passage": "Since installing a water filter pitcher and switching from bottled water, the Kowalski family calculated that they now spend roughly eleven dollars a month on replacement filters, compared to the sixty dollars a month they previously spent on bottled water, while also noticing a significant drop in the number of plastic bottles in their weekly recycling bin.",
             "options": [
                 "The family's water-related costs increased after switching to a filter pitcher.",

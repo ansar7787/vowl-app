@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 9,
-  "levels": "81-90",
-  "quests": [
-    {
-      "id": "qf_l81_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The train was supposed to leave at noon, but it's still at the platform.",
-      "sentence": "The train was supposed to leave at noon, but it's still at the platform.",
-      "options": [
-        "The train wasn't supposed to leave at noon?",
-        "Didn't the train supposed to leave at noon?",
-        "Wasn't the train supposed to leave at noon?",
-        "Wasn't the train suppose to leave at noon?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Wasn't the train supposed to leave at noon?",
-      "hint": "'Supposed to' uses the verb 'be', so use 'Wasn't', moved to the front.",
-      "explanation": "'Supposed to' is built on the verb 'be', so the negative question uses 'wasn't', not 'didn't', moved to the front of the sentence.",
-      "grammarRule": "Negative Questions: 'Supposed To'"
-    },
-    {
-      "id": "qf_l81_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You were supposed to call me back yesterday.",
-      "sentence": "You were supposed to call me back yesterday.",
-      "options": [
-        "You weren't supposed to call me back yesterday?",
-        "Weren't you supposed to call me back yesterday?",
-        "Didn't you supposed to call me back yesterday?",
-        "Weren't you suppose to call me back yesterday?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Weren't you supposed to call me back yesterday?",
-      "hint": "Use 'Weren't' since 'supposed to' pairs with 'be', not 'do'.",
-      "explanation": "Since 'supposed to' is a 'be' structure, the negative question uses 'weren't', moved to the front - not 'didn't'.",
-      "grammarRule": "Negative Questions: 'Supposed To'"
-    },
-    {
-      "id": "qf_l81_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The store is supposed to open at nine on weekdays.",
-      "sentence": "The store is supposed to open at nine on weekdays.",
-      "options": [
-        "Isn't the store supposed to open at nine on weekdays?",
-        "The store isn't supposed to open at nine on weekdays?",
-        "Doesn't the store supposed to open at nine on weekdays?",
-        "Isn't the store suppose to open at nine on weekdays?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Isn't the store supposed to open at nine on weekdays?",
-      "hint": "Use 'Isn't' since 'supposed to' is built on 'be'.",
-      "explanation": "Because 'supposed to' uses the verb 'be', the negative question needs 'isn't', not 'doesn't'.",
-      "grammarRule": "Negative Questions: 'Supposed To'"
-    },
-    {
-      "id": "qf_l82_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the report had been submitted, but I don't see it in the system yet.",
-      "sentence": "I assumed the report had been submitted, but I don't see it in the system yet.",
-      "options": [
-        "The report hasn't been submitted yet?",
-        "Didn't the report been submitted yet?",
-        "Hasn't the report been submitted yet?",
-        "Hasn't the report be submitted yet?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Hasn't the report been submitted yet?",
-      "hint": "Use the present perfect negative 'hasn't', moved to the front.",
-      "explanation": "Since this links a past action to the present result, 'hasn't...been submitted yet' is the correct negative present perfect form.",
-      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
-    },
-    {
-      "id": "qf_l82_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
-      "sentence": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
-      "options": [
-        "They haven't replied to the invitation yet?",
-        "Haven't they replied to the invitation yet?",
-        "Didn't they replied to the invitation yet?",
-        "Haven't they reply to the invitation yet?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Haven't they replied to the invitation yet?",
-      "hint": "Move 'haven't' to the front, and keep the participle 'replied' unchanged.",
-      "explanation": "'Haven't' moves to the front for this present perfect negative question, and the participle 'replied' does not change.",
-      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
-    },
-    {
-      "id": "qf_l82_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I expected you had finished the paperwork, but it's still on your desk.",
-      "sentence": "I expected you had finished the paperwork, but it's still on your desk.",
-      "options": [
-        "You haven't finished the paperwork yet?",
-        "Haven't you finished the paperwork yet?",
-        "Didn't you finished the paperwork yet?",
-        "Haven't you finish the paperwork yet?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Haven't you finished the paperwork yet?",
-      "hint": "'Haven't' moves to the front, and 'finished' stays unchanged.",
-      "explanation": "Since this connects a past action to a present result, the present perfect negative 'haven't finished' fits best.",
-      "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
-    },
-    {
-      "id": "qf_l83_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the shop still delivered groceries, but the driver said they stopped.",
-      "sentence": "I assumed the shop still delivered groceries, but the driver said they stopped.",
-      "options": [
-        "The shop doesn't deliver groceries any more?",
-        "Isn't the shop deliver groceries any more?",
-        "Doesn't the shop delivers groceries any more?",
-        "Doesn't the shop deliver groceries any more?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Doesn't the shop deliver groceries any more?",
-      "hint": "This is a routine present habit, so use 'doesn't' with the base verb.",
-      "explanation": "Since this describes a regular habit that may have changed, the present simple negative 'doesn't deliver' is correct here.",
-      "grammarRule": "Negative Questions: 'Any More'"
-    },
-    {
-      "id": "qf_l83_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought he still worked at the bank, but his old office has a new name on the door.",
-      "sentence": "I thought he still worked at the bank, but his old office has a new name on the door.",
-      "options": [
-        "He doesn't work at the bank any more?",
-        "Doesn't he work at the bank any more?",
-        "Isn't he working at the bank any more?",
-        "Doesn't he works at the bank any more?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Doesn't he work at the bank any more?",
-      "hint": "Use 'doesn't' with the base verb for this present habit.",
-      "explanation": "This describes a present routine, so 'doesn't work' is correct, with the verb returning to its base form.",
-      "grammarRule": "Negative Questions: 'Any More'"
-    },
-    {
-      "id": "qf_l83_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the two companies still competed for the same clients.",
-      "sentence": "I assumed the two companies still competed for the same clients.",
-      "options": [
-        "Don't the two companies compete for the same clients any more?",
-        "The two companies don't compete for the same clients any more?",
-        "Doesn't the two companies compete for the same clients any more?",
-        "Don't the two companies competes for the same clients any more?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Don't the two companies compete for the same clients any more?",
-      "hint": "'Companies' is plural, so use 'Don't', moved to the front.",
-      "explanation": "Plural subjects take 'don't' in the negative question form, moved to the front, with the base verb 'compete'.",
-      "grammarRule": "Negative Questions: 'Any More'"
-    },
-    {
-      "id": "qf_l84_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I was told the workers were still repairing the road, but traffic is moving normally.",
-      "sentence": "I was told the workers were still repairing the road, but traffic is moving normally.",
-      "options": [
-        "Aren't the workers still repairing the road?",
-        "The workers aren't still repairing the road?",
-        "Don't the workers still repairing the road?",
-        "Aren't the workers still repair the road?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Aren't the workers still repairing the road?",
-      "hint": "Move 'aren't' to the front, and keep the verb in its '-ing' form.",
-      "explanation": "Negative present continuous questions move 'aren't' to the front, and the verb keeps its '-ing' ending, 'repairing'.",
-      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
-    },
-    {
-      "id": "qf_l84_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed she was still recovering from the surgery.",
-      "sentence": "I assumed she was still recovering from the surgery.",
-      "options": [
-        "She isn't still recovering from the surgery?",
-        "Doesn't she still recovering from the surgery?",
-        "Isn't she still recover from the surgery?",
-        "Isn't she still recovering from the surgery?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Isn't she still recovering from the surgery?",
-      "hint": "Move 'isn't' to the front, keeping the verb in its '-ing' form.",
-      "explanation": "'Isn't' moves to the front in this negative continuous question, and the verb 'recovering' keeps its '-ing' ending.",
-      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
-    },
-    {
-      "id": "qf_l84_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I heard the two teams were still negotiating the contract terms.",
-      "sentence": "I heard the two teams were still negotiating the contract terms.",
-      "options": [
-        "The two teams aren't still negotiating the contract terms?",
-        "Aren't the two teams still negotiating the contract terms?",
-        "Don't the two teams still negotiating the contract terms?",
-        "Aren't the two teams still negotiate the contract terms?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Aren't the two teams still negotiating the contract terms?",
-      "hint": "'Teams' is plural, so use 'Aren't', moved to the front.",
-      "explanation": "Plural subjects take 'aren't' in this negative continuous question, and 'negotiating' keeps its '-ing' ending.",
-      "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
-    },
-    {
-      "id": "qf_l85_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think a short walk would help clear your head.",
-      "sentence": "I think a short walk would help clear your head.",
-      "options": [
-        "Don't you why take a short walk?",
-        "Why don't you take a short walk?",
-        "Why you don't take a short walk?",
-        "Why doesn't you take a short walk?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why don't you take a short walk?",
-      "hint": "'Why don't you...?' is a common way to make a friendly suggestion.",
-      "explanation": "'Why don't you...?' is a fixed pattern for offering a suggestion. 'Don't' follows 'why' and comes before the subject, 'you'.",
-      "grammarRule": "Negative Questions: Polite Suggestions"
-    },
-    {
-      "id": "qf_l85_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think the team should try a different approach to the problem.",
-      "sentence": "I think the team should try a different approach to the problem.",
-      "options": [
-        "Doesn't why the team try a different approach?",
-        "Why doesn't the team try a different approach?",
-        "Why the team doesn't try a different approach?",
-        "Why don't the team try a different approach?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why doesn't the team try a different approach?",
-      "hint": "'The team' is singular here, so use 'doesn't' after 'why'.",
-      "explanation": "Since 'the team' is treated as a singular subject, the suggestion pattern uses 'doesn't', placed right after 'why'.",
-      "grammarRule": "Negative Questions: Polite Suggestions"
-    },
-    {
-      "id": "qf_l85_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think we should ask the hotel for a late checkout.",
-      "sentence": "I think we should ask the hotel for a late checkout.",
-      "options": [
-        "Don't why we ask the hotel for a late checkout?",
-        "Why we don't ask the hotel for a late checkout?",
-        "Why doesn't we ask the hotel for a late checkout?",
-        "Why don't we ask the hotel for a late checkout?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Why don't we ask the hotel for a late checkout?",
-      "hint": "'We' pairs with 'don't' in this suggestion pattern.",
-      "explanation": "'Why don't we...?' is the standard way to suggest an action together, with 'don't' placed right after 'why'.",
-      "grammarRule": "Negative Questions: Polite Suggestions"
-    },
-    {
-      "id": "qf_l86_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
-      "sentence": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
-      "options": [
-        "The invoice hasn't been paid?",
-        "Didn't the invoice been paid?",
-        "Hasn't the invoice been paid?",
-        "Hasn't the invoice be paid?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Hasn't the invoice been paid?",
-      "hint": "Move 'hasn't' to the front, keeping 'been paid' together.",
-      "explanation": "This negative present perfect passive question moves 'hasn't' to the front, and 'been paid' stays together as one unit.",
-      "grammarRule": "Negative Questions: Obligation & Necessity"
-    },
-    {
-      "id": "qf_l86_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
-      "sentence": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
-      "options": [
-        "Passengers don't need to check in two hours early?",
-        "Don't passengers need to check in two hours early?",
-        "Doesn't passengers need to check in two hours early?",
-        "Don't passengers needs to check in two hours early?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Don't passengers need to check in two hours early?",
-      "hint": "'Passengers' is plural, so use 'Don't', moved to the front.",
-      "explanation": "Plural subjects take 'don't' in the negative question, moved to the front, with the base verb 'need'.",
-      "grammarRule": "Negative Questions: Obligation & Necessity"
-    },
-    {
-      "id": "qf_l86_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed guests had to pay a deposit at check-in.",
-      "sentence": "I assumed guests had to pay a deposit at check-in.",
-      "options": [
-        "Guests don't have to pay a deposit at check-in?",
-        "Doesn't guests have to pay a deposit at check-in?",
-        "Don't guests has to pay a deposit at check-in?",
-        "Don't guests have to pay a deposit at check-in?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Don't guests have to pay a deposit at check-in?",
-      "hint": "'Guests' is plural, so use 'Don't', moved to the front.",
-      "explanation": "Plural subjects take 'don't' in this negative question, moved to the front, with 'have to pay' kept together.",
-      "grammarRule": "Negative Questions: Obligation & Necessity"
-    },
-    {
-      "id": "qf_l87_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "This view from the rooftop is absolutely stunning.",
-      "sentence": "This view from the rooftop is absolutely stunning.",
-      "options": [
-        "This view isn't stunning?",
-        "Isn't this view stunning?",
-        "Doesn't this view stunning?",
-        "Isn't this view stun?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Isn't this view stunning?",
-      "hint": "'Be' questions move 'isn't' to the front - no 'does' needed.",
-      "explanation": "Since 'stunning' follows the verb 'be', the negative question moves 'isn't' to the front without adding 'does'.",
-      "grammarRule": "Negative Questions: Rhetorical Confirmation"
-    },
-    {
-      "id": "qf_l87_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "It seems unfair that only one team gets extra funding.",
-      "sentence": "It seems unfair that only one team gets extra funding.",
-      "options": [
-        "It isn't unfair that only one team gets extra funding?",
-        "Doesn't it unfair that only one team gets extra funding?",
-        "Isn't unfair it that only one team gets extra funding?",
-        "Isn't it unfair that only one team gets extra funding?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Isn't it unfair that only one team gets extra funding?",
-      "hint": "Move 'isn't' to the front, right before 'it'.",
-      "explanation": "'Isn't' moves to the front of the sentence, right before 'it', to form this rhetorical negative question.",
-      "grammarRule": "Negative Questions: Rhetorical Confirmation"
-    },
-    {
-      "id": "qf_l87_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "These directions seem confusing to a first-time visitor.",
-      "sentence": "These directions seem confusing to a first-time visitor.",
-      "options": [
-        "These directions aren't confusing to a first-time visitor?",
-        "Aren't these directions confusing to a first-time visitor?",
-        "Don't these directions confusing to a first-time visitor?",
-        "Aren't these directions confuse to a first-time visitor?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Aren't these directions confusing to a first-time visitor?",
-      "hint": "'Directions' is plural, so use 'Aren't', moved to the front.",
-      "explanation": "Plural subjects take 'aren't', moved to the front, since 'confusing' follows the verb 'be' rather than a separate action verb.",
-      "grammarRule": "Negative Questions: Rhetorical Confirmation"
-    },
-    {
-      "id": "qf_l88_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I remember this street used to have a lot more trees.",
-      "sentence": "I remember this street used to have a lot more trees.",
-      "options": [
-        "This street didn't use to have a lot more trees?",
-        "Usedn't this street to have a lot more trees?",
-        "Didn't this street use to have a lot more trees?",
-        "Didn't this street used to have a lot more trees?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Didn't this street use to have a lot more trees?",
-      "hint": "'Used to' takes 'did' in questions, and 'used' returns to 'use'.",
-      "explanation": "In questions, 'used to' becomes 'did...use to', with the verb returning to its base form, 'use', once 'did' carries the tense.",
-      "grammarRule": "Negative Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l88_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought your family used to live near the coast.",
-      "sentence": "I thought your family used to live near the coast.",
-      "options": [
-        "Your family didn't use to live near the coast?",
-        "Usedn't your family to live near the coast?",
-        "Didn't your family used to live near the coast?",
-        "Didn't your family use to live near the coast?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Didn't your family use to live near the coast?",
-      "hint": "Use 'did' + 'use to', not 'used to', in the question form.",
-      "explanation": "Negative questions with 'used to' need 'did' plus the base form 'use to' - 'used' only appears in statements, not after 'did'.",
-      "grammarRule": "Negative Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l88_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I remember he used to play the guitar every weekend.",
-      "sentence": "I remember he used to play the guitar every weekend.",
-      "options": [
-        "He didn't use to play the guitar every weekend?",
-        "Didn't he use to play the guitar every weekend?",
-        "Usedn't he to play the guitar every weekend?",
-        "Didn't he used to play the guitar every weekend?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Didn't he use to play the guitar every weekend?",
-      "hint": "Keep 'use to' (not 'used to') once 'did' is added.",
-      "explanation": "Once 'did' is added to carry the past tense, 'used to' becomes 'use to' - this is a common point of confusion in negative questions.",
-      "grammarRule": "Negative Questions: 'Used To'"
-    },
-    {
-      "id": "qf_l89_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed you could help me move this weekend.",
-      "sentence": "I assumed you could help me move this weekend.",
-      "options": [
-        "You couldn't help me move this weekend?",
-        "Doesn't you could help me move this weekend?",
-        "Couldn't you help me move this weekend?",
-        "Couldn't you helped me move this weekend?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Couldn't you help me move this weekend?",
-      "hint": "'Couldn't' moves to the front on its own, like other modals.",
-      "explanation": "Negative modal questions move 'couldn't' to the front without any extra auxiliary, and the verb stays in its base form.",
-      "grammarRule": "Negative Questions: Modals (Could / Would)"
-    },
-    {
-      "id": "qf_l89_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I figured it would be easier to meet at the office instead.",
-      "sentence": "I figured it would be easier to meet at the office instead.",
-      "options": [
-        "It wouldn't be easier to meet at the office?",
-        "Doesn't it would be easier to meet at the office?",
-        "Wouldn't it be easier to meet at the office?",
-        "Wouldn't it being easier to meet at the office?"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Wouldn't it be easier to meet at the office?",
-      "hint": "'Wouldn't' moves to the front, and the verb 'be' stays in its base form.",
-      "explanation": "'Wouldn't' moves to the front for this negative modal question, and the verb after it, 'be', stays in its base form.",
-      "grammarRule": "Negative Questions: Modals (Could / Would)"
-    },
-    {
-      "id": "qf_l89_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought we could reschedule the appointment for next week.",
-      "sentence": "I thought we could reschedule the appointment for next week.",
-      "options": [
-        "Couldn't we reschedule the appointment for next week?",
-        "We couldn't reschedule the appointment for next week?",
-        "Doesn't we could reschedule the appointment for next week?",
-        "Couldn't we rescheduled the appointment for next week?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Couldn't we reschedule the appointment for next week?",
-      "hint": "Move 'couldn't' to the front, keeping the base verb form.",
-      "explanation": "As with all modal negatives, 'couldn't' moves to the front, and the main verb 'reschedule' stays in its base form.",
-      "grammarRule": "Negative Questions: Modals (Could / Would)"
-    },
-    {
-      "id": "qf_l90_q1",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I assumed the museum was supposed to be free for students.",
-      "sentence": "I assumed the museum was supposed to be free for students.",
-      "options": [
-        "Isn't the museum supposed to be free for students?",
-        "The museum isn't supposed to be free for students?",
-        "Doesn't the museum supposed to be free for students?",
-        "Isn't the museum suppose to be free for students?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Isn't the museum supposed to be free for students?",
-      "hint": "'Supposed to' pairs with 'be', so use 'Isn't', moved to the front.",
-      "explanation": "Since 'supposed to' is built on 'be', the negative question uses 'isn't', not 'doesn't', moved to the front.",
-      "grammarRule": "Negative Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l90_q2",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I thought the two departments no longer shared a budget.",
-      "sentence": "I thought the two departments no longer shared a budget.",
-      "options": [
-        "The two departments don't share a budget any more?",
-        "Doesn't the two departments share a budget any more?",
-        "Don't the two departments shares a budget any more?",
-        "Don't the two departments share a budget any more?"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Don't the two departments share a budget any more?",
-      "hint": "'Departments' is plural, so use 'Don't', moved to the front.",
-      "explanation": "Plural subjects take 'don't', moved to the front of the negative question, with the base verb 'share'.",
-      "grammarRule": "Negative Questions: Mixed Review"
-    },
-    {
-      "id": "qf_l90_q3",
-      "instruction": "Turn the statement into a question.",
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "I think you should ask for a refund instead of a replacement.",
-      "sentence": "I think you should ask for a refund instead of a replacement.",
-      "options": [
-        "Don't why you ask for a refund instead of a replacement?",
-        "Why don't you ask for a refund instead of a replacement?",
-        "Why you don't ask for a refund instead of a replacement?",
-        "Why doesn't you ask for a refund instead of a replacement?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Why don't you ask for a refund instead of a replacement?",
-      "hint": "'Why don't you...?' is the standard pattern for a friendly suggestion.",
-      "explanation": "'Why don't you...?' is a fixed suggestion pattern, with 'don't' placed right after 'why' and before the subject.",
-      "grammarRule": "Negative Questions: Mixed Review"
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 9,
+    "levels": "81-90",
+    "quests": [
+        {
+            "id": "qf_l81_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The train was supposed to leave at noon, but it's still at the platform.",
+            "sentence": "The train was supposed to leave at noon, but it's still at the platform.",
+            "options": [
+                "The train wasn't supposed to leave at noon?",
+                "Didn't the train supposed to leave at noon?",
+                "Wasn't the train supposed to leave at noon?",
+                "Wasn't the train suppose to leave at noon?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Wasn't the train supposed to leave at noon?",
+            "hint": "'Supposed to' uses the verb 'be', so use 'Wasn't', moved to the front.",
+            "explanation": "'Supposed to' is built on the verb 'be', so the negative question uses 'wasn't', not 'didn't', moved to the front of the sentence.",
+            "grammarRule": "Negative Questions: 'Supposed To'"
+        },
+        {
+            "id": "qf_l81_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "You were supposed to call me back yesterday.",
+            "sentence": "You were supposed to call me back yesterday.",
+            "options": [
+                "You weren't supposed to call me back yesterday?",
+                "Weren't you supposed to call me back yesterday?",
+                "Didn't you supposed to call me back yesterday?",
+                "Weren't you suppose to call me back yesterday?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Weren't you supposed to call me back yesterday?",
+            "hint": "Use 'Weren't' since 'supposed to' pairs with 'be', not 'do'.",
+            "explanation": "Since 'supposed to' is a 'be' structure, the negative question uses 'weren't', moved to the front - not 'didn't'.",
+            "grammarRule": "Negative Questions: 'Supposed To'"
+        },
+        {
+            "id": "qf_l81_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "The store is supposed to open at nine on weekdays.",
+            "sentence": "The store is supposed to open at nine on weekdays.",
+            "options": [
+                "Isn't the store supposed to open at nine on weekdays?",
+                "The store isn't supposed to open at nine on weekdays?",
+                "Doesn't the store supposed to open at nine on weekdays?",
+                "Isn't the store suppose to open at nine on weekdays?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Isn't the store supposed to open at nine on weekdays?",
+            "hint": "Use 'Isn't' since 'supposed to' is built on 'be'.",
+            "explanation": "Because 'supposed to' uses the verb 'be', the negative question needs 'isn't', not 'doesn't'.",
+            "grammarRule": "Negative Questions: 'Supposed To'"
+        },
+        {
+            "id": "qf_l82_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the report had been submitted, but I don't see it in the system yet.",
+            "sentence": "I assumed the report had been submitted, but I don't see it in the system yet.",
+            "options": [
+                "The report hasn't been submitted yet?",
+                "Didn't the report been submitted yet?",
+                "Hasn't the report been submitted yet?",
+                "Hasn't the report be submitted yet?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Hasn't the report been submitted yet?",
+            "hint": "Use the present perfect negative 'hasn't', moved to the front.",
+            "explanation": "Since this links a past action to the present result, 'hasn't...been submitted yet' is the correct negative present perfect form.",
+            "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+        },
+        {
+            "id": "qf_l82_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
+            "sentence": "I was sure they had replied to the invitation, but their name isn't on the list yet.",
+            "options": [
+                "They haven't replied to the invitation yet?",
+                "Haven't they replied to the invitation yet?",
+                "Didn't they replied to the invitation yet?",
+                "Haven't they reply to the invitation yet?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Haven't they replied to the invitation yet?",
+            "hint": "Move 'haven't' to the front, and keep the participle 'replied' unchanged.",
+            "explanation": "'Haven't' moves to the front for this present perfect negative question, and the participle 'replied' does not change.",
+            "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+        },
+        {
+            "id": "qf_l82_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I expected you had finished the paperwork, but it's still on your desk.",
+            "sentence": "I expected you had finished the paperwork, but it's still on your desk.",
+            "options": [
+                "You haven't finished the paperwork yet?",
+                "Haven't you finished the paperwork yet?",
+                "Didn't you finished the paperwork yet?",
+                "Haven't you finish the paperwork yet?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Haven't you finished the paperwork yet?",
+            "hint": "'Haven't' moves to the front, and 'finished' stays unchanged.",
+            "explanation": "Since this connects a past action to a present result, the present perfect negative 'haven't finished' fits best.",
+            "grammarRule": "Negative Questions: Present Perfect with 'Yet'"
+        },
+        {
+            "id": "qf_l83_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the shop still delivered groceries, but the driver said they stopped.",
+            "sentence": "I assumed the shop still delivered groceries, but the driver said they stopped.",
+            "options": [
+                "The shop doesn't deliver groceries any more?",
+                "Isn't the shop deliver groceries any more?",
+                "Doesn't the shop delivers groceries any more?",
+                "Doesn't the shop deliver groceries any more?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Doesn't the shop deliver groceries any more?",
+            "hint": "This is a routine present habit, so use 'doesn't' with the base verb.",
+            "explanation": "Since this describes a regular habit that may have changed, the present simple negative 'doesn't deliver' is correct here.",
+            "grammarRule": "Negative Questions: 'Any More'"
+        },
+        {
+            "id": "qf_l83_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought he still worked at the bank, but his old office has a new name on the door.",
+            "sentence": "I thought he still worked at the bank, but his old office has a new name on the door.",
+            "options": [
+                "He doesn't work at the bank any more?",
+                "Doesn't he work at the bank any more?",
+                "Isn't he working at the bank any more?",
+                "Doesn't he works at the bank any more?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Doesn't he work at the bank any more?",
+            "hint": "Use 'doesn't' with the base verb for this present habit.",
+            "explanation": "This describes a present routine, so 'doesn't work' is correct, with the verb returning to its base form.",
+            "grammarRule": "Negative Questions: 'Any More'"
+        },
+        {
+            "id": "qf_l83_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the two companies still competed for the same clients.",
+            "sentence": "I assumed the two companies still competed for the same clients.",
+            "options": [
+                "Don't the two companies compete for the same clients any more?",
+                "The two companies don't compete for the same clients any more?",
+                "Doesn't the two companies compete for the same clients any more?",
+                "Don't the two companies competes for the same clients any more?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Don't the two companies compete for the same clients any more?",
+            "hint": "'Companies' is plural, so use 'Don't', moved to the front.",
+            "explanation": "Plural subjects take 'don't' in the negative question form, moved to the front, with the base verb 'compete'.",
+            "grammarRule": "Negative Questions: 'Any More'"
+        },
+        {
+            "id": "qf_l84_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I was told the workers were still repairing the road, but traffic is moving normally.",
+            "sentence": "I was told the workers were still repairing the road, but traffic is moving normally.",
+            "options": [
+                "Aren't the workers still repairing the road?",
+                "The workers aren't still repairing the road?",
+                "Don't the workers still repairing the road?",
+                "Aren't the workers still repair the road?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Aren't the workers still repairing the road?",
+            "hint": "Move 'aren't' to the front, and keep the verb in its '-ing' form.",
+            "explanation": "Negative present continuous questions move 'aren't' to the front, and the verb keeps its '-ing' ending, 'repairing'.",
+            "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+        },
+        {
+            "id": "qf_l84_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed she was still recovering from the surgery.",
+            "sentence": "I assumed she was still recovering from the surgery.",
+            "options": [
+                "She isn't still recovering from the surgery?",
+                "Doesn't she still recovering from the surgery?",
+                "Isn't she still recover from the surgery?",
+                "Isn't she still recovering from the surgery?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Isn't she still recovering from the surgery?",
+            "hint": "Move 'isn't' to the front, keeping the verb in its '-ing' form.",
+            "explanation": "'Isn't' moves to the front in this negative continuous question, and the verb 'recovering' keeps its '-ing' ending.",
+            "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+        },
+        {
+            "id": "qf_l84_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I heard the two teams were still negotiating the contract terms.",
+            "sentence": "I heard the two teams were still negotiating the contract terms.",
+            "options": [
+                "The two teams aren't still negotiating the contract terms?",
+                "Aren't the two teams still negotiating the contract terms?",
+                "Don't the two teams still negotiating the contract terms?",
+                "Aren't the two teams still negotiate the contract terms?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Aren't the two teams still negotiating the contract terms?",
+            "hint": "'Teams' is plural, so use 'Aren't', moved to the front.",
+            "explanation": "Plural subjects take 'aren't' in this negative continuous question, and 'negotiating' keeps its '-ing' ending.",
+            "grammarRule": "Negative Questions: 'Still' (Present Continuous)"
+        },
+        {
+            "id": "qf_l85_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think a short walk would help clear your head.",
+            "sentence": "I think a short walk would help clear your head.",
+            "options": [
+                "Don't you why take a short walk?",
+                "Why don't you take a short walk?",
+                "Why you don't take a short walk?",
+                "Why doesn't you take a short walk?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why don't you take a short walk?",
+            "hint": "'Why don't you...?' is a common way to make a friendly suggestion.",
+            "explanation": "'Why don't you...?' is a fixed pattern for offering a suggestion. 'Don't' follows 'why' and comes before the subject, 'you'.",
+            "grammarRule": "Negative Questions: Polite Suggestions"
+        },
+        {
+            "id": "qf_l85_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think the team should try a different approach to the problem.",
+            "sentence": "I think the team should try a different approach to the problem.",
+            "options": [
+                "Doesn't why the team try a different approach?",
+                "Why doesn't the team try a different approach?",
+                "Why the team doesn't try a different approach?",
+                "Why don't the team try a different approach?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why doesn't the team try a different approach?",
+            "hint": "'The team' is singular here, so use 'doesn't' after 'why'.",
+            "explanation": "Since 'the team' is treated as a singular subject, the suggestion pattern uses 'doesn't', placed right after 'why'.",
+            "grammarRule": "Negative Questions: Polite Suggestions"
+        },
+        {
+            "id": "qf_l85_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think we should ask the hotel for a late checkout.",
+            "sentence": "I think we should ask the hotel for a late checkout.",
+            "options": [
+                "Don't why we ask the hotel for a late checkout?",
+                "Why we don't ask the hotel for a late checkout?",
+                "Why doesn't we ask the hotel for a late checkout?",
+                "Why don't we ask the hotel for a late checkout?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Why don't we ask the hotel for a late checkout?",
+            "hint": "'We' pairs with 'don't' in this suggestion pattern.",
+            "explanation": "'Why don't we...?' is the standard way to suggest an action together, with 'don't' placed right after 'why'.",
+            "grammarRule": "Negative Questions: Polite Suggestions"
+        },
+        {
+            "id": "qf_l86_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
+            "sentence": "I assumed the invoice hadn't been paid, since the account still shows a balance.",
+            "options": [
+                "The invoice hasn't been paid?",
+                "Didn't the invoice been paid?",
+                "Hasn't the invoice been paid?",
+                "Hasn't the invoice be paid?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Hasn't the invoice been paid?",
+            "hint": "Move 'hasn't' to the front, keeping 'been paid' together.",
+            "explanation": "This negative present perfect passive question moves 'hasn't' to the front, and 'been paid' stays together as one unit.",
+            "grammarRule": "Negative Questions: Obligation & Necessity"
+        },
+        {
+            "id": "qf_l86_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
+            "sentence": "I thought passengers needed to check in two hours early, but the airline changed the rule.",
+            "options": [
+                "Passengers don't need to check in two hours early?",
+                "Don't passengers need to check in two hours early?",
+                "Doesn't passengers need to check in two hours early?",
+                "Don't passengers needs to check in two hours early?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Don't passengers need to check in two hours early?",
+            "hint": "'Passengers' is plural, so use 'Don't', moved to the front.",
+            "explanation": "Plural subjects take 'don't' in the negative question, moved to the front, with the base verb 'need'.",
+            "grammarRule": "Negative Questions: Obligation & Necessity"
+        },
+        {
+            "id": "qf_l86_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed guests had to pay a deposit at check-in.",
+            "sentence": "I assumed guests had to pay a deposit at check-in.",
+            "options": [
+                "Guests don't have to pay a deposit at check-in?",
+                "Doesn't guests have to pay a deposit at check-in?",
+                "Don't guests has to pay a deposit at check-in?",
+                "Don't guests have to pay a deposit at check-in?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Don't guests have to pay a deposit at check-in?",
+            "hint": "'Guests' is plural, so use 'Don't', moved to the front.",
+            "explanation": "Plural subjects take 'don't' in this negative question, moved to the front, with 'have to pay' kept together.",
+            "grammarRule": "Negative Questions: Obligation & Necessity"
+        },
+        {
+            "id": "qf_l87_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "This view from the rooftop is absolutely stunning.",
+            "sentence": "This view from the rooftop is absolutely stunning.",
+            "options": [
+                "This view isn't stunning?",
+                "Isn't this view stunning?",
+                "Doesn't this view stunning?",
+                "Isn't this view stun?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Isn't this view stunning?",
+            "hint": "'Be' questions move 'isn't' to the front - no 'does' needed.",
+            "explanation": "Since 'stunning' follows the verb 'be', the negative question moves 'isn't' to the front without adding 'does'.",
+            "grammarRule": "Negative Questions: Rhetorical Confirmation"
+        },
+        {
+            "id": "qf_l87_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "It seems unfair that only one team gets extra funding.",
+            "sentence": "It seems unfair that only one team gets extra funding.",
+            "options": [
+                "It isn't unfair that only one team gets extra funding?",
+                "Doesn't it unfair that only one team gets extra funding?",
+                "Isn't unfair it that only one team gets extra funding?",
+                "Isn't it unfair that only one team gets extra funding?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Isn't it unfair that only one team gets extra funding?",
+            "hint": "Move 'isn't' to the front, right before 'it'.",
+            "explanation": "'Isn't' moves to the front of the sentence, right before 'it', to form this rhetorical negative question.",
+            "grammarRule": "Negative Questions: Rhetorical Confirmation"
+        },
+        {
+            "id": "qf_l87_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "These directions seem confusing to a first-time visitor.",
+            "sentence": "These directions seem confusing to a first-time visitor.",
+            "options": [
+                "These directions aren't confusing to a first-time visitor?",
+                "Aren't these directions confusing to a first-time visitor?",
+                "Don't these directions confusing to a first-time visitor?",
+                "Aren't these directions confuse to a first-time visitor?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Aren't these directions confusing to a first-time visitor?",
+            "hint": "'Directions' is plural, so use 'Aren't', moved to the front.",
+            "explanation": "Plural subjects take 'aren't', moved to the front, since 'confusing' follows the verb 'be' rather than a separate action verb.",
+            "grammarRule": "Negative Questions: Rhetorical Confirmation"
+        },
+        {
+            "id": "qf_l88_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I remember this street used to have a lot more trees.",
+            "sentence": "I remember this street used to have a lot more trees.",
+            "options": [
+                "This street didn't use to have a lot more trees?",
+                "Usedn't this street to have a lot more trees?",
+                "Didn't this street use to have a lot more trees?",
+                "Didn't this street used to have a lot more trees?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Didn't this street use to have a lot more trees?",
+            "hint": "'Used to' takes 'did' in questions, and 'used' returns to 'use'.",
+            "explanation": "In questions, 'used to' becomes 'did...use to', with the verb returning to its base form, 'use', once 'did' carries the tense.",
+            "grammarRule": "Negative Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l88_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought your family used to live near the coast.",
+            "sentence": "I thought your family used to live near the coast.",
+            "options": [
+                "Your family didn't use to live near the coast?",
+                "Usedn't your family to live near the coast?",
+                "Didn't your family used to live near the coast?",
+                "Didn't your family use to live near the coast?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Didn't your family use to live near the coast?",
+            "hint": "Use 'did' + 'use to', not 'used to', in the question form.",
+            "explanation": "Negative questions with 'used to' need 'did' plus the base form 'use to' - 'used' only appears in statements, not after 'did'.",
+            "grammarRule": "Negative Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l88_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I remember he used to play the guitar every weekend.",
+            "sentence": "I remember he used to play the guitar every weekend.",
+            "options": [
+                "He didn't use to play the guitar every weekend?",
+                "Didn't he use to play the guitar every weekend?",
+                "Usedn't he to play the guitar every weekend?",
+                "Didn't he used to play the guitar every weekend?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Didn't he use to play the guitar every weekend?",
+            "hint": "Keep 'use to' (not 'used to') once 'did' is added.",
+            "explanation": "Once 'did' is added to carry the past tense, 'used to' becomes 'use to' - this is a common point of confusion in negative questions.",
+            "grammarRule": "Negative Questions: 'Used To'"
+        },
+        {
+            "id": "qf_l89_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed you could help me move this weekend.",
+            "sentence": "I assumed you could help me move this weekend.",
+            "options": [
+                "You couldn't help me move this weekend?",
+                "Doesn't you could help me move this weekend?",
+                "Couldn't you help me move this weekend?",
+                "Couldn't you helped me move this weekend?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Couldn't you help me move this weekend?",
+            "hint": "'Couldn't' moves to the front on its own, like other modals.",
+            "explanation": "Negative modal questions move 'couldn't' to the front without any extra auxiliary, and the verb stays in its base form.",
+            "grammarRule": "Negative Questions: Modals (Could / Would)"
+        },
+        {
+            "id": "qf_l89_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I figured it would be easier to meet at the office instead.",
+            "sentence": "I figured it would be easier to meet at the office instead.",
+            "options": [
+                "It wouldn't be easier to meet at the office?",
+                "Doesn't it would be easier to meet at the office?",
+                "Wouldn't it be easier to meet at the office?",
+                "Wouldn't it being easier to meet at the office?"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Wouldn't it be easier to meet at the office?",
+            "hint": "'Wouldn't' moves to the front, and the verb 'be' stays in its base form.",
+            "explanation": "'Wouldn't' moves to the front for this negative modal question, and the verb after it, 'be', stays in its base form.",
+            "grammarRule": "Negative Questions: Modals (Could / Would)"
+        },
+        {
+            "id": "qf_l89_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought we could reschedule the appointment for next week.",
+            "sentence": "I thought we could reschedule the appointment for next week.",
+            "options": [
+                "Couldn't we reschedule the appointment for next week?",
+                "We couldn't reschedule the appointment for next week?",
+                "Doesn't we could reschedule the appointment for next week?",
+                "Couldn't we rescheduled the appointment for next week?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Couldn't we reschedule the appointment for next week?",
+            "hint": "Move 'couldn't' to the front, keeping the base verb form.",
+            "explanation": "As with all modal negatives, 'couldn't' moves to the front, and the main verb 'reschedule' stays in its base form.",
+            "grammarRule": "Negative Questions: Modals (Could / Would)"
+        },
+        {
+            "id": "qf_l90_q1",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I assumed the museum was supposed to be free for students.",
+            "sentence": "I assumed the museum was supposed to be free for students.",
+            "options": [
+                "Isn't the museum supposed to be free for students?",
+                "The museum isn't supposed to be free for students?",
+                "Doesn't the museum supposed to be free for students?",
+                "Isn't the museum suppose to be free for students?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Isn't the museum supposed to be free for students?",
+            "hint": "'Supposed to' pairs with 'be', so use 'Isn't', moved to the front.",
+            "explanation": "Since 'supposed to' is built on 'be', the negative question uses 'isn't', not 'doesn't', moved to the front.",
+            "grammarRule": "Negative Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l90_q2",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I thought the two departments no longer shared a budget.",
+            "sentence": "I thought the two departments no longer shared a budget.",
+            "options": [
+                "The two departments don't share a budget any more?",
+                "Doesn't the two departments share a budget any more?",
+                "Don't the two departments shares a budget any more?",
+                "Don't the two departments share a budget any more?"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Don't the two departments share a budget any more?",
+            "hint": "'Departments' is plural, so use 'Don't', moved to the front.",
+            "explanation": "Plural subjects take 'don't', moved to the front of the negative question, with the base verb 'share'.",
+            "grammarRule": "Negative Questions: Mixed Review"
+        },
+        {
+            "id": "qf_l90_q3",
+            "instruction": "Turn the statement into a question.",
+            "subtype": "questionFormatter",
+            "interactionType": "reorder",
+            "question": "I think you should ask for a refund instead of a replacement.",
+            "sentence": "I think you should ask for a refund instead of a replacement.",
+            "options": [
+                "Don't why you ask for a refund instead of a replacement?",
+                "Why don't you ask for a refund instead of a replacement?",
+                "Why you don't ask for a refund instead of a replacement?",
+                "Why doesn't you ask for a refund instead of a replacement?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Why don't you ask for a refund instead of a replacement?",
+            "hint": "'Why don't you...?' is the standard pattern for a friendly suggestion.",
+            "explanation": "'Why don't you...?' is a fixed suggestion pattern, with 'don't' placed right after 'why' and before the subject.",
+            "grammarRule": "Negative Questions: Mixed Review"
+        }
+    ]
 }
