@@ -457,11 +457,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             color: const Color(0xFF3B82F6),
             shadowColor: const Color(0xFF2563EB),
             title: context.tr(
-              'home.daily_words_title',
+              'profile.daily_words_title',
               fallback: 'Daily Words',
             ),
             subtitle: context.tr(
-              'home.daily_words_subtitle',
+              'profile.daily_words_subtitle',
               fallback: 'Expand your vocabulary every day.',
             ),
             onTap: () {
