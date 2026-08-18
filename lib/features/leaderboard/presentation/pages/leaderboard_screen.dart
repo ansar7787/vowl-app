@@ -173,6 +173,8 @@ class _LeaderboardContent extends StatelessWidget {
             ),
           ),
 
+          SliverToBoxAdapter(child: SizedBox(height: 24.h)),
+
           // Sticky Current User Rank (Pins to top when scrolling)
           SliverPersistentHeader(
             pinned: true,
