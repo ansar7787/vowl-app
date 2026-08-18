@@ -223,87 +223,103 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: activeQuest == null
               ? const SizedBox()
-              : Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 16.h),
-                      DailyJournalInstruction(
-                        primaryColor: theme.primaryColor,
-                        instruction: activeQuest.instruction,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      DailyJournalPrompt(
-                        text: activeQuest.prompt ?? "",
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      DailyJournalBoosterTokens(
-                        keywords: targetKeywords,
-                        text: _controller.text,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 24.h),
-
-                      DailyJournalScratchArea(
-                        controller: _controller,
-                        isAnswered: isAnswered,
-                        wordCount: _wordCount,
-                        journalProgress: _journalProgress,
-                        color: theme.primaryColor,
-                        isDark: isDark,
-                      ),
-                      SizedBox(height: 32.h),
-
-                      if (!isAnswered)
-                        ScaleButton(
-                          onTap: () =>
-                              _submitAnswer(targetKeywords, isAnswered),
-                          child: Container(
-                            width: double.infinity,
-                            height: 60.h,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.r),
-                              color: _wordCount >= 10
-                                  ? theme.primaryColor
-                                  : Colors.grey,
-                              boxShadow: [
-                                if (_wordCount >= 10)
-                                  BoxShadow(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
-                                    ),
-                                    blurRadius: 15,
-                                  ),
-                              ],
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            DailyJournalInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: activeQuest.instruction,
                             ),
-                            child: Center(
-                              child: Text(
-                                "CRYSTALLIZE MEMORY",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 2,
+                            SizedBox(height: 24.h),
+
+                            DailyJournalPrompt(
+                              text: activeQuest.prompt ?? "",
+                              primaryColor: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            DailyJournalBoosterTokens(
+                              keywords: targetKeywords,
+                              text: _controller.text,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            DailyJournalScratchArea(
+                              controller: _controller,
+                              isAnswered: isAnswered,
+                              wordCount: _wordCount,
+                              journalProgress: _journalProgress,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 32.h),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!isAnswered)
+                              ScaleButton(
+                                onTap: () =>
+                                    _submitAnswer(targetKeywords, isAnswered),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    color: _wordCount >= 10
+                                        ? theme.primaryColor
+                                        : Colors.grey,
+                                    boxShadow: [
+                                      if (_wordCount >= 10)
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                        ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "CRYSTALLIZE MEMORY",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
+                            SizedBox(height: isAnswered ? 160.h : 60.h),
+                          ],
                         ),
-
-                      SizedBox(height: 60.h),
-                    ],
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
         );
       },

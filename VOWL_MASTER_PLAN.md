@@ -103,11 +103,11 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | 36 | Fix The Sentence | Finds & types corrections | Error detection + correction | ✅ | ✅ `FixTheSentenceScreen` | ✅ | ✅ |
 | 37 | Short Answer | Reads question → writes short answer | Concise response writing | ✅ | ✅ `ShortAnswerScreen` | ✅ | ✅ |
 | 38 | Opinion Writing | Writes opinion paragraph with reasons | Argumentative writing | ✅ | ✅ `OpinionWritingScreen` | ✅ | ✅ |
-| 39 | Daily Journal | Writes daily journal entry | Personal narrative writing | ✅ | ✅ `DailyJournalScreen` | ✅ | ⬜ |
-| 40 | Summarize Story | Reads story → writes summary | Summary/synthesis skills | ✅ | ✅ `SummarizeStoryWritingScreen` | ✅ | ⬜ |
-| 41 | Writing Email | Writes professional email | Formal writing skills | ✅ | ✅ `WritingEmailScreen` | ✅ | ⬜ |
-| 42 | Correction Writing | Identifies errors → writes corrections | Proofreading skills | ✅ | ✅ `CorrectionWritingScreen` | ✅ | ⬜ |
-| 43 | Essay Drafting | Writes structured essay draft | Academic writing skills | ✅ | ✅ `EssayDraftingScreen` | ✅ | ⬜ |
+| 39 | Daily Journal | Writes daily journal entry | Personal narrative writing | ✅ | ✅ `DailyJournalScreen` | ✅ | ✅ |
+| 40 | Summarize Story | Reads story → writes summary | Summary/synthesis skills | ✅ | ✅ `SummarizeStoryWritingScreen` | ✅ | ✅ |
+| 41 | Writing Email | Writes professional email | Formal writing skills | ✅ | ✅ `WritingEmailScreen` | ✅ | ✅ |
+| 42 | Correction Writing | Identifies errors → writes corrections | Proofreading skills | ✅ | ✅ `CorrectionWritingScreen` | ✅ | ✅ |
+| 43 | Essay Drafting | Writes structured essay draft | Academic writing skills | ✅ | ✅ `EssayDraftingScreen` | ✅ | ✅ |
 
 ### CAT-5: 🧠 GRAMMAR (19 games) — User MUST apply grammar rules
 
