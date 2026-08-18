@@ -137,12 +137,12 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
                         child: Column(
                           children: [
                             SizedBox(height: 16.h),
@@ -179,6 +179,17 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                 letterSpacing: 2,
                               ),
                             ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
                             if (_isDistilled) ...[
                               SizedBox(height: 24.h),
                               ReadingSelfEvaluationCard(

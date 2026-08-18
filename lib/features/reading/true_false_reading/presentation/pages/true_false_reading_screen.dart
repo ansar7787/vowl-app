@@ -169,50 +169,65 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    SingleChildScrollView(
+                    CustomScrollView(
                       physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            TrueFalseReadingInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 16.h),
+                                TrueFalseReadingInstruction(
+                                  primaryColor: theme.primaryColor,
+                                  instruction: quest.instruction,
+                                ),
+                                SizedBox(height: 24.h),
+                                TrueFalseReadingPassage(
+                                  passage: quest.passage ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                                SizedBox(height: 32.h),
+                                TrueFalseReadingStatement(
+                                  statement: quest.question ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 24.h),
-                            TrueFalseReadingPassage(
-                              passage: quest.passage ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 32.h),
-                            TrueFalseReadingStatement(
-                              statement: quest.question ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 40.h),
-                            TrueFalseReadingCoinZone(
-                              coinX: _coinX,
-                              coinY: _coinY,
-                              coinRotation: _coinRotation,
-                              onFlick: _onFlick,
-                              isDark: isDark,
-                              themeColor: theme.primaryColor,
-                            ),
-                            if (_isAnswered) ...[
-                              SizedBox(height: 30.h),
-                              TrueFalseReadingResult(
-                                quest: quest,
-                                isCorrect: _isCorrect == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(height: 60.h),
-                          ],
+                          ),
                         ),
-                      ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                SizedBox(height: 40.h),
+                                TrueFalseReadingCoinZone(
+                                  coinX: _coinX,
+                                  coinY: _coinY,
+                                  coinRotation: _coinRotation,
+                                  onFlick: _onFlick,
+                                  isDark: isDark,
+                                  themeColor: theme.primaryColor,
+                                ),
+                                if (_isAnswered) ...[
+                                  SizedBox(height: 30.h),
+                                  TrueFalseReadingResult(
+                                    quest: quest,
+                                    isCorrect: _isCorrect == true,
+                                    isDark: isDark,
+                                  ),
+                                ],
+                                SizedBox(height: 60.h),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     if (_pendingAnswer != null && !_isAnswered)
                       SpeakToConfirmOverlay(

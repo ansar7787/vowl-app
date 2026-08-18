@@ -9,7 +9,6 @@ import 'package:vowl/features/reading/presentation/layout/reading_base_layout.da
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
-import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_highlightable_passage.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -97,7 +96,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           isAnswered: isAnswered,
           isCorrect: isCorrect,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () =>
               context.read<ReadingBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -155,38 +154,47 @@ class _QuestContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       explicitChildNodes: true,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(height: 16.h),
-          ReadAndAnswerInstruction(
-            primaryColor: primaryColor,
-            instruction: quest.instruction,
-          ),
-          SizedBox(height: 24.h),
-          ReadAndAnswerAnchorPoint(
-            question: quest.question ?? '',
-            color: primaryColor,
-            isDark: isDark,
-          ),
-          SizedBox(height: 32.h),
-          ReadingHighlightablePassage(
-            passage: quest.passage ?? '',
-            correctAnswer: quest.correctAnswer ?? '',
-            primaryColor: primaryColor,
-            isDark: isDark,
-            isAnswered: isAnswered,
-            onSentenceSelected: onSentenceSelected,
-          ),
-          if (isAnswered) ...[
-            SizedBox(height: 24.h),
-            ReadAndAnswerResult(
-              quest: quest,
-              isCorrect: isCorrect == true,
-              isDark: isDark,
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverPadding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 0, // Padding is handled by ReadingContentArea
+              vertical: 0,
             ),
-          ],
-          SizedBox(height: 40.h),
+            sliver: SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(height: 16.h),
+                  ReadAndAnswerInstruction(
+                    primaryColor: primaryColor,
+                    instruction: quest.instruction,
+                  ),
+                  SizedBox(height: 24.h),
+                  ReadAndAnswerAnchorPoint(
+                    question: quest.question ?? '',
+                    color: primaryColor,
+                    isDark: isDark,
+                  ),
+                  SizedBox(height: 32.h),
+                  ReadingHighlightablePassage(
+                    passage: quest.passage ?? '',
+                    correctAnswer: quest.correctAnswer ?? '',
+                    primaryColor: primaryColor,
+                    isDark: isDark,
+                    isAnswered: isAnswered,
+                    onSentenceSelected: onSentenceSelected,
+                  ),
+                  SizedBox(height: 40.h),
+                ],
+              ),
+            ),
+          ),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: SizedBox.shrink(),
+          ),
         ],
       ),
     );

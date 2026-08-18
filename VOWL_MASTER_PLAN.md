@@ -65,10 +65,10 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 11 | Audio Fill Blanks | Listens → fills missing words from audio | Detail-focused listening | ✅ | ✅ `AudioFillBlanksScreen` | ✅ | ⬜ |
-| 12 | Audio MCQ | Listens to clip → answers comprehension Q | Gist + detail comprehension | ✅ | ✅ `AudioMultipleChoiceScreen` | ✅ | ⬜ |
-| 13 | Audio Sentence Order | Listens → arranges sentences in order | Sequence tracking in speech | ✅ | ✅ `AudioSentenceOrderScreen` | ✅ | ⬜ |
-| 14 | Audio True/False | Listens → judges if statement matches audio | Critical listening accuracy | ✅ | ✅ `AudioTrueFalseScreen` | ✅ | ⬜ |
+| 11 | Audio Fill Blanks | Listens → fills missing words from audio | Detail-focused listening | ✅ | ✅ `AudioFillBlanksScreen` | ✅ | ✅ |
+| 12 | Audio MCQ | Listens to clip → answers comprehension Q | Gist + detail comprehension | ✅ | ✅ `AudioMultipleChoiceScreen` | ✅ | ✅ |
+| 13 | Audio Sentence Order | Listens → arranges sentences in order | Sequence tracking in speech | ✅ | ✅ `AudioSentenceOrderScreen` | ✅ | ✅ |
+| 14 | Audio True/False | Listens → judges if statement matches audio | Critical listening accuracy | ✅ | ✅ `AudioTrueFalseScreen` | ✅ | ✅ |
 | 15 | Sound Image Match | Hears sound/word → matches to image | Vocabulary + auditory association | ✅ | ✅ `SoundImageMatchScreen` | ✅ | ✅ |
 | 16 | Fast Speech Decoder | Listens to fast speech → decodes meaning | Real-world speed comprehension | ✅ | ✅ `FastSpeechDecoderScreen` | ✅ | ✅ |
 | 17 | Emotion Recognition | Listens to tone → identifies emotion | Pragmatic/emotional intelligence | ✅ | ✅ `EmotionRecognitionScreen` | ✅ | ✅ |
@@ -80,18 +80,18 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 21 | Read & Answer | Reads passage → answers comprehension Qs | Core reading comprehension | ✅ | ✅ `ReadAndAnswerScreen` | ✅ | ⬜ |
-| 22 | Find Word Meaning | Reads passage → finds word meaning in context | Context-based vocabulary | ✅ | ✅ `FindWordMeaningScreen` | ✅ | ⬜ |
-| 23 | True/False Reading | Reads → judges statements true/false | Critical reading accuracy | ✅ | ✅ `TrueFalseReadingScreen` | ✅ | ⬜ |
-| 24 | Sentence Order | Reads jumbled sentences → orders them | Text structure understanding | ✅ | ✅ `SentenceOrderReadingScreen` | ✅ | ⬜ |
-| 25 | Reading Speed Check | Reads under timer → answers questions | Speed + comprehension balance | ✅ | ✅ `ReadingSpeedCheckScreen` | ✅ | ⬜ |
-| 26 | Guess Title | Reads passage → guesses best title | Main idea extraction | ✅ | ✅ `GuessTitleScreen` | ✅ | ⬜ |
-| 27 | Read & Match | Reads → matches statements to paragraphs | Paragraph-level comprehension | ✅ | ✅ `ReadAndMatchScreen` | ✅ | ⬜ |
-| 28 | Paragraph Summary | Reads → selects best summary | Summarization skill | ✅ | ✅ `ParagraphSummaryScreen` | ✅ | ⬜ |
-| 29 | Reading Inference | Reads → infers unstated meaning | Higher-order thinking | ✅ | ✅ `ReadingInferenceScreen` | ✅ | ⬜ |
-| 30 | Reading Conclusion | Reads → draws logical conclusion | Analytical reading | ✅ | ✅ `ReadingConclusionScreen` | ✅ | ⬜ |
-| 31 | Cloze Test | Reads passage with blanks → fills them | Grammar + vocabulary in context | ✅ | ✅ `ClozeTestScreen` | ✅ | ⬜ |
-| 32 | Skimming & Scanning | Reads quickly → finds specific info | Speed reading technique | ✅ | ✅ `SkimmingScanningScreen` | ✅ | ⬜ |
+| 21 | Read & Answer | Reads passage → answers comprehension Qs | Core reading comprehension | ✅ | ✅ `ReadAndAnswerScreen` | ✅ | ✅ |
+| 22 | Find Word Meaning | Reads passage → finds word meaning in context | Context-based vocabulary | ✅ | ✅ `FindWordMeaningScreen` | ✅ | ✅ |
+| 23 | True/False Reading | Reads → judges statements true/false | Critical reading accuracy | ✅ | ✅ `TrueFalseReadingScreen` | ✅ | ✅ |
+| 24 | Sentence Order | Reads jumbled sentences → orders them | Text structure understanding | ✅ | ✅ `SentenceOrderReadingScreen` | ✅ | ✅ |
+| 25 | Reading Speed Check | Reads under timer → answers questions | Speed + comprehension balance | ✅ | ✅ `ReadingSpeedCheckScreen` | ✅ | ✅ |
+| 26 | Guess Title | Reads passage → guesses best title | Main idea extraction | ✅ | ✅ `GuessTitleScreen` | ✅ | ✅ |
+| 27 | Read & Match | Reads → matches statements to paragraphs | Paragraph-level comprehension | ✅ | ✅ `ReadAndMatchScreen` | ✅ | ✅ |
+| 28 | Paragraph Summary | Reads → selects best summary | Summarization skill | ✅ | ✅ `ParagraphSummaryScreen` | ✅ | ✅ |
+| 29 | Reading Inference | Reads → infers unstated meaning | Higher-order thinking | ✅ | ✅ `ReadingInferenceScreen` | ✅ | ✅ |
+| 30 | Reading Conclusion | Reads → draws logical conclusion | Analytical reading | ✅ | ✅ `ReadingConclusionScreen` | ✅ | ✅ |
+| 31 | Cloze Test | Reads passage with blanks → fills them | Grammar + vocabulary in context | ✅ | ✅ `ClozeTestScreen` | ✅ | ✅ |
+| 32 | Skimming & Scanning | Reads quickly → finds specific info | Speed reading technique | ✅ | ✅ `SkimmingScanningScreen` | ✅ | ✅ |
 
 ### CAT-4: ✍️ WRITING (11 games) — User MUST type/write actual text
 

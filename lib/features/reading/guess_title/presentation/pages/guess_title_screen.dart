@@ -121,59 +121,69 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    SingleChildScrollView(
+                    CustomScrollView(
                       physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            GuessTitleInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: quest.instruction,
-                            ),
-                            SizedBox(height: 24.h),
-                            Container(
-                              width: double.infinity,
-                              padding: EdgeInsets.all(24.r),
-                              decoration: BoxDecoration(
-                                color: isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.02),
-                                borderRadius: BorderRadius.circular(20.r),
-                                border: Border.all(
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.3,
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 16.h),
+                                GuessTitleInstruction(
+                                  primaryColor: theme.primaryColor,
+                                  instruction: quest.instruction,
+                                ),
+                                SizedBox(height: 24.h),
+                                Container(
+                                  width: double.infinity,
+                                  padding: EdgeInsets.all(24.r),
+                                  decoration: BoxDecoration(
+                                    color: isDark
+                                        ? Colors.white.withValues(alpha: 0.05)
+                                        : Colors.black.withValues(alpha: 0.02),
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    border: Border.all(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      width: 1,
+                                    ),
                                   ),
-                                  width: 1,
+                                  child: Text(
+                                    quest.passage ?? "",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 18.sp,
+                                      height: 1.6,
+                                      color: isDark
+                                          ? Colors.white70
+                                          : Colors.black87,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              child: Text(
-                                quest.passage ?? "",
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 18.sp,
-                                  height: 1.6,
-                                  color: isDark
-                                      ? Colors.white70
-                                      : Colors.black87,
-                                ),
-                              ),
+                                if (_isAnswered) ...[
+                                  SizedBox(height: 30.h),
+                                  GuessTitleResult(
+                                    quest: quest,
+                                    isCorrect: _isCorrect == true,
+                                    isDark: isDark,
+                                  ),
+                                ],
+                              ],
                             ),
-                            if (_isAnswered) ...[
-                              SizedBox(height: 30.h),
-                              GuessTitleResult(
-                                quest: quest,
-                                isCorrect: _isCorrect == true,
-                                isDark: isDark,
-                              ),
-                            ],
-                            SizedBox(
-                              height: 240.h,
-                            ), // Spacing for Jigsaw Wrapper
-                          ],
+                          ),
                         ),
-                      ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(height: 240.h), // Spacing for Jigsaw Wrapper
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     if (!_isAnswered || _isCorrect == null)
                       DynamicJigsawWrapper(

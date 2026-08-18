@@ -171,58 +171,72 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
+              : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        ReadingSpeedInstruction(
-                          primaryColor: theme.primaryColor,
-                          isRevealed: _isRevealed,
-                          instruction: quest.instruction,
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            ReadingSpeedInstruction(
+                              primaryColor: theme.primaryColor,
+                              isRevealed: _isRevealed,
+                              instruction: quest.instruction,
+                            ),
+                            SizedBox(height: 32.h),
+                            if (_isRevealed)
+                              ReadingSpeedQuestionArea(
+                                question: quest.question ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                              ),
+                          ],
                         ),
-                        SizedBox(height: 32.h),
-
-                        if (!_isRevealed)
-                          ReadingSpeedPulseZone(
-                            passage: quest.passage ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                            clarityRadius: _clarityRadius,
-                            pulseScale: _pulseScale,
-                            timerValue: _timerValue,
-                            onTapPulse: _onPulseTap,
-                          )
-                        else ...[
-                          ReadingSpeedQuestionArea(
-                            question: quest.question ?? "",
-                            color: theme.primaryColor,
-                            isDark: isDark,
-                          ),
-                          SizedBox(height: 32.h),
-                          ReadingSelfEvaluationCard(
-                            correctAnswer: quest.correctAnswer ?? "",
-                            explanation: quest.explanation,
-                            primaryColor: theme.primaryColor,
-                            isDark: isDark,
-                            onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
-                          ),
-                        ],
-
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          ReadingSpeedResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 60.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!_isRevealed)
+                              ReadingSpeedPulseZone(
+                                passage: quest.passage ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                clarityRadius: _clarityRadius,
+                                pulseScale: _pulseScale,
+                                timerValue: _timerValue,
+                                onTapPulse: _onPulseTap,
+                              )
+                            else ...[
+                              SizedBox(height: 32.h),
+                              ReadingSelfEvaluationCard(
+                                correctAnswer: quest.correctAnswer ?? "",
+                                explanation: quest.explanation,
+                                primaryColor: theme.primaryColor,
+                                isDark: isDark,
+                                onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                              ),
+                            ],
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              ReadingSpeedResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
         );
       },

@@ -157,48 +157,61 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    SingleChildScrollView(
+                    CustomScrollView(
                       physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            ClozeTestInstruction(
-                              primaryColor: theme.primaryColor,
-                              instruction: context.tr(
-                                'games.clozeTest_instruction',
-                                fallback:
-                                    'Complete the sentence by docking the correct word.',
-                              ),
-                            ),
-                            SizedBox(height: 32.h),
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          sliver: SliverToBoxAdapter(
+                            child: Column(
+                              children: [
+                                SizedBox(height: 16.h),
+                                ClozeTestInstruction(
+                                  primaryColor: theme.primaryColor,
+                                  instruction: context.tr(
+                                    'games.clozeTest_instruction',
+                                    fallback:
+                                        'Complete the sentence by docking the correct word.',
+                                  ),
+                                ),
+                                SizedBox(height: 32.h),
 
-                            ClozeTestPneumaticPort(
-                              text: quest.passage ?? "",
-                              correct: quest.correctAnswer ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              dockedOption:
-                                  _dockedOption ?? _pendingDockedOption,
-                              isAnswered: _isAnswered,
-                              onDock: (opt) =>
-                                  _onDock(opt, quest.correctAnswer ?? ""),
+                                ClozeTestPneumaticPort(
+                                  text: quest.passage ?? "",
+                                  correct: quest.correctAnswer ?? "",
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  dockedOption:
+                                      _dockedOption ?? _pendingDockedOption,
+                                  isAnswered: _isAnswered,
+                                  onDock: (opt) =>
+                                      _onDock(opt, quest.correctAnswer ?? ""),
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 40.h),
-
-                            ClozeTestFuelCells(
-                              options: quest.options ?? [],
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              dockedOption:
-                                  _dockedOption ?? _pendingDockedOption,
-                            ),
-
-                            SizedBox(height: 180.h),
-                          ],
+                          ),
                         ),
-                      ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                SizedBox(height: 40.h),
+                                ClozeTestFuelCells(
+                                  options: quest.options ?? [],
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  dockedOption:
+                                      _dockedOption ?? _pendingDockedOption,
+                                ),
+                                SizedBox(height: 180.h),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     if (_pendingDockedOption != null && !_isAnswered)
                       TypeToConfirmOverlay(

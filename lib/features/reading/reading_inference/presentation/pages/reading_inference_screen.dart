@@ -127,12 +127,12 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               context.read<ReadingBloc>().add(const ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
                         child: Column(
                           children: [
                             SizedBox(height: 16.h),
@@ -165,8 +165,18 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                                 letterSpacing: 1.5,
                               ),
                             ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
                             SizedBox(height: 24.h),
-
                             AnimatedOpacity(
                               duration: const Duration(milliseconds: 300),
                               opacity: _clarity >= 0.3 ? 1.0 : 0.3,

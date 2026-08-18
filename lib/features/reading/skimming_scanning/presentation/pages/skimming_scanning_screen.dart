@@ -143,68 +143,81 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
+              : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        SkimmingScanningTargetBadge(
-                          item: quest.targetItem ?? "",
-                          color: theme.primaryColor,
-                        ),
-                        SizedBox(height: 24.h),
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            SkimmingScanningTargetBadge(
+                              item: quest.targetItem ?? "",
+                              color: theme.primaryColor,
+                            ),
+                            SizedBox(height: 24.h),
 
-                        // Scanning Terminal Box
-                        SizedBox(
-                          height: 260.h,
-                          width: double.infinity,
-                          child: SkimmingScanningTerminal(
-                            text: quest.passage ?? "",
-                            correct: quest.correctAnswer ?? "",
-                            color: theme.primaryColor,
-                            scrollController: _scrollController,
-                            isAnswered: _isAnswered,
-                            onTapWord: (clean) {
-                              if (clean.toLowerCase() ==
-                                  (quest.correctAnswer ?? "").toLowerCase()) {
-                                _submitCorrectAnswer();
-                              } else {
-                                _submitIncorrectAnswer();
-                              }
-                            },
-                          ),
+                            // Scanning Terminal Box
+                            SizedBox(
+                              height: 260.h,
+                              width: double.infinity,
+                              child: SkimmingScanningTerminal(
+                                text: quest.passage ?? "",
+                                correct: quest.correctAnswer ?? "",
+                                color: theme.primaryColor,
+                                scrollController: _scrollController,
+                                isAnswered: _isAnswered,
+                                onTapWord: (clean) {
+                                  if (clean.toLowerCase() ==
+                                      (quest.correctAnswer ?? "").toLowerCase()) {
+                                    _submitCorrectAnswer();
+                                  } else {
+                                    _submitIncorrectAnswer();
+                                  }
+                                },
+                              ),
+                            ),
+                            SizedBox(height: 20.h),
+                            Text(
+                              _isAnswered
+                                  ? "TARGET ACQUIRED!"
+                                  : (quest.instruction.toUpperCase()),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                color: _isAnswered
+                                    ? Colors.greenAccent
+                                    : theme.primaryColor,
+                                fontSize: 12.sp,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                          ],
                         ),
-
-                        SizedBox(height: 20.h),
-                        Text(
-                          _isAnswered
-                              ? "TARGET ACQUIRED!"
-                              : (quest.instruction.toUpperCase()),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            color: _isAnswered
-                                ? Colors.greenAccent
-                                : theme.primaryColor,
-                            fontSize: 12.sp,
-                            letterSpacing: 2,
-                          ),
-                        ),
-
-                        if (_isAnswered) ...[
-                          SizedBox(height: 24.h),
-                          SkimmingScanningResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 50.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (_isAnswered) ...[
+                              SizedBox(height: 24.h),
+                              SkimmingScanningResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 50.h),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
         );
       },

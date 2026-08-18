@@ -146,60 +146,75 @@ class _SentenceOrderReadingScreenState
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : SingleChildScrollView(
+              : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        SentenceOrderReadingInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: quest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
-                        ReorderableListView(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          proxyDecorator: (child, index, animation) =>
-                              _buildProxy(child, animation, theme.primaryColor),
-                          onReorder: _onReorder,
-                          children: List.generate(
-                            _currentOrder.length,
-                            (index) => SentenceOrderReadingStoneSlab(
-                              key: ValueKey(_currentOrder[index]),
-                              text: _currentOrder[index],
-                              index: index,
-                              color: theme.primaryColor,
-                              isDark: isDark,
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            SentenceOrderReadingInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: quest.instruction,
                             ),
-                          ),
+                            SizedBox(height: 24.h),
+                            ReorderableListView(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              proxyDecorator: (child, index, animation) =>
+                                  _buildProxy(child, animation, theme.primaryColor),
+                              onReorder: _onReorder,
+                              children: List.generate(
+                                _currentOrder.length,
+                                (index) => SentenceOrderReadingStoneSlab(
+                                  key: ValueKey(_currentOrder[index]),
+                                  text: _currentOrder[index],
+                                  index: index,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        if (!_isAnswered) ...[
-                          SizedBox(height: 24.h),
-                          SentenceOrderReadingCapstone(
-                            color: theme.primaryColor,
-                            onTap: () {
-                              _hapticService.heavy();
-                              _submitAnswer(
-                                quest.correctOrder ?? [],
-                                quest.shuffledSentences ?? [],
-                              );
-                            },
-                          ),
-                        ],
-                        if (_isAnswered) ...[
-                          SizedBox(height: 30.h),
-                          SentenceOrderReadingResult(
-                            quest: quest,
-                            isCorrect: _isCorrect == true,
-                            isDark: isDark,
-                          ),
-                        ],
-                        SizedBox(height: 50.h),
-                      ],
+                      ),
                     ),
-                  ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!_isAnswered) ...[
+                              SizedBox(height: 24.h),
+                              SentenceOrderReadingCapstone(
+                                color: theme.primaryColor,
+                                onTap: () {
+                                  _hapticService.heavy();
+                                  _submitAnswer(
+                                    quest.correctOrder ?? [],
+                                    quest.shuffledSentences ?? [],
+                                  );
+                                },
+                              ),
+                            ],
+                            if (_isAnswered) ...[
+                              SizedBox(height: 30.h),
+                              SentenceOrderReadingResult(
+                                quest: quest,
+                                isCorrect: _isCorrect == true,
+                                isDark: isDark,
+                              ),
+                            ],
+                            SizedBox(height: 50.h),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
         );
       },
