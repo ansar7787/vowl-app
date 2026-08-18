@@ -13,7 +13,7 @@ import 'package:vowl/features/listening/presentation/layout/listening_base_layou
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
-import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
+import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
   final int level;
@@ -40,6 +40,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -59,8 +60,11 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     super.dispose();
   }
 
-  void _submitFinalAnswer(bool isCorrect) {
+  void _submitFinalAnswer(int index, int correct) {
     if (_isAnswered) return;
+
+    setState(() => _selectedIndex = index);
+    bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -98,6 +102,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -196,23 +201,26 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                SizedBox(height: 100.h), // Spacing for BlindDictationWrapper
+                                ListeningInferenceGrid(
+                                  options: quest.options ?? [],
+                                  correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isAnswered: _isAnswered,
+                                  isCorrectState: _isCorrect,
+                                  selectedIndex: _selectedIndex,
+                                  onSubmitAnswer: (index) {
+                                    _submitFinalAnswer(
+                                      index,
+                                      quest.correctAnswerIndex ?? 0,
+                                    );
+                                  },
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (!_isAnswered || _isCorrect == null)
-                      BlindDictationWrapper(
-                        expectedText:
-                            (quest.options != null && quest.options!.isNotEmpty)
-                            ? quest.options![quest.correctAnswerIndex ?? 0]
-                            : "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                      ),
                   ],
                 ),
         );

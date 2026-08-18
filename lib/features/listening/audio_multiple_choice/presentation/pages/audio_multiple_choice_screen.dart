@@ -13,8 +13,7 @@ import 'package:vowl/features/listening/presentation/layout/listening_base_layou
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
-import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
@@ -39,6 +38,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
+  double _rotation = 0.0;
 
   @override
   void initState() {
@@ -48,10 +49,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool nailedIt) {
+  void _submitFinalAnswer(int index, int correct) {
     if (_isAnswered) return;
+    
+    setState(() => _selectedIndex = index);
+    bool isCorrect = index == correct;
 
-    if (nailedIt) {
+    if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
@@ -88,8 +92,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _isAnswered = false;
-              _isCorrect = null;
+              _selectedIndex = null;
+              _rotation = 0.0;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -162,69 +166,45 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Center(
-                                  child: GestureDetector(
-                                    onTap: () {
+                                SizedBox(
+                                  height: 350.h,
+                                  child: AudioMultipleChoiceSpinner(
+                                    options: quest.options ?? [],
+                                    correct: quest.correctAnswerIndex ?? 0,
+                                    color: theme.primaryColor,
+                                    tts: quest.textToSpeak ?? "",
+                                    emoji: quest.emoji,
+                                    rotation: _rotation,
+                                    selectedIndex: _selectedIndex,
+                                    isAnswered: _isAnswered,
+                                    isCorrectState: _isCorrect,
+                                    onSpin: (delta) {
+                                      if (!_isAnswered) {
+                                        setState(() {
+                                          _rotation += delta * 0.01;
+                                        });
+                                      }
+                                    },
+                                    onSelectSatellite: (index) {
+                                      _submitFinalAnswer(
+                                        index,
+                                        quest.correctAnswerIndex ?? 0,
+                                      );
+                                    },
+                                    onTapCore: () {
                                       _soundService.playTts(
                                         quest.textToSpeak ?? "",
                                       );
                                       _hapticService.selection();
                                     },
-                                    child: Container(
-                                      width: 140.r,
-                                      height: 140.r,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: theme.primaryColor.withValues(
-                                          alpha: 0.1,
-                                        ),
-                                        border: Border.all(
-                                          color: theme.primaryColor,
-                                          width: 2,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.2),
-                                            blurRadius: 20,
-                                            spreadRadius: 5,
-                                          ),
-                                        ],
-                                      ),
-                                      child: Icon(
-                                        Icons.volume_up_rounded,
-                                        size: 70.r,
-                                        color: theme.primaryColor,
-                                      ),
-                                    )
-                                        .animate(
-                                          onPlay: (c) =>
-                                              c.repeat(reverse: true),
-                                        )
-                                        .scale(
-                                          begin: const Offset(0.95, 0.95),
-                                          end: const Offset(1.05, 1.05),
-                                          duration: 2.seconds,
-                                        ),
                                   ),
                                 ),
-                                SizedBox(height: 100.h), // Spacing for BlindDictationWrapper
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (!_isAnswered || _isCorrect == null)
-                      BlindDictationWrapper(
-                        expectedText:
-                            (quest.options != null && quest.options!.isNotEmpty)
-                            ? quest.options![quest.correctAnswerIndex ?? 0]
-                            : "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                      ),
                   ],
                 ),
         );

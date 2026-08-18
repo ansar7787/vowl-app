@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_instruction.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_emitter.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_prompt.dart';
-import 'package:vowl/core/presentation/widgets/blind_dictation_wrapper.dart';
+import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
 
 class DetailSpotlightScreen extends StatefulWidget {
   final int level;
@@ -38,6 +38,14 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
+  final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
+
+  @override
+  void dispose() {
+    _spotlightPos.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -47,8 +55,11 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool isCorrect) {
+  void _submitFinalAnswer(int index, int correct) {
     if (_isAnswered) return;
+    
+    setState(() => _selectedIndex = index);
+    bool isCorrect = index == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -86,6 +97,8 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
+              _spotlightPos.value = const Offset(0, 0);
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -172,23 +185,35 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                SizedBox(height: 100.h), // Spacing for BlindDictationWrapper
+                                SizedBox(
+                                  height: 350.h,
+                                  child: DetailSpotlightDarkField(
+                                    options: quest.options ?? [],
+                                    correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                                    color: theme.primaryColor,
+                                    isAnswered: _isAnswered,
+                                    isCorrectState: _isCorrect,
+                                    selectedIndex: _selectedIndex,
+                                    spotlightPos: _spotlightPos,
+                                    onSearch: (pos) {
+                                      if (!_isAnswered) {
+                                        _spotlightPos.value = pos;
+                                      }
+                                    },
+                                    onSelect: (index) {
+                                      _submitFinalAnswer(
+                                        index,
+                                        quest.correctAnswerIndex ?? 0,
+                                      );
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                    if (!_isAnswered || _isCorrect == null)
-                      BlindDictationWrapper(
-                        expectedText:
-                            (quest.options != null && quest.options!.isNotEmpty)
-                            ? quest.options![quest.correctAnswerIndex ?? 0]
-                            : "",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
-                      ),
                   ],
                 ),
         );
