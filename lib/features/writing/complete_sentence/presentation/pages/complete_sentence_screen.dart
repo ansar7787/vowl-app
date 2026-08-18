@@ -204,7 +204,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () =>
               context.read<WritingBloc>().add(const NextQuestion()),
           // FIX: WritingHintUsed is dispatched inside WritingGameHeader.
@@ -299,68 +299,81 @@ class _CompleteSentenceBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(
-        children: [
-          SizedBox(height: 16.h),
-          CompleteSentenceInstruction(primaryColor: theme.primaryColor),
-          SizedBox(height: 32.h),
-          CompleteSentenceTargetWall(
-            text: quest.partialSentence ?? '',
-            injected: selectedProjectile,
-            color: theme.primaryColor,
-            isDark: isDark,
-            // FIX: onFire now receives only the selected word.
-            // correctAnswer comparison is handled in the screen.
-            onFire: onFire,
-          ),
-          SizedBox(height: 32.h),
-          if (level >= 6) ...[
-            GestureDetector(
-              onTap: () {
-                CustomSnackBar.show(
-                  context: context,
-                  message:
-                      "Hard Mode! Dragging is disabled. Please type your answer below.",
-                  type: CustomSnackBarType.info,
-                );
-              },
-              child: AbsorbPointer(
-                child: Opacity(
-                  opacity: 0.8,
-                  child: CompleteSentenceBallistaAmmo(
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          sliver: SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(height: 16.h),
+                CompleteSentenceInstruction(primaryColor: theme.primaryColor),
+                SizedBox(height: 32.h),
+                CompleteSentenceTargetWall(
+                  text: quest.partialSentence ?? '',
+                  injected: selectedProjectile,
+                  color: theme.primaryColor,
+                  isDark: isDark,
+                  // FIX: onFire now receives only the selected word.
+                  // correctAnswer comparison is handled in the screen.
+                  onFire: onFire,
+                ),
+                SizedBox(height: 32.h),
+                if (level >= 6) ...[
+                  GestureDetector(
+                    onTap: () {
+                      CustomSnackBar.show(
+                        context: context,
+                        message:
+                            "Hard Mode! Dragging is disabled. Please type your answer below.",
+                        type: CustomSnackBarType.info,
+                      );
+                    },
+                    child: AbsorbPointer(
+                      child: Opacity(
+                        opacity: 0.8,
+                        child: CompleteSentenceBallistaAmmo(
+                          options: options,
+                          color: theme.primaryColor,
+                          isDark: isDark,
+                          onBridgeStart: (_) {},
+                          onBridgeUpdate: (_) {},
+                          onFire: (_) {},
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 16.h),
+                  CompleteSentenceKeyboardInput(
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onFire: onFire,
+                  ),
+                ] else
+                  CompleteSentenceBallistaAmmo(
                     options: options,
                     color: theme.primaryColor,
                     isDark: isDark,
-                    onBridgeStart: (_) {},
-                    onBridgeUpdate: (_) {},
-                    onFire: (_) {},
+                    onBridgeStart: onBridgeStart,
+                    onBridgeUpdate: onBridgeUpdate,
+                    // FIX: onFire now receives only the fired word.
+                    onFire: onFire,
                   ),
-                ),
-              ),
+              ],
             ),
-            SizedBox(height: 16.h),
-            CompleteSentenceKeyboardInput(
-              color: theme.primaryColor,
-              isDark: isDark,
-              onFire: onFire,
-            ),
-          ] else
-            CompleteSentenceBallistaAmmo(
-              options: options,
-              color: theme.primaryColor,
-              isDark: isDark,
-              onBridgeStart: onBridgeStart,
-              onBridgeUpdate: onBridgeUpdate,
-              // FIX: onFire now receives only the fired word.
-              onFire: onFire,
-            ),
-          SizedBox(
-            height: 160.h,
-          ), // Provide enough bottom padding for the WritingFeedbackCard
-        ],
-      ),
+          ),
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              SizedBox(height: 160.h), // Bottom padding for feedback card
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

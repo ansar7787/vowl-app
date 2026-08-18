@@ -328,96 +328,110 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
           isCorrect: isCorrect,
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: activeQuest == null
               ? const SizedBox()
-              : SingleChildScrollView(
+              : CustomScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 16.h),
-                        DescribeSituationInstruction(
-                          primaryColor: theme.primaryColor,
-                          instruction: activeQuest.instruction,
-                        ),
-                        SizedBox(height: 24.h),
-
-                        DescribeSituationPromptCard(
-                          prompt: activeQuest.situation ?? "",
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
-
-                        DescribeSituationWritingArea(
-                          textController: _textController,
-                          minWords: minWords,
-                          wordCount: _wordCount,
-                          usedKeywords: _usedKeywords,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                        ),
-                        SizedBox(height: 24.h),
-
-                        DescribeSituationConstellationMap(
-                          emojis: emojis,
-                          keywords: rawKeywords,
-                          color: theme.primaryColor,
-                          isDark: isDark,
-                          expandedEmojiIndex: _expandedEmojiIndex,
-                          onEmojiTap: (idx) => _onEmojiTap(idx, isAnswered),
-                          onInjectKeyword: (kw) =>
-                              _injectKeyword(kw, isAnswered),
-                        ),
-                        SizedBox(height: 30.h),
-
-                        if (!isAnswered)
-                          ScaleButton(
-                            onTap: () => _submitAnswer(
-                              minWords,
-                              allKeywordPool,
-                              isAnswered,
+                  slivers: [
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            DescribeSituationInstruction(
+                              primaryColor: theme.primaryColor,
+                              instruction: activeQuest.instruction,
                             ),
-                            child: Container(
-                              width: double.infinity,
-                              height: 60.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20.r),
-                                color: _wordCount >= minWords
-                                    ? theme.primaryColor
-                                    : Colors.grey,
-                                boxShadow: [
-                                  if (_wordCount >= minWords)
-                                    BoxShadow(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.3,
+                            SizedBox(height: 24.h),
+
+                            DescribeSituationPromptCard(
+                              prompt: activeQuest.situation ?? "",
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            DescribeSituationWritingArea(
+                              textController: _textController,
+                              minWords: minWords,
+                              wordCount: _wordCount,
+                              usedKeywords: _usedKeywords,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                            ),
+                            SizedBox(height: 24.h),
+
+                            DescribeSituationConstellationMap(
+                              emojis: emojis,
+                              keywords: rawKeywords,
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              expandedEmojiIndex: _expandedEmojiIndex,
+                              onEmojiTap: (idx) => _onEmojiTap(idx, isAnswered),
+                              onInjectKeyword: (kw) =>
+                                  _injectKeyword(kw, isAnswered),
+                            ),
+                            SizedBox(height: 30.h),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            if (!isAnswered)
+                              ScaleButton(
+                                onTap: () => _submitAnswer(
+                                  minWords,
+                                  allKeywordPool,
+                                  isAnswered,
+                                ),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 60.h,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20.r),
+                                    color: _wordCount >= minWords
+                                        ? theme.primaryColor
+                                        : Colors.grey,
+                                    boxShadow: [
+                                      if (_wordCount >= minWords)
+                                        BoxShadow(
+                                          color: theme.primaryColor.withValues(
+                                            alpha: 0.3,
+                                          ),
+                                          blurRadius: 15,
+                                        ),
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "SEAL NARRATIVE",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
                                       ),
-                                      blurRadius: 15,
                                     ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "SEAL NARRATIVE",
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 16.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: Colors.white,
-                                    letterSpacing: 2,
                                   ),
                                 ),
                               ),
-                            ),
-                          ),
-
-                        SizedBox(height: 60.h),
-                      ],
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
         );
       },
