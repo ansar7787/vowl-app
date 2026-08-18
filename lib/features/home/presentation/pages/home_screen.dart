@@ -385,12 +385,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 globalRank: _globalRank,
                               ),
                               SizedBox(height: 12.h),
+                              HomeQuickStats(user: user),
+                              SizedBox(height: 12.h),
                               KidsGlobalProgressCard(
                                 user: user,
                                 globalRank: _kidsGlobalRank,
                               ),
-                              SizedBox(height: 12.h),
-                              HomeQuickStats(user: user),
                               SizedBox(height: 12.h),
                               CommandPod(
                                 user: user,
