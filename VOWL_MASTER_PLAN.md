@@ -69,12 +69,12 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | 12 | Audio MCQ | Listens to clip → answers comprehension Q | Gist + detail comprehension | ✅ | ✅ `AudioMultipleChoiceScreen` | ✅ | ⬜ |
 | 13 | Audio Sentence Order | Listens → arranges sentences in order | Sequence tracking in speech | ✅ | ✅ `AudioSentenceOrderScreen` | ✅ | ⬜ |
 | 14 | Audio True/False | Listens → judges if statement matches audio | Critical listening accuracy | ✅ | ✅ `AudioTrueFalseScreen` | ✅ | ⬜ |
-| 15 | Sound Image Match | Hears sound/word → matches to image | Vocabulary + auditory association | ✅ | ✅ `SoundImageMatchScreen` | ✅ | ⬜ |
-| 16 | Fast Speech Decoder | Listens to fast speech → decodes meaning | Real-world speed comprehension | ✅ | ✅ `FastSpeechDecoderScreen` | ✅ | ⬜ |
-| 17 | Emotion Recognition | Listens to tone → identifies emotion | Pragmatic/emotional intelligence | ✅ | ✅ `EmotionRecognitionScreen` | ✅ | ⬜ |
-| 18 | Detail Spotlight | Listens → spots specific details | Selective attention training | ✅ | ✅ `DetailSpotlightScreen` | ✅ | ⬜ |
-| 19 | Listening Inference | Listens → infers what speaker means | Beyond-literal comprehension | ✅ | ✅ `ListeningInferenceScreen` | ✅ | ⬜ |
-| 20 | Ambient ID | Listens to ambient sounds → identifies | Environmental English context | ✅ | ✅ `AmbientIdScreen` | ✅ | ⬜ |
+| 15 | Sound Image Match | Hears sound/word → matches to image | Vocabulary + auditory association | ✅ | ✅ `SoundImageMatchScreen` | ✅ | ✅ |
+| 16 | Fast Speech Decoder | Listens to fast speech → decodes meaning | Real-world speed comprehension | ✅ | ✅ `FastSpeechDecoderScreen` | ✅ | ✅ |
+| 17 | Emotion Recognition | Listens to tone → identifies emotion | Pragmatic/emotional intelligence | ✅ | ✅ `EmotionRecognitionScreen` | ✅ | ✅ |
+| 18 | Detail Spotlight | Listens → spots specific details | Selective attention training | ✅ | ✅ `DetailSpotlightScreen` | ✅ | ✅ |
+| 19 | Listening Inference | Listens → infers what speaker means | Beyond-literal comprehension | ✅ | ✅ `ListeningInferenceScreen` | ✅ | ✅ |
+| 20 | Ambient ID | Listens to ambient sounds → identifies | Environmental English context | ✅ | ✅ `AmbientIdScreen` | ✅ | ✅ |
 
 ### CAT-3: 📖 READING (12 games) — User MUST read full passage
 

@@ -269,135 +269,69 @@ class _AudioFillBlanksContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final maxHeight = constraints.maxHeight;
-        final isCompact = maxHeight < compactThreshold;
-
-        // Distribute remaining vertical space proportionally across the 7
-        // gap slots so the layout breathes naturally on every device height.
-        final double canvasH = isCompact ? 150.h : 220.h;
-        final double jarH = isCompact ? 80.h : 100.h;
-        final double instructionH = isCompact ? 35.h : 40.h;
-        final double submitH = isAnswered ? 0.0 : (isCompact ? 50.h : 60.h);
-
-        final double fixed =
-            instructionH + jarH + canvasH + submitH + 60.h /* input */;
-        final double remaining = (maxHeight - fixed).clamp(
-          0.0,
-          double.infinity,
-        );
-        final double unit = remaining / 7;
-
-        final double gapTop = (unit * 1.0).clamp(6.0, 16.0);
-        final double gapInstruction = (unit * 1.0).clamp(10.0, 24.0);
-        final double gapJar = (unit * 1.5).clamp(10.0, 24.0);
-        final double gapCanvas = (unit * 1.5).clamp(10.0, 24.0);
-        final double gapInput = (unit * 1.0).clamp(10.0, 20.0);
-        final double gapBottom = (unit * 1.0).clamp(10.0, 24.0);
-
-        return SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(minHeight: maxHeight),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverPadding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+          sliver: SliverToBoxAdapter(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.min,
               children: [
-                // ── Top section: instruction + jar + canvas ───────────────
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(height: gapTop),
-
-                    // Instruction badge
-                    isCompact
-                        ? SizedBox(
-                            height: instructionH,
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: AudioFillBlanksInstruction(
-                                instruction:
-                                    quest.instruction ??
-                                    'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
-                                color: theme.primaryColor,
-                              ),
-                            ),
-                          )
-                        : AudioFillBlanksInstruction(
-                            instruction:
-                                quest.instruction ??
-                                'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
-                            color: theme.primaryColor,
-                          ),
-
-                    SizedBox(height: gapInstruction),
-
-                    // Audio jar
-                    isCompact
-                        ? SizedBox(
-                            height: jarH,
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: AudioFillBlanksJar(
-                                color: theme.primaryColor,
-                                onTap: onPlayAudio,
-                              ),
-                            ),
-                          )
-                        : AudioFillBlanksJar(
-                            color: theme.primaryColor,
-                            onTap: onPlayAudio,
-                          ),
-
-                    SizedBox(height: gapJar),
-
-                    // Ink-smear canvas
-                    SizedBox(
-                      height: canvasH,
-                      child: AudioFillBlanksCanvas(
-                        text: quest.textWithBlanks ?? '',
-                        revealProgress: revealProgress,
-                        onSmear: onSmear,
-                        primaryColor: theme.primaryColor,
-                        isDark: isDark,
-                        imageUrl: quest.imageUrl,
-                        isCorrectState: isCorrect,
-                      ),
-                    ),
-                  ],
+                SizedBox(height: 6.h),
+                AudioFillBlanksInstruction(
+                  instruction: quest.instruction ??
+                      'LISTEN TO THE AUDIO AND TYPE THE MISSING WORD',
+                  color: theme.primaryColor,
                 ),
-
-                // ── Bottom section: input + submit ────────────────────────
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(height: gapCanvas),
-
-                    AudioFillBlanksInput(
-                      controller: controller,
-                      isAnswered: isAnswered,
-                      primaryColor: theme.primaryColor,
-                      maxLength: maxInputLength,
-                      onSubmitted: (_) => onSubmit(),
-                    ),
-
-                    SizedBox(height: gapInput),
-
-                    if (!isAnswered)
-                      _SubmitButton(
-                        isCompact: isCompact,
-                        primaryColor: theme.primaryColor,
-                        onTap: onSubmit,
-                      ),
-
-                    SizedBox(height: gapBottom),
-                  ],
+                SizedBox(height: 24.h),
+                AudioFillBlanksJar(
+                  color: theme.primaryColor,
+                  onTap: onPlayAudio,
+                ),
+                SizedBox(height: 32.h),
+                SizedBox(
+                  height: 220.h,
+                  child: AudioFillBlanksCanvas(
+                    text: quest.textWithBlanks ?? '',
+                    revealProgress: revealProgress,
+                    onSmear: onSmear,
+                    primaryColor: theme.primaryColor,
+                    isDark: isDark,
+                    imageUrl: quest.imageUrl,
+                    isCorrectState: isCorrect,
+                  ),
                 ),
               ],
             ),
           ),
-        );
-      },
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                AudioFillBlanksInput(
+                  controller: controller,
+                  isAnswered: isAnswered,
+                  primaryColor: theme.primaryColor,
+                  maxLength: maxInputLength,
+                  onSubmitted: (_) => onSubmit(),
+                ),
+                SizedBox(height: 16.h),
+                if (!isAnswered)
+                  _SubmitButton(
+                    isCompact: false,
+                    primaryColor: theme.primaryColor,
+                    onTap: onSubmit,
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

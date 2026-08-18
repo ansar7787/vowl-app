@@ -143,187 +143,90 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            20.h +
-                            40.h +
-                            (isCompact ? 70.h : 90.h) +
-                            (isCompact ? 130.h : 180.h) +
-                            120.h +
-                            20.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 7
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(6.0, 16.0)
-                            : 6.0;
-                        final double gapInstruction = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                            : 10.0;
-                        final double gapTuner = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                            : 10.0;
-                        final double gapDisplay = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(10.0, 24.0)
-                            : 10.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(12.0, 30.0)
-                            : 12.0;
-
-                        return SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          sliver: SliverToBoxAdapter(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 35.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: AudioTrueFalseInstruction(
-                                                color: theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
-                                            ),
-                                          )
-                                        : AudioTrueFalseInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 70.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: AudioTrueFalseTuner(
-                                                onTap: () {
-                                                  _soundService.playTts(
-                                                    quest.textToSpeak ?? "",
-                                                  );
-                                                  _hapticService.selection();
-                                                },
-                                                color: theme.primaryColor,
-                                                emoji: quest.emoji,
-                                                isCorrectState: _isCorrect,
-                                              ),
-                                            ),
-                                          )
-                                        : AudioTrueFalseTuner(
-                                            onTap: () {
-                                              _soundService.playTts(
-                                                quest.textToSpeak ?? "",
-                                              );
-                                              _hapticService.selection();
-                                            },
-                                            color: theme.primaryColor,
-                                            emoji: quest.emoji,
-                                            isCorrectState: _isCorrect,
-                                          ),
-                                  ],
+                                SizedBox(height: 6.h),
+                                AudioTrueFalseInstruction(
+                                  color: theme.primaryColor,
+                                  instruction: quest.instruction,
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTuner),
-                                    SizedBox(
-                                      height: isCompact ? 130.h : 180.h,
-                                      child: AudioTrueFalseScreenDisplay(
-                                        statement: quest.statement ?? "",
-                                        color: theme.primaryColor,
-                                        tuningValue: _tuningValue,
-                                      ),
-                                    ),
-                                    SizedBox(height: gapDisplay),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth,
-                                                child: AudioTrueFalsePolarizedFilters(
-                                                  tuningValue: _tuningValue,
-                                                  isAnswered: _isAnswered,
-                                                  isCorrectState: _isCorrect,
-                                                  color: theme.primaryColor,
-                                                  onChanged: (v) {
-                                                    setState(
-                                                      () => _tuningValue = v,
-                                                    );
-                                                    _hapticService.selection();
-                                                  },
-                                                  onChangeEnd: (v) {
-                                                    if (_isAnswered ||
-                                                        _selectedVerdict !=
-                                                            null) {
-                                                      return;
-                                                    }
-                                                    if (v > 0.9) {
-                                                      setState(
-                                                        () => _selectedVerdict =
-                                                            true,
-                                                      );
-                                                    }
-                                                    if (v < 0.1) {
-                                                      setState(
-                                                        () => _selectedVerdict =
-                                                            false,
-                                                      );
-                                                    }
-                                                  },
-                                                ),
-                                              ),
-                                            ),
-                                          )
-                                        : AudioTrueFalsePolarizedFilters(
-                                            tuningValue: _tuningValue,
-                                            isAnswered: _isAnswered,
-                                            isCorrectState: _isCorrect,
-                                            color: theme.primaryColor,
-                                            onChanged: (v) {
-                                              setState(() => _tuningValue = v);
-                                              _hapticService.selection();
-                                            },
-                                            onChangeEnd: (v) {
-                                              if (_isAnswered ||
-                                                  _selectedVerdict != null) {
-                                                return;
-                                              }
-                                              if (v > 0.9) {
-                                                setState(
-                                                  () => _selectedVerdict = true,
-                                                );
-                                              }
-                                              if (v < 0.1) {
-                                                setState(
-                                                  () =>
-                                                      _selectedVerdict = false,
-                                                );
-                                              }
-                                            },
-                                          ),
-                                    SizedBox(height: gapBottom),
-                                  ],
+                                SizedBox(height: 24.h),
+                                AudioTrueFalseTuner(
+                                  onTap: () {
+                                    _soundService.playTts(
+                                      quest.textToSpeak ?? "",
+                                    );
+                                    _hapticService.selection();
+                                  },
+                                  color: theme.primaryColor,
+                                  emoji: quest.emoji,
+                                  isCorrectState: _isCorrect,
+                                ),
+                                SizedBox(height: 32.h),
+                                SizedBox(
+                                  height: 180.h,
+                                  child: AudioTrueFalseScreenDisplay(
+                                    statement: quest.statement ?? "",
+                                    color: theme.primaryColor,
+                                    tuningValue: _tuningValue,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                        );
-                      },
+                        ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 16.h,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                AudioTrueFalsePolarizedFilters(
+                                  tuningValue: _tuningValue,
+                                  isAnswered: _isAnswered,
+                                  isCorrectState: _isCorrect,
+                                  color: theme.primaryColor,
+                                  onChanged: (v) {
+                                    setState(() => _tuningValue = v);
+                                    _hapticService.selection();
+                                  },
+                                  onChangeEnd: (v) {
+                                    if (_isAnswered ||
+                                        _selectedVerdict != null) {
+                                      return;
+                                    }
+                                    if (v > 0.9) {
+                                      setState(
+                                        () => _selectedVerdict = true,
+                                      );
+                                    }
+                                    if (v < 0.1) {
+                                      setState(
+                                        () => _selectedVerdict = false,
+                                      );
+                                    }
+                                  },
+                                ),
+                                SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     if (_selectedVerdict != null && !_isAnswered)
                       SpeakToConfirmOverlay(

@@ -145,134 +145,75 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-
-                    final double estimatedContentHeight =
-                        16.h +
-                        40.h +
-                        (isCompact ? 60.h : 80.h) +
-                        (isCompact ? 220.h : 320.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
-
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 7
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapEmitter = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(10.0, 24.0)
-                        : 10.0;
-
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: maxHeight),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: EmotionRecognitionInstruction(
-                                            isAnswered: _isAnswered,
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                        ),
-                                      )
-                                    : EmotionRecognitionInstruction(
-                                        isAnswered: _isAnswered,
-                                        color: theme.primaryColor,
-                                        instruction: quest.instruction,
-                                      ),
-                                SizedBox(height: gapInstruction),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 60.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: EmotionRecognitionEmitter(
-                                            onTap: () {
-                                              _soundService.playTts(
-                                                quest.textToSpeak ?? "",
-                                              );
-                                              _hapticService.selection();
-                                            },
-                                            color: theme.primaryColor,
-                                            emoji: quest.emoji,
-                                            isCorrectState: _isCorrect,
-                                          ),
-                                        ),
-                                      )
-                                    : EmotionRecognitionEmitter(
-                                        onTap: () {
-                                          _soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          _hapticService.selection();
-                                        },
-                                        color: theme.primaryColor,
-                                        emoji: quest.emoji,
-                                        isCorrectState: _isCorrect,
-                                      ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapEmitter),
-                                SizedBox(
-                                  height: isCompact ? 220.h : 320.h,
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: SizedBox(
-                                      width: constraints.maxWidth,
-                                      height: 350.h,
-                                      child: EmotionRecognitionNeuralField(
-                                        options: quest.options ?? [],
-                                        correctAnswerIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        color: theme.primaryColor,
-                                        isAnswered: _isAnswered,
-                                        isCorrectState: _isCorrect,
-                                        selectedIndex: _selectedIndex,
-                                        coreOffset: _coreOffset,
-                                        onCoreMove: _onCoreMove,
-                                        onSubmitAnswer: (index) =>
-                                            _submitAnswer(
-                                              index,
-                                              quest.correctAnswerIndex ?? 0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(height: gapBottom),
-                              ],
-                            ),
-                          ],
+              : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 16.h,
+                        ),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: 6.h),
+                              EmotionRecognitionInstruction(
+                                isAnswered: _isAnswered,
+                                color: theme.primaryColor,
+                                instruction: quest.instruction,
+                              ),
+                              SizedBox(height: 24.h),
+                              EmotionRecognitionEmitter(
+                                onTap: () {
+                                  _soundService.playTts(
+                                    quest.textToSpeak ?? "",
+                                  );
+                                  _hapticService.selection();
+                                },
+                                color: theme.primaryColor,
+                                emoji: quest.emoji,
+                                isCorrectState: _isCorrect,
+                              ),
+                              SizedBox(height: 32.h),
+                            ],
+                          ),
                         ),
                       ),
-                    );
-                  },
-                ),
+                      SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                height: 350.h,
+                                child: EmotionRecognitionNeuralField(
+                                  options: quest.options ?? [],
+                                  correctAnswerIndex:
+                                      quest.correctAnswerIndex ?? 0,
+                                  color: theme.primaryColor,
+                                  isAnswered: _isAnswered,
+                                  isCorrectState: _isCorrect,
+                                  selectedIndex: _selectedIndex,
+                                  coreOffset: _coreOffset,
+                                  onCoreMove: _onCoreMove,
+                                  onSubmitAnswer: (index) => _submitAnswer(
+                                    index,
+                                    quest.correctAnswerIndex ?? 0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
         );
       },
     );

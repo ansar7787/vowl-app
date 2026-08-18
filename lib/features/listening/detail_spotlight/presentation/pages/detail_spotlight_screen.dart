@@ -122,117 +122,62 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            20.h +
-                            40.h +
-                            (isCompact ? 60.h : 80.h) +
-                            40.h +
-                            200.h +
-                            20.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 5
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(6.0, 16.0)
-                            : 6.0;
-                        final double gapInstruction = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                            : 8.0;
-                        final double gapEmitter = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                            : 8.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(10.0, 24.0)
-                            : 10.0;
-
-                        return SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverPadding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 16.w,
+                            vertical: 16.h,
+                          ),
+                          sliver: SliverToBoxAdapter(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                SizedBox(height: gapTop),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: DetailSpotlightInstruction(
-                                            isAnswered: _isAnswered,
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                        ),
-                                      )
-                                    : DetailSpotlightInstruction(
-                                        isAnswered: _isAnswered,
-                                        color: theme.primaryColor,
-                                        instruction: quest.instruction,
-                                      ),
-                                SizedBox(height: gapInstruction),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 60.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: DetailSpotlightEmitter(
-                                            onTap: () {
-                                              _soundService.playTts(
-                                                quest.textToSpeak ?? "",
-                                              );
-                                              _hapticService.selection();
-                                            },
-                                            color: theme.primaryColor,
-                                            emoji: quest.emoji,
-                                            isCorrectState: _isCorrect,
-                                          ),
-                                        ),
-                                      )
-                                    : DetailSpotlightEmitter(
-                                        onTap: () {
-                                          _soundService.playTts(
-                                            quest.textToSpeak ?? "",
-                                          );
-                                          _hapticService.selection();
-                                        },
-                                        color: theme.primaryColor,
-                                        emoji: quest.emoji,
-                                        isCorrectState: _isCorrect,
-                                      ),
-                                SizedBox(height: gapEmitter),
-                                isCompact
-                                    ? SizedBox(
-                                        height: 35.h,
-                                        child: FittedBox(
-                                          fit: BoxFit.scaleDown,
-                                          child: DetailSpotlightPrompt(
-                                            isAnswered: _isAnswered,
-                                            detail:
-                                                quest.targetDetail ?? "Detail",
-                                            color: theme.primaryColor,
-                                          ),
-                                        ),
-                                      )
-                                    : DetailSpotlightPrompt(
-                                        isAnswered: _isAnswered,
-                                        detail: quest.targetDetail ?? "Detail",
-                                        color: theme.primaryColor,
-                                      ),
-                                SizedBox(height: 220.h + gapBottom),
+                                SizedBox(height: 6.h),
+                                DetailSpotlightInstruction(
+                                  isAnswered: _isAnswered,
+                                  color: theme.primaryColor,
+                                  instruction: quest.instruction,
+                                ),
+                                SizedBox(height: 24.h),
+                                DetailSpotlightEmitter(
+                                  onTap: () {
+                                    _soundService.playTts(
+                                      quest.textToSpeak ?? "",
+                                    );
+                                    _hapticService.selection();
+                                  },
+                                  color: theme.primaryColor,
+                                  emoji: quest.emoji,
+                                  isCorrectState: _isCorrect,
+                                ),
+                                SizedBox(height: 32.h),
+                                DetailSpotlightPrompt(
+                                  isAnswered: _isAnswered,
+                                  detail: quest.targetDetail ?? "Detail",
+                                  color: theme.primaryColor,
+                                ),
                               ],
                             ),
                           ),
-                        );
-                      },
+                        ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 16.h,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                SizedBox(height: 100.h), // Spacing for BlindDictationWrapper
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     if (!_isAnswered || _isCorrect == null)
                       BlindDictationWrapper(

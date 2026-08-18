@@ -144,148 +144,99 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-
-                    final double estimatedContentHeight =
-                        20.h +
-                        40.h +
-                        (isCompact ? 60.h : 95.h) +
-                        (isCompact ? 220.h : 350.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
-
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 7
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapEmitter = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(8.0, 20.0)
-                        : 8.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(10.0, 24.0)
-                        : 10.0;
-
-                    return Stack(
-                      children: [
-                        SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 35.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SoundImageMatchInstruction(
-                                                color: theme.primaryColor,
-                                                instruction: quest.instruction,
-                                              ),
-                                            ),
-                                          )
-                                        : SoundImageMatchInstruction(
-                                            color: theme.primaryColor,
-                                            instruction: quest.instruction,
-                                          ),
-                                    SizedBox(height: gapInstruction),
-                                    isCompact
-                                        ? SizedBox(
-                                            height: 60.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SoundImageMatchEmitter(
-                                                onTap: () {
-                                                  _soundService.playTts(
-                                                    quest.textToSpeak ?? "",
-                                                  );
-                                                  _hapticService.selection();
-                                                },
-                                                color: theme.primaryColor,
-                                                emoji: quest.emoji,
-                                                isCorrectState: _isCorrect,
-                                              ),
-                                            ),
-                                          )
-                                        : SoundImageMatchEmitter(
-                                            onTap: () {
-                                              _soundService.playTts(
-                                                quest.textToSpeak ?? "",
-                                              );
-                                              _hapticService.selection();
-                                            },
-                                            color: theme.primaryColor,
-                                            emoji: quest.emoji,
-                                            isCorrectState: _isCorrect,
-                                          ),
-                                  ],
-                                ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapEmitter),
-                                    SizedBox(
-                                      height: isCompact ? 220.h : 350.h,
-                                      child: SoundImageMatchScannerField(
-                                        options: quest.options ?? [],
-                                        correctAnswerIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        color: theme.primaryColor,
-                                        isAnswered: _isAnswered,
-                                        isCorrectState: _isCorrect,
-                                        selectedIndex: _selectedIndex,
-                                        lensPosition: _lensPosition,
-                                        onScan: _onScan,
-                                        onSelect: (index) {
-                                          if (_isAnswered ||
-                                              _pendingSelectedIndex != null) {
-                                            return;
-                                          }
-                                          setState(() {
-                                            _pendingSelectedIndex = index;
-                                          });
-                                        },
-                                      ),
+              : Stack(
+                    children: [
+                      CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverPadding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 16.w,
+                              vertical: 16.h,
+                            ),
+                            sliver: SliverToBoxAdapter(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  SizedBox(height: 6.h),
+                                  SoundImageMatchInstruction(
+                                    color: theme.primaryColor,
+                                    instruction: quest.instruction,
+                                  ),
+                                  SizedBox(height: 24.h),
+                                  SoundImageMatchEmitter(
+                                    onTap: () {
+                                      _soundService.playTts(
+                                        quest.textToSpeak ?? "",
+                                      );
+                                      _hapticService.selection();
+                                    },
+                                    color: theme.primaryColor,
+                                    emoji: quest.emoji,
+                                    isCorrectState: _isCorrect,
+                                  ),
+                                  SizedBox(height: 32.h),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 16.w,
+                                vertical: 16.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(
+                                    height: 350.h,
+                                    child: SoundImageMatchScannerField(
+                                      options: quest.options ?? [],
+                                      correctAnswerIndex:
+                                          quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      isAnswered: _isAnswered,
+                                      isCorrectState: _isCorrect,
+                                      selectedIndex: _selectedIndex,
+                                      lensPosition: _lensPosition,
+                                      onScan: _onScan,
+                                      onSelect: (index) {
+                                        if (_isAnswered ||
+                                            _pendingSelectedIndex != null) {
+                                          return;
+                                        }
+                                        setState(() {
+                                          _pendingSelectedIndex = index;
+                                        });
+                                      },
                                     ),
-                                    SizedBox(height: gapBottom),
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                  SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
+                                ],
+                              ),
                             ),
                           ),
+                        ],
+                      ),
+                      if (_pendingSelectedIndex != null && !_isAnswered)
+                        SpeakToConfirmOverlay(
+                          expectedText:
+                              quest.options![_pendingSelectedIndex!],
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(
+                            true,
+                            quest.correctAnswerIndex ?? 0,
+                          ),
+                          onSkipped: () => _submitFinalAnswer(
+                            false,
+                            quest.correctAnswerIndex ?? 0,
+                          ),
+                          allowSkip: true,
                         ),
-                        if (_pendingSelectedIndex != null && !_isAnswered)
-                          SpeakToConfirmOverlay(
-                            expectedText:
-                                quest.options![_pendingSelectedIndex!],
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitFinalAnswer(
-                              true,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            onSkipped: () => _submitFinalAnswer(
-                              false,
-                              quest.correctAnswerIndex ?? 0,
-                            ),
-                            allowSkip: true,
-                          ),
-                      ],
-                    );
-                  },
-                ),
+                    ],
+                  ),
         );
       },
     );
