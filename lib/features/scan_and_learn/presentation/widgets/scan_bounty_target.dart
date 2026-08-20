@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ScanBountyTarget extends StatelessWidget {
   final String currentBounty;
@@ -72,7 +73,7 @@ class ScanBountyTarget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Scan Word: "$currentBounty"',
+                            context.tr('translation.scan_word', args: [currentBounty], fallback: 'Scan Word: "$currentBounty"'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -83,7 +84,7 @@ class ScanBountyTarget extends StatelessWidget {
                           ),
                           if (!bountyFound)
                             Text(
-                              'Find this text to earn +5 XP & 5 Coins',
+                              context.tr('translation.find_text_desc', fallback: 'Find this text to earn +5 XP & 5 Coins'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,

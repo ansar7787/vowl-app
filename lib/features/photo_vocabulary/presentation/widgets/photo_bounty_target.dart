@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class PhotoBountyTarget extends StatelessWidget {
   final String currentBounty;
@@ -72,7 +73,7 @@ class PhotoBountyTarget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Daily Bounty: $currentBounty',
+                            context.tr('vocabulary.daily_bounty', args: [currentBounty], fallback: 'Daily Bounty: $currentBounty'),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 16.sp,
@@ -83,7 +84,7 @@ class PhotoBountyTarget extends StatelessWidget {
                           ),
                           if (!bountyFound)
                             Text(
-                              'Find this object to earn +5 XP & 5 Coins',
+                              context.tr('vocabulary.find_bounty_desc', fallback: 'Find this object to earn +5 XP & 5 Coins'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,

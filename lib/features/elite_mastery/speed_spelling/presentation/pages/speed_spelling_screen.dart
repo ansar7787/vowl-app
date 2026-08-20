@@ -219,6 +219,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                   fallback: 'Spell the word using the provided letters.',
                 ),
           titleIcon: Icons.keyboard_alt_rounded,
+          useScrolling: false,
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -318,11 +319,16 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
       });
     }
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-        return Column(
+              return Column(
           children: [
             SpeedSpellingInputField(
               currentInput: _currentInput,
@@ -420,6 +426,9 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           ],
         );
       },
+          ),
+        ),
+      ],
     );
   }
 }

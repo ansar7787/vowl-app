@@ -744,7 +744,7 @@ class _PhotoVocabularyScreenState extends State<PhotoVocabularyScreen>
                                   ),
                               SizedBox(height: 16.h),
                               Text(
-                                    "ANALYZING...",
+                                    context.tr('vocabulary.analyzing', fallback: 'ANALYZING...').toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontWeight: FontWeight.w900,

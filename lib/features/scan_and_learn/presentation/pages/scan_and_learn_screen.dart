@@ -287,7 +287,8 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
             }
           }
 
-          final tip = ScanResultBlock.generateReadingTip(text);
+          if (!mounted) return;
+          final tip = ScanResultBlock.generateReadingTip(context, text);
           final textToTranslate = '$text\n\n$tip';
           final translated = await di.sl<TranslationService>().translate(
             textToTranslate,
@@ -731,7 +732,7 @@ class _ScanAndLearnScreenState extends State<ScanAndLearnScreen>
                                   ),
                               SizedBox(height: 16.h),
                               Text(
-                                    "ANALYZING...",
+                                    context.tr('translation.extracting', fallback: 'EXTRACTING...').toUpperCase(),
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontWeight: FontWeight.w900,

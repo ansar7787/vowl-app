@@ -220,26 +220,38 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    _buildForensicScene(
-                      quest,
-                      theme.primaryColor,
-                      (state is VocabularyLoaded)
-                          ? state.isFinalFailure
-                          : false,
-                    ),
-                    if (_isFirstStagePassed && !_isAnswered)
-                      DynamicAnagramWrapper(
-                        title: 'SPELL THE MYSTERY WORD',
-                        subtitle: 'Tap all letters to rebuild the hidden word!',
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onFailed: () {}, // Handled by onFailedWithSpelling
-                        onFailedWithSpelling: (wrongWord) =>
-                            _submitFinalAnswer(false, wrongWord),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: _buildForensicScene(
+                              quest,
+                              theme.primaryColor,
+                              (state is VocabularyLoaded)
+                                  ? state.isFinalFailure
+                                  : false,
+                            ),
+                          ),
+                          if (_isFirstStagePassed && !_isAnswered)
+                            DynamicAnagramWrapper(
+                              title: 'SPELL THE MYSTERY WORD',
+                              subtitle: 'Tap all letters to rebuild the hidden word!',
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onFailed: () {}, // Handled by onFailedWithSpelling
+                              onFailedWithSpelling: (wrongWord) =>
+                                  _submitFinalAnswer(false, wrongWord),
+                              isPositioned: false,
+                            ),
+                          SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                        ],
                       ),
+                    ),
                   ],
                 ),
         );

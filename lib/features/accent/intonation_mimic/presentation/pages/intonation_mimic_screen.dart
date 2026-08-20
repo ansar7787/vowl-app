@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -252,6 +251,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -284,123 +284,129 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                           ? (gapUnit * 1).clamp(12.0, 40.0)
                           : 12.0;
 
-                      return GameScrollbar(
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: gapTop),
-                                      IntonationMimicInstruction(
-                                        color: theme.primaryColor,
-                                        instruction: _isFirstStagePassed
-                                            ? "Great job! Now record yourself saying the word."
-                                            : context.tr(
-                                                'games.intonation_mimic_instruction',
-                                                fallback:
-                                                    "Identify the intonation",
-                                              ),
-                                      ),
-                                      SizedBox(height: gapInstruction),
+                      return CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox(height: gapTop),
+                                            IntonationMimicInstruction(
+                                              color: theme.primaryColor,
+                                              instruction: _isFirstStagePassed
+                                                  ? "Great job! Now record yourself saying the word."
+                                                  : context.tr(
+                                                      'games.intonation_mimic_instruction',
+                                                      fallback:
+                                                          "Identify the intonation",
+                                                    ),
+                                            ),
+                                            SizedBox(height: gapInstruction),
 
-                                      isCompact
-                                          ? SizedBox(
-                                              height: 90.h,
-                                              child: FittedBox(
-                                                fit: BoxFit.scaleDown,
-                                                child: SizedBox(
-                                                  width: maxWidth - 48.w,
-                                                  child:
-                                                      IntonationMimicPromptCard(
-                                                        word: quest.word ?? "",
-                                                        color:
-                                                            theme.primaryColor,
-                                                        isDark: isDark,
+                                            isCompact
+                                                ? SizedBox(
+                                                    height: 90.h,
+                                                    child: FittedBox(
+                                                      fit: BoxFit.scaleDown,
+                                                      child: SizedBox(
+                                                        width: maxWidth - 48.w,
+                                                        child:
+                                                            IntonationMimicPromptCard(
+                                                              word: quest.word ?? "",
+                                                              color:
+                                                                  theme.primaryColor,
+                                                              isDark: isDark,
+                                                            ),
                                                       ),
-                                                ),
+                                                    ),
+                                                  )
+                                                : IntonationMimicPromptCard(
+                                                    word: quest.word ?? "",
+                                                    color: theme.primaryColor,
+                                                    isDark: isDark,
+                                                  ),
+                                            SizedBox(height: gapPrompt),
+
+                                            if (_isAnswered ||
+                                                _isFirstStagePassed) ...[
+                                              IntonationMimicRollercoaster(
+                                                contour: contour,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                isRiding: _isRiding,
+                                                cartPosition: _cartPosition,
                                               ),
-                                            )
-                                          : IntonationMimicPromptCard(
-                                              word: quest.word ?? "",
+                                              SizedBox(height: gapSpeaker),
+                                            ],
+
+                                            IntonationMimicPulseSpeaker(
+                                              text: quest.textToSpeak ?? "",
+                                              color: theme.primaryColor,
+                                              onPlayTts: _playTts,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            SizedBox(height: gapSpeaker),
+                                            IntonationMimicVerticalFader(
+                                              options: options,
+                                              correctIndex:
+                                                  quest.correctAnswerIndex ?? 0,
                                               color: theme.primaryColor,
                                               isDark: isDark,
+                                              isAnswered:
+                                                  _isAnswered || _isFirstStagePassed,
+                                              selectedIndex: _selectedIndex,
+                                              sliderValue: _sliderValue,
+                                              topIndex: topIndex,
+                                              bottomIndex: bottomIndex,
+                                              onSubmitChoice: (idx, correct) =>
+                                                  _submitChoice(
+                                                    idx,
+                                                    correct,
+                                                    topIndex,
+                                                    bottomIndex,
+                                                  ),
+                                              onSliderUpdate: (val, correct) =>
+                                                  _onSliderUpdate(
+                                                    val,
+                                                    correct,
+                                                    topIndex,
+                                                    bottomIndex,
+                                                  ),
                                             ),
-                                      SizedBox(height: gapPrompt),
 
-                                      if (_isAnswered ||
-                                          _isFirstStagePassed) ...[
-                                        IntonationMimicRollercoaster(
-                                          contour: contour,
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          isRiding: _isRiding,
-                                          cartPosition: _cartPosition,
+                                            SizedBox(height: gapBottom),
+                                          ],
                                         ),
-                                        SizedBox(height: gapSpeaker),
                                       ],
-
-                                      IntonationMimicPulseSpeaker(
-                                        text: quest.textToSpeak ?? "",
-                                        color: theme.primaryColor,
-                                        onPlayTts: _playTts,
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: gapSpeaker),
-                                      IntonationMimicVerticalFader(
-                                        options: options,
-                                        correctIndex:
-                                            quest.correctAnswerIndex ?? 0,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isAnswered:
-                                            _isAnswered || _isFirstStagePassed,
-                                        selectedIndex: _selectedIndex,
-                                        sliderValue: _sliderValue,
-                                        topIndex: topIndex,
-                                        bottomIndex: bottomIndex,
-                                        onSubmitChoice: (idx, correct) =>
-                                            _submitChoice(
-                                              idx,
-                                              correct,
-                                              topIndex,
-                                              bottomIndex,
-                                            ),
-                                        onSliderUpdate: (val, correct) =>
-                                            _onSliderUpdate(
-                                              val,
-                                              correct,
-                                              topIndex,
-                                              bottomIndex,
-                                            ),
-                                      ),
-
-                                      SizedBox(height: gapBottom),
-                                      if (_isFirstStagePassed)
-                                        AccentSelfEvaluationPanel(
-                                          textToSpeak: quest.textToSpeak ?? "",
-                                          primaryColor: theme.primaryColor,
-                                          isCompact: isCompact,
-                                          onEvaluate: _submitVerbalEvaluation,
-                                        ),
-                                      SizedBox(height: _isAnswered ? 180.h : 0),
-                                    ],
+                                ),
+                                if (_isFirstStagePassed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: isCompact,
+                                    onEvaluate: _submitVerbalEvaluation,
                                   ),
-                                ],
-                              ),
+                                SizedBox(height: _isAnswered ? 180.h : 0),
+                              ],
                             ),
                           ),
-                        ),
+                        ],
                       );
                     },
                   ),

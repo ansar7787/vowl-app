@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -198,21 +197,19 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: Stack(
-            children: [
-              AccentBaseLayout(
-                gameType: widget.gameType,
-                level: widget.level,
-                isAnswered: _isAnswered,
-                isCorrect: _isCorrect,
-                showConfetti: _showConfetti,
-                onContinue: () =>
-                    context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-                child: quest == null
-                    ? const SizedBox()
-                    : LayoutBuilder(
-                        builder: (context, constraints) {
+          child: AccentBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
+                    builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
                           final maxWidth = constraints.maxWidth;
                           final bool isCompact = maxHeight < 580;
@@ -245,36 +242,50 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                               ? (gapUnit * 1).clamp(12.0, 40.0)
                               : 12.0;
 
-                          return GameScrollbar(
+                          return CustomScrollView(
                             controller: _scrollController,
-                            child: SingleChildScrollView(
-                              controller: _scrollController,
-                              physics: const BouncingScrollPhysics(),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minHeight: maxHeight,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(height: gapTop),
-                                          isCompact
-                                              ? SizedBox(
-                                                  height: 32.h,
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: SizedBox(
-                                                      width: maxWidth - 48.w,
-                                                      child: VowelDistinctionInstruction(
-                                                        color:
-                                                            theme.primaryColor,
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapTop),
+                                                isCompact
+                                                    ? SizedBox(
+                                                        height: 32.h,
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: SizedBox(
+                                                            width: maxWidth - 48.w,
+                                                            child: VowelDistinctionInstruction(
+                                                              color:
+                                                                  theme.primaryColor,
+                                                              instruction:
+                                                                  _isFirstStagePassed
+                                                                  ? "Great job! Now confirm by speaking the word."
+                                                                  : context.tr(
+                                                                      'games.vowel_distinction_instruction',
+                                                                      fallback:
+                                                                          'Match the vowel sound',
+                                                                    ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    : VowelDistinctionInstruction(
+                                                        color: theme.primaryColor,
                                                         instruction:
                                                             _isFirstStagePassed
                                                             ? "Great job! Now confirm by speaking the word."
@@ -284,136 +295,123 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                                     'Match the vowel sound',
                                                               ),
                                                       ),
-                                                    ),
-                                                  ),
-                                                )
-                                              : VowelDistinctionInstruction(
-                                                  color: theme.primaryColor,
-                                                  instruction:
-                                                      _isFirstStagePassed
-                                                      ? "Great job! Now confirm by speaking the word."
-                                                      : context.tr(
-                                                          'games.vowel_distinction_instruction',
-                                                          fallback:
-                                                              'Match the vowel sound',
-                                                        ),
-                                                ),
-                                          SizedBox(height: gapInstruction),
-                                          isCompact
-                                              ? SizedBox(
-                                                  height: 90.h,
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: SizedBox(
-                                                      width: maxWidth - 48.w,
-                                                      child:
-                                                          VowelDistinctionPromptCard(
-                                                            word:
-                                                                quest.word ??
-                                                                "",
-                                                            color: theme
-                                                                .primaryColor,
-                                                            isDark: isDark,
+                                                SizedBox(height: gapInstruction),
+                                                isCompact
+                                                    ? SizedBox(
+                                                        height: 90.h,
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: SizedBox(
+                                                            width: maxWidth - 48.w,
+                                                            child:
+                                                                VowelDistinctionPromptCard(
+                                                                  word:
+                                                                      quest.word ??
+                                                                      "",
+                                                                  color: theme
+                                                                      .primaryColor,
+                                                                  isDark: isDark,
+                                                                ),
                                                           ),
-                                                    ),
-                                                  ),
-                                                )
-                                              : VowelDistinctionPromptCard(
-                                                  word: quest.word ?? "",
+                                                        ),
+                                                      )
+                                                    : VowelDistinctionPromptCard(
+                                                        word: quest.word ?? "",
+                                                        color: theme.primaryColor,
+                                                        isDark: isDark,
+                                                      ),
+                                                SizedBox(height: gapPrompt),
+                                                VowelDistinctionPulseSpeaker(
+                                                  text: quest.textToSpeak ?? "",
                                                   color: theme.primaryColor,
-                                                  isDark: isDark,
+                                                  onPlayTts: _playTts,
                                                 ),
-                                          SizedBox(height: gapPrompt),
-                                          VowelDistinctionPulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(height: gapSpeaker),
-                                          isCompact
-                                              ? SizedBox(
-                                                  height: 110.h,
-                                                  child: FittedBox(
-                                                    fit: BoxFit.scaleDown,
-                                                    child: SizedBox(
-                                                      width: maxWidth - 48.w,
-                                                      child: VowelDistinctionSpectralSlider(
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapSpeaker),
+                                                isCompact
+                                                    ? SizedBox(
+                                                        height: 110.h,
+                                                        child: FittedBox(
+                                                          fit: BoxFit.scaleDown,
+                                                          child: SizedBox(
+                                                            width: maxWidth - 48.w,
+                                                            child: VowelDistinctionSpectralSlider(
+                                                              options: options,
+                                                              correctIndex:
+                                                                  quest
+                                                                      .correctAnswerIndex ??
+                                                                  0,
+                                                              color:
+                                                                  theme.primaryColor,
+                                                              isDark: isDark,
+                                                              isAnswered:
+                                                                  _isAnswered ||
+                                                                  _isFirstStagePassed,
+                                                              selectedIndex:
+                                                                  _selectedIndex,
+                                                              sliderValue:
+                                                                  _sliderValue,
+                                                              onSubmitChoice:
+                                                                  _submitChoice,
+                                                              onSliderUpdate:
+                                                                  _onSliderUpdate,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    : VowelDistinctionSpectralSlider(
                                                         options: options,
                                                         correctIndex:
                                                             quest
                                                                 .correctAnswerIndex ??
                                                             0,
-                                                        color:
-                                                            theme.primaryColor,
+                                                        color: theme.primaryColor,
                                                         isDark: isDark,
                                                         isAnswered:
                                                             _isAnswered ||
                                                             _isFirstStagePassed,
-                                                        selectedIndex:
-                                                            _selectedIndex,
-                                                        sliderValue:
-                                                            _sliderValue,
-                                                        onSubmitChoice:
-                                                            _submitChoice,
+                                                        selectedIndex: _selectedIndex,
+                                                        sliderValue: _sliderValue,
+                                                        onSubmitChoice: _submitChoice,
                                                         onSliderUpdate:
                                                             _onSliderUpdate,
                                                       ),
-                                                    ),
-                                                  ),
-                                                )
-                                              : VowelDistinctionSpectralSlider(
-                                                  options: options,
-                                                  correctIndex:
-                                                      quest
-                                                          .correctAnswerIndex ??
-                                                      0,
-                                                  color: theme.primaryColor,
-                                                  isDark: isDark,
-                                                  isAnswered:
-                                                      _isAnswered ||
-                                                      _isFirstStagePassed,
-                                                  selectedIndex: _selectedIndex,
-                                                  sliderValue: _sliderValue,
-                                                  onSubmitChoice: _submitChoice,
-                                                  onSliderUpdate:
-                                                      _onSliderUpdate,
-                                                ),
-                                          SizedBox(height: gapBottom),
-                                          // Panel removed in favor of SpeakToConfirmOverlay
-                                          SizedBox(
-                                            height: _isAnswered ? 180.h : 0,
-                                          ),
-                                        ],
+                                                SizedBox(height: gapBottom),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    if (_isFirstStagePassed && !_isAnswered)
+                                      SpeakToConfirmOverlay(
+                                        expectedText: quest.textToSpeak ?? quest.word ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        onConfirmed: () {
+                                          context.read<AccentBloc>().add(
+                                            const AccentSpeakConfirmed(5),
+                                          );
+                                          _submitVerbalEvaluation(true);
+                                        },
+                                        onSkipped: () => _submitVerbalEvaluation(
+                                          false,
+                                        ),
+                                      ),
+                                    SizedBox(
+                                      height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h,
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
+                            ],
                           );
                         },
                       ),
-              ),
-              if (_isFirstStagePassed && !_isAnswered && quest != null)
-                SpeakToConfirmOverlay(
-                  expectedText: quest.textToSpeak ?? quest.word ?? "",
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: () {
-                    context.read<AccentBloc>().add(
-                      const AccentSpeakConfirmed(5),
-                    );
-                    _submitVerbalEvaluation(true);
-                  },
-                  onSkipped: () => _submitVerbalEvaluation(
-                    false,
-                  ), // Skip speaking but keep the correct answer!
-                ),
-            ],
           ),
         );
       },

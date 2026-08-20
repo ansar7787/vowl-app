@@ -10,11 +10,11 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/utils/ml_services/smart_reply_service.dart';
 import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
@@ -189,7 +189,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'DIALOGUE EXPERT!',
+            title: context.tr('speaking_games.dialogue_expert', fallback: 'DIALOGUE EXPERT!'),
             enableDoubleUp: true,
           );
         }

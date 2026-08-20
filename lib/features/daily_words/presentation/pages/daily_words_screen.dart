@@ -403,8 +403,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Translation failed. Please check internet connection.'),
+          SnackBar(
+            content: Text(context.tr('translation.error', fallback: 'Translation failed. Please check internet connection.')),
           ),
         );
       }
@@ -433,7 +433,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Translation model downloading... Please wait.')),
+          SnackBar(content: Text(context.tr('translation.downloading', fallback: 'Translation model downloading... Please wait.'))),
         );
       }
     }
@@ -569,7 +569,7 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Lesson ${state.currentDay}',
+                        context.tr('home.level_label_short', args: [state.currentDay.toString()], fallback: 'Lesson ${state.currentDay}'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 20.sp,
@@ -716,7 +716,10 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
                       children: [
                         Expanded(
                           child: ActionButton(
-                            label: 'Pronounce',
+                            label: context.tr(
+                              'daily_words.pronounce',
+                              fallback: 'Pronounce',
+                            ),
                             icon: Icons.volume_up_rounded,
                             color: const Color(0xFF6366F1),
                             isDark: isDark,

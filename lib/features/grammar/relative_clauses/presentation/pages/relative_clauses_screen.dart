@@ -168,9 +168,15 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
 
@@ -271,6 +277,7 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                         );
                       },
                     ),
+                    ),
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
@@ -279,9 +286,14 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

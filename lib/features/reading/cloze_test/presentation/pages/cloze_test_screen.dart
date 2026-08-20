@@ -8,12 +8,12 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
 
 class ClozeTestScreen extends StatefulWidget {
@@ -133,7 +133,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SEMANTIC MASTER!',
+            title: context.tr('reading_games.semantic_master', fallback: 'SEMANTIC MASTER!'),
             enableDoubleUp: true,
           );
         }

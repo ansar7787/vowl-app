@@ -5,6 +5,7 @@ import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/sy
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 
 class DialogueRoleplayExchangeStage extends StatelessWidget {
   final SpeakingQuest quest;
@@ -32,7 +33,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
       children: [
         // AI Partner Speech Card
         _buildBubbleCard(
-          title: "ROLEPLAY PARTNER",
+          title: context.tr('speaking_games.roleplay_partner', fallback: "ROLEPLAY PARTNER"),
           content: quest.partnerDialogue ?? "Dialogue statement.",
           avatarIcon: Icons.support_agent_rounded,
           color: primaryColor,
@@ -58,7 +59,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
 
         // User Spoken Target Card
         _buildBubbleCard(
-          title: "YOUR RESPONSE OBLIGATION",
+          title: context.tr('speaking_games.your_response', fallback: "YOUR RESPONSE OBLIGATION"),
           content: quest.sampleAnswer ?? "Expected response.",
           avatarIcon: Icons.face_rounded,
           color: Colors.greenAccent,

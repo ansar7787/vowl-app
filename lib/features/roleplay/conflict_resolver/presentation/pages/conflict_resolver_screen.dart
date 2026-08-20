@@ -186,9 +186,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final double empathyTarget = quest?.empathyScore ?? 0.75;
 
-        return Stack(
-          children: [
-            RoleplayBaseLayout(
+        return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered,
@@ -198,19 +196,27 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              useScrolling: false,
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
-                        return SingleChildScrollView(
+                        return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: isCompact ? 5.h : 10.h,
-                          ),
-                          child: Column(
-                            children: [
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: isCompact ? 5.h : 10.h,
+                                      ),
+                                      child: Column(
+                                        children: [
                               ConflictResolverInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -287,28 +293,34 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                                   ),
                                 ).animate().fadeIn(duration: 300.ms),
 
-                              // Post-answer review cards
-                              SizedBox(height: isCompact ? 40.h : 80.h),
-                            ],
-                          ),
+                                          // Post-answer review cards
+                                          SizedBox(height: isCompact ? 20.h : 40.h),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  if (_isFirstStagePassed && !_isAnswered)
+                                    SpeakToConfirmOverlay(
+                                      expectedText: quest.correctAnswer ?? "De-escalating conflict",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                    ),
+                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                ],
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
-            ),
-            if (_isFirstStagePassed && !_isAnswered && quest != null)
-              SpeakToConfirmOverlay(
-                expectedText: quest.correctAnswer ?? "De-escalating conflict",
-                primaryColor: theme.primaryColor,
-                onConfirmed: () {
-                  context.read<RoleplayBloc>().add(
-                    const RoleplaySpeakConfirmed(5),
-                  );
-                  _submitVerbalEvaluation(true);
-                },
-                onSkipped: () => _submitVerbalEvaluation(false),
-              ),
-          ],
-        );
+            );
       },
     );
   }

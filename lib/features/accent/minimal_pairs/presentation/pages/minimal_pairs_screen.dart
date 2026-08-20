@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -192,26 +191,25 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           _ensureOptionsShuffled(quest);
         }
 
-        final mediaQuery = MediaQuery.of(context);
 
-        return MediaQuery(
-          data: mediaQuery.copyWith(
-            textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
-          ),
-          child: Stack(
-            children: [
-              AccentBaseLayout(
-                gameType: widget.gameType,
-                level: widget.level,
-                isAnswered: _isAnswered,
-                isCorrect: _isCorrect,
-                showConfetti: _showConfetti,
-                onContinue: () =>
-                    context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-                child: quest == null
-                    ? const SizedBox()
-                    : LayoutBuilder(
+
+        return AccentBaseLayout(
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
+          onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+          useScrolling: false,
+          child: quest == null
+              ? const SizedBox()
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
                           final maxWidth = constraints.maxWidth;
@@ -243,13 +241,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                               ? (gapUnit * 1).clamp(12.0, 40.0)
                               : 12.0;
 
-                          return GameScrollbar(
-                            child: SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minHeight: maxHeight,
-                                ),
+                          return Column(
+                            children: [
+                              Expanded(
                                 child: Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 24.w,
@@ -424,7 +418,6 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           SizedBox(
                                             height: isCompact ? 16.h : 24.h,
                                           ),
-                                          // Panel removed in favor of SpeakToConfirmOverlay
                                           SizedBox(height: gapBottom),
                                         ],
                                       ),
@@ -432,29 +425,31 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                   ),
                                 ),
                               ),
-                            ),
+                              if (_isFirstStagePassed && !_isAnswered)
+                                SpeakToConfirmOverlay(
+                                  expectedText: _currentOptions.isNotEmpty
+                                      ? _currentOptions[_currentCorrectIndex]['word']!
+                                      : (quest.correctAnswer ?? quest.word1 ?? ""),
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  onConfirmed: () {
+                                    context.read<AccentBloc>().add(
+                                      const AccentSpeakConfirmed(5),
+                                    );
+                                    _submitVerbalEvaluation(true);
+                                  },
+                                  onSkipped: () => _submitVerbalEvaluation(
+                                    false,
+                                  ),
+                                ),
+                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h),
+                            ],
                           );
                         },
                       ),
-              ),
-              if (_isFirstStagePassed && !_isAnswered && quest != null)
-                SpeakToConfirmOverlay(
-                  expectedText: _currentOptions.isNotEmpty
-                      ? _currentOptions[_currentCorrectIndex]['word']!
-                      : (quest.correctAnswer ?? quest.word1 ?? ""),
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: () {
-                    context.read<AccentBloc>().add(
-                      const AccentSpeakConfirmed(5),
-                    );
-                    _submitVerbalEvaluation(true);
-                  },
-                  onSkipped: () => _submitVerbalEvaluation(
-                    false,
-                  ), // Skip speaking but keep the correct answer!
+                    ),
+                  ],
                 ),
-            ],
-          ),
         );
       },
     );

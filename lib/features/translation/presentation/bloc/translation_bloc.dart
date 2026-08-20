@@ -129,7 +129,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       emit(
         state.copyWith(
           status: TranslationStatus.error,
-          errorMessage: 'Failed to load translation settings.',
+          errorMessage: 'translation.error_load_settings',
         ),
       );
     }
@@ -149,7 +149,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
 
     if (state.currentTargetLanguage == null) {
       emit(
-        state.copyWith(errorMessage: 'Please select a target language first.'),
+        state.copyWith(errorMessage: 'translation.error_select_target'),
       );
       return;
     }
@@ -211,7 +211,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
         emit(
           state.copyWith(
             isModelDownloading: false,
-            errorMessage: 'Failed to download language model.',
+            errorMessage: 'translation.error_download_model',
           ),
         );
       }
@@ -240,7 +240,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
         ),
       );
     } catch (e) {
-      emit(state.copyWith(errorMessage: 'Failed to delete language model.'));
+      emit(state.copyWith(errorMessage: 'translation.error_delete_model'));
     }
   }
 }

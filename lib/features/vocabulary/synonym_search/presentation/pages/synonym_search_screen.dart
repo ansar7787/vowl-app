@@ -327,22 +327,30 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           },
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    _lastConstraints = constraints;
-                    final screenSize = MediaQuery.of(context).size;
-                    final double safeWidth = constraints.maxWidth.isFinite
-                        ? constraints.maxWidth
-                        : screenSize.width;
-                    final double safeHeight = constraints.maxHeight.isFinite
-                        ? constraints.maxHeight
-                        : (screenSize.height * 0.6);
-                    final isCompact = safeHeight < 580;
-
-                    return SizedBox(
-                      width: safeWidth,
-                      height: safeHeight,
-                      child: Stack(
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          _lastConstraints = constraints;
+                          final screenSize = MediaQuery.of(context).size;
+                          final double safeWidth = constraints.maxWidth.isFinite
+                              ? constraints.maxWidth
+                              : screenSize.width;
+                          final double safeHeight = constraints.maxHeight.isFinite
+                              ? constraints.maxHeight
+                              : (screenSize.height * 0.6);
+                          final isCompact = safeHeight < 580;
+      
+                          return Column(
+                            children: [
+                              Expanded(
+                                child: SizedBox(
+                                  width: safeWidth,
+                                  height: safeHeight,
+                                  child: Stack(
                         alignment: Alignment.center,
                         clipBehavior: Clip.none,
                         children: [
@@ -506,22 +514,30 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                         : "WARP THE SYNONYM SHARD",
                                   ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered)
-                            DynamicAnagramWrapper(
-                              title: 'SPELL THE SYNONYM',
-                              subtitle: 'Tap all letters to rebuild the word!',
-                              expectedText: quest.correctAnswer ?? '',
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitVerbalEvaluation(true),
-                              onFailed: () {},
-                              onFailedWithSpelling: (wrongWord) =>
-                                  _submitVerbalEvaluation(false),
-                            ),
                         ],
                       ),
+                    ),
+                  ),
+                  if (_isFirstStagePassed && !_isAnswered)
+                          DynamicAnagramWrapper(
+                            title: 'SPELL THE SYNONYM',
+                            subtitle: 'Tap all letters to rebuild the word!',
+                            expectedText: quest.correctAnswer ?? '',
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onFailed: () {},
+                            onFailedWithSpelling: (wrongWord) =>
+                                _submitVerbalEvaluation(false),
+                            isPositioned: false,
+                          ),
+                        SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                      ],
                     );
                   },
                 ),
+              ),
+            ],
+          ),
         );
       },
     );

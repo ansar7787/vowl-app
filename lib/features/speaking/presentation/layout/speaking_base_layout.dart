@@ -11,6 +11,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_game_header.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_peeking_mascot.dart';
 import 'package:vowl/features/speaking/presentation/widgets/speaking_voice_pulse_bg.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
@@ -176,7 +177,7 @@ class SpeakingBaseLayout extends StatelessWidget {
           isDark: isDark,
           primaryColor: theme.primaryColor,
           explanation: finalExplanation,
-          ruleTitle: 'SPEAKING TIP',
+          ruleTitle: context.tr('common.speaking_tip', fallback: 'SPEAKING TIP'),
           ruleContent: ruleContent,
           sampleAnswer: quest.sampleAnswer,
           onTutorPass: onTutorPass,

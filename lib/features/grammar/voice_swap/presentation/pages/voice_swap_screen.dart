@@ -145,17 +145,24 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final isCompact = constraints.maxHeight < 580;
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                final isCompact = constraints.maxHeight < 580;
 
-                    return Stack(
-                      children: [
-                        Column(
+                                return Column(
                           children: [
                             SizedBox(height: isCompact ? 4.h : 10.h),
                             isCompact
@@ -296,21 +303,27 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
 
                             SizedBox(height: isCompact ? 12.h : 40.h),
                           ],
-                        ),
-                        if (_isFirstStagePassed && !_isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText:
-                                quest.correctAnswerCategory ??
-                                quest.correctAnswer ??
-                                '',
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitVerbalEvaluation(true),
-                            onSkipped: () => _submitVerbalEvaluation(false),
-                          ),
-                      ],
-                    );
-                  },
+                        );
+                      },
+                    ),
+                    ),
+                    if (_isFirstStagePassed && !_isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText:
+                            quest.correctAnswerCategory ??
+                            quest.correctAnswer ??
+                            '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitVerbalEvaluation(true),
+                        onSkipped: () => _submitVerbalEvaluation(false),
+                        isPositioned: false,
+                      ),
+                    SizedBox(height: _isAnswered ? 160.h : 60.h),
+                  ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

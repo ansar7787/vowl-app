@@ -6,6 +6,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsZoneHomeHeader extends StatelessWidget {
   final String mascot;
@@ -33,7 +34,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Welcome Back!',
+                        context.tr('kids_zone.welcome_back', fallback: 'Welcome Back!'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 14.sp,
@@ -46,7 +47,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              'Little Explorer 🌟',
+                              context.tr('kids_zone.little_explorer', fallback: 'Little Explorer 🌟'),
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 28.sp,
@@ -71,7 +72,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
             ),
             SizedBox(height: 16.h),
             Text(
-              'LEARNING ADVENTURES',
+              context.tr('kids_zone.learning_adventures', fallback: 'LEARNING ADVENTURES'),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 11.sp,

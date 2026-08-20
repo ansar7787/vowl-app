@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -179,54 +179,44 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-
-                    final double estimatedContentHeight =
-                        20.h +
-                        40.h +
-                        (isCompact ? 80.h : 110.h) +
-                        (isCompact ? 100.h : 180.h) +
-                        20.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
-
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 6
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(6.0, 16.0)
-                        : 6.0;
-                    final double gapInstruction = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                        : 10.0;
-                    final double gapAnchor = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(10.0, 40.0)
-                        : 10.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2).clamp(12.0, 60.0)
-                        : 12.0;
-
-                    final double totalGaps =
-                        gapTop + gapInstruction + gapAnchor + gapBottom;
-                    final double requiredHeight =
-                        estimatedContentHeight + totalGaps;
-                    final double finalHeight = math.max(
-                      maxHeight,
-                      requiredHeight,
-                    );
-
-                    return SizedBox(
-                      height:
-                          maxHeight, // Keep outer stack constrained to viewport
-                      child: Stack(
-                        children: [
-                          SingleChildScrollView(
-                            physics: const BouncingScrollPhysics(),
-                            child: SizedBox(
-                              height: finalHeight,
-                              child: Column(
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final maxHeight = constraints.maxHeight;
+                          final isCompact = maxHeight < 580;
+      
+                          final double estimatedContentHeight =
+                              20.h +
+                              40.h +
+                              (isCompact ? 80.h : 110.h) +
+                              (isCompact ? 100.h : 180.h) +
+                              20.h;
+                          final remainingHeight = maxHeight - estimatedContentHeight;
+      
+                          final double gapUnit = remainingHeight > 0
+                              ? remainingHeight / 6
+                              : 0;
+                          final double gapTop = remainingHeight > 0
+                              ? (gapUnit * 1).clamp(6.0, 16.0)
+                              : 6.0;
+                          final double gapInstruction = remainingHeight > 0
+                              ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                              : 10.0;
+                          final double gapAnchor = remainingHeight > 0
+                              ? (gapUnit * 1.5).clamp(10.0, 40.0)
+                              : 10.0;
+                          final double gapBottom = remainingHeight > 0
+                              ? (gapUnit * 2).clamp(12.0, 60.0)
+                              : 12.0;
+      
+                          return Column(
+                            children: [
+                              Expanded(
+                                child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
@@ -353,26 +343,29 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                     ],
                                   ),
                                 ],
+                                ),
                               ),
-                            ),
-                          ),
-                          if (_isFirstStagePassed &&
-                              (!_isAnswered || _isCorrect == null))
-                            DynamicAnagramWrapper(
-                              title: 'SPELL THE COLLOCATION',
-                              subtitle:
-                                  'Tap all letters to rebuild the word pair!',
-                              expectedText: quest.correctAnswer ?? '',
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(true),
-                              onFailed: () {},
-                              onFailedWithSpelling: (wrongWord) =>
-                                  _submitFinalAnswer(false),
-                            ),
-                        ],
+                              if (_isFirstStagePassed &&
+                                  (!_isAnswered || _isCorrect == null))
+                                DynamicAnagramWrapper(
+                                  title: 'SPELL THE COLLOCATION',
+                                  subtitle:
+                                      'Tap all letters to rebuild the word pair!',
+                                  expectedText: quest.correctAnswer ?? '',
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () => _submitFinalAnswer(true),
+                                  onFailed: () {},
+                                  onFailedWithSpelling: (wrongWord) =>
+                                      _submitFinalAnswer(false),
+                                  isPositioned: false,
+                                ),
+                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                            ],
+                          );
+                        },
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
         );
       },

@@ -127,9 +127,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return Stack(
-          children: [
-            RoleplayBaseLayout(
+        return RoleplayBaseLayout(
               onTutorPass: _tutorPass,
               gameType: widget.gameType,
               level: widget.level,
@@ -140,19 +138,27 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              useScrolling: false,
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
-                        return SingleChildScrollView(
+                        return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: isCompact ? 5.h : 10.h,
-                          ),
-                          child: Column(
-                            children: [
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: isCompact ? 5.h : 10.h,
+                                      ),
+                                      child: Column(
+                                        children: [
                               ElevatorPitchInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -163,27 +169,33 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                                 color: theme.primaryColor,
                                 isDark: isDark,
                               ),
-                              SizedBox(height: isCompact ? 40.h : 80.h),
-                            ],
-                          ),
+                                          SizedBox(height: isCompact ? 20.h : 40.h),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  if (!_isAnswered)
+                                    SpeakToConfirmOverlay(
+                                      expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                    ),
+                                  SizedBox(height: _isAnswered ? 180.h : 40.h),
+                                ],
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
-            ),
-            if (!_isAnswered && quest != null)
-              SpeakToConfirmOverlay(
-                expectedText: quest.correctAnswer ?? "Elevator Pitch Example",
-                primaryColor: theme.primaryColor,
-                onConfirmed: () {
-                  context.read<RoleplayBloc>().add(
-                    const RoleplaySpeakConfirmed(5),
-                  );
-                  _submitVerbalEvaluation(true);
-                },
-                onSkipped: () => _submitVerbalEvaluation(false),
-              ),
-          ],
-        );
+            );
       },
     );
   }

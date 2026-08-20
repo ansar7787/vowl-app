@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -197,73 +196,79 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
                     builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
-                      return GameScrollbar(
+
+                      return CustomScrollView(
                         controller: _scrollController,
-                        child: SingleChildScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24.w,
-                                vertical: 24.h,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  ShadowingChallengeInstruction(
-                                    color: theme.primaryColor,
-                                    instruction: _isFirstStagePassed
-                                        ? "Great job! Now record yourself saying the phrase."
-                                        : context.tr(
-                                            'games.shadowing_challenge_instruction',
-                                            fallback: quest.instruction,
-                                          ),
-                                  ),
-                                  SizedBox(height: 16.h),
-                                  ShadowingChallengePromptCard(
-                                    word: quest.word ?? "",
-                                    ipa: quest.phonetic ?? "",
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                  ),
-                                  SizedBox(height: 24.h),
-                                  ShadowingChallengePulseSpeaker(
-                                    text: quest.textToSpeak ?? "",
-                                    color: theme.primaryColor,
-                                    onPlayTts: _playTts,
-                                  ),
-                                  SizedBox(height: 32.h),
-                                  ShadowingChallengeDialogueList(
-                                    options: options,
-                                    correctIndex: correctIndex,
-                                    color: theme.primaryColor,
-                                    isDark: isDark,
-                                    isAnswered:
-                                        _isAnswered || _isFirstStagePassed,
-                                    selectedIndex: _selectedIndex,
-                                    onSubmitChoice: _submitChoice,
-                                  ),
-                                  SizedBox(height: 24.h),
-                                  if (_isFirstStagePassed)
-                                    AccentSelfEvaluationPanel(
-                                      textToSpeak: quest.textToSpeak ?? "",
-                                      primaryColor: theme.primaryColor,
-                                      isCompact: false,
-                                      onEvaluate: _submitVerbalEvaluation,
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 24.w,
+                                      vertical: 24.h,
                                     ),
-                                  SizedBox(height: _isAnswered ? 200.h : 24.h),
-                                ],
-                              ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        ShadowingChallengeInstruction(
+                                          color: theme.primaryColor,
+                                          instruction: _isFirstStagePassed
+                                              ? "Great job! Now record yourself saying the phrase."
+                                              : context.tr(
+                                                  'games.shadowing_challenge_instruction',
+                                                  fallback: quest.instruction,
+                                                ),
+                                        ),
+                                        SizedBox(height: 16.h),
+                                        ShadowingChallengePromptCard(
+                                          word: quest.word ?? "",
+                                          ipa: quest.phonetic ?? "",
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                        ShadowingChallengePulseSpeaker(
+                                          text: quest.textToSpeak ?? "",
+                                          color: theme.primaryColor,
+                                          onPlayTts: _playTts,
+                                        ),
+                                        SizedBox(height: 32.h),
+                                        ShadowingChallengeDialogueList(
+                                          options: options,
+                                          correctIndex: correctIndex,
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                          isAnswered:
+                                              _isAnswered || _isFirstStagePassed,
+                                          selectedIndex: _selectedIndex,
+                                          onSubmitChoice: _submitChoice,
+                                        ),
+                                        SizedBox(height: 24.h),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                if (_isFirstStagePassed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: false,
+                                    onEvaluate: _submitVerbalEvaluation,
+                                  ),
+                                SizedBox(height: _isAnswered ? 200.h : 24.h),
+                              ],
                             ),
                           ),
-                        ),
+                        ],
                       );
                     },
                   ),

@@ -174,121 +174,145 @@ class _DirectIndirectSpeechScreenState
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                final maxHeight = constraints.maxHeight;
+                                final isCompact = maxHeight < 580;
 
-                    final double estimatedContentHeight =
-                        (isCompact ? 30.h : 40.h) +
-                        (isCompact ? 130.h : 180.h) +
-                        (isCompact ? 30.h : 50.h) +
-                        40.h;
-                    final remainingHeight = maxHeight - estimatedContentHeight;
+                                final double estimatedContentHeight =
+                                    (isCompact ? 30.h : 40.h) +
+                                    (isCompact ? 130.h : 180.h) +
+                                    (isCompact ? 30.h : 50.h) +
+                                    40.h;
+                                final remainingHeight =
+                                    maxHeight - estimatedContentHeight;
 
-                    final double gapUnit = remainingHeight > 0
-                        ? remainingHeight / 5
-                        : 0;
-                    final double gapTop = remainingHeight > 0
-                        ? (gapUnit * 1).clamp(4.0, 15.0)
-                        : 4.0;
-                    final double gapMiddle = remainingHeight > 0
-                        ? (gapUnit * 1.5).clamp(6.0, 20.0)
-                        : 6.0;
-                    final double gapBottom = remainingHeight > 0
-                        ? (gapUnit * 2.5).clamp(10.0, 30.0)
-                        : 10.0;
+                                final double gapUnit = remainingHeight > 0
+                                    ? remainingHeight / 5
+                                    : 0;
+                                final double gapTop = remainingHeight > 0
+                                    ? (gapUnit * 1).clamp(4.0, 15.0)
+                                    : 4.0;
+                                final double gapMiddle = remainingHeight > 0
+                                    ? (gapUnit * 1.5).clamp(6.0, 20.0)
+                                    : 6.0;
+                                final double gapBottom = remainingHeight > 0
+                                    ? (gapUnit * 2.5).clamp(10.0, 30.0)
+                                    : 10.0;
 
-                    return Stack(
-                      children: [
-                        Column(
-                          children: [
-                            SizedBox(height: gapTop),
-                            isCompact
-                                ? SizedBox(
-                                    height: 25.h,
-                                    child: FittedBox(
-                                      fit: BoxFit.scaleDown,
-                                      child: DirectIndirectSpeechInstruction(
-                                        primaryColor: theme.primaryColor,
-                                      ),
-                                    ),
-                                  )
-                                : DirectIndirectSpeechInstruction(
-                                    primaryColor: theme.primaryColor,
-                                  ),
-                            SizedBox(height: gapMiddle),
-
-                            // Holographic Mirror
-                            DirectIndirectSpeechMirror(
-                              rotation: _rotation,
-                              directText: displayDirect,
-                              indirectText: displayIndirect,
-                              isCorrect: _isCorrect,
-                              isDark: isDark,
-                              primaryColor: theme.primaryColor,
-                              isCompact: isCompact,
-                            ),
-
-                            SizedBox(height: isCompact ? 12.h : 30.h),
-
-                            // Reflection Options
-                            Expanded(
-                              child: SingleChildScrollView(
-                                physics: const BouncingScrollPhysics(),
-                                child: Column(
+                                return Column(
                                   children: [
-                                    Wrap(
-                                      alignment: WrapAlignment.center,
-                                      spacing: isCompact ? 8.w : 12.w,
-                                      runSpacing: isCompact ? 8.h : 12.h,
-                                      children: List.generate(
-                                        options.length,
-                                        (i) => _buildReflectionChip(
-                                          options[i],
-                                          i,
-                                          quest.correctAnswerIndex ?? 0,
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
+                                    SizedBox(height: gapTop),
+                                    isCompact
+                                        ? SizedBox(
+                                            height: 25.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child:
+                                                  DirectIndirectSpeechInstruction(
+                                                    primaryColor:
+                                                        theme.primaryColor,
+                                                  ),
+                                            ),
+                                          )
+                                        : DirectIndirectSpeechInstruction(
+                                            primaryColor: theme.primaryColor,
+                                          ),
+                                    SizedBox(height: gapMiddle),
+
+                                    // Holographic Mirror
+                                    DirectIndirectSpeechMirror(
+                                      rotation: _rotation,
+                                      directText: displayDirect,
+                                      indirectText: displayIndirect,
+                                      isCorrect: _isCorrect,
+                                      isDark: isDark,
+                                      primaryColor: theme.primaryColor,
+                                      isCompact: isCompact,
+                                    ),
+
+                                    SizedBox(height: isCompact ? 12.h : 30.h),
+
+                                    // Reflection Options
+                                    Expanded(
+                                      child: SingleChildScrollView(
+                                        physics: const BouncingScrollPhysics(),
+                                        child: Column(
+                                          children: [
+                                            Wrap(
+                                              alignment: WrapAlignment.center,
+                                              spacing: isCompact ? 8.w : 12.w,
+                                              runSpacing: isCompact
+                                                  ? 8.h
+                                                  : 12.h,
+                                              children: List.generate(
+                                                options.length,
+                                                (i) => _buildReflectionChip(
+                                                  options[i],
+                                                  i,
+                                                  quest.correctAnswerIndex ?? 0,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isCompact,
+                                                ),
+                                              ),
+                                            ),
+                                            if (_isAnswered) ...[
+                                              SizedBox(
+                                                height: isCompact ? 12.h : 30.h,
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 24.w,
+                                                ),
+                                                child: _buildCorrectResult(
+                                                  quest,
+                                                  theme.primaryColor,
+                                                  isDark,
+                                                  isCompact,
+                                                ),
+                                              ),
+                                            ],
+                                            SizedBox(height: gapBottom),
+                                          ],
                                         ),
                                       ),
                                     ),
-                                    if (_isAnswered) ...[
-                                      SizedBox(height: isCompact ? 12.h : 30.h),
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 24.w,
-                                        ),
-                                        child: _buildCorrectResult(
-                                          quest,
-                                          theme.primaryColor,
-                                          isDark,
-                                          isCompact,
-                                        ),
-                                      ),
-                                    ],
-                                    SizedBox(height: gapBottom),
                                   ],
-                                ),
-                              ),
+                                );
+                              },
                             ),
-                          ],
-                        ),
-                        if (_isFirstStagePassed && !_isAnswered)
-                          TypeToConfirmOverlay(
-                            expectedText: options[_selectedReflection],
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitVerbalEvaluation(true),
-                            onSkipped: () => _submitVerbalEvaluation(false),
                           ),
-                      ],
-                    );
-                  },
+                          if (_isFirstStagePassed && !_isAnswered)
+                            TypeToConfirmOverlay(
+                              expectedText: options[_selectedReflection],
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitVerbalEvaluation(true),
+                              onSkipped: () => _submitVerbalEvaluation(false),
+                              isPositioned: false,
+                            ),
+                          SizedBox(
+                            height: (_isAnswered || _isFirstStagePassed)
+                                ? 160.h
+                                : 60.h,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
         );
       },

@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
@@ -105,7 +106,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'HIDDEN LAYER SYNCED!',
+            title: context.tr('reading_games.hidden_layer_synced', fallback: 'HIDDEN LAYER SYNCED!'),
             enableDoubleUp: true,
           );
         }

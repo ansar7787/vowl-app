@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 /// Top header bar for the reading game screen.
 ///
@@ -75,7 +76,7 @@ class ReadingHeader extends StatelessWidget {
 
   Widget _buildInfoButton(BuildContext context) {
     return Semantics(
-      label: 'View level instructions',
+      label: context.tr('reading.view_instructions', fallback: 'View level instructions'),
       button: true,
       child: ScaleButton(
         onTap: onInfoTap,
@@ -107,7 +108,7 @@ class ReadingHeader extends StatelessWidget {
     final hint = currentQuest?.hint ?? '';
 
     Widget button = Semantics(
-      label: hintUsed ? 'Hint already used' : 'Use hint',
+      label: hintUsed ? context.tr('reading.hint_used', fallback: 'Hint already used') : context.tr('reading.use_hint', fallback: 'Use hint'),
       // Expose the hint text as the semantic hint so power users can hear
       // it without activating the button (e.g. via TalkBack "read all").
       hint: hintUsed ? null : hint,

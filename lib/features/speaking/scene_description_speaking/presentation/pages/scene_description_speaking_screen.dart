@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
 
@@ -192,7 +193,7 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'VISUAL MASTERPIECE!',
+            title: context.tr('speaking_games.visual_masterpiece', fallback: 'VISUAL MASTERPIECE!'),
             enableDoubleUp: true,
           );
         }

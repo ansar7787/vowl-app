@@ -200,7 +200,7 @@ class PhotoResultChip extends StatelessWidget {
                           ),
                           SizedBox(height: 12.h),
                           Text(
-                            'Example: "${entry.example}"',
+                            '${context.tr('daily_words.example', fallback: 'Example')}: "${entry.example}"',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 14.sp,
@@ -212,7 +212,7 @@ class PhotoResultChip extends StatelessWidget {
                           if (translatedExample != null) ...[
                             SizedBox(height: 8.h),
                             Text(
-                              'Example: "$translatedExample"',
+                              '${context.tr('daily_words.example', fallback: 'Example')}: "$translatedExample"',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 14.sp,

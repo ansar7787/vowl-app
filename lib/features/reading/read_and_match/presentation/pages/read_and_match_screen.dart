@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
@@ -205,7 +206,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'RELATIONSHIP MASTER!',
+            title: context.tr('reading_games.relationship_master', fallback: 'RELATIONSHIP MASTER!'),
             enableDoubleUp: true,
           );
         }

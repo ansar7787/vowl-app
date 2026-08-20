@@ -168,34 +168,46 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       disablePadding: true,
       child: quest == null
           ? const SizedBox.shrink()
-          : Stack(
-              children: [
-                _AcademicWordGameBody(
-                  quest: quest,
-                  isAnswered: _isAnswered,
-                  isCorrect: _isCorrect,
-                  misspelledWord: _misspelledWord,
-                  slotKey: _slotKey,
-                  activeShardIndex: _activeShardIndex,
-                  dragOffset: _dragOffset,
-                  themeColor: _cachedTheme.primaryColor,
-                  onShardTap: (i) => _attemptThrust(i, quest),
-                  onDragStart: _onShardDragStart,
-                  onDragUpdate: _onShardDragUpdate,
-                  onDragEnd: (i) => _onShardDragEnd(i, quest),
-                  getInitialPosition: _getShardInitialPosition,
-                ),
-                if (_isFirstStagePassed && !_isAnswered)
-                  DynamicAnagramWrapper(
-                    title: 'SPELL THE TARGET WORD',
-                    subtitle: 'Tap all letters to rebuild the word!',
-                    expectedText: quest.correctAnswer ?? '',
-                    primaryColor: _cachedTheme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true),
-                    onFailed: () {},
-                    onFailedWithSpelling: (wrongWord) =>
-                        _submitFinalAnswer(false, wrongWord: wrongWord),
+          : CustomScrollView(
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: _AcademicWordGameBody(
+                          quest: quest,
+                          isAnswered: _isAnswered,
+                          isCorrect: _isCorrect,
+                          misspelledWord: _misspelledWord,
+                          slotKey: _slotKey,
+                          activeShardIndex: _activeShardIndex,
+                          dragOffset: _dragOffset,
+                          themeColor: _cachedTheme.primaryColor,
+                          onShardTap: (i) => _attemptThrust(i, quest),
+                          onDragStart: _onShardDragStart,
+                          onDragUpdate: _onShardDragUpdate,
+                          onDragEnd: (i) => _onShardDragEnd(i, quest),
+                          getInitialPosition: _getShardInitialPosition,
+                        ),
+                      ),
+                      if (_isFirstStagePassed && !_isAnswered)
+                        DynamicAnagramWrapper(
+                          title: 'SPELL THE TARGET WORD',
+                          subtitle: 'Tap all letters to rebuild the word!',
+                          expectedText: quest.correctAnswer ?? '',
+                          primaryColor: _cachedTheme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onFailed: () {},
+                          onFailedWithSpelling: (wrongWord) =>
+                              _submitFinalAnswer(false, wrongWord: wrongWord),
+                          isPositioned: false,
+                        ),
+                      SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                    ],
                   ),
+                ),
               ],
             ),
     );

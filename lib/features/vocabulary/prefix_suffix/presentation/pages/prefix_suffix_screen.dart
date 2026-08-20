@@ -266,8 +266,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           },
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
                     _lastConstraints = constraints;
                     final screenSize = MediaQuery.of(context).size;
                     final double safeWidth = constraints.maxWidth.isFinite
@@ -351,6 +356,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                     );
                   },
                 ),
+              ),
+            ],
+          ),
         );
       },
     );

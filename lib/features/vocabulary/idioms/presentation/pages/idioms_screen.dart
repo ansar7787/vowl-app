@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -168,31 +168,47 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           disablePadding: true,
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    Positioned.fill(
-                      child: CustomPaint(
-                        painter: GridPainter(
-                          theme.primaryColor.withValues(
-                            alpha: isDarkMode ? 0.05 : 0.03,
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(
+                            child: CustomPaint(
+                              painter: GridPainter(
+                                theme.primaryColor.withValues(
+                                  alpha: isDarkMode ? 0.05 : 0.03,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          Column(
+                            children: [
+                              Expanded(
+                                child: _buildChatInterface(quest, theme.primaryColor, isDarkMode),
+                              ),
+                              if (_isFirstStagePassed &&
+                                  (!_isAnswered || _isCorrect == null))
+                                DynamicAnagramWrapper(
+                                  title: 'SPELL THE IDIOM',
+                                  subtitle:
+                                      'Tap all letters to rebuild the hidden phrase!',
+                                  expectedText: quest.correctAnswer ?? '',
+                                  primaryColor: theme.primaryColor,
+                                  onConfirmed: () => _submitFinalAnswer(true),
+                                  onFailed: () {},
+                                  onFailedWithSpelling: (wrongWord) =>
+                                      _submitFinalAnswer(false, wrongWord: wrongWord),
+                                  isPositioned: false,
+                                ),
+                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                    _buildChatInterface(quest, theme.primaryColor, isDarkMode),
-                    if (_isFirstStagePassed &&
-                        (!_isAnswered || _isCorrect == null))
-                      DynamicAnagramWrapper(
-                        title: 'SPELL THE IDIOM',
-                        subtitle:
-                            'Tap all letters to rebuild the hidden phrase!',
-                        expectedText: quest.correctAnswer ?? '',
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onFailed: () {},
-                        onFailedWithSpelling: (wrongWord) =>
-                            _submitFinalAnswer(false, wrongWord: wrongWord),
-                      ),
                   ],
                 ),
         );
@@ -224,15 +240,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
             ? (gapUnit * 2.5).clamp(15.0, 40.0)
             : 15.0;
 
-        final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
-        final double requiredHeight = estimatedContentHeight + totalGaps;
-        final double finalHeight = math.max(maxHeight, requiredHeight);
-
-        return SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: SizedBox(
-            height: finalHeight,
-            child: Column(
+        return Column(
               children: [
                 SizedBox(height: gapTop),
                 isCompact
@@ -346,9 +354,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                     .slideY(begin: 0.3, curve: Curves.easeOutCubic),
                 SizedBox(height: gapBottom),
               ],
-            ),
-          ),
-        );
+            );
       },
     );
   }

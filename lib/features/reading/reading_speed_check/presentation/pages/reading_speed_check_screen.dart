@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
@@ -151,7 +152,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SPEED DEMON!',
+            title: context.tr('reading_games.speed_demon', fallback: 'SPEED DEMON!'),
             enableDoubleUp: true,
           );
         }

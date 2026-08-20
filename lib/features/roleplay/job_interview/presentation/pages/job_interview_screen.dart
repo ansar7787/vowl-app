@@ -176,9 +176,7 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return Stack(
-          children: [
-            RoleplayBaseLayout(
+        return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered,
@@ -188,19 +186,27 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              useScrolling: false,
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
-                        return SingleChildScrollView(
+                        return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: isCompact ? 5.h : 10.h,
-                          ),
-                          child: Column(
-                            children: [
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: isCompact ? 5.h : 10.h,
+                                      ),
+                                      child: Column(
+                                        children: [
                               JobInterviewInstruction(
                                 primaryColor: theme.primaryColor,
                                 instruction: quest.instruction,
@@ -252,27 +258,33 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                     : CrossFadeState.showFirst,
                                 duration: const Duration(milliseconds: 450),
                               ),
-                              SizedBox(height: isCompact ? 40.h : 80.h),
-                            ],
-                          ),
+                                          SizedBox(height: isCompact ? 20.h : 40.h),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+                                    SpeakToConfirmOverlay(
+                                      expectedText: _shuffledOptions[_selectedIndex!],
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                    ),
+                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                ],
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
-            ),
-            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
-              SpeakToConfirmOverlay(
-                expectedText: _shuffledOptions[_selectedIndex!],
-                primaryColor: theme.primaryColor,
-                onConfirmed: () {
-                  context.read<RoleplayBloc>().add(
-                    const RoleplaySpeakConfirmed(5),
-                  );
-                  _submitVerbalEvaluation(true);
-                },
-                onSkipped: () => _submitVerbalEvaluation(false),
-              ),
-          ],
-        );
+            );
       },
     );
   }

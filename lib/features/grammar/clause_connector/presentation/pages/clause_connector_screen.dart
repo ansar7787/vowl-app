@@ -169,11 +169,17 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 580;
 
                         final double estimatedContentHeight =
@@ -263,6 +269,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                         );
                       },
                     ),
+                    ),
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
@@ -271,9 +278,14 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

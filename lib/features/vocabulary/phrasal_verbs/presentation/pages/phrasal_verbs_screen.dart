@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dart:math' as math;
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -180,21 +180,27 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           disablePadding: true,
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    // Edge-to-edge transparent grid background!
-                    Positioned.fill(
-                      child: CustomPaint(
-                        painter: GridPainter(
-                          theme.primaryColor.withValues(
-                            alpha: isDark ? 0.05 : 0.03,
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Positioned.fill(
+                            child: CustomPaint(
+                              painter: GridPainter(
+                                theme.primaryColor.withValues(
+                                  alpha: isDark ? 0.05 : 0.03,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
-
-                    LayoutBuilder(
+                          Column(
+                            children: [
+                              Expanded(
+                                child: LayoutBuilder(
                       builder: (context, constraints) {
                         final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 580;
@@ -224,23 +230,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                             ? (gapUnit * 2).clamp(12.0, 40.0)
                             : 12.0;
 
-                        final double totalGaps =
-                            gapTop +
-                            (quest.instruction.isNotEmpty ? gapTop / 2 : 0) +
-                            gapMiddle * 2 +
-                            gapBottom;
-                        final double requiredHeight =
-                            estimatedContentHeight + totalGaps;
-                        final double finalHeight = math.max(
-                          maxHeight,
-                          requiredHeight,
-                        );
 
-                        return SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: SizedBox(
-                            height: finalHeight,
-                            child: Column(
+
+
+                        return Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
@@ -372,10 +365,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                   ],
                                 ),
                               ],
-                            ),
-                          ),
-                        );
-                      },
+                            );
+                        },
+                      ),
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
                       DynamicAnagramWrapper(
@@ -387,10 +379,17 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                         onFailed: () {},
                         onFailedWithSpelling: (wrongWord) =>
                             _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                   ],
                 ),
-        );
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
       },
     );
   }

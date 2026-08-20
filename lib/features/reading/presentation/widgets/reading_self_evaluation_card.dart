@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ReadingSelfEvaluationCard extends StatefulWidget {
   final String correctAnswer;
@@ -77,7 +78,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
               Icon(Icons.visibility_rounded, color: Colors.white, size: 32.sp),
               SizedBox(height: 12.h),
               Text(
-                'TAP TO REVEAL ANSWER',
+                context.tr('reading.tap_reveal_answer', fallback: 'TAP TO REVEAL ANSWER'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
@@ -88,7 +89,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
               ),
               SizedBox(height: 8.h),
               Text(
-                'Think of the answer first!',
+                context.tr('reading.think_answer_first', fallback: 'Think of the answer first!'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
@@ -113,7 +114,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
       child: Column(
         children: [
           Text(
-            'THE ANSWER IS',
+            context.tr('reading.the_answer_is', fallback: 'THE ANSWER IS'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 12.sp,
@@ -158,7 +159,7 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
           Divider(color: widget.primaryColor.withValues(alpha: 0.2)),
           SizedBox(height: 16.h),
           Text(
-            'DID YOU GET IT RIGHT?',
+            context.tr('reading.did_you_get_it_right', fallback: 'DID YOU GET IT RIGHT?'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 12.sp,
@@ -173,13 +174,13 @@ class _ReadingSelfEvaluationCardState extends State<ReadingSelfEvaluationCard> {
             children: [
               _buildEvalButton(
                 icon: Icons.close_rounded,
-                label: 'MISSED IT',
+                label: context.tr('reading.missed_it', fallback: 'MISSED IT'),
                 color: Colors.redAccent,
                 onTap: () => _evaluate(false),
               ),
               _buildEvalButton(
                 icon: Icons.check_rounded,
-                label: 'NAILED IT',
+                label: context.tr('reading.nailed_it', fallback: 'NAILED IT'),
                 color: Colors.green,
                 onTap: () => _evaluate(true),
               ),

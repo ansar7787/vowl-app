@@ -5,6 +5,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
@@ -87,7 +88,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'FINAL VERDICT DELIVERED!',
+            title: context.tr('reading_games.final_verdict_delivered', fallback: 'FINAL VERDICT DELIVERED!'),
             enableDoubleUp: true,
           );
         }

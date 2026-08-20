@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
@@ -117,7 +118,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SYNTHESIS EXPERT!',
+            title: context.tr('reading_games.synthesis_expert', fallback: 'SYNTHESIS EXPERT!'),
             enableDoubleUp: true,
           );
         }

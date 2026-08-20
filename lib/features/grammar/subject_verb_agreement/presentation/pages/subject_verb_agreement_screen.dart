@@ -155,13 +155,19 @@ class _SubjectVerbAgreementScreenState
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                final isCompact = constraints.maxHeight < 580;
 
-                        return Column(
+                                return Column(
                           children: [
                             SizedBox(height: isCompact ? 4.h : 10.h),
                             isCompact
@@ -344,6 +350,7 @@ class _SubjectVerbAgreementScreenState
                         );
                       },
                     ),
+                    ),
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
@@ -352,9 +359,14 @@ class _SubjectVerbAgreementScreenState
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

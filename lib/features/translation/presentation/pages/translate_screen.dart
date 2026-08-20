@@ -153,7 +153,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   Widget _buildLanguageSelector(BuildContext context, bool isDark) {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
-        final lang = state.currentTargetLanguage ?? 'Select Language';
+        final lang = state.currentTargetLanguage ?? context.tr('translation.select_target_language', fallback: 'Select Language');
         return GestureDetector(
           onTap: () => _showLanguagePicker(context, isDark),
           child: GlassTile(
@@ -171,7 +171,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'English →',
+                        context.tr('translation.english_arrow', fallback: 'English →'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -219,7 +219,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'ENGLISH',
+                context.tr('translation.english_caps', fallback: 'ENGLISH'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
@@ -258,7 +258,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
               color: isDark ? Colors.white : const Color(0xFF0F172A),
             ),
             decoration: InputDecoration(
-              hintText: 'Type something to translate...',
+              hintText: context.tr('translation.type_to_translate', fallback: 'Type something to translate...'),
               hintStyle: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 20.sp,
@@ -286,7 +286,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    state.currentTargetLanguage?.toUpperCase() ?? 'TRANSLATION',
+                    state.currentTargetLanguage?.toUpperCase() ?? context.tr('translation.translation_caps', fallback: 'TRANSLATION'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.sp,
@@ -309,7 +309,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
               SizedBox(height: 12.h),
               if (state.errorMessage != null && state.errorMessage!.isNotEmpty)
                 Text(
-                  state.errorMessage!,
+                  context.tr(state.errorMessage!, fallback: state.errorMessage!),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
@@ -321,7 +321,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Downloading offline language pack (~30MB)...',
+                      context.tr('translation.downloading_pack', fallback: 'Downloading offline language pack (~30MB)...'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 16.sp,
@@ -345,7 +345,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
               else
                 SelectableText(
                   state.translatedText.isEmpty
-                      ? 'Translation will appear here.'
+                      ? context.tr('translation.translation_placeholder', fallback: 'Translation will appear here.')
                       : state.translatedText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
@@ -394,7 +394,7 @@ class _LanguagePickerSheet extends StatelessWidget {
           ),
           SizedBox(height: 20.h),
           Text(
-            'Select Target Language',
+            context.tr('translation.select_target_language', fallback: 'Select Target Language'),
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 20.sp,

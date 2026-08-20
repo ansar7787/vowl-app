@@ -9,6 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
@@ -123,7 +124,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'SCANNING ACE!',
+            title: context.tr('reading_games.scanning_ace', fallback: 'SCANNING ACE!'),
             enableDoubleUp: true,
           );
         }

@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -209,14 +210,14 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                         _buildNavIcon(
                           context,
                           Icons.auto_stories_rounded,
-                          "Album",
+                          context.tr('kids_zone.nav_album', fallback: "Album"),
                           Colors.pinkAccent,
                           () => context.push('/kids-stickers'),
                         ),
                         _buildNavIcon(
                           context,
                           Icons.bedroom_child_rounded,
-                          "Room",
+                          context.tr('kids_zone.nav_room', fallback: "Room"),
                           Colors.purpleAccent,
                           () => context.push('/kids-room'),
                           badgeEmoji: _getMoodEmoji(user.kidsBuddyMood),
@@ -224,14 +225,14 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                         _buildNavIcon(
                           context,
                           Icons.shopping_bag_rounded,
-                          "Shop",
+                          context.tr('kids_zone.nav_shop', fallback: "Shop"),
                           Colors.orangeAccent,
                           () => context.pushNamed('kids-boutique'),
                         ),
                         _buildNavIcon(
                           context,
                           Icons.face_retouching_natural_rounded,
-                          "Buddies",
+                          context.tr('kids_zone.nav_buddies', fallback: "Buddies"),
                           Colors.blueAccent,
                           () => context.push('/kids-mascot'),
                         ),

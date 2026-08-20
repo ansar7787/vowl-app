@@ -180,9 +180,15 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
 
@@ -316,6 +322,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                         );
                       },
                     ),
+                    ),
                     if (_pendingTyping &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
@@ -324,9 +331,14 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _pendingTyping) ? 160.h : 60.h),
                   ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

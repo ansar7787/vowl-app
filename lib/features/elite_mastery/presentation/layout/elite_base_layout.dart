@@ -35,6 +35,8 @@ class EliteBaseLayout extends StatelessWidget {
   final VisualConfig? visualConfig;
   final EliteMasteryState state;
   final VoidCallback? onTutorPass;
+  final bool useScrolling;
+  final ScrollController? scrollController;
 
   const EliteBaseLayout({
     super.key,
@@ -53,6 +55,8 @@ class EliteBaseLayout extends StatelessWidget {
     this.titleIcon,
     this.visualConfig,
     this.onTutorPass,
+    this.useScrolling = true,
+    this.scrollController,
   });
 
   @override
@@ -162,7 +166,7 @@ class EliteBaseLayout extends StatelessWidget {
       onContinue: onContinue,
       onHint: onHint,
       showConfetti: showConfetti,
-      useScrolling: true,
+      useScrolling: useScrolling,
       disablePadding: false,
     );
 

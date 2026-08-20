@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -191,6 +190,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
@@ -223,65 +223,83 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                           ? (gapUnit * 1.5).clamp(12.0, 48.0)
                           : 12.0;
 
-                      return GameScrollbar(
+                      return CustomScrollView(
                         controller: _scrollController,
-                        child: SingleChildScrollView(
-                          controller: _scrollController,
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  SizedBox(height: gapTop),
-                                  isCompact
-                                      ? SizedBox(
-                                          height: 32.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                maxWidth: maxWidth - 48.w,
-                                              ),
-                                              child: WordLinkingInstruction(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: gapTop),
+                                        isCompact
+                                            ? SizedBox(
+                                                height: 32.h,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: ConstrainedBox(
+                                                    constraints: BoxConstraints(
+                                                      maxWidth: maxWidth - 48.w,
+                                                    ),
+                                                    child: WordLinkingInstruction(
+                                                      color: theme.primaryColor,
+                                                      instruction: _isFirstStagePassed
+                                                          ? "Great job! Now record yourself saying the phrase."
+                                                          : context.tr(
+                                                              'games.word_linking_instruction',
+                                                              fallback:
+                                                                  quest.instruction,
+                                                            ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : WordLinkingInstruction(
                                                 color: theme.primaryColor,
                                                 instruction: _isFirstStagePassed
                                                     ? "Great job! Now record yourself saying the phrase."
                                                     : context.tr(
                                                         'games.word_linking_instruction',
-                                                        fallback:
-                                                            quest.instruction,
+                                                        fallback: quest.instruction,
                                                       ),
                                               ),
-                                            ),
-                                          ),
-                                        )
-                                      : WordLinkingInstruction(
+                                        SizedBox(height: gapInstruction),
+                                        WordLinkingPulseSpeaker(
+                                          text: quest.textToSpeak ?? "",
                                           color: theme.primaryColor,
-                                          instruction: _isFirstStagePassed
-                                              ? "Great job! Now record yourself saying the phrase."
-                                              : context.tr(
-                                                  'games.word_linking_instruction',
-                                                  fallback: quest.instruction,
-                                                ),
+                                          onPlayTts: _playTts,
                                         ),
-                                  SizedBox(height: gapInstruction),
-                                  WordLinkingPulseSpeaker(
-                                    text: quest.textToSpeak ?? "",
-                                    color: theme.primaryColor,
-                                    onPlayTts: _playTts,
-                                  ),
-                                  SizedBox(height: gapSpeaker),
-                                  isCompact
-                                      ? SizedBox(
-                                          height: 110.h,
-                                          child: FittedBox(
-                                            fit: BoxFit.scaleDown,
-                                            child: SizedBox(
-                                              width: maxWidth - 48.w,
-                                              child: WordLinkingSentenceField(
+                                        SizedBox(height: gapSpeaker),
+                                        isCompact
+                                            ? SizedBox(
+                                                height: 110.h,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: SizedBox(
+                                                    width: maxWidth - 48.w,
+                                                    child: WordLinkingSentenceField(
+                                                      words: words,
+                                                      correctPair:
+                                                          quest.correctAnswer ?? "",
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      isAnswered:
+                                                          _isAnswered ||
+                                                          _isFirstStagePassed,
+                                                      selectedNodeIndex:
+                                                          _selectedNodeIndex,
+                                                      onNodeTap: _onNodeTap,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : WordLinkingSentenceField(
                                                 words: words,
                                                 correctPair:
                                                     quest.correctAnswer ?? "",
@@ -290,39 +308,26 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 isAnswered:
                                                     _isAnswered ||
                                                     _isFirstStagePassed,
-                                                selectedNodeIndex:
-                                                    _selectedNodeIndex,
+                                                selectedNodeIndex: _selectedNodeIndex,
                                                 onNodeTap: _onNodeTap,
                                               ),
-                                            ),
-                                          ),
-                                        )
-                                      : WordLinkingSentenceField(
-                                          words: words,
-                                          correctPair:
-                                              quest.correctAnswer ?? "",
-                                          color: theme.primaryColor,
-                                          isDark: isDark,
-                                          isAnswered:
-                                              _isAnswered ||
-                                              _isFirstStagePassed,
-                                          selectedNodeIndex: _selectedNodeIndex,
-                                          onNodeTap: _onNodeTap,
-                                        ),
-                                  SizedBox(height: gapBottom),
-                                  if (_isFirstStagePassed)
-                                    AccentSelfEvaluationPanel(
-                                      textToSpeak: quest.textToSpeak ?? "",
-                                      primaryColor: theme.primaryColor,
-                                      isCompact: isCompact,
-                                      onEvaluate: _submitVerbalEvaluation,
+                                        SizedBox(height: gapBottom),
+                                      ],
                                     ),
-                                  SizedBox(height: _isAnswered ? 180.h : 0),
-                                ],
-                              ),
+                                  ),
+                                ),
+                                if (_isFirstStagePassed)
+                                  AccentSelfEvaluationPanel(
+                                    textToSpeak: quest.textToSpeak ?? "",
+                                    primaryColor: theme.primaryColor,
+                                    isCompact: isCompact,
+                                    onEvaluate: _submitVerbalEvaluation,
+                                  ),
+                                SizedBox(height: _isAnswered ? 180.h : 0),
+                              ],
                             ),
                           ),
-                        ),
+                        ],
                       );
                     },
                   ),

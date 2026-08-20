@@ -161,51 +161,66 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
               context.read<GrammarBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
+          useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    WordReorderInstruction(primaryColor: theme.primaryColor),
-                    SizedBox(height: 20.h),
-                    WordReorderAssemblyCard(
-                      assembledIndices: _assembledIndices,
-                      shuffledWords: shuffledWords,
-                      primaryColor: theme.primaryColor,
-                      isDark: isDark,
-                      isAnswered: _isAnswered,
-                      onWordRemove: _onWordRemove,
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 10.h),
+                          WordReorderInstruction(primaryColor: theme.primaryColor),
+                          SizedBox(height: 20.h),
+                          WordReorderAssemblyCard(
+                            assembledIndices: _assembledIndices,
+                            shuffledWords: shuffledWords,
+                            primaryColor: theme.primaryColor,
+                            isDark: isDark,
+                            isAnswered: _isAnswered,
+                            onWordRemove: _onWordRemove,
+                          ),
+                          SizedBox(height: 30.h),
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 30.h),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: Wrap(
-                          spacing: 12.w,
-                          runSpacing: 16.h,
-                          alignment: WrapAlignment.center,
-                          children: _availableIndices.map((idx) {
-                            return WordReorderFloatingTile(
-                              word: shuffledWords[idx],
-                              index: idx,
-                              onTap: () => _onWordTap(idx),
-                              primaryColor: theme.primaryColor,
-                              isDark: isDark,
-                              isHighlighted: idx == expectedNextIndex,
-                            );
-                          }).toList(),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 20.w),
+                            child: Wrap(
+                              spacing: 12.w,
+                              runSpacing: 16.h,
+                              alignment: WrapAlignment.center,
+                              children: _availableIndices.map((idx) {
+                                return WordReorderFloatingTile(
+                                  word: shuffledWords[idx],
+                                  index: idx,
+                                  onTap: () => _onWordTap(idx),
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                  isHighlighted: idx == expectedNextIndex,
+                                );
+                              }).toList(),
+                            ),
+                          ),
                         ),
-                      ),
+                        SizedBox(height: 20.h),
+                        if (!_isAnswered)
+                          WordReorderCheckButton(
+                            hasWords: _assembledIndices.isNotEmpty,
+                            isDark: isDark,
+                            primaryColor: theme.primaryColor,
+                            onCheck: () => _checkSentence(correctOrder),
+                          ),
+                        SizedBox(height: _isAnswered ? 160.h : 60.h),
+                      ],
                     ),
-                    SizedBox(height: 20.h),
-                    if (!_isAnswered)
-                      WordReorderCheckButton(
-                        hasWords: _assembledIndices.isNotEmpty,
-                        isDark: isDark,
-                        primaryColor: theme.primaryColor,
-                        onCheck: () => _checkSentence(correctOrder),
-                      ),
-                    SizedBox(height: 20.h),
+                    ),
                   ],
                 ),
         );

@@ -154,6 +154,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                       'Listen to the example, then speak and match the exact accent and rhythm.',
                 ),
           titleIcon: Icons.record_voice_over_rounded,
+          useScrolling: false,
           onContinue: () {
             setState(() {
               _isAnswered = false;
@@ -225,11 +226,16 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
     final quest = state.currentQuest;
     final targetText = quest.text ?? quest.textToSpeak;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-        return Column(
+              return Column(
           children: [
             AccentShadowingTargetPanel(
               text:
@@ -270,6 +276,9 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           ],
         );
       },
+          ),
+        ),
+      ],
     );
   }
 }

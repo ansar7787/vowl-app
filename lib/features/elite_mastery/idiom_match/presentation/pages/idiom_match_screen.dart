@@ -224,69 +224,57 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             ? _shuffledOptions[_selectedIndex!]
             : "";
 
-        return Stack(
-          children: [
-            EliteBaseLayout(
-              gameType: widget.gameType,
-              level: widget.level,
-              isAnswered: _isAnswered,
-              state: state,
-              isCorrect: _isCorrect,
-              isFinalFailure: (state is EliteMasteryLoaded)
-                  ? (state.isFinalFailure || state.livesRemaining <= 0)
-                  : false,
-              showConfetti: _showConfetti,
-              title: _isFirstStagePassed || _isAnswered
-                  ? ""
-                  : quest?.instruction.isNotEmpty == true
-                  ? quest!.instruction
-                  : context.tr(
-                      'games.idiomMatch_instruction',
-                      fallback: 'Select the matching idiom.',
-                    ),
-              titleIcon: Icons.extension_rounded,
-              visualConfig: quest?.visualConfig,
-              onContinue: () {
-                setState(() {
-                  _isAnswered = false;
-                  _isCorrect = null;
-                  _selectedIndex = null;
-                  _wrongIndices = [];
-                  _isFirstStagePassed = false;
-                });
-                context.read<EliteMasteryBloc>().add(NextEliteQuestion());
-              },
-              onHint: () {
-                final bloc = context.read<EliteMasteryBloc>();
-                final s = bloc.state;
-                if (s is EliteMasteryLoaded) {
-                  if (s.currentQuest.hint != null &&
-                      s.currentQuest.hint!.isNotEmpty) {
+        return EliteBaseLayout(
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          state: state,
+          isCorrect: _isCorrect,
+          isFinalFailure: (state is EliteMasteryLoaded)
+              ? (state.isFinalFailure || state.livesRemaining <= 0)
+              : false,
+          showConfetti: _showConfetti,
+          useScrolling: false,
+          title: _isFirstStagePassed || _isAnswered
+              ? ""
+              : quest?.instruction.isNotEmpty == true
+              ? quest!.instruction
+              : context.tr(
+                  'games.idiomMatch_instruction',
+                  fallback: 'Select the matching idiom.',
+                ),
+          titleIcon: Icons.extension_rounded,
+          visualConfig: quest?.visualConfig,
+          onContinue: () {
+            setState(() {
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
+              _wrongIndices = [];
+              _isFirstStagePassed = false;
+            });
+            context.read<EliteMasteryBloc>().add(NextEliteQuestion());
+          },
+          onHint: () {
+            final bloc = context.read<EliteMasteryBloc>();
+            final s = bloc.state;
+            if (s is EliteMasteryLoaded) {
+              if (s.currentQuest.hint != null &&
+                  s.currentQuest.hint!.isNotEmpty) {
+                if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
+                bloc.add(ShowEliteHint());
+              } else {
+                GameDialogHelper.showHintAdDialog(
+                  context,
+                  onHintEarned: () {
                     if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
                     bloc.add(ShowEliteHint());
-                  } else {
-                    GameDialogHelper.showHintAdDialog(
-                      context,
-                      onHintEarned: () {
-                        if (!s.isHintUsed) bloc.add(MarkEliteHintUsed());
-                        bloc.add(ShowEliteHint());
-                      },
-                    );
-                  }
-                }
-              },
-              child: _buildBody(context, state, isDark, theme),
-            ),
-            if (_isFirstStagePassed && !_isAnswered && quest != null)
-              SpeakToConfirmOverlay(
-                expectedText: expectedText,
-                primaryColor: theme.primaryColor,
-                onConfirmed: () => _submitVerbalEvaluation(true),
-                onSkipped: () => _submitVerbalEvaluation(
-                  false,
-                ), // Penalize if user evaluates poorly
-              ),
-          ],
+                  },
+                );
+              }
+            }
+          },
+          child: _buildBody(context, state, isDark, theme, expectedText),
         );
       },
     );
@@ -297,9 +285,10 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     EliteMasteryState state,
     bool isDark,
     ThemeResult theme,
+    String expectedText,
   ) {
     if (state is EliteMasteryLoaded) {
-      return _buildGameUI(context, state, isDark, theme);
+      return _buildGameUI(context, state, isDark, theme, expectedText);
     }
     if (state is EliteMasteryGameOver) {
       return Opacity(
@@ -314,6 +303,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             ),
             isDark,
             theme,
+            expectedText,
           ),
         ),
       );
@@ -326,14 +316,23 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
     EliteMasteryLoaded state,
     bool isDark,
     ThemeResult theme,
+    String expectedText,
   ) {
     final quest = state.currentQuest;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-        return Column(
+              return Column(
+                children: [
+                  Expanded(
+                    child: Column(
           children: [
             if (quest.question != null && quest.question!.isNotEmpty) ...[
               Padding(
@@ -418,10 +417,24 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               onOptionSelected: (index) =>
                   _onOptionSelected(index, quest.correctAnswerIndex),
             ),
-            SizedBox(height: isCompact ? 12.h : 20.h),
           ],
-        );
-      },
+        ),
+      ),
+      if (_isFirstStagePassed && !_isAnswered)
+                    SpeakToConfirmOverlay(
+                      expectedText: expectedText,
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () => _submitVerbalEvaluation(true),
+                      onSkipped: () => _submitVerbalEvaluation(false),
+                    ),
+                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                ],
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

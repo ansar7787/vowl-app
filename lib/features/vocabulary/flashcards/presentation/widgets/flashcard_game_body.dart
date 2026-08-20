@@ -110,44 +110,50 @@ class FlashcardGameBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final layout = _CardLayout.compute(constraints);
-        return SafeArea(
-          bottom: true,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(horizontal: layout.horizontalPadding),
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: layout.topSpacing),
-                  _InstructionBanner(primaryColor: primaryColor),
-                  SizedBox(height: layout.instructionToCard),
-                  Center(
-                    child: _buildCardStack(
-                      layout.cardWidth,
-                      layout.cardHeight,
-                      layout.swipeThreshold,
-                    ),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final layout = _CardLayout.compute(constraints);
+              return SafeArea(
+                bottom: true,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: layout.horizontalPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(height: layout.topSpacing),
+                      _InstructionBanner(primaryColor: primaryColor),
+                      SizedBox(height: layout.instructionToCard),
+                      Expanded(
+                        child: Center(
+                          child: _buildCardStack(
+                            layout.cardWidth,
+                            layout.cardHeight,
+                            layout.swipeThreshold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: layout.cardToActions),
+                      FlashcardActionButtons(
+                        isFlipped: isFlipped,
+                        isTransitioning: isAnswered || isRetrying,
+                        isDark: isDark,
+                        onAgain: () => onSubmitAnswer(false),
+                        onGotIt: () => onSubmitAnswer(true),
+                      ),
+                      SizedBox(height: layout.actionsToBottom),
+                    ],
                   ),
-                  SizedBox(height: layout.cardToActions),
-                  FlashcardActionButtons(
-                    isFlipped: isFlipped,
-                    isTransitioning: isAnswered || isRetrying,
-                    isDark: isDark,
-                    onAgain: () => onSubmitAnswer(false),
-                    onGotIt: () => onSubmitAnswer(true),
-                  ),
-                  SizedBox(height: layout.actionsToBottom),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           ),
-        );
-      },
+        ),
+      ],
     );
   }
 

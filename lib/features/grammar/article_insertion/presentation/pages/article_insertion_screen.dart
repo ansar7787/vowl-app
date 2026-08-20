@@ -222,9 +222,15 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
                       builder: (context, constraints) {
                         final maxHeight = constraints.maxHeight;
                         final isCompact = maxHeight < 580;
@@ -357,6 +363,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                         );
                       },
                     ),
+                    ),
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
@@ -365,9 +372,14 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: false,
                       ),
+                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],
                 ),
+                ),
+              ],
+            ),
         );
       },
     );

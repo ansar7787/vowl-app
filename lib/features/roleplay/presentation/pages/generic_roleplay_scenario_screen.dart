@@ -251,9 +251,7 @@ class _GenericRoleplayScenarioScreenState
         final options = quest.options ?? const [];
         final correctIndex = quest.correctAnswerIndex ?? 0;
 
-        return Stack(
-          children: [
-            RoleplayBaseLayout(
+        return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               mascotId: mascotId,
@@ -263,16 +261,21 @@ class _GenericRoleplayScenarioScreenState
               showConfetti: _showConfetti,
               title: widget.title,
               subtitle: quest.scene ?? 'Choose the best response',
-              useScrolling: true,
-              scrollController: _chatScrollController,
               onContinue: () =>
                   context.read<RoleplayBloc>().add(const NextQuestion()),
               onHint: () =>
                   context.read<RoleplayBloc>().add(const RoleplayHintUsed()),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  RoleplayCharacterCard(
+              useScrolling: false,
+              child: CustomScrollView(
+                controller: _chatScrollController,
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        RoleplayCharacterCard(
                     roleName: quest.roleName ?? 'Professional Advisor',
                     icon: widget.icon,
                     primaryColor: theme.primaryColor,
@@ -296,23 +299,26 @@ class _GenericRoleplayScenarioScreenState
                       onOptionSelected: _onOptionSelected,
                     ),
                   ],
+                  if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
+                    SpeakToConfirmOverlay(
+                      expectedText: options[_selectedIndex!],
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () {
+                        context.read<RoleplayBloc>().add(
+                          const RoleplaySpeakConfirmed(5),
+                        );
+                        _submitVerbalEvaluation(true);
+                      },
+                      onSkipped: () => _submitVerbalEvaluation(false),
+                    ),
+                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
                 ],
               ),
             ),
-            if (_isFirstStagePassed && !_isAnswered && _selectedIndex != null)
-              SpeakToConfirmOverlay(
-                expectedText: options[_selectedIndex!],
-                primaryColor: theme.primaryColor,
-                onConfirmed: () {
-                  context.read<RoleplayBloc>().add(
-                    const RoleplaySpeakConfirmed(5),
-                  );
-                  _submitVerbalEvaluation(true);
-                },
-                onSkipped: () => _submitVerbalEvaluation(false),
-              ),
           ],
-        );
+        ),
+      );
       },
     );
   }

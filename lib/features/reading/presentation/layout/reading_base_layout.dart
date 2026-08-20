@@ -9,6 +9,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_content_area.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_header.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_passage_area.dart';
 import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
@@ -184,7 +185,7 @@ class ReadingBaseLayout extends StatelessWidget {
               isDark: isDark,
               primaryColor: theme.primaryColor,
               explanation: finalExplanation,
-              ruleTitle: 'READING CONTEXT',
+              ruleTitle: context.tr('common.reading_context', fallback: 'READING CONTEXT'),
               ruleContent: ruleContent,
             );
           },

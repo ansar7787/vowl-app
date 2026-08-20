@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/kids_game_helper.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class KidsCategoryGrid extends StatefulWidget {
   final bool isDark;
@@ -65,7 +66,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                       CustomSnackBar.show(
                         context: context,
                         message:
-                            'Internet connection required to download smart pen model.',
+                            context.tr('kids_zone.internet_required_smart_pen', fallback: 'Internet connection required to download smart pen model.'),
                         type: CustomSnackBarType.warning,
                       );
                       return;
@@ -87,7 +88,7 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                       if (context.mounted) {
                         CustomSnackBar.show(
                           context: context,
-                          message: 'Failed to download handwriting model.',
+                          message: context.tr('kids_zone.failed_download_smart_pen', fallback: 'Failed to download handwriting model.'),
                           type: CustomSnackBarType.error,
                         );
                       }
@@ -111,9 +112,9 @@ class _KidsCategoryGridState extends State<KidsCategoryGrid> {
                 },
                 game.gridTitle,
                 _isCheckingModel
-                    ? 'Checking...'
+                    ? context.tr('kids_zone.checking', fallback: 'Checking...')
                     : (!_isModelDownloaded
-                          ? 'Download Required'
+                          ? context.tr('kids_zone.download_required', fallback: 'Download Required')
                           : game.subtitle),
                 game.color,
                 game.icon,
@@ -309,7 +310,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
                 .moveY(begin: -5, end: 5, duration: 1.seconds),
             SizedBox(height: 24.h),
             Text(
-              "Downloading Smart Pen...",
+              context.tr('kids_zone.downloading_smart_pen', fallback: "Downloading Smart Pen..."),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 20.sp,
@@ -320,7 +321,7 @@ class _DownloadModelDialogState extends State<_DownloadModelDialog> {
             ),
             SizedBox(height: 8.h),
             Text(
-              "This only happens once!",
+              context.tr('kids_zone.download_once_note', fallback: "This only happens once!"),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 14.sp,

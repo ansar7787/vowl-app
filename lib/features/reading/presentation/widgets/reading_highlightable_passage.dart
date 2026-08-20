@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/locale_service.dart';
 
 class ReadingHighlightablePassage extends StatefulWidget {
   final String passage;
@@ -106,7 +107,7 @@ class _ReadingHighlightablePassageState
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  'TAP THE SENTENCE THAT CONTAINS THE ANSWER',
+                  context.tr('reading.tap_sentence', fallback: 'TAP THE SENTENCE THAT CONTAINS THE ANSWER'),
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.sp,

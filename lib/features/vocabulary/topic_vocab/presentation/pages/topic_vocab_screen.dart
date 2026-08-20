@@ -230,10 +230,15 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           onHint: () {
             setState(() => _isHintActive = true);
           },
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final maxHeight = constraints.maxHeight;
-              final maxWidth = constraints.maxWidth;
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final maxWidth = constraints.maxWidth;
               final isCompact = maxHeight < 580;
 
               // Define relative positions as percentages of the actual available height or absolute sizes
@@ -509,6 +514,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               );
             },
           ),
+        ),
+      ],
+    ),
         );
       },
     );

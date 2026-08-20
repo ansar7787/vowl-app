@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -208,56 +207,64 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
             showConfetti: _showConfetti,
             onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
             onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
             child: quest == null
                 ? const SizedBox()
                 : LayoutBuilder(
                     builder: (context, constraints) {
-                      final maxHeight = constraints.maxHeight;
 
-                      return GameScrollbar(
-                        child: SingleChildScrollView(
-                          physics: const BouncingScrollPhysics(),
-                          child: ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: maxHeight),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 24.h,
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      DialectDrillInstruction(
-                                        instruction: _isFirstStagePassed
-                                            ? "Great job! Now record yourself saying the word."
-                                            : instructionText,
-                                        accentColor: theme.primaryColor,
-                                      ),
-                                      SizedBox(height: 24.h),
-                                      DialectDrillHologramConsole(
-                                        quest: quest,
-                                        color: theme.primaryColor,
-                                        isDark: isDark,
-                                        isAnswered:
-                                            _isAnswered || _isFirstStagePassed,
-                                        isCorrect: _isFirstStagePassed
-                                            ? true
-                                            : _isCorrect,
-                                        onPlayTargetAudio: () =>
-                                            _triggerAutoPlay(quest),
-                                        onSubmitAnswer: _submitAnswer,
-                                      ),
-                                    ],
+                      return CustomScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        slivers: [
+                          SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Column(
+                              children: [
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.w,
+                                      vertical: 24.h,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            DialectDrillInstruction(
+                                              instruction: _isFirstStagePassed
+                                                  ? "Great job! Now record yourself saying the word."
+                                                  : instructionText,
+                                              accentColor: theme.primaryColor,
+                                            ),
+                                            SizedBox(height: 24.h),
+                                            DialectDrillHologramConsole(
+                                              quest: quest,
+                                              color: theme.primaryColor,
+                                              isDark: isDark,
+                                              isAnswered:
+                                                  _isAnswered || _isFirstStagePassed,
+                                              isCorrect: _isFirstStagePassed
+                                                  ? true
+                                                  : _isCorrect,
+                                              onPlayTargetAudio: () =>
+                                                  _triggerAutoPlay(quest),
+                                              onSubmitAnswer: _submitAnswer,
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  SizedBox(height: 32.h),
-                                  AnimatedSize(
-                                    duration: const Duration(milliseconds: 400),
-                                    curve: Curves.easeOut,
-                                    child: (_isAnswered || _isFirstStagePassed)
-                                        ? Column(
+                                ),
+                                AnimatedSize(
+                                  duration: const Duration(milliseconds: 400),
+                                  curve: Curves.easeOut,
+                                  child: (_isAnswered || _isFirstStagePassed)
+                                      ? Padding(
+                                          padding: EdgeInsets.symmetric(horizontal: 16.w).copyWith(bottom: 24.h),
+                                          child: Column(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Builder(
@@ -270,7 +277,6 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   final bool showExplanation =
                                                       isSuccess ||
                                                       isFinalFailure;
-
                                                   return DialectFeedbackPanel(
                                                     isCorrect:
                                                         _isCorrect ??
@@ -319,16 +325,16 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                 ),
                                               ],
                                             ],
-                                          )
-                                        : const SizedBox(
-                                            width: double.infinity,
                                           ),
-                                  ),
-                                ],
-                              ),
+                                        )
+                                      : const SizedBox(
+                                          width: double.infinity,
+                                        ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
+                        ],
                       );
                     },
                   ),

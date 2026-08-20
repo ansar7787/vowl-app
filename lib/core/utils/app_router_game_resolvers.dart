@@ -243,6 +243,8 @@ import 'package:vowl/features/vocabulary/contextual_usage/presentation/pages/con
     as v_cu_game;
 import 'package:vowl/features/vocabulary/collocations/presentation/pages/collocations_screen.dart'
     as v_co_game;
+import 'package:vowl/features/vocabulary/jigsaw_puzzle/presentation/pages/jigsaw_puzzle_screen.dart'
+    as v_jp_game;
 
 /// Maps [GameSubtype] values to game screens wrapped in their required BlocProvider.
 ///
@@ -760,6 +762,8 @@ class AppRouterGameResolvers {
         );
       case GameSubtype.collocations:
         return v_co_game.CollocationsScreen(level: level, gameType: gameType);
+      case GameSubtype.jigsawPuzzle:
+        return v_jp_game.JigsawPuzzleScreen(level: level, gameType: gameType);
       default:
         return _unhandledSubtype(
           gameType,

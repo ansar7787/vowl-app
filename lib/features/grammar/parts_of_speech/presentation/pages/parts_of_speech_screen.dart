@@ -148,44 +148,56 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox.shrink()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
-                        return _PosQuestLayout(
-                          quest: quest,
-                          options: options,
-                          theme: theme,
-                          isDark: isDark,
-                          isCompact: isCompact,
-                          maxHeight: constraints.maxHeight,
-                          dragOffset: _dragOffset,
-                          isAnswered: _isAnswered || _pendingJigsaw,
-                          onPanUpdate: (details) {
-                            if (_pendingJigsaw || _isAnswered) return;
-                            setState(() => _dragOffset += details.delta);
-                            _checkCollision(
-                              quest.correctAnswerIndex ?? 0,
-                              isCompact: isCompact,
-                            );
-                          },
-                          onPanEnd: (_) {
-                            if (_pendingJigsaw || _isAnswered) return;
-                            setState(() => _dragOffset = Offset.zero);
-                          },
-                        );
-                      },
-                    ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
-                        cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
-                        expectedText: cleanTargetSentence,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onSkipped: () => _submitFinalAnswer(false),
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                              builder: (context, constraints) {
+                                final isCompact = constraints.maxHeight < 580;
+                                return _PosQuestLayout(
+                                  quest: quest,
+                                  options: options,
+                                  theme: theme,
+                                  isDark: isDark,
+                                  isCompact: isCompact,
+                                  maxHeight: constraints.maxHeight,
+                                  dragOffset: _dragOffset,
+                                  isAnswered: _isAnswered || _pendingJigsaw,
+                                  onPanUpdate: (details) {
+                                    if (_pendingJigsaw || _isAnswered) return;
+                                    setState(() => _dragOffset += details.delta);
+                                    _checkCollision(
+                                      quest.correctAnswerIndex ?? 0,
+                                      isCompact: isCompact,
+                                    );
+                                  },
+                                  onPanEnd: (_) {
+                                    if (_pendingJigsaw || _isAnswered) return;
+                                    setState(() => _dragOffset = Offset.zero);
+                                  },
+                                );
+                              },
+                            ),
+                          ),
+                          if (_pendingJigsaw &&
+                              !_isAnswered &&
+                              cleanTargetSentence.isNotEmpty)
+                            DynamicJigsawWrapper(
+                              expectedText: cleanTargetSentence,
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onSkipped: () => _submitFinalAnswer(false),
+                              isPositioned: false,
+                            ),
+                          SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                        ],
                       ),
+                    ),
                   ],
                 ),
         );

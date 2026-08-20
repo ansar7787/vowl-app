@@ -270,12 +270,14 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
-          useScrolling: true,
-          child: Stack(
-            children: [
-              quest == null
-                  ? const SizedBox()
-                  : Column(
+          useScrolling: false,
+          child: quest == null
+              ? const SizedBox()
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverToBoxAdapter(
+                      child: Column(
                       children: [
                         SizedBox(height: 10.h),
                         SentenceCorrectionInstruction(
@@ -415,15 +417,26 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                         SizedBox(height: 20.h),
                       ],
                     ),
-              if (_isFirstStagePassed && !_isAnswered && quest != null)
-                TypeToConfirmOverlay(
-                  expectedText: quest.correctAnswer ?? _selectedOption ?? '',
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: () => _submitVerbalEvaluation(true),
-                  onSkipped: () => _submitVerbalEvaluation(false),
+                  ),
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          if (_isFirstStagePassed && !_isAnswered)
+                            TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? _selectedOption ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitVerbalEvaluation(true),
+                              onSkipped: () => _submitVerbalEvaluation(false),
+                              isPositioned: false,
+                            ),
+                          SizedBox(height: _isAnswered ? 160.h : 60.h),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-            ],
-          ),
         );
       },
     );

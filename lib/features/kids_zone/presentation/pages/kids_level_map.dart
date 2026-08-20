@@ -162,18 +162,18 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     final level = authState.user?.unlockedLevels[widget.gameType] ?? 1;
 
     final messages = [
-      "Level $level! Superstar! ⭐",
-      "Level $level! To the moon! 🚀",
-      "Level $level! Magic touch! ✨",
-      "Level $level! Hi-Five! 🖐️",
-      "Level $level! Genius! 🧠",
-      "Level $level! You rock! 🎸",
-      "Level $level! Winner! 🏆",
-      "Level $level! Boom! 💥",
-      "Level $level! So smart! 🦉",
-      "Level $level! Go go go! 🏃‍♂️",
-      "Level $level! Wow! 🎈",
-      "Level $level! Amazing! 🌈",
+      context.tr('kids_zone.buddy_message_superstar', args: ['$level'], fallback: "Level $level! Superstar! ⭐"),
+      context.tr('kids_zone.buddy_message_moon', args: ['$level'], fallback: "Level $level! To the moon! 🚀"),
+      context.tr('kids_zone.buddy_message_magic', args: ['$level'], fallback: "Level $level! Magic touch! ✨"),
+      context.tr('kids_zone.buddy_message_hifive', args: ['$level'], fallback: "Level $level! Hi-Five! 🖐️"),
+      context.tr('kids_zone.buddy_message_genius', args: ['$level'], fallback: "Level $level! Genius! 🧠"),
+      context.tr('kids_zone.buddy_message_rock', args: ['$level'], fallback: "Level $level! You rock! 🎸"),
+      context.tr('kids_zone.buddy_message_winner', args: ['$level'], fallback: "Level $level! Winner! 🏆"),
+      context.tr('kids_zone.buddy_message_boom', args: ['$level'], fallback: "Level $level! Boom! 💥"),
+      context.tr('kids_zone.buddy_message_smart', args: ['$level'], fallback: "Level $level! So smart! 🦉"),
+      context.tr('kids_zone.buddy_message_go', args: ['$level'], fallback: "Level $level! Go go go! 🏃‍♂️"),
+      context.tr('kids_zone.buddy_message_wow', args: ['$level'], fallback: "Level $level! Wow! 🎈"),
+      context.tr('kids_zone.buddy_message_amazing', args: ['$level'], fallback: "Level $level! Amazing! 🌈"),
     ];
 
     final message = messages[Random().nextInt(messages.length)];
@@ -662,16 +662,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     String tierName;
     if (level == 10) {
       borderColor = const Color(0xFF10B981); // Emerald Green
-      tierName = "GREEN TIER";
+      tierName = context.tr('kids_zone.tier_green', fallback: "GREEN TIER");
     } else if (level == 50) {
       borderColor = const Color(0xFFB45309); // Bronze/Amber
-      tierName = "BRONZE TIER";
+      tierName = context.tr('kids_zone.tier_bronze', fallback: "BRONZE TIER");
     } else if (level == 100) {
       borderColor = const Color(0xFF94A3B8); // Silver/Slate
-      tierName = "SILVER TIER";
+      tierName = context.tr('kids_zone.tier_silver', fallback: "SILVER TIER");
     } else {
       borderColor = const Color(0xFFF59E0B); // Gold
-      tierName = "GOLD TIER";
+      tierName = context.tr('kids_zone.tier_gold', fallback: "GOLD TIER");
     }
 
     return Positioned(
@@ -760,7 +760,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       ),
                     ),
                     child: Text(
-                      isLocked ? "LVL $level $tierName" : "STICKER WON! ✨",
+                      isLocked ? context.tr('kids_zone.lvl_tier', args: ['$level', tierName], fallback: "LVL $level $tierName") : context.tr('kids_zone.sticker_won', fallback: "STICKER WON! ✨"),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 9.sp,
@@ -866,7 +866,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "KIDS QUEST",
+                    context.tr('kids_zone.kids_quest', fallback: "KIDS QUEST"),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.sp,
@@ -909,7 +909,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                         ),
                         SizedBox(width: 4.w),
                         Text(
-                          "${user?.kidsCoins ?? 0} COINS",
+                          context.tr('kids_zone.coins_label_caps', args: ['${user?.kidsCoins ?? 0}'], fallback: "${user?.kidsCoins ?? 0} COINS"),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 10.sp,

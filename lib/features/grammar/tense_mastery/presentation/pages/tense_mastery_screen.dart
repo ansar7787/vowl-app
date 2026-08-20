@@ -160,13 +160,19 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : Stack(
-                  children: [
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final isCompact = constraints.maxHeight < 580;
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final isCompact = constraints.maxHeight < 580;
 
-                        return Column(
+                          return Column(
                           children: [
                             SizedBox(height: isCompact ? 4.h : 10.h),
                             isCompact
@@ -306,13 +312,19 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                         );
                       },
                     ),
-                    if (_pendingSubmit && !_isAnswered)
-                      DynamicAnagramWrapper(
-                        expectedText: _currentTense,
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(quest, true),
-                        onFailed: () => _submitFinalAnswer(quest, false),
+                  ),
+                  if (_pendingSubmit && !_isAnswered)
+                            DynamicAnagramWrapper(
+                              expectedText: _currentTense,
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(quest, true),
+                              onFailed: () => _submitFinalAnswer(quest, false),
+                              isPositioned: false,
+                            ),
+                          SizedBox(height: (_isAnswered || _pendingSubmit) ? 160.h : 60.h),
+                        ],
                       ),
+                    ),
                   ],
                 ),
         );

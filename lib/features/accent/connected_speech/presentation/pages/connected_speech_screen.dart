@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -187,20 +186,19 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
           data: mediaQuery.copyWith(
             textScaler: mediaQuery.textScaler.clamp(maxScaleFactor: 1.1),
           ),
-          child: Stack(
-            children: [
-              AccentBaseLayout(
-                gameType: widget.gameType,
-                level: widget.level,
-                isAnswered: _isAnswered,
-                isCorrect: _isCorrect,
-                showConfetti: _showConfetti,
-                onContinue: () =>
-                    context.read<AccentBloc>().add(NextQuestion()),
-                onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-                child: quest == null
-                    ? const SizedBox()
-                    : LayoutBuilder(
+          child: AccentBaseLayout(
+            gameType: widget.gameType,
+            level: widget.level,
+            isAnswered: _isAnswered,
+            isCorrect: _isCorrect,
+            showConfetti: _showConfetti,
+            onContinue: () =>
+                context.read<AccentBloc>().add(NextQuestion()),
+            onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
+            useScrolling: false,
+            child: quest == null
+                ? const SizedBox()
+                : LayoutBuilder(
                         builder: (context, constraints) {
                           final maxHeight = constraints.maxHeight;
                           final bool isCompact = maxHeight < 580;
@@ -234,104 +232,106 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                               ? (gapUnit * 1).clamp(12.0, 40.0)
                               : 12.0;
 
-                          return GameScrollbar(
-                            child: SingleChildScrollView(
-                              physics: const BouncingScrollPhysics(),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minHeight: maxHeight,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(height: gapTop),
-                                          ConnectedSpeechInstruction(
-                                            primaryColor: theme.primaryColor,
-                                            instruction: _isFirstStagePassed
-                                                ? "Great job! Now confirm by speaking the phrase."
-                                                : context.tr(
-                                                    'games.connected_speech_instruction',
-                                                    fallback:
-                                                        "SELECT THE CORRECT SOUND CHANGE",
-                                                  ),
-                                            isCompact: isCompact,
-                                          ),
-                                          SizedBox(height: gapInstruction),
+                          return CustomScrollView(
+                            physics: const BouncingScrollPhysics(),
+                            slivers: [
+                              SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                        ),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapTop),
+                                                ConnectedSpeechInstruction(
+                                                  primaryColor: theme.primaryColor,
+                                                  instruction: _isFirstStagePassed
+                                                      ? "Great job! Now confirm by speaking the phrase."
+                                                      : context.tr(
+                                                          'games.connected_speech_instruction',
+                                                          fallback:
+                                                              "SELECT THE CORRECT SOUND CHANGE",
+                                                        ),
+                                                  isCompact: isCompact,
+                                                ),
+                                                SizedBox(height: gapInstruction),
 
-                                          ConnectedSpeechPromptCard(
-                                            word: quest.word ?? "",
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isCompact: isCompact,
-                                          ),
-                                          SizedBox(height: gapPrompt),
+                                                ConnectedSpeechPromptCard(
+                                                  word: quest.word ?? "",
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isCompact: isCompact,
+                                                ),
+                                                SizedBox(height: gapPrompt),
 
-                                          ConnectedSpeechPulseSpeaker(
-                                            text: quest.textToSpeak ?? "",
-                                            color: theme.primaryColor,
-                                            onPlayTts: _playTts,
-                                          ),
-                                        ],
+                                                ConnectedSpeechPulseSpeaker(
+                                                  text: quest.textToSpeak ?? "",
+                                                  color: theme.primaryColor,
+                                                  onPlayTts: _playTts,
+                                                ),
+                                              ],
+                                            ),
+                                            Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                SizedBox(height: gapSpeaker),
+                                                ConnectedSpeechLinkerCards(
+                                                  key: ValueKey(quest.id),
+                                                  options: options,
+                                                  correctIndex:
+                                                      _shuffledOptions.isNotEmpty
+                                                      ? _shuffledCorrectIndex
+                                                      : (quest.correctAnswerIndex ??
+                                                            0),
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  isAnswered:
+                                                      _isAnswered ||
+                                                      _isFirstStagePassed,
+                                                  selectedIndex: _selectedIndex,
+                                                  onSubmitChoice: _submitChoice,
+                                                  isCompact: isCompact,
+                                                ),
+                                                SizedBox(height: gapBottom),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(height: gapSpeaker),
-                                          ConnectedSpeechLinkerCards(
-                                            key: ValueKey(quest.id),
-                                            options: options,
-                                            correctIndex:
-                                                _shuffledOptions.isNotEmpty
-                                                ? _shuffledCorrectIndex
-                                                : (quest.correctAnswerIndex ??
-                                                      0),
-                                            color: theme.primaryColor,
-                                            isDark: isDark,
-                                            isAnswered:
-                                                _isAnswered ||
-                                                _isFirstStagePassed,
-                                            selectedIndex: _selectedIndex,
-                                            onSubmitChoice: _submitChoice,
-                                            isCompact: isCompact,
-                                          ),
-                                          SizedBox(height: gapBottom),
-                                          // Panel removed in favor of SpeakToConfirmOverlay
-                                          SizedBox(
-                                            height: _isAnswered ? 180.h : 0,
-                                          ),
-                                        ],
+                                    ),
+                                    if (_isFirstStagePassed && !_isAnswered)
+                                      SpeakToConfirmOverlay(
+                                        expectedText: quest.textToSpeak ?? quest.word ?? "",
+                                        primaryColor: theme.primaryColor,
+                                        isPositioned: false,
+                                        onConfirmed: () {
+                                          context.read<AccentBloc>().add(
+                                            const AccentSpeakConfirmed(5),
+                                          );
+                                          _submitVerbalEvaluation(true);
+                                        },
+                                        onSkipped: () => _submitVerbalEvaluation(
+                                          false,
+                                        ),
                                       ),
-                                    ],
-                                  ),
+                                    SizedBox(
+                                      height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h,
+                                    ),
+                                  ],
                                 ),
                               ),
-                            ),
+                            ],
                           );
                         },
                       ),
-              ),
-              if (_isFirstStagePassed && !_isAnswered && quest != null)
-                SpeakToConfirmOverlay(
-                  expectedText: quest.textToSpeak ?? quest.word ?? "",
-                  primaryColor: theme.primaryColor,
-                  onConfirmed: () {
-                    context.read<AccentBloc>().add(
-                      const AccentSpeakConfirmed(5),
-                    );
-                    _submitVerbalEvaluation(true);
-                  },
-                  onSkipped: () => _submitVerbalEvaluation(
-                    false,
-                  ), // Skip speaking but keep the correct answer!
-                ),
-            ],
           ),
         );
       },

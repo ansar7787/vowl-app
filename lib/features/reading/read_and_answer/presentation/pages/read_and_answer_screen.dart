@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
@@ -77,7 +78,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'ZEN READER!',
+            title: context.tr('reading_games.zen_reader', fallback: 'ZEN READER!'),
             enableDoubleUp: true,
           );
         }

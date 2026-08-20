@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -198,8 +198,13 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           },
           child: quest == null
               ? const SizedBox()
-              : LayoutBuilder(
-                  builder: (context, constraints) {
+              : CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
@@ -224,19 +229,9 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ? (gapUnit * 2).clamp(12.0, 30.0)
                         : 12.0;
 
-                    final double totalGaps = gapTop + gapMiddle * 2 + gapBottom;
-                    final double requiredHeight =
-                        estimatedContentHeight + totalGaps;
-                    final double finalHeight = math.max(
-                      maxHeight,
-                      requiredHeight,
-                    );
 
-                    return SingleChildScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      child: SizedBox(
-                        height: finalHeight,
-                        child: Column(
+
+                    return Column(
                           key: ValueKey(quest.id),
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -317,11 +312,12 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                               ],
                             ),
                           ],
-                        ),
-                      ),
                     );
                   },
                 ),
+              ),
+            ],
+          ),
         );
       },
     );

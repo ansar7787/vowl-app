@@ -114,82 +114,82 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
 | 44 | Grammar Quest | Applies grammar rule → selects answer | General grammar awareness | ✅ | ✅ `GrammarQuestScreen` | ✅ | ✅ |
-| 45 | Sentence Correction | Spots error → selects correction | Error detection skills | ✅ | ✅ `SentenceCorrectionScreen` | ✅ | ⬜ |
-| 46 | Word Reorder | Drags words into correct order | Syntax structure mastery | ✅ | ✅ `WordReorderScreen` | ✅ | ⬜ |
-| 47 | Tense Mastery | Selects correct tense form | Verb tense system | ✅ | ✅ `TenseMasteryScreen` | ✅ | ⬜ |
-| 48 | Parts of Speech | Sorts words by grammatical category | Word class awareness | ✅ | ✅ `PartsOfSpeechScreen` | ✅ | ⬜ |
-| 49 | Subject-Verb Agreement | Fixes agreement errors | Core grammar accuracy | ✅ | ✅ `SubjectVerbAgreementScreen` | ✅ | ⬜ |
-| 50 | Clause Connector | Connects clauses with right conjunction | Complex sentence building | ✅ | ✅ `ClauseConnectorScreen` | ✅ | ⬜ |
-| 51 | Voice Swap | Converts active↔passive | Voice transformation | ✅ | ✅ `VoiceSwapScreen` | ✅ | ⬜ |
-| 52 | Question Formatter | Reorders words into question form | Interrogative structures | ✅ | ✅ `QuestionFormatterScreen` | ✅ | ⬜ |
-| 53 | Article Insertion | Inserts a/an/the correctly | Article system mastery | ✅ | ✅ `ArticleInsertionScreen` | ✅ | ⬜ |
-| 54 | Modifier Placement | Places adjective/adverb correctly | Modifier positioning | ✅ | ✅ `ModifierPlacementScreen` | ✅ | ⬜ |
-| 55 | Modals Selection | Chooses correct modal verb | Modal verb nuance | ✅ | ✅ `ModalsSelectionScreen` | ✅ | ⬜ |
-| 56 | Preposition Choice | Selects correct preposition | Prepositional accuracy | ✅ | ✅ `PrepositionChoiceScreen` | ✅ | ⬜ |
-| 57 | Pronoun Resolution | Resolves pronoun references | Reference clarity | ✅ | ✅ `PronounResolutionScreen` | ✅ | ⬜ |
-| 58 | Punctuation Mastery | Fixes punctuation errors | Punctuation rules | ✅ | ✅ `PunctuationMasteryScreen` | ✅ | ⬜ |
-| 59 | Relative Clauses | Completes with who/which/that | Relative clause usage | ✅ | ✅ `RelativeClausesScreen` | ✅ | ⬜ |
-| 60 | Conditionals | Masters if/then structures | Conditional logic | ✅ | ✅ `ConditionalsScreen` | ✅ | ⬜ |
-| 61 | Conjunctions | Uses and/but/or/because correctly | Sentence joining | ✅ | ✅ `ConjunctionsScreen` | ✅ | ⬜ |
-| 62 | Direct/Indirect Speech | Converts speech types | Reported speech mastery | ✅ | ✅ `DirectIndirectSpeechScreen` | ✅ | ⬜ |
+| 45 | Sentence Correction | Spots error → selects correction | Error detection skills | ✅ | ✅ `SentenceCorrectionScreen` | ✅ | ✅ |
+| 46 | Word Reorder | Drags words into correct order | Syntax structure mastery | ✅ | ✅ `WordReorderScreen` | ✅ | ✅ |
+| 47 | Tense Mastery | Selects correct tense form | Verb tense system | ✅ | ✅ `TenseMasteryScreen` | ✅ | ✅ |
+| 48 | Parts of Speech | Sorts words by grammatical category | Word class awareness | ✅ | ✅ `PartsOfSpeechScreen` | ✅ | ✅ |
+| 49 | Subject-Verb Agreement | Fixes agreement errors | Core grammar accuracy | ✅ | ✅ `SubjectVerbAgreementScreen` | ✅ | ✅ |
+| 50 | Clause Connector | Connects clauses with right conjunction | Complex sentence building | ✅ | ✅ `ClauseConnectorScreen` | ✅ | ✅ |
+| 51 | Voice Swap | Converts active↔passive | Voice transformation | ✅ | ✅ `VoiceSwapScreen` | ✅ | ✅ |
+| 52 | Question Formatter | Reorders words into question form | Interrogative structures | ✅ | ✅ `QuestionFormatterScreen` | ✅ | ✅ |
+| 53 | Article Insertion | Inserts a/an/the correctly | Article system mastery | ✅ | ✅ `ArticleInsertionScreen` | ✅ | ✅ |
+| 54 | Modifier Placement | Places adjective/adverb correctly | Modifier positioning | ✅ | ✅ `ModifierPlacementScreen` | ✅ | ✅ |
+| 55 | Modals Selection | Chooses correct modal verb | Modal verb nuance | ✅ | ✅ `ModalsSelectionScreen` | ✅ | ✅ |
+| 56 | Preposition Choice | Selects correct preposition | Prepositional accuracy | ✅ | ✅ `PrepositionChoiceScreen` | ✅ | ✅ |
+| 57 | Pronoun Resolution | Resolves pronoun references | Reference clarity | ✅ | ✅ `PronounResolutionScreen` | ✅ | ✅ |
+| 58 | Punctuation Mastery | Fixes punctuation errors | Punctuation rules | ✅ | ✅ `PunctuationMasteryScreen` | ✅ | ✅ |
+| 59 | Relative Clauses | Completes with who/which/that | Relative clause usage | ✅ | ✅ `RelativeClausesScreen` | ✅ | ✅ |
+| 60 | Conditionals | Masters if/then structures | Conditional logic | ✅ | ✅ `ConditionalsScreen` | ✅ | ✅ |
+| 61 | Conjunctions | Uses and/but/or/because correctly | Sentence joining | ✅ | ✅ `ConjunctionsScreen` | ✅ | ✅ |
+| 62 | Direct/Indirect Speech | Converts speech types | Reported speech mastery | ✅ | ✅ `DirectIndirectSpeechScreen` | ✅ | ✅ |
 
 ### CAT-6: 💡 VOCABULARY (12 games) — User MUST recall & use words
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 63 | Flashcards | Flips card → recalls meaning | Spaced recognition + recall | ✅ | ✅ `FlashcardsScreen` | ✅ | ⬜ |
-| 64 | Synonym Search | Finds synonym from options | Vocabulary breadth | ✅ | ✅ `SynonymSearchScreen` | ✅ | ⬜ |
-| 65 | Antonym Search | Finds antonym from options | Opposite word pairs | ✅ | ✅ `AntonymSearchScreen` | ✅ | ⬜ |
-| 66 | Context Clues | Guesses word meaning from passage | Context inference skill | ✅ | ✅ `ContextCluesScreen` | ✅ | ⬜ |
-| 67 | Phrasal Verbs | Slots correct phrasal verb in | Multi-word verb mastery | ✅ | ✅ `PhrasalVerbsScreen` | ✅ | ⬜ |
-| 68 | Idioms | Learns idiom → matches meaning | Figurative language | ✅ | ✅ `IdiomsScreen` | ✅ | ⬜ |
-| 69 | Academic Word | Masters academic vocabulary | Formal register words | ✅ | ✅ `AcademicWordScreen` | ✅ | ⬜ |
-| 70 | Topic Vocabulary | Sorts words into topic buckets | Categorical vocabulary | ✅ | ✅ `TopicVocabScreen` | ✅ | ⬜ |
-| 71 | Word Formation | Builds words from roots/parts | Morphological awareness | ✅ | ✅ `WordFormationScreen` | ✅ | ⬜ |
-| 72 | Prefix/Suffix | Chains prefix+root+suffix | Word building system | ✅ | ✅ `PrefixSuffixScreen` | ✅ | ⬜ |
-| 73 | Collocations | Matches words that go together | Natural word pairing | ✅ | ✅ `CollocationsScreen` | ✅ | ⬜ |
-| 74 | Contextual Usage | Uses word correctly in context | Applied vocabulary | ✅ | ✅ `ContextualUsageScreen` | ✅ | ⬜ |
+| 63 | Flashcards | Flips card → recalls meaning | Spaced recognition + recall | ✅ | ✅ `FlashcardsScreen` | ✅ | ✅ |
+| 64 | Synonym Search | Finds synonym from options | Vocabulary breadth | ✅ | ✅ `SynonymSearchScreen` | ✅ | ✅ |
+| 65 | Antonym Search | Finds antonym from options | Opposite word pairs | ✅ | ✅ `AntonymSearchScreen` | ✅ | ✅ |
+| 66 | Context Clues | Guesses word meaning from passage | Context inference skill | ✅ | ✅ `ContextCluesScreen` | ✅ | ✅ |
+| 67 | Phrasal Verbs | Slots correct phrasal verb in | Multi-word verb mastery | ✅ | ✅ `PhrasalVerbsScreen` | ✅ | ✅ |
+| 68 | Idioms | Learns idiom → matches meaning | Figurative language | ✅ | ✅ `IdiomsScreen` | ✅ | ✅ |
+| 69 | Academic Word | Masters academic vocabulary | Formal register words | ✅ | ✅ `AcademicWordScreen` | ✅ | ✅ |
+| 70 | Topic Vocabulary | Sorts words into topic buckets | Categorical vocabulary | ✅ | ✅ `TopicVocabScreen` | ✅ | ✅ |
+| 71 | Word Formation | Builds words from roots/parts | Morphological awareness | ✅ | ✅ `WordFormationScreen` | ✅ | ✅ |
+| 72 | Prefix/Suffix | Chains prefix+root+suffix | Word building system | ✅ | ✅ `PrefixSuffixScreen` | ✅ | ✅ |
+| 73 | Collocations | Matches words that go together | Natural word pairing | ✅ | ✅ `CollocationsScreen` | ✅ | ✅ |
+| 74 | Contextual Usage | Uses word correctly in context | Applied vocabulary | ✅ | ✅ `ContextualUsageScreen` | ✅ | ✅ |
 
 ### CAT-7: 🗣️ ACCENT (12 games) — User MUST listen & reproduce sounds
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 75 | Minimal Pairs | Distinguishes ship/sheep, bat/bet | Phoneme discrimination | ✅ | ✅ `MinimalPairsScreen` | ✅ | ⬜ |
-| 76 | Intonation Mimic | Copies rising/falling patterns | Intonation awareness | ✅ | ✅ `IntonationMimicScreen` | ✅ | ⬜ |
-| 77 | Syllable Stress | Marks stressed syllable | Word stress patterns | ✅ | ✅ `SyllableStressScreen` | ✅ | ⬜ |
-| 78 | Word Linking | Practices linking words together | Connected speech fluency | ✅ | ✅ `WordLinkingScreen` | ✅ | ⬜ |
-| 79 | Shadowing Challenge | Shadows native speaker recording | Natural rhythm + pacing | ✅ | ✅ `ShadowingChallengeScreen` | ✅ | ⬜ |
-| 80 | Vowel Distinction | Distinguishes similar vowels | Vowel clarity | ✅ | ✅ `VowelDistinctionScreen` | ✅ | ⬜ |
-| 81 | Consonant Clarity | Practices difficult consonants | Consonant precision | ✅ | ✅ `ConsonantClarityScreen` | ✅ | ⬜ |
-| 82 | Pitch Pattern Match | Matches pitch contour patterns | Prosody awareness | ✅ | ✅ `PitchPatternMatchScreen` | ✅ | ⬜ |
-| 83 | Speed Variance | Adapts to slow/fast speech | Speed adaptability | ✅ | ✅ `SpeedVarianceScreen` | ✅ | ⬜ |
-| 84 | Dialect Drill | Practices different English dialects | Dialect comprehension | ✅ | ✅ `DialectDrillScreen` | ✅ | ⬜ |
-| 85 | Connected Speech | Masters elision/assimilation | Natural speech flow | ✅ | ✅ `ConnectedSpeechScreen` | ✅ | ⬜ |
-| 86 | Pitch Modulation | Modulates pitch for meaning changes | Expressive speech | ✅ | ✅ `PitchModulationScreen` | ✅ | ⬜ |
+| 75 | Minimal Pairs | Distinguishes ship/sheep, bat/bet | Phoneme discrimination | ✅ | ✅ `MinimalPairsScreen` | ✅ | ✅ |
+| 76 | Intonation Mimic | Copies rising/falling patterns | Intonation awareness | ✅ | ✅ `IntonationMimicScreen` | ✅ | ✅ |
+| 77 | Syllable Stress | Marks stressed syllable | Word stress patterns | ✅ | ✅ `SyllableStressScreen` | ✅ | ✅ |
+| 78 | Word Linking | Practices linking words together | Connected speech fluency | ✅ | ✅ `WordLinkingScreen` | ✅ | ✅ |
+| 79 | Shadowing Challenge | Shadows native speaker recording | Natural rhythm + pacing | ✅ | ✅ `ShadowingChallengeScreen` | ✅ | ✅ |
+| 80 | Vowel Distinction | Distinguishes similar vowels | Vowel clarity | ✅ | ✅ `VowelDistinctionScreen` | ✅ | ✅ |
+| 81 | Consonant Clarity | Practices difficult consonants | Consonant precision | ✅ | ✅ `ConsonantClarityScreen` | ✅ | ✅ |
+| 82 | Pitch Pattern Match | Matches pitch contour patterns | Prosody awareness | ✅ | ✅ `PitchPatternMatchScreen` | ✅ | ✅ |
+| 83 | Speed Variance | Adapts to slow/fast speech | Speed adaptability | ✅ | ✅ `SpeedVarianceScreen` | ✅ | ✅ |
+| 84 | Dialect Drill | Practices different English dialects | Dialect comprehension | ✅ | ✅ `DialectDrillScreen` | ✅ | ✅ |
+| 85 | Connected Speech | Masters elision/assimilation | Natural speech flow | ✅ | ✅ `ConnectedSpeechScreen` | ✅ | ✅ |
+| 86 | Pitch Modulation | Modulates pitch for meaning changes | Expressive speech | ✅ | ✅ `PitchModulationScreen` | ✅ | ✅ |
 
 ### CAT-8: 🎭 ROLEPLAY (10 games) — User MUST make real conversation choices
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 87 | Branching Dialogue | Chooses dialogue paths → sees consequences | Decision-based conversation | ✅ | ✅ `BranchingDialogueScreen` | ✅ | ⬜ |
-| 88 | Situational Response | Responds to real-life situations | Pragmatic competence | ✅ | ✅ `SituationalResponseScreen` | ✅ | ⬜ |
-| 89 | Job Interview | Practices interview Q&A | Professional communication | ✅ | ✅ `JobInterviewScreen` | ✅ | ⬜ |
-| 90 | Medical Consult | Practices doctor visit dialogue | Medical English | ✅ | ✅ `MedicalConsultScreen` | ✅ | ⬜ |
-| 91 | Gourmet Order | Orders food in restaurant | Restaurant English | ✅ | ✅ `GourmetOrderScreen` | ✅ | ⬜ |
-| 92 | Travel Desk | Handles travel scenarios | Travel English | ✅ | ✅ `TravelDeskScreen` | ✅ | ⬜ |
-| 93 | Conflict Resolver | Resolves conflicts politely | Diplomatic language | ✅ | ✅ `ConflictResolverScreen` | ✅ | ⬜ |
-| 94 | Elevator Pitch | Gives quick self-introduction | Concise persuasion | ✅ | ✅ `ElevatorPitchScreen` | ✅ | ⬜ |
-| 95 | Social Spark | Starts conversations with strangers | Social English | ✅ | ✅ `SocialSparkScreen` | ✅ | ⬜ |
-| 96 | Emergency Hub | Handles emergency situations | Emergency English | ✅ | ✅ `EmergencyHubScreen` | ✅ | ⬜ |
+| 87 | Branching Dialogue | Chooses dialogue paths → sees consequences | Decision-based conversation | ✅ | ✅ `BranchingDialogueScreen` | ✅ | ✅ |
+| 88 | Situational Response | Responds to real-life situations | Pragmatic competence | ✅ | ✅ `SituationalResponseScreen` | ✅ | ✅ |
+| 89 | Job Interview | Practices interview Q&A | Professional communication | ✅ | ✅ `JobInterviewScreen` | ✅ | ✅ |
+| 90 | Medical Consult | Practices doctor visit dialogue | Medical English | ✅ | ✅ `MedicalConsultScreen` | ✅ | ✅ |
+| 91 | Gourmet Order | Orders food in restaurant | Restaurant English | ✅ | ✅ `GourmetOrderScreen` | ✅ | ✅ |
+| 92 | Travel Desk | Handles travel scenarios | Travel English | ✅ | ✅ `TravelDeskScreen` | ✅ | ✅ |
+| 93 | Conflict Resolver | Resolves conflicts politely | Diplomatic language | ✅ | ✅ `ConflictResolverScreen` | ✅ | ✅ |
+| 94 | Elevator Pitch | Gives quick self-introduction | Concise persuasion | ✅ | ✅ `ElevatorPitchScreen` | ✅ | ✅ |
+| 95 | Social Spark | Starts conversations with strangers | Social English | ✅ | ✅ `SocialSparkScreen` | ✅ | ✅ |
+| 96 | Emergency Hub | Handles emergency situations | Emergency English | ✅ | ✅ `EmergencyHubScreen` | ✅ | ✅ |
 
 ### CAT-9: 🏆 ELITE MASTERY (4 games) — User MUST combine multiple skills
 
 | # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
 |---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 97 | Story Builder | Writes creative story from prompts | Creative writing + grammar + vocab | ✅ | ✅ `StoryBuilderScreen` | ✅ | ⬜ |
-| 98 | Idiom Match | Matches idioms to real meanings | Advanced figurative language | ✅ | ✅ `IdiomMatchScreen` | ✅ | ⬜ |
-| 99 | Speed Spelling | Spells words under time pressure | Spelling accuracy + speed | ✅ | ✅ `SpeedSpellingScreen` | ✅ | ⬜ |
-| 100 | Accent Shadowing | Shadows accent patterns precisely | Native-like pronunciation | ✅ | ✅ `AccentShadowingScreen` | ✅ | ⬜ |
+| 97 | Story Builder | Writes creative story from prompts | Creative writing + grammar + vocab | ✅ | ✅ `StoryBuilderScreen` | ✅ | ✅ |
+| 98 | Idiom Match | Matches idioms to real meanings | Advanced figurative language | ✅ | ✅ `IdiomMatchScreen` | ✅ | ✅ |
+| 99 | Speed Spelling | Spells words under time pressure | Spelling accuracy + speed | ✅ | ✅ `SpeedSpellingScreen` | ✅ | ✅ |
+| 100 | Accent Shadowing | Shadows accent patterns precisely | Native-like pronunciation | ✅ | ✅ `AccentShadowingScreen` | ✅ | ✅ |
 
 ---
 
@@ -197,14 +197,14 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 
 | # | Feature | Skill Trained | User Action | Free? | Status |
 |---|---------|--------------|-------------|-------|--------|
-| A1 | Daily Words | Vocabulary | Learn 5 new words daily, hear pronunciation | ✅ $0 | ⬜ |
-| A2 | Photo Vocabulary | Vocabulary | Point camera → AI labels objects in English | ✅ $0 (ML Kit) | ⬜ |
-| A3 | Scan & Learn | Reading | Scan text → AI explains meaning | ✅ $0 (ML Kit) | ⬜ |
-| A4 | Translation | Multi-skill | Type/speak → get translation | ✅ $0 (ML Kit) | ⬜ |
-| A5 | Kids Zone (25 topics) | All basics | Age-appropriate learning games | ✅ $0 | ⬜ |
-| A6 | Self-Evolution Speaking | Speaking | AI evaluates pronunciation accuracy | ✅ $0 (on-device STT) | ⬜ |
-| A7 | Self-Evolution Reading | Reading | Tracks reading speed + comprehension | ✅ $0 | ⬜ |
-| A8 | Jigsaw Puzzle | Vocabulary | Assemble word pieces into meaning | ✅ $0 | ⬜ |
+| A1 | Daily Words | Vocabulary | Learn 5 new words daily, hear pronunciation | ✅ $0 | ✅ |
+| A2 | Photo Vocabulary | Vocabulary | Point camera → AI labels objects in English | ✅ $0 (ML Kit) | ✅ |
+| A3 | Scan & Learn | Reading | Scan text → AI explains meaning | ✅ $0 (ML Kit) | ✅ |
+| A4 | Translation | Multi-skill | Type/speak → get translation | ✅ $0 (ML Kit) | ✅ |
+| A5 | Kids Zone (25 topics) | All basics | Age-appropriate learning games | ✅ $0 | ✅ |
+| A6 | Self-Evolution Speaking | Speaking | AI evaluates pronunciation accuracy | ✅ $0 (on-device STT) | ✅ |
+| A7 | Self-Evolution Reading | Reading | Tracks reading speed + comprehension | ✅ $0 | ✅ |
+| A8 | Jigsaw Puzzle | Vocabulary | Assemble word pieces into meaning | ✅ $0 | ✅ |
 | A9 | Anagram Challenge | Spelling | Unscramble letters into words | ✅ $0 | ⬜ |
 
 ---

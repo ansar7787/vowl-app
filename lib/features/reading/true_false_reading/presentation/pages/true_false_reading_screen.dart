@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/layout/reading_base_layout.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_instruction.dart';
@@ -145,7 +146,7 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
             context,
             xp: state.xpEarned,
             coins: state.coinsEarned,
-            title: 'FACT CHECKER!',
+            title: context.tr('reading_games.fact_checker', fallback: 'FACT CHECKER!'),
             enableDoubleUp: true,
           );
         }

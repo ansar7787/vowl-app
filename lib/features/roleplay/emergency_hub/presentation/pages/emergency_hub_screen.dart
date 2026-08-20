@@ -186,9 +186,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
 
-        return Stack(
-          children: [
-            RoleplayBaseLayout(
+        return RoleplayBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _isAnswered,
@@ -198,19 +196,27 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                   context.read<RoleplayBloc>().add(NextQuestion()),
               onHint: () =>
                   context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+              useScrolling: false,
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
                         final isCompact = constraints.maxHeight < 580;
-                        return SingleChildScrollView(
+                        return CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: isCompact ? 5.h : 10.h,
-                          ),
-                          child: Column(
-                            children: [
+                          slivers: [
+                            SliverFillRemaining(
+                              hasScrollBody: false,
+                              child: Column(
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 16.w,
+                                        vertical: isCompact ? 5.h : 10.h,
+                                      ),
+                                      child: Column(
+                                        children: [
                               EmergencyHubInstruction(
                                 instruction: quest.instruction,
                               ),
@@ -299,28 +305,34 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                   ),
                                 ).animate().fadeIn(duration: 300.ms),
 
-                              // Review details
-                              SizedBox(height: isCompact ? 40.h : 80.h),
-                            ],
-                          ),
+                                          // Review details
+                                          SizedBox(height: isCompact ? 20.h : 40.h),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  if (_isFirstStagePassed && !_isAnswered)
+                                    SpeakToConfirmOverlay(
+                                      expectedText: quest.correctAnswer ?? _codeController.text,
+                                      primaryColor: Colors.redAccent,
+                                      isPositioned: false,
+                                      onConfirmed: () {
+                                        context.read<RoleplayBloc>().add(
+                                          const RoleplaySpeakConfirmed(5),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      },
+                                      onSkipped: () => _submitVerbalEvaluation(false),
+                                    ),
+                                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 180.h : 40.h),
+                                ],
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
-            ),
-            if (_isFirstStagePassed && !_isAnswered && quest != null)
-              SpeakToConfirmOverlay(
-                expectedText: quest.correctAnswer ?? _codeController.text,
-                primaryColor: Colors.redAccent,
-                onConfirmed: () {
-                  context.read<RoleplayBloc>().add(
-                    const RoleplaySpeakConfirmed(5),
-                  );
-                  _submitVerbalEvaluation(true);
-                },
-                onSkipped: () => _submitVerbalEvaluation(false),
-              ),
-          ],
-        );
+            );
       },
     );
   }

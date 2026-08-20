@@ -214,6 +214,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                   fallback: 'Assemble the fragments into a correct story.',
                 ),
           titleIcon: Icons.format_list_numbered_rounded,
+          useScrolling: false,
           visualConfig: _visualConfig,
           onContinue: () {
             setState(() {
@@ -299,12 +300,17 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxHeight < _kCompactHeightBreakpoint;
 
-        return Column(
-          children: [
+              return Column(
+                children: [
             // FIX: every Story Builder quest carries a real, hand-written
             // narrative hint (verified across all four sample batches), and
             // tapping the hint button does spend it (MarkEliteHintUsed,
@@ -323,110 +329,98 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ),
               SizedBox(height: isCompact ? 12.h : 20.h),
             ],
-            ReorderableListView(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              onReorder: _onReorder,
-              // FIX: `ReorderableListView` defaults `buildDefaultDragHandles`
-              // to true, which auto-attaches its own platform drag handle
-              // per item (visibly, on Android) in addition to this tile's
-              // own custom `Icons.drag_indicator_rounded` — risking two
-              // visible drag handles per row. Disabling the default and
-              // wrapping the existing icon in a `ReorderableDragStartListener`
-              // (inside StoryBuilderNarrativeTile) keeps exactly one handle,
-              // consistently, on every platform.
-              buildDefaultDragHandles: false,
-              proxyDecorator: (child, index, animation) => Material(
-                color: Colors.transparent,
-                child: child.animate().scale(
-                  begin: const Offset(1, 1),
-                  end: const Offset(1.02, 1.02),
-                  duration: 150.ms,
-                ),
-              ),
-              children: [
-                for (int i = 0; i < _currentOrder.length; i++)
-                  Padding(
-                    // Keying on the original index is perfectly stable and
-                    // prevents duplicate-key crashes if sentences are identical.
-                    key: ValueKey('${quest.id}_${_currentOrder[i]}'),
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: StoryBuilderNarrativeTile(
-                      index: i,
-                      sentence: quest.sentences![_currentOrder[i]],
-                      quest: quest,
-                      isHintVisible: state.isHintVisible,
-                      isDark: isDark,
-                      theme: theme,
-                      isAnswered: _isAnswered,
-                      isCorrect: _isCorrect,
-                    ),
-                  ),
-              ],
-            ),
-            SizedBox(height: isCompact ? 16.h : 30.h),
-            if (!_isAnswered)
-              Semantics(
-                button: true,
-                label: context.tr(
-                  'games.finalize_story_caps',
-                  fallback: 'FINALIZE STORY',
-                ),
-                excludeSemantics: true,
-                child: ScaleButton(
-                  onTap: () => _submitOrder(quest.correctOrder),
-                  child: Container(
-                    width: double.infinity,
-                    // FIX: height was purely padding-driven, sitting right
-                    // at the 48dp touch-target floor in compact mode and
-                    // able to dip under it once ScreenUtil scales down on
-                    // the smallest screens. This is the primary submit
-                    // action for every question in this game.
-                    constraints: const BoxConstraints(minHeight: 48),
-                    padding: EdgeInsets.symmetric(
-                      vertical: isCompact ? 14.h : 20.h,
-                    ),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          theme.primaryColor,
-                          theme.primaryColor.withValues(alpha: 0.8),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      borderRadius: BorderRadius.circular(
-                        isCompact ? 16.r : 24.r,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: theme.primaryColor.withValues(alpha: 0.6),
-                          blurRadius: isCompact ? 10 : 20,
-                          offset: Offset(0, isCompact ? 5 : 10),
+                  Expanded(
+                    child: ReorderableListView(
+                      onReorder: _onReorder,
+                      buildDefaultDragHandles: false,
+                      proxyDecorator: (child, index, animation) => Material(
+                        color: Colors.transparent,
+                        child: child.animate().scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.02, 1.02),
+                          duration: 150.ms,
                         ),
+                      ),
+                      children: [
+                        for (int i = 0; i < _currentOrder.length; i++)
+                          Padding(
+                            key: ValueKey('${quest.id}_${_currentOrder[i]}'),
+                            padding: EdgeInsets.only(bottom: 8.h),
+                            child: StoryBuilderNarrativeTile(
+                              index: i,
+                              sentence: quest.sentences![_currentOrder[i]],
+                              quest: quest,
+                              isHintVisible: state.isHintVisible,
+                              isDark: isDark,
+                              theme: theme,
+                              isAnswered: _isAnswered,
+                              isCorrect: _isCorrect,
+                            ),
+                          ),
                       ],
                     ),
-                    child: Center(
-                      child: Text(
-                        context.tr(
-                          'games.finalize_story_caps',
-                          fallback: 'FINALIZE STORY',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: isCompact ? 16.sp : 18.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          letterSpacing: isCompact ? 1.5 : 2.5,
+                  ),
+                  SizedBox(height: isCompact ? 16.h : 30.h),
+                  if (!_isAnswered)
+                    Semantics(
+                      button: true,
+                      label: context.tr(
+                        'games.finalize_story_caps',
+                        fallback: 'FINALIZE STORY',
+                      ),
+                      excludeSemantics: true,
+                      child: ScaleButton(
+                        onTap: () => _submitOrder(quest.correctOrder),
+                        child: Container(
+                          width: double.infinity,
+                          constraints: const BoxConstraints(minHeight: 48),
+                          padding: EdgeInsets.symmetric(
+                            vertical: isCompact ? 14.h : 20.h,
+                          ),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                theme.primaryColor,
+                                theme.primaryColor.withValues(alpha: 0.8),
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
+                            borderRadius: BorderRadius.circular(
+                              isCompact ? 16.r : 24.r,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: theme.primaryColor.withValues(alpha: 0.6),
+                                blurRadius: isCompact ? 10 : 20,
+                                offset: Offset(0, isCompact ? 5 : 10),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              context.tr(
+                                'games.finalize_story_caps',
+                                fallback: 'FINALIZE STORY',
+                              ),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: isCompact ? 16.sp : 18.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: isCompact ? 1.5 : 2.5,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                ),
-              ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
-          ],
-        );
-      },
+                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+                ],
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

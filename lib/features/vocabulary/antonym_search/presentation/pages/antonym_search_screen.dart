@@ -131,15 +131,23 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              _lastConstraints = constraints;
-              final maxHeight = constraints.maxHeight;
-              final isCompact = maxHeight < 580;
-
-              return Stack(
-                clipBehavior: Clip.none,
-                children: [
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    _lastConstraints = constraints;
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+      
+                    return Column(
+                      children: [
+                        Expanded(
+                          child: Stack(
+                            clipBehavior: Clip.none,
+                            children: [
                   // Magnetic Flux Background
                   Positioned.fill(
                     child: CustomPaint(painter: FluxGridPainter(isDark)),
@@ -201,21 +209,28 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
 
                   if (_activeShardIndex != null)
                     _buildPlasmaThunder(targetColor, isCompact),
-
-                  if (_isFirstStagePassed && !_isAnswered)
-                    DynamicAnagramWrapper(
-                      title: 'SPELL THE ANTONYM',
-                      subtitle: 'Tap all letters to rebuild the word!',
-                      expectedText: _lastQuest!.correctAnswer ?? '',
-                      primaryColor: theme.primaryColor,
-                      onConfirmed: () => _submitVerbalEvaluation(true),
-                      onFailed: () {},
-                      onFailedWithSpelling: (wrongWord) =>
-                          _submitVerbalEvaluation(false),
-                    ),
-                ],
-              );
-            },
+                            ],
+                          ),
+                        ),
+                        if (_isFirstStagePassed && !_isAnswered)
+                          DynamicAnagramWrapper(
+                            title: 'SPELL THE ANTONYM',
+                            subtitle: 'Tap all letters to rebuild the word!',
+                            expectedText: _lastQuest!.correctAnswer ?? '',
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitVerbalEvaluation(true),
+                            onFailed: () {},
+                            onFailedWithSpelling: (wrongWord) =>
+                                _submitVerbalEvaluation(false),
+                            isPositioned: false,
+                          ),
+                        SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         );
       },

@@ -15,6 +15,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
 
   final String? title;
   final String? subtitle;
+  final bool isPositioned;
 
   const DynamicAnagramWrapper({
     super.key,
@@ -26,6 +27,7 @@ class DynamicAnagramWrapper extends StatefulWidget {
     this.bonusCoins = 5,
     this.title,
     this.subtitle,
+    this.isPositioned = true,
   });
 
   @override
@@ -135,15 +137,10 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     final subtitleColor = isDark ? Colors.white60 : Colors.black54;
     final errorColor = Colors.redAccent;
 
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
-      child:
-          Material(
-                type: MaterialType.transparency,
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
+    final content = Material(
+      type: MaterialType.transparency,
+      child: Container(
+        padding: EdgeInsets.fromLTRB(24.w, 20.h, 24.w, 32.h),
                   decoration: BoxDecoration(
                     color: bgColor,
                     borderRadius: BorderRadius.vertical(
@@ -432,8 +429,18 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                 duration: 400.ms,
                 curve: Curves.easeOut,
               )
-              .fadeIn(duration: 300.ms),
-    );
+              .fadeIn(duration: 300.ms);
+
+    if (widget.isPositioned) {
+      return Positioned(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        child: content,
+      );
+    }
+    
+    return content;
   }
 }
 

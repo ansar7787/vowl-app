@@ -100,7 +100,7 @@ class ScanEmptyState extends StatelessWidget {
           ),
           SizedBox(height: 32.h),
           Text(
-                "SYSTEM STANDBY",
+                context.tr('translation.system_standby', fallback: 'SYSTEM STANDBY').toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 14.sp,
