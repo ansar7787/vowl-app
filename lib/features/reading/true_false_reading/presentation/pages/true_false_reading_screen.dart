@@ -16,7 +16,7 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;

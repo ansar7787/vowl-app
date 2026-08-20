@@ -16,7 +16,7 @@ import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opini
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_thesis_card.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_scale_interface.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_argument_stones.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class OpinionWritingScreen extends StatefulWidget {
   final int level;

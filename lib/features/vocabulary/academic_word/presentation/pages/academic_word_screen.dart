@@ -17,7 +17,7 @@ import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/acad
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_instruction.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_thesis_paper.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Public screen widget

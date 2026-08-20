@@ -10,7 +10,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
   final int level;

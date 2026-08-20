@@ -15,7 +15,7 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speec
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_context_card.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_vortex.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_draggable_word.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class PartsOfSpeechScreen extends StatefulWidget {
   final int level;

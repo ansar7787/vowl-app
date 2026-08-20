@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_instruction.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_scanner_field.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SoundImageMatchScreen extends StatefulWidget {
   final int level;

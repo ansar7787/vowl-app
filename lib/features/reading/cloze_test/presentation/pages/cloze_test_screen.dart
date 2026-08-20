@@ -14,7 +14,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ClozeTestScreen extends StatefulWidget {
   final int level;

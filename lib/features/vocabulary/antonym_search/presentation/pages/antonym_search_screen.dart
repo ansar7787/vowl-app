@@ -16,7 +16,7 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_pulsar.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class AntonymSearchScreen extends StatefulWidget {
   final int level;

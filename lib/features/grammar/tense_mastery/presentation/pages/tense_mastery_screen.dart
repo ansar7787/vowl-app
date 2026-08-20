@@ -13,7 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_instruction.dart';
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_timeline_slider.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class TenseMasteryScreen extends StatefulWidget {
   final int level;

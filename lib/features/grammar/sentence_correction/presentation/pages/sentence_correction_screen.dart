@@ -16,7 +16,7 @@ import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/s
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_diagnostic_word.dart';
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_options_panel.dart';
 import 'package:vowl/features/grammar/sentence_correction/presentation/widgets/sentence_correction_feedback.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class SentenceCorrectionScreen extends StatefulWidget {
   final int level;

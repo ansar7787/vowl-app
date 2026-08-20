@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_placement_instruction.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_magnetic_arena.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class ModifierPlacementScreen extends StatefulWidget {
   final int level;

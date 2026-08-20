@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_instruction.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_toggle.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/widgets/voice_swap_result.dart';
-import 'package:vowl/core/presentation/widgets/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class VoiceSwapScreen extends StatefulWidget {
   final int level;

@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
-import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
 
 class RepeatSentenceScreen extends StatefulWidget {
   final int level;

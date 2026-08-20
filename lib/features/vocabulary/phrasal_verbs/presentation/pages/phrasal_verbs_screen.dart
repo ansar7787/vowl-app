@@ -18,7 +18,7 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;

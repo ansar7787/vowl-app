@@ -15,7 +15,7 @@ import 'package:vowl/features/listening/audio_true_false/presentation/widgets/au
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_polarized_filters.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;

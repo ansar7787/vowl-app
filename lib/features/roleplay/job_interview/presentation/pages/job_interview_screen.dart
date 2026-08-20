@@ -17,7 +17,7 @@ import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_in
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_telemetry_dashboard.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_interviewer_panel.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_response_console.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class JobInterviewScreen extends StatefulWidget {
   final int level;

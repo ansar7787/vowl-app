@@ -11,7 +11,7 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class ClauseConnectorScreen extends StatefulWidget {
   final int level;

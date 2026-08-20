@@ -12,7 +12,7 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
 
 /// A self-evaluation overlay for speaking tasks.
 ///

@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class ModalsSelectionScreen extends StatefulWidget {
   final int level;

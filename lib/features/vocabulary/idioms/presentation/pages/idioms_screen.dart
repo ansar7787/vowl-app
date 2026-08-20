@@ -16,7 +16,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;

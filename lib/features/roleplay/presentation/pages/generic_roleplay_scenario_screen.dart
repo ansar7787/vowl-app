@@ -18,7 +18,7 @@ import 'package:vowl/features/roleplay/presentation/widgets/chat_message.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_character_card.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_chat_messages_list.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_options_section.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 /// Generic screen for multiple-choice Roleplay quests.
 ///

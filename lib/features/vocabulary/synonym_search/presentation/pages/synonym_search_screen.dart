@@ -17,7 +17,7 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
-import 'package:vowl/core/presentation/widgets/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;

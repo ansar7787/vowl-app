@@ -11,7 +11,7 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';

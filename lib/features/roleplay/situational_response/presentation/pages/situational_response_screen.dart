@@ -17,7 +17,7 @@ import 'package:vowl/features/roleplay/situational_response/presentation/widgets
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_scene_display.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_explanation_panel.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_reaction_zone.dart';
-import 'package:vowl/core/presentation/widgets/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SituationalResponseScreen extends StatefulWidget {
   final int level;
