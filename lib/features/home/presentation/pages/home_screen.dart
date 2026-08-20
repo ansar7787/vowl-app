@@ -30,6 +30,7 @@ import 'package:vowl/features/home/presentation/widgets/inline_notification_card
 import 'package:vowl/features/home/presentation/widgets/daily_words_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/translation_home_card.dart';
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
+import 'package:vowl/features/home/presentation/widgets/ai_lab_grid.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -397,6 +398,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               SizedBox(height: 12.h),
                               TranslationHomeCard(isDark: isDark),
+                              SizedBox(height: 24.h),
+                              const AiLabGrid(),
                             ],
                           ),
                         ),

@@ -204,8 +204,8 @@ Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubt
 | A5 | Kids Zone (25 topics) | All basics | Age-appropriate learning games | ✅ $0 | ✅ |
 | A6 | Self-Evolution Speaking | Speaking | AI evaluates pronunciation accuracy | ✅ $0 (on-device STT) | ✅ |
 | A7 | Self-Evolution Reading | Reading | Tracks reading speed + comprehension | ✅ $0 | ✅ |
-| A8 | Jigsaw Puzzle | Vocabulary | Assemble word pieces into meaning | ✅ $0 | ✅ |
-| A9 | Anagram Challenge | Spelling | Unscramble letters into words | ✅ $0 | ⬜ |
+| A8 | Word Jigsaw | Vocabulary | Daily Challenge: Assemble word pieces | ✅ $0 | ✅ |
+| A9 | Word Scramble | Spelling | Daily Challenge: Unscramble letters | ✅ $0 | ✅ |
 
 ---
 

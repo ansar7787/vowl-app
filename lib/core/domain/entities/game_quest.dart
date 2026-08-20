@@ -211,7 +211,6 @@ enum GameSubtype {
   prefixSuffix(QuestType.vocabulary),
   collocations(QuestType.vocabulary),
   contextualUsage(QuestType.vocabulary),
-  jigsawPuzzle(QuestType.vocabulary),
   // 7. Accent
   minimalPairs(QuestType.accent),
   intonationMimic(QuestType.accent),

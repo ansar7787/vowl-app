@@ -18,6 +18,8 @@ import 'package:vowl/features/games/game_routes.dart';
 import 'package:vowl/features/home/home_routes.dart';
 import 'package:vowl/features/daily_words/daily_words_routes.dart';
 import 'package:vowl/features/translation/translation_routes.dart';
+import 'package:vowl/features/daily_challenges/word_mixer/presentation/pages/word_mixer_screen.dart';
+import 'package:vowl/features/daily_challenges/word_snap/presentation/pages/word_snap_screen.dart';
 
 class AppRouter {
   AppRouter._(); // Non-instantiable.
@@ -59,6 +61,8 @@ class AppRouter {
 
   // Translation
   static const String translateRoute = '/translate';
+  static const String wordSnapRoute = '/word-snap';
+  static const String wordMixerRoute = '/word-mixer';
 
   // ── Kids Zone routes ──────────────────────────────────────────────────────
 
@@ -126,6 +130,14 @@ class AppRouter {
       ...HomeRoutes.routes,
       ...DailyWordsRoutes.routes,
       ...translationRoutes,
+      GoRoute(
+        path: wordSnapRoute,
+        builder: (context, state) => const WordSnapScreen(level: 1),
+      ),
+      GoRoute(
+        path: wordMixerRoute,
+        builder: (context, state) => const WordMixerScreen(),
+      ),
     ],
     // FIX (HIGH-6): Replace bare Text with an actionable error page that
     // gives the user a path back to safety instead of a dead-end screen.
