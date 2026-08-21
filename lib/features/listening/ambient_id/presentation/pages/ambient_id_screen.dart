@@ -15,6 +15,9 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_instruction.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_sonar_field.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_emitter_node.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AmbientIdScreen extends StatefulWidget {
   final int level;
@@ -41,6 +44,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
   int _lastProcessedIndex = -1;
   int? _lastLives;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
 
   @override
   void initState() {
@@ -60,10 +64,35 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
     super.dispose();
   }
 
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
+  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
+    if (_isAnswered || _pendingSelectedIndex == null) return;
+    
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Ambient ID',
+          userAnswer: '[Failed Speaking]',
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _pendingSelectedIndex == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -71,14 +100,30 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
+        _selectedIndex = _pendingSelectedIndex;
       });
+      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Ambient ID',
+          userAnswer: _pendingSelectedIndex.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
       });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
@@ -102,6 +147,7 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -140,9 +186,11 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
           },
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
+              : Stack(
+                  children: [
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 16.w,
@@ -171,10 +219,12 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                 isAnswered: _isAnswered,
                                 isCorrectState: _isCorrect,
                                 selectedIndex: _selectedIndex,
-                                onSubmitAnswer: (index) => _submitAnswer(
-                                  index,
-                                  quest.correctAnswerIndex ?? 0,
-                                ),
+                                onSubmitAnswer: (index) {
+                                  if (_isAnswered || _pendingSelectedIndex != null) return;
+                                  setState(() {
+                                    _pendingSelectedIndex = index;
+                                  });
+                                },
                                 imageUrl: quest.imageUrl,
                               ),
                             ],
@@ -200,13 +250,29 @@ class _AmbientIdScreenState extends State<AmbientIdScreen>
                                 },
                                 color: theme.primaryColor,
                               ),
-                              SizedBox(height: 20.h),
+                              SizedBox(height: 100.h),
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
+                  if (_pendingSelectedIndex != null && !_isAnswered)
+                    SpeakToConfirmOverlay(
+                      expectedText: quest.options![_pendingSelectedIndex!],
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _submitFinalAnswer(
+                        true,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      onSkipped: () => _submitFinalAnswer(
+                        false,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      allowSkip: true,
+                    ),
+                ],
+              ),
         );
       },
     );

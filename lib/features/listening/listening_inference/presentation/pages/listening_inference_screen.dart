@@ -14,6 +14,8 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
   final int level;
@@ -77,6 +79,19 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Listening Inference',
+          userAnswer: index.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;

@@ -15,6 +15,9 @@ import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_gauges.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_core.dart';
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/widgets/fast_speech_decoder_steam_vents.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class FastSpeechDecoderScreen extends StatefulWidget {
   final int level;
@@ -43,6 +46,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
 
   @override
   void initState() {
@@ -69,10 +73,35 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     }
   }
 
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
+  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
+    if (_isAnswered || _pendingSelectedIndex == null) return;
+    
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Fast Speech Decoder',
+          userAnswer: '[Failed Speaking]',
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _pendingSelectedIndex == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -80,14 +109,30 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
+        _selectedIndex = _pendingSelectedIndex;
       });
+      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Fast Speech Decoder',
+          userAnswer: _pendingSelectedIndex.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
       });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
@@ -111,6 +156,7 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _dialRotation.value = 0.33;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -146,9 +192,11 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
+              : Stack(
+                  children: [
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 16.w,
@@ -217,17 +265,36 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
                                 isAnswered: _isAnswered,
                                 isCorrectState: _isCorrect,
                                 selectedIndex: _selectedIndex,
-                                onSubmitAnswer: (index) => _submitAnswer(
-                                  index,
-                                  quest.correctAnswerIndex ?? 0,
-                                ),
+                                onSubmitAnswer: (index) {
+                                  if (_isAnswered || _pendingSelectedIndex != null) return;
+                                  setState(() {
+                                    _pendingSelectedIndex = index;
+                                  });
+                                },
                               ),
+                              SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
+                  if (_pendingSelectedIndex != null && !_isAnswered)
+                    SpeakToConfirmOverlay(
+                      expectedText: quest.options![_pendingSelectedIndex!],
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _submitFinalAnswer(
+                        true,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      onSkipped: () => _submitFinalAnswer(
+                        false,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      allowSkip: true,
+                    ),
+                ],
+              ),
         );
       },
     );

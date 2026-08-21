@@ -14,6 +14,9 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_instruction.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_emitter.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/widgets/emotion_recognition_neural_field.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class EmotionRecognitionScreen extends StatefulWidget {
   final int level;
@@ -40,6 +43,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
 
   @override
   void initState() {
@@ -68,10 +72,35 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     _coreOffset.value = Offset(nextX, nextY);
   }
 
-  void _submitAnswer(int index, int correct) {
-    if (_isAnswered) return;
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
+  void _submitFinalAnswer(bool nailedSpeaking, int correct) {
+    if (_isAnswered || _pendingSelectedIndex == null) return;
+    
+    if (!nailedSpeaking) {
+      _hapticService.error();
+      _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Emotion Recognition',
+          userAnswer: '[Failed Speaking]',
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _pendingSelectedIndex == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -79,14 +108,30 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
+        _selectedIndex = _pendingSelectedIndex;
       });
+      context.read<ListeningBloc>().add(const ListeningSpeakConfirmed(5));
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Emotion Recognition',
+          userAnswer: _pendingSelectedIndex.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
       });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
@@ -110,6 +155,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _coreOffset.value = Offset.zero;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -145,9 +191,11 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    slivers: [
+              : Stack(
+                  children: [
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
                       SliverPadding(
                         padding: EdgeInsets.symmetric(
                           horizontal: 16.w,
@@ -202,18 +250,37 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                                   selectedIndex: _selectedIndex,
                                   coreOffset: _coreOffset,
                                   onCoreMove: _onCoreMove,
-                                  onSubmitAnswer: (index) => _submitAnswer(
-                                    index,
-                                    quest.correctAnswerIndex ?? 0,
-                                  ),
+                                  onSubmitAnswer: (index) {
+                                    if (_isAnswered || _pendingSelectedIndex != null) return;
+                                    setState(() {
+                                      _pendingSelectedIndex = index;
+                                    });
+                                  },
                                 ),
                               ),
+                              SizedBox(height: 100.h), // Spacing for SpeakToConfirmOverlay
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
+                  if (_pendingSelectedIndex != null && !_isAnswered)
+                    SpeakToConfirmOverlay(
+                      expectedText: quest.options![_pendingSelectedIndex!],
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _submitFinalAnswer(
+                        true,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      onSkipped: () => _submitFinalAnswer(
+                        false,
+                        quest.correctAnswerIndex ?? 0,
+                      ),
+                      allowSkip: true,
+                    ),
+                ],
+              ),
         );
       },
     );

@@ -22,6 +22,14 @@ class ListeningQuest extends GameQuest {
   final String? evidenceQuote;
   final List<String>? imageDescriptions;
 
+  // D3 Additions (Games 16-20)
+  final String? slowVersion;
+  final int? emotionScale;
+  final String? detailCategory;
+  final String? literalMeaning;
+  final String? locationContext;
+  final List<String>? vocabularyWords;
+
   const ListeningQuest({
     required super.id,
     super.type,
@@ -60,6 +68,12 @@ class ListeningQuest extends GameQuest {
     this.pauseMarkers,
     this.evidenceQuote,
     this.imageDescriptions,
+    this.slowVersion,
+    this.emotionScale,
+    this.detailCategory,
+    this.literalMeaning,
+    this.locationContext,
+    this.vocabularyWords,
   });
 
   String? get audioTranscript => transcript ?? transcription ?? textToSpeak;
@@ -87,5 +101,11 @@ class ListeningQuest extends GameQuest {
     pauseMarkers,
     evidenceQuote,
     imageDescriptions,
+    slowVersion,
+    emotionScale,
+    detailCategory,
+    literalMeaning,
+    locationContext,
+    vocabularyWords,
   ];
 }

@@ -38,6 +38,12 @@ class ListeningQuestModel extends ListeningQuest {
     super.pauseMarkers,
     super.evidenceQuote,
     super.imageDescriptions,
+    super.slowVersion,
+    super.emotionScale,
+    super.detailCategory,
+    super.literalMeaning,
+    super.locationContext,
+    super.vocabularyWords,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -128,6 +134,12 @@ class ListeningQuestModel extends ListeningQuest {
           : null,
       evidenceQuote: map['evidenceQuote'] as String?,
       imageDescriptions: parseStringList(map['imageDescriptions'] ?? map['descriptions']),
+      slowVersion: map['slowVersion'] as String?,
+      emotionScale: (map['emotionScale'] as num?)?.toInt(),
+      detailCategory: map['detailCategory'] as String?,
+      literalMeaning: map['literalMeaning'] as String?,
+      locationContext: map['locationContext'] as String?,
+      vocabularyWords: parseStringList(map['vocabularyWords']),
     );
   }
 
@@ -163,6 +175,12 @@ class ListeningQuestModel extends ListeningQuest {
       'pauseMarkers': pauseMarkers,
       'evidenceQuote': evidenceQuote,
       'imageDescriptions': imageDescriptions,
+      'slowVersion': slowVersion,
+      'emotionScale': emotionScale,
+      'detailCategory': detailCategory,
+      'literalMeaning': literalMeaning,
+      'locationContext': locationContext,
+      'vocabularyWords': vocabularyWords,
     };
   }
 }

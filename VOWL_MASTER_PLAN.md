@@ -75,11 +75,11 @@
 | 13 | audioSentenceOrder | 8→10 | Add `pauseMarkers` for TTS | Drag-handle sentence cards | Jigsaw wrapper | 🔲 |
 | 14 | audioTrueFalse | 7→10 | Add `evidenceQuote` field | User TYPE the evidence heard | EvidenceHighlight + TypeToConfirm | 🔲 |
 | 15 | soundImageMatch | 7→10 | Add `description` per image | 6 images at high levels + timer | SpeedChallengeTimer | 🔲 |
-| 16 | fastSpeechDecoder | 9→10 | Add `slowVersion` field | Toggle "hear it slow" button | SpeakToConfirm repeat | 🔲 |
-| 17 | emotionRecognition | 8→10 | Add `emotionScale` (intensity 1-5) | Emotion wheel visual | SpeakToConfirm same emotion | 🔲 |
-| 18 | detailSpotlight | 8→10 | Add `detailCategory` (name/number/date) | Focus hint BEFORE listening | TypeToConfirm type detail | 🔲 |
-| 19 | listeningInference | 9→10 | Add `literalMeaning` vs `impliedMeaning` | Show both meanings comparison | ErrorJournalCollector | 🔲 |
-| 20 | ambientId | 7→10 | Add `locationContext` + `vocabularyWords` | Describe scene in 1 sentence | SpeakToConfirm describe | 🔲 |
+| 16 | fastSpeechDecoder | 9→10 | Add `slowVersion` field | Toggle "hear it slow" button | SpeakToConfirm repeat | ✅ |
+| 17 | emotionRecognition | 8→10 | Add `emotionScale` (intensity 1-5) | Emotion wheel visual | SpeakToConfirm same emotion | ✅ |
+| 18 | detailSpotlight | 8→10 | Add `detailCategory` (name/number/date) | Focus hint BEFORE listening | TypeToConfirm type detail | ✅ |
+| 19 | listeningInference | 9→10 | Add `literalMeaning` vs `impliedMeaning` | Show both meanings comparison | ErrorJournalCollector | ✅ |
+| 20 | ambientId | 7→10 | Add `locationContext` + `vocabularyWords` | Describe scene in 1 sentence | SpeakToConfirm describe | ✅ |
 
 #### D3: 📖 READING (12 games) — Current 8.2 → Target 10/10
 
@@ -260,11 +260,11 @@
 | 13 | audioSentenceOrder | 🔲 | 🔲 | 🔲 | 🔲 | ✅ |
 | 14 | audioTrueFalse | ✅ | ✅ | 🔲 | 🔲 | ✅ |
 | 15 | soundImageMatch | ✅ | 🔲 | ✅ | 🔲 | ✅ |
-| 16 | fastSpeechDecoder | — | — | 🔲 | — | 🔲 |
-| 17 | emotionRecognition | — | — | — | — | 🔲 |
-| 18 | detailSpotlight | — | — | — | — | 🔲 |
-| 19 | listeningInference | — | — | — | — | 🔲 |
-| 20 | ambientId | — | — | — | — | 🔲 |
+| 16 | fastSpeechDecoder | ✅ | — | 🔲 | — | ✅ |
+| 17 | emotionRecognition | ✅ | — | — | — | ✅ |
+| 18 | detailSpotlight | — | — | — | — | ✅ |
+| 19 | listeningInference | — | — | — | — | ✅ |
+| 20 | ambientId | ✅ | — | — | — | ✅ |
 
 ### 📖 READING (12 games)
 
@@ -416,8 +416,8 @@
 | A: Foundation | 13 | ✅ 13 | 0 |
 | B: Existing Mechanics | 8 | ✅ 8 (4 fixed) | 0 |
 | C: New Mechanics | 5 | ✅ 5 | 0 |
-| D: Upgrade 100 Games | 100 | 🔲 0 | 100 |
+| D: Upgrade 100 Games | 100 | 🔲 15 | 85 |
 | E: Launch | 6 | 🔲 0 | 6 |
-| **TOTAL** | **132** | **26 done** | **106 remaining** |
+| **TOTAL** | **132** | **41 done** | **91 remaining** |
 
 **Current Rating: 8.1/10 → After all phases: 10/10**

@@ -15,6 +15,9 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/de
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_emitter.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_prompt.dart';
 import 'package:vowl/features/listening/detail_spotlight/presentation/widgets/detail_spotlight_dark_field.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class DetailSpotlightScreen extends StatefulWidget {
   final int level;
@@ -39,6 +42,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   int? _selectedIndex;
+  int? _pendingSelectedIndex;
   final ValueNotifier<Offset> _spotlightPos = ValueNotifier(const Offset(0, 0));
 
   @override
@@ -55,11 +59,35 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     );
   }
 
-  void _submitFinalAnswer(int index, int correct) {
-    if (_isAnswered) return;
+  void _submitFinalAnswer(bool typedCorrectly, int correct) {
+    if (_isAnswered || _pendingSelectedIndex == null) return;
     
-    setState(() => _selectedIndex = index);
-    bool isCorrect = index == correct;
+    if (!typedCorrectly) {
+      _hapticService.error();
+      _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Detail Spotlight',
+          userAnswer: '[Failed Typing]',
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
+      });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+      return;
+    }
+
+    bool isCorrect = _pendingSelectedIndex == correct;
 
     if (isCorrect) {
       _hapticService.success();
@@ -67,14 +95,29 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
+        _selectedIndex = _pendingSelectedIndex;
       });
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Detail Spotlight',
+          userAnswer: _pendingSelectedIndex.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
+        _selectedIndex = _pendingSelectedIndex;
       });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
@@ -98,6 +141,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+              _pendingSelectedIndex = null;
               _spotlightPos.value = const Offset(0, 0);
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -201,19 +245,34 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
                                       }
                                     },
                                     onSelect: (index) {
-                                      _submitFinalAnswer(
-                                        index,
-                                        quest.correctAnswerIndex ?? 0,
-                                      );
+                                      if (_isAnswered || _pendingSelectedIndex != null) return;
+                                      setState(() {
+                                        _pendingSelectedIndex = index;
+                                      });
                                     },
                                   ),
                                 ),
+                                SizedBox(height: 100.h), // Spacing for TypeToConfirmOverlay
                               ],
                             ),
                           ),
                         ),
                       ],
                     ),
+                    if (_pendingSelectedIndex != null && !_isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.options![_pendingSelectedIndex!],
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(
+                          true,
+                          quest.correctAnswerIndex ?? 0,
+                        ),
+                        onSkipped: () => _submitFinalAnswer(
+                          false,
+                          quest.correctAnswerIndex ?? 0,
+                        ),
+                        allowSkip: true,
+                      ),
                   ],
                 ),
         );
