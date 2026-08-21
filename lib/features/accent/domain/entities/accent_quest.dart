@@ -28,6 +28,7 @@ class AccentQuest extends GameQuest {
   final String? flowRule;
   final String? pacingRule;
   final String? stressRule;
+  final String? emotionContext;
 
   const AccentQuest({
     required super.id,
@@ -73,6 +74,7 @@ class AccentQuest extends GameQuest {
     this.flowRule,
     this.pacingRule,
     this.stressRule,
+    this.emotionContext,
     super.targetWord,
     super.question,
     super.sentence,
@@ -126,6 +128,7 @@ class AccentQuest extends GameQuest {
     String? flowRule,
     String? pacingRule,
     String? stressRule,
+    String? emotionContext,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -173,6 +176,7 @@ class AccentQuest extends GameQuest {
       flowRule: flowRule ?? this.flowRule,
       pacingRule: pacingRule ?? this.pacingRule,
       stressRule: stressRule ?? this.stressRule,
+      emotionContext: emotionContext ?? this.emotionContext,
     );
   }
 
@@ -207,5 +211,6 @@ class AccentQuest extends GameQuest {
     flowRule,
     pacingRule,
     stressRule,
+    emotionContext,
   ];
 }

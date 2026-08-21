@@ -18,7 +18,7 @@ import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/inton
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_rollercoaster.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_pulse_speaker.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/widgets/intonation_mimic_vertical_fader.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class IntonationMimicScreen extends StatefulWidget {
   final int level;
@@ -323,9 +323,9 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                         child:
                                                             IntonationMimicPromptCard(
                                                               word: quest.word ?? "",
-                                                              color:
-                                                                  theme.primaryColor,
+                                                              color: theme.primaryColor,
                                                               isDark: isDark,
+                                                              emotionContext: quest.emotionContext,
                                                             ),
                                                       ),
                                                     ),
@@ -334,6 +334,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                                     word: quest.word ?? "",
                                                     color: theme.primaryColor,
                                                     isDark: isDark,
+                                                    emotionContext: quest.emotionContext,
                                                   ),
                                             SizedBox(height: gapPrompt),
 
@@ -395,12 +396,14 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  SpeakToConfirmOverlay(
+                                    expectedText: quest.word ?? "",
+                                    displayText: "Speak the sentence with the correct intonation:\n${quest.word ?? ""}",
                                     primaryColor: theme.primaryColor,
-                                    isCompact: isCompact,
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    onConfirmed: () => _submitVerbalEvaluation(true),
+                                    onSkipped: () => _submitVerbalEvaluation(false),
+                                    isPositioned: false,
                                   ),
                                 SizedBox(height: _isAnswered ? 180.h : 0),
                               ],

@@ -49,6 +49,7 @@ class AccentQuestModel extends AccentQuest {
     super.flowRule,
     super.pacingRule,
     super.stressRule,
+    super.emotionContext,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -146,6 +147,7 @@ class AccentQuestModel extends AccentQuest {
       flowRule: getString(map['flowRule']),
       pacingRule: getString(map['pacingRule']),
       stressRule: getString(map['stressRule']),
+      emotionContext: getString(map['emotionContext']),
     );
   }
 
@@ -194,6 +196,7 @@ class AccentQuestModel extends AccentQuest {
       'flowRule': flowRule,
       'pacingRule': pacingRule,
       'stressRule': stressRule,
+      'emotionContext': emotionContext,
     };
   }
 }

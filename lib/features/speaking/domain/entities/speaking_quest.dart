@@ -25,6 +25,7 @@ class SpeakingQuest extends GameQuest {
   final List<String>? commonMistakes;
   final List<String>? bonusAntonyms;
   final String? situationExample;
+  final String? emotionContext;
 
   const SpeakingQuest({
     required super.id,
@@ -69,6 +70,7 @@ class SpeakingQuest extends GameQuest {
     this.commonMistakes,
     this.bonusAntonyms,
     this.situationExample,
+    this.emotionContext,
   });
 
   @override
@@ -96,5 +98,6 @@ class SpeakingQuest extends GameQuest {
     commonMistakes,
     bonusAntonyms,
     situationExample,
+    emotionContext,
   ];
 }

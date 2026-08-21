@@ -6,12 +6,14 @@ class IntonationMimicPromptCard extends StatelessWidget {
   final String word;
   final Color color;
   final bool isDark;
+  final String? emotionContext;
 
   const IntonationMimicPromptCard({
     super.key,
     required this.word,
     required this.color,
     required this.isDark,
+    this.emotionContext,
   });
 
   @override
@@ -37,13 +39,34 @@ class IntonationMimicPromptCard extends StatelessWidget {
                   "TARGET SENTENCE",
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 8.sp,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                     color: color,
                     letterSpacing: 2,
                   ),
                 ),
                 SizedBox(height: 8.h),
+                if (emotionContext != null) ...[
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: color.withValues(alpha: 0.3)),
+                    ),
+                    child: Text(
+                      emotionContext!.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w600,
+                        color: color,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12.h),
+                ],
                 Text(
                   word,
                   textAlign: TextAlign.center,

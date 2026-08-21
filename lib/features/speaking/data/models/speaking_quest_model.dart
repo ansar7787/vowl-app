@@ -45,6 +45,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.commonMistakes,
     super.bonusAntonyms,
     super.situationExample,
+    super.emotionContext,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -121,6 +122,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       commonMistakes: getList(map['commonMistakes']),
       bonusAntonyms: getList(map['bonusAntonyms']),
       situationExample: map['situationExample'] as String?,
+      emotionContext: map['emotionContext'] as String?,
     );
   }
 
@@ -166,6 +168,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       'commonMistakes': commonMistakes,
       'bonusAntonyms': bonusAntonyms,
       'situationExample': situationExample,
+      'emotionContext': emotionContext,
     };
   }
 
@@ -212,6 +215,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     List<String>? commonMistakes,
     List<String>? bonusAntonyms,
     String? situationExample,
+    String? emotionContext,
   }) {
     return SpeakingQuestModel(
       id: id ?? this.id,
@@ -257,6 +261,7 @@ class SpeakingQuestModel extends SpeakingQuest {
       commonMistakes: commonMistakes ?? this.commonMistakes,
       bonusAntonyms: bonusAntonyms ?? this.bonusAntonyms,
       situationExample: situationExample ?? this.situationExample,
+      emotionContext: emotionContext ?? this.emotionContext,
     );
   }
 }
