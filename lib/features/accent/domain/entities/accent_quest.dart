@@ -33,6 +33,8 @@ class AccentQuest extends GameQuest {
   final String? linkingType;
   final double? speedLevel;
   final Map<String, dynamic>? vowelChart;
+  final String? voicing;
+  final String? airflow;
 
   const AccentQuest({
     required super.id,
@@ -83,6 +85,8 @@ class AccentQuest extends GameQuest {
     this.linkingType,
     this.speedLevel,
     this.vowelChart,
+    this.voicing,
+    this.airflow,
     super.targetWord,
     super.question,
     super.sentence,
@@ -141,6 +145,8 @@ class AccentQuest extends GameQuest {
     String? linkingType,
     double? speedLevel,
     Map<String, dynamic>? vowelChart,
+    String? voicing,
+    String? airflow,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -193,6 +199,8 @@ class AccentQuest extends GameQuest {
       linkingType: linkingType ?? this.linkingType,
       speedLevel: speedLevel ?? this.speedLevel,
       vowelChart: vowelChart ?? this.vowelChart,
+      voicing: voicing ?? this.voicing,
+      airflow: airflow ?? this.airflow,
     );
   }
 
@@ -232,5 +240,7 @@ class AccentQuest extends GameQuest {
     linkingType,
     speedLevel,
     vowelChart,
+    voicing,
+    airflow,
   ];
 }

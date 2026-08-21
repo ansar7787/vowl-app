@@ -18,7 +18,7 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pi
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_melodic_canvas.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_match_vertical_fader.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class PitchPatternMatchScreen extends StatefulWidget {
   final int level;
@@ -304,6 +304,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
                                             PitchPatternMatchPromptCard(
                                               word: quest.word ?? "",
+                                              emotionContext: quest.emotionContext,
                                               color: theme.primaryColor,
                                               isDark: isDark,
                                             ),
@@ -355,15 +356,19 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  SpeakToConfirmOverlay(
+                                    expectedText: quest.textToSpeak ?? quest.word ?? "",
                                     primaryColor: theme.primaryColor,
-                                    isCompact:
-                                        false, // Fader takes fixed height
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      _submitVerbalEvaluation(true);
+                                    },
+                                    onSkipped: () {
+                                      _submitVerbalEvaluation(false);
+                                    },
                                   ),
-                                SizedBox(height: _isAnswered ? 180.h : 0),
+                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 140.h : 0),
                               ],
                             ),
                           ),

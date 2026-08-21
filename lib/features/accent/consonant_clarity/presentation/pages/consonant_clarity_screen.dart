@@ -15,7 +15,8 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/cons
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_prompt_card.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_pulse_speaker.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_tactile_grid.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/features/accent/consonant_clarity/presentation/widgets/consonant_clarity_throat_indicator.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 
 class ConsonantClarityScreen extends StatefulWidget {
   final int level;
@@ -340,11 +341,22 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                                             _isFirstStagePassed,
                                                       ),
                                                 SizedBox(height: gapPrompt),
-                                                ConsonantClarityPulseSpeaker(
-                                                  text: quest.textToSpeak ?? "",
-                                                  color: theme.primaryColor,
-                                                  onPlayTts: _playTts,
-                                                ),
+                                                if (_isFirstStagePassed && quest.voicing != null && quest.airflow != null)
+                                                  Padding(
+                                                    padding: EdgeInsets.only(bottom: 24.h),
+                                                    child: ConsonantClarityThroatIndicator(
+                                                      voicing: quest.voicing!,
+                                                      airflow: quest.airflow!,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                  )
+                                                else
+                                                  ConsonantClarityPulseSpeaker(
+                                                    text: quest.textToSpeak ?? "",
+                                                    color: theme.primaryColor,
+                                                    onPlayTts: _playTts,
+                                                  ),
                                               ],
                                             ),
                                             Column(
@@ -395,7 +407,7 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                       ),
                                     ),
                                     if (_isFirstStagePassed && !_isAnswered)
-                                      SpeakToConfirmOverlay(
+                                      ShadowPlaybackCompare(
                                         expectedText: quest.word ?? "",
                                         primaryColor: theme.primaryColor,
                                         isPositioned: false,
@@ -405,12 +417,12 @@ class _ConsonantClarityScreenState extends State<ConsonantClarityScreen> {
                                           );
                                           _submitVerbalEvaluation(true);
                                         },
-                                        onSkipped: () => _submitVerbalEvaluation(
-                                          false,
-                                        ),
+                                        onSkipped: () {
+                                          _submitVerbalEvaluation(false);
+                                        },
                                       ),
                                     SizedBox(
-                                      height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h,
+                                      height: (_isAnswered || _isFirstStagePassed) ? 140.h : 20.h,
                                     ),
                                   ],
                                 ),

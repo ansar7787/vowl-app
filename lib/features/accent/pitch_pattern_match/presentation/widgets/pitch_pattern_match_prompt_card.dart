@@ -4,12 +4,14 @@ import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class PitchPatternMatchPromptCard extends StatelessWidget {
   final String word;
+  final String? emotionContext;
   final Color color;
   final bool isDark;
 
   const PitchPatternMatchPromptCard({
     super.key,
     required this.word,
+    this.emotionContext,
     required this.color,
     required this.isDark,
   });
@@ -55,6 +57,27 @@ class PitchPatternMatchPromptCard extends StatelessWidget {
                     letterSpacing: 1,
                   ),
                 ),
+                if (emotionContext != null) ...[
+                  SizedBox(height: 12.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: color.withValues(alpha: 0.3)),
+                    ),
+                    child: Text(
+                      emotionContext!.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                        color: color,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                  ),
+                ],
               ],
             ),
           ),

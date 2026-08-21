@@ -167,8 +167,8 @@
 | 78 | wordLinking | 8→10 | ✅ Added `linkingType` | ✅ Linking arrows between words | ✅ ShadowPlaybackCompare | ✅ |
 | 79 | shadowingChallenge | 9→10 | Add `speedLevel` (0.75x-1.25x) | Speed slider progression | ShadowPlaybackCompare | ✅ |
 | 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | ✅ |
-| 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | 🔲 |
-| 82 | pitchPatternMatch | 8→10 | Add `emotionContext` | Same words + different pitch demo | SpeakToConfirm | 🔲 |
+| 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | ✅ |
+| 82 | pitchPatternMatch | 8→10 | Add `emotionContext` | Same words + different pitch demo | SpeakToConfirm | ✅ |
 | 83 | speedVariance | 8→10 | Add `naturalSpeed` vs `clearSpeed` | Toggle natural/clear | SpeedChallengeTimer | 🔲 |
 | 84 | dialectDrill | 8→10 | Add `dialectRegion` | Map of dialect region | ShadowPlaybackCompare | 🔲 |
 | 85 | connectedSpeech | 8→10 | Add `phenomenonType` | Written vs spoken side-by-side | ShadowPlaybackCompare | 🔲 |
