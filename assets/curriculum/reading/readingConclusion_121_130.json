@@ -18,7 +18,9 @@
             "correctAnswer": "The link between irregular sleep and memory decline may be influenced by other factors like stress and diet, not sleep schedule alone.",
             "hint": "Notice the researchers' own caution about what correlation does and does not prove.",
             "explanation": "The researchers found a correlation between irregular sleep and memory decline but explicitly noted that stress and diet, which also affect memory, differed between groups too, meaning the sleep schedule's specific contribution remains uncertain rather than proven as a direct cause.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L121_Q2",
@@ -35,7 +37,9 @@
             "correctAnswer": "Leadership's own visible use of vacation time appears linked to higher engagement, independent of company size, industry, or pay.",
             "hint": "Notice which specific factors the analysis controlled for separately from leadership behavior.",
             "explanation": "Engagement was higher where leadership visibly took vacation time, even after accounting for size, industry, and pay, suggesting that modeling healthy rest habits from the top may shape workplace culture in ways that formal policy alone does not capture.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L121_Q3",
@@ -52,7 +56,9 @@
             "correctAnswer": "It's unclear from the available evidence whether the musicians caused the revival or were simply among its earliest participants.",
             "hint": "Notice the historian's own uncertainty about which came first: the musicians' influence or the underlying trend.",
             "explanation": "The historian explicitly says it's unclear whether the musicians sparked the revival or simply joined an already-building trend early, meaning the honest conclusion is one of genuine uncertainty about the direction of cause and effect, not a confident claim either way.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L122_Q1",
@@ -69,7 +75,9 @@
             "correctAnswer": "The tool's accuracy appears to depend heavily on how well-represented a claim type was in its original training data.",
             "hint": "Notice what the team attributes the accuracy gap to at the end of the passage.",
             "explanation": "Accuracy was higher for common claim types with more training examples and lower for rare types with fewer examples, suggesting the tool's performance is closely tied to how much relevant data it saw during training, a limitation worth considering before relying on it for rarer cases.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L122_Q2",
@@ -86,7 +94,9 @@
             "correctAnswer": "Explicitly discussing fall risk during handoffs appears more effective at preventing falls than simply having the risk data available in the system.",
             "hint": "Notice that both types of units had access to the same risk data; only how it was discussed differed.",
             "explanation": "Checklist units with explicit fall-risk discussion had fewer falls than conversational units, even with identical access to the underlying data, suggesting that actively communicating the risk information mattered more than simply having it recorded somewhere in the system.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L122_Q3",
@@ -103,7 +113,9 @@
             "correctAnswer": "Explaining material aloud appears more effective for exam performance than silent review, even with equal total study time.",
             "hint": "Notice that total study time was equal between groups; only the study method differed.",
             "explanation": "Students who explained material aloud outperformed those who used silent review, despite equal study time, suggesting the active technique of generating an explanation strengthens learning more than passively re-reading the same material, consistent with prior research the passage mentions.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L123_Q1",
@@ -120,7 +132,9 @@
             "correctAnswer": "Forest-protection offset projects appear to be more predictably accurate than new-forest offset projects, which face more uncertainty.",
             "hint": "Compare the accuracy of the two types of offset projects, and consider why one might be more predictable.",
             "explanation": "Forest-protection projects matched their estimates more closely than new-forest projects, which faced risks like mortality and wildfire, suggesting that preventing the loss of existing carbon storage is a more reliable strategy than projecting the uncertain growth of newly planted trees.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L123_Q2",
@@ -137,7 +151,9 @@
             "correctAnswer": "Seeing a longer performance timeframe appears to help investors avoid overreacting to short-term downturns.",
             "hint": "Think about how seeing ten years of data, instead of just one, might change an investor's perspective on a temporary dip.",
             "explanation": "Investors shown a ten-year graph were less likely to sell during a downturn than those shown only a one-year graph, suggesting the longer context helped them see the dip as temporary rather than as evidence of a larger decline.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L123_Q3",
@@ -154,7 +170,9 @@
             "correctAnswer": "It remains unclear whether smaller group size or the type of visitor attracted by higher prices explains the satisfaction difference.",
             "hint": "Notice the question the authority itself raises at the end of the passage.",
             "explanation": "Smaller, pricier tours had higher satisfaction, but the passage explicitly notes uncertainty about whether the group size or the different type of visitor drawn by the price explains the difference, so the honest conclusion is one of genuine ambiguity rather than a settled cause.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L124_Q1",
@@ -171,7 +189,9 @@
             "correctAnswer": "Birth order's apparent influence on personality may actually be explained by other family factors rather than birth order itself.",
             "hint": "Notice what happened to the birth-order correlation once other family factors were accounted for.",
             "explanation": "Birth-order effects weakened once family size, sibling spacing, and socioeconomic factors were accounted for, suggesting that popular assumptions about birth order and personality may actually reflect these other characteristics rather than birth order itself being the true cause.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L124_Q2",
@@ -188,7 +208,9 @@
             "correctAnswer": "Schedule compression, rather than travel distance alone, appears to be the more direct factor behind the injury correlation.",
             "hint": "Notice what the analysts found when they broke the data down further.",
             "explanation": "The initial correlation between travel and injuries was mostly explained by compressed schedules with back-to-back games, not travel distance itself, suggesting that lack of rest, rather than distance traveled, is the more direct factor connected to injury rates.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L124_Q3",
@@ -205,7 +227,9 @@
             "correctAnswer": "A greater presence of local independent businesses appears linked to higher civic participation, beyond what income, density, or city size would explain.",
             "hint": "Notice which specific factors the sociologist accounted for separately from the type of local businesses present.",
             "explanation": "Civic participation was higher in cities with more independent local businesses, even after accounting for income, density, and size, suggesting that the presence of these businesses, perhaps as community gathering points, is itself connected to how engaged residents become in local civic life.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L125_Q1",
@@ -222,7 +246,9 @@
             "correctAnswer": "Among employees leaving for only modest raises, growth opportunity appears to matter more than compensation as the underlying reason.",
             "hint": "Notice the passage specifies a particular group of employees, those with only modest raises, for this pattern.",
             "explanation": "Employees who left for only modest raises cited growth opportunity as their main reason more often than those who left for larger raises, suggesting that for this specific group, career development concerns, not pay, were the underlying driver of their decision to leave.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L125_Q2",
@@ -239,7 +265,9 @@
             "correctAnswer": "The same broad climate trend can produce opposite outcomes at different glaciers depending on additional local factors like snowfall.",
             "hint": "Notice the passage describes most glaciers following one pattern, but a smaller group following a different one, and explains why.",
             "explanation": "Most glaciers lost ice as temperatures rose, but some gained ice mass due to increased local snowfall, illustrating that a single overall climate trend doesn't produce identical outcomes everywhere, since local factors can meaningfully shift the result at specific locations.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L125_Q3",
@@ -256,7 +284,9 @@
             "correctAnswer": "Involving students in selecting new menu items appears to increase how much of those items students actually eat.",
             "hint": "Compare consumption rates between items chosen with student input and items introduced without it.",
             "explanation": "Items chosen through student taste-testing and voting were eaten more than similar items introduced without input, even with similar nutrition, suggesting that a sense of ownership or familiarity from the selection process itself encouraged students to actually eat the food once it appeared.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L126_Q1",
@@ -273,7 +303,9 @@
             "correctAnswer": "Explaining why a permission is needed appears to increase how often users grant it, even for identical underlying requests.",
             "hint": "Notice that the actual permission requested was the same either way; only the explanation differed.",
             "explanation": "Users granted more permissions when apps explained the reason in plain language, even though the underlying request was identical to apps without an explanation, suggesting that context and transparency influence how willing users are to share access to their data.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L126_Q2",
@@ -290,7 +322,9 @@
             "correctAnswer": "Accessible online tutorials appear more closely linked to the style's global spread than in-person workshops.",
             "hint": "Compare how strongly each type of resource, online tutorials versus in-person workshops, related to the style's spread.",
             "explanation": "The style's spread correlated strongly with online tutorial availability but only weakly with in-person workshops, suggesting that digital resources, which can reach far more people than limited in-person events, played the larger role in the technique's global adoption.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L126_Q3",
@@ -307,7 +341,9 @@
             "correctAnswer": "Walk-in availability appears to matter more for working-age adults than for older adults with more established pharmacy routines.",
             "hint": "Notice which age group showed a narrower gap between the two pharmacy types.",
             "explanation": "The gap between walk-in and appointment-based pharmacies was much narrower among older adults, suggesting that working-age adults, who may have less flexible schedules, benefited more from not needing to plan a visit in advance.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L127_Q1",
@@ -324,7 +360,9 @@
             "correctAnswer": "The advisor meeting's specific effect on dropout rates is difficult to isolate, since proactive students may differ in other ways too.",
             "hint": "Notice the researcher's own caution about what else might distinguish students who sought out a meeting.",
             "explanation": "Students who met with an advisor early had lower dropout rates, but the researcher notes these students may have already been more engaged, meaning it's hard to know how much of the improvement came from the meeting itself versus the student's existing engagement.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L127_Q2",
@@ -341,7 +379,9 @@
             "correctAnswer": "Physical design changes appear more reliably effective at reducing collisions than signage alone, which drivers may overlook over time.",
             "hint": "Compare the two approaches, and consider the explanation offered for why one might work better.",
             "explanation": "Raised crosswalks reduced speed and collisions more than signage alone, suggesting that physical changes drivers must respond to in the moment work more reliably than warnings drivers can learn to tune out over repeated exposure.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L127_Q3",
@@ -358,7 +398,9 @@
             "correctAnswer": "The disclosure requirement appears to have reduced individual loan sizes without proportionally reducing overall borrowing, since customers took out more loans.",
             "hint": "Notice the passage separates the effect on individual loan size from the effect on total statewide borrowing.",
             "explanation": "Individual loan amounts dropped after the disclosure requirement, but customers took out more loans, keeping total borrowing from dropping proportionally, suggesting the requirement changed how customers borrowed without necessarily changing how much they borrowed overall.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L128_Q1",
@@ -375,7 +417,9 @@
             "correctAnswer": "Meaningful interaction with local residents appears linked to a greater intention among visitors to return.",
             "hint": "Compare visitors who had local interaction with visitors whose trip was entirely mediated through commercial services.",
             "explanation": "Visitors who interacted meaningfully with locals were more likely to plan a return trip than those without such interaction, suggesting that a personal connection to a place, not just the commercial experience of visiting it, encourages visitors to come back.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L128_Q2",
@@ -392,7 +436,9 @@
             "correctAnswer": "It's unclear whether curious communication causes higher satisfaction or whether already-satisfied couples are simply more naturally curious.",
             "hint": "Notice the two possible explanations the researcher raises at the end of the passage.",
             "explanation": "The researcher explicitly notes two possible explanations, curious communication building satisfaction, or satisfaction simply producing more natural curiosity, meaning the honest conclusion acknowledges this genuine uncertainty about which direction the relationship runs, rather than asserting one cause confidently.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L128_Q3",
@@ -409,7 +455,9 @@
             "correctAnswer": "Graduated exertion testing appears more effective at preventing repeat concussions than relying on symptom disappearance alone.",
             "hint": "Compare repeat concussion rates between the two return-to-play approaches, noting that both groups received physician clearance.",
             "explanation": "Athletes cleared through graduated exertion testing had fewer repeat concussions than those cleared based on symptoms alone, even with physician clearance for both, suggesting that structured testing catches something that self-reported symptoms and a general medical clearance may miss.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L129_Q1",
@@ -426,7 +474,9 @@
             "correctAnswer": "Follow-up guidance and accountability after funding appear to matter as much as the initial grant money itself for business survival.",
             "hint": "Compare survival rates between recipients with and without the follow-up review requirement.",
             "explanation": "Businesses required to complete a follow-up review survived longer than those receiving identical funding without follow-up, suggesting that ongoing accountability and guidance after the initial grant may be just as important to long-term success as the funding itself.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L129_Q2",
@@ -443,7 +493,9 @@
             "correctAnswer": "Salary transparency appears to have narrowed the pay gap while also introducing some new comparison-related anxiety for employees.",
             "hint": "Notice the passage mentions both a structural benefit and a psychological cost of the transparency policy.",
             "explanation": "Transparency narrowed the pay gap but also increased comparison-driven anxiety among some employees, suggesting the policy achieved a meaningful structural goal while introducing a genuine, if modest, psychological trade-off that companies would need to weigh.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L129_Q3",
@@ -460,7 +512,9 @@
             "correctAnswer": "Wildflower buffer zones appear to substantially offset pesticide-related harm to bee colonies, even without reducing pesticide use itself.",
             "hint": "Compare bee colony health on pesticide-using farms with and without buffer zones.",
             "explanation": "Farms with pesticides and buffer zones had bee colony health similar to farms using no pesticides at all, suggesting the buffer zones meaningfully offset the harm typically associated with pesticide exposure, even while pesticide use continued.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L130_Q1",
@@ -477,7 +531,9 @@
             "correctAnswer": "How teens engage with social media, not just how much time they spend, appears more closely related to mental health outcomes.",
             "hint": "Compare how strongly total time correlated with outcomes versus how strongly type of engagement correlated.",
             "explanation": "Total time showed only a weak correlation with mental health, but the type of engagement, passive versus active, showed a much stronger one, suggesting that what teens do on social media matters more than simply how long they're on it.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L130_Q2",
@@ -494,7 +550,9 @@
             "correctAnswer": "Pairing storytelling with a shared hands-on activity appears to strengthen how well the stories are remembered later.",
             "hint": "Compare retention between stories told during a shared activity and stories told as standalone narration.",
             "explanation": "Stories told alongside a shared activity like cooking were retained better than stories told alone, suggesting that combining storytelling with a hands-on shared experience helps embed the story more deeply in memory than words alone.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         },
         {
             "id": "RDG_READINGCONCLUSION_L130_Q3",
@@ -511,7 +569,9 @@
             "correctAnswer": "The designated drawer appears to reduce forgotten outgoing items, but only when every family member consistently uses it.",
             "hint": "Notice what happened during the one week the teenage son stopped using the drawer.",
             "explanation": "Forgotten items decreased overall since the drawer was introduced, but the son's items went missing again the week he stopped using it, showing the system's benefit depends on everyone consistently participating, not just on the drawer existing.",
-            "logicChain": "Premise -> Conclusion"
+            "logicChain": [
+                "Premise -> Conclusion"
+            ]
         }
     ]
 }
