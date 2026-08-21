@@ -86,11 +86,26 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
        _networkInfo = networkInfo,
        super(const ForgotPasswordState());
 
+  // ---------------------------------------------------------------------------
+  // Rate Limiting (Spam protection)
+  // ---------------------------------------------------------------------------
+  DateTime? _lastSentTime;
+
   void emailChanged(String value) =>
       emit(state.copyWith(email: value, errorMessage: () => null));
 
   Future<void> sendPasswordResetEmail() async {
     if (state.isSubmitting) return;
+
+    if (_lastSentTime != null && DateTime.now().difference(_lastSentTime!).inSeconds < 60) {
+      final secondsLeft = 60 - DateTime.now().difference(_lastSentTime!).inSeconds;
+      emit(
+        state.copyWith(
+          errorMessage: () => 'Please wait $secondsLeft seconds before requesting another email.',
+        ),
+      );
+      return;
+    }
 
     final trimmedEmail = state.email.trim();
 
@@ -138,13 +153,16 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
           errorMessage: () => AuthErrorHandler.getKey(failure.message),
         ),
       ),
-      (_) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          isSuccess: true,
-          successMessage: () => 'forgot_password.reset_link_sent',
-        ),
-      ),
+      (_) {
+        _lastSentTime = DateTime.now();
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            isSuccess: true,
+            successMessage: () => 'forgot_password.reset_link_sent',
+          ),
+        );
+      },
     );
   }
 }

@@ -340,6 +340,7 @@ class GamificationRepositoryImpl
       (isKidsGame ? 'kidsCoins' : 'coins'): FieldValue.increment(
         finalCoinIncrease,
       ),
+      'lastRewardTimestamp': FieldValue.serverTimestamp(),
       'coinHistory': coinHistoryList,
       'dailyXpHistory': dailyHistory,
       'recentActivities': trimmedActivities,

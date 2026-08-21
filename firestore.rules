@@ -36,6 +36,28 @@ service cloud.firestore {
           !request.resource.data.diff(resource.data).affectedKeys().hasAny(['kidsCoins'])
           || (request.resource.data.kidsCoins <= resource.data.kidsCoins + 250) // Max 250 earned at once
         )
+        // ANTI-SPAM: Enforce a strict 2-second rate limit on ANY rewards (XP or Coins)
+        // This prevents hackers from bypassing the max-per-write limits by sending 100 writes/sec.
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp', 'coins', 'kidsCoins'])
+          || (
+            // Bypass rate limit if it's a purchase/penalty (values are decreasing or staying the same)
+            (
+              request.resource.data.get('totalExp', 0) <= resource.data.get('totalExp', 0) &&
+              request.resource.data.get('coins', 0) <= resource.data.get('coins', 0) &&
+              request.resource.data.get('kidsCoins', 0) <= resource.data.get('kidsCoins', 0)
+            )
+            // If they increased, enforce the timestamp cooldown
+            || (
+              request.resource.data.lastRewardTimestamp == request.time &&
+              (
+                !('lastRewardTimestamp' in resource.data) || 
+                resource.data.lastRewardTimestamp == null ||
+                request.time >= resource.data.lastRewardTimestamp + duration.value(2, 's')
+              )
+            )
+          )
+        )
         // KEY SECURITY: Prevent granting oneself infinite keys
         && (
           !request.resource.data.diff(resource.data).affectedKeys().hasAny(['goldenKeys'])
@@ -51,17 +73,24 @@ service cloud.firestore {
       // Allow all users to read the pre-calculated rankings (1 Read instead of 50)
       allow read: if request.auth != null;
       
-      // Allow users to refresh the cache if it is stale
-      // App Check (configured in main.dart) provides the primary layer of security here
-      allow write: if request.auth != null;
+      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data.
+      // Prevents users from injecting fake rankings via direct Firestore writes.
+      allow write: if false;
     }
 
     match /metadata/kids_leaderboard_cache {
       // Allow all users to read the pre-calculated kids rankings
       allow read: if request.auth != null;
       
-      // Allow users to refresh the kids cache if it is stale
-      allow write: if request.auth != null;
+      // SECURITY: Only Cloud Functions (admin SDK) can write leaderboard data.
+      allow write: if false;
+    }
+
+    // ─── RATE LIMITING (Server-Side Only) ─────────────────────────────
+    // Used by Cloud Functions for per-user payment rate limiting.
+    // Clients must never read or write rate limit documents directly.
+    match /rate_limits/{document=**} {
+      allow read, write: if false;
     }
 
     // ─── CURRICULUM & QUEST DATA ─────────────────────────────────────

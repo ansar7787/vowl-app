@@ -106,6 +106,23 @@ void main() async {
     FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
     try {
+      // SECURITY: Initialize App Check immediately (not deferred) so no
+      // backend calls can be made unprotected during app boot.
+      await FirebaseAppCheck.instance.activate(
+        // ignore: deprecated_member_use
+        appleProvider: kDebugMode
+            ? AppleProvider.debug
+            : AppleProvider.deviceCheck,
+        // ignore: deprecated_member_use
+        androidProvider: kDebugMode
+            ? AndroidProvider.debug
+            : AndroidProvider.playIntegrity,
+      );
+    } catch (e) {
+      if (kDebugMode) debugPrint('Warning: App Check failed to init: $e');
+    }
+
+    try {
       FirebaseFirestore.instance.settings = const Settings(
         persistenceEnabled: true,
         cacheSizeBytes: 50 * 1024 * 1024, // 50 MB
@@ -207,19 +224,6 @@ Future<void> _initDeferredServices(FirebaseApp? firebaseApp) async {
   await runSafe(
     'RemoteConfigService',
     () => di.sl<RemoteConfigService>().init(),
-  );
-  await runSafe(
-    'FirebaseAppCheck',
-    () => FirebaseAppCheck.instance.activate(
-      // ignore: deprecated_member_use
-      appleProvider: kDebugMode
-          ? AppleProvider.debug
-          : AppleProvider.deviceCheck,
-      // ignore: deprecated_member_use
-      androidProvider: kDebugMode
-          ? AndroidProvider.debug
-          : AndroidProvider.playIntegrity,
-    ),
   );
   // NotificationService is now initialized in main() before runApp() to
   // ensure pendingDeepLink is set before the router's first redirect.

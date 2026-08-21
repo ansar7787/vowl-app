@@ -168,6 +168,7 @@ class UserRepositoryImpl
 
         transaction.update(docRef, {
           'coins': FieldValue.increment(UserGameConstants.kVipDailyGiftReward),
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
           'coinHistory': _recordCoinHistory(
             _parseMapList(doc.data()!['coinHistory']),
             titleKey: 'coin_history.vip_gift',

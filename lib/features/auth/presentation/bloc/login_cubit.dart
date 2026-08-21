@@ -116,6 +116,12 @@ class LoginCubit extends Cubit<LoginState> {
        super(const LoginState());
 
   // ---------------------------------------------------------------------------
+  // Rate Limiting (Brute-force protection)
+  // ---------------------------------------------------------------------------
+  int _failedAttempts = 0;
+  DateTime? _lockoutUntil;
+
+  // ---------------------------------------------------------------------------
   // Field change handlers
   // ---------------------------------------------------------------------------
 
@@ -134,6 +140,18 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> logInWithCredentials() async {
     if (state.isSubmitting) return;
+
+    if (_lockoutUntil != null && DateTime.now().isBefore(_lockoutUntil!)) {
+      final minutesLeft = _lockoutUntil!.difference(DateTime.now()).inMinutes;
+      final secondsLeft = _lockoutUntil!.difference(DateTime.now()).inSeconds % 60;
+      emit(
+        state.copyWith(
+          errorMessage: () =>
+              'Too many failed attempts. Try again in ${minutesLeft > 0 ? '$minutesLeft m ' : ''}$secondsLeft s.',
+        ),
+      );
+      return;
+    }
 
     // Client-side validation
     final trimmedEmail = state.email.trim();
@@ -186,13 +204,24 @@ class LoginCubit extends Cubit<LoginState> {
     if (isClosed) return;
 
     result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          errorMessage: () => AuthErrorHandler.getKey(failure.message),
-        ),
-      ),
-      (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
+      (failure) {
+        _failedAttempts++;
+        if (_failedAttempts >= 5) {
+          // Lockout duration grows: 1 min, 2 min, 3 min...
+          _lockoutUntil = DateTime.now().add(Duration(minutes: _failedAttempts - 4));
+        }
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: () => AuthErrorHandler.getKey(failure.message),
+          ),
+        );
+      },
+      (_) {
+        _failedAttempts = 0;
+        _lockoutUntil = null;
+        emit(state.copyWith(isSubmitting: false, isSuccess: true));
+      },
     );
   }
 

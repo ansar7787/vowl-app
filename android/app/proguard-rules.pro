@@ -47,3 +47,7 @@
 # ─── Google Play Core (Fixes R8 Build Error) ─────────────────────
 -keep class com.google.android.play.core.** { *; }
 -dontwarn com.google.android.play.core.**
+
+# ML Kit Text Recognition Fix
+-keep class com.google.mlkit.** { *; }
+-dontwarn com.google.mlkit.**

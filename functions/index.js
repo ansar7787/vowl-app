@@ -4,6 +4,106 @@ const admin = require('firebase-admin');
 const crypto = require('crypto');
 admin.initializeApp();
 
+// ─── SECURITY: Rate Limiting Helper ──────────────────────────────────
+// Prevents abuse by limiting payment verification calls per user.
+const RATE_LIMIT_COOLDOWN_MS = 10000; // 10 seconds between payment calls
+
+async function checkRateLimit(db, uid, operationType) {
+    const rateLimitRef = db.collection('rate_limits').doc(uid);
+    const rateLimitDoc = await rateLimitRef.get();
+    const now = Date.now();
+
+    if (rateLimitDoc.exists) {
+        const lastCall = rateLimitDoc.data()[operationType] || 0;
+        if (now - lastCall < RATE_LIMIT_COOLDOWN_MS) {
+            throw new HttpsError(
+                'resource-exhausted',
+                'Too many requests. Please wait a few seconds and try again.'
+            );
+        }
+    }
+
+    // Update the rate limit timestamp
+    await rateLimitRef.set({ [operationType]: now }, { merge: true });
+}
+
+// ─── SECURITY: Razorpay Credential Validator ─────────────────────────
+// Hard-fails if Razorpay keys are not configured. Never silently bypass.
+function requireRazorpayKeys() {
+    const keyId = process.env.RAZORPAY_KEY_ID;
+    const secret = process.env.RAZORPAY_KEY_SECRET;
+
+    if (!keyId || !secret) {
+        console.error('CRITICAL: RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET is not configured.');
+        throw new HttpsError(
+            'failed-precondition',
+            'Payment verification is not configured. Please contact support.'
+        );
+    }
+
+    return { keyId, secret };
+}
+
+// ─── SECURITY: Razorpay API Verification ─────────────────────────────
+// Fetches payment details from Razorpay and validates status + amount.
+async function verifyRazorpayPayment(keyId, secret, paymentId, expectedAmountPaise) {
+    const authHeader = 'Basic ' + Buffer.from(keyId + ':' + secret).toString('base64');
+
+    // Sanitize paymentId to prevent path traversal in the API URL
+    if (!/^pay_[a-zA-Z0-9]+$/.test(paymentId)) {
+        throw new HttpsError('invalid-argument', 'Invalid payment ID format.');
+    }
+
+    const response = await fetch(`https://api.razorpay.com/v1/payments/${paymentId}`, {
+        method: 'GET',
+        headers: { 'Authorization': authHeader }
+    });
+
+    if (!response.ok) {
+        console.error(`Razorpay API error for payment ${paymentId}: HTTP ${response.status}`);
+        throw new HttpsError('permission-denied', 'Invalid payment ID.');
+    }
+
+    const paymentData = await response.json();
+
+    // Verify payment status
+    if (paymentData.status !== 'captured' && paymentData.status !== 'authorized') {
+        console.warn(`Payment ${paymentId} status: ${paymentData.status}`);
+        throw new HttpsError('permission-denied', 'Payment not successful.');
+    }
+
+    // Verify payment amount (prevents ₹1-for-premium attacks)
+    if (expectedAmountPaise && paymentData.amount < expectedAmountPaise) {
+        console.warn(
+            `Payment ${paymentId} amount mismatch. Expected ≥${expectedAmountPaise}, got ${paymentData.amount}`
+        );
+        throw new HttpsError('permission-denied', 'Payment amount mismatch.');
+    }
+
+    return paymentData;
+}
+
+// ─── SECURITY: Razorpay Signature Verification ──────────────────────
+// Verifies HMAC-SHA256 signature to prevent payment replay attacks.
+function verifyRazorpaySignature(orderId, paymentId, signature, secret) {
+    if (!orderId || !signature) {
+        // Signature verification is optional during initial rollout.
+        // If orderId or signature is missing, skip but log a warning.
+        console.warn(`Signature verification skipped: missing orderId or signature for ${paymentId}`);
+        return;
+    }
+
+    const expectedSignature = crypto
+        .createHmac('sha256', secret)
+        .update(orderId + '|' + paymentId)
+        .digest('hex');
+
+    if (signature !== expectedSignature) {
+        console.error(`Signature mismatch for payment ${paymentId}`);
+        throw new HttpsError('permission-denied', 'Invalid payment signature.');
+    }
+}
+
 // ─── PAYMENT VERIFICATION (Server-Side Only) ────────────────────────
 // Called from the Flutter app after Razorpay success callback.
 // Verifies the payment via Razorpay API before granting premium status.
@@ -14,53 +114,53 @@ exports.verifyPayment = onCall(async (request) => {
     }
 
     const uid = request.auth.uid;
-    const {paymentId, durationDays} = request.data;
+    const {paymentId, orderId, signature, durationDays} = request.data;
 
     if (!paymentId) {
         throw new HttpsError('invalid-argument', 'Missing payment ID.');
     }
 
-    // 2. Verify Razorpay Payment (Zero Trust)
-    const keyId = process.env.RAZORPAY_KEY_ID;
-    const secret = process.env.RAZORPAY_KEY_SECRET;
+    const db = admin.firestore();
 
-    if (keyId && secret) {
-        try {
-            const authHeader = 'Basic ' + Buffer.from(keyId + ':' + secret).toString('base64');
-            const response = await fetch(`https://api.razorpay.com/v1/payments/${paymentId}`, {
-                method: 'GET',
-                headers: { 'Authorization': authHeader }
-            });
+    // 2. Rate Limiting — prevent abuse/DDoS
+    await checkRateLimit(db, uid, 'lastPremiumVerify');
 
-            if (!response.ok) {
-                console.error(`Razorpay API error for payment ${paymentId}`);
-                throw new HttpsError('permission-denied', 'Invalid payment ID.');
-            }
+    // 3. Validate plan duration — only allow real subscription plans
+    const days = typeof durationDays === 'number' ? durationDays : 0;
 
-            const paymentData = await response.json();
+    // Fetch the matching subscription plan from Firestore to get the expected price
+    const plansSnapshot = await db.collection('subscriptionPlans')
+        .where('days', '==', days)
+        .limit(1)
+        .get();
 
-            if (paymentData.status !== 'captured' && paymentData.status !== 'authorized') {
-                console.warn(`Payment ${paymentId} is not captured. Status: ${paymentData.status}`);
-                throw new HttpsError('permission-denied', 'Payment not successful.');
-            }
-            
-            // Note: Ideally, we should also verify the amount against the expected plan price here.
-            
-        } catch (error) {
-            console.error('Error verifying payment with Razorpay:', error);
-            if (error instanceof HttpsError) throw error;
-            throw new HttpsError('internal', 'Failed to verify payment with gateway.');
-        }
-    } else {
-        console.warn('RAZORPAY keys missing in environment. Bypassing strict API verification.');
+    if (plansSnapshot.empty) {
+        console.warn(`Invalid subscription duration: ${days} days from user ${uid}`);
+        throw new HttpsError('invalid-argument', 'Invalid subscription plan.');
     }
 
-    // 3. Signature verified — Grant Premium
-    const days = typeof durationDays === 'number' ? durationDays : 30;
+    const planData = plansSnapshot.docs[0].data();
+    const expectedAmountPaise = Math.round(planData.price * 100);
+
+    // 4. Verify Razorpay Payment (Zero Trust)
+    const { keyId, secret } = requireRazorpayKeys();
+
+    try {
+        // Verify signature if provided (prevents payment replay attacks)
+        verifyRazorpaySignature(orderId, paymentId, signature, secret);
+
+        // Verify payment with Razorpay API (status + amount)
+        await verifyRazorpayPayment(keyId, secret, paymentId, expectedAmountPaise);
+    } catch (error) {
+        if (error instanceof HttpsError) throw error;
+        console.error('Error verifying payment with Razorpay:', error);
+        throw new HttpsError('internal', 'Failed to verify payment with gateway.');
+    }
+
+    // 5. Payment verified — Grant Premium
     const expiryDate = new Date();
     expiryDate.setDate(expiryDate.getDate() + days);
 
-    const db = admin.firestore();
     const userRef = db.collection('users').doc(uid);
     
     await db.runTransaction(async (transaction) => {
@@ -96,7 +196,7 @@ exports.verifyCoinPurchase = onCall(async (request) => {
     }
 
     const uid = request.auth.uid;
-    const {paymentId, packId} = request.data;
+    const {paymentId, orderId, signature, packId} = request.data;
 
     if (!paymentId || !packId) {
         throw new HttpsError('invalid-argument', 'Missing payment ID or pack ID.');
@@ -104,7 +204,10 @@ exports.verifyCoinPurchase = onCall(async (request) => {
 
     const db = admin.firestore();
 
-    // 1. Fetch the pack from the database to know how much it costs and what it gives
+    // 1. Rate Limiting — prevent abuse/DDoS
+    await checkRateLimit(db, uid, 'lastCoinVerify');
+
+    // 2. Fetch the pack from the database to know how much it costs and what it gives
     const packDoc = await db.collection('coinPacks').doc(packId).get();
     if (!packDoc.exists) {
         throw new HttpsError('not-found', 'Invalid pack ID.');
@@ -112,45 +215,22 @@ exports.verifyCoinPurchase = onCall(async (request) => {
     const packData = packDoc.data();
     const expectedAmountPaise = Math.round(packData.price * 100);
 
-    // 2. Verify payment directly with Razorpay API (Zero Trust)
-    const keyId = process.env.RAZORPAY_KEY_ID;
-    const secret = process.env.RAZORPAY_KEY_SECRET;
+    // 3. Verify Razorpay Payment (Zero Trust — hard-fail if keys missing)
+    const { keyId, secret } = requireRazorpayKeys();
 
-    if (keyId && secret) {
-        try {
-            const authHeader = 'Basic ' + Buffer.from(keyId + ':' + secret).toString('base64');
-            const response = await fetch(`https://api.razorpay.com/v1/payments/${paymentId}`, {
-                method: 'GET',
-                headers: { 'Authorization': authHeader }
-            });
+    try {
+        // Verify signature if provided (prevents payment replay attacks)
+        verifyRazorpaySignature(orderId, paymentId, signature, secret);
 
-            if (!response.ok) {
-                console.error(`Razorpay API error for payment ${paymentId}`);
-                throw new HttpsError('permission-denied', 'Invalid payment ID.');
-            }
-
-            const paymentData = await response.json();
-
-            // Verify payment status and amount
-            if (paymentData.status !== 'captured' && paymentData.status !== 'authorized') {
-                console.warn(`Payment ${paymentId} is not captured. Status: ${paymentData.status}`);
-                throw new HttpsError('permission-denied', 'Payment not successful.');
-            }
-
-            if (paymentData.amount < expectedAmountPaise) {
-                console.warn(`Payment ${paymentId} amount mismatch. Expected ${expectedAmountPaise}, got ${paymentData.amount}`);
-                throw new HttpsError('permission-denied', 'Payment amount mismatch.');
-            }
-        } catch (error) {
-            console.error('Error verifying payment with Razorpay:', error);
-            if (error instanceof HttpsError) throw error;
-            throw new HttpsError('internal', 'Failed to verify payment with gateway.');
-        }
-    } else {
-        console.warn('RAZORPAY keys missing in environment. Bypassing strict API verification.');
+        // Verify payment with Razorpay API (status + amount)
+        await verifyRazorpayPayment(keyId, secret, paymentId, expectedAmountPaise);
+    } catch (error) {
+        if (error instanceof HttpsError) throw error;
+        console.error('Error verifying payment with Razorpay:', error);
+        throw new HttpsError('internal', 'Failed to verify payment with gateway.');
     }
 
-    // 3. Prevent duplicate processing
+    // 4. Prevent duplicate processing
     const userRef = db.collection('users').doc(uid);
     let coinsGranted = 0;
     let keysGranted = 0;
