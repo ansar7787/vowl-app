@@ -14,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
 
 // Extracted Optimized Widgets
 import '../widgets/context_clues_case_header.dart';
@@ -237,15 +237,13 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                             ),
                           ),
                           if (_isFirstStagePassed && !_isAnswered)
-                            DynamicAnagramWrapper(
-                              title: 'SPELL THE MYSTERY WORD',
-                              subtitle: 'Tap all letters to rebuild the hidden word!',
-                              expectedText: quest.correctAnswer ?? '',
+                            EvidenceHighlightWrapper(
+                              passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
+                              evidenceWords: quest.evidenceWords ?? [],
                               primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(true),
-                              onFailed: () {}, // Handled by onFailedWithSpelling
-                              onFailedWithSpelling: (wrongWord) =>
-                                  _submitFinalAnswer(false, wrongWord),
+                              instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
+                              onCorrectHighlight: () => _submitFinalAnswer(true),
+                              onWrongHighlight: () => {},
                               isPositioned: false,
                             ),
                           SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),

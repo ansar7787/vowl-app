@@ -14,6 +14,8 @@ class VocabularyQuest extends GameQuest {
   final String? usageExample;
   final String? nuanceDifference;
   final List<String>? gradientScale;
+  final String? clueType;
+  final List<String>? evidenceWords;
 
   const VocabularyQuest({
     required super.id,
@@ -51,6 +53,8 @@ class VocabularyQuest extends GameQuest {
     this.usageExample,
     this.nuanceDifference,
     this.gradientScale,
+    this.clueType,
+    this.evidenceWords,
   });
 
   final String? rootWord;
