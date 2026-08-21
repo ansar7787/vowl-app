@@ -140,7 +140,7 @@ class _DirectIndirectSpeechScreenState
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
-            ? state.currentQuest
+            ? state.currentQuest as GrammarQuest?
             : null;
         final rawQuestion = quest?.question ?? "DIRECT SPEECH";
         String displayDirect = quest?.sentence ?? "";
@@ -233,6 +233,53 @@ class _DirectIndirectSpeechScreenState
                                           ),
                                     SizedBox(height: gapMiddle),
 
+                                    if (quest.changesList != null && quest.changesList!.isNotEmpty) ...[
+                                      Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(16.r),
+                                          border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "REQUIRED CHANGES",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 12.sp,
+                                                color: theme.primaryColor,
+                                                fontWeight: FontWeight.bold,
+                                                letterSpacing: 1.2,
+                                              ),
+                                            ),
+                                            SizedBox(height: 6.h),
+                                            Wrap(
+                                              alignment: WrapAlignment.center,
+                                              spacing: 12.w,
+                                              runSpacing: 4.h,
+                                              children: quest.changesList!.map((change) {
+                                                final parts = change.split('->');
+                                                if (parts.length != 2) return Text(change, style: TextStyle(fontSize: 10.sp, color: theme.primaryColor));
+                                                return Row(
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    Text(parts[0].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                    Padding(
+                                                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                                                      child: Icon(Icons.arrow_forward_rounded, size: 12.sp, color: theme.primaryColor.withValues(alpha: 0.6)),
+                                                    ),
+                                                    Text(parts[1].trim(), style: TextStyle(fontSize: 11.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                                  ],
+                                                );
+                                              }).toList(),
+                                            ),
+                                          ],
+                                        ),
+                                      ).animate().fadeIn(duration: 400.ms),
+                                      SizedBox(height: isCompact ? 12.h : 20.h),
+                                    ],
+
                                     // Holographic Mirror
                                     DirectIndirectSpeechMirror(
                                       rotation: _rotation,
@@ -303,6 +350,7 @@ class _DirectIndirectSpeechScreenState
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onSkipped: () => _submitVerbalEvaluation(false),
                               isPositioned: false,
+                              displayText: "Type the indirect speech to lock it in",
                             ),
                           SizedBox(
                             height: (_isAnswered || _isFirstStagePassed)

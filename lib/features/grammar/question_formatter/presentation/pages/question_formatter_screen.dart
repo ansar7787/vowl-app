@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -14,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_instruction.dart';
 import 'package:vowl/features/grammar/question_formatter/presentation/widgets/question_formatter_crank.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class QuestionFormatterScreen extends StatefulWidget {
   final int level;
@@ -167,7 +168,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
         final options =
             quest?.options ??
             ["Is he...?", "Does he...?", "Has he...?", "Was he...?"];
@@ -227,6 +228,28 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                                     primaryColor: theme.primaryColor,
                                   ),
                             SizedBox(height: isCompact ? 8.h : 20.h),
+
+                            if (quest.questionType != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Text(
+                                  "TYPE: ${quest.questionType!.toUpperCase()}  |  FORMULA: Aux + S + V + ?",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    color: theme.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1.2,
+                                  ),
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 24.h),
+                            ],
 
                             // 3D Inverter Context Card
                             Padding(
@@ -341,12 +364,13 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the full question to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

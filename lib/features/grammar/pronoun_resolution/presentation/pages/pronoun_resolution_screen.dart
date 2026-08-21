@@ -15,7 +15,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/widgets/pronoun_resolution_instruction.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/widgets/pronoun_resolution_gravity_painter.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class PronounResolutionScreen extends StatefulWidget {
   final int level;
@@ -218,6 +218,41 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                                   ),
                             SizedBox(height: gapMiddle),
 
+                            if (quest.referentHighlight != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "REFERENT: ${quest.referentHighlight!.toUpperCase()}",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        color: theme.primaryColor,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text("Pronoun", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.7))),
+                                        Icon(Icons.arrow_forward_rounded, color: theme.primaryColor, size: 16.sp),
+                                        Text("Referent Noun", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
+
                             // Context Card
                             Padding(
                                   padding: EdgeInsets.symmetric(
@@ -295,12 +330,13 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the resolved sentence to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

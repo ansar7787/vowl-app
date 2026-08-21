@@ -35,6 +35,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.prefix,
     super.suffix,
     super.topicBuckets,
+    super.usageExample,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -134,6 +135,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       topicBuckets: map['topicBuckets'] != null
           ? List<String>.from(map['topicBuckets'])
           : null,
+      usageExample: map['usageExample'],
     );
   }
 
@@ -178,6 +180,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'prefix': prefix,
       'suffix': suffix,
       'topicBuckets': topicBuckets,
+      'usageExample': usageExample,
     };
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -13,7 +14,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_insertion_instruction.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/widgets/article_floating_orb.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ArticleInsertionScreen extends StatefulWidget {
   final int level;
@@ -188,7 +189,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
         final options = quest?.options ?? ["a", "an", "the", "Ø"];
         final correctAnswer = quest?.correctAnswer ?? "";
 
@@ -282,6 +283,27 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                                   ),
                             SizedBox(height: gapMiddle),
 
+                            if (quest.articleRule != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Text(
+                                  quest.articleRule!,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    color: theme.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
+
                             // Context Card
                             Padding(
                                   padding: EdgeInsets.symmetric(
@@ -367,12 +389,13 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the full sentence with the article to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

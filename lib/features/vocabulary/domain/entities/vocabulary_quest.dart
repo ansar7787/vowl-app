@@ -11,6 +11,7 @@ class VocabularyQuest extends GameQuest {
   final String? passage;
   final List<String>? synonyms;
   final List<String>? antonyms;
+  final String? usageExample;
 
   const VocabularyQuest({
     required super.id,
@@ -45,6 +46,7 @@ class VocabularyQuest extends GameQuest {
     this.prefix,
     this.suffix,
     this.topicBuckets,
+    this.usageExample,
   });
 
   final String? rootWord;

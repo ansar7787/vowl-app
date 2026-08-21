@@ -187,6 +187,22 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                               height: 1.5,
                             ),
                           ),
+                          if (widget.quest.usageExample != null && widget.quest.usageExample!.isNotEmpty) ...[
+                            SizedBox(height: compact ? 8.h : 12.h),
+                            Text(
+                              widget.quest.usageExample!,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: compact ? 14.sp : 15.sp,
+                                color: widget.isDark
+                                    ? Colors.white70
+                                    : Colors.black54,
+                                fontStyle: FontStyle.italic,
+                                height: 1.5,
+                              ),
+                            ),
+                          ],
                         ],
                         SizedBox(height: 8.h),
                       ],

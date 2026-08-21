@@ -46,6 +46,17 @@ class GrammarQuestModel extends GrammarQuest {
     super.connectorCategory,
     super.activeVoice,
     super.passiveVoice,
+    super.questionType,
+    super.articleRule,
+    super.modifierType,
+    super.modalMeaning,
+    super.prepositionCategory,
+    super.referentHighlight,
+    super.punctuationRule,
+    super.clauseType,
+    super.conditionalType,
+    super.conjunctionPurpose,
+    super.changesList,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -133,6 +144,17 @@ class GrammarQuestModel extends GrammarQuest {
       connectorCategory: getString(map['connectorCategory']),
       activeVoice: getString(map['activeVoice']),
       passiveVoice: getString(map['passiveVoice']),
+      questionType: getString(map['questionType']),
+      articleRule: getString(map['articleRule']),
+      modifierType: getString(map['modifierType']),
+      modalMeaning: getString(map['modalMeaning']),
+      prepositionCategory: getString(map['prepositionCategory']),
+      referentHighlight: getString(map['referentHighlight']),
+      punctuationRule: getString(map['punctuationRule']),
+      clauseType: getString(map['clauseType']),
+      conditionalType: getString(map['conditionalType']),
+      conjunctionPurpose: getString(map['conjunctionPurpose']),
+      changesList: map['changesList'] != null ? List<String>.from(map['changesList']) : null,
     );
   }
 
@@ -178,6 +200,17 @@ class GrammarQuestModel extends GrammarQuest {
       'connectorCategory': connectorCategory,
       'activeVoice': activeVoice,
       'passiveVoice': passiveVoice,
+      'questionType': questionType,
+      'articleRule': articleRule,
+      'modifierType': modifierType,
+      'modalMeaning': modalMeaning,
+      'prepositionCategory': prepositionCategory,
+      'referentHighlight': referentHighlight,
+      'punctuationRule': punctuationRule,
+      'clauseType': clauseType,
+      'conditionalType': conditionalType,
+      'conjunctionPurpose': conjunctionPurpose,
+      'changesList': changesList,
     };
   }
 }

@@ -128,23 +128,23 @@
 | 49 | subjectVerbAgreement | 10/10 | Add `subjectType` | Grammar rule card | ✅ |
 | 50 | clauseConnector | 10/10 | Add `connectorCategory` | Syntax highlighting | ✅ |
 | 51 | voiceSwap | 10/10 | Add `activeVoice`/`passiveVoice` | Conversion animation | ✅ |
-| 52 | questionFormatter | 8→10 | Add `questionType` | Question formula: Aux+S+V+? | 🔲 |
-| 53 | articleInsertion | 8→10 | Add `articleRule` | Decision tree: countable→a/the/∅ | 🔲 |
-| 54 | modifierPlacement | 8→10 | Add `modifierType` | Word order slot diagram | 🔲 |
-| 55 | modalsSelection | 8→10 | Add `modalMeaning` | Modal scale: might→must | 🔲 |
-| 56 | prepositionChoice | 7→10 | Add `prepositionCategory` | Preposition diagram: in/on/at | 🔲 |
-| 57 | pronounResolution | 8→10 | Add `referentHighlight` | Arrow: pronoun → referent noun | 🔲 |
-| 58 | punctuationMastery | 7→10 | Add `punctuationRule` | Meaning visual: comma=pause etc | 🔲 |
-| 59 | relativeClauses | 8→10 | Add `clauseType` (defining/non) | With/without commas comparison | 🔲 |
-| 60 | conditionals | 9→10 | Add `conditionalType` (0/1/2/3) | Probability meter visual | 🔲 |
-| 61 | conjunctions | 7→10 | Add `conjunctionPurpose` | FANBOYS chart | 🔲 |
-| 62 | directIndirectSpeech | 9→10 | Add `changesList` | Side-by-side: changes highlighted | 🔲 |
+| 52 | questionFormatter | 10/10 | Add `questionType` | Question formula: Aux+S+V+? | ✅ |
+| 53 | articleInsertion | 10/10 | Add `articleRule` | Decision tree: countable→a/the/∅ | ✅ |
+| 54 | modifierPlacement | 10/10 | Add `modifierType` | Word order slot diagram | ✅ |
+| 55 | modalsSelection | 10/10 | Add `modalMeaning` | Modal scale: might→must | ✅ |
+| 56 | prepositionChoice | 10/10 | Add `prepositionCategory` | Preposition diagram: in/on/at | ✅ |
+| 57 | pronounResolution | 10/10 | Add `referentHighlight` | Arrow: pronoun → referent noun | ✅ |
+| 58 | punctuationMastery | 10/10 | Add `punctuationRule` | Meaning visual: comma=pause etc | ✅ |
+| 59 | relativeClauses | 10/10 | Add `clauseType` (defining/non) | With/without commas comparison | ✅ |
+| 60 | conditionals | 10/10 | Add `conditionalType` (0/1/2/3) | Probability meter visual | ✅ |
+| 61 | conjunctions | 10/10 | Add `conjunctionPurpose` | FANBOYS chart | ✅ |
+| 62 | directIndirectSpeech | 10/10 | Add `changesList` | Side-by-side: changes highlighted | ✅ |
 
 #### D6: 💡 VOCABULARY (12 games) — Current 8.1 → Target 10/10
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 63 | flashcards | 7→10 | Add `usageExample` 2nd example | After flip: spell it + say it | Anagram + SpeakToConfirm | 🔲 |
+| 63 | flashcards | 10/10 | Add `usageExample` 2nd example | After flip: spell it + say it | Anagram + SpeakToConfirm | ✅ |
 | 64 | synonymSearch | 8→10 | Add `nuanceDifference` | Nuance scale visual | ContextSentenceBuilder | 🔲 |
 | 65 | antonymSearch | 8→10 | Add `gradientScale` | Word intensity slider | SpeakToConfirm both words | 🔲 |
 | 66 | contextClues | 9→10 | Add `clueType` | Highlight context clue words | EvidenceHighlightWrapper | 🔲 |

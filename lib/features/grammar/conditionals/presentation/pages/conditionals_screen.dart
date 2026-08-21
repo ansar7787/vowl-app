@@ -133,9 +133,19 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
-            ? state.currentQuest
+            ? state.currentQuest as GrammarQuest?
             : null;
         final options = quest?.options ?? ["RESULT A", "RESULT B", "RESULT C"];
+
+        String cleanTargetSentence = "";
+        if (quest != null) {
+          final sentence = quest.correctAnswer ?? quest.sentence ?? "";
+          if (sentence.isNotEmpty) {
+            cleanTargetSentence = sentence.replaceAll('[', '').replaceAll(']', '');
+          } else if (_targetIndex != -1) {
+            cleanTargetSentence = "${quest.question} ${options[_targetIndex]}".replaceAll(RegExp(r'\s+'), ' ').trim();
+          }
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -203,6 +213,42 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                                             primaryColor: theme.primaryColor,
                                           ),
                                     SizedBox(height: gapMiddle),
+
+                                    if (quest.conditionalType != null) ...[
+                                      Container(
+                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(16.r),
+                                          border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Text(
+                                              "TYPE: ${quest.conditionalType!.toUpperCase()}",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 12.sp,
+                                                color: theme.primaryColor,
+                                                fontWeight: FontWeight.bold,
+                                                letterSpacing: 1.2,
+                                              ),
+                                            ),
+                                            SizedBox(height: 4.h),
+                                            Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text("0: Fact  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '0' || quest.conditionalType == 'zero' ? FontWeight.bold : FontWeight.normal)),
+                                                Text("|  1: Real  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '1' || quest.conditionalType == 'first' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '1' || quest.conditionalType == 'first' ? FontWeight.bold : FontWeight.normal)),
+                                                Text("|  2: Unreal  ", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '2' || quest.conditionalType == 'second' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '2' || quest.conditionalType == 'second' ? FontWeight.bold : FontWeight.normal)),
+                                                Text("|  3: Past", style: TextStyle(fontSize: 10.sp, color: quest.conditionalType == '3' || quest.conditionalType == 'third' ? theme.primaryColor : theme.primaryColor.withValues(alpha: 0.5), fontWeight: quest.conditionalType == '3' || quest.conditionalType == 'third' ? FontWeight.bold : FontWeight.normal)),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ).animate().fadeIn(duration: 400.ms),
+                                      SizedBox(height: isCompact ? 12.h : 20.h),
+                                    ],
 
                                     // Context Card
                                     Padding(
@@ -299,13 +345,14 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                               },
                             ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered)
+                          if (_isFirstStagePassed && !_isAnswered && cleanTargetSentence.isNotEmpty)
                             TypeToConfirmOverlay(
-                              expectedText: options[_targetIndex],
+                              expectedText: cleanTargetSentence,
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitVerbalEvaluation(true),
                               onSkipped: () => _submitVerbalEvaluation(false),
                               isPositioned: false,
+                              displayText: "Type the full sentence to lock it in",
                             ),
                           SizedBox(
                             height: (_isAnswered || _isFirstStagePassed)

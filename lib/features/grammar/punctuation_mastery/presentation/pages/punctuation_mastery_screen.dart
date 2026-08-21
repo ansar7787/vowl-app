@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -151,7 +152,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
         final marks = [".", ",", "!", "?", ";", ":"];
 
         String cleanTargetSentence = "";
@@ -209,6 +210,39 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                                     primaryColor: theme.primaryColor,
                                   ),
                             SizedBox(height: isCompact ? 8.h : 20.h),
+
+                            if (quest.punctuationRule != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "RULE: ${quest.punctuationRule!.toUpperCase()}",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        color: theme.primaryColor,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text(", = Pause   |   . = Stop   |   ? = Ask", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor, fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
 
                             // Context Card with Sticker Slots
                             Padding(

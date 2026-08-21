@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -14,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_selection_instruction.dart';
 import 'package:vowl/features/grammar/modals_selection/presentation/widgets/modals_rotary_dial.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ModalsSelectionScreen extends StatefulWidget {
   final int level;
@@ -181,7 +182,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
         final options = quest?.options ?? ["CAN", "COULD", "MUST", "SHOULD"];
 
         String cleanTargetSentence = "";
@@ -265,6 +266,41 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                                     primaryColor: theme.primaryColor,
                                   ),
                             SizedBox(height: gapMiddle),
+
+                            if (quest.modalMeaning != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "MEANING: ${quest.modalMeaning!.toUpperCase()}",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        color: theme.primaryColor,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Text("LOW (might) ", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Icon(Icons.arrow_right_alt, color: theme.primaryColor, size: 16.sp),
+                                        Text(" HIGH (must)", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
 
                             // Context Card with Fill-in-the-Blank
                             Padding(
@@ -401,12 +437,13 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the full sentence to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

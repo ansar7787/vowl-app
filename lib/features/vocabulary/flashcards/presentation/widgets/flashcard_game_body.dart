@@ -81,6 +81,7 @@ class FlashcardGameBody extends StatelessWidget {
   final bool isAnswered;
   final bool isRetrying;
   final bool isHintActive;
+  final bool hideActions;
   final Offset dragOffset;
   final double dragAngle;
 
@@ -100,6 +101,7 @@ class FlashcardGameBody extends StatelessWidget {
     required this.isAnswered,
     required this.isRetrying,
     required this.isHintActive,
+    required this.hideActions,
     required this.dragOffset,
     required this.dragAngle,
     required this.onHorizontalDragUpdate,
@@ -138,13 +140,14 @@ class FlashcardGameBody extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: layout.cardToActions),
-                      FlashcardActionButtons(
-                        isFlipped: isFlipped,
-                        isTransitioning: isAnswered || isRetrying,
-                        isDark: isDark,
-                        onAgain: () => onSubmitAnswer(false),
-                        onGotIt: () => onSubmitAnswer(true),
-                      ),
+                      if (!hideActions)
+                        FlashcardActionButtons(
+                          isFlipped: isFlipped,
+                          isTransitioning: isAnswered || isRetrying,
+                          isDark: isDark,
+                          onAgain: () => onSubmitAnswer(false),
+                          onGotIt: () => onSubmitAnswer(true),
+                        ),
                       SizedBox(height: layout.actionsToBottom),
                     ],
                   ),

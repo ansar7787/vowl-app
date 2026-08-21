@@ -15,7 +15,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_placement_instruction.dart';
 import 'package:vowl/features/grammar/modifier_placement/presentation/widgets/modifier_magnetic_arena.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ModifierPlacementScreen extends StatefulWidget {
   final int level;
@@ -150,7 +150,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
         final allWords = quest?.shuffledWords ?? [];
         if (allWords.isEmpty) return const SizedBox();
 
@@ -236,6 +236,28 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                                     primaryColor: theme.primaryColor,
                                   ),
                             SizedBox(height: gapMiddle),
+
+                            if (quest.modifierType != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Text(
+                                  "MODIFIER: ${quest.modifierType!.toUpperCase()}",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    color: theme.primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1.2,
+                                  ),
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
 
                             // Context Card
                             Padding(
@@ -401,12 +423,13 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the complete sentence to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

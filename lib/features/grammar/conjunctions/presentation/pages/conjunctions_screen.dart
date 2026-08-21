@@ -14,7 +14,7 @@ import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_instruction.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -134,7 +134,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
       },
       builder: (context, state) {
         final GrammarQuest? quest = (state is GrammarLoaded)
-            ? state.currentQuest
+            ? state.currentQuest as GrammarQuest?
             : null;
         final options = quest?.options ?? ["AND", "BUT", "OR"];
         final question = quest?.question ?? "I like apples... I like oranges.";
@@ -228,6 +228,46 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                                   ),
                             SizedBox(height: gapMiddle),
 
+                            if (quest.conjunctionPurpose != null) ...[
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "PURPOSE: ${quest.conjunctionPurpose!.toUpperCase()}",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        color: theme.primaryColor,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 1.2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 4.h),
+                                    Wrap(
+                                      alignment: WrapAlignment.center,
+                                      spacing: 8.w,
+                                      children: [
+                                        Text("F = For", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("A = And", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("N = Nor", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("B = But", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("O = Or", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("Y = Yet", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                        Text("S = So", style: TextStyle(fontSize: 10.sp, color: theme.primaryColor.withValues(alpha: 0.6))),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ).animate().fadeIn(duration: 400.ms),
+                              SizedBox(height: isCompact ? 12.h : 20.h),
+                            ],
+
                             // Magnetic Junction Bridge
                             Expanded(
                               child: Padding(
@@ -289,12 +329,13 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen>
                     if (_pendingJigsaw &&
                         !_isAnswered &&
                         cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
                         isPositioned: false,
+                        displayText: "Type the full sentence to lock it in",
                       ),
                     SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
                   ],

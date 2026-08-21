@@ -30,6 +30,17 @@ class GrammarQuest extends GameQuest {
   final String? connectorCategory;
   final String? activeVoice;
   final String? passiveVoice;
+  final String? questionType;
+  final String? articleRule;
+  final String? modifierType;
+  final String? modalMeaning;
+  final String? prepositionCategory;
+  final String? referentHighlight;
+  final String? punctuationRule;
+  final String? clauseType;
+  final String? conditionalType;
+  final String? conjunctionPurpose;
+  final List<String>? changesList;
 
   const GrammarQuest({
     required super.id,
@@ -77,6 +88,17 @@ class GrammarQuest extends GameQuest {
     this.connectorCategory,
     this.activeVoice,
     this.passiveVoice,
+    this.questionType,
+    this.articleRule,
+    this.modifierType,
+    this.modalMeaning,
+    this.prepositionCategory,
+    this.referentHighlight,
+    this.punctuationRule,
+    this.clauseType,
+    this.conditionalType,
+    this.conjunctionPurpose,
+    this.changesList,
     super.targetWord,
     super.sentence,
     super.question,
