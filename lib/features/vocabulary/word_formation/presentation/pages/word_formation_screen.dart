@@ -16,6 +16,8 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class WordFormationScreen extends StatefulWidget {
   final int level;
@@ -37,6 +39,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
   int? _activeSuffixIndex;
@@ -69,11 +72,10 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
     if (isCorrect) {
       _soundService.playCorrect();
+      _hapticService.success();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
       });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -82,6 +84,26 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         _isCorrect = false;
       });
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    final bloc = context.read<VocabularyBloc>();
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      bloc.add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      bloc.add(SubmitAnswer(false));
     }
   }
 
@@ -100,6 +122,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _showConfetti = false;
+              _isFirstStagePassed = false;
               _activeSuffixIndex = null;
               _hoveringSuffixIndex = null;
             });
@@ -316,6 +339,31 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                   },
                 ),
               ),
+              if (_isFirstStagePassed && !_isAnswered)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                    child: Column(
+                      children: [
+                        if (quest != null && quest.familyTree != null && quest.familyTree!.isNotEmpty)
+                          WordFormationFamilyTree(
+                            familyTree: quest.familyTree!,
+                            color: theme.primaryColor,
+                          ),
+                        SizedBox(height: 20.h),
+                        TypeToConfirmOverlay(
+                          expectedText: quest?.correctAnswer ?? '',
+                          displayText: "Type the correct form:\n${quest?.correctAnswer?.toUpperCase()}",
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onSkipped: () => _submitFinalAnswer(false),
+                          isPositioned: false,
+                        ),
+                        SizedBox(height: 60.h),
+                      ],
+                    ),
+                  ),
+                ),
             ],
           ),
         );
@@ -459,7 +507,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: Text(
-                                    (_isAnswered
+                                    ((_isAnswered || _isFirstStagePassed)
                                             ? (quest?.correctAnswer ?? "")
                                             : root)
                                         .toUpperCase(),
@@ -475,7 +523,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                   ),
                                 ),
                               ).animate().fadeIn().shimmer(duration: 2.seconds),
-                              if (suffix != null && !_isAnswered) ...[
+                              if (suffix != null && !_isAnswered && !_isFirstStagePassed) ...[
                                 SizedBox(height: 8.h),
                                 Icon(
                                   Icons.add_rounded,
@@ -565,12 +613,12 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         suffix: entry.value,
                         color: color,
                         isDark: isDark,
-                        isBlocked: _isAnswered,
+                        isBlocked: _isAnswered || _isFirstStagePassed,
                         onMorph: (suffix) {
                           _submitMorph(suffix, root, correct, entry.key);
                         },
                         onHover: (index) {
-                          if (!_isAnswered) {
+                          if (!_isAnswered && !_isFirstStagePassed) {
                             setState(() => _hoveringSuffixIndex = index);
                           }
                         },
