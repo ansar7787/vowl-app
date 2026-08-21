@@ -18,6 +18,8 @@ import '../widgets/topic_machine_head.dart';
 import '../widgets/topic_containment_bin.dart';
 import '../widgets/topic_batch_counter.dart';
 import '../widgets/topic_draggable_core.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class TopicVocabScreen extends StatefulWidget {
   final int level;
@@ -40,6 +42,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   int? _lastProcessedIndex = -1;
   bool _isHintActive = false;
   VocabularyQuest? _lastQuest;
@@ -115,9 +118,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       _soundService.playCorrect();
       _hapticService.success();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        bloc.add(SubmitAnswer(true));
+        _isFirstStagePassed = true;
       });
     } else {
       _soundService.playWrong();
@@ -127,6 +128,26 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
         _isCorrect = false;
         bloc.add(SubmitAnswer(false));
       });
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    final bloc = context.read<VocabularyBloc>();
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      bloc.add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      bloc.add(SubmitAnswer(false));
     }
   }
 
@@ -166,6 +187,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _isFirstStagePassed = false;
               _currentWordIndex = 0;
               _isHintActive = false;
               _userChoices.clear();
@@ -233,12 +255,11 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
+              SliverToBoxAdapter(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
-                    final maxHeight = constraints.maxHeight;
-                    final maxWidth = constraints.maxWidth;
+                    final maxHeight = 500.h; // Set a fixed reasonable height for the sorting area
+                    final maxWidth = MediaQuery.of(context).size.width;
               final isCompact = maxHeight < 580;
 
               // Define relative positions as percentages of the actual available height or absolute sizes
@@ -363,7 +384,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                       ),
 
                     // Draggable Word Core
-                    if (!_isAnswered &&
+                    if (!_isAnswered && !_isFirstStagePassed &&
                         currentWord.isNotEmpty &&
                         _flickedWord == null)
                       Positioned(
@@ -411,7 +432,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                       ),
 
                     // Tutorial Hand Overlay
-                    if (!_isAnswered &&
+                    if (!_isAnswered && !_isFirstStagePassed &&
                         currentWord.isNotEmpty &&
                         _flickedWord == null &&
                         _currentWordIndex == 0 &&
@@ -515,6 +536,34 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             },
           ),
         ),
+        if (_isFirstStagePassed && !_isAnswered)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+              child: Column(
+                children: [
+                  if (quest?.relatedWords != null && quest!.relatedWords!.isNotEmpty)
+                    TopicVocabMindMap(
+                      relatedWords: quest.relatedWords!,
+                      color: theme.primaryColor,
+                    ),
+                  SizedBox(height: 20.h),
+                  DynamicAnagramWrapper(
+                    title: 'SPELL THE TARGET WORD',
+                    subtitle: 'Tap all letters to rebuild the word!',
+                    expectedText: quest?.correctAnswer ?? '',
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onFailed: () {},
+                    onFailedWithSpelling: (wrongWord) =>
+                        _submitFinalAnswer(false, wrongWord: wrongWord),
+                    isPositioned: false,
+                  ),
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
+          ),
       ],
     ),
         );

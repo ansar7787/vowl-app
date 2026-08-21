@@ -151,7 +151,7 @@
 | 67 | phrasalVerbs | 8→10 | Add `literalVsFigurative` | Literal vs phrasal side-by-side | ContextSentenceBuilder | ✅ |
 | 68 | idioms | 8→10 | Add `origin` story | Origin card after answer | SpeakToConfirm in sentence | ✅ |
 | 69 | academicWord | 8→10 | Add `academicField` + `collocations` | Academic paragraph context | TypeToConfirm write sentence | ✅ |
-| 70 | topicVocab | 8→10 | Add `relatedWords` network | Word web mind map | Anagram spell words | 🔲 |
+| 70 | topicVocab | 8→10 | Add `relatedWords` network | Word web mind map | Anagram spell words | ✅ |
 | 71 | wordFormation | 8→10 | Add `familyTree` (act→action→active) | Full word family tree | TypeToConfirm each form | 🔲 |
 | 72 | prefixSuffix | 8→10 | Add `meaningBreakdown` | Color-coded prefix/root/suffix | Anagram build word | 🔲 |
 | 73 | collocations | 8→10 | Add `wrongCollocations` | Show common WRONG pairs | ContextSentenceBuilder | 🔲 |

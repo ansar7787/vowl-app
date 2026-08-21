@@ -44,6 +44,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.origin,
     super.academicField,
     super.collocations,
+    super.relatedWords,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -158,6 +159,9 @@ class VocabularyQuestModel extends VocabularyQuest {
       collocations: map['collocations'] != null
           ? List<String>.from(map['collocations'])
           : null,
+      relatedWords: map['relatedWords'] != null
+          ? List<String>.from(map['relatedWords'])
+          : null,
     );
   }
 
@@ -211,6 +215,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'origin': origin,
       'academicField': academicField,
       'collocations': collocations,
+      'relatedWords': relatedWords,
     };
   }
 }
