@@ -15,7 +15,8 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
 import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocations_wrong_pairs.dart';
+import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -347,17 +348,26 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                               ),
                               if (_isFirstStagePassed &&
                                   (!_isAnswered || _isCorrect == null))
-                                DynamicAnagramWrapper(
-                                  title: 'SPELL THE COLLOCATION',
-                                  subtitle:
-                                      'Tap all letters to rebuild the word pair!',
-                                  expectedText: quest.correctAnswer ?? '',
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onFailed: () {},
-                                  onFailedWithSpelling: (wrongWord) =>
-                                      _submitFinalAnswer(false),
-                                  isPositioned: false,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: Column(
+                                    children: [
+                                      if (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty)
+                                        CollocationsWrongPairs(
+                                          wrongCollocations: quest.wrongCollocations!,
+                                          color: theme.primaryColor,
+                                        ),
+                                      SizedBox(height: 20.h),
+                                      ContextSentenceBuilder(
+                                        targetKeyword: '${quest.correctAnswer} ${quest.word}',
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () => _submitFinalAnswer(true),
+                                        onSkipped: () => _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                      ),
+                                      SizedBox(height: 60.h),
+                                    ],
+                                  ),
                                 ),
                               SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                             ],
