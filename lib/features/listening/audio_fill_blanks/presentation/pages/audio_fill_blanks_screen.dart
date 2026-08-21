@@ -17,6 +17,9 @@ import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/a
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_input.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
+import 'package:vowl/core/presentation/game_mechanics/blind_dictation_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -117,6 +120,18 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Audio Fill Blanks',
+          userAnswer: input,
+          correctAnswer: correct,
+          level: widget.level,
+        );
+      }
     }
 
     setState(() {
@@ -220,9 +235,30 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                   isDark: isDark,
                   maxInputLength: _kMaxInputLength,
                   compactThreshold: _kCompactHeightThreshold,
+                  level: widget.level,
                   onSmear: _onSmear,
                   onPlayAudio: () => _playAudio(quest.textToSpeak),
                   onSubmit: () => _submitAnswer(quest.correctAnswer),
+                  onBlindSubmit: (bool correct) {
+                    if (!correct) {
+                      final authState = context.read<AuthBloc>().state;
+                      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                        ErrorJournalCollector.record(
+                          userId: authState.user!.id,
+                          gameType: widget.gameType.name,
+                          question: 'Blind Dictation',
+                          userAnswer: '[Failed Dictation]',
+                          correctAnswer: quest.correctAnswer ?? quest.textToSpeak ?? '',
+                          level: widget.level,
+                        );
+                      }
+                    }
+                    setState(() {
+                      _isAnswered = true;
+                      _isCorrect = correct;
+                    });
+                    context.read<ListeningBloc>().add(SubmitAnswer(correct));
+                  },
                 ),
         );
       },
@@ -248,9 +284,11 @@ class _AudioFillBlanksContent extends StatelessWidget {
   final bool isDark;
   final int maxInputLength;
   final double compactThreshold;
+  final int level;
   final void Function(double) onSmear;
   final VoidCallback onPlayAudio;
   final VoidCallback onSubmit;
+  final void Function(bool) onBlindSubmit;
 
   const _AudioFillBlanksContent({
     required this.quest,
@@ -262,9 +300,11 @@ class _AudioFillBlanksContent extends StatelessWidget {
     required this.isDark,
     required this.maxInputLength,
     required this.compactThreshold,
+    required this.level,
     required this.onSmear,
     required this.onPlayAudio,
     required this.onSubmit,
+    required this.onBlindSubmit,
   });
 
   @override
@@ -313,20 +353,30 @@ class _AudioFillBlanksContent extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                AudioFillBlanksInput(
-                  controller: controller,
-                  isAnswered: isAnswered,
-                  primaryColor: theme.primaryColor,
-                  maxLength: maxInputLength,
-                  onSubmitted: (_) => onSubmit(),
-                ),
-                SizedBox(height: 16.h),
-                if (!isAnswered)
-                  _SubmitButton(
-                    isCompact: false,
+                if (level >= 8 && !isAnswered)
+                  BlindDictationWrapper(
+                    expectedText: quest.correctAnswer ?? quest.textToSpeak ?? '',
                     primaryColor: theme.primaryColor,
-                    onTap: onSubmit,
+                    isPositioned: false,
+                    onConfirmed: () => onBlindSubmit(true),
+                    onSkipped: () => onBlindSubmit(false),
+                  )
+                else ...[
+                  AudioFillBlanksInput(
+                    controller: controller,
+                    isAnswered: isAnswered,
+                    primaryColor: theme.primaryColor,
+                    maxLength: maxInputLength,
+                    onSubmitted: (_) => onSubmit(),
                   ),
+                  SizedBox(height: 16.h),
+                  if (!isAnswered)
+                    _SubmitButton(
+                      isCompact: false,
+                      primaryColor: theme.primaryColor,
+                      onTap: onSubmit,
+                    ),
+                ],
               ],
             ),
           ),

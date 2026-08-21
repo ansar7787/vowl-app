@@ -15,6 +15,9 @@ import 'package:vowl/features/listening/sound_image_match/presentation/widgets/s
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_scanner_field.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class SoundImageMatchScreen extends StatefulWidget {
   final int level;
@@ -41,6 +44,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   int? _lastLives;
   int? _selectedIndex;
   int? _pendingSelectedIndex;
+  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void initState() {
@@ -60,10 +64,24 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
 
   void _submitFinalAnswer(bool nailedSpeaking, int correct) {
     if (_isAnswered || _pendingSelectedIndex == null) return;
+    _timerKey.currentState?.stop();
 
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Sound Image Match',
+          userAnswer: '[Failed Speaking]',
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
@@ -88,6 +106,19 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Sound Image Match',
+          userAnswer: _pendingSelectedIndex.toString(),
+          correctAnswer: correct.toString(),
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
@@ -159,6 +190,35 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   SizedBox(height: 6.h),
+                                  if (!_isAnswered)
+                                    Padding(
+                                      padding: EdgeInsets.only(bottom: 16.h),
+                                      child: SpeedChallengeTimer(
+                                        key: _timerKey,
+                                        durationSeconds: 30,
+                                        primaryColor: theme.primaryColor,
+                                        onTimeUp: () {
+                                          final authState = context.read<AuthBloc>().state;
+                                          if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                                            ErrorJournalCollector.record(
+                                              userId: authState.user!.id,
+                                              gameType: widget.gameType.name,
+                                              question: 'Sound Image Match',
+                                              userAnswer: '[Time Up]',
+                                              correctAnswer: quest.correctAnswerIndex?.toString() ?? '',
+                                              level: widget.level,
+                                            );
+                                          }
+                                          setState(() {
+                                            _isAnswered = true;
+                                            _isCorrect = false;
+                                            _pendingSelectedIndex = -1;
+                                            _selectedIndex = -1;
+                                          });
+                                          context.read<ListeningBloc>().add(SubmitAnswer(false));
+                                        },
+                                      ),
+                                    ),
                                   SoundImageMatchInstruction(
                                     color: theme.primaryColor,
                                     instruction: quest.instruction,
@@ -207,6 +267,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                                             _pendingSelectedIndex != null) {
                                           return;
                                         }
+                                        _timerKey.currentState?.pause();
                                         setState(() {
                                           _pendingSelectedIndex = index;
                                         });
@@ -229,10 +290,13 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                             true,
                             quest.correctAnswerIndex ?? 0,
                           ),
-                          onSkipped: () => _submitFinalAnswer(
-                            false,
-                            quest.correctAnswerIndex ?? 0,
-                          ),
+                          onSkipped: () {
+                            _timerKey.currentState?.resume();
+                            _submitFinalAnswer(
+                              false,
+                              quest.correctAnswerIndex ?? 0,
+                            );
+                          },
                           allowSkip: true,
                         ),
                     ],

@@ -14,6 +14,9 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
@@ -166,39 +169,64 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                SizedBox(
-                                  height: 350.h,
-                                  child: AudioMultipleChoiceSpinner(
-                                    options: quest.options ?? [],
-                                    correct: quest.correctAnswerIndex ?? 0,
-                                    color: theme.primaryColor,
-                                    tts: quest.textToSpeak ?? "",
-                                    emoji: quest.emoji,
-                                    rotation: _rotation,
-                                    selectedIndex: _selectedIndex,
-                                    isAnswered: _isAnswered,
-                                    isCorrectState: _isCorrect,
-                                    onSpin: (delta) {
-                                      if (!_isAnswered) {
-                                        setState(() {
-                                          _rotation += delta * 0.01;
-                                        });
-                                      }
-                                    },
-                                    onSelectSatellite: (index) {
-                                      _submitFinalAnswer(
-                                        index,
-                                        quest.correctAnswerIndex ?? 0,
-                                      );
-                                    },
-                                    onTapCore: () {
-                                      _soundService.playTts(
-                                        quest.textToSpeak ?? "",
-                                      );
-                                      _hapticService.selection();
-                                    },
+                                if (_isAnswered && quest.audioTranscript != null)
+                                  SizedBox(
+                                    height: 350.h,
+                                    child: EvidenceHighlightWrapper(
+                                      passage: quest.audioTranscript!,
+                                      evidenceWords: [quest.correctAnswer ?? quest.options?[quest.correctAnswerIndex ?? 0] ?? ''],
+                                      primaryColor: theme.primaryColor,
+                                      isPositioned: false,
+                                      onCorrectHighlight: () {},
+                                      onWrongHighlight: () {
+                                        final authState = context.read<AuthBloc>().state;
+                                        if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                                          ErrorJournalCollector.record(
+                                            userId: authState.user!.id,
+                                            gameType: widget.gameType.name,
+                                            question: 'Evidence Highlight',
+                                            userAnswer: '[Wrong evidence tap]',
+                                            correctAnswer: quest.correctAnswer ?? '',
+                                            level: widget.level,
+                                          );
+                                        }
+                                      },
+                                    ),
+                                  )
+                                else
+                                  SizedBox(
+                                    height: 350.h,
+                                    child: AudioMultipleChoiceSpinner(
+                                      options: quest.options ?? [],
+                                      correct: quest.correctAnswerIndex ?? 0,
+                                      color: theme.primaryColor,
+                                      tts: quest.textToSpeak ?? "",
+                                      emoji: quest.emoji,
+                                      rotation: _rotation,
+                                      selectedIndex: _selectedIndex,
+                                      isAnswered: _isAnswered,
+                                      isCorrectState: _isCorrect,
+                                      onSpin: (delta) {
+                                        if (!_isAnswered) {
+                                          setState(() {
+                                            _rotation += delta * 0.01;
+                                          });
+                                        }
+                                      },
+                                      onSelectSatellite: (index) {
+                                        _submitFinalAnswer(
+                                          index,
+                                          quest.correctAnswerIndex ?? 0,
+                                        );
+                                      },
+                                      onTapCore: () {
+                                        _soundService.playTts(
+                                          quest.textToSpeak ?? "",
+                                        );
+                                        _hapticService.selection();
+                                      },
+                                    ),
                                   ),
-                                ),
                               ],
                             ),
                           ),

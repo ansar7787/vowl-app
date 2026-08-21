@@ -34,6 +34,10 @@ class ListeningQuestModel extends ListeningQuest {
     super.explanation,
     super.imageUrl,
     super.emoji,
+    super.distractorWords,
+    super.pauseMarkers,
+    super.evidenceQuote,
+    super.imageDescriptions,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -116,6 +120,14 @@ class ListeningQuestModel extends ListeningQuest {
       explanation: map['explanation'] as String?,
       imageUrl: map['imageUrl'] as String? ?? map['image_url'] as String?,
       emoji: map['emoji'] as String?,
+      distractorWords: parseStringList(map['distractorWords']),
+      pauseMarkers: map['pauseMarkers'] != null
+          ? (map['pauseMarkers'] as List)
+                .map((e) => int.tryParse(e.toString()) ?? 0)
+                .toList()
+          : null,
+      evidenceQuote: map['evidenceQuote'] as String?,
+      imageDescriptions: parseStringList(map['imageDescriptions'] ?? map['descriptions']),
     );
   }
 
@@ -147,6 +159,10 @@ class ListeningQuestModel extends ListeningQuest {
       'explanation': explanation,
       'imageUrl': imageUrl,
       'emoji': emoji,
+      'distractorWords': distractorWords,
+      'pauseMarkers': pauseMarkers,
+      'evidenceQuote': evidenceQuote,
+      'imageDescriptions': imageDescriptions,
     };
   }
 }

@@ -15,7 +15,9 @@ import 'package:vowl/features/listening/audio_true_false/presentation/widgets/au
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_tuner.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_screen_display.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/widgets/audio_true_false_polarized_filters.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;
@@ -56,6 +58,19 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     if (!nailedSpeaking) {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Audio True/False',
+          userAnswer: '[Failed Typing]',
+          correctAnswer: correct,
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
@@ -80,6 +95,19 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Audio True/False',
+          userAnswer: _selectedVerdict.toString(),
+          correctAnswer: correct,
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
@@ -229,8 +257,8 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
                       ],
                     ),
                     if (_selectedVerdict != null && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.statement ?? "",
+                      TypeToConfirmOverlay(
+                        expectedText: quest.evidenceQuote ?? quest.statement ?? "",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () =>
                             _submitFinalAnswer(true, quest.correctAnswer ?? ""),

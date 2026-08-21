@@ -11,12 +11,12 @@ import 'package:vowl/features/listening/presentation/bloc/listening_event.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_state.dart';
 import 'package:vowl/features/listening/presentation/layout/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
 import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
-import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_timeline.dart';
-import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_segments.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class AudioSentenceOrderScreen extends StatefulWidget {
   final int level;
@@ -50,27 +50,6 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     context.read<ListeningBloc>().add(
       FetchListeningQuests(gameType: widget.gameType, level: widget.level),
     );
-  }
-
-  void _onSnap(String segment, int slotIndex) {
-    if (_isAnswered) return;
-    setState(() {
-      _slots[slotIndex] = segment;
-      _segments.remove(segment);
-      _hapticService.selection();
-    });
-  }
-
-  void _onUnsnap(int slotIndex) {
-    if (_isAnswered) return;
-    setState(() {
-      String segment = _slots[slotIndex];
-      if (segment.isNotEmpty) {
-        _segments.add(segment);
-        _slots[slotIndex] = "";
-        _hapticService.selection();
-      }
-    });
   }
 
   void _submitAnswer(String correctFull) {
@@ -110,6 +89,19 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Sentence Order',
+          userAnswer: current,
+          correctAnswer: target,
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
@@ -201,80 +193,30 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                                 isCorrectState: _isCorrect,
                               ),
                               SizedBox(height: 32.h),
-                              SizedBox(
-                                height: 180.h,
-                                child: SingleChildScrollView(
-                                  clipBehavior: Clip.none,
-                                  physics: const BouncingScrollPhysics(),
-                                  child: AudioSentenceOrderTimeline(
-                                    slots: _slots,
-                                    color: theme.primaryColor,
-                                    onSnap: _onSnap,
-                                    onUnsnap: _onUnsnap,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SliverFillRemaining(
-                        hasScrollBody: false,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 16.h,
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              SizedBox(
-                                height: 180.h,
-                                child: SingleChildScrollView(
-                                  clipBehavior: Clip.none,
-                                  physics: const BouncingScrollPhysics(),
-                                  child: AudioSentenceOrderSegments(
-                                    segments: _segments,
-                                    slots: _slots,
-                                    color: theme.primaryColor,
-                                    isAnswered: _isAnswered,
-                                    onSnap: _onSnap,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 16.h),
                               if (!_isAnswered)
-                                ScaleButton(
-                                  onTap: () =>
-                                      _submitAnswer(quest.textToSpeak ?? ""),
-                                  child: Container(
-                                    width: double.infinity,
-                                    height: 65.h,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20.r),
-                                      color: theme.primaryColor,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: theme.primaryColor
-                                              .withValues(alpha: 0.3),
-                                          blurRadius: 15,
-                                          offset: const Offset(0, 5),
-                                        ),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        "CALIBRATE SIGNAL",
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.white,
-                                          letterSpacing: 2,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+                                DynamicJigsawWrapper(
+                                  expectedText: quest.textToSpeak ?? "",
+                                  primaryColor: theme.primaryColor,
+                                  isPositioned: false,
+                                  onConfirmed: () => _submitAnswer(quest.textToSpeak ?? ""),
+                                  onSkipped: () {
+                                    final authState = context.read<AuthBloc>().state;
+                                    if (authState.status == AuthStatus.authenticated && authState.user != null) {
+                                      ErrorJournalCollector.record(
+                                        userId: authState.user!.id,
+                                        gameType: widget.gameType.name,
+                                        question: 'Sentence Order',
+                                        userAnswer: '[Skipped]',
+                                        correctAnswer: quest.textToSpeak ?? "",
+                                        level: widget.level,
+                                      );
+                                    }
+                                    setState(() {
+                                      _isAnswered = true;
+                                      _isCorrect = false;
+                                    });
+                                    context.read<ListeningBloc>().add(SubmitAnswer(false));
+                                  },
                                 ),
                             ],
                           ),

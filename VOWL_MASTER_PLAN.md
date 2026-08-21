@@ -255,11 +255,11 @@
 
 | # | Game | SpeakToConfirm | EvidenceHighlight | SpeedTimer | BlindDictation | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|:---:|
-| 11 | audioFillBlanks | — | — | — | 🔲 | 🔲 |
-| 12 | audioMultipleChoice | — | 🔲 | — | — | 🔲 |
-| 13 | audioSentenceOrder | — | — | — | — | 🔲 |
-| 14 | audioTrueFalse | ✅ | 🔲 | — | — | 🔲 |
-| 15 | soundImageMatch | ✅ | — | 🔲 | — | 🔲 |
+| 11 | audioFillBlanks | ✅ | 🔲 | 🔲 | ✅ | ✅ |
+| 12 | audioMultipleChoice | 🔲 | ✅ | 🔲 | 🔲 | ✅ |
+| 13 | audioSentenceOrder | 🔲 | 🔲 | 🔲 | 🔲 | ✅ |
+| 14 | audioTrueFalse | ✅ | ✅ | 🔲 | 🔲 | ✅ |
+| 15 | soundImageMatch | ✅ | 🔲 | ✅ | 🔲 | ✅ |
 | 16 | fastSpeechDecoder | — | — | 🔲 | — | 🔲 |
 | 17 | emotionRecognition | — | — | — | — | 🔲 |
 | 18 | detailSpotlight | — | — | — | — | 🔲 |
