@@ -70,11 +70,11 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 11 | audioFillBlanks | 8→10 | Add `distractorWords` (similar sounds) | Limit replays to 3 | BlindDictation at high levels | 🔲 |
-| 12 | audioMultipleChoice | 7→10 | Add `audioTranscript` (shown AFTER) | Max 2 replays + evidence step | EvidenceHighlightWrapper | 🔲 |
-| 13 | audioSentenceOrder | 8→10 | Add `pauseMarkers` for TTS | Drag-handle sentence cards | Jigsaw wrapper | 🔲 |
-| 14 | audioTrueFalse | 7→10 | Add `evidenceQuote` field | User TYPE the evidence heard | EvidenceHighlight + TypeToConfirm | 🔲 |
-| 15 | soundImageMatch | 7→10 | Add `description` per image | 6 images at high levels + timer | SpeedChallengeTimer | 🔲 |
+| 11 | audioFillBlanks | 8→10 | Add `distractorWords` (similar sounds) | Limit replays to 3 | BlindDictation at high levels | ✅ |
+| 12 | audioMultipleChoice | 7→10 | Add `audioTranscript` (shown AFTER) | Max 2 replays + evidence step | EvidenceHighlightWrapper | ✅ |
+| 13 | audioSentenceOrder | 8→10 | Add `pauseMarkers` for TTS | Drag-handle sentence cards | Jigsaw wrapper | ✅ |
+| 14 | audioTrueFalse | 7→10 | Add `evidenceQuote` field | User TYPE the evidence heard | EvidenceHighlight + TypeToConfirm | ✅ |
+| 15 | soundImageMatch | 7→10 | Add `description` per image | 6 images at high levels + timer | SpeedChallengeTimer | ✅ |
 | 16 | fastSpeechDecoder | 9→10 | Add `slowVersion` field | Toggle "hear it slow" button | SpeakToConfirm repeat | ✅ |
 | 17 | emotionRecognition | 8→10 | Add `emotionScale` (intensity 1-5) | Emotion wheel visual | SpeakToConfirm same emotion | ✅ |
 | 18 | detailSpotlight | 8→10 | Add `detailCategory` (name/number/date) | Focus hint BEFORE listening | TypeToConfirm type detail | ✅ |
@@ -85,13 +85,13 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 21 | readAndAnswer | 9→10 | Add `passageWordCount` | Read time estimate + highlight | EvidenceHighlightWrapper | 🔲 |
-| 22 | findWordMeaning | 8→10 | Add `wordInContext` extra example | Type word in own sentence | ContextSentenceBuilder | 🔲 |
-| 23 | trueFalseReading | 7→10 | Add `evidenceLine` (exact proof) | TAP the line that proves answer | EvidenceHighlightWrapper | 🔲 |
-| 24 | sentenceOrderReading | 8→10 | Add `transitionWords` highlights | Color-code: First/Then/Finally | Jigsaw (already ✅) | 🔲 |
-| 25 | readingSpeedCheck | 8→10 | Add `wpm_target` per level | Live WPM counter + personal best | SpeedChallengeTimer | 🔲 |
-| 26 | guessTitle | 8→10 | Add `whyThisTitle` explanation | Highlight topic sentence after | TypeToConfirm write better title | 🔲 |
-| 27 | readAndMatch | 8→10 | Add `paragraphTopic` per paragraph | Color-code matches | Jigsaw for matching | 🔲 |
+| 21 | readAndAnswer | 9→10 | Add `passageWordCount` | Read time estimate + highlight | EvidenceHighlightWrapper | ✅ |
+| 22 | findWordMeaning | 8→10 | Add `wordInContext` extra example | Type word in own sentence | ContextSentenceBuilder | ✅ |
+| 23 | trueFalseReading | 7→10 | Add `evidenceLine` (exact proof) | TAP the line that proves answer | EvidenceHighlightWrapper | ✅ |
+| 24 | sentenceOrderReading | 8→10 | Add `transitionWords` highlights | Color-code: First/Then/Finally | Jigsaw (already ✅) | ✅ |
+| 25 | readingSpeedCheck | 8→10 | Add `wpm_target` per level | Live WPM counter + personal best | SpeedChallengeTimer | ✅ |
+| 26 | guessTitle | 8→10 | Add `whyThisTitle` explanation | Highlight topic sentence after | TypeToConfirm write better title | ✅ |
+| 27 | readAndMatch | 8→10 | Add `paragraphTopic` per paragraph | Color-code matches | Jigsaw for matching | ✅ |
 | 28 | paragraphSummary | 9→10 | Add `keyPoints` array (3 points) | Checklist: 3 points covered? | TypeToConfirm own summary | ✅ |
 | 29 | readingInference | 9→10 | Add `clueWords` array | Highlight clues AFTER answer | EvidenceHighlightWrapper | ✅ |
 | 30 | readingConclusion | 9→10 | Add `logicChain` (evidence→conclusion) | Logic flowchart visual | TypeToConfirm explain reasoning | ✅ |
