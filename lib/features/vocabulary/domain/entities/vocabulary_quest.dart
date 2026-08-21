@@ -16,6 +16,7 @@ class VocabularyQuest extends GameQuest {
   final List<String>? gradientScale;
   final String? clueType;
   final List<String>? evidenceWords;
+  final String? literalVsFigurative;
 
   const VocabularyQuest({
     required super.id,
@@ -55,6 +56,7 @@ class VocabularyQuest extends GameQuest {
     this.gradientScale,
     this.clueType,
     this.evidenceWords,
+    this.literalVsFigurative,
   });
 
   final String? rootWord;

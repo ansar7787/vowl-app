@@ -18,7 +18,8 @@ import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phra
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
 import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_literal_comparison.dart';
+import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;
@@ -370,16 +371,25 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                       ),
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
-                      DynamicAnagramWrapper(
-                        title: 'SPELL THE PHRASAL VERB',
-                        subtitle: 'Tap all letters to build the full phrase!',
-                        expectedText: "${quest.word} ${quest.correctAnswer}",
-                        primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true),
-                        onFailed: () {},
-                        onFailedWithSpelling: (wrongWord) =>
-                            _submitFinalAnswer(false),
-                        isPositioned: false,
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          children: [
+                            if (quest.literalVsFigurative != null && quest.literalVsFigurative!.isNotEmpty)
+                              PhrasalVerbsLiteralComparison(
+                                literalVsFigurative: quest.literalVsFigurative!,
+                                color: theme.primaryColor,
+                              ),
+                            SizedBox(height: 20.h),
+                            ContextSentenceBuilder(
+                              targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _submitFinalAnswer(true),
+                              onSkipped: () => _submitFinalAnswer(false),
+                              isPositioned: false,
+                            ),
+                          ],
+                        ),
                       ),
                     SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                   ],

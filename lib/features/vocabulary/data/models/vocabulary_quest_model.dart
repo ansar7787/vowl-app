@@ -40,6 +40,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.gradientScale,
     super.clueType,
     super.evidenceWords,
+    super.literalVsFigurative,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -148,6 +149,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       evidenceWords: map['evidenceWords'] != null
           ? List<String>.from(map['evidenceWords'])
           : null,
+      literalVsFigurative: map['literalVsFigurative'],
     );
   }
 
@@ -197,6 +199,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'gradientScale': gradientScale,
       'clueType': clueType,
       'evidenceWords': evidenceWords,
+      'literalVsFigurative': literalVsFigurative,
     };
   }
 }
