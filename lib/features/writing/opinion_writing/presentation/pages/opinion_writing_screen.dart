@@ -16,7 +16,7 @@ import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opini
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_thesis_card.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_scale_interface.dart';
 import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_argument_stones.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class OpinionWritingScreen extends StatefulWidget {
   final int level;
@@ -209,7 +209,32 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                                   primaryColor: theme.primaryColor,
                                 ),
                                 SizedBox(height: 16.h),
-
+                                if (quest.structureGuide != null)
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 16.h),
+                                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(12.r),
+                                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.format_list_bulleted, color: theme.primaryColor, size: 16.sp),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          quest.structureGuide!,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w700,
+                                            color: theme.primaryColor,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 OpinionWritingThesisCard(
                                   text: quest.prompt ?? "",
                                   color: theme.primaryColor,
@@ -296,14 +321,11 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                       ],
                     ),
                     if (_pendingScaleSubmit && !isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText:
-                            quest.prompt ?? "I have balanced the arguments",
-                        displayText: "Type the thesis to seal your argument",
+                      SpeakToConfirmOverlay(
+                        expectedText: quest.prompt ?? "I have balanced the arguments",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
-                        allowSkip: true,
                       ),
                   ],
                 ),

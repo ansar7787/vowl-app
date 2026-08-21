@@ -180,6 +180,33 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
                                   primaryColor: theme.primaryColor,
                                   instruction: quest.instruction,
                                 ),
+                                SizedBox(height: 16.h),
+                                if (quest.errorType != null)
+                                  Container(
+                                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(12.r),
+                                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(Icons.bug_report, color: theme.primaryColor, size: 14.sp),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          quest.errorType!.toUpperCase(),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 SizedBox(height: 32.h),
 
                                 FixTheSentenceDigitalBlackboard(

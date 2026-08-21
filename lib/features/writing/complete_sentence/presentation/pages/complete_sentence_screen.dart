@@ -17,6 +17,7 @@ import 'package:vowl/features/writing/complete_sentence/presentation/widgets/com
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_ballista_ammo.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_trajectory_painter.dart';
 import 'package:vowl/features/writing/complete_sentence/presentation/widgets/complete_sentence_keyboard_input.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 // ---------------------------------------------------------------------------
 // Immutable record for drag state â€” replaces two nullable Offset fields.
@@ -56,6 +57,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
 
   String? _selectedProjectile;
   bool _showConfetti = false;
+  bool _showAnagram = false;
 
   GameQuest? _lastQuest;
 
@@ -130,7 +132,22 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     _dragNotifier.value = null;
 
     // We let the BLoC handle all state now! No local timers hiding the continue button!
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      _hapticService.success();
+      setState(() {
+        _showAnagram = true;
+      });
+    } else {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _onAnagramSuccess() {
+    setState(() {
+      _showAnagram = false;
+    });
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   // ---------------------------------------------------------------------------
@@ -152,6 +169,7 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           setState(() {
             _selectedProjectile = null;
             _dragNotifier.value = null;
+            _showAnagram = false;
           });
         }
         if (state is WritingGameComplete) {
@@ -257,6 +275,12 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                         );
                       },
                     ),
+                    if (_showAnagram && !isAnswered)
+                      DynamicAnagramWrapper(
+                        word: quest.correctAnswer ?? '',
+                        primaryColor: _theme.primaryColor,
+                        onSuccess: _onAnagramSuccess,
+                      ),
                   ],
                 ),
         );
@@ -309,6 +333,33 @@ class _CompleteSentenceBody extends StatelessWidget {
               children: [
                 SizedBox(height: 16.h),
                 CompleteSentenceInstruction(primaryColor: theme.primaryColor),
+                if (quest.grammarFocus != null) ...[
+                  SizedBox(height: 12.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                    decoration: BoxDecoration(
+                      color: theme.primaryColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                        SizedBox(width: 8.w),
+                        Text(
+                          quest.grammarFocus!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: theme.primaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
                 SizedBox(height: 32.h),
                 CompleteSentenceTargetWall(
                   text: quest.partialSentence ?? '',

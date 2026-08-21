@@ -102,17 +102,17 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 33 | sentenceBuilder | 8→10 | Add `sentenceType` (statement/question) | TYPE sentence from memory after drag | TypeToConfirm | 🔲 |
-| 34 | completeSentence | 8→10 | Add `grammarFocus` field | Show grammar rule card after | Anagram spell word | 🔲 |
-| 35 | describeSituation | 9→10 | Add `modelAnswer` (200 words) | Word count minimum indicator | SpeakToConfirm read aloud | 🔲 |
-| 36 | fixTheSentence | 8→10 | Add `errorType` (spell/grammar/punct) | Highlight error zone | TypeToConfirm full correction | 🔲 |
-| 37 | shortAnswerWriting | 8→10 | Add `keywordsExpected` array | Keyword checker | ContextSentenceBuilder | 🔲 |
-| 38 | opinionWriting | 9→10 | Add `structureGuide` | Paragraph structure template | SpeakToConfirm present opinion | 🔲 |
-| 39 | dailyJournal | 8→10 | Add `promptQuestions` (3 guiding Qs) | Mood selector + word count | SpeakToConfirm summarize | 🔲 |
-| 40 | summarizeStory | 9→10 | Add `storyKeyEvents` (5 events) | Key events checklist | SpeedChallengeTimer | 🔲 |
-| 41 | writingEmail | 9→10 | Add `formalityLevel` field | Email template overlay | SpeakToConfirm read aloud | 🔲 |
-| 42 | correctionWriting | 8→10 | Add `errorCount` field | "X errors remaining" counter | EvidenceHighlightWrapper | 🔲 |
-| 43 | essayDrafting | 9→10 | Add `thesisStatement` model | Outline mode before writing | TypeToConfirm | 🔲 |
+| 33 | sentenceBuilder | 8→10 | Add `sentenceType` (statement/question) | TYPE sentence from memory after drag | TypeToConfirm | ✅ |
+| 34 | completeSentence | 8→10 | Add `grammarFocus` field | Show grammar rule card after | Anagram spell word | ✅ |
+| 35 | describeSituation | 9→10 | Add `modelAnswer` (200 words) | Word count minimum indicator | SpeakToConfirm read aloud | ✅ |
+| 36 | fixTheSentence | 8→10 | Add `errorType` (spell/grammar/punct) | Highlight error zone | TypeToConfirm full correction | ✅ |
+| 37 | shortAnswerWriting | 8→10 | Add `keywordsExpected` array | Keyword checker | ContextSentenceBuilder | ✅ |
+| 38 | opinionWriting | 9→10 | Add `structureGuide` | Paragraph structure template | SpeakToConfirm present opinion | ✅ |
+| 39 | dailyJournal | 8→10 | Add `promptQuestions` (3 guiding Qs) | Mood selector + word count | SpeakToConfirm summarize | ✅ |
+| 40 | summarizeStory | 9→10 | Add `storyKeyEvents` (5 events) | Key events checklist | SpeedChallengeTimer | ✅ |
+| 41 | writingEmail | 9→10 | Add `formalityLevel` field | Email template overlay | SpeakToConfirm read aloud | ✅ |
+| 42 | correctionWriting | 8→10 | Add `errorCount` field | "X errors remaining" counter | EvidenceHighlightWrapper | ✅ |
+| 43 | essayDrafting | 9→10 | Add `thesisStatement` model | Outline mode before writing | TypeToConfirm | ✅ |
 
 #### D5: 🧠 GRAMMAR (19 games) — Current 8.0 → Target 10/10
 

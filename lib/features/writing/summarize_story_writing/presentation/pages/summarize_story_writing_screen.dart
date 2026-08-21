@@ -20,6 +20,7 @@ import 'package:vowl/features/writing/summarize_story_writing/presentation/widge
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_frame_vault.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 
 class SummarizeStoryWritingScreen extends StatefulWidget {
   final int level;
@@ -121,6 +122,12 @@ class _SummarizeStoryWritingScreenState
     }
 
     context.read<WritingBloc>().add(SubmitAnswer(isAllCorrect));
+  }
+
+  void _onTimerExpired() {
+    if (_pendingSubmit) return;
+    _hapticService.error();
+    context.read<WritingBloc>().add(const SubmitAnswer(false));
   }
 
   @override
@@ -226,6 +233,60 @@ class _SummarizeStoryWritingScreenState
                                 ),
                                 SizedBox(height: 24.h),
 
+                                if (quest.storyKeyEvents != null)
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 24.h),
+                                    padding: EdgeInsets.all(16.r),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(16.r),
+                                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.checklist_rtl, color: theme.primaryColor, size: 16.sp),
+                                            SizedBox(width: 8.w),
+                                            Text(
+                                              "KEY EVENTS CHECKLIST",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w800,
+                                                color: theme.primaryColor,
+                                                letterSpacing: 2,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 12.h),
+                                        ...quest.storyKeyEvents!.map((event) => Padding(
+                                          padding: EdgeInsets.only(bottom: 6.h),
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Icon(Icons.check_circle_outline, color: theme.primaryColor.withValues(alpha: 0.7), size: 14.sp),
+                                              SizedBox(width: 8.w),
+                                              Expanded(
+                                                child: Text(
+                                                  event,
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 12.sp,
+                                                    color: isDark ? Colors.white70 : Colors.black87,
+                                                    height: 1.3,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )).toList(),
+                                      ],
+                                    ),
+                                  ),
+
                                 SummarizeStoryFilmStrip(
                                   slots: _slots,
                                   color: theme.primaryColor,
@@ -245,6 +306,13 @@ class _SummarizeStoryWritingScreenState
                                   onTapOption: (text) =>
                                       _onTapOption(text, isAnswered),
                                 ),
+                                SizedBox(height: 32.h),
+                                if (!isAnswered)
+                                  SpeedChallengeTimer(
+                                    duration: 90,
+                                    primaryColor: theme.primaryColor,
+                                    onExpired: _onTimerExpired,
+                                  ),
                                 SizedBox(height: 32.h),
                               ],
                             ),

@@ -209,7 +209,50 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                                   color: theme.primaryColor,
                                   isDark: isDark,
                                 ),
-                                SizedBox(height: 24.h),
+                                SizedBox(height: 16.h),
+                                if (activeQuest.thesisStatement != null)
+                                  Container(
+                                    margin: EdgeInsets.only(bottom: 16.h),
+                                    padding: EdgeInsets.all(12.r),
+                                    decoration: BoxDecoration(
+                                      color: theme.primaryColor.withValues(alpha: 0.1),
+                                      borderRadius: BorderRadius.circular(12.r),
+                                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.center_focus_strong, color: theme.primaryColor, size: 14.sp),
+                                            SizedBox(width: 8.w),
+                                            Text(
+                                              "THESIS STATEMENT",
+                                              style: TextStyle(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 10.sp,
+                                                fontWeight: FontWeight.w800,
+                                                color: theme.primaryColor,
+                                                letterSpacing: 1.5,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(height: 8.h),
+                                        Text(
+                                          activeQuest.thesisStatement!,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isDark ? Colors.white : Colors.black87,
+                                            fontStyle: FontStyle.italic,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                SizedBox(height: 8.h),
 
                                 ..._blueprintSlots.keys.map(
                                   (k) => EssayDraftingHexSlot(

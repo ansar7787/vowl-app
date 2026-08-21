@@ -17,6 +17,7 @@ import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sent
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_workbench.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_piece_pool.dart';
 import 'package:vowl/features/writing/sentence_builder/presentation/widgets/sentence_builder_keyboard_input.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;
@@ -44,6 +45,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   final _textController = TextEditingController();
   final List<String> _assembledPieces = [];
   bool _showConfetti = false;
+  bool _showTypeToConfirm = false;
 
   // FIX: full whitespace normalization to prevent false mismatches.
   // ".toLowerCase()" alone fails when correctAnswer has double-spaces or
@@ -129,7 +131,22 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     final expected = _normalizeAnswer(correct);
     final isCorrect = built == expected;
 
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      _hapticService.success();
+      setState(() {
+        _showTypeToConfirm = true;
+      });
+    } else {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _onTypeConfirmed() {
+    setState(() {
+      _showTypeToConfirm = false;
+    });
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -150,6 +167,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           setState(() {
             _assembledPieces.clear();
             _textController.clear();
+            _showTypeToConfirm = false;
           });
         }
 
@@ -214,20 +232,34 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           onHint: () {},
           child: quest == null
               ? const SizedBox.shrink()
-              : _SentenceBuilderBody(
-                  quest: quest,
-                  pool: pool,
-                  level: widget.level,
-                  textController: _textController,
-                  assembledPieces: _assembledPieces,
-                  isAnswered: isAnswered,
-                  isCorrect: isCorrect,
-                  theme: _theme,
-                  isDark: isDark,
-                  onSnap: (piece) => _onSnap(piece, isAnswered),
-                  onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
-                  onSubmit: () =>
-                      _submitAnswer(quest.correctAnswer ?? '', isAnswered),
+              : Stack(
+                  children: [
+                    _SentenceBuilderBody(
+                      quest: quest,
+                      pool: pool,
+                      level: widget.level,
+                      textController: _textController,
+                      assembledPieces: _assembledPieces,
+                      isAnswered: isAnswered,
+                      isCorrect: isCorrect,
+                      theme: _theme,
+                      isDark: isDark,
+                      onSnap: (piece) => _onSnap(piece, isAnswered),
+                      onRemovePiece: (idx) => _onRemovePiece(idx, isAnswered),
+                      onSubmit: () =>
+                          _submitAnswer(quest.correctAnswer ?? '', isAnswered),
+                    ),
+                    if (_showTypeToConfirm && !isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: _theme.primaryColor,
+                        onConfirmed: _onTypeConfirmed,
+                        onSkipped: () {
+                          setState(() => _showTypeToConfirm = false);
+                          context.read<WritingBloc>().add(const SubmitAnswer(false));
+                        },
+                      ),
+                  ],
                 ),
         );
       },
@@ -285,6 +317,26 @@ class _SentenceBuilderBody extends StatelessWidget {
                   primaryColor: theme.primaryColor,
                   instruction: quest.instruction,
                 ),
+                SizedBox(height: 16.h),
+                if (quest.sentenceType != null)
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: theme.primaryColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                    ),
+                    child: Text(
+                      quest.sentenceType!.toUpperCase(),
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        color: theme.primaryColor,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                  ),
                 SizedBox(height: 32.h),
 
                 if (level >= 6) ...[

@@ -20,6 +20,7 @@ import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_j
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_prompt.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_booster_tokens.dart';
 import 'package:vowl/features/writing/daily_journal/presentation/widgets/daily_journal_scratch_area.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class DailyJournalScreen extends StatefulWidget {
   final int level;
@@ -40,6 +41,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   final _controller = TextEditingController();
 
   bool _showConfetti = false;
+  bool _showSpeakToConfirm = false;
   int _wordCount = 0;
   double _journalProgress = 0.0;
   WritingQuest? _lastQuest;
@@ -160,11 +162,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
     _hapticService.success();
     _soundService.playCorrect();
 
-    context.read<WritingBloc>().add(SubmitAnswer(true));
+    _soundService.playCorrect();
 
-    if (mounted) {
-      setState(() => _isSubmitting = false);
-    }
+    setState(() {
+      _showSpeakToConfirm = true;
+      _isSubmitting = false;
+    });
+  }
+
+  void _onSpeakConfirmed() {
+    setState(() => _showSpeakToConfirm = false);
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -183,6 +191,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             _controller.clear();
             _wordCount = 0;
             _journalProgress = 0.0;
+            _showSpeakToConfirm = false;
           });
         }
         if (state is WritingGameComplete) {
@@ -248,6 +257,49 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                               primaryColor: theme.primaryColor,
                               isDark: isDark,
                             ),
+                            SizedBox(height: 16.h),
+                            if (activeQuest.promptQuestions != null)
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.help_outline, color: theme.primaryColor, size: 16.sp),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          "GUIDING QUESTIONS",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8.h),
+                                    ...activeQuest.promptQuestions!.map((q) => Padding(
+                                      padding: EdgeInsets.only(bottom: 4.h),
+                                      child: Text(
+                                        "• $q",
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          color: isDark ? Colors.white70 : Colors.black87,
+                                        ),
+                                      ),
+                                    )).toList(),
+                                  ],
+                                ),
+                              ),
                             SizedBox(height: 24.h),
 
                             DailyJournalBoosterTokens(
@@ -278,7 +330,17 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!isAnswered)
+                            if (_showSpeakToConfirm && !isAnswered)
+                              SpeakToConfirmOverlay(
+                                expectedText: _controller.text.trim(),
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: _onSpeakConfirmed,
+                                onSkipped: () {
+                                  setState(() => _showSpeakToConfirm = false);
+                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
+                                },
+                              )
+                            else if (!isAnswered)
                               ScaleButton(
                                 onTap: () =>
                                     _submitAnswer(targetKeywords, isAnswered),

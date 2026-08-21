@@ -19,6 +19,7 @@ import 'package:vowl/features/writing/writing_email/presentation/widgets/writing
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
 import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_keyboard_input.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
@@ -45,6 +46,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
 
   List<String> _shuffledOptions = [];
   bool _showConfetti = false;
+  bool _showSpeakToConfirm = false;
   WritingQuest? _lastQuest;
 
   @override
@@ -127,7 +129,18 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         isBodyCorrect &&
         isSignOffCorrect;
 
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      _hapticService.success();
+      setState(() => _showSpeakToConfirm = true);
+    } else {
+      _hapticService.error();
+      context.read<WritingBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _onSpeakConfirmed() {
+    setState(() => _showSpeakToConfirm = false);
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -144,6 +157,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _slots.updateAll((k, v) => null);
+            _showSpeakToConfirm = false;
             final quest = state.currentQuest;
             _shuffledOptions = List<String>.from(quest.options ?? [])
               ..shuffle();
@@ -206,7 +220,34 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                               primaryColor: theme.primaryColor,
                               instruction: quest.instruction,
                             ),
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 16.h),
+                            if (quest.formalityLevel != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 16.h),
+                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.mail_outline, color: theme.primaryColor, size: 14.sp),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      quest.formalityLevel!.toUpperCase(),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: theme.primaryColor,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
 
                             WritingEmailPromptCard(
                               text: quest.prompt ?? "",
@@ -286,7 +327,17 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!isAnswered)
+                            if (_showSpeakToConfirm && !isAnswered)
+                              SpeakToConfirmOverlay(
+                                expectedText: "${_slots['SUBJECT'] ?? ''} ${_slots['SALUTATION'] ?? ''} ${_slots['BODY'] ?? ''} ${_slots['SIGN-OFF'] ?? ''}".trim(),
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: _onSpeakConfirmed,
+                                onSkipped: () {
+                                  setState(() => _showSpeakToConfirm = false);
+                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
+                                },
+                              )
+                            else if (!isAnswered)
                               ScaleButton(
                                 onTap: slotsFilled
                                     ? () => _submitAnswer(isAnswered)

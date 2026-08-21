@@ -20,6 +20,7 @@ import 'package:vowl/features/writing/describe_situation_writing/presentation/wi
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_prompt_card.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_writing_area.dart';
 import 'package:vowl/features/writing/describe_situation_writing/presentation/widgets/describe_situation_constellation_map.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class DescribeSituationScreen extends StatefulWidget {
   final int level;
@@ -44,6 +45,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   int? _expandedEmojiIndex;
 
   bool _showConfetti = false;
+  bool _showSpeakToConfirm = false;
   int _wordCount = 0;
   WritingQuest? _lastQuest;
   bool _isSubmitting = false;
@@ -253,11 +255,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     _hapticService.success();
     _soundService.playCorrect();
 
-    context.read<WritingBloc>().add(SubmitAnswer(true));
+    _soundService.playCorrect();
 
-    if (mounted) {
-      setState(() => _isSubmitting = false);
-    }
+    setState(() {
+      _showSpeakToConfirm = true;
+      _isSubmitting = false;
+    });
+  }
+
+  void _onSpeakConfirmed() {
+    setState(() => _showSpeakToConfirm = false);
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -276,6 +284,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
             _usedKeywords.clear();
             _textController.clear();
             _expandedEmojiIndex = null;
+            _showSpeakToConfirm = false;
           });
         }
         if (state is WritingGameComplete) {
@@ -375,6 +384,42 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                               onInjectKeyword: (kw) =>
                                   _injectKeyword(kw, isAnswered),
                             ),
+                            if (activeQuest.modelAnswer != null && isAnswered) ...[
+                              SizedBox(height: 32.h),
+                              Container(
+                                padding: EdgeInsets.all(20.r),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "MODEL ANSWER",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: theme.primaryColor,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    SizedBox(height: 12.h),
+                                    Text(
+                                      activeQuest.modelAnswer!,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 14.sp,
+                                        color: isDark ? Colors.white70 : Colors.black87,
+                                        height: 1.5,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                             SizedBox(height: 30.h),
                           ],
                         ),
@@ -387,7 +432,17 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!isAnswered)
+                            if (_showSpeakToConfirm && !isAnswered)
+                              SpeakToConfirmOverlay(
+                                expectedText: _textController.text.trim(),
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: _onSpeakConfirmed,
+                                onSkipped: () {
+                                  setState(() => _showSpeakToConfirm = false);
+                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
+                                },
+                              )
+                            else if (!isAnswered)
                               ScaleButton(
                                 onTap: () => _submitAnswer(
                                   minWords,

@@ -19,6 +19,7 @@ import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_quill_prompt.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_booster_tokens.dart';
 import 'package:vowl/features/writing/short_answer_writing/presentation/widgets/short_answer_inkwell.dart';
+import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
 
 class ShortAnswerScreen extends StatefulWidget {
   final int level;
@@ -38,6 +39,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
   final _answerController = TextEditingController();
 
   bool _showConfetti = false;
+  bool _showContextSentence = false;
   double _inkLevel = 0.0;
   int _wordCount = 0;
   WritingQuest? _lastQuest;
@@ -149,7 +151,14 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     }
 
     _hapticService.success();
-    context.read<WritingBloc>().add(SubmitAnswer(true));
+    setState(() {
+      _showContextSentence = true;
+    });
+  }
+
+  void _onContextSentenceConfirmed() {
+    setState(() => _showContextSentence = false);
+    context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -167,6 +176,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
             _answerController.clear();
             _inkLevel = 0.0;
             _wordCount = 0;
+            _showContextSentence = false;
           });
         }
         if (state is WritingGameComplete) {
@@ -307,7 +317,18 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!isAnswered && livesRemaining > 0)
+                            if (_showContextSentence && !isAnswered)
+                              ContextSentenceBuilder(
+                                targetKeyword: targetKeywords.first,
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: _onContextSentenceConfirmed,
+                                onSkipped: () {
+                                  setState(() => _showContextSentence = false);
+                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
+                                },
+                                allowSkip: true,
+                              )
+                            else if (!isAnswered && livesRemaining > 0)
                               ScaleButton(
                                 onTap: () =>
                                     _submitAnswer(targetKeywords, isAnswered),

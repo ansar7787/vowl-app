@@ -18,6 +18,7 @@ import 'package:vowl/features/writing/correction_writing/presentation/widgets/co
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_sentence_card.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
 import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_keyboard_input.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
 
 class CorrectionWritingScreen extends StatefulWidget {
   final int level;
@@ -41,6 +42,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
   WritingQuest? _lastQuest;
 
   bool _showConfetti = false;
+  bool _showEvidence = false;
 
   @override
   void initState() {
@@ -116,12 +118,16 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
+      if ((quest.options?.isNotEmpty ?? false) && _selectedCorrection != null) {
+        setState(() => _showEvidence = true);
+      } else {
+        context.read<WritingBloc>().add(SubmitAnswer(correct));
+      }
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      context.read<WritingBloc>().add(SubmitAnswer(correct));
     }
-
-    context.read<WritingBloc>().add(SubmitAnswer(correct));
   }
 
   @override
@@ -138,6 +144,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
         if (state is WritingLoaded && !state.answerStatus.isAnswered) {
           setState(() {
             _selectedCorrection = null;
+            _showEvidence = false;
           });
         }
         if (state is WritingGameComplete) {
@@ -201,7 +208,35 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                               instruction: activeQuest.instruction,
                               primaryColor: theme.primaryColor,
                             ),
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 16.h),
+                            if (activeQuest.errorCount != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 16.h),
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.bug_report, color: theme.primaryColor, size: 16.sp),
+                                    SizedBox(width: 8.w),
+                                    Text(
+                                      "${activeQuest.errorCount} ERRORS REMAINING",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: theme.primaryColor,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            SizedBox(height: 8.h),
 
                             CorrectionWritingSentenceCard(
                               passage: activeQuest.passage ?? "",
@@ -305,6 +340,16 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                         ),
                       ),
                     ),
+                    if (_showEvidence && !isAnswered)
+                      EvidenceHighlightWrapper(
+                        passage: (activeQuest.passage ?? "").replaceAll(RegExp(r'\[(.*?)\]'), _selectedCorrection ?? ""),
+                        evidenceWords: [_selectedCorrection ?? ""],
+                        primaryColor: theme.primaryColor,
+                        onCorrectHighlight: () {
+                          setState(() => _showEvidence = false);
+                          context.read<WritingBloc>().add(const SubmitAnswer(true));
+                        },
+                      ),
                   ],
                 ),
         );
