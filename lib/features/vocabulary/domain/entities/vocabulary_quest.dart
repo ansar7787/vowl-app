@@ -24,6 +24,7 @@ class VocabularyQuest extends GameQuest {
   final List<String>? familyTree;
   final String? meaningBreakdown;
   final List<String>? wrongCollocations;
+  final int? registerLevel;
 
   const VocabularyQuest({
     required super.id,
@@ -71,6 +72,7 @@ class VocabularyQuest extends GameQuest {
     this.familyTree,
     this.meaningBreakdown,
     this.wrongCollocations,
+    this.registerLevel,
   });
 
   final String? rootWord;

@@ -48,6 +48,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.familyTree,
     super.meaningBreakdown,
     super.wrongCollocations,
+    super.registerLevel,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -172,6 +173,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       wrongCollocations: map['wrongCollocations'] != null
           ? List<String>.from(map['wrongCollocations'])
           : null,
+      registerLevel: map['registerLevel'],
     );
   }
 
@@ -229,6 +231,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'familyTree': familyTree,
       'meaningBreakdown': meaningBreakdown,
       'wrongCollocations': wrongCollocations,
+      'registerLevel': registerLevel,
     };
   }
 }

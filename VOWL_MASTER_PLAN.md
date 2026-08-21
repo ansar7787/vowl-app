@@ -155,7 +155,7 @@
 | 71 | wordFormation | 8→10 | Add `familyTree` (act→action→active) | Full word family tree | TypeToConfirm each form | ✅ |
 | 72 | prefixSuffix | 8→10 | Add `meaningBreakdown` | Color-coded prefix/root/suffix | Anagram build word | ✅ |
 | 73 | collocations | 8→10 | Add `wrongCollocations` | Show common WRONG pairs | ContextSentenceBuilder | ✅ |
-| 74 | contextualUsage | 9→10 | Add `registerLevel` | Formality meter | SpeakToConfirm | 🔲 |
+| 74 | contextualUsage | 9→10 | Add `registerLevel` | Formality meter | SpeakToConfirm | ✅ |
 
 #### D7: 🗣️ ACCENT (12 games) — Current 8.1 → Target 10/10
 

@@ -15,7 +15,8 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_painters.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_card.dart';
 import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_option_chip.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/contextual_usage/presentation/widgets/contextual_usage_register_meter.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 
 class ContextualUsageScreen extends StatefulWidget {
@@ -187,16 +188,26 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                               ),
                               if (_isFirstStagePassed &&
                                   (!_isAnswered || _isCorrect == null))
-                                DynamicAnagramWrapper(
-                                  title: 'SPELL THE TARGET WORD',
-                                  subtitle: 'Tap all letters to rebuild the word!',
-                                  expectedText: quest.correctAnswer ?? '',
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onFailed: () {},
-                                  onFailedWithSpelling: (wrongWord) =>
-                                      _submitFinalAnswer(false, wrongWord: wrongWord),
-                                  isPositioned: false,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: Column(
+                                    children: [
+                                      if (quest.registerLevel != null)
+                                        ContextualUsageRegisterMeter(
+                                          registerLevel: quest.registerLevel!,
+                                          color: theme.primaryColor,
+                                        ),
+                                      SizedBox(height: 20.h),
+                                      SpeakToConfirmOverlay(
+                                        expectedText: (quest.prompt ?? "").replaceAll('___', quest.correctAnswer ?? ""),
+                                        displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll('___', quest.correctAnswer ?? "")}",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () => _submitFinalAnswer(true),
+                                        onSkipped: () => _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                             ],
