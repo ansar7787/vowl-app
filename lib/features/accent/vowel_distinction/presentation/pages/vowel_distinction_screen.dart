@@ -16,6 +16,7 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowe
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_prompt_card.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_pulse_speaker.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_spectral_slider.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_trapezoid_chart.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
@@ -321,11 +322,21 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                                         isDark: isDark,
                                                       ),
                                                 SizedBox(height: gapPrompt),
-                                                VowelDistinctionPulseSpeaker(
-                                                  text: quest.textToSpeak ?? "",
-                                                  color: theme.primaryColor,
-                                                  onPlayTts: _playTts,
-                                                ),
+                                                if (_isFirstStagePassed && quest.vowelChart != null)
+                                                  Padding(
+                                                    padding: EdgeInsets.only(bottom: 24.h),
+                                                    child: VowelTrapezoidChart(
+                                                      vowelChart: quest.vowelChart!,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                    ),
+                                                  )
+                                                else
+                                                  VowelDistinctionPulseSpeaker(
+                                                    text: quest.textToSpeak ?? "",
+                                                    color: theme.primaryColor,
+                                                    onPlayTts: _playTts,
+                                                  ),
                                               ],
                                             ),
                                             Column(
@@ -403,7 +414,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
                                         ),
                                       ),
                                     SizedBox(
-                                      height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h,
+                                      height: (_isAnswered || _isFirstStagePassed) ? 140.h : 20.h,
                                     ),
                                   ],
                                 ),

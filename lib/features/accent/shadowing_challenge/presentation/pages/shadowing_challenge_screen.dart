@@ -19,8 +19,9 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/sh
 
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_pulse_speaker.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_dialogue_list.dart';
+import 'package:vowl/features/accent/shadowing_challenge/presentation/widgets/shadowing_challenge_speed_slider.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 
 class ShadowingChallengeScreen extends StatefulWidget {
   final int level;
@@ -49,6 +50,7 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   int? _selectedIndex;
   bool _isFirstStagePassed = false;
+  double _currentSpeed = 1.0;
 
   @override
   void initState() {
@@ -78,7 +80,8 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
 
   void _playTts(String text) {
     _hapticService.selection();
-    _soundService.playTts(text);
+    // Assuming base speed is around 0.4. We'll adjust it by _currentSpeed.
+    _soundService.playTts(text, speed: 0.4 * _currentSpeed);
   }
 
   void _submitChoice(int index, int correct) {
@@ -150,12 +153,15 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
-            if (quest != null && quest.textToSpeak != null) {
-              Future.delayed(500.milliseconds, () {
-                if (mounted) {
-                  _soundService.playTts(quest.textToSpeak!);
-                }
-              });
+            if (quest != null) {
+              _currentSpeed = quest.speedLevel ?? 1.0;
+              if (quest.textToSpeak != null) {
+                Future.delayed(500.milliseconds, () {
+                  if (mounted) {
+                    _playTts(quest.textToSpeak!);
+                  }
+                });
+              }
             }
           }
           _lastLives = state.livesRemaining;
@@ -241,6 +247,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                           color: theme.primaryColor,
                                           onPlayTts: _playTts,
                                         ),
+                                        SizedBox(height: 16.h),
+                                        ShadowingChallengeSpeedSlider(
+                                          speed: _currentSpeed,
+                                          onChanged: (val) {
+                                            setState(() {
+                                              _currentSpeed = val;
+                                            });
+                                          },
+                                          color: theme.primaryColor,
+                                          isDark: isDark,
+                                        ),
                                         SizedBox(height: 32.h),
                                         ShadowingChallengeDialogueList(
                                           options: options,
@@ -257,14 +274,17 @@ class _ShadowingChallengeScreenState extends State<ShadowingChallengeScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  ShadowPlaybackCompare(
+                                    expectedText: quest.textToSpeak ?? "",
+                                    displayText: quest.textToSpeak ?? "",
                                     primaryColor: theme.primaryColor,
-                                    isCompact: false,
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    isPositioned: false,
+                                    speedMultiplier: _currentSpeed,
+                                    onConfirmed: () => _submitVerbalEvaluation(true),
+                                    onSkipped: () => _submitVerbalEvaluation(false),
                                   ),
-                                SizedBox(height: _isAnswered ? 200.h : 24.h),
+                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 380.h : 24.h),
                               ],
                             ),
                           ),

@@ -52,6 +52,8 @@ class AccentQuestModel extends AccentQuest {
     super.emotionContext,
     super.stressIndex,
     super.linkingType,
+    super.speedLevel,
+    super.vowelChart,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -152,6 +154,8 @@ class AccentQuestModel extends AccentQuest {
       emotionContext: getString(map['emotionContext']),
       stressIndex: (map['stressIndex'] as num?)?.toInt(),
       linkingType: getString(map['linkingType']),
+      speedLevel: (map['speedLevel'] as num?)?.toDouble() ?? (map['targetSpeed'] as num?)?.toDouble(),
+      vowelChart: map['vowelChart'] as Map<String, dynamic>?,
     );
   }
 
@@ -203,6 +207,8 @@ class AccentQuestModel extends AccentQuest {
       'emotionContext': emotionContext,
       'stressIndex': stressIndex,
       'linkingType': linkingType,
+      'speedLevel': speedLevel,
+      'vowelChart': vowelChart,
     };
   }
 }

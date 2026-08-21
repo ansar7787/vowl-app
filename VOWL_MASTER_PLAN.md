@@ -165,8 +165,8 @@
 | 76 | intonationMimic | 8→10 | ✅ Added `emotionContext` | ✅ `IntonationCurve` visualizer | ✅ SpeakToConfirm | ✅ |
 | 77 | syllableStress | 8→10 | ✅ Added `stressIndex` | ✅ `SyllableBlock` visualizer | ✅ SpeakToConfirm | ✅ |
 | 78 | wordLinking | 8→10 | ✅ Added `linkingType` | ✅ Linking arrows between words | ✅ ShadowPlaybackCompare | ✅ |
-| 79 | shadowingChallenge | 9→10 | Add `speedLevel` (0.75x-1.25x) | Speed slider progression | ShadowPlaybackCompare | 🔲 |
-| 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | 🔲 |
+| 79 | shadowingChallenge | 9→10 | Add `speedLevel` (0.75x-1.25x) | Speed slider progression | ShadowPlaybackCompare | ✅ |
+| 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | ✅ |
 | 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | 🔲 |
 | 82 | pitchPatternMatch | 8→10 | Add `emotionContext` | Same words + different pitch demo | SpeakToConfirm | 🔲 |
 | 83 | speedVariance | 8→10 | Add `naturalSpeed` vs `clearSpeed` | Toggle natural/clear | SpeedChallengeTimer | 🔲 |
