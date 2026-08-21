@@ -16,7 +16,8 @@ import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/ant
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_pulsar.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_nebula_core.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_option_shard.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_gradient_scale.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class AntonymSearchScreen extends StatefulWidget {
   final int level;
@@ -213,16 +214,23 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                           ),
                         ),
                         if (_isFirstStagePassed && !_isAnswered)
-                          DynamicAnagramWrapper(
-                            title: 'SPELL THE ANTONYM',
-                            subtitle: 'Tap all letters to rebuild the word!',
-                            expectedText: _lastQuest!.correctAnswer ?? '',
-                            primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitVerbalEvaluation(true),
-                            onFailed: () {},
-                            onFailedWithSpelling: (wrongWord) =>
-                                _submitVerbalEvaluation(false),
-                            isPositioned: false,
+                          Column(
+                            children: [
+                              if (quest?.gradientScale != null && quest!.gradientScale!.isNotEmpty)
+                                AntonymGradientScale(
+                                  gradientScale: quest.gradientScale!,
+                                  primaryColor: theme.primaryColor,
+                                ),
+                              SizedBox(height: 20.h),
+                              SpeakToConfirmOverlay(
+                                expectedText: "${quest?.word} ${quest?.correctAnswer}",
+                                displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitVerbalEvaluation(true),
+                                onSkipped: () => _submitVerbalEvaluation(false),
+                                isPositioned: false,
+                              ),
+                            ],
                           ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                       ],

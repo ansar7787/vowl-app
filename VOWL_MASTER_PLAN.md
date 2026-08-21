@@ -146,7 +146,7 @@
 |---|------|--------|----------|------------|----------------|--------|
 | 63 | flashcards | 10/10 | Add `usageExample` 2nd example | After flip: spell it + say it | Anagram + SpeakToConfirm | ✅ |
 | 64 | synonymSearch | 8→10 | Add `nuanceDifference` | Nuance scale visual | ContextSentenceBuilder | ✅ |
-| 65 | antonymSearch | 8→10 | Add `gradientScale` | Word intensity slider | SpeakToConfirm both words | 🔲 |
+| 65 | antonymSearch | 8→10 | Add `gradientScale` | Word intensity slider | SpeakToConfirm both words | ✅ |
 | 66 | contextClues | 9→10 | Add `clueType` | Highlight context clue words | EvidenceHighlightWrapper | 🔲 |
 | 67 | phrasalVerbs | 8→10 | Add `literalVsFigurative` | Literal vs phrasal side-by-side | ContextSentenceBuilder | 🔲 |
 | 68 | idioms | 8→10 | Add `origin` story | Origin card after answer | SpeakToConfirm in sentence | 🔲 |
