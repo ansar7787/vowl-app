@@ -15,8 +15,8 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_instruction.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_pulse_speaker.dart';
 import 'package:vowl/features/accent/word_linking/presentation/widgets/word_linking_sentence_field.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
 
 class WordLinkingScreen extends StatefulWidget {
   final int level;
@@ -287,6 +287,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                       words: words,
                                                       correctPair:
                                                           quest.correctAnswer ?? "",
+                                                      linkingType: quest.linkingType,
                                                       color: theme.primaryColor,
                                                       isDark: isDark,
                                                       isAnswered:
@@ -303,6 +304,7 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                                 words: words,
                                                 correctPair:
                                                     quest.correctAnswer ?? "",
+                                                linkingType: quest.linkingType,
                                                 color: theme.primaryColor,
                                                 isDark: isDark,
                                                 isAnswered:
@@ -316,14 +318,16 @@ class _WordLinkingScreenState extends State<WordLinkingScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  ShadowPlaybackCompare(
+                                    expectedText: quest.textToSpeak ?? "",
+                                    displayText: quest.textToSpeak ?? "",
                                     primaryColor: theme.primaryColor,
-                                    isCompact: isCompact,
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    isPositioned: false,
+                                    onConfirmed: () => _submitVerbalEvaluation(true),
+                                    onSkipped: () => _submitVerbalEvaluation(false),
                                   ),
-                                SizedBox(height: _isAnswered ? 180.h : 0),
+                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 380.h : 20.h),
                               ],
                             ),
                           ),

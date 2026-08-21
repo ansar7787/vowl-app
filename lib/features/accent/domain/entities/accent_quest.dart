@@ -30,6 +30,7 @@ class AccentQuest extends GameQuest {
   final String? stressRule;
   final String? emotionContext;
   final int? stressIndex;
+  final String? linkingType;
 
   const AccentQuest({
     required super.id,
@@ -77,6 +78,7 @@ class AccentQuest extends GameQuest {
     this.stressRule,
     this.emotionContext,
     this.stressIndex,
+    this.linkingType,
     super.targetWord,
     super.question,
     super.sentence,
@@ -132,6 +134,7 @@ class AccentQuest extends GameQuest {
     String? stressRule,
     String? emotionContext,
     int? stressIndex,
+    String? linkingType,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -181,6 +184,7 @@ class AccentQuest extends GameQuest {
       stressRule: stressRule ?? this.stressRule,
       emotionContext: emotionContext ?? this.emotionContext,
       stressIndex: stressIndex ?? this.stressIndex,
+      linkingType: linkingType ?? this.linkingType,
     );
   }
 
@@ -217,5 +221,6 @@ class AccentQuest extends GameQuest {
     stressRule,
     emotionContext,
     stressIndex,
+    linkingType,
   ];
 }

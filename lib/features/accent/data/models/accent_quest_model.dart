@@ -51,6 +51,7 @@ class AccentQuestModel extends AccentQuest {
     super.stressRule,
     super.emotionContext,
     super.stressIndex,
+    super.linkingType,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -150,6 +151,7 @@ class AccentQuestModel extends AccentQuest {
       stressRule: getString(map['stressRule']),
       emotionContext: getString(map['emotionContext']),
       stressIndex: (map['stressIndex'] as num?)?.toInt(),
+      linkingType: getString(map['linkingType']),
     );
   }
 
@@ -200,6 +202,7 @@ class AccentQuestModel extends AccentQuest {
       'stressRule': stressRule,
       'emotionContext': emotionContext,
       'stressIndex': stressIndex,
+      'linkingType': linkingType,
     };
   }
 }

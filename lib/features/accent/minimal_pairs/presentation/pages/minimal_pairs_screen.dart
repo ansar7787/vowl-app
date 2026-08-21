@@ -15,7 +15,8 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_instruction.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_speaker_core.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_drone_option.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/features/accent/minimal_pairs/presentation/widgets/minimal_pairs_mouth_diagram.dart';
 import 'package:vowl/features/accent/presentation/constants/accent_game_constants.dart';
 
 class MinimalPairsScreen extends StatefulWidget {
@@ -418,31 +419,42 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                                           SizedBox(
                                             height: isCompact ? 16.h : 24.h,
                                           ),
-                                          SizedBox(height: gapBottom),
+                                            SizedBox(height: gapBottom),
+                                          ],
+                                        ),
+                                        if (_isFirstStagePassed && quest.mouthPosition != null) ...[
+                                          MinimalPairsMouthDiagram(
+                                            mouthPosition: quest.mouthPosition,
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                          ),
+                                          SizedBox(height: 16.h),
                                         ],
-                                      ),
-                                    ],
+                                      ],
                                   ),
                                 ),
                               ),
-                              if (_isFirstStagePassed && !_isAnswered)
-                                SpeakToConfirmOverlay(
-                                  expectedText: _currentOptions.isNotEmpty
-                                      ? _currentOptions[_currentCorrectIndex]['word']!
-                                      : (quest.correctAnswer ?? quest.word1 ?? ""),
-                                  primaryColor: theme.primaryColor,
-                                  isPositioned: false,
-                                  onConfirmed: () {
-                                    context.read<AccentBloc>().add(
-                                      const AccentSpeakConfirmed(5),
-                                    );
-                                    _submitVerbalEvaluation(true);
-                                  },
-                                  onSkipped: () => _submitVerbalEvaluation(
-                                    false,
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  ShadowPlaybackCompare(
+                                    expectedText: _currentOptions.isNotEmpty
+                                        ? _currentOptions[_currentCorrectIndex]['word']!
+                                        : (quest.correctAnswer ?? quest.word1 ?? ""),
+                                    displayText: _currentOptions.isNotEmpty
+                                        ? _currentOptions[_currentCorrectIndex]['word']!
+                                        : (quest.correctAnswer ?? quest.word1 ?? ""),
+                                    primaryColor: theme.primaryColor,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      context.read<AccentBloc>().add(
+                                        const AccentSpeakConfirmed(5),
+                                      );
+                                      _submitVerbalEvaluation(true);
+                                    },
+                                    onSkipped: () => _submitVerbalEvaluation(
+                                      false,
+                                    ),
                                   ),
-                                ),
-                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 120.h : 20.h),
+                                SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 380.h : 20.h),
                             ],
                           );
                         },

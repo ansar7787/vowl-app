@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class WordLinkingSentenceField extends StatelessWidget {
   final List<String> words;
   final String correctPair;
+  final String? linkingType;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -16,6 +17,7 @@ class WordLinkingSentenceField extends StatelessWidget {
     super.key,
     required this.words,
     required this.correctPair,
+    this.linkingType,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -137,13 +139,46 @@ class WordLinkingSentenceField extends StatelessWidget {
                       : [],
                 ),
                 child: Center(
-                  child: Icon(
-                    isSelected || isAnswered
-                        ? Icons.link_rounded
-                        : Icons.add_link_rounded,
-                    size: 22.r,
-                    color: nodeColor,
-                  ),
+                  child: isAnswered && correct
+                      ? Stack(
+                          clipBehavior: Clip.none,
+                          alignment: Alignment.center,
+                          children: [
+                            Icon(
+                              Icons.arrow_forward_rounded,
+                              size: 24.r,
+                              color: nodeColor,
+                            ),
+                            if (linkingType != null)
+                              Positioned(
+                                top: -24.h,
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                                  decoration: BoxDecoration(
+                                    color: nodeColor.withValues(alpha: 0.15),
+                                    borderRadius: BorderRadius.circular(8.r),
+                                    border: Border.all(color: nodeColor.withValues(alpha: 0.3)),
+                                  ),
+                                  child: Text(
+                                    _formatLinkingType(linkingType!),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: nodeColor,
+                                    ),
+                                  ),
+                                ).animate().scale(delay: 300.ms, duration: 400.ms, curve: Curves.easeOutBack),
+                              ),
+                          ],
+                        )
+                      : Icon(
+                          isSelected || isAnswered
+                              ? Icons.link_rounded
+                              : Icons.add_link_rounded,
+                          size: 22.r,
+                          color: nodeColor,
+                        ),
                 ),
               )
               .animate(
@@ -161,5 +196,18 @@ class WordLinkingSentenceField extends StatelessWidget {
                 curve: Curves.easeInOut,
               ),
     );
+  }
+
+  String _formatLinkingType(String type) {
+    switch (type) {
+      case 'consonant_to_vowel':
+        return 'C → V';
+      case 'vowel_to_vowel':
+        return 'V → V';
+      case 'consonant_to_consonant':
+        return 'C → C';
+      default:
+        return 'LINK';
+    }
   }
 }

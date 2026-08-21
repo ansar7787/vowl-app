@@ -161,10 +161,10 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 75 | minimalPairs | 8→10 | Add `mouthPosition` per sound | Mouth/tongue diagram | ShadowPlaybackCompare | 🔲 |
+| 75 | minimalPairs | 8→10 | ✅ Added `mouthPosition` | ✅ Mouth/tongue diagram | ✅ ShadowPlaybackCompare | ✅ |
 | 76 | intonationMimic | 8→10 | ✅ Added `emotionContext` | ✅ `IntonationCurve` visualizer | ✅ SpeakToConfirm | ✅ |
-| 77 | syllableStress | 8→10 | Add `stressPattern` (OOo) | Bouncing ball on stress | SpeakToConfirm | 🔲 |
-| 78 | wordLinking | 8→10 | Add `linkingType` | Linking arrows between words | ShadowPlaybackCompare | 🔲 |
+| 77 | syllableStress | 8→10 | ✅ Added `stressIndex` | ✅ `SyllableBlock` visualizer | ✅ SpeakToConfirm | ✅ |
+| 78 | wordLinking | 8→10 | ✅ Added `linkingType` | ✅ Linking arrows between words | ✅ ShadowPlaybackCompare | ✅ |
 | 79 | shadowingChallenge | 9→10 | Add `speedLevel` (0.75x-1.25x) | Speed slider progression | ShadowPlaybackCompare | 🔲 |
 | 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | 🔲 |
 | 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | 🔲 |
