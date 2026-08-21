@@ -17,6 +17,7 @@ class VocabularyQuest extends GameQuest {
   final String? clueType;
   final List<String>? evidenceWords;
   final String? literalVsFigurative;
+  final String? origin;
 
   const VocabularyQuest({
     required super.id,
@@ -57,6 +58,7 @@ class VocabularyQuest extends GameQuest {
     this.clueType,
     this.evidenceWords,
     this.literalVsFigurative,
+    this.origin,
   });
 
   final String? rootWord;

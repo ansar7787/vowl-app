@@ -41,6 +41,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.clueType,
     super.evidenceWords,
     super.literalVsFigurative,
+    super.origin,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -150,6 +151,7 @@ class VocabularyQuestModel extends VocabularyQuest {
           ? List<String>.from(map['evidenceWords'])
           : null,
       literalVsFigurative: map['literalVsFigurative'],
+      origin: map['origin'],
     );
   }
 
@@ -200,6 +202,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'clueType': clueType,
       'evidenceWords': evidenceWords,
       'literalVsFigurative': literalVsFigurative,
+      'origin': origin,
     };
   }
 }

@@ -16,7 +16,8 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
 import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_origin_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -191,17 +192,26 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                               ),
                               if (_isFirstStagePassed &&
                                   (!_isAnswered || _isCorrect == null))
-                                DynamicAnagramWrapper(
-                                  title: 'SPELL THE IDIOM',
-                                  subtitle:
-                                      'Tap all letters to rebuild the hidden phrase!',
-                                  expectedText: quest.correctAnswer ?? '',
-                                  primaryColor: theme.primaryColor,
-                                  onConfirmed: () => _submitFinalAnswer(true),
-                                  onFailed: () {},
-                                  onFailedWithSpelling: (wrongWord) =>
-                                      _submitFinalAnswer(false, wrongWord: wrongWord),
-                                  isPositioned: false,
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                                  child: Column(
+                                    children: [
+                                      if (quest.origin != null && quest.origin!.isNotEmpty)
+                                        IdiomsOriginCard(
+                                          origin: quest.origin!,
+                                          color: theme.primaryColor,
+                                        ),
+                                      SizedBox(height: 20.h),
+                                      SpeakToConfirmOverlay(
+                                        expectedText: quest.correctAnswer ?? '',
+                                        displayText: "Speak the idiom aloud:\n${quest.correctAnswer?.toUpperCase()}",
+                                        primaryColor: theme.primaryColor,
+                                        onConfirmed: () => _submitFinalAnswer(true),
+                                        onSkipped: () => _submitFinalAnswer(false),
+                                        isPositioned: false,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                             ],
