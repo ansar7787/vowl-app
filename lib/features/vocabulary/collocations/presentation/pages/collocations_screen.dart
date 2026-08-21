@@ -359,7 +359,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                         ),
                                       SizedBox(height: 20.h),
                                       ContextSentenceBuilder(
-                                        targetKeyword: '${quest.correctAnswer} ${quest.word}',
+                                        targetKeyword: '${quest.word} ${quest.correctAnswer}',
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () => _submitFinalAnswer(true),
                                         onSkipped: () => _submitFinalAnswer(false),

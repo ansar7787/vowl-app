@@ -199,8 +199,8 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                         ),
                                       SizedBox(height: 20.h),
                                       SpeakToConfirmOverlay(
-                                        expectedText: (quest.prompt ?? "").replaceAll('___', quest.correctAnswer ?? ""),
-                                        displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll('___', quest.correctAnswer ?? "")}",
+                                        expectedText: (quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? ""),
+                                        displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? "")}",
                                         primaryColor: theme.primaryColor,
                                         onConfirmed: () => _submitFinalAnswer(true),
                                         onSkipped: () => _submitFinalAnswer(false),
