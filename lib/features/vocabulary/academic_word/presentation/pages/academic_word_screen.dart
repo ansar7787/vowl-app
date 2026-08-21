@@ -17,7 +17,8 @@ import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/acad
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_instruction.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_thesis_paper.dart';
 import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_field_collocations.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Public screen widget
@@ -193,16 +194,27 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                         ),
                       ),
                       if (_isFirstStagePassed && !_isAnswered)
-                        DynamicAnagramWrapper(
-                          title: 'SPELL THE TARGET WORD',
-                          subtitle: 'Tap all letters to rebuild the word!',
-                          expectedText: quest.correctAnswer ?? '',
-                          primaryColor: _cachedTheme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onFailed: () {},
-                          onFailedWithSpelling: (wrongWord) =>
-                              _submitFinalAnswer(false, wrongWord: wrongWord),
-                          isPositioned: false,
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: Column(
+                            children: [
+                              if (quest.academicField != null && quest.collocations != null)
+                                AcademicWordFieldCollocations(
+                                  academicField: quest.academicField!,
+                                  collocations: quest.collocations!,
+                                  color: _cachedTheme.primaryColor,
+                                ),
+                              SizedBox(height: 20.h),
+                              TypeToConfirmOverlay(
+                                expectedText: quest.correctAnswer ?? '',
+                                displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
+                                primaryColor: _cachedTheme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true),
+                                onSkipped: () => _submitFinalAnswer(false),
+                                isPositioned: false,
+                              ),
+                            ],
+                          ),
                         ),
                       SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                     ],

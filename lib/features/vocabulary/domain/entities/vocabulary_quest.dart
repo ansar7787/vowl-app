@@ -18,6 +18,8 @@ class VocabularyQuest extends GameQuest {
   final List<String>? evidenceWords;
   final String? literalVsFigurative;
   final String? origin;
+  final String? academicField;
+  final List<String>? collocations;
 
   const VocabularyQuest({
     required super.id,
@@ -59,6 +61,8 @@ class VocabularyQuest extends GameQuest {
     this.evidenceWords,
     this.literalVsFigurative,
     this.origin,
+    this.academicField,
+    this.collocations,
   });
 
   final String? rootWord;
