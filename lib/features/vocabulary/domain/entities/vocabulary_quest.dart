@@ -12,6 +12,7 @@ class VocabularyQuest extends GameQuest {
   final List<String>? synonyms;
   final List<String>? antonyms;
   final String? usageExample;
+  final String? nuanceDifference;
 
   const VocabularyQuest({
     required super.id,
@@ -47,6 +48,7 @@ class VocabularyQuest extends GameQuest {
     this.suffix,
     this.topicBuckets,
     this.usageExample,
+    this.nuanceDifference,
   });
 
   final String? rootWord;

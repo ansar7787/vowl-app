@@ -36,6 +36,7 @@ class VocabularyQuestModel extends VocabularyQuest {
     super.suffix,
     super.topicBuckets,
     super.usageExample,
+    super.nuanceDifference,
   });
 
   factory VocabularyQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -136,6 +137,7 @@ class VocabularyQuestModel extends VocabularyQuest {
           ? List<String>.from(map['topicBuckets'])
           : null,
       usageExample: map['usageExample'],
+      nuanceDifference: map['nuanceDifference'],
     );
   }
 
@@ -181,6 +183,7 @@ class VocabularyQuestModel extends VocabularyQuest {
       'suffix': suffix,
       'topicBuckets': topicBuckets,
       'usageExample': usageExample,
+      'nuanceDifference': nuanceDifference,
     };
   }
 }

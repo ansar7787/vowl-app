@@ -17,7 +17,8 @@ import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/syn
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_nuance_scale.dart';
+import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;
@@ -519,17 +520,26 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     ),
                   ),
                   if (_isFirstStagePassed && !_isAnswered)
-                          DynamicAnagramWrapper(
-                            title: 'SPELL THE SYNONYM',
-                            subtitle: 'Tap all letters to rebuild the word!',
-                            expectedText: quest.correctAnswer ?? '',
+                    Column(
+                      children: [
+                        if (quest.nuanceDifference != null && quest.nuanceDifference!.isNotEmpty)
+                          SynonymNuanceScale(
+                            targetWord: quest.word ?? "",
+                            synonymWord: quest.correctAnswer ?? "",
+                            nuanceDifference: quest.nuanceDifference!,
                             primaryColor: theme.primaryColor,
-                            onConfirmed: () => _submitVerbalEvaluation(true),
-                            onFailed: () {},
-                            onFailedWithSpelling: (wrongWord) =>
-                                _submitVerbalEvaluation(false),
-                            isPositioned: false,
                           ),
+                        SizedBox(height: 20.h),
+                        ContextSentenceBuilder(
+                          targetKeyword: quest.correctAnswer ?? "",
+                          primaryColor: theme.primaryColor,
+                          acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
+                          onConfirmed: () => _submitVerbalEvaluation(true),
+                          onSkipped: () => _submitVerbalEvaluation(false),
+                          isPositioned: false,
+                        ),
+                      ],
+                    ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                       ],
                     );
