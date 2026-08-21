@@ -62,6 +62,66 @@ class ReadingConclusionResult extends StatelessWidget {
               ),
             ),
           ],
+          if (quest.logicChain != null && quest.logicChain!.isNotEmpty) ...[
+            SizedBox(height: 20.h),
+            Text(
+              'LOGIC CHAIN',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w800,
+                color: isDark ? Colors.white54 : Colors.black54,
+                letterSpacing: 1.5,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isDark ? Colors.white12 : Colors.black12,
+                ),
+              ),
+              child: Column(
+                children: List.generate(quest.logicChain!.length, (index) {
+                  final step = quest.logicChain![index];
+                  return Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.all(12.r),
+                        decoration: BoxDecoration(
+                          color: displayColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          step,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            color: isDark ? Colors.white : Colors.black87,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      if (index < quest.logicChain!.length - 1)
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.h),
+                          child: Icon(
+                            Icons.arrow_downward_rounded,
+                            color: displayColor.withValues(alpha: 0.5),
+                            size: 20.r,
+                          ),
+                        ),
+                    ],
+                  );
+                }),
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().shimmer(duration: 2.seconds);

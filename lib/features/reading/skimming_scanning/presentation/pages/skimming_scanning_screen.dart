@@ -15,6 +15,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
 import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_result.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
   final int level;
@@ -34,6 +35,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   final _soundService = di.sl<SoundService>();
 
   late ScrollController _scrollController;
+  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -51,12 +53,12 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   }
 
   void _startAutoScroll() {
-    Future.delayed(const Duration(milliseconds: 800), () {
+    Future.delayed(const Duration(milliseconds: 1500), () {
       if (!mounted || _isAnswered) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: const Duration(seconds: 12),
+          duration: const Duration(seconds: 28),
           curve: Curves.linear,
         );
       }
@@ -71,6 +73,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
       _isAnswered = true;
       _isCorrect = true;
     });
+    _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(true));
   }
 
@@ -78,6 +81,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
     if (_isAnswered) return;
     _hapticService.error();
     _soundService.playWrong();
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = false;
+    });
+    _timerKey.currentState?.stop();
     context.read<ReadingBloc>().add(SubmitAnswer(false));
   }
 
@@ -109,6 +117,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
             if (_scrollController.hasClients) {
               _scrollController.jumpTo(0);
             }
+            _timerKey.currentState?.start();
             _startAutoScroll();
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -154,10 +163,21 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                           children: [
                             SizedBox(height: 16.h),
                             SkimmingScanningTargetBadge(
-                              item: quest.targetItem ?? "",
+                              item: quest.targetInfo ?? quest.targetItem ?? "",
                               color: theme.primaryColor,
                             ),
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 16.h),
+                            
+                            if (!_isAnswered)
+                              SpeedChallengeTimer(
+                                key: _timerKey,
+                                durationSeconds: 30,
+                                primaryColor: theme.primaryColor,
+                                onTimeUp: _submitIncorrectAnswer,
+                                showBonusLabel: false,
+                              ),
+                              
+                            SizedBox(height: 16.h),
 
                             // Scanning Terminal Box
                             SizedBox(

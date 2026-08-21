@@ -62,6 +62,59 @@ class ParagraphSummaryResult extends StatelessWidget {
               ),
             ),
           ],
+          if (quest.keyPoints != null && quest.keyPoints!.isNotEmpty) ...[
+            SizedBox(height: 16.h),
+            Container(
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'KEY POINTS CHECKLIST',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w800,
+                      color: isDark ? Colors.white54 : Colors.black54,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  SizedBox(height: 12.h),
+                  ...quest.keyPoints!.map((point) => Padding(
+                    padding: EdgeInsets.only(bottom: 8.h),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          isCorrect ? Icons.check_circle : Icons.radio_button_unchecked,
+                          color: isCorrect ? Colors.greenAccent : (isDark ? Colors.white30 : Colors.black26),
+                          size: 18.r,
+                        ),
+                        SizedBox(width: 12.w),
+                        Expanded(
+                          child: Text(
+                            point,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              color: isCorrect 
+                                  ? (isDark ? Colors.white : Colors.black87)
+                                  : (isDark ? Colors.white60 : Colors.black54),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )).toList(),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().shimmer(duration: 2.seconds);

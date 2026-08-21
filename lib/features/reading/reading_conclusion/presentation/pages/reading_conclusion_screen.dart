@@ -11,7 +11,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
 import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -28,6 +28,7 @@ class ReadingConclusionScreen extends StatefulWidget {
 }
 
 class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
+  final _hapticService = di.sl<HapticService>();
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -42,15 +43,17 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     );
   }
 
-  void _submitSelfEvalAnswer(bool isCorrect, ReadingQuest quest) {
+  void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
     setState(() {
       _isAnswered = true;
       _isCorrect = isCorrect;
     });
 
     if (isCorrect) {
+      _hapticService.success();
       context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
+      _hapticService.error();
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -157,12 +160,14 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                           children: [
                             SizedBox(height: 24.h),
 
-                            ReadingSelfEvaluationCard(
-                              correctAnswer: quest.correctAnswer ?? "",
-                              explanation: quest.explanation,
-                              primaryColor: theme.primaryColor,
-                              onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
-                            ),
+                            if (!_isAnswered)
+                              TypeToConfirmOverlay(
+                                expectedText: quest.correctAnswer ?? "",
+                                primaryColor: theme.primaryColor,
+                                onConfirmed: () => _submitFinalAnswer(true, quest),
+                                onSkipped: () => _submitFinalAnswer(false, quest),
+                                allowSkip: true,
+                              ),
 
                             if (_isAnswered) ...[
                               SizedBox(height: 30.h),

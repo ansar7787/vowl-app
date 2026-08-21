@@ -11,9 +11,11 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
 import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;
@@ -36,6 +38,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _showEvidence = false;
+  bool _evidenceFound = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -65,10 +69,25 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     });
 
     if (isCorrect) {
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      if (quest.clueWords != null && quest.clueWords!.isNotEmpty) {
+        setState(() {
+          _showEvidence = true;
+        });
+      } else {
+        context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      }
     } else {
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _onEvidenceFound() {
+    _hapticService.success();
+    setState(() {
+      _showEvidence = false;
+      _evidenceFound = true;
+    });
+    context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -91,6 +110,8 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               _isCorrect = null;
               _rubPoints.clear();
               _clarity = 0.0;
+              _showEvidence = false;
+              _evidenceFound = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -143,15 +164,24 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                             ),
                             SizedBox(height: 32.h),
 
-                            ReadingInferenceFoggyMirror(
-                              passage: quest.passage ?? "",
-                              color: theme.primaryColor,
-                              isDark: isDark,
-                              isAnswered: _isAnswered,
-                              rubPoints: _rubPoints,
-                              clarity: _clarity,
-                              onRub: _onRub,
-                            ),
+                            if (_showEvidence)
+                              EvidenceHighlightWrapper(
+                                passage: quest.passage ?? "",
+                                evidenceWords: quest.clueWords ?? [],
+                                primaryColor: theme.primaryColor,
+                                onCorrectHighlight: _onEvidenceFound,
+                                instruction: 'Highlight the clue words that gave you the answer!',
+                              )
+                            else
+                              ReadingInferenceFoggyMirror(
+                                passage: quest.passage ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                isAnswered: _isAnswered || _showEvidence,
+                                rubPoints: _rubPoints,
+                                clarity: _clarity,
+                                onRub: _onRub,
+                              ),
                             SizedBox(height: 32.h),
 
                             Text(
@@ -178,21 +208,22 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             SizedBox(height: 24.h),
-                            AnimatedOpacity(
-                              duration: const Duration(milliseconds: 300),
-                              opacity: _clarity >= 0.3 ? 1.0 : 0.3,
-                              child: AbsorbPointer(
-                                absorbing: _clarity < 0.3 || _isAnswered,
-                                child: ReadingSelfEvaluationCard(
-                                  correctAnswer: quest.correctAnswer ?? "",
-                                  explanation: quest.explanation,
-                                  primaryColor: theme.primaryColor,
-                                  onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                            if (!_showEvidence && !_evidenceFound)
+                              AnimatedOpacity(
+                                duration: const Duration(milliseconds: 300),
+                                opacity: _clarity >= 0.3 ? 1.0 : 0.3,
+                                child: AbsorbPointer(
+                                  absorbing: _clarity < 0.3 || _isAnswered,
+                                  child: ReadingSelfEvaluationCard(
+                                    correctAnswer: quest.correctAnswer ?? "",
+                                    explanation: quest.explanation,
+                                    primaryColor: theme.primaryColor,
+                                    onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
+                                  ),
                                 ),
                               ),
-                            ),
 
-                            if (_isAnswered) ...[
+                            if (_isAnswered && (!_showEvidence || _evidenceFound)) ...[
                               SizedBox(height: 30.h),
                               ReadingInferenceResult(
                                 quest: quest,

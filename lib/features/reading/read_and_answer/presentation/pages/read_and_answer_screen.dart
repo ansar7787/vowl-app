@@ -10,7 +10,9 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_instruction.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_highlightable_passage.dart';
+import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -35,6 +37,9 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
 
   bool _showConfetti = false;
 
+  int? _pendingSelectedIndex;
+  bool _showEvidenceStep = false;
+
   @override
   void initState() {
     super.initState();
@@ -43,7 +48,25 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     );
   }
 
-  void _submitSentenceAnswer(bool isCorrect, String selectedSentence) {
+  void _onOptionTap(int index, bool isCorrect, ReadingQuest quest) {
+    if (_showEvidenceStep || _pendingSelectedIndex != null) return;
+    
+    setState(() {
+      _pendingSelectedIndex = index;
+    });
+
+    if (isCorrect) {
+      _hapticService.selection();
+      // Wait for user to tap evidence
+      setState(() {
+        _showEvidenceStep = true;
+      });
+    } else {
+      _submitFinalAnswer(false, quest);
+    }
+  }
+
+  void _submitFinalAnswer(bool isCorrect, ReadingQuest quest) {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
@@ -51,6 +74,21 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final String userAnswer = (quest.options != null &&
+              _pendingSelectedIndex != null &&
+              _pendingSelectedIndex! < quest.options!.length)
+          ? quest.options![_pendingSelectedIndex!]
+          : 'Unknown';
+
+      ErrorJournalCollector.record(
+        userId: 'local',
+        gameType: widget.gameType.name,
+        question: quest.question ?? quest.instruction,
+        userAnswer: userAnswer,
+        correctAnswer: quest.correctAnswer ?? '',
+        level: widget.level,
+      );
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -70,7 +108,10 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           (curr is ReadingLoaded && !curr.answerStatus.isAnswered),
       listener: (context, state) {
         if (state is ReadingLoaded && !state.answerStatus.isAnswered) {
-          // Reset local state if needed
+          setState(() {
+            _pendingSelectedIndex = null;
+            _showEvidenceStep = false;
+          });
         }
         if (state is ReadingGameComplete) {
           setState(() => _showConfetti = true);
@@ -112,8 +153,17 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                       isDark: isDark,
                       isAnswered: isAnswered,
                       isCorrect: isCorrect,
-                      onSentenceSelected: _submitSentenceAnswer,
+                      pendingSelectedIndex: _pendingSelectedIndex,
+                      onOptionSelected: (idx, isCorrect) => _onOptionTap(idx, isCorrect, quest),
                     ),
+                    if (_showEvidenceStep && !isAnswered)
+                      EvidenceHighlightWrapper(
+                        passage: quest.passage ?? '',
+                        evidenceWords: (quest.correctAnswer ?? '').split(' '),
+                        primaryColor: theme.primaryColor,
+                        onCorrectHighlight: () => _submitFinalAnswer(true, quest),
+                        instruction: 'Tap the words that prove your answer',
+                      ),
                   ],
                 ),
         );
@@ -140,7 +190,8 @@ class _QuestContent extends StatelessWidget {
   final bool isDark;
   final bool isAnswered;
   final bool? isCorrect;
-  final void Function(bool, String) onSentenceSelected;
+  final int? pendingSelectedIndex;
+  final void Function(int index, bool isCorrect) onOptionSelected;
 
   const _QuestContent({
     required this.quest,
@@ -148,7 +199,8 @@ class _QuestContent extends StatelessWidget {
     required this.isDark,
     required this.isAnswered,
     required this.isCorrect,
-    required this.onSentenceSelected,
+    required this.pendingSelectedIndex,
+    required this.onOptionSelected,
   });
 
   @override
@@ -172,21 +224,57 @@ class _QuestContent extends StatelessWidget {
                     primaryColor: primaryColor,
                     instruction: quest.instruction,
                   ),
-                  SizedBox(height: 24.h),
+                  SizedBox(height: 16.h),
+                  _buildReadTimeBadge(primaryColor, isDark),
+                  SizedBox(height: 16.h),
                   ReadAndAnswerAnchorPoint(
                     question: quest.question ?? '',
                     color: primaryColor,
                     isDark: isDark,
                   ),
-                  SizedBox(height: 32.h),
-                  ReadingHighlightablePassage(
-                    passage: quest.passage ?? '',
-                    correctAnswer: quest.correctAnswer ?? '',
-                    primaryColor: primaryColor,
-                    isDark: isDark,
-                    isAnswered: isAnswered,
-                    onSentenceSelected: onSentenceSelected,
+                  SizedBox(height: 24.h),
+                  // Render Passage Box
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(24.r),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? Colors.white.withValues(alpha: 0.03)
+                          : Colors.white.withValues(alpha: 0.85),
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: primaryColor.withValues(alpha: isDark ? 0.15 : 0.1),
+                        width: 1.5,
+                      ),
+                    ),
+                    child: Text(
+                      quest.passage ?? '',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
+                        height: 1.65,
+                      ),
+                    ),
                   ),
+                  SizedBox(height: 24.h),
+                  if (quest.options != null)
+                    ...quest.options!.asMap().entries.map((e) {
+                      final isOptionCorrect = e.key == quest.correctAnswerIndex ||
+                          e.value.trim().toLowerCase() == (quest.correctAnswer?.trim().toLowerCase() ?? '');
+                      
+                      return ReadAndAnswerBuoyOption(
+                        index: e.key,
+                        text: e.value,
+                        correct: quest.correctAnswer ?? '',
+                        color: primaryColor,
+                        isDark: isDark,
+                        isAnswered: isAnswered || (pendingSelectedIndex != null),
+                        selectedIndex: pendingSelectedIndex,
+                        onTap: () => onOptionSelected(e.key, isOptionCorrect),
+                      );
+                    }),
                   SizedBox(height: 40.h),
                 ],
               ),
@@ -198,6 +286,30 @@ class _QuestContent extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildReadTimeBadge(Color primaryColor, bool isDark) {
+    final wordCount = quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 50;
+    // Assume 130 WPM reading speed
+    final readTimeSec = (wordCount / 130 * 60).round();
+    final timeStr = readTimeSec < 60 ? '$readTimeSec sec read' : '${(readTimeSec/60).round()} min read';
+    
+    return Row(
+      children: [
+        Icon(Icons.timer_outlined, size: 14.sp, color: primaryColor),
+        SizedBox(width: 4.w),
+        Text(
+          timeStr.toUpperCase(),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w800,
+            color: primaryColor,
+            letterSpacing: 1,
+          ),
+        ),
+      ],
     );
   }
 }

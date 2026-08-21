@@ -92,11 +92,11 @@
 | 25 | readingSpeedCheck | 8→10 | Add `wpm_target` per level | Live WPM counter + personal best | SpeedChallengeTimer | 🔲 |
 | 26 | guessTitle | 8→10 | Add `whyThisTitle` explanation | Highlight topic sentence after | TypeToConfirm write better title | 🔲 |
 | 27 | readAndMatch | 8→10 | Add `paragraphTopic` per paragraph | Color-code matches | Jigsaw for matching | 🔲 |
-| 28 | paragraphSummary | 9→10 | Add `keyPoints` array (3 points) | Checklist: 3 points covered? | TypeToConfirm own summary | 🔲 |
-| 29 | readingInference | 9→10 | Add `clueWords` array | Highlight clues AFTER answer | EvidenceHighlightWrapper | 🔲 |
-| 30 | readingConclusion | 9→10 | Add `logicChain` (evidence→conclusion) | Logic flowchart visual | TypeToConfirm explain reasoning | 🔲 |
-| 31 | clozeTest | 8→10 | Add `wordCategory` (noun/verb/adj) | Part-of-speech hint per blank | Anagram spell the word | 🔲 |
-| 32 | skimmingScanning | 7→10 | Add `targetInfo` field | Strict 30-sec timer | SpeedChallengeTimer | 🔲 |
+| 28 | paragraphSummary | 9→10 | Add `keyPoints` array (3 points) | Checklist: 3 points covered? | TypeToConfirm own summary | ✅ |
+| 29 | readingInference | 9→10 | Add `clueWords` array | Highlight clues AFTER answer | EvidenceHighlightWrapper | ✅ |
+| 30 | readingConclusion | 9→10 | Add `logicChain` (evidence→conclusion) | Logic flowchart visual | TypeToConfirm explain reasoning | ✅ |
+| 31 | clozeTest | 8→10 | Add `wordCategory` (noun/verb/adj) | Part-of-speech hint per blank | Anagram spell the word | ✅ |
+| 32 | skimmingScanning | 7→10 | Add `targetInfo` field | Strict 30-sec timer | SpeedChallengeTimer | ✅ |
 
 #### D4: ✍️ WRITING (11 games) — Current 8.5 → Target 10/10
 

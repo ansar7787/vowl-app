@@ -175,6 +175,7 @@ class _SentenceOrderReadingScreenState
                                   index: index,
                                   color: theme.primaryColor,
                                   isDark: isDark,
+                                  transitionWords: quest.transitionWords,
                                 ),
                               ),
                             ),

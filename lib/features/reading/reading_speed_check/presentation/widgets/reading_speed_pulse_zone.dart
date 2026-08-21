@@ -10,6 +10,9 @@ class ReadingSpeedPulseZone extends StatelessWidget {
   final double clarityRadius;
   final double pulseScale;
   final int timerValue;
+  final int timeLimit;
+  final int wordCount;
+  final int wpmTarget;
   final VoidCallback onTapPulse;
 
   const ReadingSpeedPulseZone({
@@ -20,8 +23,17 @@ class ReadingSpeedPulseZone extends StatelessWidget {
     required this.clarityRadius,
     required this.pulseScale,
     required this.timerValue,
+    required this.timeLimit,
+    required this.wordCount,
+    required this.wpmTarget,
     required this.onTapPulse,
   });
+
+  int get _liveWpm {
+    final elapsed = timeLimit - timerValue;
+    if (elapsed <= 0) return 0;
+    return (wordCount / (elapsed / 60)).round();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,16 +92,28 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    "${timerValue}S",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      color: isDark ? Colors.white : color,
-                                      fontSize: 26.sp,
-                                      fontWeight: FontWeight.bold,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "$_liveWpm",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isDark ? Colors.white : color,
+                                        fontSize: 26.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
-                                  ),
+                                    Text(
+                                      "WPM",
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        color: isDark ? Colors.white70 : color.withValues(alpha: 0.7),
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             );
@@ -102,13 +126,24 @@ class ReadingSpeedPulseZone extends StatelessWidget {
         ),
         SizedBox(height: 24.h),
         Text(
-          "STABILIZE THE RHYTHM TO SPEED READ",
+          "TAP TO STOP TIMER & ANSWER",
           style: TextStyle(
             fontFamily: 'Outfit',
             fontSize: 12.sp,
             color: color.withValues(alpha: 0.6),
             fontWeight: FontWeight.w600,
             letterSpacing: 1,
+          ),
+        ),
+        SizedBox(height: 8.h),
+        Text(
+          "TARGET: $wpmTarget WPM",
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 11.sp,
+            color: color.withValues(alpha: 0.4),
+            fontWeight: FontWeight.w700,
+            letterSpacing: 1.5,
           ),
         ),
       ],

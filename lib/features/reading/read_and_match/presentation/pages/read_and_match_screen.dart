@@ -45,6 +45,17 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _pendingSubmission = false;
+  
+  final List<Color> _matchColors = [
+    Colors.purpleAccent,
+    Colors.orangeAccent,
+    Colors.tealAccent,
+    Colors.pinkAccent,
+    Colors.cyanAccent,
+    Colors.amberAccent,
+    Colors.lightGreenAccent,
+    Colors.indigoAccent,
+  ];
 
   @override
   void initState() {
@@ -220,6 +231,24 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
         // Shuffle lists but keep state-consistent orders if needed
         final keys = pairs.map((p) => p['key']!).toList();
         final values = pairs.map((p) => p['value']!).toList();
+        
+        final Map<String, Color> colorMap = {};
+        for (int i = 0; i < pairs.length; i++) {
+          colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
+        }
+
+        Color _getColorForKey(String k) {
+          return colorMap[k] ?? theme.primaryColor;
+        }
+
+        Color _getColorForValue(String v) {
+          // If matched, use the key's color. Otherwise primary
+          if (_matches.containsValue(v)) {
+            final key = _matches.entries.firstWhere((e) => e.value == v).key;
+            return colorMap[key] ?? theme.primaryColor;
+          }
+          return theme.primaryColor;
+        }
 
         return ReadingBaseLayout(
           gameType: widget.gameType,
@@ -268,7 +297,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                     (k) => ReadAndMatchTerminal(
                                                       text: k,
                                                       isSource: true,
-                                                      color: theme.primaryColor,
+                                                      color: _getColorForKey(k),
                                                       isDark: isDark,
                                                       isMatched: _matches
                                                           .containsKey(k),
@@ -290,7 +319,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                     (v) => ReadAndMatchTerminal(
                                                       text: v,
                                                       isSource: false,
-                                                      color: theme.primaryColor,
+                                                      color: _getColorForValue(v),
                                                       isDark: isDark,
                                                       isMatched: _matches
                                                           .containsValue(v),
@@ -314,6 +343,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                             getCenter: _getCenterOf,
                                             getKey: _getKeyFor,
                                             color: theme.primaryColor,
+                                            colorMap: colorMap,
                                           ),
                                           size: Size.infinite,
                                         ),

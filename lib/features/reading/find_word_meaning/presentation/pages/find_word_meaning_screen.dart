@@ -15,6 +15,8 @@ import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/fin
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_question_header.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_result.dart';
 import 'package:vowl/features/reading/find_word_meaning/presentation/widgets/find_word_meaning_interactive_passage.dart';
+import 'package:vowl/core/presentation/game_mechanics/context_sentence_builder.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
@@ -36,6 +38,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _showSentenceBuilder = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -47,17 +50,15 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool isCorrect) {
-    if (_isAnswered) return;
+  void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest]) {
+    if (_isAnswered || _showSentenceBuilder) return;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _showSentenceBuilder = true;
       });
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -65,8 +66,27 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         _isAnswered = true;
         _isCorrect = false;
       });
+      if (quest != null) {
+        ErrorJournalCollector.record(
+          userId: 'local',
+          gameType: widget.gameType.name,
+          question: quest.question ?? quest.instruction,
+          userAnswer: 'Incorrect meaning selected',
+          correctAnswer: quest.correctAnswer ?? '',
+          level: widget.level,
+        );
+      }
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _onSentenceBuilderComplete() {
+    setState(() {
+      _showSentenceBuilder = false;
+      _isAnswered = true;
+      _isCorrect = true;
+    });
+    context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -87,6 +107,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _showSentenceBuilder = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -153,7 +174,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                                   isDark: isDark,
                                   isAnswered: _isAnswered,
                                   onWordSelected: (isCorrect, word) {
-                                    _submitFinalAnswer(isCorrect);
+                                    _submitFinalAnswer(isCorrect, quest);
                                   },
                                 ),
                                 if (_isAnswered) ...[
@@ -179,6 +200,15 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                         ),
                       ],
                     ),
+                    if (_showSentenceBuilder && !_isAnswered)
+                      ContextSentenceBuilder(
+                        targetKeyword: quest.word ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: _onSentenceBuilderComplete,
+                        onSkipped: _onSentenceBuilderComplete,
+                        allowSkip: true,
+                        bonusCoins: 5,
+                      ),
                   ],
                 ),
         );

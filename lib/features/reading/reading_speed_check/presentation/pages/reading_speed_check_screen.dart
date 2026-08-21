@@ -17,6 +17,7 @@ import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/r
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
 
 class ReadingSpeedCheckScreen extends StatefulWidget {
   final int level;
@@ -38,13 +39,15 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
   double _pulseScale = 1.0;
   double _clarityRadius = 0.0;
   int _timerValue = 12;
-  Timer? _timer;
+  int _timeLimit = 12;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
   bool _isRevealed = false;
+  
+  final _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void initState() {
@@ -74,24 +77,18 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     });
   }
 
-  void _startTimer(int initialValue) {
-    _timer?.cancel();
+  void _onTimeUp() {
+    if (!mounted) return;
     setState(() {
-      _timerValue = initialValue;
-      _isRevealed = false;
+      _isRevealed = true;
       _clarityRadius = 0.0;
     });
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (!mounted) return;
-      if (_timerValue > 0) {
-        setState(() => _timerValue--);
-      } else {
-        setState(() {
-          _isRevealed = true;
-          _clarityRadius = 0.0;
-        });
-        timer.cancel();
-      }
+  }
+
+  void _onTimerTick(int remaining) {
+    if (!mounted) return;
+    setState(() {
+      _timerValue = remaining;
     });
   }
 
@@ -110,11 +107,7 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
     }
   }
 
-  @override
-  void dispose() {
-    _timer?.cancel();
-    super.dispose();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -136,8 +129,12 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
               _isCorrect = null;
               _isRevealed = false;
               _clarityRadius = 0.0;
+              _timeLimit = state.currentQuest.timeLimit ?? 12;
+              _timerValue = _timeLimit;
             });
-            _startTimer(state.currentQuest.timeLimit ?? 12);
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              _timerKey.currentState?.start();
+            });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
               _isAnswered = true;
@@ -187,6 +184,18 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                               instruction: quest.instruction,
                             ),
                             SizedBox(height: 32.h),
+                            if (!_isRevealed)
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 24.h),
+                                child: SpeedChallengeTimer(
+                                  key: _timerKey,
+                                  durationSeconds: _timeLimit,
+                                  primaryColor: theme.primaryColor,
+                                  onTimeUp: _onTimeUp,
+                                  onTick: _onTimerTick,
+                                  autoStart: true,
+                                ),
+                              ),
                             if (_isRevealed)
                               ReadingSpeedQuestionArea(
                                 question: quest.question ?? "",
@@ -212,6 +221,9 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                                 clarityRadius: _clarityRadius,
                                 pulseScale: _pulseScale,
                                 timerValue: _timerValue,
+                                timeLimit: _timeLimit,
+                                wordCount: quest.passageWordCount ?? quest.passage?.split(RegExp(r'\s+')).length ?? 0,
+                                wpmTarget: quest.wpmTarget ?? 0,
                                 onTapPulse: _onPulseTap,
                               )
                             else ...[

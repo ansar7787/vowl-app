@@ -14,6 +14,8 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_instruction.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_result.dart';
 import 'package:vowl/features/reading/guess_title/presentation/widgets/guess_title_options.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 
 class GuessTitleScreen extends StatefulWidget {
   final int level;
@@ -35,6 +37,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _showTypeToConfirm = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -46,8 +49,8 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 
-  void _submitFinalAnswer(bool isCorrect) {
-    if (_isAnswered) return;
+  void _submitFinalAnswer(bool isCorrect, [ReadingQuest? quest, String? selectedOption]) {
+    if (_isAnswered || _showTypeToConfirm) return;
 
     setState(() {
       _isAnswered = true;
@@ -57,12 +60,31 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
+      setState(() {
+        _showTypeToConfirm = true;
+      });
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      if (quest != null) {
+        ErrorJournalCollector.record(
+          userId: 'local',
+          gameType: widget.gameType.name,
+          question: quest.question ?? quest.instruction,
+          userAnswer: selectedOption ?? 'Unknown',
+          correctAnswer: quest.correctAnswer ?? '',
+          level: widget.level,
+        );
+      }
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
     }
+  }
+
+  void _onTypeConfirmed() {
+    setState(() {
+      _showTypeToConfirm = false;
+    });
+    context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -83,6 +105,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _showTypeToConfirm = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -151,17 +174,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                       width: 1,
                                     ),
                                   ),
-                                  child: Text(
-                                    quest.passage ?? "",
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 18.sp,
-                                      height: 1.6,
-                                      color: isDark
-                                          ? Colors.white70
-                                          : Colors.black87,
-                                    ),
-                                  ),
+                                  child: _buildPassageContent(quest, theme.primaryColor, isDark),
                                 ),
                                 if (!_isAnswered || _isCorrect == null) ...[
                                   SizedBox(height: 24.h),
@@ -172,7 +185,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                                     isDark: isDark,
                                     isAnswered: _isAnswered,
                                     onOptionSelected: (isCorrect, selectedOption) {
-                                      _submitFinalAnswer(isCorrect);
+                                      _submitFinalAnswer(isCorrect, quest, selectedOption);
                                     },
                                   ),
                                 ],
@@ -199,10 +212,71 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
                         ),
                       ],
                     ),
+                    if (_showTypeToConfirm && _isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: _onTypeConfirmed,
+                        onSkipped: _onTypeConfirmed,
+                        allowSkip: true,
+                      ),
                   ],
                 ),
         );
       },
+    );
+  }
+
+  Widget _buildPassageContent(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final passage = quest.passage ?? "";
+    final evidence = quest.evidenceLine ?? "";
+    
+    if (!_isAnswered || evidence.isEmpty || !passage.contains(evidence)) {
+      return Text(
+        passage,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 18.sp,
+          height: 1.6,
+          color: isDark ? Colors.white70 : Colors.black87,
+        ),
+      );
+    }
+    
+    final parts = passage.split(evidence);
+    if (parts.length != 2) {
+      return Text(
+        passage,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 18.sp,
+          height: 1.6,
+          color: isDark ? Colors.white70 : Colors.black87,
+        ),
+      );
+    }
+    
+    return RichText(
+      text: TextSpan(
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 18.sp,
+          height: 1.6,
+          color: isDark ? Colors.white70 : Colors.black87,
+        ),
+        children: [
+          TextSpan(text: parts[0]),
+          TextSpan(
+            text: evidence,
+            style: TextStyle(
+              backgroundColor: primaryColor.withValues(alpha: 0.2),
+              color: primaryColor,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          TextSpan(text: parts[1]),
+        ],
+      ),
     );
   }
 }

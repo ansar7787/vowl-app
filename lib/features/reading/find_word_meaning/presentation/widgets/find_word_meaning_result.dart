@@ -62,6 +62,27 @@ class FindWordMeaningResult extends StatelessWidget {
               ),
             ),
           ],
+          if (quest.wordInContext != null) ...[
+            SizedBox(height: 12.h),
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Text(
+                'Example: "${quest.wordInContext}"',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.italic,
+                  color: isDark ? Colors.white70 : Colors.black87,
+                ),
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().shimmer(duration: 2.seconds);

@@ -32,6 +32,18 @@ class ReadingQuestModel extends ReadingQuest {
     super.keywords,
     super.timeLimit,
     super.targetItem,
+    super.passageWordCount,
+    super.wordInContext,
+    super.evidenceLine,
+    super.transitionWords,
+    super.wpmTarget,
+    super.whyThisTitle,
+    super.paragraphTopic,
+    super.keyPoints,
+    super.clueWords,
+    super.logicChain,
+    super.wordCategory,
+    super.targetInfo,
   });
 
   factory ReadingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -114,6 +126,18 @@ class ReadingQuestModel extends ReadingQuest {
       keywords: parseStringList(map['keywords']),
       timeLimit: (map['timeLimit'] as num?)?.toInt(),
       targetItem: map['targetItem'] as String?,
+      passageWordCount: (map['passageWordCount'] as num?)?.toInt(),
+      wordInContext: getString(map['wordInContext']),
+      evidenceLine: getString(map['evidenceLine']),
+      transitionWords: parseStringList(map['transitionWords']),
+      wpmTarget: (map['wpmTarget'] as num?)?.toInt() ?? (map['wpm_target'] as num?)?.toInt(),
+      whyThisTitle: getString(map['whyThisTitle']),
+      paragraphTopic: getString(map['paragraphTopic']),
+      keyPoints: parseStringList(map['keyPoints']),
+      clueWords: parseStringList(map['clueWords']),
+      logicChain: parseStringList(map['logicChain']),
+      wordCategory: getString(map['wordCategory']),
+      targetInfo: getString(map['targetInfo']),
     );
   }
 
@@ -145,6 +169,18 @@ class ReadingQuestModel extends ReadingQuest {
       'keywords': keywords,
       'timeLimit': timeLimit,
       'targetItem': targetItem,
+      'passageWordCount': passageWordCount,
+      'wordInContext': wordInContext,
+      'evidenceLine': evidenceLine,
+      'transitionWords': transitionWords,
+      'wpmTarget': wpmTarget,
+      'whyThisTitle': whyThisTitle,
+      'paragraphTopic': paragraphTopic,
+      'keyPoints': keyPoints,
+      'clueWords': clueWords,
+      'logicChain': logicChain,
+      'wordCategory': wordCategory,
+      'targetInfo': targetInfo,
     };
   }
 }

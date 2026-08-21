@@ -14,7 +14,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_instruction.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_pneumatic_port.dart';
 import 'package:vowl/features/reading/cloze_test/presentation/widgets/cloze_test_fuel_cells.dart';
-import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class ClozeTestScreen extends StatefulWidget {
   final int level;
@@ -183,6 +183,7 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                                   isDark: isDark,
                                   dockedOption:
                                       _dockedOption ?? _pendingDockedOption,
+                                  wordCategory: quest.wordCategory,
                                   isAnswered: _isAnswered,
                                   onDock: (opt) =>
                                       _onDock(opt, quest.correctAnswer ?? ""),
@@ -214,16 +215,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                       ],
                     ),
                     if (_pendingDockedOption != null && !_isAnswered)
-                      TypeToConfirmOverlay(
-                        expectedText: _pendingDockedOption!,
+                      DynamicAnagramWrapper(
+                        word: _pendingDockedOption!,
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () =>
-                            _submitFinalAnswer(true, quest.correctAnswer ?? ""),
-                        onSkipped: () => _submitFinalAnswer(
-                          false,
-                          quest.correctAnswer ?? "",
-                        ),
-                        allowSkip: true,
+                        onSuccess: () => _submitFinalAnswer(true, quest.correctAnswer ?? ""),
                       ),
                   ],
                 ),

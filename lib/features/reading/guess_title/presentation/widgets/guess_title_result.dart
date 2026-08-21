@@ -62,6 +62,41 @@ class GuessTitleResult extends StatelessWidget {
               ),
             ),
           ],
+          if (quest.whyThisTitle != null) ...[
+            SizedBox(height: 12.h),
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Why this title?',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: displayColor,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    quest.whyThisTitle!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     ).animate().shimmer(duration: 2.seconds);

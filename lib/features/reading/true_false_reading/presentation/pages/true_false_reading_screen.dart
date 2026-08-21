@@ -16,7 +16,8 @@ import 'package:vowl/features/reading/true_false_reading/presentation/widgets/tr
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
 import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/evidence_highlight_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;
@@ -64,16 +65,28 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     });
 
     if (_coinX.abs() > 100.w) {
-      setState(() {
-        _pendingAnswer = _coinX > 0;
-      });
+      final bool pending = _coinX > 0;
+      
+      final String correct = (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest!.correctAnswer ?? "";
+      final bool isCorrect = (pending ? "true" : "false") == correct.trim().toLowerCase();
+
+      if (!isCorrect) {
+        setState(() {
+          _pendingAnswer = pending;
+        });
+        _submitFinalAnswer(false, (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest as ReadingQuest, true);
+      } else {
+        setState(() {
+          _pendingAnswer = pending;
+        });
+      }
     }
   }
 
-  void _submitFinalAnswer(bool nailedSpeaking, ReadingQuest quest) {
+  void _submitFinalAnswer(bool nailedEvidence, ReadingQuest quest, [bool failedCoin = false]) {
     if (_pendingAnswer == null) return;
 
-    if (!nailedSpeaking) {
+    if (!nailedEvidence || failedCoin) {
       _hapticService.error();
       _soundService.playWrong();
       setState(() {
@@ -82,31 +95,30 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
         _coinX = _pendingAnswer! ? 120.w : -120.w;
         _coinY = 0.0;
       });
+      ErrorJournalCollector.record(
+        userId: 'local',
+        gameType: widget.gameType.name,
+        question: quest.question ?? quest.instruction,
+        userAnswer: failedCoin ? (_pendingAnswer! ? "True" : "False") : 'Failed to find evidence',
+        correctAnswer: failedCoin ? (quest.correctAnswer ?? '') : (quest.evidenceLine ?? ''),
+        level: widget.level,
+      );
       context.read<ReadingBloc>().add(const SubmitAnswer(false));
       return;
     }
 
-    String correct = quest.correctAnswer ?? "";
-    bool isCorrect =
-        (_pendingAnswer! ? "true" : "false") == correct.trim().toLowerCase();
-
     setState(() {
       _isAnswered = true;
-      _isCorrect = isCorrect;
+      _isCorrect = true;
       _coinX = _pendingAnswer! ? 120.w : -120.w;
       _coinY = 0.0;
     });
 
-    if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5));
-      context.read<ReadingBloc>().add(const SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      context.read<ReadingBloc>().add(const SubmitAnswer(false));
-    }
+    _hapticService.success();
+    _soundService.playCorrect();
+    // Award bonus coins for finding evidence
+    context.read<ReadingBloc>().add(const ReadingSpeakConfirmed(5)); 
+    context.read<ReadingBloc>().add(const SubmitAnswer(true));
   }
 
   @override
@@ -231,12 +243,12 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                       ],
                     ),
                     if (_pendingAnswer != null && !_isAnswered)
-                      SpeakToConfirmOverlay(
-                        expectedText: quest.question ?? "",
+                      EvidenceHighlightWrapper(
+                        passage: quest.passage ?? "",
+                        evidenceWords: (quest.evidenceLine ?? quest.passage ?? "").split(RegExp(r'\s+')),
                         primaryColor: theme.primaryColor,
-                        onConfirmed: () => _submitFinalAnswer(true, quest),
-                        onSkipped: () => _submitFinalAnswer(false, quest),
-                        allowSkip: true,
+                        onCorrectHighlight: () => _submitFinalAnswer(true, quest),
+                        instruction: 'Tap the words that prove your answer',
                       ),
                   ],
                 ),

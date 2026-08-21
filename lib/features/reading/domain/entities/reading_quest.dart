@@ -12,6 +12,20 @@ class ReadingQuest extends GameQuest {
   final List<String>? keywords;
   final int? timeLimit;
   final String? targetItem;
+  
+  // D3 Fields
+  final int? passageWordCount;
+  final String? wordInContext;
+  final String? evidenceLine;
+  final List<String>? transitionWords;
+  final int? wpmTarget;
+  final String? whyThisTitle;
+  final String? paragraphTopic;
+  final List<String>? keyPoints;
+  final List<String>? clueWords;
+  final List<String>? logicChain;
+  final String? wordCategory;
+  final String? targetInfo;
 
   const ReadingQuest({
     required super.id,
@@ -43,6 +57,18 @@ class ReadingQuest extends GameQuest {
     this.keywords,
     this.timeLimit,
     this.targetItem,
+    this.passageWordCount,
+    this.wordInContext,
+    this.evidenceLine,
+    this.transitionWords,
+    this.wpmTarget,
+    this.whyThisTitle,
+    this.paragraphTopic,
+    this.keyPoints,
+    this.clueWords,
+    this.logicChain,
+    this.wordCategory,
+    this.targetInfo,
   });
 
   String? get word => targetWord ?? highlightedWord;
@@ -61,5 +87,17 @@ class ReadingQuest extends GameQuest {
     keywords,
     timeLimit,
     targetItem,
+    passageWordCount,
+    wordInContext,
+    evidenceLine,
+    transitionWords,
+    wpmTarget,
+    whyThisTitle,
+    paragraphTopic,
+    keyPoints,
+    clueWords,
+    logicChain,
+    wordCategory,
+    targetInfo,
   ];
 }

@@ -6,6 +6,7 @@ class LaserBridgePainter extends CustomPainter {
   final Offset? Function(GlobalKey) getCenter;
   final GlobalKey Function(String) getKey;
   final Color color;
+  final Map<String, Color>? colorMap;
 
   LaserBridgePainter({
     required this.matches,
@@ -13,6 +14,7 @@ class LaserBridgePainter extends CustomPainter {
     required this.getCenter,
     required this.getKey,
     required this.color,
+    this.colorMap,
   });
 
   @override
@@ -32,12 +34,25 @@ class LaserBridgePainter extends CustomPainter {
     matches.forEach((k, v) {
       final keyCenter = getCenter(getKey(k));
       final valCenter = getCenter(getKey(v));
+      
+      final matchColor = colorMap?[k] ?? color;
+      
+      final matchPaint = Paint()
+        ..color = matchColor
+        ..strokeWidth = 3
+        ..strokeCap = StrokeCap.round;
+
+      final matchGlow = Paint()
+        ..color = matchColor.withValues(alpha: 0.35)
+        ..strokeWidth = 10
+        ..strokeCap = StrokeCap.round
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
 
       if (keyCenter != null && valCenter != null) {
-        canvas.drawLine(keyCenter, valCenter, glow);
-        canvas.drawLine(keyCenter, valCenter, paint);
-        canvas.drawCircle(keyCenter, 5, paint);
-        canvas.drawCircle(valCenter, 5, paint);
+        canvas.drawLine(keyCenter, valCenter, matchGlow);
+        canvas.drawLine(keyCenter, valCenter, matchPaint);
+        canvas.drawCircle(keyCenter, 5, matchPaint);
+        canvas.drawCircle(valCenter, 5, matchPaint);
       }
     });
   }
