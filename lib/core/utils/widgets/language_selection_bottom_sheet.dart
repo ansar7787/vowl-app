@@ -747,6 +747,8 @@ class _LanguageSelectionBottomSheetState
                 ),
               ),
             ),
+          ],
+        ),
       ),
     ).then((_) {
       typeController.dispose();
