@@ -11,7 +11,7 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/subject_verb_agreement/presentation/widgets/subject_verb_agreement_instruction.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class SubjectVerbAgreementScreen extends StatefulWidget {
   final int level;
@@ -37,7 +37,7 @@ class _SubjectVerbAgreementScreenState
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  bool _pendingTypeSubmit = false;
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _SubjectVerbAgreementScreenState
   }
 
   void _onConnect(int targetIndex, int correctIndex) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered || _pendingTypeSubmit) return;
 
     bool isCorrect = targetIndex == correctIndex;
 
@@ -57,7 +57,7 @@ class _SubjectVerbAgreementScreenState
       _soundService.playCorrect();
       setState(() {
         _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
-        _pendingJigsaw = true;
+        _pendingTypeSubmit = true;
       });
     } else {
       _hapticService.error();
@@ -72,7 +72,7 @@ class _SubjectVerbAgreementScreenState
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
+    setState(() => _pendingTypeSubmit = false);
     setState(() {
       _isAnswered = true;
       _isCorrect = correct;
@@ -107,7 +107,7 @@ class _SubjectVerbAgreementScreenState
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _pendingJigsaw = false;
+              _pendingTypeSubmit = false;
               _ringOffset = Offset.zero;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -183,7 +183,69 @@ class _SubjectVerbAgreementScreenState
                                 : SubjectVerbAgreementInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
-                            SizedBox(height: isCompact ? 10.h : 24.h),
+                                  if (quest.grammarRule != null) ...[
+                                    SizedBox(height: 16.h),
+                                    Container(
+                                      margin: EdgeInsets.symmetric(horizontal: 24.w),
+                                      padding: EdgeInsets.all(16.r),
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(16.r),
+                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                                              SizedBox(width: 8.w),
+                                              Text(
+                                                "AGREEMENT RULE",
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 12.sp,
+                                                  fontWeight: FontWeight.w800,
+                                                  color: theme.primaryColor,
+                                                  letterSpacing: 2,
+                                                ),
+                                              ),
+                                              if (quest.subjectType != null) ...[
+                                                const Spacer(),
+                                                Container(
+                                                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                                                  decoration: BoxDecoration(
+                                                    color: theme.primaryColor.withValues(alpha: 0.2),
+                                                    borderRadius: BorderRadius.circular(8.r),
+                                                  ),
+                                                  child: Text(
+                                                    quest.subjectType!.toUpperCase(),
+                                                    style: TextStyle(
+                                                      fontFamily: 'Outfit',
+                                                      fontSize: 10.sp,
+                                                      fontWeight: FontWeight.w700,
+                                                      color: theme.primaryColor,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ],
+                                          ),
+                                          SizedBox(height: 8.h),
+                                          Text(
+                                            quest.grammarRule!,
+                                            style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 14.sp,
+                                              fontWeight: FontWeight.w600,
+                                              color: isDark ? Colors.white : Colors.black87,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                  SizedBox(height: isCompact ? 10.h : 24.h),
 
                             // Atmospheric Harmony Hub
                             Padding(
@@ -299,7 +361,7 @@ class _SubjectVerbAgreementScreenState
 
                                     // The Quantum Core (Harmony Slider)
                                     GestureDetector(
-                                      onPanUpdate: _isAnswered || _pendingJigsaw
+                                      onPanUpdate: _isAnswered || _pendingTypeSubmit
                                           ? null
                                           : (details) {
                                               final double newDx =
@@ -323,7 +385,7 @@ class _SubjectVerbAgreementScreenState
                                                 quest.correctAnswerIndex ?? 0,
                                               );
                                             },
-                                      onPanEnd: _isAnswered || _pendingJigsaw
+                                      onPanEnd: _isAnswered || _pendingTypeSubmit
                                           ? null
                                           : (details) {
                                               setState(
@@ -351,20 +413,19 @@ class _SubjectVerbAgreementScreenState
                       },
                     ),
                     ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
-                        cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                    if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
+                        displayText: "Type the complete sentence to lock in the rule",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
+                        allowSkip: true,
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SizedBox(height: (_isAnswered || _pendingTypeSubmit) ? 160.h : 60.h),
                   ],
                 ),
-                ),
+              ),
               ],
             ),
         );
@@ -390,7 +451,7 @@ class _SubjectVerbAgreementScreenState
     bool isCompact,
   ) {
     final isCorrect =
-        (_isAnswered || _pendingJigsaw) &&
+        (_isAnswered || _pendingTypeSubmit) &&
         _isCorrect != false &&
         index == correctIndex;
     final isWrong = _isAnswered && _isCorrect == false && index != correctIndex;
@@ -439,7 +500,7 @@ class _SubjectVerbAgreementScreenState
   }
 
   Widget _buildQuantumCore(Color primaryColor, bool isCompact) {
-    final Color coreColor = (_isAnswered || _pendingJigsaw)
+    final Color coreColor = (_isAnswered || _pendingTypeSubmit)
         ? (_isCorrect != false ? Colors.greenAccent : Colors.redAccent)
         : primaryColor;
     final coreSize = isCompact ? 50.r : 70.r;

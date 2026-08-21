@@ -296,7 +296,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                                           color: isDark ? Colors.white70 : Colors.black87,
                                         ),
                                       ),
-                                    )).toList(),
+                                    )),
                                   ],
                                 ),
                               ),

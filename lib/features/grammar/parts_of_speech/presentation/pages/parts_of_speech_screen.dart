@@ -15,7 +15,7 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speec
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_context_card.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_vortex.dart';
 import 'package:vowl/features/grammar/parts_of_speech/presentation/widgets/speech_draggable_word.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class PartsOfSpeechScreen extends StatefulWidget {
   final int level;
@@ -43,7 +43,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   int? _lastLives;
 
   bool _isSubmitting = false;
-  bool _pendingJigsaw = false;
+  bool _pendingTypeSubmit = false;
 
   static const List<String> _fallbackOptions = ['Noun', 'Verb', 'Adj', 'Adv'];
 
@@ -66,7 +66,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() {
-        _pendingJigsaw = true;
+        _pendingTypeSubmit = true;
       });
     } else {
       _hapticService.error();
@@ -80,7 +80,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
+    setState(() => _pendingTypeSubmit = false);
     setState(() {
       _isAnswered = true;
       _isCorrect = correct;
@@ -98,7 +98,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _checkCollision(int correctIndex, {required bool isCompact}) {
-    if (_pendingJigsaw || _isAnswered) return;
+    if (_pendingTypeSubmit || _isAnswered) return;
 
     final distance = _dragOffset.distance;
     final threshold = isCompact ? 60.r : 100.r;
@@ -140,16 +140,17 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling:
-              false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
+          useScrolling: false, // Stack layout constraint
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
           onHint: () =>
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox.shrink()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
+              : Stack(
+                  children: [
+                    CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
                       hasScrollBody: false,
@@ -167,9 +168,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                   isCompact: isCompact,
                                   maxHeight: constraints.maxHeight,
                                   dragOffset: _dragOffset,
-                                  isAnswered: _isAnswered || _pendingJigsaw,
+                                  isAnswered: _isAnswered || _pendingTypeSubmit,
                                   onPanUpdate: (details) {
-                                    if (_pendingJigsaw || _isAnswered) return;
+                                    if (_pendingTypeSubmit || _isAnswered) return;
                                     setState(() => _dragOffset += details.delta);
                                     _checkCollision(
                                       quest.correctAnswerIndex ?? 0,
@@ -177,29 +178,30 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                                     );
                                   },
                                   onPanEnd: (_) {
-                                    if (_pendingJigsaw || _isAnswered) return;
+                                    if (_pendingTypeSubmit || _isAnswered) return;
                                     setState(() => _dragOffset = Offset.zero);
                                   },
                                 );
                               },
                             ),
                           ),
-                          if (_pendingJigsaw &&
-                              !_isAnswered &&
-                              cleanTargetSentence.isNotEmpty)
-                            DynamicJigsawWrapper(
-                              expectedText: cleanTargetSentence,
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(true),
-                              onSkipped: () => _submitFinalAnswer(false),
-                              isPositioned: false,
-                            ),
-                          SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
-                        ],
+                            SizedBox(height: (_isAnswered || _pendingTypeSubmit) ? 160.h : 60.h),
+                          ],
+                        ),
                       ),
+                    ],
+                  ),
+                  if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                    TypeToConfirmOverlay(
+                      expectedText: cleanTargetSentence,
+                      displayText: "Type the complete sentence to lock in the part of speech",
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _submitFinalAnswer(true),
+                      onSkipped: () => _submitFinalAnswer(false),
+                      allowSkip: true,
                     ),
-                  ],
-                ),
+                ],
+              ),
         );
       },
     );
@@ -219,7 +221,7 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
           _isCorrect = null;
           _dragOffset = Offset.zero;
           _isSubmitting = false;
-          _pendingJigsaw = false;
+          _pendingTypeSubmit = false;
         });
       } else if (state.answerStatus.isAnswered && !_isAnswered) {
         setState(() {

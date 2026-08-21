@@ -25,6 +25,11 @@ class GrammarQuest extends GameQuest {
   final String? errorHighlight;
   final String? structureType;
   final String? timelinePosition;
+  final List<String>? transformations;
+  final String? subjectType;
+  final String? connectorCategory;
+  final String? activeVoice;
+  final String? passiveVoice;
 
   const GrammarQuest({
     required super.id,
@@ -67,6 +72,11 @@ class GrammarQuest extends GameQuest {
     this.errorHighlight,
     this.structureType,
     this.timelinePosition,
+    this.transformations,
+    this.subjectType,
+    this.connectorCategory,
+    this.activeVoice,
+    this.passiveVoice,
     super.targetWord,
     super.sentence,
     super.question,

@@ -198,7 +198,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                           SizedBox(height: 10.h),
                           WordReorderInstruction(primaryColor: theme.primaryColor),
                           SizedBox(height: 16.h),
-                          if (quest?.structureType != null)
+                          if (quest.structureType != null)
                             Container(
                               margin: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
                               padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -213,7 +213,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                                   Icon(Icons.account_tree_outlined, color: theme.primaryColor, size: 16.sp),
                                   SizedBox(width: 8.w),
                                   Text(
-                                    "TARGET STRUCTURE: ${quest!.structureType!.toUpperCase()}",
+                                    "TARGET STRUCTURE: ${quest.structureType!.toUpperCase()}",
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 12.sp,

@@ -150,6 +150,13 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     context.read<WritingBloc>().add(const SubmitAnswer(true));
   }
 
+  void _onAnagramFailed() {
+    setState(() {
+      _showAnagram = false;
+    });
+    context.read<WritingBloc>().add(const SubmitAnswer(false));
+  }
+
   // ---------------------------------------------------------------------------
   // Build
   // ---------------------------------------------------------------------------
@@ -277,9 +284,10 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
                     ),
                     if (_showAnagram && !isAnswered)
                       DynamicAnagramWrapper(
-                        word: quest.correctAnswer ?? '',
+                        expectedText: quest.correctAnswer ?? '',
                         primaryColor: _theme.primaryColor,
-                        onSuccess: _onAnagramSuccess,
+                        onConfirmed: _onAnagramSuccess,
+                        onFailed: _onAnagramFailed,
                       ),
                   ],
                 ),

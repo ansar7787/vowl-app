@@ -41,6 +41,11 @@ class GrammarQuestModel extends GrammarQuest {
     super.errorHighlight,
     super.structureType,
     super.timelinePosition,
+    super.transformations,
+    super.subjectType,
+    super.connectorCategory,
+    super.activeVoice,
+    super.passiveVoice,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -123,6 +128,11 @@ class GrammarQuestModel extends GrammarQuest {
       errorHighlight: getString(map['errorHighlight']),
       structureType: getString(map['structureType']),
       timelinePosition: getString(map['timelinePosition']),
+      transformations: map['transformations'] != null ? List<String>.from(map['transformations']) : null,
+      subjectType: getString(map['subjectType']),
+      connectorCategory: getString(map['connectorCategory']),
+      activeVoice: getString(map['activeVoice']),
+      passiveVoice: getString(map['passiveVoice']),
     );
   }
 
@@ -163,6 +173,11 @@ class GrammarQuestModel extends GrammarQuest {
       'errorHighlight': errorHighlight,
       'structureType': structureType,
       'timelinePosition': timelinePosition,
+      'transformations': transformations,
+      'subjectType': subjectType,
+      'connectorCategory': connectorCategory,
+      'activeVoice': activeVoice,
+      'passiveVoice': passiveVoice,
     };
   }
 }

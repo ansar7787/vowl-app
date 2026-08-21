@@ -216,9 +216,10 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
                     ),
                     if (_pendingDockedOption != null && !_isAnswered)
                       DynamicAnagramWrapper(
-                        word: _pendingDockedOption!,
+                        expectedText: quest.targetWord ?? quest.correctAnswer ?? "",
                         primaryColor: theme.primaryColor,
-                        onSuccess: () => _submitFinalAnswer(true, quest.correctAnswer ?? ""),
+                        onConfirmed: () => _submitFinalAnswer(true, quest.correctAnswer ?? ""),
+                        onFailed: () => _submitFinalAnswer(false, quest.correctAnswer ?? ""),
                       ),
                   ],
                 ),

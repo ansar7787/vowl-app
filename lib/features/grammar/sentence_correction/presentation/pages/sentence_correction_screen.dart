@@ -329,8 +329,8 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                                   runSpacing: 16.h,
                                   children: List.generate(words.length, (i) {
                                     bool isHighlighted = false;
-                                    if (quest?.errorHighlight != null) {
-                                      final highlightClean = quest!.errorHighlight!.toLowerCase().replaceAll(RegExp(r'[^\w]'), '');
+                                    if (quest.errorHighlight != null) {
+                                      final highlightClean = quest.errorHighlight!.toLowerCase().replaceAll(RegExp(r'[^\w]'), '');
                                       final wordClean = words[i].toLowerCase().replaceAll(RegExp(r'[^\w]'), '');
                                       if (highlightClean == wordClean) {
                                         isHighlighted = true;

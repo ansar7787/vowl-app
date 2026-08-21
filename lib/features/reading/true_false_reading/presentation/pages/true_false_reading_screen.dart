@@ -67,14 +67,14 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     if (_coinX.abs() > 100.w) {
       final bool pending = _coinX > 0;
       
-      final String correct = (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest!.correctAnswer ?? "";
+      final String correct = (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest.correctAnswer ?? "";
       final bool isCorrect = (pending ? "true" : "false") == correct.trim().toLowerCase();
 
       if (!isCorrect) {
         setState(() {
           _pendingAnswer = pending;
         });
-        _submitFinalAnswer(false, (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest as ReadingQuest, true);
+        _submitFinalAnswer(false, (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest, true);
       } else {
         setState(() {
           _pendingAnswer = pending;

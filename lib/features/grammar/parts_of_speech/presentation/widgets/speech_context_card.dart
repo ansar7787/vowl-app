@@ -49,19 +49,49 @@ class SpeechContextCard extends StatelessWidget {
               width: 1.5,
             ),
           ),
-          child: Text(
-            content,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: fontSize,
-              color: isDark ? Colors.white : Colors.black87,
-              height: 1.5,
-              fontWeight: fontWeight,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  content,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: fontSize,
+                    color: isDark ? Colors.white : Colors.black87,
+                    height: 1.5,
+                    fontWeight: fontWeight,
+                  ),
+                ),
+                if (quest.transformations != null && quest.transformations!.isNotEmpty) ...[
+                  SizedBox(height: 16.h),
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: 8.w,
+                    runSpacing: 8.h,
+                    children: quest.transformations!.map((word) => Container(
+                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                      decoration: BoxDecoration(
+                        color: primaryColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+                      ),
+                      child: Text(
+                        word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )).toList(),
+                  ),
+                ],
+              ],
             ),
-          ),
-        ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
-      ),
-    );
+          ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+        ),
+      );
   }
 }

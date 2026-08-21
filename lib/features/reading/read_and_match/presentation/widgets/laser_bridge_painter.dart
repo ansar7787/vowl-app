@@ -19,17 +19,6 @@ class LaserBridgePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 3
-      ..strokeCap = StrokeCap.round;
-
-    final glow = Paint()
-      ..color = color.withValues(alpha: 0.35)
-      ..strokeWidth = 10
-      ..strokeCap = StrokeCap.round
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
-
     // Draw lines for established matches
     matches.forEach((k, v) {
       final keyCenter = getCenter(getKey(k));

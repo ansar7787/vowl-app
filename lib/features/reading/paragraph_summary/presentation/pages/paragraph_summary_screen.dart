@@ -12,7 +12,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
-import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 

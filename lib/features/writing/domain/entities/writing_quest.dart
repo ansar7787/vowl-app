@@ -22,6 +22,17 @@ class WritingQuest extends GameQuest {
   final String? essayTopic;
   final List<String>? emojis;
   final Map<String, List<String>>? keywords;
+  final int? errorCount;
+  final List<String>? promptQuestions;
+  final String? modelAnswer;
+  final String? thesisStatement;
+  final String? errorType;
+  final String? structureGuide;
+  final List<String>? storyKeyEvents;
+  final String? formalityLevel;
+  final String? sentenceType;
+  final String? grammarFocus;
+  final List<String>? keywordsExpected;
 
   const WritingQuest({
     required super.id,
@@ -62,6 +73,17 @@ class WritingQuest extends GameQuest {
     this.essayTopic,
     this.emojis,
     this.keywords,
+    this.errorCount,
+    this.promptQuestions,
+    this.modelAnswer,
+    this.thesisStatement,
+    this.errorType,
+    this.structureGuide,
+    this.storyKeyEvents,
+    this.formalityLevel,
+    this.sentenceType,
+    this.grammarFocus,
+    this.keywordsExpected,
   });
 
   String? get incorrectSentence => passage;

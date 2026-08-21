@@ -110,7 +110,7 @@ class ParagraphSummaryResult extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )).toList(),
+                  )),
                 ],
               ),
             ),

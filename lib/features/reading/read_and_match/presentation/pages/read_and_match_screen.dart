@@ -237,11 +237,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
           colorMap[pairs[i]['key']!] = _matchColors[i % _matchColors.length];
         }
 
-        Color _getColorForKey(String k) {
+        Color getColorForKey(String k) {
           return colorMap[k] ?? theme.primaryColor;
         }
 
-        Color _getColorForValue(String v) {
+        Color getColorForValue(String v) {
           // If matched, use the key's color. Otherwise primary
           if (_matches.containsValue(v)) {
             final key = _matches.entries.firstWhere((e) => e.value == v).key;
@@ -297,7 +297,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                     (k) => ReadAndMatchTerminal(
                                                       text: k,
                                                       isSource: true,
-                                                      color: _getColorForKey(k),
+                                                      color: getColorForKey(k),
                                                       isDark: isDark,
                                                       isMatched: _matches
                                                           .containsKey(k),
@@ -319,7 +319,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                                                     (v) => ReadAndMatchTerminal(
                                                       text: v,
                                                       isSource: false,
-                                                      color: _getColorForValue(v),
+                                                      color: getColorForValue(v),
                                                       isDark: isDark,
                                                       isMatched: _matches
                                                           .containsValue(v),

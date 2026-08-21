@@ -124,10 +124,10 @@
 | 45 | **Sentence Correction** | sentenceCorrection | ✅ | TypeToConfirm (Verbal eval fallback) | Add `errorHighlight` visual underlining |
 | 46 | **Word Reorder** | wordReorder | ✅ | TypeToConfirm (Finalize syntax) | Add `structureType` target guide visual |
 | 47 | **Tense Mastery** | tenseMastery | ✅ | TypeToConfirm (Timeline lock) | Visual timeline with `timelinePosition` |
-| 48 | partsOfSpeech | 8→10 | Add `transformations` | Word family tree visual | 🔲 |
-| 49 | subjectVerbAgreement | 8→10 | Add `subjectType` | Highlight subject + rule display | 🔲 |
-| 50 | clauseConnector | 8→10 | Add `connectorCategory` | Connector map visual | 🔲 |
-| 51 | voiceSwap | 9→10 | Add `stepByStep` transform guide | Active→passive arrow animation | 🔲 |
+| 48 | partsOfSpeech | 10/10 | Add `transformations` | Word family tree visual | ✅ |
+| 49 | subjectVerbAgreement | 10/10 | Add `subjectType` | Grammar rule card | ✅ |
+| 50 | clauseConnector | 10/10 | Add `connectorCategory` | Syntax highlighting | ✅ |
+| 51 | voiceSwap | 10/10 | Add `activeVoice`/`passiveVoice` | Conversion animation | ✅ |
 | 52 | questionFormatter | 8→10 | Add `questionType` | Question formula: Aux+S+V+? | 🔲 |
 | 53 | articleInsertion | 8→10 | Add `articleRule` | Decision tree: countable→a/the/∅ | 🔲 |
 | 54 | modifierPlacement | 8→10 | Add `modifierType` | Word order slot diagram | 🔲 |

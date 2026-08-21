@@ -40,6 +40,17 @@ class WritingQuestModel extends WritingQuest {
     super.essayTopic,
     super.emojis,
     super.keywords,
+    super.errorCount,
+    super.promptQuestions,
+    super.modelAnswer,
+    super.thesisStatement,
+    super.errorType,
+    super.structureGuide,
+    super.storyKeyEvents,
+    super.formalityLevel,
+    super.sentenceType,
+    super.grammarFocus,
+    super.keywordsExpected,
   });
 
   factory WritingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -124,6 +135,17 @@ class WritingQuestModel extends WritingQuest {
               (k, v) => MapEntry(k.toString(), List<String>.from(v)),
             )
           : null,
+      errorCount: (map['errorCount'] as num?)?.toInt(),
+      promptQuestions: map['promptQuestions'] != null ? List<String>.from(map['promptQuestions']) : null,
+      modelAnswer: getString(map['modelAnswer']),
+      thesisStatement: getString(map['thesisStatement']),
+      errorType: getString(map['errorType']),
+      structureGuide: getString(map['structureGuide']),
+      storyKeyEvents: map['storyKeyEvents'] != null ? List<String>.from(map['storyKeyEvents']) : null,
+      formalityLevel: getString(map['formalityLevel']),
+      sentenceType: getString(map['sentenceType']),
+      grammarFocus: getString(map['grammarFocus']),
+      keywordsExpected: map['keywordsExpected'] != null ? List<String>.from(map['keywordsExpected']) : null,
     );
   }
 
@@ -163,6 +185,17 @@ class WritingQuestModel extends WritingQuest {
       'essayTopic': essayTopic,
       'emojis': emojis,
       'keywords': keywords,
+      'errorCount': errorCount,
+      'promptQuestions': promptQuestions,
+      'modelAnswer': modelAnswer,
+      'thesisStatement': thesisStatement,
+      'errorType': errorType,
+      'structureGuide': structureGuide,
+      'storyKeyEvents': storyKeyEvents,
+      'formalityLevel': formalityLevel,
+      'sentenceType': sentenceType,
+      'grammarFocus': grammarFocus,
+      'keywordsExpected': keywordsExpected,
     };
   }
 }

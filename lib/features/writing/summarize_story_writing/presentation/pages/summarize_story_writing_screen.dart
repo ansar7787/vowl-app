@@ -282,7 +282,7 @@ class _SummarizeStoryWritingScreenState
                                               ),
                                             ],
                                           ),
-                                        )).toList(),
+                                        )),
                                       ],
                                     ),
                                   ),
@@ -309,9 +309,9 @@ class _SummarizeStoryWritingScreenState
                                 SizedBox(height: 32.h),
                                 if (!isAnswered)
                                   SpeedChallengeTimer(
-                                    duration: 90,
+                                    durationSeconds: 90,
                                     primaryColor: theme.primaryColor,
-                                    onExpired: _onTimerExpired,
+                                    onTimeUp: _onTimerExpired,
                                   ),
                                 SizedBox(height: 32.h),
                               ],

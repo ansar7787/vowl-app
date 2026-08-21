@@ -11,7 +11,7 @@ import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.da
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/clause_connector/presentation/widgets/clause_connector_instruction.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class ClauseConnectorScreen extends StatefulWidget {
   final int level;
@@ -36,7 +36,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
-  bool _pendingJigsaw = false;
+  bool _pendingTypeSubmit = false;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   }
 
   void _onSnap(String connector, int correctIndex, List<String> options) {
-    if (_isAnswered || _pendingJigsaw) return;
+    if (_isAnswered || _pendingTypeSubmit) return;
 
     bool isCorrect = connector == options[correctIndex];
 
@@ -56,7 +56,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       _soundService.playCorrect();
       setState(() {
         _draggingConnector = connector;
-        _pendingJigsaw = true;
+        _pendingTypeSubmit = true;
       });
     } else {
       _hapticService.error();
@@ -71,7 +71,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   }
 
   void _submitFinalAnswer(bool correct) {
-    setState(() => _pendingJigsaw = false);
+    setState(() => _pendingTypeSubmit = false);
     setState(() {
       _isAnswered = true;
       _isCorrect = correct;
@@ -106,7 +106,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _pendingJigsaw = false;
+              _pendingTypeSubmit = false;
               _draggingConnector = null;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -161,8 +161,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
-          useScrolling:
-              false, // Turn off scrolling because DynamicJigsawWrapper needs Stack layout
+          useScrolling: false, // Stack layout
           onContinue: () =>
               context.read<GrammarBloc>().add(const NextQuestion()),
           onHint: () =>
@@ -220,6 +219,27 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                                 : ClauseConnectorInstruction(
                                     primaryColor: theme.primaryColor,
                                   ),
+                            if (quest.connectorCategory != null) ...[
+                              SizedBox(height: 10.h),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Text(
+                                  "TYPE: ${quest.connectorCategory!.toUpperCase()}",
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 10.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: theme.primaryColor,
+                                    letterSpacing: 1.5,
+                                  ),
+                                ),
+                              ),
+                            ],
                             SizedBox(height: gapMiddle),
 
                             // Magnetic Energy Port Container
@@ -256,7 +276,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                             ),
                             SizedBox(height: gapMiddle),
 
-                            if (!_isAnswered && !_pendingJigsaw)
+                            if (!_isAnswered && !_pendingTypeSubmit)
                               _buildConnectorPalette(
                                 options,
                                 theme.primaryColor,
@@ -270,20 +290,19 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                       },
                     ),
                     ),
-                    if (_pendingJigsaw &&
-                        !_isAnswered &&
-                        cleanTargetSentence.isNotEmpty)
-                      DynamicJigsawWrapper(
+                    if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
+                      TypeToConfirmOverlay(
                         expectedText: cleanTargetSentence,
+                        displayText: "Type the complete sentence to lock in the clause structure",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitFinalAnswer(true),
                         onSkipped: () => _submitFinalAnswer(false),
-                        isPositioned: false,
+                        allowSkip: true,
                       ),
-                    SizedBox(height: (_isAnswered || _pendingJigsaw) ? 160.h : 60.h),
+                    SizedBox(height: (_isAnswered || _pendingTypeSubmit) ? 160.h : 60.h),
                   ],
                 ),
-                ),
+              ),
               ],
             ),
         );
@@ -299,12 +318,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     bool isCompact,
   ) {
     return DragTarget<String>(
-      onWillAcceptWithDetails: (details) => !_isAnswered && !_pendingJigsaw,
+      onWillAcceptWithDetails: (details) => !_isAnswered && !_pendingTypeSubmit,
       onAcceptWithDetails: (details) =>
           _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final portColor = (_isAnswered || _pendingJigsaw)
+        final portColor = (_isAnswered || _pendingTypeSubmit)
             ? (_isCorrect != false ? Colors.greenAccent : Colors.redAccent)
             : (isHighlight
                   ? primaryColor
@@ -319,12 +338,12 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(
               color: portColor.withValues(alpha: 0.4),
               width: 2,
-              style: (_isAnswered || _pendingJigsaw)
+              style: (_isAnswered || _pendingTypeSubmit)
                   ? BorderStyle.none
                   : BorderStyle.solid,
             ),
             boxShadow: [
-              if (isHighlight || _isAnswered || _pendingJigsaw)
+              if (isHighlight || _isAnswered || _pendingTypeSubmit)
                 BoxShadow(
                   color: portColor.withValues(alpha: 0.2),
                   blurRadius: 20,
@@ -333,7 +352,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             ],
           ),
           child: Center(
-            child: (_isAnswered || _pendingJigsaw)
+            child: (_isAnswered || _pendingTypeSubmit)
                 ? _buildConnector(
                     _draggingConnector ?? "---",
                     primaryColor,

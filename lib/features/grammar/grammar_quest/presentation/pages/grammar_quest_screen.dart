@@ -10,6 +10,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/layout/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/game_mechanics/dynamic_jigsaw_wrapper.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
@@ -153,7 +154,9 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : Stack(
+                  children: [
+                    CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -166,7 +169,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                               primaryColor: theme.primaryColor,
                             ),
                             SizedBox(height: 16.h),
-                            if (quest?.grammarRule != null)
+                            if (quest.grammarRule != null)
                               Container(
                                 margin: EdgeInsets.only(bottom: 24.h),
                                 padding: EdgeInsets.all(16.r),
@@ -196,7 +199,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                                     ),
                                     SizedBox(height: 8.h),
                                     Text(
-                                      quest!.grammarRule!,
+                                      quest.grammarRule!,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 16.sp,
@@ -258,15 +261,17 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                     ),
                   ],
                 ),
-                if (_pendingTypeSubmit && !_isAnswered && targetText.isNotEmpty)
-                  TypeToConfirmOverlay(
-                    expectedText: targetText,
-                    displayText: "Type the complete sentence to lock in the rule",
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true),
-                    onSkipped: () => _submitFinalAnswer(false),
-                    allowSkip: true,
-                  ),
+                    if (_pendingTypeSubmit && !_isAnswered && targetText.isNotEmpty)
+                      TypeToConfirmOverlay(
+                        expectedText: targetText,
+                        displayText: "Type the complete sentence to lock in the rule",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        allowSkip: true,
+                      ),
+                  ],
+                ),
         );
       },
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -136,7 +137,22 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final quest = (state is GrammarLoaded) ? state.currentQuest as GrammarQuest? : null;
+
+        String targetVoiceStr = "";
+        String expectedConversion = "";
+        if (quest != null) {
+          if (_isPassive) {
+            targetVoiceStr = "Active";
+            expectedConversion = quest.activeVoice ?? "";
+          } else {
+            targetVoiceStr = "Passive";
+            expectedConversion = quest.passiveVoice ?? "";
+          }
+          if (expectedConversion.isEmpty) {
+            expectedConversion = quest.sentence ?? ""; // Fallback
+          }
+        }
 
         return GrammarBaseLayout(
           gameType: widget.gameType,
@@ -309,10 +325,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                     ),
                     if (_isFirstStagePassed && !_isAnswered)
                       TypeToConfirmOverlay(
-                        expectedText:
-                            quest.correctAnswerCategory ??
-                            quest.correctAnswer ??
-                            '',
+                        expectedText: expectedConversion,
+                        displayText: "Type the $targetVoiceStr conversion to lock it in",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _submitVerbalEvaluation(true),
                         onSkipped: () => _submitVerbalEvaluation(false),
