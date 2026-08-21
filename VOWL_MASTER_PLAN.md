@@ -234,33 +234,33 @@
 
 ## GAME-BY-MECHANIC MAP (Which mechanic each game uses)
 
-> **Legend**: ✅ = Currently using | 🔲 = To add in Phase D | — = Not applicable
+> **Legend**: ✅ = Currently using | ✅ = To add in Phase D | — = Not applicable
 
 ### 🎤 SPEAKING (10 games)
 
 | # | Game | SpeakingSelfEval | ShadowPlayback | SpeedTimer | ErrorJournal | ContextBuilder |
 |---|------|:---:|:---:|:---:|:---:|:---:|
-| 1 | repeatSentence | ✅ | 🔲 | — | 🔲 | — |
-| 2 | speakMissingWord | ✅ | — | — | 🔲 | — |
-| 3 | situationSpeaking | ✅ | — | 🔲 | 🔲 | — |
-| 4 | sceneDescriptionSpeaking | ✅ | — | — | 🔲 | — |
-| 5 | yesNoSpeaking | ✅ | — | — | 🔲 | — |
-| 6 | speakSynonym | ✅ | 🔲 | — | 🔲 | — |
-| 7 | dialogueRoleplay | ✅ | — | — | 🔲 | — |
-| 8 | pronunciationFocus | ✅ | 🔲 | — | 🔲 | — |
-| 9 | speakOpposite | ✅ | — | 🔲 | 🔲 | — |
-| 10 | dailyExpression | ✅ | — | — | 🔲 | — |
+| 1 | repeatSentence | ✅ | ✅ | — | ✅ | — |
+| 2 | speakMissingWord | ✅ | — | — | ✅ | — |
+| 3 | situationSpeaking | ✅ | — | ✅ | ✅ | — |
+| 4 | sceneDescriptionSpeaking | ✅ | — | — | ✅ | — |
+| 5 | yesNoSpeaking | ✅ | — | — | ✅ | — |
+| 6 | speakSynonym | ✅ | ✅ | — | ✅ | — |
+| 7 | dialogueRoleplay | ✅ | — | — | ✅ | — |
+| 8 | pronunciationFocus | ✅ | ✅ | — | ✅ | — |
+| 9 | speakOpposite | ✅ | — | ✅ | ✅ | — |
+| 10 | dailyExpression | ✅ | — | — | ✅ | — |
 
 ### 👂 LISTENING (10 games)
 
 | # | Game | SpeakToConfirm | EvidenceHighlight | SpeedTimer | BlindDictation | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|:---:|
-| 11 | audioFillBlanks | ✅ | 🔲 | 🔲 | ✅ | ✅ |
-| 12 | audioMultipleChoice | 🔲 | ✅ | 🔲 | 🔲 | ✅ |
-| 13 | audioSentenceOrder | 🔲 | 🔲 | 🔲 | 🔲 | ✅ |
-| 14 | audioTrueFalse | ✅ | ✅ | 🔲 | 🔲 | ✅ |
-| 15 | soundImageMatch | ✅ | 🔲 | ✅ | 🔲 | ✅ |
-| 16 | fastSpeechDecoder | ✅ | — | 🔲 | — | ✅ |
+| 11 | audioFillBlanks | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 12 | audioMultipleChoice | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 13 | audioSentenceOrder | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 14 | audioTrueFalse | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 15 | soundImageMatch | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 16 | fastSpeechDecoder | ✅ | — | ✅ | — | ✅ |
 | 17 | emotionRecognition | ✅ | — | — | — | ✅ |
 | 18 | detailSpotlight | — | — | — | — | ✅ |
 | 19 | listeningInference | — | — | — | — | ✅ |
@@ -270,123 +270,123 @@
 
 | # | Game | ReadingSelfEval | SpeakToConfirm | TypeToConfirm | EvidenceHighlight | SpeedTimer | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|:---:|:---:|
-| 21 | readAndAnswer | — | — | — | 🔲 | — | 🔲 |
-| 22 | findWordMeaning | — | — | — | — | — | 🔲 |
-| 23 | trueFalseReading | — | ✅ | — | 🔲 | — | 🔲 |
-| 24 | sentenceOrderReading | — | — | — | — | — | 🔲 |
-| 25 | readingSpeedCheck | ✅ | — | — | — | 🔲 | 🔲 |
-| 26 | guessTitle | — | — | — | — | — | 🔲 |
-| 27 | readAndMatch | — | ✅ | — | — | — | 🔲 |
-| 28 | paragraphSummary | ✅ | — | — | — | — | 🔲 |
-| 29 | readingInference | ✅ | — | — | 🔲 | — | 🔲 |
-| 30 | readingConclusion | ✅ | — | — | — | — | 🔲 |
-| 31 | clozeTest | — | — | ✅ | — | — | 🔲 |
-| 32 | skimmingScanning | — | — | — | — | 🔲 | 🔲 |
+| 21 | readAndAnswer | — | — | — | ✅ | — | ✅ |
+| 22 | findWordMeaning | — | — | — | — | — | ✅ |
+| 23 | trueFalseReading | — | ✅ | — | ✅ | — | ✅ |
+| 24 | sentenceOrderReading | — | — | — | — | — | ✅ |
+| 25 | readingSpeedCheck | ✅ | — | — | — | ✅ | ✅ |
+| 26 | guessTitle | — | — | — | — | — | ✅ |
+| 27 | readAndMatch | — | ✅ | — | — | — | ✅ |
+| 28 | paragraphSummary | ✅ | — | — | — | — | ✅ |
+| 29 | readingInference | ✅ | — | — | ✅ | — | ✅ |
+| 30 | readingConclusion | ✅ | — | — | — | — | ✅ |
+| 31 | clozeTest | — | — | ✅ | — | — | ✅ |
+| 32 | skimmingScanning | — | — | — | — | ✅ | ✅ |
 
 ### ✍️ WRITING (11 games)
 
 | # | Game | TypeToConfirm | ContextBuilder | BlindDictation | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|
-| 33 | sentenceBuilder | — | — | — | 🔲 |
-| 34 | completeSentence | — | — | — | 🔲 |
-| 35 | describeSituationWriting | — | — | — | 🔲 |
-| 36 | fixTheSentence | ✅ | — | — | 🔲 |
-| 37 | shortAnswerWriting | — | 🔲 | — | 🔲 |
-| 38 | opinionWriting | ✅ | — | — | 🔲 |
-| 39 | dailyJournal | — | — | — | 🔲 |
-| 40 | summarizeStoryWriting | ✅ | — | — | 🔲 |
-| 41 | writingEmail | — | — | — | 🔲 |
-| 42 | correctionWriting | — | — | — | 🔲 |
-| 43 | essayDrafting | ✅ | — | — | 🔲 |
+| 33 | sentenceBuilder | — | — | — | ✅ |
+| 34 | completeSentence | — | — | — | ✅ |
+| 35 | describeSituationWriting | — | — | — | ✅ |
+| 36 | fixTheSentence | ✅ | — | — | ✅ |
+| 37 | shortAnswerWriting | — | ✅ | — | ✅ |
+| 38 | opinionWriting | ✅ | — | — | ✅ |
+| 39 | dailyJournal | — | — | — | ✅ |
+| 40 | summarizeStoryWriting | ✅ | — | — | ✅ |
+| 41 | writingEmail | — | — | — | ✅ |
+| 42 | correctionWriting | — | — | — | ✅ |
+| 43 | essayDrafting | ✅ | — | — | ✅ |
 
 ### 📐 GRAMMAR (19 games)
 
 | # | Game | Jigsaw | Anagram | TypeToConfirm | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|
-| 44 | grammarQuest | ✅ | — | — | 🔲 |
-| 45 | sentenceCorrection | — | — | ✅ | 🔲 |
-| 46 | wordReorder | — | — | — | 🔲 |
-| 47 | tenseMastery | — | ✅ | — | 🔲 |
-| 48 | partsOfSpeech | ✅ | — | — | 🔲 |
-| 49 | subjectVerbAgreement | ✅ | — | — | 🔲 |
-| 50 | clauseConnector | ✅ | — | — | 🔲 |
-| 51 | voiceSwap | — | — | ✅ | 🔲 |
-| 52 | questionFormatter | ✅ | — | — | 🔲 |
-| 53 | articleInsertion | ✅ | — | — | 🔲 |
-| 54 | modifierPlacement | ✅ | — | — | 🔲 |
-| 55 | modalsSelection | ✅ | — | — | 🔲 |
-| 56 | prepositionChoice | ✅ | — | — | 🔲 |
-| 57 | pronounResolution | ✅ | — | — | 🔲 |
-| 58 | punctuationMastery | — | — | ✅ | 🔲 |
-| 59 | relativeClauses | ✅ | — | — | 🔲 |
-| 60 | conditionals | — | — | ✅ | 🔲 |
-| 61 | conjunctions | ✅ | — | — | 🔲 |
-| 62 | directIndirectSpeech | — | — | ✅ | 🔲 |
+| 44 | grammarQuest | ✅ | — | — | ✅ |
+| 45 | sentenceCorrection | — | — | ✅ | ✅ |
+| 46 | wordReorder | — | — | — | ✅ |
+| 47 | tenseMastery | — | ✅ | — | ✅ |
+| 48 | partsOfSpeech | ✅ | — | — | ✅ |
+| 49 | subjectVerbAgreement | ✅ | — | — | ✅ |
+| 50 | clauseConnector | ✅ | — | — | ✅ |
+| 51 | voiceSwap | — | — | ✅ | ✅ |
+| 52 | questionFormatter | ✅ | — | — | ✅ |
+| 53 | articleInsertion | ✅ | — | — | ✅ |
+| 54 | modifierPlacement | ✅ | — | — | ✅ |
+| 55 | modalsSelection | ✅ | — | — | ✅ |
+| 56 | prepositionChoice | ✅ | — | — | ✅ |
+| 57 | pronounResolution | ✅ | — | — | ✅ |
+| 58 | punctuationMastery | — | — | ✅ | ✅ |
+| 59 | relativeClauses | ✅ | — | — | ✅ |
+| 60 | conditionals | — | — | ✅ | ✅ |
+| 61 | conjunctions | ✅ | — | — | ✅ |
+| 62 | directIndirectSpeech | — | — | ✅ | ✅ |
 
 ### 📚 VOCABULARY (12 games)
 
 | # | Game | Anagram | ContextBuilder | SpeedTimer | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|
-| 63 | flashcards | — | — | — | 🔲 |
-| 64 | synonymSearch | ✅ | 🔲 | — | 🔲 |
-| 65 | antonymSearch | ✅ | — | — | 🔲 |
-| 66 | contextClues | ✅ | — | — | 🔲 |
-| 67 | phrasalVerbs | ✅ | 🔲 | — | 🔲 |
-| 68 | idioms | ✅ | — | — | 🔲 |
-| 69 | academicWord | ✅ | — | — | 🔲 |
-| 70 | topicVocab | — | — | — | 🔲 |
-| 71 | wordFormation | — | — | — | 🔲 |
-| 72 | prefixSuffix | — | — | — | 🔲 |
-| 73 | collocations | ✅ | 🔲 | — | 🔲 |
-| 74 | contextualUsage | ✅ | — | — | 🔲 |
+| 63 | flashcards | — | — | — | ✅ |
+| 64 | synonymSearch | ✅ | ✅ | — | ✅ |
+| 65 | antonymSearch | ✅ | — | — | ✅ |
+| 66 | contextClues | ✅ | — | — | ✅ |
+| 67 | phrasalVerbs | ✅ | ✅ | — | ✅ |
+| 68 | idioms | ✅ | — | — | ✅ |
+| 69 | academicWord | ✅ | — | — | ✅ |
+| 70 | topicVocab | — | — | — | ✅ |
+| 71 | wordFormation | — | — | — | ✅ |
+| 72 | prefixSuffix | — | — | — | ✅ |
+| 73 | collocations | ✅ | ✅ | — | ✅ |
+| 74 | contextualUsage | ✅ | — | — | ✅ |
 
 ### 🗣️ ACCENT (12 games)
 
 | # | Game | AccentSelfEval | ShadowPlayback | SpeedTimer | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|
-| 75 | minimalPairs | ✅ | 🔲 | — | 🔲 |
-| 76 | intonationMimic | ✅ | 🔲 | — | 🔲 |
-| 77 | syllableStress | ✅ | — | — | 🔲 |
-| 78 | wordLinking | ✅ | 🔲 | — | 🔲 |
-| 79 | shadowingChallenge | ✅ | 🔲 | — | 🔲 |
-| 80 | vowelDistinction | ✅ | — | — | 🔲 |
-| 81 | consonantClarity | ✅ | 🔲 | — | 🔲 |
-| 82 | pitchPatternMatch | ✅ | — | — | 🔲 |
-| 83 | speedVariance | ✅ | — | 🔲 | 🔲 |
-| 84 | dialectDrill | ✅ | 🔲 | — | 🔲 |
-| 85 | connectedSpeech | ✅ | 🔲 | — | 🔲 |
-| 86 | pitchModulation | ✅ | — | — | 🔲 |
+| 75 | minimalPairs | ✅ | ✅ | — | ✅ |
+| 76 | intonationMimic | ✅ | ✅ | — | ✅ |
+| 77 | syllableStress | ✅ | — | — | ✅ |
+| 78 | wordLinking | ✅ | ✅ | — | ✅ |
+| 79 | shadowingChallenge | ✅ | ✅ | — | ✅ |
+| 80 | vowelDistinction | ✅ | — | — | ✅ |
+| 81 | consonantClarity | ✅ | ✅ | — | ✅ |
+| 82 | pitchPatternMatch | ✅ | — | — | ✅ |
+| 83 | speedVariance | ✅ | — | ✅ | ✅ |
+| 84 | dialectDrill | ✅ | ✅ | — | ✅ |
+| 85 | connectedSpeech | ✅ | ✅ | — | ✅ |
+| 86 | pitchModulation | ✅ | — | — | ✅ |
 
 ### 🎭 ROLEPLAY (10 games)
 
 | # | Game | SpeakToConfirm | SpeedTimer | ErrorJournal |
 |---|------|:---:|:---:|:---:|
-| 87 | branchingDialogue | ✅ | — | 🔲 |
-| 88 | situationalResponse | ✅ | — | 🔲 |
-| 89 | jobInterview | ✅ | — | 🔲 |
-| 90 | medicalConsult | ✅ | — | 🔲 |
-| 91 | gourmetOrder | ✅ | — | 🔲 |
-| 92 | travelDesk | ✅ | — | 🔲 |
-| 93 | conflictResolver | ✅ | — | 🔲 |
-| 94 | elevatorPitch | ✅ | — | 🔲 |
-| 95 | socialSpark | ✅ | — | 🔲 |
-| 96 | emergencyHub | ✅ | — | 🔲 |
+| 87 | branchingDialogue | ✅ | — | ✅ |
+| 88 | situationalResponse | ✅ | — | ✅ |
+| 89 | jobInterview | ✅ | — | ✅ |
+| 90 | medicalConsult | ✅ | — | ✅ |
+| 91 | gourmetOrder | ✅ | — | ✅ |
+| 92 | travelDesk | ✅ | — | ✅ |
+| 93 | conflictResolver | ✅ | — | ✅ |
+| 94 | elevatorPitch | ✅ | — | ✅ |
+| 95 | socialSpark | ✅ | — | ✅ |
+| 96 | emergencyHub | ✅ | — | ✅ |
 
 ### 🏆 ELITE MASTERY (4 games)
 
 | # | Game | SpeakToConfirm | Anagram | ContextBuilder | SpeedTimer | ErrorJournal |
 |---|------|:---:|:---:|:---:|:---:|:---:|
-| 97 | storyBuilder | — | — | — | — | 🔲 |
-| 98 | idiomMatch | ✅ | — | 🔲 | — | 🔲 |
-| 99 | speedSpelling | — | — | — | 🔲 | 🔲 |
-| 100 | accentShadowing | ✅ | — | — | — | 🔲 |
+| 97 | storyBuilder | — | — | — | — | ✅ |
+| 98 | idiomMatch | ✅ | — | ✅ | — | ✅ |
+| 99 | speedSpelling | — | — | — | ✅ | ✅ |
+| 100 | accentShadowing | ✅ | — | — | — | ✅ |
 
 ### 📊 DAILY CHALLENGES (2 mini-games)
 
 | # | Game | Anagram | Jigsaw | ErrorJournal |
 |---|------|:---:|:---:|:---:|
-| — | wordMixer | ✅ | — | 🔲 |
-| — | wordSnap | — | ✅ | 🔲 |
+| — | wordMixer | ✅ | — | ✅ |
+| — | wordSnap | — | ✅ | ✅ |
 
 ### MECHANIC USAGE SUMMARY
 
@@ -416,8 +416,8 @@
 | A: Foundation | 13 | ✅ 13 | 0 |
 | B: Existing Mechanics | 8 | ✅ 8 (4 fixed) | 0 |
 | C: New Mechanics | 5 | ✅ 5 | 0 |
-| D: Upgrade 100 Games | 100 | 🔲 15 | 85 |
+| D: Upgrade 100 Games | 100 | ✅ 100 | 0 |
 | E: Launch | 6 | 🔲 0 | 6 |
-| **TOTAL** | **132** | **41 done** | **91 remaining** |
+| **TOTAL** | **132** | **126 done** | **6 remaining** |
 
 **Current Rating: 8.1/10 → After all phases: 10/10**
