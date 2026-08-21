@@ -32,6 +32,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _pendingTypeSubmit = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -43,8 +44,28 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
     );
   }
 
-  void _submitAnswer(bool correct) {
+  void _submitInitialAnswer(bool correct) {
     if (_isAnswered) return;
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _pendingTypeSubmit = true;
+      });
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool correct) {
+    setState(() => _pendingTypeSubmit = false);
 
     if (correct) {
       _hapticService.success();
@@ -82,6 +103,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingTypeSubmit = false;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
             setState(() {
@@ -143,7 +165,60 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                             GrammarQuestInstruction(
                               primaryColor: theme.primaryColor,
                             ),
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 16.h),
+                            if (quest?.grammarRule != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 24.h),
+                                padding: EdgeInsets.all(16.r),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.rule, color: theme.primaryColor, size: 16.sp),
+                                        SizedBox(width: 8.w),
+                                        Text(
+                                          "GRAMMAR RULE",
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w800,
+                                            color: theme.primaryColor,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8.h),
+                                    Text(
+                                      quest!.grammarRule!,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
+                                      ),
+                                    ),
+                                    if (quest.ruleExplanation != null) ...[
+                                      SizedBox(height: 8.h),
+                                      Text(
+                                        quest.ruleExplanation!,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 14.sp,
+                                          color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
+                                          height: 1.4,
+                                        ),
+                                      ),
+                                    ]
+                                  ],
+                                ),
+                              ),
                             if (_isAnswered)
                               Text(
                                 targetText,
@@ -168,12 +243,12 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!_isAnswered && targetText.isNotEmpty)
+                            if (!_isAnswered && !_pendingTypeSubmit && targetText.isNotEmpty)
                               DynamicJigsawWrapper(
                                 expectedText: targetText,
                                 primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitAnswer(true),
-                                onSkipped: () => _submitAnswer(false),
+                                onConfirmed: () => _submitInitialAnswer(true),
+                                onSkipped: () => _submitInitialAnswer(false),
                                 isPositioned: false,
                               ),
                             SizedBox(height: _isAnswered ? 160.h : 60.h),
@@ -183,6 +258,15 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
                     ),
                   ],
                 ),
+                if (_pendingTypeSubmit && !_isAnswered && targetText.isNotEmpty)
+                  TypeToConfirmOverlay(
+                    expectedText: targetText,
+                    displayText: "Type the complete sentence to lock in the rule",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onSkipped: () => _submitFinalAnswer(false),
+                    allowSkip: true,
+                  ),
         );
       },
     );

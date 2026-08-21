@@ -13,6 +13,7 @@ import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reo
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_floating_tile.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_assembly_card.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/widgets/word_reorder_check_button.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class WordReorderScreen extends StatefulWidget {
   final int level;
@@ -35,6 +36,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _pendingTypeSubmit = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
 
@@ -81,16 +83,38 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     if (correct) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() => _pendingTypeSubmit = true);
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
     }
+  }
 
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = correct;
-    });
-    context.read<GrammarBloc>().add(SubmitAnswer(correct));
+  void _submitFinalAnswer(bool correct) {
+    setState(() => _pendingTypeSubmit = false);
+
+    if (correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(const SubmitAnswer(false));
+    }
   }
 
   @override
@@ -111,6 +135,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _pendingTypeSubmit = false;
 
               _assembledIndices.clear();
               _availableIndices.clear();
@@ -172,7 +197,35 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                         children: [
                           SizedBox(height: 10.h),
                           WordReorderInstruction(primaryColor: theme.primaryColor),
-                          SizedBox(height: 20.h),
+                          SizedBox(height: 16.h),
+                          if (quest?.structureType != null)
+                            Container(
+                              margin: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
+                              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                              decoration: BoxDecoration(
+                                color: theme.primaryColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.account_tree_outlined, color: theme.primaryColor, size: 16.sp),
+                                  SizedBox(width: 8.w),
+                                  Text(
+                                    "TARGET STRUCTURE: ${quest!.structureType!.toUpperCase()}",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w800,
+                                      color: theme.primaryColor,
+                                      letterSpacing: 1.5,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          SizedBox(height: 8.h),
                           WordReorderAssemblyCard(
                             assembledIndices: _assembledIndices,
                             shuffledWords: shuffledWords,
@@ -210,12 +263,20 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                           ),
                         ),
                         SizedBox(height: 20.h),
-                        if (!_isAnswered)
+                        if (!_isAnswered && !_pendingTypeSubmit)
                           WordReorderCheckButton(
                             hasWords: _assembledIndices.isNotEmpty,
                             isDark: isDark,
                             primaryColor: theme.primaryColor,
                             onCheck: () => _checkSentence(correctOrder),
+                          ),
+                        if (_pendingTypeSubmit && !_isAnswered)
+                          TypeToConfirmOverlay(
+                            expectedText: correctOrder.map((idx) => shuffledWords[idx]).join(" "),
+                            primaryColor: theme.primaryColor,
+                            onConfirmed: () => _submitFinalAnswer(true),
+                            onSkipped: () => _submitFinalAnswer(false),
+                            isPositioned: false,
                           ),
                         SizedBox(height: _isAnswered ? 160.h : 60.h),
                       ],

@@ -21,6 +21,10 @@ class GrammarQuest extends GameQuest {
   final String? passiveSentence;
   final String? activeSentence;
   final String? grammarRule;
+  final String? ruleExplanation;
+  final String? errorHighlight;
+  final String? structureType;
+  final String? timelinePosition;
 
   const GrammarQuest({
     required super.id,
@@ -59,6 +63,10 @@ class GrammarQuest extends GameQuest {
     this.passiveSentence,
     this.activeSentence,
     this.grammarRule,
+    this.ruleExplanation,
+    this.errorHighlight,
+    this.structureType,
+    this.timelinePosition,
     super.targetWord,
     super.sentence,
     super.question,
@@ -92,5 +100,9 @@ class GrammarQuest extends GameQuest {
     passiveSentence,
     activeSentence,
     grammarRule,
+    ruleExplanation,
+    errorHighlight,
+    structureType,
+    timelinePosition,
   ];
 }

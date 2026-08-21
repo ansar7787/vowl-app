@@ -120,10 +120,10 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Status |
 |---|------|--------|----------|------------|--------|
-| 44 | grammarQuest | 7→10 | Add `grammarRule` + `ruleExplanation` | Rule card before question | 🔲 |
-| 45 | sentenceCorrection | 8→10 | Add `errorHighlight` field | Underline error word | 🔲 |
-| 46 | wordReorder | 8→10 | Add `structureType` (SVO/question) | Color-code S(green) V(blue) O(orange) | 🔲 |
-| 47 | tenseMastery | 8→10 | Add `timelinePosition` | Visual timeline for verb placement | 🔲 |
+| 44 | **Grammar Quest** | grammarQuest | ✅ | TypeToConfirm (Lock in rule) | Add `grammarRule` + `ruleExplanation` display |
+| 45 | **Sentence Correction** | sentenceCorrection | ✅ | TypeToConfirm (Verbal eval fallback) | Add `errorHighlight` visual underlining |
+| 46 | **Word Reorder** | wordReorder | ✅ | TypeToConfirm (Finalize syntax) | Add `structureType` target guide visual |
+| 47 | **Tense Mastery** | tenseMastery | ✅ | TypeToConfirm (Timeline lock) | Visual timeline with `timelinePosition` |
 | 48 | partsOfSpeech | 8→10 | Add `transformations` | Word family tree visual | 🔲 |
 | 49 | subjectVerbAgreement | 8→10 | Add `subjectType` | Highlight subject + rule display | 🔲 |
 | 50 | clauseConnector | 8→10 | Add `connectorCategory` | Connector map visual | 🔲 |

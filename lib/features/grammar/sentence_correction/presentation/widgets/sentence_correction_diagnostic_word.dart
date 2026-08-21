@@ -9,6 +9,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
   final bool isSuspected;
   final bool isCorrectZap;
   final bool isWrongZap;
+  final bool isErrorHighlight;
   final bool isDark;
   final Color primaryColor;
   final VoidCallback onTap;
@@ -20,6 +21,7 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
     required this.isSuspected,
     required this.isCorrectZap,
     required this.isWrongZap,
+    this.isErrorHighlight = false,
     required this.isDark,
     required this.primaryColor,
     required this.onTap,
@@ -33,6 +35,13 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
     Color textColor = isDark ? Colors.white : Colors.black87;
     List<BoxShadow> shadows = [];
     TextDecoration? textDecoration;
+    Color? decorationColor;
+
+    if (isErrorHighlight && !isCorrectZap && !isWrongZap) {
+      textDecoration = TextDecoration.underline;
+      decorationColor = Colors.orangeAccent;
+      textColor = isDark ? Colors.orangeAccent : Colors.deepOrange;
+    }
 
     if (isCorrectZap) {
       itemColor = Colors.greenAccent.withValues(alpha: 0.15);
@@ -90,6 +99,8 @@ class SentenceCorrectionDiagnosticWord extends StatelessWidget {
                     : FontWeight.normal,
                 color: textColor,
                 decoration: textDecoration,
+                decorationColor: decorationColor,
+                decorationThickness: 2,
               ),
             ),
           ),

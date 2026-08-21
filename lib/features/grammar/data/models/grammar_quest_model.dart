@@ -37,6 +37,10 @@ class GrammarQuestModel extends GrammarQuest {
     super.incorrectPart,
     super.correctedPart,
     super.grammarRule,
+    super.ruleExplanation,
+    super.errorHighlight,
+    super.structureType,
+    super.timelinePosition,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -115,6 +119,10 @@ class GrammarQuestModel extends GrammarQuest {
       incorrectPart: map['incorrectPart'] as String?,
       correctedPart: map['correctedPart'] as String?,
       grammarRule: getString(map['grammarRule']),
+      ruleExplanation: getString(map['ruleExplanation']),
+      errorHighlight: getString(map['errorHighlight']),
+      structureType: getString(map['structureType']),
+      timelinePosition: getString(map['timelinePosition']),
     );
   }
 
@@ -151,6 +159,10 @@ class GrammarQuestModel extends GrammarQuest {
       'incorrectPart': incorrectPart,
       'correctedPart': correctedPart,
       'grammarRule': grammarRule,
+      'ruleExplanation': ruleExplanation,
+      'errorHighlight': errorHighlight,
+      'structureType': structureType,
+      'timelinePosition': timelinePosition,
     };
   }
 }

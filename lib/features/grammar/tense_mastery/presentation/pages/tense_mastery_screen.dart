@@ -13,7 +13,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_instruction.dart';
 import 'package:vowl/features/grammar/tense_mastery/presentation/widgets/tense_mastery_timeline_slider.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class TenseMasteryScreen extends StatefulWidget {
   final int level;
@@ -314,12 +314,14 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                     ),
                   ),
                   if (_pendingSubmit && !_isAnswered)
-                            DynamicAnagramWrapper(
-                              expectedText: _currentTense,
+                            TypeToConfirmOverlay(
+                              expectedText: quest.correctAnswer ?? quest.sentence ?? _currentTense,
+                              displayText: "Type the complete sentence to lock in the timeline",
                               primaryColor: theme.primaryColor,
                               onConfirmed: () => _submitFinalAnswer(quest, true),
-                              onFailed: () => _submitFinalAnswer(quest, false),
+                              onSkipped: () => _submitFinalAnswer(quest, false),
                               isPositioned: false,
+                              allowSkip: true,
                             ),
                           SizedBox(height: (_isAnswered || _pendingSubmit) ? 160.h : 60.h),
                         ],
