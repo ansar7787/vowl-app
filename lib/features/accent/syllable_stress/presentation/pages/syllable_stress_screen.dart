@@ -15,8 +15,8 @@ import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_instruction.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_prompt_card.dart';
 import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_pulse_speaker.dart';
-import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_stress_drum_console.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/widgets/syllable_block_visualizer.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SyllableStressScreen extends StatefulWidget {
   final int level;
@@ -312,33 +312,24 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                                       fit: BoxFit.scaleDown,
                                                       child: SizedBox(
                                                         width: maxWidth - 48.w,
-                                                        child: SyllableStressDrumConsole(
+                                                        child: SyllableBlockVisualizer(
                                                           syllables: syllables,
-                                                          correctIndex:
-                                                              quest
-                                                                  .correctAnswerIndex ??
-                                                              0,
+                                                          correctIndex: quest.correctAnswerIndex ?? 0,
                                                           color: theme.primaryColor,
                                                           isDark: isDark,
-                                                          isAnswered:
-                                                              _isAnswered ||
-                                                              _isFirstStagePassed,
-                                                          selectedIndex:
-                                                              _selectedIndex,
+                                                          isAnswered: _isAnswered || _isFirstStagePassed,
+                                                          selectedIndex: _selectedIndex,
                                                           onPadTap: _onPadTap,
                                                         ),
                                                       ),
                                                     ),
                                                   )
-                                                : SyllableStressDrumConsole(
+                                                : SyllableBlockVisualizer(
                                                     syllables: syllables,
-                                                    correctIndex:
-                                                        quest.correctAnswerIndex ?? 0,
+                                                    correctIndex: quest.correctAnswerIndex ?? 0,
                                                     color: theme.primaryColor,
                                                     isDark: isDark,
-                                                    isAnswered:
-                                                        _isAnswered ||
-                                                        _isFirstStagePassed,
+                                                    isAnswered: _isAnswered || _isFirstStagePassed,
                                                     selectedIndex: _selectedIndex,
                                                     onPadTap: _onPadTap,
                                                   ),
@@ -349,12 +340,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  SpeakToConfirmOverlay(
+                                    expectedText: quest.word ?? "",
+                                    displayText: "Speak the word with the correct stress:\n${quest.word ?? ""}",
                                     primaryColor: theme.primaryColor,
-                                    isCompact: isCompact,
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    onConfirmed: () => _submitVerbalEvaluation(true),
+                                    onSkipped: () => _submitVerbalEvaluation(false),
+                                    isPositioned: false,
                                   ),
                                 SizedBox(height: _isAnswered ? 180.h : 0),
                               ],
