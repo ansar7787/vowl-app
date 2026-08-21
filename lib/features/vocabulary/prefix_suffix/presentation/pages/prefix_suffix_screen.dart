@@ -16,6 +16,8 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import '../widgets/prefix_suffix_mission_control.dart';
 import '../widgets/prefix_suffix_docking_terminal.dart';
 import '../widgets/prefix_suffix_root_rover.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_meaning_breakdown.dart';
+import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
 
 class PrefixSuffixScreen extends StatefulWidget {
   final int level;
@@ -38,6 +40,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  bool _isFirstStagePassed = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
@@ -50,14 +53,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   }
 
   void _onRoverDrag(DragUpdateDetails details) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     setState(() {
       _dragOffset += details.delta;
     });
   }
 
   void _onRoverRelease(VocabularyQuest quest) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isFirstStagePassed) return;
     if (_lastConstraints == null) return;
 
     final isCompact = _lastConstraints!.maxHeight < 580;
@@ -118,10 +121,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
       _soundService.playCorrect();
       _hapticService.success();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
       });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
       _soundService.playWrong();
       _hapticService.error();
@@ -130,6 +131,26 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
         _isCorrect = false;
       });
       context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    final bloc = context.read<VocabularyBloc>();
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      bloc.add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      bloc.add(SubmitAnswer(false));
     }
   }
 
@@ -189,6 +210,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _isFirstStagePassed = false;
               _dragOffset = Offset.zero;
             });
           } else if (state.answerStatus.isAnswered && !_isAnswered) {
@@ -298,7 +320,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                       instruction:
                                           quest.hint ?? quest.instruction,
                                     )
-                                    .animate(target: _isAnswered ? 1 : 0)
+                                    .animate(target: (_isAnswered || _isFirstStagePassed) ? 1 : 0)
                                     .fadeOut(duration: 400.ms)
                                     .slideY(
                                       begin: 0,
@@ -357,6 +379,34 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   },
                 ),
               ),
+              if (_isFirstStagePassed && !_isAnswered)
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                    child: Column(
+                      children: [
+                        if (quest?.meaningBreakdown != null)
+                          PrefixSuffixMeaningBreakdown(
+                            meaningBreakdown: quest!.meaningBreakdown!,
+                            color: theme.primaryColor,
+                          ),
+                        SizedBox(height: 20.h),
+                        DynamicAnagramWrapper(
+                          title: 'SPELL THE TARGET WORD',
+                          subtitle: 'Tap all letters to rebuild the word!',
+                          expectedText: quest?.correctAnswer ?? '',
+                          primaryColor: theme.primaryColor,
+                          onConfirmed: () => _submitFinalAnswer(true),
+                          onFailed: () {},
+                          onFailedWithSpelling: (wrongWord) =>
+                              _submitFinalAnswer(false, wrongWord: wrongWord),
+                          isPositioned: false,
+                        ),
+                        SizedBox(height: 60.h),
+                      ],
+                    ),
+                  ),
+                ),
             ],
           ),
         );

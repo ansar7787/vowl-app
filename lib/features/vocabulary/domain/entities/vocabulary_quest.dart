@@ -22,6 +22,7 @@ class VocabularyQuest extends GameQuest {
   final List<String>? collocations;
   final List<String>? relatedWords;
   final List<String>? familyTree;
+  final String? meaningBreakdown;
 
   const VocabularyQuest({
     required super.id,
@@ -67,6 +68,7 @@ class VocabularyQuest extends GameQuest {
     this.collocations,
     this.relatedWords,
     this.familyTree,
+    this.meaningBreakdown,
   });
 
   final String? rootWord;
