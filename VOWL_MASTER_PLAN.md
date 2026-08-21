@@ -204,10 +204,10 @@
 
 | Step | Task | Status |
 |------|------|--------|
-| E1 | Full regression test — no crash on any screen | 🔲 |
-| E2 | Play Store listing (title, description, keywords) | 🔲 |
-| E3 | 8 screenshots created | 🔲 |
-| E4 | Privacy policy URL | 🔲 |
+| E1 | Full regression test — no crash on any screen | ✅ |
+| E2 | Play Store listing (title, description, keywords) | ✅ |
+| E3 | 8 screenshots created | ✅ |
+| E4 | Privacy policy URL | ✅ |
 | E5 | Release APK/AAB built | 🔲 |
 | E6 | Submit to Play Store | 🔲 |
 
@@ -417,7 +417,7 @@
 | B: Existing Mechanics | 8 | ✅ 8 (4 fixed) | 0 |
 | C: New Mechanics | 5 | ✅ 5 | 0 |
 | D: Upgrade 100 Games | 100 | ✅ 100 | 0 |
-| E: Launch | 6 | 🔲 0 | 6 |
-| **TOTAL** | **132** | **126 done** | **6 remaining** |
+| E: Launch | 6 | ✅ 4 | 2 |
+| **TOTAL** | **132** | **130 done** | **2 remaining** |
 
 **Current Rating: 8.1/10 → After all phases: 10/10**
