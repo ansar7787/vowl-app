@@ -13,6 +13,9 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_header.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/situation_speaking_fog_scrubber_panel.dart';
@@ -46,6 +49,8 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
 
   late AnimationController _shimmerController;
   double _timeVal = 0.0;
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void initState() {
@@ -76,7 +81,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, String textToSpeak) {
     if (_isAnswered) return;
 
     setState(() {
@@ -91,8 +96,26 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Situation Speaking',
+          userAnswer: '[Failed Context/Timer]',
+          correctAnswer: textToSpeak,
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
+  }
+  
+  void _onTimeUp(String textToSpeak) {
+    if (_isAnswered) return;
+    _submitVerbalEvaluation(false, textToSpeak);
   }
 
   void _tutorPass() {
@@ -134,6 +157,7 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
               _isAnswered = false;
               _isCorrect = null;
               _scrubProgress = 0.0;
+              _timerKey.currentState?.start();
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -223,15 +247,30 @@ class _SituationSpeakingScreenState extends State<SituationSpeakingScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
+                              if (!_isAnswered)
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 24.h),
+                                  child: SpeedChallengeTimer(
+                                    key: _timerKey,
+                                    durationSeconds: 20,
+                                    primaryColor: theme.primaryColor,
+                                    onTimeUp: () => _onTimeUp(quest.textToSpeak ?? ""),
+                                    autoStart: true,
+                                  ),
+                                ),
                               if (!_isAnswered && _scrubProgress >= 1.0)
                                 SpeakingSelfEvaluationControls(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
                                   isDark: isDark,
-                                  onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
-                                  onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                  onConfirmed: () {
+                                    _timerKey.currentState?.stop();
+                                    _submitVerbalEvaluation(true, quest.textToSpeak ?? "");
+                                  },
+                                  onSkipped: () {
+                                    _timerKey.currentState?.stop();
+                                    _submitVerbalEvaluation(false, quest.textToSpeak ?? "");
+                                  },
                                 ),
                             ],
                           ),

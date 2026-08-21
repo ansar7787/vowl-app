@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class DynamicJigsawWrapper extends StatefulWidget {
   final String expectedText;
@@ -31,6 +33,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   late List<_WordTile?> _placedTiles;
   late String _targetSentence;
   bool _hasError = false;
+  bool _isSubmitting = false;
 
   @override
   void initState() {
@@ -65,6 +68,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   }
 
   void _onAvailableTileTapped(_WordTile tile) {
+    if (_isSubmitting) return;
     if (_hasError) setState(() => _hasError = false);
 
     int emptyIndex = _placedTiles.indexWhere((t) => t == null);
@@ -73,10 +77,19 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
         _placedTiles[emptyIndex] = tile;
         _availableTiles.remove(tile);
       });
+
+      // Auto-submit if all tiles are placed and correct
+      if (!_placedTiles.contains(null)) {
+        String currentSentence = _placedTiles.map((t) => t!.word).join(' ');
+        if (currentSentence == _targetSentence) {
+          _onSubmit();
+        }
+      }
     }
   }
 
   void _onPlacedTileTapped(int index) {
+    if (_isSubmitting) return;
     if (_hasError) setState(() => _hasError = false);
 
     _WordTile? tile = _placedTiles[index];
@@ -89,6 +102,7 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
   }
 
   void _onSubmit() {
+    if (_isSubmitting) return;
     if (_placedTiles.contains(null)) {
       setState(() => _hasError = true);
       return;
@@ -97,6 +111,13 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
     String currentSentence = _placedTiles.map((t) => t!.word).join(' ');
 
     if (currentSentence == _targetSentence) {
+      setState(() => _isSubmitting = true);
+      // Award bonus coins
+      if (widget.bonusCoins != null && widget.bonusCoins! > 0) {
+        context.read<EconomyBloc>().add(
+          EconomyAddCoinsRequested(widget.bonusCoins!),
+        );
+      }
       widget.onConfirmed();
     } else {
       setState(() {
@@ -197,6 +218,27 @@ class _DynamicJigsawWrapperState extends State<DynamicJigsawWrapper> {
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            // Word count badge
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 10.w,
+                                vertical: 4.h,
+                              ),
+                              decoration: BoxDecoration(
+                                color: widget.primaryColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(20.r),
+                              ),
+                              child: Text(
+                                '${_placedTiles.length} words',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: widget.primaryColor,
+                                  letterSpacing: 1,
+                                ),
                               ),
                             ),
                           ],

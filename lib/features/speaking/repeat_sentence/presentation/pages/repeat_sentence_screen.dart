@@ -14,7 +14,9 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_instruction.dart';
 import 'package:vowl/features/speaking/repeat_sentence/presentation/widgets/repeat_sentence_audition_card.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class RepeatSentenceScreen extends StatefulWidget {
   final int level;
@@ -60,7 +62,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, GameQuest quest) {
     if (_isAnswered) return;
     setState(() {
       _isAnswered = true;
@@ -73,6 +75,19 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: quest.instruction,
+          userAnswer: '[Pronunciation Error]',
+          correctAnswer: quest.textToSpeak ?? '',
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -191,14 +206,13 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               if (!_isAnswered)
-                                SpeakingSelfEvaluationControls(
+                                ShadowPlaybackCompare(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
-                                  isDark: isDark,
                                   onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
+                                      _submitVerbalEvaluation(true, quest),
                                   onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                      _submitVerbalEvaluation(false, quest),
                                 ),
                             ],
                           ),

@@ -13,6 +13,8 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_header.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/scene_description_scenic_radar_map.dart';
@@ -109,6 +111,19 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: _hotspotPrompts[_activeHotspot],
+          userAnswer: '[Failed Self-Evaluation]',
+          correctAnswer: _hotspotPrompts[_activeHotspot],
+          level: widget.level,
+        );
+      }
+      
       setState(() {
         _isAnswered = true;
         _isCorrect = false;

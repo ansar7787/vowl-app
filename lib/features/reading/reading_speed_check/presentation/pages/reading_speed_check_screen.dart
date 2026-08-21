@@ -15,7 +15,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_instruction.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_pulse_zone.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_question_area.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/widgets/reading_speed_result.dart';
 
 class ReadingSpeedCheckScreen extends StatefulWidget {
@@ -220,7 +220,6 @@ class _ReadingSpeedCheckScreenState extends State<ReadingSpeedCheckScreen> {
                                 correctAnswer: quest.correctAnswer ?? "",
                                 explanation: quest.explanation,
                                 primaryColor: theme.primaryColor,
-                                isDark: isDark,
                                 onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                               ),
                             ],

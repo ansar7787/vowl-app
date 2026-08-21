@@ -17,6 +17,14 @@ class SpeakingQuest extends GameQuest {
   final String? targetPhoneme;
   final String? expression;
   final List<String>? smartReplies;
+  final String? pronunciationTips;
+  final String? contextClue;
+  final List<String>? keyVocabulary;
+  final String? followUpQuestion;
+  final String? emotionTag;
+  final List<String>? commonMistakes;
+  final List<String>? bonusAntonyms;
+  final String? situationExample;
 
   const SpeakingQuest({
     required super.id,
@@ -53,6 +61,14 @@ class SpeakingQuest extends GameQuest {
     this.targetPhoneme,
     this.expression,
     this.smartReplies,
+    this.pronunciationTips,
+    this.contextClue,
+    this.keyVocabulary,
+    this.followUpQuestion,
+    this.emotionTag,
+    this.commonMistakes,
+    this.bonusAntonyms,
+    this.situationExample,
   });
 
   @override
@@ -72,5 +88,13 @@ class SpeakingQuest extends GameQuest {
     targetPhoneme,
     expression,
     smartReplies,
+    pronunciationTips,
+    contextClue,
+    keyVocabulary,
+    followUpQuestion,
+    emotionTag,
+    commonMistakes,
+    bonusAntonyms,
+    situationExample,
   ];
 }

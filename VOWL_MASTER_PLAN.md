@@ -1,277 +1,423 @@
-# VOWL — 100 Adult Games: Master Plan & Task Tracker
+# VOWL — MASTER PLAN & TASK TRACKER (100 Games → 10/10)
 
-> **Generated**: 2026-08-18 | **Games**: 100 | **Categories**: 9 | **Levels/Game**: 200 | **Total Levels**: 20,000
-
----
-
-## ✅ CODE VERIFICATION RESULTS (Confirmed from actual source code)
-
-### All 100 Games Have Dedicated Screens
-Verified in `app_router_game_resolvers.dart` (806 lines): Every single `GameSubtype` maps to a **unique, dedicated screen widget** — no two games share the same screen. Each game has its own folder with its own screen file.
-
-### Free-of-Cost Stack (Verified from `pubspec.yaml`)
-| Service | Package | Cost | Proof |
-|---------|---------|------|-------|
-| Speech Recognition | `speech_to_text: ^7.1.0` | **$0** (on-device) | Line 37 |
-| Text-to-Speech | `flutter_tts: ^4.2.5` | **$0** (on-device) | Line 36 |
-| Ad Revenue | `google_mobile_ads: ^9.1.0` | **$0** (earns money) | Line 29 |
-| Auth | `firebase_auth: ^6.4.0` | **$0** (free 10K/month) | Line 17 |
-| Database | `cloud_firestore: ^6.3.0` | **$0** (free 1GB) | Line 18 |
-| Analytics | `firebase_analytics: ^12.3.0` | **$0** | Line 35 |
-| Crash Reports | `firebase_crashlytics: ^5.2.0` | **$0** | Line 51 |
-| Translation | `google_mlkit_translation` | **$0** (on-device ML) | Line 64 |
-| Text Recognition | `google_mlkit_text_recognition` | **$0** (on-device ML) | Line 67 |
-| Handwriting | `google_mlkit_digital_ink_recognition` | **$0** (on-device ML) | Line 68 |
-| **TOTAL RUNNING COST** | | **$0/month** | |
+> **Updated**: 2026-08-21 | **100 Games** | **9 Categories** | **$0/month** | **20,000 Levels**
 
 ---
 
-## 🎯 PEDAGOGICAL GUARANTEE: "No Skill, No Pass"
+## STEP-BY-STEP EXECUTION ORDER
 
-> **RULE**: If the user doesn't ACTUALLY USE the skill, the game is BROKEN.
+> ✅ = Done | 🔲 = To Do | 🔨 = In Progress | Do steps in order!
 
-| Category | User MUST Do This | If They Don't → Game is Useless |
-|----------|------------------|---------------------------------|
-| **Speaking** | 🎤 Speak into mic, speech recognized | Just tapping buttons = NO speaking learned |
-| **Listening** | 🔊 Listen to TTS audio, then answer | Just reading text = NO listening learned |
-| **Reading** | 📖 Read full passage, comprehend | Just guessing from options = NO reading learned |
-| **Writing** | ✍️ Type/write actual sentences | Just tapping choices = NO writing learned |
-| **Grammar** | 🧠 Apply grammar rules to transform sentences | Just memorizing = NO grammar learned |
-| **Vocabulary** | 💡 Recall meaning, use in context | Just seeing words = NO vocabulary learned |
-| **Accent** | 🗣️ Mimic sounds, record & compare | Just listening = NO accent learned |
-| **Roleplay** | 🎭 Make real conversation choices | Just reading scripts = NO roleplay learned |
-| **Elite Mastery** | 🏆 Combine all skills creatively | Just one skill = NO mastery |
+### PHASE A: FOUNDATION (Already Done ✅)
 
----
+| Step | Task | Status | Impact |
+|------|------|--------|--------|
+| A1 | GameQuest entity model | ✅ | All 100 games |
+| A2 | CurriculumService JSON loader | ✅ | All 100 games |
+| A3 | 9 Category BLoCs | ✅ | All 100 games |
+| A4 | GameRoutes + AppRouterGameResolvers | ✅ | All 100 games |
+| A5 | 100 dedicated screen widgets | ✅ | All 100 games |
+| A6 | 2000 JSON curriculum files | ✅ | All 100 games |
+| A7 | SpeechService (STT on-device) | ✅ | 22 games |
+| A8 | TtsService (TTS on-device) | ✅ | 50+ games |
+| A9 | SoundService (SFX) | ✅ | All 100 games |
+| A10 | ModernCategoryMap (level selector) | ✅ | All 100 games |
+| A11 | StoryService + GameInstructionService | ✅ | All 100 games |
+| A12 | Firebase Auth + Firestore | ✅ | All users |
+| A13 | Google Mobile Ads | ✅ | Revenue |
 
-## PHASE 1: 100 ADULT GAMES — FULL TRACKER
+### PHASE B: EXISTING 8 MECHANICS (Audited & Fixed ✅)
 
-### CAT-1: 🎤 SPEAKING (10 games) — User MUST speak into microphone
+| Step | Mechanic | File | Status | Games Using | Fixes Applied |
+|------|----------|------|--------|-------------|---------------|
+| B1 | DynamicAnagramWrapper | `game_mechanics/` | ✅ Fixed | 10 games | Clear All button added |
+| B2 | DynamicJigsawWrapper | `game_mechanics/` | ✅ Fixed | 14 games | Auto-submit + coin award + word count badge |
+| B3 | SpeakToConfirmOverlay | `game_mechanics/` | ✅ Perfect | 20 games | No changes needed |
+| B4 | TypeToConfirmOverlay | `game_mechanics/` | ✅ Solid | 10 games | No changes needed |
+| B5 | SpeakingSelfEvaluationControls | `game_mechanics/` | ✅ Perfect | 11 games | No changes needed |
+| B6 | BlindDictationWrapper | `game_mechanics/` | ✅ Fixed | 0 (ready) | isPositioned + attempt counter + coins |
+| B7 | AdaptiveSmartMixWidget | `game_mechanics/` | ✅ Perfect | All categories | No changes needed |
+| B8 | ReadingSelfEvaluationCard | `game_mechanics/` | ✅ Fixed | 4 games | Moved from features → core, +isPositioned, +bonusCoins, +didUpdateWidget, +double-tap guard, Expanded buttons |
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 1 | Repeat Sentence | Hears sentence → speaks it exactly | Pronunciation + fluency via shadowing | ✅ | ✅ `RepeatSentenceScreen` | ✅ | ✅ |
-| 2 | Speak Missing Word | Sees sentence with blank → says the word | Active recall + context prediction | ✅ | ✅ `SpeakMissingWordScreen` | ✅ | ✅ |
-| 3 | Situation Speaking | Given real situation → speaks response | Spontaneous speech under pressure | ✅ | ✅ `SituationSpeakingScreen` | ✅ | ✅ |
-| 4 | Scene Description | Sees scene prompt → describes verbally | Descriptive vocabulary + fluency | ✅ | ✅ `SceneDescriptionScreen` | ✅ | ✅ |
-| 5 | Yes/No Speaking | Hears question → says yes/no + reason | Quick response + justification skills | ✅ | ✅ `YesNoSpeakingScreen` | ✅ | ✅ |
-| 6 | Speak Synonym | Sees word → says a synonym out loud | Vocabulary breadth via active production | ✅ | ✅ `SpeakSynonymScreen` | ✅ | ✅ |
-| 7 | Dialogue Roleplay | Takes turns in conversation → speaks | Conversational flow + turn-taking | ✅ | ✅ `DialogueRoleplayScreen` | ✅ | ✅ |
-| 8 | Pronunciation Focus | Targets specific sound → records & compares | Phoneme-level accuracy | ✅ | ✅ `PronunciationFocusScreen` | ✅ | ✅ |
-| 9 | Speak Opposite | Hears word → says antonym out loud | Vocabulary + speed of recall | ✅ | ✅ `SpeakOppositeScreen` | ✅ | ✅ |
-| 10 | Daily Expression | Learns expression → practices saying it | Real-world phrases for daily use | ✅ | ✅ `DailyExpressionScreen` | ✅ | ✅ |
+### PHASE C: 5 NEW MECHANICS (Built ✅)
 
-### CAT-2: 🔊 LISTENING (10 games) — User MUST listen to audio first
+| Step | Mechanic | What Built | Cost | Games Affected | Status |
+|------|----------|-----------|------|----------------|--------|
+| C1 | **ErrorJournalCollector** | Firestore wrong-answer logger + fetch/dismiss/clearAll API | $0 | ALL 100 | ✅ |
+| C2 | **SpeedChallengeTimer** | AnimationController countdown bar + green→yellow→red gradient + speed bonus | $0 | 30+ games | ✅ |
+| C3 | **EvidenceHighlightWrapper** | Tappable text spans + evidence progress counter + completion animation | $0 | 15+ games | ✅ |
+| C4 | **ShadowPlaybackCompare** | Dual waveform visualization + record/compare/self-evaluate flow | $0 | 22 games | ✅ |
+| C5 | **ContextSentenceBuilder** | Keyword chip + TextField + word counter + gibberish validation + coin award | $0 | 12 games | ✅ |
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 11 | Audio Fill Blanks | Listens → fills missing words from audio | Detail-focused listening | ✅ | ✅ `AudioFillBlanksScreen` | ✅ | ✅ |
-| 12 | Audio MCQ | Listens to clip → answers comprehension Q | Gist + detail comprehension | ✅ | ✅ `AudioMultipleChoiceScreen` | ✅ | ✅ |
-| 13 | Audio Sentence Order | Listens → arranges sentences in order | Sequence tracking in speech | ✅ | ✅ `AudioSentenceOrderScreen` | ✅ | ✅ |
-| 14 | Audio True/False | Listens → judges if statement matches audio | Critical listening accuracy | ✅ | ✅ `AudioTrueFalseScreen` | ✅ | ✅ |
-| 15 | Sound Image Match | Hears sound/word → matches to image | Vocabulary + auditory association | ✅ | ✅ `SoundImageMatchScreen` | ✅ | ✅ |
-| 16 | Fast Speech Decoder | Listens to fast speech → decodes meaning | Real-world speed comprehension | ✅ | ✅ `FastSpeechDecoderScreen` | ✅ | ✅ |
-| 17 | Emotion Recognition | Listens to tone → identifies emotion | Pragmatic/emotional intelligence | ✅ | ✅ `EmotionRecognitionScreen` | ✅ | ✅ |
-| 18 | Detail Spotlight | Listens → spots specific details | Selective attention training | ✅ | ✅ `DetailSpotlightScreen` | ✅ | ✅ |
-| 19 | Listening Inference | Listens → infers what speaker means | Beyond-literal comprehension | ✅ | ✅ `ListeningInferenceScreen` | ✅ | ✅ |
-| 20 | Ambient ID | Listens to ambient sounds → identifies | Environmental English context | ✅ | ✅ `AmbientIdScreen` | ✅ | ✅ |
+### PHASE D: UPGRADE ALL 100 GAMES (Per-Game Tasks 🔲)
 
-### CAT-3: 📖 READING (12 games) — User MUST read full passage
+#### D1: 🎤 SPEAKING (10 games) — Current 8.2 → Target 10/10
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 | Custom Widget |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|---------------|
-| 21 | Read & Answer | Reads passage → answers comprehension Qs | Core reading comprehension | ✅ | ✅ `ReadAndAnswerScreen` | ✅ | ✅ | ✅ |
-| 22 | Find Word Meaning | Reads passage → finds word meaning in context | Context-based vocabulary | ✅ | ✅ `FindWordMeaningScreen` | ✅ | ✅ | ✅ |
-| 23 | True/False Reading | Reads → judges statements true/false | Critical reading accuracy | ✅ | ✅ `TrueFalseReadingScreen` | ✅ | ✅ | ✅ |
-| 24 | Sentence Order | Reads jumbled sentences → orders them | Text structure understanding | ✅ | ✅ `SentenceOrderReadingScreen` | ✅ | ✅ | ✅ |
-| 25 | Reading Speed Check | Reads under timer → answers questions | Speed + comprehension balance | ✅ | ✅ `ReadingSpeedCheckScreen` | ✅ | ✅ | ✅ |
-| 26 | Guess Title | Reads passage → guesses best title | Main idea extraction | ✅ | ✅ `GuessTitleScreen` | ✅ | ✅ | ✅ |
-| 27 | Read & Match | Reads → matches statements to paragraphs | Paragraph-level comprehension | ✅ | ✅ `ReadAndMatchScreen` | ✅ | ✅ | ✅ |
-| 28 | Paragraph Summary | Reads → selects best summary | Summarization skill | ✅ | ✅ `ParagraphSummaryScreen` | ✅ | ✅ | ✅ |
-| 29 | Reading Inference | Reads → infers unstated meaning | Higher-order thinking | ✅ | ✅ `ReadingInferenceScreen` | ✅ | ✅ | ✅ |
-| 30 | Reading Conclusion | Reads → draws logical conclusion | Analytical reading | ✅ | ✅ `ReadingConclusionScreen` | ✅ | ✅ | ✅ |
-| 31 | Cloze Test | Reads passage with blanks → fills them | Grammar + vocabulary in context | ✅ | ✅ `ClozeTestScreen` | ✅ | ✅ | ✅ |
-| 32 | Skimming & Scanning | Reads quickly → finds specific info | Speed reading technique | ✅ | ✅ `SkimmingScanningScreen` | ✅ | ✅ | ✅ |
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 1 | repeatSentence | 9→10 | Add `pronunciationTips` with IPA | Waveform visual: user vs model | ShadowPlaybackCompare | ✅ |
+| 2 | speakMissingWord | 8→10 | Add `contextClue` field | Animated blank pulse effect | Anagram fallback | ✅ |
+| 3 | situationSpeaking | 9→10 | Add `sampleResponse` field | Timer bar + retry button | SpeedChallengeTimer | ✅ |
+| 4 | sceneDescription | 8→10 | Add `keyVocabulary` array (5 words) | Highlight words user said (green/grey) | SpeakingSelfEval | ✅ |
+| 5 | yesNoSpeaking | 7→10 | Add `followUpQuestion` field | 2nd screen: explain WHY (3+ words) | TypeToConfirm | ✅ |
+| 6 | speakSynonym | 8→10 | Add `acceptedSynonyms` array (3-5) | Show all accepted + pronunciation | ShadowPlaybackCompare | ✅ |
+| 7 | dialogueRoleplay | 9→10 | Add `emotionTag` per turn | Emotion indicator for tone | SpeakingSelfEval | ✅ |
+| 8 | pronunciationFocus | 8→10 | Add `commonMistakes` per phoneme | Mouth position diagram | ShadowPlaybackCompare | ✅ |
+| 9 | speakOpposite | 8→10 | Add `bonusAntonyms` array | Speed mode: 10 words in 30 sec | SpeedChallengeTimer | ✅ |
+| 10 | dailyExpression | 8→10 | Add `situationExample` field | Mini-roleplay: use in dialogue | SpeakToConfirm | ✅ |
 
-### CAT-4: ✍️ WRITING (11 games) — User MUST type/write actual text
+#### D2: 🔊 LISTENING (10 games) — Current 7.8 → Target 10/10
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 33 | Sentence Builder | Drags words → builds correct sentence | Word order + grammar structure | ✅ | ✅ `SentenceBuilderScreen` | ✅ | ✅ |
-| 34 | Complete Sentence | Types missing words into sentence | Grammar + vocabulary production | ✅ | ✅ `CompleteSentenceScreen` | ✅ | ✅ |
-| 35 | Describe Situation | Reads situation → writes description | Descriptive writing skills | ✅ | ✅ `DescribeSituationScreen` | ✅ | ✅ |
-| 36 | Fix The Sentence | Finds & types corrections | Error detection + correction | ✅ | ✅ `FixTheSentenceScreen` | ✅ | ✅ |
-| 37 | Short Answer | Reads question → writes short answer | Concise response writing | ✅ | ✅ `ShortAnswerScreen` | ✅ | ✅ |
-| 38 | Opinion Writing | Writes opinion paragraph with reasons | Argumentative writing | ✅ | ✅ `OpinionWritingScreen` | ✅ | ✅ |
-| 39 | Daily Journal | Writes daily journal entry | Personal narrative writing | ✅ | ✅ `DailyJournalScreen` | ✅ | ✅ |
-| 40 | Summarize Story | Reads story → writes summary | Summary/synthesis skills | ✅ | ✅ `SummarizeStoryWritingScreen` | ✅ | ✅ |
-| 41 | Writing Email | Writes professional email | Formal writing skills | ✅ | ✅ `WritingEmailScreen` | ✅ | ✅ |
-| 42 | Correction Writing | Identifies errors → writes corrections | Proofreading skills | ✅ | ✅ `CorrectionWritingScreen` | ✅ | ✅ |
-| 43 | Essay Drafting | Writes structured essay draft | Academic writing skills | ✅ | ✅ `EssayDraftingScreen` | ✅ | ✅ |
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 11 | audioFillBlanks | 8→10 | Add `distractorWords` (similar sounds) | Limit replays to 3 | BlindDictation at high levels | 🔲 |
+| 12 | audioMultipleChoice | 7→10 | Add `audioTranscript` (shown AFTER) | Max 2 replays + evidence step | EvidenceHighlightWrapper | 🔲 |
+| 13 | audioSentenceOrder | 8→10 | Add `pauseMarkers` for TTS | Drag-handle sentence cards | Jigsaw wrapper | 🔲 |
+| 14 | audioTrueFalse | 7→10 | Add `evidenceQuote` field | User TYPE the evidence heard | EvidenceHighlight + TypeToConfirm | 🔲 |
+| 15 | soundImageMatch | 7→10 | Add `description` per image | 6 images at high levels + timer | SpeedChallengeTimer | 🔲 |
+| 16 | fastSpeechDecoder | 9→10 | Add `slowVersion` field | Toggle "hear it slow" button | SpeakToConfirm repeat | 🔲 |
+| 17 | emotionRecognition | 8→10 | Add `emotionScale` (intensity 1-5) | Emotion wheel visual | SpeakToConfirm same emotion | 🔲 |
+| 18 | detailSpotlight | 8→10 | Add `detailCategory` (name/number/date) | Focus hint BEFORE listening | TypeToConfirm type detail | 🔲 |
+| 19 | listeningInference | 9→10 | Add `literalMeaning` vs `impliedMeaning` | Show both meanings comparison | ErrorJournalCollector | 🔲 |
+| 20 | ambientId | 7→10 | Add `locationContext` + `vocabularyWords` | Describe scene in 1 sentence | SpeakToConfirm describe | 🔲 |
 
-### CAT-5: 🧠 GRAMMAR (19 games) — User MUST apply grammar rules
+#### D3: 📖 READING (12 games) — Current 8.2 → Target 10/10
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 44 | Grammar Quest | Applies grammar rule → selects answer | General grammar awareness | ✅ | ✅ `GrammarQuestScreen` | ✅ | ✅ |
-| 45 | Sentence Correction | Spots error → selects correction | Error detection skills | ✅ | ✅ `SentenceCorrectionScreen` | ✅ | ✅ |
-| 46 | Word Reorder | Drags words into correct order | Syntax structure mastery | ✅ | ✅ `WordReorderScreen` | ✅ | ✅ |
-| 47 | Tense Mastery | Selects correct tense form | Verb tense system | ✅ | ✅ `TenseMasteryScreen` | ✅ | ✅ |
-| 48 | Parts of Speech | Sorts words by grammatical category | Word class awareness | ✅ | ✅ `PartsOfSpeechScreen` | ✅ | ✅ |
-| 49 | Subject-Verb Agreement | Fixes agreement errors | Core grammar accuracy | ✅ | ✅ `SubjectVerbAgreementScreen` | ✅ | ✅ |
-| 50 | Clause Connector | Connects clauses with right conjunction | Complex sentence building | ✅ | ✅ `ClauseConnectorScreen` | ✅ | ✅ |
-| 51 | Voice Swap | Converts active↔passive | Voice transformation | ✅ | ✅ `VoiceSwapScreen` | ✅ | ✅ |
-| 52 | Question Formatter | Reorders words into question form | Interrogative structures | ✅ | ✅ `QuestionFormatterScreen` | ✅ | ✅ |
-| 53 | Article Insertion | Inserts a/an/the correctly | Article system mastery | ✅ | ✅ `ArticleInsertionScreen` | ✅ | ✅ |
-| 54 | Modifier Placement | Places adjective/adverb correctly | Modifier positioning | ✅ | ✅ `ModifierPlacementScreen` | ✅ | ✅ |
-| 55 | Modals Selection | Chooses correct modal verb | Modal verb nuance | ✅ | ✅ `ModalsSelectionScreen` | ✅ | ✅ |
-| 56 | Preposition Choice | Selects correct preposition | Prepositional accuracy | ✅ | ✅ `PrepositionChoiceScreen` | ✅ | ✅ |
-| 57 | Pronoun Resolution | Resolves pronoun references | Reference clarity | ✅ | ✅ `PronounResolutionScreen` | ✅ | ✅ |
-| 58 | Punctuation Mastery | Fixes punctuation errors | Punctuation rules | ✅ | ✅ `PunctuationMasteryScreen` | ✅ | ✅ |
-| 59 | Relative Clauses | Completes with who/which/that | Relative clause usage | ✅ | ✅ `RelativeClausesScreen` | ✅ | ✅ |
-| 60 | Conditionals | Masters if/then structures | Conditional logic | ✅ | ✅ `ConditionalsScreen` | ✅ | ✅ |
-| 61 | Conjunctions | Uses and/but/or/because correctly | Sentence joining | ✅ | ✅ `ConjunctionsScreen` | ✅ | ✅ |
-| 62 | Direct/Indirect Speech | Converts speech types | Reported speech mastery | ✅ | ✅ `DirectIndirectSpeechScreen` | ✅ | ✅ |
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 21 | readAndAnswer | 9→10 | Add `passageWordCount` | Read time estimate + highlight | EvidenceHighlightWrapper | 🔲 |
+| 22 | findWordMeaning | 8→10 | Add `wordInContext` extra example | Type word in own sentence | ContextSentenceBuilder | 🔲 |
+| 23 | trueFalseReading | 7→10 | Add `evidenceLine` (exact proof) | TAP the line that proves answer | EvidenceHighlightWrapper | 🔲 |
+| 24 | sentenceOrderReading | 8→10 | Add `transitionWords` highlights | Color-code: First/Then/Finally | Jigsaw (already ✅) | 🔲 |
+| 25 | readingSpeedCheck | 8→10 | Add `wpm_target` per level | Live WPM counter + personal best | SpeedChallengeTimer | 🔲 |
+| 26 | guessTitle | 8→10 | Add `whyThisTitle` explanation | Highlight topic sentence after | TypeToConfirm write better title | 🔲 |
+| 27 | readAndMatch | 8→10 | Add `paragraphTopic` per paragraph | Color-code matches | Jigsaw for matching | 🔲 |
+| 28 | paragraphSummary | 9→10 | Add `keyPoints` array (3 points) | Checklist: 3 points covered? | TypeToConfirm own summary | 🔲 |
+| 29 | readingInference | 9→10 | Add `clueWords` array | Highlight clues AFTER answer | EvidenceHighlightWrapper | 🔲 |
+| 30 | readingConclusion | 9→10 | Add `logicChain` (evidence→conclusion) | Logic flowchart visual | TypeToConfirm explain reasoning | 🔲 |
+| 31 | clozeTest | 8→10 | Add `wordCategory` (noun/verb/adj) | Part-of-speech hint per blank | Anagram spell the word | 🔲 |
+| 32 | skimmingScanning | 7→10 | Add `targetInfo` field | Strict 30-sec timer | SpeedChallengeTimer | 🔲 |
 
-### CAT-6: 💡 VOCABULARY (12 games) — User MUST recall & use words
+#### D4: ✍️ WRITING (11 games) — Current 8.5 → Target 10/10
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 63 | Flashcards | Flips card → recalls meaning | Spaced recognition + recall | ✅ | ✅ `FlashcardsScreen` | ✅ | ✅ |
-| 64 | Synonym Search | Finds synonym from options | Vocabulary breadth | ✅ | ✅ `SynonymSearchScreen` | ✅ | ✅ |
-| 65 | Antonym Search | Finds antonym from options | Opposite word pairs | ✅ | ✅ `AntonymSearchScreen` | ✅ | ✅ |
-| 66 | Context Clues | Guesses word meaning from passage | Context inference skill | ✅ | ✅ `ContextCluesScreen` | ✅ | ✅ |
-| 67 | Phrasal Verbs | Slots correct phrasal verb in | Multi-word verb mastery | ✅ | ✅ `PhrasalVerbsScreen` | ✅ | ✅ |
-| 68 | Idioms | Learns idiom → matches meaning | Figurative language | ✅ | ✅ `IdiomsScreen` | ✅ | ✅ |
-| 69 | Academic Word | Masters academic vocabulary | Formal register words | ✅ | ✅ `AcademicWordScreen` | ✅ | ✅ |
-| 70 | Topic Vocabulary | Sorts words into topic buckets | Categorical vocabulary | ✅ | ✅ `TopicVocabScreen` | ✅ | ✅ |
-| 71 | Word Formation | Builds words from roots/parts | Morphological awareness | ✅ | ✅ `WordFormationScreen` | ✅ | ✅ |
-| 72 | Prefix/Suffix | Chains prefix+root+suffix | Word building system | ✅ | ✅ `PrefixSuffixScreen` | ✅ | ✅ |
-| 73 | Collocations | Matches words that go together | Natural word pairing | ✅ | ✅ `CollocationsScreen` | ✅ | ✅ |
-| 74 | Contextual Usage | Uses word correctly in context | Applied vocabulary | ✅ | ✅ `ContextualUsageScreen` | ✅ | ✅ |
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 33 | sentenceBuilder | 8→10 | Add `sentenceType` (statement/question) | TYPE sentence from memory after drag | TypeToConfirm | 🔲 |
+| 34 | completeSentence | 8→10 | Add `grammarFocus` field | Show grammar rule card after | Anagram spell word | 🔲 |
+| 35 | describeSituation | 9→10 | Add `modelAnswer` (200 words) | Word count minimum indicator | SpeakToConfirm read aloud | 🔲 |
+| 36 | fixTheSentence | 8→10 | Add `errorType` (spell/grammar/punct) | Highlight error zone | TypeToConfirm full correction | 🔲 |
+| 37 | shortAnswerWriting | 8→10 | Add `keywordsExpected` array | Keyword checker | ContextSentenceBuilder | 🔲 |
+| 38 | opinionWriting | 9→10 | Add `structureGuide` | Paragraph structure template | SpeakToConfirm present opinion | 🔲 |
+| 39 | dailyJournal | 8→10 | Add `promptQuestions` (3 guiding Qs) | Mood selector + word count | SpeakToConfirm summarize | 🔲 |
+| 40 | summarizeStory | 9→10 | Add `storyKeyEvents` (5 events) | Key events checklist | SpeedChallengeTimer | 🔲 |
+| 41 | writingEmail | 9→10 | Add `formalityLevel` field | Email template overlay | SpeakToConfirm read aloud | 🔲 |
+| 42 | correctionWriting | 8→10 | Add `errorCount` field | "X errors remaining" counter | EvidenceHighlightWrapper | 🔲 |
+| 43 | essayDrafting | 9→10 | Add `thesisStatement` model | Outline mode before writing | TypeToConfirm | 🔲 |
 
-### CAT-7: 🗣️ ACCENT (12 games) — User MUST listen & reproduce sounds
+#### D5: 🧠 GRAMMAR (19 games) — Current 8.0 → Target 10/10
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 75 | Minimal Pairs | Distinguishes ship/sheep, bat/bet | Phoneme discrimination | ✅ | ✅ `MinimalPairsScreen` | ✅ | ✅ |
-| 76 | Intonation Mimic | Copies rising/falling patterns | Intonation awareness | ✅ | ✅ `IntonationMimicScreen` | ✅ | ✅ |
-| 77 | Syllable Stress | Marks stressed syllable | Word stress patterns | ✅ | ✅ `SyllableStressScreen` | ✅ | ✅ |
-| 78 | Word Linking | Practices linking words together | Connected speech fluency | ✅ | ✅ `WordLinkingScreen` | ✅ | ✅ |
-| 79 | Shadowing Challenge | Shadows native speaker recording | Natural rhythm + pacing | ✅ | ✅ `ShadowingChallengeScreen` | ✅ | ✅ |
-| 80 | Vowel Distinction | Distinguishes similar vowels | Vowel clarity | ✅ | ✅ `VowelDistinctionScreen` | ✅ | ✅ |
-| 81 | Consonant Clarity | Practices difficult consonants | Consonant precision | ✅ | ✅ `ConsonantClarityScreen` | ✅ | ✅ |
-| 82 | Pitch Pattern Match | Matches pitch contour patterns | Prosody awareness | ✅ | ✅ `PitchPatternMatchScreen` | ✅ | ✅ |
-| 83 | Speed Variance | Adapts to slow/fast speech | Speed adaptability | ✅ | ✅ `SpeedVarianceScreen` | ✅ | ✅ |
-| 84 | Dialect Drill | Practices different English dialects | Dialect comprehension | ✅ | ✅ `DialectDrillScreen` | ✅ | ✅ |
-| 85 | Connected Speech | Masters elision/assimilation | Natural speech flow | ✅ | ✅ `ConnectedSpeechScreen` | ✅ | ✅ |
-| 86 | Pitch Modulation | Modulates pitch for meaning changes | Expressive speech | ✅ | ✅ `PitchModulationScreen` | ✅ | ✅ |
+> **Universal fix**: ALL grammar games get TypeToConfirm (type full sentence after MCQ)
 
-### CAT-8: 🎭 ROLEPLAY (10 games) — User MUST make real conversation choices
+| # | Game | Rating | JSON Fix | Screen Fix | Status |
+|---|------|--------|----------|------------|--------|
+| 44 | grammarQuest | 7→10 | Add `grammarRule` + `ruleExplanation` | Rule card before question | 🔲 |
+| 45 | sentenceCorrection | 8→10 | Add `errorHighlight` field | Underline error word | 🔲 |
+| 46 | wordReorder | 8→10 | Add `structureType` (SVO/question) | Color-code S(green) V(blue) O(orange) | 🔲 |
+| 47 | tenseMastery | 8→10 | Add `timelinePosition` | Visual timeline for verb placement | 🔲 |
+| 48 | partsOfSpeech | 8→10 | Add `transformations` | Word family tree visual | 🔲 |
+| 49 | subjectVerbAgreement | 8→10 | Add `subjectType` | Highlight subject + rule display | 🔲 |
+| 50 | clauseConnector | 8→10 | Add `connectorCategory` | Connector map visual | 🔲 |
+| 51 | voiceSwap | 9→10 | Add `stepByStep` transform guide | Active→passive arrow animation | 🔲 |
+| 52 | questionFormatter | 8→10 | Add `questionType` | Question formula: Aux+S+V+? | 🔲 |
+| 53 | articleInsertion | 8→10 | Add `articleRule` | Decision tree: countable→a/the/∅ | 🔲 |
+| 54 | modifierPlacement | 8→10 | Add `modifierType` | Word order slot diagram | 🔲 |
+| 55 | modalsSelection | 8→10 | Add `modalMeaning` | Modal scale: might→must | 🔲 |
+| 56 | prepositionChoice | 7→10 | Add `prepositionCategory` | Preposition diagram: in/on/at | 🔲 |
+| 57 | pronounResolution | 8→10 | Add `referentHighlight` | Arrow: pronoun → referent noun | 🔲 |
+| 58 | punctuationMastery | 7→10 | Add `punctuationRule` | Meaning visual: comma=pause etc | 🔲 |
+| 59 | relativeClauses | 8→10 | Add `clauseType` (defining/non) | With/without commas comparison | 🔲 |
+| 60 | conditionals | 9→10 | Add `conditionalType` (0/1/2/3) | Probability meter visual | 🔲 |
+| 61 | conjunctions | 7→10 | Add `conjunctionPurpose` | FANBOYS chart | 🔲 |
+| 62 | directIndirectSpeech | 9→10 | Add `changesList` | Side-by-side: changes highlighted | 🔲 |
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 87 | Branching Dialogue | Chooses dialogue paths → sees consequences | Decision-based conversation | ✅ | ✅ `BranchingDialogueScreen` | ✅ | ✅ |
-| 88 | Situational Response | Responds to real-life situations | Pragmatic competence | ✅ | ✅ `SituationalResponseScreen` | ✅ | ✅ |
-| 89 | Job Interview | Practices interview Q&A | Professional communication | ✅ | ✅ `JobInterviewScreen` | ✅ | ✅ |
-| 90 | Medical Consult | Practices doctor visit dialogue | Medical English | ✅ | ✅ `MedicalConsultScreen` | ✅ | ✅ |
-| 91 | Gourmet Order | Orders food in restaurant | Restaurant English | ✅ | ✅ `GourmetOrderScreen` | ✅ | ✅ |
-| 92 | Travel Desk | Handles travel scenarios | Travel English | ✅ | ✅ `TravelDeskScreen` | ✅ | ✅ |
-| 93 | Conflict Resolver | Resolves conflicts politely | Diplomatic language | ✅ | ✅ `ConflictResolverScreen` | ✅ | ✅ |
-| 94 | Elevator Pitch | Gives quick self-introduction | Concise persuasion | ✅ | ✅ `ElevatorPitchScreen` | ✅ | ✅ |
-| 95 | Social Spark | Starts conversations with strangers | Social English | ✅ | ✅ `SocialSparkScreen` | ✅ | ✅ |
-| 96 | Emergency Hub | Handles emergency situations | Emergency English | ✅ | ✅ `EmergencyHubScreen` | ✅ | ✅ |
+#### D6: 💡 VOCABULARY (12 games) — Current 8.1 → Target 10/10
 
-### CAT-9: 🏆 ELITE MASTERY (4 games) — User MUST combine multiple skills
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 63 | flashcards | 7→10 | Add `usageExample` 2nd example | After flip: spell it + say it | Anagram + SpeakToConfirm | 🔲 |
+| 64 | synonymSearch | 8→10 | Add `nuanceDifference` | Nuance scale visual | ContextSentenceBuilder | 🔲 |
+| 65 | antonymSearch | 8→10 | Add `gradientScale` | Word intensity slider | SpeakToConfirm both words | 🔲 |
+| 66 | contextClues | 9→10 | Add `clueType` | Highlight context clue words | EvidenceHighlightWrapper | 🔲 |
+| 67 | phrasalVerbs | 8→10 | Add `literalVsFigurative` | Literal vs phrasal side-by-side | ContextSentenceBuilder | 🔲 |
+| 68 | idioms | 8→10 | Add `origin` story | Origin card after answer | SpeakToConfirm in sentence | 🔲 |
+| 69 | academicWord | 8→10 | Add `academicField` + `collocations` | Academic paragraph context | TypeToConfirm write sentence | 🔲 |
+| 70 | topicVocab | 8→10 | Add `relatedWords` network | Word web mind map | Anagram spell words | 🔲 |
+| 71 | wordFormation | 8→10 | Add `familyTree` (act→action→active) | Full word family tree | TypeToConfirm each form | 🔲 |
+| 72 | prefixSuffix | 8→10 | Add `meaningBreakdown` | Color-coded prefix/root/suffix | Anagram build word | 🔲 |
+| 73 | collocations | 8→10 | Add `wrongCollocations` | Show common WRONG pairs | ContextSentenceBuilder | 🔲 |
+| 74 | contextualUsage | 9→10 | Add `registerLevel` | Formality meter | SpeakToConfirm | 🔲 |
 
-| # | Game | What User Does | How User Learns | JSON (20 files) | Screen | Pedagogy | UI Phase 2 |
-|---|------|---------------|-----------------|-----------------|--------|----------|----------|
-| 97 | Story Builder | Writes creative story from prompts | Creative writing + grammar + vocab | ✅ | ✅ `StoryBuilderScreen` | ✅ | ✅ |
-| 98 | Idiom Match | Matches idioms to real meanings | Advanced figurative language | ✅ | ✅ `IdiomMatchScreen` | ✅ | ✅ |
-| 99 | Speed Spelling | Spells words under time pressure | Spelling accuracy + speed | ✅ | ✅ `SpeedSpellingScreen` | ✅ | ✅ |
-| 100 | Accent Shadowing | Shadows accent patterns precisely | Native-like pronunciation | ✅ | ✅ `AccentShadowingScreen` | ✅ | ✅ |
+#### D7: 🗣️ ACCENT (12 games) — Current 8.1 → Target 10/10
 
----
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 75 | minimalPairs | 8→10 | Add `mouthPosition` per sound | Mouth/tongue diagram | ShadowPlaybackCompare | 🔲 |
+| 76 | intonationMimic | 8→10 | Add `intonationPattern` | Pitch curve visual | ShadowPlaybackCompare | 🔲 |
+| 77 | syllableStress | 8→10 | Add `stressPattern` (OOo) | Bouncing ball on stress | SpeakToConfirm | 🔲 |
+| 78 | wordLinking | 8→10 | Add `linkingType` | Linking arrows between words | ShadowPlaybackCompare | 🔲 |
+| 79 | shadowingChallenge | 9→10 | Add `speedLevel` (0.75x-1.25x) | Speed slider progression | ShadowPlaybackCompare | 🔲 |
+| 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | 🔲 |
+| 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | 🔲 |
+| 82 | pitchPatternMatch | 8→10 | Add `emotionContext` | Same words + different pitch demo | SpeakToConfirm | 🔲 |
+| 83 | speedVariance | 8→10 | Add `naturalSpeed` vs `clearSpeed` | Toggle natural/clear | SpeedChallengeTimer | 🔲 |
+| 84 | dialectDrill | 8→10 | Add `dialectRegion` | Map of dialect region | ShadowPlaybackCompare | 🔲 |
+| 85 | connectedSpeech | 8→10 | Add `phenomenonType` | Written vs spoken side-by-side | ShadowPlaybackCompare | 🔲 |
+| 86 | pitchModulation | 8→10 | Add `meaningShift` | 2 meanings same sentence | SpeakToConfirm both | 🔲 |
 
-## PHASE 2: SECOND-PHASE FEATURES
+#### D8: 🎭 ROLEPLAY (10 games) — Current 8.1 → Target 10/10
 
-| # | Feature | Skill Trained | User Action | Free? | Status |
-|---|---------|--------------|-------------|-------|--------|
-| A1 | Daily Words | Vocabulary | Learn 5 new words daily, hear pronunciation | ✅ $0 | ✅ |
-| A2 | Photo Vocabulary | Vocabulary | Point camera → AI labels objects in English | ✅ $0 (ML Kit) | ✅ |
-| A3 | Scan & Learn | Reading | Scan text → AI explains meaning | ✅ $0 (ML Kit) | ✅ |
-| A4 | Translation | Multi-skill | Type/speak → get translation | ✅ $0 (ML Kit) | ✅ |
-| A5 | Kids Zone (25 topics) | All basics | Age-appropriate learning games | ✅ $0 | ✅ |
-| A6 | Self-Evolution Speaking | Speaking | AI evaluates pronunciation accuracy | ✅ $0 (on-device STT) | ✅ |
-| A7 | Self-Evolution Reading | Reading | Tracks reading speed + comprehension | ✅ $0 | ✅ |
-| A8 | Word Jigsaw | Vocabulary | Daily Challenge: Assemble word pieces | ✅ $0 | ✅ |
-| A9 | Word Scramble | Spelling | Daily Challenge: Unscramble letters | ✅ $0 | ✅ |
+> **Universal fix**: ALL roleplay games get SpeakToConfirm (SAY your response)
 
----
+| # | Game | Rating | JSON Fix | Screen Fix | Status |
+|---|------|--------|----------|------------|--------|
+| 87 | branchingDialogue | 9→10 | Add `consequencePreview` | Relationship meter (polite↔rude) | 🔲 |
+| 88 | situationalResponse | 8→10 | Add `culturalNote` | Formality gauge | 🔲 |
+| 89 | jobInterview | 9→10 | Add `interviewerReaction` | Face expression change | 🔲 |
+| 90 | medicalConsult | 8→10 | Add `medicalVocab` array | Body diagram for symptoms | 🔲 |
+| 91 | gourmetOrder | 8→10 | Add `menuItems` with prices | Restaurant menu UI | 🔲 |
+| 92 | travelDesk | 8→10 | Add `travelDocuments` context | Airport/hotel counter visual | 🔲 |
+| 93 | conflictResolver | 8→10 | Add `escalationLevel` | Tension meter visual | 🔲 |
+| 94 | elevatorPitch | 8→10 | Add `timeLimit` (30/60/90s) | Countdown + word counter | 🔲 |
+| 95 | socialSpark | 8→10 | Add `socialContext` | Scene illustration | 🔲 |
+| 96 | emergencyHub | 7→10 | Add `urgencyLevel` + richer content | Emergency level indicator | 🔲 |
 
-## 8-POINT VALIDATION CHECKLIST (Per Game)
+#### D9: 🏆 ELITE MASTERY (4 games) — Current 8.3 → Target 10/10
 
-```
-□ 1. JSON EXISTS      — All 20 batch files (gameType_1_10 → gameType_191_200)
-□ 2. JSON SCHEMA      — id, interactionType, instruction, hint, explanation, correctAnswer
-□ 3. JSON QUALITY     — Warm human tone, no robotic placeholders, unique per level
-□ 4. ENUM MATCH       — GameSubtype enum ↔ JSON gameType field match exactly
-□ 5. RESOLVER MATCH   — AppRouterGameResolvers switch case exists for this subtype
-□ 6. SCREEN EXISTS    — Dedicated widget in lib/features/{category}/{game}/
-□ 7. SKILL ENFORCED   — Speaking games USE mic, Writing games USE keyboard, etc.
-□ 8. USER TRULY LEARNS — After 200 levels, user genuinely improved at this skill
-```
+| # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
+|---|------|--------|----------|------------|----------------|--------|
+| 97 | storyBuilder | 9→10 | Add `plotStructure` guide | Story arc diagram | SpeakToConfirm narrate | 🔲 |
+| 98 | idiomMatch | 8→10 | Add `idiomOrigin` + `visualMetaphor` | Literal vs figurative visual | ContextSentenceBuilder | 🔲 |
+| 99 | speedSpelling | 8→10 | Add `difficultyTier` (common→rare) | Letter slots + streak bonus | SpeedChallengeTimer + Anagram | 🔲 |
+| 100 | accentShadowing | 8→10 | Add `targetAccent` (RP/GA) | Waveform comparison visual | ShadowPlaybackCompare | 🔲 |
 
----
+### PHASE E: V1 LAUNCH (Final Steps 🔲)
 
-## DRY ARCHITECTURE (Shared Code = Write Once)
-
-| Shared File | What It Does | Used By |
-|------------|-------------|---------|
-| `GameQuest` entity | Data model for all quests | 100 games |
-| `CurriculumService` | Loads JSON from assets | 100 games |
-| `GameRoutes` + `AppRouterGameResolvers` | Routes URL → correct screen | 100 games |
-| `ModernCategoryMap` | Level selector UI | 100 games |
-| `StoryService` (86KB) | Narrative scripts per game | 100 games |
-| `GameInstructionService` (82KB) | Instruction cards per game | 100 games |
-| `SpeechService` | Mic recording + STT | 22 games (Speaking+Accent) |
-| `TtsService` | Text-to-speech playback | 50+ games |
-| `SoundService` | Correct/wrong SFX | 100 games |
-| `SpeakingBloc/ReadingBloc/etc.` | State management per category | 100 games (9 BLoCs) |
-
-**Per-game unique code**: Only 1 screen + 1 interaction widget. Target < 300 lines each.
+| Step | Task | Status |
+|------|------|--------|
+| E1 | Full regression test — no crash on any screen | 🔲 |
+| E2 | Play Store listing (title, description, keywords) | 🔲 |
+| E3 | 8 screenshots created | 🔲 |
+| E4 | Privacy policy URL | 🔲 |
+| E5 | Release APK/AAB built | 🔲 |
+| E6 | Submit to Play Store | 🔲 |
 
 ---
 
-## 12-WEEK SPRINT PLAN
+## FREE-OF-COST VERIFICATION ✅
 
-| Week | Games | Category | Deliverable |
-|------|-------|----------|-------------|
-| W1 | #1–10 | 🎤 Speaking | 10 games: JSON validated, mic tested, speech recognition working |
-| W2 | #11–20 | 🔊 Listening | 10 games: JSON validated, TTS audio playing, comprehension flow |
-| W3 | #21–32 | 📖 Reading | 12 games: JSON validated, passage display, highlightable text |
-| W4 | #33–43 | ✍️ Writing | 11 games: JSON validated, keyboard input, text evaluation |
-| W5 | #44–53 | 🧠 Grammar P1 | 10 games: JSON validated, rule application, drag/reorder |
-| W6 | #54–62 | 🧠 Grammar P2 | 9 games: remaining grammar games hardened |
-| W7 | #63–74 | 💡 Vocabulary | 12 games: JSON validated, flashcard/sort/match mechanics |
-| W8 | #75–86 | 🗣️ Accent | 12 games: JSON validated, audio playback, pitch comparison |
-| W9 | #87–96 | 🎭 Roleplay | 10 games: JSON validated, dialogue branching, scenario flow |
-| W10 | #97–100 | 🏆 Elite Mastery | 4 games: JSON validated, multi-skill integration |
-| W11 | A1–A9 | Phase 2 | Second-phase features: Daily Words, Scan, Photo, Jigsaw, Anagram |
-| W12 | ALL | 🚀 Launch | Full regression, App Store submission, production release |
+| Service | Package | Cost |
+|---------|---------|------|
+| Speech Recognition | `speech_to_text` (on-device) | $0 |
+| Text-to-Speech | `flutter_tts` (on-device) | $0 |
+| Translation | `google_mlkit_translation` | $0 |
+| Text Recognition | `google_mlkit_text_recognition` | $0 |
+| Handwriting | `google_mlkit_digital_ink_recognition` | $0 |
+| Auth | `firebase_auth` | $0 (10K free) |
+| Database | `cloud_firestore` | $0 (1GB free) |
+| Ads | `google_mobile_ads` | $0 (EARNS money) |
+| Analytics | `firebase_analytics` | $0 |
+| Crash Reports | `firebase_crashlytics` | $0 |
+| **ALL 14 MECHANICS** | Flutter widgets (on-device) | **$0** |
+| **TOTAL** | | **$0/month** |
 
 ---
 
-## SUMMARY STATS
+## GAME-BY-MECHANIC MAP (Which mechanic each game uses)
 
-| Metric | Count |
-|--------|-------|
-| Total adult games | **100** |
-| Total categories | **9** |
-| Levels per game | **200** |
-| Total playable levels | **20,000** |
-| JSON curriculum files | **2,000** (100 games × 20 batches) |
-| Dedicated screen widgets | **100** (verified ✅) |
-| Monthly server cost | **$0** (verified ✅) |
-| Kids Zone topics | **25** |
-| Phase 2 features | **9** |
+> **Legend**: ✅ = Currently using | 🔲 = To add in Phase D | — = Not applicable
+
+### 🎤 SPEAKING (10 games)
+
+| # | Game | SpeakingSelfEval | ShadowPlayback | SpeedTimer | ErrorJournal | ContextBuilder |
+|---|------|:---:|:---:|:---:|:---:|:---:|
+| 1 | repeatSentence | ✅ | 🔲 | — | 🔲 | — |
+| 2 | speakMissingWord | ✅ | — | — | 🔲 | — |
+| 3 | situationSpeaking | ✅ | — | 🔲 | 🔲 | — |
+| 4 | sceneDescriptionSpeaking | ✅ | — | — | 🔲 | — |
+| 5 | yesNoSpeaking | ✅ | — | — | 🔲 | — |
+| 6 | speakSynonym | ✅ | 🔲 | — | 🔲 | — |
+| 7 | dialogueRoleplay | ✅ | — | — | 🔲 | — |
+| 8 | pronunciationFocus | ✅ | 🔲 | — | 🔲 | — |
+| 9 | speakOpposite | ✅ | — | 🔲 | 🔲 | — |
+| 10 | dailyExpression | ✅ | — | — | 🔲 | — |
+
+### 👂 LISTENING (10 games)
+
+| # | Game | SpeakToConfirm | EvidenceHighlight | SpeedTimer | BlindDictation | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|:---:|
+| 11 | audioFillBlanks | — | — | — | 🔲 | 🔲 |
+| 12 | audioMultipleChoice | — | 🔲 | — | — | 🔲 |
+| 13 | audioSentenceOrder | — | — | — | — | 🔲 |
+| 14 | audioTrueFalse | ✅ | 🔲 | — | — | 🔲 |
+| 15 | soundImageMatch | ✅ | — | 🔲 | — | 🔲 |
+| 16 | fastSpeechDecoder | — | — | 🔲 | — | 🔲 |
+| 17 | emotionRecognition | — | — | — | — | 🔲 |
+| 18 | detailSpotlight | — | — | — | — | 🔲 |
+| 19 | listeningInference | — | — | — | — | 🔲 |
+| 20 | ambientId | — | — | — | — | 🔲 |
+
+### 📖 READING (12 games)
+
+| # | Game | ReadingSelfEval | SpeakToConfirm | TypeToConfirm | EvidenceHighlight | SpeedTimer | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|:---:|:---:|
+| 21 | readAndAnswer | — | — | — | 🔲 | — | 🔲 |
+| 22 | findWordMeaning | — | — | — | — | — | 🔲 |
+| 23 | trueFalseReading | — | ✅ | — | 🔲 | — | 🔲 |
+| 24 | sentenceOrderReading | — | — | — | — | — | 🔲 |
+| 25 | readingSpeedCheck | ✅ | — | — | — | 🔲 | 🔲 |
+| 26 | guessTitle | — | — | — | — | — | 🔲 |
+| 27 | readAndMatch | — | ✅ | — | — | — | 🔲 |
+| 28 | paragraphSummary | ✅ | — | — | — | — | 🔲 |
+| 29 | readingInference | ✅ | — | — | 🔲 | — | 🔲 |
+| 30 | readingConclusion | ✅ | — | — | — | — | 🔲 |
+| 31 | clozeTest | — | — | ✅ | — | — | 🔲 |
+| 32 | skimmingScanning | — | — | — | — | 🔲 | 🔲 |
+
+### ✍️ WRITING (11 games)
+
+| # | Game | TypeToConfirm | ContextBuilder | BlindDictation | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|
+| 33 | sentenceBuilder | — | — | — | 🔲 |
+| 34 | completeSentence | — | — | — | 🔲 |
+| 35 | describeSituationWriting | — | — | — | 🔲 |
+| 36 | fixTheSentence | ✅ | — | — | 🔲 |
+| 37 | shortAnswerWriting | — | 🔲 | — | 🔲 |
+| 38 | opinionWriting | ✅ | — | — | 🔲 |
+| 39 | dailyJournal | — | — | — | 🔲 |
+| 40 | summarizeStoryWriting | ✅ | — | — | 🔲 |
+| 41 | writingEmail | — | — | — | 🔲 |
+| 42 | correctionWriting | — | — | — | 🔲 |
+| 43 | essayDrafting | ✅ | — | — | 🔲 |
+
+### 📐 GRAMMAR (19 games)
+
+| # | Game | Jigsaw | Anagram | TypeToConfirm | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|
+| 44 | grammarQuest | ✅ | — | — | 🔲 |
+| 45 | sentenceCorrection | — | — | ✅ | 🔲 |
+| 46 | wordReorder | — | — | — | 🔲 |
+| 47 | tenseMastery | — | ✅ | — | 🔲 |
+| 48 | partsOfSpeech | ✅ | — | — | 🔲 |
+| 49 | subjectVerbAgreement | ✅ | — | — | 🔲 |
+| 50 | clauseConnector | ✅ | — | — | 🔲 |
+| 51 | voiceSwap | — | — | ✅ | 🔲 |
+| 52 | questionFormatter | ✅ | — | — | 🔲 |
+| 53 | articleInsertion | ✅ | — | — | 🔲 |
+| 54 | modifierPlacement | ✅ | — | — | 🔲 |
+| 55 | modalsSelection | ✅ | — | — | 🔲 |
+| 56 | prepositionChoice | ✅ | — | — | 🔲 |
+| 57 | pronounResolution | ✅ | — | — | 🔲 |
+| 58 | punctuationMastery | — | — | ✅ | 🔲 |
+| 59 | relativeClauses | ✅ | — | — | 🔲 |
+| 60 | conditionals | — | — | ✅ | 🔲 |
+| 61 | conjunctions | ✅ | — | — | 🔲 |
+| 62 | directIndirectSpeech | — | — | ✅ | 🔲 |
+
+### 📚 VOCABULARY (12 games)
+
+| # | Game | Anagram | ContextBuilder | SpeedTimer | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|
+| 63 | flashcards | — | — | — | 🔲 |
+| 64 | synonymSearch | ✅ | 🔲 | — | 🔲 |
+| 65 | antonymSearch | ✅ | — | — | 🔲 |
+| 66 | contextClues | ✅ | — | — | 🔲 |
+| 67 | phrasalVerbs | ✅ | 🔲 | — | 🔲 |
+| 68 | idioms | ✅ | — | — | 🔲 |
+| 69 | academicWord | ✅ | — | — | 🔲 |
+| 70 | topicVocab | — | — | — | 🔲 |
+| 71 | wordFormation | — | — | — | 🔲 |
+| 72 | prefixSuffix | — | — | — | 🔲 |
+| 73 | collocations | ✅ | 🔲 | — | 🔲 |
+| 74 | contextualUsage | ✅ | — | — | 🔲 |
+
+### 🗣️ ACCENT (12 games)
+
+| # | Game | AccentSelfEval | ShadowPlayback | SpeedTimer | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|
+| 75 | minimalPairs | ✅ | 🔲 | — | 🔲 |
+| 76 | intonationMimic | ✅ | 🔲 | — | 🔲 |
+| 77 | syllableStress | ✅ | — | — | 🔲 |
+| 78 | wordLinking | ✅ | 🔲 | — | 🔲 |
+| 79 | shadowingChallenge | ✅ | 🔲 | — | 🔲 |
+| 80 | vowelDistinction | ✅ | — | — | 🔲 |
+| 81 | consonantClarity | ✅ | 🔲 | — | 🔲 |
+| 82 | pitchPatternMatch | ✅ | — | — | 🔲 |
+| 83 | speedVariance | ✅ | — | 🔲 | 🔲 |
+| 84 | dialectDrill | ✅ | 🔲 | — | 🔲 |
+| 85 | connectedSpeech | ✅ | 🔲 | — | 🔲 |
+| 86 | pitchModulation | ✅ | — | — | 🔲 |
+
+### 🎭 ROLEPLAY (10 games)
+
+| # | Game | SpeakToConfirm | SpeedTimer | ErrorJournal |
+|---|------|:---:|:---:|:---:|
+| 87 | branchingDialogue | ✅ | — | 🔲 |
+| 88 | situationalResponse | ✅ | — | 🔲 |
+| 89 | jobInterview | ✅ | — | 🔲 |
+| 90 | medicalConsult | ✅ | — | 🔲 |
+| 91 | gourmetOrder | ✅ | — | 🔲 |
+| 92 | travelDesk | ✅ | — | 🔲 |
+| 93 | conflictResolver | ✅ | — | 🔲 |
+| 94 | elevatorPitch | ✅ | — | 🔲 |
+| 95 | socialSpark | ✅ | — | 🔲 |
+| 96 | emergencyHub | ✅ | — | 🔲 |
+
+### 🏆 ELITE MASTERY (4 games)
+
+| # | Game | SpeakToConfirm | Anagram | ContextBuilder | SpeedTimer | ErrorJournal |
+|---|------|:---:|:---:|:---:|:---:|:---:|
+| 97 | storyBuilder | — | — | — | — | 🔲 |
+| 98 | idiomMatch | ✅ | — | 🔲 | — | 🔲 |
+| 99 | speedSpelling | — | — | — | 🔲 | 🔲 |
+| 100 | accentShadowing | ✅ | — | — | — | 🔲 |
+
+### 📊 DAILY CHALLENGES (2 mini-games)
+
+| # | Game | Anagram | Jigsaw | ErrorJournal |
+|---|------|:---:|:---:|:---:|
+| — | wordMixer | ✅ | — | 🔲 |
+| — | wordSnap | — | ✅ | 🔲 |
+
+### MECHANIC USAGE SUMMARY
+
+| Mechanic | Currently In | To Add (Phase D) | Total After |
+|----------|:---:|:---:|:---:|
+| ErrorJournalCollector (C1) | 0 | **100** | 100 |
+| SpeakingSelfEvaluationControls (B5) | 11 | 0 | 11 |
+| SpeakToConfirmOverlay (B3) | 20 | 0 | 20 |
+| DynamicJigsawWrapper (B2) | 14 | 0 | 14 |
+| DynamicAnagramWrapper (B1) | 10 | 0 | 10 |
+| TypeToConfirmOverlay (B4) | 10 | 0 | 10 |
+| AccentSelfEvalPanel (wrapper→B5) | 11 | 0 | 11 |
+| ReadingSelfEvaluationCard (B8) | 4 | 0 | 4 |
+| ShadowPlaybackCompare (C4) | 0 | **11** | 11 |
+| SpeedChallengeTimer (C2) | 0 | **8** | 8 |
+| EvidenceHighlightWrapper (C3) | 0 | **7** | 7 |
+| ContextSentenceBuilder (C5) | 0 | **6** | 6 |
+| BlindDictationWrapper (B6) | 0 | **2** | 2 |
+| AdaptiveSmartMixWidget (B7) | 1 | 0 | 1 |
+
+---
+
+## PROGRESS SUMMARY
+
+| Phase | Tasks | Done | Remaining |
+|-------|-------|------|-----------|
+| A: Foundation | 13 | ✅ 13 | 0 |
+| B: Existing Mechanics | 8 | ✅ 8 (4 fixed) | 0 |
+| C: New Mechanics | 5 | ✅ 5 | 0 |
+| D: Upgrade 100 Games | 100 | 🔲 0 | 100 |
+| E: Launch | 6 | 🔲 0 | 6 |
+| **TOTAL** | **132** | **26 done** | **106 remaining** |
+
+**Current Rating: 8.1/10 → After all phases: 10/10**

@@ -10,8 +10,10 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_header.dart';
 import 'package:vowl/features/speaking/pronunciation_focus/presentation/widgets/pronunciation_focus_phoneme_crucible.dart';
@@ -95,6 +97,19 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: widget.gameType.name,
+          userAnswer: '[Failed Pronunciation]',
+          correctAnswer: 'Shadow Playback Compare Target',
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -231,10 +246,9 @@ class _PronunciationFocusScreenState extends State<PronunciationFocusScreen>
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               if (!_isAnswered)
-                                SpeakingSelfEvaluationControls(
+                                ShadowPlaybackCompare(
                                   expectedText: quest.textToSpeak ?? "",
                                   primaryColor: theme.primaryColor,
-                                  isDark: isDark,
                                   onConfirmed: () =>
                                       _submitVerbalEvaluation(true),
                                   onSkipped: () =>

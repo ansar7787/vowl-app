@@ -11,7 +11,9 @@ import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
 import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_header.dart';
 import 'package:vowl/features/speaking/speak_synonym/presentation/widgets/speak_synonym_sentence_panel.dart';
@@ -94,6 +96,19 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: _acceptedSyns.join(', '),
+          userAnswer: '[Failed Synonym]',
+          correctAnswer: _acceptedSyns.isNotEmpty ? _acceptedSyns.first : '',
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -236,10 +251,9 @@ class _SpeakSynonymScreenState extends State<SpeakSynonymScreen>
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               if (!_isAnswered)
-                                SpeakingSelfEvaluationControls(
+                                ShadowPlaybackCompare(
                                   expectedText: expectedText,
                                   primaryColor: theme.primaryColor,
-                                  isDark: isDark,
                                   onConfirmed: () =>
                                       _submitVerbalEvaluation(true),
                                   onSkipped: () =>

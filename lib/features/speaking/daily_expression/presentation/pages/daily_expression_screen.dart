@@ -12,7 +12,9 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_header.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/daily_expression_scratch_panel.dart';
@@ -98,6 +100,19 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Speak to confirm expression',
+          userAnswer: '[Failed Speak to Confirm]',
+          correctAnswer: _targetExpression,
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }
@@ -281,10 +296,10 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               if (!_isAnswered && _scratchProgress >= 1.0)
-                                SpeakingSelfEvaluationControls(
+                                SpeakToConfirmOverlay(
                                   expectedText: _targetExpression,
                                   primaryColor: theme.primaryColor,
-                                  isDark: isDark,
+                                  isPositioned: false,
                                   onConfirmed: () =>
                                       _submitVerbalEvaluation(true),
                                   onSkipped: () =>

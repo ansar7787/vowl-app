@@ -17,6 +17,7 @@ import 'package:vowl/core/utils/ml_monetization_controller.dart';
 import 'package:vowl/core/utils/widgets/smart_reply_chip.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
 
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_header.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/dialogue_roleplay_exchange_stage.dart';
@@ -132,6 +133,19 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: _chosenReply.isNotEmpty ? _chosenReply : 'Roleplay',
+          userAnswer: '[Failed Dialogue]',
+          correctAnswer: _chosenReply.isNotEmpty ? _chosenReply : (_acceptedSynonyms.isNotEmpty ? _acceptedSynonyms.first : ''),
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
   }

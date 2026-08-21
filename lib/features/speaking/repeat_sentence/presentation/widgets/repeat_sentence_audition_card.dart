@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -83,6 +84,37 @@ class RepeatSentenceAuditionCard extends StatelessWidget {
               height: 1.35,
             ),
           ),
+          if (quest is SpeakingQuest && (quest as SpeakingQuest).pronunciationTips != null) ...[
+            SizedBox(height: 16.h),
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: primaryColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: primaryColor.withValues(alpha: 0.3),
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.tips_and_updates_rounded, color: primaryColor, size: 20.sp),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      (quest as SpeakingQuest).pronunciationTips!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

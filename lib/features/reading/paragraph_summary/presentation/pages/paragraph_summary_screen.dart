@@ -13,7 +13,7 @@ import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
-import 'package:vowl/features/reading/presentation/widgets/reading_self_evaluation_card.dart';
+import 'package:vowl/core/presentation/game_mechanics/reading_self_evaluation_card.dart';
 
 class ParagraphSummaryScreen extends StatefulWidget {
   final int level;
@@ -197,7 +197,6 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                                 correctAnswer: quest.correctAnswer ?? "",
                                 explanation: quest.explanation,
                                 primaryColor: theme.primaryColor,
-                                isDark: isDark,
                                 onEvaluated: (isCorrect) => _submitSelfEvalAnswer(isCorrect, quest),
                               ),
                             ],

@@ -37,6 +37,14 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.targetPhoneme,
     super.expression,
     super.smartReplies,
+    super.pronunciationTips,
+    super.contextClue,
+    super.keyVocabulary,
+    super.followUpQuestion,
+    super.emotionTag,
+    super.commonMistakes,
+    super.bonusAntonyms,
+    super.situationExample,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -105,6 +113,14 @@ class SpeakingQuestModel extends SpeakingQuest {
       expression: map['expression'] as String?,
       explanation: map['explanation'] as String?,
       smartReplies: getList(map['smartReplies']),
+      pronunciationTips: map['pronunciationTips'] as String?,
+      contextClue: map['contextClue'] as String?,
+      keyVocabulary: getList(map['keyVocabulary']),
+      followUpQuestion: map['followUpQuestion'] as String?,
+      emotionTag: map['emotionTag'] as String?,
+      commonMistakes: getList(map['commonMistakes']),
+      bonusAntonyms: getList(map['bonusAntonyms']),
+      situationExample: map['situationExample'] as String?,
     );
   }
 
@@ -142,6 +158,14 @@ class SpeakingQuestModel extends SpeakingQuest {
       'sampleAnswer': sampleAnswer,
       'translation': translation,
       'smartReplies': smartReplies,
+      'pronunciationTips': pronunciationTips,
+      'contextClue': contextClue,
+      'keyVocabulary': keyVocabulary,
+      'followUpQuestion': followUpQuestion,
+      'emotionTag': emotionTag,
+      'commonMistakes': commonMistakes,
+      'bonusAntonyms': bonusAntonyms,
+      'situationExample': situationExample,
     };
   }
 
@@ -180,6 +204,14 @@ class SpeakingQuestModel extends SpeakingQuest {
     String? targetPhoneme,
     String? expression,
     List<String>? smartReplies,
+    String? pronunciationTips,
+    String? contextClue,
+    List<String>? keyVocabulary,
+    String? followUpQuestion,
+    String? emotionTag,
+    List<String>? commonMistakes,
+    List<String>? bonusAntonyms,
+    String? situationExample,
   }) {
     return SpeakingQuestModel(
       id: id ?? this.id,
@@ -217,6 +249,14 @@ class SpeakingQuestModel extends SpeakingQuest {
       targetPhoneme: targetPhoneme ?? this.targetPhoneme,
       expression: expression ?? this.expression,
       smartReplies: smartReplies ?? this.smartReplies,
+      pronunciationTips: pronunciationTips ?? this.pronunciationTips,
+      contextClue: contextClue ?? this.contextClue,
+      keyVocabulary: keyVocabulary ?? this.keyVocabulary,
+      followUpQuestion: followUpQuestion ?? this.followUpQuestion,
+      emotionTag: emotionTag ?? this.emotionTag,
+      commonMistakes: commonMistakes ?? this.commonMistakes,
+      bonusAntonyms: bonusAntonyms ?? this.bonusAntonyms,
+      situationExample: situationExample ?? this.situationExample,
     );
   }
 }

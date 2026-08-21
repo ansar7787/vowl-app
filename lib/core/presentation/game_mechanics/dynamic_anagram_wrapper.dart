@@ -97,6 +97,20 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
     }
   }
 
+  void _clearAll() {
+    if (_isSubmitting) return;
+    setState(() {
+      _hasError = false;
+      for (int i = 0; i < _placedTiles.length; i++) {
+        final tile = _placedTiles[i];
+        if (tile != null && tile.id != -1) {
+          _availableTiles.add(tile);
+          _placedTiles[i] = null;
+        }
+      }
+    });
+  }
+
   void _onSubmit() {
     if (_isSubmitting) return;
     if (_placedTiles.contains(null)) {
@@ -266,6 +280,24 @@ class _DynamicAnagramWrapperState extends State<DynamicAnagramWrapper> {
                               ),
                           ],
                         ),
+                        // Clear All button (only show when tiles are placed)
+                        if (_placedTiles.any((t) => t != null && t.id != -1) && !_isSubmitting)
+                          Padding(
+                            padding: EdgeInsets.only(top: 8.h),
+                            child: GestureDetector(
+                              onTap: _clearAll,
+                              child: Text(
+                                'CLEAR ALL',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: subtitleColor,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ),
+                          ),
                         SizedBox(height: 24.h),
 
                         // Placed Tiles (Slots)

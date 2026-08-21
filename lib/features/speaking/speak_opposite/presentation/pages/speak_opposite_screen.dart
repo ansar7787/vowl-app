@@ -12,6 +12,9 @@ import 'package:vowl/features/speaking/presentation/layout/speaking_base_layout.
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/error_journal_collector.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_header.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/widgets/speak_opposite_positive_pole_panel.dart';
@@ -43,6 +46,8 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  
+  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   late AnimationController _sparkController;
   double _timeVal = 0.0;
@@ -79,8 +84,10 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     }
   }
 
-  void _submitVerbalEvaluation(bool nailedIt) {
+  void _submitVerbalEvaluation(bool nailedIt, String expectedText) {
     if (_isAnswered) return;
+    
+    _timerKey.currentState?.stop();
     setState(() {
       _isAnswered = true;
       _isCorrect = nailedIt;
@@ -94,8 +101,26 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      
+      final authState = context.read<AuthBloc>().state;
+      if (authState.status == AuthStatus.authenticated && authState.user != null) {
+        ErrorJournalCollector.record(
+          userId: authState.user!.id,
+          gameType: widget.gameType.name,
+          question: 'Speak Opposite',
+          userAnswer: '[Failed Antonym/Timer]',
+          correctAnswer: expectedText,
+          level: widget.level,
+        );
+      }
+      
       context.read<SpeakingBloc>().add(const SubmitAnswer(false));
     }
+  }
+  
+  void _onTimeUp(String expectedText) {
+    if (_isAnswered) return;
+    _submitVerbalEvaluation(false, expectedText);
   }
 
   void _tutorPass() {
@@ -126,6 +151,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
               _isAnswered = false;
               _isCorrect = null;
               _pullProgress = 0.0;
+              _timerKey.currentState?.start();
             });
             Future.delayed(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
@@ -232,16 +258,27 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              if (!_isAnswered)
+                              if (!_isAnswered) ...[
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 24.h),
+                                  child: SpeedChallengeTimer(
+                                    key: _timerKey,
+                                    durationSeconds: 30,
+                                    primaryColor: theme.primaryColor,
+                                    onTimeUp: () => _onTimeUp(expectedText),
+                                    autoStart: true,
+                                  ),
+                                ),
                                 SpeakingSelfEvaluationControls(
                                   expectedText: expectedText,
                                   primaryColor: theme.primaryColor,
                                   isDark: isDark,
                                   onConfirmed: () =>
-                                      _submitVerbalEvaluation(true),
+                                      _submitVerbalEvaluation(true, expectedText),
                                   onSkipped: () =>
-                                      _submitVerbalEvaluation(false),
+                                      _submitVerbalEvaluation(false, expectedText),
                                 ),
+                              ],
                             ],
                           ),
                         ),
