@@ -17,7 +17,19 @@
             "correctAnswer": "Guacamole, Mole Poblano, Flan",
             "hint": "The customer asks for a recommendation, then accepts three suggested dishes.",
             "explanation": "‘I’ll trust you’ shows the customer is relying on the server's judgment. ‘Mole poblano’ is a rich Mexican sauce made with chocolate and chili peppers.",
-            "id": "go_l81_q1"
+            "id": "go_l81_q1",
+            "menuItems": [
+                "Guacamole",
+                "Mole Poblano",
+                "Flan",
+                "Churros"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$10.00",
+                "$17.75",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Tom Yum Soup, Pad Krapow, Mango Sticky Rice",
             "hint": "The customer checks on spice level first, then confirms the full order.",
             "explanation": "‘Tom yum’ is a hot and sour soup, so checking the spice level first is a natural, practical question. ‘Pad krapow’ is a stir-fried dish with Thai basil.",
-            "id": "go_l81_q2"
+            "id": "go_l81_q2",
+            "menuItems": [
+                "Tom Yum Soup",
+                "Pad Krapow",
+                "Mango Sticky Rice",
+                "Tom Kha Soup"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$13.75",
+                "$8.50",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Samosas, Chicken Korma, Naan",
             "hint": "‘Family style’ means the dishes will be placed in the middle for everyone to share.",
             "explanation": "‘Family style’ is a way of eating where shared dishes are placed in the center of the table for everyone to serve themselves, common in Indian and Chinese dining.",
-            "id": "go_l81_q3"
+            "id": "go_l81_q3",
+            "menuItems": [
+                "Samosas",
+                "Chicken Korma",
+                "Naan",
+                "Butter Chicken"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$3.25",
+                "$14.00",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Hummus, Lamb Tagine, Baklava",
             "hint": "A wine pairing is requested, but it doesn't change the three food items ordered.",
             "explanation": "‘Could you pair it with a wine?’ asks the server for a wine suggestion — a common request in restaurants with a wine list, but not a food item itself.",
-            "id": "go_l82_q1"
+            "id": "go_l82_q1",
+            "menuItems": [
+                "Hummus",
+                "Lamb Tagine",
+                "Baklava",
+                "Falafel"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$14.00",
+                "$2.00",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Pad Thai, Spring Rolls, Thai Iced Tea",
             "hint": "An allergy-related question comes first, then the customer confirms their order.",
             "explanation": "‘Just so I know…’ is a polite way to ask an important question, like checking for allergens, before finalizing an order.",
-            "id": "go_l82_q2"
+            "id": "go_l82_q2",
+            "menuItems": [
+                "Pad Thai",
+                "Spring Rolls",
+                "Thai Iced Tea",
+                "Satay"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$3.25",
+                "$9.75",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Shakshuka, Pita, Mint Tea",
             "hint": "The customer is trying something new for the first time.",
             "explanation": "‘I’ve never had X before — I’ll give it a try’ is a natural way to express curiosity about an unfamiliar dish.",
-            "id": "go_l82_q3"
+            "id": "go_l82_q3",
+            "menuItems": [
+                "Shakshuka",
+                "Pita",
+                "Mint Tea",
+                "Falafel"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$20.50",
+                "$16.50",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Empanadas, Churrasco, Tres Leches Cake",
             "hint": "One item is shared at the start, one is personal, and the last is shared again at the end.",
             "explanation": "‘Churrasco’ refers to grilled meat, popular in South American cooking. ‘Tres leches cake’ is soaked in three types of milk, making it extra moist.",
-            "id": "go_l83_q1"
+            "id": "go_l83_q1",
+            "menuItems": [
+                "Empanadas",
+                "Churrasco",
+                "Tres Leches Cake",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$20.50",
+                "$10.00",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Bibimbap, Kimchi Pancake, Sikhye",
             "hint": "The customer decides to try a popular dish based on recommendations from others.",
             "explanation": "‘I keep hearing good things about…’ shows the customer's decision is based on outside recommendations, not the menu alone. ‘Sikhye’ is a sweet, traditional Korean rice drink.",
-            "id": "go_l83_q2"
+            "id": "go_l83_q2",
+            "menuItems": [
+                "Bibimbap",
+                "Kimchi Pancake",
+                "Sikhye",
+                "Japchae"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$16.50",
+                "$7.25",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Patatas Bravas, Croquetas, Pan con Tomate",
             "hint": "All three dishes are classic Spanish tapas meant for sharing.",
             "explanation": "‘Croquetas’ are small, breaded, and fried rolls usually filled with ham or cheese. ‘Pan con tomate’ is simply bread rubbed with fresh tomato and olive oil.",
-            "id": "go_l83_q3"
+            "id": "go_l83_q3",
+            "menuItems": [
+                "Patatas Bravas",
+                "Croquetas",
+                "Pan con Tomate",
+                "Gazpacho"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$5.75",
+                "$17.75",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Chef's Recommendation, Duck Breast, Crème Brûlée",
             "hint": "The customer lets the chef choose the first course instead of picking it themselves.",
             "explanation": "‘I’ll defer to…’ means letting someone else make the decision. ‘The chef’s recommendation’ is selected as its own item since the exact dish isn't named.",
-            "id": "go_l84_q1"
+            "id": "go_l84_q1",
+            "menuItems": [
+                "Chef's Recommendation",
+                "Duck Breast",
+                "Crème Brûlée",
+                "Foie Gras"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$14.00",
+                "$2.00",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Vindaloo, Garlic Naan, Mango Lassi",
             "hint": "The customer describes their taste preference before receiving and accepting a recommendation.",
             "explanation": "‘Vindaloo’ is one of the spiciest curries on a typical Indian menu, fitting the customer's request for something spicy. ‘Mango lassi’ is a cooling, yogurt-based drink that pairs well with spicy food.",
-            "id": "go_l84_q2"
+            "id": "go_l84_q2",
+            "menuItems": [
+                "Vindaloo",
+                "Garlic Naan",
+                "Mango Lassi",
+                "Korma"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$16.50",
+                "$20.50",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Som Tum, Larb, Sticky Rice",
             "hint": "The customer checks on flavor intensity before confirming all three dishes.",
             "explanation": "‘Som tum’ is a spicy green papaya salad known for its sour, tangy flavor. ‘Larb’ is a minced meat salad, another popular Thai and Laotian dish.",
-            "id": "go_l84_q3"
+            "id": "go_l84_q3",
+            "menuItems": [
+                "Som Tum",
+                "Larb",
+                "Sticky Rice",
+                "Pad Thai"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$7.25",
+                "$6.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Pho, Spring Rolls, Vietnamese Coffee",
             "hint": "An ingredient question comes first, but it doesn't change the customer's mind.",
             "explanation": "Confirming an ingredient, like fish sauce, helps a customer decide with confidence — here, the answer doesn't stop them from ordering.",
-            "id": "go_l85_q1"
+            "id": "go_l85_q1",
+            "menuItems": [
+                "Pho",
+                "Spring Rolls",
+                "Vietnamese Coffee",
+                "Bun Cha"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$3.25",
+                "$15.25",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Bibimbap, Mandu, Barley Tea",
             "hint": "The customer is curious about an unfamiliar Korean dish and its typical sides.",
             "explanation": "‘Mandu’ are Korean dumplings, often filled with meat and vegetables. Barley tea is a common, mild drink served in many Korean restaurants.",
-            "id": "go_l85_q2"
+            "id": "go_l85_q2",
+            "menuItems": [
+                "Bibimbap",
+                "Mandu",
+                "Barley Tea",
+                "Japchae"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$13.75",
+                "$15.25",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Hummus, Shawarma, Baklava",
             "hint": "A shared starter and dessert bookend one personal main course.",
             "explanation": "This sentence uses the same shared-personal-shared pattern from earlier levels, just with Middle Eastern dishes this time.",
-            "id": "go_l85_q3"
+            "id": "go_l85_q3",
+            "menuItems": [
+                "Hummus",
+                "Shawarma",
+                "Baklava",
+                "Falafel"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$2.00",
+                "$2.00",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Birria Tacos, Elote, Agua de Jamaica",
             "hint": "The customer chooses a specific, trendy taco style along with two classic Mexican sides.",
             "explanation": "‘Birria tacos’ are made with slow-braised meat and often served with a rich dipping broth. ‘Agua de jamaica’ is a refreshing drink made from hibiscus flowers.",
-            "id": "go_l86_q1"
+            "id": "go_l86_q1",
+            "menuItems": [
+                "Birria Tacos",
+                "Elote",
+                "Agua de Jamaica",
+                "Al Pastor Tacos"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$7.25",
+                "$9.75",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Dumplings, Scallion Pancakes, Hot and Sour Soup",
             "hint": "Three shareable Chinese dishes are named together.",
             "explanation": "‘Scallion pancakes’ are savory, flaky pancakes made with green onions, a popular starter alongside dumplings.",
-            "id": "go_l86_q2"
+            "id": "go_l86_q2",
+            "menuItems": [
+                "Dumplings",
+                "Scallion Pancakes",
+                "Hot and Sour Soup",
+                "Spring Rolls"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$9.75",
+                "$4.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Chef's Recommendation, Peking Duck, Almond Cookies",
             "hint": "Again, the first course is left up to the chef instead of being named directly.",
             "explanation": "‘Peking duck’ is a famous Chinese dish known for its thin, crispy skin, traditionally carved and served with pancakes at the table.",
-            "id": "go_l86_q3"
+            "id": "go_l86_q3",
+            "menuItems": [
+                "Chef's Recommendation",
+                "Peking Duck",
+                "Almond Cookies",
+                "Hot and Sour Soup"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$5.75",
+                "$8.50",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Sushi Platter, Miso Soup, Mochi",
             "hint": "The customer explains their sharing plan before getting a recommendation.",
             "explanation": "Describing your situation (‘for two people who want to share’) helps the server give a more useful recommendation.",
-            "id": "go_l87_q1"
+            "id": "go_l87_q1",
+            "menuItems": [
+                "Sushi Platter",
+                "Miso Soup",
+                "Mochi",
+                "Edamame"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$13.75",
+                "$8.50",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Jerk Chicken, Festival, Rum Cake",
             "hint": "The spice check comes first again, followed by two classic Caribbean sides.",
             "explanation": "‘Festival’ is a slightly sweet, fried Jamaican dumpling, often served alongside jerk chicken. ‘Rum cake’ is a rich, moist cake soaked in rum syrup.",
-            "id": "go_l87_q2"
+            "id": "go_l87_q2",
+            "menuItems": [
+                "Jerk Chicken",
+                "Festival",
+                "Rum Cake",
+                "Curry Goat"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$2.00",
+                "$16.50",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Injera, Doro Wat, Misir Wot",
             "hint": "Three Ethiopian dishes are shared together in the family-style tradition.",
             "explanation": "‘Injera’ is a spongy flatbread used to scoop up other dishes, like the spiced chicken stew ‘doro wat’ and the lentil dish ‘misir wot.’",
-            "id": "go_l87_q3"
+            "id": "go_l87_q3",
+            "menuItems": [
+                "Injera",
+                "Doro Wat",
+                "Misir Wot",
+                "Kitfo"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$4.50",
+                "$2.00",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Poutine, Peameal Bacon Sandwich, Butter Tart",
             "hint": "All three dishes are classic Canadian comfort foods, and the customer is trying them for the first time.",
             "explanation": "‘Poutine’ is fries topped with cheese curds and gravy. A ‘butter tart’ is a small, sweet pastry filled with a buttery, syrupy filling.",
-            "id": "go_l88_q1"
+            "id": "go_l88_q1",
+            "menuItems": [
+                "Poutine",
+                "Peameal Bacon Sandwich",
+                "Butter Tart",
+                "Nanaimo Bar"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$21.75",
+                "$3.25",
+                "$2.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Laksa, Roti Canai, Teh Tarik",
             "hint": "An ingredient question is confirmed positively before the full order is placed.",
             "explanation": "‘Laksa’ is a spicy noodle soup from Malaysia and Singapore. ‘Teh tarik’ means ‘pulled tea’ in Malay, referring to how the tea is stretched between two cups while pouring.",
-            "id": "go_l88_q2"
+            "id": "go_l88_q2",
+            "menuItems": [
+                "Laksa",
+                "Roti Canai",
+                "Teh Tarik",
+                "Nasi Lemak"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$12.50",
+                "$16.50",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Spanakopita, Moussaka, Loukoumades",
             "hint": "A shared starter and shared dessert surround one personal main.",
             "explanation": "‘Loukoumades’ are small, fried Greek doughnuts drizzled with honey — a lighter, shareable alternative to baklava.",
-            "id": "go_l88_q3"
+            "id": "go_l88_q3",
+            "menuItems": [
+                "Spanakopita",
+                "Moussaka",
+                "Loukoumades",
+                "Baklava"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$14.00",
+                "$21.75",
+                "$2.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Feijoada, Pão de Queijo, Brigadeiro",
             "hint": "A famous Brazilian stew is paired with a cheesy bread and a chocolate dessert.",
             "explanation": "‘Feijoada’ is a hearty black bean and pork stew, considered Brazil's national dish. ‘Brigadeiro’ is a small, fudgy chocolate truffle rolled in sprinkles.",
-            "id": "go_l89_q1"
+            "id": "go_l89_q1",
+            "menuItems": [
+                "Feijoada",
+                "Pão de Queijo",
+                "Brigadeiro",
+                "Coxinha"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$10.00",
+                "$4.50",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Vine Leaves, Halloumi, Taramasalata",
             "hint": "Three shareable Greek starters are named together.",
             "explanation": "‘Halloumi’ is a firm cheese that holds its shape when grilled or fried. ‘Taramasalata’ is a creamy dip made from fish roe.",
-            "id": "go_l89_q2"
+            "id": "go_l89_q2",
+            "menuItems": [
+                "Vine Leaves",
+                "Halloumi",
+                "Taramasalata",
+                "Spanakopita"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$3.25",
+                "$10.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Chef's Recommendation, Paella, Crema Catalana",
             "hint": "The starter is again left to the chef's choice, while the main and dessert are named directly.",
             "explanation": "Letting the chef choose a starter shows trust in the kitchen — a phrase useful at any restaurant with a tasting or recommendation option.",
-            "id": "go_l89_q3"
+            "id": "go_l89_q3",
+            "menuItems": [
+                "Chef's Recommendation",
+                "Paella",
+                "Crema Catalana",
+                "Gazpacho"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$17.75",
+                "$7.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Tonkotsu Ramen, Gyoza, Matcha Ice Cream",
             "hint": "The customer mentions this is their first visit, then accepts a recommended combination.",
             "explanation": "‘Tonkotsu’ refers to a rich, creamy broth made from simmered pork bones — a specific style, different from miso ramen.",
-            "id": "go_l90_q1"
+            "id": "go_l90_q1",
+            "menuItems": [
+                "Tonkotsu Ramen",
+                "Gyoza",
+                "Matcha Ice Cream",
+                "Miso Ramen"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$14.00",
+                "$7.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Harissa, Couscous, Mint Tea",
             "hint": "The customer asks about a spicy condiment's strength before confirming the rest of the order.",
             "explanation": "‘Harissa’ is a spicy North African chili paste, often served alongside couscous to add heat to the meal.",
-            "id": "go_l90_q2"
+            "id": "go_l90_q2",
+            "menuItems": [
+                "Harissa",
+                "Couscous",
+                "Mint Tea",
+                "Tagine"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$18.00",
+                "$16.50",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Dim Sum, Char Siu, Egg Tarts",
             "hint": "Three classic Cantonese dishes are shared for the whole table.",
             "explanation": "‘Char siu’ is a sweet, barbecued pork, often bright red in color. Egg tarts, with their flaky crust and creamy custard, are a beloved dim sum dessert.",
-            "id": "go_l90_q3"
+            "id": "go_l90_q3",
+            "menuItems": [
+                "Dim Sum",
+                "Char Siu",
+                "Egg Tarts",
+                "Congee"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$15.25",
+                "$7.25",
+                "$15.25"
+            ]
         }
     ]
 }

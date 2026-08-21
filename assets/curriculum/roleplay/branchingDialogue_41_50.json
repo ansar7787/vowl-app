@@ -17,7 +17,17 @@
             "correctAnswerIndex": 0,
             "hint": "When more medical testing is recommended, express full, calm cooperation.",
             "explanation": "'Whatever tests you think necessary - I'd rather know for certain' shows mature, cooperative trust in the medical process. 'Inconclusive results are very common' is a general fact. 'I was hoping the first round would be enough' expresses mild resistance to a reasonable medical recommendation.",
-            "id": "bd_l41_q1"
+            "id": "bd_l41_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 1,
             "hint": "Under sales pressure, maintain your due diligence standards and state what you need before acting.",
             "explanation": "'I understand the time pressure, but I need to verify the provenance documentation before committing' resists pressure tactics while maintaining legitimate standards. 'Rare pieces attract competitive interest' is a general observation. 'If others are interested the price should reflect that' suggests a price increase, which is the opposite of the buyer's interest.",
-            "id": "bd_l41_q2"
+            "id": "bd_l41_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 2,
             "hint": "In a professional aviation context, give specific, actionable instructions for passenger communication.",
             "explanation": "'Let them know the local time, current weather, and temperature at the destination' gives three specific, useful items for a passenger briefing. 'Passengers are generally curious about their destination' is true but doesn't give direction. 'Passengers appreciate updates from the flight deck' is a general statement rather than a specific instruction.",
-            "id": "bd_l41_q3"
+            "id": "bd_l41_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 0,
             "hint": "Accept a meaningful assignment with enthusiasm and add immediate value with an improvement idea.",
             "explanation": "'I'd be glad to. I have some ideas for making the programme more hands-on and practical' accepts with confidence and immediately shows you'll bring value. 'Training is important for development' is a general statement. 'It's a significant time commitment on top of my responsibilities' sounds reluctant and focuses on the burden rather than the opportunity.",
-            "id": "bd_l42_q1"
+            "id": "bd_l42_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 2,
             "hint": "Commit fully to a professional task and address any relevant limitations honestly.",
             "explanation": "'I'll translate accurately and with complete discretion, regardless of how sensitive the content becomes' is a full, confident professional commitment. 'Professional translators always maintain confidentiality' speaks about translators in general, not about your specific commitment. 'I'll do my best, but I should warn you I'm not a trained interpreter' is honest about limitations but may undermine confidence in a sensitive situation.",
-            "id": "bd_l42_q2"
+            "id": "bd_l42_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 2,
             "hint": "When given a premium ingredient, recommend a preparation that showcases it at its best.",
             "explanation": "'Keep it simple - tagliatelle or a risotto, finished with fresh shavings at the table' demonstrates real culinary understanding of how to let a premium ingredient shine. 'Truffles are a premium ingredient' is a general statement. 'Truffles are versatile across multiple courses' is true but doesn't give specific menu direction.",
-            "id": "bd_l42_q3"
+            "id": "bd_l42_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give precise clinical details about the pattern of a symptom - constant vs. intermittent, triggers.",
             "explanation": "'It comes and goes - mainly when I stand up too quickly or turn my head suddenly' gives the pattern (intermittent) and identifies specific triggers, which is exactly the clinical detail needed. 'Dizziness has many causes' is a general fact. 'It started a week ago' gives duration but doesn't answer the constant vs. intermittent question that was asked.",
-            "id": "bd_l43_q1"
+            "id": "bd_l43_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 0,
             "hint": "Show genuine appreciation for craftsmanship and ask a specific, knowledgeable follow-up question.",
             "explanation": "'I can see the quality. What materials and techniques go into this particular piece?' shows appreciation and demonstrates genuine interest. 'Premium pricing is only justified when quality is truly exceptional' is a challenging statement that creates an adversarial tone. 'I was just looking - I don't usually spend at this level' deflects without engaging.",
-            "id": "bd_l43_q2"
+            "id": "bd_l43_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 1,
             "hint": "In a professional context, make a clear decision and give a brief, sound reason.",
             "explanation": "'Yes please - passengers always appreciate good news, especially early arrival' makes a clear, positive decision with a sensible rationale. 'Tailwinds are the result of jet stream patterns' is interesting but not relevant to the question of whether to announce the change. 'That's your call' avoids making a recommendation when one was clearly sought.",
-            "id": "bd_l43_q3"
+            "id": "bd_l43_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a security vulnerability is identified, state the immediate operational priority clearly.",
             "explanation": "'Isolate the affected system immediately and prevent exploitation while we assess and arrange a fix' identifies the correct immediate priority: contain, assess, then repair. 'Security vulnerabilities can have severe consequences' is a general statement about risk. 'Bring in a cybersecurity specialist' is an important long-term step but not the immediate priority.",
-            "id": "bd_l44_q1"
+            "id": "bd_l44_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "In a high-stakes security context, assess risk conservatively and state the safest operational assumption.",
             "explanation": "'Assume compromise until proven otherwise and immediately review what intelligence they had access to' takes the safest operational assumption and moves to mitigate the risk. 'Informants going silent is one of the highest-risk signals' is a general statement. 'It could simply mean they couldn't make contact safely' is also true but less actionable as an immediate response.",
-            "id": "bd_l44_q2"
+            "id": "bd_l44_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 1,
             "hint": "Prepare your team for a high-stakes scenario with specific, actionable instructions.",
             "explanation": "'Brief on consistency - the same high standards every day, plus our best server managing their table' is specific and actionable. 'Food critics can make or break a restaurant' is true but offers no guidance. 'Tell everyone to try a little harder than usual' implies that standards are lower on other occasions.",
-            "id": "bd_l44_q3"
+            "id": "bd_l44_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 2,
             "hint": "Confirm compliance with a medical programme honestly and share your motivation.",
             "explanation": "'Yes, every day without exception. I've been very motivated, knowing the progress was happening' confirms full compliance and shares genuine motivation. 'Recovery exercises can be tedious' is a general complaint. 'Most of them - perhaps not as consistently as I should be' is honest but reveals partial non-compliance.",
-            "id": "bd_l45_q1"
+            "id": "bd_l45_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 0,
             "hint": "When it's your last chance, commit to a specific final bid or withdraw clearly.",
             "explanation": "'One final bid at twelve hundred - that's my absolute ceiling' is decisive, specific, and sets a clear limit. 'Final bids are always the most pressure-filled' makes a general observation rather than bidding. 'I'll need two more minutes' is a delay when the timing has been explicitly stated.",
-            "id": "bd_l45_q2"
+            "id": "bd_l45_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 2,
             "hint": "Accept a generous offer with genuine, warm appreciation.",
             "explanation": "'That is very generous - thank you so much. I really appreciate that gesture' accepts the gesture with warmth and genuine gratitude. 'Day rooms are more comfortable than gate areas' makes a comparison rather than a warm acknowledgment. 'A day room is better than nothing' is a barely-concealed complaint that diminishes a generous gesture.",
-            "id": "bd_l45_q3"
+            "id": "bd_l45_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 1,
             "hint": "When given a positive update, state a specific, action-oriented next step.",
             "explanation": "'Immediately verify the key finding, brief the full team, and reassess the operational timeline' gives three specific, actionable next steps. 'Breakthroughs at this stage are very significant' is a general observation. 'This is very positive and encouraging news' is celebratory but doesn't move the operation forward.",
-            "id": "bd_l46_q1"
+            "id": "bd_l46_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 0,
             "hint": "When given a covert task, describe the specific technique you'll use to execute it successfully.",
             "explanation": "'Silent mode, keep it below the desk line, ready to cover it instantly if anyone approaches' describes a specific, practical covert technique. 'Covert photography requires specific training' is a general statement. 'I'll do my best though I've never done this before' raises doubts about competence at the worst possible moment.",
-            "id": "bd_l46_q2"
+            "id": "bd_l46_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a specific, structured response that directly addresses the creative brief.",
             "explanation": "'Start light and local, build to rich and complex, then lift with a bright refreshing dessert as a final chapter' provides a specific, vivid structure. 'Tasting menus are wonderful for showcasing range' is a general endorsement. 'Storytelling through food is very creative' is a compliment rather than a structured answer.",
-            "id": "bd_l46_q3"
+            "id": "bd_l46_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 1,
             "hint": "Respond to a sensitive medical suggestion with openness and a focus on understanding.",
             "explanation": "'I'm open to exploring all possible causes - I want to understand what's happening to me' is the most constructive, open response that serves your health. 'Psychological factors are increasingly recognised in modern medicine' is a general statement. 'I'd prefer to focus on purely physical causes first' creates an artificial barrier to a thorough medical assessment.",
-            "id": "bd_l47_q1"
+            "id": "bd_l47_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 2,
             "hint": "When given an exclusive offer, show interest while asking a clarifying question that helps you assess the opportunity.",
             "explanation": "'I appreciate the trust, but I'd want to know why you're offering it to me specifically' is smart - it gathers context before committing to interest. 'Exclusive pre-market access is compelling' is a general statement. 'I'm very interested. What can you tell me?' shows interest immediately but misses the opportunity to understand why you've been selected.",
-            "id": "bd_l47_q2"
+            "id": "bd_l47_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 0,
             "hint": "In a professional aviation context, confirm receipt and immediately describe the next operational steps.",
             "explanation": "'Roger that. I'll update the fuel calculations and revise our ETA for the destination' is the correct, professional response - confirming the change and immediately executing the follow-up tasks. 'Route adjustments are a normal part of aviation' is general. 'Will the passengers need to be informed?' is a good follow-up question, but the immediate operational tasks should come first.",
-            "id": "bd_l47_q3"
+            "id": "bd_l47_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give clear, specific design principles when asked for strategic guidance on a programme redesign.",
             "explanation": "'Three principles: relevance to operational scenarios, immediate practical application, regular assessment for retention' gives concrete, actionable design criteria. 'Redesigns require careful planning and resources' is a general statement. 'Start by consulting the crew' is a good process step but doesn't answer the question about guiding principles.",
-            "id": "bd_l48_q1"
+            "id": "bd_l48_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 1,
             "hint": "In a potential security compromise, recommend the most conservative, protective course of action.",
             "explanation": "'Assume the worst: cease contact with assets, activate extraction protocol, and don't return to any associated locations' is the safest, most conservative protective response. 'Cover compromises are one of the most serious risks' is a general statement. 'First, try to assess how much has been compromised' is logical but may take too long if the situation is genuinely urgent.",
-            "id": "bd_l48_q2"
+            "id": "bd_l48_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a balanced, specific analysis of both the upsides and the genuine risks.",
             "explanation": "'Massive brand exposure and new customer acquisition are the benefits. One poor performance reaching a huge audience is the risk' gives a genuinely balanced, specific analysis. 'Television appearances can significantly raise your profile' describes one upside without addressing any risks. 'Many chefs have used television successfully' is a general example without a balanced assessment.",
-            "id": "bd_l48_q3"
+            "id": "bd_l48_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 2,
             "hint": "Before entering a complex medical discussion, ask the most clinically important questions upfront.",
             "explanation": "'I'd like to understand the long-term side effects and what success looks like over time' asks the two most practically important questions for managing a long-term treatment. 'Long-term treatment plans are important for managing chronic conditions' is a general fact. 'I'd like to know if my condition will fully resolve' is one important question but misses the equally important side effects question.",
-            "id": "bd_l49_q1"
+            "id": "bd_l49_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked to set terms for a commercial agreement, state specific, concrete requirements.",
             "explanation": "'Minimum five hundred units per quarter, fixed pricing for twelve months, and a seventy-two-hour delivery guarantee' gives three specific, concrete commercial requirements. 'Regular supply agreements are beneficial for both parties' is a general statement. 'I need to review with my team first' is appropriate for complex negotiations, but when explicitly asked for terms, you can share your initial requirements.",
-            "id": "bd_l49_q2"
+            "id": "bd_l49_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give specific, timed instructions to professional crew during a pre-landing sequence.",
             "explanation": "'Begin the cabin safety check, secure all loose items, and prepare for landing in twenty minutes' gives three specific, timed instructions. 'Cabin crew preparation is a critical part of arrival' is true but doesn't give direction. 'The cabin crew are experienced professionals who know the procedures' is also true but delegates without providing specific instruction.",
-            "id": "bd_l49_q3"
+            "id": "bd_l49_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a balanced, honest assessment that identifies both strengths and specific gaps.",
             "explanation": "'Core strengths are solid - training is high, equipment operational. Primary gap is limited intelligence on the target - I'd want forty-eight more hours' gives a specific, balanced, honest assessment. 'The team is as ready as it will ever be' is encouraging but lacks specific analysis. 'Mission readiness is difficult to assess in a single statement' avoids the question when a direct assessment was specifically requested.",
-            "id": "bd_l50_q1"
+            "id": "bd_l50_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 0,
             "hint": "Express full commitment to an authorised mission clearly and without hesitation.",
             "explanation": "'Completely. I understand the stakes and I'm fully committed to the mission's success' is a clear, unambiguous declaration of commitment. 'High-level authorisation increases legitimacy' is an observation about authority, not a personal commitment. 'I'm committed, though I reserve the right to raise concerns' adds an unnecessary qualification at the moment of commitment.",
-            "id": "bd_l50_q2"
+            "id": "bd_l50_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 1,
             "hint": "Respond to significant personal news with genuine emotion and appropriate respect for the person's autonomy.",
             "explanation": "'That's a deeply personal decision, I completely respect it - but I'd be sad to see something so special end' honours the decision while expressing genuine feeling. 'Fifteen years is an enormous achievement' acknowledges the milestone but doesn't respond to the emotional weight of the news. 'Restaurant closures are common in the industry' is coldly impersonal about a very personal and emotional announcement.",
-            "id": "bd_l50_q3"
+            "id": "bd_l50_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         }
     ]
 }

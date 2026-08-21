@@ -18,6 +18,7 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medi
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_patient_record.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_scan_bay.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_diagnostic_tray.dart';
+import 'package:vowl/features/roleplay/medical_consult/presentation/widgets/medical_consult_body_diagram.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class MedicalConsultScreen extends StatefulWidget {
@@ -440,6 +441,14 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen>
                                 ).animate().fadeIn(duration: 300.ms),
 
                                           // Explanations cards post-selection
+                                          if (_isAnswered) ...[
+                                            SizedBox(height: isCompact ? 12.h : 20.h),
+                                            MedicalConsultBodyDiagram(
+                                              quest: quest,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                            ),
+                                          ],
                                           SizedBox(height: isCompact ? 20.h : 40.h),
                                         ],
                                       ),

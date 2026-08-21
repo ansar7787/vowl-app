@@ -169,10 +169,10 @@
 | 80 | vowelDistinction | 8→10 | Add `vowelChart` position | Vowel trapezoid chart | SpeakToConfirm | ✅ |
 | 81 | consonantClarity | 8→10 | Add `voicing` + `airflow` | Throat vibration indicator | ShadowPlaybackCompare | ✅ |
 | 82 | pitchPatternMatch | 8→10 | Add `emotionContext` | Same words + different pitch demo | SpeakToConfirm | ✅ |
-| 83 | speedVariance | 8→10 | Add `naturalSpeed` vs `clearSpeed` | Toggle natural/clear | SpeedChallengeTimer | 🔲 |
-| 84 | dialectDrill | 8→10 | Add `dialectRegion` | Map of dialect region | ShadowPlaybackCompare | 🔲 |
-| 85 | connectedSpeech | 8→10 | Add `phenomenonType` | Written vs spoken side-by-side | ShadowPlaybackCompare | 🔲 |
-| 86 | pitchModulation | 8→10 | Add `meaningShift` | 2 meanings same sentence | SpeakToConfirm both | 🔲 |
+| 83 | speedVariance | 8→10 | Add `naturalSpeed` vs `clearSpeed` | Toggle natural/clear | SpeedChallengeTimer | ✅ |
+| 84 | dialectDrill | 8→10 | Add `dialectRegion` | Map of dialect region | ShadowPlaybackCompare | ✅ |
+| 85 | connectedSpeech | 8→10 | Add `phenomenonType` | Written vs spoken side-by-side | ShadowPlaybackCompare | ✅ |
+| 86 | pitchModulation | 8→10 | Add `meaningShift` | 2 meanings same sentence | SpeakToConfirm both | ✅ |
 
 #### D8: 🎭 ROLEPLAY (10 games) — Current 8.1 → Target 10/10
 
@@ -180,25 +180,25 @@
 
 | # | Game | Rating | JSON Fix | Screen Fix | Status |
 |---|------|--------|----------|------------|--------|
-| 87 | branchingDialogue | 9→10 | Add `consequencePreview` | Relationship meter (polite↔rude) | 🔲 |
-| 88 | situationalResponse | 8→10 | Add `culturalNote` | Formality gauge | 🔲 |
-| 89 | jobInterview | 9→10 | Add `interviewerReaction` | Face expression change | 🔲 |
-| 90 | medicalConsult | 8→10 | Add `medicalVocab` array | Body diagram for symptoms | 🔲 |
-| 91 | gourmetOrder | 8→10 | Add `menuItems` with prices | Restaurant menu UI | 🔲 |
-| 92 | travelDesk | 8→10 | Add `travelDocuments` context | Airport/hotel counter visual | 🔲 |
-| 93 | conflictResolver | 8→10 | Add `escalationLevel` | Tension meter visual | 🔲 |
-| 94 | elevatorPitch | 8→10 | Add `timeLimit` (30/60/90s) | Countdown + word counter | 🔲 |
-| 95 | socialSpark | 8→10 | Add `socialContext` | Scene illustration | 🔲 |
-| 96 | emergencyHub | 7→10 | Add `urgencyLevel` + richer content | Emergency level indicator | 🔲 |
+| 87 | branchingDialogue | 9→10 | Add `consequencePreview` | Relationship meter (polite↔rude) | ✅ |
+| 88 | situationalResponse | 8→10 | Add `culturalNote` | Formality gauge | ✅ |
+| 89 | jobInterview | 9→10 | Add `interviewerReaction` | Face expression change | ✅ |
+| 90 | medicalConsult | 8→10 | Add `medicalVocab` array | Body diagram for symptoms | ✅ |
+| 91 | gourmetOrder | 8→10 | Add `menuItems` with prices | Restaurant menu UI | ✅ |
+| 92 | travelDesk | 8→10 | Add `travelDocuments` context | Airport/hotel counter visual | ✅ |
+| 93 | conflictResolver | 8→10 | Add `escalationLevel` | Tension meter visual | ✅ |
+| 94 | elevatorPitch | 8→10 | Add `timeLimit` (30/60/90s) | Countdown + word counter | ✅ |
+| 95 | socialSpark | 8→10 | Add `socialContext` | Scene illustration | ✅ |
+| 96 | emergencyHub | 7→10 | Add `urgencyLevel` + richer content | Emergency level indicator | ✅ |
 
 #### D9: 🏆 ELITE MASTERY (4 games) — Current 8.3 → Target 10/10
 
 | # | Game | Rating | JSON Fix | Screen Fix | Mechanic To Add | Status |
 |---|------|--------|----------|------------|----------------|--------|
-| 97 | storyBuilder | 9→10 | Add `plotStructure` guide | Story arc diagram | SpeakToConfirm narrate | 🔲 |
-| 98 | idiomMatch | 8→10 | Add `idiomOrigin` + `visualMetaphor` | Literal vs figurative visual | ContextSentenceBuilder | 🔲 |
-| 99 | speedSpelling | 8→10 | Add `difficultyTier` (common→rare) | Letter slots + streak bonus | SpeedChallengeTimer + Anagram | 🔲 |
-| 100 | accentShadowing | 8→10 | Add `targetAccent` (RP/GA) | Waveform comparison visual | ShadowPlaybackCompare | 🔲 |
+| 97 | storyBuilder | 9→10 | Add `plotStructure` guide | Story arc diagram | SpeakToConfirm narrate | ✅ |
+| 98 | idiomMatch | 8→10 | Add `idiomOrigin` + `visualMetaphor` | Literal vs figurative visual | ContextSentenceBuilder | ✅ |
+| 99 | speedSpelling | 8→10 | Add `difficultyTier` (common→rare) | Letter slots + streak bonus | SpeedChallengeTimer + Anagram | ✅ |
+| 100 | accentShadowing | 8→10 | Add `targetAccent` (RP/GA) | Waveform comparison visual | ShadowPlaybackCompare | ✅ |
 
 ### PHASE E: V1 LAUNCH (Final Steps 🔲)
 

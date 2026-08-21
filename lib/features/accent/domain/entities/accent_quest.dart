@@ -27,6 +27,7 @@ class AccentQuest extends GameQuest {
   final String? emphasisRule;
   final String? flowRule;
   final String? pacingRule;
+
   final String? stressRule;
   final String? emotionContext;
   final int? stressIndex;
@@ -35,6 +36,11 @@ class AccentQuest extends GameQuest {
   final Map<String, dynamic>? vowelChart;
   final String? voicing;
   final String? airflow;
+  final double? naturalSpeed;
+  final double? clearSpeed;
+  final String? dialectRegion;
+  final String? phenomenonType;
+  final String? spokenForm;
 
   const AccentQuest({
     required super.id,
@@ -87,6 +93,11 @@ class AccentQuest extends GameQuest {
     this.vowelChart,
     this.voicing,
     this.airflow,
+    this.naturalSpeed,
+    this.clearSpeed,
+    this.dialectRegion,
+    this.phenomenonType,
+    this.spokenForm,
     super.targetWord,
     super.question,
     super.sentence,
@@ -147,6 +158,11 @@ class AccentQuest extends GameQuest {
     Map<String, dynamic>? vowelChart,
     String? voicing,
     String? airflow,
+    double? naturalSpeed,
+    double? clearSpeed,
+    String? dialectRegion,
+    String? phenomenonType,
+    String? spokenForm,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -201,6 +217,11 @@ class AccentQuest extends GameQuest {
       vowelChart: vowelChart ?? this.vowelChart,
       voicing: voicing ?? this.voicing,
       airflow: airflow ?? this.airflow,
+      naturalSpeed: naturalSpeed ?? this.naturalSpeed,
+      clearSpeed: clearSpeed ?? this.clearSpeed,
+      dialectRegion: dialectRegion ?? this.dialectRegion,
+      phenomenonType: phenomenonType ?? this.phenomenonType,
+      spokenForm: spokenForm ?? this.spokenForm,
     );
   }
 
@@ -242,5 +263,10 @@ class AccentQuest extends GameQuest {
     vowelChart,
     voicing,
     airflow,
+    naturalSpeed,
+    clearSpeed,
+    dialectRegion,
+    phenomenonType,
+    spokenForm,
   ];
 }

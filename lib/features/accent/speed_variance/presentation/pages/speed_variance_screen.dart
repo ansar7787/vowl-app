@@ -16,7 +16,9 @@ import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_v
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_prompt_card.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_pulse_speaker.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_tempo_dial.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/features/accent/speed_variance/presentation/widgets/speed_variance_speed_toggle.dart';
+import 'package:vowl/core/presentation/game_mechanics/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SpeedVarianceScreen extends StatefulWidget {
   final int level;
@@ -45,6 +47,9 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
   bool _isDragging = false;
   int? _selectedIndex;
   bool _isFirstStagePassed = false;
+
+  bool _isNaturalSpeed = true;
+  final GlobalKey<SpeedChallengeTimerState> _timerKey = GlobalKey<SpeedChallengeTimerState>();
 
   @override
   void initState() {
@@ -138,13 +143,25 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
       _hapticService.error();
       _soundService.playWrong();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      _scrollToBottom();
-      context.read<AccentBloc>().add(const SubmitAnswer(false));
-    }
+      _isAnswered = true;
+      _isCorrect = false;
+      _timerKey.currentState?.stop();
+    });
+    _scrollToBottom();
+    context.read<AccentBloc>().add(const SubmitAnswer(false));
   }
+}
+
+void _handleTimeExpired() {
+  if (_isAnswered || _isFirstStagePassed) return;
+  setState(() {
+    _isAnswered = true;
+    _isCorrect = false;
+  });
+  _soundService.playWrong();
+  _scrollToBottom();
+  context.read<AccentBloc>().add(const SubmitAnswer(false));
+}
 
   void _submitVerbalEvaluation(bool nailedIt) {
     if (_isAnswered) return;
@@ -190,6 +207,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
               _selectedIndex = null;
               _isDragging = false;
               _isFirstStagePassed = false;
+              _isNaturalSpeed = true;
+              if (!_isAnswered) _timerKey.currentState?.start();
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -282,6 +301,16 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: gapTop),
+                                      if (!_isFirstStagePassed && !_isAnswered)
+                                        Padding(
+                                          padding: EdgeInsets.only(bottom: 16.h),
+                                          child: SpeedChallengeTimer(
+                                            key: _timerKey,
+                                            durationSeconds: 15,
+                                            primaryColor: theme.primaryColor,
+                                            onTimeUp: _handleTimeExpired,
+                                          ),
+                                        ),
                                       SpeedVarianceInstruction(
                                         color: theme.primaryColor,
                                         instruction: _isFirstStagePassed
@@ -297,13 +326,33 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                                         color: theme.primaryColor,
                                         isDark: isDark,
                                       ),
-                                      SizedBox(height: gapPrompt),
-                                      SpeedVariancePulseSpeaker(
-                                        text: quest.textToSpeak ?? "",
-                                        color: theme.primaryColor,
-                                        onPlayTts: (text) =>
-                                            _playTts(text, speed: quest.targetSpeed),
-                                      ),
+                                        SizedBox(height: gapPrompt),
+                                        if (_isFirstStagePassed && !_isAnswered)
+                                          Padding(
+                                            padding: EdgeInsets.only(bottom: 16.h),
+                                            child: SpeedVarianceSpeedToggle(
+                                              isNatural: _isNaturalSpeed,
+                                              onChanged: (val) {
+                                                setState(() => _isNaturalSpeed = val);
+                                                _playTts(
+                                                  quest.textToSpeak ?? "",
+                                                  speed: val ? (quest.naturalSpeed ?? 1.0) : (quest.clearSpeed ?? 0.75),
+                                                );
+                                              },
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                            ),
+                                          ),
+                                        SpeedVariancePulseSpeaker(
+                                          text: quest.textToSpeak ?? "",
+                                          color: theme.primaryColor,
+                                          onPlayTts: (text) => _playTts(
+                                            text,
+                                            speed: _isFirstStagePassed
+                                                ? (_isNaturalSpeed ? (quest.naturalSpeed ?? 1.0) : (quest.clearSpeed ?? 0.75))
+                                                : quest.targetSpeed,
+                                          ),
+                                        ),
                                     ],
                                   ),
                                   Column(
@@ -331,14 +380,15 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen> {
                               ),
                             ),
                           ),
-                          if (_isFirstStagePassed)
-                            AccentSelfEvaluationPanel(
-                              textToSpeak: quest.textToSpeak ?? "",
+                          if (_isFirstStagePassed && !_isAnswered)
+                            SpeakToConfirmOverlay(
+                              expectedText: quest.textToSpeak ?? quest.word ?? "",
                               primaryColor: theme.primaryColor,
-                              isCompact: false, // Dial uses fixed size
-                              onEvaluate: _submitVerbalEvaluation,
+                              isPositioned: false,
+                              onConfirmed: () => _submitVerbalEvaluation(true),
+                              onSkipped: () => _submitVerbalEvaluation(false),
                             ),
-                          SizedBox(height: _isAnswered ? 180.h : 0),
+                          SizedBox(height: _isAnswered || _isFirstStagePassed ? 140.h : 0),
                         ],
                       ),
                     ),

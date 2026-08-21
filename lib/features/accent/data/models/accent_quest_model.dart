@@ -56,6 +56,11 @@ class AccentQuestModel extends AccentQuest {
     super.vowelChart,
     super.voicing,
     super.airflow,
+    super.naturalSpeed,
+    super.clearSpeed,
+    super.dialectRegion,
+    super.phenomenonType,
+    super.spokenForm,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -158,8 +163,13 @@ class AccentQuestModel extends AccentQuest {
       linkingType: getString(map['linkingType']),
       speedLevel: (map['speedLevel'] as num?)?.toDouble() ?? (map['targetSpeed'] as num?)?.toDouble(),
       vowelChart: map['vowelChart'] as Map<String, dynamic>?,
-      voicing: getString(map['voicing']),
-      airflow: getString(map['airflow']),
+      voicing: map['voicing'] as String?,
+      airflow: map['airflow'] as String?,
+      naturalSpeed: (map['naturalSpeed'] as num?)?.toDouble(),
+      clearSpeed: (map['clearSpeed'] as num?)?.toDouble(),
+      dialectRegion: map['dialectRegion'] as String?,
+      phenomenonType: map['phenomenonType'] as String?,
+      spokenForm: map['spokenForm'] as String?,
     );
   }
 
@@ -212,9 +222,14 @@ class AccentQuestModel extends AccentQuest {
       'stressIndex': stressIndex,
       'linkingType': linkingType,
       'speedLevel': speedLevel,
-      'vowelChart': vowelChart,
-      'voicing': voicing,
-      'airflow': airflow,
+      if (vowelChart != null) 'vowelChart': vowelChart,
+      if (voicing != null) 'voicing': voicing,
+      if (airflow != null) 'airflow': airflow,
+      if (naturalSpeed != null) 'naturalSpeed': naturalSpeed,
+      if (clearSpeed != null) 'clearSpeed': clearSpeed,
+      if (dialectRegion != null) 'dialectRegion': dialectRegion,
+      if (phenomenonType != null) 'phenomenonType': phenomenonType,
+      if (spokenForm != null) 'spokenForm': spokenForm,
     };
   }
 }

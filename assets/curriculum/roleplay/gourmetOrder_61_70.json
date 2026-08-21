@@ -17,7 +17,19 @@
             "correctAnswer": "Shrimp Cocktail, Ribeye, Tiramisu",
             "hint": "The steak's cooking temperature is mentioned, but it's just a detail about the main course, not a separate item.",
             "explanation": "‘Medium-rare’ describes how the steak should be cooked — it doesn't change which three items to select. ‘I think I’ll go with…’ shows natural hesitation while deciding.",
-            "id": "go_l61_q1"
+            "id": "go_l61_q1",
+            "menuItems": [
+                "Shrimp Cocktail",
+                "Ribeye",
+                "Tiramisu",
+                "Cheesecake"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$20.50",
+                "$12.50",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Calamari, Salmon, Chocolate Cake",
             "hint": "‘Well-done’ is a cooking instruction for the fish, not an extra course.",
             "explanation": "Asking for fish to be ‘well-done’ means fully cooked through, with no translucent center. This request doesn't add a fourth item to the order.",
-            "id": "go_l61_q2"
+            "id": "go_l61_q2",
+            "menuItems": [
+                "Calamari",
+                "Salmon",
+                "Chocolate Cake",
+                "Cheesecake"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$20.50",
+                "$14.00",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Goat Cheese Salad, Lamb Chops, Crème Brûlée",
             "hint": "Two different starters or mains might be expected, but read carefully — only one starter is named here.",
             "explanation": "‘My partner will have…’ shows two people are ordering different mains, but this sentence only names one starter, one main, and one shared dessert.",
-            "id": "go_l61_q3"
+            "id": "go_l61_q3",
+            "menuItems": [
+                "Goat Cheese Salad",
+                "Lamb Chops",
+                "Crème Brûlée",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$15.25",
+                "$2.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Beet Salad, Roast Chicken, Apple Tart",
             "hint": "The allergy explains the customer's choice, but doesn't change what needs to be selected.",
             "explanation": "Mentioning an allergy helps explain why a customer avoids certain dishes, but the actual order is still just the three named items.",
-            "id": "go_l62_q1"
+            "id": "go_l62_q1",
+            "menuItems": [
+                "Beet Salad",
+                "Roast Chicken",
+                "Apple Tart",
+                "Fruit Tart"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$20.50",
+                "$11.25",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "French Onion Soup, Filet Mignon, Panna Cotta",
             "hint": "The steak's temperature is a cooking detail woven into the middle of the order.",
             "explanation": "This sentence places the cooking instruction mid-order rather than at the end, but it's still just extra detail about the filet mignon, not a separate item.",
-            "id": "go_l62_q2"
+            "id": "go_l62_q2",
+            "menuItems": [
+                "French Onion Soup",
+                "Filet Mignon",
+                "Panna Cotta",
+                "Crème Caramel"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$12.50",
+                "$3.25",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Bruschetta, Duck Breast, Lemon Tart",
             "hint": "The question about cooking temperature is part of the main course request, not a fourth item.",
             "explanation": "‘Could you cook the duck breast medium?’ is a polite way to specify doneness for meats other than steak, like duck.",
-            "id": "go_l62_q3"
+            "id": "go_l62_q3",
+            "menuItems": [
+                "Bruschetta",
+                "Duck Breast",
+                "Lemon Tart",
+                "Chocolate Tart"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$14.00",
+                "$18.00",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Mushroom Soup, Seared Scallops, Sticky Toffee Pudding",
             "hint": "Two different starters could appear, but here only one starter and one main are named for two people, plus a shared dessert.",
             "explanation": "‘One of us… the other…’ is a natural way to describe two people ordering different dishes at the same table, while sharing dessert.",
-            "id": "go_l63_q1"
+            "id": "go_l63_q1",
+            "menuItems": [
+                "Mushroom Soup",
+                "Seared Scallops",
+                "Sticky Toffee Pudding",
+                "Chocolate Fondant"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$7.25",
+                "$9.75",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
             "hint": "‘As for the main’ signals the customer is now moving on to their second course.",
             "explanation": "‘As for…’ is a natural way to shift from one course to the next while ordering, similar to ‘for my main.’",
-            "id": "go_l63_q2"
+            "id": "go_l63_q2",
+            "menuItems": [
+                "Calamari",
+                "Swordfish",
+                "Coconut Cream Pie",
+                "Key Lime Pie"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$7.25",
+                "$7.25",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Garlic Bread, Seafood Risotto, Panna Cotta",
             "hint": "‘For the table’ shows the starter will be shared, even though the main and dessert belong to just one person.",
             "explanation": "‘For the table’ signals a shared starter, which is common when a group orders together, even if the rest of the order is personal.",
-            "id": "go_l63_q3"
+            "id": "go_l63_q3",
+            "menuItems": [
+                "Garlic Bread",
+                "Seafood Risotto",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$15.25",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Pâté, Pork Tenderloin, Crème Caramel",
             "hint": "‘Cooked through’ is a common request for pork, meaning no pink should remain.",
             "explanation": "Unlike beef, pork is traditionally requested ‘cooked through’ for food safety, even though modern pork can safely be served slightly pink. This is just a cooking detail, not a new item.",
-            "id": "go_l64_q1"
+            "id": "go_l64_q1",
+            "menuItems": [
+                "Pâté",
+                "Pork Tenderloin",
+                "Crème Caramel",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$6.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Wedge Salad, Burger, S'mores",
             "hint": "The cooking instruction for the burger patty sits in the middle of the order.",
             "explanation": "Burgers, like steaks, can be cooked to different levels of doneness. ‘Medium’ here describes how the patty should be cooked.",
-            "id": "go_l64_q2"
+            "id": "go_l64_q2",
+            "menuItems": [
+                "Wedge Salad",
+                "Burger",
+                "S'mores",
+                "Chocolate Cake"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$7.25",
+                "$12.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Shrimp Bisque, Veal Chop, Profiteroles",
             "hint": "‘Rare if possible’ is a polite way to request a specific cooking temperature.",
             "explanation": "‘If possible’ softens the request, making it sound more like a preference than a demand — a useful, polite phrase for any special request.",
-            "id": "go_l64_q3"
+            "id": "go_l64_q3",
+            "menuItems": [
+                "Shrimp Bisque",
+                "Veal Chop",
+                "Profiteroles",
+                "Éclair"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$10.00",
+                "$18.00",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Calamari, Pork Belly, Sea Bass",
             "hint": "This sentence names a shared starter and two different mains for two people.",
             "explanation": "‘My partner’s having…’ is a short way of saying ‘my partner is having…’ This structure is common when two people at a table order different mains.",
-            "id": "go_l65_q1"
+            "id": "go_l65_q1",
+            "menuItems": [
+                "Calamari",
+                "Pork Belly",
+                "Sea Bass",
+                "Salmon"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$4.50",
+                "$10.00",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Onion Soup, Strip Steak, Chocolate Soufflé",
             "hint": "All the usual course markers are here, but listen closely for the exact steak cut named.",
             "explanation": "‘Strip steak’ is a specific cut, different from a ribeye or filet. Always listen for the exact cut named, since menus often list several.",
-            "id": "go_l65_q2"
+            "id": "go_l65_q2",
+            "menuItems": [
+                "Onion Soup",
+                "Strip Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$16.50",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Burrata, Branzino, Affogato",
             "hint": "A polite request about cooking is tucked into the main course description.",
             "explanation": "‘Please don’t overcook it’ is a polite way to ask for careful preparation, especially for delicate fish like branzino. ‘Affogato’ is a scoop of ice cream with a shot of hot espresso poured over it.",
-            "id": "go_l65_q3"
+            "id": "go_l65_q3",
+            "menuItems": [
+                "Burrata",
+                "Branzino",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Garden Salad, Roast Chicken, Apple Crumble",
             "hint": "The customer explains why they're avoiding one dish, then names their actual order.",
             "explanation": "‘I’ll skip… and have… instead’ clearly shows a substitution. The seafood starter mentioned is not part of the final order — only the garden salad is.",
-            "id": "go_l66_q1"
+            "id": "go_l66_q1",
+            "menuItems": [
+                "Garden Salad",
+                "Roast Chicken",
+                "Apple Crumble",
+                "Fruit Tart"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$20.50",
+                "$20.50",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Beet and Goat Cheese Salad, Halibut, Lemon Tart",
             "hint": "‘Until it flakes’ describes exactly how the fish should be cooked, not a separate request.",
             "explanation": "Fish is often described as done when it ‘flakes easily’ with a fork. This is simply a more descriptive way of requesting well-cooked fish.",
-            "id": "go_l66_q2"
+            "id": "go_l66_q2",
+            "menuItems": [
+                "Beet and Goat Cheese Salad",
+                "Halibut",
+                "Lemon Tart",
+                "Chocolate Tart"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$5.75",
+                "$18.00",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Mussels, Steak Frites, Crème Brûlée",
             "hint": "One starter, one main with a cooking instruction, and a shared dessert make up this order.",
             "explanation": "‘Steak frites’ is steak served with French fries — a classic bistro dish. The cooking word ‘medium’ applies only to the steak.",
-            "id": "go_l66_q3"
+            "id": "go_l66_q3",
+            "menuItems": [
+                "Mussels",
+                "Steak Frites",
+                "Crème Brûlée",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$13.75",
+                "$2.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "French Onion Soup, Lamb Rack, Chocolate Torte",
             "hint": "‘Pink in the middle’ is another way to describe a cooking temperature, similar to ‘medium-rare.’",
             "explanation": "‘Pink in the middle’ is a natural, descriptive way to request a cooking temperature without using the words ‘medium-rare’ directly.",
-            "id": "go_l67_q1"
+            "id": "go_l67_q1",
+            "menuItems": [
+                "French Onion Soup",
+                "Lamb Rack",
+                "Chocolate Torte",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$3.25",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Escargot, Duck Confit, Crème Caramel",
             "hint": "A request about texture, not temperature, appears in the middle of this order.",
             "explanation": "‘Extra crispy skin’ is a texture request rather than a temperature request, but it works the same way — it's a detail about the main course, not a new item.",
-            "id": "go_l67_q2"
+            "id": "go_l67_q2",
+            "menuItems": [
+                "Escargot",
+                "Duck Confit",
+                "Crème Caramel",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$16.50",
+                "$6.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Burrata, Octopus, Olive Oil Cake",
             "hint": "Two different starters are named for two people, followed by one shared dessert.",
             "explanation": "This is the same pattern as before, but now it's the starters that differ between the two diners, rather than the mains.",
-            "id": "go_l67_q3"
+            "id": "go_l67_q3",
+            "menuItems": [
+                "Burrata",
+                "Octopus",
+                "Olive Oil Cake",
+                "Cheesecake"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$9.75",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
             "hint": "This entire order follows the familiar starter, main with temperature, dessert structure.",
             "explanation": "‘Venison’ is deer meat, often served medium-rare like a fine cut of beef. The structure here should feel familiar from earlier levels, just with richer vocabulary.",
-            "id": "go_l68_q1"
+            "id": "go_l68_q1",
+            "menuItems": [
+                "Tuna Tartare",
+                "Venison",
+                "Dark Chocolate Mousse",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$2.00",
+                "$18.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Flatbread, Short Rib, Bread Pudding",
             "hint": "‘Falling off the bone’ describes how tender the meat should be after slow cooking.",
             "explanation": "‘Falling off the bone’ is a common way to describe perfectly slow-cooked meat, so tender it separates from the bone with almost no effort.",
-            "id": "go_l68_q2"
+            "id": "go_l68_q2",
+            "menuItems": [
+                "Flatbread",
+                "Short Rib",
+                "Bread Pudding",
+                "Sticky Toffee Pudding"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$21.75",
+                "$13.75",
+                "$9.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Beet Carpaccio, Rack of Pork, Pear Tart",
             "hint": "The request balances two things — full cooking and juiciness — but it's still just detail about the pork.",
             "explanation": "‘Cooked through but still juicy’ shows a customer being specific about both safety and quality. This detail doesn't change which three items to select.",
-            "id": "go_l68_q3"
+            "id": "go_l68_q3",
+            "menuItems": [
+                "Beet Carpaccio",
+                "Rack of Pork",
+                "Pear Tart",
+                "Apple Tart"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$6.00",
+                "$3.25",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Tomato Soup, Grilled Sea Bream, Flourless Chocolate Cake",
             "hint": "The dietary need explains the customer's dessert choice, without adding an extra item.",
             "explanation": "‘Flourless’ tells you the cake contains no wheat flour, making it suitable for someone avoiding gluten. The dietary note is context, not a separate selection.",
-            "id": "go_l69_q1"
+            "id": "go_l69_q1",
+            "menuItems": [
+                "Tomato Soup",
+                "Grilled Sea Bream",
+                "Flourless Chocolate Cake",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$5.75",
+                "$15.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Endive Salad, Bone-In Ribeye, Crema Catalana",
             "hint": "‘Bone-in’ describes the cut of steak, while ‘medium’ describes how it's cooked — two details about one item.",
             "explanation": "‘Bone-in ribeye’ is a specific style of steak cut that includes the rib bone, often prized for extra flavor. Both details belong to the same main course.",
-            "id": "go_l69_q2"
+            "id": "go_l69_q2",
+            "menuItems": [
+                "Endive Salad",
+                "Bone-In Ribeye",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$2.00",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Clams, Pork Chop, Almond Cake",
             "hint": "Two different starters or mains might be expected — read carefully to see which item belongs to which diner and course.",
             "explanation": "This sentence gives each diner a different starter/main pairing — clams for one, pork chop for the other — with one shared dessert at the end.",
-            "id": "go_l69_q3"
+            "id": "go_l69_q3",
+            "menuItems": [
+                "Clams",
+                "Pork Chop",
+                "Almond Cake",
+                "Olive Oil Cake"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$16.50",
+                "$21.75",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Burrata, Lamb Shank, Tiramisu",
             "hint": "‘Falling apart tender’ describes the ideal texture after slow braising.",
             "explanation": "‘Falling apart tender’ is another way to describe meat that has been slow-cooked until extremely soft, similar to ‘falling off the bone.’",
-            "id": "go_l70_q1"
+            "id": "go_l70_q1",
+            "menuItems": [
+                "Burrata",
+                "Lamb Shank",
+                "Tiramisu",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$3.25",
+                "$12.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Seared Tuna, Porterhouse, Crème Brûlée",
             "hint": "‘Porterhouse’ is a large, specific cut of steak — listen carefully for the exact name.",
             "explanation": "A ‘porterhouse’ steak combines two cuts in one — a strip steak and a filet — separated by a T-shaped bone, making it one of the largest steak cuts.",
-            "id": "go_l70_q2"
+            "id": "go_l70_q2",
+            "menuItems": [
+                "Seared Tuna",
+                "Porterhouse",
+                "Crème Brûlée",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$4.50",
+                "$2.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Calamari, Risotto, Swordfish",
             "hint": "A shared starter is followed by two different mains for two different people.",
             "explanation": "This combines a shared starter (‘for the table’) with two separate main courses — one for each diner — a common structure in real restaurant conversations.",
-            "id": "go_l70_q3"
+            "id": "go_l70_q3",
+            "menuItems": [
+                "Calamari",
+                "Risotto",
+                "Swordfish",
+                "Sea Bass"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$6.00",
+                "$7.25",
+                "$10.00"
+            ]
         }
     ]
 }

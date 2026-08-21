@@ -17,7 +17,19 @@
             "correctAnswer": "Endive Salad, Duck Breast, Crema Catalana",
             "hint": "The customer is a returning guest choosing a dish they already know and love.",
             "explanation": "‘Having sampled X on a previous visit’ shows the customer is a repeat guest, confidently reordering a dish they've already tried and enjoyed.",
-            "id": "go_l131_q1"
+            "id": "go_l131_q1",
+            "menuItems": [
+                "Endive Salad",
+                "Duck Breast",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$14.00",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Octopus Carpaccio, Lamb Rack, Panna Cotta",
             "hint": "A specific staff member — not just any server — offers this recommendation.",
             "explanation": "A ‘maître d’’ oversees the dining room and often greets guests personally, so a recommendation from them carries particular weight.",
-            "id": "go_l131_q2"
+            "id": "go_l131_q2",
+            "menuItems": [
+                "Octopus Carpaccio",
+                "Lamb Rack",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$3.25",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Seared Scallops, Branzino, Chocolate Lava Cake",
             "hint": "The occasion — impressing visiting guests — explains this especially impressive order.",
             "explanation": "‘To showcase the best of the menu’ means choosing dishes specifically meant to impress, a common goal when entertaining visitors.",
-            "id": "go_l131_q3"
+            "id": "go_l131_q3",
+            "menuItems": [
+                "Seared Scallops",
+                "Branzino",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$11.25",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Burrata, Branzino, Olive Oil Cake",
             "hint": "A polite note about a possible small change comes before the rest of the order.",
             "explanation": "‘If the kitchen can accommodate a small modification’ politely signals a minor request, like removing an ingredient, without stating exactly what it is.",
-            "id": "go_l132_q1"
+            "id": "go_l132_q1",
+            "menuItems": [
+                "Burrata",
+                "Branzino",
+                "Olive Oil Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Tuna Tartare, Pork Chop, Sticky Toffee Pudding",
             "hint": "A booked private space explains why all three courses will arrive at once, rather than separately.",
             "explanation": "‘Seeing as…’ means ‘since’ or ‘because,’ introducing a reason. In private dining, courses are sometimes served together rather than one at a time.",
-            "id": "go_l132_q2"
+            "id": "go_l132_q2",
+            "menuItems": [
+                "Tuna Tartare",
+                "Pork Chop",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$16.50",
+                "$9.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Beet Salad, Branzino, Panna Cotta",
             "hint": "A professional gathering explains why the customer is choosing safe, familiar dishes.",
             "explanation": "‘Nothing too adventurous’ shows the customer deliberately avoiding unusual dishes, likely to keep the focus on business rather than food.",
-            "id": "go_l132_q3"
+            "id": "go_l132_q3",
+            "menuItems": [
+                "Beet Salad",
+                "Branzino",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$11.25",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Truffle Risotto, Veal Chop, Tiramisu",
             "hint": "A dish's popularity and limited availability explains why it's ordered first.",
             "explanation": "‘Sells out quickly’ warns that a dish may run out, a good reason to order it early rather than risk missing it.",
-            "id": "go_l133_q1"
+            "id": "go_l133_q1",
+            "menuItems": [
+                "Truffle Risotto",
+                "Veal Chop",
+                "Tiramisu",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$10.00",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Escargot, Lamb Rack, Crema Catalana",
             "hint": "A specific person's request is described from someone else's point of view.",
             "explanation": "‘The honoree’ is the person being celebrated at an event, like a retirement dinner — their personal requests often shape the whole meal.",
-            "id": "go_l133_q2"
+            "id": "go_l133_q2",
+            "menuItems": [
+                "Escargot",
+                "Lamb Rack",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$3.25",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Burrata, Lamb Shank, Sticky Toffee Pudding",
             "hint": "The customer commits to any wine pairing before naming all three food courses.",
             "explanation": "‘I’ll match whatever wine you suggest’ shows complete openness to a wine recommendation, similar to earlier phrases about trusting the sommelier.",
-            "id": "go_l133_q3"
+            "id": "go_l133_q3",
+            "menuItems": [
+                "Burrata",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$3.25",
+                "$9.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Caviar, Wagyu, Chocolate Lava Cake",
             "hint": "A generous gesture from the host explains this elaborate order for the whole group.",
             "explanation": "‘As a token of appreciation’ means as a way of showing thanks, often explaining why a host is treating guests to something special.",
-            "id": "go_l134_q1"
+            "id": "go_l134_q1",
+            "menuItems": [
+                "Caviar",
+                "Wagyu",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$7.25",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Octopus Carpaccio, Duck Breast, Affogato",
             "hint": "This returning-guest structure reappears with a new starter.",
             "explanation": "This sentence follows the same shape seen earlier — a confident reorder of a dish already known and enjoyed.",
-            "id": "go_l134_q2"
+            "id": "go_l134_q2",
+            "menuItems": [
+                "Octopus Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$14.00",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Beet Carpaccio, Halibut, Lemon Posset",
             "hint": "The same trusted staff member's recommendation reappears here.",
             "explanation": "This structure continues to highlight a specific, respected recommendation, rather than a general server suggestion.",
-            "id": "go_l134_q3"
+            "id": "go_l134_q3",
+            "menuItems": [
+                "Beet Carpaccio",
+                "Halibut",
+                "Lemon Posset",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$5.75",
+                "$9.75",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Burrata, Branzino, Tiramisu",
             "hint": "This ‘impressing visitors’ structure returns with a slightly lighter three-course meal.",
             "explanation": "Even a simpler set of dishes can ‘showcase the best of the menu,’ depending on what a restaurant is known for.",
-            "id": "go_l135_q1"
+            "id": "go_l135_q1",
+            "menuItems": [
+                "Burrata",
+                "Branzino",
+                "Tiramisu",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Beet Carpaccio, Duck Breast, Affogato",
             "hint": "The polite modification note returns here with a new starter.",
             "explanation": "This phrase remains a graceful way to hint at a small special request without over-explaining it.",
-            "id": "go_l135_q2"
+            "id": "go_l135_q2",
+            "menuItems": [
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Beet Salad, Veal Chop, Olive Oil Cake",
             "hint": "The private room explanation returns, again describing courses served all at once.",
             "explanation": "This structure remains useful for describing any private event where the usual course-by-course timing might be adjusted.",
-            "id": "go_l135_q3"
+            "id": "go_l135_q3",
+            "menuItems": [
+                "Beet Salad",
+                "Veal Chop",
+                "Olive Oil Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$10.00",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Burrata, Sea Bass, Panna Cotta",
             "hint": "This cautious, professional-dinner structure returns once more.",
             "explanation": "This phrase continues to show a deliberate, safe choice made for a formal business setting.",
-            "id": "go_l136_q1"
+            "id": "go_l136_q1",
+            "menuItems": [
+                "Burrata",
+                "Sea Bass",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Octopus, Wagyu, Chocolate Fondant",
             "hint": "This popularity-driven ordering logic returns with new dishes.",
             "explanation": "This structure continues to explain a practical reason — limited availability — for ordering a specific starter first.",
-            "id": "go_l136_q2"
+            "id": "go_l136_q2",
+            "menuItems": [
+                "Octopus",
+                "Wagyu",
+                "Chocolate Fondant",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$7.25",
+                "$6.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Octopus, Lamb Shank, Sticky Toffee Pudding",
             "hint": "A named event and a specific honoree's requests return once more.",
             "explanation": "This structure remains useful for describing any special meal centered around one particular guest's wishes.",
-            "id": "go_l136_q3"
+            "id": "go_l136_q3",
+            "menuItems": [
+                "Octopus",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$3.25",
+                "$9.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Beet Carpaccio, Duck Breast, Affogato",
             "hint": "This full trust in wine pairing returns with a new three-course meal.",
             "explanation": "This structure continues to show complete confidence in the sommelier's expertise, regardless of the specific food ordered.",
-            "id": "go_l137_q1"
+            "id": "go_l137_q1",
+            "menuItems": [
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Beet Salad, Halibut, Sorbet",
             "hint": "A generous host's gesture returns once more, explaining a shared group order.",
             "explanation": "This phrase remains a graceful way to describe a host treating an entire group to a thoughtfully chosen meal.",
-            "id": "go_l137_q2"
+            "id": "go_l137_q2",
+            "menuItems": [
+                "Beet Salad",
+                "Halibut",
+                "Sorbet",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$5.75",
+                "$15.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Burrata, Veal Chop, Crema Catalana",
             "hint": "The returning-guest structure appears once more with a new main course.",
             "explanation": "This sentence pattern continues to express loyalty to a dish already tried and trusted on an earlier visit.",
-            "id": "go_l137_q3"
+            "id": "go_l137_q3",
+            "menuItems": [
+                "Burrata",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Tuna Tartare, Branzino, Olive Oil Cake",
             "hint": "The trusted staff recommendation returns with a fish main course this time.",
             "explanation": "This structure continues to highlight the special weight of a personal recommendation from senior restaurant staff.",
-            "id": "go_l138_q1"
+            "id": "go_l138_q1",
+            "menuItems": [
+                "Tuna Tartare",
+                "Branzino",
+                "Olive Oil Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$11.25",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Caviar, Lamb Rack, Chocolate Soufflé",
             "hint": "This impressive-guest structure appears once more with a new set of standout dishes.",
             "explanation": "This phrase remains a natural way to explain an elevated order made specifically to impress visiting guests.",
-            "id": "go_l138_q2"
+            "id": "go_l138_q2",
+            "menuItems": [
+                "Caviar",
+                "Lamb Rack",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$3.25",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Burrata, Halibut, Lemon Posset",
             "hint": "The polite modification phrase returns once more with a light fish main.",
             "explanation": "This gentle, indirect way of hinting at a special request continues to work smoothly across many different dishes.",
-            "id": "go_l138_q3"
+            "id": "go_l138_q3",
+            "menuItems": [
+                "Burrata",
+                "Halibut",
+                "Lemon Posset",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$5.75",
+                "$9.75",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Octopus Carpaccio, Wagyu, Tiramisu",
             "hint": "The private-room explanation returns once more, describing a shared, simultaneous course delivery.",
             "explanation": "This structure continues to be useful for private events where guests may prefer all their courses served closely together.",
-            "id": "go_l139_q1"
+            "id": "go_l139_q1",
+            "menuItems": [
+                "Octopus Carpaccio",
+                "Wagyu",
+                "Tiramisu",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$7.25",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Beet Salad, Branzino, Sorbet",
             "hint": "This cautious business-dinner phrase makes its final appearance in this set of levels.",
             "explanation": "This sentence closes out a recurring theme in this level range: choosing safe, familiar dishes for a professional setting.",
-            "id": "go_l139_q2"
+            "id": "go_l139_q2",
+            "menuItems": [
+                "Beet Salad",
+                "Branzino",
+                "Sorbet",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$11.25",
+                "$15.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Burrata, Veal Chop, Crema Catalana",
             "hint": "The popularity-driven starter logic returns once more.",
             "explanation": "This structure remains a natural, practical way to explain ordering something quickly before it runs out.",
-            "id": "go_l139_q3"
+            "id": "go_l139_q3",
+            "menuItems": [
+                "Burrata",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Seared Scallops, Lamb Shank, Panna Cotta",
             "hint": "This named-event structure makes its final appearance in this set of levels.",
             "explanation": "This sentence closes out this tier using the same clear structure for describing a special guest's personal requests at a celebratory meal.",
-            "id": "go_l140_q1"
+            "id": "go_l140_q1",
+            "menuItems": [
+                "Seared Scallops",
+                "Lamb Shank",
+                "Panna Cotta",
+                "Sticky Toffee Pudding"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$3.25",
+                "$3.25",
+                "$9.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Burrata, Sea Bass, Panna Cotta",
             "hint": "This full trust in wine pairing appears one final time to close out this tier.",
             "explanation": "Throughout this level range, this phrase has consistently shown complete confidence in expert wine recommendations.",
-            "id": "go_l140_q2"
+            "id": "go_l140_q2",
+            "menuItems": [
+                "Burrata",
+                "Sea Bass",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Crab Cakes, Veal Chop, Chocolate Lava Cake",
             "hint": "This generous host structure returns one final time to close out this set of levels.",
             "explanation": "This phrase has repeated throughout this level range as a graceful way to describe a host's generosity toward an entire group of guests.",
-            "id": "go_l140_q3"
+            "id": "go_l140_q3",
+            "menuItems": [
+                "Crab Cakes",
+                "Veal Chop",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$14.00",
+                "$12.50"
+            ]
         }
     ]
 }

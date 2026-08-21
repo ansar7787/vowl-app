@@ -17,7 +17,7 @@ import 'package:vowl/features/accent/connected_speech/presentation/widgets/conne
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_prompt_card.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_pulse_speaker.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/widgets/connected_speech_linker_cards.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
   final int level;
@@ -266,6 +266,9 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
 
                                                 ConnectedSpeechPromptCard(
                                                   word: quest.word ?? "",
+                                                  spokenForm: quest.spokenForm,
+                                                  phenomenonType: quest.phenomenonType,
+                                                  isAnswered: _isFirstStagePassed || _isAnswered,
                                                   color: theme.primaryColor,
                                                   isDark: isDark,
                                                   isCompact: isCompact,
@@ -308,7 +311,7 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
                                       ),
                                     ),
                                     if (_isFirstStagePassed && !_isAnswered)
-                                      SpeakToConfirmOverlay(
+                                      ShadowPlaybackCompare(
                                         expectedText: quest.textToSpeak ?? quest.word ?? "",
                                         primaryColor: theme.primaryColor,
                                         isPositioned: false,

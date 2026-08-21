@@ -18,7 +18,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /d/ in \"could\" and the /j/ starting \"yield\" don't survive as separate sounds in fast speech. What do they turn into together?",
             "explanation": "This is why \"could yield\" doesn't sound like two crisp, separate words: the boundary consonant /d/ and the /j/ of \"yield\" merge into the single sound /dʒ/.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "could yield"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L51_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the /d/ at the end of \"second\". With another consonant right before it and another right after (from \"language\"), can a speaker realistically hit all three cleanly?",
             "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /d/ at the end of \"second\" disappears before the consonant that starts \"language\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "secon' language"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L51_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"seven cars\" at natural speed. Listen right at the boundary — does the /n/ stay a /n/, or does it become something else?",
             "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /n/ ending \"seven\" turns into /ŋ/ because \"cars\" begins with a velar consonant.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "seven cars"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L52_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 1,
             "hint": "A bilabial consonant is coming up in \"buy\". What does that do to the /d/ just before it in \"good\"?",
             "explanation": "Speakers save effort by letting /d/ anticipate the bilabial sound ahead. So in \"good buy\", /d/ is pronounced as /b/ instead.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "goob buy"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L52_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 0,
             "hint": "Try saying \"plant trees\" at a natural conversational pace, not word by word. What happens to the /t/ sound in the middle?",
             "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"plant trees\", the /t/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "plant 'rees"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L52_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 1,
             "hint": "Notice how the mouth has to move from the /n/ ending \"ten\" to the velar sound that opens \"coupons\". Does it really make that full move, or take a shortcut?",
             "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /n/ becomes /ŋ/ in \"ten coupons\" to match the velar consonant that follows.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "ten coupons"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L53_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 1,
             "hint": "This is a spelling trap: \"Africa\" looks like it should flow straight into \"is\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
             "explanation": "Since \"Africa\" doesn't end in a written consonant that could explain a /r/, the /r/ you hear before \"is\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "Africa is"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L53_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 0,
             "hint": "This is a sound-merging boundary. What new consonant replaces /t/ + /j/ when you say \"won't yield\" naturally?",
             "explanation": "Coalescence is a genuine sound change, not just fast talking — /t/ plus /j/ reliably becomes /tʃ/ in phrases like \"won't yield\" across natural English speech.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "won't yield"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L53_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 1,
             "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"contact\" meets \"number\" — does English keep it or drop it?",
             "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"contact number\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "contac' number"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L54_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two vowels back to back is awkward to say smoothly. What sound does natural speech add between \"drama\" and \"award\" — despite it not appearing in either word's spelling?",
             "explanation": "This is a purely phonetic addition: /r/ shows up between \"drama\" and \"award\" only to ease pronunciation, with nothing in either word's spelling to account for it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "drama award"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L54_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 0,
             "hint": "Nothing in \"idea\"'s ending suggests a consonant at all. So the /r/ you might hear before \"of\" isn't really part of either word — where does it come from?",
             "explanation": "Vowel hiatus (two vowels in a row) is uncomfortable in fluent English, so an intrusive /r/ fills the gap in \"idea of\" — a sound created by the flow of speech, not by spelling.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "idea of"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L54_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 0,
             "hint": "In casual speech, does the final /t/ of \"kept\" get pronounced before \"quiet\", or does it just vanish?",
             "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"kept\" is the one that goes missing before \"quiet\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "kept quie'"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L55_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 1,
             "hint": "Picture how a native speaker would say \"fast lane\" in a fast, everyday sentence. Is every single consonant still there?",
             "explanation": "This is a textbook case of consonant-cluster elision: the /t/ between two consonants is dropped to keep speech fluent and effortless in \"fast lane\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "fas' lane"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L55_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try blending \"good\" straight into \"yield\" without a pause. The /d/ and /j/ fuse — into what sound?",
             "explanation": "The two sounds don't just sit next to each other; they blend into /dʒ/. That's the defining feature of coalescence, and it's exactly what happens in \"good yield\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "good yield"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L55_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the consonant joining \"send\" to \"back\". Is it still /d/, or has it changed shape to match what follows?",
             "explanation": "When a word ending in /d/ meets a bilabial sound, the /d/ shifts to /b/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"send back\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "senb back"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L56_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 0,
             "hint": "Check the spelling: \"more\" ends in 'r'. Before a consonant or pause it usually stays silent — so what happens before the vowel starting \"or\"?",
             "explanation": "The final 'r' in \"more\" behaves like a switch: silent before consonants, audible before vowels. Since \"or\" starts with a vowel, the /r/ links the two words together smoothly.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "more or less"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L56_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "In connected speech, the /t/ ending \"set\" often adapts to its neighbor. What does it turn into right before the velar sound in \"goal\"?",
             "explanation": "This is place assimilation: /t/ moves to a velar position to blend smoothly with what comes next, turning into /k/ in \"set goal\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "sek goal"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L56_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"bless\" ends in /s/ and \"you\" begins with a /j/ sound. What single new consonant do the two combine into?",
             "explanation": "When /s/ meets /j/ across a word boundary, the two often fuse into a single new consonant. In \"bless you\", /s/ + /j/ becomes /ʃ/ — a completely different sound from either original.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "bless you"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L57_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 1,
             "hint": "Instead of hearing /t/ and /j/ separately between \"last\" and \"year\", listen for one fused sound. What is it?",
             "explanation": "This is coalescent assimilation: two adjacent sounds merge into a third sound that resembles neither one alone. Here, /t/ and /j/ combine into /tʃ/ in \"last year\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "last year"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L57_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /d/ in \"hard\" is trapped between two other consonants right before \"luck\". What usually happens to a stop consonant stuck in that position?",
             "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /d/ from \"hard\" entirely. The result flows straight from the first consonant into \"luck\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "har' luck"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L57_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 0,
             "hint": "Focus on the last sound of \"what\". With a bilabial consonant starting \"month\" right after it, what shift would make pronunciation easier?",
             "explanation": "Rather than jump from the /t/ ending \"what\" to a bilabial sound, the mouth compromises: /t/ becomes /p/, matching the bilabial consonant that opens \"month\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "what monph"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L58_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"great band\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /t/ used to be?",
             "explanation": "In fluent speech, /t/ rarely stays /t/ before a bilabial sound — it assimilates to /p/, which is exactly what you hear in \"great band\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "greap band"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L58_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"soda\" has no letter for /r/ anywhere at its end. So if you hear a /r/ before \"and\", where does it actually come from?",
             "explanation": "English avoids putting two vowel sounds directly next to each other, so speakers insert a small linking sound to bridge them. Since \"soda\" has no /r/ in its spelling, this /r/ is intrusive — added purely for smoothness, not because it's really part of \"soda\" or \"and\".",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "soda and ice"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L58_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 1,
             "hint": "The tongue is already anticipating \"park\"'s bilabial sound before it even finishes \"green\". What happens to /n/ as a result?",
             "explanation": "The change from /n/ to /m/ at the end of \"green\" happens because the following bilabial consonant in \"park\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "greem park"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L59_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 1,
             "hint": "Between \"wide\" and \"collar\" sits a consonant under pressure to match its neighbor. What does it become?",
             "explanation": "This pairing is a classic assimilation example: the /d/ ending \"wide\" adopts the velar quality of the sound in \"collar\", surfacing as /g/ in natural, connected speech.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "wige collar"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L59_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 1,
             "hint": "The 'r' in \"before\" isn't always pronounced. Does the vowel at the start of \"anyone\" bring it back to life?",
             "explanation": "Because the letter 'r' genuinely exists at the end of \"before\", its reappearance before the vowel in \"anyone\" is called linking /r/ — a real, spelled sound resurfacing, unlike intrusive /r/, which comes from nowhere in the spelling.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "before anyone"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L59_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"bad year\" quickly and casually. The /d/ and the /j/ in \"year\" don't stay separate — what do they merge into?",
             "explanation": "Rather than two separate consonants, connected speech blends /d/ and /j/ into /dʒ/. That's why \"bad year\" sounds like one smooth unit rather than two words bumping together.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "bad year"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L60_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's a consonant collision at the boundary of \"want\" and \"your\": /t/ meets /j/. Which single sound comes out the other side?",
             "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /t/ and /j/ become /tʃ/ in \"want your\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "want your feedback"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L60_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen closely at the boundary of \"point\" and \"taken\" — count the consonants stacking up. Does the /t/ still make it into the sentence?",
             "explanation": "In fast, connected speech, a /t/ wedged between consonants almost always disappears. That's what you'll hear in \"point taken\" — the /t/ goes silent.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "point 'aken"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L60_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 1,
             "hint": "Two consonants become one here. Focus on where \"wouldn't\" ends and \"you\" begins — what's the resulting blended sound?",
             "explanation": "This merge is extremely common wherever a word ending in /t/ meets a \"you\"-type word. In \"wouldn't you\", the result is /tʃ/, not /t/ followed by /j/.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "wouldn't you"
         }
     ]
 }

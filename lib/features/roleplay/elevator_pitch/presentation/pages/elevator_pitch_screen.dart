@@ -166,6 +166,7 @@ class _ElevatorPitchScreenState extends State<ElevatorPitchScreen> {
                               SizedBox(height: isCompact ? 10.h : 16.h),
                               ElevatorPitchPromptCard(
                                 prompt: quest.prompt ?? "",
+                                timeLimit: quest.timeLimit ?? 30,
                                 color: theme.primaryColor,
                                 isDark: isDark,
                               ),

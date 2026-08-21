@@ -17,7 +17,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a superior notices your absence, explain professionally and commit to improvement.",
             "explanation": "'I apologise, Captain' acknowledges the issue, gives a professional explanation, takes responsibility, and offers a concrete solution. 'Morning briefings start early' is a deflection. 'I work very late' mentions working late but doesn't explain or address the briefings specifically.",
-            "id": "bd_l21_q1"
+            "id": "bd_l21_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked for your analysis, first ask a targeted question to identify the specific issue.",
             "explanation": "'Interesting - which section specifically isn't matching your expectations?' shows analytical thinking and asks the right clarifying question. 'Data analysis can be complex' is a vague deflection. 'I haven't looked at it yet' is honest but fails to engage or move the investigation forward.",
-            "id": "bd_l21_q2"
+            "id": "bd_l21_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 0,
             "hint": "A confident server speaks specifically and enthusiastically about menu items.",
             "explanation": "'The sea bass is excellent today, and the lemon caper sauce complements it perfectly' is a confident, specific recommendation. 'Fish is a healthy choice' is a general health fact, not a restaurant recommendation. 'I haven't tried everything' shows lack of preparation and undermines confidence.",
-            "id": "bd_l21_q3"
+            "id": "bd_l21_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give specific, honest medical information and mention any positive steps you're taking.",
             "explanation": "'About eight to ten a day, though I've been making an effort to cut down' gives a specific quantity and shows effort toward improvement - both medically valuable. 'Smoking is a difficult habit' is a general observation and a deflection. 'I've been smoking since my late teens' gives history but not the specific current quantity needed.",
-            "id": "bd_l22_q1"
+            "id": "bd_l22_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 2,
             "hint": "When offered a chance to try something on, accept and immediately provide your size.",
             "explanation": "'Yes, I'd love to! Do you have it in a medium or large?' is enthusiastic, practical, and moves the purchase forward. 'Jackets are designed to keep you warm' is a general fact. 'Fashion changes every season' shows disinterest without clearly declining.",
-            "id": "bd_l22_q2"
+            "id": "bd_l22_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 2,
             "hint": "When flagged for a potential rule violation, apologise and offer a practical solution.",
             "explanation": "'I apologise - does it need to be checked? I can redistribute some items if that would help' shows willingness to comply and offers practical solutions. 'Airlines have become strict recently' acknowledges the rules but doesn't address your specific bag. 'I need everything I've packed' is defensive and doesn't resolve the issue.",
-            "id": "bd_l22_q3"
+            "id": "bd_l22_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked for a recommendation with a firm deadline, give a decisive, well-reasoned answer.",
             "explanation": "'I recommend Option B - lower risk and achievable within our window' is decisive and gives two clear, concrete reasons. 'Decisions should never be made under pressure' ignores the operational reality. 'I need more time' is not a useful response when the deadline has already been set.",
-            "id": "bd_l23_q1"
+            "id": "bd_l23_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked about a security incident, provide your alibi clearly and offer to cooperate.",
             "explanation": "'I was at home all night and can provide my access logs' is transparent, provides a specific alibi, and offers to cooperate. 'Security is everyone's responsibility' is a platitude that doesn't answer the question. 'Unauthorised access is a serious offence' states the obvious without addressing the inquiry.",
-            "id": "bd_l23_q2"
+            "id": "bd_l23_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give specific, knowledgeable culinary advice when asked for a professional cooking opinion.",
             "explanation": "'A small amount of truffle oil would elevate the dish - but use restraint' demonstrates real culinary knowledge and gives practical, actionable advice. 'Oil is used in Italian cuisine' is a vague general fact. 'Pasta is typically served with tomato sauce' is irrelevant to the question.",
-            "id": "bd_l23_q3"
+            "id": "bd_l23_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 1,
             "hint": "When given a practical choice, state your preference clearly and give a logical reason.",
             "explanation": "'Nearby would be far more convenient for my follow-up appointments' gives a clear preference with a sensible practical reason. 'Specialists charge higher fees' discusses cost, which wasn't asked. 'I don't think I need a specialist' challenges the doctor's professional recommendation inappropriately.",
-            "id": "bd_l24_q1"
+            "id": "bd_l24_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "At an auction, bid promptly and clearly if you want to acquire the item.",
             "explanation": "'Four hundred - I'm in. You have my bid' is a clear, immediate opening bid - decisive and appropriate for an auction. 'Four hundred appears to be the starting point' describes the situation without actually bidding. 'I need to review my budget' is hesitant and would likely lose the opening bid to another buyer.",
-            "id": "bd_l24_q2"
+            "id": "bd_l24_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 0,
             "hint": "For any safety decision, always gather information before making a recommendation.",
             "explanation": "'Let's check the weather radar and assess the severity before deciding' is the correct safety approach - information before action. 'Flying through is frequently quicker' may be true but oversimplifies a safety decision. 'Passengers don't enjoy turbulence' is an observation, not a professional operational decision.",
-            "id": "bd_l24_q3"
+            "id": "bd_l24_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 1,
             "hint": "Accept a leadership assignment with confidence and a commitment to the mission.",
             "explanation": "'I accept, Captain. I'll do everything in my power to ensure our success' is confident, committed, and mission-focused. 'Leadership comes with significant responsibility' is true but sounds like hesitation. 'Is there someone better suited?' suggests you don't want the role and undermines the Captain's decision.",
-            "id": "bd_l25_q1"
+            "id": "bd_l25_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 1,
             "hint": "When given a time constraint and asked for a plan, give a concrete, logical first step.",
             "explanation": "'Let's start at the source - revisit the scene and work methodically forward' is a concrete, systematic investigative strategy. 'Forty-eight hours is not very long' focuses on the problem rather than solving it. 'Cases can't always be solved quickly' ignores the specific constraint and doesn't provide any plan.",
-            "id": "bd_l25_q2"
+            "id": "bd_l25_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a customer has a valid complaint, act immediately, apologise, and offer to make it right.",
             "explanation": "Immediate apology combined with a complimentary replacement is the professional hospitality standard. 'Steaks are cooked at high temperatures' is irrelevant. 'It was prepared exactly as ordered' is defensive and puts the customer in the wrong without actually resolving the issue.",
-            "id": "bd_l25_q3"
+            "id": "bd_l25_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 0,
             "hint": "When told about a medical procedure, show understanding and ask a practical follow-up.",
             "explanation": "'I understand the caution. Could I perhaps notify my family?' shows compliance and immediately addresses a practical need. 'Overnight observation is standard practice' states a fact without addressing your personal situation. 'I'd prefer my own bed' expresses personal preference over professional medical advice.",
-            "id": "bd_l26_q1"
+            "id": "bd_l26_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "When standard policy doesn't apply to your specific situation, explain why and escalate appropriately.",
             "explanation": "'It has a manufacturing defect - may I speak with your manager?' correctly distinguishes a defect from a normal return and escalates appropriately. 'Return policies are very strict' acknowledges the policy without solving the problem. 'I've lost my receipt' creates an additional barrier to the return.",
-            "id": "bd_l26_q2"
+            "id": "bd_l26_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 2,
             "hint": "When time is short, accept help immediately and ask the two most important questions.",
             "explanation": "'Yes please! What gate and will I need to go through security again?' accepts help and asks the two most critical questions. 'Thirty-five minutes should be sufficient' is uncertain. 'I've made tight connections before' shows experience but wastes time you don't have.",
-            "id": "bd_l26_q3"
+            "id": "bd_l26_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 0,
             "hint": "Handle competing requests by carefully balancing operational needs with fairness to your team.",
             "explanation": "'Assess operational needs first, then have a fair conversation' balances business requirements with team fairness - the professional leadership approach. 'Leave requests are common at that time' acknowledges context without solving the problem. Approving all three without assessing needs could leave operations dangerously understaffed.",
-            "id": "bd_l27_q1"
+            "id": "bd_l27_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 1,
             "hint": "At the end of an interview, share any remaining relevant information you may have held back.",
             "explanation": "'There is actually one more thing - I noticed a second individual leaving at approximately 11pm' adds critical new information. 'Investigations require a lot of information' is a platitude. 'I believe I've told you everything' closes the door on potentially crucial information.",
-            "id": "bd_l27_q2"
+            "id": "bd_l27_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 2,
             "hint": "When a product perfectly matches your quality standards, respond with enthusiasm and make a decisive purchase.",
             "explanation": "'They look beautiful and absolutely perfect. I'll take two punnets, please' shows appreciation and makes a decisive purchase. 'Strawberries are in season' is general knowledge. 'Are you certain they're untreated?' questions the vendor's integrity without cause.",
-            "id": "bd_l27_q3"
+            "id": "bd_l27_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "Show genuine interest while responsibly asking for complete information before committing.",
             "explanation": "'I'm potentially interested - could you give me complete details, including risks and benefits?' shows interest while being appropriately cautious and informed. 'Clinical trials make important contributions' is true but doesn't engage with the personal invitation. 'I'm not keen on medical experiments' refuses without even considering the details.",
-            "id": "bd_l28_q1"
+            "id": "bd_l28_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 1,
             "hint": "When told about a delay that doesn't work for you, express it politely and ask for alternatives.",
             "explanation": "'Three weeks is rather longer than my timeline allows. Do you have any suitable alternative?' is direct, honest about your constraint, and solution-oriented. 'Three weeks equals twenty-one days' is pedantic. 'Back-orders are part of business' acknowledges the situation without addressing your specific need.",
-            "id": "bd_l28_q2"
+            "id": "bd_l28_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 0,
             "hint": "When you have a logistical problem, ask what your options are to resolve it efficiently.",
             "explanation": "'What are my options? Can I remove something or is there a fee?' asks the two most practical questions needed to resolve the problem. 'Luggage restrictions are inconvenient' is a complaint. 'I was careful about packing' doesn't change the weight and doesn't move toward a solution.",
-            "id": "bd_l28_q3"
+            "id": "bd_l28_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 2,
             "hint": "Show genuine enthusiasm when invited to participate in something professionally relevant.",
             "explanation": "'Absolutely! I've been looking forward to seeing this system' shows enthusiasm and professional investment. 'New equipment requires maintenance' is true but doesn't respond to the invitation. 'I'll review it when I have free time' sounds indifferent and uncommitted.",
-            "id": "bd_l29_q1"
+            "id": "bd_l29_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 0,
             "hint": "When asked to analyse something, give your best interpretation with specific reasoning.",
             "explanation": "'Looking at the number sequence... it could be coordinates - latitude and longitude' provides a specific analysis with reasoning. 'Encrypted codes can be complex' is a deflection. 'I'm not a trained cryptographer' avoids contributing any analysis - even a tentative interpretation is valuable.",
-            "id": "bd_l29_q2"
+            "id": "bd_l29_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 0,
             "hint": "Accept a special invitation or honour with genuine enthusiasm and curiosity.",
             "explanation": "'I would be truly honoured! What have you been working on?' accepts the special role enthusiastically and shows genuine interest. 'Desserts are popular with guests' is a general observation. 'I try to limit sugar in my diet' politely declines but misses the special nature of the invitation - a better decline would include an apology.",
-            "id": "bd_l29_q3"
+            "id": "bd_l29_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give specific family medical history when asked by a doctor - it's essential diagnostic information.",
             "explanation": "'My father had a heart attack at sixty-two, and my paternal grandfather also had heart problems' gives precise, clinically invaluable family medical history. 'Heart disease is one of the most common conditions' is a statistic. 'I exercise regularly and eat well' gives lifestyle information when family history was specifically asked for.",
-            "id": "bd_l30_q1"
+            "id": "bd_l30_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 1,
             "hint": "Ask about benefits before committing - it demonstrates you're a thoughtful and informed consumer.",
             "explanation": "'What are the actual benefits of joining?' is the smart first question before signing up to anything. 'Loyalty programmes are excellent for business' is a general observation from a business perspective. 'I'm already in too many schemes' is a dismissal without even hearing what's being offered.",
-            "id": "bd_l30_q2"
+            "id": "bd_l30_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 1,
             "hint": "When a colleague asks for expert knowledge about a route, share it specifically and helpfully.",
             "explanation": "Specific warnings about crosswinds and traffic congestion are genuinely helpful to a new pilot on a route. 'New routes take time to become familiar' is sympathetic but shares nothing useful. 'I'm confident you'll work it out' is dismissive of a legitimate and important safety request.",
-            "id": "bd_l30_q3"
+            "id": "bd_l30_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         }
     ]
 }

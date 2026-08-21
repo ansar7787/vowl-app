@@ -15,6 +15,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_console_board.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_relationship_meter.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
@@ -262,6 +263,15 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                   instruction: quest.instruction,
                                 ),
                                 SizedBox(height: isCompact ? 10.h : 16.h),
+                                if (_isAnswered && _selectedIndex != null && quest.consequenceScores != null)
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: isCompact ? 10.h : 16.h),
+                                    child: BranchingDialogueRelationshipMeter(
+                                      consequenceScore: quest.consequenceScores![_selectedIndex!],
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                    ),
+                                  ),
                                 BranchingDialoguePersonaConsole(
                                   quest: quest,
                                   color: theme.primaryColor,
@@ -271,6 +281,7 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen>
                                 SizedBox(height: isCompact ? 12.h : 20.h),
                                 BranchingDialogueConsoleBoard(
                                   options: options,
+                                  consequencePreviews: quest.consequencePreviews ?? [],
                                   correctIndex: quest.correctAnswerIndex ?? 0,
                                   color: theme.primaryColor,
                                   isDark: isDark,

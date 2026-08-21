@@ -17,6 +17,7 @@ import 'package:vowl/features/roleplay/situational_response/presentation/widgets
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_scene_display.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_explanation_panel.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_reaction_zone.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_formality_gauge.dart';
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class SituationalResponseScreen extends StatefulWidget {
@@ -305,6 +306,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen>
                                     : CrossFadeState.showFirst,
                                 duration: const Duration(milliseconds: 450),
                               ),
+                              if (_isAnswered) ...[
+                                SizedBox(height: isCompact ? 12.h : 20.h),
+                                SituationalResponseFormalityGauge(
+                                  quest: quest,
+                                  primaryColor: theme.primaryColor,
+                                  isDark: isDark,
+                                ),
+                              ],
                                           SizedBox(
                                             height: isCompact ? 20.h : 40.h,
                                           ),

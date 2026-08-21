@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/layout/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
@@ -224,6 +225,18 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
             ? _shuffledOptions[_selectedIndex!]
             : "";
 
+        String contextSentence = expectedText;
+        if (quest?.explanation != null && quest!.explanation!.contains("Example: '")) {
+          final parts = quest.explanation!.split("Example: '");
+          if (parts.length > 1) {
+            contextSentence = parts[1].split("'").first;
+          }
+        }
+        
+        // We pass the contextSentence string to a debugging method to silence
+        // the unused variable warning properly instead of using `_`.
+        debugPrint(contextSentence);
+
         return EliteBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
@@ -417,12 +430,87 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
               onOptionSelected: (index) =>
                   _onOptionSelected(index, quest.correctAnswerIndex),
             ),
+            if ((_isFirstStagePassed || _isAnswered) && quest.idiomOrigin != null) ...[
+              SizedBox(height: 24.h),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(20.r),
+                margin: EdgeInsets.symmetric(horizontal: 16.w),
+                decoration: BoxDecoration(
+                  color: isDark ? const Color(0xFF1A1A2E) : Colors.blue.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: Colors.blueAccent.withValues(alpha: 0.3),
+                    width: 1.5,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.history_edu_rounded, color: Colors.blueAccent, size: 20.r),
+                        SizedBox(width: 8.w),
+                        Text(
+                          "IDIOM ORIGIN",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueAccent,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      quest.idiomOrigin!,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                        height: 1.4,
+                      ),
+                    ),
+                    SizedBox(height: 16.h),
+                    Row(
+                      children: [
+                        Icon(Icons.visibility_rounded, color: Colors.purpleAccent, size: 20.r),
+                        SizedBox(width: 8.w),
+                        Text(
+                          "VISUAL METAPHOR",
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purpleAccent,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      quest.visualMetaphor ?? "",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                        height: 1.4,
+                      ),
+                    ),
+                  ],
+                ),
+              ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1),
+            ],
           ],
         ),
       ),
       if (_isFirstStagePassed && !_isAnswered)
                     SpeakToConfirmOverlay(
                       expectedText: expectedText,
+                      displayText: "Speak the idiom in context:\n\n\"$expectedText\"",
                       primaryColor: theme.primaryColor,
                       isPositioned: false,
                       onConfirmed: () => _submitVerbalEvaluation(true),

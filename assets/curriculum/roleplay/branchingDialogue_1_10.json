@@ -17,7 +17,17 @@
             "correctAnswerIndex": 0,
             "hint": "When asked for your name, give it and add a polite greeting.",
             "explanation": "'I'm Alex. Pleased to meet you, Captain!' directly answers the question by giving a name and adds the natural greeting 'Pleased to meet you.' 'I am fine' answers 'How are you?' not 'What's your name?' 'Yes, I completely agree' makes no sense as an introduction.",
-            "id": "bd_l1_q1"
+            "id": "bd_l1_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Respond to 'How are you?' with your current state and politely return the question.",
             "explanation": "'I'm doing well, thanks. How about you?' is the standard, natural exchange for this greeting - answering and returning the question shows good social English. 'Yesterday was busy' answers a different type of question. 'My name is Jordan' answers 'What's your name?' not 'How are you?'",
-            "id": "bd_l1_q2"
+            "id": "bd_l1_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 1,
             "hint": "'Are you hungry?' is a direct yes/no question. Give an honest, natural answer.",
             "explanation": "'Not really - I just had lunch, but it smells amazing!' is honest, natural, and adds a friendly compliment. 'My name is Chef O-Ring' answers a completely different question. 'Where exactly is the kitchen?' is absurd - you're already standing in it.",
-            "id": "bd_l1_q3"
+            "id": "bd_l1_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 0,
             "hint": "'Where are you from?' asks about your home country or city. Answer directly.",
             "explanation": "'I am from Brazil, but I have lived here for five years' directly answers the question and adds useful context. 'I am very hungry' answers a completely different question. 'The weather has been lovely' ignores the question entirely.",
-            "id": "bd_l2_q1"
+            "id": "bd_l2_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 0,
             "hint": "'How much does it cost?' asks for the price. State a specific amount and currency.",
             "explanation": "'It costs eighty dollars' directly gives the price with the required information. 'It is very beautiful' describes the item but ignores the price question. 'I purchased it last month' gives irrelevant purchasing history.",
-            "id": "bd_l2_q2"
+            "id": "bd_l2_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 0,
             "hint": "'What time...?' asks for a specific time. Use hours and minutes or expressions like 'quarter past'.",
             "explanation": "'It departs at quarter past two in the afternoon' gives the precise time requested. 'The flight is going to be very long' describes duration, not departure time. 'I really enjoy travelling by air' shares a personal feeling but does not answer the question.",
-            "id": "bd_l2_q3"
+            "id": "bd_l2_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 0,
             "hint": "Answer 'Can you...?' questions with 'Yes, I can' or 'No, I can't', then add detail.",
             "explanation": "'Yes, I can speak English fairly well' answers the yes/no question and gives an honest qualifier. 'I speak it on Mondays' confuses ability with a schedule. 'English is a European language' is a geographic fact, not an answer about your ability.",
-            "id": "bd_l3_q1"
+            "id": "bd_l3_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 2,
             "hint": "'Is this seat taken?' asks if a seat is occupied. Say whether it is free or not.",
             "explanation": "'No, it's free. Please go ahead and sit down' correctly says the seat is available and invites the person to sit. 'I do not know who took it' misunderstands 'taken' as meaning stolen. 'The chair is dark brown' describes colour but completely ignores the question.",
-            "id": "bd_l3_q2"
+            "id": "bd_l3_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 2,
             "hint": "'Do you like/enjoy...?' asks about preferences. Give a direct, enthusiastic honest answer.",
             "explanation": "'I love spicy food - the hotter, the better!' directly and vividly answers the preference question. 'Food is normally prepared in a kitchen' is an irrelevant fact. 'I had dinner at seven' talks about when you ate, not what type of food you enjoy.",
-            "id": "bd_l3_q3"
+            "id": "bd_l3_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 2,
             "hint": "'How old are you?' asks for age. Give a specific number followed by 'years old'.",
             "explanation": "'I am thirty-two years old' directly gives the age as required. 'I am tall with dark hair' describes physical appearance, not age. 'I was born in the spring' gives a season, which doesn't answer the age question.",
-            "id": "bd_l4_q1"
+            "id": "bd_l4_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 1,
             "hint": "When offered an alternative, accept graciously and move forward.",
             "explanation": "'Of course - please show me what else you have' accepts the helpful offer graciously. 'The price was completely wrong anyway' addresses a different complaint and is unnecessarily rude. 'I disagree with your policy' is confrontational and irrelevant.",
-            "id": "bd_l4_q2"
+            "id": "bd_l4_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 2,
             "hint": "'Have you...before?' uses the present perfect. Answer 'Yes, I have' or 'No, I haven't' and add detail.",
             "explanation": "'Yes, I flew with you last year on the summer route' correctly answers and provides a specific detail. 'The sky looks very clear' makes a weather observation but doesn't answer the question. 'I generally prefer trains' expresses a preference but does not answer the yes/no question asked.",
-            "id": "bd_l4_q3"
+            "id": "bd_l4_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 1,
             "hint": "'Good night' is a farewell greeting. Respond with 'Good night' and a warm addition.",
             "explanation": "'Good night, Captain! Sleep well' is natural, warm, and appropriate as a farewell. 'Good morning to you too!' uses completely the wrong time-of-day greeting. 'I'm afraid I don't understand' is inappropriate - 'Good night' is extremely basic English.",
-            "id": "bd_l5_q1"
+            "id": "bd_l5_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked politely to do something, agree clearly and promptly.",
             "explanation": "'Of course - I'll do that right now' accepts the polite request clearly and confirms it will be done. 'Doors are typically made of wood' is irrelevant. 'I already closed my bag' misunderstands 'door' for 'bag' and describes a different action.",
-            "id": "bd_l5_q2"
+            "id": "bd_l5_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 2,
             "hint": "When passing something to someone, say 'Here you go!' or 'Here it is!'",
             "explanation": "'Here you go!' is the natural, friendly phrase used when handing something to someone. 'Personally, I prefer sweet flavours' shares a personal preference but does not pass the salt. 'Salt is a white, crystalline substance' defines salt but does nothing to help.",
-            "id": "bd_l5_q3"
+            "id": "bd_l5_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 1,
             "hint": "Acknowledge the instruction and ask any practical, polite follow-up question.",
             "explanation": "'Thank you. Approximately how long will the wait be?' politely acknowledges the instruction and asks a practical, reasonable question. 'I would prefer a different doctor' is a specific request that ignores the current instruction. 'I'm not waiting for anyone' misunderstands the context entirely.",
-            "id": "bd_l6_q1"
+            "id": "bd_l6_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 0,
             "hint": "React enthusiastically to a genuinely good deal and make a clear purchase decision.",
             "explanation": "'Oh, that's a fantastic deal! I'll take one, please' shows natural enthusiasm and makes a decisive purchase. 'What day of the week is today?' is completely off-topic. 'Fifty percent of what amount?' is oddly confrontational given a clearly stated half-price sale.",
-            "id": "bd_l6_q2"
+            "id": "bd_l6_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 0,
             "hint": "Safety instructions should be met with immediate agreement and respect.",
             "explanation": "'Of course! Safety is always the priority' shows immediate compliance and a positive attitude toward safety. 'Must I? It feels uncomfortable' sounds reluctant and rude about a safety requirement. 'I prefer the window seat' changes the subject instead of complying with the safety instruction.",
-            "id": "bd_l6_q3"
+            "id": "bd_l6_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked about your availability, state whether you're free and offer to help.",
             "explanation": "'Yes, I'm completely free. What do you need?' confirms availability and immediately opens the door to assist. 'This afternoon looks warm and sunny' talks about weather. 'Help yourself to coffee' misunderstands 'help' - the Captain is asking for your assistance, not refreshments.",
-            "id": "bd_l7_q1"
+            "id": "bd_l7_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 1,
             "hint": "'What did you observe?' asks for specific past details. Provide concrete, useful information.",
             "explanation": "'I noticed a silver car parked outside all evening' gives a specific, useful past observation with detail. 'Tonight I am planning to sleep early' talks about the future, not last night. 'I can see very well without glasses' discusses eyesight ability, not what was actually observed.",
-            "id": "bd_l7_q2"
+            "id": "bd_l7_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a server asks if you're ready, either give your order or politely ask for more time.",
             "explanation": "'I'll have the grilled chicken with roasted vegetables, please' places a clear, polite order. 'The menu has beautiful colours' makes an observation but does not order. 'I already ate at home' is a strange thing to say in a restaurant - it doesn't make sense in this context.",
-            "id": "bd_l7_q3"
+            "id": "bd_l7_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 1,
             "hint": "'When did it start?' asks for a specific time. Give the day and approximate time of day.",
             "explanation": "'It started this morning at around nine o'clock' gives precise, clinically useful information. 'I once had a headache some time ago' is vague and unhelpful for diagnosis. 'I sometimes take paracetamol' describes treatment, not when the current problem began.",
-            "id": "bd_l8_q1"
+            "id": "bd_l8_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 0,
             "hint": "'How many?' asks for a specific quantity. Give a clear number.",
             "explanation": "'I would like to order fifteen units, please' gives a specific quantity with polite phrasing. 'These boxes are made from thick cardboard' describes material, not quantity. 'The boxes look quite heavy' describes weight - neither answers the question.",
-            "id": "bd_l8_q2"
+            "id": "bd_l8_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked for an opinion on a safety decision, give a clear recommendation with sound reasoning.",
             "explanation": "'Safety must always come before schedule' gives a clear, well-reasoned recommendation to delay. 'I don't particularly enjoy flying in rain' is a personal preference, not a professional operational decision. 'The aircraft is well-built' doesn't directly address the specific safety question.",
-            "id": "bd_l8_q3"
+            "id": "bd_l8_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 1,
             "hint": "When asked if everyone is ready, confirm your own readiness respectfully.",
             "explanation": "'I'm ready whenever you are, Captain' confirms readiness and shows respectful deference. 'The briefing room is on the third floor' states a location rather than confirming readiness. 'Briefings are generally on Tuesday mornings' discusses scheduling, not current readiness.",
-            "id": "bd_l9_q1"
+            "id": "bd_l9_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give the most honest and helpful answer based on what you can actually see.",
             "explanation": "'I'm sorry, the print is quite small. I can make out the first four digits' is honest, explains the difficulty, and shares what IS readable. 'Serial numbers come in different formats' is irrelevant general knowledge. 'I am an extremely fast reader' talks about speed, not what you can see.",
-            "id": "bd_l9_q2"
+            "id": "bd_l9_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked for practical help with a problem, offer specific, actionable solutions.",
             "explanation": "'You could substitute coconut cream, or send someone to the shop quickly' gives two practical solutions. 'Cream is a dairy product' defines it but offers no solution. 'I had a pasta dish with cream sauce yesterday' is completely irrelevant.",
-            "id": "bd_l9_q3"
+            "id": "bd_l9_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 2,
             "hint": "When a doctor asks about your health after treatment, give a specific, honest update.",
             "explanation": "'I feel significantly better. The pain has almost completely gone' gives a clear, specific health update that helps the doctor evaluate the treatment. 'I'll probably need more later' is about future plans, not current state. 'Medication can be quite expensive' talks about cost, not your health.",
-            "id": "bd_l10_q1"
+            "id": "bd_l10_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 1,
             "hint": "State your maximum price clearly and firmly when asked during a negotiation.",
             "explanation": "'My ceiling is three hundred dollars - not a penny more' states a clear, firm limit and signals finality. 'It is certainly a very rare piece' describes rarity but avoids stating a price. 'What have other buyers paid?' deflects the question instead of answering it.",
-            "id": "bd_l10_q2"
+            "id": "bd_l10_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 2,
             "hint": "In professional contexts, confirm receipt of a clearance and state your immediate next action.",
             "explanation": "'Understood. Initiating takeoff procedure now' is correct professional communication - it confirms the clearance and states the action being taken. 'The weather is perfect' is a comment at an inappropriate moment. 'How long is the runway?' asks for something a pilot should already know.",
-            "id": "bd_l10_q3"
+            "id": "bd_l10_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         }
     ]
 }

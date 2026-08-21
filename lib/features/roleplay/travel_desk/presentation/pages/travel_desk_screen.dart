@@ -215,6 +215,7 @@ class _TravelDeskScreenState extends State<TravelDeskScreen>
                                 color: theme.primaryColor,
                                 correctIndex: quest.correctAnswerIndex ?? 0,
                                 isDark: isDark,
+                                travelDocument: quest.travelDocuments,
                                 selectedIndex: _selectedIndex,
                                 hoveredIndex: _hoveredIndex,
                                 isAnswered: _isAnswered || _isFirstStagePassed,

@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class SocialSparkConnectionMonitor extends StatelessWidget {
   final String text;
+  final String? socialContext;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -12,6 +13,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
   const SocialSparkConnectionMonitor({
     super.key,
     required this.text,
+    this.socialContext,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -67,6 +69,34 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               ),
             ],
           ),
+          if (socialContext != null) ...[
+            SizedBox(height: 12.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: outlineColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: outlineColor.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.location_on_outlined, color: outlineColor, size: 12.r),
+                  SizedBox(width: 4.w),
+                  Text(
+                    "SCENE: ${socialContext!.toUpperCase()}",
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 9.sp,
+                      fontWeight: FontWeight.bold,
+                      color: outlineColor,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
           SizedBox(height: 16.h),
           AnimatedSize(
             duration: const Duration(milliseconds: 250),

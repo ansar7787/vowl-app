@@ -18,7 +18,9 @@
             "correctAnswerIndex": 0,
             "hint": "Try stressing every word in \"out of stock\" equally — it sounds stiff and unnatural, right? Which word loses its full vowel to fix that?",
             "explanation": "English sentence rhythm relies on this kind of reduction — content words stay strong, function words like \"of\" go weak. That's why /ɒ/ becomes schwa in \"out of stock\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "out of stock"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L121_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"look\" ends in a clear consonant sound, and \"up\" starts with a vowel. What happens to that consonant when you say them together naturally?",
             "explanation": "When a word ending in a consonant meets a word starting with a vowel, the consonant shifts to open the next syllable instead of closing the first. In \"look up\", the final consonant of \"look\" links smoothly onto the vowel that begins \"up\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "look up"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L121_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try blending \"freeze\" straight into \"yogurt\" without a pause. The /z/ and /j/ fuse — into what sound?",
             "explanation": "The two sounds don't just sit next to each other; they blend into /ʒ/. That's the defining feature of coalescence, and it's exactly what happens in \"freeze yogurt\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "freeze yogurt"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L122_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 0,
             "hint": "Function words like \"from\" rarely keep their dictionary pronunciation in natural sentences. Listen for what its vowel becomes in \"far from home\".",
             "explanation": "Because \"from\" isn't emphasized in \"far from home\", its vowel weakens from the full /ɒ/ to a fast, neutral schwa sound. This happens to almost every unstressed function word in fluent English.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "far from home"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L122_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 1,
             "hint": "In \"I can do it\", one word carries no stress at all. Focus on \"can\" — what happens to its vowel as a result?",
             "explanation": "Weak forms like this one are what make native speech sound smooth rather than choppy. \"can\" trades its citation vowel /æ/ for schwa whenever it's unstressed, as it is in \"I can do it\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "I can do it"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L122_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"stop\" ends and \"pouring\" begins with the exact same /p/ sound. Do you really hear it twice in natural speech, or just once?",
             "explanation": "When the same consonant ends one word and begins the next, speakers don't pronounce it twice — they merge the two into a single, slightly longer sound. That's gemination, and it's exactly what happens with /p/ in \"stop pouring\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "stop pouring"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L123_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 0,
             "hint": "In casual speech, does the final /t/ of \"just\" get pronounced before \"kidding\", or does it just vanish?",
             "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"just\" is the one that goes missing before \"kidding\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "jus' kidding"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L123_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"ten classes\" at natural speed. Listen right at the boundary — does the /n/ stay a /n/, or does it become something else?",
             "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /n/ ending \"ten\" turns into /ŋ/ because \"classes\" begins with a velar consonant.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "ten classes"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L123_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 1,
             "hint": "Check the spelling of \"opera\" before \"every\" — does it end in a letter that would predict a /r/ sound? If not, where's that /r/ actually coming from?",
             "explanation": "Unlike linking, where the connecting sound is already written into the word, this /r/ in \"opera every\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "opera every"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L124_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"remind\" ends in /d/ and \"yourself\" begins with a /j/ sound. What single new consonant do the two combine into?",
             "explanation": "When /d/ meets /j/ across a word boundary, the two often fuse into a single new consonant. In \"remind yourself\", /d/ + /j/ becomes /dʒ/ — a completely different sound from either original.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "remind yourself"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L124_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"as soon as possible\" quickly, the way you would in real conversation. Does \"as\" sound the same as when you say it alone?",
             "explanation": "Say \"as\" on its own and you get the full vowel /æ/. Say it inside \"as soon as possible\" at natural speed, and it reduces to schwa — the standard weak form.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "as soon as possible"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L124_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 1,
             "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"zoo\" and \"animals\" here?",
             "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /w/ as a natural bridge. You'll hear it in \"zoo animals\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "zoo animals"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L125_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 0,
             "hint": "A velar consonant is coming up in \"glass\". What does that do to the /n/ just before it in \"thin\"?",
             "explanation": "Speakers save effort by letting /n/ anticipate the velar sound ahead. So in \"thin glass\", /n/ is pronounced as /ŋ/ instead.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "thin glass"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L125_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two identical /s/ sounds meet right at the boundary of \"this\" and \"side\". Listen closely — one sound, or two separate ones?",
             "explanation": "This is gemination, not deletion: the /s/ isn't dropped, it's simply held for one longer articulation instead of being repeated. \"this side\" sounds like one smooth /s/, not two separate ones.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "this side"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L125_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"less stress\" together at a normal pace. Does the /s/ get pronounced twice, back to back, or does it blend into a single, slightly longer sound?",
             "explanation": "Pronouncing the same consonant twice in a row takes extra effort for no real gain in clarity, so English merges them. The double /s/ in \"less stress\" becomes a single lengthened sound.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "less stress"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L126_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 1,
             "hint": "Notice how the mouth has to move from the /t/ ending \"flat\" to the bilabial sound that opens \"battery\". Does it really make that full move, or take a shortcut?",
             "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /t/ becomes /p/ in \"flat battery\" to match the bilabial consonant that follows.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "flat batpery"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L126_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"thick\" and \"coat\" share the same boundary sound: /k/. What does a fluent speaker actually do with two identical consonants in a row?",
             "explanation": "Rather than a quick /k/-/k/ repetition, fluent speakers produce one continuous /k/ across the word boundary in \"thick coat\" — that's gemination.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "thick coat"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L126_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 1,
             "hint": "In \"big garden\", this isn't a case of one sound changing into another — it's the same /g/ on both sides. What happens when identical sounds collide?",
             "explanation": "Two identical consonants meeting at a word boundary typically fuse into one longer articulation rather than being pronounced separately. You'll hear this clearly in \"big garden\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "big garden"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L127_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"brother\" ends in a silent 'r' on its own. Say it together with \"and\" — does that silence hold, or break?",
             "explanation": "Because \"brother\" ends in 'r', the connected-speech rule is simple: pronounce the /r/ whenever a vowel follows, as it does before \"and\". That's what makes this linking rather than intrusion.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "brother and sister"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L127_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 0,
             "hint": "Try pronouncing \"give\" and \"vegetables\" as two fully separate /v/ sounds. Now say them fast and naturally — what changes?",
             "explanation": "This is a case of avoiding needless repetition — instead of two short /v/ sounds, English produces one held /v/ across \"give\" and \"vegetables\", saving effort while staying clear.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "give vegetables"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L127_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /t/ that ends \"quite\" is the same /t/ that starts \"tired\". Does English double it, or merge it into one?",
             "explanation": "Because \"quite\" and \"tired\" share the same final and initial sound, the boundary doesn't have two /t/ articulations — it has one slightly extended one. That's gemination in action.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "quite tired"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L128_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 0,
             "hint": "Instead of hearing /d/ and /j/ separately between \"told\" and \"you\", listen for one fused sound. What is it?",
             "explanation": "This is coalescent assimilation: two adjacent sounds merge into a third sound that resembles neither one alone. Here, /d/ and /j/ combine into /dʒ/ in \"told you\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "told you"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L128_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's no /r/ anywhere in the spelling of \"panda\". Yet something links it to the vowel that opens \"eats\" — what is it?",
             "explanation": "This inserted /r/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"panda\" and \"eats\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "panda eats"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L128_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"for\" said by itself has a full, clear vowel. Said inside \"thanks for asking\" at natural speed, does that vowel survive?",
             "explanation": "This reduction isn't sloppy speech — it's a predictable, rule-governed feature of English. Unstressed \"for\" reduces from /ɔː/ to schwa in virtually every natural sentence, including \"thanks for asking\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "thanks for asking"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L129_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"recommend your\" quickly and casually. The /d/ and the /j/ in \"your\" don't stay separate — what do they merge into?",
             "explanation": "Rather than two separate consonants, connected speech blends /d/ and /j/ into /dʒ/. That's why \"recommend your\" sounds like one smooth unit rather than two words bumping together.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "recommend your friend"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L129_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen for a doubled or lengthened /p/ at the seam between \"deep\" and \"pool\" — not two short ones back to back.",
             "explanation": "Native speakers merge repeated identical consonants into a single sound rather than doubling up. In \"deep pool\", the /p/ is pronounced once, just held a touch longer.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "deep pool"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L129_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"ten\" ends and \"nights\" begins with the exact same /n/ sound. Do you really hear it twice in natural speech, or just once?",
             "explanation": "When the same consonant ends one word and begins the next, speakers don't pronounce it twice — they merge the two into a single, slightly longer sound. That's gemination, and it's exactly what happens with /n/ in \"ten nights\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "ten nights"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L130_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the consonant joining \"what\" to \"game\". Is it still /t/, or has it changed shape to match what follows?",
             "explanation": "When a word ending in /t/ meets a velar sound, the /t/ shifts to /k/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"what game\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "whak game"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L130_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two identical /k/ sounds meet right at the boundary of \"black\" and \"coffee\". Listen closely — one sound, or two separate ones?",
             "explanation": "This is gemination, not deletion: the /k/ isn't dropped, it's simply held for one longer articulation instead of being repeated. \"black coffee\" sounds like one smooth /k/, not two separate ones.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "black coffee"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L130_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"wet towel\" together at a normal pace. Does the /t/ get pronounced twice, back to back, or does it blend into a single, slightly longer sound?",
             "explanation": "Pronouncing the same consonant twice in a row takes extra effort for no real gain in clarity, so English merges them. The double /t/ in \"wet towel\" becomes a single lengthened sound.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "wet towel"
         }
     ]
 }

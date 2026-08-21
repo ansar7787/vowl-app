@@ -13,8 +13,9 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_feedback_panel.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_instruction.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_hologram_console.dart';
+import 'package:vowl/features/accent/dialect_drill/presentation/widgets/dialect_drill_region_map.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/game_mechanics/shadow_playback_compare.dart';
 
 class DialectDrillScreen extends StatefulWidget {
   final int level;
@@ -238,6 +239,14 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   : instructionText,
                                               accentColor: theme.primaryColor,
                                             ),
+                                            if (quest.dialectRegion != null) ...[
+                                              SizedBox(height: 16.h),
+                                              DialectDrillRegionMap(
+                                                region: quest.dialectRegion!,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                              ),
+                                            ],
                                             SizedBox(height: 24.h),
                                             DialectDrillHologramConsole(
                                               quest: quest,
@@ -311,17 +320,18 @@ class _DialectDrillScreenState extends State<DialectDrillScreen> {
                                                   );
                                                 },
                                               ),
-                                              if (_isFirstStagePassed) ...[
+                                              if (_isFirstStagePassed && !_isAnswered) ...[
                                                 SizedBox(height: 16.h),
-                                                AccentSelfEvaluationPanel(
-                                                  textToSpeak:
-                                                      quest.word ??
-                                                      "", // For Dialect Drill, target is usually the word
-                                                  primaryColor:
-                                                      theme.primaryColor,
-                                                  isCompact: false,
-                                                  onEvaluate:
-                                                      _submitVerbalEvaluation,
+                                                ShadowPlaybackCompare(
+                                                  expectedText: quest.word ?? "",
+                                                  primaryColor: theme.primaryColor,
+                                                  isPositioned: false,
+                                                  onConfirmed: () {
+                                                    _submitVerbalEvaluation(true);
+                                                  },
+                                                  onSkipped: () {
+                                                    _submitVerbalEvaluation(false);
+                                                  },
                                                 ),
                                               ],
                                             ],

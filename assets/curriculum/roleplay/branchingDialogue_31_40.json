@@ -17,7 +17,17 @@
             "correctAnswerIndex": 2,
             "hint": "In situations of conflicting information, state your best current assessment and recommend verification.",
             "explanation": "'Based on the most credible source, I believe the eastern location is correct - though I recommend we verify' gives a concrete assessment and a sensible safety step. 'Conflicting reports are common' is a platitude. 'I'd prefer to wait' can be appropriate, but here it fails to give any assessment when one is requested.",
-            "id": "bd_l31_q1"
+            "id": "bd_l31_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Confirm mission instructions clearly and describe your preparation steps.",
             "explanation": "'I'll study the cover identity during transit and be in position well before 1400' confirms the instruction and describes concrete preparation steps. 'Hotel check-ins are in the afternoon' is a general statement. 'Is it really necessary?' questions the operation without a valid reason.",
-            "id": "bd_l31_q2"
+            "id": "bd_l31_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 1,
             "hint": "Know your menu confidently and recommend specific dishes with genuine enthusiasm.",
             "explanation": "'I'd recommend the roasted aubergine tart or the spinach and ricotta pasta' is a confident, specific recommendation that shows menu expertise. 'Vegetarian cuisine has become popular' is a general observation. 'Let me check if we have options' shows a lack of menu knowledge that a professional server should not have.",
-            "id": "bd_l31_q3"
+            "id": "bd_l31_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 1,
             "hint": "Connect the medical finding to your personal circumstances honestly and ask a relevant question.",
             "explanation": "'Work has been particularly intense lately. Could stress be contributing to this?' is honest and asks a clinically relevant follow-up question. 'I exercise every day' provides lifestyle information but doesn't address the stress question. 'Blood pressure is measured in mmHg' defines a medical term but doesn't contribute any personal information.",
-            "id": "bd_l32_q1"
+            "id": "bd_l32_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 0,
             "hint": "When offered an incentive, ask for specific details before making any decision.",
             "explanation": "'How much better a deal exactly?' is the most practical first question - you need to know the specific benefit before deciding whether to pay cash. 'Cash is less secure than electronic payments' is a general statement. 'I'll need time to consider' delays when you could simply ask for the specifics first.",
-            "id": "bd_l32_q2"
+            "id": "bd_l32_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 2,
             "hint": "Accept helpful local advice with enthusiasm and clarify your relevant constraints.",
             "explanation": "'That would be wonderful! What do you recommend for someone with limited time?' accepts the offer enthusiastically and provides a practical constraint. 'Six hours is not very long' is a mild complaint rather than engaging with the offer. 'I'll just stay in the terminal' closes down a potentially enriching offer.",
-            "id": "bd_l32_q3"
+            "id": "bd_l32_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 2,
             "hint": "When offered a promotion opportunity, respond with genuine enthusiasm and show readiness.",
             "explanation": "'I'd be genuinely honoured. I have ideas about adding more value in a senior role' expresses enthusiasm and shows forward thinking. 'Senior roles come with greater responsibility' is true but sounds like hesitation. 'Are there other candidates?' focuses on competition rather than the opportunity itself.",
-            "id": "bd_l33_q1"
+            "id": "bd_l33_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 0,
             "hint": "When given actionable intelligence, suggest a careful, methodical next step.",
             "explanation": "'Before we approach them, gather more corroborating evidence - ensure our case is solid' is a methodical, defensible approach. 'Suspects have to be handled carefully' is vague. 'We should inform our supervisor' might be appropriate, but gathering evidence first is the most logical operational step.",
-            "id": "bd_l33_q2"
+            "id": "bd_l33_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give specific, data-informed advice when asked for a professional menu recommendation.",
             "explanation": "'From the feedback I hear, there's excitement about lighter, plant-based dishes' bases the recommendation on actual customer feedback. 'Similar restaurants typically feature Italian and Asian dishes' describes competitors without offering a tailored recommendation. 'Customers order what's familiar' is a general observation, not actionable advice.",
-            "id": "bd_l33_q3"
+            "id": "bd_l33_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give precise duration and a potential cause when reporting a medical symptom.",
             "explanation": "'About three weeks - ever since I started working longer hours' gives a specific duration and a likely contributing factor, both highly valuable for diagnosis. 'Fatigue is a very common complaint' is a general fact. 'I try to get seven hours of sleep' talks about sleep habits but doesn't answer how long the fatigue has lasted.",
-            "id": "bd_l34_q1"
+            "id": "bd_l34_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "Show genuine interest and ask for more information before committing to a purchase.",
             "explanation": "'Yes, I'm very interested. Tell me more - what makes it special?' shows genuine interest while asking for more detail before committing. 'Limited editions are popular because of scarcity' explains the concept without personally engaging. 'I'll think it over and come back' risks losing the item and doesn't engage with the offer.",
-            "id": "bd_l34_q2"
+            "id": "bd_l34_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 0,
             "hint": "Respond to minor inconveniences on flights with grace and practicality.",
             "explanation": "'Not to worry - I've actually brought plenty to read with me' shows grace and demonstrates you're self-sufficient. 'In-flight entertainment systems are complex' is a general observation. 'I chose this flight for the entertainment!' adds guilt to the crew member who has already apologised for something outside their control.",
-            "id": "bd_l34_q3"
+            "id": "bd_l34_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 0,
             "hint": "Describe the specific actions and approach that led to success.",
             "explanation": "'Clear goals at the start, plus consistent mutual support' identifies specific contributing factors to the success. 'High performance ratings are gratifying' just expresses pleasure. 'We were fortunate that conditions were favourable' deflects credit with luck rather than recognising the team's work.",
-            "id": "bd_l35_q1"
+            "id": "bd_l35_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 0,
             "hint": "When forced to make a binary decision under time pressure, make a clear, reasoned choice.",
             "explanation": "'Given that we have seventy percent of the intelligence, I say we move now' makes a decisive choice and provides a specific reason. 'Operational windows often close fast' is a truism, not a decision. 'This is your decision' abdicates responsibility when you've been explicitly asked for your call.",
-            "id": "bd_l35_q2"
+            "id": "bd_l35_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a trusted relationship has a problem, recommend direct communication as the first step.",
             "explanation": "'Have a direct conversation with the supplier - give them the chance to address it first' is a mature, professional approach that preserves a valuable relationship while addressing the issue. 'Supplier relationships take years to build' is true but offers no concrete advice. 'Switching is difficult' acknowledges the challenge without suggesting a solution.",
-            "id": "bd_l35_q3"
+            "id": "bd_l35_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 2,
             "hint": "In a crisis, immediately offer concrete, specific options rather than general observations.",
             "explanation": "'Three backup options: satellite relay, emergency radio frequency, or a physical runner to secondary command' offers specific, immediately actionable alternatives. 'Communications going down is a major risk' is a statement of the problem, not a solution. 'I'll need time to look into it' is too slow for an active emergency.",
-            "id": "bd_l36_q1"
+            "id": "bd_l36_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked to analyse something unfamiliar, give your best technical interpretation with reasoning.",
             "explanation": "'The repeating groups of three digits suggest a numeric substitution cipher - the repetition could be key' provides a specific, reasoned analysis. 'Coded messages use many cipher systems' is general. 'Consult a cryptography expert' avoids contributing when your input was specifically requested.",
-            "id": "bd_l36_q2"
+            "id": "bd_l36_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 0,
             "hint": "When asked for professional advice on a major decision, give specific, conditional guidance.",
             "explanation": "'If your current location is consistently profitable and you have an experienced team, the fundamentals are strong' gives specific, conditional guidance based on real factors. 'Expansions carry significant financial risk' is a general caution without specific advice. 'Run the numbers carefully' is sound general advice but gives no specific recommendation.",
-            "id": "bd_l36_q3"
+            "id": "bd_l36_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 1,
             "hint": "When faced with difficult medical news, ask for it directly and clearly.",
             "explanation": "'Please be direct and give me the full picture - I need to understand everything clearly' is mature and practical. It positions you to make informed decisions. 'Bad news is always hard to receive' is an emotional statement that delays the conversation. 'Can you give me a warning first?' is already asking for a warning - the question itself is the warning.",
-            "id": "bd_l37_q1"
+            "id": "bd_l37_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 0,
             "hint": "In a commercial context, state your buyer status clearly and with appropriate conditions.",
             "explanation": "'I'm a serious buyer if the right item comes up at a reasonable price' is honest and sets clear, reasonable conditions. 'All buyers start as browsers' is philosophical and avoids the direct question. 'I find that rude' is overly defensive about a perfectly standard commercial question.",
-            "id": "bd_l37_q2"
+            "id": "bd_l37_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 1,
             "hint": "Before accepting a routing change, cross-check with current data to confirm the recommendation.",
             "explanation": "'Let me cross-check against current radar and the latest METAR reports before we commit' is the responsible, safety-first approach - data-driven and cautious. 'Weather routing software is generally reliable' accepts the recommendation without verification. 'A longer route increases fuel consumption' is true but is an argument, not a decision.",
-            "id": "bd_l37_q3"
+            "id": "bd_l37_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "When someone valuable asks to leave, understand their reasons before responding or deciding.",
             "explanation": "'Have an honest conversation first - understand their reasons, and explore if there's something we can offer here' addresses the situation constructively. 'Crew transfers are normal' accepts the situation passively. 'Strong performers are hard to replace' states the cost without offering a solution.",
-            "id": "bd_l38_q1"
+            "id": "bd_l38_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 2,
             "hint": "When an operation isn't producing results, evaluate it against the original justification before deciding.",
             "explanation": "'Review the original intelligence basis - if it was solid, extend to a full week before abandoning' is a data-driven, proportionate approach. 'Three-day operations don't always produce immediate results' is a platitude. 'Cut our losses and redirect' is premature without evaluating the original intelligence quality.",
-            "id": "bd_l38_q2"
+            "id": "bd_l38_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 2,
             "hint": "When there are mixed results, recommend a specific improvement cycle before a permanent decision.",
             "explanation": "'Refine the criticised elements, run one more taste test, then decide' is a concrete, improvement-focused approach. 'Mixed reviews suggest it hasn't found its audience' may be true but doesn't give actionable advice. 'Mixed reviews are common for new dishes' is a general reassurance without specific guidance.",
-            "id": "bd_l38_q3"
+            "id": "bd_l38_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 1,
             "hint": "Show full commitment to medical advice and immediately ask for specifics.",
             "explanation": "'I'm completely committed - what specific changes are you recommending?' shows total commitment and moves straight to the actionable detail. 'Lifestyle changes are harder than medication' sounds like it's laying the groundwork for non-compliance. 'I'll do my best, though it's challenging' expresses commitment with excessive qualification.",
-            "id": "bd_l39_q1"
+            "id": "bd_l39_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 2,
             "hint": "When offered a helpful comparison, accept enthusiastically and let the seller present the information.",
             "explanation": "'Yes please - a side-by-side comparison would be very helpful' accepts the offer and positions you to make an informed decision. 'Products from the same manufacturer are usually similar' is a generalisation that undermines the comparison before it's made. 'I find it difficult to decide between two options' describes the problem rather than seeking the solution.",
-            "id": "bd_l39_q2"
+            "id": "bd_l39_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 0,
             "hint": "Handle upgrade requests professionally by checking availability and setting clear, polite expectations.",
             "explanation": "'I'll check our availability - if seats are available and they qualify, I'm happy to upgrade them as a service gesture' is professional, action-oriented, and customer-focused. 'Upgrade requests happen frequently' is a general statement. 'Upgrades are at the airline's discretion' is technically true but doesn't actually help the passenger.",
-            "id": "bd_l39_q3"
+            "id": "bd_l39_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 1,
             "hint": "Invite specific feedback openly and position yourself to learn from criticism.",
             "explanation": "'I welcome the feedback. Please walk me through your specific concerns - I want to understand them fully' is open, professional, and learning-oriented. 'My proposal was based on thorough analysis' is slightly defensive, though it establishes your process. 'I can produce a revised version' jumps to solutions before understanding the concerns.",
-            "id": "bd_l40_q1"
+            "id": "bd_l40_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 1,
             "hint": "Confirm thorough operational preparation with specific details when asked.",
             "explanation": "'Yes - packed, memorised my cover story, and left no digital trail since this morning' gives specific, concrete confirmation of preparation. 'Going off-grid presents practical challenges' describes the challenge without addressing whether you're prepared. 'What does going off the grid involve?' asks for clarification when concrete preparation was expected.",
-            "id": "bd_l40_q2"
+            "id": "bd_l40_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 1,
             "hint": "For a complex planning challenge, start with information gathering and look for efficient, adaptable solutions.",
             "explanation": "'Collect detailed requirements first, then identify naturally adaptable dishes' is both systematic and efficient. 'Large events with complex needs are always challenging' is sympathetic but offers no direction. 'Twelve completely separate menus' is technically thorough but operationally impractical.",
-            "id": "bd_l40_q3"
+            "id": "bd_l40_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         }
     ]
 }

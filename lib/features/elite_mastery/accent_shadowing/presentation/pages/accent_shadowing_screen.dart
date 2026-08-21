@@ -245,6 +245,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                     fallback: 'Target Text',
                   ),
               shadowingFocus: quest.shadowingFocus,
+              targetAccent: quest.targetAccent,
               matchedIndices: _matchedIndices,
               isDark: isDark,
               primaryColor: theme.primaryColor,

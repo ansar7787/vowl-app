@@ -18,7 +18,9 @@
             "correctAnswerIndex": 1,
             "hint": "Notice how the mouth has to move from the /t/ ending \"not\" to the bilabial sound that opens \"married\". Does it really make that full move, or take a shortcut?",
             "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /t/ becomes /p/ in \"not married\" to match the bilabial consonant that follows.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "nop married"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L11_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen for the /d/ at the end of \"recommend\". With another consonant right before it and another right after (from \"doctor\"), can a speaker realistically hit all three cleanly?",
             "explanation": "This is elision: a sound is removed entirely, not changed or weakened. Here, the /d/ at the end of \"recommend\" disappears before the consonant that starts \"doctor\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "recommend 'octor"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L11_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the consonant joining \"hot\" to \"meals\". Is it still /t/, or has it changed shape to match what follows?",
             "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"hot meals\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "hop meals"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L12_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 0,
             "hint": "Try saying \"expand business\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
             "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"expand business\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "expan' business"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L12_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 1,
             "hint": "In connected speech, the /d/ ending \"bread\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"basket\"?",
             "explanation": "This is place assimilation: /d/ moves to a bilabial position to blend smoothly with what comes next, turning into /b/ in \"bread basket\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "breab basket"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L12_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 1,
             "hint": "Focus on the last sound of \"loud\". With a bilabial consonant starting \"music\" right after it, what shift would make pronunciation easier?",
             "explanation": "Rather than jump from the /d/ ending \"loud\" to a bilabial sound, the mouth compromises: /d/ becomes /b/, matching the bilabial consonant that opens \"music\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "loub music"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L13_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 1,
             "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"contest\" meets \"winner\" — does English keep it or drop it?",
             "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"contest winner\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "contes' winner"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L13_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"ten clients\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
             "explanation": "In fluent speech, /n/ rarely stays /n/ before a velar sound — it assimilates to /ŋ/, which is exactly what you hear in \"ten clients\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "ten clients"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L13_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 1,
             "hint": "In casual speech, does the final /t/ of \"trust\" get pronounced before \"me\", or does it just vanish?",
             "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /t/ in \"trust\" is the one that goes missing before \"me\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "trus' me"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L14_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 1,
             "hint": "Picture how a native speaker would say \"packed lunch\" in a fast, everyday sentence. Is every single consonant still there?",
             "explanation": "This is a textbook case of consonant-cluster elision: the /t/ between two consonants is dropped to keep speech fluent and effortless in \"packed lunch\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "packed lunch"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L14_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 0,
             "hint": "The tongue is already anticipating \"bag\"'s bilabial sound before it even finishes \"right\". What happens to /t/ as a result?",
             "explanation": "The change from /t/ to /p/ at the end of \"right\" happens because the following bilabial consonant in \"bag\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "righp bag"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L14_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /d/ in \"world\" is trapped between two other consonants right before \"tour\". What usually happens to a stop consonant stuck in that position?",
             "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /d/ from \"world\" entirely. The result flows straight from the first consonant into \"tour\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "worl' tour"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L15_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 1,
             "hint": "Between \"seven\" and \"months\" sits a consonant under pressure to match its neighbor. What does it become?",
             "explanation": "This pairing is a classic assimilation example: the /n/ ending \"seven\" adopts the bilabial quality of the sound in \"months\", surfacing as /m/ in natural, connected speech.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "seven momths"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L15_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 1,
             "hint": "This isn't a case of a sound vanishing from \"ten\" — it's still there, just different. What does /n/ turn into before the velar sound in \"guests\"?",
             "explanation": "Notice that the /n/ ending \"ten\" isn't deleted the way it would be in elision — it survives, just transformed into /ŋ/ to match the velar sound beginning \"guests\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "ten guests"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L15_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 0,
             "hint": "The /t/ at the end of \"must\" is about to meet a bilabial sound in \"pay\". Does it hold firm, or shift to match?",
             "explanation": "Before a bilabial consonant, /t/ commonly shifts to match its place of articulation. In \"must pay\", /t/ becomes /p/ — the sound itself changes, it doesn't disappear.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "musp pay"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L16_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"good meal\" at natural speed. Listen right at the boundary — does the /d/ stay a /d/, or does it become something else?",
             "explanation": "This is regressive assimilation: a sound changes to become more like the sound that follows it. Here, the /d/ ending \"good\" turns into /b/ because \"meal\" begins with a bilabial consonant.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "goob meal"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L16_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "A velar consonant is coming up in \"coffee\". What does that do to the /t/ just before it in \"hot\"?",
             "explanation": "Speakers save effort by letting /t/ anticipate the velar sound ahead. So in \"hot coffee\", /t/ is pronounced as /k/ instead.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "hok coffee"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L16_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen closely at the boundary of \"cold\" and \"call\" — count the consonants stacking up. Does the /d/ still make it into the sentence?",
             "explanation": "In fast, connected speech, a /d/ wedged between consonants almost always disappears. That's what you'll hear in \"cold call\" — the /d/ goes silent.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "col' call"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L17_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 0,
             "hint": "Notice how the mouth has to move from the /t/ ending \"light\" to the velar sound that opens \"coat\". Does it really make that full move, or take a shortcut?",
             "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /t/ becomes /k/ in \"light coat\" to match the velar consonant that follows.",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "light coak"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L17_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the consonant joining \"quiet\" to \"mood\". Is it still /t/, or has it changed shape to match what follows?",
             "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"quiet mood\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "quiep mood"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L17_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 0,
             "hint": "In connected speech, the /t/ ending \"hit\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"pause\"?",
             "explanation": "This is place assimilation: /t/ moves to a bilabial position to blend smoothly with what comes next, turning into /p/ in \"hit pause\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "hip pause"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L18_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"old news\" naturally, without pausing between the words. Is the /d/ audible, or does it disappear into the next consonant?",
             "explanation": "Elision removes a sound completely rather than merely blending it. Here the /d/ vanishes from \"old\" so the phrase moves directly into \"news\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "ol' news"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L18_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 0,
             "hint": "This pair, \"correct list\", creates a tricky consonant sequence. Which sound do fluent speakers simplify away — and is it really gone, or just quieter?",
             "explanation": "Speakers naturally avoid three consonants in a row, so the /t/ is dropped rather than forced through. That's why \"correct list\" sounds smoother without it.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "correct lis'"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L18_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 0,
             "hint": "Fluent speech avoids awkward consonant pile-ups. Where exactly does that simplification happen in \"next level\"?",
             "explanation": "This cluster is simplified by deleting the /t/ altogether — not weakening it, not shifting it, just leaving it out — which is the defining feature of elision in \"next level\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "nex' level"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L19_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 0,
             "hint": "Focus on the last sound of \"quite\". With a bilabial consonant starting \"busy\" right after it, what shift would make pronunciation easier?",
             "explanation": "Rather than jump from the /t/ ending \"quite\" to a bilabial sound, the mouth compromises: /t/ becomes /p/, matching the bilabial consonant that opens \"busy\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "quipe busy"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L19_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"count\" alone, then \"down\" alone — both consonants are clear. Now blend them at speed. What happens to the /t/ in between?",
             "explanation": "Notice that nothing replaces the /t/ — it isn't weakened or swapped for another sound, it's simply omitted. That full deletion is what separates elision from assimilation in \"count down\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "coun' down"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L19_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 0,
             "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /t/ in \"post code\" — is it there?",
             "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /t/ drops out of \"post code\" for exactly that reason.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "pos' code"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L20_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"waste money\" quickly. The consonants pile up right around the /t/ in \"waste\" — does it survive the crowd, or get squeezed out?",
             "explanation": "When /t/ sits between two other consonants, English speakers routinely drop it to keep the rhythm smooth. In \"waste money\", the /t/ disappears rather than being pronounced.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "was'e money"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L20_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"green bag\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
             "explanation": "In fluent speech, /n/ rarely stays /n/ before a bilabial sound — it assimilates to /m/, which is exactly what you hear in \"green bag\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "greem bag"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L20_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's a consonant cluster forming between \"shift\" and \"schedule\". In natural speech, one sound in that cluster usually disappears. Which one?",
             "explanation": "Three consonants in a row are hard to articulate cleanly, so speakers simplify by deleting the middle one. That's exactly what happens to the /t/ in \"shift schedule\" — it's dropped, not just softened.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "shif' schedule"
         }
     ]
 }

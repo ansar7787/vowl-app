@@ -18,7 +18,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"blue ocean\" without a pause. Two vowel sounds are about to collide — what does English insert to smooth the transition?",
             "explanation": "Because \"blue\" ends in a vowel and \"ocean\" begins with one, English speakers instinctively insert /w/ between them. It's not in the spelling of either word — it's added on the fly to keep the speech flowing.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "blue ocean"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L191_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"must be careful\" quickly, the way you would in real conversation. Does \"must\" sound the same as when you say it alone?",
             "explanation": "Say \"must\" on its own and you get the full vowel /ʌ/. Say it inside \"must be careful\" at natural speed, and it reduces to schwa — the standard weak form.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "must be careful"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L191_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"to\" said by itself has a full, clear vowel. Said inside \"need to study\" at natural speed, does that vowel survive?",
             "explanation": "This reduction isn't sloppy speech — it's a predictable, rule-governed feature of English. Unstressed \"to\" reduces from /uː/ to schwa in virtually every natural sentence, including \"need to study\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "need to study"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 0,
             "hint": "This exact combination is so common that English speakers have a dedicated shortcut for it. What does \"trying to finish\" become in relaxed conversation?",
             "explanation": "This is a lexicalized contraction: \"trying to finish\" is reduced all the way down to \"tryna finish\" in relaxed, everyday speech. It's extremely common in spoken English, though it's generally avoided in formal writing.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\"."
+            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
+            "phenomenonType": "Contraction",
+            "spokenForm": "trying to finish"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 0,
             "hint": "Check the spelling of \"delay\" before \"our\" — does it end in a letter that would predict a /j/ sound? If not, where's that /j/ actually coming from?",
             "explanation": "Unlike linking, where the connecting sound is already written into the word, this /j/ in \"delay our\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "delay our flight"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L192_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the consonant joining \"what\" to \"brand\". Is it still /t/, or has it changed shape to match what follows?",
             "explanation": "When a word ending in /t/ meets a bilabial sound, the /t/ shifts to /p/ so both sounds are made in nearly the same place in the mouth. That's what happens in \"what brand\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "whap brand"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"have to study\" the way a native speaker would in a quick, casual chat — not word by word. What comes out?",
             "explanation": "Frequent phrases like this one develop their own casual shortcut over time. \"have to study\" becomes \"hafta study\" — a fixed, informal form recognized by virtually every native speaker.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing."
+            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
+            "phenomenonType": "Contraction",
+            "spokenForm": "have to study"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 0,
             "hint": "Picture how a native speaker would say \"hold steady\" in a fast, everyday sentence. Is every single consonant still there?",
             "explanation": "This is a textbook case of consonant-cluster elision: the /d/ between two consonants is dropped to keep speech fluent and effortless in \"hold steady\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "hold stea'y"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L193_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen at natural speed: does \"would your\" keep two distinct consonant sounds at the boundary, or blend them into a new one?",
             "explanation": "In relaxed, natural speech, /d/ and /j/ rarely stay separate at a word boundary like this one. They coalesce into /dʒ/, exactly as in \"would your\".",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "would your team"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 1,
             "hint": "Content words — nouns, verbs, adjectives — usually keep their full vowels; function words like \"a\" often don't. What happens to it in \"a slice of cake\"?",
             "explanation": "Stress timing in English means unstressed words get compressed. \"a\" loses its full /ɒ/ vowel and reduces to schwa here, keeping \"a slice of cake\" flowing at a natural rhythm.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "a slice of cake"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 0,
             "hint": "In connected speech, the /n/ ending \"brown\" often adapts to its neighbor. What does it turn into right before the bilabial sound in \"paper\"?",
             "explanation": "This is place assimilation: /n/ moves to a bilabial position to blend smoothly with what comes next, turning into /m/ in \"brown paper\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "browm paper"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L194_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 0,
             "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"pizza\" and \"and\" here?",
             "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /r/ as a natural bridge. You'll hear it in \"pizza and\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "pizza and pasta"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's no /r/ anywhere in the spelling of \"camera\". Yet something links it to the vowel that opens \"app\" — what is it?",
             "explanation": "This inserted /r/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"camera\" and \"app\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "camera app"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /d/ in \"child\" is trapped between two other consonants right before \"care\". What usually happens to a stop consonant stuck in that position?",
             "explanation": "Rather than pronounce all three consonants back to back, speakers cut the /d/ from \"child\" entirely. The result flows straight from the first consonant into \"care\".",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "chil' care"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L195_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen to the boundary between \"come\" and \"in\". A consonant and a vowel are meeting — what does fluent speech do with them?",
             "explanation": "Rather than pausing between the consonant and the vowel, speakers connect them directly — the consonant essentially becomes the first sound of the next syllable. You hear this clearly in \"come in\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "come in"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen carefully between \"see\" and \"it\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
             "explanation": "Native speakers automatically fill the gap between two vowel sounds with /j/, even when there's no letter to justify it. \"see it\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "see it"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen closely at the boundary of \"old\" and \"friend\" — count the consonants stacking up. Does the /d/ still make it into the sentence?",
             "explanation": "In fast, connected speech, a /d/ wedged between consonants almost always disappears. That's what you'll hear in \"old friend\" — the /d/ goes silent.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "old frien'"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L196_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 0,
             "hint": "The 'r' in \"driver\" isn't always pronounced. Does the vowel at the start of \"arrived\" bring it back to life?",
             "explanation": "Because the letter 'r' genuinely exists at the end of \"driver\", its reappearance before the vowel in \"arrived\" is called linking /r/ — a real, spelled sound resurfacing, unlike intrusive /r/, which comes from nowhere in the spelling.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "driver arrived"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 1,
             "hint": "This isn't just a weak form — the words actually blend into a brand-new informal spelling and sound. What's that reduced form of \"might have\"?",
             "explanation": "Unlike a simple stress reduction, this phrase actually merges into a new informal word: \"might've\". You'll hear \"might have\" pronounced this way constantly in casual conversation.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\"."
+            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
+            "phenomenonType": "Contraction",
+            "spokenForm": "might have"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 1,
             "hint": "Focus on the last sound of \"road\". With a velar consonant starting \"closed\" right after it, what shift would make pronunciation easier?",
             "explanation": "Rather than jump from the /d/ ending \"road\" to a velar sound, the mouth compromises: /d/ becomes /g/, matching the velar consonant that opens \"closed\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "road closeg"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L197_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 0,
             "hint": "This is a spelling trap: \"too\" looks like it should flow straight into \"easy\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
             "explanation": "Since \"too\" doesn't end in a written consonant that could explain a /w/, the /w/ you hear before \"easy\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "too easy"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"ten birds\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
             "explanation": "In fluent speech, /n/ rarely stays /n/ before a bilabial sound — it assimilates to /m/, which is exactly what you hear in \"ten birds\".",
-            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants."
+            "phoneticRule": "Assimilation changes a sound's place of articulation to match its neighbor — /t/, /d/, and /n/ are the sounds most commonly affected before bilabial or velar consonants.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "tem birds"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen to \"her\" right after \"watch\". In casual speech, does its initial /h/ survive, or does it disappear?",
             "explanation": "Weak pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in casual, connected speech — especially right after a consonant. Here, the /h/ in \"her\" drops, letting the final consonant of \"watch\" link directly onto the vowel that follows.",
-            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech."
+            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "watch her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L198_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 1,
             "hint": "Right after \"for\", \"her\" is a weak, unstressed pronoun. What commonly happens to its /h/ in fast, natural speech?",
             "explanation": "This is h-dropping: unstressed pronouns beginning with /h/ almost always lose that sound in fluent speech. In \"for her\", dropping the /h/ lets \"for\"'s final consonant flow straight into the vowel of \"her\".",
-            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly."
+            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "for her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"invite her\" quickly and casually. Do you actually hear an /h/ at the start of \"her\", or does it vanish?",
             "explanation": "Because \"her\" is unstressed, its /h/ disappears in natural speech, and the consonant ending \"invite\" links directly to the exposed vowel. That's why \"invite her\" sounds like one connected unit rather than two separate words.",
-            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech."
+            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "invite her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 0,
             "hint": "The tongue is already anticipating \"map\"'s bilabial sound before it even finishes \"road\". What happens to /d/ as a result?",
             "explanation": "The change from /d/ to /b/ at the end of \"road\" happens because the following bilabial consonant in \"map\" pulls the place of articulation to match. Nothing is lost here, just reshaped.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "roab map"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L199_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two identical /k/ sounds meet right at the boundary of \"like\" and \"coffee\". Listen closely — one sound, or two separate ones?",
             "explanation": "This is gemination, not deletion: the /k/ isn't dropped, it's simply held for one longer articulation instead of being repeated. \"like coffee\" sounds like one smooth /k/, not two separate ones.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "like coffee"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"grand piano\" naturally, without pausing between the words. Is the /d/ audible, or does it disappear into the next consonant?",
             "explanation": "Elision removes a sound completely rather than merely blending it. Here the /d/ vanishes from \"grand\" so the phrase moves directly into \"piano\".",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "gran' piano"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 0,
             "hint": "The /s/ in \"this\" and the /j/ starting \"yarn\" don't survive as separate sounds in fast speech. What do they turn into together?",
             "explanation": "This is why \"this yarn\" doesn't sound like two crisp, separate words: the boundary consonant /s/ and the /j/ of \"yarn\" merge into the single sound /ʃ/.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "this yarn"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L200_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 0,
             "hint": "Weak pronouns like \"him\", \"her\", and \"his\" behave differently from stressed nouns. What happens to the /h/ in \"her\" right after \"forgive\"?",
             "explanation": "H-dropping is extremely common with weak pronouns after a consonant. The /h/ in \"her\" vanishes, and \"forgive\"'s final sound carries straight over into the vowel left behind.",
-            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly."
+            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "forgive her"
         }
     ]
 }

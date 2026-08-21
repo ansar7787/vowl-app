@@ -17,7 +17,19 @@
             "correctAnswer": "Pancake Stack, Coffee",
             "hint": "The customer pauses to think, then finishes the order with a drink.",
             "explanation": "The pause (shown by ‘…’) is natural in spoken English when someone is deciding. ‘Pancake stack’ and ‘waffle stack’ look similar on a menu, so read carefully.",
-            "id": "go_l21_q1"
+            "id": "go_l21_q1",
+            "menuItems": [
+                "Pancake Stack",
+                "Coffee",
+                "Waffle Stack",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$6.00",
+                "$3.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Club Sandwich, Coleslaw",
             "hint": "The customer first asks a question, then places the actual order.",
             "explanation": "Asking ‘Do you have…?’ first is common before ordering something you're not sure is on the menu. ‘I’ll take one’ then confirms the order.",
-            "id": "go_l21_q2"
+            "id": "go_l21_q2",
+            "menuItems": [
+                "Club Sandwich",
+                "Coleslaw",
+                "BLT",
+                "Side Salad"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$6.00",
+                "$8.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Beef Chili, Cornbread",
             "hint": "‘For here’ tells the staff the customer is eating in the restaurant, not taking food away.",
             "explanation": "‘For here’ and ‘to go’ are two essential phrases for ordering in the US. ‘Beef chili’ and ‘cornbread’ are a classic pairing.",
-            "id": "go_l21_q3"
+            "id": "go_l21_q3",
+            "menuItems": [
+                "Beef Chili",
+                "Cornbread",
+                "Chicken Soup",
+                "Dinner Roll"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$14.00",
+                "$12.50",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Turkey Club, Water",
             "hint": "‘To go’ means the customer will take the food with them, not eat it at the restaurant.",
             "explanation": "‘To go’ (called ‘takeaway’ in British English) tells the staff to pack the order. ‘Turkey’ and ‘chicken’ clubs are both common, so the meat word matters.",
-            "id": "go_l22_q1"
+            "id": "go_l22_q1",
+            "menuItems": [
+                "Turkey Club",
+                "Water",
+                "Chicken Club",
+                "Soda"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$17.75",
+                "$19.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Mushroom Omelet, Hash Browns",
             "hint": "‘I’ll do…’ is a casual, modern way to place an order.",
             "explanation": "‘I’ll do…’ is heard often in casual restaurants, meaning the same as ‘I’ll have…’ Hash browns are shredded and fried, while home fries are cut into cubes.",
-            "id": "go_l22_q2"
+            "id": "go_l22_q2",
+            "menuItems": [
+                "Mushroom Omelet",
+                "Hash Browns",
+                "Cheese Omelet",
+                "Home Fries"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$5.75",
+                "$21.75",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Fish and Chips, Tartar Sauce",
             "hint": "One item is a classic British dish; the other is its traditional dipping sauce.",
             "explanation": "‘Give me…’ is direct, so adding ‘please’ keeps it polite. Tartar sauce is the traditional partner for fish and chips, while cocktail sauce usually goes with shrimp.",
-            "id": "go_l22_q3"
+            "id": "go_l22_q3",
+            "menuItems": [
+                "Fish and Chips",
+                "Tartar Sauce",
+                "Fried Shrimp",
+                "Cocktail Sauce"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$19.25",
+                "$7.25",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Iced Latte, Blueberry Muffin",
             "hint": "This order sounds like the customer is listing items one by one.",
             "explanation": "‘One… and one…’ is a simple, clear way to list items, often used when ordering quickly. ‘Iced’ and ‘hot’ describe temperature, not flavor.",
-            "id": "go_l23_q1"
+            "id": "go_l23_q1",
+            "menuItems": [
+                "Iced Latte",
+                "Blueberry Muffin",
+                "Hot Latte",
+                "Bran Muffin"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$19.25",
+                "$7.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Cobb Salad, Lemonade",
             "hint": "The customer adds a second request after starting the order.",
             "explanation": "‘And could I also get…?’ is a natural way to add a second item after the first. A ‘Cobb salad’ traditionally includes egg, bacon, and blue cheese.",
-            "id": "go_l23_q2"
+            "id": "go_l23_q2",
+            "menuItems": [
+                "Cobb Salad",
+                "Lemonade",
+                "Chef Salad",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$11.25",
+                "$9.75",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Grilled Salmon, Steamed Vegetables",
             "hint": "‘Actually’ often signals the customer has just made a final decision.",
             "explanation": "‘Actually…’ is used when someone changes their mind or confirms a decision. ‘Steamed’ and ‘roasted’ are different cooking methods, so listen closely.",
-            "id": "go_l23_q3"
+            "id": "go_l23_q3",
+            "menuItems": [
+                "Grilled Salmon",
+                "Steamed Vegetables",
+                "Grilled Trout",
+                "Roasted Vegetables"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$13.75",
+                "$15.25",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Beef Burrito, Horchata",
             "hint": "‘Let’s go with…’ sounds like the customer is finally settling on a choice.",
             "explanation": "‘Let’s go with…’ is a relaxed way to confirm a decision, often after considering other options. ‘Horchata’ is a sweet, cinnamon-flavored rice drink.",
-            "id": "go_l24_q1"
+            "id": "go_l24_q1",
+            "menuItems": [
+                "Beef Burrito",
+                "Horchata",
+                "Chicken Burrito",
+                "Agua Fresca"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$8.50",
+                "$8.50",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Shrimp Curry, Rice",
             "hint": "The customer thinks out loud before finishing the order with a side dish.",
             "explanation": "The pause shows natural hesitation while deciding. ‘Shrimp’ and ‘chicken’ curry often sit next to each other on a menu, so the protein word is the key detail.",
-            "id": "go_l24_q2"
+            "id": "go_l24_q2",
+            "menuItems": [
+                "Shrimp Curry",
+                "Rice",
+                "Chicken Curry",
+                "Naan"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$19.25",
+                "$6.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Veggie Burger, Side Salad",
             "hint": "The customer checks if the item is available before confirming the order.",
             "explanation": "‘Do you have…?’ is useful when a customer isn't sure a dish is on the menu. Once confirmed, ‘I’ll take one’ completes the order.",
-            "id": "go_l24_q3"
+            "id": "go_l24_q3",
+            "menuItems": [
+                "Veggie Burger",
+                "Side Salad",
+                "Beef Burger",
+                "Fries"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$14.00",
+                "$19.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Eggs Benedict, Orange Juice",
             "hint": "Two egg dishes with similar names appear here — check which one was ordered.",
             "explanation": "‘Eggs Benedict’ uses ham and hollandaise sauce, while ‘Eggs Florentine’ replaces the ham with spinach. ‘Fresh’ simply describes the juice, not a new item.",
-            "id": "go_l25_q1"
+            "id": "go_l25_q1",
+            "menuItems": [
+                "Eggs Benedict",
+                "Orange Juice",
+                "Eggs Florentine",
+                "Apple Juice"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$20.50",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Chicken Shawarma, Hummus",
             "hint": "This Middle Eastern order names a wrap and a creamy chickpea dip.",
             "explanation": "‘Shawarma’ is meat cooked on a rotating spit, often served in a wrap. ‘Hummus’ is made from chickpeas, while ‘baba ganoush’ is made from eggplant.",
-            "id": "go_l25_q2"
+            "id": "go_l25_q2",
+            "menuItems": [
+                "Chicken Shawarma",
+                "Hummus",
+                "Beef Shawarma",
+                "Baba Ganoush"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$19.25",
+                "$2.00",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Korean Fried Chicken, Pickled Radish",
             "hint": "This dish is fried twice for extra crispiness and often served with a tangy side.",
             "explanation": "Korean fried chicken is known for its extra-crispy texture, often coated in a sweet and spicy glaze. Pickled radish is a common side that cuts through the richness.",
-            "id": "go_l25_q3"
+            "id": "go_l25_q3",
+            "menuItems": [
+                "Korean Fried Chicken",
+                "Pickled Radish",
+                "Buffalo Wings",
+                "Coleslaw"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$19.25",
+                "$21.75",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Jerk Chicken, Rice and Peas",
             "hint": "This spicy dish comes from the Caribbean, along with its traditional side.",
             "explanation": "‘Jerk chicken’ is a Caribbean dish made with a spicy marinade. ‘Rice and peas’ is its classic side dish in Jamaican cooking.",
-            "id": "go_l26_q1"
+            "id": "go_l26_q1",
+            "menuItems": [
+                "Jerk Chicken",
+                "Rice and Peas",
+                "BBQ Chicken",
+                "Mashed Potatoes"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$21.75",
+                "$20.50",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Falafel Wrap, Mint Lemonade",
             "hint": "One item is made from chickpeas; the other has a cooling herb added.",
             "explanation": "‘Falafel’ is made from ground chickpeas, shaped into balls, and fried. ‘Mint’ tells you the lemonade has fresh mint added.",
-            "id": "go_l26_q2"
+            "id": "go_l26_q2",
+            "menuItems": [
+                "Falafel Wrap",
+                "Mint Lemonade",
+                "Chicken Wrap",
+                "Plain Lemonade"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$7.25",
+                "$19.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Poke Bowl, Edamame",
             "hint": "The main dish is a Hawaiian rice bowl; the side is a simple steamed bean.",
             "explanation": "A ‘poke bowl’ typically features raw fish over rice with vegetables. ‘Edamame’ are steamed and salted soybeans, a popular starter.",
-            "id": "go_l26_q3"
+            "id": "go_l26_q3",
+            "menuItems": [
+                "Poke Bowl",
+                "Edamame",
+                "Sushi Bowl",
+                "Seaweed Salad"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$20.50",
+                "$14.00",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Shrimp Tacos, Rice",
             "hint": "The customer changes their mind — listen for which taco they actually order.",
             "explanation": "‘Instead of…’ shows the customer switching from one choice to another. Only the final choice — shrimp tacos — should be selected, not the one mentioned first.",
-            "id": "go_l27_q1"
+            "id": "go_l27_q1",
+            "menuItems": [
+                "Shrimp Tacos",
+                "Rice",
+                "Fish Tacos",
+                "Beans"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$19.25",
+                "$16.50",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Pesto Pasta, Garlic Bread",
             "hint": "The pasta sauce and the type of bread both matter here.",
             "explanation": "‘Pesto’ is a green sauce made from basil, pine nuts, and cheese, quite different from a tomato sauce. Garlic bread and breadsticks are both common, so check the exact word.",
-            "id": "go_l27_q2"
+            "id": "go_l27_q2",
+            "menuItems": [
+                "Pesto Pasta",
+                "Garlic Bread",
+                "Tomato Pasta",
+                "Breadsticks"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$16.50",
+                "$11.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Cuban Sandwich, Plantains",
             "hint": "The customer pauses before finishing the order with a Caribbean-style side.",
             "explanation": "A ‘Cuban sandwich’ is pressed and filled with roast pork, ham, and cheese. Plantains are a starchy fruit, often fried and served as a side.",
-            "id": "go_l27_q3"
+            "id": "go_l27_q3",
+            "menuItems": [
+                "Cuban Sandwich",
+                "Plantains",
+                "Cubano Melt",
+                "French Fries"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$2.00",
+                "$12.50",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Breakfast Burrito, Black Coffee",
             "hint": "The customer checks the menu item exists, then adds a simple drink.",
             "explanation": "‘Black coffee’ means coffee with nothing added — no milk or sugar. This is different from a latte, which is mostly steamed milk.",
-            "id": "go_l28_q1"
+            "id": "go_l28_q1",
+            "menuItems": [
+                "Breakfast Burrito",
+                "Black Coffee",
+                "Breakfast Bowl",
+                "Latte"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$3.25",
+                "$9.75",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Eggplant Parmesan, Side Salad",
             "hint": "The main ingredient of the parmesan dish is the key detail — it isn't meat this time.",
             "explanation": "‘Eggplant parmesan’ replaces the usual chicken with breaded, fried eggplant. Both parmesan dishes are common, so the first word decides the answer.",
-            "id": "go_l28_q2"
+            "id": "go_l28_q2",
+            "menuItems": [
+                "Eggplant Parmesan",
+                "Side Salad",
+                "Chicken Parmesan",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$14.00",
+                "$8.50",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Banh Mi, Vietnamese Iced Coffee",
             "hint": "The sandwich and the sweetened, strong coffee are both named specifically.",
             "explanation": "‘Banh mi’ is a Vietnamese sandwich served on a crispy baguette. Vietnamese iced coffee is made with sweetened condensed milk, giving it a distinct taste.",
-            "id": "go_l28_q3"
+            "id": "go_l28_q3",
+            "menuItems": [
+                "Banh Mi",
+                "Vietnamese Iced Coffee",
+                "Spring Roll Wrap",
+                "Regular Iced Coffee"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$16.50",
+                "$8.50",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Greek Gyro, Tzatziki",
             "hint": "The wrap and its cool, yogurt-based sauce are both mentioned.",
             "explanation": "A ‘gyro’ is meat cooked on a spit and wrapped in flatbread. ‘Tzatziki’ is a yogurt sauce with cucumber and garlic, different from hummus.",
-            "id": "go_l29_q1"
+            "id": "go_l29_q1",
+            "menuItems": [
+                "Greek Gyro",
+                "Tzatziki",
+                "Chicken Kebab",
+                "Hummus"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$8.50",
+                "$20.50",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Ramen with Pork Belly, Soft-Boiled Egg",
             "hint": "The protein in the ramen and the way the egg is cooked both need attention.",
             "explanation": "‘Pork belly’ and ‘chicken’ are common ramen toppings, so check which was named. ‘Soft-boiled’ eggs have a runny center, unlike ‘hard-boiled’ eggs.",
-            "id": "go_l29_q2"
+            "id": "go_l29_q2",
+            "menuItems": [
+                "Ramen with Pork Belly",
+                "Soft-Boiled Egg",
+                "Ramen with Chicken",
+                "Hard-Boiled Egg"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$9.75",
+                "$18.00",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Margherita Flatbread, Sparkling Lemonade",
             "hint": "The flatbread topping and the type of lemonade both matter.",
             "explanation": "‘Margherita’ describes a simple tomato, cheese, and basil topping. ‘Sparkling’ tells you the lemonade has bubbles, unlike a ‘still’ one.",
-            "id": "go_l29_q3"
+            "id": "go_l29_q3",
+            "menuItems": [
+                "Margherita Flatbread",
+                "Sparkling Lemonade",
+                "Pepperoni Flatbread",
+                "Still Lemonade"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$14.00",
+                "$9.75",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Double Espresso, Almond Croissant",
             "hint": "The strength of the coffee and the croissant filling both need attention.",
             "explanation": "A ‘double espresso’ uses twice the coffee of a single shot. ‘Almond’ tells you the croissant has an almond filling, unlike a plain one.",
-            "id": "go_l30_q1"
+            "id": "go_l30_q1",
+            "menuItems": [
+                "Double Espresso",
+                "Almond Croissant",
+                "Single Espresso",
+                "Plain Croissant"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$19.25",
+                "$16.50",
+                "$2.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Oat Milk Latte, Avocado Toast",
             "hint": "The customer changes the type of milk in their coffee order — listen for the final choice.",
             "explanation": "‘Instead of…’ signals a switch from one choice to another. Only the final drink — the oat milk latte — should be selected.",
-            "id": "go_l30_q2"
+            "id": "go_l30_q2",
+            "menuItems": [
+                "Oat Milk Latte",
+                "Avocado Toast",
+                "Regular Latte",
+                "Sourdough Toast"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$16.50",
+                "$18.00",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Cold Brew, Banana Bread",
             "hint": "This coffee style is brewed slowly with cold water, not hot.",
             "explanation": "‘Cold brew’ is steeped in cold water for many hours, giving it a smoother taste than regular iced coffee. Banana bread is a common café treat.",
-            "id": "go_l30_q3"
+            "id": "go_l30_q3",
+            "menuItems": [
+                "Cold Brew",
+                "Banana Bread",
+                "Iced Coffee",
+                "Blueberry Muffin"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$19.25",
+                "$9.75",
+                "$19.25"
+            ]
         }
     ]
 }

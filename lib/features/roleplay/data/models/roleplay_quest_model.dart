@@ -33,6 +33,19 @@ class RoleplayQuestModel extends RoleplayQuest {
     super.itinerary,
     super.explanation,
     super.shuffledWords,
+    super.consequencePreviews,
+    super.consequenceScores,
+    super.culturalNote,
+    super.formalityScore,
+    super.interviewerReaction,
+    super.medicalVocab,
+    super.menuItems,
+    super.menuPrices,
+    super.travelDocuments,
+    super.escalationLevel,
+    super.timeLimit,
+    super.socialContext,
+    super.urgencyLevel,
   });
 
   /// Safely parses any dynamic input into a List of strings, fallback to single string conversion or null.
@@ -139,6 +152,21 @@ class RoleplayQuestModel extends RoleplayQuest {
       shuffledWords: map['shuffledWords'] != null
           ? _parseStringList(map['shuffledWords'])
           : _parseStringList(map['keywords']),
+      consequencePreviews: _parseStringList(map['consequencePreviews']),
+      consequenceScores: (map['consequenceScores'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+      culturalNote: map['culturalNote']?.toString(),
+      formalityScore: (map['formalityScore'] as num?)?.toInt(),
+      interviewerReaction: _parseStringList(map['interviewerReaction']),
+      medicalVocab: _parseStringList(map['medicalVocab']),
+      menuItems: _parseStringList(map['menuItems']),
+      menuPrices: _parseStringList(map['menuPrices']),
+      travelDocuments: map['travelDocuments']?.toString(),
+      escalationLevel: (map['escalationLevel'] as num?)?.toInt(),
+      timeLimit: (map['timeLimit'] as num?)?.toInt(),
+      socialContext: map['socialContext']?.toString(),
+      urgencyLevel: (map['urgencyLevel'] as num?)?.toInt(),
     );
   }
 
@@ -186,6 +214,19 @@ class RoleplayQuestModel extends RoleplayQuest {
       'itinerary': itinerary,
       'explanation': explanation,
       'shuffledWords': shuffledWords,
+      'consequencePreviews': consequencePreviews,
+      'consequenceScores': consequenceScores,
+      'culturalNote': culturalNote,
+      'formalityScore': formalityScore,
+      'interviewerReaction': interviewerReaction,
+      'medicalVocab': medicalVocab,
+      'menuItems': menuItems,
+      'menuPrices': menuPrices,
+      'travelDocuments': travelDocuments,
+      'escalationLevel': escalationLevel,
+      'timeLimit': timeLimit,
+      'socialContext': socialContext,
+      'urgencyLevel': urgencyLevel,
     };
   }
 }

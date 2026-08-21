@@ -17,7 +17,17 @@
             "correctAnswerIndex": 1,
             "hint": "Separate the visions from the people, using explicit written criteria.",
             "explanation": "Written submissions judged against explicit criteria remove personality and seniority from the decision. 'Facilitate a debate and let the stronger argument prevail' lets political capital affect the outcome. 'Requires decisive and fair leadership' is a general statement.",
-            "id": "bd_l121_q1"
+            "id": "bd_l121_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Prioritise trust over extraction in this first meeting.",
             "explanation": "Naming trust, not extraction, as the actual objective is the psychologically sophisticated and correct answer. 'Assess the credibility and value of the intelligence' treats the meeting as extraction, which undermines the trust needed. 'Critical for establishing the terms of the relationship' is a general statement.",
-            "id": "bd_l121_q2"
+            "id": "bd_l121_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 1,
             "hint": "Prioritise honest cultural representation over technical showmanship, and consult beyond professional kitchens.",
             "explanation": "Choosing honest cultural representation, and consulting home cooks over chefs alone, reflects real cultural responsibility. 'Showcase technical achievements' centres the chef's own skill over the culture. 'Carries significant cultural responsibility' is a general statement.",
-            "id": "bd_l121_q3"
+            "id": "bd_l121_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 1,
             "hint": "Prioritise individual dignity over procedural equality when delivering hard news.",
             "explanation": "Individual conversations, clarity about certainty, and real agency respect each person's dignity in a hard moment. 'Tell the whole team at once' privileges procedural fairness over individual dignity. 'Requires both honesty and compassion' is a general statement.",
-            "id": "bd_l122_q1"
+            "id": "bd_l122_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 2,
             "hint": "Pursue several tracks at once, including regulatory engagement, not just product adaptation alone.",
             "explanation": "Running regulatory engagement, adaptation, and market alternatives in parallel is a complete strategic response. 'Begin product adaptation immediately' is one useful track but skips regulatory engagement, often the highest-value move. 'Require urgent strategic reassessment' is a general statement.",
-            "id": "bd_l122_q2"
+            "id": "bd_l122_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 0,
             "hint": "Name aviation-specific challenges, not generic occupational health elements.",
             "explanation": "Naming genuinely aviation-specific challenges - licence fear, circadian disruption, and abrupt retirement - designs for this profession specifically. 'Health screenings and fatigue education' are generic occupational health elements, not aviation-specific design. 'Follow SOPs and technical documentation' doesn't address wellness design at all.",
-            "id": "bd_l122_q3"
+            "id": "bd_l122_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give specific, staged verification steps, not just a formal process request.",
             "explanation": "Naming specific, staged steps - verification, methodology, and a low-stakes test - gives a real framework. 'Request a formal vetting process' is one appropriate step, not a full framework. 'Requires systematic verification' is a general statement.",
-            "id": "bd_l123_q1"
+            "id": "bd_l123_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 2,
             "hint": "Cover reporting, remediation, and documentation together, not just reporting alone.",
             "explanation": "Covering reporting, active remediation, and documentation together addresses the full obligation, not just one part of it. 'Report immediately and cooperate with investigation' is one true obligation but misses remediation and documentation. 'Follow protocols and consult your handler' is a general statement.",
-            "id": "bd_l123_q2"
+            "id": "bd_l123_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 0,
             "hint": "Name the specific boundaries of your expertise, not just its general value.",
             "explanation": "Naming specific boundaries - what a chef knows and doesn't - identifies the real risk of well-meaning but impractical advice. 'Bring your practical experience to complement other perspectives' doesn't address the limits of that expertise. 'Has an important role alongside other disciplines' is a general statement.",
-            "id": "bd_l123_q3"
+            "id": "bd_l123_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 2,
             "hint": "Separate evidence from personal view explicitly, rather than avoiding personal views entirely.",
             "explanation": "Explicit, repeated separation lets you share genuine views honestly without borrowing false authority from the evidence. 'Decline to comment beyond current evidence' draws too complete a boundary rather than allowing clearly-labelled personal views. 'Conduct a thorough review and consult colleagues' is process advice, not the actual discipline needed.",
-            "id": "bd_l124_q1"
+            "id": "bd_l124_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 2,
             "hint": "Look beyond the financial terms to thesis, track record, and control.",
             "explanation": "Understanding thesis, track record, and retained control covers what actually determines the outcome of private equity deals. 'Understand the financial terms' addresses only one dimension of what matters. 'Conduct due diligence and negotiate well-prepared' is sound but generic process advice.",
-            "id": "bd_l124_q2"
+            "id": "bd_l124_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 1,
             "hint": "Demonstrate a visible positive outcome rather than improving the system itself.",
             "explanation": "One genuine, visible positive response does more for reporting culture than any system redesign. 'Conduct an anonymous survey' is a useful diagnostic, but not the most important intervention. 'Follow the emergency checklist' doesn't address the reporting culture problem at all.",
-            "id": "bd_l124_q3"
+            "id": "bd_l124_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 1,
             "hint": "Diagnose scope precisely, then rebuild from scratch rather than correcting the old picture.",
             "explanation": "Diagnosing exact scope, then rebuilding from first principles rather than patching, avoids repeating the same bias that caused the original error. 'Conduct a thorough review and consult stakeholders' is the standard process without these specific insights. 'Apply established doctrine' is a general statement.",
-            "id": "bd_l125_q1"
+            "id": "bd_l125_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 0,
             "hint": "Manage insider knowledge transparently rather than removing yourself from the analysis.",
             "explanation": "Managing the asset and the liability transparently, rather than removing both through recusal, preserves valuable insight while controlling for bias. 'Recuse yourself to ensure objectivity' removes the asset along with the liability. 'Gather additional intelligence and conduct rigorous review' doesn't address the specific bias risk at all.",
-            "id": "bd_l125_q2"
+            "id": "bd_l125_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 2,
             "hint": "Distinguish between commenting on the competitor and commenting on a genuine systemic issue.",
             "explanation": "Declining comment on the competitor while allowing a genuine systemic point serves the public interest without opportunism. 'Contrast your own standards with the competitor's practices' weaponises their misfortune for commercial gain. 'Create complex communication situations' is a general statement.",
-            "id": "bd_l125_q3"
+            "id": "bd_l125_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 1,
             "hint": "Test for genuine independence rather than declining automatically or accepting without safeguards.",
             "explanation": "Testing for genuine independence, with external review regardless of the outcome, avoids both an unchecked conflict and an unnecessarily cautious refusal. 'Decline automatically to avoid any appearance of conflict' is too cautious when insider knowledge can be genuinely valuable with the right safeguards. 'Follow established guidelines' is a general statement.",
-            "id": "bd_l126_q1"
+            "id": "bd_l126_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 0,
             "hint": "Distinguish formalising decision rights from formalising every process.",
             "explanation": "Formalising decision rights rather than every process adds accountability without sacrificing the agility that drove growth. 'Introduce formal processes systematically across all areas' is precisely what removes that agility. 'Gather information and apply a structured framework' is a general statement.",
-            "id": "bd_l126_q2"
+            "id": "bd_l126_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give design principles that distinguish excellent training, not just its content.",
             "explanation": "Naming design principles - own data, active simulation, and applied assessment - distinguishes excellent from merely adequate training. 'Include key concepts like situational awareness and CRM' describes content, not the design that makes training effective. 'Brief thoroughly and assign responsibilities' is a general statement about crew management, not training design.",
-            "id": "bd_l126_q3"
+            "id": "bd_l126_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 0,
             "hint": "Understand what actually happened before setting new direction.",
             "explanation": "Listening first, rather than accepting the external narrative, builds the genuine understanding leadership requires here. 'Establish new standards to move beyond the failure' is a reasonable second step that can't work well without this first one. 'Ensure clear objectives and regular briefings' is a general statement.",
-            "id": "bd_l127_q1"
+            "id": "bd_l127_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give the specific qualities that make circumstantial evidence compelling, not just presentation strategy.",
             "explanation": "Naming density, independence, and coherence, plus a precise test, gives real analytical substance. 'Present the evidence and let it speak for itself' is a presentation strategy, not an analytical framework. 'Follow security protocols and consult a senior officer' is a general statement.",
-            "id": "bd_l127_q2"
+            "id": "bd_l127_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 0,
             "hint": "Recommend specificity over universality when aiming for genuine emotional resonance.",
             "explanation": "Choosing specific personal truth over designed universality is the counter-intuitive but real path to emotional resonance. 'Inspired by a universal experience like homecoming or comfort' is exactly the universality approach that tends to fail. 'Showcase seasonal ingredients and culinary strengths' doesn't address emotional resonance at all.",
-            "id": "bd_l127_q3"
+            "id": "bd_l127_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 1,
             "hint": "State the boundary of your expertise explicitly, rather than trying to cover the gap.",
             "explanation": "Stating the boundary explicitly, and pointing to the right additional expert, protects credibility and serves the committee better. 'Prepare thoroughly on health economics' pushes beyond your genuine expertise rather than managing its boundary honestly. 'Follow clinical guidelines and document decisions' doesn't address this specific situation.",
-            "id": "bd_l128_q1"
+            "id": "bd_l128_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 0,
             "hint": "Balance stopping purchases with supporting remediation, rather than cutting ties outright.",
             "explanation": "Stopping the specific purchases while supporting remediation avoids abandoning the very workers the response is meant to protect. 'Immediately terminate the relationship' can harm the workers involved more than a responsible, engaged exit would. 'Apply sound judgment and consult advisers' is a general statement.",
-            "id": "bd_l128_q2"
+            "id": "bd_l128_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 2,
             "hint": "Reflect on specific meaningful moments, not a broad career overview.",
             "explanation": "Naming specific meaningful moments with this aircraft gives an honest, personal reflection rather than an abstract one. 'Reflect on how much aviation has changed' is a broader, more impersonal reflection that misses this specific relationship. 'Follow SOPs and technical documentation' doesn't address the reflective question at all.",
-            "id": "bd_l128_q3"
+            "id": "bd_l128_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 1,
             "hint": "Weigh multiple variables together rather than treating the decision as binary.",
             "explanation": "Weighing probability, both costs, and reversibility together avoids treating this as a simple binary choice. 'Act immediately given the time constraint' skips any use of the available time to increase confidence. 'Consult advisers and gather all intelligence' is a general statement.",
-            "id": "bd_l129_q1"
+            "id": "bd_l129_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 0,
             "hint": "Apply specific, testable distinctions rather than deferring the decision upward.",
             "explanation": "Applying specific tests - principle versus preference, value versus expression - gives real criteria for the decision. 'Discuss with your superior and get authorisation' shifts responsibility rather than working through the decision. 'Follow protocols and consult your handler' is a general statement.",
-            "id": "bd_l129_q2"
+            "id": "bd_l129_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name specific responsibilities - access, collaboration, honesty - beyond academic research alone.",
             "explanation": "Naming access, collaboration, and honest attribution reflects what genuine cross-cultural scholarship actually requires. 'Conduct thorough research from academic sources' misses that academic sources alone aren't the same as access to practitioners. 'Apply your expertise and consult colleagues' doesn't address the specific responsibilities involved.",
-            "id": "bd_l129_q3"
+            "id": "bd_l129_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 0,
             "hint": "Treat the unexpected result as valuable, and resist pressure to explain it away.",
             "explanation": "Publishing the unexpected result with full rigour, and resisting reframing pressure, is the honest scientific standard. 'Conduct additional analysis to explain or reconcile it' can become exactly the kind of result-management this standard warns against. 'Follow established guidelines' is a general statement.",
-            "id": "bd_l130_q1"
+            "id": "bd_l130_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 0,
             "hint": "Combine intellectual honesty with a genuine governance check.",
             "explanation": "Presenting both sides honestly, then checking actual authority, combines intellectual honesty with the real governance question at stake. 'Emphasise your own conviction to build support' is advocacy rather than honest presentation. 'Gather information and apply a framework' is a general statement.",
-            "id": "bd_l130_q2"
+            "id": "bd_l130_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 2,
             "hint": "Go beyond duty-hour compliance to model real fatigue and encourage honest reporting.",
             "explanation": "Modelling actual fatigue, direction-specific design, and consequence-free reporting go well beyond simple duty-hour compliance. 'Optimise scheduling for maximum permitted rest' describes the regulatory minimum, not genuine fatigue design. 'Brief the crew and apply CRM principles' is a general statement unrelated to system design.",
-            "id": "bd_l130_q3"
+            "id": "bd_l130_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         }
     ]
 }

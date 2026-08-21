@@ -16,7 +16,7 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_prompt_card.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_pulse_speaker.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/widgets/pitch_modulation_dial_control.dart';
-import 'package:vowl/features/accent/presentation/widgets/accent_self_evaluation_panel.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class PitchModulationScreen extends StatefulWidget {
   final int level;
@@ -45,6 +45,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
   bool _isDragging = false;
   int? _selectedIndex;
   bool _isFirstStagePassed = false;
+  int _spokenMeaningsCount = 0;
   AccentQuest? _lastQuest;
 
   @override
@@ -176,6 +177,7 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
               _selectedIndex = null;
               _isDragging = false;
               _isFirstStagePassed = false;
+              _spokenMeaningsCount = 0;
             });
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
@@ -325,15 +327,26 @@ class _PitchModulationScreenState extends State<PitchModulationScreen> {
                                     ),
                                   ),
                                 ),
-                                if (_isFirstStagePassed)
-                                  AccentSelfEvaluationPanel(
-                                    textToSpeak: quest.textToSpeak ?? "",
+                                if (_isFirstStagePassed && !_isAnswered)
+                                  SpeakToConfirmOverlay(
+                                    expectedText: quest.textToSpeak ?? "",
+                                    displayText: '${quest.textToSpeak ?? ""}\n\n(Meaning: ${options[_spokenMeaningsCount]})',
                                     primaryColor: theme.primaryColor,
-                                    isCompact:
-                                        false, // Dial takes fixed height, compact check not strongly needed here
-                                    onEvaluate: _submitVerbalEvaluation,
+                                    isPositioned: false,
+                                    onConfirmed: () {
+                                      if (_spokenMeaningsCount == 0) {
+                                        setState(() => _spokenMeaningsCount = 1);
+                                        _soundService.playCorrect();
+                                      } else {
+                                        context.read<AccentBloc>().add(
+                                          const AccentSpeakConfirmed(10),
+                                        );
+                                        _submitVerbalEvaluation(true);
+                                      }
+                                    },
+                                    onSkipped: () => _submitVerbalEvaluation(false),
                                   ),
-                                SizedBox(height: _isAnswered ? 180.h : 0),
+                                SizedBox(height: _isAnswered ? 180.h : 20.h),
                               ],
                             ),
                           ),

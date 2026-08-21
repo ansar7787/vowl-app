@@ -227,6 +227,7 @@ class _SocialSparkScreenState extends State<SocialSparkScreen>
 
                               SocialSparkConnectionMonitor(
                                 text: currentText,
+                                socialContext: quest.socialContext,
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 isAnswered: _isAnswered,

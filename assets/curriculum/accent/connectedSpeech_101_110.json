@@ -18,7 +18,9 @@
             "correctAnswerIndex": 1,
             "hint": "Focus on the last sound of \"that\". With a bilabial consonant starting \"meal\" right after it, what shift would make pronunciation easier?",
             "explanation": "Rather than jump from the /t/ ending \"that\" to a bilabial sound, the mouth compromises: /t/ becomes /p/, matching the bilabial consonant that opens \"meal\".",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "thap meal"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L101_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 1,
             "hint": "Check the spelling of \"you\" before \"and\" — does it end in a letter that would predict a /w/ sound? If not, where's that /w/ actually coming from?",
             "explanation": "Unlike linking, where the connecting sound is already written into the word, this /w/ in \"you and\" comes from nowhere in the spelling. That's exactly what makes it intrusive rather than a genuine linking sound.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "you and I"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L101_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"ten minutes\" quickly, the way you'd say it in conversation. Which consonant do you actually hear where /n/ used to be?",
             "explanation": "In fluent speech, /n/ rarely stays /n/ before a bilabial sound — it assimilates to /m/, which is exactly what you hear in \"ten minutes\".",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "ten mimutes"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L102_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"most of them\" at a natural conversational pace. Does \"of\" keep its full vowel sound, or shrink to a quick \"uh\"?",
             "explanation": "Unstressed function words like \"of\" almost always reduce their vowel to schwa /ə/ in connected speech. Its full form is /ɒ/, but in \"most of them\" it shrinks to something much quicker and quieter.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "most of them"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L102_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"September and\" naturally. That final 'r' in \"September\", usually silent, resurfaces here — why, do you think?",
             "explanation": "This is linking, not intrusion, because the 'r' is already written into \"September\". It stays silent before a pause or consonant but comes back to life right before the vowel that opens \"and\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "September and October"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L102_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"him\" isn't the stressed word in \"him and her\". What usually happens to an unstressed function word's vowel in fast speech?",
             "explanation": "This is a weak form: \"him\" keeps its full vowel /æ/ only when stressed or said alone. In natural speech like \"him and her\", it reduces to schwa because it carries no sentence stress.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "him and her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L103_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try stressing every word in \"she was tired\" equally — it sounds stiff and unnatural, right? Which word loses its full vowel to fix that?",
             "explanation": "English sentence rhythm relies on this kind of reduction — content words stay strong, function words like \"was\" go weak. That's why /ɒ/ becomes schwa in \"she was tired\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "she was tired"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L103_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 0,
             "hint": "Vowel sounds rarely bump directly into each other in fluent English. What extra sound bridges \"area\" and \"around\" here?",
             "explanation": "Two vowel sounds meeting head-on is hard to say smoothly, so speakers add /r/ as a natural bridge. You'll hear it in \"area around\", even though neither word's spelling contains it.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "area around"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L103_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 0,
             "hint": "Function words like \"that\" rarely keep their dictionary pronunciation in natural sentences. Listen for what its vowel becomes in \"the book that I read\".",
             "explanation": "Because \"that\" isn't emphasized in \"the book that I read\", its vowel weakens from the full /æ/ to a fast, neutral schwa sound. This happens to almost every unstressed function word in fluent English.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "the book that I read"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L104_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 0,
             "hint": "In \"she can swim\", one word carries no stress at all. Focus on \"can\" — what happens to its vowel as a result?",
             "explanation": "Weak forms like this one are what make native speech sound smooth rather than choppy. \"can\" trades its citation vowel /æ/ for schwa whenever it's unstressed, as it is in \"she can swim\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "she can swim"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L104_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 1,
             "hint": "There's a consonant collision at the boundary of \"about\" and \"your\": /t/ meets /j/. Which single sound comes out the other side?",
             "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /t/ and /j/ become /tʃ/ in \"about your\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "about your health"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L104_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen to the boundary between \"set\" and \"off\". A consonant and a vowel are meeting — what does fluent speech do with them?",
             "explanation": "Rather than pausing between the consonant and the vowel, speakers connect them directly — the consonant essentially becomes the first sound of the next syllable. You hear this clearly in \"set off\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "set off"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L105_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"search for answers\" quickly, the way you would in real conversation. Does \"for\" sound the same as when you say it alone?",
             "explanation": "Say \"for\" on its own and you get the full vowel /ɔː/. Say it inside \"search for answers\" at natural speed, and it reduces to schwa — the standard weak form.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "search for answers"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L105_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"do\" said by itself has a full, clear vowel. Said inside \"what do you think\" at natural speed, does that vowel survive?",
             "explanation": "This reduction isn't sloppy speech — it's a predictable, rule-governed feature of English. Unstressed \"do\" reduces from /uː/ to schwa in virtually every natural sentence, including \"what do you think\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "what do you think"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L105_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 0,
             "hint": "In natural speech, a word-final consonant followed by a vowel often gets pulled into the next syllable. Does that happen between \"turn\" and \"it\"?",
             "explanation": "This smooth consonant-to-vowel connection is what makes native speech sound joined-up rather than word-by-word. \"turn it\" links this way naturally.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "turn it off"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L106_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 0,
             "hint": "A stop consonant squeezed between two other consonants rarely survives in fast speech. Listen for the /t/ in \"looked tired\" — is it there?",
             "explanation": "Consonant clusters like this one are common at word boundaries in English, and the middle stop is almost always the casualty. The /t/ drops out of \"looked tired\" for exactly that reason.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "looked 'ired"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L106_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "\"drop\" ends in a consonant; \"off\" begins with a vowel. Try saying them together quickly — which word does that consonant sound like it belongs to now?",
             "explanation": "No sound is created or lost here — the final consonant of \"drop\" simply carries over to open the vowel in \"off\", which is the essence of linking in connected speech.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "drop off"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L106_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 0,
             "hint": "Content words — nouns, verbs, adjectives — usually keep their full vowels; function words like \"and\" often don't. What happens to it in \"rock and roll\"?",
             "explanation": "Stress timing in English means unstressed words get compressed. \"and\" loses its full /æ/ vowel and reduces to schwa here, keeping \"rock and roll\" flowing at a natural rhythm.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "rock and roll"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L107_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 0,
             "hint": "This is a classic resyllabification moment. What happens to the last sound of \"take\" once the vowel of \"off\" is right there waiting?",
             "explanation": "Because a vowel immediately follows, the closing consonant of \"take\" doesn't stay put — it links forward into \"off\", exactly as fluent speakers naturally do.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "take off"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L107_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 1,
             "hint": "Listen for the schwa. Somewhere in \"plan to travel\", a full vowel gets flattened into that quick, neutral \"uh\" sound — which word is it?",
             "explanation": "Native listeners expect this weak form; a fully stressed /uː/ on \"to\" in \"plan to travel\" would actually sound unnatural or overly formal. The relaxed schwa is the normal, expected pronunciation.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "plan to travel"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L107_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 0,
             "hint": "Check the spelling: \"order\" ends in 'r'. Before a consonant or pause it usually stays silent — so what happens before the vowel starting \"online\"?",
             "explanation": "The final 'r' in \"order\" behaves like a switch: silent before consonants, audible before vowels. Since \"online\" starts with a vowel, the /r/ links the two words together smoothly.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "order online"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L108_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"was\" is grammatically necessary but rarely emphasized. What does that lack of stress do to its vowel in \"it was fun\"?",
             "explanation": "This is one of the most common patterns in spoken English: function words reduce, content words don't. \"was\" follows that rule exactly, shrinking from /ɒ/ to schwa in \"it was fun\".",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "it was fun"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L108_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"burnt toast\" quickly. The consonants pile up right around the /t/ in \"burnt\" — does it survive the crowd, or get squeezed out?",
             "explanation": "When /t/ sits between two other consonants, English speakers routinely drop it to keep the rhythm smooth. In \"burnt toast\", the /t/ disappears rather than being pronounced.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "burnt toas'"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L108_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 1,
             "hint": "Say \"a pair of shoes\" at a natural conversational pace. Does \"a\" keep its full vowel sound, or shrink to a quick \"uh\"?",
             "explanation": "Unstressed function words like \"a\" almost always reduce their vowel to schwa /ə/ in connected speech. Its full form is /ɒ/, but in \"a pair of shoes\" it shrinks to something much quicker and quieter.",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "a pair of shoes"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L109_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 1,
             "hint": "There's no /w/ anywhere in the spelling of \"you\". Yet something links it to the vowel that opens \"ought\" — what is it?",
             "explanation": "This inserted /w/ has no basis in spelling — it exists purely to smooth the vowel-to-vowel transition between \"you\" and \"ought\". That's the hallmark of intrusion.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "you ought"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L109_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two consonants become one here. Focus on where \"support\" ends and \"your\" begins — what's the resulting blended sound?",
             "explanation": "This merge is extremely common wherever a word ending in /t/ meets a \"you\"-type word. In \"support your\", the result is /tʃ/, not /t/ followed by /j/.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "support your team"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L109_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen carefully between \"essay\" and \"about\". An unwritten sound appears purely to ease the vowel-to-vowel transition. Which one?",
             "explanation": "Native speakers automatically fill the gap between two vowel sounds with /j/, even when there's no letter to justify it. \"essay about\" is a clear example of this intrusive sound.",
-            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling."
+            "phoneticRule": "English avoids two vowel sounds colliding directly, so an extra /r/, /w/, or /j/ sound is inserted between them — even though that sound doesn't appear in either word's spelling.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "essay about"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L110_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 1,
             "hint": "Rather than pronouncing /z/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"use your\"?",
             "explanation": "Notice that neither the original /z/ nor /j/ survives on its own — they combine into /ʒ/. That fusion is what makes \"use your\" sound natural and fast.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "use your imagination"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L110_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's a consonant cluster forming between \"just\" and \"married\". In natural speech, one sound in that cluster usually disappears. Which one?",
             "explanation": "Three consonants in a row are hard to articulate cleanly, so speakers simplify by deleting the middle one. That's exactly what happens to the /t/ in \"just married\" — it's dropped, not just softened.",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "jus' married"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L110_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 0,
             "hint": "This is a spelling trap: \"away\" looks like it should flow straight into \"at\", but a sound gets inserted that isn't written anywhere. Can you hear it?",
             "explanation": "Since \"away\" doesn't end in a written consonant that could explain a /j/, the /j/ you hear before \"at\" is added by the speech system itself — an intrusive sound, not a spelled one.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "away at"
         }
     ]
 }

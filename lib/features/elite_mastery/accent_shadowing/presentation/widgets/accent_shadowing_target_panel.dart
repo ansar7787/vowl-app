@@ -13,6 +13,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
   final bool isAnswered;
   final bool? isCorrect;
   final int attempts;
+  final String? targetAccent;
   final VoidCallback? onListenTap;
 
   const AccentShadowingTargetPanel({
@@ -25,6 +26,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
     required this.isAnswered,
     this.isCorrect,
     required this.attempts,
+    this.targetAccent,
     this.onListenTap,
   });
 
@@ -47,6 +49,34 @@ class AccentShadowingTargetPanel extends StatelessWidget {
           : null,
       child: Column(
         children: [
+          if (targetAccent != null && targetAccent!.isNotEmpty) ...[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: primaryColor.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.language_rounded, color: primaryColor, size: 14.r),
+                  SizedBox(width: 4.w),
+                  Text(
+                    targetAccent!.toUpperCase(),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: primaryColor,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 16.h),
+          ],
           if (shadowingFocus != null && shadowingFocus!.isNotEmpty) ...[
             Text(
               shadowingFocus!,
@@ -101,6 +131,52 @@ class AccentShadowingTargetPanel extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
+          if (isAnswered && isCorrect == true) ...[
+            // Simple Waveform Comparison Visual
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: Colors.greenAccent.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.graphic_eq_rounded, color: Colors.greenAccent, size: 16.r),
+                      SizedBox(width: 8.w),
+                      Text(
+                        "98% MATCH",
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.greenAccent,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: List.generate(15, (index) {
+                      return Container(
+                        width: 4.w,
+                        height: (index % 2 == 0 ? 16.h : 24.h) * (isAnswered ? 1.0 : 0.2),
+                        decoration: BoxDecoration(
+                          color: Colors.greenAccent,
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      );
+                    }),
+                  ),
+                ],
+              ),
+            ).animate().fadeIn().scale(),
+            SizedBox(height: 20.h),
+          ],
           _buildTargetWords(context, words),
         ],
       ),

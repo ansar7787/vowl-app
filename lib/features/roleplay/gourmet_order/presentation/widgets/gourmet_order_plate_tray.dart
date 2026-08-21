@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class GourmetOrderPlateTray extends StatelessWidget {
   final List<String> options;
+  final List<String> prices;
   final Color color;
   final bool isDark;
   final bool isAnswered;
@@ -15,6 +16,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
   const GourmetOrderPlateTray({
     super.key,
     required this.options,
+    required this.prices,
     required this.color,
     required this.isDark,
     required this.isAnswered,
@@ -66,7 +68,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemCount: options.length,
-              itemBuilder: (context, i) => _buildDraggablePlate(options[i]),
+              itemBuilder: (context, i) => _buildDraggablePlate(options[i], prices.length > i ? prices[i] : "\$3.50"),
             ),
           ),
         ],
@@ -74,7 +76,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
     ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 
-  Widget _buildDraggablePlate(String item) {
+  Widget _buildDraggablePlate(String item, String price) {
     final bool isSelected = selectedItems.contains(item);
 
     Color plateColor = color;
@@ -89,6 +91,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
         onDragStarted: onDragStarted,
         feedback: _buildPlateCore(
           item,
+          price,
           plateColor,
           isSelected,
           isDark,
@@ -98,6 +101,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
           opacity: 0.3,
           child: _buildPlateCore(
             item,
+            price,
             plateColor,
             isSelected,
             isDark,
@@ -106,9 +110,10 @@ class GourmetOrderPlateTray extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () => onItemTapped(item),
-          borderRadius: BorderRadius.circular(100.r),
+          borderRadius: BorderRadius.circular(16.r),
           child: _buildPlateCore(
             item,
+            price,
             plateColor,
             isSelected,
             isDark,
@@ -121,6 +126,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
 
   Widget _buildPlateCore(
     String item,
+    String price,
     Color color,
     bool isSelected,
     bool isDark, {
@@ -130,9 +136,9 @@ class GourmetOrderPlateTray extends StatelessWidget {
       color: Colors.transparent,
       child: Container(
         width: 100.r,
-        height: 100.r,
+        height: 110.h,
         decoration: BoxDecoration(
-          shape: BoxShape.circle,
+          borderRadius: BorderRadius.circular(16.r),
           color: isSelected
               ? color
               : (isDark ? const Color(0xFF131326) : Colors.white),
@@ -155,19 +161,41 @@ class GourmetOrderPlateTray extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.all(10.r),
-              child: Text(
-                item.toUpperCase(),
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isSelected
-                      ? Colors.white
-                      : (isDark ? Colors.white70 : Colors.black87),
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    item.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isSelected
+                          ? Colors.white
+                          : (isDark ? Colors.white70 : Colors.black87),
+                    ),
+                  ),
+                  SizedBox(height: 8.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    decoration: BoxDecoration(
+                      color: isSelected ? Colors.white.withValues(alpha: 0.2) : color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      price,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                        color: isSelected ? Colors.white : color,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             if (isSelected)

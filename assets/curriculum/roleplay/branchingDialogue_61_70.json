@@ -17,7 +17,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give a specific, multi-part impact assessment, not a general reaction.",
             "explanation": "Naming the concrete impacts - and the one piece of good news - is the real assessment that was asked for. 'A significant delay' just states the obvious. 'We'll need a complete reassessment' promises a process instead of giving one.",
-            "id": "bd_l61_q1"
+            "id": "bd_l61_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Recommend checking whether the situation itself changed before assuming a source is wrong.",
             "explanation": "Reasoning that the situation likely changed, rather than assuming a source is lying, is the sharper analytical move. 'A genuinely complex problem' just names the difficulty. 'One of them has been compromised' jumps to a conclusion without evidence.",
-            "id": "bd_l61_q2"
+            "id": "bd_l61_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 2,
             "hint": "Propose a specific surprise rather than asking the guest what they want.",
             "explanation": "Planning an actual surprise is what makes the occasion memorable - part of the magic is not having to ask for it. 'Guests always appreciate personalised experiences' is a general statement. 'Ask the guest what they'd like' undercuts the whole idea of a surprise.",
-            "id": "bd_l61_q3"
+            "id": "bd_l61_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask the clinically important questions together, not just one of them.",
             "explanation": "These three questions together cover the evidence, the risk, and the safety net - genuinely useful for an informed decision. 'New approaches are continuously emerging' is a general statement. 'Why do you think this is better?' is a good question, but only one of the three that matter here.",
-            "id": "bd_l62_q1"
+            "id": "bd_l62_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask a specific question, then request a concrete protection for your existing orders.",
             "explanation": "Asking to understand the change, then requesting a specific window to lock in pricing, is a proactive commercial move. 'Pricing changes always affect long-term planning' is a general statement. 'I'll review with my procurement team' doesn't say what you actually want.",
-            "id": "bd_l62_q2"
+            "id": "bd_l62_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 1,
             "hint": "Acknowledge the instruction, confirm you're acting on it, then ask the most useful follow-up.",
             "explanation": "Acknowledging, confirming action, and asking about sequence position is the most operationally useful response. 'Standard and mandatory procedure' just states a fact. 'Ask for an updated landing time' is reasonable, but position in the sequence matters more right now.",
-            "id": "bd_l62_q3"
+            "id": "bd_l62_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 0,
             "hint": "Describe the actual structure of the conversation, not just its difficulty.",
             "explanation": "Starting privately, acknowledging contributions, then getting specific with examples is a real, usable structure. 'An essential part of leadership' is a general statement. 'Always difficult and emotionally charged' names the challenge without offering an approach.",
-            "id": "bd_l63_q1"
+            "id": "bd_l63_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 0,
             "hint": "Escalate to legal counsel before acting, rather than assuming which law applies.",
             "explanation": "Escalating for a clear ruling is the responsible move when laws and principles conflict. 'Always a complex challenge' is a general statement. 'Follow local laws' ignores that the conflict itself needs resolving first.",
-            "id": "bd_l63_q2"
+            "id": "bd_l63_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 1,
             "hint": "Advocate for one consistent standard rather than special treatment.",
             "explanation": "Naming the real risk - creating two tiers of service - is a principled, operationally sound stance. 'Can significantly affect reputation' just states the stakes. 'Make a special effort tonight' quietly does the very thing the response should avoid.",
-            "id": "bd_l63_q3"
+            "id": "bd_l63_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give consent, but attach a specific, reasonable condition.",
             "explanation": "Agreeing while asking to review the anonymised version first is informed, conditional consent. 'Case studies contribute to medical knowledge' is a general statement. 'That's fine, happy to help' agrees without asking for the one safeguard that actually matters.",
-            "id": "bd_l64_q1"
+            "id": "bd_l64_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give concrete, immediate steps rather than stating the general risk.",
             "explanation": "Naming two specific actions to take this week is an actual mitigation plan. 'A serious supply chain risk' just labels the problem. 'Find a replacement as quickly as possible' states the goal without any steps.",
-            "id": "bd_l64_q2"
+            "id": "bd_l64_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 0,
             "hint": "Accept conditionally, and be specific about what cannot be rushed.",
             "explanation": "Agreeing conditionally, and naming exactly what can't be compressed, protects safety while staying cooperative. 'Common in commercial aviation' is a general observation. 'We can certainly try to accommodate that' risks agreeing to cut corners on safety checks.",
-            "id": "bd_l64_q3"
+            "id": "bd_l64_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a clear recommendation on the mandate question, with your reasoning.",
             "explanation": "Giving a clear recommendation, with the reasoning behind it, is what advice actually requires. 'Additional resources are always attractive' is a general observation. 'It depends on the nature and risk' avoids answering the actual mandate question.",
-            "id": "bd_l65_q1"
+            "id": "bd_l65_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give the first concrete priorities, in order, not a general principle.",
             "explanation": "Naming the first two concrete priorities, in order, is an actual strategy. 'Extremely demanding challenge' just names the difficulty. 'Ensure evidence is properly documented' is a sound principle but not a sequence of actions.",
-            "id": "bd_l65_q2"
+            "id": "bd_l65_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 1,
             "hint": "Name specific tactics rather than the general goal.",
             "explanation": "Naming two specific, proven tactics gives the team something to actually implement. 'A key revenue metric' just states why it matters. 'Focus on upselling' names the category without any specific tactic.",
-            "id": "bd_l65_q3"
+            "id": "bd_l65_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 1,
             "hint": "Include an honest account of shortfalls alongside the wins.",
             "explanation": "Balancing real achievements with an honest account of shortfalls builds more credibility with a council than a polished-only report. 'Need to be very thorough' is a general statement. 'Focus on our successes' leaves out the honest picture councils actually want.",
-            "id": "bd_l66_q1"
+            "id": "bd_l66_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name the specific safeguards you need before committing.",
             "explanation": "Naming the exact safeguards required before agreeing is the professional way to accept a high-risk assignment. 'Among the most psychologically demanding assignments' is a general statement. 'A very significant commitment' is an observation, not a set of conditions.",
-            "id": "bd_l66_q2"
+            "id": "bd_l66_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask the questions that come before the investment question.",
             "explanation": "These two questions - about customers and skills - come before any investment decision and are the ones most likely to be overlooked. 'Always a high-risk decision' is a general statement. 'Will require significant investment' skips straight to cost without checking whether the move even makes sense first.",
-            "id": "bd_l66_q3"
+            "id": "bd_l66_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 2,
             "hint": "Cover both genuine understanding and respecting the final decision.",
             "explanation": "Ensuring true comprehension first, then respecting the decision either way, covers the full ethical process. 'A fundamental principle of medical ethics' is a general statement. 'Patients have the right to refuse' is correct but skips the duty to check they truly understood first.",
-            "id": "bd_l67_q1"
+            "id": "bd_l67_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 2,
             "hint": "Recommend against reflexively matching price, and say what to do instead.",
             "explanation": "Advising against an immediate price match, and naming the better alternative, is sound competitive strategy. 'One of the most common challenges' is a general statement. 'Consider a selective price response' is a narrower tactic offered without the bigger picture.",
-            "id": "bd_l67_q2"
+            "id": "bd_l67_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give a balanced view: real benefit, plus the one non-negotiable safeguard.",
             "explanation": "Naming a genuine benefit alongside the one non-negotiable safeguard is a balanced, principled view. 'Making inroads into many fields' is a general observation. 'I'm cautious about AI in safety-critical environments' is a fair instinct but doesn't engage with this specific use or offer a safeguard.",
-            "id": "bd_l67_q3"
+            "id": "bd_l67_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a specific way to capture and reuse the lessons learned.",
             "explanation": "A debrief plus recognition turns a success into something the team can learn from and repeat. 'Builds team confidence and resilience' is a general statement. 'Celebrate properly first' matters, but on its own it doesn't capture any of the lessons.",
-            "id": "bd_l68_q1"
+            "id": "bd_l68_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 1,
             "hint": "Address the fear directly, and rule out pressure as a tactic.",
             "explanation": "Asking about the fear directly, and ruling out pressure, is a psychologically sound way to build trust. 'Can be very challenging to engage' is a general observation. 'Make them understand it's the right thing to do' is likely to increase resistance, not reduce it.",
-            "id": "bd_l68_q2"
+            "id": "bd_l68_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give specific structural principles rather than a general goal.",
             "explanation": "Naming the actual structure - sequencing, setting, and mentorship - gives real design principles to build from. 'A valuable investment' just states why it matters. 'Balance skill with creative expression' is one good principle, not a full structure.",
-            "id": "bd_l68_q3"
+            "id": "bd_l68_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 1,
             "hint": "Ask for the specific evidence and whether there's been peer input.",
             "explanation": "Asking for the actual evidence and whether colleagues have weighed in is informed, engaged consent. 'Normal medical practice' is a general statement. 'I trust your judgment' accepts a genuinely novel application without asking a single question.",
-            "id": "bd_l69_q1"
+            "id": "bd_l69_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 0,
             "hint": "Recommend a specific, low-risk first step, not just general caution.",
             "explanation": "Proposing an actual pilot step gives a concrete, low-risk way to test the market. 'One of the most common growth strategies' is a general statement. 'Research the market thoroughly' is sound but vague advice without a specific first move.",
-            "id": "bd_l69_q2"
+            "id": "bd_l69_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give the specific preparation steps for this particular region.",
             "explanation": "Briefing on the actual differences, and having the more experienced pilot lead communication, is a concrete plan for this specific region. 'Conventions vary between regions' is a general observation. 'Ensure crew familiarity with international standards' is a general directive, not a plan for this flight.",
-            "id": "bd_l69_q3"
+            "id": "bd_l69_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give the first concrete steps, not just a description of the seriousness.",
             "explanation": "Halting dependent actions and reassessing what's realistically achievable is a real, immediate response. 'Extremely critical situation' just names the stakes. 'Think very carefully about how to adapt' promises reflection without any actual first step.",
-            "id": "bd_l70_q1"
+            "id": "bd_l70_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 2,
             "hint": "Separate the professional response from the personal one, and address both.",
             "explanation": "Naming both the professional steps and the personal impact - and treating them separately - is a complete, mature response. 'One of the most deeply damaging things' names the feeling but gives no direction. 'Report immediately and let the investigation proceed' covers only the professional half.",
-            "id": "bd_l70_q2"
+            "id": "bd_l70_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 1,
             "hint": "Respond publicly and constructively rather than disputing through a formal process.",
             "explanation": "A calm public response that corrects the facts and invites them back is constructive and rebuilds trust. 'Very powerful in shaping reputation' just states the stakes. 'Dispute through the platform's formal processes' is adversarial and rarely as effective as a good public response.",
-            "id": "bd_l70_q3"
+            "id": "bd_l70_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         }
     ]
 }

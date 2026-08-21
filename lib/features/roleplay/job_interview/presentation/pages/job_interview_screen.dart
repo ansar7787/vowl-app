@@ -228,6 +228,9 @@ class _JobInterviewScreenState extends State<JobInterviewScreen>
                                 text: quest.interviewerQuestion ?? "",
                                 color: theme.primaryColor,
                                 isDark: isDark,
+                                reaction: _isAnswered && _selectedIndex != null && quest.interviewerReaction != null && quest.options != null
+                                    ? quest.interviewerReaction![quest.options!.indexOf(_shuffledOptions[_selectedIndex!])]
+                                    : null,
                               ),
                               SizedBox(height: isCompact ? 16.h : 24.h),
 

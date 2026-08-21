@@ -17,7 +17,17 @@
             "correctAnswerIndex": 1,
             "hint": "When someone asks for directions to a specific place, direct them there helpfully.",
             "explanation": "'It's at the end of the corridor, third door on the right' directly answers with clear directions. 'I don't drink coffee myself' talks about your own habits. 'Coffee is bad for your health' is unsolicited advice that doesn't help the Captain find the galley.",
-            "id": "bd_l11_q1"
+            "id": "bd_l11_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Respond to 'Thank you' with 'You're welcome' and a friendly follow-up.",
             "explanation": "'You're welcome - happy to help anytime!' is warm, natural, and invites future cooperation. 'I am generally a very busy person' is an odd, disconnected non-response to gratitude. 'Helping others is an important virtue' is philosophical, not a natural conversational reply.",
-            "id": "bd_l11_q2"
+            "id": "bd_l11_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 1,
             "hint": "When someone apologizes for a small, easily corrected mistake, respond with grace.",
             "explanation": "'Not to worry - mistakes happen!' shows graciousness about a minor, easily resolved error. 'That is completely and utterly unacceptable!' is a dramatic overreaction to a simple mix-up. 'I ordered this yesterday too' is confusing and irrelevant.",
-            "id": "bd_l11_q3"
+            "id": "bd_l11_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 0,
             "hint": "'Have you eaten today?' is a direct health question. Answer yes/no with specific details.",
             "explanation": "'Yes, I had a small bowl of porridge this morning' directly answers the question and gives medically useful specific information. 'Food is essential for good health' is a general statement. 'I tend to cook at home' describes a habit, not what was eaten today.",
-            "id": "bd_l12_q1"
+            "id": "bd_l12_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 1,
             "hint": "When offered useful information, accept it enthusiastically and confirm the practical details.",
             "explanation": "'Yes please! What email address do you have on file?' accepts the offer and immediately takes a step to ensure you receive the information correctly. 'Weekends are very busy' doesn't answer whether you want the information. 'I prefer shopping in the morning' is irrelevant to the offer.",
-            "id": "bd_l12_q2"
+            "id": "bd_l12_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 0,
             "hint": "When asked for a document, either present it or politely explain your situation.",
             "explanation": "'I checked in online - is a digital boarding pass acceptable?' is clear, explains your situation, and asks a practical clarifying question. 'I lost my luggage on a previous trip' is a different problem entirely. 'Boarding sounds like an excellent idea' is a casual non-answer.",
-            "id": "bd_l12_q3"
+            "id": "bd_l12_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "When given a formal safety instruction, confirm you've understood and show readiness.",
             "explanation": "'Understood, Captain. Ready and waiting for your instructions' confirms you heard the announcement and are prepared to act. 'I've done drills before' doesn't engage with the current one. 'Are drills truly necessary?' questions the Captain's authority unhelpfully.",
-            "id": "bd_l13_q1"
+            "id": "bd_l13_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked to do a specific task, confirm you are ready and equipped to do it.",
             "explanation": "'Of course! I'm ready with my notepad - go ahead' confirms readiness and shows you have what you need. 'Writing is an important form of communication' is a platitude that doesn't help. 'I've written many things today' implies fatigue or reluctance.",
-            "id": "bd_l13_q2"
+            "id": "bd_l13_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 0,
             "hint": "When offered a tasting opportunity, accept enthusiastically and show genuine interest.",
             "explanation": "'Yes, please! I'd love to try it and give you my thoughts' accepts the invitation with enthusiasm and offers exactly what was asked - honest feedback. 'Cooking takes considerable time and skill' is a general observation. 'I already had quite a large lunch' might be relevant but 'No thank you, but it smells wonderful!' would be the polite decline.",
-            "id": "bd_l13_q3"
+            "id": "bd_l13_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give the safest, most responsible answer for a medical context - honest and specific.",
             "explanation": "'I'm not entirely certain - what medications are you considering?' is the safest response when unsure, opening a dialogue for the doctor to specify. 'I don't take medication often' doesn't address the allergy question. 'Allergies have become very common' is a statistic, not a personal medical answer.",
-            "id": "bd_l14_q1"
+            "id": "bd_l14_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "When told a price is final, make a clear decision without arguing unnecessarily.",
             "explanation": "'Very well, I understand. In that case, I'll take it' accepts the terms clearly and moves forward. 'Everything is negotiable if you approach it correctly' challenges the seller when they have been clear. 'I'll come back next week' delays when an immediate decision is expected.",
-            "id": "bd_l14_q2"
+            "id": "bd_l14_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 2,
             "hint": "When time is short, accept help immediately and ask the two most critical questions.",
             "explanation": "'Yes, please! Which gate and do I need to clear security again?' accepts help and asks the two most essential questions for making a connection. 'Forty minutes should be enough' is uncertain and doesn't move you forward. 'I've managed before' shows past experience but wastes precious time.",
-            "id": "bd_l14_q3"
+            "id": "bd_l14_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked for a professional impression, give a constructive, thoughtful observation.",
             "explanation": "'They seem very eager and show real potential for growth' gives a genuine, positive professional observation. 'New arrivals can find it challenging' is vague and doesn't offer an opinion on this specific person. 'I haven't had the opportunity yet' avoids the question - even if true, a first impression could be shared.",
-            "id": "bd_l15_q1"
+            "id": "bd_l15_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give a firm, clear commitment when asked if you can be trusted.",
             "explanation": "'Absolutely. You have my complete word on it' gives an unconditional, clear commitment of trustworthiness. 'Confidential information is sensitive' just defines the term without committing. 'That depends on what it is' makes trust conditional, which undermines the commitment completely.",
-            "id": "bd_l15_q2"
+            "id": "bd_l15_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 0,
             "hint": "When your first choice is unavailable, accept the offer of a substitute graciously.",
             "explanation": "'What a shame - but yes, what would you recommend?' expresses mild disappointment while opening up to alternatives. 'How long has it been on the menu?' is irrelevant to your current need. 'I'll simply have water' is an extreme reaction to a simple substitution offer.",
-            "id": "bd_l15_q3"
+            "id": "bd_l15_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 2,
             "hint": "Follow medical advice gracefully and confirm you understand the full instructions.",
             "explanation": "'I understand completely. I'll follow your advice carefully' shows respect for the doctor's professional judgment. 'But I genuinely feel fine' challenges medical advice - how you feel doesn't override a clinical judgment. 'My job isn't particularly physical' argues around the instruction rather than following it.",
-            "id": "bd_l16_q1"
+            "id": "bd_l16_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "When given an interesting fact about an item, show genuine curiosity and ask a relevant follow-up.",
             "explanation": "'That's fascinating! Could you tell me more about its history and provenance?' shows real interest and moves the conversation forward. 'Very old objects are not necessarily valuable' is dismissive and challenges the seller's implication. 'Two hundred years does sound long' just restates the obvious without advancing the conversation.",
-            "id": "bd_l16_q2"
+            "id": "bd_l16_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 2,
             "hint": "When a safety concern is raised, suggest a careful, systematic approach before acting.",
             "explanation": "'Let's review all applicable safety procedures before making a final decision' shows responsible, safety-first professional thinking. 'Fog is common in coastal regions' is a geographic observation that doesn't answer the question. 'I prefer clear weather' states a personal preference but doesn't address the operational decision.",
-            "id": "bd_l16_q3"
+            "id": "bd_l16_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give the most practical and helpful response based on available tools and current information.",
             "explanation": "'I'm not entirely certain, but according to my compass we should bear left - that appears to be north' is honest about uncertainty but immediately uses available tools. 'North is in the direction of the North Pole' is a definition, not a helpful navigation aid. 'I used to be quite good at navigation' doesn't help the current situation.",
-            "id": "bd_l17_q1"
+            "id": "bd_l17_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 1,
             "hint": "When caught doing something potentially wrong, apologize immediately and correct your behaviour.",
             "explanation": "'I apologise - I wasn't aware it was classified. I'll stop immediately' takes responsibility, gives an explanation, and immediately corrects the behaviour. 'Documents need to be organized' is a deflection. 'Classified files are very interesting' would be dangerously inappropriate in a real security context.",
-            "id": "bd_l17_q2"
+            "id": "bd_l17_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 1,
             "hint": "When a product's characteristics match a specific need perfectly, show knowledge and make a decisive purchase.",
             "explanation": "'Very ripe tomatoes make the best sauce. I'll take two kilograms' demonstrates food knowledge, confirms the product is right for the purpose, and makes a clear purchase decision. 'Tomatoes come in many varieties' is general knowledge. 'I was hoping for firmer tomatoes' is a valid preference but doesn't engage with the seller's suggestion.",
-            "id": "bd_l17_q3"
+            "id": "bd_l17_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 0,
             "hint": "When offered important information you need, accept clearly and show you're ready to listen.",
             "explanation": "'Yes, please explain everything as clearly as you can' gives a clear yes and makes a specific, useful request for clarity. 'Medical tests are stressful' is a general statement. 'How long did the processing take?' asks a procedural question when what matters is the results themselves.",
-            "id": "bd_l18_q1"
+            "id": "bd_l18_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 1,
             "hint": "When an offer has conditions attached, ask for clarification about those conditions first.",
             "explanation": "'How large a quantity would be required to qualify?' is the most practical first question - you need to know the condition before you can make a decision. 'Discounts are beneficial for business' is a vague agreement. 'Fifteen percent doesn't seem generous' jumps to negotiation before you even know the full terms.",
-            "id": "bd_l18_q2"
+            "id": "bd_l18_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 1,
             "hint": "In professional aviation contexts, always confirm receipt of instructions by repeating key details.",
             "explanation": "'Easterly at twelve knots, runway three - understood. Beginning final approach' uses the standard professional practice of reading back key details and confirms the action. 'What exactly does twelve knots mean?' would be alarming from a pilot. 'Which side is runway three?' is something a pilot should always know.",
-            "id": "bd_l18_q3"
+            "id": "bd_l18_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 0,
             "hint": "Accept praise graciously with thanks and a forward-looking commitment.",
             "explanation": "'Thank you, Captain. I'll continue giving everything I have' accepts the praise appropriately and makes a genuine commitment. 'I'm well aware - it has been hard work' sounds arrogant. 'I was simply doing what anyone would do' undersells the achievement and misses the social cue to accept praise with warmth.",
-            "id": "bd_l19_q1"
+            "id": "bd_l19_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 0,
             "hint": "When a trusted colleague asks to borrow something for a short time, lend it willingly.",
             "explanation": "'Of course - go right ahead. Here it is' is generous and trusting, appropriate for a colleague. 'Mobile phones are very personal devices' implies reluctance without declining clearly. 'What exactly do you need it for?' questions a simple request and suggests unnecessary distrust.",
-            "id": "bd_l19_q2"
+            "id": "bd_l19_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked for a specific preference, give a specific, enthusiastic answer with a reason.",
             "explanation": "'I adore the wild mushroom risotto - the texture is always perfectly silky' gives a specific, enthusiastic answer with a sensory reason. 'I generally enjoy tasty and filling food' is a vague non-answer. 'Your menu offers many choices' is an observation about quantity, not a personal preference.",
-            "id": "bd_l19_q3"
+            "id": "bd_l19_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked about health habits, give specific, quantified information for the best medical value.",
             "explanation": "'I've been sleeping well - roughly seven to eight hours each night' gives both a quality assessment and a specific quantity - both medically useful. 'Sleep is very important for health' is a general fact. 'I sleep in a comfortable bedroom' describes the environment, not the quality or duration.",
-            "id": "bd_l20_q1"
+            "id": "bd_l20_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 0,
             "hint": "When asked to commit to a deadline, give a direct yes or no and immediately state your next step.",
             "explanation": "'Yes, absolutely - I'll have written confirmation to you within the hour' commits clearly to the deadline and adds a professional follow-up step. 'Friday comes directly after Thursday' is a non-answer. 'Deliveries are generally on time' is vague and doesn't specifically commit to this particular Friday.",
-            "id": "bd_l20_q2"
+            "id": "bd_l20_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 2,
             "hint": "When asked about your experience, give a genuine, specific response that the person will value.",
             "explanation": "'Yes - it was extremely smooth and comfortable. The crew were absolutely wonderful' gives specific, enthusiastic feedback that any airline crew would value. 'Air travel is faster than road travel' makes a general comparison. 'I booked three months ago' gives irrelevant booking history.",
-            "id": "bd_l20_q3"
+            "id": "bd_l20_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         }
     ]
 }

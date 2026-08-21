@@ -17,7 +17,19 @@
             "correctAnswer": "Avocado Toast, Latte",
             "hint": "The customer names a popular modern breakfast dish and a coffee drink.",
             "explanation": "‘I’ll try…’ is a relaxed way to order, often used when something on the menu sounds appealing. A ‘latte’ has more steamed milk than a ‘cappuccino,’ so listen for the exact word.",
-            "id": "go_l11_q1"
+            "id": "go_l11_q1",
+            "menuItems": [
+                "Avocado Toast",
+                "Latte",
+                "Sourdough Toast",
+                "Cappuccino"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$18.00",
+                "$11.25",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Fruit Salad, Green Tea",
             "hint": "Both items are light, healthy choices — one is chopped fruit, one is a hot drink.",
             "explanation": "‘Green tea’ and ‘black tea’ are both common menu choices, so the color word matters. Fruit salad is simply a mix of chopped fruit.",
-            "id": "go_l11_q2"
+            "id": "go_l11_q2",
+            "menuItems": [
+                "Fruit Salad",
+                "Green Tea",
+                "Yogurt Parfait",
+                "Black Tea"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$13.75",
+                "$5.75",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Granola Bowl, Orange Juice",
             "hint": "Notice ‘an’ before orange juice again — the vowel-sound rule still applies.",
             "explanation": "A ‘granola bowl’ and an ‘acai bowl’ look similar on a menu, so always check the exact name. ‘An’ is used before ‘orange’ because it starts with a vowel sound.",
-            "id": "go_l11_q3"
+            "id": "go_l11_q3",
+            "menuItems": [
+                "Granola Bowl",
+                "Orange Juice",
+                "Acai Bowl",
+                "Apple Juice"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$20.50",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Turkey Sandwich, Bag of Chips",
             "hint": "‘Let me get…’ is a casual, friendly way to order.",
             "explanation": "‘Let me get…’ sounds relaxed and is common in fast, casual restaurants. The sandwich filling — turkey, not ham — is the key detail here.",
-            "id": "go_l12_q1"
+            "id": "go_l12_q1",
+            "menuItems": [
+                "Turkey Sandwich",
+                "Bag of Chips",
+                "Ham Sandwich",
+                "Bag of Pretzels"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$16.50",
+                "$7.25",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Chicken Noodle Soup, Crackers",
             "hint": "This soup is named after two ingredients — listen for both.",
             "explanation": "‘Chicken noodle soup’ needs both words to name it correctly. Crackers are a common light side for soup, different from a bread roll.",
-            "id": "go_l12_q2"
+            "id": "go_l12_q2",
+            "menuItems": [
+                "Chicken Noodle Soup",
+                "Crackers",
+                "Vegetable Soup",
+                "Bread Roll"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$18.00",
+                "$4.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Veggie Burger, Fries",
             "hint": "‘How about…?’ is a casual suggestion, but it still works as an order.",
             "explanation": "‘How about…?’ can sound like a suggestion, but here the customer is choosing their own order. ‘Veggie’ tells you this burger has no meat.",
-            "id": "go_l12_q3"
+            "id": "go_l12_q3",
+            "menuItems": [
+                "Veggie Burger",
+                "Fries",
+                "Beef Burger",
+                "Onion Rings"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$17.75",
+                "$19.25",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Caprese Salad, Sparkling Water",
             "hint": "‘I guess I’ll have…’ shows the customer deciding out loud.",
             "explanation": "‘I guess I’ll have…’ sounds natural when someone is thinking as they speak. A caprese salad contains tomato, mozzarella, and basil — different from a Greek salad, which usually includes olives and feta.",
-            "id": "go_l13_q1"
+            "id": "go_l13_q1",
+            "menuItems": [
+                "Caprese Salad",
+                "Sparkling Water",
+                "Greek Salad",
+                "Still Water"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$4.50",
+                "$19.25",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Club Sandwich, Iced Coffee",
             "hint": "Two sandwiches sound similar here — check which one was actually named.",
             "explanation": "A ‘club sandwich’ usually has three layers of bread, while a ‘BLT’ is a simpler bacon, lettuce, and tomato sandwich. ‘Iced’ tells you the coffee is cold.",
-            "id": "go_l13_q2"
+            "id": "go_l13_q2",
+            "menuItems": [
+                "Club Sandwich",
+                "Iced Coffee",
+                "BLT",
+                "Hot Coffee"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$9.75",
+                "$8.50",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Nachos, Lemonade",
             "hint": "‘We’d like’ shows more than one person is ordering, and a number appears before one item.",
             "explanation": "‘We’d like…’ is used when ordering for a group. The word ‘two’ tells you the quantity, but the drink itself is still just ‘lemonade’ — the same word whether you order one or several.",
-            "id": "go_l13_q3"
+            "id": "go_l13_q3",
+            "menuItems": [
+                "Nachos",
+                "Lemonade",
+                "Loaded Fries",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$11.25",
+                "$2.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Margherita Pizza, Side Salad",
             "hint": "This pizza is named after a simple topping combination — tomato, cheese, and basil.",
             "explanation": "‘I’ll go with…’ is a relaxed way to state a final choice. ‘Margherita’ describes the classic pizza topping, different from ‘pepperoni.’",
-            "id": "go_l14_q1"
+            "id": "go_l14_q1",
+            "menuItems": [
+                "Margherita Pizza",
+                "Side Salad",
+                "Pepperoni Pizza",
+                "Garlic Bread"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$14.00",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Chicken Caesar Wrap, Lemonade",
             "hint": "‘Just… for me’ shows the customer is ordering only for themselves.",
             "explanation": "‘Just… for me, please’ is a clear, polite way to state a personal order, often used when others at the table have already ordered.",
-            "id": "go_l14_q2"
+            "id": "go_l14_q2",
+            "menuItems": [
+                "Chicken Caesar Wrap",
+                "Lemonade",
+                "Turkey Club Wrap",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$11.25",
+                "$12.50",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Mushroom Risotto, Bread",
             "hint": "‘I think I’ll have…’ shows the customer deciding between similar dishes.",
             "explanation": "‘I think I’ll have…’ is natural when choosing between similar options, like two kinds of risotto. Remember that bread is uncountable, so we say ‘some bread.’",
-            "id": "go_l14_q3"
+            "id": "go_l14_q3",
+            "menuItems": [
+                "Mushroom Risotto",
+                "Bread",
+                "Seafood Risotto",
+                "Crackers"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$10.00",
+                "$15.25",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Double Cheeseburger, Soda",
             "hint": "‘I want’ is more direct than ‘I’d like’ — it still works, but sounds less formal.",
             "explanation": "‘I want…’ is grammatically correct but can sound a little blunt. ‘I’d like…’ or ‘Could I have…?’ often sound more polite in a restaurant.",
-            "id": "go_l15_q1"
+            "id": "go_l15_q1",
+            "menuItems": [
+                "Double Cheeseburger",
+                "Soda",
+                "Single Cheeseburger",
+                "Small Soda"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$3.25",
+                "$10.00",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Shrimp Tacos, Guacamole",
             "hint": "Adding ‘please’ in the middle of a request makes it sound extra polite.",
             "explanation": "‘Could I please have…?’ is one of the most polite ways to order. The type of taco filling — shrimp, not fish — is the key detail.",
-            "id": "go_l15_q2"
+            "id": "go_l15_q2",
+            "menuItems": [
+                "Shrimp Tacos",
+                "Guacamole",
+                "Fish Tacos",
+                "Salsa"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$18.00",
+                "$16.50",
+                "$2.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Vegetable Stir-Fry, Steamed Rice",
             "hint": "The cooking method for the rice matters just as much as the rice itself.",
             "explanation": "‘Steamed’ rice is plain and simple, while ‘fried rice’ is cooked with oil and other ingredients — two very different side dishes.",
-            "id": "go_l15_q3"
+            "id": "go_l15_q3",
+            "menuItems": [
+                "Vegetable Stir-Fry",
+                "Steamed Rice",
+                "Chicken Stir-Fry",
+                "Fried Rice"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$20.50",
+                "$15.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Spring Rolls, Water",
             "hint": "Look for the appetizer and the drink — the number just tells you the quantity.",
             "explanation": "‘Spring rolls’ and ‘dumplings’ are both common appetizers, so check which one is named. The word ‘two’ only tells you the quantity of water, not a new item.",
-            "id": "go_l16_q1"
+            "id": "go_l16_q1",
+            "menuItems": [
+                "Spring Rolls",
+                "Water",
+                "Dumplings",
+                "Soda"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$17.75",
+                "$17.75",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Mixed Platter, Naan",
             "hint": "‘We’ll have…’ works the same way as ‘I’ll have…’ but for a group.",
             "explanation": "‘We’ll have…’ shows the whole table is sharing these items. ‘Naan’ is a soft flatbread often served with Indian dishes, different from ‘pita.’",
-            "id": "go_l16_q2"
+            "id": "go_l16_q2",
+            "menuItems": [
+                "Mixed Platter",
+                "Naan",
+                "Vegetable Platter",
+                "Pita"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$14.00",
+                "$17.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Dumplings, Tea",
             "hint": "‘My friend and I’ is another way to show two people are ordering together.",
             "explanation": "‘My friend and I would like…’ names exactly who is ordering. ‘A pot of tea’ is a natural way to order tea for more than one person to share.",
-            "id": "go_l16_q3"
+            "id": "go_l16_q3",
+            "menuItems": [
+                "Dumplings",
+                "Tea",
+                "Spring Rolls",
+                "Coffee"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$3.25",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Beef Tacos, Rice",
             "hint": "The type of meat inside the taco is the detail to catch here.",
             "explanation": "‘Beef’ and ‘chicken’ tacos often appear together on a menu, so the meat word is essential. Rice and beans are both common taco sides, but only one was ordered.",
-            "id": "go_l17_q1"
+            "id": "go_l17_q1",
+            "menuItems": [
+                "Beef Tacos",
+                "Rice",
+                "Chicken Tacos",
+                "Beans"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$19.25",
+                "$3.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Miso Soup, California Roll",
             "hint": "Two familiar dishes are named here — a soup and a type of sushi roll.",
             "explanation": "‘Miso soup’ is a savory Japanese soup made from fermented soybean paste. A ‘California roll’ is a common sushi roll with crab, avocado, and cucumber.",
-            "id": "go_l17_q2"
+            "id": "go_l17_q2",
+            "menuItems": [
+                "Miso Soup",
+                "California Roll",
+                "Egg Drop Soup",
+                "Spicy Tuna Roll"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$3.25",
+                "$19.25",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Pad Thai, Spring Roll",
             "hint": "Both dish names come from Thai cuisine and start with similar sounds — read carefully.",
             "explanation": "‘Pad Thai’ and ‘Pad See Ew’ are both popular Thai noodle dishes with similar names, so check the exact wording. A ‘spring roll’ is a crispy rolled appetizer.",
-            "id": "go_l17_q3"
+            "id": "go_l17_q3",
+            "menuItems": [
+                "Pad Thai",
+                "Spring Roll",
+                "Pad See Ew",
+                "Dumpling"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$10.00",
+                "$10.00",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Chicken Quesadilla, Lemonade",
             "hint": "The filling inside the quesadilla is the detail that decides the right answer.",
             "explanation": "‘Chicken’ and ‘cheese’ quesadillas are both common, so the filling word changes the correct choice. ‘Just… for me’ shows this is a single, personal order.",
-            "id": "go_l18_q1"
+            "id": "go_l18_q1",
+            "menuItems": [
+                "Chicken Quesadilla",
+                "Lemonade",
+                "Cheese Quesadilla",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$11.25",
+                "$20.50",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Vegetable Dumplings, Rice",
             "hint": "The dumpling filling and the side dish both need close attention.",
             "explanation": "‘Vegetable’ and ‘pork’ dumplings are both common menu items, so the filling word decides the answer. Rice and noodles are both popular sides, but only one was ordered.",
-            "id": "go_l18_q2"
+            "id": "go_l18_q2",
+            "menuItems": [
+                "Vegetable Dumplings",
+                "Rice",
+                "Pork Dumplings",
+                "Noodles"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$19.25",
+                "$21.75",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Spring Rolls, Sweet Chili Sauce",
             "hint": "One item is a crispy appetizer, the other is a dipping sauce.",
             "explanation": "Spring rolls are often served with a dipping sauce on the side. ‘Sweet chili sauce’ and ‘soy sauce’ are both common choices, so the exact name matters.",
-            "id": "go_l18_q3"
+            "id": "go_l18_q3",
+            "menuItems": [
+                "Spring Rolls",
+                "Sweet Chili Sauce",
+                "Dumplings",
+                "Soy Sauce"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$20.50",
+                "$17.75",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Beef Pho, Spring Rolls",
             "hint": "‘Pho’ is a Vietnamese noodle soup — the meat inside changes the name.",
             "explanation": "‘Pho’ is pronounced like ‘fuh’ and is a popular Vietnamese noodle soup. ‘Beef’ and ‘chicken’ pho are both common, so the meat word matters.",
-            "id": "go_l19_q1"
+            "id": "go_l19_q1",
+            "menuItems": [
+                "Beef Pho",
+                "Spring Rolls",
+                "Chicken Pho",
+                "Dumplings"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$3.25",
+                "$2.00",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Chicken Burrito Bowl, Lemonade",
             "hint": "A ‘bowl’ version of this dish skips the tortilla wrap, but the filling word still matters.",
             "explanation": "A ‘burrito bowl’ has the same fillings as a burrito, just served without the tortilla. ‘Chicken’ and ‘beef’ are both common choices, so listen for the right one.",
-            "id": "go_l19_q2"
+            "id": "go_l19_q2",
+            "menuItems": [
+                "Chicken Burrito Bowl",
+                "Lemonade",
+                "Beef Burrito Bowl",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$11.25",
+                "$7.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Butter Chicken, Garlic Naan",
             "hint": "Two similar Indian chicken dishes are listed — only one matches exactly.",
             "explanation": "‘Butter chicken’ and ‘chicken tikka masala’ are both popular Indian curries with a similar creamy tomato sauce, so listen for the exact name. ‘Garlic naan’ has garlic mixed into the bread.",
-            "id": "go_l19_q3"
+            "id": "go_l19_q3",
+            "menuItems": [
+                "Butter Chicken",
+                "Garlic Naan",
+                "Chicken Tikka Masala",
+                "Plain Naan"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$16.50",
+                "$4.50",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Chicken Burrito, Guacamole",
             "hint": "The filling and the extra side are both named clearly in the sentence.",
             "explanation": "‘Chicken’ and ‘beef’ burritos are both common, so the filling word is key. Guacamole is a dip made from mashed avocado.",
-            "id": "go_l20_q1"
+            "id": "go_l20_q1",
+            "menuItems": [
+                "Chicken Burrito",
+                "Guacamole",
+                "Beef Burrito",
+                "Sour Cream"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$18.00",
+                "$5.75",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Caprese Sandwich, Iced Lemon Tea",
             "hint": "The sandwich filling and the tea flavor both need careful attention.",
             "explanation": "A ‘caprese’ sandwich contains tomato, mozzarella, and basil. ‘Lemon’ and ‘peach’ are both common iced tea flavors, so the flavor word decides the answer.",
-            "id": "go_l20_q2"
+            "id": "go_l20_q2",
+            "menuItems": [
+                "Caprese Sandwich",
+                "Iced Lemon Tea",
+                "Turkey Sandwich",
+                "Iced Peach Tea"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$18.00",
+                "$17.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Vegetable Dumplings, Green Tea",
             "hint": "The dumpling filling and the tea color both matter here.",
             "explanation": "‘Vegetable’ and ‘pork’ dumplings are both common menu items, so check the filling carefully. The number ‘two’ only affects quantity, not the item name itself.",
-            "id": "go_l20_q3"
+            "id": "go_l20_q3",
+            "menuItems": [
+                "Vegetable Dumplings",
+                "Green Tea",
+                "Pork Dumplings",
+                "Black Tea"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$13.75",
+                "$21.75",
+                "$11.25"
+            ]
         }
     ]
 }

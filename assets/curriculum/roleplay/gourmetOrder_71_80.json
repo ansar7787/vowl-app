@@ -17,7 +17,19 @@
             "correctAnswer": "Caesar Salad, Grilled Chicken, Cheesecake",
             "hint": "The customer mentions two possible starters — only the second one, after ‘instead,’ is the real order.",
             "explanation": "‘I was going to get X, but I’ll have Y instead’ is a common way to show a change of mind. The first item mentioned (the soup) was rejected, so it should not be selected.",
-            "id": "go_l71_q1"
+            "id": "go_l71_q1",
+            "menuItems": [
+                "Caesar Salad",
+                "Grilled Chicken",
+                "Cheesecake",
+                "French Onion Soup"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$16.50",
+                "$21.75",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Soup, Salmon, Crème Brûlée",
             "hint": "This is a short back-and-forth between waiter and customer — listen for the customer's actual choice.",
             "explanation": "The waiter offers two options, but only the one the customer picks (‘the soup’) should be selected — the other option (‘salad’) was never ordered.",
-            "id": "go_l71_q2"
+            "id": "go_l71_q2",
+            "menuItems": [
+                "Soup",
+                "Salmon",
+                "Crème Brûlée",
+                "Salad"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$20.50",
+                "$2.00",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Salmon, Bruschetta, Panna Cotta",
             "hint": "An almost-ordered item is mentioned first — only the final choice should be selected.",
             "explanation": "‘I almost ordered X, but I think I’ll go with Y’ shows the customer considered one option before choosing another. Only ‘salmon’ was actually ordered.",
-            "id": "go_l71_q3"
+            "id": "go_l71_q3",
+            "menuItems": [
+                "Salmon",
+                "Bruschetta",
+                "Panna Cotta",
+                "Ribeye"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$13.75",
+                "$3.25",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Calamari, Swordfish, Tiramisu",
             "hint": "‘Everyone’ shows the starter is shared by the whole group, while the main and dessert belong to just this speaker.",
             "explanation": "‘Everyone at the table is having…’ describes a group decision for the starter, while ‘I’ll have…’ shows this speaker's personal choices for the rest of the meal.",
-            "id": "go_l72_q1"
+            "id": "go_l72_q1",
+            "menuItems": [
+                "Calamari",
+                "Swordfish",
+                "Tiramisu",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$7.25",
+                "$12.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Risotto, Panna Cotta, Espresso",
             "hint": "‘Let me change my mind’ clearly signals the first item mentioned is being replaced.",
             "explanation": "‘Let me change my mind’ is a very direct way to signal a switch. ‘Instead of the pasta’ tells you pasta is rejected in favor of risotto.",
-            "id": "go_l72_q2"
+            "id": "go_l72_q2",
+            "menuItems": [
+                "Risotto",
+                "Panna Cotta",
+                "Espresso",
+                "Pasta"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$3.25",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Burrata, Osso Buco, Affogato",
             "hint": "The customer adds each course almost as an afterthought, but all three still belong to the order.",
             "explanation": "‘Oh, and…’ and ‘I nearly forgot…’ are natural ways speakers add items when thinking aloud — the whole sentence is still one complete order.",
-            "id": "go_l72_q3"
+            "id": "go_l72_q3",
+            "menuItems": [
+                "Burrata",
+                "Osso Buco",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Mozzarella Sticks, Burger, Grilled Chicken Salad",
             "hint": "Three different people are ordering three different things — listen for who orders what.",
             "explanation": "This sentence describes a family order: a shared starter for the kids, one main for the husband, and one main for the speaker.",
-            "id": "go_l73_q1"
+            "id": "go_l73_q1",
+            "menuItems": [
+                "Mozzarella Sticks",
+                "Burger",
+                "Grilled Chicken Salad",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$7.25",
+                "$9.75",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Chicken Parmesan, Garlic Bread, Tiramisu",
             "hint": "The customer politely asks to correct an earlier order, and only the new choice counts.",
             "explanation": "‘Instead of what I said before’ clearly shows the customer is replacing an earlier choice, even though that earlier choice isn't directly named.",
-            "id": "go_l73_q2"
+            "id": "go_l73_q2",
+            "menuItems": [
+                "Chicken Parmesan",
+                "Garlic Bread",
+                "Tiramisu",
+                "Eggplant Parmesan"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$16.50",
+                "$12.50",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Oysters, Lobster, Chocolate Soufflé",
             "hint": "‘Splurge’ tells you the customer is treating themselves to something special.",
             "explanation": "‘Splurge’ means to spend more than usual on something enjoyable, often used for special occasions like celebrations.",
-            "id": "go_l73_q3"
+            "id": "go_l73_q3",
+            "menuItems": [
+                "Oysters",
+                "Lobster",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$7.25",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Bruschetta, Seafood Linguine, Tiramisu",
             "hint": "‘For the table’ and ‘we’ll finish’ both suggest this order is meant to be shared.",
             "explanation": "‘For the table’ and ‘we’ll finish with’ both signal shared items, even though ‘for mains, I’ll have’ shows the main course is personal.",
-            "id": "go_l74_q1"
+            "id": "go_l74_q1",
+            "menuItems": [
+                "Bruschetta",
+                "Seafood Linguine",
+                "Tiramisu",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$18.00",
+                "$12.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Mac and Cheese, Seared Tuna, Ribeye",
             "hint": "Three different orders for three different people are named in this sentence.",
             "explanation": "This is a common way for one parent to order for the entire family at once, naming what each person will have.",
-            "id": "go_l74_q2"
+            "id": "go_l74_q2",
+            "menuItems": [
+                "Mac and Cheese",
+                "Seared Tuna",
+                "Ribeye",
+                "Salmon"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$8.50",
+                "$20.50",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Spring Rolls, Pad Thai, Mango Sticky Rice",
             "hint": "The group asks to swap the starter, and only the replacement should be selected.",
             "explanation": "‘Could we change the appetizer? We’ll have X instead’ shows a group decision to switch starters, similar to an individual changing their mind.",
-            "id": "go_l74_q3"
+            "id": "go_l74_q3",
+            "menuItems": [
+                "Spring Rolls",
+                "Pad Thai",
+                "Mango Sticky Rice",
+                "Dumplings"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$3.25",
+                "$8.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Oysters, Halibut, Crème Brûlée",
             "hint": "Two shellfish starters are mentioned — only the final choice belongs in the order.",
             "explanation": "The pattern ‘I was going to get X, but I’ll have Y instead’ continues to signal that X should not be selected, no matter how clearly it's named.",
-            "id": "go_l75_q1"
+            "id": "go_l75_q1",
+            "menuItems": [
+                "Oysters",
+                "Halibut",
+                "Crème Brûlée",
+                "Mussels"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$5.75",
+                "$2.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Steak Tartare, Duck Breast, Crème Caramel",
             "hint": "The water question is small talk before the real order — listen for the three food items.",
             "explanation": "Small exchanges about water or bread often happen before the main order. Only the starter, main, and dessert actually named should be selected.",
-            "id": "go_l75_q2"
+            "id": "go_l75_q2",
+            "menuItems": [
+                "Steak Tartare",
+                "Duck Breast",
+                "Crème Caramel",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$14.00",
+                "$6.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Beef, Calamari, Profiteroles",
             "hint": "The rejected item this time comes before the final choice, not after.",
             "explanation": "Whether the rejected item comes first or the chosen item comes first, ‘instead’ or ‘but I think I’ll go with’ always marks the true, final decision.",
-            "id": "go_l75_q3"
+            "id": "go_l75_q3",
+            "menuItems": [
+                "Beef",
+                "Calamari",
+                "Profiteroles",
+                "Fish"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$12.50",
+                "$18.00",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Calamari, Branzino, Panna Cotta",
             "hint": "Each course is added almost as an afterthought, but all three make up the full order.",
             "explanation": "‘Oh, and…’ and ‘I nearly forgot…’ show natural, unplanned speech, but the full order still includes all three named items.",
-            "id": "go_l76_q1"
+            "id": "go_l76_q1",
+            "menuItems": [
+                "Calamari",
+                "Branzino",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$11.25",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Chicken Tenders, Fish Tacos, Steak Salad",
             "hint": "Three different family members are ordering three different dishes.",
             "explanation": "‘Our son wants… our daughter wants… I’ll have…’ is another natural way to report a family's full order at once, using a different subject for each item.",
-            "id": "go_l76_q2"
+            "id": "go_l76_q2",
+            "menuItems": [
+                "Chicken Tenders",
+                "Fish Tacos",
+                "Steak Salad",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$16.50",
+                "$17.75",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Salmon, Wild Rice, Lemon Tart",
             "hint": "The customer corrects an earlier choice — only the new order counts.",
             "explanation": "‘Instead of what I said before’ is a polite, common way to correct an order without needing to repeat the original mistake out loud.",
-            "id": "go_l76_q3"
+            "id": "go_l76_q3",
+            "menuItems": [
+                "Salmon",
+                "Wild Rice",
+                "Lemon Tart",
+                "Grilled Chicken"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$15.25",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Caviar, Wagyu Steak, Chocolate Soufflé",
             "hint": "‘Splurge’ signals a special, more expensive order than usual.",
             "explanation": "‘Wagyu’ is a prized type of beef known for its rich marbling and tenderness, often reserved for special celebrations.",
-            "id": "go_l77_q1"
+            "id": "go_l77_q1",
+            "menuItems": [
+                "Caviar",
+                "Wagyu Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$5.75",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Burrata, Osso Buco, Affogato",
             "hint": "The starter and dessert are shared, but the main course belongs to just one person.",
             "explanation": "‘For the table’ and ‘we’ll finish with’ mark shared items, while ‘for mains, I’ll have’ shows a personal choice within a group order.",
-            "id": "go_l77_q2"
+            "id": "go_l77_q2",
+            "menuItems": [
+                "Burrata",
+                "Osso Buco",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Pasta with Butter, Branzino, Veal Chop",
             "hint": "The children's order is described casually, but all three dishes for three people still need to be tracked.",
             "explanation": "‘Our little ones just want…’ is a warm, informal way parents often describe a simple children's order before naming their own choices.",
-            "id": "go_l77_q3"
+            "id": "go_l77_q3",
+            "menuItems": [
+                "Pasta with Butter",
+                "Branzino",
+                "Veal Chop",
+                "Salmon"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$11.25",
+                "$10.00",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Ravioli, Burrata, Tiramisu",
             "hint": "A rejected main course appears before the customer's real choice.",
             "explanation": "‘I was going to get X, but I’ll have Y instead’ always signals the same thing: X is not part of the final order.",
-            "id": "go_l78_q1"
+            "id": "go_l78_q1",
+            "menuItems": [
+                "Ravioli",
+                "Burrata",
+                "Tiramisu",
+                "Risotto"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$11.25",
+                "$12.50",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Flatbread, Lamb Chops, Pear Tart",
             "hint": "The waiter's question is answered with a shared starter, followed by a personal main and dessert.",
             "explanation": "This dialogue format — a question from staff, then the customer's answer — is common in real restaurants and doesn't change how the order should be selected.",
-            "id": "go_l78_q2"
+            "id": "go_l78_q2",
+            "menuItems": [
+                "Flatbread",
+                "Lamb Chops",
+                "Pear Tart",
+                "Bruschetta"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$15.25",
+                "$3.25",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Branzino, Beet Salad, Olive Oil Cake",
             "hint": "The group asks to swap the main course, so only the new choice belongs in the order.",
             "explanation": "‘Could we change the main? We’ll have X instead’ mirrors the earlier pattern for changing a starter, just applied to the main course this time.",
-            "id": "go_l78_q3"
+            "id": "go_l78_q3",
+            "menuItems": [
+                "Branzino",
+                "Beet Salad",
+                "Olive Oil Cake",
+                "Halibut"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$7.25",
+                "$19.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Steak Salad, Soup, Cheesecake",
             "hint": "The almost-chosen item is named first, but the final decision comes right after.",
             "explanation": "‘But I think I’ll go with… instead’ confirms the true final choice, no matter which item was mentioned first in the sentence.",
-            "id": "go_l79_q1"
+            "id": "go_l79_q1",
+            "menuItems": [
+                "Steak Salad",
+                "Soup",
+                "Cheesecake",
+                "Burger"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$5.75",
+                "$21.75",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Garlic Knots, Ribeye, Seared Scallops",
             "hint": "A shared starter for the children is described a little differently here, but the meaning is the same.",
             "explanation": "‘For the little ones…’ is another warm, natural way to refer to children when explaining part of a family order.",
-            "id": "go_l79_q2"
+            "id": "go_l79_q2",
+            "menuItems": [
+                "Garlic Knots",
+                "Ribeye",
+                "Seared Scallops",
+                "Filet Mignon"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$20.50",
+                "$7.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Duck, Wild Mushroom Risotto, Pavlova",
             "hint": "The customer corrects an earlier choice before naming the rest of the order.",
             "explanation": "Even though the original order isn't repeated, ‘instead of what I said before’ makes it clear that only the new items should count.",
-            "id": "go_l79_q3"
+            "id": "go_l79_q3",
+            "menuItems": [
+                "Duck",
+                "Wild Mushroom Risotto",
+                "Pavlova",
+                "Lamb Chops"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$12.50",
+                "$9.75",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Foie Gras, Lobster Thermidor, Chocolate Torte",
             "hint": "All three items reflect a special, indulgent celebration meal.",
             "explanation": "‘Lobster thermidor’ is lobster meat mixed with a rich sauce and served in the shell — a classic special-occasion dish.",
-            "id": "go_l80_q1"
+            "id": "go_l80_q1",
+            "menuItems": [
+                "Foie Gras",
+                "Lobster Thermidor",
+                "Chocolate Torte",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$17.75",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Oysters, Venison, Chocolate Soufflé",
             "hint": "The reason for ordering dessert early is explained, but it's still just the third item in the order.",
             "explanation": "Soufflés must be baked to order and take time, so restaurants often ask guests to order dessert early. This detail doesn't add a fourth item.",
-            "id": "go_l80_q2"
+            "id": "go_l80_q2",
+            "menuItems": [
+                "Oysters",
+                "Venison",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$2.00",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Fish Fingers, Wagyu, Sea Bass",
             "hint": "Different wording, same idea — three family members, three different dishes.",
             "explanation": "‘Fish fingers’ is the British English term for what Americans usually call ‘fish sticks’ — a common children's menu item.",
-            "id": "go_l80_q3"
+            "id": "go_l80_q3",
+            "menuItems": [
+                "Fish Fingers",
+                "Wagyu",
+                "Sea Bass",
+                "Ribeye"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$7.25",
+                "$10.00",
+                "$20.50"
+            ]
         }
     ]
 }

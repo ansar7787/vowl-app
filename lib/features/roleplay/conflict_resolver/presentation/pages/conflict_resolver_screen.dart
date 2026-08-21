@@ -224,6 +224,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen>
                               SizedBox(height: isCompact ? 10.h : 16.h),
                               ConflictResolverConflictCard(
                                 scene: quest.scene ?? "",
+                                escalationLevel: quest.escalationLevel ?? 5,
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 rotation: _rotation,

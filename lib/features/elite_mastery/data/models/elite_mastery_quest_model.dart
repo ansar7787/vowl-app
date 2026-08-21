@@ -31,6 +31,11 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
     super.usageContext,
     super.spellingRule,
     super.sequenceLogic,
+    super.plotStructure,
+    super.idiomOrigin,
+    super.visualMetaphor,
+    super.difficultyTier,
+    super.targetAccent,
   });
 
   factory EliteMasteryQuestModel.fromJson(Map<String, dynamic> json) {
@@ -112,6 +117,11 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       usageContext: getString(json['usageContext']),
       spellingRule: getString(json['spellingRule']),
       sequenceLogic: getString(json['sequenceLogic']),
+      plotStructure: getString(json['plotStructure']),
+      idiomOrigin: getString(json['idiomOrigin']),
+      visualMetaphor: getString(json['visualMetaphor']),
+      difficultyTier: getString(json['difficultyTier']),
+      targetAccent: getString(json['targetAccent']),
     );
   }
 
@@ -142,6 +152,11 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
       'usageContext': usageContext,
       'spellingRule': spellingRule,
       'sequenceLogic': sequenceLogic,
+      'plotStructure': plotStructure,
+      'idiomOrigin': idiomOrigin,
+      'visualMetaphor': visualMetaphor,
+      'difficultyTier': difficultyTier,
+      'targetAccent': targetAccent,
     };
   }
 }

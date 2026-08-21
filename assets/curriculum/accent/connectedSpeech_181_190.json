@@ -18,7 +18,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try stressing every word in \"plenty of time\" equally — it sounds stiff and unnatural, right? Which word loses its full vowel to fix that?",
             "explanation": "English sentence rhythm relies on this kind of reduction — content words stay strong, function words like \"of\" go weak. That's why /ɒ/ becomes schwa in \"plenty of time\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "plenty of time"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L181_Q2",
@@ -35,7 +37,9 @@
             "correctAnswerIndex": 0,
             "hint": "Instead of hearing /d/ and /j/ separately between \"send\" and \"your\", listen for one fused sound. What is it?",
             "explanation": "This is coalescent assimilation: two adjacent sounds merge into a third sound that resembles neither one alone. Here, /d/ and /j/ combine into /dʒ/ in \"send your\".",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "send your resume"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L181_Q3",
@@ -52,7 +56,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"isn't your\" quickly and casually. The /t/ and the /j/ in \"your\" don't stay separate — what do they merge into?",
             "explanation": "Rather than two separate consonants, connected speech blends /t/ and /j/ into /tʃ/. That's why \"isn't your\" sounds like one smooth unit rather than two words bumping together.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "isn't your turn"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L182_Q1",
@@ -69,7 +75,9 @@
             "correctAnswerIndex": 0,
             "hint": "A bilabial consonant is coming up in \"people\". What does that do to the /n/ just before it in \"ten\"?",
             "explanation": "Speakers save effort by letting /n/ anticipate the bilabial sound ahead. So in \"ten people\", /n/ is pronounced as /m/ instead.",
-            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows."
+            "phoneticRule": "Unlike elision, assimilation keeps the sound but reshapes it. /t/, /d/, and /n/ typically shift toward /p, b, m, k/ or /g/ when one of those sounds follows.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "tem people"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L182_Q2",
@@ -86,7 +94,9 @@
             "correctAnswerIndex": 0,
             "hint": "In \"this song\", this isn't a case of one sound changing into another — it's the same /s/ on both sides. What happens when identical sounds collide?",
             "explanation": "Two identical consonants meeting at a word boundary typically fuse into one longer articulation rather than being pronounced separately. You'll hear this clearly in \"this song\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "this song"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L182_Q3",
@@ -103,7 +113,9 @@
             "correctAnswerIndex": 0,
             "hint": "Native speakers rarely spell this out fully when talking fast. What informal contraction replaces \"ought to\"?",
             "explanation": "\"oughta\" isn't sloppy speech — it's the expected, natural pronunciation of \"ought to\" in casual English, similar to how \"do not\" becomes \"don't\" in writing.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing."
+            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
+            "phenomenonType": "Contraction",
+            "spokenForm": "ought to"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L183_Q1",
@@ -120,7 +132,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"dinner is\" naturally. That final 'r' in \"dinner\", usually silent, resurfaces here — why, do you think?",
             "explanation": "This is linking, not intrusion, because the 'r' is already written into \"dinner\". It stays silent before a pause or consonant but comes back to life right before the vowel that opens \"is\".",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "dinner is"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L183_Q2",
@@ -137,7 +151,9 @@
             "correctAnswerIndex": 0,
             "hint": "Try saying \"command line\" at a natural conversational pace, not word by word. What happens to the /d/ sound in the middle?",
             "explanation": "Native speakers rarely pronounce every consonant in a heavy cluster. In \"command line\", the /d/ is left out completely, letting the surrounding consonants connect directly.",
-            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants."
+            "phoneticRule": "Elision deletes a sound completely rather than changing it. It happens most often to /t/ and /d/ when they're trapped between two other consonants.",
+            "phenomenonType": "Elision",
+            "spokenForm": "comman' line"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L183_Q3",
@@ -154,7 +170,9 @@
             "correctAnswerIndex": 1,
             "hint": "Function words like \"were\" rarely keep their dictionary pronunciation in natural sentences. Listen for what its vowel becomes in \"we were ready\".",
             "explanation": "Because \"were\" isn't emphasized in \"we were ready\", its vowel weakens from the full /ɜː/ to a fast, neutral schwa sound. This happens to almost every unstressed function word in fluent English.",
-            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English."
+            "phoneticRule": "Unstressed grammatical words shrink to their weak form, trading a full vowel for schwa — this is one of the most frequent patterns in fluent English.",
+            "phenomenonType": "Weak",
+            "spokenForm": "we were ready"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L184_Q1",
@@ -171,7 +189,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try pronouncing \"book\" and \"club\" as two fully separate /k/ sounds. Now say them fast and naturally — what changes?",
             "explanation": "This is a case of avoiding needless repetition — instead of two short /k/ sounds, English produces one held /k/ across \"book\" and \"club\", saving effort while staying clear.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "book club"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L184_Q2",
@@ -188,7 +208,9 @@
             "correctAnswerIndex": 1,
             "hint": "Both \"comma\" and \"or\" end and begin with vowel sounds. Listen for an extra consonant sound that sneaks in between them.",
             "explanation": "This is intrusion: a sound appears between two vowels even though it isn't written anywhere. In \"comma or\", an intrusive /r/ bridges the gap, purely to avoid an awkward vowel collision.",
-            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all."
+            "phoneticRule": "Intrusive sounds (/r/, /w/, /j/) bridge vowel-to-vowel gaps in connected speech purely for smoothness, with no basis in spelling at all.",
+            "phenomenonType": "Intrusion",
+            "spokenForm": "comma or"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L184_Q3",
@@ -205,7 +227,9 @@
             "correctAnswerIndex": 0,
             "hint": "Notice how the mouth has to move from the /n/ ending \"seven\" to the bilabial sound that opens \"players\". Does it really make that full move, or take a shortcut?",
             "explanation": "Unlike elision, nothing is dropped here — the sound simply changes place. /n/ becomes /m/ in \"seven players\" to match the bilabial consonant that follows.",
-            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound."
+            "phoneticRule": "Alveolar consonants like /t/, /d/, and /n/ often shift to match the place of articulation of a following bilabial (/p, b, m/) or velar (/k, g/) sound.",
+            "phenomenonType": "Assimilation",
+            "spokenForm": "sevem players"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L185_Q1",
@@ -222,7 +246,9 @@
             "correctAnswerIndex": 1,
             "hint": "Try saying \"where's he\" the way you would in a relaxed conversation, not a careful reading. Is the /h/ still there?",
             "explanation": "Because \"he\" is unstressed, its /h/ disappears in natural speech, and the consonant ending \"where's\" links directly to the exposed vowel. That's why \"where's he\" sounds like one connected unit rather than two separate words.",
-            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech."
+            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "where's he"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L185_Q2",
@@ -239,7 +265,9 @@
             "correctAnswerIndex": 1,
             "hint": "Three consonants in a row is hard work for the mouth. Focus on the /t/ where \"just\" meets \"now\" — does English keep it or drop it?",
             "explanation": "Because /t/ is squeezed between two other consonants, it gets dropped in fluent speech. Say \"just now\" aloud and you'll notice the /t/ just isn't there.",
-            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together."
+            "phoneticRule": "When a stop consonant like /t/ or /d/ is sandwiched between two other consonants, English speakers usually drop it rather than force all three sounds together.",
+            "phenomenonType": "Elision",
+            "spokenForm": "jus' now"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L185_Q3",
@@ -256,7 +284,9 @@
             "correctAnswerIndex": 0,
             "hint": "In \"is he\", \"he\" carries no stress. Unstressed h-words often lose that opening sound — does it happen here?",
             "explanation": "H-dropping is extremely common with weak pronouns after a consonant. The /h/ in \"he\" vanishes, and \"is\"'s final sound carries straight over into the vowel left behind.",
-            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly."
+            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "is he"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L186_Q1",
@@ -273,7 +303,9 @@
             "correctAnswerIndex": 0,
             "hint": "Say \"speak up\" as one smooth unit, not two separate words. Where does the final consonant of \"speak\" end up?",
             "explanation": "This is linking: the consonant isn't added, dropped, or changed — it simply moves to attach to the following vowel. That's exactly what happens between \"speak\" and \"up\".",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "speak up"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L186_Q2",
@@ -290,7 +322,9 @@
             "correctAnswerIndex": 1,
             "hint": "The /d/ that ends \"wide\" is the same /d/ that starts \"door\". Does English double it, or merge it into one?",
             "explanation": "Because \"wide\" and \"door\" share the same final and initial sound, the boundary doesn't have two /d/ articulations — it has one slightly extended one. That's gemination in action.",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "wide door"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L186_Q3",
@@ -307,7 +341,9 @@
             "correctAnswerIndex": 0,
             "hint": "There's a consonant collision at the boundary of \"guard\" and \"your\": /d/ meets /j/. Which single sound comes out the other side?",
             "explanation": "Coalescence happens when neighboring sounds are so close in the mouth that they collapse into one. /d/ and /j/ become /dʒ/ in \"guard your\" — faster and easier to say than keeping the two sounds apart.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "guard your password"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L187_Q1",
@@ -324,7 +360,9 @@
             "correctAnswerIndex": 0,
             "hint": "Two consonants become one here. Focus on where \"raise\" ends and \"your\" begins — what's the resulting blended sound?",
             "explanation": "This merge is extremely common wherever a word ending in /z/ meets a \"you\"-type word. In \"raise your\", the result is /ʒ/, not /z/ followed by /j/.",
-            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/."
+            "phoneticRule": "When /t/, /d/, /s/, or /z/ meets /j/ across a word boundary, the two sounds often fuse into a brand-new consonant: /tʃ/, /dʒ/, /ʃ/, or /ʒ/.",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "raise your hand"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L187_Q2",
@@ -341,7 +379,9 @@
             "correctAnswerIndex": 0,
             "hint": "Listen for a doubled or lengthened /t/ at the seam between \"what\" and \"time\" — not two short ones back to back.",
             "explanation": "Native speakers merge repeated identical consonants into a single sound rather than doubling up. In \"what time\", the /t/ is pronounced once, just held a touch longer.",
-            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions."
+            "phoneticRule": "Gemination avoids doubling identical adjacent consonants — the two collapse into one held sound rather than two short repetitions.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "what time"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L187_Q3",
@@ -358,7 +398,9 @@
             "correctAnswerIndex": 0,
             "hint": "\"soap\" ends and \"powder\" begins with the exact same /p/ sound. Do you really hear it twice in natural speech, or just once?",
             "explanation": "When the same consonant ends one word and begins the next, speakers don't pronounce it twice — they merge the two into a single, slightly longer sound. That's gemination, and it's exactly what happens with /p/ in \"soap powder\".",
-            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately."
+            "phoneticRule": "When identical consonants meet at a word boundary, English merges them into a single, slightly longer sound instead of pronouncing both separately.",
+            "phenomenonType": "Gemination",
+            "spokenForm": "soap powder"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L188_Q1",
@@ -375,7 +417,9 @@
             "correctAnswerIndex": 0,
             "hint": "The consonant at the end of \"keep\" has a vowel waiting right after it in \"up\". Does it stay attached to \"keep\", or slide onto the next syllable?",
             "explanation": "Fluent English resyllabifies across word boundaries whenever a consonant meets a vowel. Here, the last sound of \"keep\" glides directly into \"up\", making the phrase sound like one continuous unit.",
-            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit."
+            "phoneticRule": "A word-final consonant, or a normally-silent final 'r', reattaches to a following vowel sound, joining the two words into one smooth unit.",
+            "phenomenonType": "Linking",
+            "spokenForm": "keep up"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L188_Q2",
@@ -392,7 +436,9 @@
             "correctAnswerIndex": 0,
             "hint": "Think about how \"let me\" sounds in a casual conversation rather than a formal speech. What's the reduced, everyday form?",
             "explanation": "Because \"let me\" is so frequent in spoken English, it has its own dedicated reduced form: \"lemme\". Recognizing shortcuts like this is essential for understanding fast, natural conversation.",
-            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\"."
+            "phoneticRule": "Beyond simple weak forms, some common phrases fuse completely into a recognized casual contraction, like \"going to\" becoming \"gonna\".",
+            "phenomenonType": "Contraction",
+            "spokenForm": "let me"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L188_Q3",
@@ -409,7 +455,9 @@
             "correctAnswerIndex": 1,
             "hint": "Focus on the very start of \"her\", right after \"warn\". In fluent, connected speech, is that /h/ pronounced, or dropped entirely?",
             "explanation": "In relaxed speech, \"her\" rarely keeps its /h/ once it's unstressed — especially following a consonant like the one ending \"warn\", which then links smoothly onto the newly exposed vowel.",
-            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech."
+            "phoneticRule": "Weak, unstressed pronouns like \"him\", \"her\", and \"his\" regularly lose their initial /h/ in fast, casual connected speech.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "warn her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L189_Q1",
@@ -426,7 +474,9 @@
             "correctAnswerIndex": 0,
             "hint": "In \"wait for me\", one word carries no stress at all. Focus on \"for\" — what happens to its vowel as a result?",
             "explanation": "Weak forms like this one are what make native speech sound smooth rather than choppy. \"for\" trades its citation vowel /ɔː/ for schwa whenever it's unstressed, as it is in \"wait for me\".",
-            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech."
+            "phoneticRule": "Function words like \"a\", \"to\", \"of\", \"was\", and \"can\" reduce their vowel to a quick schwa /ə/ whenever they're unstressed, which is almost always in natural speech.",
+            "phenomenonType": "Weak",
+            "spokenForm": "wait for me"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L189_Q2",
@@ -443,7 +493,9 @@
             "correctAnswerIndex": 1,
             "hint": "Rather than pronouncing /t/ then /j/ separately, fluent speakers coalesce them. What do you actually hear in \"haven't you\"?",
             "explanation": "Notice that neither the original /t/ nor /j/ survives on its own — they combine into /tʃ/. That fusion is what makes \"haven't you\" sound natural and fast.",
-            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\"."
+            "phoneticRule": "Coalescent assimilation merges two adjacent sounds into a completely different third sound — most often where a word ending in /t, d, s/, or /z/ meets a \"y\"-initial word like \"you\" or \"your\".",
+            "phenomenonType": "Coalescence",
+            "spokenForm": "haven't you"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L189_Q3",
@@ -460,7 +512,9 @@
             "correctAnswerIndex": 1,
             "hint": "Check the spelling: \"far\" ends in 'r'. Before a consonant or pause it usually stays silent — so what happens before the vowel starting \"away\"?",
             "explanation": "The final 'r' in \"far\" behaves like a switch: silent before consonants, audible before vowels. Since \"away\" starts with a vowel, the /r/ links the two words together smoothly.",
-            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all."
+            "phoneticRule": "Linking happens when a sound already present — in pronunciation or in spelling — carries across a word boundary onto a following vowel, unlike intrusion, where the sound has no spelling basis at all.",
+            "phenomenonType": "Linking",
+            "spokenForm": "far away"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L190_Q1",
@@ -477,7 +531,9 @@
             "correctAnswerIndex": 1,
             "hint": "This pronoun almost never gets its full pronunciation in casual speech. What happens to the /h/ in \"her\" when it follows \"help\"?",
             "explanation": "The /h/ drops from \"her\" here because unstressed pronouns lose that sound constantly in natural English, letting \"help\" flow directly into the vowel that remains.",
-            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly."
+            "phoneticRule": "H-dropping removes the initial /h/ from unstressed pronouns and auxiliaries, letting the surrounding sounds link or glide together smoothly.",
+            "phenomenonType": "H-Dropping",
+            "spokenForm": "help her"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L190_Q2",
@@ -494,7 +550,9 @@
             "correctAnswerIndex": 0,
             "hint": "In fast, informal speech, \"out of\" often collapses into a much shorter form. Can you say the casual version out loud?",
             "explanation": "\"out of\" is used so frequently in casual speech that it has collapsed into its own recognized informal form: \"outta\". This goes beyond a simple weak form — the words fuse into a new spoken (and often written) shortcut.",
-            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing."
+            "phoneticRule": "Extremely frequent word combinations develop their own fixed informal shortcut, used constantly in casual speech even though it's avoided in formal writing.",
+            "phenomenonType": "Contraction",
+            "spokenForm": "out of"
         },
         {
             "id": "ACC_CONNECTEDSPEECH_L190_Q3",
@@ -511,7 +569,9 @@
             "correctAnswerIndex": 0,
             "hint": "In casual speech, does the final /d/ of \"friend\" get pronounced before \"group\", or does it just vanish?",
             "explanation": "English speakers simplify clusters like this one by deleting a stop consonant rather than forcing it in. The /d/ in \"friend\" is the one that goes missing before \"group\".",
-            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy."
+            "phoneticRule": "In consonant clusters, /t/ and /d/ are the sounds most likely to disappear entirely — this is called elision, and it keeps fast speech from sounding choppy.",
+            "phenomenonType": "Elision",
+            "spokenForm": "frien' group"
         }
     ]
 }

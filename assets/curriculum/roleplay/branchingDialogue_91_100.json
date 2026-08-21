@@ -17,7 +17,17 @@
             "correctAnswerIndex": 2,
             "hint": "Acknowledge the team genuinely, then name the specific contributors within that.",
             "explanation": "Doing both - team credit and specific recognition - is accurate, not contradictory. 'Give full credit equally' avoids resentment but misrepresents what actually happened and fails to reinforce it. 'Requires careful balancing' is a general statement.",
-            "id": "bd_l91_q1"
+            "id": "bd_l91_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 1,
             "hint": "Treat the trust itself, not just the information, as what needs to transfer.",
             "explanation": "A slow, personal introduction transfers the actual trust, not just the facts about each source. 'Brief thoroughly then hand over' treats it as a document transfer rather than a relationship transfer. 'Requires careful management' is a general statement.",
-            "id": "bd_l91_q2"
+            "id": "bd_l91_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask specific questions about your own knowledge and identity before deciding to comment.",
             "explanation": "Honestly checking your own basis for the view, and its effect on your identity, is a genuine pre-comment discipline. 'Chefs with a platform have a responsibility to use it' skips the question of whether the view is well-informed. 'Increasingly expected of prominent chefs' is a general statement.",
-            "id": "bd_l91_q3"
+            "id": "bd_l91_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 1,
             "hint": "Include a specific request, not just a description of what went wrong.",
             "explanation": "Naming the standard breached and making a specific request turns a complaint into a call to action. 'Describe the incident and explain why' covers the facts but not the harm or the request. 'Require accuracy and professional tone' is a general statement.",
-            "id": "bd_l92_q1"
+            "id": "bd_l92_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 0,
             "hint": "Build internal capability before scaling, rather than outsourcing it.",
             "explanation": "Hiring someone who builds internal capability, then scaling only after, avoids the most common failure mode. 'Hire an agency while your team learns' builds dependency, not capability. 'Requires different capabilities' is a general statement.",
-            "id": "bd_l92_q2"
+            "id": "bd_l92_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name the real, counter-intuitive core of the job, not the training path.",
             "explanation": "Naming decision-making under pressure as the real core of the job is honest and counter-intuitive. 'Tell them about the training process' describes the path, not the nature of the role. 'Should be inspiring but realistic' is a general statement.",
-            "id": "bd_l92_q3"
+            "id": "bd_l92_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "Execute fully, but document your disagreement first - both, not either.",
             "explanation": "Executing with full commitment while documenting disagreement covers both the duty and the integrity question. 'Orders are orders' skips the obligation to express disagreement through proper channels. 'A fundamental leadership question' is a general statement.",
-            "id": "bd_l93_q1"
+            "id": "bd_l93_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 1,
             "hint": "Lead with the headline finding, not background or methodology.",
             "explanation": "Leading with the headline and implication respects the five-minute limit that background-first structures waste. 'Prepare a one-page summary for later' substitutes a document for the actual conversation that was asked for. 'Requires specific communication skills' is a general statement.",
-            "id": "bd_l93_q2"
+            "id": "bd_l93_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 1,
             "hint": "Take it seriously in private, but stay minimal and composed in public.",
             "explanation": "Taking it seriously internally while staying brief and composed publicly avoids looking either defensive or dismissive. 'Publicly defend your dish and explain the technique' looks defensive and extends the controversy. 'Require measured and professional handling' is a general statement.",
-            "id": "bd_l93_q3"
+            "id": "bd_l93_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 2,
             "hint": "State both what is known and what is genuinely uncertain, without discomfort.",
             "explanation": "Naming both the known and the unknown clearly resists the pressure to fake certainty. 'Stay within what is definitively established' misses the chance to honestly convey the state of the science. 'One of the most challenging aspects' is a general statement.",
-            "id": "bd_l94_q1"
+            "id": "bd_l94_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 0,
             "hint": "Investigate the targets and the pattern of underperformance before blaming either.",
             "explanation": "Checking target calibration and the distribution of underperformance is the correct diagnostic step before acting. 'The problem is almost certainly the team' assumes the conclusion without checking. 'Always requires analysis of both' is a general statement.",
-            "id": "bd_l94_q2"
+            "id": "bd_l94_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give the structural principles that make a debrief actually work, not just its topics.",
             "explanation": "Naming structure, consistency, and visible follow-through addresses why debriefs succeed or fail in practice. 'Design around the most important questions and use external facilitators' names two elements without the structural principles. 'A critical component of safety management' is a general statement.",
-            "id": "bd_l94_q3"
+            "id": "bd_l94_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask with genuine curiosity rather than correcting them directly or publicly.",
             "explanation": "A genuinely curious question preserves the officer's dignity while opening an honest comparison. 'Demonstrate the better technique to the full team' publicly embarrasses them. 'Can be a source of resistance to change' is a general statement.",
-            "id": "bd_l95_q1"
+            "id": "bd_l95_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 2,
             "hint": "Refuse clearly, name the specific violation, and escalate simultaneously, not sequentially.",
             "explanation": "Naming the specific violation and escalating at the same time, not after, is clear and unambiguous. 'Refuse and escalate to a senior officer' is the right direction but misses the simultaneous documentation requirement. 'One of the most serious professional actions' is a general statement.",
-            "id": "bd_l95_q2"
+            "id": "bd_l95_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 0,
             "hint": "Ask specific diagnostic questions about clientele type and what the move actually enables.",
             "explanation": "These specific questions determine whether the move actually makes sense, not just whether it's possible. 'Consider a gradual transition with a second location' is a practical option but skips the underlying strategic question. 'Among the most consequential decisions' is a general statement.",
-            "id": "bd_l95_q3"
+            "id": "bd_l95_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name the two specific tensions, not just the general dimensions involved.",
             "explanation": "Naming the two actual tensions, rather than general dimensions, directly answers what was asked. 'Balance satisfaction with efficiency, and quality with communication' names relevant dimensions but not the specific tensions within them. 'Follow established guidelines' doesn't address tensions at all.",
-            "id": "bd_l96_q1"
+            "id": "bd_l96_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a specific signal that distinguishes tactic from character.",
             "explanation": "Checking where the aggression is concentrated is a real diagnostic signal for tactic versus character. 'Treat it as a negotiating tactic' assumes the most favourable interpretation without checking. 'Important before entering a relationship' is a general statement.",
-            "id": "bd_l96_q2"
+            "id": "bd_l96_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name the specific question aviation asks that technology-led panels tend to skip.",
             "explanation": "Naming the specific, underrepresented question about partial failure is a genuine insight, not a category label. 'A safety-focused perspective emphasising certification' describes a type of contribution without the specific insight. 'Provides important operational and safety context' is a general statement.",
-            "id": "bd_l96_q3"
+            "id": "bd_l96_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 2,
             "hint": "Recommend a genuine shared difficulty over talking about values.",
             "explanation": "Naming lived shared difficulty, not a values workshop, as the real driver reflects genuine experience. 'Define shared values then build reinforcing activities' is the conventional but less powerful approach. 'Requires cultural work and consistent leadership' is a general statement.",
-            "id": "bd_l97_q1"
+            "id": "bd_l97_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 1,
             "hint": "Steelman the opposing conclusion first, then disclose your own stake.",
             "explanation": "Writing the strongest opposing case first, then disclosing bias, is a real, testable discipline. 'Recuse yourself' removes valuable perspective when it isn't always necessary. 'One of the most difficult cognitive challenges' is a general statement.",
-            "id": "bd_l97_q2"
+            "id": "bd_l97_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 0,
             "hint": "Recommend uncomfortable honesty over a curated success narrative.",
             "explanation": "Naming honest, uncomfortable truth as the real differentiator identifies what actually makes memoirs worth reading. 'Focus on the human stories behind the dishes' is valid but describes the conventional approach. 'An important genre in food writing' is a general statement.",
-            "id": "bd_l97_q3"
+            "id": "bd_l97_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "Separate alignment on process from alignment on the actual conclusion.",
             "explanation": "Documenting the reasoning while treating the decision as final for this case, not for all future ones, respects dissent without being paralysed by it. 'Chair a meeting where the majority prevails' uses a democratic process for a clinical call, which isn't the right criterion. 'Requires rigour and sensitivity' is a general statement.",
-            "id": "bd_l98_q1"
+            "id": "bd_l98_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 0,
             "hint": "Apply specific strategic tests before accepting, rather than treating the offer as automatically positive.",
             "explanation": "Naming four specific, checkable tests turns a vague worry into an actual decision framework. 'Accept - it's a strong sign of your market position' treats a risk signal as automatically positive. 'Create significant strategic dependencies' is a general statement.",
-            "id": "bd_l98_q2"
+            "id": "bd_l98_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 1,
             "hint": "Address bias in both directions, not just the risk of being too lenient.",
             "explanation": "Naming both possible biases - leniency and overcorrection - is a more complete standard than rigour alone. 'Be especially rigorous to ensure the appearance of independence' overcorrects in the other direction. 'Require particular care around independence' is a general statement.",
-            "id": "bd_l98_q3"
+            "id": "bd_l98_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 1,
             "hint": "Recommend pre-making decisions in advance, not just practising under pressure.",
             "explanation": "Identifying pre-made decisions as the real lever, not raw practice, is a counter-intuitive and accurate insight. 'Run more simulation exercises under time pressure' treats the symptom rather than the actual cause. 'One of the most important capabilities' is a general statement.",
-            "id": "bd_l99_q1"
+            "id": "bd_l99_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 2,
             "hint": "Name specific, often-overlooked factors rather than general career advice.",
             "explanation": "Naming three specific, often-underestimated factors gives real substance to think through. 'Consider the long-term implications' is sound but generic advice without any specific factor. 'Involve both professional and personal considerations' is a general statement.",
-            "id": "bd_l99_q2"
+            "id": "bd_l99_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a precise, testable line between simplification and misrepresentation.",
             "explanation": "Naming the exact test - implying equivalence between a shortcut and the original - gives a precise, usable line. 'Accept and use the platform to reach more people' is a valid stance but doesn't say where the line actually is. 'Require significant compromises' is a general statement.",
-            "id": "bd_l99_q3"
+            "id": "bd_l99_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 0,
             "hint": "Name something genuinely unexpected, not a commonly taught leadership skill.",
             "explanation": "Naming the risk of experience curdling into certainty is honest and genuinely counter-intuitive. 'Learning when to delegate and take ownership' is important, but delegation is already explicitly taught, so it isn't unexpected. 'Often reflect on unexpected lessons' is a general statement.",
-            "id": "bd_l100_q1"
+            "id": "bd_l100_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 1,
             "hint": "Prioritise human reconnection over operational intelligence in the first conversation.",
             "explanation": "Naming human reconnection as the actual priority, with a specific delay for the operational debrief, identifies what matters first. 'Begin with the highest-priority operational intelligence' puts operational value ahead of the person's welfare. 'Require thoroughness and sensitivity' is a general statement.",
-            "id": "bd_l100_q2"
+            "id": "bd_l100_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 0,
             "hint": "Distinguish between the culture itself and the practices that used to express it.",
             "explanation": "Separating culture from the practices that expressed it is the key distinction before reacting to change. 'Have a direct conversation about non-negotiable elements' is a reasonable next step, but only after making that distinction first. 'Invest in structured training and performance standards' doesn't address the actual question being asked.",
-            "id": "bd_l100_q3"
+            "id": "bd_l100_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         }
     ]
 }

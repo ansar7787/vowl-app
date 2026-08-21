@@ -227,6 +227,7 @@ class _EmergencyHubScreenState extends State<EmergencyHubScreen>
                                 telex:
                                     quest.dispatcherQuestion ??
                                     "AWAITING BROADCAST VECTOR DETAILS...",
+                                urgencyLevel: quest.urgencyLevel ?? 3,
                                 isDark: isDark,
                               ),
                               SizedBox(height: isCompact ? 12.h : 20.h),

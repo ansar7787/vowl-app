@@ -10,6 +10,7 @@ class TravelDeskPassportBook extends StatelessWidget {
   final bool isDark;
   final int? selectedIndex;
   final int? hoveredIndex;
+  final String? travelDocument;
   final bool isAnswered;
   final bool? isCorrect;
   final Animation<double> rippleAnimation;
@@ -26,6 +27,7 @@ class TravelDeskPassportBook extends StatelessWidget {
     required this.isDark,
     required this.selectedIndex,
     required this.hoveredIndex,
+    this.travelDocument,
     required this.isAnswered,
     required this.isCorrect,
     required this.rippleAnimation,
@@ -58,7 +60,7 @@ class TravelDeskPassportBook extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "BIOMETRIC PASSPORT BOOKLET",
+                (travelDocument ?? "BIOMETRIC PASSPORT BOOKLET").toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,

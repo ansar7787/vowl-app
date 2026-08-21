@@ -15,6 +15,7 @@ import 'package:vowl/features/elite_mastery/presentation/bloc/elite_mastery_bloc
 import 'package:vowl/features/elite_mastery/presentation/layout/elite_base_layout.dart';
 import 'package:vowl/features/elite_mastery/presentation/widgets/elite_hint_card.dart';
 import '../widgets/story_builder_narrative_tile.dart';
+import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class StoryBuilderScreen extends StatefulWidget {
   final int level;
@@ -37,6 +38,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   List<int> _currentOrder = [];
   bool _isAnswered = false;
   bool? _isCorrect;
+  bool _isFirstStagePassed = false;
   VisualConfig? _visualConfig;
   String? _lastQuestId;
   int _lastLives = 3;
@@ -101,18 +103,15 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
   }
 
   void _submitOrder(List<int>? correctOrder) {
-    if (correctOrder == null || _isAnswered) return;
+    if (correctOrder == null || _isAnswered || _isFirstStagePassed) return;
 
     bool isCorrect = _isCorrectSequence(_currentOrder, correctOrder);
 
     if (isCorrect) {
       _hapticService.success();
-      _soundService.playCorrect();
       setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
+        _isFirstStagePassed = true;
       });
-      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
@@ -121,6 +120,25 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
         _isCorrect = false;
         _isAnswered = true;
       });
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
+    }
+  }
+
+  void _submitVerbalEvaluation(bool nailedIt) {
+    if (_isAnswered) return;
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = nailedIt;
+    });
+
+    if (nailedIt) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
       context.read<EliteMasteryBloc>().add(SubmitEliteAnswer(false));
     }
   }
@@ -163,6 +181,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               _lastQuestId = quest.id;
               _isAnswered = false;
               _isCorrect = null;
+              _isFirstStagePassed = false;
               _visualConfig = quest.visualConfig;
             });
             _shuffleSentences(quest.sentences ?? [], quest.correctOrder);
@@ -230,6 +249,7 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               // on every single question transition across all 200 levels.
               _isAnswered = false;
               _isCorrect = null;
+              _isFirstStagePassed = false;
               _currentOrder = [];
             });
             context.read<EliteMasteryBloc>().add(NextEliteQuestion());
@@ -329,6 +349,52 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
               ),
               SizedBox(height: isCompact ? 12.h : 20.h),
             ],
+                  if (quest.plotStructure != null) ...[
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: theme.primaryColor.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.timeline_rounded, color: theme.primaryColor, size: 14.r),
+                              SizedBox(width: 8.w),
+                              Text(
+                                "NARRATIVE ARC",
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: theme.primaryColor,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 8.h),
+                          Text(
+                            quest.plotStructure!.split(',').join(' ➔ '),
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: isCompact ? 12.h : 20.h),
+                  ],
                   Expanded(
                     child: ReorderableListView(
                       onReorder: _onReorder,
@@ -415,6 +481,21 @@ class _StoryBuilderScreenState extends State<StoryBuilderScreen> {
                         ),
                       ),
                     ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2),
+
+                  if (_isFirstStagePassed && !_isAnswered)
+                    SpeakToConfirmOverlay(
+                      expectedText: quest.sentences != null && quest.sentences!.isNotEmpty 
+                          ? quest.sentences![_currentOrder.last] // Just narrate the final resolution sentence
+                          : "Narrate the ending",
+                      displayText: "Narrate the final sentence to finish the story",
+                      primaryColor: theme.primaryColor,
+                      isPositioned: false,
+                      onConfirmed: () {
+                        _submitVerbalEvaluation(true);
+                      },
+                      onSkipped: () => _submitVerbalEvaluation(false),
+                    ),
+                  SizedBox(height: _isAnswered || _isFirstStagePassed ? 160.h : 20.h),
                 ],
               );
             },

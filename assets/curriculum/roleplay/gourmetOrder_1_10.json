@@ -17,7 +17,19 @@
             "correctAnswer": "Coffee, Toast",
             "hint": "Listen for the two food and drink words that come after ‘I’ll have the… and the…’.",
             "explanation": "‘I’ll have…’ is one of the most common ways to order food in English. When two items are joined by ‘and,’ both belong in the order.",
-            "id": "go_l1_q1"
+            "id": "go_l1_q1",
+            "menuItems": [
+                "Coffee",
+                "Toast",
+                "Tea",
+                "Muffin"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$5.75",
+                "$14.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Tea, Muffin",
             "hint": "‘I’d like’ is short for ‘I would like’ — a simple, polite way to order.",
             "explanation": "‘I’d like’ is just as common as ‘I’ll have’ for ordering food, and sounds a little more polite. Both named items belong in the order.",
-            "id": "go_l1_q2"
+            "id": "go_l1_q2",
+            "menuItems": [
+                "Tea",
+                "Muffin",
+                "Coffee",
+                "Croissant"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$5.75",
+                "$6.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Orange Juice, Pancakes",
             "hint": "This sentence is a question, but it still means the customer wants both items.",
             "explanation": "‘Can I have…?’ looks like a yes/no question, but in a restaurant it's really a polite request — the customer expects to receive both items, not just a yes or no.",
-            "id": "go_l1_q3"
+            "id": "go_l1_q3",
+            "menuItems": [
+                "Orange Juice",
+                "Pancakes",
+                "Apple Juice",
+                "Waffles"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$20.50",
+                "$16.50",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Scrambled Eggs, Bacon",
             "hint": "Listen for the two breakfast foods, not just similar-sounding options.",
             "explanation": "‘Scrambled’ tells you exactly how the eggs are cooked. Picking a different cooking style, like ‘fried,’ would be the wrong order.",
-            "id": "go_l2_q1"
+            "id": "go_l2_q1",
+            "menuItems": [
+                "Scrambled Eggs",
+                "Bacon",
+                "Fried Eggs",
+                "Sausage"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$5.75",
+                "$4.50",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Yogurt, Granola",
             "hint": "Both items are light breakfast choices — one is creamy, one is crunchy.",
             "explanation": "Yogurt and granola are often eaten together for a light breakfast. ‘Oatmeal’ and ‘cereal’ are similar but different foods, so don't mix them up.",
-            "id": "go_l2_q2"
+            "id": "go_l2_q2",
+            "menuItems": [
+                "Yogurt",
+                "Granola",
+                "Oatmeal",
+                "Cereal"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$10.00",
+                "$17.75",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Coffee, Croissant",
             "hint": "‘A’ is used here because the customer means one of each, not a specific one.",
             "explanation": "‘Could I get…?’ is a friendly, everyday way to order in a café. Using ‘a’ before both items shows the customer wants one coffee and one croissant.",
-            "id": "go_l2_q3"
+            "id": "go_l2_q3",
+            "menuItems": [
+                "Coffee",
+                "Croissant",
+                "Tea",
+                "Muffin"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$16.50",
+                "$14.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Tomato Soup, Bread Roll",
             "hint": "The word right before ‘soup’ tells you exactly which one to pick.",
             "explanation": "‘Tomato’ describes the soup, so ‘vegetable soup’ would be the wrong choice even though it's also a soup. Bread rolls are a common side order with soup.",
-            "id": "go_l3_q1"
+            "id": "go_l3_q1",
+            "menuItems": [
+                "Tomato Soup",
+                "Bread Roll",
+                "Vegetable Soup",
+                "Crackers"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$3.25",
+                "$4.50",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Cheese Sandwich, Water",
             "hint": "One item is the sandwich filling; the other is a simple drink.",
             "explanation": "‘Cheese’ tells you what's inside the sandwich. ‘A glass of water’ is a very natural way to ask for water in a restaurant.",
-            "id": "go_l3_q2"
+            "id": "go_l3_q2",
+            "menuItems": [
+                "Cheese Sandwich",
+                "Water",
+                "Tuna Sandwich",
+                "Juice"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$17.75",
+                "$19.25",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Garden Salad, Lemonade",
             "hint": "Two kinds of salad appear in the options — only one matches the order.",
             "explanation": "A ‘garden salad’ is a simple mixed salad, different from a ‘Caesar salad.’ Lemonade is a cold, sweet drink made from lemons.",
-            "id": "go_l3_q3"
+            "id": "go_l3_q3",
+            "menuItems": [
+                "Garden Salad",
+                "Lemonade",
+                "Caesar Salad",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$11.25",
+                "$8.50",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Burger, Fries",
             "hint": "This is a classic fast-food pairing.",
             "explanation": "‘I’ll take…’ works just like ‘I’ll have…’ when ordering. Burgers and fries are one of the most common combinations in casual dining.",
-            "id": "go_l4_q1"
+            "id": "go_l4_q1",
+            "menuItems": [
+                "Burger",
+                "Fries",
+                "Hot Dog",
+                "Onion Rings"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$17.75",
+                "$15.25",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Pasta, Side Salad",
             "hint": "One item is the main dish; the other is a smaller side dish.",
             "explanation": "A ‘side salad’ is a small salad ordered alongside a main dish. Pasta and pizza are both Italian dishes, so read carefully to choose the right one.",
-            "id": "go_l4_q2"
+            "id": "go_l4_q2",
+            "menuItems": [
+                "Pasta",
+                "Side Salad",
+                "Pizza",
+                "Garlic Bread"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Grilled Chicken, Rice",
             "hint": "The cooking method — grilled or fried — makes a big difference here.",
             "explanation": "‘Grilled’ means cooked over direct heat, while ‘fried’ means cooked in oil. These two words often appear together as options, so listen carefully.",
-            "id": "go_l4_q3"
+            "id": "go_l4_q3",
+            "menuItems": [
+                "Grilled Chicken",
+                "Rice",
+                "Fried Chicken",
+                "Noodles"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$19.25",
+                "$11.25",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Slice of Cake, Coffee",
             "hint": "‘A slice of’ means just one piece, not the whole cake.",
             "explanation": "‘A slice of cake’ is a precise, natural way to order one portion. This phrase is useful anywhere desserts are sold by the piece.",
-            "id": "go_l5_q1"
+            "id": "go_l5_q1",
+            "menuItems": [
+                "Slice of Cake",
+                "Coffee",
+                "Cookie",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$6.00",
+                "$14.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Ice Cream, Orange Juice",
             "hint": "Notice the small word right before ‘orange juice’ — it's a useful clue.",
             "explanation": "We use ‘an’ before words that start with a vowel sound, like ‘orange.’ Saying ‘a orange juice’ would be a grammar mistake.",
-            "id": "go_l5_q2"
+            "id": "go_l5_q2",
+            "menuItems": [
+                "Ice Cream",
+                "Orange Juice",
+                "Brownie",
+                "Apple Juice"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$20.50",
+                "$16.50",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Cookie, Milk",
             "hint": "Cookies and milk are a familiar pairing in English-speaking countries.",
             "explanation": "‘A glass of milk’ is clearer than just saying ‘milk,’ since it shows exactly how much the customer wants.",
-            "id": "go_l5_q3"
+            "id": "go_l5_q3",
+            "menuItems": [
+                "Cookie",
+                "Milk",
+                "Muffin",
+                "Water"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$9.75",
+                "$5.75",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Vegetable Soup, Bread",
             "hint": "‘Some’ is used here instead of ‘a’ because this food can't be counted as one single item.",
             "explanation": "Bread is an uncountable noun in English, so we say ‘some bread,’ never ‘a bread.’ This is a useful rule to remember when ordering.",
-            "id": "go_l6_q1"
+            "id": "go_l6_q1",
+            "menuItems": [
+                "Vegetable Soup",
+                "Bread",
+                "Tomato Soup",
+                "Crackers"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$10.00",
+                "$21.75",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Orange Juice, Toast",
             "hint": "Like bread, this breakfast food is uncountable — we don't say ‘a toast.’",
             "explanation": "‘Could I get…?’ is a friendly, everyday way to order. ‘Toast’ is uncountable in English, so we ask for ‘some toast’ or ‘the toast,’ never ‘a toast.’",
-            "id": "go_l6_q2"
+            "id": "go_l6_q2",
+            "menuItems": [
+                "Orange Juice",
+                "Toast",
+                "Apple Juice",
+                "Muffin"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$5.75",
+                "$16.50",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Tea, Biscuits",
             "hint": "In British English, this sweet snack has a different name than in American English.",
             "explanation": "‘Can I have…?’ is simple and direct, but still polite. In British English, ‘biscuits’ are small, sweet snacks — what Americans call ‘cookies.’",
-            "id": "go_l6_q3"
+            "id": "go_l6_q3",
+            "menuItems": [
+                "Tea",
+                "Biscuits",
+                "Coffee",
+                "Cookies"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$20.50",
+                "$6.00",
+                "$15.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Burger, Lemonade",
             "hint": "‘Could I get…?’ is casual and polite — very common in American restaurants.",
             "explanation": "‘Could I get…?’ is used constantly in everyday American English. It sounds like a question, but it's really a polite way to order.",
-            "id": "go_l7_q1"
+            "id": "go_l7_q1",
+            "menuItems": [
+                "Burger",
+                "Lemonade",
+                "Chicken Sandwich",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$11.25",
+                "$12.50",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Fries, Milkshake",
             "hint": "A milkshake is thick and made with ice cream — different from a soda.",
             "explanation": "‘I’ll have…’ works with any two items joined by ‘and.’ A milkshake is made by blending milk and ice cream, so it's much thicker than a soda.",
-            "id": "go_l7_q2"
+            "id": "go_l7_q2",
+            "menuItems": [
+                "Fries",
+                "Milkshake",
+                "Onion Rings",
+                "Soda"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$17.75",
+                "$18.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Pizza, Soda",
             "hint": "‘Soda’ is the American English word for a fizzy drink.",
             "explanation": "‘Can I have…?’ is another everyday way to order politely. ‘Soda’ means a fizzy drink in American English — elsewhere, people might say ‘pop’ or ‘fizzy drink.’",
-            "id": "go_l7_q3"
+            "id": "go_l7_q3",
+            "menuItems": [
+                "Pizza",
+                "Soda",
+                "Pasta",
+                "Water"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$3.25",
+                "$17.75",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Tuna Sandwich, Coffee",
             "hint": "‘Can I have…?’ is direct but still polite in everyday English.",
             "explanation": "‘Can I have…?’ is grammatically informal, but it's completely normal and polite when ordering food.",
-            "id": "go_l8_q1"
+            "id": "go_l8_q1",
+            "menuItems": [
+                "Tuna Sandwich",
+                "Coffee",
+                "Chicken Sandwich",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$6.00",
+                "$12.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Soup of the Day, Bread",
             "hint": "‘Soup of the day’ doesn't name a flavor — it means whatever soup the kitchen made today.",
             "explanation": "‘I’d like…’ is a slightly more formal way to order. ‘Soup of the day’ is a common restaurant phrase for a soup that changes daily, so just select it as a whole.",
-            "id": "go_l8_q2"
+            "id": "go_l8_q2",
+            "menuItems": [
+                "Soup of the Day",
+                "Bread",
+                "Garden Salad",
+                "Crackers"
+            ],
+            "menuPrices": [
+                "$9.75",
+                "$10.00",
+                "$12.50",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Apple Pie, Milk",
             "hint": "One is a warm, fruity dessert; the other is a simple drink served in a glass.",
             "explanation": "‘Could I get…?’ is friendly and polite, similar to ‘Could I have…?’ ‘A glass of milk’ shows the natural way to specify a drink amount.",
-            "id": "go_l8_q3"
+            "id": "go_l8_q3",
+            "menuItems": [
+                "Apple Pie",
+                "Milk",
+                "Cheesecake",
+                "Juice"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$9.75",
+                "$21.75",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Garden Salad, Sparkling Water",
             "hint": "‘Sparkling’ means the water has bubbles.",
             "explanation": "‘Sparkling water’ is carbonated, while ‘still water’ has no bubbles. Restaurants often ask which one a customer prefers.",
-            "id": "go_l9_q1"
+            "id": "go_l9_q1",
+            "menuItems": [
+                "Garden Salad",
+                "Sparkling Water",
+                "Caesar Salad",
+                "Still Water"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$4.50",
+                "$8.50",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Chicken Wrap, Iced Tea",
             "hint": "A ‘wrap’ uses soft flatbread instead of sliced bread.",
             "explanation": "A ‘wrap’ is a sandwich rolled in flatbread. ‘Iced tea’ means cold tea served over ice — a very popular drink in the US.",
-            "id": "go_l9_q2"
+            "id": "go_l9_q2",
+            "menuItems": [
+                "Chicken Wrap",
+                "Iced Tea",
+                "Veggie Wrap",
+                "Lemonade"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$5.75",
+                "$17.75",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Oatmeal, Apple Juice",
             "hint": "Listen for the warm breakfast dish made from oats, and the drink that follows it.",
             "explanation": "‘Could I have…?’ is another polite request form. ‘Oatmeal’ is a hot breakfast made from oats cooked in water or milk — in British English, it's usually called ‘porridge.’",
-            "id": "go_l9_q3"
+            "id": "go_l9_q3",
+            "menuItems": [
+                "Oatmeal",
+                "Apple Juice",
+                "Pancakes",
+                "Orange Juice"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$16.50",
+                "$20.50",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Cheesecake, Hot Chocolate",
             "hint": "Both desserts on the option list are popular, but only one was actually named.",
             "explanation": "Cheesecake is made with cream cheese on a biscuit base. ‘Hot chocolate’ is made from chocolate, not coffee beans, so it tastes completely different from coffee.",
-            "id": "go_l10_q1"
+            "id": "go_l10_q1",
+            "menuItems": [
+                "Cheesecake",
+                "Hot Chocolate",
+                "Apple Pie",
+                "Coffee"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$15.25",
+                "$16.50",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Grilled Cheese, Soda",
             "hint": "This toasted sandwich is named after its main ingredient and cooking method.",
             "explanation": "A ‘grilled cheese’ is toasted bread with melted cheese inside. A ‘tuna melt’ looks similar but adds tuna, so check the wording carefully.",
-            "id": "go_l10_q2"
+            "id": "go_l10_q2",
+            "menuItems": [
+                "Grilled Cheese",
+                "Soda",
+                "Tuna Melt",
+                "Juice"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$3.25",
+                "$14.00",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Mashed Potatoes, Grilled Chicken",
             "hint": "Pay attention to both the side dish and the cooking method of the chicken.",
             "explanation": "‘Mashed’ potatoes are cooked and mashed until smooth — very different from rice. And remember, ‘grilled’ is not the same as ‘fried.’",
-            "id": "go_l10_q3"
+            "id": "go_l10_q3",
+            "menuItems": [
+                "Mashed Potatoes",
+                "Grilled Chicken",
+                "Rice",
+                "Fried Chicken"
+            ],
+            "menuPrices": [
+                "$13.75",
+                "$16.50",
+                "$19.25",
+                "$11.25"
+            ]
         }
     ]
 }

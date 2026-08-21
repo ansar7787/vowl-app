@@ -17,7 +17,19 @@
             "correctAnswer": "Burrata, Lamb Rack, Panna Cotta",
             "hint": "A comment about the dish's reputation as a ‘signature’ doesn't add a new item — it's still just the starter.",
             "explanation": "A ‘signature dish’ is a restaurant's most famous or defining item, often recommended by staff. This detail explains the choice without changing the order.",
-            "id": "go_l111_q1"
+            "id": "go_l111_q1",
+            "menuItems": [
+                "Burrata",
+                "Lamb Rack",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$3.25",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Consommé, Branzino, Lemon Tart",
             "hint": "The customer compares two soups by weight, then names their final choice directly.",
             "explanation": "A ‘consommé’ is a clear, light broth, much thinner than a rich, creamy bisque — a useful comparison when two soups are offered.",
-            "id": "go_l111_q2"
+            "id": "go_l111_q2",
+            "menuItems": [
+                "Consommé",
+                "Branzino",
+                "Lemon Tart",
+                "Bisque"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$11.25",
+                "$18.00",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Wine Pairing, Venison, Dark Chocolate Tart",
             "hint": "The customer hands over the wine decision entirely, but still names the food themselves.",
             "explanation": "‘I’ll let you surprise me’ means trusting the sommelier or server completely with a choice, often used specifically for wine pairings.",
-            "id": "go_l111_q3"
+            "id": "go_l111_q3",
+            "menuItems": [
+                "Wine Pairing",
+                "Venison",
+                "Dark Chocolate Tart",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$2.00",
+                "$3.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Foie Gras, Halibut, Sorbet",
             "hint": "‘Provided’ introduces a condition, but the customer still confirms their order.",
             "explanation": "‘Provided that…’ means ‘as long as…’ — it introduces a condition, similar to ‘if,’ but sounds more formal.",
-            "id": "go_l112_q1"
+            "id": "go_l112_q1",
+            "menuItems": [
+                "Foie Gras",
+                "Halibut",
+                "Sorbet",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$5.75",
+                "$15.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Sea Bream, Wild Rice, Crème Caramel",
             "hint": "The customer defers to freshness rather than naming a specific fish outright.",
             "explanation": "‘Whatever’s freshest’ is a flexible way to order fish, trusting the kitchen to suggest the best catch of the day.",
-            "id": "go_l112_q2"
+            "id": "go_l112_q2",
+            "menuItems": [
+                "Sea Bream",
+                "Wild Rice",
+                "Crème Caramel",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$15.25",
+                "$6.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Burrata, Duck Breast, Olive Oil Cake",
             "hint": "The customer checks availability first, using conditional, polite language.",
             "explanation": "‘If it's still available’ shows awareness that a popular dish might have sold out — a thoughtful, realistic detail in a busy restaurant.",
-            "id": "go_l112_q3"
+            "id": "go_l112_q3",
+            "menuItems": [
+                "Burrata",
+                "Duck Breast",
+                "Olive Oil Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$14.00",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Octopus Carpaccio, Lamb Shank, Sticky Toffee Pudding",
             "hint": "‘Rather than the usual’ shows the customer choosing something less typical for them.",
             "explanation": "‘Rather than…’ introduces an alternative choice, showing the customer is stepping outside their normal order.",
-            "id": "go_l113_q1"
+            "id": "go_l113_q1",
+            "menuItems": [
+                "Octopus Carpaccio",
+                "Lamb Shank",
+                "Sticky Toffee Pudding",
+                "Sticky Date Pudding"
+            ],
+            "menuPrices": [
+                "$16.50",
+                "$3.25",
+                "$9.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Tableside Guacamole, Ribeye, Churros",
             "hint": "A preparation detail explains why the customer is especially interested in the starter.",
             "explanation": "‘Prepared table-side’ means the dish is made in front of the guest at their table — a memorable presentation offered at some restaurants.",
-            "id": "go_l113_q2"
+            "id": "go_l113_q2",
+            "menuItems": [
+                "Tableside Guacamole",
+                "Ribeye",
+                "Churros",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$20.50",
+                "$10.00",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Risotto, Branzino, Panna Cotta",
             "hint": "The customer compares two options but only names the one they finally chose.",
             "explanation": "‘Given the choice, I’ll take X over the alternative’ confirms a decision without needing to repeat the rejected option by name.",
-            "id": "go_l113_q3"
+            "id": "go_l113_q3",
+            "menuItems": [
+                "Risotto",
+                "Branzino",
+                "Panna Cotta",
+                "Tagliatelle"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$11.25",
+                "$3.25",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Caviar, Wagyu, Chocolate Soufflé",
             "hint": "The occasion is named directly, and the customer defers entirely to the chef's suggestions.",
             "explanation": "‘Exactly as the chef recommends’ shows complete trust in the kitchen's judgment, often reserved for special celebrations.",
-            "id": "go_l114_q1"
+            "id": "go_l114_q1",
+            "menuItems": [
+                "Caviar",
+                "Wagyu",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$7.25",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Tuna Tartare, Duck Breast, Panna Cotta",
             "hint": "This familiar structure returns, praising a starter's reputation before naming the rest of the order.",
             "explanation": "This sentence follows the same shape seen earlier in this level range, reinforcing the pattern with a new main course.",
-            "id": "go_l114_q2"
+            "id": "go_l114_q2",
+            "menuItems": [
+                "Tuna Tartare",
+                "Duck Breast",
+                "Panna Cotta",
+                "Beef Tartare"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$14.00",
+                "$3.25",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Arugula Salad, Halibut, Lemon Posset",
             "hint": "A comparison between two salads leads to one clear final choice.",
             "explanation": "‘Arugula’ is a peppery, leafy green often used in lighter salads, in contrast to a heavier salad like a Caesar with croutons and dressing.",
-            "id": "go_l114_q3"
+            "id": "go_l114_q3",
+            "menuItems": [
+                "Arugula Salad",
+                "Halibut",
+                "Lemon Posset",
+                "Caesar Salad"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$5.75",
+                "$9.75",
+                "$8.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Tasting Menu, Duck, Cheese Course",
             "hint": "The customer trusts the whole tasting menu, but still highlights two specific favorite courses.",
             "explanation": "Even within a tasting menu where the chef decides most of the courses, a guest might mention a couple of favorites they're especially looking forward to.",
-            "id": "go_l115_q1"
+            "id": "go_l115_q1",
+            "menuItems": [
+                "Tasting Menu",
+                "Duck",
+                "Cheese Course",
+                "Chef's Recommendation"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$3.25",
+                "$14.00",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Harissa-Rubbed Lamb, Couscous, Orange Blossom Cake",
             "hint": "A spice-level condition is checked before the customer confirms their full order.",
             "explanation": "‘Provided it's not too spicy’ sets a condition based on personal spice tolerance, similar to earlier questions about how hot a dish is.",
-            "id": "go_l115_q2"
+            "id": "go_l115_q2",
+            "menuItems": [
+                "Harissa-Rubbed Lamb",
+                "Couscous",
+                "Orange Blossom Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$18.00",
+                "$7.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Oysters, Sea Bass, Sorbet",
             "hint": "The customer again defers to freshness, this time naming shellfish as a possibility.",
             "explanation": "This flexible ordering style works for starters as well as mains, always trusting the kitchen's knowledge of what's best that day.",
-            "id": "go_l115_q3"
+            "id": "go_l115_q3",
+            "menuItems": [
+                "Oysters",
+                "Sea Bass",
+                "Sorbet",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$10.00",
+                "$15.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Truffle Risotto, Veal Chop, Tiramisu",
             "hint": "Checking availability again shows a thoughtful, realistic approach to ordering a popular dish.",
             "explanation": "Truffle dishes are often seasonal and limited, so checking availability before committing is a sensible, practical habit.",
-            "id": "go_l116_q1"
+            "id": "go_l116_q1",
+            "menuItems": [
+                "Truffle Risotto",
+                "Veal Chop",
+                "Tiramisu",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$10.00",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Cheese Course, Burrata, Branzino",
             "hint": "The dessert is mentioned first this time, even though it will be eaten last — listen for all three items regardless of order.",
             "explanation": "‘Rather than the usual dessert’ leads the sentence, followed by the starter and main — a reminder that course order in speech doesn't always match the order dishes are served.",
-            "id": "go_l116_q2"
+            "id": "go_l116_q2",
+            "menuItems": [
+                "Cheese Course",
+                "Burrata",
+                "Branzino",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$11.25",
+                "$11.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Sea Bass, Burrata, Chocolate Fondant",
             "hint": "The main course is named before the starter this time — track the order they're spoken, not the order they'll be served.",
             "explanation": "‘Prepared table-side’ describes a special presentation for the sea bass, mentioned first even though it will arrive after the starter — a good test of careful listening.",
-            "id": "go_l116_q3"
+            "id": "go_l116_q3",
+            "menuItems": [
+                "Sea Bass",
+                "Burrata",
+                "Chocolate Fondant",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$11.25",
+                "$6.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Duck, Burrata, Panna Cotta",
             "hint": "The main course is mentioned first here — the starter and dessert follow after, out of their usual order.",
             "explanation": "‘Given the choice, I’ll take X over the alternative’ leads the sentence with the main course this time, followed by the starter and dessert — listen for all three regardless of the order mentioned.",
-            "id": "go_l117_q1"
+            "id": "go_l117_q1",
+            "menuItems": [
+                "Duck",
+                "Burrata",
+                "Panna Cotta",
+                "Chicken"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$11.25",
+                "$3.25",
+                "$9.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Tasting Menu, Wine Pairing, Cheese Course",
             "hint": "The full tasting experience is embraced for this special occasion.",
             "explanation": "Ordering the tasting menu along with its wine pairing and a cheese course represents a complete, immersive fine dining experience, ideal for marking a special evening.",
-            "id": "go_l117_q2"
+            "id": "go_l117_q2",
+            "menuItems": [
+                "Tasting Menu",
+                "Wine Pairing",
+                "Cheese Course",
+                "Chef's Recommendation"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$5.75",
+                "$14.00",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Lamb Rack, Burrata, Affogato",
             "hint": "This time, the ‘signature dish’ mentioned first is the main course, not the starter — the other two items still follow.",
             "explanation": "A restaurant's signature dish can be any course, not just a starter — here it's the main course, mentioned first before the rest of the order.",
-            "id": "go_l117_q3"
+            "id": "go_l117_q3",
+            "menuItems": [
+                "Lamb Rack",
+                "Burrata",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$11.25",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Flambéed Bananas, Burrata, Branzino",
             "hint": "Dessert leads this sentence again, followed by the starter and main in that order.",
             "explanation": "‘Flambéed’ describes a dish that's set briefly alight with liquor for a dramatic table-side presentation — a memorable dessert experience.",
-            "id": "go_l118_q1"
+            "id": "go_l118_q1",
+            "menuItems": [
+                "Flambéed Bananas",
+                "Burrata",
+                "Branzino",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$11.25",
+                "$11.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Halibut, Tuna Tartare, Lemon Tart",
             "hint": "Once more, the main course is named first, followed by the starter and dessert.",
             "explanation": "This reordering pattern has now appeared several times in this level range — always listen for all three items no matter which course is mentioned first.",
-            "id": "go_l118_q2"
+            "id": "go_l118_q2",
+            "menuItems": [
+                "Halibut",
+                "Tuna Tartare",
+                "Lemon Tart",
+                "Branzino"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$19.25",
+                "$18.00",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Oysters, Wagyu, Chocolate Lava Cake",
             "hint": "This time, the order returns to the familiar starter-main-dessert sequence.",
             "explanation": "Not every sentence reorders the courses — this one follows the expected sequence, so read carefully rather than assuming based on recent levels.",
-            "id": "go_l118_q3"
+            "id": "go_l118_q3",
+            "menuItems": [
+                "Oysters",
+                "Wagyu",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$7.25",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Seared Scallops, Veal Chop, Crema Catalana",
             "hint": "This sentence returns to the standard starter-main-dessert order.",
             "explanation": "Checking availability continues to be a realistic, useful habit, and here the courses appear in their expected order.",
-            "id": "go_l119_q1"
+            "id": "go_l119_q1",
+            "menuItems": [
+                "Seared Scallops",
+                "Veal Chop",
+                "Crema Catalana",
+                "Flan"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$10.00",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Beet Carpaccio, Duck Breast, Olive Oil Cake",
             "hint": "The standard order returns once again — starter, then main, then dessert.",
             "explanation": "This level range mixes both standard and reordered sentences, so success depends on listening carefully every time, not memorizing a fixed pattern.",
-            "id": "go_l119_q2"
+            "id": "go_l119_q2",
+            "menuItems": [
+                "Beet Carpaccio",
+                "Duck Breast",
+                "Olive Oil Cake",
+                "Almond Cake"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$14.00",
+                "$19.25",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Appetizer Pairing, Branzino, Panna Cotta",
             "hint": "The customer trusts the chef with just the starter this time, then names the rest directly.",
             "explanation": "‘I’ll let you surprise me’ can apply to just one course, like the starter, rather than the whole meal — read carefully to see exactly what's being left to the chef.",
-            "id": "go_l119_q3"
+            "id": "go_l119_q3",
+            "menuItems": [
+                "Appetizer Pairing",
+                "Branzino",
+                "Panna Cotta",
+                "Wine Pairing"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$11.25",
+                "$3.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Seared Scallops, Wagyu, Salted Caramel Tart",
             "hint": "This final level in the set follows the standard starter-main-dessert order.",
             "explanation": "This sentence closes out the tier with the familiar structure, using rich, formal vocabulary built up throughout this level range.",
-            "id": "go_l120_q1"
+            "id": "go_l120_q1",
+            "menuItems": [
+                "Seared Scallops",
+                "Wagyu",
+                "Salted Caramel Tart",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$7.25",
+                "$11.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Wild Mushroom Risotto, Burrata, Affogato",
             "hint": "The main course leads the sentence one final time, followed by the starter and dessert.",
             "explanation": "This reordering pattern — main course first — has been an important skill throughout this level range, testing careful listening over assumptions.",
-            "id": "go_l120_q2"
+            "id": "go_l120_q2",
+            "menuItems": [
+                "Wild Mushroom Risotto",
+                "Burrata",
+                "Affogato",
+                "Tagliatelle"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$11.25",
+                "$17.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Cherries Jubilee, Octopus, Lamb Rack",
             "hint": "Dessert is named first one last time, followed by the starter and main.",
             "explanation": "‘Cherries jubilee’ is a dessert of cherries flambéed in liqueur, often poured over ice cream — a dramatic table-side finish to a fine dining meal.",
-            "id": "go_l120_q3"
+            "id": "go_l120_q3",
+            "menuItems": [
+                "Cherries Jubilee",
+                "Octopus",
+                "Lamb Rack",
+                "Flambéed Bananas"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$9.75",
+                "$3.25",
+                "$8.50"
+            ]
         }
     ]
 }

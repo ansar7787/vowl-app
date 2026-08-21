@@ -17,7 +17,19 @@
             "correctAnswer": "Catch of the Day, Roasted Vegetables, Lemon Tart",
             "hint": "The customer asks a question first, then confirms their choice based on the answer.",
             "explanation": "‘Could you tell me more about…?’ is a useful way to ask for details before deciding. ‘Catch of the day’ refers to the freshest fish available that day, without naming a specific type.",
-            "id": "go_l91_q1"
+            "id": "go_l91_q1",
+            "menuItems": [
+                "Catch of the Day",
+                "Roasted Vegetables",
+                "Lemon Tart",
+                "Steamed Vegetables"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$4.50",
+                "$18.00",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Caesar Salad, Grilled Chicken, Iced Tea",
             "hint": "The customer explains why they're choosing simple, familiar dishes.",
             "explanation": "‘I’ll keep it simple’ often applies to business meals, where the focus is on conversation rather than adventurous eating.",
-            "id": "go_l91_q2"
+            "id": "go_l91_q2",
+            "menuItems": [
+                "Caesar Salad",
+                "Grilled Chicken",
+                "Iced Tea",
+                "Chicken Sandwich"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$16.50",
+                "$5.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Burrata, Branzino, Tiramisu",
             "hint": "The customer agrees to match someone else's order, then confirms the specific items.",
             "explanation": "‘I’ll have whatever you’re having’ shows the customer trusts a dining companion's choice, then repeats it back to confirm.",
-            "id": "go_l91_q3"
+            "id": "go_l91_q3",
+            "menuItems": [
+                "Burrata",
+                "Branzino",
+                "Tiramisu",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$12.50",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Salmon, Wild Rice, Crème Brûlée",
             "hint": "The customer compares two fish options before choosing one.",
             "explanation": "‘Between X and Y, I’ll go with X’ is a natural way to show a decision after comparing two similar choices — only the chosen one should be selected.",
-            "id": "go_l92_q1"
+            "id": "go_l92_q1",
+            "menuItems": [
+                "Salmon",
+                "Wild Rice",
+                "Crème Brûlée",
+                "Halibut"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$15.25",
+                "$2.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Oysters, Filet Mignon, Chocolate Soufflé",
             "hint": "The occasion explains why the customer is ordering something special.",
             "explanation": "Mentioning the reason for celebrating helps explain a more indulgent order, similar to earlier ‘splurge’ examples.",
-            "id": "go_l92_q2"
+            "id": "go_l92_q2",
+            "menuItems": [
+                "Oysters",
+                "Filet Mignon",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$12.50",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Soup, Club Sandwich, Coffee",
             "hint": "Time pressure explains why the customer wants a fast, simple order.",
             "explanation": "‘We have a flight to catch’ explains the urgency, and ‘to go’ tells the staff the coffee should be prepared for travel.",
-            "id": "go_l92_q3"
+            "id": "go_l92_q3",
+            "menuItems": [
+                "Soup",
+                "Club Sandwich",
+                "Coffee",
+                "Salad"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$19.25",
+                "$6.00",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Risotto, Veal, Panna Cotta",
             "hint": "‘Tasting portion’ means a smaller serving size, but the item name stays the same.",
             "explanation": "A ‘tasting portion’ is a smaller-than-normal serving, often available so guests can sample more dishes without ordering full plates of each.",
-            "id": "go_l93_q1"
+            "id": "go_l93_q1",
+            "menuItems": [
+                "Risotto",
+                "Veal",
+                "Panna Cotta",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$6.00",
+                "$4.50",
+                "$3.25",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Beet Salad, Pork Chop, Apple Tart",
             "hint": "The customer pauses to think, encouraged by the server, before naming their final order.",
             "explanation": "‘Take your time’ is something a server might say, and ‘actually, I’ll go with…’ shows the customer using that time to settle on an answer.",
-            "id": "go_l93_q2"
+            "id": "go_l93_q2",
+            "menuItems": [
+                "Beet Salad",
+                "Pork Chop",
+                "Apple Tart",
+                "Pear Tart"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$16.50",
+                "$11.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Burrata, Seafood Pasta, Affogato",
             "hint": "A recommendation from a colleague explains why the customer chose this restaurant.",
             "explanation": "‘My colleague recommended this place’ gives context for the order without changing what needs to be selected — just the reason behind the visit.",
-            "id": "go_l93_q3"
+            "id": "go_l93_q3",
+            "menuItems": [
+                "Burrata",
+                "Seafood Pasta",
+                "Affogato",
+                "Tiramisu"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$10.00",
+                "$17.75",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Champagne, Surf and Turf, Chocolate Torte",
             "hint": "A successful business event is the reason for this celebratory order.",
             "explanation": "‘Closing the deal’ is a business expression meaning an agreement was successfully completed — a natural reason to celebrate with a nicer meal.",
-            "id": "go_l94_q1"
+            "id": "go_l94_q1",
+            "menuItems": [
+                "Champagne",
+                "Surf and Turf",
+                "Chocolate Torte",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$2.00",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Wild Mushroom Risotto, Burrata, Panna Cotta",
             "hint": "A question about the main course comes before the full order is confirmed, out of order from the usual starter-first pattern.",
             "explanation": "Customers don't always ask about dishes in the order they'll eat them — here, the main course question comes before naming the starter and dessert.",
-            "id": "go_l94_q2"
+            "id": "go_l94_q2",
+            "menuItems": [
+                "Wild Mushroom Risotto",
+                "Burrata",
+                "Panna Cotta",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$11.25",
+                "$3.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Soup, Grilled Salmon, Sparkling Water",
             "hint": "Once again, simplicity is chosen deliberately for a professional setting.",
             "explanation": "Choosing simple, easy-to-eat dishes is common at business lunches, where neat presentation and easy conversation matter more than elaborate food.",
-            "id": "go_l94_q3"
+            "id": "go_l94_q3",
+            "menuItems": [
+                "Soup",
+                "Grilled Salmon",
+                "Sparkling Water",
+                "Still Water"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$7.25",
+                "$4.50",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Porterhouse, Creamed Spinach, Cheesecake",
             "hint": "This time, the second option mentioned is the one the customer actually chooses.",
             "explanation": "Whether the chosen item is named first or second in the comparison, the words ‘I’ll go with…’ always mark the true final decision.",
-            "id": "go_l95_q1"
+            "id": "go_l95_q1",
+            "menuItems": [
+                "Porterhouse",
+                "Creamed Spinach",
+                "Cheesecake",
+                "Ribeye"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$21.75",
+                "$21.75",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Caviar, Wagyu, Crème Brûlée",
             "hint": "A significant career achievement explains this especially indulgent order.",
             "explanation": "The reason for celebrating can change from order to order, but the sentence pattern for expressing it stays useful and repeatable.",
-            "id": "go_l95_q2"
+            "id": "go_l95_q2",
+            "menuItems": [
+                "Caviar",
+                "Wagyu",
+                "Crème Brûlée",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$7.25",
+                "$2.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Wrap, Fruit Cup, Bottled Water",
             "hint": "Once again, time pressure leads to a fast, simple order.",
             "explanation": "‘Bottled water’ is easy to carry through an airport, unlike a drink that needs a glass — a practical detail for a traveler in a hurry.",
-            "id": "go_l95_q3"
+            "id": "go_l95_q3",
+            "menuItems": [
+                "Wrap",
+                "Fruit Cup",
+                "Bottled Water",
+                "Sparkling Water"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$12.50",
+                "$9.75",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Duck, Halibut, Lemon Tart",
             "hint": "This time, the tasting portion applies to the first course rather than a main.",
             "explanation": "Ordering a tasting portion of an early course allows a guest to try something rich, like duck, without feeling too full for the rest of the meal.",
-            "id": "go_l96_q1"
+            "id": "go_l96_q1",
+            "menuItems": [
+                "Duck",
+                "Halibut",
+                "Lemon Tart",
+                "Chocolate Tart"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$5.75",
+                "$18.00",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Calamari, Swordfish, Coconut Cream Pie",
             "hint": "Another pause for thought comes before a final, confident order.",
             "explanation": "This structure — an invitation to think, then a decision — is common whenever a customer needs a moment before choosing from a full menu.",
-            "id": "go_l96_q2"
+            "id": "go_l96_q2",
+            "menuItems": [
+                "Calamari",
+                "Swordfish",
+                "Coconut Cream Pie",
+                "Key Lime Pie"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$7.25",
+                "$7.25",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Shrimp Bisque, Filet Mignon, Profiteroles",
             "hint": "The same recommendation phrase reappears, now attached to a different meal.",
             "explanation": "Useful phrases like ‘my colleague recommended this place’ can be reused across many different situations and orders.",
-            "id": "go_l96_q3"
+            "id": "go_l96_q3",
+            "menuItems": [
+                "Shrimp Bisque",
+                "Filet Mignon",
+                "Profiteroles",
+                "Éclair"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$12.50",
+                "$18.00",
+                "$10.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Oysters, Lobster, Chocolate Lava Cake",
             "hint": "This celebratory order once again marks a successful business outcome.",
             "explanation": "Repeating a useful structure with new vocabulary — like ‘lobster’ and ‘chocolate lava cake’ — helps reinforce the pattern while expanding menu knowledge.",
-            "id": "go_l97_q1"
+            "id": "go_l97_q1",
+            "menuItems": [
+                "Oysters",
+                "Lobster",
+                "Chocolate Lava Cake",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$7.25",
+                "$14.00",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Osso Buco, Burrata, Tiramisu",
             "hint": "A question about an unfamiliar dish leads to a confident final order.",
             "explanation": "‘Osso buco’ is a braised veal shank, a dish some diners might not recognize by name, making a clarifying question especially useful.",
-            "id": "go_l97_q2"
+            "id": "go_l97_q2",
+            "menuItems": [
+                "Osso Buco",
+                "Burrata",
+                "Tiramisu",
+                "Affogato"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$11.25",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Salad, Turkey Sandwich, Unsweetened Iced Tea",
             "hint": "The now-familiar ‘keep it simple’ phrase appears again with new menu items.",
             "explanation": "Business lunch orders often repeat similar patterns — simple food, easy drinks — no matter which specific restaurant is chosen.",
-            "id": "go_l97_q3"
+            "id": "go_l97_q3",
+            "menuItems": [
+                "Salad",
+                "Turkey Sandwich",
+                "Unsweetened Iced Tea",
+                "Sweet Tea"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$17.75",
+                "$12.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Sea Bass, Risotto, Panna Cotta",
             "hint": "A comparison between two fish is resolved, followed by two more courses.",
             "explanation": "This comparison structure works with any two similar menu items, always ending in one clear, selected choice.",
-            "id": "go_l98_q1"
+            "id": "go_l98_q1",
+            "menuItems": [
+                "Sea Bass",
+                "Risotto",
+                "Panna Cotta",
+                "Halibut"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$6.00",
+                "$3.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Tuna Tartare, Venison, Dark Chocolate Mousse",
             "hint": "New vocabulary appears, but the celebratory sentence structure stays familiar.",
             "explanation": "Recognizing a familiar sentence pattern makes it easier to understand new vocabulary within it, even words like ‘venison’ that may be unfamiliar.",
-            "id": "go_l98_q2"
+            "id": "go_l98_q2",
+            "menuItems": [
+                "Tuna Tartare",
+                "Venison",
+                "Dark Chocolate Mousse",
+                "Chocolate Torte"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$2.00",
+                "$18.00",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Bagel, Yogurt, Orange Juice",
             "hint": "A simple, portable breakfast order fits the time pressure of travel.",
             "explanation": "Bagels and yogurt are easy to eat quickly, making them popular choices for travelers who need to catch a flight soon.",
-            "id": "go_l98_q3"
+            "id": "go_l98_q3",
+            "menuItems": [
+                "Bagel",
+                "Yogurt",
+                "Orange Juice",
+                "Apple Juice"
+            ],
+            "menuPrices": [
+                "$17.75",
+                "$8.50",
+                "$20.50",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Foie Gras, Lamb Rack, Crème Caramel",
             "hint": "A rich, expensive starter is requested in a smaller portion.",
             "explanation": "Foie gras is often rich and filling, so a tasting portion lets a guest enjoy it without overdoing the first course.",
-            "id": "go_l99_q1"
+            "id": "go_l99_q1",
+            "menuItems": [
+                "Foie Gras",
+                "Lamb Rack",
+                "Crème Caramel",
+                "Panna Cotta"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$3.25",
+                "$6.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Endive Salad, Veal Chop, Almond Cake",
             "hint": "The familiar ‘take your time’ pause returns once more with new dishes.",
             "explanation": "By now, this pattern should feel familiar: a pause for thought, followed by a confident final decision.",
-            "id": "go_l99_q2"
+            "id": "go_l99_q2",
+            "menuItems": [
+                "Endive Salad",
+                "Veal Chop",
+                "Almond Cake",
+                "Olive Oil Cake"
+            ],
+            "menuPrices": [
+                "$20.50",
+                "$10.00",
+                "$21.75",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Crab Cakes, Swordfish, Key Lime Pie",
             "hint": "The same trusted recommendation phrase appears again, tied to yet another meal.",
             "explanation": "This phrase works equally well whether the recommendation is for a casual lunch spot or a special-occasion restaurant.",
-            "id": "go_l99_q3"
+            "id": "go_l99_q3",
+            "menuItems": [
+                "Crab Cakes",
+                "Swordfish",
+                "Key Lime Pie",
+                "Coconut Cream Pie"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$7.25",
+                "$16.50",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Champagne, Wagyu Steak, Chocolate Soufflé",
             "hint": "This final celebratory order in the set marks an especially significant achievement.",
             "explanation": "‘Wagyu steak’ and ‘chocolate soufflé’ both represent higher-end menu choices, matching the importance of the occasion.",
-            "id": "go_l100_q1"
+            "id": "go_l100_q1",
+            "menuItems": [
+                "Champagne",
+                "Wagyu Steak",
+                "Chocolate Soufflé",
+                "Chocolate Mousse"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$5.75",
+                "$12.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Tasting Menu, Wine Flight, Cheese Course",
             "hint": "This order introduces a full tasting menu experience, a concept that will appear more often at higher levels.",
             "explanation": "A ‘tasting menu’ offers several small courses chosen by the chef, often paired with a ‘wine flight’ — a selection of small wine pours meant to complement each course.",
-            "id": "go_l100_q2"
+            "id": "go_l100_q2",
+            "menuItems": [
+                "Tasting Menu",
+                "Wine Flight",
+                "Cheese Course",
+                "Chef's Recommendation"
+            ],
+            "menuPrices": [
+                "$11.25",
+                "$17.75",
+                "$14.00",
+                "$21.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Soup, Roasted Chicken, Sparkling Water",
             "hint": "A familiar, simple order returns to close out this set of levels.",
             "explanation": "Ending on a comfortable, familiar structure — soup, a simple main, and water — reinforces the patterns learned throughout this tier before the vocabulary grows more advanced.",
-            "id": "go_l100_q3"
+            "id": "go_l100_q3",
+            "menuItems": [
+                "Soup",
+                "Roasted Chicken",
+                "Sparkling Water",
+                "Still Water"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$11.25",
+                "$4.50",
+                "$13.75"
+            ]
         }
     ]
 }

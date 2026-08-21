@@ -20,6 +20,19 @@ class RoleplayQuest extends GameQuest {
   final List<String>? symptoms;
   final List<String>? itinerary;
   final List<String>? shuffledWords;
+  final List<String>? consequencePreviews;
+  final List<int>? consequenceScores;
+  final String? culturalNote;
+  final int? formalityScore;
+  final List<String>? interviewerReaction;
+  final List<String>? medicalVocab;
+  final List<String>? menuItems;
+  final List<String>? menuPrices;
+  final String? travelDocuments;
+  final int? escalationLevel;
+  final int? timeLimit;
+  final String? socialContext;
+  final int? urgencyLevel;
 
   const RoleplayQuest({
     required super.id,
@@ -54,6 +67,19 @@ class RoleplayQuest extends GameQuest {
     this.itinerary,
     super.explanation,
     this.shuffledWords,
+    this.consequencePreviews,
+    this.consequenceScores,
+    this.culturalNote,
+    this.formalityScore,
+    this.interviewerReaction,
+    this.medicalVocab,
+    this.menuItems,
+    this.menuPrices,
+    this.travelDocuments,
+    this.escalationLevel,
+    this.timeLimit,
+    this.socialContext,
+    this.urgencyLevel,
   });
 
   String? get roleName => persona;
@@ -77,6 +103,19 @@ class RoleplayQuest extends GameQuest {
     symptoms,
     itinerary,
     shuffledWords,
+    consequencePreviews,
+    consequenceScores,
+    culturalNote,
+    formalityScore,
+    interviewerReaction,
+    medicalVocab,
+    menuItems,
+    menuPrices,
+    travelDocuments,
+    escalationLevel,
+    timeLimit,
+    socialContext,
+    urgencyLevel,
   ];
 }
 

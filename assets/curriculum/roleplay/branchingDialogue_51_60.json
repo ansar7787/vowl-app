@@ -17,7 +17,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give a clear recommendation and briefly explain your safety reasoning.",
             "explanation": "Recommending a top-up as a safety buffer is a specific, responsible answer, not just a yes or no. 'Fuel reserves are a critical factor' states the obvious without answering. 'That depends on conditions' avoids giving the assessment that was asked for.",
-            "id": "bd_l51_q1"
+            "id": "bd_l51_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -33,7 +43,17 @@
             "correctAnswerIndex": 2,
             "hint": "Suggest a specific, credible cover story and briefly explain why it works.",
             "explanation": "Naming an actual cover and explaining why it's credible is exactly what was asked for. 'Cover stories need verifiable details' is general advice, not a suggestion. 'A variation on your previous cover' is risky if that cover is already known.",
-            "id": "bd_l51_q2"
+            "id": "bd_l51_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -49,7 +69,17 @@
             "correctAnswerIndex": 0,
             "hint": "Know your menu's allergen profile and mention cross-contamination as a safety check.",
             "explanation": "Naming safe dishes and checking cross-contamination is specific and genuinely safe advice for a coeliac guest. 'Coeliac guests require gluten-free options' just restates the problem. 'A few dishes could possibly be adapted' isn't a guarantee of safety.",
-            "id": "bd_l51_q3"
+            "id": "bd_l51_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -65,7 +95,17 @@
             "correctAnswerIndex": 1,
             "hint": "Accept the advice and ask the most useful practical follow-up question.",
             "explanation": "Trusting the doctor's judgment and asking what to watch for is cooperative and clinically useful. 'All medications carry some risk' is a general fact, not a response. 'I'd prefer a non-medication approach' pushes back without any medical reason.",
-            "id": "bd_l52_q1"
+            "id": "bd_l52_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -81,7 +121,17 @@
             "correctAnswerIndex": 2,
             "hint": "Show interest, then take the professional step of asking for written terms.",
             "explanation": "Expressing genuine interest and asking for written terms is the correct professional next step. 'Exclusive deals can be transformative' just restates the pitch back. 'That's a very generous offer' is an emotional reaction, not a business response.",
-            "id": "bd_l52_q2"
+            "id": "bd_l52_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -97,7 +147,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give a specific technical read, then recommend the proper next step.",
             "explanation": "Giving an actual read on the data, plus recommending full diagnostics before assuming, is exactly the second opinion that was asked for. 'Should always be taken seriously' is a general statement. 'Sensor malfunctions occur sometimes' doesn't address this specific reading.",
-            "id": "bd_l52_q3"
+            "id": "bd_l52_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -113,7 +173,17 @@
             "correctAnswerIndex": 1,
             "hint": "Accept gratefully, then ask for reasonable time to handle the personal side.",
             "explanation": "Accepting the promotion and asking for a reasonable amount of time is both grateful and practical. 'Relocations always involve challenges' just names the difficulty. 'That's a major decision to process' describes your feelings but doesn't respond to the offer.",
-            "id": "bd_l53_q1"
+            "id": "bd_l53_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -129,7 +199,17 @@
             "correctAnswerIndex": 1,
             "hint": "If a channel may be compromised, recommend protecting it first, not testing it first.",
             "explanation": "Switching to backup immediately and assuming exposure is the safe, decisive response to a suspected breach. 'A very serious security concern' just labels the problem. 'Run tests to check first' risks more exposure while you wait.",
-            "id": "bd_l53_q2"
+            "id": "bd_l53_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -145,7 +225,17 @@
             "correctAnswerIndex": 2,
             "hint": "Give practical, specific steps rather than a general observation.",
             "explanation": "Naming two concrete daily practices gives the chef something to actually do tomorrow. 'A significant issue in hospitality' just names the problem. 'Requires a shift in how the kitchen thinks' is true but isn't a step.",
-            "id": "bd_l53_q3"
+            "id": "bd_l53_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -161,7 +251,17 @@
             "correctAnswerIndex": 0,
             "hint": "Name the specific symptom that concerns you when asking for a second opinion.",
             "explanation": "Naming the specific unresolved symptom gives the doctor a real starting point. 'A second opinion is reasonable' doesn't say what actually worries you. 'I want every possibility explored' is too vague to act on.",
-            "id": "bd_l54_q1"
+            "id": "bd_l54_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -177,7 +277,17 @@
             "correctAnswerIndex": 2,
             "hint": "When challenged on price, point to overall value, not just the sticker price.",
             "explanation": "Shifting the conversation to total value is the strongest response to a price objection. 'Widely recognised for superior quality' is an unsupported claim. 'We've been in business longer' talks about history, not value.",
-            "id": "bd_l54_q2"
+            "id": "bd_l54_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -193,7 +303,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give specific, concrete symptoms when a doctor asks how you're doing.",
             "explanation": "Naming two specific symptoms gives the doctor something useful to work with. 'Stress is common in demanding jobs' is a general observation, not personal information. 'Things could always be a little better' is too vague to be clinically useful.",
-            "id": "bd_l54_q3"
+            "id": "bd_l54_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -209,7 +329,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a specific, numbers-based risk assessment rather than a general statement.",
             "explanation": "Tying the assessment to actual weight and conditions, and asking to check the numbers, is proper risk analysis. 'Always a risk factor' just states the obvious. 'I've done it before' is not a reason to skip this check.",
-            "id": "bd_l55_q1"
+            "id": "bd_l55_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -225,7 +355,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a concrete commitment, not just a general principle.",
             "explanation": "Confirming the date and personally following up is a specific, accountable commitment. 'A regular client deserves our full attention' is a nice sentiment without a plan. 'Under-promise and over-deliver' is a philosophy, not an actual answer to the request.",
-            "id": "bd_l55_q2"
+            "id": "bd_l55_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -241,7 +381,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a context-specific plan rather than a general statement about the trend.",
             "explanation": "Suggesting a low-risk trial run is specific and practical for this restaurant. 'Attracted considerable interest' is a market observation, not a recommendation. 'Requires specialised equipment and training' talks about difficulty, not whether to try it.",
-            "id": "bd_l55_q3"
+            "id": "bd_l55_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -257,7 +407,17 @@
             "correctAnswerIndex": 2,
             "hint": "Acknowledge the frustration, then move straight to offering a solution.",
             "explanation": "Acknowledging the frustration and immediately offering to check alternatives is helpful customer service. 'One of the most frustrating parts of travel' agrees but offers nothing. 'Nothing anyone can do' shuts the conversation down.",
-            "id": "bd_l56_q1"
+            "id": "bd_l56_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -273,7 +433,17 @@
             "correctAnswerIndex": 2,
             "hint": "Offer an immediate, concrete action rather than a general comment.",
             "explanation": "Offering to check for a same-day fix is the specific, helpful response a stranded passenger needs. 'Quite a common issue' is true but unhelpful in the moment. 'I'm sure it will turn up' is a vague reassurance, not action.",
-            "id": "bd_l56_q2"
+            "id": "bd_l56_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -289,7 +459,17 @@
             "correctAnswerIndex": 2,
             "hint": "Reassure with a specific fact about safety margins, not just a general comment.",
             "explanation": "Explaining that the aircraft is built for far worse conditions gives a concrete, reassuring fact. 'Normal part of flying' is true but less reassuring on its own. 'It makes me nervous too' isn't the professional reassurance a passenger needs.",
-            "id": "bd_l56_q3"
+            "id": "bd_l56_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -305,7 +485,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give the specific, immediate actions the threat calls for.",
             "explanation": "Naming concrete, time-bound actions is what a credible threat actually requires. 'Requires immediate action' says so without saying what to do. 'Verify before changing anything' is too slow when the threat window is this short.",
-            "id": "bd_l57_q1"
+            "id": "bd_l57_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -321,7 +511,17 @@
             "correctAnswerIndex": 0,
             "hint": "Offer a specific, reasoned read on the ambiguity, not just the obvious explanation.",
             "explanation": "Reading the omission as deliberate, and considering they might be under observation, is the sharper analytical take. 'Always needs careful decoding' is a general statement, not an interpretation. 'Could just be incomplete' is the obvious explanation a trained analyst should look past.",
-            "id": "bd_l57_q2"
+            "id": "bd_l57_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -337,7 +537,17 @@
             "correctAnswerIndex": 2,
             "hint": "Offer specific, actionable ideas rather than stating the goal.",
             "explanation": "Naming two concrete actions gives the team something to do right now. 'One of the most challenging parts' just names the problem. 'Focus on filling covers quickly' states the goal without any means of reaching it.",
-            "id": "bd_l57_q3"
+            "id": "bd_l57_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -353,7 +563,17 @@
             "correctAnswerIndex": 2,
             "hint": "Respond to the referral with openness and a concrete next step.",
             "explanation": "Accepting the referral and agreeing to book the appointment shows real openness. 'Widely recognised as part of holistic care' is a general fact, not a personal response. 'I'm not sure I see the connection' resists the suggestion without a reason.",
-            "id": "bd_l58_q1"
+            "id": "bd_l58_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant",
+                "Polite & Appropriate"
+            ],
+            "consequenceScores": [
+                -1,
+                -1,
+                1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -369,7 +589,17 @@
             "correctAnswerIndex": 0,
             "hint": "Name the one specific thing that would actually close the deal.",
             "explanation": "Naming the exact sticking point and the specific fix gives the seller something real to work with. 'Shopping around is prudent' justifies the delay but doesn't answer the question. 'I need more time' avoids it after three visits.",
-            "id": "bd_l58_q2"
+            "id": "bd_l58_q2",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -385,7 +615,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a specific number and a clear rule for when to act.",
             "explanation": "A specific fuel figure plus a clear trigger point is exactly the assessment that was asked for. 'Quite common at busy airports' comments on the queue, not the fuel. 'One of the most critical skills' is true but isn't an assessment.",
-            "id": "bd_l58_q3"
+            "id": "bd_l58_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -401,7 +641,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give a specific name and a brief, honest rationale.",
             "explanation": "Naming a specific person with a clear reason is exactly what was asked for. 'Succession planning is critical' avoids naming anyone. 'Deserves a formal process' is fair advice but dodges the direct question.",
-            "id": "bd_l59_q1"
+            "id": "bd_l59_q1",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -417,7 +667,17 @@
             "correctAnswerIndex": 1,
             "hint": "Give personal, reflective questions rather than a general statement.",
             "explanation": "Asking these two personal questions gives real, useful criteria to think through. 'Very significant professional decisions' just states the obvious. 'Management offers more security and influence' only presents one side of the choice.",
-            "id": "bd_l59_q2"
+            "id": "bd_l59_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -433,7 +693,17 @@
             "correctAnswerIndex": 1,
             "hint": "Describe the actual structure of good, specific feedback.",
             "explanation": "Leading with genuine praise, then giving specific, technical notes, is exactly how good feedback works. 'Should always be encouraging and positive' misses that honesty matters too. 'Honest feedback is the most respectful thing' is a nice principle without any practical structure.",
-            "id": "bd_l59_q3"
+            "id": "bd_l59_q3",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -449,7 +719,17 @@
             "correctAnswerIndex": 1,
             "hint": "Respond with honesty and openness to the doctor's guidance.",
             "explanation": "Acknowledging the concern and welcoming guidance shows real self-awareness. 'A very complex issue with many factors' doesn't engage personally. 'I think about it a lot' is an observation, not a step toward a solution.",
-            "id": "bd_l60_q1"
+            "id": "bd_l60_q1",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -465,7 +745,17 @@
             "correctAnswerIndex": 1,
             "hint": "Suggest a specific value-add alternative instead of a straight discount.",
             "explanation": "Being transparent about margins and offering a concrete alternative is a creative, honest way to handle the request. 'Among the most valuable assets' just states the obvious. 'Accept a short-term loss' skips straight to conceding without exploring options first.",
-            "id": "bd_l60_q2"
+            "id": "bd_l60_q2",
+            "consequencePreviews": [
+                "Awkward or Irrelevant",
+                "Polite & Appropriate",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                -1,
+                1,
+                -1
+            ]
         },
         {
             "instruction": "Choose the best response.",
@@ -481,7 +771,17 @@
             "correctAnswerIndex": 0,
             "hint": "Give the full, ordered protocol, not just one step of it.",
             "explanation": "Covering all three steps in order is the complete protocol this situation calls for. 'Always handled as the highest priority' states a principle without a plan. 'Ask if there's a doctor on board' is only one part of the full protocol.",
-            "id": "bd_l60_q3"
+            "id": "bd_l60_q3",
+            "consequencePreviews": [
+                "Polite & Appropriate",
+                "Awkward or Irrelevant",
+                "Awkward or Irrelevant"
+            ],
+            "consequenceScores": [
+                1,
+                -1,
+                -1
+            ]
         }
     ]
 }

@@ -4,6 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class ConflictResolverConflictCard extends StatelessWidget {
   final String scene;
+  final int escalationLevel;
   final Color color;
   final bool isDark;
   final double rotation;
@@ -11,6 +12,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
   const ConflictResolverConflictCard({
     super.key,
     required this.scene,
+    required this.escalationLevel,
     required this.color,
     required this.isDark,
     required this.rotation,
@@ -87,6 +89,53 @@ class ConflictResolverConflictCard extends StatelessWidget {
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,
                   ),
+                ),
+                SizedBox(height: 16.h),
+                // Tension Meter
+                Row(
+                  children: [
+                    Text(
+                      "TENSION",
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        color: isDark ? Colors.white54 : Colors.black54,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    Expanded(
+                      child: Row(
+                        children: List.generate(10, (index) {
+                          final isActive = index < escalationLevel;
+                          final levelColor = Color.lerp(
+                            Colors.greenAccent, 
+                            Colors.redAccent, 
+                            index / 9
+                          ) ?? color;
+
+                          return Expanded(
+                            child: Container(
+                              height: 6.h,
+                              margin: EdgeInsets.symmetric(horizontal: 2.w),
+                              decoration: BoxDecoration(
+                                color: isActive ? levelColor : (isDark ? Colors.white10 : Colors.black12),
+                                borderRadius: BorderRadius.circular(4.r),
+                                boxShadow: isActive ? [
+                                  BoxShadow(
+                                    color: levelColor.withValues(alpha: 0.4),
+                                    blurRadius: 4,
+                                    spreadRadius: 0,
+                                  )
+                                ] : null,
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

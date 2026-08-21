@@ -6,6 +6,7 @@ import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/b
 
 class BranchingDialogueConsoleBoard extends StatelessWidget {
   final List<String> options;
+  final List<String> consequencePreviews;
   final int correctIndex;
   final Color color;
   final bool isDark;
@@ -21,6 +22,7 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
   const BranchingDialogueConsoleBoard({
     super.key,
     required this.options,
+    this.consequencePreviews = const [],
     required this.correctIndex,
     required this.color,
     required this.isDark,
@@ -240,6 +242,30 @@ class BranchingDialogueConsoleBoard extends StatelessWidget {
                   ),
                 ),
               ),
+              if (consequencePreviews.length > index && (isHovered || isSelected))
+                Padding(
+                  padding: EdgeInsets.only(top: 4.h),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                    decoration: BoxDecoration(
+                      color: (isSelected && isAnswered) 
+                          ? (index == correctIndex ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2))
+                          : color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                    child: Text(
+                      consequencePreviews[index],
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.bold,
+                        color: (isSelected && isAnswered) 
+                          ? (index == correctIndex ? Colors.greenAccent : Colors.redAccent)
+                          : color,
+                      ),
+                    ),
+                  ).animate().fadeIn(duration: 200.ms),
+                ),
             ],
           ),
         ),

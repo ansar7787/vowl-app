@@ -186,6 +186,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
       builder: (context, state) {
         final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? [];
+        final prices = quest?.menuPrices ?? [];
 
         return RoleplayBaseLayout(
               gameType: widget.gameType,
@@ -246,6 +247,7 @@ class _GourmetOrderScreenState extends State<GourmetOrderScreen>
                               // Tray of plate choices
                               GourmetOrderPlateTray(
                                 options: options,
+                                prices: prices,
                                 color: theme.primaryColor,
                                 isDark: isDark,
                                 isAnswered: _isAnswered,

@@ -4,12 +4,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 class ElevatorPitchPromptCard extends StatelessWidget {
   final String prompt;
+  final int timeLimit;
   final Color color;
   final bool isDark;
 
   const ElevatorPitchPromptCard({
     super.key,
     required this.prompt,
+    required this.timeLimit,
     required this.color,
     required this.isDark,
   });
@@ -73,6 +75,68 @@ class ElevatorPitchPromptCard extends StatelessWidget {
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,
                   ),
+                ),
+                SizedBox(height: 16.h),
+                Divider(
+                  color: color.withValues(alpha: 0.15),
+                  thickness: 1,
+                  height: 1,
+                ),
+                SizedBox(height: 12.h),
+                TweenAnimationBuilder<double>(
+                  key: ValueKey(prompt),
+                  tween: Tween(begin: timeLimit.toDouble(), end: 0.0),
+                  duration: Duration(seconds: timeLimit),
+                  builder: (context, value, child) {
+                    final int secondsLeft = value.ceil();
+                    final int wordsSpoken = ((timeLimit - value) * 1.5).floor(); // Fake words per sec
+                    
+                    final bool isLowTime = secondsLeft <= 10;
+                    
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.timer_outlined,
+                              color: isLowTime ? Colors.redAccent : color.withValues(alpha: 0.7),
+                              size: 14.r,
+                            ),
+                            SizedBox(width: 6.w),
+                            Text(
+                              "00:${secondsLeft.toString().padLeft(2, '0')}",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold,
+                                color: isLowTime ? Colors.redAccent : (isDark ? Colors.white70 : Colors.black87),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.text_snippet_outlined,
+                              color: color.withValues(alpha: 0.7),
+                              size: 14.r,
+                            ),
+                            SizedBox(width: 6.w),
+                            Text(
+                              "$wordsSpoken WORDS",
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.white70 : Colors.black87,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ],
             ),

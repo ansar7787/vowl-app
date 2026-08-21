@@ -12,6 +12,11 @@ class EliteMasteryQuest extends GameQuest {
   final String? usageContext;
   final String? spellingRule;
   final String? sequenceLogic;
+  final String? plotStructure;
+  final String? idiomOrigin;
+  final String? visualMetaphor;
+  final String? difficultyTier;
+  final String? targetAccent;
 
   const EliteMasteryQuest({
     required super.id,
@@ -47,6 +52,11 @@ class EliteMasteryQuest extends GameQuest {
     this.usageContext,
     this.spellingRule,
     this.sequenceLogic,
+    this.plotStructure,
+    this.idiomOrigin,
+    this.visualMetaphor,
+    this.difficultyTier,
+    this.targetAccent,
   });
 
   EliteMasteryQuest copyWith({
@@ -78,6 +88,11 @@ class EliteMasteryQuest extends GameQuest {
     String? usageContext,
     String? spellingRule,
     String? sequenceLogic,
+    String? plotStructure,
+    String? idiomOrigin,
+    String? visualMetaphor,
+    String? difficultyTier,
+    String? targetAccent,
   }) {
     return EliteMasteryQuest(
       id: id ?? this.id,
@@ -108,6 +123,11 @@ class EliteMasteryQuest extends GameQuest {
       usageContext: usageContext ?? this.usageContext,
       spellingRule: spellingRule ?? this.spellingRule,
       sequenceLogic: sequenceLogic ?? this.sequenceLogic,
+      plotStructure: plotStructure ?? this.plotStructure,
+      idiomOrigin: idiomOrigin ?? this.idiomOrigin,
+      visualMetaphor: visualMetaphor ?? this.visualMetaphor,
+      difficultyTier: difficultyTier ?? this.difficultyTier,
+      targetAccent: targetAccent ?? this.targetAccent,
     );
   }
 
@@ -126,5 +146,10 @@ class EliteMasteryQuest extends GameQuest {
     usageContext,
     spellingRule,
     sequenceLogic,
+    plotStructure,
+    idiomOrigin,
+    visualMetaphor,
+    difficultyTier,
+    targetAccent,
   ];
 }

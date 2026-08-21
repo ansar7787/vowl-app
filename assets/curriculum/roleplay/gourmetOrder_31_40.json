@@ -17,7 +17,19 @@
             "correctAnswer": "Burger, Lemonade",
             "hint": "‘No onions’ is a request about the burger, not a separate item to select.",
             "explanation": "‘No onions’ tells the kitchen to leave something out — it's a modification, not a new food item. Only ‘burger’ and ‘lemonade’ need to be selected.",
-            "id": "go_l31_q1"
+            "id": "go_l31_q1",
+            "menuItems": [
+                "Burger",
+                "Lemonade",
+                "Cheeseburger",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$11.25",
+                "$10.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -33,7 +45,19 @@
             "correctAnswer": "Salad, Iced Tea",
             "hint": "‘Without’ works the same way as ‘no’ — it removes something from the dish.",
             "explanation": "‘Without croutons’ means the salad should be served minus the croutons. This doesn't change which two items to tap — just how the food is prepared.",
-            "id": "go_l31_q2"
+            "id": "go_l31_q2",
+            "menuItems": [
+                "Salad",
+                "Iced Tea",
+                "Soup",
+                "Lemonade"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$5.75",
+                "$5.75",
+                "$11.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -49,7 +73,19 @@
             "correctAnswer": "Sandwich, Coffee",
             "hint": "The customer asks for a small change to the sandwich before naming the drink.",
             "explanation": "‘Could you leave out…?’ is a polite way to request that an ingredient be removed. It doesn't create a new menu item — the order is still just the sandwich and the coffee.",
-            "id": "go_l31_q3"
+            "id": "go_l31_q3",
+            "menuItems": [
+                "Sandwich",
+                "Coffee",
+                "Wrap",
+                "Tea"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$6.00",
+                "$12.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -65,7 +101,19 @@
             "correctAnswer": "Grilled Cheese, Tomato Soup",
             "hint": "The customer reacts to the menu before confirming their choice.",
             "explanation": "‘That sounds good — I’ll have that’ is a natural way to decide after reading a menu. Grilled cheese and tomato soup is a classic combination.",
-            "id": "go_l32_q1"
+            "id": "go_l32_q1",
+            "menuItems": [
+                "Grilled Cheese",
+                "Tomato Soup",
+                "Turkey Melt",
+                "Vegetable Soup"
+            ],
+            "menuPrices": [
+                "$8.50",
+                "$21.75",
+                "$16.50",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -81,7 +129,19 @@
             "correctAnswer": "Steak Sandwich, Side Salad",
             "hint": "‘On the side’ tells you the salad comes separately, not mixed into the sandwich.",
             "explanation": "‘On the side’ means an item is served in a separate dish rather than on the main plate. It's a useful phrase for describing how food should be served.",
-            "id": "go_l32_q2"
+            "id": "go_l32_q2",
+            "menuItems": [
+                "Steak Sandwich",
+                "Side Salad",
+                "Chicken Sandwich",
+                "Fries"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$14.00",
+                "$12.50",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -97,7 +157,19 @@
             "correctAnswer": "Nachos, Lemonade",
             "hint": "‘To share’ shows this order is meant for the whole table, not one person.",
             "explanation": "‘Can we get… to share?’ is common when a group orders appetizers together. A ‘pitcher’ is a large container used to serve drinks for several people.",
-            "id": "go_l32_q3"
+            "id": "go_l32_q3",
+            "menuItems": [
+                "Nachos",
+                "Lemonade",
+                "Loaded Fries",
+                "Pitcher of Soda"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$11.25",
+                "$2.00",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -113,7 +185,19 @@
             "correctAnswer": "Chicken Caesar Salad, Sparkling Water",
             "hint": "‘I’ll stick with…’ shows the customer is choosing a familiar, safe option.",
             "explanation": "‘I’ll stick with…’ means the customer is choosing something familiar rather than trying something new. It's a natural phrase after considering other options.",
-            "id": "go_l33_q1"
+            "id": "go_l33_q1",
+            "menuItems": [
+                "Chicken Caesar Salad",
+                "Sparkling Water",
+                "Cobb Salad",
+                "Still Water"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$4.50",
+                "$15.25",
+                "$13.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -129,7 +213,19 @@
             "correctAnswer": "Veggie Omelet, Rye Toast",
             "hint": "‘Excuse me’ politely gets the server's attention before the order begins.",
             "explanation": "‘Excuse me’ is a polite way to start a request, especially to get someone's attention first. ‘Rye’ and ‘white’ are both types of bread, so the word before ‘toast’ matters.",
-            "id": "go_l33_q2"
+            "id": "go_l33_q2",
+            "menuItems": [
+                "Veggie Omelet",
+                "Rye Toast",
+                "Denver Omelet",
+                "White Toast"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$7.25",
+                "$4.50",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -145,7 +241,19 @@
             "correctAnswer": "Spicy Ramen, Gyoza",
             "hint": "‘I’m in the mood for…’ shows a personal craving, not just a random choice.",
             "explanation": "‘I’m in the mood for…’ is a natural way to express a craving. ‘Gyoza’ are Japanese pan-fried dumplings, different from spring rolls.",
-            "id": "go_l33_q3"
+            "id": "go_l33_q3",
+            "menuItems": [
+                "Spicy Ramen",
+                "Gyoza",
+                "Miso Ramen",
+                "Spring Rolls"
+            ],
+            "menuPrices": [
+                "$7.25",
+                "$14.00",
+                "$3.25",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -161,7 +269,19 @@
             "correctAnswer": "Black Coffee, Bagel with Cream Cheese",
             "hint": "‘Same as always’ suggests this customer is a regular who orders the same thing often.",
             "explanation": "‘Same as always’ is a phrase regular customers often use with staff who already know their usual order. ‘Black coffee’ has nothing added, unlike a latte.",
-            "id": "go_l34_q1"
+            "id": "go_l34_q1",
+            "menuItems": [
+                "Black Coffee",
+                "Bagel with Cream Cheese",
+                "Latte",
+                "Plain Bagel"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$4.50",
+                "$18.00",
+                "$3.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -177,7 +297,19 @@
             "correctAnswer": "Roast Beef Sandwich, Bag of Chips",
             "hint": "The customer removes one ingredient but still orders two full items.",
             "explanation": "‘No mustard’ is a small change to the sandwich, not a separate item. The two things to select are the sandwich itself and the chips.",
-            "id": "go_l34_q2"
+            "id": "go_l34_q2",
+            "menuItems": [
+                "Roast Beef Sandwich",
+                "Bag of Chips",
+                "Ham Sandwich",
+                "Pretzels"
+            ],
+            "menuPrices": [
+                "$14.00",
+                "$16.50",
+                "$7.25",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -193,7 +325,19 @@
             "correctAnswer": "Chicken Tikka Masala, Rice",
             "hint": "The customer asks to remove an herb, but the main dish and side stay the same.",
             "explanation": "Some people dislike the taste of cilantro, so asking to remove it is a common request. ‘Without cilantro’ doesn't change which dish or side to select.",
-            "id": "go_l34_q3"
+            "id": "go_l34_q3",
+            "menuItems": [
+                "Chicken Tikka Masala",
+                "Rice",
+                "Butter Chicken",
+                "Naan"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$19.25",
+                "$15.25",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -209,7 +353,19 @@
             "correctAnswer": "Philly Cheesesteak, Root Beer",
             "hint": "One ingredient is removed from the sandwich, but the full order still has two items.",
             "explanation": "‘Could you leave out…?’ is polite and specific. ‘Root beer’ and ‘cream soda’ are both classic American sodas, so the exact name matters.",
-            "id": "go_l35_q1"
+            "id": "go_l35_q1",
+            "menuItems": [
+                "Philly Cheesesteak",
+                "Root Beer",
+                "Italian Beef",
+                "Cream Soda"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$4.50",
+                "$2.00",
+                "$9.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -225,7 +381,19 @@
             "correctAnswer": "Buddha Bowl, Kombucha",
             "hint": "The main dish is a mix of vegetables and grains; the drink is a fermented tea.",
             "explanation": "A ‘Buddha bowl’ typically combines grains, vegetables, and a plant-based protein. ‘Kombucha’ is a fizzy, fermented tea drink.",
-            "id": "go_l35_q2"
+            "id": "go_l35_q2",
+            "menuItems": [
+                "Buddha Bowl",
+                "Kombucha",
+                "Grain Bowl",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$18.00",
+                "$19.25",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -241,7 +409,19 @@
             "correctAnswer": "Lobster Roll, Clam Chowder",
             "hint": "The seafood in the roll and the soup both need careful attention.",
             "explanation": "‘Lobster roll’ and ‘shrimp roll’ look similar on a menu, so the seafood word matters. ‘Clam’ and ‘corn’ chowder are both thick soups, but with very different ingredients.",
-            "id": "go_l35_q3"
+            "id": "go_l35_q3",
+            "menuItems": [
+                "Lobster Roll",
+                "Clam Chowder",
+                "Shrimp Roll",
+                "Corn Chowder"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$3.25",
+                "$12.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -257,7 +437,19 @@
             "correctAnswer": "Calamari, Bruschetta",
             "hint": "Both items are appetizers meant to be shared before the main course.",
             "explanation": "‘Calamari’ is fried squid, a popular starter. ‘Bruschetta’ is toasted bread topped with tomato and basil — both are common shared starters in Italian restaurants.",
-            "id": "go_l36_q1"
+            "id": "go_l36_q1",
+            "menuItems": [
+                "Calamari",
+                "Bruschetta",
+                "Fried Shrimp",
+                "Garlic Knots"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$13.75",
+                "$7.25",
+                "$17.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -273,7 +465,19 @@
             "correctAnswer": "Pepperoni Pizza, Caesar Salad",
             "hint": "The pizza topping and the salad name both need attention.",
             "explanation": "‘Pepperoni’ and ‘margherita’ are common pizza choices, so the topping word decides the answer. ‘Caesar’ salad includes parmesan and croutons, unlike a garden salad.",
-            "id": "go_l36_q2"
+            "id": "go_l36_q2",
+            "menuItems": [
+                "Pepperoni Pizza",
+                "Caesar Salad",
+                "Margherita Pizza",
+                "Garden Salad"
+            ],
+            "menuPrices": [
+                "$18.00",
+                "$8.50",
+                "$16.50",
+                "$12.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -289,7 +493,19 @@
             "correctAnswer": "Seafood Pasta, White Wine",
             "hint": "The pasta filling and the wine color both matter here.",
             "explanation": "‘Seafood’ and ‘chicken’ pasta are both common, so the first word is essential. ‘White’ and ‘red’ wine are chosen based on the dish, so the color word matters too.",
-            "id": "go_l36_q3"
+            "id": "go_l36_q3",
+            "menuItems": [
+                "Seafood Pasta",
+                "White Wine",
+                "Chicken Pasta",
+                "Red Wine"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$2.00",
+                "$14.00",
+                "$6.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -305,7 +521,19 @@
             "correctAnswer": "Buffalo Wings, Celery Sticks",
             "hint": "The wing sauce and the crunchy vegetable side both need attention.",
             "explanation": "‘Buffalo’ wings are spicy and tangy, different from ‘BBQ’ wings. Celery sticks are the traditional side for buffalo wings, meant to cool the spice.",
-            "id": "go_l37_q1"
+            "id": "go_l37_q1",
+            "menuItems": [
+                "Buffalo Wings",
+                "Celery Sticks",
+                "BBQ Wings",
+                "Carrot Sticks"
+            ],
+            "menuPrices": [
+                "$21.75",
+                "$17.75",
+                "$9.75",
+                "$18.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -321,7 +549,19 @@
             "correctAnswer": "Turkey Avocado Wrap, Unsweetened Iced Tea",
             "hint": "This regular customer's usual order includes a specific wrap and a specific type of iced tea.",
             "explanation": "‘Unsweetened’ and ‘sweet’ describe how much sugar is added to iced tea, so the word matters. The wrap filling — turkey and avocado — is also specific.",
-            "id": "go_l37_q2"
+            "id": "go_l37_q2",
+            "menuItems": [
+                "Turkey Avocado Wrap",
+                "Unsweetened Iced Tea",
+                "Chicken Caesar Wrap",
+                "Sweet Tea"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$12.50",
+                "$8.50",
+                "$14.00"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -337,7 +577,19 @@
             "correctAnswer": "Chicken Quesadilla, Horchata",
             "hint": "One topping is removed, but the quesadilla and drink still need to be selected.",
             "explanation": "‘No sour cream’ is a small change to how the dish is served. It doesn't remove the quesadilla itself from the order.",
-            "id": "go_l37_q3"
+            "id": "go_l37_q3",
+            "menuItems": [
+                "Chicken Quesadilla",
+                "Horchata",
+                "Beef Quesadilla",
+                "Agua Fresca"
+            ],
+            "menuPrices": [
+                "$2.00",
+                "$8.50",
+                "$13.75",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -353,7 +605,19 @@
             "correctAnswer": "Pad See Ew, Thai Iced Tea",
             "hint": "The dish name and the specific type of iced tea both need attention.",
             "explanation": "‘Pad See Ew’ and ‘Pad Thai’ are both popular Thai noodle dishes with similar-sounding names. ‘Thai iced tea’ has a distinct orange color and sweet, creamy taste.",
-            "id": "go_l38_q1"
+            "id": "go_l38_q1",
+            "menuItems": [
+                "Pad See Ew",
+                "Thai Iced Tea",
+                "Pad Thai",
+                "Iced Coffee"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$9.75",
+                "$3.25",
+                "$9.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -369,7 +633,19 @@
             "correctAnswer": "Vegetable Pad Thai, Lemonade",
             "hint": "An allergy-friendly change is requested, but the dish and drink still form the order.",
             "explanation": "Removing peanuts is a common request for people with allergies. ‘Vegetable’ and ‘chicken’ pad thai are both common, so the first word decides the answer.",
-            "id": "go_l38_q2"
+            "id": "go_l38_q2",
+            "menuItems": [
+                "Vegetable Pad Thai",
+                "Lemonade",
+                "Chicken Pad Thai",
+                "Iced Tea"
+            ],
+            "menuPrices": [
+                "$10.00",
+                "$11.25",
+                "$14.00",
+                "$5.75"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -385,7 +661,19 @@
             "correctAnswer": "Bibimbap, Kimchi",
             "hint": "The main rice dish and its classic spicy, fermented side are both named.",
             "explanation": "‘Bibimbap’ is a Korean rice bowl mixed with vegetables and a fried egg. ‘Kimchi’ is spicy, fermented cabbage — one of Korea's most famous side dishes.",
-            "id": "go_l38_q3"
+            "id": "go_l38_q3",
+            "menuItems": [
+                "Bibimbap",
+                "Kimchi",
+                "Bulgogi Bowl",
+                "Pickled Radish"
+            ],
+            "menuPrices": [
+                "$12.50",
+                "$21.75",
+                "$17.75",
+                "$19.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -401,7 +689,19 @@
             "correctAnswer": "Club Sandwich, Soup",
             "hint": "‘On the side’ tells you the soup is a separate dish, served alongside the sandwich.",
             "explanation": "‘On the side’ shows the soup isn't part of the sandwich — it's a separate item served together. This phrase is useful whenever two dishes are ordered as one meal.",
-            "id": "go_l39_q1"
+            "id": "go_l39_q1",
+            "menuItems": [
+                "Club Sandwich",
+                "Soup",
+                "BLT",
+                "Salad"
+            ],
+            "menuPrices": [
+                "$19.25",
+                "$5.75",
+                "$8.50",
+                "$7.25"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -417,7 +717,19 @@
             "correctAnswer": "Spring Rolls, Dumplings",
             "hint": "Two appetizers with similar-sounding relatives appear as options — read carefully.",
             "explanation": "‘Spring rolls’ and ‘egg rolls’ look alike but are made differently, and the same is true for ‘dumplings’ and ‘wontons.’ Only the exact words used in the order should be selected.",
-            "id": "go_l39_q2"
+            "id": "go_l39_q2",
+            "menuItems": [
+                "Spring Rolls",
+                "Dumplings",
+                "Egg Rolls",
+                "Wontons"
+            ],
+            "menuPrices": [
+                "$3.25",
+                "$17.75",
+                "$5.75",
+                "$4.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -433,7 +745,19 @@
             "correctAnswer": "Classic Burger, Chocolate Milkshake",
             "hint": "‘Classic’ and ‘chocolate’ both describe exactly which version of each item was ordered.",
             "explanation": "‘Classic’ burger usually means a plain, traditional recipe. The milkshake flavor — chocolate, not vanilla — is the detail that decides the correct answer.",
-            "id": "go_l39_q3"
+            "id": "go_l39_q3",
+            "menuItems": [
+                "Classic Burger",
+                "Chocolate Milkshake",
+                "Bacon Burger",
+                "Vanilla Milkshake"
+            ],
+            "menuPrices": [
+                "$5.75",
+                "$19.25",
+                "$4.50",
+                "$20.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -449,7 +773,19 @@
             "correctAnswer": "Eggs Benedict, Orange Juice",
             "hint": "One ingredient is removed from the egg dish, but the order still has two items to select.",
             "explanation": "‘Without ham’ changes how the eggs benedict is prepared, but the dish name stays the same. ‘Eggs Florentine’ already comes without ham, so it wouldn't be the correct choice here.",
-            "id": "go_l40_q1"
+            "id": "go_l40_q1",
+            "menuItems": [
+                "Eggs Benedict",
+                "Orange Juice",
+                "Eggs Florentine",
+                "Apple Juice"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$20.50",
+                "$18.00",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -465,7 +801,19 @@
             "correctAnswer": "Chicken Tinga Tacos, Horchata",
             "hint": "The type of chicken preparation in the taco filling is the key detail.",
             "explanation": "‘Tinga’ is chicken cooked in a smoky tomato and chipotle sauce, different from ‘carnitas,’ which is slow-cooked pork. Horchata remains the sweet rice drink from earlier levels.",
-            "id": "go_l40_q2"
+            "id": "go_l40_q2",
+            "menuItems": [
+                "Chicken Tinga Tacos",
+                "Horchata",
+                "Carnitas Tacos",
+                "Agua Fresca"
+            ],
+            "menuPrices": [
+                "$4.50",
+                "$8.50",
+                "$13.75",
+                "$16.50"
+            ]
         },
         {
             "instruction": "Tap the items to fulfill the customer's order.",
@@ -481,7 +829,19 @@
             "correctAnswer": "Cobb Salad, Unsweetened Tea",
             "hint": "‘Dressing on the side’ is a serving instruction, not a separate item to tap.",
             "explanation": "‘Dressing on the side’ means the dressing is served in a small cup instead of poured over the salad — it's a preparation detail, not a new item. The salad and the tea are the only two items to select.",
-            "id": "go_l40_q3"
+            "id": "go_l40_q3",
+            "menuItems": [
+                "Cobb Salad",
+                "Unsweetened Tea",
+                "Chef Salad",
+                "Sweet Tea"
+            ],
+            "menuPrices": [
+                "$15.25",
+                "$5.75",
+                "$9.75",
+                "$14.00"
+            ]
         }
     ]
 }
