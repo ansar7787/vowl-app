@@ -87,7 +87,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+  void _submitFinalAnswer(bool nailedIt) {
     if (_isAnswered) return;
 
     setState(() {
@@ -345,15 +345,15 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                     child: Column(
                       children: [
-                        if (quest != null && quest.familyTree != null && quest.familyTree!.isNotEmpty)
+                        if (quest.familyTree != null && quest.familyTree!.isNotEmpty)
                           WordFormationFamilyTree(
                             familyTree: quest.familyTree!,
                             color: theme.primaryColor,
                           ),
                         SizedBox(height: 20.h),
                         TypeToConfirmOverlay(
-                          expectedText: quest?.correctAnswer ?? '',
-                          displayText: "Type the correct form:\n${quest?.correctAnswer?.toUpperCase()}",
+                          expectedText: quest.correctAnswer ?? '',
+                          displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
                           primaryColor: theme.primaryColor,
                           onConfirmed: () => _submitFinalAnswer(true),
                           onSkipped: () => _submitFinalAnswer(false),

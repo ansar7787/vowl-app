@@ -385,16 +385,16 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                     child: Column(
                       children: [
-                        if (quest?.meaningBreakdown != null)
+                        if (quest.meaningBreakdown != null)
                           PrefixSuffixMeaningBreakdown(
-                            meaningBreakdown: quest!.meaningBreakdown!,
+                            meaningBreakdown: quest.meaningBreakdown!,
                             color: theme.primaryColor,
                           ),
                         SizedBox(height: 20.h),
                         DynamicAnagramWrapper(
                           title: 'SPELL THE TARGET WORD',
                           subtitle: 'Tap all letters to rebuild the word!',
-                          expectedText: quest?.correctAnswer ?? '',
+                          expectedText: quest.correctAnswer ?? '',
                           primaryColor: theme.primaryColor,
                           onConfirmed: () => _submitFinalAnswer(true),
                           onFailed: () {},
