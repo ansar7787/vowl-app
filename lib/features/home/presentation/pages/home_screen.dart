@@ -239,67 +239,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 3. HERO CAROUSEL (Daily Words & Junior Adventure)
-                      SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 16.h),
-                            SizedBox(
-                              height: 190.h, // 160.h for card + 30.h for shadow
-                              child: PageView(
-                                clipBehavior: Clip.none,
-                                controller: _carouselController,
-                                physics: const BouncingScrollPhysics(),
-                                onPageChanged: (idx) {
-                                  _carouselIndex.value = idx;
-                                },
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: CommandPod(
-                                      user: user,
-                                      mode: CommandPodMode.kidsOnly,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: DailyWordsHomeCard(isDark: isDark),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: const VowlMascotCard(),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            ValueListenableBuilder<int>(
-                              valueListenable: _carouselIndex,
-                              builder: (context, currentIndex, _) {
-                                return Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: List.generate(3, (index) {
-                                    final isSelected = index == currentIndex;
-                                    return AnimatedContainer(
-                                      duration: const Duration(milliseconds: 300),
-                                      curve: Curves.easeOutCubic,
-                                      margin: EdgeInsets.symmetric(horizontal: 4.w),
-                                      height: 6.h,
-                                      width: isSelected ? 24.w : 6.w,
-                                      decoration: BoxDecoration(
-                                        color: isSelected
-                                            ? const Color(0xFF6366F1)
-                                            : (isDark ? Colors.white24 : Colors.black12),
-                                        borderRadius: BorderRadius.circular(4.r),
-                                      ),
-                                    );
-                                  }),
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-
                       // 3. QUEST ARENA (Deep Work, Core Journey)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -373,7 +312,88 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 5. GLOBAL PROGRESS, STATS & UTILITY
+                      // 4. HERO CAROUSEL (Daily Words & Junior Adventure)
+                      SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            SizedBox(
+                              height: 190.h, // 160.h for card + 30.h for shadow
+                              child: PageView(
+                                clipBehavior: Clip.none,
+                                controller: _carouselController,
+                                physics: const BouncingScrollPhysics(),
+                                onPageChanged: (idx) {
+                                  _carouselIndex.value = idx;
+                                },
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: CommandPod(
+                                      user: user,
+                                      mode: CommandPodMode.kidsOnly,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: DailyWordsHomeCard(isDark: isDark),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: const VowlMascotCard(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            ValueListenableBuilder<int>(
+                              valueListenable: _carouselIndex,
+                              builder: (context, currentIndex, _) {
+                                return Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: List.generate(3, (index) {
+                                    final isSelected = index == currentIndex;
+                                    return AnimatedContainer(
+                                      duration: const Duration(milliseconds: 300),
+                                      curve: Curves.easeOutCubic,
+                                      margin: EdgeInsets.symmetric(horizontal: 4.w),
+                                      height: 6.h,
+                                      width: isSelected ? 24.w : 6.w,
+                                      decoration: BoxDecoration(
+                                        color: isSelected
+                                            ? const Color(0xFF6366F1)
+                                            : (isDark ? Colors.white24 : Colors.black12),
+                                        borderRadius: BorderRadius.circular(4.r),
+                                      ),
+                                    );
+                                  }),
+                                );
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // 5. DISCOVERY HUB (Audio Deck)
+                      HomeSliverSectionHeader(
+                        title: context.tr(
+                          'home.discovery_hub_title',
+                          fallback: 'Discovery Hub',
+                        ),
+                        subtitle: context.tr(
+                          'home.discovery_hub_subtitle',
+                          fallback: 'Listen and learn new topics',
+                        ),
+                        categoryColor: const Color(0xFF3B82F6),
+                      ),
+                      SliverToBoxAdapter(
+                        child: DiscoveryDeck(
+                          user: user,
+                          onLaunchQuest: (id) =>
+                              _launchThemedQuest(context, id),
+                        ),
+                      ),
+
+                      // 6. GLOBAL PROGRESS, STATS & UTILITY
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -402,26 +422,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               const AiLabGrid(),
                             ],
                           ),
-                        ),
-                      ),
-
-                      // 7. DISCOVERY HUB (Audio Deck)
-                      HomeSliverSectionHeader(
-                        title: context.tr(
-                          'home.discovery_hub_title',
-                          fallback: 'Discovery Hub',
-                        ),
-                        subtitle: context.tr(
-                          'home.discovery_hub_subtitle',
-                          fallback: 'Listen and learn new topics',
-                        ),
-                        categoryColor: const Color(0xFF3B82F6),
-                      ),
-                      SliverToBoxAdapter(
-                        child: DiscoveryDeck(
-                          user: user,
-                          onLaunchQuest: (id) =>
-                              _launchThemedQuest(context, id),
                         ),
                       ),
 
