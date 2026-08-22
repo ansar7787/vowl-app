@@ -56,39 +56,94 @@ class FlashcardActionButtons extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 14.h),
+      padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 24.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-                Icons.keyboard_double_arrow_left_rounded,
-                color: Colors.red.withValues(alpha: 0.5),
-                size: 24.r,
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .moveX(begin: 2, end: -2, duration: 1.seconds),
-          SizedBox(width: 12.w),
-          Text(
-            'SWIPE TO DECIDE',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              color: isDark ? Colors.white54 : Colors.black45,
-              letterSpacing: 2,
-              fontWeight: FontWeight.bold,
-              fontSize: 12.sp,
+          Expanded(
+            child: _ActionBtn(
+              label: 'AGAIN',
+              icon: Icons.keyboard_double_arrow_left_rounded,
+              color: Colors.redAccent,
+              isDark: isDark,
+              onTap: isTransitioning ? null : onAgain,
             ),
           ),
-          SizedBox(width: 12.w),
-          Icon(
-                Icons.keyboard_double_arrow_right_rounded,
-                color: Colors.green.withValues(alpha: 0.5),
-                size: 24.r,
-              )
-              .animate(onPlay: (c) => c.repeat())
-              .moveX(begin: -2, end: 2, duration: 1.seconds),
+          SizedBox(width: 16.w),
+          Expanded(
+            child: _ActionBtn(
+              label: 'GOT IT',
+              icon: Icons.keyboard_double_arrow_right_rounded,
+              color: Colors.green,
+              isDark: isDark,
+              onTap: isTransitioning ? null : onGotIt,
+              isRight: true,
+            ),
+          ),
         ],
       ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2),
+    );
+  }
+}
+
+class _ActionBtn extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final Color color;
+  final bool isDark;
+  final VoidCallback? onTap;
+  final bool isRight;
+
+  const _ActionBtn({
+    required this.label,
+    required this.icon,
+    required this.color,
+    required this.isDark,
+    this.onTap,
+    this.isRight = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: color.withValues(alpha: 0.15),
+      borderRadius: BorderRadius.circular(16.r),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16.r),
+        splashColor: color.withValues(alpha: 0.3),
+        highlightColor: color.withValues(alpha: 0.2),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 16.h),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (!isRight) ...[
+                Icon(icon, color: color, size: 20.r),
+                SizedBox(width: 4.w),
+              ],
+              Text(
+                label,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  color: color,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 14.sp,
+                  letterSpacing: 1.5,
+                ),
+              ),
+              if (isRight) ...[
+                SizedBox(width: 4.w),
+                Icon(icon, color: color, size: 20.r),
+              ],
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

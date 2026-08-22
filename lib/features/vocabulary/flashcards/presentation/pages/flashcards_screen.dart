@@ -15,8 +15,6 @@ import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashca
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
-import 'package:vowl/core/presentation/game_mechanics/speak_to_confirm_overlay.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
@@ -43,7 +41,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   Offset _dragOffset = Offset.zero;
   double _dragAngle = 0.0;
   bool _isFlipped = false;
-  bool _isSpelled = false;
   bool _isAnswered = false;
   bool _isRetrying = false;
   bool? _isCorrect;
@@ -195,51 +192,25 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           onHint: _onHintRequested,
           child: quest == null
               ? GameShimmerLoading(primaryColor: _theme.primaryColor)
-              : Stack(
-                  children: [
-                    FlashcardGameBody(
-                      quest: quest,
-                      primaryColor: _theme.primaryColor,
-                      isDark: isDark,
-                      isFlipped: _isFlipped,
-                      isAnswered: _isAnswered,
-                      isRetrying: _isRetrying,
-                      isHintActive: _isHintActive,
-                      hideActions: _isFlipped,
-                      dragOffset: _dragOffset,
-                      dragAngle: _dragAngle,
-                      onHorizontalDragUpdate: _onHorizontalDragUpdate,
-                      onHorizontalDragEnd: _onHorizontalDragEnd,
-                      onCardTap: () {
-                        if (_isAnswered || _isRetrying) return;
-                        _hapticService.light();
-                        setState(() => _isFlipped = !_isFlipped);
-                      },
-                      onSubmitAnswer: _submitAnswer,
-                    ),
-                    if (_isFlipped && !_isAnswered && !_isRetrying) ...[
-                      if (!_isSpelled)
-                        DynamicAnagramWrapper(
-                          expectedText: quest.targetWord ?? "",
-                          primaryColor: _theme.primaryColor,
-                          title: "SPELL THE WORD",
-                          subtitle: "Tap the letters to form the target word",
-                          onConfirmed: () {
-                            setState(() => _isSpelled = true);
-                          },
-                          onFailed: () => _submitAnswer(false),
-                          isPositioned: true,
-                        )
-                      else
-                        SpeakToConfirmOverlay(
-                          expectedText: quest.targetWord ?? "",
-                          primaryColor: _theme.primaryColor,
-                          onConfirmed: () => _submitAnswer(true),
-                          onSkipped: () => _submitAnswer(false),
-                          isPositioned: true,
-                        ),
-                    ],
-                  ],
+              : FlashcardGameBody(
+                  quest: quest,
+                  primaryColor: _theme.primaryColor,
+                  isDark: isDark,
+                  isFlipped: _isFlipped,
+                  isAnswered: _isAnswered,
+                  isRetrying: _isRetrying,
+                  isHintActive: _isHintActive,
+                  hideActions: !_isFlipped,
+                  dragOffset: _dragOffset,
+                  dragAngle: _dragAngle,
+                  onHorizontalDragUpdate: _onHorizontalDragUpdate,
+                  onHorizontalDragEnd: _onHorizontalDragEnd,
+                  onCardTap: () {
+                    if (_isAnswered || _isRetrying) return;
+                    _hapticService.light();
+                    setState(() => _isFlipped = !_isFlipped);
+                  },
+                  onSubmitAnswer: _submitAnswer,
                 ),
         );
       },
@@ -261,7 +232,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           _isRetrying = isRetry;
           _isCorrect = null;
           _isFlipped = false;
-          _isSpelled = false;
           _isHintActive = false;
           _dragOffset = Offset.zero;
           _dragAngle = 0.0;

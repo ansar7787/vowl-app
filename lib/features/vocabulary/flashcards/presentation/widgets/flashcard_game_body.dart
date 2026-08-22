@@ -112,15 +112,15 @@ class FlashcardGameBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final layout = _CardLayout.compute(constraints);
-              return SafeArea(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final layout = _CardLayout.compute(constraints);
+        return CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: SafeArea(
                 bottom: true,
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: layout.horizontalPadding),
@@ -152,11 +152,11 @@ class FlashcardGameBody extends StatelessWidget {
                     ],
                   ),
                 ),
-              );
-            },
-          ),
-        ),
-      ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 

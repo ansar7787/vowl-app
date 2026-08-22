@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-
 class FlashcardSwipeBack extends StatefulWidget {
   final VocabularyQuest quest;
   final Color color;
@@ -26,11 +27,17 @@ class FlashcardSwipeBack extends StatefulWidget {
 
 class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
   late final ScrollController _scrollController;
+  final TtsService _ttsService = di.sl<TtsService>();
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    if (widget.quest.word != null && widget.quest.word!.isNotEmpty) {
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (mounted) _ttsService.speak(widget.quest.word!);
+      });
+    }
   }
 
   @override
@@ -71,14 +78,29 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                 40.0,
               );
 
-              return RawScrollbar(
-                controller: _scrollController,
-                thumbColor: widget.color.withValues(alpha: 0.4),
-                radius: Radius.circular(8.r),
-                thickness: 4.w,
-                crossAxisMargin: 2.w, // close to edge but padded by ClipRRect
-                mainAxisMargin: 8.h,
-                child: SingleChildScrollView(
+              return Stack(
+                children: [
+                  if (widget.quest.topicEmoji != null && widget.quest.topicEmoji!.isNotEmpty)
+                    Positioned(
+                      right: -40.w,
+                      bottom: -40.h,
+                      child: Opacity(
+                        opacity: widget.isDark ? 0.08 : 0.12,
+                        child: Text(
+                          widget.quest.topicEmoji!,
+                          style: TextStyle(fontSize: 220.sp),
+                        ),
+                      ),
+                    ),
+                  Positioned.fill(
+                    child: RawScrollbar(
+                      controller: _scrollController,
+                      thumbColor: widget.color.withValues(alpha: 0.4),
+                      radius: Radius.circular(8.r),
+                      thickness: 4.w,
+                      crossAxisMargin: 2.w, // close to edge but padded by ClipRRect
+                      mainAxisMargin: 8.h,
+                      child: SingleChildScrollView(
                   controller: _scrollController,
                   physics: const BouncingScrollPhysics(),
                   padding: EdgeInsets.symmetric(
@@ -95,18 +117,39 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                         SizedBox(height: 8.h),
                         FittedBox(
                           fit: BoxFit.scaleDown,
-                          child: Text(
-                            widget.quest.word?.toUpperCase() ?? '',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: compact ? 24.sp : 28.sp,
-                              color: widget.isDark
-                                  ? Colors.white
-                                  : Colors.black87,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 2,
-                            ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                widget.quest.word?.toUpperCase() ?? '',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: compact ? 24.sp : 28.sp,
+                                  color: widget.isDark
+                                      ? Colors.white
+                                      : Colors.black87,
+                                  fontWeight: FontWeight.w800,
+                                  letterSpacing: 2,
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
+                              IconButton(
+                                onPressed: () {
+                                  if (widget.quest.word != null) {
+                                    _ttsService.speak(widget.quest.word!);
+                                  }
+                                },
+                                icon: Icon(
+                                  Icons.volume_up_rounded,
+                                  color: widget.color,
+                                  size: compact ? 24.r : 28.r,
+                                ),
+                                padding: EdgeInsets.zero,
+                                constraints: const BoxConstraints(),
+                                splashRadius: 24.r,
+                              ),
+                            ],
                           ),
                         ),
                         SizedBox(height: compact ? 12.h : 16.h),
@@ -207,13 +250,16 @@ class _FlashcardSwipeBackState extends State<FlashcardSwipeBack> {
                         SizedBox(height: 8.h),
                       ],
                     ),
+                    ),
                   ),
                 ),
-              );
-            },
-          ),
-        ),
+              ),
+            ],
+          );
+        },
       ),
-    );
+    ),
+  ),
+);
   }
 }
