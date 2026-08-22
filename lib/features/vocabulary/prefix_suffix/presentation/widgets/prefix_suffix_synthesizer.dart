@@ -335,9 +335,11 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
   }
 
   Widget _buildFusedWord() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
-      decoration: BoxDecoration(
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
+        decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
           begin: Alignment.topLeft,
