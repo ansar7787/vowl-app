@@ -13,7 +13,8 @@ import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -99,13 +100,13 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       children: [
                         SizedBox(height: 24.h),
                         _buildLanguageSelector(context, isDark),
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 20.h),
                         _buildInputArea(context, isDark),
-                        SizedBox(height: 24.h),
+                        SizedBox(height: 20.h),
                         _buildOutputArea(context, isDark),
                         if (!isPremium) ...[
-                          SizedBox(height: 32.h),
-                          const AdRewardCard(margin: EdgeInsets.zero),
+                          SizedBox(height: 24.h),
+                          _buildPremiumLockCard(context, isDark),
                         ],
                         SizedBox(height: 80.h),
                       ],
@@ -225,7 +226,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
   Widget _buildInputArea(BuildContext context, bool isDark) {
     return GlassTile(
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -263,7 +264,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
           TextField(
             controller: _inputController,
             onChanged: _onInputChanged,
-            maxLines: 5,
+            maxLines: null, // Allows infinite expansion
             minLines: 3,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -293,7 +294,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
         return GlassTile(
-          padding: EdgeInsets.all(24.r),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           borderColor: const Color(0xFF10B981).withValues(alpha: 0.3),
           borderWidth: 2,
           child: Column(
@@ -378,6 +379,107 @@ class _TranslateScreenState extends State<TranslateScreen> {
           ),
         );
       },
+    );
+  }
+
+  Widget _buildPremiumLockCard(BuildContext context, bool isDark) {
+    return ScaleButton(
+      onTap: () {
+        di.sl<AdService>().showRewardedAd(
+          context: context,
+          isPremium: false,
+          onUserEarnedReward: (_) {},
+          onDismissed: () {},
+        );
+      },
+      child: GlassTile(
+        padding: EdgeInsets.all(20.r),
+        borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+        borderWidth: 2,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.workspace_premium_rounded,
+                    color: const Color(0xFFF59E0B),
+                    size: 24.r,
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        context.tr('translation.support_vowl', fallback: 'SUPPORT VOWL'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFFF59E0B),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      SizedBox(height: 4.h),
+                      Text(
+                        context.tr('translation.watch_ad_unlock', fallback: 'Watch Ad to Unlock Limitless'),
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w800,
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                        ),
+                        maxLines: 2,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.h),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 12.h),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                ),
+                borderRadius: BorderRadius.circular(16.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.play_arrow_rounded, color: Colors.white, size: 20.r),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr('translation.watch_ad_btn', fallback: 'Watch Ad'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
