@@ -120,6 +120,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                           builder: (context, state) {
                             if (!isPremium && state.isLimitReached) {
                               return PremiumLockCard(
+                                onPremiumTap: () => context.push('/premium'),
                                 onTap: () {
                                   di.sl<AdService>().showRewardedAd(
                                     context: context,

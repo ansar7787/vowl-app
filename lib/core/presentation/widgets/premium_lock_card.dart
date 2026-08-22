@@ -6,105 +6,168 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 class PremiumLockCard extends StatelessWidget {
   final VoidCallback onTap;
+  final VoidCallback onPremiumTap;
 
-  const PremiumLockCard({super.key, required this.onTap});
+  const PremiumLockCard({super.key, required this.onTap, required this.onPremiumTap});
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
-    return ScaleButton(
-      onTap: onTap,
-      child: GlassTile(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-        borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-        borderWidth: 2,
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.workspace_premium_rounded,
-                    color: const Color(0xFFF59E0B),
-                    size: 24.r,
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        context.tr('premium.support_vowl', fallback: 'SUPPORT VOWL'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w900,
-                          color: const Color(0xFFF59E0B),
-                          letterSpacing: 2,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      SizedBox(height: 4.h),
-                      Text(
-                        context.tr('premium.watch_ad_unlock', fallback: 'Watch Ad to Unlock Limitless'),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
+    return GlassTile(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      borderColor: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
+      borderWidth: 2,
+      child: Column(
+        children: [
+          // Icon
+          Container(
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xFF6366F1).withValues(alpha: 0.3),
+                  blurRadius: 12,
+                  offset: const Offset(0, 6),
                 ),
               ],
             ),
-            SizedBox(height: 16.h),
-            Container(
+            child: Icon(
+              Icons.g_translate_rounded,
+              color: Colors.white,
+              size: 28.r,
+            ),
+          ),
+          SizedBox(height: 16.h),
+
+          // Title
+          Text(
+            context.tr('translation.limit_reached', fallback: 'Translation Limit Reached'),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w900,
+              color: isDark ? Colors.white : Colors.black87,
+              letterSpacing: -0.5,
+            ),
+          ),
+          SizedBox(height: 8.h),
+
+          // Subtitle
+          Text(
+            context.tr(
+              'translation.translate_cta',
+              fallback: 'Watch a quick ad to get 3 more translations, or get Premium for unlimited access.',
+            ),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              color: isDark ? Colors.white70 : Colors.black54,
+              height: 1.4,
+            ),
+          ),
+          SizedBox(height: 24.h),
+
+          // Primary Premium Button
+          ScaleButton(
+            onTap: onPremiumTap,
+            child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 12.h),
+              padding: EdgeInsets.symmetric(vertical: 14.h),
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
-                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
+                  colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
                 borderRadius: BorderRadius.circular(16.r),
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                    blurRadius: 12,
+                    offset: const Offset(0, 5),
                   ),
                 ],
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.play_arrow_rounded, color: Colors.white, size: 20.r),
+                  Icon(
+                    Icons.workspace_premium_rounded,
+                    color: Colors.white,
+                    size: 18.r,
+                  ),
                   SizedBox(width: 8.w),
                   Text(
-                    context.tr('premium.watch_ad_btn', fallback: 'Watch Ad'),
+                    context.tr(
+                      'translation.get_premium_button',
+                      fallback: 'Get Vowl Premium',
+                    ),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 14.sp,
                       fontWeight: FontWeight.w900,
+                      fontSize: 14.sp,
                       color: Colors.white,
+                      letterSpacing: 0.5,
                     ),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 12.h),
+
+          // Secondary Ad Button
+          ScaleButton(
+            onTap: onTap,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 14.h),
+              decoration: BoxDecoration(
+                color: isDark
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.05),
+                border: Border.all(
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.1)
+                      : Colors.black.withValues(alpha: 0.1),
+                ),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.play_circle_fill_rounded,
+                    color: isDark ? Colors.white70 : Colors.black87,
+                    size: 18.r,
+                  ),
+                  SizedBox(width: 8.w),
+                  Text(
+                    context.tr(
+                      'translation.watch_ad_button',
+                      fallback: 'Watch Ad (3 Translations)',
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13.sp,
+                      color: isDark ? Colors.white70 : Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
