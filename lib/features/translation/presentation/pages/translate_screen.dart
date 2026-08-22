@@ -25,6 +25,7 @@ class TranslateScreen extends StatefulWidget {
 
 class _TranslateScreenState extends State<TranslateScreen> {
   final TextEditingController _inputController = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   final HapticService _haptics = di.sl<HapticService>();
   Timer? _debounce;
 
@@ -38,6 +39,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   void dispose() {
     _debounce?.cancel();
     _inputController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
@@ -92,11 +94,16 @@ class _TranslateScreenState extends State<TranslateScreen> {
               children: [
                 _buildHeader(context, isDark),
                 Expanded(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                  child: Scrollbar(
+                    controller: _scrollController,
+                    thumbVisibility: true,
+                    radius: Radius.circular(8.r),
+                    child: SingleChildScrollView(
+                      controller: _scrollController,
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      physics: const BouncingScrollPhysics(),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         SizedBox(height: 24.h),
                         _buildLanguageSelector(context, isDark),
