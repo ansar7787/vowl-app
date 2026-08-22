@@ -272,7 +272,6 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
   Widget _buildDraggableChip(String affix) {
     final bool isHinted = widget.hintedAffix == affix;
-    final bool isDragging = _draggedAffix == affix;
     
     Widget chip = Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
