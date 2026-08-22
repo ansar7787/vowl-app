@@ -47,55 +47,7 @@ class TopicContainmentBin extends StatelessWidget {
       }
     }
 
-    // Contextual Icons for Categories
-    IconData bucketIcon = Icons.settings_input_component_rounded;
-    final lLabel = label.toLowerCase();
-
-    if (lLabel.contains("positive")) {
-      bucketIcon = Icons.sentiment_very_satisfied_rounded;
-    } else if (lLabel.contains("negative")) {
-      bucketIcon = Icons.sentiment_very_dissatisfied_rounded;
-    } else if (lLabel.contains("fruit")) {
-      bucketIcon = Icons.apple_rounded;
-    } else if (lLabel.contains("vegetable")) {
-      bucketIcon = Icons.eco_rounded;
-    } else if (lLabel.contains("indoor")) {
-      bucketIcon = Icons.home_rounded;
-    } else if (lLabel.contains("outdoor")) {
-      bucketIcon = Icons.landscape_rounded;
-    } else if (lLabel.contains("animal")) {
-      bucketIcon = Icons.pets_rounded;
-    } else if (lLabel.contains("plant")) {
-      bucketIcon = Icons.local_florist_rounded;
-    } else if (lLabel.contains("modern")) {
-      bucketIcon = Icons.smartphone_rounded;
-    } else if (lLabel.contains("ancient")) {
-      bucketIcon = Icons.history_rounded;
-    } else if (lLabel.contains("loud")) {
-      bucketIcon = Icons.volume_up_rounded;
-    } else if (lLabel.contains("quiet")) {
-      bucketIcon = Icons.volume_off_rounded;
-    } else if (lLabel.contains("large")) {
-      bucketIcon = Icons.aspect_ratio_rounded;
-    } else if (lLabel.contains("small")) {
-      bucketIcon = Icons.photo_size_select_small_rounded;
-    } else if (lLabel.contains("water")) {
-      bucketIcon = Icons.water_drop_rounded;
-    } else if (lLabel.contains("land")) {
-      bucketIcon = Icons.terrain_rounded;
-    } else if (lLabel.contains("summer")) {
-      bucketIcon = Icons.wb_sunny_rounded;
-    } else if (lLabel.contains("winter")) {
-      bucketIcon = Icons.ac_unit_rounded;
-    } else if (lLabel.contains("work")) {
-      bucketIcon = Icons.work_rounded;
-    } else if (lLabel.contains("hobby")) {
-      bucketIcon = Icons.sports_esports_rounded;
-    } else if (lLabel.contains("correct")) {
-      bucketIcon = Icons.check_circle_outline_rounded;
-    } else if (lLabel.contains("wrong")) {
-      bucketIcon = Icons.cancel_outlined;
-    }
+    IconData bucketIcon = Icons.category_rounded;
 
     return Column(
       children: [

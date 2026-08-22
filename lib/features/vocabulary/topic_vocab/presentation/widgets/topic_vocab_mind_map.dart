@@ -35,7 +35,7 @@ class TopicVocabMindMap extends StatelessWidget {
               Icon(Icons.hub_rounded, color: color, size: 20.r),
               SizedBox(width: 8.w),
               AutoSizeText(
-                "RELATED WORDS",
+                "TOPIC DICTIONARY",
                 maxLines: 1,
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -52,6 +52,11 @@ class TopicVocabMindMap extends StatelessWidget {
             spacing: 8.w,
             runSpacing: 8.h,
             children: relatedWords.map((word) {
+              // Extract key/value pair robustly using regex
+              final match = RegExp(r'^(.*?)(?:[:\-])(.*)$').firstMatch(word);
+              final key = match != null ? match.group(1)?.trim() : word;
+              final value = match != null ? match.group(2)?.trim() : '';
+
               return Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                 decoration: BoxDecoration(
@@ -64,13 +69,31 @@ class TopicVocabMindMap extends StatelessWidget {
                   children: [
                     Icon(Icons.link_rounded, color: color, size: 12.r),
                     SizedBox(width: 4.w),
-                    Text(
-                      word,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : Colors.black87,
+                    Flexible(
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: key,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w800,
+                                color: color,
+                              ),
+                            ),
+                            if (value != null && value.isNotEmpty)
+                              TextSpan(
+                                text: ' - $value',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: isDark ? Colors.white70 : Colors.black87,
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

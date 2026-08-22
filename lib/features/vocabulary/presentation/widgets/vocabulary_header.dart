@@ -30,6 +30,7 @@ class VocabularyHeader extends StatefulWidget {
   final VoidCallback onExit;
   final VoidCallback onBriefingShow;
   final VoidCallback? onHint;
+  final String? customHintText;
 
   const VocabularyHeader({
     super.key,
@@ -44,6 +45,7 @@ class VocabularyHeader extends StatefulWidget {
     required this.onExit,
     required this.onBriefingShow,
     this.onHint,
+    this.customHintText,
   });
 
   @override
@@ -135,14 +137,13 @@ class _VocabularyHeaderState extends State<VocabularyHeader> {
     final button = QuestHintButton(
       used: hintUsed,
       primaryColor: primaryColor,
-      hintText:
-          (widget.gameType == GameSubtype.topicVocab ||
-              widget.gameType == GameSubtype.flashcards ||
+      hintText: widget.customHintText ??
+          ((widget.gameType == GameSubtype.flashcards ||
               widget.gameType == GameSubtype.wordFormation)
           ? null
           : (widget.gameType == GameSubtype.prefixSuffix
                 ? "Base word: ${currentQuest.rootWord ?? currentQuest.word}. Find the matching affix!"
-                : currentQuest.hint),
+                : currentQuest.hint)),
       soundService: _soundService,
       onTap: () {
         context.read<VocabularyBloc>().add(const VocabularyHintUsed());

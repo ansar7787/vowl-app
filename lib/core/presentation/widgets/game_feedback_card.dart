@@ -47,6 +47,9 @@ class GameFeedbackCard extends StatelessWidget {
   /// Optional: required points for an answer (used in writing games).
   final List<String>? requiredPoints;
 
+  /// Optional: a completely custom widget to render inside the feedback card.
+  final Widget? customContent;
+
   const GameFeedbackCard({
     super.key,
     required this.isCorrect,
@@ -61,6 +64,7 @@ class GameFeedbackCard extends StatelessWidget {
     this.ruleContent,
     this.sampleAnswer,
     this.requiredPoints,
+    this.customContent,
   });
 
   static const _successGradient = [Color(0xFF2DD4BF), Color(0xFF10B981)];
@@ -127,6 +131,11 @@ class GameFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 _buildResultRow(icon, title, gradient),
+
+                if (showEducationalInfo && customContent != null) ...[
+                  SizedBox(height: 16.h),
+                  customContent!,
+                ],
 
                 if (showEducationalInfo &&
                     ruleContent != null &&

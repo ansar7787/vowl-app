@@ -18,8 +18,8 @@ import '../widgets/topic_machine_head.dart';
 import '../widgets/topic_containment_bin.dart';
 import '../widgets/topic_batch_counter.dart';
 import '../widgets/topic_draggable_core.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
-import 'package:vowl/core/presentation/game_mechanics/dynamic_anagram_wrapper.dart';
+import '../controllers/topic_vocab_controller.dart';
+
 
 class TopicVocabScreen extends StatefulWidget {
   final int level;
@@ -35,140 +35,29 @@ class TopicVocabScreen extends StatefulWidget {
 }
 
 class _TopicVocabScreenState extends State<TopicVocabScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
-
-  int _currentWordIndex = 0;
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
-  int? _lastProcessedIndex = -1;
-  bool _isHintActive = false;
+  late final TopicVocabController _controller;
   VocabularyQuest? _lastQuest;
-  List<String> _shuffledOptions = [];
-
-  // Track the user's choices for the batch check
-  final List<Map<String, String>> _userChoices = [];
-
-  // Track which words are currently "stored" in each bin for visualization
-  final Map<int, List<String>> _wordsInBins = {0: [], 1: []};
-
-  // Track the current flicking word for animation
-  String? _flickedWord;
-  int? _flickTarget;
+  int? _lastProcessedIndex = -1;
 
   @override
   void initState() {
     super.initState();
+    _controller = TopicVocabController(
+      hapticService: di.sl<HapticService>(),
+      soundService: di.sl<SoundService>(),
+      onSubmitAnswer: (nailedIt) {
+        context.read<VocabularyBloc>().add(SubmitAnswer(nailedIt));
+      },
+    );
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
   }
 
-  void _handleFlick(
-    double velocity,
-    String word,
-    List<String> buckets,
-    String correctAnswer,
-  ) {
-    if (_isAnswered || _flickedWord != null) return;
-
-    setState(() {
-      int targetBin = velocity < 0 ? 0 : 1;
-      String bucketName = buckets[targetBin % buckets.length];
-
-      _flickedWord = word;
-      _flickTarget = targetBin;
-
-      final bloc = context.read<VocabularyBloc>();
-      // Delay the actual state update to allow animation to play
-      Future.delayed(const Duration(milliseconds: 100), () {
-        if (!context.mounted) return;
-        setState(() {
-          _userChoices.add({'word': word, 'bucket': bucketName});
-          _wordsInBins[targetBin]?.add(word);
-          _flickedWord = null;
-          _flickTarget = null;
-          _isHintActive = false;
-
-          if (_currentWordIndex < (wordsPerQuest(buckets) - 1)) {
-            _currentWordIndex++;
-          } else {
-            _performBatchCheck(correctAnswer, bloc);
-          }
-        });
-      });
-    });
-  }
-
-  int wordsPerQuest(List<String> buckets) =>
-      (buckets.length * 2 + 1).clamp(3, 5);
-
-  void _performBatchCheck(String correctAnswer, VocabularyBloc bloc) {
-    bool allCorrect = true;
-    for (var choice in _userChoices) {
-      if (!_validateChoice(choice['word']!, choice['bucket']!, correctAnswer)) {
-        allCorrect = false;
-        break;
-      }
-    }
-
-    if (allCorrect) {
-      _soundService.playCorrect();
-      _hapticService.success();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
-    } else {
-      _soundService.playWrong();
-      _hapticService.error();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-        bloc.add(SubmitAnswer(false));
-      });
-    }
-  }
-
-  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
-    if (_isAnswered) return;
-
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
-
-    final bloc = context.read<VocabularyBloc>();
-    if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      bloc.add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      bloc.add(SubmitAnswer(false));
-    }
-  }
-
-  bool _validateChoice(String word, String bucket, String correctAnswer) {
-    final cleanWord = word.trim().toLowerCase();
-    final cleanLabel = bucket.trim().toLowerCase();
-
-    // Safely parse "Hot:Boiling, Cold:Freezing" into exact matches
-    final pairs = correctAnswer.split(',');
-    for (var pair in pairs) {
-      final parts = pair.split(':');
-      if (parts.length == 2) {
-        final targetBucket = parts[0].trim().toLowerCase();
-        final targetWord = parts[1].trim().toLowerCase();
-
-        if (targetWord == cleanWord) {
-          return targetBucket == cleanLabel;
-        }
-      }
-    }
-    return false;
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -179,40 +68,30 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
+          final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _isFirstStagePassed = false;
-              _currentWordIndex = 0;
-              _isHintActive = false;
-              _userChoices.clear();
-              _wordsInBins.forEach((_, list) => list.clear());
-              _shuffledOptions = List<String>.from(
-                state.currentQuest.options ?? [],
-              )..shuffle();
-            });
+            _lastQuest = state.currentQuest;
+            _lastProcessedIndex = state.currentIndex;
+            _controller.reset(state.currentQuest.options);
           }
         }
         if (state is VocabularyGameComplete) {
-          final xp = state.xpEarned;
-          final coins = state.coinsEarned;
-          setState(() => _showConfetti = true);
+          _controller.completeGame();
           if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
-            xp: xp,
-            coins: coins,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
             title: 'WORD SORTER!',
             enableDoubleUp: true,
           );
         }
       },
       builder: (context, state) {
+        return AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
         final theme = LevelThemeHelper.getTheme(
           'vocabulary',
           level: widget.level,
@@ -232,25 +111,42 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             ? state.currentQuest
             : _lastQuest;
 
-        final options = _shuffledOptions.isNotEmpty
-            ? _shuffledOptions
+        final options = _controller.shuffledOptions.isNotEmpty
+            ? _controller.shuffledOptions
             : (quest?.options ?? []);
         final buckets = quest?.topicBuckets ?? ["A", "B"];
-        final currentWord = _currentWordIndex < options.length
-            ? options[_currentWordIndex]
+        final currentWord = _controller.currentWordIndex < options.length
+            ? options[_controller.currentWordIndex]
             : "";
         final correctAnswer = quest?.correctAnswer ?? "";
+
+        String? dynamicHint;
+        if (currentWord.isNotEmpty && quest?.relatedWords != null) {
+          final cleanCurrentWord = currentWord.trim().toLowerCase();
+          for (var related in quest!.relatedWords!) {
+            final separatorIndex = related.indexOf(RegExp(r'[:\-]'));
+            if (separatorIndex != -1) {
+              final prefix = related.substring(0, separatorIndex).trim().toLowerCase();
+              if (prefix == cleanCurrentWord) {
+                final definitionText = related.substring(separatorIndex + 1).trim();
+                dynamicHint = "Definition: $definitionText";
+                break;
+              }
+            }
+          }
+        }
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+          isAnswered: _controller.isAnswered,
+          isCorrect: _controller.isCorrect,
+          showConfetti: _controller.showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
+          customHintText: dynamicHint,
           onHint: () {
-            setState(() => _isHintActive = true);
+            _controller.activateHint();
           },
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
@@ -283,7 +179,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                       top: counterTop,
                       child: RepaintBoundary(
                         child: TopicBatchCounter(
-                          count: _userChoices.length,
+                          count: _controller.userChoices.length,
                           total: options.length,
                           color: theme.primaryColor,
                         ),
@@ -330,8 +226,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                     isDark: isDark,
                                     correctAnswer: correctAnswer,
                                     currentWord: currentWord,
-                                    words: _wordsInBins[0] ?? [],
-                                    isHintActive: _isHintActive,
+                                    words: _controller.wordsInBins[0] ?? [],
+                                    isHintActive: _controller.isHintActive,
                                   ),
                                 ),
                               )
@@ -342,15 +238,15 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                 isDark: isDark,
                                 correctAnswer: correctAnswer,
                                 currentWord: currentWord,
-                                words: _wordsInBins[0] ?? [],
-                                isHintActive: _isHintActive,
+                                words: _controller.wordsInBins[0] ?? [],
+                                isHintActive: _controller.isHintActive,
                               ),
                       ),
                     ),
                     if (buckets.length > 1)
                       Positioned(
                         bottom: binBottom,
-                        right: 8.w, // Added premium visual margin from the edge
+                        right: 8.w,
                         child: RepaintBoundary(
                           child: isCompact
                               ? SizedBox(
@@ -365,8 +261,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                       isDark: isDark,
                                       correctAnswer: correctAnswer,
                                       currentWord: currentWord,
-                                      words: _wordsInBins[1] ?? [],
-                                      isHintActive: _isHintActive,
+                                      words: _controller.wordsInBins[1] ?? [],
+                                      isHintActive: _controller.isHintActive,
                                     ),
                                   ),
                                 )
@@ -377,197 +273,151 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                                   isDark: isDark,
                                   correctAnswer: correctAnswer,
                                   currentWord: currentWord,
-                                  words: _wordsInBins[1] ?? [],
-                                  isHintActive: _isHintActive,
+                                  words: _controller.wordsInBins[1] ?? [],
+                                  isHintActive: _controller.isHintActive,
                                 ),
                         ),
                       ),
-
-                    // Draggable Word Core
-                    if (!_isAnswered && !_isFirstStagePassed &&
-                        currentWord.isNotEmpty &&
-                        _flickedWord == null)
-                      Positioned(
-                        bottom: wordBottom,
-                        child: isCompact
-                            ? SizedBox(
-                                width: 110.w,
-                                height: 55.h,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
+                              if (!_controller.isAnswered && !_controller.isFirstStagePassed &&
+                                  currentWord.isNotEmpty &&
+                                  _controller.flickedWord == null)
+                                Positioned(
+                                  bottom: wordBottom,
+                                  child: isCompact
+                                      ? SizedBox(
+                                          width: 110.w,
+                                          height: 55.h,
+                                          child: FittedBox(
+                                            fit: BoxFit.scaleDown,
+                                            child: TopicDraggableWord(
+                                              word: currentWord,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onFlick: (v) => _controller.handleFlick(
+                                                v,
+                                                currentWord,
+                                                buckets,
+                                                correctAnswer,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      : TopicDraggableWord(
+                                              word: currentWord,
+                                              primaryColor: theme.primaryColor,
+                                              isDark: isDark,
+                                              onFlick: (v) => _controller.handleFlick(
+                                                v,
+                                                currentWord,
+                                                buckets,
+                                                correctAnswer,
+                                              ),
+                                            )
+                                            .animate(
+                                              key: ValueKey("word_${_controller.currentWordIndex}"),
+                                            )
+                                            .move(
+                                              begin: const Offset(0, -100),
+                                              end: Offset.zero,
+                                              duration: 500.ms,
+                                              curve: Curves.bounceOut,
+                                            )
+                                            .fadeIn(),
+                                ),
+                              if (!_controller.isAnswered && !_controller.isFirstStagePassed &&
+                                  currentWord.isNotEmpty &&
+                                  _controller.flickedWord == null &&
+                                  _controller.currentWordIndex == 0 &&
+                                  _controller.userChoices.isEmpty)
+                                Positioned(
+                                  bottom: wordBottom - 35.h,
+                                  child: IgnorePointer(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                              Icons.keyboard_double_arrow_left_rounded,
+                                              color: Colors.white.withValues(alpha: 0.5),
+                                              size: 24.r,
+                                            )
+                                            .animate(onPlay: (c) => c.repeat())
+                                            .fadeIn(duration: 500.ms)
+                                            .fadeOut(delay: 500.ms),
+                                        SizedBox(width: 8.w),
+                                        Icon(
+                                              Icons.touch_app_rounded,
+                                              color: Colors.white.withValues(alpha: 0.9),
+                                              size: 32.r,
+                                            )
+                                            .animate(
+                                              onPlay: (c) => c.repeat(reverse: true),
+                                            )
+                                            .moveX(
+                                              begin: -25.w,
+                                              end: 25.w,
+                                              duration: 1200.ms,
+                                              curve: Curves.easeInOutSine,
+                                            ),
+                                        SizedBox(width: 8.w),
+                                        Icon(
+                                              Icons.keyboard_double_arrow_right_rounded,
+                                              color: Colors.white.withValues(alpha: 0.5),
+                                              size: 24.r,
+                                            )
+                                            .animate(onPlay: (c) => c.repeat())
+                                            .fadeIn(duration: 500.ms)
+                                            .fadeOut(delay: 500.ms),
+                                      ],
+                                    ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
+                                  ),
+                                ),
+                              if (_controller.flickedWord != null)
+                                Positioned(
+                                  bottom: flyingWordBottom,
+                                  left: _controller.flickTarget == 0 ? 40.w : null,
+                                  right: _controller.flickTarget == 1 ? 40.w : null,
                                   child: TopicDraggableWord(
-                                    word: currentWord,
-                                    primaryColor: theme.primaryColor,
-                                    isDark: isDark,
-                                    onFlick: (v) => _handleFlick(
-                                      v,
-                                      currentWord,
-                                      buckets,
-                                      correctAnswer,
-                                    ),
-                                  ),
+                                          word: _controller.flickedWord!,
+                                          primaryColor: theme.primaryColor,
+                                          isDark: isDark,
+                                          onFlick: (v) {},
+                                        )
+                                        .animate()
+                                        .move(
+                                          begin: Offset.zero,
+                                          end: Offset(
+                                            _controller.flickTarget == 0
+                                                ? -(maxWidth / 2 - 70.w)
+                                                : (maxWidth / 2 - 70.w),
+                                            isCompact ? 100.h : 150.h,
+                                          ),
+                                          duration: 200.ms,
+                                          curve: Curves.easeIn,
+                                        )
+                                        .scale(
+                                          begin: const Offset(1, 1),
+                                          end: const Offset(0.3, 0.3),
+                                          duration: 250.ms,
+                                        )
+                                        .rotate(
+                                          begin: 0,
+                                          end: _controller.flickTarget == 0 ? -0.2 : 0.2,
+                                          duration: 250.ms,
+                                        ),
                                 ),
-                              )
-                            : TopicDraggableWord(
-                                    word: currentWord,
-                                    primaryColor: theme.primaryColor,
-                                    isDark: isDark,
-                                    onFlick: (v) => _handleFlick(
-                                      v,
-                                      currentWord,
-                                      buckets,
-                                      correctAnswer,
-                                    ),
-                                  )
-                                  .animate(
-                                    key: ValueKey("word_$_currentWordIndex"),
-                                  )
-                                  .move(
-                                    begin: const Offset(0, -100),
-                                    end: Offset.zero,
-                                    duration: 500.ms,
-                                    curve: Curves.bounceOut,
-                                  )
-                                  .fadeIn(),
-                      ),
-
-                    // Tutorial Hand Overlay
-                    if (!_isAnswered && !_isFirstStagePassed &&
-                        currentWord.isNotEmpty &&
-                        _flickedWord == null &&
-                        _currentWordIndex == 0 &&
-                        _userChoices.isEmpty)
-                      Positioned(
-                        bottom: wordBottom - 35.h,
-                        child: IgnorePointer(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                    Icons.keyboard_double_arrow_left_rounded,
-                                    color: Colors.white.withValues(alpha: 0.5),
-                                    size: 24.r,
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .fadeIn(duration: 500.ms)
-                                  .fadeOut(delay: 500.ms),
-                              SizedBox(width: 8.w),
-                              Icon(
-                                    Icons.touch_app_rounded,
-                                    color: Colors.white.withValues(alpha: 0.9),
-                                    size: 32.r,
-                                  )
-                                  .animate(
-                                    onPlay: (c) => c.repeat(reverse: true),
-                                  )
-                                  .moveX(
-                                    begin: -25.w,
-                                    end: 25.w,
-                                    duration: 1200.ms,
-                                    curve: Curves.easeInOutSine,
-                                  ),
-                              SizedBox(width: 8.w),
-                              Icon(
-                                    Icons.keyboard_double_arrow_right_rounded,
-                                    color: Colors.white.withValues(alpha: 0.5),
-                                    size: 24.r,
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .fadeIn(duration: 500.ms)
-                                  .fadeOut(delay: 500.ms),
                             ],
-                          ).animate().fadeIn(delay: 1.seconds, duration: 500.ms),
-                        ),
-                      ),
-
-                    // Flying Word Animation
-                    if (_flickedWord != null)
-                      Positioned(
-                        bottom: flyingWordBottom,
-                        child:
-                            Container(
-                                  width: 140.w,
-                                  height: 70.h,
-                                  decoration: BoxDecoration(
-                                    color: isDark
-                                        ? const Color(0xFF1E293B)
-                                        : Colors.white,
-                                    borderRadius: BorderRadius.circular(12.r),
-                                    border: Border.all(
-                                      color: theme.primaryColor.withValues(
-                                        alpha: 0.5,
-                                      ),
-                                      width: 1.5,
-                                    ),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      _flickedWord!.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: isDark
-                                            ? Colors.white
-                                            : Colors.black87,
-                                      ),
-                                    ),
-                                  ),
-                                )
-                                .animate()
-                                .move(
-                                  begin: Offset.zero,
-                                  end: Offset(
-                                    _flickTarget == 0 ? -110.w : 110.w,
-                                    isCompact ? 100.h : maxHeight * 0.28,
-                                  ),
-                                  duration: 400.ms,
-                                  curve: Curves.easeInBack,
-                                )
-                                .scale(
-                                  begin: const Offset(1, 1),
-                                  end: const Offset(0.2, 0.2),
-                                )
-                                .fadeOut(),
-                      ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ),
-        if (_isFirstStagePassed && !_isAnswered)
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-              child: Column(
-                children: [
-                  if (quest?.relatedWords != null && quest!.relatedWords!.isNotEmpty)
-                    TopicVocabMindMap(
-                      relatedWords: quest.relatedWords!,
-                      color: theme.primaryColor,
+                          ),
+                        );
+                      },
                     ),
-                  SizedBox(height: 20.h),
-                  DynamicAnagramWrapper(
-                    title: 'SPELL THE TARGET WORD',
-                    subtitle: 'Tap all letters to rebuild the word!',
-                    expectedText: quest?.correctAnswer ?? '',
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _submitFinalAnswer(true),
-                    onFailed: () {},
-                    onFailedWithSpelling: (wrongWord) =>
-                        _submitFinalAnswer(false, wrongWord: wrongWord),
-                    isPositioned: false,
                   ),
-                  SizedBox(height: 60.h),
                 ],
               ),
-            ),
-          ),
-      ],
-    ),
+            );
+          },
         );
       },
     );
   }
 }
+

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +14,8 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
+import '../controllers/flashcard_controller.dart';
+
 class FlashcardsScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
@@ -31,32 +31,22 @@ class FlashcardsScreen extends StatefulWidget {
 }
 
 class _FlashcardsScreenState extends State<FlashcardsScreen> {
-  final HapticService _hapticService = di.sl<HapticService>();
-  final SoundService _soundService = di.sl<SoundService>();
-
-  // ── Theme — updated in didChangeDependencies so dark-mode changes apply
+  late final FlashcardController _controller;
   late ThemeResult _theme;
 
-  // ── Game state ────────────────────────────────────────────────────────────
-  Offset _dragOffset = Offset.zero;
-  double _dragAngle = 0.0;
-  bool _isFlipped = false;
-  bool _isAnswered = false;
-  bool _isRetrying = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
   int _lastProcessedIndex = -1;
-  bool _isHintActive = false;
   VocabularyQuest? _lastQuest;
-
-  /// Cancellable hint-auto-flip timer.
-  Timer? _hintTimer;
-
-  // ── Lifecycle ─────────────────────────────────────────────────────────────
 
   @override
   void initState() {
     super.initState();
+    _controller = FlashcardController(
+      hapticService: di.sl<HapticService>(),
+      soundService: di.sl<SoundService>(),
+      onSubmitAnswer: (mastered) {
+        context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
+      },
+    );
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
@@ -71,75 +61,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
 
   @override
   void dispose() {
-    _hintTimer?.cancel();
+    _controller.dispose();
     super.dispose();
-  }
-
-  // ── Drag ─────────────────────────────────────────────────────────────────
-
-  void _onHorizontalDragUpdate(DragUpdateDetails details) {
-    if (_isAnswered) return;
-    if (_isRetrying) setState(() => _isRetrying = false);
-    final oldDx = _dragOffset.dx;
-    setState(() {
-      _dragOffset = Offset(_dragOffset.dx + details.delta.dx, 0);
-      _dragAngle = _dragOffset.dx / 500;
-      if ((_dragOffset.dx - oldDx).abs() > 0 &&
-          (_dragOffset.dx.abs() % 20 < 2)) {
-        _hapticService.selection();
-      }
-    });
-  }
-
-  void _onHorizontalDragEnd(DragEndDetails details, double threshold) {
-    if (_isAnswered) return;
-    if (_dragOffset.dx.abs() > threshold) {
-      _submitAnswer(_dragOffset.dx > 0);
-    } else {
-      setState(() {
-        _dragOffset = Offset.zero;
-        _dragAngle = 0.0;
-      });
-    }
-  }
-
-  // ── Answer submission ─────────────────────────────────────────────────────
-
-  void _submitAnswer(bool mastered) {
-    if (_isAnswered) return;
-    _hintTimer?.cancel();
-    // Fire-and-forget: audio/haptic must not block the immediate card animation.
-    if (mastered) {
-      _hapticService.success();
-      _soundService.playCorrect();
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-    }
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = mastered;
-      _dragOffset = Offset(mastered ? 1000 : -1000, 0);
-    });
-    context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
-  }
-
-  // ── Hint ──────────────────────────────────────────────────────────────────
-
-  void _onHintRequested() {
-    if (_isFlipped) return;
-    setState(() {
-      _isFlipped = true;
-      _isHintActive = true;
-    });
-    _hintTimer?.cancel();
-    _hintTimer = Timer(const Duration(seconds: 4), () {
-      if (!mounted || !_isHintActive || _isAnswered) return;
-      setState(() {
-        _isFlipped = false;
-        _isHintActive = false;
-      });
-    });
   }
 
   // ── Build ─────────────────────────────────────────────────────────────────
@@ -180,41 +103,39 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
             ? state.currentQuestOrNull
             : _lastQuest;
 
-        return VocabularyBaseLayout(
-          gameType: widget.gameType,
-          level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
-          onContinue: () =>
-              context.read<VocabularyBloc>().add(const NextQuestion()),
-          useScrolling: false,
-          onHint: _onHintRequested,
-          child: quest == null
-              ? GameShimmerLoading(primaryColor: _theme.primaryColor)
-              : FlashcardGameBody(
-                  quest: quest,
-                  primaryColor: _theme.primaryColor,
-                  isDark: isDark,
-                  isFlipped: _isFlipped,
-                  isAnswered: _isAnswered,
-                  isRetrying: _isRetrying,
-                  isHintActive: _isHintActive,
-                  hideActions: false,
-                  dragOffset: _dragOffset,
-                  dragAngle: _dragAngle,
-                  onHorizontalDragUpdate: _onHorizontalDragUpdate,
-                  onHorizontalDragEnd: _onHorizontalDragEnd,
-                  onCardTap: () {
-                    if (_isAnswered) return;
-                    _hapticService.light();
-                    setState(() {
-                      if (_isRetrying) _isRetrying = false;
-                      _isFlipped = !_isFlipped;
-                    });
-                  },
-                  onSubmitAnswer: _submitAnswer,
-                ),
+        return AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: _controller.isAnswered,
+              isCorrect: _controller.isCorrect,
+              showConfetti: _controller.showConfetti,
+              onContinue: () =>
+                  context.read<VocabularyBloc>().add(const NextQuestion()),
+              useScrolling: false,
+              onHint: _controller.requestHint,
+              child: quest == null
+                  ? GameShimmerLoading(primaryColor: _theme.primaryColor)
+                  : FlashcardGameBody(
+                      quest: quest,
+                      primaryColor: _theme.primaryColor,
+                      isDark: isDark,
+                      isFlipped: _controller.isFlipped,
+                      isAnswered: _controller.isAnswered,
+                      isRetrying: _controller.isRetrying,
+                      isHintActive: _controller.isHintActive,
+                      hideActions: false,
+                      dragOffset: _controller.dragOffset,
+                      dragAngle: _controller.dragAngle,
+                      onHorizontalDragUpdate: _controller.onHorizontalDragUpdate,
+                      onHorizontalDragEnd: _controller.onHorizontalDragEnd,
+                      onCardTap: _controller.flipCard,
+                      onSubmitAnswer: _controller.submitAnswer,
+                    ),
+            );
+          },
         );
       },
     );
@@ -225,24 +146,14 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
       final isNew = state.currentIndex != _lastProcessedIndex;
-      final isRetry = !state.answerStatus.isAnswered && _isAnswered;
+      final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
       if (isNew || isRetry) {
-        _hintTimer?.cancel();
-        setState(() {
-          _lastQuest = state.currentQuestOrNull ?? _lastQuest;
-          _lastProcessedIndex = state.currentIndex;
-          _isAnswered = false;
-          _isRetrying = isRetry;
-          _isCorrect = null;
-          _isFlipped = false;
-          _isHintActive = false;
-          _dragOffset = Offset.zero;
-          _dragAngle = 0.0;
-        });
+        _lastQuest = state.currentQuestOrNull ?? _lastQuest;
+        _lastProcessedIndex = state.currentIndex;
+        _controller.reset(isRetry);
       }
     } else if (state is VocabularyGameComplete) {
-      if (_showConfetti) return;
-      setState(() => _showConfetti = true);
+      _controller.completeGame();
       if (!context.mounted) return;
       GameDialogHelper.showCompletion(
         context,

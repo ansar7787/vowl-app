@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
 import 'package:vowl/core/presentation/models/game_scaffold_config.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 
 class VocabularyBaseLayout extends StatelessWidget {
   final GameSubtype gameType;
@@ -23,6 +24,7 @@ class VocabularyBaseLayout extends StatelessWidget {
   final bool showConfetti;
   final bool useScrolling;
   final bool disablePadding;
+  final String? customHintText;
 
   const VocabularyBaseLayout({
     super.key,
@@ -37,6 +39,7 @@ class VocabularyBaseLayout extends StatelessWidget {
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.customHintText,
   });
 
   @override
@@ -87,6 +90,7 @@ class VocabularyBaseLayout extends StatelessWidget {
           ),
           onBriefingShow: () {}, // Handled by GameBaseLayout internally now
           onHint: onHint,
+          customHintText: customHintText,
         );
       },
       mascotBuilder: (context, state, lives) {
@@ -126,22 +130,17 @@ class VocabularyBaseLayout extends StatelessWidget {
             ? null
             : explanation;
         String ruleTitle = 'VOCABULARY TIP';
+        Widget? customContent;
 
         if (gameType == GameSubtype.topicVocab) {
-          ruleTitle = 'TOPIC REVIEW';
-          final rawAns = quest.correctAnswer ?? "";
-          if (rawAns.isNotEmpty) {
-            ruleContent = rawAns
-                .split(',')
-                .map((pair) {
-                  final parts = pair.split(':');
-                  if (parts.length == 2) {
-                    return "${parts[1].trim()} (${parts[0].trim()})";
-                  }
-                  return pair.trim();
-                })
-                .join(' • ');
+          if (quest.relatedWords != null && quest.relatedWords!.isNotEmpty) {
+            customContent = TopicVocabMindMap(
+              relatedWords: quest.relatedWords!,
+              color: isCorrect == true ? const Color(0xFF10B981) : theme.primaryColor,
+            );
           }
+          ruleTitle = '';
+          ruleContent = null;
           finalExplanation = quest.explanation;
         } else if (gameType == GameSubtype.wordFormation) {
           ruleTitle = 'WORD BUILDING';
@@ -157,6 +156,7 @@ class VocabularyBaseLayout extends StatelessWidget {
           explanation: finalExplanation,
           ruleTitle: ruleTitle,
           ruleContent: ruleContent,
+          customContent: customContent,
         );
       },
     );
