@@ -185,14 +185,18 @@ class KidsGlobalProgressCard extends StatelessWidget {
                           width: 48.w,
                           height: 38.h,
                           decoration: BoxDecoration(
-                            color: isDark ? Colors.white12 : Colors.black12,
+                            color: const Color(0xFFF43F5E).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(16.r),
+                            border: Border.all(
+                              color: const Color(0xFFF43F5E).withValues(alpha: 0.2),
+                              width: 1,
+                            ),
                           ),
                         )
                             .animate(onPlay: (c) => c.repeat())
                             .shimmer(
                               duration: 1500.ms,
-                              color: isDark ? Colors.white24 : Colors.black26,
+                              color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
                             ),
                     ],
                   ),
