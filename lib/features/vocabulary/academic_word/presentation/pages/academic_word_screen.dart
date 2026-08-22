@@ -211,6 +211,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                 primaryColor: _cachedTheme.primaryColor,
                                 onConfirmed: () => _submitFinalAnswer(true),
                                 onSkipped: () => _submitFinalAnswer(false),
+                                onBypassed: () => _submitFinalAnswer(true),
                                 isPositioned: false,
                               ),
                             ],

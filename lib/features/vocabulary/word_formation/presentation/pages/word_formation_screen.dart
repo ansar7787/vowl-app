@@ -14,10 +14,11 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
 class WordFormationScreen extends StatefulWidget {
   final int level;
@@ -36,75 +37,32 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
 
-  bool _isAnswered = false;
-  bool? _isCorrect;
-  bool _showConfetti = false;
-  bool _isFirstStagePassed = false;
-  int _lastProcessedIndex = -1;
-  VocabularyQuest? _lastQuest;
-  int? _activeSuffixIndex;
-  int? _hoveringSuffixIndex;
+  late final WordFormationController _controller;
 
   @override
   void initState() {
     super.initState();
+    _controller = WordFormationController(
+      hapticService: _hapticService,
+      soundService: _soundService,
+      onSubmitAnswer: (isCorrect) {
+        if (mounted) {
+          context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+        }
+      },
+    );
+    _controller.addListener(() {
+      if (mounted) setState(() {});
+    });
     context.read<VocabularyBloc>().add(
       FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
   }
 
-  void _submitMorph(String suffix, String root, String correct, int index) {
-    if (_isAnswered) return;
-
-    setState(() {
-      _activeSuffixIndex = index;
-      _hoveringSuffixIndex = null;
-    });
-
-    // We compare the final formed word with the correct answer from JSON
-    final target = correct.trim().toLowerCase();
-
-    bool isCorrect = false;
-    String cleanS = suffix.replaceAll('-', '').trim().toLowerCase();
-    if (target.endsWith(cleanS) || target.startsWith(cleanS)) {
-      isCorrect = true;
-    }
-
-    if (isCorrect) {
-      _soundService.playCorrect();
-      _hapticService.success();
-      setState(() {
-        _isFirstStagePassed = true;
-      });
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = false;
-      });
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
-    }
-  }
-
-  void _submitFinalAnswer(bool nailedIt) {
-    if (_isAnswered) return;
-
-    setState(() {
-      _isAnswered = true;
-      _isCorrect = nailedIt;
-    });
-
-    final bloc = context.read<VocabularyBloc>();
-    if (nailedIt) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      bloc.add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      bloc.add(SubmitAnswer(false));
-    }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -112,31 +70,20 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = !state.answerStatus.isAnswered && _isAnswered;
+          final isNewQuestion = state.currentIndex != _controller.lastProcessedIndex;
+          final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            setState(() {
-              _lastQuest = state.currentQuest;
-              _lastProcessedIndex = state.currentIndex;
-              _isAnswered = false;
-              _isCorrect = null;
-              _showConfetti = false;
-              _isFirstStagePassed = false;
-              _activeSuffixIndex = null;
-              _hoveringSuffixIndex = null;
-            });
-          } else if (state.answerStatus.isAnswered && !_isAnswered) {
-            setState(() {
-              _isAnswered = true;
-              _isCorrect = state.answerStatus.asBoolOrNull;
-            });
+            _controller.reset(state.currentQuest, state.currentIndex, isRetry);
+          } else if (state.answerStatus.isAnswered && !_controller.isAnswered) {
+            _controller.isAnswered = true;
+            _controller.isCorrect = state.answerStatus.asBoolOrNull;
           }
         }
         if (state is VocabularyGameComplete) {
           final xp = state.xpEarned;
           final coins = state.coinsEarned;
-          setState(() => _showConfetti = true);
+          _controller.completeGame();
           if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
@@ -155,7 +102,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
         if (state is VocabularyLoading ||
             (state is! VocabularyGameComplete &&
-                _lastQuest == null &&
+                _controller.lastQuest == null &&
                 state is! VocabularyLoaded &&
                 state is! VocabularyError)) {
           return Scaffold(
@@ -167,12 +114,12 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
 
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
-            : _lastQuest;
+            : _controller.lastQuest;
         final options = quest?.options ?? [];
         final root = quest?.rootWord ?? quest?.word ?? "";
 
         // Use hovering suffix if dragging, otherwise use active selection
-        final displaySuffixIndex = _hoveringSuffixIndex ?? _activeSuffixIndex;
+        final displaySuffixIndex = _controller.hoveringSuffixIndex ?? _controller.activeSuffixIndex;
         final activeSuffix =
             (displaySuffixIndex != null &&
                 options.isNotEmpty &&
@@ -183,9 +130,9 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         return VocabularyBaseLayout(
           gameType: widget.gameType,
           level: widget.level,
-          isAnswered: _isAnswered,
-          isCorrect: _isCorrect,
-          showConfetti: _showConfetti,
+          isAnswered: _controller.isAnswered,
+          isCorrect: _controller.isCorrect,
+          showConfetti: _controller.showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () {
             // Find correct suffix index
@@ -210,11 +157,11 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
               }
             }
             if (correctIdx != null) {
-              setState(() => _hoveringSuffixIndex = correctIdx);
+              _controller.setHoveringIndex(correctIdx);
               // Auto-reset after a short delay if they don't drag
               Future.delayed(2.seconds, () {
-                if (mounted && !_isAnswered) {
-                  setState(() => _hoveringSuffixIndex = null);
+                if (mounted && !_controller.isAnswered) {
+                  _controller.setHoveringIndex(null);
                 }
               });
             }
@@ -339,7 +286,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                   },
                 ),
               ),
-              if (_isFirstStagePassed && !_isAnswered)
+              if (_controller.isFirstStagePassed && !_controller.isAnswered)
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
@@ -350,13 +297,37 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                             familyTree: quest.familyTree!,
                             color: theme.primaryColor,
                           ),
+                        if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+                          SizedBox(height: 16.h),
+                          Container(
+                            width: double.infinity,
+                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                            decoration: BoxDecoration(
+                              color: theme.primaryColor.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(16.r),
+                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                            ),
+                            child: Text(
+                              quest.explanation!,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+                                height: 1.4,
+                              ),
+                            ),
+                          ),
+                        ],
                         SizedBox(height: 20.h),
                         TypeToConfirmOverlay(
                           expectedText: quest.correctAnswer ?? '',
                           displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
                           primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onSkipped: () => _submitFinalAnswer(false),
+                          onConfirmed: () => _controller.submitFinalAnswer(true),
+                          onSkipped: () => _controller.submitFinalAnswer(false),
+                          onBypassed: () => _controller.submitFinalAnswer(true),
                           isPositioned: false,
                         ),
                         SizedBox(height: 60.h),
@@ -507,7 +478,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
                                   child: Text(
-                                    ((_isAnswered || _isFirstStagePassed)
+                                    ((_controller.isAnswered || _controller.isFirstStagePassed)
                                             ? (quest?.correctAnswer ?? "")
                                             : root)
                                         .toUpperCase(),
@@ -523,7 +494,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                   ),
                                 ),
                               ).animate().fadeIn().shimmer(duration: 2.seconds),
-                              if (suffix != null && !_isAnswered && !_isFirstStagePassed) ...[
+                              if (suffix != null && !_controller.isAnswered && !_controller.isFirstStagePassed) ...[
                                 SizedBox(height: 8.h),
                                 Icon(
                                   Icons.add_rounded,
@@ -613,13 +584,13 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         suffix: entry.value,
                         color: color,
                         isDark: isDark,
-                        isBlocked: _isAnswered || _isFirstStagePassed,
+                        isBlocked: _controller.isAnswered || _controller.isFirstStagePassed,
                         onMorph: (suffix) {
-                          _submitMorph(suffix, root, correct, entry.key);
+                          _controller.submitMorph(suffix, root, correct, entry.key);
                         },
                         onHover: (index) {
-                          if (!_isAnswered && !_isFirstStagePassed) {
-                            setState(() => _hoveringSuffixIndex = index);
+                          if (!_controller.isAnswered && !_controller.isFirstStagePassed) {
+                            _controller.setHoveringIndex(index);
                           }
                         },
                       ),
@@ -641,3 +612,4 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
     );
   }
 }
+

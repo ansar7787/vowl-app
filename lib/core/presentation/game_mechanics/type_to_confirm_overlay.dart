@@ -27,8 +27,11 @@ class TypeToConfirmOverlay extends StatefulWidget {
   /// Fires when the user successfully types the answer.
   final VoidCallback onConfirmed;
 
-  /// Fires when the user exhausts retries or taps "Skip".
+  /// Fires when the user exhausts retries or taps "Skip" (and isn't bypassing).
   final VoidCallback onSkipped;
+
+  /// Fires when the user watches an ad or uses premium to bypass the typing test.
+  final VoidCallback? onBypassed;
 
   /// Similarity threshold for text match (0.0–1.0). Default 0.85
   final double threshold;
@@ -36,8 +39,8 @@ class TypeToConfirmOverlay extends StatefulWidget {
   /// Maximum number of recording attempts before auto-skip. Default 3.
   final int maxAttempts;
 
-  /// Bonus XP label shown on success. Null hides the badge entirely.
-  final int? bonusXp;
+  /// Bonus Coins label shown on success. Null hides the badge entirely.
+  final int? bonusCoins;
 
   /// Whether to show a "Skip" button. Defaults to true for accessibility.
   final bool allowSkip;
@@ -53,9 +56,10 @@ class TypeToConfirmOverlay extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
+    this.onBypassed,
     this.threshold = 0.85,
     this.maxAttempts = 3,
-    this.bonusXp = 5,
+    this.bonusCoins,
     this.allowSkip = true,
     this.isPositioned = true,
   });
@@ -235,7 +239,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                     ],
                   ),
                 ),
-                if (widget.bonusXp != null)
+                if (widget.bonusCoins != null)
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10.w,
@@ -251,7 +255,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     child: Text(
-                      '+${widget.bonusXp} XP',
+                      '+${widget.bonusCoins} COIN',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
@@ -388,13 +392,23 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                     final user = context.read<AuthBloc>().state.user;
                     final isPremium = user?.isPremium ?? false;
                     if (isPremium) {
-                      widget.onSkipped();
+                      if (widget.onBypassed != null) {
+                        widget.onBypassed!();
+                      } else {
+                        widget.onSkipped();
+                      }
                     } else {
                       di.sl<AdService>().showRewardedAd(
                         context: context,
                         isPremium: false,
                         onUserEarnedReward: (_) {
-                          if (mounted) widget.onSkipped();
+                          if (mounted) {
+                            if (widget.onBypassed != null) {
+                              widget.onBypassed!();
+                            } else {
+                              widget.onSkipped();
+                            }
+                          }
                         },
                         onDismissed: () {},
                       );

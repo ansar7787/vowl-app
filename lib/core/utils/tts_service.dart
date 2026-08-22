@@ -130,13 +130,13 @@ class TtsServiceImpl implements TtsService {
             },
           );
       if (result == 0) {
-        throw Exception(
+        sl<AppLogger>().error(
           "TTS Engine failed to speak (possibly unbound or crashed)",
         );
+        return;
       }
     } catch (e) {
       sl<AppLogger>().error('TtsService: Speech execution error', error: e);
-      rethrow;
     }
   }
 
