@@ -38,7 +38,6 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
   // Track hovered state for the drop zones
   bool _isHoveringPrefix = false;
   bool _isHoveringSuffix = false;
-  String? _draggedAffix;
 
   @override
   Widget build(BuildContext context) {
@@ -310,14 +309,9 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
     return Draggable<String>(
       data: affix,
-      onDragStarted: () {
-        setState(() {
-          _draggedAffix = affix;
-        });
-      },
+      onDragStarted: () {},
       onDragEnd: (details) {
         setState(() {
-          _draggedAffix = null;
           _isHoveringPrefix = false;
           _isHoveringSuffix = false;
         });
