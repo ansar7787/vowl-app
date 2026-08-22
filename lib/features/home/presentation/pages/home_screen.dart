@@ -230,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 16.h),
+                              SizedBox(height: 12.h), // Reduced from 16.h
                               InlineNotificationCard(
                                 streak: user.currentStreak,
                               ),
@@ -245,7 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         sliver: SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              SizedBox(height: 24.h),
+                              SizedBox(height: 12.h), // Reduced from 24.h
                               GlobalProgressCard(
                                 user: user,
                                 globalRank: _globalRank,
