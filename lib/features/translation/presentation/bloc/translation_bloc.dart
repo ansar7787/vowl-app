@@ -123,7 +123,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     on<TranslationTextChanged>(
       _onTextChanged,
       transformer: (events, mapper) {
-        return events.debounceTime(const Duration(milliseconds: 1500)).switchMap(mapper);
+        return events.debounce(const Duration(milliseconds: 1500)).switchMap(mapper);
       },
     );
     on<TranslationLanguageChanged>(_onLanguageChanged);
