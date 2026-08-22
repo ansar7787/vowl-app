@@ -200,7 +200,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                   isAnswered: _isAnswered,
                   isRetrying: _isRetrying,
                   isHintActive: _isHintActive,
-                  hideActions: !_isFlipped,
+                  hideActions: false,
                   dragOffset: _dragOffset,
                   dragAngle: _dragAngle,
                   onHorizontalDragUpdate: _onHorizontalDragUpdate,
