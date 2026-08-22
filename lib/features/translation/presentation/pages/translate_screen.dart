@@ -337,7 +337,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
               ),
               border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(vertical: 4.h),
+              contentPadding: EdgeInsets.symmetric(vertical: 12.h),
             ),
           ),
         ],
