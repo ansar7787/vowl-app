@@ -13,16 +13,14 @@ class PrefixSuffixController extends ChangeNotifier {
   final TtsService _ttsService;
   final void Function(bool) onSubmitAnswer;
 
-  Offset dragOffset = Offset.zero;
   bool isAnswered = false;
   bool? isCorrect;
   bool showConfetti = false;
   bool isFirstStagePassed = false;
+  String? selectedAffix;
   
   int lastProcessedIndex = -1;
   VocabularyQuest? lastQuest;
-  double safeWidth = 400.0;
-  double safeHeight = 800.0;
 
   PrefixSuffixController({
     required HapticService hapticService,
@@ -39,7 +37,7 @@ class PrefixSuffixController extends ChangeNotifier {
     isAnswered = false;
     isCorrect = null;
     isFirstStagePassed = false;
-    dragOffset = Offset.zero;
+    selectedAffix = null;
     notifyListeners();
   }
   
@@ -55,57 +53,16 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateDimensions(double width, double height) {
-    safeWidth = width;
-    safeHeight = height;
-  }
+  // Layout dimensions can be ignored now, but kept for signature compatibility
+  void updateDimensions(double width, double height) {}
 
-  void onRoverDrag(Offset delta) {
+  void onAffixSelected(String option, VocabularyQuest quest) {
     if (isAnswered || isFirstStagePassed) return;
-    dragOffset += delta;
+    
+    selectedAffix = option;
     notifyListeners();
-  }
 
-  void onRoverRelease(VocabularyQuest quest, bool isCompact) {
-    if (isAnswered || isFirstStagePassed) return;
-
-    final options = quest.options ?? [];
-    int? dockedIndex;
-
-    // Check collision with terminals - dynamically scale collision radius
-    final double collisionDistance = isCompact ? 65.r : 90.r;
-    for (int i = 0; i < options.length; i++) {
-      final terminalPos = getTerminalPosition(
-        i,
-        options.length,
-        safeWidth,
-        safeHeight,
-        isCompact,
-      );
-      final roverPos = Offset.zero + dragOffset;
-
-      if ((roverPos - terminalPos).distance < collisionDistance) {
-        dockedIndex = i;
-        break;
-      }
-    }
-
-    if (dockedIndex != null) {
-      // Visual Snap to terminal
-      dragOffset = getTerminalPosition(
-        dockedIndex,
-        options.length,
-        safeWidth,
-        safeHeight,
-        isCompact,
-      );
-      notifyListeners();
-      _submitAffix(options[dockedIndex], quest);
-    } else {
-      dragOffset = Offset.zero;
-      _hapticService.light();
-      notifyListeners();
-    }
+    _submitAffix(option, quest);
   }
 
   /// DRY Helper: Consistently evaluates if an affix matches the target word.
@@ -186,55 +143,13 @@ class PrefixSuffixController extends ChangeNotifier {
     // Find the correct option using the DRY helper
     for (int i = 0; i < options.length; i++) {
       final option = options[i];
-      
       if (_isAffixMatch(option, correctWord)) {
-        dragOffset = getTerminalPosition(
-          i,
-          options.length,
-          safeWidth,
-          safeHeight,
-          isCompact,
-        ) * 0.4;
-        notifyListeners();
-        
-        Future.delayed(const Duration(seconds: 1), () {
-          if (!isAnswered) {
-            dragOffset = Offset.zero;
-            notifyListeners();
-          }
-        });
+        // Flash the correct option somehow (currently handled by hint glow in UI)
+        _hapticService.light();
         break;
       }
     }
   }
 
-  Offset getTerminalPosition(
-    int index,
-    int total,
-    double width,
-    double height,
-    bool isCompact,
-  ) {
-    // Dynamic Responsive Positioning (Diamond/Corner Grid)
-    double hDist = (width - 120.w) / 2;
-    double vDist = (height - (isCompact ? 130.h : 180.h)) / 2;
 
-    // Use a smaller radius if the screen is tiny
-    hDist = hDist.clamp(isCompact ? 60.w : 80.w, 140.w);
-    vDist = vDist.clamp(isCompact ? 70.h : 100.h, 160.h);
-
-    switch (index) {
-      case 0:
-        return Offset(-hDist, -vDist); // Top Left
-      case 1:
-        return Offset(hDist, -vDist); // Top Right
-      case 2:
-        return Offset(-hDist, vDist); // Bottom Left
-      case 3:
-        return Offset(hDist, vDist); // Bottom Right
-      default:
-        double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
-        return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
-    }
-  }
 }
