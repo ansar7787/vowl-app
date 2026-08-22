@@ -154,15 +154,17 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     Emitter<TranslationState> emit,
   ) async {
     final text = event.text.trim();
+    final bool isFreshTranslation = state.translatedText.isEmpty && text.isNotEmpty;
+
     emit(state.copyWith(sourceText: text, errorMessage: null));
 
     if (text.isEmpty) {
-      emit(state.copyWith(translatedText: ''));
+      emit(state.copyWith(translatedText: '', isLimitReached: false));
       return;
     }
 
-    if (!event.isPremium && state.isLimitReached) {
-      emit(state.copyWith(errorMessage: null));
+    if (!event.isPremium && state.freeTranslationsRemaining <= 0 && isFreshTranslation) {
+      emit(state.copyWith(isLimitReached: true));
       return;
     }
 
@@ -184,8 +186,9 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
 
-      final int newRemaining = event.isPremium ? 3 : (state.freeTranslationsRemaining - 1);
-      final bool limitReached = !event.isPremium && newRemaining <= 0;
+      final int newRemaining = event.isPremium 
+          ? 3 
+          : (isFreshTranslation ? state.freeTranslationsRemaining - 1 : state.freeTranslationsRemaining);
 
       emit(
         state.copyWith(
@@ -193,7 +196,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
           isModelDownloading: false,
           downloadedLanguages: newDownloaded,
           freeTranslationsRemaining: newRemaining > 0 ? newRemaining : 0,
-          isLimitReached: limitReached,
+          isLimitReached: false,
         ),
       );
     } catch (e) {
