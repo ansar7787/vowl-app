@@ -239,7 +239,39 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 3. QUEST ARENA (Deep Work, Core Journey)
+                      // 3. DASHBOARD (Stats, Leaderboards & Utility)
+                      SliverPadding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        sliver: SliverToBoxAdapter(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 24.h),
+                              GlobalProgressCard(
+                                user: user,
+                                globalRank: _globalRank,
+                              ),
+                              SizedBox(height: 12.h),
+                              HomeQuickStats(user: user),
+                              SizedBox(height: 12.h),
+                              KidsGlobalProgressCard(
+                                user: user,
+                                globalRank: _kidsGlobalRank,
+                              ),
+                              SizedBox(height: 12.h),
+                              CommandPod(
+                                user: user,
+                                mode: CommandPodMode.vaultOnly,
+                              ),
+                              SizedBox(height: 12.h),
+                              TranslationHomeCard(isDark: isDark),
+                              SizedBox(height: 24.h),
+                              const AiLabGrid(),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      // 4. QUEST ARENA (Deep Work, Core Journey)
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
                         sliver: SliverToBoxAdapter(
@@ -312,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 4. HERO CAROUSEL (Daily Words & Junior Adventure)
+                      // 5. HERO CAROUSEL (Daily Words & Junior Adventure)
                       SliverToBoxAdapter(
                         child: Column(
                           children: [
@@ -373,7 +405,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 5. DISCOVERY HUB (Audio Deck)
+                      // 6. DISCOVERY HUB (Audio Deck)
                       HomeSliverSectionHeader(
                         title: context.tr(
                           'home.discovery_hub_title',
@@ -390,38 +422,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           user: user,
                           onLaunchQuest: (id) =>
                               _launchThemedQuest(context, id),
-                        ),
-                      ),
-
-                      // 6. GLOBAL PROGRESS, STATS & UTILITY
-                      SliverPadding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        sliver: SliverToBoxAdapter(
-                          child: Column(
-                            children: [
-                              SizedBox(height: 24.h),
-                              TranslationHomeCard(isDark: isDark),
-                              SizedBox(height: 12.h),
-                              GlobalProgressCard(
-                                user: user,
-                                globalRank: _globalRank,
-                              ),
-                              SizedBox(height: 12.h),
-                              HomeQuickStats(user: user),
-                              SizedBox(height: 12.h),
-                              KidsGlobalProgressCard(
-                                user: user,
-                                globalRank: _kidsGlobalRank,
-                              ),
-                              SizedBox(height: 12.h),
-                              CommandPod(
-                                user: user,
-                                mode: CommandPodMode.vaultOnly,
-                              ),
-                              SizedBox(height: 24.h),
-                              const AiLabGrid(),
-                            ],
-                          ),
                         ),
                       ),
 
