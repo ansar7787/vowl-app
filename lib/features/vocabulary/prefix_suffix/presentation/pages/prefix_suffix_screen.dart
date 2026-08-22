@@ -122,14 +122,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
               useScrolling: false,
               onHint: () {
-                final isCompact = (_controller.lastConstraints?.maxHeight ?? 800) < 580;
+                final isCompact = _controller.safeHeight < 580;
                 _controller.onHint(quest, isCompact);
               },
               child: quest == null
                   ? const SizedBox()
                   : LayoutBuilder(
                       builder: (context, constraints) {
-                        _controller.updateConstraints(constraints);
                         final screenSize = MediaQuery.of(context).size;
                         final double safeWidth = constraints.maxWidth.isFinite
                             ? constraints.maxWidth
@@ -138,6 +137,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                             ? constraints.maxHeight
                             : (screenSize.height * 0.6);
                         final isCompact = safeHeight < 580;
+                        _controller.updateDimensions(safeWidth, safeHeight);
 
                         return SizedBox(
                           width: safeWidth,
@@ -175,9 +175,10 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                         position: _controller.getTerminalPosition(
                                           i,
                                           quest.options!.length,
-                                          constraints,
+                                          safeWidth,
+                                          safeHeight,
                                           isCompact,
-                                        ).scale(1.w, 1.h),
+                                        ),
                                         parentWidth: safeWidth,
                                         parentHeight: safeHeight,
                                       ),

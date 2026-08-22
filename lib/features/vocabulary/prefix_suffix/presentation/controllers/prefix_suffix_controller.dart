@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -20,7 +21,8 @@ class PrefixSuffixController extends ChangeNotifier {
   
   int lastProcessedIndex = -1;
   VocabularyQuest? lastQuest;
-  BoxConstraints? lastConstraints;
+  double safeWidth = 400.0;
+  double safeHeight = 800.0;
 
   PrefixSuffixController({
     required HapticService hapticService,
@@ -53,8 +55,9 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void updateConstraints(BoxConstraints constraints) {
-    lastConstraints = constraints;
+  void updateDimensions(double width, double height) {
+    safeWidth = width;
+    safeHeight = height;
   }
 
   void onRoverDrag(Offset delta) {
@@ -65,18 +68,18 @@ class PrefixSuffixController extends ChangeNotifier {
 
   void onRoverRelease(VocabularyQuest quest, bool isCompact) {
     if (isAnswered || isFirstStagePassed) return;
-    if (lastConstraints == null) return;
 
     final options = quest.options ?? [];
     int? dockedIndex;
 
     // Check collision with terminals - dynamically scale collision radius
-    final double collisionDistance = isCompact ? 65.0 : 90.0;
+    final double collisionDistance = isCompact ? 65.r : 90.r;
     for (int i = 0; i < options.length; i++) {
       final terminalPos = getTerminalPosition(
         i,
         options.length,
-        lastConstraints!,
+        safeWidth,
+        safeHeight,
         isCompact,
       );
       final roverPos = Offset.zero + dragOffset;
@@ -92,7 +95,8 @@ class PrefixSuffixController extends ChangeNotifier {
       dragOffset = getTerminalPosition(
         dockedIndex,
         options.length,
-        lastConstraints!,
+        safeWidth,
+        safeHeight,
         isCompact,
       );
       notifyListeners();
@@ -179,8 +183,6 @@ class PrefixSuffixController extends ChangeNotifier {
       return;
     }
 
-    if (lastConstraints == null) return;
-
     // Find the correct option using the DRY helper
     for (int i = 0; i < options.length; i++) {
       final option = options[i];
@@ -189,7 +191,8 @@ class PrefixSuffixController extends ChangeNotifier {
         dragOffset = getTerminalPosition(
           i,
           options.length,
-          lastConstraints!,
+          safeWidth,
+          safeHeight,
           isCompact,
         ) * 0.4;
         notifyListeners();
@@ -208,19 +211,17 @@ class PrefixSuffixController extends ChangeNotifier {
   Offset getTerminalPosition(
     int index,
     int total,
-    BoxConstraints constraints,
+    double width,
+    double height,
     bool isCompact,
   ) {
-    final double safeMaxWidth = constraints.maxWidth;
-    final double safeMaxHeight = constraints.maxHeight;
-
     // Dynamic Responsive Positioning (Diamond/Corner Grid)
-    double hDist = (safeMaxWidth - 120) / 2;
-    double vDist = (safeMaxHeight - (isCompact ? 130 : 180)) / 2;
+    double hDist = (width - 120.w) / 2;
+    double vDist = (height - (isCompact ? 130.h : 180.h)) / 2;
 
     // Use a smaller radius if the screen is tiny
-    hDist = hDist.clamp(isCompact ? 60.0 : 80.0, 140.0);
-    vDist = vDist.clamp(isCompact ? 70.0 : 100.0, 160.0);
+    hDist = hDist.clamp(isCompact ? 60.w : 80.w, 140.w);
+    vDist = vDist.clamp(isCompact ? 70.h : 100.h, 160.h);
 
     switch (index) {
       case 0:
