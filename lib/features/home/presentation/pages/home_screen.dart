@@ -400,6 +400,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 24.h),
+                              TranslationHomeCard(isDark: isDark),
+                              SizedBox(height: 12.h),
                               GlobalProgressCard(
                                 user: user,
                                 globalRank: _globalRank,
@@ -416,8 +418,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 user: user,
                                 mode: CommandPodMode.vaultOnly,
                               ),
-                              SizedBox(height: 12.h),
-                              TranslationHomeCard(isDark: isDark),
                               SizedBox(height: 24.h),
                               const AiLabGrid(),
                             ],
