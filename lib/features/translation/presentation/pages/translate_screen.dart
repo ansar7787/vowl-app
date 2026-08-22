@@ -337,7 +337,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
               ),
               border: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(vertical: 12.h),
+              contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
             ),
           ),
         ],
@@ -417,18 +417,21 @@ class _TranslateScreenState extends State<TranslateScreen> {
                   ],
                 )
               else
-                SelectableText(
-                  state.translatedText.isEmpty
-                      ? context.tr('translation.translation_placeholder', fallback: 'Translation will appear here.')
-                      : state.translatedText,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
-                    height: 1.4,
-                    color: state.translatedText.isEmpty
-                        ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
-                        : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: SelectableText(
+                    state.translatedText.isEmpty
+                        ? context.tr('translation.translation_placeholder', fallback: 'Translation will appear here.')
+                        : state.translatedText,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w500,
+                      height: 1.4,
+                      color: state.translatedText.isEmpty
+                          ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
+                          : (isDark ? Colors.white : const Color(0xFF0F172A)),
+                    ),
                   ),
                 ),
             ],
