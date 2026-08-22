@@ -364,7 +364,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
           letterSpacing: 4,
         ),
       ),
-    ).animate()
+    )).animate()
      .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack, duration: 400.ms)
      .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 800.ms, delay: 200.ms);
   }
