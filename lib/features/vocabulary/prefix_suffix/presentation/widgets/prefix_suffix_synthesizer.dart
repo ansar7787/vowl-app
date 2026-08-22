@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-class PrefixSuffixSynthesizer extends StatelessWidget {
+class PrefixSuffixSynthesizer extends StatefulWidget {
   final String rootWord;
   final List<String> options;
   final String correctAnswer;
@@ -12,7 +12,7 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
   final bool isFirstStagePassed;
   final Color primaryColor;
   final bool isDark;
-  final Function(String) onAffixSelected;
+  final Function(String, bool) onAffixSelected;
   final VoidCallback onContinue;
 
   const PrefixSuffixSynthesizer({
@@ -31,56 +31,53 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    // 1. ROBUST DETECTION LOGIC
-    final cleanCorrect = correctAnswer.replaceAll('-', '').trim().toLowerCase();
-    
-    // Find which option actually fits inside the correct answer
-    final correctOption = options.firstWhere(
-      (opt) => cleanCorrect.contains(opt.replaceAll('-', '').trim().toLowerCase()),
-      orElse: () => options.first,
-    );
-    
-    final cleanOpt = correctOption.replaceAll('-', '').trim().toLowerCase();
-    
-    // A prefix is anything that comes at the beginning of the word.
-    final isPrefix = correctOption.endsWith('-') || cleanCorrect.startsWith(cleanOpt);
+  State<PrefixSuffixSynthesizer> createState() => _PrefixSuffixSynthesizerState();
+}
 
+class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
+  // Track hovered state for the drop zones
+  bool _isHoveringPrefix = false;
+  bool _isHoveringSuffix = false;
+  String? _draggedAffix;
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(height: 40.h),
-        // ── SYNTHESIS ZONE ──
+        
+        // ── THE MAGNETIC TRACK (Center) ──
         Container(
           height: 120.h,
           width: double.infinity,
           alignment: Alignment.center,
-          child: isFirstStagePassed
+          child: widget.isFirstStagePassed
               ? _buildFusedWord()
-              : _buildSynthesisSockets(isPrefix),
+              : _buildMagneticTrack(),
         ),
 
         SizedBox(height: 60.h),
 
-        // ── EXPLANATION OR AFFIX DOCK ──
-        if (isFirstStagePassed) ...[
-          if (explanation != null && explanation!.isNotEmpty)
+        // ── EXPLANATION OR ARSENAL DOCK ──
+        if (widget.isFirstStagePassed) ...[
+          if (widget.explanation != null && widget.explanation!.isNotEmpty)
             Container(
               margin: EdgeInsets.symmetric(horizontal: 24.w),
               padding: EdgeInsets.all(20.r),
               decoration: BoxDecoration(
-                color: primaryColor.withValues(alpha: 0.1),
+                color: widget.primaryColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: primaryColor.withValues(alpha: 0.3)),
+                border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
               ),
               child: Text(
-                explanation!,
+                widget.explanation!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
+                  color: widget.isDark ? Colors.white : Colors.black87,
                   height: 1.4,
                 ),
               ),
@@ -89,9 +86,9 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
           SizedBox(height: 30.h),
           
           ElevatedButton(
-            onPressed: onContinue,
+            onPressed: widget.onContinue,
             style: ElevatedButton.styleFrom(
-              backgroundColor: primaryColor,
+              backgroundColor: widget.primaryColor,
               padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.r),
@@ -109,15 +106,15 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
             ),
           ).animate().fadeIn(delay: 500.ms, duration: 400.ms).scale(curve: Curves.easeOutBack),
         ] else ...[
-          // Affix Dock
+          // Arsenal Dock (Draggable Chips)
           Wrap(
             spacing: 16.w,
             runSpacing: 16.h,
             alignment: WrapAlignment.center,
-            children: options.map((option) {
-              return _buildAffixPiece(option);
+            children: widget.options.map((option) {
+              return _buildDraggableChip(option);
             }).toList(),
-          ).animate(target: selectedAffix != null ? 0 : 1).scale(
+          ).animate(target: widget.selectedAffix != null ? 0 : 1).scale(
             begin: const Offset(0.8, 0.8),
             end: const Offset(1.0, 1.0),
             duration: 300.ms,
@@ -128,179 +125,248 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
     );
   }
 
-  Widget _buildSynthesisSockets(bool isPrefix) {
-    // 2. FITTEDBOX TO PREVENT RENDERFLEX OVERFLOWS
+  Widget _buildMagneticTrack() {
     return FittedBox(
       fit: BoxFit.scaleDown,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (isPrefix) _buildDynamicSocket(),
-          if (isPrefix) SizedBox(width: 8.w),
-          _buildRootBlock(),
-          if (!isPrefix) SizedBox(width: 8.w),
-          if (!isPrefix) _buildDynamicSocket(),
-        ],
+      child: Container(
+        padding: EdgeInsets.all(12.r),
+        decoration: BoxDecoration(
+          color: widget.isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: widget.primaryColor.withValues(alpha: 0.1)),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildDropZone(isPrefixSlot: true),
+            SizedBox(width: 12.w),
+            _buildRootBlock(),
+            SizedBox(width: 12.w),
+            _buildDropZone(isPrefixSlot: false),
+          ],
+        ),
       ),
     );
   }
 
-  // 3. TRUE ANIMATION (Sockets render the selected piece immediately)
-  Widget _buildDynamicSocket() {
-    if (selectedAffix != null) {
-      // Show the selected affix snapping into the socket
-      return Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-        decoration: BoxDecoration(
-          color: primaryColor,
-          borderRadius: BorderRadius.circular(16.r),
-          boxShadow: [
-            BoxShadow(
-              color: primaryColor.withValues(alpha: 0.4),
-              blurRadius: 12,
-              spreadRadius: 2,
-            )
-          ],
-        ),
-        child: Text(
-          selectedAffix!.toUpperCase(),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
-            color: Colors.white,
-            letterSpacing: 2,
-          ),
-        ),
-      ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
+  Widget _buildDropZone({required bool isPrefixSlot}) {
+    // If an affix is selected and snapping into this side
+    if (widget.selectedAffix != null) {
+      final isSelectedPrefix = widget.selectedAffix!.endsWith('-');
+      if (isPrefixSlot == isSelectedPrefix) {
+        return _buildSnappedAffix(widget.selectedAffix!);
+      }
     }
 
-    // Default Empty Socket
-    return Container(
-      width: 80.w,
-      height: 70.h,
-      decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(
-          color: primaryColor.withValues(alpha: 0.5),
-          width: 2,
-          style: BorderStyle.solid,
-        ),
-      ),
-      alignment: Alignment.center,
-      child: Icon(
-        Icons.add,
-        color: primaryColor.withValues(alpha: 0.5),
-        size: 32.r,
-      ),
-    ).animate(onPlay: (controller) => controller.repeat(reverse: true))
-     .fade(begin: 0.5, end: 1.0, duration: 1000.ms);
+    final isHovering = isPrefixSlot ? _isHoveringPrefix : _isHoveringSuffix;
+    
+    return DragTarget<String>(
+      onWillAcceptWithDetails: (details) {
+        setState(() {
+          if (isPrefixSlot) {
+            _isHoveringPrefix = true;
+          } else {
+            _isHoveringSuffix = true;
+          }
+        });
+        return true;
+      },
+      onLeave: (data) {
+        setState(() {
+          if (isPrefixSlot) {
+            _isHoveringPrefix = false;
+          } else {
+            _isHoveringSuffix = false;
+          }
+        });
+      },
+      onAcceptWithDetails: (details) {
+        setState(() {
+          _isHoveringPrefix = false;
+          _isHoveringSuffix = false;
+        });
+        widget.onAffixSelected(details.data, isPrefixSlot);
+      },
+      builder: (context, candidateData, rejectedData) {
+        return AnimatedContainer(
+          duration: 200.ms,
+          width: isHovering ? 100.w : 80.w,
+          height: isHovering ? 80.h : 70.h,
+          decoration: BoxDecoration(
+            color: isHovering 
+                ? widget.primaryColor.withValues(alpha: 0.2)
+                : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05)),
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isHovering ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.5),
+              width: isHovering ? 3 : 2,
+              style: isHovering ? BorderStyle.solid : BorderStyle.none, // Dashed look simulated by alpha when not hovering
+            ),
+            boxShadow: isHovering 
+                ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.3), blurRadius: 12, spreadRadius: 2)]
+                : null,
+          ),
+          alignment: Alignment.center,
+          child: isHovering
+              ? Icon(Icons.arrow_downward_rounded, color: widget.primaryColor, size: 32.r)
+              : Icon(Icons.add, color: widget.primaryColor.withValues(alpha: 0.3), size: 32.r),
+        );
+      },
+    );
   }
 
-  Widget _buildRootBlock() {
+  Widget _buildSnappedAffix(String affix) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        color: widget.primaryColor,
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
+            color: widget.primaryColor.withValues(alpha: 0.4),
+            blurRadius: 12,
+            spreadRadius: 2,
+          )
         ],
       ),
       child: Text(
-        rootWord.toUpperCase(),
+        affix.toUpperCase(),
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 24.sp,
           fontWeight: FontWeight.w900,
-          color: isDark ? Colors.white : Colors.black87,
+          color: Colors.white,
+          letterSpacing: 2,
+        ),
+      ),
+    ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
+  }
+
+  Widget _buildRootBlock() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 24.h),
+      decoration: BoxDecoration(
+        color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: widget.primaryColor.withValues(alpha: 0.4), width: 2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.15),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
+          ),
+        ],
+      ),
+      child: Text(
+        widget.rootWord.toUpperCase(),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 28.sp,
+          fontWeight: FontWeight.w900,
+          color: widget.isDark ? Colors.white : Colors.black87,
           letterSpacing: 2,
         ),
       ),
     );
   }
 
-  Widget _buildAffixPiece(String affix) {
-    // 4. FIX HINT SYSTEM (Visual glow for correct piece)
-    final bool isHinted = hintedAffix == affix;
+  Widget _buildDraggableChip(String affix) {
+    final bool isHinted = widget.hintedAffix == affix;
+    final bool isDragging = _draggedAffix == affix;
     
-    Widget piece = GestureDetector(
-      onTap: () {
-        if (selectedAffix == null) {
-          onAffixSelected(affix);
-        }
-      },
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: isHinted ? primaryColor : primaryColor.withValues(alpha: 0.3),
-            width: isHinted ? 3 : 2,
-          ),
-          boxShadow: isHinted
-              ? [
-                  BoxShadow(
-                    color: primaryColor.withValues(alpha: 0.6),
-                    blurRadius: 16,
-                    spreadRadius: 4,
-                  )
-                ]
-              : null,
+    Widget chip = Container(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: isHinted ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.3),
+          width: isHinted ? 3 : 2,
         ),
-        child: Text(
-          affix.toUpperCase(),
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 20.sp,
-            fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white : Colors.black87,
-          ),
+        boxShadow: isHinted
+            ? [
+                BoxShadow(
+                  color: widget.primaryColor.withValues(alpha: 0.6),
+                  blurRadius: 16,
+                  spreadRadius: 4,
+                )
+              ]
+            : null,
+      ),
+      child: Text(
+        affix.toUpperCase(),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w800,
+          color: widget.isDark ? Colors.white : Colors.black87,
         ),
       ),
     );
 
     if (isHinted) {
-      piece = piece.animate(onPlay: (controller) => controller.repeat(reverse: true))
-                   .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.05, 1.05), duration: 500.ms);
+      chip = chip.animate(onPlay: (controller) => controller.repeat(reverse: true))
+                 .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.05, 1.05), duration: 500.ms);
     }
 
-    return piece;
+    return Draggable<String>(
+      data: affix,
+      onDragStarted: () {
+        setState(() {
+          _draggedAffix = affix;
+        });
+      },
+      onDragEnd: (details) {
+        setState(() {
+          _draggedAffix = null;
+          _isHoveringPrefix = false;
+          _isHoveringSuffix = false;
+        });
+      },
+      feedback: Transform.scale(
+        scale: 1.1,
+        child: Material(
+          color: Colors.transparent,
+          child: Opacity(
+            opacity: 0.9,
+            child: chip,
+          ),
+        ),
+      ),
+      childWhenDragging: Opacity(
+        opacity: 0.2,
+        child: chip,
+      ),
+      child: chip,
+    );
   }
 
   Widget _buildFusedWord() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 20.h),
+      padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
+          colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(24.r),
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withValues(alpha: 0.4),
+            color: widget.primaryColor.withValues(alpha: 0.4),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
         ],
       ),
       child: Text(
-        correctAnswer.toUpperCase(),
+        widget.correctAnswer.toUpperCase(),
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 32.sp,
+          fontSize: 36.sp,
           fontWeight: FontWeight.w900,
           color: Colors.white,
-          letterSpacing: 3,
+          letterSpacing: 4,
         ),
       ),
     ).animate()

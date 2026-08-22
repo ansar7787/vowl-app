@@ -56,9 +56,21 @@ class PrefixSuffixController extends ChangeNotifier {
   // Layout dimensions can be ignored now, but kept for signature compatibility
   void updateDimensions(double width, double height) {}
 
-  void onAffixSelected(String option, VocabularyQuest quest) {
+  void onAffixSelected(String option, VocabularyQuest quest, bool droppedAsPrefix) {
     if (isAnswered || isFirstStagePassed) return;
     
+    // Check if they dropped a prefix in a suffix slot or vice versa
+    final isOptionPrefix = option.endsWith('-');
+    final isOptionSuffix = option.startsWith('-');
+    
+    if ((isOptionPrefix && !droppedAsPrefix) || (isOptionSuffix && droppedAsPrefix)) {
+      // Wrong slot!
+      _soundService.playWrong();
+      _hapticService.error();
+      // We don't fail the whole game, just reject the drop.
+      return;
+    }
+
     selectedAffix = option;
     notifyListeners();
 
