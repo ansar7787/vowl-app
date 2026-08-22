@@ -342,8 +342,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildOutputArea(BuildContext context, bool isDark) {
     return BlocBuilder<TranslationBloc, TranslationState>(
