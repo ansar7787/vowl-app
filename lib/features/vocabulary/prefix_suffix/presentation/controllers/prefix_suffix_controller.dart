@@ -1,6 +1,4 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
@@ -127,7 +125,7 @@ class PrefixSuffixController extends ChangeNotifier {
     }
   }
 
-  void onHint(VocabularyQuest? quest, bool isCompact) {
+  void onHint(VocabularyQuest? quest) {
     final options = quest?.options ?? [];
     final correctWord = quest?.correctAnswer?.toLowerCase() ?? "";
     

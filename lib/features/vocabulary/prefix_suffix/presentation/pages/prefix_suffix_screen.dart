@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
@@ -119,8 +117,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
               useScrolling: false,
               onHint: () {
-                final isCompact = _controller.safeHeight < 580;
-                _controller.onHint(quest, isCompact);
+                _controller.onHint(quest);
               },
               child: quest == null
                   ? const SizedBox()
