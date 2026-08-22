@@ -16,7 +16,7 @@ class PremiumLockCard extends StatelessWidget {
     return ScaleButton(
       onTap: onTap,
       child: GlassTile(
-        padding: EdgeInsets.all(20.r),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         borderColor: const Color(0xFFF59E0B).withValues(alpha: 0.3),
         borderWidth: 2,
         child: Column(
@@ -49,6 +49,8 @@ class PremiumLockCard extends StatelessWidget {
                           color: const Color(0xFFF59E0B),
                           letterSpacing: 2,
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: 4.h),
                       Text(
@@ -60,6 +62,7 @@ class PremiumLockCard extends StatelessWidget {
                           color: isDark ? Colors.white : const Color(0xFF0F172A),
                         ),
                         maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),

@@ -264,15 +264,48 @@ class _TranslateScreenState extends State<TranslateScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                context.tr('translation.english_caps', fallback: 'ENGLISH'),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w800,
-                  color: const Color(0xFF6366F1),
-                  letterSpacing: 1.5,
-                ),
+              Row(
+                children: [
+                  Text(
+                    context.tr('translation.english_caps', fallback: 'ENGLISH'),
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w800,
+                      color: const Color(0xFF6366F1),
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  if (!isPremium) ...[
+                    SizedBox(width: 12.w),
+                    BlocBuilder<TranslationBloc, TranslationState>(
+                      builder: (context, state) {
+                        return Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.bolt_rounded, color: const Color(0xFFF59E0B), size: 12.r),
+                              SizedBox(width: 4.w),
+                              Text(
+                                '${state.freeTranslationsRemaining} LEFT',
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: const Color(0xFFF59E0B),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ],
               ),
               if (_inputController.text.isNotEmpty)
                 GestureDetector(
@@ -291,29 +324,6 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 ),
             ],
           ),
-          if (!isPremium) ...[
-            SizedBox(height: 12.h),
-            BlocBuilder<TranslationBloc, TranslationState>(
-              builder: (context, state) {
-                return Row(
-                  children: [
-                    Icon(Icons.bolt_rounded, color: const Color(0xFFF59E0B), size: 14.r),
-                    SizedBox(width: 4.w),
-                    Text(
-                      '${state.freeTranslationsRemaining} FREE LEFT',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        color: const Color(0xFFF59E0B),
-                        letterSpacing: 1.5,
-                      ),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ],
           SizedBox(height: 12.h),
           TextField(
             controller: _inputController,
