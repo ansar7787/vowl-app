@@ -7,9 +7,7 @@ import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 /// Manages the monetization flow for ML Kit Translations.
 ///

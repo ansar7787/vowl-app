@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+
 import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
 
 class PremiumLockCard extends StatelessWidget {
