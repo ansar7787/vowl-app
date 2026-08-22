@@ -13,7 +13,7 @@ class PremiumLockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       borderColor: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
       borderWidth: 2,
       child: PremiumUpsellContent(

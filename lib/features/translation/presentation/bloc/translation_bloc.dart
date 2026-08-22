@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/translation_service.dart';
+import 'package:rxdart/rxdart.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // EVENTS
@@ -113,12 +114,18 @@ class TranslationState extends Equatable {
 
 class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
   final TranslationService _service;
+  DateTime? _lastTokenDeductionTime;
 
   TranslationBloc({required TranslationService service})
     : _service = service,
       super(const TranslationState()) {
     on<TranslationInitRequested>(_onInitRequested);
-    on<TranslationTextChanged>(_onTextChanged);
+    on<TranslationTextChanged>(
+      _onTextChanged,
+      transformer: (events, mapper) {
+        return events.debounceTime(const Duration(milliseconds: 1500)).switchMap(mapper);
+      },
+    );
     on<TranslationLanguageChanged>(_onLanguageChanged);
     on<TranslationModelDeleted>(_onModelDeleted);
     on<TranslationAdWatched>(_onAdWatched);
@@ -159,12 +166,22 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     Emitter<TranslationState> emit,
   ) async {
     final text = event.text.trim();
-    final bool isFreshTranslation = state.translatedText.isEmpty && text.isNotEmpty;
+    
+    final now = DateTime.now();
+    bool isFreshTranslation = false;
+    
+    if (text.isNotEmpty) {
+      if (_lastTokenDeductionTime == null || 
+          now.difference(_lastTokenDeductionTime!) > const Duration(seconds: 20)) {
+        isFreshTranslation = true;
+      }
+    }
 
     emit(state.copyWith(sourceText: text, errorMessage: null));
 
     if (text.isEmpty) {
       emit(state.copyWith(translatedText: '', isLimitReached: false));
+      _lastTokenDeductionTime = null; 
       return;
     }
 
@@ -200,6 +217,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       if (isFreshTranslation && !event.isPremium) {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setInt('translation_free_remaining', finalRemaining);
+        _lastTokenDeductionTime = now;
       }
 
       emit(
