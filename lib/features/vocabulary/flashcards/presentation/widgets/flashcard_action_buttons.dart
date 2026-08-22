@@ -22,7 +22,7 @@ class FlashcardActionButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!isFlipped) {
       return Padding(
-        padding: EdgeInsets.symmetric(vertical: 14.h),
+        padding: EdgeInsets.symmetric(vertical: 8.h),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -56,7 +56,7 @@ class FlashcardActionButtons extends StatelessWidget {
     }
 
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 24.w),
+      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 24.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -42,20 +42,20 @@ class _CardLayout {
     final maxW = isTablet ? min(w * 0.60, 440.0) : min(w - (hPad * 2), 372.0);
     final cardW = maxW.clamp(250.0, w - (hPad * 2));
     final cardH = isLandscape
-        ? (h * 0.60).clamp(220.0, 360.0)
+        ? (h * 0.65).clamp(220.0, 380.0)
         : isTablet
-        ? (h * 0.50).clamp(290.0, 460.0)
-        : (h * 0.60).clamp(250.0, 440.0);
+        ? (h * 0.60).clamp(290.0, 520.0)
+        : (h * 0.68).clamp(250.0, 540.0);
 
     return _CardLayout._(
       horizontalPadding: hPad,
       cardWidth: cardW,
       cardHeight: cardH,
       swipeThreshold: max(90.0, min(150.0, cardW * 0.38)),
-      topSpacing: isSmallHeight ? 18.h : 12.h,
-      instructionToCard: isSmallHeight ? 22.h : 28.h,
-      cardToActions: isSmallHeight ? 22.h : 28.h,
-      actionsToBottom: isSmallHeight ? 10.h : 14.h,
+      topSpacing: isSmallHeight ? 8.h : 12.h,
+      instructionToCard: isSmallHeight ? 12.h : 16.h,
+      cardToActions: isSmallHeight ? 12.h : 16.h,
+      actionsToBottom: isSmallHeight ? 8.h : 12.h,
     );
   }
 }
