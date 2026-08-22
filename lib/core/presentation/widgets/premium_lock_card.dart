@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
 
 class PremiumLockCard extends StatelessWidget {
   final VoidCallback onTap;
@@ -12,162 +12,19 @@ class PremiumLockCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    
     return GlassTile(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
       borderColor: const Color(0xFF8B5CF6).withValues(alpha: 0.3),
       borderWidth: 2,
-      child: Column(
-        children: [
-          // Icon
-          Container(
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xFF6366F1).withValues(alpha: 0.3),
-                  blurRadius: 12,
-                  offset: const Offset(0, 6),
-                ),
-              ],
-            ),
-            child: Icon(
-              Icons.g_translate_rounded,
-              color: Colors.white,
-              size: 28.r,
-            ),
-          ),
-          SizedBox(height: 16.h),
-
-          // Title
-          Text(
-            context.tr('translation.limit_reached', fallback: 'Translation Limit Reached'),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w900,
-              color: isDark ? Colors.white : Colors.black87,
-              letterSpacing: -0.5,
-            ),
-          ),
-          SizedBox(height: 8.h),
-
-          // Subtitle
-          Text(
-            context.tr(
-              'translation.translate_cta',
-              fallback: 'Watch a quick ad to get 3 more translations, or get Premium for unlimited access.',
-            ),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.4,
-            ),
-          ),
-          SizedBox(height: 24.h),
-
-          // Primary Premium Button
-          ScaleButton(
-            onTap: onPremiumTap,
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 14.h),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(16.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.4),
-                    blurRadius: 12,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.workspace_premium_rounded,
-                    color: Colors.white,
-                    size: 18.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    context.tr(
-                      'translation.get_premium_button',
-                      fallback: 'Get Vowl Premium',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.w900,
-                      fontSize: 14.sp,
-                      color: Colors.white,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 12.h),
-
-          // Secondary Ad Button
-          ScaleButton(
-            onTap: onTap,
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 14.h),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.05),
-                border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.1),
-                ),
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.play_circle_fill_rounded,
-                    color: isDark ? Colors.white70 : Colors.black87,
-                    size: 18.r,
-                  ),
-                  SizedBox(width: 8.w),
-                  Text(
-                    context.tr(
-                      'translation.watch_ad_button',
-                      fallback: 'Watch Ad (3 Translations)',
-                    ),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13.sp,
-                      color: isDark ? Colors.white70 : Colors.black87,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+      child: PremiumUpsellContent(
+        titleKey: 'translation.limit_reached',
+        titleFallback: 'Translation Limit Reached',
+        subtitleKey: 'translation.translate_cta',
+        subtitleFallback: 'Watch a quick ad to get 3 more translations, or get Premium for unlimited access.',
+        adButtonTextKey: 'translation.watch_ad_button',
+        adButtonTextFallback: 'Watch Ad (3 Translations)',
+        onPremiumTap: onPremiumTap,
+        onAdTap: onTap,
       ),
     );
   }

@@ -8,6 +8,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/premium_upsell_content.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 /// Manages the monetization flow for ML Kit Translations.
@@ -90,161 +91,15 @@ class TranslationMonetizationController {
                       ),
                     ),
                     SizedBox(height: 4.h),
-
-                    // Icon
-                    Container(
-                      padding: EdgeInsets.all(18.r),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(
-                              0xFF6366F1,
-                            ).withValues(alpha: 0.3),
-                            blurRadius: 12,
-                            offset: const Offset(0, 6),
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.g_translate_rounded,
-                        color: Colors.white,
-                        size: 32.r,
-                      ),
-                    ),
-                    SizedBox(height: 20.h),
-
-                    // Title
-                    Text(
-                      ctx.tr(
-                        'translation.premium_upsell',
-                        fallback: 'Instant Translation',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : Colors.black87,
-                        letterSpacing: -0.5,
-                      ),
-                    ),
-                    SizedBox(height: 10.h),
-
-                    // Subtitle
-                    Text(
-                      ctx.tr(
-                        'translation.translate_cta',
-                        fallback:
-                            'Watch a quick ad to translate this text, or get Premium for unlimited access.',
-                      ),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                        height: 1.4,
-                      ),
-                    ),
-                    SizedBox(height: 28.h),
-
-                    // Primary Premium Button
-                    ScaleButton(
-                      onTap: () => Navigator.pop(ctx, 'premium'),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF6366F1), Color(0xFF8B5CF6)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: const Color(
-                                0xFF6366F1,
-                              ).withValues(alpha: 0.4),
-                              blurRadius: 12,
-                              offset: const Offset(0, 5),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.workspace_premium_rounded,
-                              color: Colors.white,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              ctx.tr(
-                                'translation.get_premium_button',
-                                fallback: 'Get Vowl Premium',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.w900,
-                                fontSize: 15.sp,
-                                color: Colors.white,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-
-                    // Secondary Ad Button
-                    ScaleButton(
-                      onTap: () => Navigator.pop(ctx, 'ad'),
-                      child: Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 16.h),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.05)
-                              : Colors.black.withValues(alpha: 0.05),
-                          border: Border.all(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.1)
-                                : Colors.black.withValues(alpha: 0.1),
-                          ),
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.play_circle_fill_rounded,
-                              color: isDark ? Colors.white70 : Colors.black87,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              ctx.tr(
-                                'translation.watch_ad_button',
-                                fallback: 'Watch Ad (1 Translation)',
-                              ),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14.sp,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    PremiumUpsellContent(
+                      titleKey: 'translation.premium_upsell',
+                      titleFallback: 'Instant Translation',
+                      subtitleKey: 'translation.translate_cta',
+                      subtitleFallback: 'Watch a quick ad to translate this text, or get Premium for unlimited access.',
+                      adButtonTextKey: 'translation.watch_ad_button',
+                      adButtonTextFallback: 'Watch Ad (1 Translation)',
+                      onPremiumTap: () => Navigator.pop(ctx, 'premium'),
+                      onAdTap: () => Navigator.pop(ctx, 'ad'),
                     ),
                   ],
                 ),
