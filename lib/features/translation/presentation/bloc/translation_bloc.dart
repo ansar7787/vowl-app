@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -132,11 +133,15 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final currentLang = await _service.getConfiguredLanguageName();
       final downloaded = await _service.getDownloadedLanguageNames();
 
+      final prefs = await SharedPreferences.getInstance();
+      final int freeRemaining = prefs.getInt('translation_free_remaining') ?? 3;
+
       emit(
         state.copyWith(
           status: TranslationStatus.loaded,
           currentTargetLanguage: currentLang,
           downloadedLanguages: downloaded,
+          freeTranslationsRemaining: freeRemaining,
         ),
       );
     } catch (e) {
@@ -190,12 +195,19 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
           ? 3 
           : (isFreshTranslation ? state.freeTranslationsRemaining - 1 : state.freeTranslationsRemaining);
 
+      final int finalRemaining = newRemaining > 0 ? newRemaining : 0;
+
+      if (isFreshTranslation && !event.isPremium) {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('translation_free_remaining', finalRemaining);
+      }
+
       emit(
         state.copyWith(
           translatedText: result,
           isModelDownloading: false,
           downloadedLanguages: newDownloaded,
-          freeTranslationsRemaining: newRemaining > 0 ? newRemaining : 0,
+          freeTranslationsRemaining: finalRemaining,
           isLimitReached: false,
         ),
       );
@@ -271,10 +283,13 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     }
   }
 
-  void _onAdWatched(
+  Future<void> _onAdWatched(
     TranslationAdWatched event,
     Emitter<TranslationState> emit,
-  ) {
+  ) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('translation_free_remaining', 3);
+
     emit(
       state.copyWith(
         freeTranslationsRemaining: 3,
