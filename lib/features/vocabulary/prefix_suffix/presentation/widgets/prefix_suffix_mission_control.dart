@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class PrefixSuffixMissionControl extends StatelessWidget {
   final Color primaryColor;
@@ -16,35 +15,66 @@ class PrefixSuffixMissionControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          width: MediaQuery.of(context).size.width * 0.9,
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [primaryColor, primaryColor.withValues(alpha: 0.7)],
-            ),
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: primaryColor.withValues(alpha: 0.3),
-                blurRadius: 10,
+      width: MediaQuery.of(context).size.width * 0.9,
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: primaryColor.withValues(alpha: 0.3),
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withValues(alpha: 0.05),
+            blurRadius: 20,
+            spreadRadius: 2,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.lightbulb_circle,
+                color: primaryColor,
+                size: 18.sp,
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                'MISSION',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 2,
+                ),
               ),
             ],
           ),
-          child: AutoSizeText(
+          SizedBox(height: 12.h),
+          Text(
             instruction.toUpperCase(),
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              letterSpacing: 1,
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).brightness == Brightness.dark 
+                  ? Colors.white 
+                  : Colors.black87,
+              height: 1.3,
             ),
             textAlign: TextAlign.center,
-            maxLines: 2,
-            minFontSize: 8,
+            // Removed maxLines to let it expand indefinitely.
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2.seconds);
+        ],
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true))
+     .shimmer(duration: 3.seconds, color: primaryColor.withValues(alpha: 0.2));
   }
 }

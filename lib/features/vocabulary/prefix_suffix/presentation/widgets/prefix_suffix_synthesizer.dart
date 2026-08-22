@@ -82,28 +82,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
               ),
             ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, duration: 400.ms),
           
-          SizedBox(height: 30.h),
-          
-          ElevatedButton(
-            onPressed: widget.onContinue,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: widget.primaryColor,
-              padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r),
-              ),
-            ),
-            child: Text(
-              'CONTINUE',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800,
-                color: Colors.white,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ).animate().fadeIn(delay: 500.ms, duration: 400.ms).scale(curve: Curves.easeOutBack),
+          SizedBox(height: 120.h), // extra space for the typing overlay
         ] else ...[
           // Arsenal Dock (Draggable Chips)
           Wrap(

@@ -12,8 +12,9 @@ import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
-import '../widgets/prefix_suffix_mission_control.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_mission_control.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_synthesizer.dart';
+import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 
 class PrefixSuffixScreen extends StatefulWidget {
   final int level;
@@ -105,7 +106,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
         return ListenableBuilder(
           listenable: _controller,
           builder: (context, child) {
-            return VocabularyBaseLayout(
+            final baseLayout = VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
               isAnswered: _controller.isAnswered,
@@ -154,6 +155,19 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         ),
                       ],
               ),
+            );
+            
+            return Stack(
+              children: [
+                baseLayout,
+                if (_controller.isFirstStagePassed && quest != null)
+                  TypeToConfirmOverlay(
+                    expectedText: quest.correctAnswer ?? "",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                    onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                  ),
+              ],
             );
           },
         );
