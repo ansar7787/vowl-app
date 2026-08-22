@@ -127,17 +127,22 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               },
               child: quest == null
                   ? const SizedBox()
-                  : LayoutBuilder(
-                      builder: (context, constraints) {
-                        final screenSize = MediaQuery.of(context).size;
-                        final double safeWidth = constraints.maxWidth.isFinite
-                            ? constraints.maxWidth
-                            : screenSize.width;
-                        final double safeHeight = constraints.maxHeight.isFinite
-                            ? constraints.maxHeight
-                            : (screenSize.height * 0.6);
-                        final isCompact = safeHeight < 580;
-                        _controller.updateDimensions(safeWidth, safeHeight);
+                  : CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: LayoutBuilder(
+                            builder: (context, constraints) {
+                              final screenSize = MediaQuery.of(context).size;
+                              final double safeWidth = constraints.maxWidth.isFinite
+                                  ? constraints.maxWidth
+                                  : screenSize.width;
+                              final double safeHeight = constraints.maxHeight.isFinite
+                                  ? constraints.maxHeight
+                                  : (screenSize.height * 0.6);
+                              final isCompact = safeHeight < 580;
+                              _controller.updateDimensions(safeWidth, safeHeight);
 
                         return SizedBox(
                           width: safeWidth,
@@ -185,30 +190,15 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                     ),
 
                                     // The Root Rover
-                                    isCompact
-                                        ? SizedBox(
-                                            width: 100.w,
-                                            height: 100.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: PrefixSuffixRootRover(
-                                                rootWord: quest.rootWord ?? "???",
-                                                primaryColor: theme.primaryColor,
-                                                isDark: isDark,
-                                                dragOffset: _controller.dragOffset,
-                                                onPanUpdate: (d) => _controller.onRoverDrag(d.delta),
-                                                onPanEnd: (_) => _controller.onRoverRelease(quest, isCompact),
-                                              ),
-                                            ),
-                                          )
-                                        : PrefixSuffixRootRover(
-                                            rootWord: quest.rootWord ?? "???",
-                                            primaryColor: theme.primaryColor,
-                                            isDark: isDark,
-                                            dragOffset: _controller.dragOffset,
-                                            onPanUpdate: (d) => _controller.onRoverDrag(d.delta),
-                                            onPanEnd: (_) => _controller.onRoverRelease(quest, isCompact),
-                                          ),
+                                    PrefixSuffixRootRover(
+                                      rootWord: quest.rootWord ?? "???",
+                                      primaryColor: theme.primaryColor,
+                                      isDark: isDark,
+                                      dragOffset: _controller.dragOffset,
+                                      isCompact: isCompact,
+                                      onPanUpdate: (d) => _controller.onRoverDrag(d.delta),
+                                      onPanEnd: (_) => _controller.onRoverRelease(quest, isCompact),
+                                    ),
                                   ],
                                 )
                                 .animate(target: _controller.isFirstStagePassed ? 1 : 0)
@@ -216,66 +206,72 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                 .scale(end: const Offset(0.9, 0.9), duration: 400.ms, curve: Curves.easeIn),
                               ),
 
-                              // ── STAGE 2: Anagram Builder ──
-                              if (_controller.isFirstStagePassed && !_controller.isAnswered)
-                                Positioned.fill(
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        if (quest.meaningBreakdown != null)
-                                          PrefixSuffixMeaningBreakdown(
-                                            meaningBreakdown: quest.meaningBreakdown!,
-                                            color: theme.primaryColor,
-                                          ),
-                                        if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
-                                          SizedBox(height: 16.h),
-                                          Container(
-                                            width: double.infinity,
-                                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                                            decoration: BoxDecoration(
-                                              color: theme.primaryColor.withValues(alpha: 0.1),
-                                              borderRadius: BorderRadius.circular(16.r),
-                                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
-                                            ),
-                                            child: Text(
-                                              quest.explanation!,
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 13.sp,
-                                                fontWeight: FontWeight.w600,
-                                                color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
-                                                height: 1.4,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                        SizedBox(height: 30.h),
-                                        DynamicAnagramWrapper(
-                                          title: context.tr('prefix_suffix.spell_title', fallback: 'SPELL THE TARGET WORD'),
-                                          subtitle: context.tr('prefix_suffix.spell_subtitle', fallback: 'Tap all letters to rebuild the word!'),
-                                          expectedText: quest.correctAnswer ?? '',
-                                          primaryColor: theme.primaryColor,
-                                          onConfirmed: () => _controller.submitFinalAnswer(true, quest),
-                                          onFailed: () {},
-                                          onFailedWithSpelling: (wrongWord) =>
-                                              _controller.submitFinalAnswer(false, quest, wrongWord: wrongWord),
-                                          isPositioned: false,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                  .animate()
-                                  .fadeIn(duration: 500.ms, delay: 200.ms)
-                                  .slideY(begin: 0.1, end: 0, duration: 500.ms, curve: Curves.easeOut, delay: 200.ms),
-                                ),
+                              // End of Stage 1 Stack
                             ],
                           ),
                         );
                       },
                     ),
+                  ),
+                  
+                  // ── STAGE 2: Anagram Builder ──
+                  if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            if (quest.meaningBreakdown != null)
+                              PrefixSuffixMeaningBreakdown(
+                                meaningBreakdown: quest.meaningBreakdown!,
+                                color: theme.primaryColor,
+                              ),
+                            if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+                              SizedBox(height: 16.h),
+                              Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                decoration: BoxDecoration(
+                                  color: theme.primaryColor.withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                                ),
+                                child: Text(
+                                  quest.explanation!,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+                                    height: 1.4,
+                                  ),
+                                ),
+                              ),
+                            ],
+                            SizedBox(height: 30.h),
+                            DynamicAnagramWrapper(
+                              title: context.tr('prefix_suffix.spell_title', fallback: 'SPELL THE TARGET WORD'),
+                              subtitle: context.tr('prefix_suffix.spell_subtitle', fallback: 'Tap all letters to rebuild the word!'),
+                              expectedText: quest.correctAnswer ?? '',
+                              primaryColor: theme.primaryColor,
+                              onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                              onFailed: () {},
+                              onFailedWithSpelling: (wrongWord) =>
+                                  _controller.submitFinalAnswer(false, quest, wrongWord: wrongWord),
+                              isPositioned: false,
+                            ),
+                            SizedBox(height: 60.h),
+                          ],
+                        ),
+                      )
+                      .animate()
+                      .fadeIn(duration: 500.ms, delay: 200.ms)
+                      .slideY(begin: 0.1, end: 0, duration: 500.ms, curve: Curves.easeOut, delay: 200.ms),
+                    ),
+                ],
+              ),
             );
           },
         );

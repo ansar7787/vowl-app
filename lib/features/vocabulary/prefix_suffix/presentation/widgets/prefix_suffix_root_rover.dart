@@ -7,6 +7,7 @@ class PrefixSuffixRootRover extends StatelessWidget {
   final Color primaryColor;
   final bool isDark;
   final Offset dragOffset;
+  final bool isCompact;
   final GestureDragUpdateCallback onPanUpdate;
   final GestureDragEndCallback onPanEnd;
 
@@ -16,6 +17,7 @@ class PrefixSuffixRootRover extends StatelessWidget {
     required this.primaryColor,
     required this.isDark,
     required this.dragOffset,
+    this.isCompact = false,
     required this.onPanUpdate,
     required this.onPanEnd,
   });
@@ -31,8 +33,8 @@ class PrefixSuffixRootRover extends StatelessWidget {
               duration: 150.ms,
               scale: dragOffset == Offset.zero ? 1.0 : 1.15,
               child: Container(
-                width: 130.w,
-                padding: EdgeInsets.symmetric(vertical: 20.h),
+                width: isCompact ? 100.w : 130.w,
+                padding: EdgeInsets.symmetric(vertical: isCompact ? 15.h : 20.h),
                 decoration: BoxDecoration(
                   color: isDark ? const Color(0xFF1E293B) : Colors.white,
                   borderRadius: BorderRadius.circular(20.r),
@@ -54,7 +56,7 @@ class PrefixSuffixRootRover extends StatelessWidget {
                         Icon(
                           Icons.rocket_rounded,
                           color: primaryColor,
-                          size: 32.r,
+                          size: isCompact ? 24.r : 32.r,
                         ),
                         Positioned(
                           bottom: 0,
@@ -82,7 +84,7 @@ class PrefixSuffixRootRover extends StatelessWidget {
                           rootWord.toUpperCase(),
                           style: TextStyle(
                             fontFamily: 'Outfit',
-                            fontSize: 20.sp,
+                            fontSize: isCompact ? 16.sp : 20.sp,
                             fontWeight: FontWeight.w900,
                             color: isDark ? Colors.white : Colors.black87,
                             letterSpacing: 1.2,
