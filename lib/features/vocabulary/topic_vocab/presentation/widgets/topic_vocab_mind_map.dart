@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class TopicVocabMindMap extends StatelessWidget {
   final List<String> relatedWords;
@@ -35,7 +36,7 @@ class TopicVocabMindMap extends StatelessWidget {
               Icon(Icons.hub_rounded, color: color, size: 20.r),
               SizedBox(width: 8.w),
               AutoSizeText(
-                "TOPIC DICTIONARY",
+                context.tr('instructions.topicVocab.topic_dictionary'),
                 maxLines: 1,
                 style: TextStyle(
                   fontFamily: 'Outfit',

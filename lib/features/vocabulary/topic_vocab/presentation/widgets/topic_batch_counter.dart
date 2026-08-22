@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
 class TopicBatchCounter extends StatelessWidget {
   final int count;
@@ -27,7 +28,7 @@ class TopicBatchCounter extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "BATCH PROGRESS: $count / $total",
+            "${context.tr('instructions.topicVocab.words_in_batch')}: $count / $total",
             style: TextStyle(
               fontFamily: 'Outfit',
               color: color.withValues(alpha: 0.8),

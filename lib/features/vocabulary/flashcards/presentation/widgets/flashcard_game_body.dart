@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_action_buttons.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
@@ -133,6 +134,7 @@ class FlashcardGameBody extends StatelessWidget {
                       Expanded(
                         child: Center(
                           child: _buildCardStack(
+                            context,
                             layout.cardWidth,
                             layout.cardHeight,
                             layout.swipeThreshold,
@@ -162,11 +164,9 @@ class FlashcardGameBody extends StatelessWidget {
 
   // ── Card stack ────────────────────────────────────────────────────────────
 
-  Widget _buildCardStack(double width, double height, double swipeThreshold) {
+  Widget _buildCardStack(BuildContext context, double width, double height, double swipeThreshold) {
     return Semantics(
-      label:
-          'Flashcard: ${quest.word ?? ""}. '
-          '${isFlipped ? "Definition revealed." : "Tap to reveal definition."}',
+      label: '${quest.word ?? ""}. ${isFlipped ? context.tr('instructions.flashcards.definition_revealed') : context.tr('instructions.flashcards.tap_to_reveal')}',
       child: GestureDetector(
         onHorizontalDragUpdate: isFlipped ? onHorizontalDragUpdate : null,
         onHorizontalDragEnd: isFlipped
@@ -266,7 +266,7 @@ class _InstructionBanner extends StatelessWidget {
           children: [
             Icon(Icons.swipe_rounded, size: 14.r, color: primaryColor),
             Text(
-              'SWIPE RIGHT TO MASTER, LEFT TO REVIEW',
+              context.tr('instructions.flashcards.swipe_instruction'),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'Outfit',

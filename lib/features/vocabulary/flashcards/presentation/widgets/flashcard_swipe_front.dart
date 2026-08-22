@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class FlashcardSwipeFront extends StatefulWidget {
@@ -42,7 +43,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
   Widget build(BuildContext context) {
     return Semantics(
       label:
-          'Hint: ${widget.quest.hint ?? widget.quest.instruction}. Tap to reveal word.',
+          '${context.tr('hint')}: ${widget.quest.hint ?? widget.quest.instruction}. ${context.tr('instructions.flashcards.tap_to_reveal')}',
       child: Container(
         width: widget.width,
         height: widget.height,
