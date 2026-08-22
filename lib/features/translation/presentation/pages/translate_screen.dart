@@ -12,6 +12,8 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/translation_service.dart';
 import 'package:vowl/features/translation/presentation/bloc/translation_bloc.dart';
 import 'package:vowl/features/translation/presentation/widgets/language_manager_sheet.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 
 class TranslateScreen extends StatefulWidget {
   const TranslateScreen({super.key});
@@ -77,6 +79,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
@@ -100,7 +103,11 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         _buildInputArea(context, isDark),
                         SizedBox(height: 24.h),
                         _buildOutputArea(context, isDark),
-                        SizedBox(height: 48.h),
+                        if (!isPremium) ...[
+                          SizedBox(height: 32.h),
+                          const AdRewardCard(margin: EdgeInsets.zero),
+                        ],
+                        SizedBox(height: 80.h),
                       ],
                     ),
                   ),
@@ -157,13 +164,20 @@ class _TranslateScreenState extends State<TranslateScreen> {
         return GestureDetector(
           onTap: () => _showLanguagePicker(context, isDark),
           child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
             child: Row(
               children: [
-                Icon(
-                  Icons.language_rounded,
-                  color: const Color(0xFF6366F1),
-                  size: 24.r,
+                Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.language_rounded,
+                    color: const Color(0xFF6366F1),
+                    size: 24.r,
+                  ),
                 ),
                 SizedBox(width: 16.w),
                 Expanded(
@@ -186,8 +200,8 @@ class _TranslateScreenState extends State<TranslateScreen> {
                         lang,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w800,
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
                           color: isDark
                               ? Colors.white
                               : const Color(0xFF0F172A),
@@ -211,7 +225,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
 
   Widget _buildInputArea(BuildContext context, bool isDark) {
     return GlassTile(
-      padding: EdgeInsets.all(20.r),
+      padding: EdgeInsets.all(24.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -222,10 +236,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 context.tr('translation.english_caps', fallback: 'ENGLISH'),
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w800,
                   color: const Color(0xFF6366F1),
-                  letterSpacing: 1.2,
+                  letterSpacing: 1.5,
                 ),
               ),
               if (_inputController.text.isNotEmpty)
@@ -253,15 +267,17 @@ class _TranslateScreenState extends State<TranslateScreen> {
             minLines: 3,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w500,
+              fontSize: 24.sp,
+              fontWeight: FontWeight.w600,
               color: isDark ? Colors.white : const Color(0xFF0F172A),
+              height: 1.4,
             ),
             decoration: InputDecoration(
               hintText: context.tr('translation.type_to_translate', fallback: 'Type something to translate...'),
               hintStyle: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 20.sp,
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w500,
                 color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
               ),
               border: InputBorder.none,
@@ -277,8 +293,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
     return BlocBuilder<TranslationBloc, TranslationState>(
       builder: (context, state) {
         return GlassTile(
-          padding: EdgeInsets.all(20.r),
+          padding: EdgeInsets.all(24.r),
           borderColor: const Color(0xFF10B981).withValues(alpha: 0.3),
+          borderWidth: 2,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -289,10 +306,10 @@ class _TranslateScreenState extends State<TranslateScreen> {
                     state.currentTargetLanguage?.toUpperCase() ?? context.tr('translation.translation_caps', fallback: 'TRANSLATION'),
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
                       color: const Color(0xFF10B981),
-                      letterSpacing: 1.2,
+                      letterSpacing: 1.5,
                     ),
                   ),
                   if (state.isModelDownloading)
@@ -349,8 +366,9 @@ class _TranslateScreenState extends State<TranslateScreen> {
                       : state.translatedText,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w500,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w600,
+                    height: 1.4,
                     color: state.translatedText.isEmpty
                         ? (isDark ? Colors.white38 : const Color(0xFF94A3B8))
                         : (isDark ? Colors.white : const Color(0xFF0F172A)),

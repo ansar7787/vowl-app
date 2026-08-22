@@ -18,21 +18,7 @@ class TranslationHomeCard extends StatelessWidget {
 
   void _launchTranslate(BuildContext context) {
     di.sl<HapticService>().light();
-
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
-
-    if (isPremium) {
-      context.push(AppRouter.translateRoute);
-    } else {
-      di.sl<AdService>().showRewardedAd(
-        context: context,
-        isPremium: false,
-        onUserEarnedReward: (_) {},
-        onDismissed: () {
-          context.push(AppRouter.translateRoute);
-        },
-      );
-    }
+    context.push(AppRouter.translateRoute);
   }
 
   @override
