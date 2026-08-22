@@ -5,6 +5,7 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
 
 class DiscoveryDeck extends StatefulWidget {
   const DiscoveryDeck({
@@ -177,23 +178,13 @@ class _DiscoveryDeckState extends State<DiscoveryDeck> {
                 discoveryItems.length.toString(),
               ],
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                discoveryItems.length,
-                (index) => AnimatedContainer(
-                  duration: const Duration(milliseconds: 400),
-                  margin: EdgeInsets.symmetric(horizontal: 4.w),
-                  height: 6.r,
-                  width: _currentPage == index ? 28.w : 8.r,
-                  decoration: BoxDecoration(
-                    color: _currentPage == index
-                        ? discoveryItems[index].color
-                        : discoveryItems[index].color.withValues(alpha: 0.2),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                ),
-              ),
+            child: AnimatedPageIndicator(
+              itemCount: discoveryItems.length,
+              currentIndex: _currentPage,
+              itemColors: discoveryItems.map((e) => e.color).toList(),
+              activeWidth: 28.w,
+              inactiveWidth: 8.r,
+              height: 6.r,
             ),
           ),
         ],
