@@ -2,7 +2,6 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/translation_service.dart';
-import 'package:stream_transform/stream_transform.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // EVENTS
@@ -120,12 +119,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     : _service = service,
       super(const TranslationState()) {
     on<TranslationInitRequested>(_onInitRequested);
-    on<TranslationTextChanged>(
-      _onTextChanged,
-      transformer: (events, mapper) {
-        return events.debounce(const Duration(milliseconds: 1500)).switchMap(mapper);
-      },
-    );
+    on<TranslationTextChanged>(_onTextChanged);
     on<TranslationLanguageChanged>(_onLanguageChanged);
     on<TranslationModelDeleted>(_onModelDeleted);
     on<TranslationAdWatched>(_onAdWatched);
