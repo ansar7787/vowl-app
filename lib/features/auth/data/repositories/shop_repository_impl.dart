@@ -71,6 +71,10 @@ class ShopRepositoryImpl
         final updates = <String, dynamic>{
           'coins': FieldValue.increment(amountChange),
         };
+        
+        if (amountChange > 0) {
+          updates['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+        }
 
         if (title != null) {
           final history = _recordCoinHistory(
@@ -103,6 +107,7 @@ class ShopRepositoryImpl
       // FieldValue.increment is atomically safe for server-side increments.
       await _firestore.collection('users').doc(user.uid).update({
         'kidsCoins': FieldValue.increment(amount),
+        'lastRewardTimestamp': FieldValue.serverTimestamp(),
       });
       return const Right(null);
     } catch (e) {
@@ -157,6 +162,7 @@ class ShopRepositoryImpl
           'coins': FieldValue.increment(reward),
           'coinHistory': history,
           'lastDailyRewardDate': Timestamp.now(),
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
         });
         return const Right<Failure, void>(null);
       });
@@ -217,6 +223,7 @@ class ShopRepositoryImpl
           'coins': FieldValue.increment(amount),
           'coinHistory': history,
           'lastDailyRewardDate': Timestamp.now(),
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
         });
         return const Right<Failure, void>(null);
       });
@@ -262,6 +269,7 @@ class ShopRepositoryImpl
         transaction.update(docRef, {
           'kidsCoins': FieldValue.increment(amount),
           'lastKidsDailyRewardDate': Timestamp.now(),
+          'lastRewardTimestamp': FieldValue.serverTimestamp(),
         });
         return const Right<Failure, void>(null);
       });

@@ -37,7 +37,7 @@ class AiLabGrid extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         SizedBox(
-          height: 240.h,
+          height: 270.h, // Increased to prevent vertical overflow on larger text scalers
           child: Row(
             children: [
               Expanded(
@@ -134,12 +134,12 @@ class AiLabGrid extends StatelessWidget {
       },
       child: GlassTile(
         borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(16.r),
+        padding: EdgeInsets.all(12.r), // Reduced padding to allow more text room
         child: SizedBox(
           width: double.infinity,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
             children: [
               Container(
                 padding: EdgeInsets.all(10.r),
@@ -149,14 +149,20 @@ class AiLabGrid extends StatelessWidget {
                 ),
                 child: Icon(icon, color: color, size: 28.r),
               ),
-              Text(
-                title,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  height: 1.1,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+              SizedBox(height: 12.h), // Replaced Spacer with fixed height
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.center, // Center text box
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center, // Center text multiline
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w900,
+                    height: 1.1,
+                    color: isDark ? Colors.white : const Color(0xFF0F172A),
+                  ),
                 ),
               ),
             ],

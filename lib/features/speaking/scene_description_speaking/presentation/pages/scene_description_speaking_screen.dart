@@ -279,6 +279,46 @@ class _SceneDescriptionScreenState extends State<SceneDescriptionScreen>
                                         isDark: isDark,
                                       ),
                               ),
+                              if (quest.keyVocabulary != null && quest.keyVocabulary!.isNotEmpty) ...[
+                                SizedBox(height: 24.h),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "Target Vocabulary",
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark ? Colors.white54 : Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                Wrap(
+                                  spacing: 8.w,
+                                  runSpacing: 8.h,
+                                  alignment: WrapAlignment.start,
+                                  children: quest.keyVocabulary!.map((word) {
+                                    return Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(12.r),
+                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                                      ),
+                                      child: Text(
+                                        word,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: theme.primaryColor,
+                                        ),
+                                      ),
+                                    );
+                                  }).toList(),
+                                ),
+                              ],
                             ],
                           ),
                         ),
