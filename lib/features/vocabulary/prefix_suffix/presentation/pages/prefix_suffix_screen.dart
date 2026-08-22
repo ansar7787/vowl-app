@@ -130,8 +130,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   : CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: LayoutBuilder(
                             builder: (context, constraints) {
                               final screenSize = MediaQuery.of(context).size;

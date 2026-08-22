@@ -154,8 +154,8 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
 
     if (nailedIt) {
-      _hapticService.success();
       _soundService.playCorrect();
+      _hapticService.success();
       
       final correctWord = quest?.correctAnswer ?? "";
       if (correctWord.isNotEmpty) {
