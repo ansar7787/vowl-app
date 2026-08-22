@@ -46,7 +46,7 @@ class AiLabGrid extends StatelessWidget {
                     Expanded(
                       child: _buildBentoCard(
                         context: context,
-                        title: 'Photo\nVocab',
+                        title: 'Photo Vocab',
                         icon: Icons.camera_alt_rounded,
                         color: const Color(0xFF10B981),
                         route: AppRouter.photoVocabularyRoute,
@@ -56,7 +56,7 @@ class AiLabGrid extends StatelessWidget {
                     Expanded(
                       child: _buildBentoCard(
                         context: context,
-                        title: 'Word\nSnap',
+                        title: 'Word Snap',
                         icon: Icons.extension_rounded,
                         color: const Color(0xFFF59E0B),
                         route: '/word-snap',
@@ -72,7 +72,7 @@ class AiLabGrid extends StatelessWidget {
                     Expanded(
                       child: _buildBentoCard(
                         context: context,
-                        title: 'Scan &\nLearn',
+                        title: 'Scan & Learn',
                         icon: Icons.document_scanner_rounded,
                         color: const Color(0xFF3B82F6),
                         route: AppRouter.scanAndLearnRoute,
@@ -82,7 +82,7 @@ class AiLabGrid extends StatelessWidget {
                     Expanded(
                       child: _buildBentoCard(
                         context: context,
-                        title: 'Word\nMixer',
+                        title: 'Word Mixer',
                         icon: Icons.sort_by_alpha_rounded,
                         color: const Color(0xFFA855F7),
                         route: '/word-mixer',
@@ -156,6 +156,7 @@ class AiLabGrid extends StatelessWidget {
                 child: Text(
                   title,
                   textAlign: TextAlign.center, // Center text multiline
+                  maxLines: 1, // Enforce single line
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 16.sp,
