@@ -206,9 +206,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                   onHorizontalDragUpdate: _onHorizontalDragUpdate,
                   onHorizontalDragEnd: _onHorizontalDragEnd,
                   onCardTap: () {
-                    if (_isAnswered || _isRetrying) return;
+                    if (_isAnswered) return;
                     _hapticService.light();
-                    setState(() => _isFlipped = !_isFlipped);
+                    setState(() {
+                      if (_isRetrying) _isRetrying = false;
+                      _isFlipped = !_isFlipped;
+                    });
                   },
                   onSubmitAnswer: _submitAnswer,
                 ),
