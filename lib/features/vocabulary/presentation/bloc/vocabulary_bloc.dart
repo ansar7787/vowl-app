@@ -161,8 +161,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (s.livesRemaining <= 0) return;
 
     if (event.isCorrect) {
-      await soundService.playCorrect();
-      await hapticService.success();
       emit(
         s.copyWith(
           answerStatus: AnswerStatus.correct,
@@ -171,9 +169,6 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         ),
       );
     } else {
-      await soundService.playWrong();
-      await hapticService.error();
-
       final newLives = s.livesRemaining - 1;
       final newWrong = s.wrongCount + 1;
       final isFinal =

@@ -26,7 +26,7 @@ class WordFormationController extends ChangeNotifier {
   })  : _hapticService = hapticService,
         _soundService = soundService;
 
-  void reset(VocabularyQuest quest, int index, bool isRetry) {
+  void reset(VocabularyQuest quest, int index) {
     lastQuest = quest;
     lastProcessedIndex = index;
     isAnswered = false;
@@ -80,7 +80,9 @@ class WordFormationController extends ChangeNotifier {
       _soundService.playWrong();
       isAnswered = true;
       isCorrect = false;
+      notifyListeners();
       onSubmitAnswer(false);
+      return;
     }
     notifyListeners();
   }
@@ -90,6 +92,7 @@ class WordFormationController extends ChangeNotifier {
 
     isAnswered = true;
     isCorrect = nailedIt;
+    notifyListeners();
     
     if (nailedIt) {
       _hapticService.success();
@@ -100,6 +103,5 @@ class WordFormationController extends ChangeNotifier {
       _soundService.playWrong();
       onSubmitAnswer(false);
     }
-    notifyListeners();
   }
 }

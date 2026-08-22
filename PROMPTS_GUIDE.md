@@ -65,7 +65,7 @@ Here is the exact schema and UI rendering rules for the specific game you are up
 ```text
 1. "word" & "correctAnswer": The target academic word in ALL CAPS.
 2. "hint": A short, clear definition clue.
-3. "options": Array of 4 words in ALL CAPS (1 correct, 3 tricky distractors).
+3. "options": Array of 4 words in ALL CAPS (1 correct, 3 tricky distractors). **CRITICAL GAMEPLAY RULE: Ensure the 3 incorrect options DO NOT make sense in the sentence. Avoid exact synonyms that would perfectly fit the `[TARGET]` blank, because the game only accepts the one `correctAnswer`.**
 4. "explanation": A detailed explanation of why the word fits the academic context.
 5. "passage": A sentence with "[TARGET]" where the word belongs.
 6. "instruction": "Drag the correct word to complete the sentence."
@@ -80,7 +80,7 @@ Here is the exact schema and UI rendering rules for the specific game you are up
 3. "instruction": "Select the antonym for the given word."
 4. "hint": A thought-provoking clue about the antonym.
 5. "explanation": Explain the contrast between the word and its antonym.
-6. "options": Array of 4 words in ALL CAPS (1 correct antonym, 3 synonyms or unrelated distractors).
+6. "options": Array of 4 words in ALL CAPS. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors are NOT also valid antonyms. (e.g. If the word is HOT, do not put both COLD and FREEZING in the options).**
 7. "gradientScale": Array of 5 strings showing the linguistic spectrum from the word to the antonym.
 ```
 
@@ -92,7 +92,7 @@ UI NOTE: The user must combine the 'word' and 'correctAnswer' (e.g., DO + HOMEWO
 3. "instruction": "Find the word that naturally completes the pair."
 4. "hint": A clue about the meaning of the combined phrase.
 5. "explanation": Explain why these words go together and why others don't.
-6. "options": Array of 4 words (1 correct, 3 tricky incorrect ones).
+6. "options": Array of 4 words. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors DO NOT form a valid real-world collocation with the base word (e.g. if the word is DO and answer is HOMEWORK, do not use DISHES as a distractor because DO DISHES is also valid).**
 7. "wrongCollocations": Array of 3 common learner mistakes (e.g., ["make HOMEWORK", "have HOMEWORK"]).
 8. "contextSentence": A sentence with a blank "__" for the correct answer.
 ```
@@ -103,7 +103,7 @@ UI NOTE: The user must combine the 'word' and 'correctAnswer' (e.g., DO + HOMEWO
 2. "instruction": "Analyze the sentence to deduce the hidden word."
 3. "sentence": A sentence with "[TARGET]" where the word belongs.
 4. "hint": A clever clue to point them in the right direction.
-5. "options": Array of 4 words.
+5. "options": Array of 4 words. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors DO NOT logically fit the `[TARGET]` blank. Avoid exact synonyms that would work just as well as the correct answer.**
 6. "explanation": Explain how the evidence in the sentence reveals the answer.
 7. "clueType": "synonym", "antonym", or "inference".
 8. "evidenceWords": Array of 2-3 words extracted precisely from the sentence that provide the context clue.
@@ -150,7 +150,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 3. "instruction": "Select the correct prefix or suffix."
 4. "hint": The definition of the new word.
 5. "explanation": Explain what the affix means (e.g., "RE- means again").
-6. "options": Array of 4 affixes (e.g., ["-LY", "-FUL", "RE-", "UN-"]).
+6. "options": Array of 4 affixes (e.g., ["-LY", "-FUL", "RE-", "UN-"]). **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors CANNOT form a real English word with the root to avoid multiple correct answers (e.g. if the root is DO, don't use OVER- as a distractor because OVERDO is also a real word).**
 7. "meaningBreakdown": Text displaying the word math (e.g., "RE (prefix) + DO (root)").
 ```
 
@@ -161,7 +161,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 3. "instruction": "Find the synonym for the given word."
 4. "hint": A clue about the meaning.
 5. "explanation": Explain the nuance between the base word and the synonym.
-6. "options": Array of 4 words (1 correct synonym, 3 distractors).
+6. "options": Array of 4 words. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors are NOT also valid synonyms. (e.g. If the word is FAST, do not put both QUICK and RAPID in the options).**
 7. "nuanceDifference": Explain exactly when to use this synonym over the base word.
 ```
 
@@ -181,9 +181,9 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 1. "correctAnswer": The full word.
 2. "rootWord": The base root word.
 3. "instruction": "Slide the correct morpheme into the core to form a new word."
-4. "hint": A clue about what kind of word it forms (e.g., "Form an adjective...").
-5. "explanation": Explain the word math (e.g., "HELP + -FUL = HELPFUL").
-6. "options": Array of 4 morphemes.
+4. "hint": Include the definition AND a short fill-in-the-blank sentence (e.g., "Form an adjective that means giving support. He was very _____ today.").
+5. "explanation": Show the word math (e.g., "HELP + -FUL = HELPFUL") AND explain the meaning of the morpheme (e.g., "The suffix -FUL means 'full of', turning the noun into an adjective.").
+6. "options": Array of 4 morphemes. **CRITICAL GAMEPLAY RULE: Ensure the 3 incorrect morphemes absolutely CANNOT form a real English word with the root. For example, if the root is USE and the answer is USEFUL, you cannot put -LESS as a distractor because USELESS is also a real word and the app will mark the user wrong.**
 7. "familyTree": Array of 3-4 related words from the same root to show morphology.
 ```
 
@@ -199,7 +199,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 3. "options": Array of exactly 4 strings: ["a", "an", "the", "(no article)"].
 4. "correctAnswerIndex": The integer index (0-3) of the correct answer in your options array.
 5. "correctAnswer": The exact string of the correct answer.
-6. "hint": A clue about vowel sounds, specific vs general, or countability.
+6. "hint": A clue about vowel sounds, specific vs general, or countability. **CRITICAL: Provide enough context in the sentence so that ONLY ONE article is grammatically and logically possible (e.g. don't just say "I want ___ apple" where both 'an' and 'the' could work).**
 7. "explanation": Explain the rule clearly.
 8. "grammarRule": A short title of the rule (e.g., "Definite Article").
 ```
@@ -208,7 +208,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 ```text
 1. "instruction": "Select the correct connector."
 2. "question" & "sentence": A sentence with "____" connecting two clauses.
-3. "options": Array of 4 connector words (e.g., "and", "but", "so", "although").
+3. "options": Array of 4 connector words. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors DO NOT also logically and grammatically fit the sentence (e.g. don't offer both 'so' and 'and' if both could technically link the clauses).**
 4. "correctAnswerIndex": Integer index (0-3) of the correct option.
 5. "correctAnswer": The exact string of the correct option.
 6. "hint": A clue about the relationship (e.g., "Look for a contrast").
@@ -245,7 +245,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 1. "instruction": "TRANSFORM THE SPEECH"
 2. "question": "Convert to reported speech: [Quote]" or "Convert to direct speech: [Sentence]".
 3. "sentence": The original sentence text.
-4. "options": Array of 3 or 4 transformations.
+4. "options": Array of 3 or 4 transformations. **CRITICAL GAMEPLAY RULE: Ensure the distractors are definitively wrong. (e.g. Do not provide one option with 'that' and one without 'that' if both are grammatically correct reported speech).**
 5. "correctAnswerIndex": Integer index of correct answer.
 6. "correctAnswer": The exact correct string.
 7. "hint": A clue about tense backshifting or pronoun changes.
@@ -283,7 +283,7 @@ UI NOTE: The user must physically speak the 'correctAnswer' into the microphone.
 UI NOTE: This is a sentence-building game where words are dragged into order.
 1. "instruction": "PLACE THE MODIFIER"
 2. "sentence": e.g., "Insert the modifier 'fresh' into the correct position."
-3. "correctAnswer": The fully assembled correct sentence.
+3. "correctAnswer": The fully assembled correct sentence. **CRITICAL GAMEPLAY RULE: Ensure there is only ONE grammatically correct place for the modifier to prevent unfair failures.**
 4. "shuffledWords": Array of strings containing ALL words in the correct sentence, BUT scrambled randomly. Include punctuation attached to the last word.
 5. "hint": A clue about where adjectives/adverbs go.
 6. "explanation": Explain the grammatical placement rule.
@@ -334,7 +334,7 @@ UI NOTE: This is a sentence-building game where words are dragged into order.
 ```text
 1. "instruction": "APPLY HOLOGRAPHIC DECALS"
 2. "sentence": A sentence missing all its punctuation (e.g., "We packed shirts socks and shoes").
-3. "correctAnswer": The fully and perfectly punctuated sentence.
+3. "correctAnswer": The fully and perfectly punctuated sentence. **CRITICAL GAMEPLAY RULE: You MUST be consistent with comma rules (e.g., if using the Oxford comma, use it consistently) so the user is not unfairly punished by exact string matching.**
 4. "hint": A clue about pauses or lists.
 5. "explanation": Explain the specific punctuation rule.
 6. "grammarRule": Title (e.g., "Periods").
@@ -420,7 +420,7 @@ UI NOTE: The user must reconstruct the sentence from shuffled words.
 1. "instruction": "REORDER WORDS"
 2. "sentence": The perfectly assembled sentence.
 3. "shuffledWords": Array of strings representing the scrambled sentence. Punctuation must be attached to the final word.
-4. "correctOrder": An array of integers representing the index of each word in the `shuffledWords` array that forms the `sentence`. (e.g., if the sentence is "A B", and shuffledWords is ["B", "A"], correctOrder is [1, 0]).
+4. "correctOrder": An array of integers representing the index of each word in the `shuffledWords` array that forms the `sentence`. **CRITICAL GAMEPLAY RULE: You MUST ensure there are NO duplicate words in the sentence (e.g., do not use "the" twice). Since the game checks integer indexes, if a user taps the "wrong" "the", they will unfairly fail.**
 ```
 
 ---
@@ -432,7 +432,7 @@ UI NOTE: The user must reconstruct the sentence from shuffled words.
 ```text
 1. "instruction": "Fill in the blank with the correct word."
 2. "passage": A sentence or short paragraph with "____" indicating the missing word.
-3. "options": Array of 4 words.
+3. "options": Array of 4 words. **CRITICAL GAMEPLAY RULE: Ensure the 3 distractors do NOT grammatically and logically fit the blank just as perfectly as the correct answer. Avoid exact synonyms.**
 4. "correctAnswer" & "missingWord": The exact correct string.
 5. "hint": A contextual clue.
 6. "explanation": Explain why this word fits best based on context.
@@ -535,7 +535,7 @@ UI NOTE: The user must draw lines between words and their definitions based on a
 ```text
 1. "instruction": "Arrange the sentences in the correct order to form a logical paragraph."
 2. "shuffledSentences": Array of 3 to 5 strings representing the sentences out of order.
-3. "correctOrder": Array of integers representing the index of each sentence in `shuffledSentences` that forms the chronological paragraph.
+3. "correctOrder": Array of integers representing the index of each sentence in `shuffledSentences` that forms the chronological paragraph. **CRITICAL GAMEPLAY RULE: Ensure the paragraph has ONLY ONE logical chronological order. Do not use generic sentences that could be reversed without changing the meaning.**
 4. "hint": Clue about time/transition words.
 5. "explanation": Explain the chronological flow of the sentences.
 6. "transitionWords": Array of 2 strings showing the link words used (e.g., ["First", "Then"]).
@@ -894,7 +894,7 @@ UI NOTE: The user must draw lines between words and their definitions based on a
 ```text
 1. "instruction": "Build the sentence."
 2. "shuffledWords": Array of strings representing a scrambled sentence.
-3. "correctAnswer": The perfectly assembled sentence string.
+3. "correctAnswer": The perfectly assembled sentence string. **CRITICAL GAMEPLAY RULE: Ensure the sentence is NOT grammatically reversible! Avoid sentences like "The cat saw the dog" because "The dog saw the cat" is also correct, and the game will unfairly punish the user if they build the reversed version.**
 4. "hint": Grammar clue about word order.
 5. "explanation": Identify Subject-Verb-Object flow.
 6. "sentenceType": String (e.g., "statement", "question").
@@ -989,7 +989,7 @@ UI NOTE: The user must draw lines between words and their definitions based on a
 1. "instruction": "Usually 'Listen to the order and select the correct items'."
 2. "prompt": The text representing what the customer said (this will be read aloud by TTS).
 3. "options": Array of 4-6 menu items (e.g., ["Latte", "Espresso", "Croissant", "Muffin"]).
-4. "correctAnswer": A single string of comma-separated correct items (e.g., "Latte, Croissant").
+4. "correctAnswer": A single string of comma-separated correct items (e.g., "Latte, Croissant"). **CRITICAL GAMEPLAY RULE: Ensure the formatting of `correctAnswer` matches the elements in `options` exactly, and that the audio prompt unambiguously identifies the items.**
 5. "hint": A clue about what was ordered.
 6. "explanation": Detail the items requested by the customer.
 7. "menuItems": Array of objects, each with a "name" and "price" (e.g., `[{"name": "Latte", "price": 4.5}]`).
@@ -1133,7 +1133,8 @@ UI NOTE: The user must draw lines between words and their definitions based on a
 1. "instruction": "Which pronunciation is British/American?"
 2. "word": The target word.
 3. "options": Array of 2 strings (e.g., ["LAHT (American)", "LOT (British)"]).
-4. "correctAnswerIndex": Integer index.
+4. "correctAnswerIndex": Integer index. **CRITICAL GAMEPLAY RULE: Ensure the options correctly map to the target dialect without ambiguity. Do not provide a target word that is pronounced identically in both dialects.**
+
 5. "hint": A pronunciation clue comparing the vowels.
 6. "explanation": Explain the difference between the two dialects.
 7. "dialectNote": The specific phonetic rule difference.
@@ -1231,13 +1232,14 @@ UI NOTE: The user must draw lines between words and their definitions based on a
 
 ### 100. Word Linking (`wordLinking_X_Y.json`)
 ```text
-1. "instruction": "Identify how the words link."
-2. "textToSpeak": Phrase demonstrating linking.
-3. "hint": Clue on consonant-vowel bridging.
-4. "explanation": Describe the phonetic bridge.
-5. "options": Array of 4 linking pairs (e.g., ["an_apple", "a_napple"]).
-6. "correctAnswerIndex": Integer index.
-7. "linkingType": String (e.g., "Intrusion", "Elision", "Catenation").
+1. "instruction": "Identify the linking"
+2. "textToSpeak": The full phrase demonstrating linking (e.g., "call us right now").
+3. "words": Array of the individual words in the phrase (e.g., ["call", "us", "right", "now"]).
+4. "correctAnswer": The exact two words that link together (e.g., "call us"). **CRITICAL GAMEPLAY RULE: You must randomize the location of the link within the phrase! Do NOT always link the first two words. Mix it up so the link happens between words 2 and 3, or words 3 and 4, to prevent the game from being predictable.**
+5. "hint": Clue on consonant-vowel bridging.
+6. "explanation": Describe the phonetic bridge (e.g., "the /l/ in call links to the /u/ in us").
+7. "flowRule": The linguistic rule being applied (e.g., "Consonant-to-Vowel Linking...").
+8. "linkingType": String (e.g., "consonant_to_vowel").
 ```
 
 ---
@@ -1255,8 +1257,8 @@ Your objective is to upgrade the pedagogical content of these files to absolute 
 CRITICAL RULES TO PREVENT AI LOOPHOLES:
 1. STRICT PROGRESSION: The curriculum is progressively scaled. As the levels increase from Level 1 to Level 200, the difficulty of the questions, the complexity of the hints, and the rarity of the target words MUST increase.
 2. ZERO REPETITION: You must NEVER repeat a target word, question, hint, or fun fact across the 20 batches. Every single quest must be 100% unique. 
-3. ZERO MOCKING: Do not use placeholders like "..." or "Continue for other levels". Output the fully expanded, complete JSON arrays.
 4. CHILD-FRIENDLY TONE: Use a polite, encouraging, and age-appropriate tone. Use emojis generously in the string fields and keep `funFact` sentences short and fascinating for kids.
+5. NO AMBIGUOUS DISTRACTORS: **CRITICAL GAMEPLAY RULE: Across all Kids Zone games, the 3 distractors in the `options` array MUST BE unequivocally wrong. Do not include options that could technically be correct or easily confused by a child.**
 
 WORKFLOW:
 Do NOT generate all files at once. 

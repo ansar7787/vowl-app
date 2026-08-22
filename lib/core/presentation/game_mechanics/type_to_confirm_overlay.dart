@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/text_similarity_helper.dart';
 import 'package:vowl/core/utils/gibberish_detector_service.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -70,7 +69,6 @@ class TypeToConfirmOverlay extends StatefulWidget {
 
 class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   final _textController = TextEditingController();
   final _focusNode = FocusNode();
 
@@ -118,7 +116,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
 
     if (matched) {
       _hapticService.success();
-      _soundService.playCorrect();
       _focusNode.unfocus();
       await Future.delayed(const Duration(milliseconds: 1200));
       if (mounted) widget.onConfirmed();

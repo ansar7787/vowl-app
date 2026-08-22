@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -17,6 +16,8 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/reaction_core.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/instruction_panel.dart';
 import 'package:vowl/core/presentation/game_mechanics/type_to_confirm_overlay.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/controllers/word_formation_controller.dart';
 
@@ -74,7 +75,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           final isRetry = !state.answerStatus.isAnswered && _controller.isAnswered;
 
           if (isNewQuestion || isRetry) {
-            _controller.reset(state.currentQuest, state.currentIndex, isRetry);
+            _controller.reset(state.currentQuest, state.currentIndex);
           } else if (state.answerStatus.isAnswered && !_controller.isAnswered) {
             _controller.isAnswered = true;
             _controller.isCorrect = state.answerStatus.asBoolOrNull;
@@ -168,13 +169,8 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           },
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
+              : LayoutBuilder(
+                  builder: (context, constraints) {
                     final maxHeight = constraints.maxHeight;
                     final isCompact = maxHeight < 580;
 
@@ -199,363 +195,156 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ? (gapUnit * 2).clamp(12.0, 30.0)
                         : 12.0;
 
-
-
-                    return Column(
-                          key: ValueKey(quest.id),
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverToBoxAdapter(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                            child: Column(
+                              key: ValueKey(quest.id),
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                SizedBox(height: gapTop),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 24.w,
-                                  ),
-                                  child:
-                                      _buildInstruction(
-                                            theme.primaryColor,
-                                            quest,
-                                          )
-                                          .animate()
-                                          .fadeIn(duration: 500.ms)
-                                          .slideY(
-                                            begin: -0.5,
-                                            end: 0,
-                                            duration: 500.ms,
-                                            curve: Curves.easeOutBack,
-                                          ),
-                                ),
-                                SizedBox(height: gapMiddle),
-
-                                // Reaction Core
-                                (isCompact
-                                        ? SizedBox(
-                                            height: 120.h,
-                                            child: FittedBox(
-                                              fit: BoxFit.scaleDown,
-                                              child: SizedBox(
-                                                width: constraints.maxWidth,
-                                                child: _buildReactionCore(
-                                                  quest,
-                                                  root,
-                                                  activeSuffix,
-                                                  theme.primaryColor,
-                                                  isDark,
-                                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapTop),
+                                    Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 24.w,
+                                      ),
+                                      child:
+                                          InstructionPanel(
+                                                color: theme.primaryColor,
+                                                quest: quest,
+                                              )
+                                              .animate()
+                                              .fadeIn(duration: 500.ms)
+                                              .slideY(
+                                                begin: -0.5,
+                                                end: 0,
+                                                duration: 500.ms,
+                                                curve: Curves.easeOutBack,
                                               ),
-                                            ),
-                                          )
-                                        : _buildReactionCore(
-                                            quest,
-                                            root,
-                                            activeSuffix,
-                                            theme.primaryColor,
-                                            isDark,
-                                          ))
-                                    .animate()
-                                    .scale(
-                                      begin: const Offset(0.8, 0.8),
-                                      end: const Offset(1.0, 1.0),
-                                      duration: 600.ms,
-                                      curve: Curves.easeOutBack,
-                                    )
-                                    .fadeIn(duration: 600.ms),
-                              ],
-                            ),
+                                    ),
+                                    SizedBox(height: gapMiddle),
 
-                            Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(height: gapMiddle),
-                                // Injection Rails
-                                _buildInjectionRails(
-                                  options,
-                                  root,
-                                  quest.correctAnswer ?? "",
-                                  theme.primaryColor,
-                                  isDark,
-                                  isCompact,
+                                    // Reaction Core
+                                    (isCompact
+                                            ? SizedBox(
+                                                height: 120.h,
+                                                child: FittedBox(
+                                                  fit: BoxFit.scaleDown,
+                                                  child: SizedBox(
+                                                    width: constraints.maxWidth,
+                                                    child: ReactionCore(
+                                                      quest: quest,
+                                                      root: root,
+                                                      suffix: activeSuffix,
+                                                      color: theme.primaryColor,
+                                                      isDark: isDark,
+                                                      controller: _controller,
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            : ReactionCore(
+                                                quest: quest,
+                                                root: root,
+                                                suffix: activeSuffix,
+                                                color: theme.primaryColor,
+                                                isDark: isDark,
+                                                controller: _controller,
+                                              ))
+                                        .animate()
+                                        .scale(
+                                          begin: const Offset(0.8, 0.8),
+                                          end: const Offset(1.0, 1.0),
+                                          duration: 600.ms,
+                                          curve: Curves.easeOutBack,
+                                        )
+                                        .fadeIn(duration: 600.ms),
+                                  ],
                                 ),
-                                SizedBox(height: gapBottom),
+
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: gapMiddle),
+                                    // Injection Rails
+                                    _buildInjectionRails(
+                                      options,
+                                      root,
+                                      quest.correctAnswer ?? "",
+                                      theme.primaryColor,
+                                      isDark,
+                                      isCompact,
+                                    ),
+                                    SizedBox(height: gapBottom),
+                                  ],
+                                ),
                               ],
                             ),
-                          ],
-                    );
-                  },
-                ),
-              ),
-              if (_controller.isFirstStagePassed && !_controller.isAnswered)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                    child: Column(
-                      children: [
-                        if (quest.familyTree != null && quest.familyTree!.isNotEmpty)
-                          WordFormationFamilyTree(
-                            familyTree: quest.familyTree!,
-                            color: theme.primaryColor,
                           ),
-                        if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
-                          SizedBox(height: 16.h),
-                          Container(
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                            decoration: BoxDecoration(
-                              color: theme.primaryColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(16.r),
-                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
-                            ),
-                            child: Text(
-                              quest.explanation!,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
-                                height: 1.4,
+                        ),
+                        if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                          SliverToBoxAdapter(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                              child: Column(
+                                children: [
+                                  if (quest.familyTree != null && quest.familyTree!.isNotEmpty)
+                                    WordFormationFamilyTree(
+                                      familyTree: quest.familyTree!,
+                                      color: theme.primaryColor,
+                                    ),
+                                  if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+                                    SizedBox(height: 16.h),
+                                    Container(
+                                      width: double.infinity,
+                                      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                      decoration: BoxDecoration(
+                                        color: theme.primaryColor.withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(16.r),
+                                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                                      ),
+                                      child: Text(
+                                        quest.explanation!,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 13.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+                                          height: 1.4,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                  SizedBox(height: 20.h),
+                                  TypeToConfirmOverlay(
+                                    expectedText: quest.correctAnswer ?? '',
+                                    displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                                    primaryColor: theme.primaryColor,
+                                    onConfirmed: () => _controller.submitFinalAnswer(true),
+                                    onSkipped: () => _controller.submitFinalAnswer(false),
+                                    onBypassed: () => _controller.submitFinalAnswer(true),
+                                    isPositioned: false,
+                                  ),
+                                  SizedBox(height: 60.h),
+                                ],
                               ),
                             ),
                           ),
-                        ],
-                        SizedBox(height: 20.h),
-                        TypeToConfirmOverlay(
-                          expectedText: quest.correctAnswer ?? '',
-                          displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _controller.submitFinalAnswer(true),
-                          onSkipped: () => _controller.submitFinalAnswer(false),
-                          onBypassed: () => _controller.submitFinalAnswer(true),
-                          isPositioned: false,
-                        ),
-                        SizedBox(height: 60.h),
                       ],
-                    ),
-                  ),
+                    );
+                  },
                 ),
-            ],
-          ),
         );
       },
     );
   }
 
-  Widget _buildInstruction(Color color, GameQuest? quest) {
-    final text =
-        quest?.hint ??
-        quest?.instruction ??
-        "Analyze the meaning and select the correct ending.";
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: AutoSizeText(
-        text,
-        textAlign: TextAlign.center,
-        maxLines: 2,
-        minFontSize: 8,
-        stepGranularity: 1,
-        overflowReplacement: AutoSizeText(
-          text,
-          textAlign: TextAlign.center,
-          maxLines: 3,
-          minFontSize: 6,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 11.sp,
-            fontWeight: FontWeight.w600,
-            color: color,
-            letterSpacing: 0.2,
-            height: 1.2,
-          ),
-        ),
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 13.sp,
-          fontWeight: FontWeight.w600,
-          color: color,
-          letterSpacing: 0.2,
-          height: 1.3,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildReactionCore(
-    GameQuest? quest,
-    String root,
-    String? suffix,
-    Color color,
-    bool isDark,
-  ) {
-    return SizedBox(
-      height: 180.h,
-      width: 1.sw,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Energy Field Glow - RepaintBoundary for optimization
-          RepaintBoundary(
-            child:
-                Container(
-                      width: 200.r,
-                      height: 200.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.15),
-                            blurRadius: 40,
-                            spreadRadius: 10,
-                          ),
-                        ],
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(0.8, 0.8),
-                      end: const Offset(1.2, 1.2),
-                      duration: 2.seconds,
-                    ),
-          ),
-
-          // Hexagonal Chamber
-          RepaintBoundary(
-                child: Container(
-                  width: 240.w,
-                  height: 140.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.03),
-                    borderRadius: BorderRadius.circular(30.r),
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.3),
-                      width: 2,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.1),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30.r),
-                    child: Stack(
-                      children: [
-                        // Dynamic Liquid/Energy Background
-                        Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  color.withValues(alpha: 0.05),
-                                  color.withValues(alpha: 0.1),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        // Word Text with Shimmer
-                        Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    ((_controller.isAnswered || _controller.isFirstStagePassed)
-                                            ? (quest?.correctAnswer ?? "")
-                                            : root)
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 24.sp,
-                                      fontWeight: FontWeight.w900,
-                                      color: isDark
-                                          ? Colors.white
-                                          : const Color(0xFF0F172A),
-                                      letterSpacing: 4,
-                                    ),
-                                  ),
-                                ),
-                              ).animate().fadeIn().shimmer(duration: 2.seconds),
-                              if (suffix != null && !_controller.isAnswered && !_controller.isFirstStagePassed) ...[
-                                SizedBox(height: 8.h),
-                                Icon(
-                                  Icons.add_rounded,
-                                  color: color,
-                                  size: 20.r,
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.w,
-                                  ),
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: Text(
-                                      suffix.toUpperCase(),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 20.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: color,
-                                        letterSpacing: 2,
-                                      ),
-                                    ),
-                                  ),
-                                ).animate().slideY(begin: 0.5, end: 0),
-                              ],
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .moveY(
-                begin: -5,
-                end: 5,
-                duration: 3.seconds,
-                curve: Curves.easeInOutQuad,
-              ),
-
-          // Particle Orbits - Optimized with RepaintBoundary
-          ...List.generate(3, (index) {
-            return RepaintBoundary(child: _buildEnergyOrbit(index, color));
-          }),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEnergyOrbit(int index, Color color) {
-    final duration = (2 + index).seconds;
-    return Container(
-      width: (260 + (index * 20)).w,
-      height: (160 + (index * 20)).h,
-      decoration: BoxDecoration(
-        border: Border.all(color: color.withValues(alpha: 0.1), width: 1),
-        borderRadius: BorderRadius.circular(100.r),
-      ),
-    ).animate(onPlay: (c) => c.repeat()).rotate(duration: duration);
-  }
 
   Widget _buildInjectionRails(
     List<String> options,

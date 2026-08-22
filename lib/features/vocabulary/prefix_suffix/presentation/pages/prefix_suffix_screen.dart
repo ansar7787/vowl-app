@@ -8,6 +8,8 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -101,27 +103,37 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     }
   }
 
-  void _submitAffix(String option, VocabularyQuest quest) {
-    final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
+  /// DRY Helper: Consistently evaluates if an affix matches the target word.
+  bool _isAffixMatch(String option, String correctWord) {
     final cleanOption = option.replaceAll('-', '').trim().toLowerCase();
-
-    bool isCorrect = false;
-    // ROBUST CHECK: Handles spelling changes (like Create -> Creation)
+    
     if (option.endsWith('-')) {
       // Prefix (e.g., UN-)
-      isCorrect = correctWord.startsWith(cleanOption);
+      return correctWord.startsWith(cleanOption);
     } else if (option.startsWith('-')) {
       // Suffix (e.g., -NESS)
-      isCorrect = correctWord.endsWith(cleanOption);
-    } else {
-      isCorrect = correctWord.contains(cleanOption);
+      return correctWord.endsWith(cleanOption);
     }
+    
+    return correctWord.contains(cleanOption);
+  }
+
+  void _submitAffix(String option, VocabularyQuest quest) {
+    final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
+    final isCorrect = _isAffixMatch(option, correctWord);
 
     if (isCorrect) {
       _soundService.playCorrect();
       _hapticService.success();
-      setState(() {
-        _isFirstStagePassed = true;
+      
+      // We already snapped it visually in _onRoverRelease.
+      // Wait a moment for the user to register the success, then transition!
+      Future.delayed(const Duration(milliseconds: 600), () {
+        if (mounted) {
+          setState(() {
+            _isFirstStagePassed = true;
+          });
+        }
       });
     } else {
       _soundService.playWrong();
@@ -134,7 +146,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     }
   }
 
-  void _submitFinalAnswer(bool nailedIt, {String? wrongWord}) {
+  void _submitFinalAnswer(bool nailedIt, VocabularyQuest? quest, {String? wrongWord}) {
     if (_isAnswered) return;
 
     setState(() {
@@ -146,6 +158,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     if (nailedIt) {
       _hapticService.success();
       _soundService.playCorrect();
+      
+      final correctWord = quest?.correctAnswer ?? "";
+      if (correctWord.isNotEmpty) {
+        di.sl<TtsService>().speak(correctWord);
+      }
+
       bloc.add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -264,10 +282,23 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           useScrolling: false,
           onHint: () {
             final options = quest?.options ?? [];
-            final correct = quest?.correctAnswer?.toLowerCase() ?? "";
+            final correctWord = quest?.correctAnswer?.toLowerCase() ?? "";
+            
+            if (correctWord.isNotEmpty) {
+              di.sl<TtsService>().speak(correctWord);
+            }
+
+            if (_isFirstStagePassed) {
+              // If already on the spelling stage, the audio hint is enough.
+              return;
+            }
+
+            // Find the correct option using the DRY helper
+            int? correctIdx;
             for (int i = 0; i < options.length; i++) {
-              final opt = options[i].replaceAll('-', '').trim().toLowerCase();
-              if (correct.contains(opt)) {
+              final option = options[i];
+              
+              if (_isAffixMatch(option, correctWord)) {
                 setState(
                   () => _dragOffset =
                       _getTerminalPosition(
@@ -288,13 +319,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           },
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
+              : LayoutBuilder(
+                  builder: (context, constraints) {
                     _lastConstraints = constraints;
                     final screenSize = MediaQuery.of(context).size;
                     final double safeWidth = constraints.maxWidth.isFinite
@@ -312,103 +338,134 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         alignment: Alignment.center,
                         clipBehavior: Clip.none,
                         children: [
-                          Positioned(
-                            top: 20.h,
-                            child:
-                                PrefixSuffixMissionControl(
-                                      primaryColor: theme.primaryColor,
-                                      instruction:
-                                          quest.hint ?? quest.instruction,
-                                    )
-                                    .animate(target: (_isAnswered || _isFirstStagePassed) ? 1 : 0)
-                                    .fadeOut(duration: 400.ms)
-                                    .slideY(
-                                      begin: 0,
-                                      end: -1.5,
-                                      duration: 400.ms,
-                                      curve: Curves.easeIn,
-                                    ),
-                          ),
-
-                          // Docking Terminals (Options)
-                          ...List.generate(
-                            quest.options?.length ?? 0,
-                            (i) => PrefixSuffixDockingTerminal(
-                              index: i,
-                              text: quest.options![i],
-                              primaryColor: theme.primaryColor,
-                              isDark: isDark,
-                              position: _getTerminalPosition(
-                                i,
-                                quest.options!.length,
-                                constraints,
-                              ),
-                              parentWidth: safeWidth,
-                              parentHeight: safeHeight,
-                            ),
-                          ),
-
-                          // The Root Rover (Central Draggable)
-                          isCompact
-                              ? SizedBox(
-                                  width: 100.w,
-                                  height: 100.h,
-                                  child: FittedBox(
-                                    fit: BoxFit.scaleDown,
-                                    child: PrefixSuffixRootRover(
-                                      rootWord: quest.rootWord ?? "???",
-                                      primaryColor: theme.primaryColor,
-                                      isDark: isDark,
-                                      dragOffset: _dragOffset,
-                                      onPanUpdate: _onRoverDrag,
-                                      onPanEnd: (_) => _onRoverRelease(quest),
-                                    ),
-                                  ),
-                                )
-                              : PrefixSuffixRootRover(
-                                  rootWord: quest.rootWord ?? "???",
-                                  primaryColor: theme.primaryColor,
-                                  isDark: isDark,
-                                  dragOffset: _dragOffset,
-                                  onPanUpdate: _onRoverDrag,
-                                  onPanEnd: (_) => _onRoverRelease(quest),
+                          // ── STAGE 1: Drag and Drop ──
+                          IgnorePointer(
+                            ignoring: _isFirstStagePassed,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              clipBehavior: Clip.none,
+                              children: [
+                                Positioned(
+                                  top: 20.h,
+                                  child: PrefixSuffixMissionControl(
+                                    primaryColor: theme.primaryColor,
+                                    instruction: quest.hint ?? quest.instruction,
+                                  )
+                                  .animate(target: (_isAnswered || _isFirstStagePassed) ? 1 : 0)
+                                  .fadeOut(duration: 400.ms)
+                                  .slideY(begin: 0, end: -1.5, duration: 400.ms, curve: Curves.easeIn),
                                 ),
+
+                                // Docking Terminals
+                                ...List.generate(
+                                  quest.options?.length ?? 0,
+                                  (i) => PrefixSuffixDockingTerminal(
+                                    index: i,
+                                    text: quest.options![i],
+                                    primaryColor: theme.primaryColor,
+                                    isDark: isDark,
+                                    position: _getTerminalPosition(
+                                      i,
+                                      quest.options!.length,
+                                      constraints,
+                                    ),
+                                    parentWidth: safeWidth,
+                                    parentHeight: safeHeight,
+                                  ),
+                                ),
+
+                                // The Root Rover
+                                isCompact
+                                    ? SizedBox(
+                                        width: 100.w,
+                                        height: 100.h,
+                                        child: FittedBox(
+                                          fit: BoxFit.scaleDown,
+                                          child: PrefixSuffixRootRover(
+                                            rootWord: quest.rootWord ?? "???",
+                                            primaryColor: theme.primaryColor,
+                                            isDark: isDark,
+                                            dragOffset: _dragOffset,
+                                            onPanUpdate: _onRoverDrag,
+                                            onPanEnd: (_) => _onRoverRelease(quest),
+                                          ),
+                                        ),
+                                      )
+                                    : PrefixSuffixRootRover(
+                                        rootWord: quest.rootWord ?? "???",
+                                        primaryColor: theme.primaryColor,
+                                        isDark: isDark,
+                                        dragOffset: _dragOffset,
+                                        onPanUpdate: _onRoverDrag,
+                                        onPanEnd: (_) => _onRoverRelease(quest),
+                                      ),
+                              ],
+                            )
+                            .animate(target: _isFirstStagePassed ? 1 : 0)
+                            .fadeOut(duration: 400.ms)
+                            .scale(end: const Offset(0.9, 0.9), duration: 400.ms, curve: Curves.easeIn),
+                          ),
+
+                          // ── STAGE 2: Anagram Builder ──
+                          if (_isFirstStagePassed && !_isAnswered)
+                            Positioned.fill(
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (quest.meaningBreakdown != null)
+                                      PrefixSuffixMeaningBreakdown(
+                                        meaningBreakdown: quest.meaningBreakdown!,
+                                        color: theme.primaryColor,
+                                      ),
+                                    if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+                                      SizedBox(height: 16.h),
+                                      Container(
+                                        width: double.infinity,
+                                        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                                        decoration: BoxDecoration(
+                                          color: theme.primaryColor.withValues(alpha: 0.1),
+                                          borderRadius: BorderRadius.circular(16.r),
+                                          border: Border.all(color: theme.primaryColor.withValues(alpha: 0.2)),
+                                        ),
+                                        child: Text(
+                                          quest.explanation!,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 13.sp,
+                                            fontWeight: FontWeight.w600,
+                                            color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
+                                            height: 1.4,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                    SizedBox(height: 30.h),
+                                    DynamicAnagramWrapper(
+                                      title: context.tr('prefix_suffix.spell_title', fallback: 'SPELL THE TARGET WORD'),
+                                      subtitle: context.tr('prefix_suffix.spell_subtitle', fallback: 'Tap all letters to rebuild the word!'),
+                                      expectedText: quest.correctAnswer ?? '',
+                                      primaryColor: theme.primaryColor,
+                                      onConfirmed: () => _submitFinalAnswer(true, quest),
+                                      onFailed: () {},
+                                      onFailedWithSpelling: (wrongWord) =>
+                                          _submitFinalAnswer(false, quest, wrongWord: wrongWord),
+                                      isPositioned: false,
+                                    ),
+                                  ],
+                                ),
+                              )
+                              .animate()
+                              .fadeIn(duration: 500.ms, delay: 200.ms)
+                              .slideY(begin: 0.1, end: 0, duration: 500.ms, curve: Curves.easeOut, delay: 200.ms),
+                            ),
                         ],
                       ),
                     );
                   },
                 ),
-              ),
-              if (_isFirstStagePassed && !_isAnswered)
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-                    child: Column(
-                      children: [
-                        if (quest.meaningBreakdown != null)
-                          PrefixSuffixMeaningBreakdown(
-                            meaningBreakdown: quest.meaningBreakdown!,
-                            color: theme.primaryColor,
-                          ),
-                        SizedBox(height: 20.h),
-                        DynamicAnagramWrapper(
-                          title: 'SPELL THE TARGET WORD',
-                          subtitle: 'Tap all letters to rebuild the word!',
-                          expectedText: quest.correctAnswer ?? '',
-                          primaryColor: theme.primaryColor,
-                          onConfirmed: () => _submitFinalAnswer(true),
-                          onFailed: () {},
-                          onFailedWithSpelling: (wrongWord) =>
-                              _submitFinalAnswer(false, wrongWord: wrongWord),
-                          isPositioned: false,
-                        ),
-                        SizedBox(height: 60.h),
-                      ],
-                    ),
-                  ),
-                ),
-            ],
-          ),
         );
       },
     );
