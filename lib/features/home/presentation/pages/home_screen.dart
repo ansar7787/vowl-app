@@ -32,6 +32,7 @@ import 'package:vowl/features/home/presentation/widgets/translation_home_card.da
 import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
 import 'package:vowl/features/home/presentation/widgets/ai_lab_grid.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/presentation/widgets/animated_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -264,10 +265,54 @@ class _HomeScreenState extends State<HomeScreen> {
                                 user: user,
                                 mode: CommandPodMode.vaultOnly,
                               ),
-                              SizedBox(height: 24.h),
-                              const AiLabGrid(),
                             ],
                           ),
+                        ),
+                      ),
+
+                      // 5. HERO CAROUSEL (Daily Words & Junior Adventure)
+                      SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 16.h),
+                            SizedBox(
+                              height: 190.h, // 160.h for card + 30.h for shadow
+                              child: PageView(
+                                clipBehavior: Clip.none,
+                                controller: _carouselController,
+                                physics: const BouncingScrollPhysics(),
+                                onPageChanged: (idx) {
+                                  _carouselIndex.value = idx;
+                                },
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: CommandPod(
+                                      user: user,
+                                      mode: CommandPodMode.kidsOnly,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: DailyWordsHomeCard(isDark: isDark),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
+                                    child: const VowlMascotCard(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            ValueListenableBuilder<int>(
+                              valueListenable: _carouselIndex,
+                              builder: (context, currentIndex, _) {
+                                return AnimatedPageIndicator(
+                                  itemCount: 3,
+                                  currentIndex: currentIndex,
+                                );
+                              },
+                            ),
+                          ],
                         ),
                       ),
 
@@ -344,63 +389,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      // 5. HERO CAROUSEL (Daily Words & Junior Adventure)
+                      // 5.5 AI EXPERIMENTS
+                      HomeSliverSectionHeader(
+                        title: context.tr(
+                          'home.ai_lab_title',
+                          fallback: 'AI Experiments',
+                        ),
+                        subtitle: context.tr(
+                          'home.ai_lab_subtitle',
+                          fallback: 'Explore new ways to learn',
+                        ),
+                        categoryColor: const Color(0xFFA855F7),
+                      ),
                       SliverToBoxAdapter(
                         child: Column(
                           children: [
+                            SizedBox(height: 8.h),
+                            const AiLabGrid(),
                             SizedBox(height: 16.h),
-                            SizedBox(
-                              height: 190.h, // 160.h for card + 30.h for shadow
-                              child: PageView(
-                                clipBehavior: Clip.none,
-                                controller: _carouselController,
-                                physics: const BouncingScrollPhysics(),
-                                onPageChanged: (idx) {
-                                  _carouselIndex.value = idx;
-                                },
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: CommandPod(
-                                      user: user,
-                                      mode: CommandPodMode.kidsOnly,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: DailyWordsHomeCard(isDark: isDark),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.fromLTRB(8.w, 0, 8.w, 30.h),
-                                    child: const VowlMascotCard(),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            ValueListenableBuilder<int>(
-                              valueListenable: _carouselIndex,
-                              builder: (context, currentIndex, _) {
-                                return Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: List.generate(3, (index) {
-                                    final isSelected = index == currentIndex;
-                                    return AnimatedContainer(
-                                      duration: const Duration(milliseconds: 300),
-                                      curve: Curves.easeOutCubic,
-                                      margin: EdgeInsets.symmetric(horizontal: 4.w),
-                                      height: 6.h,
-                                      width: isSelected ? 24.w : 6.w,
-                                      decoration: BoxDecoration(
-                                        color: isSelected
-                                            ? const Color(0xFF6366F1)
-                                            : (isDark ? Colors.white24 : Colors.black12),
-                                        borderRadius: BorderRadius.circular(4.r),
-                                      ),
-                                    );
-                                  }),
-                                );
-                              },
-                            ),
                           ],
                         ),
                       ),

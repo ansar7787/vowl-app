@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -15,92 +14,57 @@ class AiLabGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Icon(Icons.science_rounded, color: const Color(0xFF6366F1), size: 24.r),
-            SizedBox(width: 8.w),
-            Text(
-              context.tr('home.ai_lab_title', fallback: 'AI Lab & Challenges'),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w900,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white
-                    : const Color(0xFF0F172A),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 16.h),
-        SizedBox(
-          height: 270.h, // Increased to prevent vertical overflow on larger text scalers
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: _buildBentoCard(
-                        context: context,
-                        title: 'Photo Vocab',
-                        icon: Icons.camera_alt_rounded,
-                        color: const Color(0xFF10B981),
-                        route: AppRouter.photoVocabularyRoute,
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    Expanded(
-                      child: _buildBentoCard(
-                        context: context,
-                        title: 'Word Snap',
-                        icon: Icons.extension_rounded,
-                        color: const Color(0xFFF59E0B),
-                        route: '/word-snap',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: _buildBentoCard(
-                        context: context,
-                        title: 'Scan & Learn',
-                        icon: Icons.document_scanner_rounded,
-                        color: const Color(0xFF3B82F6),
-                        route: AppRouter.scanAndLearnRoute,
-                      ),
-                    ),
-                    SizedBox(height: 12.h),
-                    Expanded(
-                      child: _buildBentoCard(
-                        context: context,
-                        title: 'Word Mixer',
-                        icon: Icons.sort_by_alpha_rounded,
-                        color: const Color(0xFFA855F7),
-                        route: '/word-mixer',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+    return SizedBox(
+      height: 160.h,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        children: [
+          _buildLabCard(
+            context: context,
+            title: 'Photo Vocab',
+            subtitle: 'Learn from images',
+            icon: Icons.camera_alt_rounded,
+            color: const Color(0xFF10B981),
+            route: AppRouter.photoVocabularyRoute,
           ),
-        ),
-      ],
+          SizedBox(width: 16.w),
+          _buildLabCard(
+            context: context,
+            title: 'Scan & Learn',
+            subtitle: 'Read text alive',
+            icon: Icons.document_scanner_rounded,
+            color: const Color(0xFF3B82F6),
+            route: AppRouter.scanAndLearnRoute,
+          ),
+          SizedBox(width: 16.w),
+          _buildLabCard(
+            context: context,
+            title: 'Word Snap',
+            subtitle: 'Quick memory',
+            icon: Icons.extension_rounded,
+            color: const Color(0xFFF59E0B),
+            route: '/word-snap',
+          ),
+          SizedBox(width: 16.w),
+          _buildLabCard(
+            context: context,
+            title: 'Word Mixer',
+            subtitle: 'Creative combos',
+            icon: Icons.sort_by_alpha_rounded,
+            color: const Color(0xFFA855F7),
+            route: '/word-mixer',
+          ),
+        ],
+      ),
     );
   }
 
-  Widget _buildBentoCard({
+  Widget _buildLabCard({
     required BuildContext context,
     required String title,
+    required String subtitle,
     required IconData icon,
     required Color color,
     required String route,
@@ -133,37 +97,45 @@ class AiLabGrid extends StatelessWidget {
         );
       },
       child: GlassTile(
+        showShadow: false,
         borderRadius: BorderRadius.circular(24.r),
-        padding: EdgeInsets.all(12.r), // Reduced padding to allow more text room
+        padding: EdgeInsets.all(20.r),
         child: SizedBox(
-          width: double.infinity,
+          width: 200.w,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
-            crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding: EdgeInsets.all(10.r),
+                padding: EdgeInsets.all(12.r),
                 decoration: BoxDecoration(
                   color: color.withValues(alpha: 0.15),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(icon, color: color, size: 28.r),
               ),
-              SizedBox(height: 12.h), // Replaced Spacer with fixed height
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.center, // Center text box
-                child: Text(
-                  title,
-                  textAlign: TextAlign.center, // Center text multiline
-                  maxLines: 1, // Enforce single line
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    height: 1.1,
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  ),
+              const Spacer(),
+              Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.w900,
+                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                ),
+              ),
+              SizedBox(height: 4.h),
+              Text(
+                subtitle,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white70 : Colors.black54,
                 ),
               ),
             ],
