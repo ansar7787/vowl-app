@@ -25,6 +25,7 @@ class TranslateScreen extends StatefulWidget {
 
 class _TranslateScreenState extends State<TranslateScreen> {
   final TextEditingController _inputController = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   final ScrollController _scrollController = ScrollController();
   final HapticService _haptics = di.sl<HapticService>();
   Timer? _debounce;
@@ -39,6 +40,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   void dispose() {
     _debounce?.cancel();
     _inputController.dispose();
+    _focusNode.dispose();
     _scrollController.dispose();
     super.dispose();
   }
@@ -251,9 +253,12 @@ class _TranslateScreenState extends State<TranslateScreen> {
   }
 
   Widget _buildInputArea(BuildContext context, bool isDark, bool isPremium) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-      child: Column(
+    return GestureDetector(
+      onTap: () => _focusNode.requestFocus(),
+      behavior: HitTestBehavior.opaque,
+      child: GlassTile(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+        child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -312,6 +317,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
           SizedBox(height: 12.h),
           TextField(
             controller: _inputController,
+            focusNode: _focusNode,
             onChanged: _onInputChanged,
             maxLines: null, // Allows infinite expansion
             minLines: 3,
@@ -331,7 +337,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
                 color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
               ),
               border: InputBorder.none,
-              contentPadding: EdgeInsets.zero,
+              contentPadding: EdgeInsets.symmetric(vertical: 4.h),
             ),
           ),
         ],
