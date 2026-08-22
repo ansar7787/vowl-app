@@ -16,9 +16,10 @@ class TranslationInitRequested extends TranslationEvent {}
 
 class TranslationTextChanged extends TranslationEvent {
   final String text;
-  const TranslationTextChanged(this.text);
+  final bool isPremium;
+  const TranslationTextChanged(this.text, {this.isPremium = false});
   @override
-  List<Object?> get props => [text];
+  List<Object?> get props => [text, isPremium];
 }
 
 class TranslationLanguageChanged extends TranslationEvent {
@@ -35,6 +36,8 @@ class TranslationModelDeleted extends TranslationEvent {
   List<Object?> get props => [targetLanguageName];
 }
 
+class TranslationAdWatched extends TranslationEvent {}
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -49,6 +52,8 @@ class TranslationState extends Equatable {
   final List<String> downloadedLanguages;
   final bool isModelDownloading;
   final String? errorMessage;
+  final int freeTranslationsRemaining;
+  final bool isLimitReached;
 
   const TranslationState({
     this.status = TranslationStatus.initial,
@@ -58,6 +63,8 @@ class TranslationState extends Equatable {
     this.downloadedLanguages = const [],
     this.isModelDownloading = false,
     this.errorMessage,
+    this.freeTranslationsRemaining = 3,
+    this.isLimitReached = false,
   });
 
   TranslationState copyWith({
@@ -68,6 +75,8 @@ class TranslationState extends Equatable {
     List<String>? downloadedLanguages,
     bool? isModelDownloading,
     String? errorMessage,
+    int? freeTranslationsRemaining,
+    bool? isLimitReached,
   }) {
     return TranslationState(
       status: status ?? this.status,
@@ -78,6 +87,8 @@ class TranslationState extends Equatable {
       downloadedLanguages: downloadedLanguages ?? this.downloadedLanguages,
       isModelDownloading: isModelDownloading ?? this.isModelDownloading,
       errorMessage: errorMessage,
+      freeTranslationsRemaining: freeTranslationsRemaining ?? this.freeTranslationsRemaining,
+      isLimitReached: isLimitReached ?? this.isLimitReached,
     );
   }
 
@@ -90,6 +101,8 @@ class TranslationState extends Equatable {
     downloadedLanguages,
     isModelDownloading,
     errorMessage,
+    freeTranslationsRemaining,
+    isLimitReached,
   ];
 }
 
@@ -107,6 +120,7 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
     on<TranslationTextChanged>(_onTextChanged);
     on<TranslationLanguageChanged>(_onLanguageChanged);
     on<TranslationModelDeleted>(_onModelDeleted);
+    on<TranslationAdWatched>(_onAdWatched);
   }
 
   Future<void> _onInitRequested(
@@ -147,6 +161,11 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       return;
     }
 
+    if (!event.isPremium && state.isLimitReached) {
+      emit(state.copyWith(errorMessage: null));
+      return;
+    }
+
     if (state.currentTargetLanguage == null) {
       emit(
         state.copyWith(errorMessage: 'translation.error_select_target'),
@@ -165,11 +184,16 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final result = await _service.translate(text);
       final newDownloaded = await _service.getDownloadedLanguageNames();
 
+      final int newRemaining = event.isPremium ? 3 : (state.freeTranslationsRemaining - 1);
+      final bool limitReached = !event.isPremium && newRemaining <= 0;
+
       emit(
         state.copyWith(
           translatedText: result,
           isModelDownloading: false,
           downloadedLanguages: newDownloaded,
+          freeTranslationsRemaining: newRemaining > 0 ? newRemaining : 0,
+          isLimitReached: limitReached,
         ),
       );
     } catch (e) {
@@ -241,6 +265,22 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       );
     } catch (e) {
       emit(state.copyWith(errorMessage: 'translation.error_delete_model'));
+    }
+  }
+
+  void _onAdWatched(
+    TranslationAdWatched event,
+    Emitter<TranslationState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        freeTranslationsRemaining: 3,
+        isLimitReached: false,
+        errorMessage: null,
+      ),
+    );
+    if (state.sourceText.isNotEmpty) {
+      add(TranslationTextChanged(state.sourceText));
     }
   }
 }
