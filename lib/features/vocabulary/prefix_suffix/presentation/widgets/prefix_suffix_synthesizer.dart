@@ -8,6 +8,7 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
   final String correctAnswer;
   final String? explanation;
   final String? selectedAffix;
+  final String? hintedAffix;
   final bool isFirstStagePassed;
   final Color primaryColor;
   final bool isDark;
@@ -21,6 +22,7 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
     required this.correctAnswer,
     this.explanation,
     this.selectedAffix,
+    this.hintedAffix,
     required this.isFirstStagePassed,
     required this.primaryColor,
     required this.isDark,
@@ -30,13 +32,19 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Determine if the correct answer uses a prefix or suffix based on the options.
-    // If the correct option ends with '-', it's a prefix (goes on the left).
+    // 1. ROBUST DETECTION LOGIC
+    final cleanCorrect = correctAnswer.replaceAll('-', '').trim().toLowerCase();
+    
+    // Find which option actually fits inside the correct answer
     final correctOption = options.firstWhere(
-      (opt) => correctAnswer.toLowerCase().contains(opt.replaceAll('-', '').toLowerCase()),
+      (opt) => cleanCorrect.contains(opt.replaceAll('-', '').trim().toLowerCase()),
       orElse: () => options.first,
     );
-    final isPrefix = correctOption.endsWith('-');
+    
+    final cleanOpt = correctOption.replaceAll('-', '').trim().toLowerCase();
+    
+    // A prefix is anything that comes at the beginning of the word.
+    final isPrefix = correctOption.endsWith('-') || cleanCorrect.startsWith(cleanOpt);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -109,26 +117,65 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
             children: options.map((option) {
               return _buildAffixPiece(option);
             }).toList(),
-          ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0, duration: 400.ms),
+          ).animate(target: selectedAffix != null ? 0 : 1).scale(
+            begin: const Offset(0.8, 0.8),
+            end: const Offset(1.0, 1.0),
+            duration: 300.ms,
+            curve: Curves.easeOut,
+          ).fade(duration: 300.ms),
         ]
       ],
     );
   }
 
   Widget _buildSynthesisSockets(bool isPrefix) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        if (isPrefix) _buildEmptySocket(),
-        if (isPrefix) SizedBox(width: 8.w),
-        _buildRootBlock(),
-        if (!isPrefix) SizedBox(width: 8.w),
-        if (!isPrefix) _buildEmptySocket(),
-      ],
+    // 2. FITTEDBOX TO PREVENT RENDERFLEX OVERFLOWS
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (isPrefix) _buildDynamicSocket(),
+          if (isPrefix) SizedBox(width: 8.w),
+          _buildRootBlock(),
+          if (!isPrefix) SizedBox(width: 8.w),
+          if (!isPrefix) _buildDynamicSocket(),
+        ],
+      ),
     );
   }
 
-  Widget _buildEmptySocket() {
+  // 3. TRUE ANIMATION (Sockets render the selected piece immediately)
+  Widget _buildDynamicSocket() {
+    if (selectedAffix != null) {
+      // Show the selected affix snapping into the socket
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+        decoration: BoxDecoration(
+          color: primaryColor,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: [
+            BoxShadow(
+              color: primaryColor.withValues(alpha: 0.4),
+              blurRadius: 12,
+              spreadRadius: 2,
+            )
+          ],
+        ),
+        child: Text(
+          selectedAffix!.toUpperCase(),
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+            letterSpacing: 2,
+          ),
+        ),
+      ).animate().scale(begin: const Offset(1.3, 1.3), end: const Offset(1.0, 1.0), duration: 250.ms, curve: Curves.easeOutBack);
+    }
+
+    // Default Empty Socket
     return Container(
       width: 80.w,
       height: 70.h,
@@ -180,24 +227,30 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
   }
 
   Widget _buildAffixPiece(String affix) {
-    final bool isSelected = selectedAffix == affix;
-    return GestureDetector(
-      onTap: () => onAffixSelected(affix),
+    // 4. FIX HINT SYSTEM (Visual glow for correct piece)
+    final bool isHinted = hintedAffix == affix;
+    
+    Widget piece = GestureDetector(
+      onTap: () {
+        if (selectedAffix == null) {
+          onAffixSelected(affix);
+        }
+      },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: isSelected ? primaryColor : (isDark ? const Color(0xFF1E293B) : Colors.white),
+          color: isDark ? const Color(0xFF1E293B) : Colors.white,
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
-            color: isSelected ? primaryColor : primaryColor.withValues(alpha: 0.3),
-            width: 2,
+            color: isHinted ? primaryColor : primaryColor.withValues(alpha: 0.3),
+            width: isHinted ? 3 : 2,
           ),
-          boxShadow: isSelected
+          boxShadow: isHinted
               ? [
                   BoxShadow(
-                    color: primaryColor.withValues(alpha: 0.4),
-                    blurRadius: 12,
-                    spreadRadius: 2,
+                    color: primaryColor.withValues(alpha: 0.6),
+                    blurRadius: 16,
+                    spreadRadius: 4,
                   )
                 ]
               : null,
@@ -208,11 +261,18 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
             fontFamily: 'Outfit',
             fontSize: 20.sp,
             fontWeight: FontWeight.w800,
-            color: isSelected ? Colors.white : (isDark ? Colors.white : Colors.black87),
+            color: isDark ? Colors.white : Colors.black87,
           ),
         ),
       ),
     );
+
+    if (isHinted) {
+      piece = piece.animate(onPlay: (controller) => controller.repeat(reverse: true))
+                   .scale(begin: const Offset(1.0, 1.0), end: const Offset(1.05, 1.05), duration: 500.ms);
+    }
+
+    return piece;
   }
 
   Widget _buildFusedWord() {
@@ -244,7 +304,7 @@ class PrefixSuffixSynthesizer extends StatelessWidget {
         ),
       ),
     ).animate()
-     .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack, duration: 600.ms)
-     .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 1000.ms, delay: 600.ms);
+     .scale(begin: const Offset(0.8, 0.8), curve: Curves.easeOutBack, duration: 400.ms)
+     .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 800.ms, delay: 200.ms);
   }
 }

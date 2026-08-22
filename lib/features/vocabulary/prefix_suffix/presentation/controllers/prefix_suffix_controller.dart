@@ -16,6 +16,7 @@ class PrefixSuffixController extends ChangeNotifier {
   bool showConfetti = false;
   bool isFirstStagePassed = false;
   String? selectedAffix;
+  String? hintedAffix;
   
   int lastProcessedIndex = -1;
   VocabularyQuest? lastQuest;
@@ -36,6 +37,7 @@ class PrefixSuffixController extends ChangeNotifier {
     isCorrect = null;
     isFirstStagePassed = false;
     selectedAffix = null;
+    hintedAffix = null;
     notifyListeners();
   }
   
@@ -142,8 +144,17 @@ class PrefixSuffixController extends ChangeNotifier {
     for (int i = 0; i < options.length; i++) {
       final option = options[i];
       if (_isAffixMatch(option, correctWord)) {
-        // Flash the correct option somehow (currently handled by hint glow in UI)
+        hintedAffix = option;
+        notifyListeners();
+        
         _hapticService.light();
+        
+        Future.delayed(const Duration(milliseconds: 1500), () {
+          if (!isAnswered) {
+            hintedAffix = null;
+            notifyListeners();
+          }
+        });
         break;
       }
     }
