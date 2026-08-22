@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -8,8 +7,6 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class TranslationHomeCard extends StatelessWidget {
   final bool isDark;
