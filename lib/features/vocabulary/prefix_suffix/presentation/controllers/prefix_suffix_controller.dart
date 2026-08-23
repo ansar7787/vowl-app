@@ -101,7 +101,7 @@ class PrefixSuffixController extends ChangeNotifier {
       _hapticService.success();
       
       // Wait a moment for the user to register the success, then transition!
-      Future.delayed(const Duration(milliseconds: 600), () {
+      Future.delayed(const Duration(milliseconds: 250), () {
         isFirstStagePassed = true;
         notifyListeners();
       });
