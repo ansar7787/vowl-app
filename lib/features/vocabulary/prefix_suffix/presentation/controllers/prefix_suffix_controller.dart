@@ -11,6 +11,8 @@ class PrefixSuffixController extends ChangeNotifier {
   final TtsService _ttsService;
   final void Function(bool) onSubmitAnswer;
 
+  bool _isDisposed = false;
+
   bool isAnswered = false;
   bool? isCorrect;
   bool showConfetti = false;
@@ -29,6 +31,12 @@ class PrefixSuffixController extends ChangeNotifier {
   })  : _hapticService = hapticService,
         _soundService = soundService,
         _ttsService = ttsService;
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
+  }
 
   void reset(VocabularyQuest? quest, int index) {
     lastQuest = quest;
@@ -111,6 +119,7 @@ class PrefixSuffixController extends ChangeNotifier {
       
       // Wait a moment for the user to register the success, then transition!
       Future.delayed(const Duration(milliseconds: 250), () {
+        if (_isDisposed) return;
         isFirstStagePassed = true;
         notifyListeners();
       });
@@ -171,6 +180,7 @@ class PrefixSuffixController extends ChangeNotifier {
         _hapticService.light();
         
         Future.delayed(const Duration(milliseconds: 1500), () {
+          if (_isDisposed) return;
           if (!isAnswered) {
             hintedAffix = null;
             notifyListeners();

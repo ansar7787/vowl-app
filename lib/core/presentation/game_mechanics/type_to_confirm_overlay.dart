@@ -111,13 +111,13 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
     if (matched) {
       _hapticService.success();
       _focusNode.unfocus();
-      await Future.delayed(const Duration(milliseconds: 1200));
+      await Future.delayed(const Duration(milliseconds: 800));
       if (mounted) widget.onConfirmed();
     } else {
       _hapticService.error();
       if (_attempts >= widget.maxAttempts) {
         _focusNode.unfocus();
-        await Future.delayed(const Duration(milliseconds: 800));
+        await Future.delayed(const Duration(milliseconds: 500));
         if (mounted) widget.onSkipped();
       }
     }
