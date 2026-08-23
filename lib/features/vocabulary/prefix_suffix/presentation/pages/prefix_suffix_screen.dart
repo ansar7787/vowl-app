@@ -161,11 +161,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               children: [
                 baseLayout,
                 if (_controller.isFirstStagePassed && quest != null)
-                  TypeToConfirmOverlay(
-                    expectedText: quest.correctAnswer ?? "",
-                    primaryColor: theme.primaryColor,
-                    onConfirmed: () => _controller.submitFinalAnswer(true, quest),
-                    onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                  Material(
+                    type: MaterialType.transparency,
+                    child: TypeToConfirmOverlay(
+                      expectedText: quest.correctAnswer ?? "",
+                      primaryColor: theme.primaryColor,
+                      onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                      onSkipped: () => _controller.submitFinalAnswer(false, quest),
+                    ),
                   ),
               ],
             );
