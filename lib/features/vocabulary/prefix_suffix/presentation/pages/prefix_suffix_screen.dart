@@ -160,7 +160,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
             return Stack(
               children: [
                 baseLayout,
-                if (_controller.isFirstStagePassed && quest != null)
+                if (_controller.isFirstStagePassed && !_controller.isAnswered && quest != null)
                   Positioned(
                     bottom: 0,
                     left: 0,
