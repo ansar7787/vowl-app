@@ -13,6 +13,7 @@ import 'package:vowl/features/auth/domain/usecases/add_golden_key.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/presentation/widgets/premium_store_bottom_sheet.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
 
 class KeyShopBottomSheet {
   static void show({
@@ -35,7 +36,7 @@ class KeyShopBottomSheet {
   }
 }
 
-class _KeyShopContent extends StatelessWidget {
+class _KeyShopContent extends StatefulWidget {
   final BuildContext parentContext;
   final bool isKidsMode;
   final Color primaryColor;
@@ -47,7 +48,33 @@ class _KeyShopContent extends StatelessWidget {
   });
 
   @override
+  State<_KeyShopContent> createState() => _KeyShopContentState();
+}
+
+class _KeyShopContentState extends State<_KeyShopContent> {
+  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
+  bool _isLoadingLimits = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimits();
+  }
+
+  Future<void> _loadLimits() async {
+    final remaining = await RewardLimitService.getRemainingClaims('keys');
+    if (mounted) {
+      setState(() {
+        _remainingClaims = remaining;
+        _isLoadingLimits = false;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isPremium = widget.parentContext.read<AuthBloc>().state.user?.isPremium ?? false;
+
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () => Navigator.pop(context),
@@ -61,12 +88,12 @@ class _KeyShopContent extends StatelessWidget {
                 : Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(32.r)),
             border: Border.all(
-              color: primaryColor.withValues(alpha: 0.3),
+              color: widget.primaryColor.withValues(alpha: 0.3),
               width: 1.5.w,
             ),
             boxShadow: [
               BoxShadow(
-                color: primaryColor.withValues(alpha: 0.15),
+                color: widget.primaryColor.withValues(alpha: 0.15),
                 blurRadius: 24.r,
                 offset: Offset(0, -4.h),
               ),
@@ -82,20 +109,20 @@ class _KeyShopContent extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        primaryColor.withValues(alpha: 0.15),
-                        primaryColor.withValues(alpha: 0.25),
+                        widget.primaryColor.withValues(alpha: 0.15),
+                        widget.primaryColor.withValues(alpha: 0.25),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: primaryColor.withValues(alpha: 0.4),
+                      color: widget.primaryColor.withValues(alpha: 0.4),
                       width: 1.w,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: primaryColor.withValues(alpha: 0.2),
+                        color: widget.primaryColor.withValues(alpha: 0.2),
                         blurRadius: 16.r,
                       ),
                     ],
@@ -103,7 +130,7 @@ class _KeyShopContent extends StatelessWidget {
                   child: Icon(
                     Icons.key_rounded,
                     size: 56.r,
-                    color: primaryColor,
+                    color: widget.primaryColor,
                   ),
                 ),
                 SizedBox(height: 16.h),
@@ -116,7 +143,7 @@ class _KeyShopContent extends StatelessWidget {
                     fontFamily: 'Outfit',
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
-                    color: primaryColor,
+                    color: widget.primaryColor,
                     letterSpacing: 1.0,
                   ),
                 ),
@@ -140,7 +167,7 @@ class _KeyShopContent extends StatelessWidget {
                 BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, authState) {
                     final user = authState.user;
-                    final userCoins = isKidsMode
+                    final userCoins = widget.isKidsMode
                         ? (user?.kidsCoins ?? 0)
                         : (user?.coins ?? 0);
                     const int cost = 150;
@@ -149,7 +176,7 @@ class _KeyShopContent extends StatelessWidget {
                       onTap: () async {
                         if (userCoins < cost) {
                           Navigator.pop(context);
-                          if (!parentContext.mounted) return;
+                          if (!widget.parentContext.mounted) return;
                           // BUG FIX (STALE CONTEXT): was `context: context`
                           // (this BlocBuilder's own, sheet-scoped context)
                           // used right after Navigator.pop deactivated the
@@ -158,9 +185,9 @@ class _KeyShopContent extends StatelessWidget {
                           // dialog in this file correctly uses for this
                           // exact situation.
                           showDialog(
-                            context: parentContext,
+                            context: widget.parentContext,
                             builder: (ctx) => ModernGameDialog(
-                              title: isKidsMode
+                              title: widget.isKidsMode
                                   ? context.tr(
                                       'store.not_enough_toys_title',
                                       fallback: 'NOT ENOUGH TOYS',
@@ -173,12 +200,12 @@ class _KeyShopContent extends StatelessWidget {
                                 'store.not_enough_currency_desc',
                                 args: [
                                   '$cost',
-                                  isKidsMode
+                                  widget.isKidsMode
                                       ? context.tr('store.toys_lower')
                                       : context.tr('store.coins_lower'),
                                 ],
                                 fallback:
-                                    'You need $cost ${isKidsMode ? 'toys' : 'coins'} to get a key!',
+                                    'You need $cost ${widget.isKidsMode ? 'toys' : 'coins'} to get a key!',
                               ),
                               buttonText: context.tr(
                                 'games.keep_playing',
@@ -194,11 +221,11 @@ class _KeyShopContent extends StatelessWidget {
                         final result = await di.sl<PurchaseGoldenKey>().call(
                           PurchaseGoldenKeyParams(
                             cost: cost,
-                            isKidsMode: isKidsMode,
+                            isKidsMode: widget.isKidsMode,
                           ),
                         );
 
-                        if (!parentContext.mounted) return;
+                        if (!widget.parentContext.mounted) return;
 
                         // BUG FIX (SILENT FAILURE): previously only the
                         // success branch (`result.isRight()`) was handled -
@@ -211,7 +238,7 @@ class _KeyShopContent extends StatelessWidget {
                         result.fold(
                           (failure) {
                             showDialog(
-                              context: parentContext,
+                              context: widget.parentContext,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
                                   'store.purchase_failed_title',
@@ -231,11 +258,11 @@ class _KeyShopContent extends StatelessWidget {
                             );
                           },
                           (_) {
-                            parentContext.read<AuthBloc>().add(
+                            widget.parentContext.read<AuthBloc>().add(
                               const AuthReloadUser(),
                             );
                             showDialog(
-                              context: parentContext,
+                              context: widget.parentContext,
                               builder: (ctx) => Material(
                                 type: MaterialType.transparency,
                                 child: Stack(
@@ -276,7 +303,7 @@ class _KeyShopContent extends StatelessWidget {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: userCoins >= cost
-                                ? [primaryColor, Colors.amber.shade700]
+                                ? [widget.primaryColor, Colors.amber.shade700]
                                 : [Colors.grey.shade400, Colors.grey.shade500],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -290,7 +317,7 @@ class _KeyShopContent extends StatelessWidget {
                             BoxShadow(
                               color:
                                   (userCoins >= cost
-                                          ? primaryColor
+                                          ? widget.primaryColor
                                           : Colors.grey.shade500)
                                       .withValues(alpha: 0.4),
                               offset: Offset(0, 4.h),
@@ -333,19 +360,18 @@ class _KeyShopContent extends StatelessWidget {
 
                 // Get with Ad
                 ScaleButton(
-                  onTap: () {
+                  onTap: _remainingClaims <= 0
+                      ? null
+                      : () {
                     final adService = di.sl<AdService>();
                     // FIX: Read premium status from AuthBloc instead of
                     // hardcoding `false`. Premium users who open the key
                     // shop (e.g. via Kids Zone toll gate) should get the
                     // premium bypass, not be forced to watch an ad.
-                    final isPremium =
-                        parentContext.read<AuthBloc>().state.user?.isPremium ??
-                        false;
                     if (!isPremium && !adService.isRewardedAdLoaded) {
                       Navigator.pop(context);
                       showDialog(
-                        context: parentContext,
+                        context: widget.parentContext,
                         builder: (ctx) => ModernGameDialog(
                           title: context.tr(
                             'store.ad_not_ready_title',
@@ -370,18 +396,21 @@ class _KeyShopContent extends StatelessWidget {
                     }
                     Navigator.pop(context);
                     adService.showRewardedAd(
-                      context: parentContext,
+                      context: widget.parentContext,
                       isPremium: isPremium,
                       // FIX: COPPA compliance — when the key shop is opened
                       // from Kids Zone (isKidsMode: true), force child-safe
                       // ad parameters.
-                      childSafe: isKidsMode,
+                      childSafe: widget.isKidsMode,
                       onUserEarnedReward: (_) async {
                         final result = await di.sl<AddGoldenKey>().call(
                           const AddGoldenKeyParams(amount: 1),
                         );
 
-                        if (!parentContext.mounted) return;
+                        if (!widget.parentContext.mounted) return;
+
+                        await RewardLimitService.incrementClaimCount('keys');
+                        if (mounted) await _loadLimits();
 
                         // BUG FIX (SILENT FAILURE): same missing-failure-
                         // handling issue as the coin-purchase flow above -
@@ -392,7 +421,7 @@ class _KeyShopContent extends StatelessWidget {
                         result.fold(
                           (failure) {
                             showDialog(
-                              context: parentContext,
+                              context: widget.parentContext,
                               builder: (ctx) => ModernGameDialog(
                                 title: context.tr(
                                   'store.reward_failed_title',
@@ -412,11 +441,11 @@ class _KeyShopContent extends StatelessWidget {
                             );
                           },
                           (_) {
-                            parentContext.read<AuthBloc>().add(
+                            widget.parentContext.read<AuthBloc>().add(
                               const AuthReloadUser(),
                             );
                             showDialog(
-                              context: parentContext,
+                              context: widget.parentContext,
                               builder: (ctx) => Material(
                                 type: MaterialType.transparency,
                                 child: Stack(
@@ -481,16 +510,25 @@ class _KeyShopContent extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.play_circle_fill_rounded,
+                          isPremium ? Icons.redeem_rounded : Icons.play_circle_fill_rounded,
                           color: Colors.white,
                           size: 20.r,
                         ),
                         SizedBox(width: 8.w),
                         Text(
-                          context.tr(
-                            'store.watch_ad_for_key',
-                            fallback: 'Watch Ad for 1 Key',
-                          ),
+                          _isLoadingLimits
+                              ? context.tr('store.loading_ad', fallback: 'Loading...')
+                              : _remainingClaims <= 0
+                                  ? context.tr('store.daily_limit_reached', fallback: "Daily Limit Reached")
+                                  : isPremium
+                                      ? context.tr(
+                                          'store.claim_free_key',
+                                          fallback: 'Claim 1 Free Key',
+                                        )
+                                      : context.tr(
+                                          'store.watch_ad_key',
+                                          fallback: 'Watch Ad for 1 Key',
+                                        ),
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
@@ -510,8 +548,8 @@ class _KeyShopContent extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                     PremiumStoreBottomSheet.show(
-                      context: parentContext,
-                      isKidsMode: isKidsMode,
+                      context: widget.parentContext,
+                      isKidsMode: widget.isKidsMode,
                     );
                   },
                   child: Container(
@@ -564,90 +602,92 @@ class _KeyShopContent extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 24.h),
+                if (!isPremium) ...[
+                  SizedBox(height: 24.h),
 
-                // Premium bypass info
-                ScaleButton(
-                  onTap: () {
-                    Navigator.pop(context);
-                    parentContext.push(AppRouter.premiumRoute);
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(
-                      vertical: 16.h,
-                      horizontal: 16.w,
-                    ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF59E0B).withValues(alpha: 0.08),
-                      borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(
-                        color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
-                        width: 1.w,
+                  // Premium bypass info
+                  ScaleButton(
+                    onTap: () {
+                      Navigator.pop(context);
+                      widget.parentContext.push(AppRouter.premiumRoute);
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16.h,
+                        horizontal: 16.w,
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8.r),
-                          decoration: BoxDecoration(
-                            color: const Color(
-                              0xFFF59E0B,
-                            ).withValues(alpha: 0.2),
-                            shape: BoxShape.circle,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF59E0B).withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                          color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                          width: 1.w,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(8.r),
+                            decoration: BoxDecoration(
+                              color: const Color(
+                                0xFFF59E0B,
+                              ).withValues(alpha: 0.2),
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.workspace_premium_rounded,
+                              color: const Color(0xFFF59E0B),
+                              size: 24.r,
+                            ),
                           ),
-                          child: Icon(
-                            Icons.workspace_premium_rounded,
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  context.tr(
+                                    'store.tired_of_keys',
+                                    fallback: 'Tired of Keys?',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: const Color(0xFFF59E0B),
+                                  ),
+                                ),
+                                SizedBox(height: 2.h),
+                                Text(
+                                  context.tr(
+                                    'store.premium_bypass_gates',
+                                    fallback: 'Premium users bypass all gates!',
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color:
+                                        Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white70
+                                        : Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Icon(
+                            Icons.chevron_right_rounded,
                             color: const Color(0xFFF59E0B),
                             size: 24.r,
                           ),
-                        ),
-                        SizedBox(width: 12.w),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                context.tr(
-                                  'store.tired_of_keys',
-                                  fallback: 'Tired of Keys?',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: const Color(0xFFF59E0B),
-                                ),
-                              ),
-                              SizedBox(height: 2.h),
-                              Text(
-                                context.tr(
-                                  'store.premium_bypass_gates',
-                                  fallback: 'Premium users bypass all gates!',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color:
-                                      Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.white70
-                                      : Colors.black54,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Icon(
-                          Icons.chevron_right_rounded,
-                          color: const Color(0xFFF59E0B),
-                          size: 24.r,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                ],
 
                 SizedBox(height: MediaQuery.of(context).padding.bottom),
               ],

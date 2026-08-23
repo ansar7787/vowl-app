@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
 
 class KidsStarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -52,6 +53,24 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     return 150 + ((index - 9) * 30);
   });
   bool _isProcessing = false;
+  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
+  bool _isLoadingLimits = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimits();
+  }
+
+  Future<void> _loadLimits() async {
+    final remaining = await RewardLimitService.getRemainingClaims('stars');
+    if (mounted) {
+      setState(() {
+        _remainingClaims = remaining;
+        _isLoadingLimits = false;
+      });
+    }
+  }
 
   int _calculateTotalStars(Map<String, dynamic> categoryStars) {
     int gameplayStars = 0;
@@ -93,6 +112,10 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
     );
 
     if (mounted) {
+      await RewardLimitService.incrementClaimCount('stars');
+      await _loadLimits();
+
+      if (!mounted) return;
       context.read<AuthBloc>().add(const AuthRefreshUser());
 
       setState(() {
@@ -130,7 +153,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
   }
 
   Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing) return;
+    if (_isProcessing || _remainingClaims <= 0) return;
     setState(() => _isProcessing = true);
 
     final adService = di.sl<AdService>();
@@ -163,6 +186,9 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
             isVaultReward: true,
           ),
         );
+
+        await RewardLimitService.incrementClaimCount('stars');
+        if (mounted) await _loadLimits();
 
         if (mounted) {
           context.read<AuthBloc>().add(const AuthRefreshUser());
@@ -216,6 +242,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
         final categoryStars = user.starRatings[widget.gameType] ?? {};
         final totalStars = _calculateTotalStars(categoryStars);
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
+        final isPremium = user.isPremium;
 
         int nextTierIndex = claimedTier;
         if (nextTierIndex >= _chestTiers.length) {
@@ -655,7 +682,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                           ),
                                         ],
                                       ),
-                                      child: _isProcessing
+                                      child: _isProcessing || _isLoadingLimits
                                           ? Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
@@ -670,7 +697,7 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 ),
                                                 SizedBox(width: 12.w),
                                                 Text(
-                                                  "Loading Ad...",
+                                                  "Loading...",
                                                   style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 16.sp,
@@ -680,33 +707,68 @@ class _KidsStarVaultBottomSheetState extends State<KidsStarVaultBottomSheet> {
                                                 ),
                                               ],
                                             )
-                                          : Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons
-                                                      .play_circle_filled_rounded,
-                                                  color: Colors.white,
-                                                  size: 28.sp,
+                                          : _remainingClaims <= 0
+                                              ? Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(
+                                                      Icons.lock_clock_rounded,
+                                                      color: Colors.white70,
+                                                      size: 28.sp,
+                                                    ),
+                                                    SizedBox(width: 12.w),
+                                                    Text(
+                                                      "Daily Limit Reached",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 15.sp,
+                                                        fontWeight: FontWeight.w900,
+                                                        color: Colors.white70,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                )
+                                              : Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    Icon(
+                                                      isPremium ? Icons.auto_awesome_rounded : Icons
+                                                          .play_circle_filled_rounded,
+                                                      color: Colors.white,
+                                                      size: 28.sp,
+                                                    ),
+                                                    SizedBox(width: 12.w),
+                                                    Text(
+                                                      isPremium
+                                                          ? "Claim +2 Free Magic Stars"
+                                                          : "Watch Ad for +2 Magic Stars",
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 15.sp,
+                                                        fontWeight: FontWeight.w900,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
-                                                SizedBox(width: 12.w),
-                                                Text(
-                                                  "Watch Ad for +2 Magic Stars",
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                    fontSize: 15.sp,
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Colors.white,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 16.h),
-                              ],
+                                  SizedBox(height: 12.h),
+                                  Text(
+                                    _remainingClaims <= 0
+                                        ? "Come back tomorrow for more free stars!"
+                                        : "Magic Stars permanently count towards your total! ($_remainingClaims left today)",
+                                    style: TextStyle(
+                                      fontSize: 11.sp,
+                                      color: Colors.white70,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  SizedBox(height: 16.h),
+                                ],
 
                               SizedBox(
                                 height:

@@ -68,21 +68,15 @@ class QuestHintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // HIGH FIX: BlocSelector rebuilds only when hintCount changes.
-    // Previously BlocBuilder<AuthBloc, AuthState> rebuilt on any auth change.
-    return BlocSelector<AuthBloc, AuthState, int>(
-      selector: (state) => state.user?.hintCount ?? 0,
-      builder: (context, hintCount) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        final hintCount = state.user?.hintCount ?? 0;
+        final isPremium = state.user?.isPremium ?? false;
         final canUseHint = !used && hintCount > 0;
 
         return Semantics(
           button: true,
           enabled: !used,
-          // BUG FIX (LOCALIZATION/ACCESSIBILITY): these labels were
-          // hardcoded English, unlike the snackbar text a few lines above
-          // in this same file which already correctly used context.tr().
-          // Screen-reader users in the other 17 supported locales heard
-          // English-only descriptions for this button.
           label: used
               ? context.tr(
                   'hint.already_used_semantic',
@@ -94,10 +88,15 @@ class QuestHintButton extends StatelessWidget {
                   args: ['$hintCount'],
                   fallback: 'Use hint ($hintCount remaining)',
                 )
-              : context.tr(
-                  'hint.watch_ad_semantic',
-                  fallback: 'Watch ad to earn a hint',
-                ),
+              : isPremium
+                  ? context.tr(
+                      'hint.get_free_hint_semantic',
+                      fallback: 'Get a free hint',
+                    )
+                  : context.tr(
+                      'hint.watch_ad_semantic',
+                      fallback: 'Watch ad to earn a hint',
+                    ),
           child: ScaleButton(
             onTap: () => _handleTap(context, hintCount),
             child: RepaintBoundary(
@@ -133,12 +132,14 @@ class QuestHintButton extends StatelessWidget {
                               ? Icons.psychology_outlined
                               : (hintCount > 0
                                     ? Icons.lightbulb_rounded
-                                    : Icons.video_collection_rounded),
+                                    : (isPremium
+                                          ? Icons.add_circle_outline_rounded
+                                          : Icons.video_collection_rounded)),
                           color: used
                               ? Colors.grey
                               : (hintCount > 0
                                     ? primaryColor
-                                    : Colors.amber[700]),
+                                    : (isPremium ? Colors.greenAccent : Colors.amber[700])),
                           size: 26.r,
                         )
                         .animate(
@@ -188,12 +189,12 @@ class QuestHintButton extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.all(2.r),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B),
+                            color: isPremium ? Colors.green : const Color(0xFFF59E0B),
                             shape: BoxShape.circle,
                             border: Border.all(color: Colors.white, width: 1),
                           ),
                           child: Icon(
-                            Icons.play_arrow_rounded,
+                            isPremium ? Icons.add : Icons.play_arrow_rounded,
                             color: Colors.white,
                             size: 10.r,
                           ),

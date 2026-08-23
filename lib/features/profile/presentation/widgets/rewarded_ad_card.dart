@@ -83,16 +83,23 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
 
   @override
   Widget build(BuildContext context) {
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
     final title =
         widget.title ??
         context.tr('economy.get_free_coins_title', fallback: 'Free Coins!');
     final subtitle =
         widget.subtitle ??
-        context.tr(
-          'economy.get_free_coins_subtitle',
-          fallback: 'Watch an ad to earn 20 coins.',
-          args: ['${widget.rewardAmount}'],
-        );
+        (isPremium
+            ? context.tr(
+                'economy.claim_free_coins_subtitle',
+                fallback: 'Claim your daily free coins!',
+              )
+            : context.tr(
+                'economy.get_free_coins_subtitle',
+                fallback: 'Watch an ad to earn 20 coins.',
+                args: ['${widget.rewardAmount}'],
+              ));
 
     return Container(
       decoration: BoxDecoration(
@@ -159,11 +166,16 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
           Semantics(
             button: true,
             enabled: !_isLoading,
-            label: context.tr(
-              'economy.watch_ad_button',
-              fallback: 'Watch Ad',
-              args: ['${widget.rewardAmount}'],
-            ),
+            label: isPremium
+                ? context.tr(
+                    'economy.claim_button',
+                    fallback: 'Claim',
+                  )
+                : context.tr(
+                    'economy.watch_ad_button',
+                    fallback: 'Watch Ad',
+                    args: ['${widget.rewardAmount}'],
+                  ),
             child: ElevatedButton(
               onPressed: _isLoading ? null : _handleWatchAd,
               style: ElevatedButton.styleFrom(

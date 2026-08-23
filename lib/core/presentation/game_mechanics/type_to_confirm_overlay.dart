@@ -386,7 +386,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                       if (widget.onBypassed != null) {
                         widget.onBypassed!();
                       } else {
-                        widget.onSkipped();
+                        widget.onConfirmed();
                       }
                     } else {
                       di.sl<AdService>().showRewardedAd(
@@ -397,7 +397,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
                             if (widget.onBypassed != null) {
                               widget.onBypassed!();
                             } else {
-                              widget.onSkipped();
+                              widget.onConfirmed();
                             }
                           }
                         },

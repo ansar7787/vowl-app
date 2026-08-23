@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
 
 /// Card widget that awards 20 Vowl Coins in exchange for watching a
 /// rewarded video ad.
@@ -26,10 +27,28 @@ class AdRewardCard extends StatefulWidget {
 }
 
 class _AdRewardCardState extends State<AdRewardCard> {
-  /// Prevents duplicate taps while an ad is already loading or showing.
   final ValueNotifier<bool> _isLoading = ValueNotifier(false);
 
   static const int _coinReward = 20;
+  
+  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
+  bool _isLoadingLimits = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimits();
+  }
+
+  Future<void> _loadLimits() async {
+    final remaining = await RewardLimitService.getRemainingClaims('coins');
+    if (mounted) {
+      setState(() {
+        _remainingClaims = remaining;
+        _isLoadingLimits = false;
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -38,7 +57,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
   }
 
   Future<void> _showRewardAd() async {
-    if (_isLoading.value) return;
+    if (_isLoading.value || _remainingClaims <= 0) return;
     _isLoading.value = true;
 
     bool rewardEarned = false;
@@ -48,9 +67,13 @@ class _AdRewardCardState extends State<AdRewardCard> {
       di.sl<AdService>().showRewardedAd(
         context: context,
         isPremium: isPremium,
-        onUserEarnedReward: (reward) {
+        onUserEarnedReward: (reward) async {
           rewardEarned = true;
-          if (!context.mounted) return;
+          
+          await RewardLimitService.incrementClaimCount('coins');
+          if (mounted) await _loadLimits();
+
+          if (!mounted) return;
           context.read<EconomyBloc>().add(
             EconomyAddCoinsRequested(
               _coinReward,
@@ -82,6 +105,7 @@ class _AdRewardCardState extends State<AdRewardCard> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
 
     return Container(
       margin:
@@ -95,10 +119,15 @@ class _AdRewardCardState extends State<AdRewardCard> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              context.tr(
-                'games.watch_earn_coins_title',
-                fallback: 'WATCH AND EARN COINS',
-              ),
+              isPremium
+                  ? context.tr(
+                      'games.claim_free_coins_title',
+                      fallback: 'CLAIM FREE COINS',
+                    )
+                  : context.tr(
+                      'games.watch_earn_coins_title',
+                      fallback: 'WATCH AND EARN COINS',
+                    ),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 10.sp,
@@ -160,11 +189,17 @@ class _AdRewardCardState extends State<AdRewardCard> {
                     return Semantics(
                       button: true,
                       enabled: !loading,
-                      label: context.tr(
-                        'games.coins_semantic_label',
-                        args: ['$_coinReward'],
-                        fallback: 'Watch ad to earn $_coinReward coins',
-                      ),
+                      label: isPremium
+                          ? context.tr(
+                              'games.coins_semantic_claim_label',
+                              args: ['$_coinReward'],
+                              fallback: 'Claim $_coinReward free coins',
+                            )
+                          : context.tr(
+                              'games.coins_semantic_label',
+                              args: ['$_coinReward'],
+                              fallback: 'Watch ad to earn $_coinReward coins',
+                            ),
                       child: ScaleButton(
                         onTap: loading ? null : _showRewardAd,
                         child: Container(
@@ -198,34 +233,60 @@ class _AdRewardCardState extends State<AdRewardCard> {
                                     ),
                                   ],
                           ),
-                          child: loading
+                          child: loading || _isLoadingLimits
                               ? const VowlButtonSpinner(
                                   size: 18,
                                   color: Colors.white,
                                 )
-                              : Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(
-                                      Icons.play_arrow_rounded,
-                                      color: Colors.white,
-                                      size: 20.r,
+                              : _remainingClaims <= 0
+                                  ? Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          Icons.lock_clock_rounded,
+                                          color: Colors.white,
+                                          size: 20.r,
+                                        ),
+                                        SizedBox(width: 4.w),
+                                        Text(
+                                          'LIMIT',
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  : Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Icon(
+                                          isPremium ? Icons.redeem_rounded : Icons.play_arrow_rounded,
+                                          color: Colors.white,
+                                          size: 20.r,
+                                        ),
+                                        SizedBox(width: 4.w),
+                                        Text(
+                                          isPremium
+                                              ? context.tr(
+                                                  'games.claim_button',
+                                                  fallback: 'CLAIM',
+                                                )
+                                              : context.tr(
+                                                  'games.watch_button',
+                                                  fallback: 'WATCH',
+                                                ),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 12.sp,
+                                            fontWeight: FontWeight.w900,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                    SizedBox(width: 4.w),
-                                    Text(
-                                      context.tr(
-                                        'games.watch_button',
-                                        fallback: 'WATCH',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
                         ),
                       ),
                     );

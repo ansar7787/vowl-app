@@ -15,6 +15,7 @@ import 'package:vowl/features/auth/domain/constants/user_game_constants.dart';
 import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/vowl_button_spinner.dart';
+import 'package:vowl/core/utils/reward_limit_service.dart';
 
 class StarVaultBottomSheet extends StatefulWidget {
   final String gameType;
@@ -52,6 +53,24 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     return 150 + ((index - 9) * 30);
   });
   bool _isProcessing = false;
+  int _remainingClaims = RewardLimitService.maxClaimsPerDay;
+  bool _isLoadingLimits = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLimits();
+  }
+
+  Future<void> _loadLimits() async {
+    final remaining = await RewardLimitService.getRemainingClaims('stars');
+    if (mounted) {
+      setState(() {
+        _remainingClaims = remaining;
+        _isLoadingLimits = false;
+      });
+    }
+  }
 
   int _calculateTotalStars(Map<String, dynamic> categoryStars) {
     int gameplayStars = 0;
@@ -180,7 +199,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
   }
 
   Future<void> _watchAdForMagicStars() async {
-    if (_isProcessing) return;
+    if (_isProcessing || _remainingClaims <= 0) return;
     setState(() => _isProcessing = true);
 
     final adService = di.sl<AdService>();
@@ -226,6 +245,10 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
           return;
         }
 
+        await RewardLimitService.incrementClaimCount('stars');
+        if (mounted) await _loadLimits();
+
+        if (!mounted) return;
         context.read<AuthBloc>().add(const AuthRefreshUser());
         showDialog(
           context: context,
@@ -283,6 +306,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
         final categoryStars = user.starRatings[widget.gameType] ?? {};
         final totalStars = _calculateTotalStars(categoryStars);
         final claimedTier = categoryStars['claimed_chests'] ?? 0;
+        final isPremium = user.isPremium;
 
         // Find next target
         int nextTierIndex = claimedTier;
@@ -759,7 +783,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                       ),
                                     ],
                                   ),
-                                  child: _isProcessing
+                                  child: _isProcessing || _isLoadingLimits
                                       ? Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -775,7 +799,7 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             Text(
                                               context.tr(
                                                 'store.loading_ad',
-                                                fallback: 'Loading Ad...',
+                                                fallback: 'Loading...',
                                               ),
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
@@ -786,22 +810,55 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                             ),
                                           ],
                                         )
-                                      : Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Icons.play_circle_filled_rounded,
+                                      : _remainingClaims <= 0
+                                          ? Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  Icons.lock_clock_rounded,
+                                                  color: Colors.white70,
+                                                  size: 24.sp,
+                                                ),
+                                                SizedBox(width: 12.w),
+                                                Text(
+                                                  context.tr(
+                                                    'store.daily_limit_reached',
+                                                    fallback: 'Daily Limit Reached',
+                                                  ),
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 16.sp,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: Colors.white70,
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                          : Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                              isPremium
+                                                  ? Icons.auto_awesome_rounded
+                                                  : Icons.play_circle_filled_rounded,
                                               color: Colors.white,
                                               size: 24.sp,
                                             ),
                                             SizedBox(width: 12.w),
                                             Text(
-                                              context.tr(
-                                                'store.watch_ad_magic_stars',
-                                                fallback:
-                                                    'Watch Ad for +2 Magic Stars',
-                                              ),
+                                              isPremium
+                                                  ? context.tr(
+                                                      'store.claim_magic_stars',
+                                                      fallback:
+                                                          'Claim +2 Free Magic Stars',
+                                                    )
+                                                  : context.tr(
+                                                      'store.watch_ad_magic_stars',
+                                                      fallback:
+                                                          'Watch Ad for +2 Magic Stars',
+                                                    ),
                                               style: TextStyle(
                                                 fontFamily: 'Outfit',
                                                 fontSize: 16.sp,
@@ -816,11 +873,16 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                             ),
                             SizedBox(height: 12.h),
                             Text(
-                              context.tr(
-                                'store.magic_stars_hint',
-                                fallback:
-                                    'Magic Stars permanently count towards your total!',
-                              ),
+                              _remainingClaims <= 0
+                                  ? context.tr(
+                                      'store.come_back_tomorrow',
+                                      fallback: 'Come back tomorrow for more free stars!',
+                                    )
+                                  : context.tr(
+                                      'store.magic_stars_hint',
+                                      fallback:
+                                          'Magic Stars permanently count towards your total! ($_remainingClaims left today)',
+                                    ),
                               style: TextStyle(
                                 fontSize: 11.sp,
                                 color: Colors.grey,
@@ -845,3 +907,4 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
     );
   }
 }
+

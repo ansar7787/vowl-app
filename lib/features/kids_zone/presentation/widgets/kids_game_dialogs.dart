@@ -225,10 +225,18 @@ class KidsGameDialogs {
 
                               if (!rewardsDoubled) ...[
                                 Kids3DButton(
-                                      text: isPremium ? "CLAIM 3X REWARDS" : "WATCH AD FOR 3X REWARDS",
+                                      text: isPremium
+                                          ? context.tr(
+                                              'kids_zone.claim_3x_rewards',
+                                              fallback: 'CLAIM 3X REWARDS',
+                                            )
+                                          : context.tr(
+                                              'kids_zone.watch_ad_3x',
+                                              fallback: 'WATCH AD FOR 3X REWARDS',
+                                            ),
                                       color: primaryColor,
                                       isGolden: true,
-                                      icon: Icons.play_circle_fill_rounded,
+                                      icon: isPremium ? Icons.auto_awesome_rounded : Icons.play_circle_fill_rounded,
                                       onTap: () {
                                         adService.showRewardedAd(
                                           context: context,

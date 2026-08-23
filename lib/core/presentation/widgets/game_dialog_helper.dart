@@ -233,7 +233,10 @@ class GameDialogHelper {
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
     final resolvedAdButtonText =
-        adButtonText ?? context.tr('games.watch_ad', fallback: isPremium ? 'FREE RESCUE' : 'WATCH AD');
+        adButtonText ??
+        (isPremium
+            ? context.tr('games.free_rescue', fallback: 'FREE RESCUE')
+            : context.tr('games.watch_ad', fallback: 'WATCH AD'));
 
     showDialog(
       context: context,
