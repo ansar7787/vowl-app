@@ -7,6 +7,7 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
   final List<String> options;
   final String correctAnswer;
   final String? explanation;
+  final String? meaningBreakdown;
   final String? selectedAffix;
   final String? hintedAffix;
   final bool isFirstStagePassed;
@@ -20,6 +21,7 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
     required this.options,
     required this.correctAnswer,
     this.explanation,
+    this.meaningBreakdown,
     this.selectedAffix,
     this.hintedAffix,
     required this.isFirstStagePassed,
@@ -67,16 +69,35 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3)),
               ),
-              child: Text(
-                widget.explanation!,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: widget.isDark ? Colors.white : Colors.black87,
-                  height: 1.4,
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (widget.meaningBreakdown != null && widget.meaningBreakdown!.isNotEmpty) ...[
+                    Text(
+                      widget.meaningBreakdown!,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w800,
+                        color: widget.primaryColor,
+                        letterSpacing: 1.2,
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                  ],
+                  Text(
+                    widget.explanation!,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: widget.isDark ? Colors.white : Colors.black87,
+                      height: 1.4,
+                    ),
+                  ),
+                ],
               ),
             ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2, end: 0, duration: 400.ms),
           

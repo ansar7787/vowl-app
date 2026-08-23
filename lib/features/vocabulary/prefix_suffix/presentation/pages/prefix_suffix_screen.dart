@@ -140,6 +140,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                   options: quest.options ?? [],
                                   correctAnswer: quest.correctAnswer ?? "",
                                   explanation: quest.explanation,
+                                  meaningBreakdown: quest.meaningBreakdown,
                                   selectedAffix: _controller.selectedAffix,
                                   hintedAffix: _controller.hintedAffix,
                                   isFirstStagePassed: _controller.isFirstStagePassed,
