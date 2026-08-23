@@ -230,8 +230,10 @@ class GameDialogHelper {
         );
     final resolvedButtonText =
         buttonText ?? context.tr('games.give_up', fallback: 'GIVE UP');
+    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+
     final resolvedAdButtonText =
-        adButtonText ?? context.tr('games.watch_ad', fallback: 'WATCH AD');
+        adButtonText ?? context.tr('games.watch_ad', fallback: isPremium ? 'FREE RESCUE' : 'WATCH AD');
 
     showDialog(
       context: context,
@@ -476,7 +478,9 @@ class GameDialogHelper {
         },
         adButtonText: context.tr(
           'games.watch_ad_for_hint_button',
-          fallback: 'WATCH AD FOR HINT',
+          fallback: (context.read<AuthBloc>().state.user?.isPremium ?? false) 
+              ? 'GET FREE HINT' 
+              : 'WATCH AD FOR HINT',
         ),
         isRescueLife: true,
         customIcon: Icon(

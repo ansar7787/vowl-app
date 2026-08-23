@@ -225,7 +225,7 @@ class KidsGameDialogs {
 
                               if (!rewardsDoubled) ...[
                                 Kids3DButton(
-                                      text: "WATCH AD FOR 3X REWARDS",
+                                      text: isPremium ? "CLAIM 3X REWARDS" : "WATCH AD FOR 3X REWARDS",
                                       color: primaryColor,
                                       isGolden: true,
                                       icon: Icons.play_circle_fill_rounded,
