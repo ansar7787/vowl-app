@@ -13,7 +13,6 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
   final Color primaryColor;
   final bool isDark;
   final Function(String, bool) onAffixSelected;
-  final VoidCallback onContinue;
 
   const PrefixSuffixSynthesizer({
     super.key,
@@ -27,7 +26,6 @@ class PrefixSuffixSynthesizer extends StatefulWidget {
     required this.primaryColor,
     required this.isDark,
     required this.onAffixSelected,
-    required this.onContinue,
   });
 
   @override

@@ -53,8 +53,6 @@ class PrefixSuffixController extends ChangeNotifier {
     notifyListeners();
   }
 
-  // Layout dimensions can be ignored now, but kept for signature compatibility
-  void updateDimensions(double width, double height) {}
 
   void onAffixSelected(String option, VocabularyQuest quest, bool droppedAsPrefix) {
     if (isAnswered || isFirstStagePassed) return;

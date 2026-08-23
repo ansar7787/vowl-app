@@ -146,7 +146,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                                   primaryColor: theme.primaryColor,
                                   isDark: isDark,
                                   onAffixSelected: (affix, isPrefix) => _controller.onAffixSelected(affix, quest, isPrefix),
-                                  onContinue: () => _controller.submitFinalAnswer(true, quest),
                                 ),
                                 SizedBox(height: 60.h),
                               ],
