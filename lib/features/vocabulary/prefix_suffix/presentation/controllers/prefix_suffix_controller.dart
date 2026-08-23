@@ -60,8 +60,19 @@ class PrefixSuffixController extends ChangeNotifier {
     if (isAnswered || isFirstStagePassed) return;
     
     // Check if they dropped a prefix in a suffix slot or vice versa
-    final isOptionPrefix = option.endsWith('-');
-    final isOptionSuffix = option.startsWith('-');
+    bool isOptionPrefix = option.endsWith('-');
+    bool isOptionSuffix = option.startsWith('-');
+    
+    // Fallback: If the JSON curriculum missed the hyphens, infer from the correct answer
+    if (!isOptionPrefix && !isOptionSuffix) {
+      final cleanOption = option.trim().toLowerCase();
+      final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
+      if (correctWord.startsWith(cleanOption) && correctWord != cleanOption) {
+        isOptionPrefix = true;
+      } else if (correctWord.endsWith(cleanOption) && correctWord != cleanOption) {
+        isOptionSuffix = true;
+      }
+    }
     
     if ((isOptionPrefix && !droppedAsPrefix) || (isOptionSuffix && droppedAsPrefix)) {
       // Wrong slot!

@@ -113,15 +113,18 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
           borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: widget.primaryColor.withValues(alpha: 0.1)),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildDropZone(isPrefixSlot: true),
-            SizedBox(width: 12.w),
-            _buildRootBlock(),
-            SizedBox(width: 12.w),
-            _buildDropZone(isPrefixSlot: false),
-          ],
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildDropZone(isPrefixSlot: true),
+              SizedBox(width: 12.w),
+              _buildRootBlock(),
+              SizedBox(width: 12.w),
+              _buildDropZone(isPrefixSlot: false),
+            ],
+          ),
         ),
       ),
     );
