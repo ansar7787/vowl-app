@@ -172,6 +172,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                         expectedText: quest.correctAnswer ?? "",
                         primaryColor: theme.primaryColor,
                         onConfirmed: () => _controller.submitFinalAnswer(true, quest),
+                        onBypassed: () => _controller.submitFinalAnswer(true, quest),
                         onSkipped: () => _controller.submitFinalAnswer(false, quest),
                       ),
                     ),
