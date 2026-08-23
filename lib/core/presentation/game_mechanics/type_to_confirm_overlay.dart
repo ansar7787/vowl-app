@@ -75,10 +75,7 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   int _attempts = 0;
   _ConfirmResult? _result;
 
-  @override
-  void initState() {
-    super.initState();
-  }
+
 
   @override
   void dispose() {
