@@ -81,7 +81,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       _hapticService.error();
       if (_attempts >= widget.maxAttempts) {
         _focusNode.unfocus();
-        Future.delayed(const Duration(milliseconds: 800), () {
+        Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onSkipped();
         });
       }
@@ -122,7 +122,7 @@ class _BlindDictationWrapperState extends State<BlindDictationWrapper> {
       });
       if (_attempts >= widget.maxAttempts) {
         _focusNode.unfocus();
-        Future.delayed(const Duration(milliseconds: 800), () {
+        Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onSkipped();
         });
       }

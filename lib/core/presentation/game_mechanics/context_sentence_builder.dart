@@ -187,7 +187,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
       );
     }
 
-    Future.delayed(const Duration(milliseconds: 1200), () {
+    Future.delayed(const Duration(milliseconds: 800), () {
       if (mounted) widget.onConfirmed();
     });
   }
@@ -195,7 +195,7 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   void _checkAttemptLimit() {
     if (_attempts >= widget.maxAttempts) {
       _focusNode.unfocus();
-      Future.delayed(const Duration(milliseconds: 800), () {
+      Future.delayed(const Duration(milliseconds: 500), () {
         if (mounted) widget.onSkipped();
       });
     }

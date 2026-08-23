@@ -139,7 +139,7 @@ class _EvidenceHighlightWrapperState extends State<EvidenceHighlightWrapper> {
           .length;
       if (evidenceFound >= _targetCount) {
         setState(() => _isComplete = true);
-        Future.delayed(const Duration(milliseconds: 800), () {
+        Future.delayed(const Duration(milliseconds: 500), () {
           if (mounted) widget.onCorrectHighlight();
         });
       }
