@@ -78,9 +78,6 @@ class _TypeToConfirmOverlayState extends State<TypeToConfirmOverlay> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 400), () {
-      if (mounted) _focusNode.requestFocus();
-    });
   }
 
   @override
