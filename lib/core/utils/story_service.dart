@@ -209,7 +209,7 @@ class StoryServiceImpl implements StoryService {
     'phrasalVerbs':
         "Phrasal verbs are the secret to conversational English! Let's master these combinations so you sound totally fluent.",
     'prefixSuffix':
-        "Let's play with prefixes and suffixes! Knowing how to attach these small pieces will help you understand thousands of new words.",
+        "Word Alchemy! Let's see how tiny word pieces can completely change a word's meaning. Build some words with me!",
     'synonymSearch':
         "Having a variety of words for the same thing makes you a much better speaker. Let's build your word flexibility!",
     'topicVocab':
@@ -1191,11 +1191,11 @@ class StoryServiceImpl implements StoryService {
     ],
     'prefixsuffix': [
       "",
-      "Great start! You're learning how to build and modify words perfectly.",
-      "You are getting so good at connecting prefixes and suffixes!",
-      "Halfway to 100! Your vocabulary is growing stronger with every new affix you learn.",
-      "Level 100! You can now confidently shape and transform words like a native speaker.",
-      "Level 200 reached! You have completely mastered the art of word building.",
+      "Nice! You're getting the hang of how these little word pieces fit together.",
+      "You're doing great! Spotting prefixes and suffixes is becoming second nature to you.",
+      "Halfway to 100! Your vocabulary is expanding so much just by knowing these building blocks.",
+      "Level 100! This is huge. You're shaping words just like a native speaker.",
+      "Level 200! Incredible work. You've completely mastered how English words are built from the ground up.",
     ],
     'synonymsearch': [
       "",
