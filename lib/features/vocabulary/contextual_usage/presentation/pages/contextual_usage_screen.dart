@@ -167,12 +167,15 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
               ? const SizedBox()
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Stack(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
+                          physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverToBoxAdapter(
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                child: Stack(
                             children: [
                               Positioned.fill(
                             child: CustomPaint(
@@ -199,15 +202,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                                           registerLevel: quest.registerLevel!,
                                           color: theme.primaryColor,
                                         ),
-                                      SizedBox(height: 20.h),
-                                      SpeakToConfirmOverlay(
-                                        expectedText: (quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? ""),
-                                        displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? "")}",
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () => _submitFinalAnswer(true),
-                                        onSkipped: () => _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                      ),
+                                      SizedBox(height: 160.h),
                                     ],
                                   ),
                                 ),
@@ -216,9 +211,21 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                           ),
                         ],
                       ),
+                      ),
                     ),
                   ],
-                );
+                ),
+                if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                  SpeakToConfirmOverlay(
+                    expectedText: (quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? ""),
+                    displayText: "Speak the completed sentence:\n${(quest.prompt ?? "").replaceAll(RegExp(r'_+'), quest.correctAnswer ?? "")}",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onSkipped: () => _submitFinalAnswer(false),
+                    isPositioned: true,
+                  ),
+              ],
+            );
               },
             ),
         );

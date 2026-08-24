@@ -148,8 +148,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           onHint: () {
             _controller.activateHint();
           },
+          disablePadding: true,
           child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             slivers: [
               SliverToBoxAdapter(
                 child: LayoutBuilder(

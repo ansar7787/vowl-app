@@ -218,16 +218,20 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
+          disablePadding: true,
           child: quest == null
               ? const SizedBox()
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Column(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
+                          physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverToBoxAdapter(
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                child: Column(
                             children: [
                           Expanded(
                             child: _buildForensicScene(
@@ -238,20 +242,23 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                                   : false,
                             ),
                           ),
-                          if (_isFirstStagePassed && !_isAnswered)
-                            EvidenceHighlightWrapper(
-                              passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
-                              evidenceWords: quest.evidenceWords ?? [],
-                              primaryColor: theme.primaryColor,
-                              instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
-                              onCorrectHighlight: () => _submitFinalAnswer(true),
-                              onWrongHighlight: () => {},
-                              isPositioned: false,
-                            ),
-                          SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                        ],
-                      ),
+                              SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                            ],
+                          ),
+                        ),
+                        ),
+                      ],
                     ),
+                    if (_isFirstStagePassed && !_isAnswered)
+                      EvidenceHighlightWrapper(
+                        passage: quest.sentence?.replaceAll('[TARGET]', quest.correctAnswer ?? '') ?? "",
+                        evidenceWords: quest.evidenceWords ?? [],
+                        primaryColor: theme.primaryColor,
+                        instruction: "Find the ${quest.clueType ?? 'context'} clue that proves the answer",
+                        onCorrectHighlight: () => _submitFinalAnswer(true),
+                        onWrongHighlight: () => {},
+                        isPositioned: true,
+                      ),
                   ],
                 );
               },

@@ -171,12 +171,15 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
               ? const SizedBox()
               : LayoutBuilder(
                   builder: (context, constraints) {
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Stack(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
+                          physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
+                            SliverToBoxAdapter(
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                child: Stack(
                             children: [
                               Positioned.fill(
                             child: CustomPaint(
@@ -203,15 +206,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                                           origin: quest.origin!,
                                           color: theme.primaryColor,
                                         ),
-                                      SizedBox(height: 20.h),
-                                      SpeakToConfirmOverlay(
-                                        expectedText: quest.correctAnswer ?? '',
-                                        displayText: "Speak the idiom aloud:\n${quest.correctAnswer?.toUpperCase()}",
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () => _submitFinalAnswer(true),
-                                        onSkipped: () => _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                      ),
+                                      SizedBox(height: 160.h),
                                     ],
                                   ),
                                 ),
@@ -220,9 +215,21 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                           ),
                         ],
                       ),
+                      ),
                     ),
                   ],
-                );
+                ),
+                if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                  SpeakToConfirmOverlay(
+                    expectedText: quest.correctAnswer ?? '',
+                    displayText: "Speak the idiom aloud:\n${quest.correctAnswer?.toUpperCase()}",
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onSkipped: () => _submitFinalAnswer(false),
+                    isPositioned: true,
+                  ),
+              ],
+            );
               },
             ),
         );

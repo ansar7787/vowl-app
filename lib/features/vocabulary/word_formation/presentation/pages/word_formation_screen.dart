@@ -135,6 +135,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           isCorrect: _controller.isCorrect,
           showConfetti: _controller.showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          disablePadding: true,
           onHint: () {
             // Find correct suffix index
             final correct = quest?.correctAnswer ?? "";
@@ -195,9 +196,11 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                         ? (gapUnit * 2).clamp(12.0, 30.0)
                         : 12.0;
 
-                    return CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
-                      slivers: [
+                    return Stack(
+                      children: [
+                        CustomScrollView(
+                          physics: (!_controller.isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(minHeight: constraints.maxHeight),
@@ -321,23 +324,25 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                       ),
                                     ),
                                   ],
-                                  SizedBox(height: 20.h),
-                                  TypeToConfirmOverlay(
-                                    expectedText: quest.correctAnswer ?? '',
-                                    displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
-                                    primaryColor: theme.primaryColor,
-                                    onConfirmed: () => _controller.submitFinalAnswer(true),
-                                    onSkipped: () => _controller.submitFinalAnswer(false),
-                                    onBypassed: () => _controller.submitFinalAnswer(true),
-                                    isPositioned: false,
-                                  ),
-                                  SizedBox(height: 60.h),
+                                  SizedBox(height: 160.h),
                                 ],
                               ),
                             ),
                           ),
                       ],
-                    );
+                    ),
+                    if (_controller.isFirstStagePassed && !_controller.isAnswered)
+                      TypeToConfirmOverlay(
+                        expectedText: quest.correctAnswer ?? '',
+                        displayText: "Type the correct form:\n${quest.correctAnswer?.toUpperCase()}",
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _controller.submitFinalAnswer(true),
+                        onSkipped: () => _controller.submitFinalAnswer(false),
+                        onBypassed: () => _controller.submitFinalAnswer(true),
+                        isPositioned: true,
+                      ),
+                  ],
+                );
                   },
                 ),
         );

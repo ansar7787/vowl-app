@@ -171,12 +171,15 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
           ? const SizedBox.shrink()
           : LayoutBuilder(
               builder: (context, constraints) {
-                return CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
+                return Stack(
+                  children: [
+                    CustomScrollView(
+                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverToBoxAdapter(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                            child: Column(
                         children: [
                           Expanded(
                             child: _AcademicWordGameBody(
@@ -206,16 +209,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                                       collocations: quest.collocations!,
                                       color: _cachedTheme.primaryColor,
                                     ),
-                                  SizedBox(height: 20.h),
-                                  TypeToConfirmOverlay(
-                                    expectedText: quest.correctAnswer ?? '',
-                                    displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
-                                    primaryColor: _cachedTheme.primaryColor,
-                                    onConfirmed: () => _submitFinalAnswer(true),
-                                    onSkipped: () => _submitFinalAnswer(false),
-                                    onBypassed: () => _submitFinalAnswer(true),
-                                    isPositioned: false,
-                                  ),
+                                  SizedBox(height: 160.h),
                                 ],
                               ),
                             ),
@@ -223,8 +217,21 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
                         ],
                       ),
                     ),
+                    ),
                   ],
-                );
+                ),
+                if (_isFirstStagePassed && !_isAnswered)
+                  TypeToConfirmOverlay(
+                    expectedText: quest.correctAnswer ?? '',
+                    displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
+                    primaryColor: _cachedTheme.primaryColor,
+                    onConfirmed: () => _submitFinalAnswer(true),
+                    onSkipped: () => _submitFinalAnswer(false),
+                    onBypassed: () => _submitFinalAnswer(true),
+                    isPositioned: true,
+                  ),
+              ],
+            );
               },
             ),
     );

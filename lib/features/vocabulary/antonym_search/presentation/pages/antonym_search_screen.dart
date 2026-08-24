@@ -132,18 +132,22 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
+          disablePadding: true,
           child: LayoutBuilder(
             builder: (context, constraints) {
               _lastConstraints = constraints;
               final maxHeight = constraints.maxHeight;
               final isCompact = maxHeight < 580;
 
-              return CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Column(
+              return Stack(
+                children: [
+                  CustomScrollView(
+                    physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                          child: Column(
                       children: [
                         Expanded(
                           child: Stack(
@@ -221,23 +225,27 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                                   gradientScale: quest.gradientScale!,
                                   primaryColor: theme.primaryColor,
                                 ),
-                              SizedBox(height: 20.h),
-                              SpeakToConfirmOverlay(
-                                expectedText: "${quest?.word} ${quest?.correctAnswer}",
-                                displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: () => _submitVerbalEvaluation(true),
-                                onSkipped: () => _submitVerbalEvaluation(false),
-                                isPositioned: false,
-                              ),
+                              SizedBox(height: 160.h),
                             ],
                           ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                       ],
                     ),
                   ),
+                  ),
                 ],
-              );
+              ),
+              if (_isFirstStagePassed && !_isAnswered)
+                SpeakToConfirmOverlay(
+                  expectedText: "${quest?.word} ${quest?.correctAnswer}",
+                  displayText: "${quest?.word?.toUpperCase()}   ↔   ${quest?.correctAnswer?.toUpperCase()}",
+                  primaryColor: theme.primaryColor,
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
+                  isPositioned: true,
+                ),
+            ],
+          );
             },
           ),
         );
