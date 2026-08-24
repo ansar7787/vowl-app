@@ -4,8 +4,32 @@
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![AI](https://img.shields.io/badge/AI-Powered-green?style=for-the-badge)
+![CI/CD](https://github.com/ansar7787/vowl-app/actions/workflows/flutter_ci.yml/badge.svg)
 
 **Vowl** is a premium educational platform designed to transform English language learning into an immersive adventure. Built with Flutter and powered by Google Gemini AI, Vowl offers a massive curriculum designed for both adults and children.
+
+---
+
+## 📸 Application Previews
+
+*(Note to maintainer: Add 3-4 high-quality screenshots or a GIF of the app running here to show off the premium UI)*
+
+<div align="center">
+  <img src="https://via.placeholder.com/250x500.png?text=Home+Screen" width="200" />
+  <img src="https://via.placeholder.com/250x500.png?text=Game+UI" width="200" />
+  <img src="https://via.placeholder.com/250x500.png?text=Kids+Zone" width="200" />
+</div>
+
+---
+
+## 🏛️ System Architecture & Workflow
+
+Vowl is engineered using a robust, scalable architecture tailored for enterprise-grade performance:
+
+- **State Management:** Fully reactive UI powered by `flutter_bloc`. Strict separation between Presentation, Domain, and Data layers.
+- **Continuous Integration (CI/CD):** Automated GitHub Actions pipeline validates `flutter analyze` and `flutter test` on every PR.
+- **Dynamic Content:** Curriculum and balance tuning controlled via **Firebase Remote Config**, allowing zero-downtime updates.
+- **Offline-First Capabilities:** Employs heavy local caching and atomic Firestore transactions for a seamless experience even on poor networks.
 
 ---
 
@@ -63,10 +87,32 @@ A vibrant, tailored environment for young minds:
 
 ## 🏗️ Getting Started
 
-1.  **Clone**: `git clone https://github.com/ansar7787/vowl-app.git`
-2.  **Setup**: `flutter pub get`
-3.  **Config**: Create `.env` from `.env.template`.
-4.  **Launch**: `flutter run --release`
+### Prerequisites
+- Flutter SDK (Stable)
+- Node.js (Only required for running backend data-generation scripts)
+
+### Installation
+
+1.  **Clone the Repository**: 
+    ```bash
+    git clone https://github.com/ansar7787/vowl-app.git
+    cd vowl-app
+    ```
+2.  **Install Flutter Dependencies**: 
+    ```bash
+    flutter pub get
+    ```
+3.  **Install Script Dependencies**:
+    *Note: The `package.json` in the root directory is strictly used for data-generation and utility scripts located in the `scripts/` folder, NOT for the core Flutter application.*
+    ```bash
+    npm install
+    ```
+4.  **Environment Setup**: 
+    Create `.env` from `.env.template` and add your Firebase/Gemini keys.
+5.  **Run the App**: 
+    ```bash
+    flutter run --release
+    ```
 
 ---
 
