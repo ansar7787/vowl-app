@@ -102,9 +102,9 @@ To support 125+ game mechanics, interactive buddies, and an offline engine, I ha
 
 ---
 
-## 🛡️ Backend, Security & The Game Economy
+## 💰 Backend, Security & The Highly Profitable Economy
 
-A massive game needs a secure economy. Vowl runs on a dual-currency system (Coins and Keys), backed entirely by Firebase.
+A massive game needs a secure economy. By pre-generating the curriculum and relying on Firebase, I architected Vowl to run **completely free of server and API costs**. Every active user is pure profit, powered by a secure dual-currency system (Coins and Keys).
 
 ### Firebase Infrastructure
 - **Firestore (Atomic Transactions)**: The database is optimized with atomic batches and array unions. This ensures that user progress, level unlocks, and virtual currency updates happen safely.
@@ -116,9 +116,9 @@ A massive game needs a secure economy. Vowl runs on a dual-currency system (Coin
 - **Firebase App Check**: Cryptographically ensures that only the compiled, official Vowl binary can communicate with our Firestore database.
 - **Global Debounce Protection**: Every single one of the hundreds of interactive buttons is wrapped in debounce logic to prevent rapid-fire API spamming.
 
-### Monetization
-- **Premium Subscriptions (Razorpay)**: Fully integrated payment flows for users who want to upgrade to the premium tier.
-- **Rewarded Ad Loops**: Free users aren't locked out. By watching Google Mobile Ads, they can earn "Keys" to unlock premium features and Elite Mastery levels with their time instead of their money.
+### Monetization Strategy (100% Margin)
+- **Premium Subscriptions (Razorpay)**: Fully integrated, secure payment flows for users who want to upgrade to the premium tier.
+- **Strictly Google AdMob (No Sketchy 3rd Parties)**: I refused to ruin the app with cheap, invasive 3rd-party ad networks. I strictly implemented official Google Mobile Ads. Free users can watch high-quality rewarded ads to earn "Keys", unlocking premium features with their time instead of their money.
 
 ---
 
