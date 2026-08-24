@@ -37,7 +37,6 @@ class AppRouter {
   static const String premiumRoute = '/premium';
   static const String profileRoute = '/profile';
   static const String progressDashboardRoute = '/progress-dashboard';
-  static const String adminRoute = '/admin';
   static const String settingsRoute = '/settings';
   static const String leaderboardRoute = '/leaderboard';
   static const String kidsLeaderboardRoute = '/kids-leaderboard';
@@ -96,7 +95,6 @@ class AppRouter {
   static const String kidsWeatherRoute = '/kids-weather';
   static const String kidsProfessionsRoute = '/kids-professions';
   static const String kidsBuddyBoutiqueRoute = '/kids-zone/boutique';
-  static const String kidsAdminRoute = '/kids-admin';
   static const String kidsRoomRoute = '/kids-room';
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';

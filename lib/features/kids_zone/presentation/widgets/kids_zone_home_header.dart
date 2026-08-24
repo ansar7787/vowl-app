@@ -88,15 +88,9 @@ class KidsZoneHomeHeader extends StatelessWidget {
   }
 
   Widget _buildMascotButton(BuildContext context) {
-    return GestureDetector(
-      onLongPress: () {
-        di.sl<HapticService>().heavy();
-        context.push(AppRouter.kidsAdminRoute);
-      },
-      child: ScaleButton(
-        onTap: () => context.push(AppRouter.kidsMascotSelectionRoute),
-        child: VowlMascot(size: 40.r, isKidsMode: true),
-      ),
+    return ScaleButton(
+      onTap: () => context.push(AppRouter.kidsMascotSelectionRoute),
+      child: VowlMascot(size: 40.r, isKidsMode: true),
     );
   }
 }

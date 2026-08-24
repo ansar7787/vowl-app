@@ -7,7 +7,7 @@
 
 Vowl is my passion project—a massive, full-stack language learning application built from the ground up with Flutter and Firebase. I wanted to build something that goes far beyond simple multiple-choice quizzes. My goal was to create a living, breathing pedagogical engine that actually listens, speaks, and adapts to the user, **all while remaining completely offline-first with zero loading screens.**
 
-What started as a simple idea has evolved into an enormous ecosystem. Vowl contains **100 distinct adult-level learning games** and **25 specific kids' games**, encompassing over 20,000 unique levels of curriculum. Whether you're an adult practicing for a job interview in the Roleplay arena, or a kid learning to write the alphabet using on-device handwriting recognition with their interactive buddy, Vowl handles it all within a single, highly structured codebase.
+What started as a simple idea has evolved into an enormous ecosystem. Vowl contains **100 distinct adult-level learning games** and **25 specific kids' games**, encompassing **25,000 unique levels** and **75,000 individual questions**. Whether you're an adult practicing for a job interview in the AI Roleplay arena, or a kid learning to write the alphabet using on-device handwriting recognition with their interactive buddy, Vowl handles it all within a single, highly structured codebase.
 
 ---
 
@@ -23,9 +23,9 @@ What started as a simple idea has evolved into an enormous ecosystem. Vowl conta
 
 ---
 
-## 🎮 The Adult Curriculum: 100 Unique Game Mechanics
+## 🎮 The Adult Curriculum: 100 Games & 20,000 Levels
 
-The adult learning section is built to take users from beginner to absolute fluency. I didn't just build one quiz screen; I built **100 entirely different game mechanics**, spanning multiple linguistic disciplines:
+The adult learning section is built to take users from beginner to absolute fluency. I didn't just build one quiz screen; I built **100 entirely different game mechanics**, totaling **20,000 levels** (with exactly 3 questions per level):
 
 ### Vocabulary & Memory
 - **Topic Nexus**: Context-aware vocabulary training that spans over 50 real-world topics (business, travel, daily life).
@@ -53,12 +53,12 @@ The adult learning section is built to take users from beginner to absolute flue
 
 ---
 
-## 🧒 The Kids Zone Ecosystem: 25 Sandboxed Games
+## 🧒 The Kids Zone Ecosystem: 25 Games & 5,000 Levels
 
 Children learn differently than adults. I built a completely separate, highly sandboxed environment tailored for young minds, stripped of complex UI and focused entirely on engagement and sensory feedback.
 
 ### The 25 Kids Games
-I built 25 distinct learning modules specifically for kids, including:
+I built 25 distinct learning modules specifically for kids, totaling **5,000 levels** (with 3 interactive questions per level), including:
 - **Digital Ink Handwriting**: Children trace letters and numbers directly on the screen. I use Google ML Kit's Digital Ink Recognition to process and grade their handwriting locally on the device in real-time.
 - **Phonics & Sounds**: Connecting letters to their physical sounds using high-fidelity audio cues.
 - **Math & Counting**: Interactive drag-and-drop logic for foundational counting.
@@ -77,7 +77,7 @@ Learning alone is boring. I built a dynamic companion system:
 
 One of the biggest architectural decisions I made was ensuring Vowl runs **completely offline without live API costs.** 
 
-Instead of hitting live AI APIs during gameplay (which causes loading screens and costs money), I used AI to *pre-generate* the massive 20,000+ level curriculum. This is all securely stored in highly optimized local JSON files.
+Instead of hitting live AI APIs during gameplay (which causes loading screens and costs money), I used AI to *pre-generate* the massive **25,000 level curriculum**. This is all securely stored in highly optimized local JSON files.
 
 - **Zero Loading Screens**: The entire curriculum loads instantly from device memory.
 - **Advanced Context-Aware Hints**: If a user gets a Prefix/Suffix question wrong, the app doesn't just say "Wrong." The pre-generated pedagogical hint engine analyzes their exact mistake (e.g., using "un-" instead of "re-") and provides a localized micro-lesson.

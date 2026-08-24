@@ -29,30 +29,7 @@ class ProfilePreferencesList extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Column(
         children: [
-          if (user.isAdmin) ...[
-            Divider(
-              height: 1,
-              thickness: 1,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : const Color(0xFFE2E8F0),
-              indent: 20.w,
-              endIndent: 20.w,
-            ),
-            _buildPreferenceTile(
-              context,
-              context.tr(
-                'profile.admin_dashboard',
-                fallback: 'Admin Dashboard',
-              ),
-              Icons.admin_panel_settings_rounded,
-              Colors.orange,
-              () {
-                di.sl<HapticService>().light();
-                context.push(AppRouter.adminRoute);
-              },
-            ),
-          ],
+
           Divider(
             height: 1,
             thickness: 1,
