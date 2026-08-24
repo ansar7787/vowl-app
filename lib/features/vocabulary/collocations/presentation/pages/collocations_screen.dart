@@ -209,15 +209,17 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                         ? (gapUnit * 2).clamp(12.0, 60.0)
                         : 12.0;
 
-                    return CustomScrollView(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Column(
-                            children: [
-                              Expanded(
-                                child: Column(
+                        SliverToBoxAdapter(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Column(
+                              children: [
+                                  Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
@@ -345,7 +347,6 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                   ),
                                 ],
                                 ),
-                              ),
                               if (_isFirstStagePassed &&
                                   (!_isAnswered || _isCorrect == null))
                                 Padding(
@@ -357,24 +358,27 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                           wrongCollocations: quest.wrongCollocations!,
                                           color: theme.primaryColor,
                                         ),
-                                      SizedBox(height: 20.h),
-                                      ContextSentenceBuilder(
-                                        targetKeyword: '${quest.word} ${quest.correctAnswer}',
-                                        primaryColor: theme.primaryColor,
-                                        onConfirmed: () => _submitFinalAnswer(true),
-                                        onSkipped: () => _submitFinalAnswer(false),
-                                        isPositioned: false,
-                                      ),
-                                      SizedBox(height: 60.h),
+                                      SizedBox(height: 160.h),
                                     ],
                                   ),
                                 ),
                               SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                             ],
                           ),
+                          ),
                         ),
                       ],
-                    );
+                    ),
+                    if (_isFirstStagePassed && (!_isAnswered || _isCorrect == null))
+                      ContextSentenceBuilder(
+                        targetKeyword: '${quest.word} ${quest.correctAnswer}',
+                        primaryColor: theme.primaryColor,
+                        onConfirmed: () => _submitFinalAnswer(true),
+                        onSkipped: () => _submitFinalAnswer(false),
+                        isPositioned: true,
+                      ),
+                  ],
+                );
                   },
                 ),
         );

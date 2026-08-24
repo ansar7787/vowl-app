@@ -218,7 +218,9 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : Stack(
+                  children: [
+                    CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverPadding(
@@ -317,18 +319,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (_showContextSentence && !isAnswered)
-                              ContextSentenceBuilder(
-                                targetKeyword: targetKeywords.first,
-                                primaryColor: theme.primaryColor,
-                                onConfirmed: _onContextSentenceConfirmed,
-                                onSkipped: () {
-                                  setState(() => _showContextSentence = false);
-                                  context.read<WritingBloc>().add(const SubmitAnswer(false));
-                                },
-                                allowSkip: true,
-                              )
-                            else if (!isAnswered && livesRemaining > 0)
+                            if (!_showContextSentence && !isAnswered && livesRemaining > 0)
                               ScaleButton(
                                 onTap: () =>
                                     _submitAnswer(targetKeywords, isAnswered),
@@ -371,6 +362,20 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                     ),
                   ],
                 ),
+                if (_showContextSentence && !isAnswered)
+                  ContextSentenceBuilder(
+                    targetKeyword: targetKeywords.first,
+                    primaryColor: theme.primaryColor,
+                    onConfirmed: _onContextSentenceConfirmed,
+                    onSkipped: () {
+                      setState(() => _showContextSentence = false);
+                      context.read<WritingBloc>().add(const SubmitAnswer(false));
+                    },
+                    allowSkip: true,
+                    isPositioned: true,
+                  ),
+              ],
+            ),
         );
       },
     );

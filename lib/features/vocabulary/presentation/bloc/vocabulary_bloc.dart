@@ -161,6 +161,9 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
     if (s.livesRemaining <= 0) return;
 
     if (event.isCorrect) {
+      await soundService.playCorrect();
+      await hapticService.success();
+
       emit(
         s.copyWith(
           answerStatus: AnswerStatus.correct,
@@ -177,6 +180,9 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       // Mastery loop: append failed quest so the player must answer it
       // correctly before the level ends.
       final updatedQuests = isFinal ? [...s.quests, s.currentQuest] : s.quests;
+
+      await soundService.playWrong();
+      await hapticService.error();
 
       emit(
         s.copyWith(

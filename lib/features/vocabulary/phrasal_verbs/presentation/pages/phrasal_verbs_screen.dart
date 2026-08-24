@@ -211,12 +211,15 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                         ? (gapUnit * 2).clamp(12.0, 40.0)
                         : 12.0;
 
-                    return CustomScrollView(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
-                          child: Stack(
+                        SliverToBoxAdapter(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(minHeight: maxHeight),
+                            child: Stack(
                         alignment: Alignment.center,
                         children: [
                           Positioned.fill(
@@ -230,8 +233,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                           ),
                           Column(
                             children: [
-                              Expanded(
-                                child: Column(
+                                Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
@@ -364,8 +366,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 ),
                               ],
                             ),
-                              ),
-                              if (_isFirstStagePassed && !_isAnswered)
+                            if (_isFirstStagePassed && !_isAnswered)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Column(
@@ -375,14 +376,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                 literalVsFigurative: quest.literalVsFigurative!,
                                 color: theme.primaryColor,
                               ),
-                            SizedBox(height: 20.h),
-                            ContextSentenceBuilder(
-                              targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
-                              primaryColor: theme.primaryColor,
-                              onConfirmed: () => _submitFinalAnswer(true),
-                              onSkipped: () => _submitFinalAnswer(false),
-                              isPositioned: false,
-                            ),
+                            SizedBox(height: 160.h),
                           ],
                         ),
                       ),
@@ -391,9 +385,20 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                 ),
               ],
             ),
+            ),
           ),
         ],
-      );
+      ),
+      if (_isFirstStagePassed && !_isAnswered)
+        ContextSentenceBuilder(
+          targetKeyword: "${quest.word} ${quest.correctAnswer}".trim(),
+          primaryColor: theme.primaryColor,
+          onConfirmed: () => _submitFinalAnswer(true),
+          onSkipped: () => _submitFinalAnswer(false),
+          isPositioned: true,
+        ),
+    ],
+  );
                   },
                 ),
         );

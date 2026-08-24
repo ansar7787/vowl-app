@@ -340,15 +340,16 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         : (screenSize.height * 0.6);
                     final isCompact = safeHeight < 580;
 
-                    return CustomScrollView(
+                    return Stack(
+                      children: [
+                        CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
-                        SliverFillRemaining(
-                          hasScrollBody: false,
+                        SliverToBoxAdapter(
                           child: Column(
                             children: [
-                              Expanded(
-                                child: SizedBox(
+
+                                SizedBox(
                                   width: safeWidth,
                                   height: safeHeight,
                                   child: Stack(
@@ -518,7 +519,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         ],
                       ),
                     ),
-                  ),
                   if (_isFirstStagePassed && !_isAnswered)
                     Column(
                       children: [
@@ -529,15 +529,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             nuanceDifference: quest.nuanceDifference!,
                             primaryColor: theme.primaryColor,
                           ),
-                        SizedBox(height: 20.h),
-                        ContextSentenceBuilder(
-                          targetKeyword: quest.correctAnswer ?? "",
-                          primaryColor: theme.primaryColor,
-                          acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
-                          onConfirmed: () => _submitVerbalEvaluation(true),
-                          onSkipped: () => _submitVerbalEvaluation(false),
-                          isPositioned: false,
-                        ),
+                        SizedBox(height: 160.h),
                       ],
                     ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
@@ -545,7 +537,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     ),
                   ),
                 ],
-              );
+              ),
+              if (_isFirstStagePassed && !_isAnswered)
+                ContextSentenceBuilder(
+                  targetKeyword: quest.correctAnswer ?? "",
+                  primaryColor: theme.primaryColor,
+                  acceptedKeywordForms: quest.synonyms ?? [quest.correctAnswer ?? ""],
+                  onConfirmed: () => _submitVerbalEvaluation(true),
+                  onSkipped: () => _submitVerbalEvaluation(false),
+                  isPositioned: true,
+                ),
+            ],
+          );
             },
           ),
         );
