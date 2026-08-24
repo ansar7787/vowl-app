@@ -214,6 +214,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
           isFinalFailure: isFinalFailure,
           showConfetti: _showConfetti,
           useScrolling: false,
+          disablePadding: true,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: quest == null
@@ -311,14 +312,6 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                           ],
                         ),
                       ),
-                    ),
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
                             if (!_showContextSentence && !isAnswered && livesRemaining > 0)
                               ScaleButton(
                                 onTap: () =>

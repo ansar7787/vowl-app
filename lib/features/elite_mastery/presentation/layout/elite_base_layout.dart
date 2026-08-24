@@ -37,6 +37,7 @@ class EliteBaseLayout extends StatelessWidget {
   final VoidCallback? onTutorPass;
   final bool useScrolling;
   final ScrollController? scrollController;
+  final bool disablePadding;
 
   const EliteBaseLayout({
     super.key,
@@ -57,6 +58,7 @@ class EliteBaseLayout extends StatelessWidget {
     this.onTutorPass,
     this.useScrolling = true,
     this.scrollController,
+    this.disablePadding = false,
   });
 
   @override
@@ -167,7 +169,7 @@ class EliteBaseLayout extends StatelessWidget {
       onHint: onHint,
       showConfetti: showConfetti,
       useScrolling: useScrolling,
-      disablePadding: false,
+      disablePadding: disablePadding,
     );
 
     return GameBaseLayout<EliteMasteryBloc, EliteMasteryState>(
