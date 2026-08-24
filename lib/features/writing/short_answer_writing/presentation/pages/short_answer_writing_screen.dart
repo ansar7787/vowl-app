@@ -309,10 +309,8 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                   ],
                                 ),
                               ),
-                          ],
-                        ),
-                      ),
-                            if (!_showContextSentence && !isAnswered && livesRemaining > 0)
+                            if (!_showContextSentence && !isAnswered && livesRemaining > 0) ...[
+                              SizedBox(height: 24.h),
                               ScaleButton(
                                 onTap: () =>
                                     _submitAnswer(targetKeywords, isAnswered),
@@ -348,6 +346,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                                   ),
                                 ),
                               ),
+                            ],
                             SizedBox(height: isAnswered ? 160.h : 60.h),
                           ],
                         ),
