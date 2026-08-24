@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/game_mechanics/speaking_self_evaluation_controls.dart';
 
 /// A self-evaluation overlay for speaking tasks.
@@ -12,6 +17,7 @@ class SpeakToConfirmOverlay extends StatelessWidget {
   final Color primaryColor;
   final VoidCallback onConfirmed;
   final VoidCallback onSkipped;
+  final VoidCallback? onBypassed;
   final double threshold;
   final int maxAttempts;
   final int? bonusCoins;
@@ -25,6 +31,7 @@ class SpeakToConfirmOverlay extends StatelessWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
+    this.onBypassed,
     this.threshold = 0.65,
     this.maxAttempts = 3,
     this.bonusCoins = 5,
@@ -186,6 +193,57 @@ class SpeakToConfirmOverlay extends StatelessWidget {
                 onSkipped: onSkipped,
                 isDark: isDark,
               ),
+
+              // Skip button
+              if (allowSkip)
+                Padding(
+                  padding: EdgeInsets.only(top: 16.h),
+                  child: ScaleButton(
+                    onTap: () {
+                      final user = context.read<AuthBloc>().state.user;
+                      final isPremium = user?.isPremium ?? false;
+                      if (isPremium) {
+                        if (onBypassed != null) {
+                          onBypassed!();
+                        } else {
+                          onConfirmed();
+                        }
+                      } else {
+                        di.sl<AdService>().showRewardedAd(
+                          context: context,
+                          isPremium: false,
+                          onUserEarnedReward: (_) {
+                            if (context.mounted) {
+                              if (onBypassed != null) {
+                                onBypassed!();
+                              } else {
+                                onConfirmed();
+                              }
+                            }
+                          },
+                          onDismissed: () {},
+                        );
+                      }
+                    },
+                    child: Builder(
+                      builder: (context) {
+                        final isPremium =
+                            context.watch<AuthBloc>().state.user?.isPremium ??
+                            false;
+                        return Text(
+                          isPremium ? 'SKIP' : 'WATCH AD TO BYPASS',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: subtitleColor,
+                            letterSpacing: 1.5,
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

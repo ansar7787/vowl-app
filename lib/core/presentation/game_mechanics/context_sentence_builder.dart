@@ -9,6 +9,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 /// A mechanic where the user writes their own sentence using a target keyword.
 ///
@@ -39,6 +42,9 @@ class ContextSentenceBuilder extends StatefulWidget {
   /// Fires when the user skips or exhausts attempts.
   final VoidCallback onSkipped;
 
+  /// Fires when the user watches an ad or uses premium to bypass the typing test.
+  final VoidCallback? onBypassed;
+
   /// Minimum number of words required. Default 5.
   final int minWordCount;
 
@@ -65,6 +71,7 @@ class ContextSentenceBuilder extends StatefulWidget {
     required this.primaryColor,
     required this.onConfirmed,
     required this.onSkipped,
+    this.onBypassed,
     this.minWordCount = 5,
     this.acceptedKeywordForms,
     this.isPositioned = true,
@@ -92,9 +99,6 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 400), () {
-      if (mounted) _focusNode.requestFocus();
-    });
   }
 
   @override
@@ -490,22 +494,60 @@ class _ContextSentenceBuilderState extends State<ContextSentenceBuilder> {
                     ),
 
                     // Skip button
-                    if (widget.allowSkip)
+                    if (widget.allowSkip && _status != _BuilderStatus.success)
                       Padding(
                         padding: EdgeInsets.only(top: 12.h),
-                        child: GestureDetector(
-                          onTap: widget.onSkipped,
-                          child: AutoSizeText(
-                            'SKIP',
-                            maxLines: 1,
-                            minFontSize: 8,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w700,
-                              color: subtitleColor,
-                              letterSpacing: 1.5,
-                            ),
+                        child: ScaleButton(
+                          onTap: () {
+                            if (_attempts >= widget.maxAttempts) {
+                              widget.onSkipped();
+                              return;
+                            }
+                            final user = context.read<AuthBloc>().state.user;
+                            final isPremium = user?.isPremium ?? false;
+                            if (isPremium) {
+                              if (widget.onBypassed != null) {
+                                widget.onBypassed!();
+                              } else {
+                                widget.onConfirmed();
+                              }
+                            } else {
+                              di.sl<AdService>().showRewardedAd(
+                                context: context,
+                                isPremium: false,
+                                onUserEarnedReward: (_) {
+                                  if (mounted) {
+                                    if (widget.onBypassed != null) {
+                                      widget.onBypassed!();
+                                    } else {
+                                      widget.onConfirmed();
+                                    }
+                                  }
+                                },
+                                onDismissed: () {},
+                              );
+                            }
+                          },
+                          child: Builder(
+                            builder: (context) {
+                              final isPremium =
+                                  context.watch<AuthBloc>().state.user?.isPremium ??
+                                  false;
+                              return AutoSizeText(
+                                _attempts >= widget.maxAttempts
+                                    ? 'CONTINUE'
+                                    : (isPremium ? 'SKIP' : 'WATCH AD TO BYPASS'),
+                                maxLines: 1,
+                                minFontSize: 8,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: subtitleColor,
+                                  letterSpacing: 1.5,
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
