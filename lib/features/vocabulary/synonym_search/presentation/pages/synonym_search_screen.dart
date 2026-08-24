@@ -303,6 +303,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           useScrolling: false,
+          disablePadding: true,
           onHint: () {
             final options = quest?.options ?? [];
             final correct = quest?.correctAnswer?.toLowerCase() ?? "";
@@ -343,7 +344,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     return Stack(
                       children: [
                         CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                       slivers: [
                         SliverToBoxAdapter(
                           child: Column(

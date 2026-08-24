@@ -178,6 +178,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
+          disablePadding: true,
           child: quest == null
               ? const SizedBox()
               : LayoutBuilder(
@@ -212,7 +213,7 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                     return Stack(
                       children: [
                         CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                       slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(

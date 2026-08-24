@@ -214,7 +214,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                     return Stack(
                       children: [
                         CustomScrollView(
-                      physics: const BouncingScrollPhysics(),
+                      physics: (!_isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
                       slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(
