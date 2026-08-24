@@ -143,4 +143,4 @@ A massive game needs a secure economy. Vowl runs on a dual-currency system (Coin
     ```
 
 ---
-*Architected and built with passion by the Vowl Team.*
+*Architected and built entirely solo with passion by Ansar.*
