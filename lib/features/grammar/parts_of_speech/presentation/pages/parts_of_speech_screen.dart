@@ -149,7 +149,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
               ? const SizedBox.shrink()
               : Stack(
                   children: [
-                    CustomScrollView(
+                    LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
@@ -190,7 +192,9 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
                         ),
                       ),
                     ],
-                  ),
+                  );
+                  },
+                ),
                   if (_pendingTypeSubmit && !_isAnswered && cleanTargetSentence.isNotEmpty)
                     TypeToConfirmOverlay(
                       expectedText: cleanTargetSentence,

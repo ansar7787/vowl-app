@@ -137,7 +137,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
 
           // 2. Dynamic Scroll Content
           RepaintBoundary(
-            child: CustomScrollView(
+            child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
               controller: _scrollController,
               physics: const BouncingScrollPhysics(),
               slivers: [
@@ -208,7 +210,9 @@ class _QuestLibraryPageState extends State<QuestLibraryPage> {
                         ),
                       ),
               ],
-            ),
+            );
+                  },
+                ),
           ),
 
           // 6. Floating Glass Island AppBar

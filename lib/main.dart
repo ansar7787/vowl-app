@@ -151,9 +151,25 @@ void main() async {
   // 3. Crashlytics — must run after DI so Firestore is ready
   if (firebaseApp != null) {
     try {
-      FlutterError.onError =
-          FirebaseCrashlytics.instance.recordFlutterFatalError;
+      FlutterError.onError = (details) {
+        final exception = details.exception;
+        if (exception is MissingPluginException) {
+          final msg = exception.message;
+          if (msg != null && msg.contains('firebase_firestore/transaction')) {
+            // Harmless race condition in cloud_firestore stream teardown.
+            return;
+          }
+        }
+        FirebaseCrashlytics.instance.recordFlutterFatalError(details);
+      };
+      
       PlatformDispatcher.instance.onError = (error, stack) {
+        if (error is MissingPluginException) {
+          final msg = error.message;
+          if (msg != null && msg.contains('firebase_firestore/transaction')) {
+            return true;
+          }
+        }
         FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
         return true;
       };

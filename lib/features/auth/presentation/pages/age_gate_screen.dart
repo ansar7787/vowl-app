@@ -216,7 +216,9 @@ class AgeGateScreen extends StatelessWidget {
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 500),
-              child: CustomScrollView(
+              child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                 physics: const BouncingScrollPhysics(),
                 slivers: [
                   SliverFillRemaining(
@@ -508,7 +510,9 @@ class AgeGateScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
+              );
+                  },
+                ),
             ),
           ),
         ),

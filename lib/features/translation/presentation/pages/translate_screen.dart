@@ -88,7 +88,7 @@ class _TranslateScreenState extends State<TranslateScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
+    final isPremium = context.watch<AuthBloc>().state.user?.isPremium ?? false;
 
     return Scaffold(
       backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,

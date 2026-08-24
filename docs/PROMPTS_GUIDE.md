@@ -38,7 +38,10 @@ CRITICAL RULES TO PREVENT AI LOOPHOLES:
 WORKFLOW:
 Do NOT generate all files at once. You will hit an output token limit and break the JSON. 
 Start by generating ONLY the fully updated JSON for the very first file in the batch sequence. Keep the exact same `id` and `interactionType` values.
-Return ONLY the raw, perfectly formatted JSON array/object so I can copy and paste it.
+
+CRITICAL OUTPUT INSTRUCTION - USE ARTIFACTS:
+You MUST use your Claude Artifacts feature to output the JSON. 
+Do NOT just print the JSON in a standard chat bubble code block. Create a dedicated JSON code Artifact so that it opens in the right-hand panel. This prevents chat cutoff issues and allows me to cleanly copy or download the entire file without formatting risks.
 
 Here is the exact schema and UI rendering rules for the specific game you are updating:
 

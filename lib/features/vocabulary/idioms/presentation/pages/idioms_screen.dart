@@ -169,14 +169,16 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           disablePadding: true,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Stack(
-                        children: [
-                          Positioned.fill(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Stack(
+                            children: [
+                              Positioned.fill(
                             child: CustomPaint(
                               painter: GridPainter(
                                 theme.primaryColor.withValues(
@@ -220,7 +222,9 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                       ),
                     ),
                   ],
-                ),
+                );
+              },
+            ),
         );
       },
     );

@@ -159,7 +159,9 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
@@ -363,6 +365,8 @@ class _ConditionalsScreenState extends State<ConditionalsScreen> {
                       ),
                     ),
                   ],
+                );
+                  },
                 ),
         );
       },

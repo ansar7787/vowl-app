@@ -333,7 +333,9 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
   ) {
     final quest = state.currentQuest;
 
-    return CustomScrollView(
+    return LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
         SliverFillRemaining(
@@ -524,5 +526,7 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
         ),
       ],
     );
+                  },
+                );
   }
 }

@@ -328,24 +328,24 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
           },
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
-                          _lastConstraints = constraints;
-                          final screenSize = MediaQuery.of(context).size;
-                          final double safeWidth = constraints.maxWidth.isFinite
-                              ? constraints.maxWidth
-                              : screenSize.width;
-                          final double safeHeight = constraints.maxHeight.isFinite
-                              ? constraints.maxHeight
-                              : (screenSize.height * 0.6);
-                          final isCompact = safeHeight < 580;
-      
-                          return Column(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    _lastConstraints = constraints;
+                    final screenSize = MediaQuery.of(context).size;
+                    final double safeWidth = constraints.maxWidth.isFinite
+                        ? constraints.maxWidth
+                        : screenSize.width;
+                    final double safeHeight = constraints.maxHeight.isFinite
+                        ? constraints.maxHeight
+                        : (screenSize.height * 0.6);
+                    final isCompact = safeHeight < 580;
+
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
                             children: [
                               Expanded(
                                 child: SizedBox(
@@ -542,11 +542,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                       ],
-                    );
-                  },
-                ),
-              ),
-            ],
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         );
       },

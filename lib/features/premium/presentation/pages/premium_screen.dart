@@ -275,7 +275,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                   radius: 200,
                 ),
               ),
-              CustomScrollView(
+              LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                 slivers: [
                   SliverAppBar(
                     backgroundColor: Colors.transparent,
@@ -349,7 +351,9 @@ class _PremiumScreenState extends State<PremiumScreen> {
                     child: _buildScrollableBody(),
                   ),
                 ],
-              ),
+              );
+                  },
+                ),
               if (_isProcessing) _buildProcessingOverlay(),
               if (_paymentCompleted) _buildCompletedOverlay(),
               Align(

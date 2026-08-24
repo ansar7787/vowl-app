@@ -264,7 +264,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
+                    LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(
@@ -376,7 +378,9 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                           ),
                         ),
                       ],
-                    ),
+                    );
+                  },
+                ),
                     if (_pendingSubmission && !_isAnswered)
                       SpeakToConfirmOverlay(
                         expectedText:

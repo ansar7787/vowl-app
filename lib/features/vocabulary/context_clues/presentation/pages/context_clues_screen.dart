@@ -220,13 +220,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Column(
-                        children: [
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
+                            children: [
                           Expanded(
                             child: _buildForensicScene(
                               quest,
@@ -251,7 +253,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
                       ),
                     ),
                   ],
-                ),
+                );
+              },
+            ),
         );
       },
     );

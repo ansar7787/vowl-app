@@ -205,7 +205,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
@@ -461,6 +463,8 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
                       ),
                     ),
                   ],
+                );
+                  },
                 ),
         );
       },

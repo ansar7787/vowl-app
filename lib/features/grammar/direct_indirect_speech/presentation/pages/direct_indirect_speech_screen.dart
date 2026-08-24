@@ -179,7 +179,9 @@ class _DirectIndirectSpeechScreenState
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
@@ -361,6 +363,8 @@ class _DirectIndirectSpeechScreenState
                       ),
                     ),
                   ],
+                );
+                  },
                 ),
         );
       },

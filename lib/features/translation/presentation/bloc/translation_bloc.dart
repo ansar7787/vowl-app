@@ -135,7 +135,27 @@ class TranslationBloc extends Bloc<TranslationEvent, TranslationState> {
       final downloaded = await _service.getDownloadedLanguageNames();
 
       final prefs = await SharedPreferences.getInstance();
-      final int freeRemaining = prefs.getInt('translation_free_remaining') ?? 3;
+      
+      final lastResetStr = prefs.getString('translation_last_reset_date');
+      final now = DateTime.now();
+      bool shouldReset = false;
+      
+      if (lastResetStr != null) {
+        final lastReset = DateTime.tryParse(lastResetStr);
+        if (lastReset == null || lastReset.year != now.year || lastReset.month != now.month || lastReset.day != now.day) {
+          shouldReset = true;
+        }
+      } else {
+        shouldReset = true;
+      }
+      
+      int freeRemaining = prefs.getInt('translation_free_remaining') ?? 3;
+      
+      if (shouldReset) {
+        freeRemaining = 3;
+        await prefs.setInt('translation_free_remaining', 3);
+        await prefs.setString('translation_last_reset_date', now.toIso8601String());
+      }
 
       emit(
         state.copyWith(

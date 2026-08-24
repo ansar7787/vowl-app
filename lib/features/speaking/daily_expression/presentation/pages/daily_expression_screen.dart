@@ -191,7 +191,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                 context.read<SpeakingBloc>().add(const SpeakingHintUsed()),
             child: quest == null
                 ? const SizedBox()
-                : CustomScrollView(
+                : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                     physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverPadding(
@@ -310,7 +312,9 @@ class _DailyExpressionScreenState extends State<DailyExpressionScreen>
                         ),
                       ),
                     ],
-                  ),
+                  );
+                  },
+                ),
           ),
         );
       },

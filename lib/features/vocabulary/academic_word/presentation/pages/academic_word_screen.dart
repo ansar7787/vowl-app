@@ -169,59 +169,63 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       disablePadding: true,
       child: quest == null
           ? const SizedBox.shrink()
-          : CustomScrollView(
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: _AcademicWordGameBody(
-                          quest: quest,
-                          isAnswered: _isAnswered,
-                          isCorrect: _isCorrect,
-                          misspelledWord: _misspelledWord,
-                          slotKey: _slotKey,
-                          activeShardIndex: _activeShardIndex,
-                          dragOffset: _dragOffset,
-                          themeColor: _cachedTheme.primaryColor,
-                          onShardTap: (i) => _attemptThrust(i, quest),
-                          onDragStart: _onShardDragStart,
-                          onDragUpdate: _onShardDragUpdate,
-                          onDragEnd: (i) => _onShardDragEnd(i, quest),
-                          getInitialPosition: _getShardInitialPosition,
-                        ),
-                      ),
-                      if (_isFirstStagePassed && !_isAnswered)
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20.w),
-                          child: Column(
-                            children: [
-                              if (quest.academicField != null && quest.collocations != null)
-                                AcademicWordFieldCollocations(
-                                  academicField: quest.academicField!,
-                                  collocations: quest.collocations!,
-                                  color: _cachedTheme.primaryColor,
-                                ),
-                              SizedBox(height: 20.h),
-                              TypeToConfirmOverlay(
-                                expectedText: quest.correctAnswer ?? '',
-                                displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
-                                primaryColor: _cachedTheme.primaryColor,
-                                onConfirmed: () => _submitFinalAnswer(true),
-                                onSkipped: () => _submitFinalAnswer(false),
-                                onBypassed: () => _submitFinalAnswer(true),
-                                isPositioned: false,
-                              ),
-                            ],
+          : LayoutBuilder(
+              builder: (context, constraints) {
+                return CustomScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Column(
+                        children: [
+                          Expanded(
+                            child: _AcademicWordGameBody(
+                              quest: quest,
+                              isAnswered: _isAnswered,
+                              isCorrect: _isCorrect,
+                              misspelledWord: _misspelledWord,
+                              slotKey: _slotKey,
+                              activeShardIndex: _activeShardIndex,
+                              dragOffset: _dragOffset,
+                              themeColor: _cachedTheme.primaryColor,
+                              onShardTap: (i) => _attemptThrust(i, quest),
+                              onDragStart: _onShardDragStart,
+                              onDragUpdate: _onShardDragUpdate,
+                              onDragEnd: (i) => _onShardDragEnd(i, quest),
+                              getInitialPosition: _getShardInitialPosition,
+                            ),
                           ),
-                        ),
-                      SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
-                    ],
-                  ),
-                ),
-              ],
+                          if (_isFirstStagePassed && !_isAnswered)
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20.w),
+                              child: Column(
+                                children: [
+                                  if (quest.academicField != null && quest.collocations != null)
+                                    AcademicWordFieldCollocations(
+                                      academicField: quest.academicField!,
+                                      collocations: quest.collocations!,
+                                      color: _cachedTheme.primaryColor,
+                                    ),
+                                  SizedBox(height: 20.h),
+                                  TypeToConfirmOverlay(
+                                    expectedText: quest.correctAnswer ?? '',
+                                    displayText: "Type the academic word to confirm:\n${quest.correctAnswer?.toUpperCase()}",
+                                    primaryColor: _cachedTheme.primaryColor,
+                                    onConfirmed: () => _submitFinalAnswer(true),
+                                    onSkipped: () => _submitFinalAnswer(false),
+                                    onBypassed: () => _submitFinalAnswer(true),
+                                    isPositioned: false,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
     );
   }

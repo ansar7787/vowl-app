@@ -132,18 +132,18 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
           onHint: () =>
               context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
-          child: CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    _lastConstraints = constraints;
-                    final maxHeight = constraints.maxHeight;
-                    final isCompact = maxHeight < 580;
-      
-                    return Column(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              _lastConstraints = constraints;
+              final maxHeight = constraints.maxHeight;
+              final isCompact = maxHeight < 580;
+
+              return CustomScrollView(
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Column(
                       children: [
                         Expanded(
                           child: Stack(
@@ -234,11 +234,11 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
                           ),
                         SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                       ],
-                    );
-                  },
-                ),
-              ),
-            ],
+                    ),
+                  ),
+                ],
+              );
+            },
           ),
         );
       },

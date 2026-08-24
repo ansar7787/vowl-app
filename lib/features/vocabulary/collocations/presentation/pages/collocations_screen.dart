@@ -180,41 +180,41 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: LayoutBuilder(
-                        builder: (context, constraints) {
-                          final maxHeight = constraints.maxHeight;
-                          final isCompact = maxHeight < 580;
-      
-                          final double estimatedContentHeight =
-                              20.h +
-                              40.h +
-                              (isCompact ? 80.h : 110.h) +
-                              (isCompact ? 100.h : 180.h) +
-                              20.h;
-                          final remainingHeight = maxHeight - estimatedContentHeight;
-      
-                          final double gapUnit = remainingHeight > 0
-                              ? remainingHeight / 6
-                              : 0;
-                          final double gapTop = remainingHeight > 0
-                              ? (gapUnit * 1).clamp(6.0, 16.0)
-                              : 6.0;
-                          final double gapInstruction = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                              : 10.0;
-                          final double gapAnchor = remainingHeight > 0
-                              ? (gapUnit * 1.5).clamp(10.0, 40.0)
-                              : 10.0;
-                          final double gapBottom = remainingHeight > 0
-                              ? (gapUnit * 2).clamp(12.0, 60.0)
-                              : 12.0;
-      
-                          return Column(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+                    
+                    final double estimatedContentHeight =
+                        20.h +
+                        40.h +
+                        (isCompact ? 80.h : 110.h) +
+                        (isCompact ? 100.h : 180.h) +
+                        20.h;
+                    final remainingHeight = maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 6
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 16.0)
+                        : 6.0;
+                    final double gapInstruction = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                        : 10.0;
+                    final double gapAnchor = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 40.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(12.0, 60.0)
+                        : 12.0;
+
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Column(
                             children: [
                               Expanded(
                                 child: Column(
@@ -371,11 +371,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
                                 ),
                               SizedBox(height: (_isAnswered || _isFirstStagePassed) ? 160.h : 60.h),
                             ],
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
         );
       },

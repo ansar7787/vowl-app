@@ -181,12 +181,42 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
           disablePadding: true,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Stack(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+                    final isCompact = maxHeight < 580;
+
+                    final double estimatedContentHeight =
+                        (isCompact ? 30.h : 40.h) +
+                        (quest.instruction.isNotEmpty
+                            ? (isCompact ? 60.h : 80.h)
+                            : 0) +
+                        (isCompact ? 70.h : 90.h) +
+                        (isCompact ? 110.h : 160.h) +
+                        (isCompact ? 90.h : 130.h) +
+                        20.h;
+                    final remainingHeight =
+                        maxHeight - estimatedContentHeight;
+
+                    final double gapUnit = remainingHeight > 0
+                        ? remainingHeight / 6
+                        : 0;
+                    final double gapTop = remainingHeight > 0
+                        ? (gapUnit * 1).clamp(6.0, 24.0)
+                        : 6.0;
+                    final double gapMiddle = remainingHeight > 0
+                        ? (gapUnit * 1.5).clamp(10.0, 30.0)
+                        : 10.0;
+                    final double gapBottom = remainingHeight > 0
+                        ? (gapUnit * 2).clamp(12.0, 40.0)
+                        : 12.0;
+
+                    return CustomScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Stack(
                         alignment: Alignment.center,
                         children: [
                           Positioned.fill(
@@ -201,40 +231,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                           Column(
                             children: [
                               Expanded(
-                                child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        final maxHeight = constraints.maxHeight;
-                        final isCompact = maxHeight < 580;
-
-                        final double estimatedContentHeight =
-                            (isCompact ? 30.h : 40.h) +
-                            (quest.instruction.isNotEmpty
-                                ? (isCompact ? 60.h : 80.h)
-                                : 0) +
-                            (isCompact ? 70.h : 90.h) +
-                            (isCompact ? 110.h : 160.h) +
-                            (isCompact ? 90.h : 130.h) +
-                            20.h;
-                        final remainingHeight =
-                            maxHeight - estimatedContentHeight;
-
-                        final double gapUnit = remainingHeight > 0
-                            ? remainingHeight / 6
-                            : 0;
-                        final double gapTop = remainingHeight > 0
-                            ? (gapUnit * 1).clamp(6.0, 24.0)
-                            : 6.0;
-                        final double gapMiddle = remainingHeight > 0
-                            ? (gapUnit * 1.5).clamp(10.0, 30.0)
-                            : 10.0;
-                        final double gapBottom = remainingHeight > 0
-                            ? (gapUnit * 2).clamp(12.0, 40.0)
-                            : 12.0;
-
-
-
-
-                        return Column(
+                                child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
@@ -366,11 +363,9 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                                   ],
                                 ),
                               ],
-                            );
-                        },
-                      ),
-                    ),
-                    if (_isFirstStagePassed && !_isAnswered)
+                            ),
+                              ),
+                              if (_isFirstStagePassed && !_isAnswered)
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20.w),
                         child: Column(
@@ -398,8 +393,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
             ),
           ),
         ],
-      ),
-    );
+      );
+                  },
+                ),
+        );
       },
     );
   }

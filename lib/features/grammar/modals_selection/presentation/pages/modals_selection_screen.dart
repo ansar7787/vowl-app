@@ -214,7 +214,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
               context.read<GrammarBloc>().add(const GrammarHintUsed()),
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverFillRemaining(
@@ -450,7 +452,9 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                 ),
                 ),
               ],
-            ),
+            );
+                  },
+                ),
         );
       },
     );

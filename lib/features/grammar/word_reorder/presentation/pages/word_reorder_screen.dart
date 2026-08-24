@@ -189,7 +189,9 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
           useScrolling: false,
           child: quest == null
               ? const SizedBox()
-              : CustomScrollView(
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     SliverToBoxAdapter(
@@ -283,6 +285,8 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
                     ),
                     ),
                   ],
+                );
+                  },
                 ),
         );
       },

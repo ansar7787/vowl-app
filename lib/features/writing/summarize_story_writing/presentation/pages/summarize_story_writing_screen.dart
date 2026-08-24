@@ -208,7 +208,9 @@ class _SummarizeStoryWritingScreenState
               ? const SizedBox()
               : Stack(
                   children: [
-                    CustomScrollView(
+                    LayoutBuilder(
+                  builder: (context, constraints) {
+                    return CustomScrollView(
                       physics: const BouncingScrollPhysics(),
                       slivers: [
                         SliverPadding(
@@ -367,7 +369,9 @@ class _SummarizeStoryWritingScreenState
                           ),
                         ),
                       ],
-                    ),
+                    );
+                  },
+                ),
                     if (_pendingSubmit && !isAnswered)
                       TypeToConfirmOverlay(
                         expectedText: _slots.isNotEmpty
