@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/utils/locale_service.dart';
