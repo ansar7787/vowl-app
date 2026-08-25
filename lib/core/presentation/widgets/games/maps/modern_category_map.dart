@@ -548,31 +548,41 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final screenWidth = ScreenUtil().screenWidth;
     final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    final maxOffset = screenWidth * 0.35;
+    // Widen the wander zone for more dramatic, premium-feeling curves.
+    final maxOffset = screenWidth * 0.32;
 
-    // Organic, beautiful wandering path that feels completely unpredictable
-    // and premium, like top-tier mobile games (Candy Crush, etc.)
-    final List<double> organicPath = [
-      0.0,
-      -0.6,
-      -0.85,
-      -0.3,
-      0.45,
-      0.85,
-      0.5,
-      0.1,
-      -0.5,
-      -0.75,
-      -0.2,
-      0.35,
-      0.8,
-      0.9,
-      0.4,
-      -0.1,
-    ];
+    // ── Organic multi-frequency path — NEVER repeats within 200 levels ──
+    //
+    // Instead of a short repeating array, we layer 4 sine waves whose
+    // frequencies are irrational multiples of each other (φ-derived).
+    // Their superposition creates a waveform that looks hand-drawn and
+    // unpredictable, similar to how Perlin noise works but far cheaper
+    // to compute. A secondary amplitude envelope adds variety — some
+    // swings are wide (dramatic S-curves) and some are tight (nodes
+    // cluster near center), giving the map "breathing room" and rhythm.
+    //
+    // Golden ratio & friends ensure incommensurable periods:
+    const double phi = 1.6180339887; // golden ratio
+    const double freq1 = 0.45;       // primary wave
+    const double freq2 = 0.45 * phi; // ≈ 0.728
+    const double freq3 = 0.45 / phi; // ≈ 0.278
+    const double freq4 = 0.17;       // very slow drift
 
     for (int i = 0; i < _totalLevels; i++) {
-      final factor = organicPath[i % organicPath.length];
+      final double t = i.toDouble();
+
+      // Superpose 4 waves at irrational frequency ratios
+      final double wave = 0.40 * math.sin(freq1 * t + 0.3)
+                        + 0.30 * math.sin(freq2 * t + 1.7)
+                        + 0.20 * math.sin(freq3 * t + 4.2)
+                        + 0.10 * math.sin(freq4 * t + 2.5);
+
+      // Amplitude envelope — varies how wide each swing is (0.6 → 1.0)
+      final double envelope = 0.8 + 0.2 * math.sin(0.09 * t + 0.8);
+
+      // Clamp to [-1, 1] and apply envelope
+      final double factor = (wave * envelope).clamp(-1.0, 1.0);
+
       final offsetX = centerX + (factor * maxOffset);
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));

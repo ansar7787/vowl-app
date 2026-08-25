@@ -83,6 +83,11 @@ class ModernSegmentPathPainter extends CustomPainter {
     }
 
     // ── Incoming path from top boundary (y=0) to node center (y=centerY) ──
+    //
+    // S-curve math: cp1 anchors horizontally near the *source* X and cp2
+    // near the *destination* X. This makes the path lazily leave the
+    // previous node before sweeping into the current one — a proper
+    // S-shape rather than a stiff kink.
     if (!isFirst && prevPoint != null) {
       final prevX = prevPoint!.dx;
       final midX = (prevX + nodeX) / 2;
@@ -90,10 +95,10 @@ class ModernSegmentPathPainter extends CustomPainter {
       final incomingPath = Path()
         ..moveTo(midX, 0)
         ..cubicTo(
-          (prevX + 3 * nodeX) / 4,
-          centerY * 0.25,
-          nodeX,
-          centerY * 0.50,
+          midX,              // cp1.x — hold at the hand-off X
+          centerY * 0.35,    // cp1.y — drop 35% vertically first
+          nodeX,             // cp2.x — swing to destination X
+          centerY * 0.65,    // cp2.y — arrive from above
           nodeX,
           centerY,
         );
@@ -124,6 +129,10 @@ class ModernSegmentPathPainter extends CustomPainter {
     }
 
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
+    //
+    // Mirror of the incoming S-curve logic: cp1 holds at the current
+    // node's X while dropping vertically, then cp2 swings to the hand-off
+    // X that becomes the next segment's start.
     if (!isLast && nextPoint != null) {
       final nextX = nextPoint!.dx;
       final midNextX = (nodeX + nextX) / 2;
@@ -133,10 +142,10 @@ class ModernSegmentPathPainter extends CustomPainter {
       final outgoingPath = Path()
         ..moveTo(nodeX, centerY)
         ..cubicTo(
-          nodeX,
-          centerY + remainingH * 0.50,
-          (3 * nodeX + nextX) / 4,
-          centerY + remainingH * 0.75,
+          nodeX,                             // cp1.x — hold at current X
+          centerY + remainingH * 0.35,       // cp1.y — descend 35%
+          midNextX,                          // cp2.x — swing toward hand-off
+          centerY + remainingH * 0.65,       // cp2.y — arrive from the side
           midNextX,
           bottomY,
         );
