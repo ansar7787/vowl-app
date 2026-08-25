@@ -53,6 +53,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   StoryBeat? _activeStoryBeat;
   int _totalLevels = 10;
   bool _isLoading = true;
+  int? _justUnlockedLevel;
 
   // ── Smooth Animation Controllers ──
   late AnimationController _entryController;
@@ -298,8 +299,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         _previousUnlockedLevel = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
+          _justUnlockedLevel = currLevel;
           _unlockPathController.reset();
-          _unlockPathController.forward();
+          _unlockPathController.forward().then((_) {
+            if (mounted) {
+              setState(() => _justUnlockedLevel = null);
+            }
+          });
         }
 
         Future.delayed(const Duration(milliseconds: 1500), () {
@@ -400,6 +406,38 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                   ),
 
                   // Track View — Lazy SliverList with per-segment path painting & smooth entrance fade
+                  if (_isLoading)
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SizedBox(
+                              width: 40.r,
+                              height: 40.r,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 3.r,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  theme.primaryColor.withValues(alpha: 0.6),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 16.h),
+                            Text(
+                              context.tr('games.loading_map', fallback: 'Loading map...'),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark ? Colors.white38 : Colors.black26,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  else
                   SliverFadeTransition(
                     opacity: CurvedAnimation(
                       parent: _entryController,
@@ -425,6 +463,18 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                             levelNumber > unlockedLevels &&
                             !isPremium;
                         final isCurrent = isPlayable || isTollGateSegment;
+                        final isJustUnlocked = levelNumber == _justUnlockedLevel;
+
+                        // Choose animation: glow for current node, unlock bounce
+                        // for just-unlocked node, static for everything else.
+                        final Animation<double> nodeAnimation;
+                        if (isJustUnlocked) {
+                          nodeAnimation = _unlockPathController;
+                        } else if (isCurrent) {
+                          nodeAnimation = _glowController;
+                        } else {
+                          nodeAnimation = const AlwaysStoppedAnimation(0);
+                        }
 
                         final glowValue = isCurrent
                             ? Curves.easeInOutSine.transform(
@@ -434,29 +484,46 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
                         return RepaintBoundary(
                           child: AnimatedBuilder(
-                            animation: isCurrent
-                                ? _glowController
-                                : const AlwaysStoppedAnimation(0),
-                            builder: (context, child) => CustomPaint(
-                              painter: ModernSegmentPathPainter(
-                                currentPoint: Offset(point.dx, rowSpacing / 2),
-                                prevPoint: index > 0
-                                    ? Offset(points[index - 1].dx, 0)
-                                    : null,
-                                nextPoint: index < _totalLevels - 1
-                                    ? Offset(points[index + 1].dx, rowSpacing)
-                                    : null,
-                                activeColor: theme.primaryColor,
-                                isCompleted: isNodeCompleted,
-                                isPrevCompleted: isPrevNodeCompleted,
-                                isFirst: index == 0,
-                                isLast: index == _totalLevels - 1,
-                                isDark: isDark,
-                                isTollGate: isTollGateSegment,
-                                glowPulse: glowValue,
-                              ),
-                              child: child,
-                            ),
+                            animation: nodeAnimation,
+                            builder: (context, child) {
+                              // Apply unlock celebration: scale bounce + glow burst
+                              Widget result = CustomPaint(
+                                painter: ModernSegmentPathPainter(
+                                  currentPoint: Offset(point.dx, rowSpacing / 2),
+                                  prevPoint: index > 0
+                                      ? Offset(points[index - 1].dx, 0)
+                                      : null,
+                                  nextPoint: index < _totalLevels - 1
+                                      ? Offset(points[index + 1].dx, rowSpacing)
+                                      : null,
+                                  activeColor: theme.primaryColor,
+                                  isCompleted: isNodeCompleted,
+                                  isPrevCompleted: isPrevNodeCompleted,
+                                  isFirst: index == 0,
+                                  isLast: index == _totalLevels - 1,
+                                  isDark: isDark,
+                                  isTollGate: isTollGateSegment,
+                                  glowPulse: glowValue,
+                                ),
+                                child: child,
+                              );
+
+                              // Unlock celebration: elastic scale bounce
+                              if (isJustUnlocked) {
+                                final bounceValue = Curves.elasticOut.transform(
+                                  _unlockPathController.value.clamp(0.0, 1.0),
+                                );
+                                result = Transform.scale(
+                                  scale: 0.6 + 0.4 * bounceValue,
+                                  child: Opacity(
+                                    opacity: _unlockPathController.value.clamp(0.0, 1.0),
+                                    child: result,
+                                  ),
+                                );
+                              }
+
+                              return result;
+                            },
                             child: SizedBox(
                               height: rowSpacing,
                               child: Align(
@@ -480,7 +547,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                             ),
                           ),
                         );
-                      }, childCount: _isLoading ? 0 : _totalLevels + 1),
+                      }, childCount: _totalLevels + 1),
                     ),
                   ),
                 ],
@@ -603,13 +670,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         });
         final totalStars = gameplayStars + magicStars;
 
-        return ScaleButton(
+        return Semantics(
+          button: true,
+          label: context.tr(
+            'category_map.star_vault_label',
+            args: [totalStars.toString()],
+            fallback: 'Star Vault, $totalStars stars',
+          ),
+          child: ScaleButton(
           onTap: () => StarVaultBottomSheet.show(
             context,
             widget.gameType,
             theme.primaryColor,
           ),
-          child: Container(
+          child: ExcludeSemantics(
+            child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: theme.primaryColor,
@@ -648,8 +723,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                 ),
               ],
             ),
-          ),
-        );
+          )),
+        ));
       },
     );
   }
@@ -659,13 +734,21 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       builder: (context, state) {
         final keys = state.user?.keys ?? 0;
 
-        return ScaleButton(
+        return Semantics(
+          button: true,
+          label: context.tr(
+            'category_map.golden_keys_label',
+            args: [keys.toString()],
+            fallback: 'Golden Keys, $keys keys',
+          ),
+          child: ScaleButton(
           onTap: () => KeyShopBottomSheet.show(
             context: context,
             isKidsMode: false,
             primaryColor: theme.primaryColor,
           ),
-          child: Container(
+          child: ExcludeSemantics(
+            child: Container(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             decoration: BoxDecoration(
               color: Colors.amber,
@@ -694,8 +777,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                 ),
               ],
             ),
-          ),
-        );
+          )),
+        ));
       },
     );
   }
@@ -916,16 +999,12 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                       // `/game` route's query-param parsing happens to expect
                       // for case sensitivity.
                       '/game?category=${Uri.encodeQueryComponent(widget.categoryId)}&gameType=${Uri.encodeQueryComponent(widget.gameType)}&level=$level',
-                    )
-                    .then((_) {
-                      if (mounted) {
-                        Future.delayed(const Duration(milliseconds: 300), () {
-                          if (mounted) {
-                            _scrollToCurrentLevel(animate: true);
-                          }
-                        });
-                      }
-                    });
+                    );
+                // NOTE: no `.then()` auto-scroll here — the BlocListener
+                // (line ~310) already scrolls to the newly-unlocked node
+                // if a level was completed. Removing the old `.then()`
+                // preserves the user's scroll position when they return
+                // without completing a level (e.g. browsing or quitting).
               },
               child: ExcludeSemantics(
                 child: Stack(
