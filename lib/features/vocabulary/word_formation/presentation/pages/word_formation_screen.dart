@@ -208,7 +208,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                               key: ValueKey(quest.id),
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                SizedBox(height: gapTop),
+                                SizedBox(height: gapTop + 32.h),
                                 Padding(
                                   padding: EdgeInsets.symmetric(
                                     horizontal: 24.w,
@@ -227,7 +227,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                             curve: Curves.easeOutBack,
                                           ),
                                 ),
-                                SizedBox(height: gapMiddle),
+                                SizedBox(height: gapMiddle * 0.4),
 
                                 // Reaction Core
                                 (isCompact
@@ -265,7 +265,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                     )
                                     .fadeIn(duration: 600.ms),
 
-                                SizedBox(height: gapMiddle * 0.5),
+                                SizedBox(height: gapMiddle),
                                 
                                 // Injection Rails
                                 _buildInjectionRails(
