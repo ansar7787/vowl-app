@@ -199,93 +199,84 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                     return Stack(
                       children: [
                         CustomScrollView(
-                          physics: (!_controller.isFirstStagePassed) ? const NeverScrollableScrollPhysics() : const BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           slivers: [
                         SliverToBoxAdapter(
                           child: ConstrainedBox(
                             constraints: BoxConstraints(minHeight: constraints.maxHeight),
                             child: Column(
                               key: ValueKey(quest.id),
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapTop),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 24.w,
-                                      ),
-                                      child:
-                                          InstructionPanel(
-                                                color: theme.primaryColor,
-                                                quest: quest,
-                                              )
-                                              .animate()
-                                              .fadeIn(duration: 500.ms)
-                                              .slideY(
-                                                begin: -0.5,
-                                                end: 0,
-                                                duration: 500.ms,
-                                                curve: Curves.easeOutBack,
-                                              ),
-                                    ),
-                                    SizedBox(height: gapMiddle),
+                                SizedBox(height: gapTop),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24.w,
+                                  ),
+                                  child:
+                                      InstructionPanel(
+                                            color: theme.primaryColor,
+                                            quest: quest,
+                                          )
+                                          .animate()
+                                          .fadeIn(duration: 500.ms)
+                                          .slideY(
+                                            begin: -0.5,
+                                            end: 0,
+                                            duration: 500.ms,
+                                            curve: Curves.easeOutBack,
+                                          ),
+                                ),
+                                SizedBox(height: gapMiddle),
 
-                                    // Reaction Core
-                                    (isCompact
-                                            ? SizedBox(
-                                                height: 120.h,
-                                                child: FittedBox(
-                                                  fit: BoxFit.scaleDown,
-                                                  child: SizedBox(
-                                                    width: constraints.maxWidth,
-                                                    child: ReactionCore(
-                                                      quest: quest,
-                                                      root: root,
-                                                      suffix: activeSuffix,
-                                                      color: theme.primaryColor,
-                                                      isDark: isDark,
-                                                      controller: _controller,
-                                                    ),
-                                                  ),
+                                // Reaction Core
+                                (isCompact
+                                        ? SizedBox(
+                                            height: 120.h,
+                                            child: FittedBox(
+                                              fit: BoxFit.scaleDown,
+                                              child: SizedBox(
+                                                width: constraints.maxWidth,
+                                                child: ReactionCore(
+                                                  quest: quest,
+                                                  root: root,
+                                                  suffix: activeSuffix,
+                                                  color: theme.primaryColor,
+                                                  isDark: isDark,
+                                                  controller: _controller,
                                                 ),
-                                              )
-                                            : ReactionCore(
-                                                quest: quest,
-                                                root: root,
-                                                suffix: activeSuffix,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                controller: _controller,
-                                              ))
-                                        .animate()
-                                        .scale(
-                                          begin: const Offset(0.8, 0.8),
-                                          end: const Offset(1.0, 1.0),
-                                          duration: 600.ms,
-                                          curve: Curves.easeOutBack,
-                                        )
-                                        .fadeIn(duration: 600.ms),
-                                  ],
-                                ),
+                                              ),
+                                            ),
+                                          )
+                                        : ReactionCore(
+                                            quest: quest,
+                                            root: root,
+                                            suffix: activeSuffix,
+                                            color: theme.primaryColor,
+                                            isDark: isDark,
+                                            controller: _controller,
+                                          ))
+                                    .animate()
+                                    .scale(
+                                      begin: const Offset(0.8, 0.8),
+                                      end: const Offset(1.0, 1.0),
+                                      duration: 600.ms,
+                                      curve: Curves.easeOutBack,
+                                    )
+                                    .fadeIn(duration: 600.ms),
 
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: gapMiddle),
-                                    // Injection Rails
-                                    _buildInjectionRails(
-                                      options,
-                                      root,
-                                      quest.correctAnswer ?? "",
-                                      theme.primaryColor,
-                                      isDark,
-                                      isCompact,
-                                    ),
-                                    SizedBox(height: gapBottom),
-                                  ],
+                                SizedBox(height: gapMiddle * 0.5),
+                                
+                                // Injection Rails
+                                _buildInjectionRails(
+                                  options,
+                                  root,
+                                  quest.correctAnswer ?? "",
+                                  theme.primaryColor,
+                                  isDark,
+                                  isCompact,
                                 ),
+                                SizedBox(height: gapBottom),
                               ],
                             ),
                           ),
