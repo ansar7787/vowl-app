@@ -521,7 +521,22 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                           child: AnimatedBuilder(
                             animation: Listenable.merge([nodeAnimation, _unlockPathController]),
                             builder: (context, child) {
-                              // Apply unlock celebration: scale bounce + glow burst
+                              Widget nodeWidget = child!;
+                              
+                              if (isJustUnlocked) {
+                                // The node only pops in during the last 30% of the 2-second animation (after the line reaches it)
+                                final double popProgress = ((_unlockPathController.value - 0.7) * (1.0 / 0.3)).clamp(0.0, 1.0);
+                                final double popScale = Curves.elasticOut.transform(popProgress);
+                                
+                                nodeWidget = Transform.scale(
+                                  scale: 0.5 + 0.5 * popScale,
+                                  child: Opacity(
+                                    opacity: popProgress.clamp(0.0, 1.0),
+                                    child: nodeWidget,
+                                  ),
+                                );
+                              }
+
                               Widget result = CustomPaint(
                                 painter: ModernSegmentPathPainter(
                                   currentPoint: Offset(point.dx, rowSpacing / 2),
@@ -548,10 +563,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   outgoingPathProgress: outgoingProgress,
                                   glowAnimation: isCurrent ? _glowController : null,
                                 ),
-                                child: child,
+                                child: nodeWidget,
                               );
-
-
 
                               return result;
                             },

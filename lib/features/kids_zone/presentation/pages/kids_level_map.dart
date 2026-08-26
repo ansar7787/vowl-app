@@ -665,11 +665,14 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                       final user = context.read<AuthBloc>().state.user;
                       final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
                       if (level == currUnlocked) {
-                        final bounceValue = Curves.elasticOut.transform(_unlockPathController.value);
+                        // The node only pops in during the last 30% of the 2-second animation (after the line reaches it)
+                        final double popProgress = ((_unlockPathController.value - 0.7) * (1.0 / 0.3)).clamp(0.0, 1.0);
+                        final bounceValue = Curves.elasticOut.transform(popProgress);
+                        
                         return Transform.scale(
-                          scale: 0.6 + 0.4 * bounceValue,
+                          scale: 0.5 + 0.5 * bounceValue,
                           child: Opacity(
-                            opacity: _unlockPathController.value,
+                            opacity: popProgress.clamp(0.0, 1.0),
                             child: node,
                           ),
                         );
