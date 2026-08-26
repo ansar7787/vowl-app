@@ -4,482 +4,482 @@
         {
             "id": "VOC_PREFIXSUFFIX_L1_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To do something again.",
-            "explanation": "RE- means again. RE + DO = REDO.",
+            "hint": "To do something a second time because the first attempt was wrong.",
+            "explanation": "RE- means 'again' or 'once more'. RE- + DO = REDO, meaning to do something a second time.",
             "interactionType": "choice",
             "correctAnswer": "REDO",
             "rootWord": "DO",
             "options": [
-                "-LY",
-                "-FUL",
-                "-SHIP",
-                "RE-"
+                "RE-",
+                "DE-",
+                "MIS-",
+                "PRE-"
             ],
-            "meaningBreakdown": "R (prefix) + E (root) + DO (suffix)"
+            "meaningBreakdown": "RE (prefix, 'again') + DO (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L1_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To fill something again.",
-            "explanation": "RE + FILL = REFILL.",
+            "hint": "To write a document a second time, perhaps to fix mistakes.",
+            "explanation": "RE- means 'again'. RE- + WRITE = REWRITE, meaning to write something a second time.",
             "interactionType": "choice",
-            "correctAnswer": "REFILL",
-            "rootWord": "FILL",
+            "correctAnswer": "REWRITE",
+            "rootWord": "WRITE",
             "options": [
-                "IM-",
-                "IN-",
-                "-SHIP",
-                "RE-"
+                "EN-",
+                "DE-",
+                "RE-",
+                "IM-"
             ],
-            "meaningBreakdown": "RE (prefix) + FI (root) + LL (suffix)"
+            "meaningBreakdown": "RE (prefix, 'again') + WRITE (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L1_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To load something again.",
-            "explanation": "RE + LOAD = RELOAD.",
+            "hint": "To warm up food that has already cooled down.",
+            "explanation": "RE- means 'again'. RE- + HEAT = REHEAT, meaning to make something hot a second time.",
             "interactionType": "choice",
-            "correctAnswer": "RELOAD",
-            "rootWord": "LOAD",
+            "correctAnswer": "REHEAT",
+            "rootWord": "HEAT",
             "options": [
-                "IN-",
-                "RE-",
-                "IM-",
-                "-ENCE"
+                "DE-",
+                "MIS-",
+                "CO-",
+                "RE-"
             ],
-            "meaningBreakdown": "RE (prefix) + LO (root) + AD (suffix)"
+            "meaningBreakdown": "RE (prefix, 'again') + HEAT (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L2_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To undo a knot.",
-            "explanation": "UN- means not. UN + TIE = UNTIE.",
+            "hint": "To loosen a knot so a rope comes apart.",
+            "explanation": "UN- reverses an action. UN- + TIE = UNTIE, meaning to undo a knot.",
             "interactionType": "choice",
             "correctAnswer": "UNTIE",
             "rootWord": "TIE",
             "options": [
+                "DE-",
                 "UN-",
-                "EX-",
-                "TRANS-",
-                "DE-"
+                "DIS-",
+                "MIS-"
             ],
-            "meaningBreakdown": "U (prefix) + NT (root) + IE (suffix)"
+            "meaningBreakdown": "UN (prefix, reverses the action) + TIE (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L2_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To open a zipper.",
-            "explanation": "UN + ZIP = UNZIP.",
+            "hint": "To open a shirt by undoing the fastenings down the front.",
+            "explanation": "UN- reverses an action. UN- + BUTTON = UNBUTTON, meaning to open something that was buttoned.",
             "interactionType": "choice",
-            "correctAnswer": "UNZIP",
-            "rootWord": "ZIP",
+            "correctAnswer": "UNBUTTON",
+            "rootWord": "BUTTON",
             "options": [
-                "INTER-",
                 "DE-",
-                "UN-",
-                "IN-"
+                "MIS-",
+                "DIS-",
+                "UN-"
             ],
-            "meaningBreakdown": "U (prefix) + NZ (root) + IP (suffix)"
+            "meaningBreakdown": "UN (prefix, reverses the action) + BUTTON (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L2_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To open something that was folded.",
-            "explanation": "UN + FOLD = UNFOLD.",
+            "hint": "To remove boxes and bags from the back of a truck.",
+            "explanation": "UN- reverses an action. UN- + LOAD = UNLOAD, meaning to remove cargo from a vehicle.",
             "interactionType": "choice",
-            "correctAnswer": "UNFOLD",
-            "rootWord": "FOLD",
+            "correctAnswer": "UNLOAD",
+            "rootWord": "LOAD",
             "options": [
-                "-ATE",
-                "-IZE",
-                "INTER-",
-                "UN-"
+                "DIS-",
+                "EN-",
+                "UN-",
+                "MIS-"
             ],
-            "meaningBreakdown": "UN (prefix) + FO (root) + LD (suffix)"
+            "meaningBreakdown": "UN (prefix, reverses the action) + LOAD (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L3_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who dances.",
-            "explanation": "-ER means a person who does something. DANCE + ER = DANCER.",
+            "hint": "A person whose job is to help students learn.",
+            "explanation": "-ER identifies a person who performs an action. TEACH + -ER = TEACHER, a person who teaches.",
             "interactionType": "choice",
-            "correctAnswer": "DANCER",
-            "rootWord": "DANCE",
+            "correctAnswer": "TEACHER",
+            "rootWord": "TEACH",
             "options": [
-                "-IC",
-                "MID-",
                 "-ER",
-                "-FOLD"
+                "-HOOD",
+                "-MENT",
+                "-ISM"
             ],
-            "meaningBreakdown": "DA (prefix) + NC (root) + ER (suffix)"
+            "meaningBreakdown": "TEACH (root) + ER (suffix, 'person who does')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L3_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who drives.",
-            "explanation": "DRIVE + ER = DRIVER.",
+            "hint": "A person who creates pictures using a brush and colors.",
+            "explanation": "-ER identifies a person who performs an action. PAINT + -ER = PAINTER, a person who paints.",
             "interactionType": "choice",
-            "correctAnswer": "DRIVER",
-            "rootWord": "DRIVE",
+            "correctAnswer": "PAINTER",
+            "rootWord": "PAINT",
             "options": [
+                "-MENT",
                 "-ER",
-                "-LESS",
-                "-FUL",
-                "PRO-"
+                "-SHIP",
+                "-DOM"
             ],
-            "meaningBreakdown": "DR (prefix) + IV (root) + ER (suffix)"
+            "meaningBreakdown": "PAINT (root) + ER (suffix, 'person who does')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L3_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who works on a farm.",
-            "explanation": "FARM + ER = FARMER.",
+            "hint": "A person who moves through water using their arms and legs.",
+            "explanation": "-ER identifies a person who performs an action. SWIM + -ER = SWIMMER, a person who swims.",
             "interactionType": "choice",
-            "correctAnswer": "FARMER",
-            "rootWord": "FARM",
+            "correctAnswer": "SWIMMER",
+            "rootWord": "SWIM",
             "options": [
+                "-ISM",
+                "-HOOD",
                 "-ER",
-                "IM-",
-                "-IZE",
-                "-WARD"
+                "-MENT"
             ],
-            "meaningBreakdown": "FA (prefix) + RM (root) + ER (suffix)"
+            "meaningBreakdown": "SWIM (root) + ER (suffix, 'person who does')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L4_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Full of utility.",
-            "explanation": "-FUL means full of. USE + FUL = USEFUL.",
+            "hint": "Feeling positive that something good will happen.",
+            "explanation": "-FUL means 'full of'. HOPE + -FUL = HOPEFUL, meaning full of hope.",
             "interactionType": "choice",
-            "correctAnswer": "USEFUL",
-            "rootWord": "USE",
+            "correctAnswer": "HOPEFUL",
+            "rootWord": "HOPE",
             "options": [
-                "-OUS",
-                "-FUL",
-                "FORE-",
-                "-ISM"
+                "-DOM",
+                "-MENT",
+                "-SHIP",
+                "-FUL"
             ],
-            "meaningBreakdown": "US (prefix) + EF (root) + UL (suffix)"
+            "meaningBreakdown": "HOPE (root) + FUL (suffix, 'full of')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L4_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Full of caution.",
-            "explanation": "CARE + FUL = CAREFUL.",
+            "hint": "Filled with happiness, such as a celebration.",
+            "explanation": "-FUL means 'full of'. JOY + -FUL = JOYFUL, meaning full of joy.",
             "interactionType": "choice",
-            "correctAnswer": "CAREFUL",
-            "rootWord": "CARE",
+            "correctAnswer": "JOYFUL",
+            "rootWord": "JOY",
             "options": [
-                "-LY",
-                "-DOM",
                 "-FUL",
-                "DE-"
+                "-SHIP",
+                "-MENT",
+                "-HOOD"
             ],
-            "meaningBreakdown": "CA (prefix) + RE (root) + FUL (suffix)"
+            "meaningBreakdown": "JOY (root) + FUL (suffix, 'full of')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L4_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Giving a lot of aid.",
-            "explanation": "HELP + FUL = HELPFUL.",
+            "hint": "Describing an injury that causes a lot of discomfort.",
+            "explanation": "-FUL means 'full of'. PAIN + -FUL = PAINFUL, meaning full of pain.",
             "interactionType": "choice",
-            "correctAnswer": "HELPFUL",
-            "rootWord": "HELP",
+            "correctAnswer": "PAINFUL",
+            "rootWord": "PAIN",
             "options": [
+                "-MENT",
                 "-FUL",
-                "-ER",
-                "DE-",
-                "SUPER-"
+                "-SHIP",
+                "-ISM"
             ],
-            "meaningBreakdown": "HE (prefix) + LP (root) + FUL (suffix)"
+            "meaningBreakdown": "PAIN (root) + FUL (suffix, 'full of')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Going on forever, without a finish.",
-            "explanation": "-LESS means without. END + LESS = ENDLESS.",
+            "hint": "Showing no fear at all, even in danger.",
+            "explanation": "-LESS means 'without'. FEAR + -LESS = FEARLESS, meaning without fear.",
             "interactionType": "choice",
-            "correctAnswer": "ENDLESS",
-            "rootWord": "END",
+            "correctAnswer": "FEARLESS",
+            "rootWord": "FEAR",
             "options": [
-                "-LESS",
-                "DE-",
-                "ULTRA-",
-                "-IC"
+                "-HOOD",
+                "-MENT",
+                "-DOM",
+                "-LESS"
             ],
-            "meaningBreakdown": "EN (prefix) + DL (root) + ESS (suffix)"
+            "meaningBreakdown": "FEAR (root) + LESS (suffix, 'without')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Without utility.",
-            "explanation": "USE + LESS = USELESS.",
+            "hint": "Describing an insect bite that causes no injury.",
+            "explanation": "-LESS means 'without'. HARM + -LESS = HARMLESS, meaning without harm.",
             "interactionType": "choice",
-            "correctAnswer": "USELESS",
-            "rootWord": "USE",
+            "correctAnswer": "HARMLESS",
+            "rootWord": "HARM",
             "options": [
-                "-DOM",
-                "-OUS",
-                "-ISM",
-                "-LESS"
+                "-SHIP",
+                "-LESS",
+                "-MENT",
+                "-ISM"
             ],
-            "meaningBreakdown": "US (prefix) + EL (root) + ESS (suffix)"
+            "meaningBreakdown": "HARM (root) + LESS (suffix, 'without')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L5_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Without caution.",
-            "explanation": "CARE + LESS = CARELESS.",
+            "hint": "Describing bland food that has no flavor.",
+            "explanation": "-LESS means 'without'. TASTE + -LESS = TASTELESS, meaning without taste.",
             "interactionType": "choice",
-            "correctAnswer": "CARELESS",
-            "rootWord": "CARE",
+            "correctAnswer": "TASTELESS",
+            "rootWord": "TASTE",
             "options": [
                 "-LESS",
-                "OMNI-",
-                "-ITY",
-                "-IFY"
+                "-ISM",
+                "-HOOD",
+                "-MENT"
             ],
-            "meaningBreakdown": "CA (prefix) + REL (root) + ESS (suffix)"
+            "meaningBreakdown": "TASTE (root) + LESS (suffix, 'without')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "In a poor way.",
-            "explanation": "-LY forms an adverb from an adjective. BAD + LY = BADLY.",
+            "hint": "In a fast manner, without wasting time.",
+            "explanation": "-LY turns an adjective into an adverb describing how something is done. QUICK + -LY = QUICKLY.",
             "interactionType": "choice",
-            "correctAnswer": "BADLY",
-            "rootWord": "BAD",
+            "correctAnswer": "QUICKLY",
+            "rootWord": "QUICK",
             "options": [
+                "-DOM",
+                "-LESS",
                 "-LY",
-                "DIS-",
-                "SUB-",
-                "-ABLE"
+                "-FUL"
             ],
-            "meaningBreakdown": "B (prefix) + AD (root) + LY (suffix)"
+            "meaningBreakdown": "QUICK (root) + LY (suffix, forms an adverb)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "In an unhappy way.",
-            "explanation": "SAD + LY = SADLY.",
+            "hint": "In an unhurried manner, taking plenty of time.",
+            "explanation": "-LY turns an adjective into an adverb describing how something is done. SLOW + -LY = SLOWLY.",
             "interactionType": "choice",
-            "correctAnswer": "SADLY",
-            "rootWord": "SAD",
+            "correctAnswer": "SLOWLY",
+            "rootWord": "SLOW",
             "options": [
-                "IL-",
-                "-ENCE",
-                "-OUS",
+                "-FUL",
+                "-HOOD",
+                "-DOM",
                 "-LY"
             ],
-            "meaningBreakdown": "S (prefix) + AD (root) + LY (suffix)"
+            "meaningBreakdown": "SLOW (root) + LY (suffix, forms an adverb)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L6_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Without effort.",
-            "explanation": "EASY + LY = EASILY.",
+            "hint": "Speaking in a hushed, gentle voice.",
+            "explanation": "-LY turns an adjective into an adverb describing how something is done. QUIET + -LY = QUIETLY.",
             "interactionType": "choice",
-            "correctAnswer": "EASILY",
-            "rootWord": "EASY",
+            "correctAnswer": "QUIETLY",
+            "rootWord": "QUIET",
             "options": [
-                "-WARD",
-                "-ENCE",
                 "-LY",
-                "DE-"
+                "-FUL",
+                "-DOM",
+                "-ISM"
             ],
-            "meaningBreakdown": "EA (prefix) + SI (root) + LY (suffix)"
+            "meaningBreakdown": "QUIET (root) + LY (suffix, forms an adverb)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L7_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "The state of being sick.",
-            "explanation": "-NESS forms a noun from an adjective. ILL + NESS = ILLNESS.",
+            "hint": "The quality a person shows when they help others generously.",
+            "explanation": "-NESS turns an adjective into a noun naming a state or quality. KIND + -NESS = KINDNESS.",
             "interactionType": "choice",
-            "correctAnswer": "ILLNESS",
-            "rootWord": "ILL",
+            "correctAnswer": "KINDNESS",
+            "rootWord": "KIND",
             "options": [
-                "TRANS-",
-                "-ION",
-                "SEMI-",
-                "-NESS"
+                "-FUL",
+                "-NESS",
+                "-ISH",
+                "-DOM"
             ],
-            "meaningBreakdown": "IL (prefix) + LN (root) + ESS (suffix)"
+            "meaningBreakdown": "KIND (root) + NESS (suffix, forms a noun of state)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L7_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "The state of feeling unhappy.",
-            "explanation": "SAD + NESS = SADNESS.",
+            "hint": "The state of having little physical strength.",
+            "explanation": "-NESS turns an adjective into a noun naming a state or quality. WEAK + -NESS = WEAKNESS.",
             "interactionType": "choice",
-            "correctAnswer": "SADNESS",
-            "rootWord": "SAD",
+            "correctAnswer": "WEAKNESS",
+            "rootWord": "WEAK",
             "options": [
+                "-ISM",
                 "-FUL",
-                "IM-",
-                "-FOLD",
-                "-NESS"
+                "-NESS",
+                "-DOM"
             ],
-            "meaningBreakdown": "SA (prefix) + DN (root) + ESS (suffix)"
+            "meaningBreakdown": "WEAK (root) + NESS (suffix, forms a noun of state)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L7_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "The state of being dark.",
-            "explanation": "DARK + NESS = DARKNESS.",
+            "hint": "The smooth, gentle quality of a fresh pillow.",
+            "explanation": "-NESS turns an adjective into a noun naming a state or quality. SOFT + -NESS = SOFTNESS.",
             "interactionType": "choice",
-            "correctAnswer": "DARKNESS",
-            "rootWord": "DARK",
+            "correctAnswer": "SOFTNESS",
+            "rootWord": "SOFT",
             "options": [
-                "OVER-",
-                "-DOM",
-                "-NESS",
-                "POST-"
+                "-ISM",
+                "-FUL",
+                "-HOOD",
+                "-NESS"
             ],
-            "meaningBreakdown": "DA (prefix) + RKN (root) + ESS (suffix)"
+            "meaningBreakdown": "SOFT (root) + NESS (suffix, forms a noun of state)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L8_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To open something again after it was closed.",
-            "explanation": "RE + OPEN = REOPEN.",
+            "hint": "To hold a different opinion from someone else.",
+            "explanation": "DIS- means 'not' or 'the opposite of'. DIS- + AGREE = DISAGREE, meaning to not agree.",
             "interactionType": "choice",
-            "correctAnswer": "REOPEN",
-            "rootWord": "OPEN",
+            "correctAnswer": "DISAGREE",
+            "rootWord": "AGREE",
             "options": [
-                "FORE-",
-                "RE-",
-                "IM-",
-                "-ER"
+                "DIS-",
+                "UN-",
+                "MIS-",
+                "RE-"
             ],
-            "meaningBreakdown": "RE (prefix) + OP (root) + EN (suffix)"
+            "meaningBreakdown": "DIS (prefix, 'not') + AGREE (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L8_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To play something again.",
-            "explanation": "RE + PLAY = REPLAY.",
+            "hint": "Describing someone who lies or cheats.",
+            "explanation": "DIS- means 'not'. DIS- + HONEST = DISHONEST, meaning not honest.",
             "interactionType": "choice",
-            "correctAnswer": "REPLAY",
-            "rootWord": "PLAY",
+            "correctAnswer": "DISHONEST",
+            "rootWord": "HONEST",
             "options": [
-                "-ARY",
                 "IN-",
-                "RE-",
-                "-OR"
+                "DIS-",
+                "UN-",
+                "NON-"
             ],
-            "meaningBreakdown": "RE (prefix) + PL (root) + AY (suffix)"
+            "meaningBreakdown": "DIS (prefix, 'not') + HONEST (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L8_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To tell a story again.",
-            "explanation": "RE + TELL = RETELL.",
+            "hint": "To refuse to follow a rule or instruction.",
+            "explanation": "DIS- means 'not' or 'the opposite of'. DIS- + OBEY = DISOBEY, meaning to not obey.",
             "interactionType": "choice",
-            "correctAnswer": "RETELL",
-            "rootWord": "TELL",
+            "correctAnswer": "DISOBEY",
+            "rootWord": "OBEY",
             "options": [
-                "-FOLD",
                 "RE-",
-                "IL-",
-                "SUPER-"
+                "MIS-",
+                "DIS-",
+                "UN-"
             ],
-            "meaningBreakdown": "RE (prefix) + TE (root) + LL (suffix)"
+            "meaningBreakdown": "DIS (prefix, 'not') + OBEY (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Make it the opposite of fastened.",
-            "explanation": "UN + LOCK = UNLOCK.",
+            "hint": "Describing clothing that can safely go in the washing machine.",
+            "explanation": "-ABLE means 'capable of being'. WASH + -ABLE = WASHABLE, meaning able to be washed.",
             "interactionType": "choice",
-            "correctAnswer": "UNLOCK",
-            "rootWord": "LOCK",
+            "correctAnswer": "WASHABLE",
+            "rootWord": "WASH",
             "options": [
-                "CO-",
-                "UN-",
-                "IN-",
-                "UNI-"
+                "-ISH",
+                "-FUL",
+                "-ABLE",
+                "-LESS"
             ],
-            "meaningBreakdown": "UN (prefix) + LO (root) + CK (suffix)"
+            "meaningBreakdown": "WASH (root) + ABLE (suffix, 'capable of being')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "To take things out of a suitcase or box.",
-            "explanation": "UN + PACK = UNPACK.",
+            "hint": "Describing a glass vase that could shatter if dropped.",
+            "explanation": "-ABLE means 'capable of being'. BREAK + -ABLE = BREAKABLE, meaning able to be broken.",
             "interactionType": "choice",
-            "correctAnswer": "UNPACK",
-            "rootWord": "PACK",
+            "correctAnswer": "BREAKABLE",
+            "rootWord": "BREAK",
             "options": [
-                "UN-",
-                "POST-",
-                "-MENT",
-                "-HOOD"
+                "-DOM",
+                "-ISH",
+                "-FUL",
+                "-ABLE"
             ],
-            "meaningBreakdown": "UN (prefix) + PA (root) + CK (suffix)"
+            "meaningBreakdown": "BREAK (root) + ABLE (suffix, 'capable of being')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L9_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "Make it the opposite of covered.",
-            "explanation": "UN + WRAP = UNWRAP.",
+            "hint": "Describing a film that is pleasant and fun to watch.",
+            "explanation": "-ABLE means 'capable of being'. ENJOY + -ABLE = ENJOYABLE, meaning able to be enjoyed.",
             "interactionType": "choice",
-            "correctAnswer": "UNWRAP",
-            "rootWord": "WRAP",
+            "correctAnswer": "ENJOYABLE",
+            "rootWord": "ENJOY",
             "options": [
-                "-IC",
-                "NON-",
-                "UN-",
-                "PRO-"
+                "-ABLE",
+                "-LESS",
+                "-ISH",
+                "-FUL"
             ],
-            "meaningBreakdown": "UN (prefix) + WR (root) + AP (suffix)"
+            "meaningBreakdown": "ENJOY (root) + ABLE (suffix, 'capable of being')"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L10_Q1",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who sings.",
-            "explanation": "SING + ER = SINGER.",
+            "hint": "A short clip that shows part of a movie before its release.",
+            "explanation": "PRE- means 'before'. PRE- + VIEW = PREVIEW, meaning to view something before it happens.",
             "interactionType": "choice",
-            "correctAnswer": "SINGER",
-            "rootWord": "SING",
+            "correctAnswer": "PREVIEW",
+            "rootWord": "VIEW",
             "options": [
-                "-OR",
-                "MULTI-",
-                "ULTRA-",
-                "-ER"
+                "OVER-",
+                "PRE-",
+                "INTER-",
+                "RE-"
             ],
-            "meaningBreakdown": "SI (prefix) + NG (root) + ER (suffix)"
+            "meaningBreakdown": "PRE (prefix, 'before') + VIEW (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L10_Q2",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who works.",
-            "explanation": "WORK + ER = WORKER.",
+            "hint": "The classroom young children attend before starting elementary school.",
+            "explanation": "PRE- means 'before'. PRE- + SCHOOL = PRESCHOOL, meaning before regular school.",
             "interactionType": "choice",
-            "correctAnswer": "WORKER",
-            "rootWord": "WORK",
+            "correctAnswer": "PRESCHOOL",
+            "rootWord": "SCHOOL",
             "options": [
-                "DE-",
-                "-IZE",
-                "OMNI-",
-                "-ER"
+                "PRE-",
+                "RE-",
+                "OUT-",
+                "MIS-"
             ],
-            "meaningBreakdown": "WO (prefix) + RK (root) + ER (suffix)"
+            "meaningBreakdown": "PRE (prefix, 'before') + SCHOOL (root)"
         },
         {
             "id": "VOC_PREFIXSUFFIX_L10_Q3",
             "instruction": "Select the correct prefix or suffix.",
-            "hint": "One who writes books or stories.",
-            "explanation": "WRITE + ER = WRITER.",
+            "hint": "To pay for a service, like a phone plan, before you use it.",
+            "explanation": "PRE- means 'before'. PRE- + PAY = PREPAY, meaning to pay before receiving the service.",
             "interactionType": "choice",
-            "correctAnswer": "WRITER",
-            "rootWord": "WRITE",
+            "correctAnswer": "PREPAY",
+            "rootWord": "PAY",
             "options": [
-                "-HOOD",
-                "-ER",
-                "-IFY",
-                "-DOM"
+                "MIS-",
+                "DE-",
+                "OUT-",
+                "PRE-"
             ],
-            "meaningBreakdown": "WR (prefix) + IT (root) + ER (suffix)"
+            "meaningBreakdown": "PRE (prefix, 'before') + PAY (root)"
         }
     ],
     "gameType": "prefixSuffix",
