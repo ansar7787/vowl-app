@@ -1108,8 +1108,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         children: [
           // 1. Clean Drop Shadow
           Container(
-            width: isCurrent ? 100.r : 85.r,
-            height: isCurrent ? 100.r : 85.r,
+            width: 100.r,
+            height: 100.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               boxShadow: [
@@ -1130,8 +1130,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
 
           // 2. Main Disk Body
           Container(
-                width: isCurrent ? 100.r : 85.r,
-                height: isCurrent ? 100.r : 85.r,
+                width: 100.r,
+                height: 100.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isTollGate
