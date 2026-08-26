@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -145,18 +146,19 @@ class ContinueLearningCard extends StatelessWidget {
                           ),
                           SizedBox(height: 6.h),
                           // Title
-                          Text(
+                          AutoSizeText(
                             title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 20.sp,
+                              fontSize: 22.sp, // slightly larger, allowed to scale down
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
                               letterSpacing: -0.3,
                               height: 1.1,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            maxLines: 2,
+                            minFontSize: 14,
+                            overflow: TextOverflow.visible,
                           ),
                         ],
                       ),
@@ -176,58 +178,68 @@ class ContinueLearningCard extends StatelessWidget {
                       child: Icon(
                         Icons.play_arrow_rounded,
                         color: Colors.white,
-                        size: 24.r,
+                        size: 28.r, // slightly larger
                       ),
+                    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveX(
+                      begin: 0,
+                      end: 4.w,
+                      duration: 800.ms,
+                      curve: Curves.easeInOut,
                     ),
                   ],
                 ),
                 if (!isNewUser) ...[
-                  SizedBox(height: 16.h),
-                  // Mini progress bar
-                  Stack(
+                  SizedBox(height: 20.h),
+                  Row(
                     children: [
-                      Container(
-                        height: 6.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withValues(alpha: 0.15),
-                          borderRadius: BorderRadius.circular(3.r),
+                      // Thick progress bar
+                      Expanded(
+                        child: Stack(
+                          children: [
+                            Container(
+                              height: 10.h,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.black.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(5.r),
+                              ),
+                            ),
+                            FractionallySizedBox(
+                              widthFactor: progress.clamp(0.0, 1.0),
+                              child: Container(
+                                    height: 10.h,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5.r),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.white.withValues(alpha: 0.5),
+                                          blurRadius: 8,
+                                        ),
+                                      ],
+                                    ),
+                                  )
+                                  .animate(onPlay: (c) => c.repeat())
+                                  .shimmer(
+                                    duration: 2000.ms,
+                                    color: Colors.white.withValues(alpha: 0.4),
+                                  ),
+                            ),
+                          ],
                         ),
                       ),
-                      FractionallySizedBox(
-                        widthFactor: progress.clamp(0.02, 1.0),
-                        child: Container(
-                              height: 6.h,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(3.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white.withValues(alpha: 0.4),
-                                    blurRadius: 6,
-                                  ),
-                                ],
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat())
-                            .shimmer(
-                              duration: 2500.ms,
-                              color: Colors.white.withValues(alpha: 0.3),
-                            ),
+                      SizedBox(width: 16.w),
+                      // Progress text
+                      Text(
+                        '$cleared / $max',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                        ),
                       ),
                     ],
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    '$cleared / $max ${context.tr('home.levels_word', fallback: 'levels')}',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white.withValues(alpha: 0.8),
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ],
