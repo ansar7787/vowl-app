@@ -171,20 +171,58 @@ class _TrophyRoomView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 12.h),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.r),
-                    child: LinearProgressIndicator(
-                      value: state.totalPossibleBadges > 0
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      final progress = state.totalPossibleBadges > 0
                           ? totalEarned / state.totalPossibleBadges
-                          : 0,
-                      minHeight: 8.h,
-                      backgroundColor: isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : Colors.black.withValues(alpha: 0.05),
-                      valueColor: const AlwaysStoppedAnimation<Color>(
-                        Color(0xFFFFD700),
-                      ),
-                    ),
+                          : 0.0;
+                      return Container(
+                        height: 12.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? const Color(0xFF1E293B)
+                              : const Color(0xFFE2E8F0),
+                          borderRadius: BorderRadius.circular(10.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.1),
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: Stack(
+                          children: [
+                            AnimatedContainer(
+                              duration: const Duration(milliseconds: 800),
+                              curve: Curves.easeOutCubic,
+                              width: constraints.maxWidth * progress,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.r),
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xFFFFD700),
+                                    Color(0xFFF59E0B),
+                                  ],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight,
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(
+                                      0xFFF59E0B,
+                                    ).withValues(alpha: 0.4),
+                                    blurRadius: 8,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -222,92 +260,108 @@ class _TrophyRoomView extends StatelessWidget {
   Widget _buildFilterTabs(BuildContext context, bool isDark) {
     return BlocBuilder<TrophyRoomCubit, TrophyRoomState>(
       builder: (context, state) {
+        final isLegendary = state.currentFilter == TrophyFilter.legendary;
         return Container(
+          height: 52.h,
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.05)
-                : Colors.black.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          child: Row(
-            children: [
-              // 'All' tab removed for a cleaner 50/50 split design
-              _buildTab(
-                context,
-                title: context.tr(
-                  'profile.filter_standard',
-                  fallback: 'Standard',
-                ),
-                isSelected: state.currentFilter == TrophyFilter.standard,
-                onTap: () => context.read<TrophyRoomCubit>().updateFilter(
-                  TrophyFilter.standard,
-                ),
-                isDark: isDark,
-              ),
-              _buildTab(
-                context,
-                title: context.tr(
-                  'profile.filter_legendary',
-                  fallback: 'Legendary',
-                ),
-                isSelected: state.currentFilter == TrophyFilter.legendary,
-                onTap: () => context.read<TrophyRoomCubit>().updateFilter(
-                  TrophyFilter.legendary,
-                ),
-                isDark: isDark,
+            color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
+            borderRadius: BorderRadius.circular(30.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
             ],
+          ),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final tabWidth = constraints.maxWidth / 2;
+              return Stack(
+                children: [
+                  AnimatedPositioned(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeOutCubic,
+                    left: isLegendary ? tabWidth : 0,
+                    top: 0,
+                    bottom: 0,
+                    width: tabWidth,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: isDark ? const Color(0xFF334155) : Colors.white,
+                        borderRadius: BorderRadius.circular(24.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.08),
+                            blurRadius: 8,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      _buildSlidingTab(
+                        title: context.tr(
+                          'profile.filter_standard',
+                          fallback: 'Standard',
+                        ),
+                        isSelected: !isLegendary,
+                        isDark: isDark,
+                        onTap: () => context
+                            .read<TrophyRoomCubit>()
+                            .updateFilter(TrophyFilter.standard),
+                      ),
+                      _buildSlidingTab(
+                        title: context.tr(
+                          'profile.filter_legendary',
+                          fallback: 'Legendary',
+                        ),
+                        isSelected: isLegendary,
+                        isDark: isDark,
+                        onTap: () => context
+                            .read<TrophyRoomCubit>()
+                            .updateFilter(TrophyFilter.legendary),
+                      ),
+                    ],
+                  ),
+                ],
+              );
+            },
           ),
         ).animate().fadeIn(duration: 400.ms).slideY(begin: -0.1, end: 0);
       },
     );
   }
 
-  Widget _buildTab(
-    BuildContext context, {
+  Widget _buildSlidingTab({
     required String title,
     required bool isSelected,
     required VoidCallback onTap,
     required bool isDark,
   }) {
     return Expanded(
-      child: ScaleButton(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
         onTap: () {
           Haptics.vibrate(HapticsType.light);
           onTap();
         },
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeInOut,
-          padding: EdgeInsets.symmetric(vertical: 10.h),
-          decoration: BoxDecoration(
-            color: isSelected
-                ? (isDark ? const Color(0xFF334155) : Colors.white)
-                : Colors.transparent,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: isSelected
-                ? [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.05),
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
-                    ),
-                  ]
-                : [],
-          ),
-          child: Center(
-            child: Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 14.sp,
-                fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
-                color: isSelected
-                    ? (isDark ? Colors.white : const Color(0xFF0F172A))
-                    : (isDark ? Colors.white54 : Colors.black54),
-              ),
+        child: Center(
+          child: AnimatedDefaultTextStyle(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOutCubic,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 14.sp,
+              fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+              color: isSelected
+                  ? (isDark ? Colors.white : const Color(0xFF0F172A))
+                  : (isDark ? Colors.white54 : Colors.black54),
             ),
+            child: Text(title),
           ),
         ),
       ),
