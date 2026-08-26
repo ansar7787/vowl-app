@@ -22,8 +22,11 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/presentation/widgets/key_shop_bottom_sheet.dart';
 import 'package:vowl/core/utils/age_gate_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -36,6 +39,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   final math.Random _random = math.Random();
   final List<Map<String, dynamic>> _activeCoins = [];
   late ConfettiController _confettiController;
+  int? _globalRank;
 
   @override
   void initState() {
@@ -43,6 +47,35 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
     _confettiController = ConfettiController(
       duration: const Duration(seconds: 2),
     );
+    _fetchKidsGlobalRank();
+  }
+
+  Future<void> _fetchKidsGlobalRank() async {
+    try {
+      final repo = di.sl<LeaderboardRepository>();
+      final result = await repo.getTopUsers(limit: 100);
+
+      if (!mounted) return;
+
+      result.fold((_) {}, (data) {
+        final sorted = List<UserEntity>.from(data.users)
+          ..sort((a, b) {
+            final aL = a.kidsTotalLevelsCompleted;
+            final bL = b.kidsTotalLevelsCompleted;
+            if (bL != aL) return bL.compareTo(aL);
+            return b.kidsCoins.compareTo(a.kidsCoins); // Tie-breaker for kids
+          });
+        final currentUser = context.read<AuthBloc>().state.user;
+        if (currentUser != null && mounted) {
+          final idx = sorted.indexWhere((u) => u.id == currentUser.id);
+          setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
+        }
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('KidsZoneScreen: failed to fetch global rank: $e');
+      }
+    }
   }
 
   @override
@@ -142,7 +175,10 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 16.h),
-                          KidsGlobalProgressCard(user: user),
+                          KidsGlobalProgressCard(
+                            user: user,
+                            globalRank: _globalRank,
+                          ),
                         ],
                       ),
                     ),
