@@ -263,6 +263,7 @@ class _TrophyRoomView extends StatelessWidget {
         final isLegendary = state.currentFilter == TrophyFilter.legendary;
         return Container(
           height: 52.h,
+          width: double.infinity,
           padding: EdgeInsets.all(4.r),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E293B) : const Color(0xFFF1F5F9),
