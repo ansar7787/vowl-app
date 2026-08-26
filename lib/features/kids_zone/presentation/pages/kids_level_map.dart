@@ -253,7 +253,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         final prevUnlocked =
             previous.user?.unlockedLevels[widget.gameType] ?? 1;
         final currUnlocked = current.user?.unlockedLevels[widget.gameType] ?? 1;
-        return prevUnlocked != currUnlocked;
+        final prevCompleted = previous.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final currCompleted = current.user?.completedLevels[widget.gameType]?.length ?? 0;
+        return prevUnlocked != currUnlocked || prevCompleted != currCompleted;
       },
       listener: (context, state) {
         // Trigger smooth unlock-path-draw animation

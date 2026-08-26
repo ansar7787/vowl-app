@@ -307,9 +307,13 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     _previousUnlockedLevel ??= unlockedLevels;
 
     return BlocListener<AuthBloc, AuthState>(
-      listenWhen: (prev, curr) =>
-          prev.user?.unlockedLevels[widget.gameType] !=
-          curr.user?.unlockedLevels[widget.gameType],
+      listenWhen: (prev, curr) {
+        final prevUnlocked = prev.user?.unlockedLevels[widget.gameType] ?? 1;
+        final currUnlocked = curr.user?.unlockedLevels[widget.gameType] ?? 1;
+        final prevCompleted = prev.user?.completedLevels[widget.gameType]?.length ?? 0;
+        final currCompleted = curr.user?.completedLevels[widget.gameType]?.length ?? 0;
+        return prevUnlocked != currUnlocked || prevCompleted != currCompleted;
+      },
       listener: (context, state) {
         // Trigger smooth unlock-path-draw animation
         final prevLevel = _previousUnlockedLevel;
