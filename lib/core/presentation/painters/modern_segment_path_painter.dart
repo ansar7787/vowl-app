@@ -18,7 +18,7 @@ class ModernSegmentPathPainter extends CustomPainter {
   final bool isLast;
   final bool isDark;
   final bool isTollGate;
-  final double glowPulse;
+  final Animation<double>? glowAnimation;
 
   const ModernSegmentPathPainter({
     required this.currentPoint,
@@ -33,8 +33,8 @@ class ModernSegmentPathPainter extends CustomPainter {
     required this.isLast,
     required this.isDark,
     this.isTollGate = false,
-    this.glowPulse = 0.0,
-  });
+    this.glowAnimation,
+  }) : super(repaint: glowAnimation);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -216,18 +216,17 @@ class ModernSegmentPathPainter extends CustomPainter {
       }
     }
 
-    // ── Current node subtle beacon glow ──
-    if (glowPulse > 0.0) {
-      final pulseRadius = 50.0 + 8.0 * glowPulse;
-      canvas.drawCircle(
-        Offset(nodeX, centerY),
-        pulseRadius,
-        Paint()
-          ..color = activeColor.withValues(alpha: 0.28 * (1.0 - glowPulse))
-          ..style = PaintingStyle.stroke
-          ..strokeWidth = 2.5
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 4.0),
-      );
+    // ── Current-Node glow ring at the node center ──
+    final double glowValue = glowAnimation?.value ?? 0.0;
+    
+    // The subtle ambient glow behind the current unlocked level
+    if (glowValue > 0.0) {
+      final glowPaint = Paint()
+        ..color = activeColor.withValues(alpha: 0.15 * glowValue)
+        ..style = PaintingStyle.fill
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 24.0 * glowValue);
+        
+      canvas.drawCircle(Offset(nodeX, centerY), 60.0 + (10.0 * glowValue), glowPaint);
     }
   }
 
@@ -250,10 +249,10 @@ class ModernSegmentPathPainter extends CustomPainter {
   bool shouldRepaint(covariant ModernSegmentPathPainter oldDelegate) {
     return oldDelegate.isCompleted != isCompleted ||
         oldDelegate.isPrevCompleted != isPrevCompleted ||
+        oldDelegate.isLast != isLast ||
         oldDelegate.isDark != isDark ||
-        oldDelegate.activeColor != activeColor ||
         oldDelegate.isTollGate != isTollGate ||
-        oldDelegate.glowPulse != glowPulse ||
+        oldDelegate.glowAnimation != glowAnimation ||
         oldDelegate.currentPoint != currentPoint ||
         oldDelegate.nextPoint != nextPoint ||
         oldDelegate.prevPoint != prevPoint;

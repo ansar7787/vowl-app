@@ -238,7 +238,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         _previousUnlockedLevel = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
-          _isUnlockAnimating = true;
+          setState(() {
+            _isUnlockAnimating = true;
+          });
           _unlockPathController.reset();
 
           // Wait until the user returns to the map before playing the animation
@@ -564,7 +566,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
     return AnimatedBuilder(
       animation: Listenable.merge([
         _unlockPathController,
-        _glowController,
         _entryController,
       ]),
       builder: (context, child) {
@@ -587,8 +588,6 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             );
           }
         }
-
-        final glowValue = Curves.easeInOutSine.transform(_glowController.value);
 
         return Opacity(
           opacity: entryT,
@@ -615,7 +614,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                 level: level,
                 pathProgress: pathProgress,
                 isCurrent: isCurrent,
-                glowPulse: isCurrent ? glowValue : 0.0,
+                glowAnimation: isCurrent ? _glowController : null,
               ),
               child: child,
             ),

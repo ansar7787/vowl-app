@@ -11,7 +11,7 @@ class SegmentPathPainter extends CustomPainter {
   final int level;
   final double pathProgress; // 0.0 → 1.0: animated path draw progress
   final bool isCurrent;
-  final double glowPulse; // 0.0 → 1.0: glow pulse for current node path
+  final Animation<double>? glowAnimation; // 0.0 → 1.0: glow pulse for current node path
 
   SegmentPathPainter({
     required this.incomingColor,
@@ -23,8 +23,8 @@ class SegmentPathPainter extends CustomPainter {
     required this.level,
     this.pathProgress = 1.0,
     this.isCurrent = false,
-    this.glowPulse = 0.0,
-  });
+    this.glowAnimation,
+  }) : super(repaint: glowAnimation);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -115,14 +115,16 @@ class SegmentPathPainter extends CustomPainter {
           metric.length * pathProgress,
         );
 
+        final double glowValue = glowAnimation?.value ?? 0.0;
+        
         // If this is the "just-unlocked" path, draw a glow underneath
-        if (glowPulse > 0.0) {
+        if (glowValue > 0.0) {
           final glowPaint = Paint()
-            ..color = outgoingColor.withValues(alpha: 0.3 * glowPulse)
+            ..color = outgoingColor.withValues(alpha: 0.3 * glowValue)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = (22.r + 14.r * glowPulse)
+            ..strokeWidth = (22.r + 14.r * glowValue)
             ..strokeCap = StrokeCap.butt
-            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowPulse);
+            ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowValue);
           canvas.drawPath(extractedPath, glowPaint);
         }
 
@@ -155,12 +157,13 @@ class SegmentPathPainter extends CustomPainter {
     }
 
     // ── Current-Node glow ring at the node center ──
-    if (isCurrent && glowPulse > 0.0) {
+    final double glowValue = glowAnimation?.value ?? 0.0;
+    if (isCurrent && glowValue > 0.0) {
       final glowPaint = Paint()
-        ..color = incomingColor.withValues(alpha: 0.25 * glowPulse)
+        ..color = incomingColor.withValues(alpha: 0.25 * glowValue)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 4.r
-        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 12.r * glowPulse);
+        ..maskFilter = MaskFilter.blur(BlurStyle.normal, 12.r * glowValue);
       canvas.drawCircle(Offset(startX, centerY), 55.r, glowPaint);
     }
   }
@@ -175,6 +178,6 @@ class SegmentPathPainter extends CustomPainter {
         oldDelegate.level != level ||
         oldDelegate.pathProgress != pathProgress ||
         oldDelegate.isCurrent != isCurrent ||
-        oldDelegate.glowPulse != glowPulse;
+        oldDelegate.glowAnimation != glowAnimation;
   }
 }

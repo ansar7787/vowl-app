@@ -299,7 +299,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         _previousUnlockedLevel = currLevel;
 
         if (prevLevel != null && currLevel > prevLevel) {
-          _justUnlockedLevel = currLevel;
+          setState(() {
+            _justUnlockedLevel = currLevel;
+          });
           _unlockPathController.reset();
 
           // Wait until the user returns to the map before playing the animation
@@ -491,15 +493,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                           nodeAnimation = const AlwaysStoppedAnimation(0);
                         }
 
-                        final glowValue = isCurrent
-                            ? Curves.easeInOutSine.transform(
-                                _glowController.value,
-                              )
-                            : 0.0;
-
                         return RepaintBoundary(
                           child: AnimatedBuilder(
-                            animation: nodeAnimation,
+                            animation: Listenable.merge([nodeAnimation, _unlockPathController]),
                             builder: (context, child) {
                               // Apply unlock celebration: scale bounce + glow burst
                               Widget result = CustomPaint(
@@ -524,7 +520,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   isLast: index == _totalLevels - 1,
                                   isDark: isDark,
                                   isTollGate: isTollGateSegment,
-                                  glowPulse: glowValue,
+                                  glowAnimation: isCurrent ? _glowController : null,
                                 ),
                                 child: child,
                               );
