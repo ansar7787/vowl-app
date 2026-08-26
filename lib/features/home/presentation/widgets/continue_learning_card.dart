@@ -248,6 +248,12 @@ class ContinueLearningCard extends StatelessWidget {
                               ),
                             ],
                           ),
+                        ).animate().scaleX(
+                          begin: 0,
+                          end: 1,
+                          duration: 800.ms,
+                          curve: Curves.easeOutQuart,
+                          alignment: Alignment.centerLeft,
                         ),
                       ),
                     ],
