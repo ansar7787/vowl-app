@@ -240,13 +240,29 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         if (prevLevel != null && currLevel > prevLevel) {
           _isUnlockAnimating = true;
           _unlockPathController.reset();
-          _unlockPathController.forward().then((_) {
-            if (mounted) {
-              setState(() => _isUnlockAnimating = false);
+
+          // Wait until the user returns to the map before playing the animation
+          Timer.periodic(const Duration(milliseconds: 200), (timer) {
+            if (!mounted) {
+              timer.cancel();
+              return;
+            }
+            if (ModalRoute.of(context)?.isCurrent == true) {
+              timer.cancel();
+              // Slight delay for dramatic effect after the screen transition finishes
+              Future.delayed(const Duration(milliseconds: 600), () {
+                if (mounted) {
+                  _scrollToUnlockedLevel(); // Scroll exactly as the animation starts
+                  _unlockPathController.forward().then((_) {
+                    if (mounted) setState(() => _isUnlockAnimating = false);
+                  });
+                }
+              });
             }
           });
+        } else {
+          _scrollToUnlockedLevel();
         }
-        _scrollToUnlockedLevel();
       },
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {

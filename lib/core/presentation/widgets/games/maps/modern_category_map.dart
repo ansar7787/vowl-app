@@ -301,18 +301,33 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
         if (prevLevel != null && currLevel > prevLevel) {
           _justUnlockedLevel = currLevel;
           _unlockPathController.reset();
-          _unlockPathController.forward().then((_) {
+
+          // Wait until the user returns to the map before playing the animation
+          Timer.periodic(const Duration(milliseconds: 200), (timer) {
+            if (!mounted) {
+              timer.cancel();
+              return;
+            }
+            if (ModalRoute.of(context)?.isCurrent == true) {
+              timer.cancel();
+              // Slight delay for dramatic effect after the screen transition finishes
+              Future.delayed(const Duration(milliseconds: 600), () {
+                if (mounted) {
+                  _scrollToCurrentLevel(animate: true); // Scroll exactly as the animation starts
+                  _unlockPathController.forward().then((_) {
+                    if (mounted) setState(() => _justUnlockedLevel = null);
+                  });
+                }
+              });
+            }
+          });
+        } else {
+          Future.delayed(const Duration(milliseconds: 1500), () {
             if (mounted) {
-              setState(() => _justUnlockedLevel = null);
+              _scrollToCurrentLevel(animate: true);
             }
           });
         }
-
-        Future.delayed(const Duration(milliseconds: 1500), () {
-          if (mounted) {
-            _scrollToCurrentLevel(animate: true);
-          }
-        });
       },
       child: PopScope(
         canPop: false,
