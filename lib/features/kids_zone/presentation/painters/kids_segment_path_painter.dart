@@ -6,6 +6,7 @@ class SegmentPathPainter extends CustomPainter {
   final Color outgoingColor;
   final double currentOffset;
   final double nextOffset;
+  final double prevOffset; // Added to calculate incoming curve from previous node
   final bool isLast;
   final int level;
   final double pathProgress; // 0.0 → 1.0: animated path draw progress
@@ -17,6 +18,7 @@ class SegmentPathPainter extends CustomPainter {
     required this.outgoingColor,
     required this.currentOffset,
     required this.nextOffset,
+    required this.prevOffset,
     required this.isLast,
     required this.level,
     this.pathProgress = 1.0,
@@ -28,6 +30,7 @@ class SegmentPathPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final double startX = currentOffset + 50.r;
     final double endX = nextOffset + 50.r;
+    final double prevX = prevOffset + 50.r;
     final double centerY = size.height / 2;
 
     final incomingPath = Path();
@@ -42,24 +45,40 @@ class SegmentPathPainter extends CustomPainter {
       );
 
       incomingPath.moveTo(size.width / 2, headerGap);
-      incomingPath.lineTo(startX, centerY);
+      incomingPath.cubicTo(
+        size.width / 2, 0, 
+        startX, 0, 
+        startX, centerY,
+      );
     } else {
-      // 2. Continuous Path from previous level
-      incomingPath.moveTo(startX, 0);
-      incomingPath.lineTo(startX, centerY);
+      // 2. Continuous Bouncy Curve from previous level
+      // The previous segment ended halfway between prevX and startX at the boundary
+      final double boundaryX = (prevX + startX) / 2;
+      incomingPath.moveTo(boundaryX, 0);
+      
+      incomingPath.cubicTo(
+        boundaryX + (startX - prevX) * 0.25, 
+        centerY * 0.5,
+        startX, 
+        centerY * 0.5,
+        startX, 
+        centerY,
+      );
     }
 
     final outgoingPath = Path();
     if (!isLast) {
       outgoingPath.moveTo(startX, centerY);
-      // 3. Smooth Modern Curve to next level
-      final midY = centerY + (size.height - centerY) * 0.5;
+      
+      // 3. Smooth Bouncy Curve to next level boundary
+      final double boundaryX = (startX + endX) / 2;
+      
       outgoingPath.cubicTo(
-        startX,
-        centerY + 50.h,
-        endX,
-        midY - 50.h,
-        endX,
+        startX, 
+        centerY + (size.height - centerY) * 0.5,
+        boundaryX - (endX - startX) * 0.25, 
+        size.height - (size.height - centerY) * 0.5,
+        boundaryX, 
         size.height,
       );
     }
@@ -68,7 +87,7 @@ class SegmentPathPainter extends CustomPainter {
     final shadowPaint = Paint()
       ..color = Colors.black.withValues(alpha: 0.05)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 14.r
+      ..strokeWidth = 22.r
       ..strokeCap = StrokeCap.butt
       ..maskFilter = MaskFilter.blur(BlurStyle.normal, 4.r);
 
@@ -81,7 +100,7 @@ class SegmentPathPainter extends CustomPainter {
     final incomingPaint = Paint()
       ..color = incomingColor
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 14.r
+      ..strokeWidth = 22.r
       ..strokeCap = StrokeCap.butt;
 
     canvas.drawPath(incomingPath, incomingPaint);
@@ -101,7 +120,7 @@ class SegmentPathPainter extends CustomPainter {
           final glowPaint = Paint()
             ..color = outgoingColor.withValues(alpha: 0.3 * glowPulse)
             ..style = PaintingStyle.stroke
-            ..strokeWidth = (14.r + 12.r * glowPulse)
+            ..strokeWidth = (22.r + 14.r * glowPulse)
             ..strokeCap = StrokeCap.butt
             ..maskFilter = MaskFilter.blur(BlurStyle.normal, 8.r * glowPulse);
           canvas.drawPath(extractedPath, glowPaint);
@@ -110,7 +129,7 @@ class SegmentPathPainter extends CustomPainter {
         final outgoingPaint = Paint()
           ..color = outgoingColor
           ..style = PaintingStyle.stroke
-          ..strokeWidth = 14.r
+          ..strokeWidth = 22.r
           ..strokeCap = StrokeCap.butt;
         canvas.drawPath(extractedPath, outgoingPaint);
 
@@ -152,6 +171,7 @@ class SegmentPathPainter extends CustomPainter {
         oldDelegate.outgoingColor != outgoingColor ||
         oldDelegate.currentOffset != currentOffset ||
         oldDelegate.nextOffset != nextOffset ||
+        oldDelegate.prevOffset != prevOffset ||
         oldDelegate.level != level ||
         oldDelegate.pathProgress != pathProgress ||
         oldDelegate.isCurrent != isCurrent ||

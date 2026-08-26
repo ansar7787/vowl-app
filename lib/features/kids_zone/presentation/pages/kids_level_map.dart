@@ -592,6 +592,9 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                           : Colors.black.withValues(alpha: 0.05)),
                 currentOffset: currentOffset,
                 nextOffset: nextOffset,
+                prevOffset: level == 1 
+                    ? currentOffset 
+                    : _getHorizontalOffset(level - 1, MediaQuery.of(context).size.width),
                 isLast: isLast,
                 level: level,
                 pathProgress: pathProgress,
@@ -612,25 +615,16 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child:
-                  _buildLevelNode(
-                        context,
-                        level,
-                        isLocked,
-                        isCurrent,
-                        isTollGate,
-                        isCompleted,
-                        isPlayable,
-                        isNextZone,
-                      )
-                      .animate()
-                      .fadeIn(duration: 600.ms, delay: (level % 5 * 80).ms)
-                      .scale(
-                        begin: const Offset(0.6, 0.6),
-                        end: const Offset(1.0, 1.0),
-                        duration: 700.ms,
-                        curve: Curves.easeOutBack,
-                      ),
+              child: _buildLevelNode(
+                context,
+                level,
+                isLocked,
+                isCurrent,
+                isTollGate,
+                isCompleted,
+                isPlayable,
+                isNextZone,
+              ),
             ),
             if (isCurrent)
               Positioned(
@@ -800,6 +794,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           outgoingColor: Colors.white,
           currentOffset: currentOffset,
           nextOffset: nextOffset,
+          prevOffset: currentOffset, // Shimmer doesn't need perfect continuity
           isLast: isLast,
           level: 0, // Shimmer level
         ),
