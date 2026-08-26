@@ -204,6 +204,18 @@ class _TrophyRoomView extends StatelessWidget {
               _buildTab(
                 context,
                 title: context.tr(
+                  'profile.filter_standard',
+                  fallback: 'Standard',
+                ),
+                isSelected: state.currentFilter == TrophyFilter.standard,
+                onTap: () => context.read<TrophyRoomCubit>().updateFilter(
+                  TrophyFilter.standard,
+                ),
+                isDark: isDark,
+              ),
+              _buildTab(
+                context,
+                title: context.tr(
                   'profile.filter_legendary',
                   fallback: 'Legendary',
                 ),
@@ -460,38 +472,12 @@ class _TrophyRoomView extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.02)
                   : Colors.black.withValues(alpha: 0.02),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 56.r,
-                  height: 56.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.05),
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.lock_rounded,
-                      color: isDark ? Colors.white24 : Colors.black26,
-                      size: 24.r,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                Container(
-                  width: 40.w,
-                  height: 8.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.05)
-                        : Colors.black.withValues(alpha: 0.05),
-                    borderRadius: BorderRadius.circular(4.r),
-                  ),
-                ),
-              ],
+            child: Center(
+              child: Icon(
+                Icons.lock_rounded,
+                color: isDark ? Colors.white24 : Colors.black26,
+                size: 40.r,
+              ),
             ),
           ),
         )
