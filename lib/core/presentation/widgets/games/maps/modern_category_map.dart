@@ -615,66 +615,47 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     final screenWidth = ScreenUtil().screenWidth;
     final centerX = screenWidth / 2;
     final spacing = _getVerticalSpacing(category);
-    // How far nodes can swing from center on each side.
-    final maxOffset = screenWidth * 0.34;
+    // Max swing from center. 36% means it leaves a comfortable 14% margin on the edges.
+    final maxOffset = screenWidth * 0.36;
 
-    // ── Smooth winding river — premium flowing map path ──
-    //
-    // The path uses a steepened sine wave that creates a natural S-shaped
-    // river winding across the screen. Key design choices:
-    //
-    // 1. DOMINANT WAVE (freq=0.75, ~8 nodes per full cycle):
-    //    3-4 nodes sit clearly on one side before the path sweeps to the
-    //    other — matching Duolingo/Candy Crush visual rhythm.
-    //
-    // 2. STEEPENING (power 0.45):
-    //    Raw sine drifts slowly through center, making nodes cluster there.
-    //    Raising to the 0.45 power makes the transition SNAP through center
-    //    quickly while lingering at the edges.
-    //    Example: raw 0.30 → steepened 0.57 (pushed further from center)
-    //
-    // 3. SECONDARY WAVE (freq=0.23):
-    //    Slow drift ensures the pattern doesn't visually repeat over 200
-    //    levels. Adds subtle long-term variation in swing width.
-    //
-    // 4. PER-NODE JITTER (seeded PRNG):
-    //    ±5% random offset makes each node feel hand-placed, not
-    //    mathematically perfect. Same seed → same path every time.
-    //
-    // Verified: only 4% of 200 nodes fall within ±25% of center.
-
-    // Seeded PRNG for per-node organic jitter (deterministic per category)
+    // ── Beautiful Premium S-Curve Path ──
+    // 
+    // The user requested a beautiful, smooth S-curve that feels organic and 
+    // never repetitive.
+    // 
+    // 1. SMOOTH WAVE (freq = pi / 3.5):
+    //    This creates a pure, unmistakable sweeping S-curve.
+    // 
+    // 2. VARIABLE AMPLITUDE & JITTER:
+    //    To prevent the curve from looking artificial and exactly identical
+    //    on every screen ("duplicate scrolling"), we use a seeded random
+    //    number generator to give each sweep a unique width and slight jitter,
+    //    while maintaining the perfect mathematical flow.
+    
     final rng = math.Random(category.index * 7919 + 31);
-
-    // Wave parameters
-    const double freq = 0.75;    // ~8 nodes per cycle (4 per side)
-    const double phase = 0.8;    // start clearly on right side
-    const double freq2 = 0.23;   // slow secondary drift
-    const double phase2 = 2.1;   // offset from primary
-    const double steepPower = 0.45; // how aggressively to push from center
-
+    const double freq = math.pi / 3.5; 
+    
     for (int i = 0; i < _totalLevels; i++) {
-      final double t = i.toDouble();
+      // Offset by category index to give each category a slightly different starting phase
+      final double phase = (category.index * math.pi / 2);
+      
+      // Base pure sine wave
+      final double baseSine = math.sin((i * freq) + phase);
+      
+      // Randomize the amplitude so some S-curves swing wide and some stay tighter
+      // (Random value between 0.60 and 1.0)
+      final double swingAmplitude = 0.60 + (rng.nextDouble() * 0.40);
+      
+      // A very subtle, slow secondary wave to add a premium organic drift
+      final double drift = math.sin(i * 0.12 + category.index) * 0.20;
+      
+      // Add a slight per-node organic jitter (±4%) so it feels beautifully hand-placed
+      final double jitter = (rng.nextDouble() - 0.5) * 0.08;
+      
+      // Combine it all
+      final double combined = (baseSine * swingAmplitude + drift + jitter).clamp(-1.0, 1.0);
 
-      // Primary wave (80%) + secondary drift (20%)
-      final double rawWave = 0.80 * math.sin(freq * t + phase)
-                           + 0.20 * math.sin(freq2 * t + phase2);
-
-      // Clamp to safe range
-      final double clamped = rawWave.clamp(-1.0, 1.0);
-
-      // Steepen: push values away from center, snap through zero
-      // sign(x) × |x|^0.45 — preserves direction, amplifies small values
-      final double steepened = clamped >= 0
-          ? math.pow(clamped.abs(), steepPower).toDouble()
-          : -math.pow(clamped.abs(), steepPower).toDouble();
-
-      // Per-node jitter: ±5% organic noise
-      final double jitter = (rng.nextDouble() - 0.5) * 0.10;
-
-      final double factor = (steepened + jitter).clamp(-1.0, 1.0);
-
-      final offsetX = centerX + (factor * maxOffset);
+      final offsetX = centerX + (combined * maxOffset);
       final y = (i * spacing) + (spacing / 2);
       points.add(Offset(offsetX, y));
     }
