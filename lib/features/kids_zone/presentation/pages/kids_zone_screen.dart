@@ -39,7 +39,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   final math.Random _random = math.Random();
   final List<Map<String, dynamic>> _activeCoins = [];
   late ConfettiController _confettiController;
-  int? _globalRank;
+  final ValueNotifier<int?> _globalRank = ValueNotifier(null);
 
   @override
   void initState() {
@@ -68,7 +68,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
         final currentUser = context.read<AuthBloc>().state.user;
         if (currentUser != null && mounted) {
           final idx = sorted.indexWhere((u) => u.id == currentUser.id);
-          setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
+          _globalRank.value = idx >= 0 ? idx + 1 : null;
         }
       });
     } catch (e) {
@@ -81,6 +81,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
   @override
   void dispose() {
     _confettiController.dispose();
+    _globalRank.dispose();
     super.dispose();
   }
 
@@ -175,9 +176,14 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                       child: Column(
                         children: [
                           SizedBox(height: 16.h),
-                          KidsGlobalProgressCard(
-                            user: user,
-                            globalRank: _globalRank,
+                          ValueListenableBuilder<int?>(
+                            valueListenable: _globalRank,
+                            builder: (context, rank, child) {
+                              return KidsGlobalProgressCard(
+                                user: user,
+                                globalRank: rank,
+                              );
+                            },
                           ),
                         ],
                       ),

@@ -22,7 +22,6 @@ import 'package:vowl/features/home/presentation/widgets/inline_notification_card
 import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
 import 'package:vowl/features/home/presentation/widgets/daily_motivation_card.dart';
 import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
-import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/widgets/unified_stats_row.dart';
@@ -37,7 +36,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int? _globalRank;
+  final ValueNotifier<int?> _globalRank = ValueNotifier(null);
   bool _hasCheckedDailyChestThisSession = false;
 
   @override
@@ -81,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         final currentUser = context.read<AuthBloc>().state.user;
         if (currentUser != null && mounted) {
           final idx = sorted.indexWhere((u) => u.id == currentUser.id);
-          setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
+          _globalRank.value = idx >= 0 ? idx + 1 : null;
         }
       });
     } catch (e) {
@@ -92,6 +91,12 @@ class _HomeScreenState extends State<HomeScreen> {
         debugPrint('HomeScreen: failed to fetch global rank: $e');
       }
     }
+  }
+
+  @override
+  void dispose() {
+    _globalRank.dispose();
+    super.dispose();
   }
 
   @override
@@ -119,10 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 context.read<ProgressionBloc>().add(
                   const ProgressionResetRequested(),
                 );
-                setState(() {
-                  _hasCheckedDailyChestThisSession = false;
-                  _globalRank = null;
-                });
+                _hasCheckedDailyChestThisSession = false;
+                _globalRank.value = null;
               }
             },
           ),
@@ -222,9 +225,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 16.h),
-                              UnifiedStatsRow(
-                                user: user,
-                                globalRank: _globalRank,
+                              ValueListenableBuilder<int?>(
+                                valueListenable: _globalRank,
+                                builder: (context, rank, child) {
+                                  return UnifiedStatsRow(
+                                    user: user,
+                                    globalRank: rank,
+                                  );
+                                },
                               ),
                             ],
                           ),
@@ -272,9 +280,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               SizedBox(height: 24.h),
-                              GlobalProgressCard(
-                                user: user,
-                                globalRank: _globalRank,
+                              ValueListenableBuilder<int?>(
+                                valueListenable: _globalRank,
+                                builder: (context, rank, child) {
+                                  return GlobalProgressCard(
+                                    user: user,
+                                    globalRank: rank,
+                                  );
+                                },
                               ),
                             ],
                           ),
@@ -320,7 +333,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // ══════════════════════════════════════════════════
-                      // 8. DAILY WISDOM + EARN
+                      // 8. DAILY WISDOM
                       // ══════════════════════════════════════════════════
                       SliverPadding(
                         padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -330,8 +343,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             DailyMotivationCard(
                               streakCount: user.currentStreak,
                             ),
-                            SizedBox(height: 24.h),
-                            const AdRewardCard(margin: EdgeInsets.zero),
                             SizedBox(height: 80.h),
                           ]),
                         ),
