@@ -4,7 +4,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -347,9 +346,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                               badgeEmoji,
                               style: TextStyle(fontSize: 12.sp),
                             ),
-                          )
-                          .animate(onPlay: (c) => c.repeat(reverse: true))
-                          .moveY(begin: -2, end: 2, duration: 1.seconds),
+                          ),
                 ),
             ],
           ),

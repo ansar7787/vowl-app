@@ -180,11 +180,11 @@ class ContinueLearningCard extends StatelessWidget {
                         color: Colors.white,
                         size: 28.r, // slightly larger
                       ),
-                    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveX(
-                      begin: 0,
-                      end: 4.w,
+                    ).animate().scale(
+                      begin: const Offset(0.8, 0.8),
+                      end: const Offset(1, 1),
                       duration: 800.ms,
-                      curve: Curves.easeInOut,
+                      curve: Curves.easeOutBack,
                     ),
                   ],
                 ),

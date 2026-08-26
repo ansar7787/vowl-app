@@ -190,12 +190,7 @@ class GlobalProgressCard extends StatelessWidget {
                               width: 1,
                             ),
                           ),
-                        )
-                            .animate(onPlay: (c) => c.repeat())
-                            .shimmer(
-                              duration: 1500.ms,
-                              color: const Color(0xFF6366F1).withValues(alpha: 0.3),
-                            ),
+                        ),
                     ],
                   ),
 
@@ -342,11 +337,12 @@ class GlobalProgressCard extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shimmer(
-                                    duration: 2500.ms,
-                                    color: Colors.white24,
+                                  ).animate().scaleX(
+                                    begin: 0,
+                                    end: 1,
+                                    duration: 800.ms,
+                                    curve: Curves.easeOutQuart,
+                                    alignment: Alignment.centerLeft,
                                   ),
                         ),
                       ],
