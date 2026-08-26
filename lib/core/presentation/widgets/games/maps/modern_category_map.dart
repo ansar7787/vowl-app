@@ -598,7 +598,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   nextNextX: index < _totalLevels - 2
                                       ? points[index + 2].dx
                                       : null,
-                                  activeColor: theme.primaryColor,
+                                  activeColor: _getTierColor(levelNumber, isTollGateSegment, theme.primaryColor),
                                   isCompleted: isNodeCompleted,
                                   isPrevCompleted: isPrevNodeCompleted,
                                   isFirst: index == 0,
@@ -987,6 +987,19 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     );
   }
 
+  Color _getTierColor(int level, bool isTollGate, Color baseColor) {
+    if (isTollGate) {
+      return Colors.amber;
+    } else if (level >= 50 && level < 100) {
+      return const Color(0xFFCD7F32); // Bronze
+    } else if (level >= 100 && level < 150) {
+      return const Color(0xFFC0C0C0); // Silver
+    } else if (level >= 150) {
+      return const Color(0xFFFFD700); // Gold
+    }
+    return baseColor;
+  }
+
   Widget _buildPathNode(
     BuildContext context,
     int level,
@@ -1018,16 +1031,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
     // They can only play if they actually reached it sequentially.
     final bool isUnlockedForClick = isCompleted || isPlayable;
     final bool isCurrent = isPlayable || isTollGate;
-    Color tierColor = theme.primaryColor;
-    if (isTollGate) {
-      tierColor = Colors.amber;
-    } else if (level >= 50 && level < 100) {
-      tierColor = const Color(0xFFCD7F32);
-    } else if (level >= 100 && level < 150) {
-      tierColor = const Color(0xFFC0C0C0);
-    } else if (level >= 150) {
-      tierColor = const Color(0xFFFFD700);
-    }
+    final Color tierColor = _getTierColor(level, isTollGate, theme.primaryColor);
 
     final String statusLabel;
     if (isCompleted) {
