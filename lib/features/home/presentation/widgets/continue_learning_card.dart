@@ -86,10 +86,7 @@ class ContinueLearningCard extends StatelessWidget {
             padding: EdgeInsets.all(20.r),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  color,
-                  color.withValues(alpha: 0.85),
-                ],
+                colors: [color, color.withValues(alpha: 0.85)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -150,7 +147,8 @@ class ContinueLearningCard extends StatelessWidget {
                             title,
                             style: TextStyle(
                               fontFamily: 'Outfit',
-                              fontSize: 22.sp, // slightly larger, allowed to scale down
+                              fontSize: 22
+                                  .sp, // slightly larger, allowed to scale down
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
                               letterSpacing: -0.3,
@@ -194,7 +192,10 @@ class ContinueLearningCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        context.tr('home.level_progress', fallback: 'Level Progress'),
+                        context.tr(
+                          'home.level_progress',
+                          fallback: 'Level Progress',
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -204,7 +205,10 @@ class ContinueLearningCard extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 4.h,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.black.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12.r),
@@ -235,26 +239,27 @@ class ContinueLearningCard extends StatelessWidget {
                       ),
                       FractionallySizedBox(
                         widthFactor: progress.clamp(0.0, 1.0),
-                        child: Container(
-                          height: 12.h,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(6.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.white.withValues(alpha: 0.5),
-                                blurRadius: 10,
-                                spreadRadius: 1,
+                        child:
+                            Container(
+                              height: 12.h,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.white.withValues(alpha: 0.5),
+                                    blurRadius: 10,
+                                    spreadRadius: 1,
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
-                        ).animate().scaleX(
-                          begin: 0,
-                          end: 1,
-                          duration: 800.ms,
-                          curve: Curves.easeOutQuart,
-                          alignment: Alignment.centerLeft,
-                        ),
+                            ).animate().scaleX(
+                              begin: 0,
+                              end: 1,
+                              duration: 800.ms,
+                              curve: Curves.easeOutQuart,
+                              alignment: Alignment.centerLeft,
+                            ),
                       ),
                     ],
                   ),

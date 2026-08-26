@@ -183,10 +183,14 @@ class GlobalProgressCard extends StatelessWidget {
                           width: 48.w,
                           height: 38.h,
                           decoration: BoxDecoration(
-                            color: const Color(0xFF6366F1).withValues(alpha: 0.1),
+                            color: const Color(
+                              0xFF6366F1,
+                            ).withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(16.r),
                             border: Border.all(
-                              color: const Color(0xFF6366F1).withValues(alpha: 0.2),
+                              color: const Color(
+                                0xFF6366F1,
+                              ).withValues(alpha: 0.2),
                               width: 1,
                             ),
                           ),
@@ -318,32 +322,32 @@ class GlobalProgressCard extends StatelessWidget {
                           widthFactor: progress.clamp(0.02, 1.0),
                           child:
                               Container(
-                                    height: 8.h,
-                                    decoration: BoxDecoration(
-                                      gradient: const LinearGradient(
-                                        colors: [
-                                          Color(0xFF6366F1),
-                                          Color(0xFF8B5CF6),
-                                          Color(0xFFA855F7),
-                                        ],
-                                      ),
-                                      borderRadius: BorderRadius.circular(4.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: const Color(
-                                            0xFF8B5CF6,
-                                          ).withValues(alpha: 0.4),
-                                          blurRadius: 6,
-                                        ),
-                                      ],
-                                    ),
-                                  ).animate().scaleX(
-                                    begin: 0,
-                                    end: 1,
-                                    duration: 800.ms,
-                                    curve: Curves.easeOutQuart,
-                                    alignment: Alignment.centerLeft,
+                                height: 8.h,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFF6366F1),
+                                      Color(0xFF8B5CF6),
+                                      Color(0xFFA855F7),
+                                    ],
                                   ),
+                                  borderRadius: BorderRadius.circular(4.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(
+                                        0xFF8B5CF6,
+                                      ).withValues(alpha: 0.4),
+                                      blurRadius: 6,
+                                    ),
+                                  ],
+                                ),
+                              ).animate().scaleX(
+                                begin: 0,
+                                end: 1,
+                                duration: 800.ms,
+                                curve: Curves.easeOutQuart,
+                                alignment: Alignment.centerLeft,
+                              ),
                         ),
                       ],
                     ),

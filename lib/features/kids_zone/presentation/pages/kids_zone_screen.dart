@@ -273,7 +273,10 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                         _buildNavIcon(
                           context,
                           Icons.face_retouching_natural_rounded,
-                          context.tr('kids_zone.nav_buddies', fallback: "Buddies"),
+                          context.tr(
+                            'kids_zone.nav_buddies',
+                            fallback: "Buddies",
+                          ),
                           Colors.blueAccent,
                           () => context.push('/kids-mascot'),
                         ),
@@ -332,21 +335,17 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                 Positioned(
                   top: -4.h,
                   right: -4.w,
-                  child:
-                      Container(
-                            padding: EdgeInsets.all(2.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                              boxShadow: [
-                                BoxShadow(color: Colors.black12, blurRadius: 4),
-                              ],
-                            ),
-                            child: Text(
-                              badgeEmoji,
-                              style: TextStyle(fontSize: 12.sp),
-                            ),
-                          ),
+                  child: Container(
+                    padding: EdgeInsets.all(2.r),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(color: Colors.black12, blurRadius: 4),
+                      ],
+                    ),
+                    child: Text(badgeEmoji, style: TextStyle(fontSize: 12.sp)),
+                  ),
                 ),
             ],
           ),

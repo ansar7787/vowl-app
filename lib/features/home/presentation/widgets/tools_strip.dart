@@ -137,91 +137,89 @@ class _ToolCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-          button: true,
-          label: '$title — $subtitle',
-          child: ScaleButton(
-            onTap: () {
-              di.sl<HapticService>().light();
-              if (!requiresAd) {
-                context.push(route);
-                return;
-              }
-              final isPremium =
-                  context.read<AuthBloc>().state.user?.isPremium ?? false;
-              if (isPremium) {
-                context.push(route);
-                return;
-              }
-              di.sl<AdService>().showRewardedAd(
-                context: context,
-                isPremium: isPremium,
-                childSafe: false,
-                onUserEarnedReward: (_) => context.push(route),
-                onDismissed: () {},
-              );
-            },
-            child: ExcludeSemantics(
-              child: GlassTile(
-                showShadow: false,
-                borderRadius: BorderRadius.circular(24.r),
-                borderColor: color.withValues(alpha: 0.2),
-                padding: EdgeInsets.all(16.r),
-                child: SizedBox(
-                  width: 110.w,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(10.r),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.12),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(icon, color: color, size: 20.r),
-                      ),
-                      const Spacer(),
-                      Text(
-                        title,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 6.w,
-                          vertical: 2.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        child: Text(
-                          subtitle.toUpperCase(),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 8.sp,
-                            fontWeight: FontWeight.w800,
-                            color: color,
-                            letterSpacing: 1.0,
-                          ),
-                        ),
-                      ),
-                    ],
+      button: true,
+      label: '$title — $subtitle',
+      child: ScaleButton(
+        onTap: () {
+          di.sl<HapticService>().light();
+          if (!requiresAd) {
+            context.push(route);
+            return;
+          }
+          final isPremium =
+              context.read<AuthBloc>().state.user?.isPremium ?? false;
+          if (isPremium) {
+            context.push(route);
+            return;
+          }
+          di.sl<AdService>().showRewardedAd(
+            context: context,
+            isPremium: isPremium,
+            childSafe: false,
+            onUserEarnedReward: (_) => context.push(route),
+            onDismissed: () {},
+          );
+        },
+        child: ExcludeSemantics(
+          child: GlassTile(
+            showShadow: false,
+            borderRadius: BorderRadius.circular(24.r),
+            borderColor: color.withValues(alpha: 0.2),
+            padding: EdgeInsets.all(16.r),
+            child: SizedBox(
+              width: 110.w,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10.r),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.12),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(icon, color: color, size: 20.r),
                   ),
-                ),
+                  const Spacer(),
+                  Text(
+                    title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 6.w,
+                      vertical: 2.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(6.r),
+                    ),
+                    child: Text(
+                      subtitle.toUpperCase(),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w800,
+                        color: color,
+                        letterSpacing: 1.0,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
-        );
+        ),
+      ),
+    );
   }
 }

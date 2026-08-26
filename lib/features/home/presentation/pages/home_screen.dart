@@ -198,7 +198,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       // 1.5 INLINE NOTIFICATION (Conditional)
                       // ══════════════════════════════════════════════════
                       SliverToBoxAdapter(
-                        child: InlineNotificationCard(streak: user.currentStreak),
+                        child: InlineNotificationCard(
+                          streak: user.currentStreak,
+                        ),
                       ),
 
                       // ══════════════════════════════════════════════════

@@ -182,21 +182,27 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         )
                       else
                         Container(
-                          width: 48.w,
-                          height: 38.h,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF43F5E).withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: const Color(0xFFF43F5E).withValues(alpha: 0.2),
-                              width: 1,
-                            ),
-                          ),
-                        )
+                              width: 48.w,
+                              height: 38.h,
+                              decoration: BoxDecoration(
+                                color: const Color(
+                                  0xFFF43F5E,
+                                ).withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(16.r),
+                                border: Border.all(
+                                  color: const Color(
+                                    0xFFF43F5E,
+                                  ).withValues(alpha: 0.2),
+                                  width: 1,
+                                ),
+                              ),
+                            )
                             .animate(onPlay: (c) => c.repeat())
                             .shimmer(
                               duration: 1500.ms,
-                              color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
+                              color: const Color(
+                                0xFFF43F5E,
+                              ).withValues(alpha: 0.3),
                             ),
                     ],
                   ),
@@ -283,31 +289,34 @@ class KidsGlobalProgressCard extends StatelessWidget {
                         ),
                         FractionallySizedBox(
                           widthFactor: progress.clamp(0.02, 1.0),
-                          child: Container(
-                            height: 8.h,
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(
-                                colors: [
-                                  Color(0xFFF43F5E),
-                                  Color(0xFFE11D48),
-                                  Color(0xFFBE123C),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(4.r),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: const Color(0xFFE11D48).withValues(alpha: 0.4),
-                                  blurRadius: 6,
+                          child:
+                              Container(
+                                height: 8.h,
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFFF43F5E),
+                                      Color(0xFFE11D48),
+                                      Color(0xFFBE123C),
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(4.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(
+                                        0xFFE11D48,
+                                      ).withValues(alpha: 0.4),
+                                      blurRadius: 6,
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ).animate().scaleX(
-                            begin: 0,
-                            end: 1,
-                            duration: 800.ms,
-                            curve: Curves.easeOutQuart,
-                            alignment: Alignment.centerLeft,
-                          ),
+                              ).animate().scaleX(
+                                begin: 0,
+                                end: 1,
+                                duration: 800.ms,
+                                curve: Curves.easeOutQuart,
+                                alignment: Alignment.centerLeft,
+                              ),
                         ),
                       ],
                     ),
