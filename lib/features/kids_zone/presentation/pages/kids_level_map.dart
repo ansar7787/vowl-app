@@ -73,7 +73,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       final unlockedLevel = authState.user!.unlockedLevels[widget.gameType] ?? 1;
       final completedLevels = authState.user!.completedLevels[widget.gameType] ?? [];
       final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
-      final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
+      final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
       
       final targetOffset = (targetLevel - 1) * 200.h;
       initialOffset = math.max(0.0, targetOffset - 300.h);
@@ -133,7 +133,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
           final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
           
           // Always scroll to the node the user actually needs to interact with next
-          final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
+          final targetLevel = (highestCompleted + 1).clamp(1, math.min(200, unlockedLevel));
 
           // Store for unlock-animation delta detection
           _previousUnlockedLevel ??= unlockedLevel;
