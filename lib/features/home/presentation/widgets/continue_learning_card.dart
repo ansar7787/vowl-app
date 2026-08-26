@@ -99,198 +99,120 @@ class ContinueLearningCard extends StatelessWidget {
                 ),
               ],
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // Category icon
-                    Container(
-                      padding: EdgeInsets.all(12.r),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.2),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(icon, color: Colors.white, size: 24.r),
-                    ),
-                    // Category eyebrow
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.2),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Text(
+                // Category icon
+                Container(
+                  padding: EdgeInsets.all(14.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.2),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(icon, color: Colors.white, size: 28.r),
+                ),
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize:
+                        MainAxisSize.min, // Keep it as short as possible
+                    children: [
+                      // Category eyebrow
+                      Text(
                         categoryLabel,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 11.sp,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
-                          color: Colors.white,
+                          color: Colors.white.withValues(alpha: 0.8),
                           letterSpacing: 1.5,
                         ),
+                      ),
+                      SizedBox(height: 4.h),
+                      // Title
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 22.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: -0.3,
+                          height: 1.1,
+                        ),
                         maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 16.h),
-                // Title given full horizontal width
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: -0.5,
-                    height: 1.1,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                if (isNewUser)
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white.withValues(alpha: 0.8),
-                    ),
-                  ),
-                SizedBox(height: 24.h),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: isNewUser
-                          ? const SizedBox.shrink()
-                          : Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      context.tr(
-                                        'home.level_progress',
-                                        fallback: 'Level Progress',
-                                      ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.8,
-                                        ),
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 10.w,
-                                        vertical: 4.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.black.withValues(
-                                          alpha: 0.2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        '$cleared / $max',
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 12.h),
-                                // Diamond standard glowing progress bar
-                                Stack(
-                                  children: [
-                                    Container(
-                                      height: 14.h,
-                                      width: double.infinity,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black.withValues(
-                                          alpha: 0.2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          8.r,
-                                        ),
-                                      ),
-                                    ),
-                                    FractionallySizedBox(
-                                      widthFactor: progress.clamp(0.0, 1.0),
-                                      child:
-                                          Container(
-                                            height: 14.h,
-                                            decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.r),
-                                              boxShadow: [
-                                                BoxShadow(
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.6),
-                                                  blurRadius: 12,
-                                                  spreadRadius: 2,
-                                                ),
-                                              ],
-                                            ),
-                                          ).animate().scaleX(
-                                            begin: 0,
-                                            end: 1,
-                                            duration: 800.ms,
-                                            curve: Curves.easeOutQuart,
-                                            alignment: Alignment.centerLeft,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                    ),
-                    if (!isNewUser) SizedBox(width: 20.w),
-                    // Floating Action Play Button
-                    Container(
-                      padding: EdgeInsets.all(18.r),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.2),
-                            blurRadius: 10,
-                            offset: const Offset(0, 4),
+                      if (isNewUser) ...[
+                        SizedBox(height: 6.h),
+                        Text(
+                          subtitle,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white.withValues(alpha: 0.8),
                           ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.play_arrow_rounded,
-                        color:
-                            color, // The icon takes the dynamic category color
-                        size: 36.r,
-                      ),
-                    ).animate().scale(
-                      begin: const Offset(0.8, 0.8),
-                      end: const Offset(1, 1),
-                      duration: 800.ms,
-                      curve: Curves.easeOutBack,
-                    ),
-                  ],
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ] else ...[
+                        SizedBox(height: 12.h),
+                        // Sleek minimalist progress bar
+                        Stack(
+                          children: [
+                            Container(
+                              height: 6.h,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Colors.black.withValues(alpha: 0.2),
+                                borderRadius: BorderRadius.circular(3.r),
+                              ),
+                            ),
+                            FractionallySizedBox(
+                              widthFactor: progress.clamp(0.0, 1.0),
+                              child:
+                                  Container(
+                                    height: 6.h,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(3.r),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.white.withValues(
+                                            alpha: 0.6,
+                                          ),
+                                          blurRadius: 8,
+                                          spreadRadius: 1,
+                                        ),
+                                      ],
+                                    ),
+                                  ).animate().scaleX(
+                                    begin: 0,
+                                    end: 1,
+                                    duration: 800.ms,
+                                    curve: Curves.easeOutQuart,
+                                    alignment: Alignment.centerLeft,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                SizedBox(width: 16.w),
+                // Standard iOS Chevron
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: Colors.white.withValues(alpha: 0.6),
+                  size: 32.r,
+                ).animate().slideX(
+                  begin: -0.2,
+                  end: 0,
+                  duration: 600.ms,
+                  curve: Curves.easeOut,
                 ),
               ],
             ),
