@@ -498,16 +498,86 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                             ),
                           ),
 
-                          SizedBox(height: 32.h),
+                          SizedBox(height: 16.h),
 
-                          // Chests ListView
+                          // Progress toward next chest
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      context.tr(
+                                        'store.progress_label',
+                                        fallback: 'Progress',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: isDark
+                                            ? Colors.white54
+                                            : Colors.black54,
+                                      ),
+                                    ),
+                                    Text(
+                                      '$totalStars / $nextRequirement',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w800,
+                                        color: widget.primaryColor,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 8.h),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  child: SizedBox(
+                                    height: 10.h,
+                                    child: LinearProgressIndicator(
+                                      value: nextRequirement > 0
+                                          ? (totalStars / nextRequirement)
+                                              .clamp(0.0, 1.0)
+                                          : 0.0,
+                                      backgroundColor: isDark
+                                          ? Colors.white.withValues(alpha: 0.08)
+                                          : Colors.black.withValues(alpha: 0.05),
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        widget.primaryColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          SizedBox(height: 24.h),
+
+                          // Chests ListView — auto-scrolls to the next claimable chest
                           SizedBox(
                             height: 160.h,
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              padding: EdgeInsets.symmetric(horizontal: 24.w),
-                              itemCount: _chestTiers.length,
-                              itemBuilder: (context, index) {
+                            child: Builder(
+                              builder: (context) {
+                                // Each tile is 120.w wide + 16.w right margin = 136.w per tile.
+                                // Scroll so the "next" tile is centered in the viewport.
+                                final tileWidth = 120.w + 16.w;
+                                final viewportWidth = ScreenUtil().screenWidth - 48.w; // minus horizontal padding
+                                final initialOffset = (nextTierIndex * tileWidth - viewportWidth / 2 + tileWidth / 2)
+                                    .clamp(0.0, double.infinity);
+
+                                return ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  controller: ScrollController(initialScrollOffset: initialOffset),
+                                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                                  itemCount: _chestTiers.length,
+                                  itemBuilder: (context, index) {
                                 final requirement = _chestTiers[index];
                                 final isClaimed = claimedTier > index;
                                 final canClaim =
@@ -748,10 +818,12 @@ class _StarVaultBottomSheetState extends State<StarVaultBottomSheet> {
                                       ),
                                     ),
                                   ),
-                                );
-                              },
-                            ),
-                          ),
+                                );  // itemBuilder return
+                              },    // itemBuilder callback
+                                );  // ListView.builder
+                              },    // Builder callback
+                            ),      // Builder
+                          ),        // SizedBox
 
                           SizedBox(height: 32.h),
 

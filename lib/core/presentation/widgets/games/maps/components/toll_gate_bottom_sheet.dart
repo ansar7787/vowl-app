@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -48,6 +49,18 @@ class TollGateBottomSheet {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    // Drag handle
+                    Center(
+                      child: Container(
+                        width: 40.w,
+                        height: 4.h,
+                        margin: EdgeInsets.only(bottom: 16.h),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withValues(alpha: 0.3),
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      ),
+                    ),
                     Container(
                       padding: EdgeInsets.all(16.r),
                       decoration: BoxDecoration(
@@ -55,11 +68,14 @@ class TollGateBottomSheet {
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
-                        Icons.lock_open_rounded,
+                        Icons.lock_rounded,
                         size: 56.r,
                         color: Colors.amber.shade600,
                       ),
-                    ),
+                    )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .shake(hz: 2, curve: Curves.easeInOutSine, duration: 1500.ms)
+                        .then(delay: 2000.ms),
                     SizedBox(height: 16.h),
                     Text(
                       context.tr(

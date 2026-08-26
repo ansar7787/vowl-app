@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -104,6 +105,18 @@ class _KeyShopContentState extends State<_KeyShopContent> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                // Drag handle
+                Center(
+                  child: Container(
+                    width: 40.w,
+                    height: 4.h,
+                    margin: EdgeInsets.only(bottom: 16.h),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(2.r),
+                    ),
+                  ),
+                ),
                 Container(
                   padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(
@@ -132,7 +145,13 @@ class _KeyShopContentState extends State<_KeyShopContent> {
                     size: 56.r,
                     color: widget.primaryColor,
                   ),
-                ),
+                )
+                    .animate(onPlay: (c) => c.repeat())
+                    .shimmer(
+                      duration: 2.seconds,
+                      delay: 1.seconds,
+                      color: Colors.white.withValues(alpha: 0.4),
+                    ),
                 SizedBox(height: 16.h),
                 Text(
                   context.tr(
