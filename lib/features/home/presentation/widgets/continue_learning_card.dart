@@ -189,55 +189,71 @@ class ContinueLearningCard extends StatelessWidget {
                   ],
                 ),
                 if (!isNewUser) ...[
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 24.h),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Thick progress bar
-                      Expanded(
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 10.h,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: Colors.black.withValues(alpha: 0.15),
-                                borderRadius: BorderRadius.circular(5.r),
-                              ),
-                            ),
-                            FractionallySizedBox(
-                              widthFactor: progress.clamp(0.0, 1.0),
-                              child: Container(
-                                    height: 10.h,
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(5.r),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.white.withValues(alpha: 0.5),
-                                          blurRadius: 8,
-                                        ),
-                                      ],
-                                    ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat())
-                                  .shimmer(
-                                    duration: 2000.ms,
-                                    color: Colors.white.withValues(alpha: 0.4),
-                                  ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 16.w),
-                      // Progress text
                       Text(
-                        '$cleared / $max',
+                        context.tr('home.level_progress', fallback: 'Level Progress'),
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white.withValues(alpha: 0.8),
+                          letterSpacing: 0.5,
                         ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          '$cleared / $max',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10.h),
+                  // Diamond standard progress bar
+                  Stack(
+                    children: [
+                      Container(
+                        height: 12.h,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                      ),
+                      FractionallySizedBox(
+                        widthFactor: progress.clamp(0.0, 1.0),
+                        child: Container(
+                              height: 12.h,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(6.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.white.withValues(alpha: 0.5),
+                                    blurRadius: 10,
+                                    spreadRadius: 1,
+                                  ),
+                                ],
+                              ),
+                            )
+                            .animate(onPlay: (c) => c.repeat())
+                            .shimmer(
+                              duration: 2000.ms,
+                              color: Colors.white.withValues(alpha: 0.6),
+                            ),
                       ),
                     ],
                   ),
