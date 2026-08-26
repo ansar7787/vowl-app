@@ -386,73 +386,72 @@ class _TrophyRoomView extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18.r),
-                gradient: isLegendary
-                    ? LinearGradient(
-                        colors: [
+                gradient: LinearGradient(
+                  colors: isLegendary
+                      ? [
                           const Color(0xFF451A03).withValues(
-                            alpha: isDark ? 0.6 : 0.8,
+                            alpha: isDark ? 0.8 : 0.9,
                           ), // Deep Amber Dark
                           const Color(
                             0xFF78350F,
-                          ).withValues(alpha: isDark ? 0.3 : 0.6), // Brown Gold
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      )
-                    : null,
-                color: isLegendary
-                    ? null
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.02)
-                          : Colors.white.withValues(alpha: 0.5)),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 56.r,
-                    height: 56.r,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        colors: colorPair,
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      boxShadow: [
+                          ).withValues(alpha: isDark ? 0.5 : 0.8), // Brown Gold
+                        ]
+                      : colorPair
+                            .map(
+                              (c) => c.withValues(alpha: isDark ? 0.15 : 0.4),
+                            )
+                            .toList(),
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                border: Border.all(
+                  color: isLegendary
+                      ? const Color(0xFFFFD700).withValues(alpha: 0.8)
+                      : colorPair[0].withValues(alpha: 0.5),
+                  width: isLegendary ? 2.5 : 1.5,
+                ),
+                boxShadow: isLegendary
+                    ? [
                         BoxShadow(
-                          color: colorPair[0].withValues(alpha: 0.3),
-                          blurRadius: 10,
-                          offset: const Offset(0, 4),
+                          color: const Color(0xFFFFD700).withValues(alpha: 0.2),
+                          blurRadius: 15,
+                          spreadRadius: 2,
                         ),
-                      ],
-                      border: Border.all(
-                        color: isLegendary
-                            ? const Color(0xFFFFD700).withValues(alpha: 0.8)
-                            : Colors.white.withValues(alpha: 0.4),
-                        width: isLegendary ? 2.5 : 1.5,
-                      ),
-                    ),
-                    child: Center(
+                      ]
+                    : null,
+              ),
+              child: Stack(
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        bottom: 24.h,
+                      ), // Push up to leave room for text
                       child: Text(
                         isLegendary ? "👑" : _getCategoryEmoji(badgeId),
                         style: TextStyle(
-                          fontSize: isLegendary ? 28.sp : 24.sp,
+                          fontSize: isLegendary ? 48.sp : 40.sp,
                           shadows: const [
                             Shadow(
-                              color: Colors.black26,
-                              blurRadius: 4,
-                              offset: Offset(0, 2),
+                              color: Colors.black45,
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
                             ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 12.h),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 4.w),
-                    child: _buildBadgeText(badgeId, isDark, isLocked: false),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        bottom: 12.h,
+                        left: 4.w,
+                        right: 4.w,
+                      ),
+                      child: _buildBadgeText(badgeId, isDark, isLocked: false),
+                    ),
                   ),
                 ],
               ),
@@ -487,18 +486,28 @@ class _TrophyRoomView extends StatelessWidget {
                   ? Colors.white.withValues(alpha: 0.02)
                   : Colors.black.withValues(alpha: 0.02),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Stack(
               children: [
-                Icon(
-                  Icons.lock_rounded,
-                  color: isDark ? Colors.white24 : Colors.black26,
-                  size: 32.r,
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 24.h),
+                    child: Icon(
+                      Icons.lock_rounded,
+                      color: isDark ? Colors.white24 : Colors.black26,
+                      size: 36.r,
+                    ),
+                  ),
                 ),
-                SizedBox(height: 8.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: _buildBadgeText(badgeId, isDark, isLocked: true),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 12.h,
+                      left: 4.w,
+                      right: 4.w,
+                    ),
+                    child: _buildBadgeText(badgeId, isDark, isLocked: true),
+                  ),
                 ),
               ],
             ),
