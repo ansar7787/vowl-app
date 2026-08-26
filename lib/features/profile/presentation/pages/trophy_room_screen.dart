@@ -42,19 +42,19 @@ class _TrophyRoomView extends StatelessWidget {
         children: [
           if (!isMidnight)
             // Premium Adult Background (No Kids Renderers)
-          MeshGradientBackground(
-            colors: isDark
-                ? [
-                    const Color(0xFF0F172A),
-                    const Color(0xFF1E293B),
-                    const Color(0xFF33201C), // Deep gold tint
-                  ]
-                : [
-                    const Color(0xFFF8FAFC),
-                    const Color(0xFFF1F5F9),
-                    const Color(0xFFFEF3C7), // Light gold tint
-                  ],
-          ),
+            MeshGradientBackground(
+              colors: isDark
+                  ? [
+                      const Color(0xFF0F172A),
+                      const Color(0xFF1E293B),
+                      const Color(0xFF33201C), // Deep gold tint
+                    ]
+                  : [
+                      const Color(0xFFF8FAFC),
+                      const Color(0xFFF1F5F9),
+                      const Color(0xFFFEF3C7), // Light gold tint
+                    ],
+            ),
 
           SafeArea(
             child: CustomScrollView(
@@ -226,20 +226,35 @@ class _TrophyRoomView extends StatelessWidget {
               crossAxisSpacing: 16.r,
               childAspectRatio: 0.75,
             ),
-            delegate: SliverChildBuilderDelegate((context, index) {
-              return _buildBadgeCard(
-                state.filteredBadges[index],
-                isDark,
-                index,
-              );
-            }, childCount: state.filteredBadges.length),
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final isLocked = index >= state.filteredBadges.length;
+                if (isLocked) {
+                  return _buildLockedSlot(isDark, index, state.currentFilter);
+                }
+                return _buildBadgeCard(
+                  state.filteredBadges[index],
+                  isDark,
+                  index,
+                  state.currentFilter,
+                );
+              },
+              childCount: state.filteredBadges.length < 15
+                  ? 15
+                  : state.filteredBadges.length,
+            ),
           ),
         );
       },
     );
   }
 
-  Widget _buildBadgeCard(String badgeId, bool isDark, int index) {
+  Widget _buildBadgeCard(
+    String badgeId,
+    bool isDark,
+    int index,
+    TrophyFilter filter,
+  ) {
     final isLegendary =
         badgeId.contains('master') ||
         badgeId.contains('legend') ||
@@ -250,6 +265,7 @@ class _TrophyRoomView extends StatelessWidget {
         : [const Color(0xFF94A3B8), const Color(0xFF64748B)]; // Silver
 
     return ScaleButton(
+          key: ValueKey('${filter.name}_${badgeId}_$index'),
           onTap: () => Haptics.vibrate(HapticsType.light),
           child: GlassTile(
             borderRadius: BorderRadius.circular(20.r),
@@ -384,5 +400,62 @@ class _TrophyRoomView extends StatelessWidget {
         ],
       ),
     ).animate().fadeIn().slideY(begin: 0.1);
+  }
+
+  Widget _buildLockedSlot(bool isDark, int index, TrophyFilter filter) {
+    return GlassTile(
+          key: ValueKey('${filter.name}_locked_$index'),
+          borderRadius: BorderRadius.circular(20.r),
+          padding: EdgeInsets.all(2.r),
+          borderColor: Colors.white.withValues(alpha: 0.05),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18.r),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.02)
+                  : Colors.black.withValues(alpha: 0.02),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 56.r,
+                  height: 56.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.lock_rounded,
+                      color: isDark ? Colors.white24 : Colors.black26,
+                      size: 24.r,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                Container(
+                  width: 40.w,
+                  height: 8.h,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.05)
+                        : Colors.black.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(4.r),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+        .animate()
+        .scale(
+          delay: (50 * (index % 6)).ms,
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+        )
+        .fadeIn(delay: (50 * (index % 6)).ms);
   }
 }
