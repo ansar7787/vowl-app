@@ -309,13 +309,15 @@ class _TrophyRoomView extends StatelessWidget {
                 color: isDark ? Colors.white54 : Colors.black54,
               ),
               SizedBox(width: 8.w),
-              Text(
-                text,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white54 : Colors.black54,
+              Expanded(
+                child: Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white54 : Colors.black54,
+                  ),
                 ),
               ),
             ],
