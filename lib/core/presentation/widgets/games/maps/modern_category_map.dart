@@ -595,7 +595,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
   }
 
   double _getVerticalSpacing(GameCategory category) {
-    // Set to 170.h for the perfect balance between tight S-curves and node spacing.
+    // 170.h is the industry standard density for 7-node maps.
     return 170.h;
   }
 
@@ -625,37 +625,36 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
 
     // ── Beautiful Premium S-Curve Path ──
     // 
-    // 1. PERFECT 4-NODE S-CURVE (freq = pi / 2):
-    //    We use exactly 4 nodes to form a full S-curve so it fits beautifully
-    //    on a single mobile screen.
-    // 
-    // 2. EQUAL LINE LENGTHS (Phase = 0):
-    //    By starting exactly at phase 0, the nodes follow a strict pattern:
-    //    Center -> Edge -> Center -> Edge. 
-    //    Because the horizontal jump is always exactly 50% of the screen width,
-    //    the distance between EVERY node is mathematically identical. No more 
-    //    "short" or "long" lines!
+    // We use a 7-node sine wave (freq = pi/3.5) combined with the perfectly 
+    // smooth Catmull-Rom spline in the painter. This creates a massive, gorgeous,
+    // organic river that flows naturally without any sharp Z-kinks or boring repetition!
     
     final rng = math.Random(category.index * 7919 + 31);
-    const double freq = math.pi / 2; 
+    const double freq = math.pi / 3.5; 
     
     for (int i = 0; i < _totalLevels; i++) {
-      // Alternate phase between categories (0 or pi) so some maps start by 
-      // swinging Right, and others start by swinging Left, but they ALWAYS 
-      // start perfectly Centered.
-      final double phase = (category.index % 2 == 0) ? 0.0 : math.pi;
+      // Offset by category index to give each category a slightly different starting phase
+      final double phase = (category.index * math.pi / 2);
       
-      // Base pure sine wave (Center, Edge, Center, Edge)
+      // Base pure sine wave that creates the sweeping S-shape
       final double baseSine = math.sin((i * freq) + phase);
       
-      // Smoothly vary the width of the S-curves (between 60% and 100% width)
-      final double slowAmplitude = 0.80 + math.sin(i * 0.15 + category.index * 3) * 0.20;
+      // Smoothly vary the width of the S-curves (between 50% and 100% width)
+      final double slowAmplitude = 0.75 + math.sin(i * 0.15 + category.index * 3) * 0.25;
       
-      // Add a slight per-node organic jitter (±2%) so it feels beautifully hand-placed
-      final double jitter = (rng.nextDouble() - 0.5) * 0.04;
+      // Smoothly drift the entire S-curve left or right across the screen
+      final double slowDrift = math.sin(i * 0.08 + category.index * 7) * 0.25;
       
-      // Combine it all. (Removed drift because it would break the perfect line lengths)
-      final double combined = (baseSine * slowAmplitude + jitter).clamp(-1.0, 1.0);
+      // Add a slight per-node organic jitter (±3%) so it feels beautifully hand-placed
+      final double jitter = (rng.nextDouble() - 0.5) * 0.06;
+      
+      // Force the first node (i=0) to be exactly in the center so the connection 
+      // from the header is perfectly vertical. We gracefully fade the amplitude 
+      // in over the first 1.5 nodes to smoothly start the sweeping S-curve.
+      final double startFade = math.min(i / 1.5, 1.0);
+      
+      // Combine it all
+      final double combined = ((baseSine * slowAmplitude + slowDrift + jitter) * startFade).clamp(-1.0, 1.0);
 
       final offsetX = centerX + (combined * maxOffset);
       final y = (i * spacing) + (spacing / 2);

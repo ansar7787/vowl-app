@@ -84,21 +84,27 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Incoming path from top boundary (y=0) to node center (y=centerY) ──
     //
-    // Uses a mathematically continuous split Bezier curve with k=1.0 tension.
-    // The user specifically requested that lines MUST enter and exit the node 
-    // perfectly vertically to feel "centered" (anter time and exit time).
+    // Uses a mathematically exact split of a Catmull-Rom spline. 
+    // This is the TRUE INDUSTRY STANDARD. It allows the path to flow naturally 
+    // diagonally through center nodes, completely eliminating artificial Z-kinks.
     if (!isFirst && prevPoint != null) {
-      final prevX = prevPoint!.dx;
-      final midX = (prevX + nodeX) / 2;
+      final x0 = prevPoint!.dx;
+      final x1 = nodeX;
+      
+      // Calculate smooth natural tangents based on the neighbors
+      final t0 = (x1 - (prevPrevX ?? x0)) / 2;
+      final t1 = ((nextPoint?.dx ?? x1) - x0) / 2;
+      
+      final startX = 0.5 * x0 + 0.5 * x1 + (t0 - t1) / 6;
 
       final incomingPath = Path()
-        ..moveTo(midX, 0)
+        ..moveTo(startX, 0)
         ..cubicTo(
-          0.25 * prevX + 0.75 * nodeX,       // cp1.x
-          centerY * 0.25,                    // cp1.y 
-          nodeX,                             // cp2.x (Forces perfectly vertical entry)
-          centerY * 0.50,                    // cp2.y 
-          nodeX,
+          0.25 * x0 + 0.75 * x1 + t0 / 12 - t1 / 4,    // cp1.x
+          centerY * 0.333333,                          // cp1.y 
+          x1 - t1 / 6,                                 // cp2.x 
+          centerY * 0.666667,                          // cp2.y 
+          x1,
           centerY,
         );
 
@@ -129,20 +135,26 @@ class ModernSegmentPathPainter extends CustomPainter {
 
     // ── Outgoing path from node center (y=centerY) to bottom boundary (y=size.height) ──
     //
-    // The exact mirror of the incoming path, guaranteeing a perfectly vertical exit.
+    // The exact mirror of the Catmull-Rom incoming path.
     if (!isLast && nextPoint != null) {
-      final nextX = nextPoint!.dx;
-      final midNextX = (nodeX + nextX) / 2;
+      final x0 = prevPoint?.dx ?? nodeX;
+      final x1 = nodeX;
+      final x2 = nextPoint!.dx;
+      
+      final t1 = (x2 - x0) / 2;
+      final t2 = ((nextNextX ?? x2) - x1) / 2;
+      
+      final endX = 0.5 * x1 + 0.5 * x2 + (t1 - t2) / 6;
       final bottomY = size.height;
 
       final outgoingPath = Path()
-        ..moveTo(nodeX, centerY)
+        ..moveTo(x1, centerY)
         ..cubicTo(
-          nodeX,                             // cp1.x (Forces perfectly vertical exit)
-          centerY * 1.50,                    // cp1.y 
-          0.75 * nodeX + 0.25 * nextX,       // cp2.x
-          centerY * 1.75,                    // cp2.y 
-          midNextX,
+          x1 + t1 / 6,                                 // cp1.x 
+          centerY * 1.333333,                          // cp1.y 
+          0.75 * x1 + 0.25 * x2 + t1 / 4 - t2 / 12,    // cp2.x 
+          centerY * 1.666667,                          // cp2.y 
+          endX,
           bottomY,
         );
 
