@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -103,6 +103,7 @@ class ContinueLearningCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // Category icon
                     Container(
@@ -113,70 +114,175 @@ class ContinueLearningCard extends StatelessWidget {
                       ),
                       child: Icon(icon, color: Colors.white, size: 24.r),
                     ),
-                    SizedBox(width: 16.w),
+                    // Category eyebrow
+                    Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12.w,
+                        vertical: 6.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child: Text(
+                        categoryLabel,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: 1.5,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20.h),
+                // Title given full horizontal width
+                Text(
+                  title,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 28.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: -0.5,
+                    height: 1.1,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                if (isNewUser)
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white.withValues(alpha: 0.8),
+                    ),
+                  ),
+                SizedBox(height: 24.h),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // Category eyebrow
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 3.h,
+                      child: isNewUser
+                          ? const SizedBox.shrink()
+                          : Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      context.tr(
+                                        'home.level_progress',
+                                        fallback: 'Level Progress',
+                                      ),
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white.withValues(
+                                          alpha: 0.8,
+                                        ),
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 10.w,
+                                        vertical: 4.h,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.black.withValues(
+                                          alpha: 0.2,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          12.r,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        '$cleared / $max',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 12.sp,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 12.h),
+                                // Diamond standard glowing progress bar
+                                Stack(
+                                  children: [
+                                    Container(
+                                      height: 14.h,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black.withValues(
+                                          alpha: 0.2,
+                                        ),
+                                        borderRadius: BorderRadius.circular(
+                                          8.r,
+                                        ),
+                                      ),
+                                    ),
+                                    FractionallySizedBox(
+                                      widthFactor: progress.clamp(0.0, 1.0),
+                                      child:
+                                          Container(
+                                            height: 14.h,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.white
+                                                      .withValues(alpha: 0.6),
+                                                  blurRadius: 12,
+                                                  spreadRadius: 2,
+                                                ),
+                                              ],
+                                            ),
+                                          ).animate().scaleX(
+                                            begin: 0,
+                                            end: 1,
+                                            duration: 800.ms,
+                                            curve: Curves.easeOutQuart,
+                                            alignment: Alignment.centerLeft,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(8.r),
-                            ),
-                            child: Text(
-                              categoryLabel,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 9.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: 1.5,
-                              ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                          SizedBox(height: 6.h),
-                          // Title
-                          AutoSizeText(
-                            title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 22
-                                  .sp, // slightly larger, allowed to scale down
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: -0.3,
-                              height: 1.1,
-                            ),
-                            maxLines: 2,
-                            minFontSize: 14,
-                            overflow: TextOverflow.visible,
+                    ),
+                    if (!isNewUser) SizedBox(width: 20.w),
+                    // Floating Action Play Button
+                    Container(
+                      padding: EdgeInsets.all(16.r),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 10,
+                            offset: const Offset(0, 4),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(width: 8.w),
-                    // Play button
-                    Container(
-                      padding: EdgeInsets.all(14.r),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: 0.2),
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.3),
-                          width: 1.5,
-                        ),
-                      ),
                       child: Icon(
                         Icons.play_arrow_rounded,
-                        color: Colors.white,
-                        size: 28.r, // slightly larger
+                        color:
+                            color, // The icon takes the dynamic category color
+                        size: 32.r,
                       ),
                     ).animate().scale(
                       begin: const Offset(0.8, 0.8),
@@ -186,84 +292,6 @@ class ContinueLearningCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                if (!isNewUser) ...[
-                  SizedBox(height: 24.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        context.tr(
-                          'home.level_progress',
-                          fallback: 'Level Progress',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white.withValues(alpha: 0.8),
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12.r),
-                        ),
-                        child: Text(
-                          '$cleared / $max',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10.h),
-                  // Diamond standard progress bar
-                  Stack(
-                    children: [
-                      Container(
-                        height: 12.h,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                      ),
-                      FractionallySizedBox(
-                        widthFactor: progress.clamp(0.0, 1.0),
-                        child:
-                            Container(
-                              height: 12.h,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(6.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.white.withValues(alpha: 0.5),
-                                    blurRadius: 10,
-                                    spreadRadius: 1,
-                                  ),
-                                ],
-                              ),
-                            ).animate().scaleX(
-                              begin: 0,
-                              end: 1,
-                              duration: 800.ms,
-                              curve: Curves.easeOutQuart,
-                              alignment: Alignment.centerLeft,
-                            ),
-                      ),
-                    ],
-                  ),
-                ],
               ],
             ),
           ),
