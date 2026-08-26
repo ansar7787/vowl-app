@@ -95,9 +95,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
       final highestCompleted = completedLevels.isEmpty ? 0 : completedLevels.reduce(math.max);
       final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
       
-      final double rowSpacing = _getVerticalSpacing(widget.categoryId);
+      // Obtain GameCategory using a dummy isDark value (doesn't affect category mapping)
+      final theme = LevelThemeHelper.getCategoryTheme(
+        widget.categoryId,
+        isDark: false,
+      );
+      final double rowSpacing = _getVerticalSpacing(theme.category);
       final targetOffset = (targetLevel - 1) * rowSpacing;
-      initialOffset = max(0, targetOffset - 300.h);
+      initialOffset = math.max(0.0, targetOffset - 300.h);
       _previousUnlockedLevel = unlockedLevel;
     }
 

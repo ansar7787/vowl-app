@@ -76,7 +76,7 @@ class _KidsLevelMapState extends State<KidsLevelMap>
       final targetLevel = (highestCompleted + 1).clamp(1, unlockedLevel);
       
       final targetOffset = (targetLevel - 1) * 200.h;
-      initialOffset = max(0, targetOffset - 300.h);
+      initialOffset = math.max(0.0, targetOffset - 300.h);
       _previousUnlockedLevel = unlockedLevel;
     }
 
