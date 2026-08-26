@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/profile/presentation/bloc/trophy_room_cubit.dart';
 
 class TrophyRoomScreen extends StatelessWidget {
@@ -33,11 +34,14 @@ class _TrophyRoomView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
 
     return Scaffold(
+      backgroundColor: isMidnight ? const Color(0xFF020617) : null,
       body: Stack(
         children: [
-          // Premium Adult Background (No Kids Renderers)
+          if (!isMidnight)
+            // Premium Adult Background (No Kids Renderers)
           MeshGradientBackground(
             colors: isDark
                 ? [
