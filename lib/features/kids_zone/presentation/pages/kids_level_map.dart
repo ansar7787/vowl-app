@@ -306,7 +306,19 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             }
           });
         } else {
-          _scrollToUnlockedLevel();
+          // Wait until the user returns to the map before scrolling so they can watch it happen
+          Timer.periodic(const Duration(milliseconds: 200), (timer) {
+            if (!mounted) {
+              timer.cancel();
+              return;
+            }
+            if (ModalRoute.of(context)?.isCurrent == true) {
+              timer.cancel();
+              Future.delayed(const Duration(milliseconds: 600), () {
+                if (mounted) _scrollToUnlockedLevel(delayMs: 0, animate: true);
+              });
+            }
+          });
         }
       },
       child: BlocBuilder<AuthBloc, AuthState>(

@@ -370,9 +370,17 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
             }
           });
         } else {
-          Future.delayed(const Duration(milliseconds: 1500), () {
-            if (mounted) {
-              _scrollToCurrentLevel(animate: true);
+          // Wait until the user returns to the map before scrolling so they can watch it happen
+          Timer.periodic(const Duration(milliseconds: 200), (timer) {
+            if (!mounted) {
+              timer.cancel();
+              return;
+            }
+            if (ModalRoute.of(context)?.isCurrent == true) {
+              timer.cancel();
+              Future.delayed(const Duration(milliseconds: 600), () {
+                if (mounted) _scrollToCurrentLevel(animate: true);
+              });
             }
           });
         }
