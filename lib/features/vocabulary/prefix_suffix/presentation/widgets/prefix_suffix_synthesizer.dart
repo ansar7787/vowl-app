@@ -139,9 +139,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildDropZone(isPrefixSlot: true),
-              SizedBox(width: 12.w),
               _buildRootBlock(),
-              SizedBox(width: 12.w),
               _buildDropZone(isPrefixSlot: false),
             ],
           ),
@@ -155,7 +153,15 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     if (widget.selectedAffix != null) {
       final isSelectedPrefix = widget.selectedAffix!.endsWith('-');
       if (isPrefixSlot == isSelectedPrefix) {
-        return _buildSnappedAffix(widget.selectedAffix!);
+        return Container(
+          padding: EdgeInsets.only(
+            left: isPrefixSlot ? 60.w : 6.w,
+            right: isPrefixSlot ? 6.w : 60.w,
+            top: 40.h,
+            bottom: 40.h,
+          ),
+          child: _buildSnappedAffix(widget.selectedAffix!),
+        );
       }
     }
 
@@ -190,28 +196,44 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
         widget.onAffixSelected(details.data, isPrefixSlot);
       },
       builder: (context, candidateData, rejectedData) {
-        return AnimatedContainer(
-          duration: 200.ms,
-          width: isHovering ? 100.w : 80.w,
-          height: isHovering ? 80.h : 70.h,
-          decoration: BoxDecoration(
-            color: isHovering 
-                ? widget.primaryColor.withValues(alpha: 0.2)
-                : (widget.isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05)),
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: isHovering ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.5),
-              width: isHovering ? 3 : 2,
-              style: isHovering ? BorderStyle.solid : BorderStyle.none, // Dashed look simulated by alpha when not hovering
-            ),
-            boxShadow: isHovering 
-                ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.3), blurRadius: 12, spreadRadius: 2)]
-                : null,
+        return Container(
+          color: Colors.transparent, // Massive hit area for ultra-magnetic feel
+          padding: EdgeInsets.only(
+            left: isPrefixSlot ? 60.w : 6.w,
+            right: isPrefixSlot ? 6.w : 60.w,
+            top: 40.h,
+            bottom: 40.h,
           ),
-          alignment: Alignment.center,
-          child: isHovering
-              ? Icon(Icons.arrow_downward_rounded, color: widget.primaryColor, size: 32.r)
-              : Icon(Icons.add, color: widget.primaryColor.withValues(alpha: 0.3), size: 32.r),
+          child: SizedBox(
+            width: 100.w,
+            height: 80.h,
+            child: Align(
+              alignment: isPrefixSlot ? Alignment.centerRight : Alignment.centerLeft,
+              child: AnimatedContainer(
+                duration: 200.ms,
+                width: isHovering ? 100.w : 80.w,
+                height: isHovering ? 80.h : 70.h,
+                decoration: BoxDecoration(
+                  color: isHovering 
+                      ? widget.primaryColor.withValues(alpha: 0.2)
+                      : (widget.isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03)),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isHovering ? widget.primaryColor : widget.primaryColor.withValues(alpha: 0.3),
+                    width: isHovering ? 3 : 2,
+                    style: BorderStyle.solid,
+                  ),
+                  boxShadow: isHovering 
+                      ? [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.4), blurRadius: 16, spreadRadius: 4)]
+                      : null,
+                ),
+                alignment: Alignment.center,
+                child: isHovering
+                    ? Icon(Icons.bolt_rounded, color: widget.primaryColor, size: 36.r) // Lightning bolt implies magnetic snap
+                    : Icon(Icons.add, color: widget.primaryColor.withValues(alpha: 0.4), size: 28.r),
+              ),
+            ),
+          ),
         );
       },
     );
@@ -312,7 +334,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
     return Draggable<String>(
       data: affix,
-      dragAnchorStrategy: pointerDragAnchorStrategy,
+      dragAnchorStrategy: childDragAnchorStrategy,
       onDragStarted: () {
         HapticFeedback.selectionClick();
       },
