@@ -59,18 +59,17 @@ class PrefixSuffixMissionControl extends StatelessWidget {
           ),
           SizedBox(height: 12.h),
           Text(
-            instruction.toUpperCase(),
+            instruction,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w700,
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w600,
               color: Theme.of(context).brightness == Brightness.dark 
                   ? Colors.white 
                   : Colors.black87,
-              height: 1.3,
+              height: 1.4,
             ),
             textAlign: TextAlign.center,
-            // Removed maxLines to let it expand indefinitely.
           ),
         ],
       ),

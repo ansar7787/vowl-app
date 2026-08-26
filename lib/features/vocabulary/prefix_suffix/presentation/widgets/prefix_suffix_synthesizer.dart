@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -162,6 +163,7 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
     
     return DragTarget<String>(
       onWillAcceptWithDetails: (details) {
+        HapticFeedback.lightImpact();
         setState(() {
           if (isPrefixSlot) {
             _isHoveringPrefix = true;
@@ -310,7 +312,10 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
 
     return Draggable<String>(
       data: affix,
-      onDragStarted: () {},
+      dragAnchorStrategy: pointerDragAnchorStrategy,
+      onDragStarted: () {
+        HapticFeedback.selectionClick();
+      },
       onDragEnd: (details) {
         setState(() {
           _isHoveringPrefix = false;
@@ -318,12 +323,33 @@ class _PrefixSuffixSynthesizerState extends State<PrefixSuffixSynthesizer> {
         });
       },
       feedback: Transform.scale(
-        scale: 1.1,
+        scale: 1.05,
         child: Material(
           color: Colors.transparent,
-          child: Opacity(
-            opacity: 0.9,
-            child: chip,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+            decoration: BoxDecoration(
+              color: widget.isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(color: widget.primaryColor, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.3),
+                  blurRadius: 20,
+                  spreadRadius: 5,
+                  offset: const Offset(0, 10),
+                )
+              ],
+            ),
+            child: Text(
+              affix.toUpperCase(),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w800,
+                color: widget.isDark ? Colors.white : Colors.black87,
+              ),
+            ),
           ),
         ),
       ),
