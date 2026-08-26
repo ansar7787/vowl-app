@@ -19,7 +19,8 @@ class ModernSegmentPathPainter extends CustomPainter {
   final bool isLast;
   final bool isDark;
   final bool isTollGate;
-  final double pathProgress;
+  final double incomingPathProgress;
+  final double outgoingPathProgress;
   final Animation<double>? glowAnimation;
 
   const ModernSegmentPathPainter({
@@ -35,7 +36,8 @@ class ModernSegmentPathPainter extends CustomPainter {
     required this.isLast,
     required this.isDark,
     this.isTollGate = false,
-    this.pathProgress = 1.0,
+    this.incomingPathProgress = 1.0,
+    this.outgoingPathProgress = 1.0,
     this.glowAnimation,
   }) : super(repaint: glowAnimation);
 
@@ -128,9 +130,9 @@ class ModernSegmentPathPainter extends CustomPainter {
           ..strokeCap = StrokeCap.butt,
       );
 
-        if (isActive && pathProgress > 0.0) {
+        if (isActive && incomingPathProgress > 0.0) {
           for (final metric in incomingPath.computeMetrics()) {
-            final extracted = metric.extractPath(0, metric.length * pathProgress);
+            final extracted = metric.extractPath(0, metric.length * incomingPathProgress);
             canvas.drawPath(
               extracted,
               Paint()
@@ -184,46 +186,65 @@ class ModernSegmentPathPainter extends CustomPainter {
           canvas,
           outgoingPath,
           Paint()
-            ..color = isActive
-                ? activeColor
-                : lockedColor
+            ..color = lockedColor
             ..style = PaintingStyle.stroke
             ..strokeWidth = strokeW
             ..strokeCap = StrokeCap.butt,
         );
 
-        if (isActive) {
-          _drawDashedPath(
-            canvas,
-            outgoingPath,
-            Paint()
-              ..color = activeColor.withValues(alpha: 0.35)
-              ..strokeWidth = strokeW + 12.0
-              ..style = PaintingStyle.stroke
-              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
-          );
+        if (isActive && outgoingPathProgress > 0.0) {
+          for (final metric in outgoingPath.computeMetrics()) {
+            final extracted = metric.extractPath(0, metric.length * outgoingPathProgress);
+            _drawDashedPath(
+              canvas,
+              extracted,
+              Paint()
+                ..color = activeColor.withValues(alpha: 0.35)
+                ..strokeWidth = strokeW + 12.0
+                ..style = PaintingStyle.stroke
+                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+            );
+            _drawDashedPath(
+              canvas,
+              extracted,
+              Paint()
+                ..color = activeColor
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = strokeW
+                ..strokeCap = StrokeCap.butt,
+            );
+          }
         }
       } else {
         canvas.drawPath(
           outgoingPath,
           Paint()
-            ..color = isActive
-                ? activeColor
-                : lockedColor
+            ..color = lockedColor
             ..style = PaintingStyle.stroke
             ..strokeWidth = strokeW
             ..strokeCap = StrokeCap.butt,
         );
 
-        if (isActive) {
-          canvas.drawPath(
-            outgoingPath,
-            Paint()
-              ..color = activeColor.withValues(alpha: 0.35)
-              ..strokeWidth = strokeW + 12.0
-              ..style = PaintingStyle.stroke
-              ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
-          );
+        if (isActive && outgoingPathProgress > 0.0) {
+          for (final metric in outgoingPath.computeMetrics()) {
+            final extracted = metric.extractPath(0, metric.length * outgoingPathProgress);
+            canvas.drawPath(
+              extracted,
+              Paint()
+                ..color = activeColor.withValues(alpha: 0.35)
+                ..strokeWidth = strokeW + 12.0
+                ..style = PaintingStyle.stroke
+                ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8.0),
+            );
+            canvas.drawPath(
+              extracted,
+              Paint()
+                ..color = activeColor
+                ..style = PaintingStyle.stroke
+                ..strokeWidth = strokeW
+                ..strokeCap = StrokeCap.butt,
+            );
+          }
         }
       }
     }
@@ -264,7 +285,8 @@ class ModernSegmentPathPainter extends CustomPainter {
         oldDelegate.isLast != isLast ||
         oldDelegate.isDark != isDark ||
         oldDelegate.isTollGate != isTollGate ||
-        oldDelegate.pathProgress != pathProgress ||
+        oldDelegate.incomingPathProgress != incomingPathProgress ||
+        oldDelegate.outgoingPathProgress != outgoingPathProgress ||
         oldDelegate.glowAnimation != glowAnimation ||
         oldDelegate.currentPoint != currentPoint ||
         oldDelegate.nextPoint != nextPoint ||

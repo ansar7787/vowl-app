@@ -9,7 +9,8 @@ class SegmentPathPainter extends CustomPainter {
   final double prevOffset; // Added to calculate incoming curve from previous node
   final bool isLast;
   final int level;
-  final double pathProgress; // 0.0 → 1.0: animated path draw progress
+  final double incomingPathProgress;
+  final double outgoingPathProgress;
   final bool isCurrent;
   final Animation<double>? glowAnimation; // 0.0 → 1.0: glow pulse for current node path
 
@@ -21,7 +22,8 @@ class SegmentPathPainter extends CustomPainter {
     required this.prevOffset,
     required this.isLast,
     required this.level,
-    this.pathProgress = 1.0,
+    this.incomingPathProgress = 1.0,
+    this.outgoingPathProgress = 1.0,
     this.isCurrent = false,
     this.glowAnimation,
   }) : super(repaint: glowAnimation);
@@ -96,14 +98,36 @@ class SegmentPathPainter extends CustomPainter {
       canvas.drawPath(outgoingPath, shadowPaint);
     }
 
-    // ── Incoming Path ──
+    // ── Incoming Path with animated draw ──
     final incomingPaint = Paint()
       ..color = incomingColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 22.r
       ..strokeCap = StrokeCap.butt;
 
-    canvas.drawPath(incomingPath, incomingPaint);
+    if (incomingPathProgress > 0.0) {
+      final pathMetrics = incomingPath.computeMetrics();
+      for (final metric in pathMetrics) {
+        final extractedPath = metric.extractPath(0, metric.length * incomingPathProgress);
+        canvas.drawPath(extractedPath, incomingPaint);
+        
+        if (incomingPathProgress > 0.0 && incomingPathProgress < 1.0 && isCurrent) {
+          final tangent = metric.getTangentForOffset(metric.length * incomingPathProgress);
+          if (tangent != null) {
+            final tipPaint = Paint()
+              ..color = Colors.white
+              ..style = PaintingStyle.fill
+              ..maskFilter = MaskFilter.blur(BlurStyle.normal, 6.r);
+            canvas.drawCircle(tangent.position, 8.r, tipPaint);
+
+            final dotPaint = Paint()
+              ..color = Colors.white
+              ..style = PaintingStyle.fill;
+            canvas.drawCircle(tangent.position, 4.r, dotPaint);
+          }
+        }
+      }
+    }
 
     // ── Outgoing Path with animated draw ──
     if (!isLast) {
@@ -112,7 +136,7 @@ class SegmentPathPainter extends CustomPainter {
       for (final metric in pathMetrics) {
         final extractedPath = metric.extractPath(
           0,
-          metric.length * pathProgress,
+          metric.length * outgoingPathProgress,
         );
 
         final double glowValue = glowAnimation?.value ?? 0.0;
@@ -136,9 +160,9 @@ class SegmentPathPainter extends CustomPainter {
         canvas.drawPath(extractedPath, outgoingPaint);
 
         // Sparkle dot at the tip of the animated path
-        if (pathProgress < 1.0 && pathProgress > 0.0) {
+        if (outgoingPathProgress > 0.0 && outgoingPathProgress < 1.0) {
           final tangent = metric.getTangentForOffset(
-            metric.length * pathProgress,
+            metric.length * outgoingPathProgress,
           );
           if (tangent != null) {
             final tipPaint = Paint()
@@ -176,7 +200,8 @@ class SegmentPathPainter extends CustomPainter {
         oldDelegate.nextOffset != nextOffset ||
         oldDelegate.prevOffset != prevOffset ||
         oldDelegate.level != level ||
-        oldDelegate.pathProgress != pathProgress ||
+        oldDelegate.incomingPathProgress != incomingPathProgress ||
+        oldDelegate.outgoingPathProgress != outgoingPathProgress ||
         oldDelegate.isCurrent != isCurrent ||
         oldDelegate.glowAnimation != glowAnimation;
   }

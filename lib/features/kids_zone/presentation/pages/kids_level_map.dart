@@ -577,15 +577,19 @@ class _KidsLevelMapState extends State<KidsLevelMap>
         );
 
         // Path-draw progress for the segment right before the current node
-        double pathProgress = 1.0;
-        if (_isUnlockAnimating && isCompleted) {
-          // The just-completed level's outgoing path draws in
+        double incomingProgress = 1.0;
+        double outgoingProgress = 1.0;
+        
+        if (_isUnlockAnimating) {
           final user = context.read<AuthBloc>().state.user;
           final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
-          if (level == currUnlocked - 1) {
-            pathProgress = Curves.easeInOutCubic.transform(
-              _unlockPathController.value,
-            );
+          
+          final double rawValue = Curves.easeInOutCubic.transform(_unlockPathController.value);
+          
+          if (level == currUnlocked) {
+            incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
+          } else if (level == currUnlocked - 1) {
+            outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
           }
         }
 
@@ -612,7 +616,8 @@ class _KidsLevelMapState extends State<KidsLevelMap>
                     : _getHorizontalOffset(level - 1, MediaQuery.of(context).size.width),
                 isLast: isLast,
                 level: level,
-                pathProgress: pathProgress,
+                incomingPathProgress: incomingProgress,
+                outgoingPathProgress: outgoingProgress,
                 isCurrent: isCurrent,
                 glowAnimation: isCurrent ? _glowController : null,
               ),
@@ -630,16 +635,36 @@ class _KidsLevelMapState extends State<KidsLevelMap>
             Positioned(
               left: currentOffset,
               top: 50.h, // Vertically center the node in the 200.h segment
-              child: _buildLevelNode(
-                context,
-                level,
-                isLocked,
-                isCurrent,
-                isTollGate,
-                isCompleted,
-                isPlayable,
-                isNextZone,
-              ),
+                child: Builder(
+                  builder: (context) {
+                    Widget node = _buildLevelNode(
+                      context,
+                      level,
+                      isLocked,
+                      isCurrent,
+                      isTollGate,
+                      isCompleted,
+                      isPlayable,
+                      isNextZone,
+                    );
+                    
+                    if (_isUnlockAnimating) {
+                      final user = context.read<AuthBloc>().state.user;
+                      final currUnlocked = user?.unlockedLevels[widget.gameType] ?? 1;
+                      if (level == currUnlocked) {
+                        final bounceValue = Curves.elasticOut.transform(_unlockPathController.value);
+                        return Transform.scale(
+                          scale: 0.6 + 0.4 * bounceValue,
+                          child: Opacity(
+                            opacity: _unlockPathController.value,
+                            child: node,
+                          ),
+                        );
+                      }
+                    }
+                    return node;
+                  },
+                ),
             ),
             if (isCurrent)
               Positioned(

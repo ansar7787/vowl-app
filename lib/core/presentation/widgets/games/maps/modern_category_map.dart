@@ -481,16 +481,31 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                             !isPremium;
                         final isCurrent = isPlayable || isTollGateSegment;
                         final isJustUnlocked = levelNumber == _justUnlockedLevel;
+                        final isPrevToJustUnlocked = _justUnlockedLevel != null && levelNumber == _justUnlockedLevel! - 1;
 
-                        // Choose animation: glow for current node, unlock bounce
-                        // for just-unlocked node, static for everything else.
+                        // Choose animation: glow for current node, static for everything else.
+                        // (The AnimatedBuilder merges _unlockPathController anyway, so we don't need to assign it here).
                         final Animation<double> nodeAnimation;
-                        if (isJustUnlocked) {
-                          nodeAnimation = _unlockPathController;
-                        } else if (isCurrent) {
+                        if (isCurrent) {
                           nodeAnimation = _glowController;
                         } else {
                           nodeAnimation = const AlwaysStoppedAnimation(0);
+                        }
+
+                        // Map the 0-1 path animation into two halves:
+                        // 0.0 - 0.5: Previous node's outgoing path grows.
+                        // 0.5 - 1.0: Current node's incoming path grows.
+                        double incomingProgress = 1.0;
+                        double outgoingProgress = 1.0;
+                        
+                        if (_justUnlockedLevel != null) {
+                          final double rawValue = _unlockPathController.value;
+                          if (isJustUnlocked) {
+                            incomingProgress = ((rawValue - 0.5) * 2).clamp(0.0, 1.0);
+                            // Outgoing progress of the just-unlocked node remains 0 until it's completed later
+                          } else if (isPrevToJustUnlocked) {
+                            outgoingProgress = (rawValue * 2).clamp(0.0, 1.0);
+                          }
                         }
 
                         return RepaintBoundary(
@@ -520,7 +535,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap>
                                   isLast: index == _totalLevels - 1,
                                   isDark: isDark,
                                   isTollGate: isTollGateSegment,
-                                  pathProgress: isJustUnlocked ? _unlockPathController.value : 1.0,
+                                  incomingPathProgress: incomingProgress,
+                                  outgoingPathProgress: outgoingProgress,
                                   glowAnimation: isCurrent ? _glowController : null,
                                 ),
                                 child: child,
