@@ -49,8 +49,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   bool _isFirstStagePassed = false;
   AccentQuest? _lastQuest;
 
-  double _previewProgress = 0.0;
-  bool _isPreviewing = false;
+  final ValueNotifier<double> _previewProgress = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isPreviewing = ValueNotifier(false);
   Timer? _previewTimer;
 
   @override
@@ -65,6 +65,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   void dispose() {
     _previewTimer?.cancel();
     _scrollController.dispose();
+    _previewProgress.dispose();
+    _isPreviewing.dispose();
     super.dispose();
   }
 
@@ -88,10 +90,8 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
   void _triggerPreviewWave() {
     _previewTimer?.cancel();
-    setState(() {
-      _previewProgress = 0.0;
-      _isPreviewing = true;
-    });
+    _previewProgress.value = 0.0;
+    _isPreviewing.value = true;
 
     const steps = 30;
     const interval = Duration(milliseconds: 40);
@@ -103,12 +103,11 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         return;
       }
       currentStep++;
-      setState(() {
-        _previewProgress = (currentStep / steps).clamp(0.0, 1.0);
-      });
+      _previewProgress.value = (currentStep / steps).clamp(0.0, 1.0);
+      
       if (currentStep >= steps) {
         timer.cancel();
-        setState(() => _isPreviewing = false);
+        _isPreviewing.value = false;
       }
     });
   }
@@ -192,10 +191,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
               _isCorrect = null;
               _sliderValue = 0.5;
               _selectedIndex = null;
-              _previewProgress = 0.0;
-              _isPreviewing = false;
               _isFirstStagePassed = false;
             });
+            _previewProgress.value = 0.0;
+            _isPreviewing.value = false;
             // Proactively auto-play sound on question load
             final quest = state.currentQuest as AccentQuest?;
             if (quest != null) {
@@ -312,15 +311,23 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
                                             if (_isAnswered ||
                                                 _isFirstStagePassed) ...[
-                                              PitchPatternMatchMelodicCanvas(
-                                                pattern: pattern,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isPreviewing: _isPreviewing,
-                                                isAnswered:
-                                                    _isAnswered ||
-                                                    _isFirstStagePassed,
-                                                previewProgress: _previewProgress,
+                                              ValueListenableBuilder<bool>(
+                                                valueListenable: _isPreviewing,
+                                                builder: (context, isPreviewing, _) {
+                                                  return ValueListenableBuilder<double>(
+                                                    valueListenable: _previewProgress,
+                                                    builder: (context, previewProgress, _) {
+                                                      return PitchPatternMatchMelodicCanvas(
+                                                        pattern: pattern,
+                                                        color: theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isPreviewing: isPreviewing,
+                                                        isAnswered: _isAnswered || _isFirstStagePassed,
+                                                        previewProgress: previewProgress,
+                                                      );
+                                                    },
+                                                  );
+                                                },
                                               ),
                                               SizedBox(height: gapSpeaker),
                                             ],

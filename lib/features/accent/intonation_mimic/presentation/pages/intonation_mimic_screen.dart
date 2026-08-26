@@ -49,8 +49,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   bool _isFirstStagePassed = false;
 
   // Pitch ride animation parameters
-  double _cartPosition = 0.0;
-  bool _isRiding = false;
+  final ValueNotifier<double> _cartPosition = ValueNotifier(0.0);
+  final ValueNotifier<bool> _isRiding = ValueNotifier(false);
   Timer? _rideTimer;
 
   @override
@@ -64,6 +64,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
   @override
   void dispose() {
     _rideTimer?.cancel();
+    _cartPosition.dispose();
+    _isRiding.dispose();
     super.dispose();
   }
 
@@ -75,10 +77,8 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
   void _triggerRideEffect() {
     _rideTimer?.cancel();
-    setState(() {
-      _cartPosition = 0.0;
-      _isRiding = true;
-    });
+    _cartPosition.value = 0.0;
+    _isRiding.value = true;
 
     const steps = 30;
     const interval = Duration(milliseconds: 40);
@@ -90,12 +90,11 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
         return;
       }
       currentStep++;
-      setState(() {
-        _cartPosition = (currentStep / steps).clamp(0.0, 1.0);
-      });
+      _cartPosition.value = (currentStep / steps).clamp(0.0, 1.0);
+      
       if (currentStep >= steps) {
         timer.cancel();
-        setState(() => _isRiding = false);
+        _isRiding.value = false;
       }
     });
   }
@@ -185,10 +184,10 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
               _isCorrect = null;
               _sliderValue = 0.5;
               _selectedIndex = null;
-              _cartPosition = 0.0;
-              _isRiding = false;
               _isFirstStagePassed = false;
             });
+            _cartPosition.value = 0.0;
+            _isRiding.value = false;
             // Proactively auto-play sound and trigger ride effect on load
             final quest = state.currentQuest;
             if (quest.textToSpeak != null) {
@@ -340,12 +339,22 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
 
                                             if (_isAnswered ||
                                                 _isFirstStagePassed) ...[
-                                              IntonationMimicRollercoaster(
-                                                contour: contour,
-                                                color: theme.primaryColor,
-                                                isDark: isDark,
-                                                isRiding: _isRiding,
-                                                cartPosition: _cartPosition,
+                                              ValueListenableBuilder<bool>(
+                                                valueListenable: _isRiding,
+                                                builder: (context, isRiding, _) {
+                                                  return ValueListenableBuilder<double>(
+                                                    valueListenable: _cartPosition,
+                                                    builder: (context, cartPosition, _) {
+                                                      return IntonationMimicRollercoaster(
+                                                        contour: contour,
+                                                        color: theme.primaryColor,
+                                                        isDark: isDark,
+                                                        isRiding: isRiding,
+                                                        cartPosition: cartPosition,
+                                                      );
+                                                    }
+                                                  );
+                                                }
                                               ),
                                               SizedBox(height: gapSpeaker),
                                             ],
