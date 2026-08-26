@@ -66,8 +66,24 @@ class ToolsStrip extends StatelessWidget {
         title: context.tr('home.tools_scan_learn', fallback: 'Scan & Learn'),
         subtitle: context.tr('home.tools_scan', fallback: 'Scanner'),
         icon: Icons.document_scanner_rounded,
-        color: const Color(0xFFA855F7),
+        color: const Color(0xFFEAB308), // Yellow color for scanner
         route: AppRouter.scanAndLearnRoute,
+        requiresAd: false,
+      ),
+      (
+        title: context.tr('home.tools_word_snap', fallback: 'Word Snap'),
+        subtitle: context.tr('home.tools_memory', fallback: 'Memory'),
+        icon: Icons.extension_rounded,
+        color: const Color(0xFFF59E0B), // Orange color for snap
+        route: AppRouter.wordSnapRoute,
+        requiresAd: false,
+      ),
+      (
+        title: context.tr('home.tools_word_mixer', fallback: 'Word Mixer'),
+        subtitle: context.tr('home.tools_combos', fallback: 'Combos'),
+        icon: Icons.sort_by_alpha_rounded,
+        color: const Color(0xFFA855F7), // Purple color for mixer
+        route: AppRouter.wordMixerRoute,
         requiresAd: false,
       ),
     ];
